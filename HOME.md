@@ -19,9 +19,10 @@ WHERE domain
 SORT domain ASC
 ```
 
-### 🆕 新增: [[Programming]] + [[freeCodeCamp]] (2026-07-21)
+### 🆕 新增: [[Programming]] + [[freeCodeCamp]] + [[8051-MCU]] (2026-07-21)
 Python 3.14 新特性、AI Agent 架构模式、ReAct/CodeAct 范式、build123d + AI 结合、OpenClaw Skill 开发
 **freeCodeCamp**: 451K GitHub Stars 的开源编程教育平台源码研究
+**8051-MCU**: 51单片机嵌入式开发全流程 (Keil/SDCC → GPIO/定时器/UART → STC-ISP 烧录) + 新 skill `8051-embedded-dev`
 
 ## 📝 最近更新的笔记
 
@@ -97,7 +98,7 @@ build123d 参数化建模、软件选型、3D打印、学习路径
 ### 🐍 [[Programming]] — Python 与 AI 开发 🆕
 Python 3.14 新特性、AI Agent 架构、ReAct/CodeAct 模式、build123d + AI
 - **驱动**: Python 生态 + 7 个 CAD Python 库
-- **关联**: → [[AI-Agent]]（Agent 实现）· → [[AI-Workflow]]（代码编排）· → [[CAD-Design]]（build123d）· → [[Vibe-Coding]]（开发环境）· → [[freeCodeCamp]]（编程教育）
+- **关联**: → [[AI-Agent]]（Agent 实现）· → [[AI-Workflow]]（代码编排）· → [[CAD-Design]]（build123d）· → [[Vibe-Coding]]（开发环境）· → [[freeCodeCamp]]（编程教育）· → [[8051-MCU]]（嵌入式 C 语言）
 
 ### 🏫 [[freeCodeCamp]] — 全球最大开源编程教育平台 🆕
 451K Stars · 10 年 · 100K 就业 · Monorepo 架构 · CFSD 认证体系
