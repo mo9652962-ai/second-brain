@@ -163,13 +163,9 @@ embedding provider configuration issue
 ### Impact
 无法检索历史记忆，影响上下文恢复和长期学习
 
-### Suggested Fix
-检查 embedding provider 配置，可能需要切换到本地模型或更换 provider
-
-### Metadata
-- Recurrence-Count: 1
-- First-Seen: 2026-07-20
-- Last-Seen: 2026-07-20
+### Resolution
+- **Resolved**: 2026-07-21T01:24:00+08:00
+- **Notes**: 添加 sync.embeddingBatchTimeoutSeconds: 90 + openclaw memory index --force → 1s响应
 
 ---
 

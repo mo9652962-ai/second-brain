@@ -496,10 +496,10 @@ sora Skill全家桶原则：任务时该领域全部 skills 启用，全流程�
 
 ## [LRN-20260720-013] knowledge_gap
 
-**Logged**: 2026-07-21T01:10:00+08:00 | **Priority**: medium | **Status**: unresolved | **Area**: infra
+**Logged**: 2026-07-21T01:10:00+08:00 | **Priority**: medium | **Status**: resolved | **Area**: infra
 
 ### Summary
-memory_search embedding provider 超时(15s)，搜索不可用。需切换模型或云端API
+memory_search embedding 超时修复：embeddingBatchTimeoutSeconds 90s + reindex → 1s响应
 
 ### Metadata
 - Tags: memory, embedding, local-model
@@ -517,3 +517,252 @@ PowerShell 不支持 &&/||，命令分隔用 `;`，条件用 `if ($?) {}`
 ### Metadata
 - Tags: powershell, exec, gotcha
 - Pattern-Key: tools.powershell-syntax
+
+---
+
+## [LRN-20260721-001] best_practice
+
+**Logged**: 2026-07-21T02:40:00+08:00 | **Priority**: high | **Status**: resolved | **Area**: infra
+
+### Summary
+Obsidian + OpenClaw + GitHub 三方联动完整搭建，Second Brain 知识中枢上线
+
+### 步骤
+1. workspace 下创建 knowledge/projects/templates 目录 + 4 个知识库文件
+2. 创建 HOME.md 入口页 + .obsidian 配置
+3. Git init + .gitignore（排除 skills/ 等大目录）
+4. GitHub 私有仓库 + PAT → Obsidian Git 插件
+5. 已有文件的目录不用 Clone → git init + remote + push
+6. 国内网络 push 超时但实际已成功（Everything up-to-date）
+
+### 关键经验
+- 已有文件目录不能用 Git: Clone（要求空目录），需手动 init+remote+push
+- Token 绝对不要公开发送
+- CRLF 警告无害
+- push SIGKILL 不一定失败
+- Obsidian Git 默认 10 分钟自动 sync
+
+### Metadata
+- Tags: obsidian, openclaw, github, second-brain, git
+- Pattern-Key: config.obsidian-openclaw-github
+
+---
+
+## [LRN-20260721-002] knowledge_gap
+
+**Logged**: 2026-07-21T02:40:00+08:00 | **Priority**: medium | **Status**: resolved | **Area**: tools
+
+### Summary
+Obsidian Git Clone vs 已有 Git 仓库的冲突：已有文件时不可 Clone，需手动 git init + push
+
+### Metadata
+- Tags: obsidian, git, gotcha
+- Pattern-Key: tools.obsidian-git-clone
+
+---
+
+## [LRN-20260721-003] insight
+
+**Logged**: 2026-07-21T15:13:00+08:00
+**Priority**: high
+**Status**: pending
+**Area**: config
+
+### Summary
+OpenClaw 2026.7.1-2 是最新稳定版；OpenClaw 已转型为非营利基金会 (2026-07-08)，有全职团队和 NVIDIA 合作
+
+### Details
+通过 Tavily 搜索 + 本地 `openclaw --version` 验证：
+1. 当前安装版本 2026.7.1-2 (0790d9f)，npm 显示 openclaw@2026.7.1-2，为 2026年7月最新
+2. OpenClaw Foundation 于 2026-07-08 宣布成立，从个人项目转型为非营利组织
+3. NVIDIA 合作推出 SkillSpector 安全扫描（所有 ClawHub skills 自动检测隐藏指令）
+4. Skill Workshop 于 2026-06-03 上线：review/revise/apply/reject 技能提案
+5. Webhook ingress plugin 已内置，外部自动化可触发内部 TaskFlow
+6. 2026.4.7 修复了 Node 22+ 上 web_fetch/web_search 的 fetch failed 问题
+
+### Key 2026 Architecture Changes
+- ContextEngine (2026.3.7): 可插拔上下文管理，模型路由器自动 fallback/retry
+- Active Memory 插件 (2026.4.10/12): 动态上下文检索替代静态 MEMORY.md，memory-lancedb 云存储
+- Task Brain (2026.3.31): 统一任务管理层 (ACP/subagents/cron/CLI)
+- Cross-Component Trust: 远程节点事件默认标记为 untrusted
+
+### Suggested Action
+- 当前版本已是最新，无需升级
+- 关注 Active Memory 插件成熟度，评估是否需要从文件-based memory 迁移
+- 保持对新特性的跟踪
+
+### Metadata
+- Source: web_search + openclaw --version
+- Tags: openclaw, version, foundation, 2026.7.1, architecture
+- Pattern-Key: config.openclaw-version
+- Recurrence-Count: 1
+- First-Seen: 2026-07-21
+- Last-Seen: 2026-07-21
+
+---
+
+## [LRN-20260721-004] best_practice
+
+**Logged**: 2026-07-21T15:13:00+08:00
+**Priority**: medium
+**Status**: pending
+**Area**: infra
+
+### Summary
+OpenClaw session store 需要定期清理维护：孤儿 transcript 和缺少 transcript 的 session 条目会积累
+
+### Details
+执行 `openclaw doctor` 发现：
+- 2/4 recent sessions missing transcripts
+- 4 orphan transcript files (.jsonl) 不再被 sessions.json 引用
+- 通过 `openclaw sessions cleanup --enforce --fix-missing` 清理后从 4 entries → 2 entries
+
+### Suggested Action
+- 将 session cleanup 加入定期维护清单
+- 命令: openclaw sessions cleanup --store "...\sessions.json" --enforce --fix-missing
+- 建议每月或心跳中执行一次
+
+### Metadata
+- Source: openclaw doctor
+- Tags: session, cleanup, maintenance, orphan
+- Pattern-Key: config.session-cleanup
+- Recurrence-Count: 1
+- First-Seen: 2026-07-21
+- Last-Seen: 2026-07-21
+
+---
+
+## [LRN-20260721-005] knowledge_gap
+
+**Logged**: 2026-07-21T15:13:00+08:00
+**Priority**: high
+**Status**: pending
+**Area**: config
+
+### Summary
+2026 AI Agent Memory 范式转型：Memory 已成为一等架构组件，Vector+Graph 混合是生产标准
+
+### Details
+综合 mem0.ai 2026 报告 + Atlan + AgentMarketCap 等来源：
+1. **Memory ≠ RAG**: Observational memory 84.23% vs RAG 80.05% (LongMemEval)，token 成本降 10x
+2. **Graph + Vector 混合已成主流**: 向量检索 (语义相似) + 图数据库 (实体关系推理) 协同
+3. **Memory 成熟度模型**: RAG only (初级) → + Memory (中级) → Memory+RAG+KG+治理层 (生产级)
+4. **GraphRAG-Bench / HopRAG**: 2026新基准，标准化评估多跳推理场景
+5. **Oracle AI Agent Memory**: 统一向量+图数据库后端，企业级方案
+6. **VentureBeat 2026**: 预测 Contextual Memory 将在 agentic AI 中超越 RAG
+7. **21框架 + 20向量存储 + 3托管模式**: 2026的 memory 基础设施生态已成熟
+
+### Suggested Action
+- 当前文件-based memory (MEMORY.md + memory/*.md) 适合轻量场景
+- 当需要关系推理时（如论文引用网络、技能依赖图），考虑引入 Neo4j/pgvector
+- 跟踪 Active Memory 插件发展（OpenClaw built-in 方案）
+
+### Metadata
+- Source: web_search (mem0.ai, Atlan, AgentMarketCap)
+- Tags: memory, graph-rag, vector, knowledge-graph, 2026-trends
+- Pattern-Key: config.memory-graph-hybrid
+- Recurrence-Count: 1
+- First-Seen: 2026-07-21
+- Last-Seen: 2026-07-21
+
+---
+
+## [LRN-20260721-006] best_practice
+
+**Logged**: 2026-07-21T15:13:00+08:00
+**Priority**: high
+**Status**: resolved
+**Area**: config
+
+### Summary
+Self-improvement cron 架构验证：isolated agentTurn 模式符合 2026 最佳实践
+
+### Details
+对比 Proactive Agent v3.1.0 理论和 OpenClaw 实际架构：
+1. ✅ 自改进 cron 使用 isolated agentTurn（非 systemEvent），真正做事而非仅提醒
+2. ✅ WAL Protocol：SESSION-STATE.md 先写再回复
+3. ✅ Working Buffer：60% 上下文后记录
+4. ✅ Memory 三层架构：SESSION-STATE → daily notes → MEMORY.md
+5. ✅ ADL/VFM 安全护栏
+6. ✅ 搜索三层冗余：Tavily + Firecrawl + Exa
+
+### 2026 自改进最佳实践对照
+- Harness-layer improvement (非模型微调) ✅
+- Verifiable continual learning (可回放验证) ✅ → .learnings/ + MEMORY.md + AGENTS.md
+- Regression-aware (不破坏已有能力) ✅ → ADL Protocol
+- 正确的路由修复到对应层 ✅ → 错误归类 + Pattern-Key 体系
+
+### Metadata
+- Source: tavily_search + skill_review
+- Tags: self-improvement, cron, validation, best-practices
+- Pattern-Key: config.self-improvement-validated
+- Recurrence-Count: 1
+- First-Seen: 2026-07-21
+- Last-Seen: 2026-07-21
+
+---
+
+## [LRN-20260721-007] knowledge_gap
+
+**Logged**: 2026-07-21T15:13:00+08:00
+**Priority**: medium
+**Status**: pending
+**Area**: config
+
+### Summary
+OpenClaw 安全态势：已知 CVE (2026年1月) + command owner 未配置
+
+### Details
+1. **OpenClaw CVE (2026-01)**: Ethiack 发现 1-click account takeover 到 RCE 漏洞，48h内修复
+2. **当前版本 2026.7.1-2**: 远晚于漏洞修复时间，不受影响
+3. **Command owner 未配置**: `openclaw doctor` 检测到 commands.ownerAllowFrom 为空
+   - 影响：特权命令 (/diagnostics, /export-trajectory, /config) 和 exec 审批无身份验证
+   - 修复：需配置 commands.ownerAllowFrom 指向 sora 的 channel user id
+4. **NVIDIA SkillSpector**: ClawHub 所有 skills 自动扫描隐藏指令（2026-06-01起）
+5. **Cross-Component Trust**: 2026.4.x 起远程节点事件默认标记 untrusted
+
+### Suggested Action
+- [ ] 配置 commands.ownerAllowFrom（需 sora 手动执行，需知道微信用户ID）
+- 当前版本安全，CVE 已修复
+- 利用 SkillSpector 审计已安装 skills（可自动化）
+
+### Metadata
+- Source: web_search + openclaw doctor
+- Tags: security, cve, command-owner, skills
+- Pattern-Key: config.security-gaps
+- Recurrence-Count: 1
+- First-Seen: 2026-07-21
+- Last-Seen: 2026-07-21
+
+---
+
+## [LRN-20260721-008] best_practice
+
+**Logged**: 2026-07-21T15:13:00+08:00
+**Priority**: medium
+**Status**: pending
+**Area**: config
+
+### Summary
+低成本模型路由 (Cheap-Model Tiering) 可节省 60-70% token 成本，心跳/监控任务用小型模型
+
+### Details
+来自 2026 AI Agent 成本优化研究：
+1. **模型路由**: 简单任务用小型模型，复杂任务用大型模型 → 省 60-70% cost
+2. **Semantic Caching**: 嵌入相似度 0.92 阈值缓存 → 消除 20-40% LLM 调用
+3. **Prompt Caching**: Claude 5-min TTL, OpenAI 1-hour auto cache → 省 60-80% token
+4. **Batch API**: 非实时任务用 Batch API → 50% 折扣
+5. **实施优先级**: Model Routing → Prompt Caching → Batching → Semantic Cache
+
+### Suggested Action
+- 为心跳检查配置小型/便宜模型（如 qwen3.7-plus 而非 deepseek-v4-pro）
+- 评估心跳 token 消耗，考虑 cheap-model tiering
+- 考虑在 cron 任务中指定 model 参数
+
+### Metadata
+- Source: web_search (BitPixel Coders guide)
+- Tags: cost-optimization, model-routing, caching, token-efficiency
+- Pattern-Key: config.cheap-model-tiering
+- Recurrence-Count: 1
+- First-Seen: 2026-07-21
+- Last-Seen: 2026-07-21

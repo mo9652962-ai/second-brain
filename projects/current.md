@@ -11,30 +11,39 @@ updated: 2026-07-21
 - [x] WeChat 连接（v2.4.6，已登录）
 - [x] 搜索三引擎冗余（Tavily + Firecrawl + Exa）
 - [x] 搜索超时修复（60→120s）
-- [x] memory_search 修复（embedding timeout 90s）
+- [x] memory_search 修复（embedding timeout 90s + reindex）
 - [x] PPT Skills 2026 趋势升级（6/6 完成）
-- [x] 错误总结与经验记录（8 条错误 + 14 条学习）
-- [ ] Obsidian + GitHub 三方联动（进行中）
+- [x] 错误总结与经验记录（8 条错误 + 22 条学习）
+- [x] Obsidian + GitHub 三方联动 ✅ 2026-07-21
+- [x] MiMo-V2.5-Pro 加入 fallback 链（图片视觉回退）
+- [x] 自改进 Cron 执行 + 架构验证 ✅ 2026-07-21
+- [x] Memory 范式研究（Vector+Graph 混合, 2026 前沿）
+- [x] 低成本模型路由策略研究
+- [x] Session store 清理（4→2 entries）
+- [ ] 配置 `commands.ownerAllowFrom`（安全加固）
+- [ ] 跨供应商模型 fallback
 
-### 2. 桌面美化
+### 2. 桌面优化
 - [x] Wallpaper Engine（原有）
 - [x] Rainmeter v4.5.26（已下载）
 - [x] TranslucentTB 2026.1（已下载）
 - [x] ExplorerPatcher（已下载）
 - [x] VC++ 运行库全版本（已安装）
 - [ ] SFC 系统扫描（需管理员权限手动执行）
+- [ ] 桌面美化方案实际部署
 
-## 待规划
-
-### 变现路径
+### 3. AI 变现路径规划
+- [x] 六大路径市场调研
+- [x] 价格定位分析
 - [ ] 闲鱼挂「AI 代做 PPT」
 - [ ] 小红书发「AI PPT 教程」内容
 - [ ] 尝试接论文润色/翻译单
 
-### 待解决
-- [ ] 跨供应商模型 fallback
-- [ ] memory pruning 定期清理
+## 待解决
+- [ ] memory pruning 定期清理自动化
+- [ ] 低成本模型 tiering for heartbeat
+- [ ] 探索 opencode-go 更多 vision 模型
 
 ## 每日更新
 
-_由 k (OpenClaw) 在每次会话结束时更新_
+_由 k (OpenClaw) 在每次会话结束时更新_ | 2026-07-21: 基础设施大幅完善，Memory 范式升级，变现路径明确

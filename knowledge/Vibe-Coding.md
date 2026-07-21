@@ -36,7 +36,19 @@ created: 2026-07-21
 ## 桌面美化
 
 - Wallpaper Engine（已有）
-- Rainmeter v4.5.26
-- TranslucentTB 2026.1
-- ExplorerPatcher（开始菜单）
+- Rainmeter v4.5.26（已下载）
+- TranslucentTB 2026.1（已下载）
+- ExplorerPatcher（开始菜单，已下载）
 - Portals（桌面分区，Fences 替代品）
+
+## 系统维护
+
+### VC++ 运行库
+- **工具**: VisualCppRedist_AIO v0.105.0 (30.7MB)
+- **全版本检查**: 2005/2008/2010/2012/2013/2015-2022
+- **注意**: 2005/2008 在 WinSxS 中，不显示为独立条目
+
+### SFC / DISM 系统扫描
+- **SFC**: `sfc /scannow` — 需管理员权限
+- **DISM**: `DISM /Online /Cleanup-Image /RestoreHealth` — 先执行，再 sfc
+- **场景**: 系统文件损坏、游戏报错、dll 缺失
