@@ -1,9 +1,23 @@
 ---
 tags: [academic, paper, research]
+domain: academic
+cross-domain: [ai-agent, ppt-design, vibe-coding, workflow]
+related: ["knowledge/AI-Agent", "knowledge/AI-Workflow", "knowledge/PPT-Design", "knowledge/Vibe-Coding"]
 created: 2026-07-21
+updated: 2026-07-21
 ---
 
 # 学术知识库
+
+```dataview
+TABLE domain, tags, updated
+FROM #ai-agent OR #workflow OR #ppt OR #academic OR #coding
+WHERE file.name != this.file.name
+SORT updated DESC
+LIMIT 8
+```
+
+---
 
 ## 论文 Skills 全家桶
 

@@ -1,9 +1,23 @@
 ---
 tags: [workflow, orchestration, skills, pipeline, 2026-standards]
+domain: ai-workflow
+cross-domain: [ai-agent, ppt-design, academic, vibe-coding]
+related: ["knowledge/AI-Agent", "knowledge/PPT-Design", "knowledge/Academic", "knowledge/Vibe-Coding"]
 created: 2026-07-21
+updated: 2026-07-21
 ---
 
 # AI 工作流与 Skill 编排
+
+```dataview
+TABLE domain, tags, updated
+FROM #ai-agent OR #workflow OR #ppt OR #academic OR #coding
+WHERE file.name != this.file.name
+SORT updated DESC
+LIMIT 8
+```
+
+---
 
 > 2026 年前沿：如何让多个 Skills 自然、准确地协同工作
 

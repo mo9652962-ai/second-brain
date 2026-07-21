@@ -1,9 +1,23 @@
 ---
 tags: [ai-agent, openclaw]
+domain: ai-agent
+cross-domain: [ppt-design, academic, vibe-coding, workflow]
+related: ["knowledge/AI-Workflow", "knowledge/PPT-Design", "knowledge/Academic", "knowledge/Vibe-Coding"]
 created: 2026-07-21
+updated: 2026-07-21
 ---
 
 # AI Agent 知识库
+
+```dataview
+TABLE domain, tags, updated
+FROM #ai-agent OR #workflow OR #ppt OR #academic OR #coding
+WHERE file.name != this.file.name
+SORT updated DESC
+LIMIT 8
+```
+
+---
 
 ## 我的 Agent 架构
 
