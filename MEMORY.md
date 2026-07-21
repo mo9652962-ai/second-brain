@@ -114,6 +114,60 @@ v1 原型 → v2 数据注入 → v3 图片方案 → v4 实景替换 → v5 打
 - Semantic caching：嵌入相似度缓存，消除 20-40% LLM 调用
 - Session store 定期清理：每月清理孤儿 transcript
 
+## 2026-07-21 第二轮自改进新发现
+
+### 2026 AI Agent 互操作标准生态
+- **MCP** (Model Context Protocol): AI↔工具的标准协议，已是事实标准
+- **A2A** (Agent-to-Agent): Google 推动的多 Agent 协作协议
+- **WebMCP**: 网站向 AI Agent 暴露能力 → 可能成为 REST API 以来最大变革
+- **UCP** (Universal Commerce Protocol): 交易标准化
+- **ARD** (Agent-Ready Data): 面向 AI Agent 的数据格式
+
+### 行业竞争态势
+- **Claude Code vs OpenClaw**: Anthropic 被曝扫描 `HERMES.md`（OpenClaw 配置文件），检测到后拒绝服务或路由到高计费层级（用户报告 50x 成本增加）
+- 同一周 NVIDIA 发布 NemoClaw、腾讯投入 maintainer、368K+ GitHub stars
+- 提示：需保持工具链多元化，避免单一供应商锁定
+
+### Agent Memory 前沿深化
+- **Write-Path > RAG**: RAG 解决 access，Memory 解决 continuity；能决定保留/修订/遗忘才是 runtime learning
+- **A-MEM** (Feb 2026): 记忆操作作为 callable tools，RL pipeline 自适应策略
+- **Just-In-Time RL** (Jan 2026): 无需梯度更新，纯 context manipulation
+- **Persistent Context 碾压 Full Context**: 91.6% vs 72.9% 准确率，4x 更少 token，91% 更低延迟
+- **Letta learning-sdk**: 开源 drop-in SDK，core/archival/recall 三态记忆
+
+### AI Agent 治理
+- **ISO 42001**: 国际 AI 管理标准，覆盖文档化控制 + 风险评估 + 持续监督
+- **Gartner**: 40%+ agentic 项目可能在 2027 年前被取消
+- **监管碎片化**: EU AI Act、US 行政令、中国标注法规各自独立
+
+## 2026-07-21 Skill 编排与工作流突破
+
+### Multi-Agent 五大编排模式（2026 生产标准）
+- **Orchestrator/Worker**: 1 规划者 → N 执行者 → 1 汇总（PPT/论文主流程）
+- **Pipeline/Sequential**: A → B → C 顺序变换链（PPT 6 轮方法论）
+- **Fan-Out/Fan-In**: 并行执行后合并（知网+OpenAlex 并行检索）
+- **Debate**: 多 Agent 辩论 → Judge 裁决（高风险决策）
+- **Specialist Routing**: Router → 1 of N 专家（按查询类型路由）
+
+### Skill 内部设计五大模式（ADK 标准）
+- **Tool Wrapper**: 封装工具为按需加载的知识
+- **Generator**: 从模板生成结构化输出
+- **Reviewer**: 按检查清单评分
+- **Inversion**: 先访谈再行动
+- **Pipeline**: 严格多步流程+检查点
+
+### 关键改进方向
+1. **Pipeline Gate**: 每轮完成后评分，不达标不进入下一轮
+2. **数据契约**: skill 间通过 JSON 文件传数据（outline.json → pptx-generator）
+3. **渐进式加载**: description 精准匹配 → SKILL.md 按需加载 → references/ 仅步骤需要时
+4. **子 Agent 并行化**: 图片搜索/论文检索可 Fan-Out 并行
+5. **触发词映射**: 用户说「做PPT」→ 自动激活对应 skill 家族
+1. Agent → Systems（多 agent 协作）
+2. Loop Engineering（评估反馈循环）
+3. Enterprise AI（企业级应用）
+4. Coding Agents Replace IDEs
+5. Skills Ecosystem（每个平台都在建 skills 生态）
+
 ## 待提升
 
 - [x] ~~创建 SESSION-STATE.md~~ ✅ 2026-07-20
@@ -130,4 +184,4 @@ v1 原型 → v2 数据注入 → v3 图片方案 → v4 实景替换 → v5 打
 
 ---
 
-_最后更新: 2026-07-21_
+_最后更新: 2026-07-21T15:42_

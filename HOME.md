@@ -21,33 +21,38 @@
      │  k 的能力与架构 │ │  设计与方法论  │ │  检索·阅读·写作  │
      └───────┬────────┘ └──────┬───────┘ └────────┬────────┘
              │                 │                   │
-             └─────────┬───────┴──────────┬────────┘
-                       │                  │
-                       ▼                  ▼
-              ┌────────────────┐ ┌─────────────────┐
-              │ 💻 Vibe-Coding │ │ 📋 projects/    │
-              │  环境·工具·系统 │ │   当前项目状态    │
-              └────────────────┘ └─────────────────┘
+             │         ┌───────┴───────┐           │
+             │         │               │           │
+             ▼         ▼               ▼           ▼
+     ┌────────────┐ ┌────────────────┐ ┌─────────────────┐
+     │🔀AI-Workflow│ │ 💻 Vibe-Coding │ │ 📋 projects/    │
+     │ Skill编排   │ │  环境·工具·系统 │ │   当前项目状态    │
+     └────────────┘ └────────────────┘ └─────────────────┘
 ```
 
 ---
 
-## 📁 四大知识领域
+## 📁 五大知识领域
 
 ### 🤖 [[AI-Agent]] — Agent 核心
 k 的能力架构、Memory 范式、安全态势、成本优化
 - **驱动**: 26 个 skills（9 论文 + 6 PPT + 7 图片 + 3 自改进 + 1 搜索）
-- **关联**: → [[PPT-Design]] · → [[Academic]] · → [[Vibe-Coding]]
+- **关联**: → [[AI-Workflow]] · → [[PPT-Design]] · → [[Academic]] · → [[Vibe-Coding]]
+
+### 🔀 [[AI-Workflow]] — Skill 编排与工作流 🆕
+Multi-Agent 五大模式、Skill 设计模式、Pipeline 管道、渐进式加载
+- **核心**: 让 26 个 Skills 自然精准地联动
+- **关联**: → 全部领域（编排层，串联一切）
 
 ### 🎨 [[PPT-Design]] — PPT 设计
 2026 六大趋势、6 轮制作方法论、行业工具对标
 - **驱动**: 6 个 PPT skills 全家桶（v4.0 标准）
-- **关联**: → [[AI-Agent]] · → [[Academic]]（学术 PPT）· → [[Vibe-Coding]]（python-pptx）
+- **关联**: → [[AI-Agent]] · → [[AI-Workflow]]（Pipeline 化）· → [[Academic]]
 
 ### 📚 [[Academic]] — 学术论文
 检索→阅读→写作→SCI 精修全流程、去 AI 化方法论
 - **驱动**: 9 个论文 skills 全家桶
-- **关联**: → [[AI-Agent]] · → [[PPT-Design]]（答辩 PPT）
+- **关联**: → [[AI-Agent]] · → [[AI-Workflow]]（Pipeline 化）· → [[PPT-Design]]
 
 ### 💻 [[Vibe-Coding]] — 编程与系统
 Windows 环境、PowerShell、搜索工具链、系统维护
@@ -59,10 +64,10 @@ Windows 环境、PowerShell、搜索工具链、系统维护
 
 | 交叉点 | 涉及领域 | 场景 |
 |--------|----------|------|
+| **Skill 编排** | [[AI-Workflow]] + 全部 | Pipeline 化、Fan-Out 并行、渐进式加载 |
 | **学术 PPT** | [[PPT-Design]] + [[Academic]] | 论文答辩、学术汇报 |
 | **AI 变现** | [[AI-Agent]] + 全部 | PPT代做、论文润色、Agent定制 |
 | **知识管理** | [[AI-Agent]] + [[Vibe-Coding]] | Obsidian + Git 联动 |
-| **桌面美化** | [[Vibe-Coding]] | Rainmeter + TranslucentTB |
 
 ---
 
@@ -80,6 +85,7 @@ Windows 环境、PowerShell、搜索工具链、系统维护
 |-------------|-------------|
 | 做 PPT | [[PPT-Design]] → 看趋势 + 方法论 |
 | 写论文 | [[Academic]] → 选对应 skills |
+| 联动多个 Skills | [[AI-Workflow]] → Pipeline 编排指南 |
 | 配置 Agent | [[AI-Agent]] → 配置要点 |
 | 修系统问题 | [[Vibe-Coding]] → 系统维护 |
 | 看进度 | [[projects/current]] |
@@ -92,7 +98,8 @@ Windows 环境、PowerShell、搜索工具链、系统维护
 | 指标 | 数值 |
 |------|------|
 | Skills 总量 | 26 |
-| 知识库文件 | 4 领域 + 1 中枢 |
+| 知识库文件 | 5 领域 + 1 中枢 |
+| 编排模式 | 5 大 Multi-Agent + 5 大 Skill 设计 |
 | 记忆文件 | MEMORY + SESSION-STATE + 每日日志 |
 | 学习记录 | 8 错误 + 22 经验 (learnings/) |
 | Git 备份 | github.com/mo9652962-ai/second-brain |

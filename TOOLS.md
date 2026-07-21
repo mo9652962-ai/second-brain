@@ -34,6 +34,9 @@
 - **安全**: 安装前用 skill-vetter 审计
 - **更新**: `clawhub install slug` 覆盖旧版
 - **总计**: 26 个已安装
+- **编排**: 见 [[knowledge/AI-Workflow]] — 5 大 Multi-Agent 模式 + 5 大 Skill 设计模式
+- **Skill 家族**: 论文(9) / PPT(6) / 图片(7) / 自改进(3) / 搜索(1)
+- **Pipeline 触发**: 用户说「做PPT」→ 自动链式激活 outline→generator→optimizer
 
 ## Cron / Heartbeat
 

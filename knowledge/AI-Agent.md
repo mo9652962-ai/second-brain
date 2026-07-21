@@ -92,6 +92,7 @@ MEMORY.md → 长期 curated 记忆
 
 ## 🔗 知识关联
 
+- **[[AI-Workflow]]** — Skill 编排与 Pipeline 设计（如何让 26 个 Skills 自然联动）
 - **[[PPT-Design]]** — PPT 制作能力的技术实现与设计方法论
 - **[[Academic]]** — 学术检索/阅读/写作全流程
 - **[[Vibe-Coding]]** — Agent 运行环境、工具链与系统维护
