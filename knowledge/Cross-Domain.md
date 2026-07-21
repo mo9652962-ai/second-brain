@@ -46,6 +46,15 @@ WHERE contains(cross-domain, "academic") AND file.name != "Academic"
 SORT file.mtime DESC
 ```
 
+### 🐍 Programming 相关
+
+```dataview
+TABLE file.mtime AS "更新时间", tags
+FROM "knowledge" OR "projects"
+WHERE contains(cross-domain, "programming") AND file.name != "Programming"
+SORT file.mtime DESC
+```
+
 ### 💻 Vibe-Coding 相关
 
 ```dataview
