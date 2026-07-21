@@ -264,3 +264,34 @@ ForEach-Object { $_.Path + ': ' + $_.Line }  # 报错
 ### Resolution
 - **Resolved**: 2026-07-21T15:34:00+08:00
 - **Notes**: Select-String 直接输出匹配行即可，不需要 ForEach-Object 格式化
+
+## [ERR-20260721-6N8] openclaw_session_sweep
+
+**Logged**: 2026-07-21T15:47:48.201Z
+**Priority**: medium
+**Status**: pending
+**Area**: config
+
+### Summary
+Session-end sweep detected 1 possible error in the previous OpenClaw session.
+
+### Error
+```
+[assistant turn failed before producing content]
+```
+
+### Context
+- Detected by the self-improvement hook on `/new` (OpenClaw has no per-tool-call hook, so errors are swept from the session transcript at session end)
+- Session key: agent:main:main
+- Session transcript: C:\Users\31954\.openclaw\agents\main\sessions\8a91a3df-f378-41b2-86b8-2a24ecc95ec5.jsonl
+- Excerpts are truncated and redacted; check the transcript for full context
+
+### Suggested Fix
+Triage this entry: if the error was real and non-obvious, keep it and fill in the fix; otherwise mark it resolved or delete it. Before keeping it, grep for its Pattern-Key(s) and fold recurrences into the existing entry (bump Recurrence-Count) instead of duplicating.
+
+### Metadata
+- Source: openclaw-error-sweep
+- Reproducible: unknown
+- Pattern-Key: runtime.failure
+
+---
