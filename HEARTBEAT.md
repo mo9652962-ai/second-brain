@@ -22,6 +22,8 @@
 - [ ] 🗑️ Memory Pruning：清理超过 30 天的日常日志中的冗余内容
 - [ ] 📊 自我审查：review .learnings/ 中的 pending 项，解决或晋升
 - [ ] 🔍 健康检查：Gateway 状态、模型可用性、token 用量
+- [ ] 🧹 Session Cleanup：`openclaw sessions cleanup --enforce --fix-missing`（每月一次）
+- [ ] 🔒 安全审计：确认 commands.ownerAllowFrom 配置，检查 skills 是否有 SkillSpector 标记
 
 ### 主动
 - [ ] 💡 反思：有什么可以做得更好？有什么模式可以自动化？

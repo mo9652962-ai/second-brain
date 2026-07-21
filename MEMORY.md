@@ -82,17 +82,52 @@ v1 原型 → v2 数据注入 → v3 图片方案 → v4 实景替换 → v5 打
 - **working-buffer.md**: 60%上下文后记录每次交换，防 context loss
 - **恢复流程**: working-buffer → SESSION-STATE → daily notes → MEMORY
 
+## 2026-07-21 自改进 Cron 新发现
+
+### OpenClaw 版本与环境
+- **当前版本**: 2026.7.1-2 (0790d9f)，2026年7月最新稳定版
+- **OpenClaw Foundation**: 2026-07-08 成立，非营利化，全职团队+NVIDIA合作
+- **SkillSpector**: NVIDIA 合作安全扫描，所有 ClawHub skills 自动检测
+- **Skill Workshop**: 2026-06-03 上线，技能提案的 review/revise/apply/reject 流程
+
+### 2026 AI Agent Memory 范式
+- **Memory 是一等架构组件**：不是「塞进 context window 就行」
+- **Vector + Graph 混合**：向量语义检索 + 图数据库关系推理 → 2026 生产标准
+- **Observational memory > RAG**: LongMemEval 84.23% vs 80.05%
+- **GraphRAG-Bench / HopRAG**: 2026 新基准
+- **成熟度**: RAG only (初级) → +Memory (中级) → +KG+治理 (生产级)
+- **VentureBeat 2026**: Contextual Memory 将超越 RAG
+
+### Self-Improvement 架构验证 ✅
+- isolated agentTurn cron 符合最佳实践
+- WAL Protocol + Working Buffer + 三层 memory → 通过验证
+- .learnings/ + Pattern-Key + ADL/VFM → harness-layer improvement
+- 搜索三层冗余 (Tavily+Firecrawl+Exa) → 防单点故障
+
+### 安全态势
+- CVE (2026-01): 1-click RCE，48h内修复（当前版本不受影响）
+- Command owner 尚未配置 → 需 sora 手动执行
+- Cross-Component Trust: 远程节点事件默认 untrusted
+
+### 待改进
+- 低成本模型 routing：心跳用 cheap model，省 60-70% token
+- Semantic caching：嵌入相似度缓存，消除 20-40% LLM 调用
+- Session store 定期清理：每月清理孤儿 transcript
+
 ## 待提升
 
 - [x] ~~创建 SESSION-STATE.md~~ ✅ 2026-07-20
 - [x] ~~创建 working-buffer.md~~ ✅ 2026-07-20
 - [x] ~~充实 heartbeat-state.json~~ ✅ 2026-07-20
+- [x] ~~更新全部6个PPT skills至2026标准~~ ✅ 2026-07-20
+- [x] ~~Self-improvement cron 架构验证~~ ✅ 2026-07-21
 - [ ] 跨供应商模型 fallback
 - [ ] 定期 memory pruning（清理过期 daily notes）
+- [ ] 低成本模型 tiering（心跳用小型模型）
+- [ ] 配置 commands.ownerAllowFrom（安全）
 - [ ] 更多 proactive cron 任务（morning brief, daily summary）
-- [ ] 关注 OpenClaw 2026 新特性（Task Brain, Active Memory）
-- [x] ~~更新全部6个PPT skills至2026标准~~ ✅ 2026-07-20
+- [ ] 探索 Active Memory 插件（OpenClaw built-in memory 方案）
 
 ---
 
-_最后更新: 2026-07-20_
+_最后更新: 2026-07-21_
