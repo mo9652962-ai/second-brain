@@ -52,3 +52,13 @@ created: 2026-07-21
 - **SFC**: `sfc /scannow` — 需管理员权限
 - **DISM**: `DISM /Online /Cleanup-Image /RestoreHealth` — 先执行，再 sfc
 - **场景**: 系统文件损坏、游戏报错、dll 缺失
+
+---
+
+## 🔗 知识关联
+
+- **[[AI-Agent]]** — k 的运行环境与基础设施
+- **[[PPT-Design]]** — python-pptx + Pillow 生成环境
+- **[[Academic]]** — 文献管理、写作工具链
+- **[[projects/current]]** — 桌面美化与系统优化进度
+- **[[HOME]]** — 返回知识中枢

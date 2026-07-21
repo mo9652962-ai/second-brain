@@ -1,26 +1,102 @@
 # 🏠 Second Brain — 知识中枢
 
 > Obsidian + OpenClaw + GitHub 三方联动
-> 我（k）在这里读写，你在这里思考。
-> 每次变更自动推送到 GitHub 备份。
-
-## 目录
-
-- [[MEMORY]] — 长期记忆（k 维护）
-- [[knowledge/AI-Agent]] — AI Agent 知识库
-- [[knowledge/PPT-Design]] — PPT 设计知识库
-- [[knowledge/Academic]] — 学术知识库
-- [[knowledge/Vibe-Coding]] — 编程与技术
-- [[projects/current]] — 当前项目状态
-- [[memory/]] — 每日日志目录
-
-## 如何用
-
-- `Ctrl+O` 快速打开文件
-- `[[]]` 创建双向链接
-- `Ctrl+P` 打开命令面板
-- 右上角 ↗️ 图谱视图看知识关联
+> 我（k）在这里读写，你（sora）在这里思考。
 
 ---
 
-_由 Obsidian + k (OpenClaw) 共同维护_
+## 🧭 知识图谱
+
+```
+                        ┌─────────────────┐
+                        │    🏠 HOME.MD    │
+                        │    知识中枢       │
+                        └────────┬────────┘
+                                 │
+              ┌──────────────────┼──────────────────┐
+              │                  │                  │
+              ▼                  ▼                  ▼
+     ┌────────────────┐ ┌──────────────┐ ┌─────────────────┐
+     │  🤖 AI-Agent   │ │ 🎨 PPT-Design│ │ 📚 Academic     │
+     │  k 的能力与架构 │ │  设计与方法论  │ │  检索·阅读·写作  │
+     └───────┬────────┘ └──────┬───────┘ └────────┬────────┘
+             │                 │                   │
+             └─────────┬───────┴──────────┬────────┘
+                       │                  │
+                       ▼                  ▼
+              ┌────────────────┐ ┌─────────────────┐
+              │ 💻 Vibe-Coding │ │ 📋 projects/    │
+              │  环境·工具·系统 │ │   当前项目状态    │
+              └────────────────┘ └─────────────────┘
+```
+
+---
+
+## 📁 四大知识领域
+
+### 🤖 [[AI-Agent]] — Agent 核心
+k 的能力架构、Memory 范式、安全态势、成本优化
+- **驱动**: 26 个 skills（9 论文 + 6 PPT + 7 图片 + 3 自改进 + 1 搜索）
+- **关联**: → [[PPT-Design]] · → [[Academic]] · → [[Vibe-Coding]]
+
+### 🎨 [[PPT-Design]] — PPT 设计
+2026 六大趋势、6 轮制作方法论、行业工具对标
+- **驱动**: 6 个 PPT skills 全家桶（v4.0 标准）
+- **关联**: → [[AI-Agent]] · → [[Academic]]（学术 PPT）· → [[Vibe-Coding]]（python-pptx）
+
+### 📚 [[Academic]] — 学术论文
+检索→阅读→写作→SCI 精修全流程、去 AI 化方法论
+- **驱动**: 9 个论文 skills 全家桶
+- **关联**: → [[AI-Agent]] · → [[PPT-Design]]（答辩 PPT）
+
+### 💻 [[Vibe-Coding]] — 编程与系统
+Windows 环境、PowerShell、搜索工具链、系统维护
+- **关联**: → [[AI-Agent]]（运行环境）· → [[PPT-Design]]（生成工具）· → [[Academic]]（写作工具链）
+
+---
+
+## 🔥 交叉领域
+
+| 交叉点 | 涉及领域 | 场景 |
+|--------|----------|------|
+| **学术 PPT** | [[PPT-Design]] + [[Academic]] | 论文答辩、学术汇报 |
+| **AI 变现** | [[AI-Agent]] + 全部 | PPT代做、论文润色、Agent定制 |
+| **知识管理** | [[AI-Agent]] + [[Vibe-Coding]] | Obsidian + Git 联动 |
+| **桌面美化** | [[Vibe-Coding]] | Rainmeter + TranslucentTB |
+
+---
+
+## 📋 项目与日志
+
+- **[[projects/current]]** — 所有进行中项目实时状态
+- **[[MEMORY]]** — k 的长期记忆（curated）
+- **[[memory/]]** — 每日原始日志
+
+---
+
+## 🛠 快速入口
+
+| 你想做什么？ | 从这里开始 → |
+|-------------|-------------|
+| 做 PPT | [[PPT-Design]] → 看趋势 + 方法论 |
+| 写论文 | [[Academic]] → 选对应 skills |
+| 配置 Agent | [[AI-Agent]] → 配置要点 |
+| 修系统问题 | [[Vibe-Coding]] → 系统维护 |
+| 看进度 | [[projects/current]] |
+| 查经验 | [[MEMORY]] |
+
+---
+
+## 📊 统计
+
+| 指标 | 数值 |
+|------|------|
+| Skills 总量 | 26 |
+| 知识库文件 | 4 领域 + 1 中枢 |
+| 记忆文件 | MEMORY + SESSION-STATE + 每日日志 |
+| 学习记录 | 8 错误 + 22 经验 (learnings/) |
+| Git 备份 | github.com/mo9652962-ai/second-brain |
+
+---
+
+_由 Obsidian + k (OpenClaw) 共同维护 | 最后更新: 2026-07-21_
