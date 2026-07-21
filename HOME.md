@@ -19,6 +19,9 @@ WHERE domain
 SORT domain ASC
 ```
 
+### 🆕 新增: [[Programming]] (2026-07-21)
+Python 3.14 新特性、AI Agent 架构模式、ReAct/CodeAct 范式、build123d + AI 结合、OpenClaw Skill 开发
+
 ## 📝 最近更新的笔记
 
 ```dataview
@@ -52,12 +55,18 @@ LIMIT 10
      ┌────────────┐ ┌────────────────┐ ┌─────────────────┐
      │🔀AI-Workflow│ │ 💻 Vibe-Coding │ │ 📋 projects/    │
      │ Skill编排   │ │  环境·工具·系统 │ │   当前项目状态    │
-     └────────────┘ └────────────────┘ └─────────────────┘
+     └───────┬────┘ └────────────────┘ └─────────────────┘
+             │
+             ▼
+     ┌────────────────┐
+     │ 🐍 Programming  │
+     │ Python + AI 开发 │
+     └────────────────┘
 ```
 
 ---
 
-## 📁 六大知识领域
+## 📁 七大知识领域
 
 ### 🤖 [[AI-Agent]] — Agent 核心
 k 的能力架构、Memory 范式、安全态势、成本优化
@@ -84,9 +93,14 @@ build123d 参数化建模、软件选型、3D打印、学习路径
 - **驱动**: cad-design-master skill + 7 个 ClawHub CAD skills
 - **关联**: → [[AI-Agent]] · → [[Vibe-Coding]]（Python/Docker 环境）
 
+### 🐍 [[Programming]] — Python 与 AI 开发 🆕
+Python 3.14 新特性、AI Agent 架构、ReAct/CodeAct 模式、build123d + AI
+- **驱动**: Python 生态 + 7 个 CAD Python 库
+- **关联**: → [[AI-Agent]]（Agent 实现）· → [[AI-Workflow]]（代码编排）· → [[CAD-Design]]（build123d）· → [[Vibe-Coding]]（开发环境）
+
 ### 💻 [[Vibe-Coding]] — 编程与系统
 Windows 环境、PowerShell、搜索工具链、系统维护
-- **关联**: → [[AI-Agent]]（运行环境）· → [[PPT-Design]]（生成工具）· → [[Academic]]（写作工具链）
+- **关联**: → [[AI-Agent]]（运行环境）· → [[PPT-Design]]（生成工具）· → [[Academic]]（写作工具链）· → [[Programming]]（开发环境）
 
 ---
 
