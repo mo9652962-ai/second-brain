@@ -57,7 +57,7 @@ LIMIT 10
 
 ---
 
-## 📁 五大知识领域
+## 📁 六大知识领域
 
 ### 🤖 [[AI-Agent]] — Agent 核心
 k 的能力架构、Memory 范式、安全态势、成本优化
@@ -78,6 +78,11 @@ Multi-Agent 五大模式、Skill 设计模式、Pipeline 管道、渐进式加�
 检索→阅读→写作→SCI 精修全流程、去 AI 化方法论
 - **驱动**: 9 个论文 skills 全家桶
 - **关联**: → [[AI-Agent]] · → [[AI-Workflow]]（Pipeline 化）· → [[PPT-Design]]
+
+### 🔧 [[CAD-Design]] — CAD 与 3D 建模 🆕
+build123d 参数化建模、软件选型、3D打印、学习路径
+- **驱动**: cad-design-master skill + 7 个 ClawHub CAD skills
+- **关联**: → [[AI-Agent]] · → [[Vibe-Coding]]（Python/Docker 环境）
 
 ### 💻 [[Vibe-Coding]] — 编程与系统
 Windows 环境、PowerShell、搜索工具链、系统维护
@@ -125,7 +130,7 @@ Windows 环境、PowerShell、搜索工具链、系统维护
 | 指标 | 数值 |
 |------|------|
 | Skills 总量 | 26 |
-| 知识库文件 | 5 领域 + 1 中枢 |
+| 知识库文件 | 6 领域 + 1 中枢 |
 | 编排模式 | 5 大 Multi-Agent + 5 大 Skill 设计 |
 | 记忆文件 | MEMORY + SESSION-STATE + 每日日志 |
 | 学习记录 | 8 错误 + 22 经验 (learnings/) |
