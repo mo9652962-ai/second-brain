@@ -766,3 +766,203 @@ OpenClaw 安全态势：已知 CVE (2026年1月) + command owner 未配置
 - Recurrence-Count: 1
 - First-Seen: 2026-07-21
 - Last-Seen: 2026-07-21
+
+---
+
+## [LRN-20260721-009] knowledge_gap
+
+**Logged**: 2026-07-21T15:42:00+08:00
+**Priority**: high
+**Status**: pending
+**Area**: config
+
+### Summary
+2026 AI Agent 互操作标准生态成型：MCP + A2A + WebMCP + UCP + ARD
+
+### Details
+来自 LinkedIn/AIEWF 2026 的多方确认：
+1. **MCP (Model Context Protocol)**: 连接 AI 到工具和 API 的标准协议，已是事实标准
+2. **A2A (Agent-to-Agent)**: Google 推动的多 Agent 协作协议，让专业化 Agent 团队协作
+   - 例：Travel Agent + Hotel Agent + Finance Agent + Calendar Agent + Booking Agent 协同完成旅行规划
+3. **WebMCP**: 向 AI Agent 暴露网站能力，可能成为 REST API 以来 Web 最大变革
+4. **UCP (Universal Commerce Protocol)**: 交易/支付标准化
+5. **ARD (Agent-Ready Data)**: 面向 AI Agent 的数据格式标准
+
+### Implications for OpenClaw
+- OpenClaw 已通过 Skill Workshop 实现 skills 生态系统，与 A2A 理念一致
+- MCP 集成已在 OpenClaw 中支持（作为工具协议）
+- WebMCP 可能是下一个大趋势：网站主动暴露结构化数据给 AI Agent
+- 当前 skills 体系可能需要 A2A-compatible 接口以支持跨平台协作
+
+### Suggested Action
+- 跟踪 WebMCP/UCP 标准化进展
+- 评估 skills 之间是否需要 A2A 协作机制
+
+### Metadata
+- Source: web_search (LinkedIn/LinkedIn articles)
+- Tags: standards, mcp, a2a, webmcp, interoperability
+- Pattern-Key: config.agent-standards-2026
+- Recurrence-Count: 1
+- First-Seen: 2026-07-21
+- Last-Seen: 2026-07-21
+
+---
+
+## [LRN-20260721-010] insight
+
+**Logged**: 2026-07-21T15:42:00+08:00
+**Priority**: high
+**Status**: pending
+**Area**: docs
+
+### Summary
+AI 行业竞争态势：Claude Code 被曝扫描 OpenClaw 配置文件 (HERMES.md)，按域分流或拒绝服务
+
+### Details
+2026-04-30 Hacker News 热点（1,336 upvotes, 718 comments）：
+1. Claude Code 扫描代码仓库，检测 `HERMES.md`（OpenClaw agent 配置文件）
+2. 检测到后：要么拒绝请求，要么路由到更高计费层级
+3. 用户报告成本增加最高达 50x
+4. 同一周：NVIDIA 发布 NemoClaw alpha、腾讯投入全职 maintainer
+5. OpenClaw 仓库突破 368K GitHub stars、1200万下载
+
+### Analysis
+- 这是 AI 平台竞争的商业行为，不是技术漏洞
+- 提示：使用 OpenClaw 写的代码在 Claude Code 中可能被「歧视性」处理
+- 反向证明了 OpenClaw 的市场影响力已大到引起 Anthropic 的防御性反应
+- 跨平台兼容性成为刚需：不能在单一厂商的工具链中锁定
+
+### Suggested Action
+- 关注 OpenClaw 社区对此的应对策略
+- 保持工具链多元化，避免单一供应商锁定
+
+### Metadata
+- Source: web_search (Big Hat Group / HN)
+- Tags: industry, competition, claude-code, anticompetitive
+- Pattern-Key: config.vendor-lockout
+- Recurrence-Count: 1
+- First-Seen: 2026-07-21
+- Last-Seen: 2026-07-21
+
+---
+
+## [LRN-20260721-011] knowledge_gap
+
+**Logged**: 2026-07-21T15:42:00+08:00
+**Priority**: high
+**Status**: pending
+**Area**: config
+
+### Summary
+Agent Memory 2026 前沿：Write-Path 超越 Read-Only RAG，A-MEM RL 驱动自适应记忆，Persistent Context 碾压 Full-Context Baseline
+
+### Details
+综合 3 个深度来源：
+1. **Memory ≠ RAG** (Micheal Lanham 2026): RAG 解决 access，Memory 解决 continuity。
+   - 能决定保留什么 → 修订 → 忘记/取代旧条目 → 才是 runtime learning
+   - Write-path 是 2026 记忆工程的本质
+2. **A-MEM (Agentic Memory, Feb 2026)**: 记忆操作 (store/retrieve/update/summarize/discard) 作为 callable tools
+   - 三步 RL pipeline + step-wise GRPO
+   - Agent 自学非显而易见的记忆策略：preemptive summarization, selective forgetting, proactive linking
+3. **Persistent Context > Full Context** (Beam AI / Knolli 2026):
+   - Two-layer persistent memory: 91.6% accuracy vs 72.9% (full-context)
+   - ~6,956 tokens/query vs ~26,000 (4x fewer)
+   - p95 latency 1.44s vs 17.12s (91% lower)
+4. **Just-In-Time RL (Jan 2026)**: 无需梯度更新的持续学习，纯 context manipulation 实现 RL-like 适应
+5. **Letta learning-sdk (Feb 2026)**: 开源 drop-in SDK，三态记忆 (core/archival/recall)
+
+### Key Takeaway
+当前的文件-based memory (MEMORY.md + session files) 相当于「基础 write-path」。
+未来升级方向：
+- L1: 当前 (file-based, manual consolidation)
+- L2: 加入 embedding vector search (memory_search 已就绪但不可靠)
+- L3: 加入 graph-based 关系推理 (知识图谱连接 entities)
+- L4: 自适应记忆策略 (RL-driven pruning/consolidation)
+
+### Suggested Action
+- 修复 memory_search embedding 使其稳定可用（L2 门槛）
+- 评估 Letta learning-sdk 或 OpenClaw Active Memory 插件
+- 长期：探索 graph-based memory 用于关系推理
+
+### Metadata
+- Source: web_search (Medium/Micheal Lanham, Zylos.ai, Knolli.ai)
+- Tags: memory, a-mem, persistent-context, continual-learning, write-path
+- Pattern-Key: config.memory-write-path
+- Recurrence-Count: 1
+- First-Seen: 2026-07-21
+- Last-Seen: 2026-07-21
+
+---
+
+## [LRN-20260721-012] best_practice
+
+**Logged**: 2026-07-21T15:42:00+08:00
+**Priority**: medium
+**Status**: pending
+**Area**: config
+
+### Summary
+AI Agent 治理已成硬需求：ISO 42001 国际标准、多国监管、企业问责制
+
+### Details
+来自 Jitterbit 2026 AI Automation Benchmark Report：
+1. **ISO 42001**: AI 管理系统的国际标准，覆盖文档化控制、风险评估、持续监督
+2. **监管碎片化**: EU AI Act、US 行政令、中国标注法规各自独立演进
+3. **企业需求**: 'AI Accountability' topped list of enterprise requirements for new AI tools
+4. **Gartner 警告**: 40%+ agentic 项目可能在 2027 年前被取消（成本激增、业务价值不清、风险控制不足）
+5. **Multi-jurisdiction warnings**: 比利时、中国、韩国已发布 AI Agent 限制和咨询
+
+### Implications for OpenClaw Users
+- self-hosted agent 天然具备数据主权优势
+- 但 logging/audit trail/governance 需要自行建设
+- Command owner + skill vetting + session audit 是基础治理手段
+
+### Suggested Action
+- 持续关注 ISO 42001 合规要求对 self-hosted agent 的影响
+- 增强审计能力：定期 review session logs, 保持 .learnings/ 追溯性
+
+### Metadata
+- Source: web_search (Jitterbit/Gartner)
+- Tags: governance, iso42001, regulation, compliance
+- Pattern-Key: config.agent-governance
+- Recurrence-Count: 1
+- First-Seen: 2026-07-21
+- Last-Seen: 2026-07-21
+
+---
+
+## [LRN-20260721-013] insight
+
+**Logged**: 2026-07-21T15:42:00+08:00
+**Priority**: medium
+**Status**: pending
+**Area**: docs
+
+### Summary
+AIEWF 2026 五大趋势：Agent→Systems, Loop Engineering, Enterprise AI, Coding Agents, Skills Ecosystem
+
+### Details
+AI Engineer World's Fair 2026 提炼的五大趋势：
+1. **Agent → Systems**: 焦点从单一 agent 转向 agent 系统（多 agent 协作）
+2. **Loop Engineering**: 新的控制层——评估反馈循环的设计和优化
+3. **Enterprise AI**: AI 工程正式进入企业级应用
+4. **Coding Agents Replace IDEs**: 编码 agent 正在取代 IDE 成为开发入口
+5. **Skills Ecosystem**: 每个 agent 平台都在围绕 skills 建设生态
+
+### Relevance to k
+- #5 直接对应 OpenClaw Skill Workshop + ClawHub 生态
+- #2 对应我们的 self-improvement loop + .learnings/ + Pattern-Key 体系
+- #1 暗示未来需要多 agent 协作（如 PPT agent + 数据 agent + 图片 agent）
+- #3 提示我们的体系已具备企业级特征（冗余、审计、fallback）
+
+### Suggested Action
+- 保持 loop engineering 思维：每次改进后验证不破坏已有能力
+- 关注 OpenClaw 的 sub-agent / sessions_spawn 能力用于多 agent 协作
+
+### Metadata
+- Source: web_search (Facebook/AIEWF)
+- Tags: trends, aiewf, multi-agent, loop-engineering, skills
+- Pattern-Key: config.aiewf-2026-trends
+- Recurrence-Count: 1
+- First-Seen: 2026-07-21
+- Last-Seen: 2026-07-21

@@ -187,3 +187,80 @@ token '&&' is not a valid statement separator in this version.
 ### Resolution
 - **Resolved**: 2026-07-20T21:04:00+08:00
 - **Notes**: 使用 `;` 分隔命令，或用 `if ($?) { ... }` 条件判断。已更新 TOOLS.md 记录此 gotcha
+
+---
+
+## [ERR-20260721-001] tavily-search-batch-timeout 🆕
+
+**Logged**: 2026-07-21T15:34:00+08:00
+**Priority**: medium
+**Status**: resolved
+**Area**: infra
+**Recurrence-Count**: 2
+
+### Summary
+Tavily 搜索批量调用时第 4-5 个并发请求超时/fetch failed
+
+### Error Pattern
+```
+tavily_search → "fetch failed" (query 4)
+tavily_search → "request timed out" (query 5)
+```
+
+### Context
+- 前 3 个并发 tavily_search 请求成功返回（7.4s, 7.4s, 6.0s）
+- 第 4-5 个并发请求失败
+- 可能是 Tavily API 并发限制或网络波动
+
+### Suggested Fix
+- 批量搜索时控制在 3 个并发以内
+- 失败后可单独重试
+- 已有数据足够时跳过补充搜索
+
+### Metadata
+- Reproducible: occasional
+- Pattern-Key: api.rate-limit-batch
+- See Also: ERR-20260720-001 (search timeout)
+- First-Seen: 2026-07-21
+- Last-Seen: 2026-07-21
+
+### Resolution
+- **Resolved**: 2026-07-21T15:34:00+08:00
+- **Notes**: 已有 3 次成功搜索的数据足够完成自改进任务，跳过补充搜索
+
+---
+
+## [ERR-20260721-002] powershell-foreach-property-access 🆕
+
+**Logged**: 2026-07-21T15:34:00+08:00
+**Priority**: low
+**Status**: resolved
+**Area**: tools
+**Recurrence-Count**: 1
+
+### Summary
+PowerShell ForEach-Object 中使用 $_.Path 拼接字符串语法错误
+
+### Error
+```
+ForEach-Object { $_.Path + ': ' + $_.Line }  # 报错
+```
+
+### Context
+尝试用 Select-String 搜索 .learnings/ 中的 Recurrence-Count，ForEach-Object 中属性访问语法在嵌套 exec 调用时失败。
+
+### Suggested Fix
+- 使用双引号字符串内嵌 $($_.Property) 语法
+- 或使用 [PSCustomObject] 的 ToString() 方法
+- 简单搜索直接用 Select-String -Pattern 'keyword' 即可，不需要 ForEach 格式化
+
+### Metadata
+- Reproducible: yes
+- Pattern-Key: shell.powershell-property-access
+- See Also: ERR-20260720-006 (PowerShell syntax)
+- First-Seen: 2026-07-21
+- Last-Seen: 2026-07-21
+
+### Resolution
+- **Resolved**: 2026-07-21T15:34:00+08:00
+- **Notes**: Select-String 直接输出匹配行即可，不需要 ForEach-Object 格式化

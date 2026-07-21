@@ -1,9 +1,23 @@
 ---
 tags: [ppt, design, 2026-trends]
+domain: ppt-design
+cross-domain: [ai-agent, academic, vibe-coding, workflow]
+related: ["knowledge/AI-Agent", "knowledge/AI-Workflow", "knowledge/Academic", "knowledge/Vibe-Coding"]
 created: 2026-07-21
+updated: 2026-07-21
 ---
 
 # PPT 设计知识库
+
+```dataview
+TABLE domain, tags, updated
+FROM #ai-agent OR #workflow OR #ppt OR #academic OR #coding
+WHERE file.name != this.file.name
+SORT updated DESC
+LIMIT 8
+```
+
+---
 
 ## 2026 六大趋势
 

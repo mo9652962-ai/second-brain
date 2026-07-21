@@ -1,9 +1,23 @@
 ---
 tags: [coding, tools, windows]
+domain: vibe-coding
+cross-domain: [ai-agent, ppt-design, academic]
+related: ["knowledge/AI-Agent", "knowledge/AI-Workflow", "knowledge/PPT-Design", "knowledge/Academic"]
 created: 2026-07-21
+updated: 2026-07-21
 ---
 
 # 编程与技术
+
+```dataview
+TABLE domain, tags, updated
+FROM #ai-agent OR #workflow OR #ppt OR #academic OR #coding
+WHERE file.name != this.file.name
+SORT updated DESC
+LIMIT 8
+```
+
+---
 
 ## 本地环境
 
