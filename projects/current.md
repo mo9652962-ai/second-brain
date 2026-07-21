@@ -44,6 +44,16 @@ updated: 2026-07-21
 - [ ] 低成本模型 tiering for heartbeat
 - [ ] 探索 opencode-go 更多 vision 模型
 
+## 🔗 相关领域
+
+- [[AI-Agent]] — 基础设施与能力架构
+- [[PPT-Design]] — PPT 制作方法论
+- [[Academic]] — 学术服务与写作
+- [[Vibe-Coding]] — 桌面美化与系统优化
+- [[HOME]] — 返回知识中枢
+
+---
+
 ## 每日更新
 
 _由 k (OpenClaw) 在每次会话结束时更新_ | 2026-07-21: 基础设施大幅完善，Memory 范式升级，变现路径明确
