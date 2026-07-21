@@ -1,0 +1,90 @@
+# PPT 数据契约: outline.json
+
+> `cn-ppt-outline-writer` → `pptx-generator` 之间的标准化数据格式
+> `ppt-optimizer` 也读取此格式进行 Gate 检查
+
+## Schema
+
+```json
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "PPT Pipeline Data Contract",
+  "type": "object",
+  "required": ["title", "meta", "slides"],
+  "properties": {
+    "title": { "type": "string", "maxLength": 80 },
+    "meta": {
+      "type": "object",
+      "required": ["type", "slides_count", "style"],
+      "properties": {
+        "type": { "type": "string", "enum": ["academic", "business", "creative", "tourism"] },
+        "slides_count": { "type": "integer", "minimum": 3, "maximum": 50 },
+        "target_audience": { "type": "string" },
+        "style": { "type": "string", "enum": ["warm-minimal", "professional", "creative", "dark"] },
+        "mobile_ready": { "type": "boolean", "default": true }
+      }
+    },
+    "slides": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["index", "type", "title"],
+        "properties": {
+          "index": { "type": "integer" },
+          "type": {
+            "type": "string",
+            "enum": ["title", "content", "card", "comparison", "chart", "quote", "image", "ending", "toc"]
+          },
+          "title": { "type": "string", "maxLength": 40 },
+          "subtitle": { "type": "string" },
+          "body": { "type": "string" },
+          "bullet_points": { "type": "array", "items": { "type": "string" } },
+          "data": {
+            "type": "object",
+            "properties": {
+              "type": { "type": "string", "enum": ["chart", "table", "stat", "timeline"] },
+              "source": { "type": "string" },
+              "values": { "type": "array" }
+            }
+          },
+          "image_prompt": { "type": "string" },
+          "image_alt_text": { "type": "string" },
+          "layout": { "type": "string", "enum": ["single", "two-column", "grid", "full-image", "card-row"] },
+          "notes": { "type": "string" }
+        }
+      }
+    },
+    "theme": {
+      "type": "object",
+      "properties": {
+        "primary_color": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" },
+        "font": { "type": "string" },
+        "transition": { "type": "string" }
+      }
+    }
+  }
+}
+```
+
+## 数据流
+
+```
+outline-writer     pptx-generator        ppt-optimizer
+    │                   │                    │
+    └─── outline.json ──┤  (数据契约)         │
+                        │                     │
+                        └───presentation.pptx ──┤
+                                                │
+                                                └─── report.json
+```
+
+## 验证规则
+
+| 字段 | 规则 | 触发阻断 |
+|------|------|----------|
+| title | 非空, ≤80字 | ❌ 阻断 |
+| slides_count | 3-50 | ❌ 阻断 |
+| each slide.title | ≤40字 | ⚠️ 警告 |
+| each slide.type | 必须在枚举内 | ❌ 阻断 |
+| image_prompt | 可选, 有则长度≥16 | ⚠️ 警告 |
