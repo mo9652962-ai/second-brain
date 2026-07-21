@@ -19,8 +19,9 @@ WHERE domain
 SORT domain ASC
 ```
 
-### 🆕 新增: [[Programming]] (2026-07-21)
+### 🆕 新增: [[Programming]] + [[freeCodeCamp]] (2026-07-21)
 Python 3.14 新特性、AI Agent 架构模式、ReAct/CodeAct 范式、build123d + AI 结合、OpenClaw Skill 开发
+**freeCodeCamp**: 451K GitHub Stars 的开源编程教育平台源码研究
 
 ## 📝 最近更新的笔记
 
@@ -96,7 +97,12 @@ build123d 参数化建模、软件选型、3D打印、学习路径
 ### 🐍 [[Programming]] — Python 与 AI 开发 🆕
 Python 3.14 新特性、AI Agent 架构、ReAct/CodeAct 模式、build123d + AI
 - **驱动**: Python 生态 + 7 个 CAD Python 库
-- **关联**: → [[AI-Agent]]（Agent 实现）· → [[AI-Workflow]]（代码编排）· → [[CAD-Design]]（build123d）· → [[Vibe-Coding]]（开发环境）
+- **关联**: → [[AI-Agent]]（Agent 实现）· → [[AI-Workflow]]（代码编排）· → [[CAD-Design]]（build123d）· → [[Vibe-Coding]]（开发环境）· → [[freeCodeCamp]]（编程教育）
+
+### 🏫 [[freeCodeCamp]] — 全球最大开源编程教育平台 🆕
+451K Stars · 10 年 · 100K 就业 · Monorepo 架构 · CFSD 认证体系
+- **核心**: 开源教育模式、Monorepo 工程实践、课程设计方法论
+- **关联**: → [[Programming]]（编程技术栈）· → [[AI-Agent]]（开源协作模式）· → [[AI-Workflow]]（课程流水线设计）· → [[Vibe-Coding]]（开发环境技术栈）
 
 ### 💻 [[Vibe-Coding]] — 编程与系统
 Windows 环境、PowerShell、搜索工具链、系统维护
