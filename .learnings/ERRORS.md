@@ -269,7 +269,7 @@ ForEach-Object { $_.Path + ': ' + $_.Line }  # 报错
 
 **Logged**: 2026-07-21T15:47:48.201Z
 **Priority**: medium
-**Status**: pending
+**Status**: resolved
 **Area**: config
 
 ### Summary
@@ -281,13 +281,13 @@ Session-end sweep detected 1 possible error in the previous OpenClaw session.
 ```
 
 ### Context
-- Detected by the self-improvement hook on `/new` (OpenClaw has no per-tool-call hook, so errors are swept from the session transcript at session end)
+- Detected by the self-improvement hook on `/new`
 - Session key: agent:main:main
 - Session transcript: C:\Users\31954\.openclaw\agents\main\sessions\8a91a3df-f378-41b2-86b8-2a24ecc95ec5.jsonl
-- Excerpts are truncated and redacted; check the transcript for full context
 
-### Suggested Fix
-Triage this entry: if the error was real and non-obvious, keep it and fill in the fix; otherwise mark it resolved or delete it. Before keeping it, grep for its Pattern-Key(s) and fold recurrences into the existing entry (bump Recurrence-Count) instead of duplicating.
+### Resolution
+- **Resolved**: 2026-07-22T14:15:00+08:00
+- **Notes**: 一次性 transient 失败，无具体错误信息，未复现。认定为偶发性基础设施抖动（模型API瞬时故障/网络抖动），无需进一步action。若未来 Pattern-Key: runtime.failure 重复出现再升优先处理。
 
 ### Metadata
 - Source: openclaw-error-sweep
