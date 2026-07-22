@@ -10,6 +10,11 @@ date: 2026-07-22
 
 ---
 
+## 🌐 Web 开发
+
+> [[web-dev-2026]] — 2026 全栈技术栈（Next.js 15/RSC/Biome/Tailwind）
+> 对应 skill: [[../skills/web-dev-2026]]
+
 ## 💰 变现分析
 
 > [[monetization-analysis]] — 基于现有能力的变现路径、可担任职位、立即行动方案
