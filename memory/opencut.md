@@ -8,7 +8,8 @@ source: https://github.com/OpenCut-app/OpenCut
 # OpenCut — 开源视频剪辑工具
 
 > 来源: [OpenCut-app/OpenCut](https://github.com/OpenCut-app/OpenCut) | [Classic 版](https://github.com/opencut-app/opencut-classic)
-> 学习时间: 2026-07-22 | 相关: [[airi]]
+> 学习时间: 2026-07-22
+> 所属知识网络: [[knowledge-map]] | 相关: [[airi]]
 
 ## 项目定位
 

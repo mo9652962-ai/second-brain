@@ -9,7 +9,7 @@ source: https://github.com/mattpocock/skills
 
 > 来源: [mattpocock/skills](https://github.com/mattpocock/skills)
 > 作者: Matt Pocock（知名 TypeScript 教育家）
-> 学习时间: 2026-07-22 | 相关: [[mattpocock-methodology]] | [[engineering-workflow]] | [[system-design-primer]]
+> 学习时间: 2026-07-22 | 所属知识网络: [[knowledge-map]] | 相关: [[mattpocock-methodology]] | [[engineering-workflow]] | [[system-design-primer]]
 
 ## 项目定位
 

@@ -8,7 +8,8 @@ source: https://github.com/moeru-ai/airi
 # AIRI (アイリ) — 开源 AI VTuber / 数字伙伴
 
 > 来源: [moeru-ai/airi](https://github.com/moeru-ai/airi) | [中文文档](https://github.com/moeru-ai/airi/blob/main/docs/README.zh-CN.md)
-> 学习时间: 2026-07-22 | 相关: [[grok-build]] | [[mattpocock-skills]]
+> 学习时间: 2026-07-22
+> 所属知识网络: [[knowledge-map]] | 相关: [[grok-build]] | [[mattpocock-skills]]
 
 ## 简介
 

@@ -7,7 +7,8 @@ source: https://github.com/donnemartin/system-design-primer
 
 # 系统设计入门
 
-> 来源: [donnemartin/system-design-primer](https://github.com/donnemartin/system-design-primer) (265K+ stars) | 学习时间: 2026-07-22 | 相关: [[mattpocock-skills]]
+> 来源: [donnemartin/system-design-primer](https://github.com/donnemartin/system-design-primer) (265K+ stars) | 学习时间: 2026-07-22
+> 所属知识网络: [[knowledge-map]] | 相关: [[mattpocock-skills]]
 
 ---
 
