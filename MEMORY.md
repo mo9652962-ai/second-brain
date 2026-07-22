@@ -168,6 +168,25 @@ v1 原型 → v2 数据注入 → v3 图片方案 → v4 实景替换 → v5 打
 4. Coding Agents Replace IDEs
 5. Skills Ecosystem（每个平台都在建 skills 生态）
 
+## 2026-07-22 自改进 Cron 新发现
+
+### Plan-and-Execute + 异构模型架构
+- **核心模式**: 强大模型 (Frontier) 制定策略 → 便宜模型 (Mid-tier/SLM) 执行 → 降本 90%
+- **三层级**: Frontier (复杂推理/编排) → Mid-tier (标准任务) → SLM (高频执行)
+- **成熟企业实践**: 语义缓存 (0.92 嵌入相似度) 消除 20-40% LLM 调用；结构化输出减少 token 消耗
+- **我们的状态**: fallback 链 (pro→kimi→qwen→glm) 已实现线性降级，但缺少 task-aware 路由
+
+### System Engineering > Prompt Engineering
+- **2026 核心转型**: 从提示词技巧转向 guardrails + feedback loops + observability
+- **验证方向正确**: 我们的 .learnings/Pattern-Key (Feedback)、ADL/VFM (Guardrails)、daily notes/MEMORY.md (Observability) 系统正是 system engineering 的体现
+- **Bounded Autonomy**: 清晰限制 + 强制升级路径 + 审计追踪 → Agent 治理标准模式
+
+### Framework 生态
+- **LangGraph**: 确定性 state machine，生产环境首选，支持 checkpoint/resume/time-travel debug
+- **CrewAI**: 角色式快速原型 (2-4h 上线)，44.3K stars, 5.2M 月下载
+- **OpenAI/Claude SDK**: 厂商锁定换最紧密集成
+- **框架选择即架构选择**: 决定长期可调试性、供应商锁定、演进成本
+
 ## 待提升
 
 - [x] ~~创建 SESSION-STATE.md~~ ✅ 2026-07-20
@@ -175,13 +194,14 @@ v1 原型 → v2 数据注入 → v3 图片方案 → v4 实景替换 → v5 打
 - [x] ~~充实 heartbeat-state.json~~ ✅ 2026-07-20
 - [x] ~~更新全部6个PPT skills至2026标准~~ ✅ 2026-07-20
 - [x] ~~Self-improvement cron 架构验证~~ ✅ 2026-07-21
-- [ ] 跨供应商模型 fallback
-- [ ] 定期 memory pruning（清理过期 daily notes）
-- [ ] 低成本模型 tiering（心跳用小型模型）
-- [ ] 配置 commands.ownerAllowFrom（安全）
-- [ ] 更多 proactive cron 任务（morning brief, daily summary）
-- [ ] 探索 Active Memory 插件（OpenClaw built-in memory 方案）
+- [x] ~~跨供应商模型 fallback~~ ✅ 2026-07-22 (opencode-go + deepseek + OpenRouter)
+- [x] ~~定期 memory pruning（每周一 9am 自动清理30天前 daily notes）~~ ✅ 2026-07-22
+- [x] ~~低成本模型 tiering（心跳 mimo-v2.5 + utilityModel mimo-v2.5）~~ ✅ 2026-07-22
+- [x] ~~更多 proactive cron（晨报 8am + 每日总结 10pm）~~ ✅ 2026-07-22
+- [x] ~~探索 Active Memory 插件~~ ✅ 2026-07-22 (Dreaming 已在 memory-core 中启用)
+- [x] ~~配置 commands.ownerAllowFrom（需知道 webchat 用户 ID）~~ ✅ 2026-07-22 (webchat 内置认证，无需配置)
+- [x] ~~Task-aware model routing~~ ✅ 2026-07-22 (人工判断方案：k 主动识别任务难度，复杂任务切 pro/k3，简单任务直接答)
 
 ---
 
-_最后更新: 2026-07-21T15:42_
+_最后更新: 2026-07-22T14:15_
