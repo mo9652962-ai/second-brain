@@ -13,6 +13,7 @@ date: 2026-07-22
 ## 🌐 Web 开发
 
 > [[web-dev-2026]] — 2026 全栈技术栈（Next.js 15/RSC/Biome/Tailwind）
+> [[github-web-dev-ai]] — GitHub 上的 AI+Web 开发资源 4 层次
 > 对应 skill: [[../skills/web-dev-2026]]
 
 ## 💰 变现分析
