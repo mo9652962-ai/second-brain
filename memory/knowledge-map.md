@@ -14,6 +14,10 @@ date: 2026-07-22
 
 > [[monetization-analysis]] — 基于现有能力的变现路径、可担任职位、立即行动方案
 
+## 🎓 学术服务
+
+> [[academic-service-research]] — 2026知网5.0应对、AI PPT行业报告、服务套餐设计、竞争分析
+
 ## 📂 领域总览
 
 ```mermaid
