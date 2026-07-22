@@ -8,7 +8,7 @@ source: https://github.com/xai-org/grok-build
 # Grok Build — xAI 开源 AI 编码 Agent
 
 > 来源: [xai-org/grok-build](https://github.com/xai-org/grok-build)
-> 学习时间: 2026-07-22 | 相关: [[airi]] | [[opencut]]
+> 学习时间: 2026-07-22 | 所属知识网络: [[knowledge-map]] | 相关: [[airi]] | [[opencut]]
 
 ## 简介
 
