@@ -1,17 +1,17 @@
 ---
-tags: [workflow, orchestration, skills, pipeline, 2026-standards]
+tags: [workflow, orchestration, skills, pipeline, hermes, 2026-standards]
 domain: ai-workflow
-cross-domain: [ai-agent, ppt-design, academic, vibe-coding]
-related: ["knowledge/AI-Agent", "knowledge/PPT-Design", "knowledge/Academic", "knowledge/Vibe-Coding"]
-created: 2026-07-21
-updated: 2026-07-21
+cross-domain: [hermes-agent, skill-authoring, multi-agent, automation]
+related: ["skills/hermes-agent", "skills/hermes-model-fallback", "skills/hermes-search-config", "skills/test-driven-development", "skills/systematic-debugging"]
+created: 2026-07-23
+updated: 2026-07-23
 ---
 
-# AI 工作流与 Skill 编排
+# AI 工作流与 Skill 编排（Hermes Edition）
 
 ```dataview
 TABLE domain, tags, updated
-FROM #ai-agent OR #workflow OR #ppt OR #academic OR #coding
+FROM #hermes OR #workflow OR #skill OR #automation OR #multi-agent
 WHERE file.name != this.file.name
 SORT updated DESC
 LIMIT 8
@@ -19,7 +19,7 @@ LIMIT 8
 
 ---
 
-> 2026 年前沿：如何让多个 Skills 自然、准确地协同工作
+> Hermes Agent 生态下的编排：如何用 delegate_task、cronjob、skill_manage 让多个 Skills 自然、准确地协同工作
 
 ---
 
@@ -28,179 +28,364 @@ LIMIT 8
 > "没有明确的组合与协调机制，Skill 生态就无法发挥其关键价值：**编排多个 Skill 解决超越任何单一 Skill 能力的任务**。"
 > — ArXiv 2603.02176 (2026-02)
 
-这正是我们的问题：26 个 Skills 各自强大，但缺乏系统化的联动机制。
+这正是 Hermes 的设计哲学：**70+ Skills 各自强大，通过 `delegate_task`、`cronjob`、`skill_manage` 等原生工具实现系统化的联动机制。**
 
 ---
 
-## 一、Multi-Agent 编排五大模式（2026 生产标准）
+## 一、Hermes 原生编排能力 vs. 五大模式对照
 
-| 模式 | 结构 | 适用场景 |
-|------|------|----------|
-| **Orchestrator/Worker** | 1 规划者 → N 执行者 → 1 汇总 | 可分解为清晰子任务的工作 |
-| **Pipeline/Sequential** | A → B → C → D | 顺序变换链（如 Unix 管道）|
-| **Fan-Out/Fan-In** | 1 → N → 1 | Best-of-N、并行推理 |
-| **Debate** | A ↔ B, N 轮 → Judge | 高风险正确性要求 |
-| **Specialist Routing** | Router → 1 of N | 多样化查询类型 |
+Hermes 内置的编排工具覆盖了所有经典多 Agent 编排模式：
 
-**→ 我们的 PPT/论文工作流对应模式：**
+| 经典模式 | Hermes 实现 | 适用场景 |
+|----------|-------------|----------|
+| **Orchestrator/Worker** | `delegate_task()` — 父Agent派生子Agent | 可分解为清晰子任务的工作 |
+| **Pipeline/Sequential** | Skill 链 + `context_from` 数据传递 | 顺序变换链（如写作→翻译→润色） |
+| **Fan-Out/Fan-In** | `delegate_task(tasks=[...])` — 并行子任务 | Best-of-N、并行推理 |
+| **Debate** | `delegate_task()` + Cron 审核节点 | 高风险正确性要求 |
+| **Specialist Routing** | `skill_manage` + 条件加载 | 多样化查询类型 |
 
+### 1.1 Orchestrator/Worker 模式
+
+```python
+# Hermes: 父Agent 派生子Agent 并行工作
+from hermes_tools import delegate_task
+
+# 并行执行 3 个子任务
+results = delegate_task(tasks=[
+    {"goal": "搜索 2026 年 DeepSeek 最新论文", "context": "关注技术突破"},
+    {"goal": "检索 arXiv 上关于 Agent 编排的论文", "context": "2025-2026"},
+    {"goal": "总结当前 AI Agent 最佳实践", "context": "面向开发者"},
+])
+# 父Agent 自动汇总所有结果
 ```
-PPT 工作流 = Pipeline 模式
-  大纲设计 → 结构生成 → 数据注入 → 图片方案 → 打破AI模式 → 背景注入
 
-论文工作流 = Pipeline + Orchestrator 混合
-  检索(Scholar) → 检索(知网) → 阅读(Parse) → 写作(CHN) → 写作(SCI) → 润色
+**要点**：
+- `delegate_task(tasks=[...])` 并行派生子 Agent，默认最多 3 个并发
+- `background=True` 让子任务在后台运行，不阻塞主会话
+- Leaf 角色不能继续派生子任务；`role="orchestrator"` 可以嵌套
+- 子 Agent 的结果自动回到父 Agent 的上下文
+
+### 1.2 Pipeline/Sequential 模式
+
+```text
+Hermes Cron Pipeline:   cronjob A → cronjob B → cronjob C
+                             │             │
+                        context_from   context_from
+```
+
+通过 Cron 的 `context_from` 实现步骤间数据传递：
+
+```bash
+# 步骤 A：每天早上 9 点检索论文
+hermes cron create "0 9 * * *" \
+  --prompt "检索 arXiv 上最新 AI 论文" \
+  --name paper-fetch
+
+# 步骤 B：论文检索完成后自动执行总结
+hermes cron create "0 10 * * *" \
+  --prompt "总结昨天获取的论文" \
+  --context-from paper-fetch \
+  --name paper-summarize
+```
+
+### 1.3 Fan-Out/Fan-In 模式
+
+```python
+# 并行 Fan-Out：同时搜索多个来源
+from hermes_tools import delegate_task
+
+tasks = [
+    {"goal": "用 web_search 搜索 'DeepSeek R1 2026'", "context": ""},
+    {"goal": "用 arxiv skill 搜索 2026 DeepSeek 论文", "context": ""},
+    {"goal": "搜索中文社区关于 DeepSeek 的讨论", "context": ""},
+]
+results = delegate_task(tasks=tasks)
+# 汇总 = 自动的 Fan-In
+```
+
+### 1.4 Debate 模式
+
+借助 Cron 的审核节点实现多轮验证：
+
+```bash
+# 主任务：生成报告
+hermes cron create --schedule "0 14 * * *" \
+  --prompt "撰写本周 AI 行业周报" \
+  --name weekly-report
+
+# 审核节点：生成 2 小时后运行质量检查
+hermes cron create --schedule "0 16 * * *" \
+  --prompt "审核 weekly-report 的输出，检查事实准确性" \
+  --context-from weekly-report \
+  --name report-review
+```
+
+### 1.5 Specialist Routing 模式
+
+```python
+# 根据任务类型加载对应 Skill
+skill_manage(action='view', name='test-driven-development')  # 开发任务
+skill_manage(action='view', name='systematic-debugging')     # 调试任务
+skill_manage(action='view', name='academic-paper-writing')   # 论文任务
+# 按需加载，不浪费 context
 ```
 
 ---
 
-## 二、Skill 内部设计五大模式（ADK 标准）
+## 二、Skill 内部设计五大模式（Hermes 兼容）
 
-| 模式 | 作用 | 在我们的 Skills 中 |
+| 模式 | 作用 | Hermes Skills 实例 |
 |------|------|-------------------|
-| **Tool Wrapper** | 将工具/库封装为按需加载的知识 | journal-sci-ssci-checker 检查期刊索引 |
-| **Generator** | 从可复用模板生成结构化输出 | pptx-generator 从 JSON 生成 PPTX |
-| **Reviewer** | 按检查清单评分 | ppt-optimizer 自检评分 |
-| **Inversion** | 先访谈再行动，避免假设 | cn-ppt-outline-writer 收集需求 |
-| **Pipeline** | 严格多步流程+检查点 | academic-presentation 全程控制 |
+| **Tool Wrapper** | 将工具/库封装为按需加载的知识 | `huggingface-hub` 封装 HF CLI；`llama-cpp` 封装 GGUF 推理 |
+| **Generator** | 从可复用模板生成结构化输出 | `powerpoint` 从 JSON 生成 PPTX；`xlsx` 生成 Excel |
+| **Reviewer** | 按检查清单评分 | `requesting-code-review` 安全检查清单 |
+| **Inversion** | 先访谈再行动，避免假设 | `plan` 模式：先写计划再执行 |
+| **Pipeline** | 严格多步流程+检查点 | `test-driven-development` 红绿重构循环；`systematic-debugging` 4 阶段流程 |
 
 > 这些模式**可组合**：Pipeline 可以包含 Reviewer 步骤；Generator 可以先用 Inversion 收集变量。
 
+### 2.1 Hermes Skill 结构规范
+
+```yaml
+---
+name: my-skill
+description: "精确的触发条件描述——这是最重要的单行文本"
+tags: [hermes, workflow, ...]
+version: 1.0.0
+author: k
 ---
 
-## 三、Skill 组合编排最佳实践
+# SKILL.md
+## 触发条件
+- 当用户说 X 时
+- 当遇到 Y 场景时
 
-### 3.1 渐进式加载（Progressive Disclosure）
+## 步骤
+1. Step one
+2. Step two
 
-```
-Level 1: description 字段 → 触发条件匹配（不占 context）
-Level 2: SKILL.md 本体 → 只在匹配时加载
-Level 3: references/ 目录 → 只在特定步骤需要时加载
-```
-
-**→ 对我们的启示**：Skills 的 `description` 是最重要的单行文本——它是"开火条件"，不是摘要。
-
-### 3.2 连贯单元设计（Coherent Units）
-
-- **太窄**：多个 Skills 需要同时加载 → 上下文冗余 + 指令冲突
-- **太宽**：难以精准激活，一个 Skill 试图做太多事
-- **最佳**：一个 Skill = 一个可组合的连贯工作单元
-
-### 3.3 验证循环（Validation Loops）
-
-```
-1. 执行工作
-2. 运行验证器（脚本/检查清单/自查）
-3. 如果失败 → 修复 → 重新验证
-4. 只有通过验证才能继续
+## Pitfalls
+- ⚠️ 常见陷阱
 ```
 
-### 3.4 显式交付物（Explicit Deliverables）
+### 2.2 渐进式加载（Hermes 三级）
+
+```
+Level 1: skill_list / description 字段 → 触发条件匹配（不占 context）
+Level 2: skill_view(name) → SKILL.md 本体 → 只在匹配时加载
+Level 3: linked_files (references/, templates/, scripts/) → 只在特定步骤需要时加载
+```
+
+**→ 最重要的原则**：Skills 的 `description` 是"开火条件"，不是摘要。
+
+---
+
+## 三、Hermes 原生编排最佳实践
+
+### 3.1 delegate_task 并行化
+
+```python
+# 并行 Fan-Out：从多个来源获取信息
+from hermes_tools import delegate_task
+
+results = delegate_task(tasks=[
+    {"goal": "搜索 Tavily: 2026 LLM trends"},
+    {"goal": "搜索 Exa: latest AI research papers"},
+    {"goal": "搜索 DDGS: AI agent frameworks comparison"},
+])
+
+# 自动汇总结果
+summary = "\n\n".join([r["summary"] for r in results])
+```
+
+### 3.2 Cron 定时任务链
+
+```bash
+# 早 8:00 —— 获取晨间信息
+hermes cron create "0 8 * * *" \
+  --prompt "搜索今日 AI 头条并总结" \
+  --name morning-digest
+
+# 晚 7:00 —— 回顾与记录到 Obsidian
+hermes cron create "0 19 * * *" \
+  --prompt "回顾 today's digest 并写入 Obsidian" \
+  --context-from morning-digest \
+  --name evening-review
+```
+
+### 3.3 Skill 链式管道
+
+```text
+文档处理 Pipeline:
+  web_extract(URL) → [content] → delegate_task(write_summary)
+  → [summary] → skill_view('powerpoint') → create_ppt(summary)
+```
+
+### 3.4 验证循环（Testing Loops）
+
+```
+┌─────────────────────────────────────┐
+│ 1. 执行工作                           │
+│ 2. 运行验证器（TDD skill / 自检清单）  │
+│ 3. 如果失败 → 修复 → 重新验证          │
+│ 4. 只有通过验证才能提交/继续            │
+└─────────────────────────────────────┘
+```
+
+Hermes 内置 TDD skill (`test-driven-development`) 和代码审查 skill (`requesting-code-review`) 直接支持此模式。
+
+### 3.5 显式交付物
 
 ❌ "写一篇论文"（范围模糊，容易跑偏）
 ✅ "生成：1) 摘要 200-300字 2) 引言含3个研究问题 3) 方法论含样本描述..."（可对照检查清单）
 
 ---
 
-## 四、对我们 26 个 Skills 的实战改进
+## 四、Hermes Skills 生态分类（70+ Skills）
 
-### 4.1 技能家族分类（Skill Families）
+### 按家族分类
 
+```text
+📝 学术家族 (6 skills)
+├── academic-paper-writing, arxiv, youtube-content, llm-wiki
+├── ocr-and-documents, pdf
+
+🛠️ 开发家族 (10+ skills)
+├── TDD: test-driven-development, systematic-debugging
+├── 代码质量: requesting-code-review, simplify-code, spike
+├── 工程: engineering-workflow, web-dev-2026
+├── 模型: llama-cpp, huggingface-hub, weights-and-biases
+
+🎨 创意家族 (12+ skills)
+├── ascii-art, ascii-video, architecture-diagram, excalidraw
+├── p5js, sketch, claude-design, popular-web-designs
+├── manim-video, comfyui, baoyu-infographic, songwriting-and-ai-music
+
+📊 生产力家族 (10+ skills)
+├── office: docx, xlsx, powerpoint, pdf, nano-pdf
+├── 笔记: obsidian, obsidian-vault-management, notion
+├── 邮件: himalaya
+├── 日历: google-workspace
+├── 数据: airtable, maps
+
+🤖 自主 Agent 家族 (4 skills)
+├── claude-code, codex, opencode
+├── hermes-agent（元技能：配置 Hermes 自身）
+
+🔍 搜索家族 (5+ skills)
+├── hermes-search-config, hermes-model-fallback
+├── hermes-web-search-config, github-*
+├── blogwatcher, polymarket
+
+🏠 智能家居 (1 skill)
+├── openhue
+
+🎵 媒体家族 (5+ skills)
+├── youtube-content, gif-search, heartmula, songsee
+├── text-to-speech
 ```
-📝 论文家族 (9 skills)
-├── 🔍 检索层: cnki-scholar, cnki-advanced-search, journal-sci-ssci-checker
-├── 📖 阅读层: paper-parse, paper-summarize-academic
-└── ✍️ 写作层: chinese-academic-writing, sci-paper-three-pass, paper-writing-workflow
 
-🎨 PPT家族 (6 skills)
-├── 📐 设计层: cn-ppt-outline-writer, academic-presentation
-├── 🔧 生成层: pptx-generator, openclaw-slides, PowerPoint/PPTX
-└── ✅ 检查层: ppt-optimizer
-
-🖼️ 图片家族 (7 skills)
-├── 🎨 创作层: ai-image-generation, nano-banana-pro-image-gen, image-prompt-generator
-└── 🔧 工具层: (其余)
-
-🤖 自改进家族 (3 skills)
-├── proactive-agent, self-improving-agent, skill-vetter
-```
-
-### 4.2 Pipeline 触发词映射
+### Pipeline 触发词映射
 
 | 用户说 | 自动触发的 Skill 链 |
 |--------|-------------------|
-| "做PPT" / "制作演示" | cn-ppt-outline-writer → pptx-generator → ppt-optimizer |
-| "写论文" / "润色论文" | cnki-scholar → paper-parse → chinese-academic-writing → sci-paper-three-pass |
-| "学术汇报" | cn-ppt-outline-writer + academic-presentation → pptx-generator → ppt-optimizer |
-| "检索文献" | cnki-advanced-search + cnki-scholar + journal-sci-ssci-checker |
-| "生成图片" | image-prompt-generator → ai-image-generation / nano-banana-pro-image-gen |
-| "自我改进" | proactive-agent + self-improving-agent |
+| "开发新功能" | `plan` → `test-driven-development` → `requesting-code-review` |
+| "修复这个 bug" | `systematic-debugging` → `engineering-workflow` |
+| "写论文" | `arxiv` → `academic-paper-writing` → `humanizer` |
+| "做 PPT" | `powerpoint` / `sketch` → `architecture-diagram` |
+| "生成图片" | `comfyui` / `ascii-art` |
+| "日常汇报" | `hermes-model-fallback` + `hermes-search-config` + cron |
+| "自我改进" | 自动：`session_search` 回顾 + `skill_manage` 优化 |
 
-### 4.3 关键改进点
+### 关键改进点
 
-1. **Pipeline Gate 机制**：在 PPT 6 轮方法论中插入显式检查点
-   - "v1 完成后，运行 ppt-optimizer 评分，≥80 分才能进 v2"
-   - 避免 Agent 跳过关键步骤直接生成最终结果
+1. **delegate_task 作为 Pipeline Gate**
+   - 在 Pipeline 中插入显式检查点：
+     ```python
+     result = delegate_task(goal="生成初稿")
+     verify = delegate_task(goal=f"审核以下内容，评分>=80才能通过：{result}")
+     if not verify_passed:  # 重新生成
+     ```
 
-2. **Skill 间数据契约**：定义明确的输入/输出格式
-   - `cn-ppt-outline-writer` 输出 `outline.json` → `pptx-generator` 读入 `outline.json`
-   - `cnki-scholar` 输出 `papers.json` → `paper-parse` 读入逐篇解析
+2. **Skill 间数据契约**
+   - `delegate_task` 的 `context` 参数传递结构化数据
+   - `cronjob` 的 `context_from` 链式传递输出
+   - 文件系统传递：A 写 `output.json` → B 读 `output.json`（节省 context token）
 
-3. **渐进式加载优化**：只在需要时加载 references/
-   - 不让全部 6 个 PPT Skills 同时占满 context
-   - 用 `description` 精准匹配任务，按需激活
+3. **渐进式加载优化**
+   - 用 `skill_manage(action='view', name='...')` 按需加载
+   - 不用一次性加载全部 Skills
+   - 用 `description` 精准匹配任务
 
-4. **子 Agent 并行化**：
-   - PPT 图片搜索可以 Fan-Out: 同时搜 Wikimedia + 本地生成
-   - 论文检索可以 Fan-Out: 同时搜知网(中文) + OpenAlex(英文)
+4. **并行化**
+   - `delegate_task(tasks=[...])` 支持 Fan-Out 模式
+   - 同时搜索多个来源（Tavily + Exa + DDGS 并行）
+   - 跨模型并行推理
 
 ---
 
 ## 五、2026 前沿趋势
 
-### Stacked Skill Invocation（2026-06 Claude Code）
-> 单条消息链式调用最多 5 个 Skills
+### Stacked Skill Invocation
 
-这意味着我们可以设计「复合 Skill」——一个描述触发多个协同 Skills。
+单次会话可链式调用多个 Skills，通过 `skill_manage()` 逐级激活。
 
 ### 基于文件系统的消息传递
-> Pipeline 步骤间通过文件系统传递数据，而非都塞进 context
 
-步骤 A 写 `output.json` → 步骤 B 读 `output.json`，节省 context token。
+Pipeline 步骤间通过文件系统传递数据，而非都塞进 context：
+```python
+# 步骤 A
+open("output.json", "w").write(json.dumps(result_a))
+# 步骤 B — 读取步骤 A 的输出
+result_a = json.load(open("output.json"))
+```
 
 ### Orchestration > Automation
+
 > 2026 关键词从"自动化"变成"编排"——路径在执行中决定，而非预先固定
+
+Hermes 的 `delegate_task` 天生支持运行时路径决策：父 Agent 根据子任务结果决定下一步调用哪个 Skill。
+
+### Hermes Curator 自动 Skill 维护
+
+Hermes 的 Curator 系统自动管理 Agent 创建的 Skill：
+- 追踪使用频率
+- 标记长期未使用的 Skill 为"陈旧"
+- 可选合并重叠 Skill（`curator.consolidate: true`）
+- **永远不会删除**——最大破坏动作是归档
 
 ---
 
 ## 六、立即行动计划
 
-- [ ] 为每个 Skill Family 建立 Pipeline 定义文件（`pipelines/ppt-pipeline.md` 等）
-- [ ] 在 `cn-ppt-outline-writer` 和 `pptx-generator` 之间建立 JSON 数据契约
-- [ ] 给 `ppt-optimizer` 添加 gate 检查功能（评分+阻断）
+- [ ] 为常用工作流建立 Hermes Cron Pipeline 定义
+  ```bash
+  # 示例：每日研究流水线
+  hermes cron create "0 7 * * *" --prompt "检索 arXiv 新论文" --name arxiv-fetch
+  hermes cron create "0 8 * * *" --context-from arxiv-fetch --prompt "总结论文到 Obsidian" --name arxiv-summarize
+  ```
+- [ ] 在 Skill 之间建立 JSON 数据契约（`delegate_task` context 结构化）
 - [ ] 优化各 Skill 的 `description` 字段（触发条件精准化）
-- [ ] 测试 Fan-Out 并行搜索（知网 + OpenAlex 并行）
+- [ ] 测试 Fan-Out 并行搜索（Tavily + Exa + DDGS 并行）
+- [ ] 配置 Curator 自动维护 Skill 生态
 
 ---
 
 ## 🔗 知识关联
 
-- **[[AI-Agent]]** — k 的 Skills 架构与编排能力
-- **[[PPT-Design]]** — PPT 6 轮方法论如何改造成 Pipeline
-- **[[Academic]]** — 论文全流程的 Pipeline 化
-- **[[Vibe-Coding]]** — 脚本和数据契约的实现环境
-- **[[projects/current]]** — 改进任务追踪
-- **[[HOME]]** — 返回知识中枢
+- **[[hermes-agent]]**（skills/） — Hermes Agent 完整 CLI 与配置参考
+- **[[hermes-model-fallback]]**（skills/） — 模型容灾链配置
+- **[[hermes-search-config]]**（skills/） — 5 搜索引擎多后端配置
+- **[[test-driven-development]]**（skills/） — TDD 红绿重构循环
+- **[[systematic-debugging]]**（skills/） — 4 阶段 Bug 诊断
+- **[[../LLM-Providers]]** — 当前模型与提供商配置
 
 ---
 
 ## 参考来源
 
-- explainx.ai — Multi-Agent Orchestration Patterns Guide 2026
-- developersdigest.tech — 7 AI Agent Orchestration Patterns
-- YouMind/Google ADK — 5 Agent Skill Design Patterns
-- agentskills.io — Best Practices for Skill Creators
-- Anthropic — Building Effective AI Agents (PDF)
+- Hermes Agent Docs — https://hermes-agent.nousresearch.com/docs/
+- Anthropic — Building Effective AI Agents
 - ArXiv 2603.02176 — Organizing Agent Skills at Ecosystem Scale
-- MindStudio — Chaining Skills Into Autonomous Pipelines
-- anthonytd.com — Building Skills for AI Agents
+- explainx.ai — Multi-Agent Orchestration Patterns Guide 2026
+- Hermes Agent Skills — 70+ skills catalog
