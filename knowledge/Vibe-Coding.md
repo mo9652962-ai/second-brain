@@ -4,7 +4,7 @@ domain: vibe-coding
 cross-domain: [ai-agent, ppt-design, academic]
 related: ["knowledge/AI-Agent", "knowledge/AI-Workflow", "knowledge/PPT-Design", "knowledge/Academic"]
 created: 2026-07-21
-updated: 2026-07-21
+updated: 2026-07-23
 ---
 
 # 编程与技术
@@ -31,21 +31,27 @@ LIMIT 8
 
 - Visual C++ 运行库: AIO v0.105.0（全版本已安装）
 - Wallpaper Engine: Steam
-- OpenClaw Gateway: http://127.0.0.1:18789
+- **Hermes Agent Desktop**: Hermes Agent GUI 桌面应用（任务面板、终端、预览、TUI dock）
+- **Obsidian**: 知识中枢 / 库文件管理（`.openclaw/workspace/knowledge/` 映射到 Obsidian vault）
 
 ## PowerShell 注意事项
 
 - 命令分隔用 `;`（不能用 `&&`）
 - 条件用 `if ($?) { ... }`
 - `2>$null` 代替 `2>nul`
-- 路径用 `\` 而非 `/`
+- 路径用 `\\` 而非 `/`
 
-## 搜索工具
+## 搜索工具（5-Way 多后端）
 
-- Tavily: 主力 AI 搜索
-- Firecrawl: JS 渲染 + 反爬
-- Exa: 语义神经搜索
-- web_fetch fallback: Firecrawl
+| 后端 | 用途 |
+|------|------|
+| **Tavily** | 主力 AI 搜索 |
+| **Exa** | 语义神经搜索 |
+| **Firecrawl** | JS 渲染 + 反爬 |
+| **DDGS** | DuckDuckGo 免费回退 |
+| **SearXNG** | 自托管元搜索引擎 |
+
+配置方式: `hermes config set search.backends '["tavily","exa","firecrawl","ddgs","searxng"]'`
 
 ## 桌面美化
 
@@ -71,7 +77,7 @@ LIMIT 8
 
 ## 🔗 知识关联
 
-- **[[AI-Agent]]** — k 的运行环境与基础设施
+- **[[AI-Agent]]** — Hermes Agent 的运行环境与基础设施
 - **[[PPT-Design]]** — python-pptx + Pillow 生成环境
 - **[[Academic]]** — 文献管理、写作工具链
 - **[[projects/current]]** — 桌面美化与系统优化进度

@@ -4,7 +4,7 @@ domain: academic
 cross-domain: [ai-agent, ppt-design, vibe-coding, workflow]
 related: ["knowledge/AI-Agent", "knowledge/AI-Workflow", "knowledge/PPT-Design", "knowledge/Vibe-Coding"]
 created: 2026-07-21
-updated: 2026-07-21
+updated: 2026-07-23
 ---
 
 # 学术知识库
@@ -18,6 +18,8 @@ LIMIT 8
 ```
 
 ---
+
+> 本知识库同时兼容 **OpenClaw** 与 **Hermes Agent** 环境。以下 9 个论文 skills 通过 ClawHub 安装，在两个平台中均可正常使用。
 
 ## 论文 Skills 全家桶
 
@@ -51,7 +53,7 @@ LIMIT 8
 
 ## 🔗 知识关联
 
-- **[[AI-Agent]]** — 由 k 的 9 个论文 skills 全家桶驱动
+- **[[AI-Agent]]** — 由 9 个论文 skills 全家桶驱动（ClawHub 安装，Hermes / OpenClaw 双平台兼容）
 - **[[PPT-Design]]** — 论文答辩 PPT 制作与学术汇报设计
 - **[[Vibe-Coding]]** — 文献管理工具与写作环境
 - **[[projects/current]]** — 学术服务变现进度

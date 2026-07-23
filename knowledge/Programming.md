@@ -2,12 +2,12 @@
 domain: 编程
 cross-domain: ["AI-Agent", "AI-Workflow", "CAD-Design"]
 related: [[AI-Agent]], [[AI-Workflow]], [[CAD-Design]], [[Vibe-Coding]]
-description: "编程技术栈、Python 3.14 新特性、AI Agent 架构模式、ReAct 范式"
+description: "编程技术栈、Python 3.14 新特性、AI Agent 架构模式、ReAct 范式、Hermes Agent 技能开发"
 ---
 
 # 编程技术栈
 
-> 2026-07-21 全网学习汇总。来源: Tavily、Firecrawl、Brave、Perplexity
+> 2026-07-21 全网学习汇总。来源: Tavily、Exa、Firecrawl、DDGS、SearXNG
 
 ## Python 3.14 (2026 年 10 月发布) — 核心新特性
 
@@ -169,6 +169,86 @@ print(f"2+2 = {result}")
 
 ---
 
+## Hermes Agent 框架下的 Agent 架构
+
+### Hermes 核心编排工具
+
+| 工具 | 用途 | 对应模式 |
+|------|------|----------|
+| `delegate_task` | 向子 Agent 委派独立任务，获得结果后继续 | Orchestrator-Worker |
+| `cronjob` | 定时执行技能工作流（周期性自动化） | Pipeline / Scheduled |
+| `skill_manage` | 创建/更新/删除技能（程序记忆） | Generator / Reviewer |
+| `terminal` | 执行 shell 命令（前台/后台/PTY） | CodeAct Loop |
+| `process` | 管理后台进程生命周期 | Daemon / Watcher |
+
+### 典型工作流示例
+
+```python
+# Hermes Agent 中 Orchestrator-Worker 模式
+# 主 Agent 委派并行任务给子 Agent
+subtask_a = delegate_task("搜索 2026 AI Agent 趋势", tools=["web_search"])
+subtask_b = delegate_task("总结 ReAct 论文核心观点", tools=["web_extract"])
+results = await asyncio.gather(subtask_a, subtask_b)
+
+# 合并结果
+final = synthesize(results)
+```
+
+### Cronjob 自动化
+
+```bash
+# 每周一早 8 点执行学术文献检索
+hermes cron create --schedule "0 8 * * 1" \
+  --skill academic-paper-writing \
+  --input '{"query": "latest AI agent papers last week"}'
+```
+
+---
+
+## Hermes Skill 开发最佳实践
+
+### Skill 设计五模式
+
+| 模式 | 说明 | 例子 |
+|------|------|------|
+| **Tool Wrapper** | 封装工具为按需加载知识 | Tavily 搜索 skill |
+| **Generator** | 从模板生成结构化输出 | PPT 大纲 → 幻灯片 |
+| **Reviewer** | 按检查清单评分 | ppt-optimizer |
+| **Inversion** | 先访谈再行动 | 需求澄清 skill |
+| **Pipeline** | 严格多步流程 + 检查点 | 论文写作 6 轮流程 |
+
+### SKILL.md 格式要点
+
+```markdown
+# Skill Name
+> 描述 ≤160 字符（精准匹配触发词）
+
+## 触发条件
+- 用户说「做 PPT」→ 自动激活 PPT skill 家族
+
+## 工作流
+1. 步骤 A
+2. 步骤 B
+
+## 输出格式
+\```json
+{ "key": "value" }
+\```
+
+## 安全
+- 不执行 rm -rf /
+- 敏感操作前询问
+```
+
+### Skill 安全
+
+- **Skill Specter**: NVIDIA 合作，自动扫描隐藏指令
+- **Skill Card**: 每个 skill 需说明来源和功能
+- **Gating**: 通过 allowlist 控制 skill 可访问的工具
+- **Pinned Skills**: 保护关键技能不被意外删除；锁定后仍可 patch（改进），仅禁止 delete
+
+---
+
 ## build123d + AI Agent 结合 (2026 前沿)
 
 ### Text-to-CAD Harness
@@ -211,48 +291,6 @@ export_stl(bracket.part, "bracket.stl")
 
 ---
 
-## OpenClaw Skill 开发最佳实践
-
-### Skill 设计五模式 (ADK 2026 标准)
-
-| 模式 | 说明 | 例子 |
-|------|------|------|
-| **Tool Wrapper** | 封装工具为按需加载知识 | Tavily 搜索 skill |
-| **Generator** | 从模板生成结构化输出 | PPT 大纲 → 幻灯片 |
-| **Reviewer** | 按检查清单评分 | ppt-optimizer |
-| **Inversion** | 先访谈再行动 | 需求澄清 skill |
-| **Pipeline** | 严格多步流程 + 检查点 | 论文写作 6 轮流程 |
-
-### SKILL.md 格式要点
-
-```markdown
-# Skill Name
-> 描述 ≤160 字符（精准匹配触发词）
-
-## 触发条件
-- 用户说「做 PPT」→ 自动激活 PPT skill 家族
-
-## 工作流
-1. 步骤 A
-2. 步骤 B
-
-## 输出格式
-```json
-{ "key": "value" }
-```
-
-## 安全
-- 不执行 rm -rf /
-- 敏感操作前询问
-```
-
-### Skill 安全
-- **SkillSpector**: NVIDIA 合作，自动扫描隐藏指令
-- **Skill Card**: 每个 skill 需说明来源和功能
-- **Gating**: 通过 allowlist 控制 skill 可访问的工具
-
----
-
 ## 学习资源
 
 | 资源 | 链接 | 说明 |
@@ -262,7 +300,8 @@ export_stl(bracket.part, "bracket.stl")
 | ReAct 从零实现 | til.simonwillison.net/llms/python-react-pattern | Simon Willison |
 | AI Agent 架构 | redis.io/blog/ai-agent-architecture | Redis 出品 |
 | LangChain 2026 框架 | langchain.com/resources/ai-agent-frameworks | 框架对比 |
+| Hermes Agent Docs | hermes-agent.nousresearch.com/docs | 官方文档 |
 
 ---
 
-_最后更新: 2026-07-21_
+_最后更新: 2026-07-23_

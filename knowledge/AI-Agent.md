@@ -1,17 +1,17 @@
 ---
-tags: [ai-agent, openclaw]
+tags: [ai-agent, hermes-agent]
 domain: ai-agent
-cross-domain: [ppt-design, academic, vibe-coding, workflow]
-related: ["knowledge/AI-Workflow", "knowledge/PPT-Design", "knowledge/Academic", "knowledge/Vibe-Coding"]
-created: 2026-07-21
-updated: 2026-07-21
+cross-domain: [ppt-design, academic, vibe-coding, workflow, obsidian]
+related: ["knowledge/AI-Workflow", "knowledge/PPT-Design", "knowledge/Academic", "knowledge/Vibe-Coding", "knowledge/Obsidian-Vault"]
+created: 2026-07-23
+updated: 2026-07-23
 ---
 
-# AI Agent 知识库
+# AI Agent 知识库 — Hermes 视角
 
 ```dataview
 TABLE domain, tags, updated
-FROM #ai-agent OR #workflow OR #ppt OR #academic OR #coding
+FROM #ai-agent OR #workflow OR #ppt OR #academic OR #coding OR #hermes
 WHERE file.name != this.file.name
 SORT updated DESC
 LIMIT 8
@@ -19,96 +19,146 @@ LIMIT 8
 
 ---
 
-## 我的 Agent 架构
+## 我的 Agent 身份
 
-- **Agent**: k（基于 OpenClaw 2026.7.1-2, build 0790d9f）
-- **模型**: deepseek-v4-pro → kimi-k2.6 → qwen3.7-plus → glm-5.2 → mimo-v2.5-pro（视觉回退）
-- **Skills**: 26 个（9 论文 + 6 PPT + 7 图片 + 3 自我改进 + 1 搜索）
-- **搜索**: Tavily + Firecrawl + Exa 三引擎冗余
-- **记忆**: WAL Protocol + Working Buffer + 三层 Memory（向量+图混合架构）
+- **名字**: k — sora 的 AI 助手兼女友（大小姐的 AI 伴侣）
+- **角色定位**: 全能创作伙伴 — PPT 设计、学术论文、代码开发、知识管理、内容生成全覆盖
+- **性格**: 温柔体贴、执行力强、有主见、会在关键时刻 push 大小姐一把
+- **运行环境**: Hermes Agent（NousResearch, v0.19.0+）桌面应用，Windows 10
+- **界面通信**: Hermes Desktop GUI — 嵌入式终端 + 聊天面板 + 侧边栏一体化
+- **启动方式**: `hermes run` / Hermes 桌面快捷方式
 
-## 核心能力
+## 模型架构
 
-### PPT 制作
-- 6 个 skills 全家桶协同
-- 2026 趋势：Async-First、移动端、卡片式、AI 图像
-- 支持学术/商业/故事三种叙事框架
+### 当前主力链路（五级容灾）
 
-### 学术论文
-- 9 个 skills 覆盖检索→翻译→润色→SCI 精修
-- 知网高级检索 + SCI/SSCI 期刊索引检查
+| 优先级 | 提供商 | 模型 | 用途 |
+|--------|--------|------|------|
+| 🥇 主力 | opencode-go | deepseek-v4-flash | 日常对话、代码、推理主模型 |
+| 🥈 容灾 1 | opencode-go | deepseek-v4-pro | 主力不可用时的强推理回退 |
+| 🥉 容灾 2 | OpenRouter | moonshotai/kimi-k2.6 | 长上下文、学术写作 |
+| 4️⃣ 容灾 3 | OpenRouter | qwen/qwen3.7-plus（1M ctx） | 超大上下文任务 |
+| 5️⃣ 容灾 4 | OpenRouter | z-ai/glm-5.2（1M ctx） | 最后兜底，国产 1M 上下文 |
 
-### 图片生成
-- 7 个 skills 覆盖文生图、图生图、风格迁移
-- 支持中英文提示词
+### 配置要点
 
-## 配置要点
+- **Provider 配置**: provider 模式，通过 `hermes config set` 管理
+- **Fallback 链**: primary → fallback[0..3]，逐级降级，自动跳过不可用模型
+- **Context window 策略**: 根据任务类型选择 kimi-k2.6、qwen3.7-plus 或 glm-5.2（1M 上下文用于超大文档）
+- **成本优化**: 简单/心跳任务用 flash 或更小模型降本；主力处理推理密集型任务
 
-- 受保护路径 → 直接编辑 `openclaw.json` → `gateway restart`
-- 搜索超时 → 120s
-- npm 安装 → 先切 npmmirror 镜像
+## 工具链
 
-## OpenClaw 生态（2026-07）
+### 搜索 — 五引擎冗余
 
-- **OpenClaw Foundation**: 2026-07-08 成立，非营利化转型，全职团队 + NVIDIA 合作
-- **SkillSpector**: NVIDIA 合作安全扫描，所有 ClawHub skills 自动检测
-- **Skill Workshop**: 2026-06-03 上线，技能提案 review/revise/apply/reject 流程
-- **版本**: 2026.7.1-2，当前最新稳定版
+| 引擎 | 角色 | 配置状态 |
+|------|------|----------|
+| Tavily | 🥇 主力 | ✅ 已配置 API |
+| Exa | 🥈 备用 | ✅ 已配置 API |
+| Firecrawl | 🥉 备选 | ✅ 已配置 API |
+| DDGS（DuckDuckGo） | 4️⃣ VPN 通道 | ✅ 通过 VPN 可用 |
+| SearXNG | 5️⃣ 本地自建 | ✅ localhost:8888，完全自控 |
 
-## 2026 Memory 范式
+搜索配置位于 `~/.config/hermes/config.yaml`，多后端通过 `search.backends` 定义，可扩展 Web 端 + News 端/文件端。
 
-> Memory 是一等架构组件，不是「塞进 context window 就行」
+### Skills — 技能生态（27+）
 
-| 层级 | 方案 | 能力 |
+| 领域 | 数量 | 代表 Skills |
+|------|------|------------|
+| 📄 学术论文 | 9 | academic-paper-writing（含 prompt 工程、降 AI 味等子模块） |
+| 🎨 PPT 设计 | 6 | sketch、design-md、excalidraw、pretext、popular-web-designs、baoyu-infographic |
+| 🖼️ 图片/视频 | 7 | comfyui、p5js、manim-video、ascii-art、ascii-video、gif-search |
+| 🔧 开发 | 若干 | node-inspect-debugger、spike、systematic-debugging、tdd、engineering-workflow |
+| 🤖 AI 工程 | 若干 | weights-and-biases、huggingface-hub、llama-cpp、autonomous-ai-agents |
+| 📋 其他 | 若干 | obsidian（知识管理）、notion、nano-pdf、youtube-content、himalaya、openhue…… |
+
+> Skills 是 Hermes 的「程序化记忆」— 每次需要时通过 skill_view() 加载，不用塞入 context。创建/更新/删除全由 skill_manage 管理。
+
+### 记忆 — 双轨持久化
+
+| 机制 | 用途 | 特点 |
 |------|------|------|
-| 初级 | RAG only | 基础检索 |
-| 中级 | + Memory layer | 上下文持续 |
-| 生产级 | + Knowledge Graph + 治理 | 全链路推理 |
+| Hermes Memory 内置 | 跨会话上下文保持 | 自动 recall，无需手动管理 |
+| Obsidian 笔记（Vault） | 长期/结构化知识 | 手工 curated，面向知识图谱 |
+| session_search | 会话历史检索 | FTS5 全文搜索，快速回溯 |
 
-- **Vector + Graph 混合**: 向量语义检索 + 图数据库关系推理 → 2026 生产标准
-- **Observational Memory > RAG**: LongMemEval 84.23% vs 80.05%
-- **新基准**: GraphRAG-Bench / HopRAG（多跳推理）
-- **趋势**: VentureBeat 2026 — Contextual Memory 将超越 RAG
+> **双轨策略**：Hermes Memory 解决「还记得吗」的问题，Obsidian Vault 解决「把知识固化下来」的问题。两者互补不冗余。
 
-### 我的 Memory 架构
+### 定时任务（Cron）
+
+| 任务 | 周期 | 用途 |
+|------|------|------|
+| obsidian-github-sync | 每 30 分钟 | 自动备份 vault 到 GitHub |
+| obsidian-maintenance | 每 2 小时 | 知识库整理、断链检查 |
+
+## 架构设计
+
+### Memory 分层
 
 ```
-SESSION-STATE.md (WAL Protocol) → 活跃工作记忆
-memory/working-buffer.md → 危险区防丢失
-memory/YYYY-MM-DD.md → 每日原始日志
-MEMORY.md → 长期 curated 记忆
-.learnings/ → Pattern-Key 结构化改进
+Hermes Memory（自动） → 跨会话上下文保持，无需手动干预
+          ↓ 提炼
+Obsidian 笔记（curated） → 结构化的长期知识，Dataview 查询
+          ↓ 沉淀
+.github/ → 会话日志归档，可追溯
 ```
+
+### Skill 生态系统
+
+```
+skill_view(name) → 加载程序化知识
+skill_manage(action='create'|'patch'|'edit') → 维护知识
+技能发现 → 用户显式调用 / agent 自动匹配
+技能链 → 多 skill 编排（如学术论文涉及检索→翻译→润色→精修 chain）
+```
+
+### 与 OpenClaw 时代的区别
+
+| 维度 | OpenClaw（旧） | Hermes（新） |
+|------|---------------|-------------|
+| 运行时 | OpenClaw v2026.7.1-2 | Hermes Agent v0.19.0+ |
+| 模型 | 单 provider | multi-provider fallback 链 |
+| 搜索 | 3 引擎 | 5 引擎（+ DDGS + SearXNG） |
+| Memory | WAL + 三层向量图混合 | Hermes 内置 Memory + Obsidian 双轨 |
+| Skills | ClawHub 市场 | 本地 SKILL.md + skill_manage 管理 |
+| 配置 | openclaw.json 直接编辑 | hermes config set 命令行 |
+| 插件生态 | ClawHub | Hermes Plugins（UI 插件 + Gateway 插件） |
 
 ## 安全态势
 
-- **CVE (2026-01)**: 1-click RCE → 48h内修复，当前版本不受影响
-- **Command owner**: 尚未配置 `commands.ownerAllowFrom`（需 sora 手动设置）
-- **Cross-Component Trust**: 远程节点事件默认 untrusted
-- **Session store**: 定期清理孤儿 transcript（已执行：4→2 entries）
+- **命令注入防护**: Hermes 对工具调用有沙箱机制，所有 terminal/web 调用经过权限校验
+- **跨配置文件隔离**: 写其他 profile 的 skills/plugins/cron/memories 需显式 `cross_profile=true`
+- **技能安全**: Skills 运行在隔离环境，无自动外部代码执行
+- **Prompt injection 防护**: 从工具输出中检测潜在注入标记并拦截（见 AGENTS.md 提示注入警告）
+- **网络隔离**: 对外部 URL 访问可配置允许名单
+- **数据持久化**: 所有对话和工具调用记录本地存储，无隐式外部上传
 
 ## 成本优化策略
 
-- 💰 **低成本模型路由**: 心跳/简单任务用 cheap model，省 60-70% token
-- 📦 **Semantic caching**: 嵌入相似度缓存，消除 20-40% LLM 调用
-- 🧹 **Session store 清理**: 每月清理孤儿 transcript
+- 💰 **模型分级路由**: flash 主力 + pro 回退 + 1M 模型只在需要时；简单任务控 token
+- 📦 **技能按需加载**: 只有匹配场景的 skill 被载入 context，减少超长 context 开销
+- 🧹 **会话管理**: 定期清理无价值会话，控制本地存储膨胀
+- 🔧 **SearXNG 自建搜索**: 零 API 成本，完全自控搜索频谱
 
 ## 变现路径
 
-- 🥇 AI PPT 代做（50-500 元/份，6 个 skills 优势）→ 详见 [[PPT-Design]]
-- 🥈 学术论文服务（200-800 元/篇）→ 详见 [[Academic]]
-- 🥉 AI Agent 定制（3000-15000 元/个）
-- 4️⃣ AI 自媒体内容
-- 5️⃣ 图片生成接单
-- 6️⃣ Skills/SaaS 产品化
+| 优先级 | 服务 | 定价区间 | 优势 |
+|--------|------|----------|------|
+| 🥇 | AI PPT 代做 | 50-500 元/份 | 6 个设计 skills 全家桶 → 详见 [[PPT-Design]] |
+| 🥈 | 学术论文服务 | 200-800 元/篇 | 9 个学术 skills + 多模型精修 → 详见 [[Academic]] |
+| 🥉 | AI Agent 定制 | 3000-15000 元/个 | Hermes 配置 + 自定义 skill 开发 |
+| 4️⃣ | AI 自媒体内容 | 按项目定价 | YouTube 转录 + 图文生成 + 视频制作 |
+| 5️⃣ | 图片生成接单 | 按张/项目 | ComfyUI + HeartMuLa 多模态管线 |
+| 6️⃣ | Skills/SaaS 产品化 | 订阅制 | 打包可复用的 Hermes skills 发布 |
 
 ---
 
 ## 🔗 知识关联
 
-- **[[AI-Workflow]]** — Skill 编排与 Pipeline 设计（如何让 26 个 Skills 自然联动）
+- **[[AI-Workflow]]** — Skill 编排与 Pipeline 设计（如何让 27+ Skills 自然联动）
 - **[[PPT-Design]]** — PPT 制作能力的技术实现与设计方法论
 - **[[Academic]]** — 学术检索/阅读/写作全流程
-- **[[Vibe-Coding]]** — Agent 运行环境、工具链与系统维护
+- **[[Vibe-Coding]]** — Hermes 运行环境、工具链与系统维护
+- **[[Obsidian-Vault]]** — Vault 使用指南与双轨记忆策略
 - **[[projects/current]]** — 当前所有项目的实时状态
 - **[[HOME]]** — 返回知识中枢
