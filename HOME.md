@@ -7,8 +7,8 @@ updated: 2026-07-21
 
 # 🏠 Second Brain — 知识中枢
 
-> Obsidian + OpenClaw + GitHub 三方联动
-> 我（k）在这里读写，你（sora）在这里思考。
+> Obsidian + Hermes + GitHub 三方联动
+> 我（k）在 Hermes Agent 上读写，你（sora）在这里思考。
 
 ## 📊 知识域总览
 
@@ -146,7 +146,53 @@ Windows 环境、PowerShell、搜索工具链、系统维护
 
 ---
 
-## 📊 统计
+## 📊 自动索引
+
+### 知识域概览
+
+```dataview
+TABLE domain AS "领域", tags AS "标签", updated AS "最后更新"
+FROM "knowledge"
+WHERE domain
+SORT domain ASC
+```
+
+### 最近修改
+
+```dataview
+TABLE file.mtime AS "修改时间", domain AS "领域"
+FROM "knowledge" OR "projects" OR "memory"
+SORT file.mtime DESC
+LIMIT 10
+```
+
+### 所有标签
+
+```dataview
+TABLE rows.file.link AS "笔记"
+FROM -"templates"
+FLATTEN tags AS tag
+GROUP BY tag
+SORT tag ASC
+```
+
+### 孤立笔记（无反向链接）
+
+```dataview
+TABLE file.folder AS "位置"
+FROM -"templates"
+WHERE length(file.inlinks) = 0 AND file.name != "HOME"
+SORT file.folder ASC
+```
+
+### 项目状态
+
+```dataview
+TABLE status AS "状态", updated AS "最后更新"
+FROM "projects"
+WHERE domain = "project"
+SORT status ASC, updated DESC
+```
 
 | 指标 | 数值 |
 |------|------|
@@ -159,4 +205,4 @@ Windows 环境、PowerShell、搜索工具链、系统维护
 
 ---
 
-_由 Obsidian + k (OpenClaw) 共同维护 | 最后更新: 2026-07-21_
+_由 Obsidian + k (Hermes) 共同维护 | 最后更新: 2026-07-23_
