@@ -92,6 +92,18 @@ v1 原型 → v2 数据注入 → v3 图片方案 → v4 实景替换 → v5 打
 - **System Engineering > Prompt Engineering**: Guardrails + Feedback Loops + Observability
 - **Plan-and-Execute**: 异构模型降本 90%
 - **Memory 三态**: Core → Recall → Archival
+- **Graph Memory 生态成熟**: Mem0/Letta/Cognee/Zep 等 10+ 框架，Write-Path > Read-Only RAG
+- **OpenClaw 2026.7.1**: Control UI 大改，GPT-5.6/Hy3/Muse 支持，Codex 工作流
+
+### AI Agent 生产部署 8 大最佳实践 (2026)
+1. 全链路监控（技术指标 + 业务指标 + AI 专属指标）
+2. 高可用架构 + 灾备恢复 + 依赖管理
+3. 权限系统最小特权原则 + 完整审计日志
+4. 置信度阈值 + 人工升级路径（Bounded Autonomy）
+5. 内容过滤 + Guardrails + Bias 监控
+6. 自动测试 Pipeline + Canary 部署 + A/B 验证
+7. 模型版本控制 + 快速回滚
+8. 成本优化：模型路由(60-70%) + Prompt Caching(60-80%) + Batch API(50%)
 
 ## 待提升
 

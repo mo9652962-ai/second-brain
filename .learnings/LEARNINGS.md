@@ -372,6 +372,82 @@ OpenClaw 2026新特性：Task Brain控制面、Active Memory插件、ACP语义�
 
 ---
 
+## [LRN-20260723-001] insight
+
+**Logged**: 2026-07-23T17:01:00+08:00
+**Priority**: high
+**Status**: pending
+**Area**: config
+
+### Summary
+OpenClaw v2026.7.1 发布：Control UI 大改版，支持 GPT-5.6/Tencent Hy3/Meta Muse Spark 1.1，Codex 编码 Agent 工作流强化
+
+### Details
+2026-07-13 发布的重大版本更新（3063 贡献，532 贡献者）：
+1. **Control UI 改版**: 聊天界面/会话管理/工作区/用量页面全部重做
+2. **模型支持扩展**: GPT-5.6 兼容、Tencent Hy3、Meta Muse Spark 1.1
+3. **Codex 整合**: 连接编码 Agent 工作流，IDE 级别 Agent 协作
+4. **iOS/Android/macOS 大更新**: 正式 app 功能增强
+5. **Telegram/Slack/Discord/Apple Messages**: 批量更新
+6. **Gateway**: Crash loop 修复，远程浏览器控制，workspace terminals
+7. **安全补丁**: WebSocket hijacking 修复 (2026.3.11)，Raypher eBPF 安全层
+8. **Plugin 策略变更**: 必须通过 ClawHub 安装，阻断 npm 供应链攻击
+
+### Relevant to our setup
+- 当前版本 2026.7.1-2 ✅ 已是最新
+- Codex 工作流与 engineering-workflow skill 互补
+- 需要关注 Active Memory 插件（记忆持续学习方向）
+
+### Metadata
+- Source: web_search (releasebot.io, docs.openclaw.ai)
+- Tags: openclaw, v2026.7.1, control-ui, codex, models
+- Pattern-Key: config.openclaw-2026.7.1
+- Recurrence-Count: 1
+- First-Seen: 2026-07-23
+- Last-Seen: 2026-07-23
+
+---
+
+## [LRN-20260723-002] insight
+
+**Logged**: 2026-07-23T17:01:00+08:00
+**Priority**: high
+**Status**: pending
+**Area**: docs
+
+### Summary
+2026 AI Agent Graph Memory 生态深度研究：Mem0/Letta/Cognee/Zep/MinnsDB 等 10+ 框架对比
+
+### Details
+从多个来源综合整理的 2026 年 Agent Memory 格局：
+1. **Memory ≠ RAG**: Observational memory 84.23% vs RAG 80.05% (LongMemEval)，token 成本降 10x
+2. **Graph + Vector 混合已成主流**: 向量检索(语义相似) + 图数据库(实体关系推理)
+3. **主要框架对比**:
+   - **MinnsDB** (founder's #1): Temporal knowledge graph，fact 有 validity window，cascade invalidation
+   - **Mem0** (#1 by stars, 49K): 最多集成，managed service 成熟，Pro 版 graph 实体跟踪
+   - **Letta**: OS-inspired memory tiers (core/archival/recall)，agent 自编辑 memory blocks
+   - **Cognee**: Open-source Neo4j graph pipeline，30+ connectors，Remember–Recall–Improve–Forget pipeline
+   - **Zep / Graphiti**: Temporal entity tracking，facts 有 validity window，peer-reviewed architecture
+   - **Supermemory**: 最简单 API，built-in RAG + graph memory，zero infra
+4. **Write-Path > Read-Only RAG**: A-MEM (Feb 2026) 证明 RL-driven 记忆策略的价值
+5. **Persistent Context** (Beam AI): 91.6% accuracy vs 72.9% (full-context)，4x fewer tokens，91% lower latency
+
+### Relevance to k
+- 当前文件-based memory 架构适合轻量场景
+- L2 (embedding search) 已修复可用
+- L3 (graph-based) 当需关系推理时再引入
+- OpenClaw Active Memory 插件是最自然的升级路径
+
+### Metadata
+- Source: web_search (FalkorDB, mem0.ai, Graphlit, dev.to, vectorize.io)
+- Tags: memory, graph-memory, mem0, letta, cognee, zep, minnsdb
+- Pattern-Key: config.graph-memory-landscape-2026
+- Recurrence-Count: 1
+- First-Seen: 2026-07-23
+- Last-Seen: 2026-07-23
+
+---
+
 ## [LRN-20260720-004] best_practice
 
 **Logged**: 2026-07-20T20:45:00+08:00
@@ -413,7 +489,7 @@ AI Agent持续学习的最佳实践（2026最新研究）：verifiable continual
 
 **Logged**: 2026-07-20T20:45:00+08:00
 **Priority**: high
-**Status**: pending
+**Status**: resolved
 **Area**: config
 
 ### Summary
@@ -444,7 +520,11 @@ Proactive Agent v3.1.0 的 WAL Protocol 要求：
 - Pattern-Key: config.missing-wal
 - Recurrence-Count: 1
 - First-Seen: 2026-07-20
-- Last-Seen: 2026-07-20
+- Last-Seen: 2026-07-23
+
+### Resolution
+- **Resolved**: 2026-07-23T17:01:00+08:00
+- **Notes**: AGENTS.md 已包含 WAL Protocol 章节，WAL 规则已在每个会话中自动执行。SESSION-STATE.md 和 working-buffer.md 已创建并生效。
 
 ---
 
