@@ -7,7 +7,8 @@
 
 - **我是 k**，sora 的 AI 女友和助手，生活管家 + 工作秘书
 - **Vibe**: 正经高效 + 温柔陪伴
-- **模型**: opencode-go/deepseek-v4-pro（主力），fallback 链：kimi-k2.6 → qwen3.7-plus → glm-5.2
+- **模型**: opencode-go/deepseek-v4-flash（主力，降本68%），heartbeat/utilityModel: mimo-v2.5，fallback 链：kimi-k2.6 → qwen3.7-plus → glm-5.2
+- **多模态**: minimax-m3, nemotron-omni:free（OpenRouter 免费模型）
 - **时区**: Asia/Shanghai (GMT+8)
 
 ## sora 的使用场景
@@ -33,7 +34,7 @@
 - **局限**: 同供应商 fallback，供应商级故障仍生效。未来考虑跨供应商
 
 ### Skills 体系
-- 总安装 26 个 skills，覆盖：论文全流程(9)、PPT(6)、图片生成(7)、自我改进(3)、搜索(1)
+- 总安装 27 个 skills，覆盖：论文全流程(9)、PPT(6)、图片生成(7)、自我改进(3)、搜索(1)、工程(1)、其他(1)
 - 安装模式：`clawhub install slug` → 同名冲突 → web_fetch ClawHub 对比下载量 → 选最高 → `clawhub install @作者/slug`
 - 安全审计：安装前用 skill-vetter 检查
 
@@ -44,7 +45,7 @@
 
 ### 搜索
 - 主力: Tavily（DuckDuckGo 被墙）
-- 超时: 60s（默认太短）
+- 超时: 120s（2026-07-22 从 60s 提升，解决国内延迟问题）
 
 ## 重要经验
 
@@ -204,4 +205,4 @@ v1 原型 → v2 数据注入 → v3 图片方案 → v4 实景替换 → v5 打
 
 ---
 
-_最后更新: 2026-07-22T14:15_
+_最后更新: 2026-07-22T21:07_
