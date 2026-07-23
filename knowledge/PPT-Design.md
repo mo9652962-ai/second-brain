@@ -9,6 +9,8 @@ updated: 2026-07-21
 
 # PPT 设计知识库
 
+> 已关联 Hermes Skill: `ppt-design-2026` (v1.0，12 章覆盖全流程)
+
 ```dataview
 TABLE domain, tags, updated
 FROM #ai-agent OR #workflow OR #ppt OR #academic OR #coding
@@ -19,52 +21,39 @@ LIMIT 8
 
 ---
 
-## 2026 六大趋势
+## 2026 最新趋势（2026-07-23 全网搜索更新）
 
-1. **Async-First** — 大多数 PPT 通过链接异步分享，无演讲者
-2. **移动端优先** — 正文 ≥18pt，避免多列
-3. **Gamma 卡片式** — 模块化卡片 → 自由排序
-4. **AI 图像生成** — Copilot/DALL-E 定制化视觉
-5. **3D 视觉** — 图标/插图主流化
-6. **暖色极简** — 暖色调 + 柔和形状取代冷白
+来源：Microsoft PPT Blog、iSlide、ChatSlide、掘金、LumiChats、Storyflow
 
-## 行业工具排行
+### 六大趋势（2026 升级版）
 
-| 工具 | 定位 |
-|------|------|
-| Gamma | 最快生成（<60s），卡片式 |
-| Canva | 最强免费，设计资产库 |
-| Plus AI | 原生 PowerPoint 插件 |
-| Beautiful.ai | 自动布局一致性 |
-| AiPPT | 中国市场 |
+| # | 趋势 | 变化说明 |
+|---|------|---------|
+| 1 | **极致精准** | 不是"少即是多"，而是"精准即力量"。有意留白，每页一个核心观点 |
+| 2 | **暖色极简 + 多元疯狂** | 暖色调+柔和形状 vs 高饱和色彩+夸张字体+拼贴混搭（两种并行流派） |
+| 3 | **Async-First** | 大多数 deck 通过邮件/链接异步分享，无演讲者 → 每页必须独立可读 |
+| 4 | **移动端优先** | 手机审阅普及 → 正文 ≥18pt，避免多列，高对比度配色 |
+| 5 | **数据叙事化** | 图表从"展示数据"升级为"讲述故事"。一页一洞察，标注含义 |
+| 6 | **AI 贯穿全流程** | 从大纲→设计建议→图片生成→多端适配，AI 深度嵌入 |
 
-## 我的 PPT Skills
+### 工具排行更新
 
-| Skill | 版本 | 用途 |
-|-------|------|------|
-| academic-presentation | v4.0 | 学术汇报全流程 |
-| cn-ppt-outline-writer | v3.0 | 大纲设计 |
-| openclaw-slides | v4.0 | HTML 演示稿 |
-| ppt-optimizer | v3.0 | 优化检查 |
-| pptx-generator | v4.0 | PPTX 生成 |
-| PowerPoint/PPTX | v1.1 | 原生编辑 |
+依据 2026 年多家中英文评测综合排名：
 
-## 学术 PPT 规范
+```
+🥇 Gamma      — prompt→deck <60s，最快出稿
+🥇 Storyflow  — 故事先行，建框架再做 deck（2026 新星）
+🥈 Copilot    — 原生 PPTX，格式完美
+🥈 iSlide     — 中国市场首选，AI 排版升级
+🥉 Canva      — 最强免费，设计资产库
+🥉 Beautiful.ai — 自动布局一致性
+```
 
-- 图表优先（Figure-First Design）
-- 15 字标题法则
-- 证据等级标注
-- 知识缺口诚实标记
-- 适配 10/15/20/30 分钟不同时长
+### 关键发现
 
-## 制作工作流（6 轮方法论）
-
-1. **v1 原型** — python-pptx 生成骨架结构
-2. **v2 数据注入** — Tavily 搜索真实数据填充
-3. **v3 图片方案** — Wikimedia Commons CC 图片优先
-4. **v4 实景替换** — 拒绝 AI 生成，追求真实感
-5. **v5 打破AI模式** — 诗词、布局多样性润色
-6. **v6 背景注入** — post-processing 脚本
+- **Gamma + python-pptx 互补**：Gamma 快速出稿 → python-pptx 精修格式 → 最佳工作流
+- **数据叙事三大层次**：展示数据 → 说明含义 → 讲述故事
+- **2026 中文学术 PPT 特有要求**：关键术语中英双语、GB/T 7714 引用、致谢不可忽视
 
 ---
 
