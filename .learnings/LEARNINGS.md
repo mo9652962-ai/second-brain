@@ -372,6 +372,139 @@ OpenClaw 2026新特性：Task Brain控制面、Active Memory插件、ACP语义�
 
 ---
 
+## [LRN-20260724-001] insight
+
+**Logged**: 2026-07-24T10:06:00+08:00
+**Priority**: high
+**Status**: pending
+**Area**: docs
+
+### Summary
+Context Engineering 已正式取代 Prompt Engineering 成为 2026 AI Agent 核心技能。三层解决方案：Static → Dynamic → Learned
+
+### Details
+多个独立来源（Anthropic、Sourcegraph、Karpathy、Supermemory）一致确认：
+1. **Context Engineering ≠ Prompt Engineering**: PE 是「一句话」，CE 是「整个 pipeline」— 管理模型在推理时看到的所有信息
+2. **三层解决方案**:
+   - Tier 1 — Static: CLAUDE.md / SOUL.md / AGENTS.md 类静态文件
+   - Tier 2 — Dynamic: claude-mem (50K stars) / Active Memory 插件 — 运行时动态检索
+   - Tier 3 — Learned: HippoRAG 2 (ICML 2025) — 类人类记忆的 RAG
+3. **核心理念**: "A model's intelligence is increasingly less constrained by the model itself and more determined by the quality of context we provide"
+4. **关键数据**: Contextual retrieval + chunk-specific summaries → 49% 检索失败率降低; Supermemory 10-20x faster than Zep/Mem0
+5. **Anthropic 官方**: "The context window is the most important resource to manage. LLM performance degrades as it fills up."
+
+### Relevance to k
+- ✅ Tier 1: SOUL.md + AGENTS.md + USER.md + TOOLS.md = 已就位
+- ✅ Tier 2 雏形: MEMORY.md + daily notes + memory_search = 手动版
+- ⚠️ Active Memory 插件可升级到原生 Tier 2
+- ❌ Tier 3 (learned/RL) 暂不需要
+
+### Suggested Action
+- 评估 OpenClaw Active Memory 插件成熟度
+- 考虑 CLAUDE.md 等效方案（SOUL.md 已覆盖）
+- 定期审查 context 质量：哪些文件被读入上下文？是否冗余？
+
+### Metadata
+- Source: web_search (nicolasmeridjen, sourcegraph, supermemory, meta-intelligence)
+- Tags: context-engineering, prompt-engineering, memory, paradigm-shift
+- Pattern-Key: config.context-engineering
+- Recurrence-Count: 1
+- First-Seen: 2026-07-24
+- Last-Seen: 2026-07-24
+
+---
+
+## [LRN-20260724-002] insight
+
+**Logged**: 2026-07-24T10:06:00+08:00
+**Priority**: high
+**Status**: pending
+**Area**: config
+
+### Summary
+OpenClaw v2026.7.1 存在稳定性危机 (Gateway 频繁崩溃)，v2026.7.2 beta 引入分布式执行架构
+
+### Details
+Big Hat Group 2026-07-20 周报关键发现：
+1. **v2026.7.1 稳定性问题**: Gateway 频繁崩溃，功能虽强但不可靠运行
+   - "The problem is that it does not reliably stay running"
+   - 暴露 OpenClaw Foundation 发布工程成熟度差距
+   - "stable" 标签不代表生产就绪
+2. **v2026.7.2 beta (7/15-18)**: 引入 Remote Coding Sessions
+   - Control UI 会话可在云端 worker 上运行
+   - Codex/Claude/OpenCode 会话不必须与浏览器在同一机器
+   - 架构方向：**分布式 Agent 执行**（桌面⇄节点⇄云 worker）
+3. **Active Memory 插件**: 2026.4.10 引入，记忆不再限于 session 启动时的静态 MEMORY.md
+4. **将来方向**: OpenClaw 从 Agent 框架 → Agent OS 转型
+
+### Relevance to k
+- 当前版本 2026.7.1-2，关注 Gateway 稳定性
+- 大版本升级前参考第三方验证报告
+- Remote Coding Sessions 意味着未来可分布式执行 PPT 生成等重计算任务
+
+### Suggested Action
+- 大版本升级前等 2-4 周社区反馈
+- 关注 2026.7.2 稳定版发布
+- 评估 Active Memory 插件对现有 memory 架构的影响
+
+### Metadata
+- Source: web_search (Big Hat Group, PetronellaTech, ExplainX)
+- Tags: openclaw, stability, v2026.7.1, v2026.7.2, distributed-execution
+- Pattern-Key: config.openclaw-stability-2026-07
+- Recurrence-Count: 1
+- First-Seen: 2026-07-24
+- Last-Seen: 2026-07-24
+
+---
+
+## [LRN-20260724-003] insight
+
+**Logged**: 2026-07-24T10:06:00+08:00
+**Priority**: high
+**Status**: pending
+**Area**: docs
+
+### Summary
+Multi-Agent Orchestration 六大模式已成 2026 生产标准，EU AI Act 8月生效将 multi-agent 归为 high-risk
+
+### Details
+来自 Knowlee 2026 Guide + TrueFoundry + FifthRow 等来源：
+1. **六大编排模式**:
+   - Sequential Pipeline — 线性链式
+   - Parallel Fan-out — 并行分发+聚合
+   - Debate & Consensus — 多 Agent 辩论（AutoGen 唯一擅长此场景）
+   - Supervisor/Orchestrator — 主管分发子任务
+   - Marketplace — Agent 竞标
+   - Mesh/P2P — 去中心化协作
+2. **EU AI Act (2026-08 生效)**: 多 Agent 编排归类 high-risk
+   - HITL 监督 + 不可篡改审计 + 身份管理整个 Agent 生命周期
+3. **Gartner 预测**: 40% 企业应用将含任务特定 Agent（2026）
+4. **框架格局变化**: 
+   - AutoGen 进入维护模式，合并到 Microsoft Agent Framework (2026-02 RC)
+   - CrewAI 44.3K stars, 5.2M 月下载 — 最活跃
+   - LlamaIndex 仍是最强 RAG 框架
+
+### Relevance to k
+- 当前单 Agent 架构较简单，但 skills 体系已有分工雏形
+- PPT 制作流程 (outline→generator→optimizer) 可视为 Sequential Pipeline
+- 未来多 Agent 场景：research agent + writing agent + design agent
+- self-hosted agent 在 EU AI Act 语境下有数据主权优势
+
+### Suggested Action
+- 理解编排模式，评估哪些场景适合多 Agent 协作
+- 跟踪 EU AI Act 实施进展
+- 关注 Microsoft Agent Framework 对 OpenClaw 的影响
+
+### Metadata
+- Source: web_search (Knowlee, TrueFoundry, FifthRow, AlphaCorp)
+- Tags: multi-agent, orchestration, eu-ai-act, autogen, crewai, governance
+- Pattern-Key: config.multi-agent-orchestration-2026
+- Recurrence-Count: 1
+- First-Seen: 2026-07-24
+- Last-Seen: 2026-07-24
+
+---
+
 ## [LRN-20260723-001] insight
 
 **Logged**: 2026-07-23T17:01:00+08:00
