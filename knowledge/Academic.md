@@ -58,3 +58,5 @@ LIMIT 8
 - **[[Vibe-Coding]]** — 文献管理工具与写作环境
 - **[[projects/current]]** — 学术服务变现进度
 - **[[HOME]]** — 返回知识中枢
+---
+> 关联: [[PPT-Design]] · [[AI-Workflow]] · [[Cross-Domain|🔀 知识地图]] | [[HOME|🏠 首页]]

@@ -162,3 +162,5 @@ skill_manage(action='create'|'patch'|'edit') → 维护知识
 - **[[Obsidian-Vault]]** — Vault 使用指南与双轨记忆策略
 - **[[projects/current]]** — 当前所有项目的实时状态
 - **[[HOME]]** — 返回知识中枢
+---
+> 关联: [[AI-Workflow]] · [[LLM-Providers]] · [[Cross-Domain|🔀 知识地图]] | [[HOME|🏠 首页]]

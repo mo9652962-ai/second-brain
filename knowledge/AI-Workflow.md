@@ -389,3 +389,5 @@ Hermes 的 Curator 系统自动管理 Agent 创建的 Skill：
 - ArXiv 2603.02176 — Organizing Agent Skills at Ecosystem Scale
 - explainx.ai — Multi-Agent Orchestration Patterns Guide 2026
 - Hermes Agent Skills — 70+ skills catalog
+---
+> 关联: [[AI-Agent]] · [[Vibe-Coding]] · [[Cross-Domain|🔀 知识地图]] | [[HOME|🏠 首页]]

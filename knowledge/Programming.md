@@ -305,3 +305,5 @@ export_stl(bracket.part, "bracket.stl")
 ---
 
 _最后更新: 2026-07-23_
+---
+> 关联: [[8051-MCU]] · [[freeCodeCamp]] · [[Vibe-Coding]] · [[Cross-Domain|🔀 知识地图]] | [[HOME|🏠 首页]]

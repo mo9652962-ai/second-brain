@@ -4,69 +4,109 @@ domain: cross-reference
 created: 2026-07-21
 ---
 
-# 🔀 交叉领域索引
+# 🔀 交叉领域索引 — 知识串联地图
 
-> 自动收集所有跨域关联的内容。由 Dataview 动态生成，无需手动维护。
+> 所有知识不是孤立的，它们的连接点才是价值所在。
 
-## 按交叉域分组
+---
 
-### 🤖 AI-Agent 相关
+## 🗺️ 知识领域关系图
 
-```dataview
-TABLE file.mtime AS "更新时间", tags
-FROM "knowledge" OR "projects"
-WHERE contains(cross-domain, "ai-agent") AND file.name != "AI-Agent"
-SORT file.mtime DESC
 ```
+                      ┌──────────────────┐
+                      │   🤖 AI-Agent    │
+                      │   (核心引擎)      │
+                      └────┬──┬──┬──┬───┘
+                    ┌──────┘  │  │  └──────────────┐
+                    ▼         │  │                 ▼
+           ┌────────────┐    │  │    ┌──────────────────┐
+           │ AI-Workflow │◄──┘  └──►│  LLM-Providers   │
+           │ (编排方法)   │         │  (模型架构)       │
+           └──┬──┬──┬───┘         └──────────────────┘
+              │  │  │
+    ┌─────────┘  │  └──────────┐
+    ▼            ▼             ▼
+┌──────────┐ ┌────────┐ ┌──────────┐
+│ Academic │ │ PPT    │ │ Vibe-    │
+│ (学术)   │ │ (设计) │ │ Coding   │
+└──┬───────┘ └──┬─────┘ └──┬───────┘
+   │            │          │
+   │     ┌──────┘          │
+   ▼     ▼                 ▼
+┌──────────────┐   ┌──────────────┐
+│ Programming  │   │ CAD-Design   │
+│ (编程基础)   │   │ (CAD建模)    │
+└──────┬───────┘   └──────┬───────┘
+       │                  │
+       ▼                  ▼
+┌──────────────┐   ┌──────────────┐
+│ 8051-MCU    │   │ freeCodeCamp │
+│ (嵌入式)    │   │ (全栈学习)   │
+└──────────────┘   └──────────────┘
 
-### 🔀 AI-Workflow 相关
-
-```dataview
-TABLE file.mtime AS "更新时间", tags
-FROM "knowledge" OR "projects"
-WHERE contains(cross-domain, "workflow") AND file.name != "AI-Workflow"
-SORT file.mtime DESC
-```
-
-### 🎨 PPT-Design 相关
-
-```dataview
-TABLE file.mtime AS "更新时间", tags
-FROM "knowledge" OR "projects"
-WHERE contains(cross-domain, "ppt-design") AND file.name != "PPT-Design"
-SORT file.mtime DESC
-```
-
-### 📚 Academic 相关
-
-```dataview
-TABLE file.mtime AS "更新时间", tags
-FROM "knowledge" OR "projects"
-WHERE contains(cross-domain, "academic") AND file.name != "Academic"
-SORT file.mtime DESC
-```
-
-### 🐍 Programming 相关
-
-```dataview
-TABLE file.mtime AS "更新时间", tags
-FROM "knowledge" OR "projects"
-WHERE contains(cross-domain, "programming") AND file.name != "Programming"
-SORT file.mtime DESC
-```
-
-### 💻 Vibe-Coding 相关
-
-```dataview
-TABLE file.mtime AS "更新时间", tags
-FROM "knowledge" OR "projects"
-WHERE contains(cross-domain, "vibe-coding") AND file.name != "Vibe-Coding"
-SORT file.mtime DESC
+┌────────────────────────────────────────────┐
+│ 🆕 扩展领域                                │
+│ ┌──────────┐ ┌──────────────────┐          │
+│ │ Desktop  │ │ 微信小程序开发    │          │
+│ │ 美化     │ │ 校园便利盒       │          │
+│ └──────────┘ └──────────────────┘          │
+└────────────────────────────────────────────┘
 ```
 
 ---
 
-## 全部跨域关联矩阵
+## 💡 领域交叉点 — 在哪里用得上
+
+### 场景一：学术论文 + AI 辅助
+
+```
+学术写作(Academic) 
+    + AI 模型(LLM-Providers) 
+    + PPT 演示(PPT-Design)
+    = 完整的论文产出流水线
+```
+
+### 场景二：AI Agent + 工作流编排
+
+```
+AI Agent 技术(AI-Agent)
+    + 编排方法(AI-Workflow)
+    + 模型容灾(LLM-Providers)
+    + 搜索配置(hermes-search-config)
+    = Hermes 智能助手核心
+```
+
+### 场景三：编程 + 嵌入式开发
+
+```
+编程基础(Programming)
+    + 嵌入式(8051-MCU)
+    + Vibe Coding 工具(Vibe-Coding)
+    = 嵌入式开发完整链路
+```
+
+### 场景四：CAD + AI 编程
+
+```
+CAD 设计(CAD-Design)
+    + AI 编程(Vibe-Coding)
+    + AI 工作流(AI-Workflow)
+    = build123d + AI 参数化设计
+```
+
+### 场景五：PPT + AI 图片生成
+
+```
+PPT 设计(PPT-Design)
+    + 图片生成(ai-image-generation skill)
+    + 反推提示词(reverse-prompting)
+    + AI 辅助(Academic)
+    = 高质量学术汇报
+```
+
+---
+
+## 📊 关联矩阵
 
 ```dataview
 TABLE domain AS "领域", cross-domain AS "交叉域", file.mtime AS "最后更新"
@@ -77,7 +117,26 @@ SORT domain ASC
 
 ---
 
-## 🔗 知识关联
+## 🔗 所有知识文件快速导航
 
-- **[[HOME]]** — 返回知识中枢
-- **[[Second Brain]]** — Canvas 视觉图谱
+| 领域 | 文件 | 核心交叉 |
+|:-----|:-----|:---------|
+| 🤖 **AI-Agent** | [[AI-Agent]] | Workflow / LLM / PPT / Academic |
+| 🔀 **AI-Workflow** | [[AI-Workflow]] | Agent / Skills / CAD |
+| 🎨 **PPT-Design** | [[PPT-Design]] | Academic / AI / Vibe |
+| 📚 **Academic** | [[Academic]] | PPT / AI / LLM |
+| 💻 **Programming** | [[Programming]] | 8051 / CAD / Vibe |
+| 🏗️ **CAD-Design** | [[CAD-Design]] | Programming / Vibe / 3D |
+| 🔧 **8051-MCU** | [[8051-MCU]] | Programming / Coding |
+| 📘 **freeCodeCamp** | [[freeCodeCamp]] | Programming / Fullstack |
+| 🌐 **LLM-Providers** | [[LLM-Providers]] | AI-Agent / Fallback |
+| 🎮 **Vibe-Coding** | [[Vibe-Coding]] | AI / PPT / Academic |
+| 🖼️ **reverse-prompting** | [[reverse-prompting]] | AI-Image / PPT |
+| 💡 **desktop-beautify** | [[desktop-beautify]] | Windows / UX |
+| 📱 **campus-box-design** | [[campus-box-design]] | WeChat / Fullstack |
+| 📐 **CAD-Postmortem** | [[CAD-Project-Postmortem]] | CAD / 3D-Printing |
+
+---
+
+> 文件之间用 `[[wiki link]]` 相互引用，Obsidian 图谱面板会自动绘制关系网络。
+> 更新任一文件后，在图谱面板中即可看到新的连接。

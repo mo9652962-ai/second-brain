@@ -82,3 +82,5 @@ LIMIT 8
 - **[[Academic]]** — 文献管理、写作工具链
 - **[[projects/current]]** — 桌面美化与系统优化进度
 - **[[HOME]]** — 返回知识中枢
+---
+> 关联: [[AI-Agent]] · [[Programming]] · [[Cross-Domain|🔀 知识地图]] | [[HOME|🏠 首页]]
