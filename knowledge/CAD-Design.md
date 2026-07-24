@@ -83,3 +83,5 @@ updated: 2026-07-21
 - **[[AI-Workflow]]** — CAD Pipeline 可与图片生成/搜索 Skills 串联
 - **[[Vibe-Coding]]** — build123d Python 环境、Docker 容器
 - **[[HOME]]** — 返回知识中枢
+---
+> 关联: [[Programming]] · [[AI-Workflow]] · [[Cross-Domain|🔀 知识地图]] | [[HOME|🏠 首页]]

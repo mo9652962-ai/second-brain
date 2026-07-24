@@ -64,3 +64,5 @@ LIMIT 8
 - **[[Vibe-Coding]]** — python-pptx 环境与图片下载策略
 - **[[projects/current]]** — 变现落地进度
 - **[[HOME]]** — 返回知识中枢
+---
+> 关联: [[Academic]] · [[reverse-prompting]] · [[Cross-Domain|🔀 知识地图]] | [[HOME|🏠 首页]]

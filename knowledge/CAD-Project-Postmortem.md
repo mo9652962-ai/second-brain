@@ -167,3 +167,5 @@ mesh.write("output.stl")
 ---
 
 _最后更新: 2026-07-21 | 累计迭代: v1-v8 + iStand | 工期: ~5 小时_
+---
+> 关联: [[CAD-Design]] · [[Cross-Domain|🔀 知识地图]] | [[HOME|🏠 首页]]
