@@ -129,7 +129,6 @@ Windows 环境、PowerShell、搜索工具链、系统维护
 
 - **[[projects/current]]** — 所有进行中项目实时状态
 - **[[knowledge/Cross-Domain]]** — 交叉领域自动索引（Dataview 驱动）
-- **[[Second Brain]]** — Canvas 视觉知识图谱
 - **[[MEMORY]]** — k 的长期记忆（curated）
 - **[[memory/]]** — 每日原始日志
 
