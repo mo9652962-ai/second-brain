@@ -88,12 +88,18 @@ v1 原型 → v2 数据注入 → v3 图片方案 → v4 实景替换 → v5 打
 
 ## 行业认知（2026）
 
+- **Context Engineering > Prompt Engineering**: 2026 核心技能转型。Static(CLAUDE.md) / Dynamic(claude-mem) / Learned(HippoRAG 2) 三层
 - **MCP + A2A**: Agent 互操作事实标准
 - **System Engineering > Prompt Engineering**: Guardrails + Feedback Loops + Observability
 - **Plan-and-Execute**: 异构模型降本 90%
 - **Memory 三态**: Core → Recall → Archival
 - **Graph Memory 生态成熟**: Mem0/Letta/Cognee/Zep 等 10+ 框架，Write-Path > Read-Only RAG
-- **OpenClaw 2026.7.1**: Control UI 大改，GPT-5.6/Hy3/Muse 支持，Codex 工作流
+- **OpenClaw 2026.7.1**: Control UI 大改，GPT-5.6/Hy3/Muse 支持，Codex 工作流，但有 Gateway 稳定性问题
+- **OpenClaw 2026.7.2 beta**: Remote Coding Sessions，分布式 Agent 执行（桌面⇄节点⇄云 worker）
+- **Multi-Agent 六大编排模式**: Sequential / Fan-out / Debate / Supervisor / Marketplace / Mesh
+- **EU AI Act 8月生效**: 多 Agent 编排归类 high-risk，需 HITL+审计+身份管理
+- **AutoGen 进入维护模式**: 已合并到 Microsoft Agent Framework（2026-02 RC）
+- **CrewAI**: 44.3K stars, 5.2M 月下载，最活跃多 Agent 框架
 
 ### AI Agent 生产部署 8 大最佳实践 (2026)
 1. 全链路监控（技术指标 + 业务指标 + AI 专属指标）
@@ -104,6 +110,39 @@ v1 原型 → v2 数据注入 → v3 图片方案 → v4 实景替换 → v5 打
 6. 自动测试 Pipeline + Canary 部署 + A/B 验证
 7. 模型版本控制 + 快速回滚
 8. 成本优化：模型路由(60-70%) + Prompt Caching(60-80%) + Batch API(50%)
+
+## 本周亮点 (W30, 07/20~07/26)
+
+### 🏗️ 架构全面升级
+- **搜索 5 路冗余**: Tavily + Exa + Firecrawl + DDGS + SearXNG — 7/23 完成
+- **模型容灾链**: opencode-go → DeepSeek 直连 → OpenRouter，11 级 fallback
+- **主力降本 68%**: pro→flash ($0.14/$0.28)，7/22 切换
+- **跨供应商 fallback**: 彻底解决 HTTP 500 单点故障（历史痛点）
+
+### 🧩 Skills 体系爆发
+- 从 7/19 的 26 个安装 skill → 7/23 建成 8 大自建 skill：`academic-paper-writing`（57门禁）`ppt-design-2026`（19章）`ai-image-generation`（9章）`engineering-workflow` `8051-embedded-dev` `cad-design-master` `low-cost-model-guide` `hermes-model-strengths`
+- GitHub 周报吸收：hallmark→去AI味、impeccable→设计语言、Graphify→知识图谱、OmniRoute→模型指南
+
+### 📚 知识体系正式建成
+- Obsidian Second Brain：HOME.md + 12 个知识域（AI-Agent/PPT/Academic/CAD/Programming/Vibe-Coding/8051/LLM/freeCodeCamp 等）
+- 全域互联：YAML frontmatter + graph.json + Dataview + Canvas
+- GitHub 自动同步每 30 分钟 + 结构维护每 2 小时
+
+### 🔧 CAD 全栈
+- 6 款 CAD 软件（FreeCAD/Blender/Fusion 360 等）+ 7 个 Python CAD 库
+- AI-CAD Pipeline：自然语言 → build123d 代码 → STEP+STL 导出
+- 5/5 测试通过 + 手机支架 Pro v2.0（120行复杂模型）
+- cad-design-master v2.2（DFAM + 高级模板）
+
+### 🔍 搜索架构
+- 三层冗余（Tavily/Exa/Firecrawl）→ 五层（+DDGS/SearXNG）
+- 超时时间 60→120s
+- **Tavily 10061 持续（7/24起）**: 新错误模式，非偶发，需切换默认后端
+
+### 🎯 系统状态
+- 7 项历史待办全部清零（7/22）
+- .learnings/ 深度饱和（35+ learnings），进入「知识执行」阶段
+- PPT 实战方法论成熟（6 轮迭代）
 
 ## 待提升
 
@@ -120,4 +159,4 @@ v1 原型 → v2 数据注入 → v3 图片方案 → v4 实景替换 → v5 打
 
 ---
 
-_最后更新: 2026-07-23｜运行环境: Hermes Agent on Windows 10_
+_最后更新: 2026-07-26｜运行环境: Hermes Agent on Windows 10_
