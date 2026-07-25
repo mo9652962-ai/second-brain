@@ -1,58 +1,44 @@
-# Pipeline 工作流总览
+# Pipeline 工作流总览（优化版）
 
-> 更新：2026-07-25 | 所有 cron 任务状态
+> 更新：2026-07-25 | 10 轮研究后优化
 
-## 📊 每日 Pipeline
-
-| 时间 | 任务 | 状态 | 说明 |
-|:----|:-----|:----:|:------|
-| **7:00** | arxiv-fetch | ✅ | 检索 arXiv 最新 AI 论文 |
-| **8:00** | arxiv-summarize | ✅ | 总结论文到 Obsidian |
-| **8:30** | daily-health-check | ✅ | 健康检查 |
-| **9:00** | daily-self-improvement | ✅ | 技能学习（加载多个 skills） |
-| **18:00** | daily-monetization-review | 🆕 | 每日闲鱼定价/成本复盘 |
-| **22:00** | memory-prune-and-summary | ⚠️ 超时 | 记忆压缩（超时待修） |
-| **每30min** | obsidian-github-sync | ✅ | Git 自动同步（no-agent） |
-| **每2h** | obsidian-maintenance | ⚠️ 401 | Obsidian 维护（API key 待修） |
-
-## 📅 每周 Pipeline
-
-| 时间 | 任务 | 状态 | 说明 |
-|:----|:-----|:----:|:------|
-| 周六 18:00 | weekly-todo-cleanup | ✅ | TODO 清理 |
-| 周日 10:00 | weekly-knowledge-consolidation | ✅ | 知识整合 |
-| 周日 12:00 | weekly-graphify-update | ✅ | 知识图谱更新 |
-| 周日 14:00 | weekly-system-cleanup | ✅ | 系统清理 |
-| 周日 15:00 | weekly-trending-review | 🆕 | GitHub 趋势项目吸收 |
-| 周日 20:00 | weekly-learning-progress | ✅ | 学习进度回顾 |
-| 周日 21:00 | weekly-cost-report | ✅ | 成本报告 |
-
-## 📆 双周/月 Pipeline
-
-| 时间 | 任务 | 说明 |
-|:----|:-----|:------|
-| 1日/15日 10:00 | biweekly-skill-audit | Skill 使用审计 |
-| 每月1日 10:00 | monthly-skill-usage | 月度 Skill 统计 |
-
-## 📈 完整数据流
+## 📊 架构全景
 
 ```
-7:00  arXiv论文检索
-  └─→ 8:00 论文摘要→Obsidian
-       │
-8:30  健康检查
-9:00  每日技能学习
-       │
-18:00 变现复盘（定价/成本/行动项）
-       │
-22:00 记忆压缩（当日日志→长期记忆）
-       │
-每30min → GitHub 自动同步
+时间层        任务链
+──────        ──────
+7:00  ──→  arxiv-fetch
+　　　　↕ context_from
+8:00  ──→  arxiv-summarize
+8:30  ──→  daily-health-check
+9:00  ──→  daily-self-improvement
+18:00 ──→  daily-monetization-review 🆕
+22:00 ──→  memory-summary
+
+每30min ─→ obsidian-github-sync
+每2h   ──→ obsidian-vault-sync
+
+每周日:
+10:00 ──→ 知识整合
+12:00 ──→ 图谱更新
+14:00 ──→ 系统清理  
+15:00 ──→ 趋势项目吸收 🆕
+20:00 ──→ 学习进度
+21:00 ──→ 成本报告
 ```
 
-## ⚠️ 待修复
+## ⚡ 稳定性优化
 
-| 任务 | 问题 | 修复方案 |
+| 任务 | 问题 | 优化方案 |
 |:-----|:-----|:---------|
-| memory-prune-and-summary | 超时 604s/600s | 下次手动触发测试 |
-| obsidian-maintenance | HTTP 401 | 检查 API Key 配置 |
+| memory-prune | 超时 604s | 已缩短 prompt，2h 间隔 |
+| obsidian-maintenance | HTTP 401 | 需检查 API Key |
+| arxiv-summarize | 无 context_from | 待配置链式传递 |
+
+## 📈 扩展建议
+
+| 优先级 | 行动 | 收益 |
+|:------|:-----|:-----|
+| ⭐⭐⭐ | context_from 链式配置 | 消除数据断层 |
+| ⭐⭐ | cron 输出归档到 knowledge | 知识沉淀 |
+| ⭐ | 修复 401/超时任务 | 稳定性提升 |
