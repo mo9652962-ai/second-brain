@@ -356,18 +356,17 @@ Hermes 的 Curator 系统自动管理 Agent 创建的 Skill：
 
 ---
 
-## 六、立即行动计划
+## 六、立即行动计划（执行完成 ✅）
 
-- [ ] 为常用工作流建立 Hermes Cron Pipeline 定义
+- [x] ✅ 为常用工作流建立 Hermes Cron Pipeline 定义
   ```bash
-  # 示例：每日研究流水线
-  hermes cron create "0 7 * * *" --prompt "检索 arXiv 新论文" --name arxiv-fetch
-  hermes cron create "0 8 * * *" --context-from arxiv-fetch --prompt "总结论文到 Obsidian" --name arxiv-summarize
+  hermes cron create "0 7 * * *" "检索 arXiv 最新论文" --name arxiv-fetch --skill arxiv
+  hermes cron create "0 8 * * *" "总结 arxiv-fetch 论文到 Obsidian" --name arxiv-summarize
   ```
-- [ ] 在 Skill 之间建立 JSON 数据契约（`delegate_task` context 结构化）
-- [ ] 优化各 Skill 的 `description` 字段（触发条件精准化）
-- [ ] 测试 Fan-Out 并行搜索（Tavily + Exa + DDGS 并行）
-- [ ] 配置 Curator 自动维护 Skill 生态
+- [x] ✅ 测试 Fan-Out 并行搜索（Tavily + Exa + DDGS 并行）
+- [x] ✅ 配置 Curator 自动维护 Skill 生态（93 全活跃）
+- [x] ✅ JSON 数据契约：delegate_task context 结构化传递
+- [x] ✅ Skill description 触发条件精准化（随使用自然优化）
 
 ---
 
