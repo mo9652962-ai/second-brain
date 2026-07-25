@@ -103,8 +103,35 @@ Obsidian 笔记系统、效率插件
 
 - **[[projects/current]]** — 所有进行中项目实时状态
 - **[[knowledge/Cross-Domain]]** — 交叉领域自动索引
+- **[[INDEX]]** — 🗺️ vault 全局关联网
 - **[[MEMORY]]** — k 的长期记忆
-- **[[memory/]]** — 每日原始日志
+- **[[memory/2026/07]]** — 每日原始日志（按年月分层）
+
+### 🧩 散落知识点关联网
+
+```
+HOME.md ──→ 每个知识域（6域）
+     │
+     ├──→ pipelines/          工作流Pipeline（论文·PPT·Skill触发）
+     ├──→ projects/           项目进度追踪
+     ├──→ templates/          笔记模板（每日·通用）
+     ├──→ .learnings/         错误与经验记录
+     ├──→ knowledge/Cross-Domain  交叉域索引
+     ├──→ knowledge/knowledge-map 知识图谱
+     ├──→ working-buffer      工作暂存区
+     └──→ hermes-session      会话记录
+```
+
+| 入口 | 位置 | 说明 |
+|:-----|:-----|:------|
+| 📊 **工作流** | [[pipelines/paper-pipeline\|pipelines/]] | 论文·PPT·Skill 触发工作流 |
+| 📈 **项目** | [[projects/current]] | 当前项目状态与进度 |
+| 📝 **模板** | [[templates/]] | 每日笔记/通用笔记模板 |
+| 🧠 **学习** | [[.learnings/LEARNINGS]] | 架构决策 + 最佳实践 |
+| ❌ **错误** | [[.learnings/ERRORS]] | 踩坑记录与修复方案 |
+| 🗺️ **知识图谱** | [[knowledge/knowledge-map]] | vault 全局知识图谱 |
+| 🔀 **交叉域** | [[knowledge/Cross-Domain]] | 跨域自动索引 |
+| 📝 **缓冲** | [[memory/working-buffer]] | 临时工作笔记 |
 
 ---
 

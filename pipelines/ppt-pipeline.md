@@ -105,3 +105,6 @@ Phase 5: Academic (可选, 学术场景)
 | 2 | pptx-generator | 5-10 min | - |
 | 3 | ppt-optimizer | 2-3 min | - |
 | 4+5 | slides/academic | 3-5 min | 可并行 |
+
+---
+[[HOME|🏠 返回首页]]

@@ -27,3 +27,6 @@ message content
 ## [timestamp] Agent (summary)
 1-2 sentence summary of response + key details
 -->
+
+---
+[[HOME|🏠 返回首页]]
