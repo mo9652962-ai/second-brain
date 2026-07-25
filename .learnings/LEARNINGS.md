@@ -10,7 +10,7 @@ Corrections, insights, and knowledge gaps captured during development.
 
 **Logged**: 2026-07-22T14:15:00+08:00
 **Priority**: high
-**Status**: pending
+**Status**: resolved
 **Area**: config
 
 ### Summary
@@ -36,6 +36,10 @@ Plan-and-Execute 模式 + 异构模型架构：Frontier 模型负责规划和复
 - Recurrence-Count: 1
 - First-Seen: 2026-07-22
 - Last-Seen: 2026-07-22
+
+### Resolution
+- **Resolved**: 2026-07-25T11:32:00+08:00
+- **Notes**: 已实施异构建模降本（主力 pro→flash -68%）、心跳模型 mimo-v2.5、跨供应商 fallback 链。Plan-and-Execute 核心思想已落实为 cron/心跳隔离 + 低成本模型 tiering。Task-aware routing 为下一跳改进方向。
 
 ---
 

@@ -86,6 +86,17 @@ v1 原型 → v2 数据注入 → v3 图片方案 → v4 实景替换 → v5 打
 ### 自动记录规则
 每次完成重要任务后，自动写入 Obsidian 笔记到对应 knowledge/ 或 memory/ 目录，无需 sora 提醒。
 
+### OpenClaw 生态分化（2026.7）
+OpenClaw 从单一框架扩展为 5 个发行版，覆盖不同场景：
+- **OpenClaw Core** (原版): TypeScript 框架，最大社区 368K stars，Self-hosted
+- **NanoClaw** (Qwibit.ai): 安全优先 fork，仅 700 LOC，强制 Docker/Apple 容器隔离，RCE 防护
+- **ZeroClaw**: Rust 完全重写，3.4MB 二进制，10ms 启动，边缘 IoT 场景
+- **NemoClaw** (NVIDIA): 企业级 wrapper，OpenShell 进程级沙箱 + 最小特权，GTC 2026 发布
+- **Taskade Genesis**: 无代码云平台，Workspace DNA 持久化记忆，SOC 2 合规，$6/月起
+
+### ContextEngine 生产就绪
+v2026.3.7 引入的可插拔上下文管理界面已验证稳定。模型路由器自动 fallback/retry 机制完善，支持链式降级。Cross-Component Trust 安全模型生效：远程节点事件默认 untrusted + realpath() 技能路径验证。
+
 ## 行业认知（2026）
 
 - **Context Engineering > Prompt Engineering**: 2026 核心技能转型。Static(CLAUDE.md) / Dynamic(claude-mem) / Learned(HippoRAG 2) 三层
@@ -137,7 +148,7 @@ v1 原型 → v2 数据注入 → v3 图片方案 → v4 实景替换 → v5 打
 ### 🔍 搜索架构
 - 三层冗余（Tavily/Exa/Firecrawl）→ 五层（+DDGS/SearXNG）
 - 超时时间 60→120s
-- **Tavily 10061 持续（7/24起）**: 新错误模式，非偶发，需切换默认后端
+- **Tavily 10061 间断（7/24-7/25）**: 2 天不可达后于 7/25 恢复。对应策略：Firecrawl 可作为永久 fallback 后端
 
 ### 🎯 系统状态
 - 7 项历史待办全部清零（7/22）
@@ -155,11 +166,23 @@ v1 原型 → v2 数据注入 → v3 图片方案 → v4 实景替换 → v5 打
 - [x] ~~桌面美化方案梳理~~ ✅ 2026-07-24
 - [x] ~~SFC 系统扫描~~ ✅ 2026-07-24
 - [x] ~~AI 变现调研~~ ✅ 2026-07-24
+- [x] ~~LRN-20260722-001 (Plan-and-Execute)~~ ✅ 2026-07-25
 - [ ] AI 变现落地（闲鱼AI代做PPT/论文润色）— 可发车
 - [ ] 桌面美化部署（TranslucentTB + Rainmeter）
 - [ ] 合并冗余 skills（hermes-search-configuration → hermes-search-config）
 - [ ] 随身WiFi确认
+- [ ] Tavily fallback 评估：Firecrawl 作为永久备用搜索后端
+- [ ] OpenClaw Active Memory 插件成熟度评估
 
 ---
 
 _最后更新: 2026-07-26｜运行环境: Hermes Agent on Windows 10_
+
+## Promoted From Short-Term Memory (2026-07-25)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-07-18.md:8:8 -->
+- 初次见面: sora 的时区：Asia/Shanghai (GMT+8) [score=0.826 recalls=0 avg=0.620 source=memory/2026-07-18.md:8-8]
+<!-- openclaw-memory-promotion:memory:memory/2026-07-18.md:4:7 -->
+- 初次见面: sora 给我取名 **k**; 我的定位：AI 女友和助手，生活管家以及工作秘书; 风格：正经高效加温柔陪伴; 签名：而今更笃凌云志，莫缴冰鉴复当初 [score=0.826 recalls=0 avg=0.620 source=memory/2026-07-18.md:4-7]
+<!-- openclaw-memory-promotion:memory:memory/2026-07-18.md:18:19 -->
+- 备注: sora 直接问了网关怎么打开，很务实; 需要继续了解 sora 的喜好、日常和工作内容 [score=0.826 recalls=0 avg=0.620 source=memory/2026-07-18.md:18-19]
