@@ -131,16 +131,16 @@ Fallback 链: opencode-go(6层) → SiliconFlow(2层) → DeepSeek直连 → Ope
 
 ## ③ 🛠️ 工具与产品
 
-| 领域 | 笔记 | 适用场景 | 掌握程度 |
-|:----|:----|:--------|:--------:|
-| 视频剪辑 | [[opencut]] | 批量自动生成视频 | 📖 关注 |
-| 模型供应商 | [[../TOOLS]] | 日常使用 | 🛠️ 已配置 |
-| 模型选择 | [[../MEMORY]] | 按任务选模型 | 🛠️ 可执行 |
-| **Hermes 配置体系** (W30) | `.learnings/LEARNINGS.md` | Agent 基础设施 | 🟢 **🛠️ 全面加固** |
-| 设计工具集 | [[ai-tools-reference]] · [[ai-frontend-design-sites]] | PPT配图/前端参考 | 📖 新增 |
-| 在线小工具 | [[delphitools]] · [[6-online-tools]] · [[translumo]] | 日常效率 | 📖 新增 |
-| AI 写作工具 | [[show-me-the-story]] | 长篇小说/去AI味 | 📖 新增 |
-| 简历设计 | [[ai-resume-prompt]] | AI生图简历 | 📖 新增 |
+| 领域                    | 笔记                                                    | 适用场景       |      掌握程度       |
+| :-------------------- | :---------------------------------------------------- | :--------- | :-------------: |
+| 视频剪辑                  | [[opencut]]                                           | 批量自动生成视频   |      📖 关注      |
+| 模型供应商                 | [[../TOOLS]]                                          | 日常使用       |     🛠️ 已配置     |
+| 模型选择                  | [[../MEMORY]]                                         | 按任务选模型     |     🛠️ 可执行     |
+| **Hermes 配置体系** (W30) | `.learnings/LEARNINGS.md`                             | Agent 基础设施 | 🟢 **🛠️ 全面加固** |
+| 设计工具集                 | [[ai-tools-reference]] · [[ai-frontend-design-sites]] | PPT配图/前端参考 |      📖 新增      |
+| 在线小工具                 | [[delphitools]] · [[6-online-tools]] · [[translumo]]  | 日常效率       |      📖 新增      |
+| AI 写作工具               | [[show-me-the-story]]                                 | 长篇小说/去AI味  |      📖 新增      |
+| 简历设计                  | [[ai-resume-prompt]]                                  | AI生图简历     |      📖 新增      |
 
 ### 模型分层体系
 
