@@ -36,9 +36,20 @@
 | **全部 cron 401** | **model.base_url 指向 opencode.ai 需 Key** | **已切回 api.deepseek.com/v1 ✅** |
 
 ## 🔧 修复记录 (2026-07-26)
-- 修复：`model.base_url` 从 `opencode.ai/zen/go/v1` → `api.deepseek.com/v1`
-- 修复：Gateway 重新安装并启动（PID 22808）
-- 影响：18 个 cron 任务全部恢复
+- 修复：`model.base_url` 从 `opencode.ai/zen/go/v1` → `api.deepseek.com/v1`（后又切回 opencode）
+- 修复：`opencode-go` provider 补上 `key_env: OPENCODE_GO_API_KEY`
+- 修复：`model.provider` 设为 `opencode-go`
+- 修复：所有 cron 任务重建并锁定 model/provider，绕过"配置漂移"安全拦截
+- 影响：18+ cron 任务全部恢复 ✅
+
+## 📈 当前状态
+
+| 项目 | 状态 |
+|:-----|:------|
+| 当前 provider | **opencode-go** (deepseek-v4-flash) |
+| Gateway | ✅ Running (PID 22808) |
+| arxiv-fetch | ✅ 已触发执行中 |
+| cron 认证 | ✅ 全部修复 |
 
 ## 📈 扩展建议
 
