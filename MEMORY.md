@@ -94,6 +94,17 @@ OpenClaw 从单一框架扩展为 5 个发行版，覆盖不同场景：
 - **NemoClaw** (NVIDIA): 企业级 wrapper，OpenShell 进程级沙箱 + 最小特权，GTC 2026 发布
 - **Taskade Genesis**: 无代码云平台，Workspace DNA 持久化记忆，SOC 2 合规，$6/月起
 
+### OpenClaw v2026.2.12 关键安全特性
+- **SSRF explicit deny policy**: 新 URL 需加入 `files.urlAllowlist` 白名单
+- **Webhook auth-failure throttling**: HTTP 429 触发后等待 60s
+- **Sandbox confinement**: 技能只能写入 `skills/` 目录，path traversal 被阻断
+- **新模型原生支持**: GLM-5、MiniMax M2.5、Claude Opus 4.7 (AWS Bedrock)
+
+### 2026 H2 新 Agent 平台
+- **Google Gemini Enterprise Agent Platform**: graph-based agent 开发框架，MCP 服务连接，agent-to-agent 编排，agent registry + agent gateway 策略执行
+- **VMware Agent Foundations**: "secure-by-default" runtime，不可篡改供应链 + 零信任网络 + 沙箱，agent 循环限制预定义资源上限
+- **Microsoft Copilot Cowork**: Anthropic 合作，编排跨应用全工作流（数据→展示→邮件团队协作）
+
 ### ContextEngine 生产就绪
 v2026.3.7 引入的可插拔上下文管理界面已验证稳定。模型路由器自动 fallback/retry 机制完善，支持链式降级。Cross-Component Trust 安全模型生效：远程节点事件默认 untrusted + realpath() 技能路径验证。
 
