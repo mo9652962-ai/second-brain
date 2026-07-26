@@ -106,6 +106,11 @@ tags: [reflection, self-improvement, weekly-review]
 
 **剩余行动：** show-me-the-story 等 `discovered` 笔记需在下周清理前做一次试用决策
 
+### ③ Skill 安全提醒（来自 OpenSkillRisk 论文 [2607.20121]）✅
+- 第三方 Skill 可能存在安全隐患（数据泄露、命令注入）
+- 安装新 Skill 前应检查：来源可信度、代码权限范围、API Key 暴露风险
+- 后续创建 Skill 时注意不要硬编码敏感信息
+
 ---
 
 ## 💭 感悟
