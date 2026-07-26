@@ -131,3 +131,40 @@ Grace Hui Yang et al. — LLM agentic system 从研究到生产部署综述。
 
 📝 [[memory/2026/07/arxiv-paper-deepdive-2026-07-26|论文深度解读 2026-07-26]] — NOOA / Dark Room in GRPO / AgentDebugX
 |
+## k 的学习笔记 (2026-07-26)
+
+### 🧠 可直接应用的洞察
+
+**1. NOOA — OOP Agent 范式**
+Agent = Python 对象。跟我现在用 Skill 的方式异曲同工——把能力封装成可复用模块。
+→ 后续 Skill 开发可参考 OOP 思维：每个 Skill 是一个对象，tools 是它的方法。
+
+**2. Euclid-MCP — MCP + 符号推理**
+MCP 协议不止连 API，还能连 Prolog 逻辑引擎。
+→ 我们已经有 4 个 MCP 服务器了，证明 MCP 生态是对的路线。
+
+**3. Dark Room in GRPO — 奖励陷阱**
+密集每步奖励破坏策略。跟之前讨论的"提示词越精细越好"相反——过度约束反而有害。
+→ 写 prompt 时留空间，别把每一步都框死。
+
+**4. RF-Agent — 电路设计 AI [2607.18772]**
+AI 辅助电路设计的 agent。跟 jlcmcp 方向一致！
+→ 我们这条路有人在做，不是孤例。
+
+**5. OpenSkillRisk [2607.20121] — 第三方 Skill 安全**
+Skill 安全审计的 benchmark。
+→ 正好我们有 93 个 skill，安全是个值得关注的维度。
+
+### 趋势总结
+- MCP 生态在扩展（Euclid-MCP 是证明）
+- 记忆机制是当前热点（AttriMem, PRO-LONG）
+- Agent 安全和可靠性从理论走向实战审计
+- 轻量/本地 Agent 是明确方向（Agentic Coding Without the Cloud）
+
+### 实操行动建议
+- [ ] 考虑把 NOOA 的 OOP 思维融入未来 Skill 设计
+- [ ] 关注 MCP 新工具（Euclid 如果开源可以一试）
+- [ ] 给 RF-Agent 论文标星，后续学习 AI for circuit design
+
+---
+*学习人: k | 方法: arXiv 周报精读*
