@@ -377,7 +377,7 @@ Hermes 的 Curator 系统自动管理 Agent 创建的 Skill：
 - **[[hermes-search-config]]**（skills/） — 5 搜索引擎多后端配置
 - **[[test-driven-development]]**（skills/） — TDD 红绿重构循环
 - **[[systematic-debugging]]**（skills/） — 4 阶段 Bug 诊断
-- **[[../LLM-Providers]]** — 当前模型与提供商配置
+- **[[LLM-Providers]]** — 当前模型与提供商配置
 
 ---
 
