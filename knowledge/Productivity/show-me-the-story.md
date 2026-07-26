@@ -1,3 +1,7 @@
+---
+status: discovered
+---
+
 # Show Me The Story · AI 长篇小说创作工具
 
 来源：小黑盒 "软件格律诗"
