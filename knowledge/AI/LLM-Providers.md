@@ -285,9 +285,9 @@ curl -X POST https://api.tavily.com/search \
 
 ## 🔗 知识关联
 
-- **[[hermes-model-fallback]]**（skills/） — 模型容灾链配置详情
-- **[[hermes-search-config]]**（skills/） — 搜索引擎多后端配置详情
-- **[[hermes-agent]]**（skills/） — Hermes Agent 完整参考
+- **hermes-model-fallback**（skills/） — 模型容灾链配置详情
+- **hermes-search-config**（skills/） — 搜索引擎多后端配置详情
+- **hermes-agent**（skills/） — Hermes Agent 完整参考
 - **[[AI-Workflow]]** — Workflow 编排与 Skill 组合
 
 ---

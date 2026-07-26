@@ -46,4 +46,4 @@
 - 最小改动完成需求，不堆砌不必要的信息
 
 ---
-> 关联: [[Vibe-Coding]] · [[Programming]] · [[engineering-workflow]]
+> 关联: [[Vibe-Coding]] · [[Programming]] · engineering-workflow

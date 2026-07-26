@@ -8,7 +8,7 @@ updated: 2026-07-25
 # 🏠 Second Brain — 知识中枢
 
 > Obsidian + Hermes + GitHub 三方联动
-> 知识库已按域分类整理（2026-07-25）
+> 知识库已按域分类整理（2026-07-26 v2 维护完成 | W30 周学习总结已归档）
 
 ## 📊 知识域总览
 
@@ -124,7 +124,7 @@ HOME.md ──→ 每个知识域（6域）
 
 | 入口 | 位置 | 说明 |
 |:-----|:-----|:------|
-| 📊 **工作流** | [[pipelines/paper-pipeline\|pipelines/]] | 论文·PPT·Skill 触发工作流 |
+| 📊 **工作流** | [[pipelines/pipeline-overview\|pipelines/]] | 论文·PPT·Skill 触发工作流 |
 | 📈 **项目** | [[projects/current]] | 当前项目状态与进度 |
 | 📝 **模板** | [[templates/每日笔记模板|templates/]] | 每日笔记/通用笔记模板 |
 | 🧠 **学习** | [[.learnings/LEARNINGS]] | 架构决策 + 最佳实践 |
