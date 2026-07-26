@@ -36,6 +36,6 @@
 | **Smart App Control 问题** | 学到：Windows上的Python uv环境会被SAC拦截 |
 
 ## 行动项
-- [ ] 去 EDA 扩展广场安装 PCA 自动化工具
-- [ ] `winget install pandoc` 装 Pandoc
-- [ ] 尝试 Gamma 免费版评估PPT出稿速度
+- [x] 去 EDA 扩展广场安装 PCA 自动化工具（✅ 已装）
+- [x] `winget install pandoc` 装 Pandoc（✅ 已装 v3.10）
+- [x] 尝试 Gamma 免费版评估PPT出稿速度（✅ 已注册）
