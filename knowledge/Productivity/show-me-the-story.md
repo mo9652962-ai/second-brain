@@ -1,5 +1,6 @@
 ---
-status: discovered
+status: abandoned
+abandoned_reason: 面向小说创作，与现闲鱼变现方向（学术论文/PPT/PCB）不符，暂不部署
 ---
 
 # Show Me The Story · AI 长篇小说创作工具
