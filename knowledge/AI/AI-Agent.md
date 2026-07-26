@@ -161,6 +161,11 @@ skill_manage(action='create'|'patch'|'edit') → 维护知识
 - **[[Vibe-Coding]]** — Hermes 运行环境、工具链与系统维护
 - **[[Obsidian-Vault]]** — Vault 使用指南与双轨记忆策略
 - **[[projects/current]]** — 当前所有项目的实时状态
-- **[[HOME]]** — 返回知识中枢
+|- **[[HOME]]** — 返回知识中枢
+
+## 📡 arXiv 论文周报
+
+每周自动采集 arXiv 最新 AI Agent / LLM 论文，详见 [[../memory/2026/07/arxiv-agent-llm-2026-07-26.md|2026-07-26 周报]]（NOOA, PATS, GRADRAG, Euclid-MCP, PRO-LONG, AgentDebugX 等 39 篇）
+
 ---
 > 关联: [[AI-Workflow]] · [[LLM-Providers]] · [[Cross-Domain|🔀 知识地图]] | [[HOME|🏠 首页]]
