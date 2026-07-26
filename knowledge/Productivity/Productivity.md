@@ -18,7 +18,8 @@ created: 2026-07-26
 | [[6-online-tools]] | 在线工具推荐（续） | 网络发现 |
 | [[translumo]] | 屏幕实时翻译工具 | GitHub 项目 |
 | [[workbuddy-bluebook]] | AI 办公工作流手册 | 网络发现 |
-| [[vault-health-baseline]] | Vault 健康基线检查与维护 | 经验总结 |
+|| [[vault-health-baseline]] | Vault 健康基线检查与维护 | 经验总结 |
+|| [[obsidian-mcp-setup]] | Obsidian Local REST API + MCP 配置 | 经验总结 |
 
 ## 关联域
 
