@@ -46,9 +46,20 @@ AI 深度融入科研全流程，按"科研怎么干"而不是"工具叫什么"�
 | **AutoResearchClaw** | 13.5k | 多阶段自进化研究流水线 |
 | **EvoScientist** | 3.7k | 多 agent，持久记忆+技能演化 |
 > 关联: [[researchpilot-skills]] · [[ai-research-collaboration]] · [[academic-service-research]] · academic-paper-writing（skill）
-## 关键原则
+## 🔗 关键原则
 
 1. **组合拳**：别指望一个工具从选题干到发表，分阶段配不同工具
 2. **AI 主导 ≠ 你甩手**：关键判断（idea值不值、结果说明什么、rebuttal怎么回）还是你来
 3. **从一个阶段切入**：先挑最头疼的那一步试一个工具
 4. **注意学术规范**：很多会议要求披露 AI 使用情况
+
+---
+
+## 深度探索结论 (2026-07-26)
+
+详见 [[vibe-research-deepdive]] — 10 轮研究后的落地评估
+
+### 已验证的方向
+- **学术诚信闸门**：可以借鉴到 academic-paper-writing skill
+- **RefChecker**：论文服务时可集成引用核验
+- **EvoScientist 架构**：多 Agent + 记忆进化，与我们的自进化路线一致
