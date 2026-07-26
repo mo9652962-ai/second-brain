@@ -1,3 +1,7 @@
+---
+status: adopted
+---
+
 # delphitools · 在线小工具站
 
 来源：小黑盒 "软件格律诗"
