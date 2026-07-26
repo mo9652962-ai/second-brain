@@ -86,6 +86,28 @@ tags: [reflection, self-improvement, weekly-review]
 
 ---
 
+## ✅ 改进执行记录 (2026-07-26)
+
+### ① Cron 健康看板 ✅
+已通过 `python` 直接解析 `jobs.json` 建立看板脚本，19 个任务全部可查。
+- 所有任务均无错误（均为今天重建，尚未第一次执行）
+
+### ② Skill 依赖检查 ✅
+- 19 个 cron 中仅 `arxiv-fetch` 依赖 skill `arxiv`
+- `arxiv` skill 存在且可用 → 无断裂依赖
+
+### ③ 工具消化 status 标记 ✅
+| 笔记 | 标记 | 
+|:-----|:----:|
+| delphitools (58工具站) | `adopted` — 参考资源，随时可用 |
+| show-me-the-story (AI写小说) | `discovered` — 待试用 |
+| ponytail (极简编程) | `adopted` — 已融入行为 |
+| 其余 7/25 工具笔记 | 已有对应状态 |
+
+**剩余行动：** show-me-the-story 等 `discovered` 笔记需在下周清理前做一次试用决策
+
+---
+
 ## 💭 感悟
 
 本周 Hermes 自身的架构稳定性（cron、fallback、搜索冗余）终于达到一个比较扎实的状态，但"找的太多，吃的太少"——知识库扩张速度远超消化速度。需要从"宽度优先"切换到"深度优先"，每个新发现的工具/方法至少要经过一次实际试用才能算真正吸收。
