@@ -9,7 +9,7 @@ source: https://github.com/mattpocock/skills
 
 > 基于 [mattpocock/skills](https://github.com/mattpocock/skills) 学习
 > 核心文档: `writing-great-skills` + engineering workflow
-> 所属知识网络: [[knowledge-map]] | 相关: [[mattpocock-skills]] | [[engineering-workflow]]
+> 所属知识网络: [[knowledge-map]] | 相关: [[mattpocock-skills]] | engineering-workflow
 
 ## 一、我采纳的 7 条行为法则
 

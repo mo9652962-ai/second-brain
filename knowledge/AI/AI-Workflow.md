@@ -372,11 +372,11 @@ Hermes 的 Curator 系统自动管理 Agent 创建的 Skill：
 
 ## 🔗 知识关联
 
-- **[[hermes-agent]]**（skills/） — Hermes Agent 完整 CLI 与配置参考
-- **[[hermes-model-fallback]]**（skills/） — 模型容灾链配置
-- **[[hermes-search-config]]**（skills/） — 5 搜索引擎多后端配置
-- **[[test-driven-development]]**（skills/） — TDD 红绿重构循环
-- **[[systematic-debugging]]**（skills/） — 4 阶段 Bug 诊断
+- **hermes-agent**（skills/） — Hermes Agent 完整 CLI 与配置参考
+- **hermes-model-fallback**（skills/） — 模型容灾链配置
+- **hermes-search-config**（skills/） — 5 搜索引擎多后端配置
+- **test-driven-development**（skills/） — TDD 红绿重构循环
+- **systematic-debugging**（skills/） — 4 阶段 Bug 诊断
 - **[[LLM-Providers]]** — 当前模型与提供商配置
 
 ---

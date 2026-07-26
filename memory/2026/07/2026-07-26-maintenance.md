@@ -28,8 +28,8 @@ created: 2026-07-26
 
 ## 未修复项（有意保留）
 
-- **Skill 交叉引用**（~20 个 wikilinks）：knowledge-map.md、AI-Workflow.md、LLM-Providers.md 中的 `[[engineering-workflow]]`、`[[hermes-agent]]` 等是故意指向 Hermes 技能的引用，留作占位
-- **OpenClaw skill-card.md artifact 链接**（14 个）：来自克隆仓库，artifact 目录未被纳入 vault
+- **Skill 交叉引用**（~22 个 wikilinks → 已全部转换为纯文本）：knowledge-map.md、AI-Workflow.md、LLM-Providers.md 等中的 skill 引用已统一为纯文本（v2 维护完成）
+- **OpenClaw skill-card.md artifact 链接**（13 个）：来自克隆仓库，artifact 目录未被纳入 vault
 - **CSS 色值 `#FFFFFF` vs `#ffffff`**：在不同 skill 参考文件中，是 CSS 颜色代码而非标签
 
 ## 关键指标
