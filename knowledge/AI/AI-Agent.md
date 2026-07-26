@@ -155,8 +155,32 @@ skill_manage(action='create'|'patch'|'edit') → 维护知识
 
 ## 🔗 知识关联
 
-- **[[AI-Workflow]]** — Skill 编排与 Pipeline 设计（如何让 27+ Skills 自然联动）
-- **[[PPT-Design]]** — PPT 制作能力的技术实现与设计方法论
+- **[[AI-Workflow]]** — Skill 编排与 Pipeline 设计
+- **[[LLM-Providers]]** — 模型供应商对比
+
+---
+
+## 2026 下半年趋势更新
+
+### Agent 范式跃迁
+- 从"被动响应"到"主动决策"，MCP 协议成为行业标准
+- 多 Agent 协作成熟化：Sub-agent → Multi-Agent → Agent OS
+- Desktop Agent 形态跑通，Skills 标准化
+
+### 最新模型进展（截至 2026-07）
+
+| 模型 | 特点 |
+|:-----|:------|
+| GPT-5.6 (Sol/Terra/Luna) | Agent 模型，Terra 性能接近 5.5 成本减半 |
+| Claude Opus 4.8 | Fast mode 速度 2.5x，成本低 3x |
+| Gemini 3.5 Flash | 128K 上下文，快速迭代编码 |
+| DeepSeek V4 | 原生多模态，视觉推理链 |
+| GLM-5.2 / MiniMax M3 | 国内开源 Agent 模型 |
+
+### 记忆分层架构（行业共识）
+1. **工作记忆**：当前会话上下文
+2. **情景记忆**：按时间索引的具体事件
+3. **语义记忆**：提炼后的知识和规律
 - **[[Academic]]** — 学术检索/阅读/写作全流程
 - **[[Vibe-Coding]]** — Hermes 运行环境、工具链与系统维护
 - **[[Obsidian-Vault]]** — Vault 使用指南与双轨记忆策略
