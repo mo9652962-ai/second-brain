@@ -132,7 +132,7 @@ Matt Pocock 方法论     Grill+TDD 工作流
 心跳/内部 ─── mimo-v2.5 ─── $0.14/$0.28
 日常主力 ─── deepseek-v4-flash ─── $0.14/$0.28
 复杂推理 ─── deepseek-v4-pro → kimi-k3
-免费兜底 ─── OpenRouter 免费模型 ─── $0
+免费兜底 ─── DeepSeek 直连 ─── deepseek-chat
 多模态 ─── minimax-m3 / gemma-4:free
 ```
 

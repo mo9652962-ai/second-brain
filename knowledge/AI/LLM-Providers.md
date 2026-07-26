@@ -20,12 +20,12 @@ updated: 2026-07-23
 | **Agent 框架** | Hermes Agent（Nous Research） |
 | **主模型提供商** | opencode-go（OpenCode Go 网关） |
 | **主力模型** | `deepseek-v4-flash`（$1/Mtok 输出） |
-| **升级模型** | `deepseek-v4-pro`（$0.435/$0.87 per MTok） |
-| **容灾链路** | 4 级 OpenRouter 容灾 |
+| **升级模型** | `deepseek-v4-pro` |
+| **容灾链路** | 8 级（opencode-go ×5 + siliconflow ×2 + deepseek 直连） |
 | **搜索引擎** | Tavily + Exa + Firecrawl + DDGS + SearXNG（5 路自动切换） |
 | **记忆系统** | Obsidian Vault（笔记型持久记忆） |
-| **技能系统** | 70+ Skills |
-| **调度系统** | Hermes Cron（定时任务自动化） |
+| **技能系统** | 93 Skills |
+| **调度系统** | Hermes Cron（18 个定时任务） |
 
 ---
 
@@ -53,38 +53,51 @@ updated: 2026-07-23
 | **定位** | 复杂推理、高难度代码、深度分析时自动升级 |
 | **触发条件** | 当 v4-flash 失败时自动升级到此模型 |
 
-### 容灾链（跨供应商 — OpenRouter）
+### 容灾链（8 级）
 
-| 优先级 | 提供商 | 模型 | 上下文窗口 | 特点 |
-|--------|--------|------|-----------|------|
-| ③ | `openrouter` | `moonshotai/kimi-k2.6` | 128K | 中文语感极佳，长文理解 |
-| ④ | `openrouter` | `qwen/qwen3.7-plus` | **1,000,000** | 超长上下文，代码能力强 |
-| ⑤ | `openrouter` | `z-ai/glm-5.2` | **1,000,000** | 最后防线，中文推理可靠 |
+| 优先级 | 提供商 | 模型 | 特点 |
+|--------|--------|------|------|
+| ③ | opencode-go | kimi-k3 | 长上下文 |
+| ④ | opencode-go | kimi-k2.7-code | 代码场景 |
+| ⑤ | opencode-go | qwen3.7-plus | 1M 上下文 |
+| ⑥ | opencode-go | glm-5.2 | 国产 1M 上下文 |
+| ⑦ | siliconflow | Qwen/Qwen3.5-4B | 轻量回退 |
+| ⑧ | siliconflow | DeepSeek-V4-Pro | 硅基流动回退 |
+| ⑨ | deepseek 直连 | deepseek-chat | 最后兜底 |
 
 ### 容灾链逻辑
 
 ```text
 ┌─ 主力 ─────────────────────────────────┐
-│  opencode-go / deepseek-v4-flash        │ ← 日常使用（$1/Mtok）
+│  opencode-go / deepseek-v4-flash        │ ← 日常使用
 └──────────┬─────────────────────────────┘
            │ 限流 / 超时 / 服务不可用
            ▼
-┌─ 同供应商升级 ─────────────────────────┐
-│  opencode-go / deepseek-v4-pro          │ ← 更强能力，同 Key
+┌─ 同供应商升级 (opencode-go) ───────────┐
+│  deepseek-v4-pro → kimi-k3             │
+│  → kimi-k2.7-code → qwen3.7-plus      │
+│  → glm-5.2                             │ ← 5 级
 └──────────┬─────────────────────────────┘
            │ 故障
            ▼
-┌─ 跨供应商容灾 (OpenRouter) ────────────┐
-│  openrouter / kimi-k2.6                 │ ← 中文语感好
-│  openrouter / qwen3.7-plus             │ ← 1M 上下文
-│  openrouter / glm-5.2                  │ ← 1M 上下文，最终防线
-└────────────────────────────────────────┘
+┌─ 跨供应商容灾 (siliconflow) ──────────┐
+│  Qwen3.5-4B → DeepSeek-V4-Pro         │ ← 2 级
+└──────────┬─────────────────────────────┘
+           │ 故障
+           ▼
+┌─ 最终防线 (DeepSeek 直连) ───────────┐
+│  api.deepseek.com / deepseek-chat     │ ← 兜底
+└──────────────────────────────────────┘
 ```
 
 **设计原则**：
-1. **同供应商升级优先** — 相同的认证凭据，延迟最低
-2. **跨供应商容灾** — 消除单点故障
-3. **OpenRouter 统管** — 所有容灾模型通过 OpenRouter 接入，单一 API Key 管理
+1. **同供应商升级优先** — 前 5 级通过 opencode-go，延迟最低
+2. **跨供应商容灾** — siliconflow 2 级 + DeepSeek 直连兜底
+3. **认证统一** — opencode-go 用 OPENCODE_GO_API_KEY，siliconflow 用 SILICONFLOW_API_KEY
+
+### 更新记录
+- 2026-07-26: 移除 OpenRouter（402），改为 8 级链
+- 2026-07-26: opencode-go 补 key_env，修复 cron 401
 
 ---
 
@@ -96,23 +109,37 @@ updated: 2026-07-23
 # ~/.hermes/config.yaml 顶部
 fallback_model:
   - provider: opencode-go
-    model: deepseek-v4-flash
-    base_url: https://opencode.ai/zen/go/v1
-  - provider: opencode-go
     model: deepseek-v4-pro
     base_url: https://opencode.ai/zen/go/v1
-  - provider: openrouter
-    model: moonshotai/kimi-k2.6
-  - provider: openrouter
-    model: qwen/qwen3.7-plus
-  - provider: openrouter
-    model: z-ai/glm-5.2
+  - provider: opencode-go
+    model: kimi-k3
+    base_url: https://opencode.ai/zen/go/v1
+  - provider: opencode-go
+    model: kimi-k2.7-code
+    base_url: https://opencode.ai/zen/go/v1
+  - provider: opencode-go
+    model: qwen3.7-plus
+    base_url: https://opencode.ai/zen/go/v1
+  - provider: opencode-go
+    model: glm-5.2
+    base_url: https://opencode.ai/zen/go/v1
+  - provider: siliconflow
+    key_env: SILICONFLOW_API_KEY
+    model: Qwen/Qwen3.5-4B
+  - provider: siliconflow
+    key_env: SILICONFLOW_API_KEY
+    model: deepseek-ai/DeepSeek-V4-Pro
+  - provider: deepseek
+    base_url: https://api.deepseek.com
+    key_env: DEEPSEEK_API_KEY
+    model: deepseek-chat
 
 # 默认模型设置
 model:
-  default: opencode-go/deepseek-v4-flash
+  default: deepseek-v4-flash
   provider: opencode-go
-  context_length: 1000000
+  base_url: https://opencode.ai/zen/go/v1
+  api_mode: chat_completions
 ```
 
 ### 环境变量（`~/.hermes/.env`）
