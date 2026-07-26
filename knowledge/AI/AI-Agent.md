@@ -30,21 +30,29 @@ LIMIT 8
 
 ## 模型架构
 
-### 当前主力链路（五级容灾）
+### 当前主力链路（八级容灾）
 
 | 优先级 | 提供商 | 模型 | 用途 |
 |--------|--------|------|------|
 | 🥇 主力 | opencode-go | deepseek-v4-flash | 日常对话、代码、推理主模型 |
-| 🥈 容灾 1 | opencode-go | deepseek-v4-pro | 主力不可用时的强推理回退 |
-| 🥉 容灾 2 | OpenRouter | moonshotai/kimi-k2.6 | 长上下文、学术写作 |
-| 4️⃣ 容灾 3 | OpenRouter | qwen/qwen3.7-plus（1M ctx） | 超大上下文任务 |
-| 5️⃣ 容灾 4 | OpenRouter | z-ai/glm-5.2（1M ctx） | 最后兜底，国产 1M 上下文 |
+| 🥈 容灾 1 | opencode-go | deepseek-v4-pro | 强推理回退 |
+| 🥉 容灾 2 | opencode-go | kimi-k3 | 长上下文 |
+| 4️⃣ 容灾 3 | opencode-go | kimi-k2.7-code | 代码场景 |
+| 5️⃣ 容灾 4 | opencode-go | qwen3.7-plus | 超大上下文 |
+| 6️⃣ 容灾 5 | opencode-go | glm-5.2 | 国产 1M 上下文 |
+| 7️⃣ 容灾 6 | siliconflow | Qwen/Qwen3.5-4B | 轻量回退 |
+| 8️⃣ 容灾 7 | siliconflow | deepseek-ai/DeepSeek-V4-Pro | 硅基流动回退 |
+| 9️⃣ 兜底 | deepseek | deepseek-chat（直连） | 最后保底 |
+
+### 更新记录
+- 2026-07-26: 移除 OpenRouter（402 额度耗尽），改为 opencode-go 统一前 5 级 + siliconflow 2 级 + DeepSeek 直连兜底
+- 2026-07-26: opencode-go 补上 key_env，修复 cron 401 认证问题
 
 ### 配置要点
-
-- **Provider 配置**: provider 模式，通过 `hermes config set` 管理
-- **Fallback 链**: primary → fallback[0..3]，逐级降级，自动跳过不可用模型
-- **Context window 策略**: 根据任务类型选择 kimi-k2.6、qwen3.7-plus 或 glm-5.2（1M 上下文用于超大文档）
+- **Provider 配置**: custom_providers 模式，含 opencode-go / siliconflow / deepseek
+- **Fallback 链**: 8 级逐级降级，自动跳过不可用模型
+- **认证**: opencode-go 使用 OPENCODE_GO_API_KEY（Bearer 格式）
+- **推理力度**: model.reasoning_effort: high，支持 max/ultra
 - **成本优化**: 简单/心跳任务用 flash 或更小模型降本；主力处理推理密集型任务
 
 ## 工具链
