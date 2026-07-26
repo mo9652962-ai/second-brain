@@ -40,3 +40,5 @@
 - 中医养生爱好者
 - 基层中医/自学从业者
 - AI 工具深度玩家
+
+> 关联: [[knowledge/AI/AI-Agent|AI]] · [[knowledge/Academic/Academic|Academic]] · [[knowledge/Productivity/生产力工具|Productivity]] · [[knowledge/Design/PPT-Design|Design]]

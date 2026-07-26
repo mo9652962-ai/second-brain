@@ -44,13 +44,17 @@ created: 2026-07-21
 │ (嵌入式)    │   │ (全栈学习)   │
 └──────────────┘   └──────────────┘
 
-┌────────────────────────────────────────────┐
-│ 🆕 扩展领域                                │
-│ ┌──────────┐ ┌──────────────────┐          │
-│ │ Desktop  │ │ 微信小程序开发    │          │
-│ │ 美化     │ │ 校园便利盒       │          │
-│ └──────────┘ └──────────────────┘          │
-└────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────┐
+│ 🆕 扩展领域                                                    │
+│ ┌─────────────┐ ┌──────────────────┐ ┌──────────────────┐     │
+│ │ Desktop     │ │ 微信小程序开发    │ │ 变现分析         │     │
+│ │ 美化        │ │ 校园便利盒       │ │ monetization     │     │
+│ └─────────────┘ └──────────────────┘ └──────────────────┘     │
+│ ┌─────────────┐ ┌──────────────────┐                           │
+│ │ AI 工具集   │ │ 极简编程方法论   │                           │
+│ │ ai-tools    │ │ ponytail         │                           │
+│ └─────────────┘ └──────────────────┘                           │
+└─────────────────────────────────────────────────────────────────┘
 ```
 
 ---
@@ -104,6 +108,36 @@ PPT 设计(PPT-Design)
     = 高质量学术汇报
 ```
 
+### 场景六：自我进化 + 上下文工程
+
+```
+上下文工程(k-self-improvement)
+    + 极简原则(ponytail)
+    + 任务分解(self-improvement-guide)
+    + 4步循环(AI-Workflow)
+    = Agent 持续优化的方法论闭环
+```
+
+### 场景七：AI 科研全流程
+
+```
+科研工具(vibe-research)
+    + 7阶段流程(researchpilot-skills)
+    + 知网插件(cnki-browser-plugin)
+    + 110亿Token经验(ai-research-collaboration)
+    = 从选题到发表的 AI 辅助流水线
+```
+
+### 场景八：闲鱼变现实战
+
+```
+价目表(ai-monetization-costs)
+    + 能力盘点(monetization-analysis)
+    + 服务套餐(academic-service-research)
+    + PPT技能(PPT-Design)
+    = 学术服务变现闭环
+```
+
 ---
 
 ## 📊 关联矩阵
@@ -135,6 +169,14 @@ SORT domain ASC
 | 💡 **desktop-beautify** | [[desktop-beautify]] | Windows / UX |
 | 📱 **campus-box-design** | [[campus-box-design]] | WeChat / Fullstack |
 | 📐 **CAD-Postmortem** | [[CAD-Project-Postmortem]] | CAD / 3D-Printing |
+| 💰 **monetization-analysis** | [[monetization-analysis]] | 变现 / 学术 / 技术接单 |
+| 🧪 **ai-monetization-costs** | [[ai-monetization-costs]] | 闲鱼 / 定价 / 利润测算 |
+| 🔬 **vibe-research** | [[vibe-research]] | AI科研 / 工具选型 |
+| 📝 **researchpilot-skills** | [[researchpilot-skills]] | 科研全流程 / ML |
+| 🧩 **k-self-improvement** | [[k-self-improvement]] | 上下文工程 / Agent进化 |
+| 🎯 **ponytail** | [[ponytail]] | 极简编程 / 方法论 |
+| 🔧 **show-me-the-story** | [[show-me-the-story]] | 长篇小说 / 去AI味 |
+| 🛠️ **ai-tools-reference** | [[ai-tools-reference]] | AI工具目录 / 设计 / 视频 |
 
 ---
 

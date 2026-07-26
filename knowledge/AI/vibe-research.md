@@ -45,7 +45,7 @@ AI 深度融入科研全流程，按"科研怎么干"而不是"工具叫什么"�
 | **AI-Scientist-v2** | 6.6k | 升级版，agentic tree search |
 | **AutoResearchClaw** | 13.5k | 多阶段自进化研究流水线 |
 | **EvoScientist** | 3.7k | 多 agent，持久记忆+技能演化 |
-
+> 关联: [[researchpilot-skills]] · [[ai-research-collaboration]] · [[academic-service-research]] · [[../skills/academic-paper-writing|academic-paper-writing]]
 ## 关键原则
 
 1. **组合拳**：别指望一个工具从选题干到发表，分阶段配不同工具

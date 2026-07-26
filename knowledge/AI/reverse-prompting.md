@@ -53,4 +53,4 @@ Q版/潮玩/盲盒、头身比、材质(哑光/树脂/PVC)、服饰装饰
 - 替代: `Qwen3-VL-32B-Thinking`（CoT 推理增强）
 - 轻量: `Qwen3-VL-8B-Instruct`
 ---
-> 关联: [[PPT-Design]] · [[Cross-Domain|🔀 知识地图]] | [[HOME|🏠 首页]]
+> 关联: [[PPT-Design]] · [[AI-Workflow]] · [[Cross-Domain|🔀 知识地图]] | [[HOME|🏠 首页]]
