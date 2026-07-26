@@ -44,3 +44,6 @@
 - 回复也遵循这个原则：能不写就不写，能复用就复用
 - 先看现有 Skill/知识库能不能解决，再创作新内容
 - 最小改动完成需求，不堆砌不必要的信息
+
+---
+> 关联: [[Vibe-Coding]] · [[../Dev/Programming|Programming]] · [[engineering-workflow skill]]

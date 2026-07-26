@@ -86,29 +86,31 @@ Grace Hui Yang et al. — LLM agentic system 从研究到生产部署综述。
 
 ## Agent 应用
 
-| ID | 标题 | 领域 | 日期 |
-|----|------|------|------|
+| ID                                             | 标题                               | 领域                 | 日期    |
+| ---------------------------------------------- | -------------------------------- | ------------------ | ----- |
 | [2607.21482](https://arxiv.org/abs/2607.21482) | Agentic Coding Without the Cloud | Local coding agent | 07-23 |
-| [2607.21019](https://arxiv.org/abs/2607.21019) | HiMe: Health Agent Platform | Healthcare | 07-23 |
-| [2607.21268](https://arxiv.org/abs/2607.21268) | pAI-Econ-claude | Economics | 07-23 |
-| [2607.20630](https://arxiv.org/abs/2607.20630) | GenDB: LLM for Query Processing | Database | 07-22 |
-| [2607.18772](https://arxiv.org/abs/2607.18772) | RF-Agent | Circuit design | 07-21 |
-| [2607.19794](https://arxiv.org/abs/2607.19794) | TriAgent | Finance | 07-22 |
-| [2607.20582](https://arxiv.org/abs/2607.20582) | Bayesian Medical AI Agents | Medical | 07-22 |
-| [2607.18566](https://arxiv.org/abs/2607.18566) | The Story Shapes the Agent | Narrative priors | 07-20 |
+| [2607.21019](https://arxiv.org/abs/2607.21019) | HiMe: Health Agent Platform      | Healthcare         | 07-23 |
+| [2607.21268](https://arxiv.org/abs/2607.21268) | pAI-Econ-claude                  | Economics          | 07-23 |
+| [2607.20630](https://arxiv.org/abs/2607.20630) | GenDB: LLM for Query Processing  | Database           | 07-22 |
+| [2607.18772](https://arxiv.org/abs/2607.18772) | RF-Agent                         | Circuit design     | 07-21 |
+| [2607.19794](https://arxiv.org/abs/2607.19794) | TriAgent                         | Finance            | 07-22 |
+| [2607.20582](https://arxiv.org/abs/2607.20582) | Bayesian Medical AI Agents       | Medical            | 07-22 |
+| [2607.18566](https://arxiv.org/abs/2607.18566) | The Story Shapes the Agent       | Narrative priors   | 07-20 |
+|                                                |                                  |                    |       |
 
 ## LLM 训练与推理
 
-| ID | 标题 | 关键词 | 日期 |
-|----|------|--------|------|
-| [2607.21273](https://arxiv.org/abs/2607.21273) | Dark Room in Reward Channel | GRPO pitfalls | 07-23 |
-| [2607.20908](https://arxiv.org/abs/2607.20908) | Multi-turn RL for CUDA Kernel | RLVR code gen | 07-23 |
-| [2607.21518](https://arxiv.org/abs/2607.21518) | Same Objective, Opposite Advice | Safety alignment | 07-23 |
-| [2607.20773](https://arxiv.org/abs/2607.20773) | HARP: Human-AI Research | Research platform | 07-22 |
-| [2607.20690](https://arxiv.org/abs/2607.20690) | UI Principle via RL | Code quality | 07-22 |
-| [2607.18213](https://arxiv.org/abs/2607.18213) | SWE-Pruner Pro | Context pruning | 07-20 |
-| [2607.18754](https://arxiv.org/abs/2607.18754) | AgentDebugX | Debug toolkit | 07-21 |
-| [2607.19899](https://arxiv.org/abs/2607.19899) | Harnessing Disagreement | Agreement blindness | 07-22 |
+| ID                                             | 标题                              | 关键词                 | 日期    |
+| ---------------------------------------------- | ------------------------------- | ------------------- | ----- |
+| [2607.21273](https://arxiv.org/abs/2607.21273) | Dark Room in Reward Channel     | GRPO pitfalls       | 07-23 |
+| [2607.20908](https://arxiv.org/abs/2607.20908) | Multi-turn RL for CUDA Kernel   | RLVR code gen       | 07-23 |
+| [2607.21518](https://arxiv.org/abs/2607.21518) | Same Objective, Opposite Advice | Safety alignment    | 07-23 |
+| [2607.20773](https://arxiv.org/abs/2607.20773) | HARP: Human-AI Research         | Research platform   | 07-22 |
+| [2607.20690](https://arxiv.org/abs/2607.20690) | UI Principle via RL             | Code quality        | 07-22 |
+| [2607.18213](https://arxiv.org/abs/2607.18213) | SWE-Pruner Pro                  | Context pruning     | 07-20 |
+| [2607.18754](https://arxiv.org/abs/2607.18754) | AgentDebugX                     | Debug toolkit       | 07-21 |
+| [2607.19899](https://arxiv.org/abs/2607.19899) | Harnessing Disagreement         | Agreement blindness | 07-22 |
+|                                                |                                 |                     |       |
 
 ---
 
@@ -124,3 +126,8 @@ Grace Hui Yang et al. — LLM agentic system 从研究到生产部署综述。
 ---
 
 *自动采集于 arXiv API · 分类: cs.AI, cs.CL, cs.LG · 共 ~39 篇相关论文*
+
+## 精选论文深度解读
+
+📝 [[memory/2026/07/arxiv-paper-deepdive-2026-07-26|论文深度解读 2026-07-26]] — NOOA / Dark Room in GRPO / AgentDebugX
+|

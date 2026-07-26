@@ -37,3 +37,5 @@
 ## 类似工具
 - 对抗 AI 腔：内置 23 条句式禁令 + 套话替换
 - 与 academic-paper-writing 的去AI味思路相似但面向小说
+
+> 关联: [[../skills/academic-paper-writing|academic-paper-writing]]（去AI味方法论互补）

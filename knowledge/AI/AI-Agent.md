@@ -165,7 +165,7 @@ skill_manage(action='create'|'patch'|'edit') → 维护知识
 
 ## 📡 arXiv 论文周报
 
-每周自动采集 arXiv 最新 AI Agent / LLM 论文，详见 [[../memory/2026/07/arxiv-agent-llm-2026-07-26.md|2026-07-26 周报]]（NOOA, PATS, GRADRAG, Euclid-MCP, PRO-LONG, AgentDebugX 等 39 篇）
+- **[[../../memory/2026/07/arxiv-agent-llm-2026-07-26|2026-07-26 周报]]**（NOOA, PATS, GRADRAG, Euclid-MCP, PRO-LONG, AgentDebugX 等 39 篇）
 
 ---
-> 关联: [[AI-Workflow]] · [[LLM-Providers]] · [[Cross-Domain|🔀 知识地图]] | [[HOME|🏠 首页]]
+> 关联: [[AI-Workflow]] · [[LLM-Providers]] · [[Cross-Domain|🔀 知识地图]] · [[k-self-improvement]] · [[self-improvement-guide]] | [[HOME|🏠 首页]]

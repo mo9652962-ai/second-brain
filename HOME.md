@@ -105,7 +105,7 @@ Obsidian 笔记系统、效率插件
 - **[[knowledge/Cross-Domain]]** — 交叉领域自动索引
 - **[[INDEX]]** — 🗺️ vault 全局关联网
 - **[[MEMORY]]** — k 的长期记忆
-- **[[memory/2026/07]]** — 每日原始日志（按年月分层）
+- **[[memory/2026/07/2026-07-26-review|memory/2026/07]]** — 每日原始日志（按年月分层，近期回顾可见）
 
 ### 🧩 散落知识点关联网
 
@@ -126,7 +126,7 @@ HOME.md ──→ 每个知识域（6域）
 |:-----|:-----|:------|
 | 📊 **工作流** | [[pipelines/paper-pipeline\|pipelines/]] | 论文·PPT·Skill 触发工作流 |
 | 📈 **项目** | [[projects/current]] | 当前项目状态与进度 |
-| 📝 **模板** | [[templates/]] | 每日笔记/通用笔记模板 |
+| 📝 **模板** | [[templates/每日笔记模板|templates/]] | 每日笔记/通用笔记模板 |
 | 🧠 **学习** | [[.learnings/LEARNINGS]] | 架构决策 + 最佳实践 |
 | ❌ **错误** | [[.learnings/ERRORS]] | 踩坑记录与修复方案 |
 | 🗺️ **知识图谱** | [[knowledge/knowledge-map]] | vault 全局知识图谱 |

@@ -1,238 +1,33 @@
 {
-  "nodes": [
-    {
-      "id": "home",
-      "type": "text",
-      "text": "# 🏠 知识中枢\n\n**HOME.md**\n\n所有领域的入口与总览\n\n→ 5 大知识域\n→ Dataview 动态面板\n→ 快速入口导航",
-      "x": 0,
-      "y": 0,
-      "width": 280,
-      "height": 220,
-      "color": "5"
-    },
-    {
-      "id": "ai-agent",
-      "type": "text",
-      "text": "## 🤖 AI-Agent\n\nk 的能力架构\n\n- 26 Skills 总览\n- Memory 范式\n- 安全态势\n- 成本优化\n- 变现路径",
-      "x": -450,
-      "y": -280,
-      "width": 260,
-      "height": 220,
-      "color": "1"
-    },
-    {
-      "id": "ai-workflow",
-      "type": "text",
-      "text": "## 🔀 AI-Workflow\n\nSkill 编排与工作流\n\n- 5大Multi-Agent模式\n- 5大Skill设计模式\n- Pipeline管道\n- 渐进式加载\n- 触发词映射",
-      "x": -140,
-      "y": -280,
-      "width": 260,
-      "height": 240,
-      "color": "2"
-    },
-    {
-      "id": "ppt-design",
-      "type": "text",
-      "text": "## 🎨 PPT-Design\n\n演示设计方法论\n\n- 2026六大趋势\n- 6轮制作方法论\n- 行业工具对标\n- 学术PPT规范\n- 变现: 50-500元/份",
-      "x": 170,
-      "y": -280,
-      "width": 260,
-      "height": 240,
-      "color": "3"
-    },
-    {
-      "id": "academic",
-      "type": "text",
-      "text": "## 📚 Academic\n\n学术论文全流程\n\n- 检索→阅读→写作\n- 去AI化方法论\n- SCI/SSCI索引\n- 知网高级检索\n- 变现: 200-800元/篇",
-      "x": -300,
-      "y": 50,
-      "width": 260,
-      "height": 240,
-      "color": "4"
-    },
-    {
-      "id": "vibe-coding",
-      "type": "text",
-      "text": "## 💻 Vibe-Coding\n\n编程与系统环境\n\n- Windows 11\n- PowerShell技巧\n- 搜索工具链\n- 桌面美化\n- 系统维护",
-      "x": 10,
-      "y": 50,
-      "width": 260,
-      "height": 240,
-      "color": "6"
-    },
-    {
-      "id": "projects",
-      "type": "text",
-      "text": "## 📋 projects/current\n\n当前项目状态\n\n- 基础设施完善 ✅\n- 桌面优化 ⏳\n- Skill编排改进 ⏳\n- AI变现规划\n- 待解决问题",
-      "x": -145,
-      "y": 370,
-      "width": 270,
-      "height": 220,
-      "color": "0"
-    },
-    {
-      "id": "legend",
-      "type": "text",
-      "text": "## 📐 图例\n\n🟣 HOME - 知识中枢\n🔵 AI-Agent - 核心能力\n🟢 AI-Workflow - 编排层\n🟠 PPT-Design - 设计\n🟢 Academic - 学术\n🟤 Vibe-Coding - 系统\n⚪ Projects - 项目\n\n━━ 双向链接\n--- 单向引用\n⋯ 交叉领域",
-      "x": 340,
-      "y": 50,
-      "width": 200,
-      "height": 240,
-      "color": "5"
-    }
-  ],
-  "edges": [
-    {
-      "id": "home-ai-agent",
-      "fromNode": "home",
-      "fromSide": "top",
-      "toNode": "ai-agent",
-      "toSide": "bottom",
-      "label": "核心能力"
-    },
-    {
-      "id": "home-workflow",
-      "fromNode": "home",
-      "fromSide": "top",
-      "toNode": "ai-workflow",
-      "toSide": "bottom",
-      "label": "编排层"
-    },
-    {
-      "id": "home-ppt",
-      "fromNode": "home",
-      "fromSide": "top",
-      "toNode": "ppt-design",
-      "toSide": "bottom",
-      "label": "设计"
-    },
-    {
-      "id": "home-academic",
-      "fromNode": "home",
-      "fromSide": "bottom",
-      "toNode": "academic",
-      "toSide": "top",
-      "label": "学术"
-    },
-    {
-      "id": "home-vibe",
-      "fromNode": "home",
-      "fromSide": "bottom",
-      "toNode": "vibe-coding",
-      "toSide": "top",
-      "label": "系统"
-    },
-    {
-      "id": "home-projects",
-      "fromNode": "home",
-      "fromSide": "bottom",
-      "toNode": "projects",
-      "toSide": "top",
-      "label": "项目"
-    },
-    {
-      "id": "agent-workflow",
-      "fromNode": "ai-agent",
-      "fromSide": "right",
-      "toNode": "ai-workflow",
-      "toSide": "left",
-      "label": "Skills驱动编排"
-    },
-    {
-      "id": "agent-ppt",
-      "fromNode": "ai-agent",
-      "fromSide": "right",
-      "toNode": "ppt-design",
-      "toSide": "left",
-      "label": "PPT Skills全家桶"
-    },
-    {
-      "id": "agent-academic",
-      "fromNode": "ai-agent",
-      "fromSide": "bottom",
-      "toNode": "academic",
-      "toSide": "left",
-      "label": "论文Skills全家桶"
-    },
-    {
-      "id": "agent-vibe",
-      "fromNode": "ai-agent",
-      "fromSide": "bottom",
-      "toNode": "vibe-coding",
-      "toSide": "left",
-      "label": "运行环境"
-    },
-    {
-      "id": "workflow-ppt",
-      "fromNode": "ai-workflow",
-      "fromSide": "right",
-      "toNode": "ppt-design",
-      "toSide": "left",
-      "label": "Pipeline化"
-    },
-    {
-      "id": "workflow-academic",
-      "fromNode": "ai-workflow",
-      "fromSide": "bottom",
-      "toNode": "academic",
-      "toSide": "right",
-      "label": "Pipeline化"
-    },
-    {
-      "id": "ppt-academic",
-      "fromNode": "ppt-design",
-      "fromSide": "bottom",
-      "toNode": "academic",
-      "toSide": "right",
-      "label": "学术PPT交叉"
-    },
-    {
-      "id": "ppt-vibe",
-      "fromNode": "ppt-design",
-      "fromSide": "bottom",
-      "toNode": "vibe-coding",
-      "toSide": "right",
-      "label": "python-pptx"
-    },
-    {
-      "id": "academic-vibe",
-      "fromNode": "academic",
-      "fromSide": "right",
-      "toNode": "vibe-coding",
-      "toSide": "left",
-      "label": "写作工具链"
-    },
-    {
-      "id": "all-projects",
-      "fromNode": "academic",
-      "fromSide": "bottom",
-      "toNode": "projects",
-      "toSide": "left",
-      "label": "学术变现进度"
-    },
-    {
-      "id": "ppt-projects",
-      "fromNode": "ppt-design",
-      "fromSide": "bottom",
-      "toNode": "projects",
-      "toSide": "top",
-      "label": "PPT变现进度"
-    },
-    {
-      "id": "vibe-projects",
-      "fromNode": "vibe-coding",
-      "fromSide": "bottom",
-      "toNode": "projects",
-      "toSide": "right",
-      "label": "桌面优化进度"
-    },
-    {
-      "id": "workflow-projects",
-      "fromNode": "ai-workflow",
-      "fromSide": "bottom",
-      "toNode": "projects",
-      "toSide": "top",
-      "label": "编排改进"
-    }
-  ]
+	"nodes":[
+		{"id":"ai-agent","type":"text","text":"## 🤖 AI-Agent\n\nk 的能力架构\n\n- 26 Skills 总览\n- Memory 范式\n- 安全态势\n- 成本优化\n- 变现路径","x":-450,"y":-280,"width":260,"height":220,"color":"1"},
+		{"id":"ai-workflow","type":"text","text":"## 🔀 AI-Workflow\n\nSkill 编排与工作流\n\n- 5大Multi-Agent模式\n- 5大Skill设计模式\n- Pipeline管道\n- 渐进式加载\n- 触发词映射","x":-140,"y":-280,"width":260,"height":240,"color":"2"},
+		{"id":"ppt-design","type":"text","text":"## 🎨 PPT-Design\n\n演示设计方法论\n\n- 2026六大趋势\n- 6轮制作方法论\n- 行业工具对标\n- 学术PPT规范\n- 变现: 50-500元/份","x":170,"y":-280,"width":260,"height":240,"color":"3"},
+		{"id":"academic","type":"text","text":"## 📚 Academic\n\n学术论文全流程\n\n- 检索→阅读→写作\n- 去AI化方法论\n- SCI/SSCI索引\n- 知网高级检索\n- 变现: 200-800元/篇","x":-300,"y":50,"width":260,"height":240,"color":"4"},
+		{"id":"projects","type":"text","text":"## 📋 projects/current\n\n当前项目状态\n\n- 基础设施完善 ✅\n- 桌面优化 ⏳\n- Skill编排改进 ⏳\n- AI变现规划\n- 待解决问题","x":-240,"y":480,"width":270,"height":220,"color":"0"},
+		{"id":"vibe-coding","type":"text","text":"## 💻 Vibe-Coding\n\n编程与系统环境\n\n- Windows 11\n- PowerShell技巧\n- 搜索工具链\n- 桌面美化\n- 系统维护","x":80,"y":290,"width":260,"height":240,"color":"6"},
+		{"id":"legend","type":"text","text":"## 📐 图例\n\n🟣 HOME - 知识中枢\n🔵 AI-Agent - 核心能力\n🟢 AI-Workflow - 编排层\n🟠 PPT-Design - 设计\n🟢 Academic - 学术\n🟤 Vibe-Coding - 系统\n⚪ Projects - 项目\n\n━━ 双向链接\n--- 单向引用\n⋯ 交叉领域","x":380,"y":50,"width":200,"height":240,"color":"5"},
+		{"id":"home","type":"text","text":"# 🏠 知识中枢\n\n**HOME.md**\n\n所有领域的入口与总览\n\n→ 5 大知识域\n→ Dataview 动态面板\n→ 快速入口导航","x":60,"y":0,"width":280,"height":220,"color":"5"}
+	],
+	"edges":[
+		{"id":"home-ai-agent","fromNode":"home","fromSide":"top","toNode":"ai-agent","toSide":"bottom","label":"核心能力"},
+		{"id":"home-workflow","fromNode":"home","fromSide":"top","toNode":"ai-workflow","toSide":"bottom","label":"编排层"},
+		{"id":"home-ppt","fromNode":"home","fromSide":"top","toNode":"ppt-design","toSide":"bottom","label":"设计"},
+		{"id":"home-academic","fromNode":"home","fromSide":"bottom","toNode":"academic","toSide":"top","label":"学术"},
+		{"id":"home-vibe","fromNode":"home","fromSide":"bottom","toNode":"vibe-coding","toSide":"top","label":"系统"},
+		{"id":"home-projects","fromNode":"home","fromSide":"bottom","toNode":"projects","toSide":"top","label":"项目"},
+		{"id":"agent-workflow","fromNode":"ai-agent","fromSide":"right","toNode":"ai-workflow","toSide":"left","label":"Skills驱动编排"},
+		{"id":"agent-ppt","fromNode":"ai-agent","fromSide":"right","toNode":"ppt-design","toSide":"left","label":"PPT Skills全家桶"},
+		{"id":"agent-academic","fromNode":"ai-agent","fromSide":"bottom","toNode":"academic","toSide":"left","label":"论文Skills全家桶"},
+		{"id":"agent-vibe","fromNode":"ai-agent","fromSide":"bottom","toNode":"vibe-coding","toSide":"left","label":"运行环境"},
+		{"id":"workflow-ppt","fromNode":"ai-workflow","fromSide":"right","toNode":"ppt-design","toSide":"left","label":"Pipeline化"},
+		{"id":"workflow-academic","fromNode":"ai-workflow","fromSide":"bottom","toNode":"academic","toSide":"right","label":"Pipeline化"},
+		{"id":"ppt-academic","fromNode":"ppt-design","fromSide":"bottom","toNode":"academic","toSide":"right","label":"学术PPT交叉"},
+		{"id":"ppt-vibe","fromNode":"ppt-design","fromSide":"bottom","toNode":"vibe-coding","toSide":"right","label":"python-pptx"},
+		{"id":"academic-vibe","fromNode":"academic","fromSide":"right","toNode":"vibe-coding","toSide":"left","label":"写作工具链"},
+		{"id":"all-projects","fromNode":"academic","fromSide":"bottom","toNode":"projects","toSide":"left","label":"学术变现进度"},
+		{"id":"ppt-projects","fromNode":"ppt-design","fromSide":"bottom","toNode":"projects","toSide":"top","label":"PPT变现进度"},
+		{"id":"vibe-projects","fromNode":"vibe-coding","fromSide":"bottom","toNode":"projects","toSide":"right","label":"桌面优化进度"},
+		{"id":"workflow-projects","fromNode":"ai-workflow","fromSide":"bottom","toNode":"projects","toSide":"top","label":"编排改进"}
+	]
 }
