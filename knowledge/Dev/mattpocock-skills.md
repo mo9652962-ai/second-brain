@@ -147,8 +147,8 @@ Skill 的根目标是：**Agent 每次跑同样的流程**，而不是产生同�
 
 | 当前 skill | 问题 | 状态 | 改进方向 |
 |:---------|:---:|:----:|---------|
-| 8051-embedded-dev | 偏知识清单 | ⏳ 不存在于 Hermes | 加入「grill」步骤 |
-| cad-design-master | 模板偏多 | ⏳ 不存在于 Hermes | 用引导词压缩关键概念 |
+| 8051-embedded-dev | 偏知识清单 | ✅ **已有 Gril 步骤**（openclaw-imports） | 已完成 |
+| cad-design-master | 模板偏多 | ✅ **已有 Gril + 完成标准**（openclaw-imports） | 已完成 |
 | 所有 PPT skills | 无完成条件 | ✅ **已修复 (2026-07-26)** | 每个阶段加了明确完成标准 |
 
 笔记已更新到 `memory/mattpocock-skills.md`

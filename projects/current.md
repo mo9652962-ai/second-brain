@@ -40,10 +40,10 @@ updated: 2026-07-23
 - [ ] 尝试接论文润色/翻译单
 
 ## 🔀 Skill 编排改进
-- [ ] 建立 PPT Pipeline 数据契约（outline.json ↔ pptx-generator）
+- [x] 建立 PPT Pipeline 数据契约（outline.json 已在 ppt-design-2026 §十五）✅
 - [ ] 建立论文 Pipeline 数据契约
 - [ ] 测试 Fan-Out 并行搜索
-- [ ] 为 ppt-optimizer 添加 gate 检查
+- [x] 为 ppt-optimizer 添加 gate 检查（已在 ppt-design-2026 §十三）✅
 
 ## 待解决
 - [ ] 随身WiFi选购确认（赫电 Pro / 格行）
