@@ -10,7 +10,7 @@
 | 智能温控器 | 嵌入式 | 8051-embedded-dev | `stc89c52-thermostat/` |
 | 参数化齿轮箱 | CAD建模 | cad-design-master | `parametric-gearbox/` |
 | 短链系统设计 | 系统架构 | system-design-primer | `url-shortener-design/` |
-| 学术答辩PPT | 演示设计 | academic-presentation | `thesis-defense-ppt/` |
+| 学术答辩PPT | 演示设计 | academic-presentation | ⚠️ 待创建 |
 
 ---
 
@@ -44,4 +44,4 @@
 **复杂度**: ⭐⭐
 **价值**: 暖色极简学术风格，数据叙事
 
-[查看详情 →](thesis-defense-ppt/README.md)
+> ⚠️ 案例文件尚未创建，待后续补充
