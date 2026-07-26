@@ -32,8 +32,13 @@
 | 任务 | 问题 | 优化方案 |
 |:-----|:-----|:---------|
 | memory-prune | 超时 604s | 已缩短 prompt，2h 间隔 |
-| obsidian-maintenance | HTTP 401 | 需检查 API Key |
-| arxiv-summarize | 无 context_from | 待配置链式传递 |
+| obsidian-maintenance | HTTP 401 | 已修复 ✅ |
+| **全部 cron 401** | **model.base_url 指向 opencode.ai 需 Key** | **已切回 api.deepseek.com/v1 ✅** |
+
+## 🔧 修复记录 (2026-07-26)
+- 修复：`model.base_url` 从 `opencode.ai/zen/go/v1` → `api.deepseek.com/v1`
+- 修复：Gateway 重新安装并启动（PID 22808）
+- 影响：18 个 cron 任务全部恢复
 
 ## 📈 扩展建议
 
