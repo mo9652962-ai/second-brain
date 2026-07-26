@@ -48,7 +48,6 @@ updated: 2026-07-25
 | 查踩坑记录 | `.learnings/ERRORS.md` |
 | 写新笔记 | `templates/` 复制模板 |
 | 临时记东西 | `memory/working-buffer.md` |
-
----
+| 看健康看板 | `memory/2026/07/cron-health-latest.md` |
 
 _由 HOME.md 自动关联 · 更新: 2026-07-25_
