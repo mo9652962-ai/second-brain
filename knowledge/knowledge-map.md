@@ -15,7 +15,7 @@ date: 2026-07-22
 
 > [[web-dev-2026]] — 2026 全栈技术栈（Next.js 15/RSC/Biome/Tailwind）
 > [[github-web-dev-ai]] — GitHub 上的 AI+Web 开发资源 4 层次
-> 对应 skill: [[../skills/web-dev-2026]]
+> 对应 skill: [[web-dev-2026]]
 
 ## 🎮 极简编程 + 创意开发
 
@@ -165,7 +165,7 @@ Matt Pocock 方法论     Grill+TDD 工作流
 | [[k-self-improvement]] | 搜索引擎研究 | Agent 行为优化 | [[self-improvement-guide]] |
 | [[ai-monetization-costs]] | 闲鱼市场调研 | 变现落地执行 | [[monetization-analysis]] · [[academic-service-research]] |
 | [[vibe-research]] | GitHub 社区研究 | AI 科研工具选型 | [[researchpilot-skills]] · [[ai-research-collaboration]] |
-| [[campus-box-design]] | 微信小程序开发 | 校园服务平台 MVP | [[wechat-miniprogram-cloudbase skill]] |
+| [[campus-box-design]] | 微信小程序开发 | 校园服务平台 MVP | wechat-miniprogram-cloudbase（skill，未安装本地） |
 | [[ponytail]] | 社区最佳实践 | 编程极简原则 | [[engineering-workflow]] |
 
 ---

@@ -115,4 +115,4 @@ Classic 版已可用，通过 [opencut.app](https://opencut.app) 直接在浏览
 OpenCut 目前最适合作为 **本地视频编辑工具** 使用。长远看如果 New 版完成了 MCP + 无头模式，就能和我配合做自动化视频生产。目前关注即可，等 New 版发布再深入。
 
 ---
-> 关联: [[AI-Workflow]] · [[../Productivity/delphitools]] · [[../Knowledge/AI/vibe-research]]
+> 关联: [[AI-Workflow]] · [[../Productivity/delphitools]] · [[vibe-research]]
