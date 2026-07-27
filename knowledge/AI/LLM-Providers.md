@@ -1,5 +1,5 @@
 ---
-tags: [hermes, llm, providers, model, fallback, search, opencode-go, openrouter]
+tags: [hermes, LLM, providers, model, fallback, search, opencode-go, openrouter]
 domain: llm-config
 cross-domain: [hermes-agent, hermes-model-fallback, hermes-search-config, infrastructure]
 related: ["skills/hermes-model-fallback", "skills/hermes-search-config", "skills/hermes-agent"]
