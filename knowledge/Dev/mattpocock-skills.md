@@ -8,8 +8,10 @@ source: https://github.com/mattpocock/skills
 # Matt Pocock Skills
 
 > 来源: [mattpocock/skills](https://github.com/mattpocock/skills)
+> ⭐ 183K | 🚀 本周新增 2.4K (trendshift.io 月榜 Top 10)
 > 作者: Matt Pocock（知名 TypeScript 教育家）
-> 学习时间: 2026-07-22 | 所属知识网络: [[knowledge-map]] | 相关: [[mattpocock-methodology]] | engineering-workflow | [[system-design-primer]]
+> 学习时间: 2026-07-22 (更新: 2026-07-27)
+> 所属知识网络: [[knowledge-map]] | 相关: [[mattpocock-methodology]] | engineering-workflow | [[system-design-primer]] | [[ibelick-ui-skills]]
 
 ## 项目定位
 
