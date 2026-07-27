@@ -1,7 +1,7 @@
 ---
 tags: [writing, AI-resistance, storytelling, backlog]
 domain: Productivity
-status: backlog
+status: trial
 note: 以后拿来写小说用
 ---
 

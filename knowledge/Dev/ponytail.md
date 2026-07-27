@@ -1,7 +1,7 @@
 ---
 tags: [AI编码工具, programming, vibe-coding, productivity]
 domain: Programming
-status: trial
+status: adopted
 ---
 # Ponytail · AI 编程极简原则
 
