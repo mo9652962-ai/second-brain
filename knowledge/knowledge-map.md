@@ -124,12 +124,13 @@ Matt Pocock 方法论     Grill+TDD 工作流
 
 ### Hermes 配置体系 (W30 更新)
 
-```
-Fallback 链: opencode-go(6层) → SiliconFlow(2层) → DeepSeek直连 → OpenRouter(2层)
+```text
+Fallback 链: opencode-go(5层) → SiliconFlow(2层) → DeepSeek直连(1层)
 搜索冗余: Tavily + Exa + Firecrawl + DDGS + SearXNG (5路)
-模型分层: 心跳/mimo-v2.5 → 日常/flash → 推理/pro+kimi → 兜底/直连+OpenRouter
-成本优化: pro→flash 降68%, 异构tiering省60-70%
-记忆体系: SESSION-STATE(活跃) → working-buffer(60%填充) → daily notes → MEMORY.md
+模型分层: 日常/flash → 推理/pro→kimi→qwen→glm → 轻量/siliconflow → 兜底/deepseek
+成本优化: flash 性价比最高，异构 tiering 省 60-70%
+MCP 生态: GitHub + Filesystem + JLCPCB(38工具) + Obsidian(笔记操作)
+记忆体系: SESSION-STATE(活跃) → memory notes → MEMORY.md
 ```
 
 ---
@@ -149,12 +150,12 @@ Fallback 链: opencode-go(6层) → SiliconFlow(2层) → DeepSeek直连 → Ope
 
 ### 模型分层体系
 
-```
-心跳/内部 ─── mimo-v2.5 ─── $0.14/$0.28
-日常主力 ─── deepseek-v4-flash ─── $0.14/$0.28
-复杂推理 ─── deepseek-v4-pro → kimi-k3
-免费兜底 ─── DeepSeek 直连 ─── deepseek-chat
-多模态 ─── minimax-m3 / gemma-4:free
+```text
+日常主力 ─── opencode-go/deepseek-v4-flash
+复杂推理 ─── deepseek-v4-pro → kimi-k3 → kimi-k2.7-code
+超大上下文 ─── qwen3.7-plus → glm-5.2 (1M ctx)
+轻量回退 ─── siliconflow Qwen3.5-4B → DeepSeek-V4-Pro
+最后兜底 ─── DeepSeek直连 deepseek-chat
 ```
 
 ---
@@ -212,7 +213,7 @@ Fallback 链: opencode-go(6层) → SiliconFlow(2层) → DeepSeek直连 → Ope
 
 ---
 
-> **W30 亮点**: 24+ 知识点的系统性吸收，2 个新 Skill 创建，配置体系全面加固，Vault 健康归零。详情见 [[../memory/2026/07/weekly-2026-07-26|本周学习总结]]。
+|> **W30 亮点**: 24+ 知识点的系统性吸收，2 个新 Skill 创建，配置体系全面加固，Vault 健康归零，MCP 生态扩展至 4 个服务器（GitHub/Filesystem/JLCPCB/Obsidian），8 级 fallback 链无 OpenRouter。详情见 [[../memory/2026/07/weekly-2026-07-26|本周学习总结]]。
 
 ---
 [[HOME|🏠 返回首页]]
