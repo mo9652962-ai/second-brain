@@ -8,7 +8,8 @@ source: https://github.com/xai-org/grok-build
 # Grok Build — xAI 开源 AI 编码 Agent
 
 > 来源: [xai-org/grok-build](https://github.com/xai-org/grok-build)
-> 学习时间: 2026-07-22 | 所属知识网络: [[knowledge-map]] | 相关: [[airi]] | [[opencut]]
+> 学习时间: 2026-07-22 (更新: 2026-07-27) | ⭐ 22.6K (⬆ 13K/周)
+> 所属知识网络: [[knowledge-map]] | 相关: [[airi]] | [[opencut]] | [[codebase-memory-mcp]]
 
 ## 简介
 
@@ -71,6 +72,7 @@ cargo build -p xai-grok-pager-bin --release  # 编译发布版
 | TUI | ✅ 全屏 | ✅ | ✅ |
 | 开源 | ✅ Apache 2.0 | ✅ MIT | ❌ |
 | MCP 支持 | ✅ | ✅ | ✅ |
+| ACP 支持 | ✅ | ❌ | ❌ |
 | 模型 | Grok 系列 | 75+ 供应商 | Claude |
 | 平台 | Mac/Linux/Win | Mac/Linux/Win | Mac/Linux |
 
