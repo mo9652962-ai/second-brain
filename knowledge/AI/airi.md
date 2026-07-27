@@ -3,6 +3,7 @@ tags: [AI VTuber, 开源工具, 学习笔记, AI Agent]
 aliases: [Airi, Project AIRI, アイリ]
 date: 2026-07-22
 source: https://github.com/moeru-ai/airi
+status: learning
 ---
 
 # AIRI (アイリ) — 开源 AI VTuber / 数字伙伴

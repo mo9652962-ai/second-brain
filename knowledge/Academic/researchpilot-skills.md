@@ -1,6 +1,7 @@
 ---
 tags: [research, AI-Agent, skills, academic-workflow, paper-writing]
 domain: Academic
+status: adopted
 ---
 # ResearchPilot-Skills · AI 科研全流程 Skill 套件
 
