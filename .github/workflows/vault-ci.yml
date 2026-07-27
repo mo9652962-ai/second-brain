@@ -5,6 +5,8 @@ on:
     branches: [main]
   push:
     branches: [dev]
+  schedule:
+    - cron: "0 0 * * 1"   # 每周一 00:00 全库健康检查
 
 jobs:
   lint:
@@ -14,3 +16,18 @@ jobs:
 
       - name: Check wikilinks
         run: python3 scripts/check_wikilinks.py
+
+  health:
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Full vault health check
+        run: python3 scripts/vault-structure.py
+
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: vault-audit-report
+          path: scripts/vault-audit-report.json
