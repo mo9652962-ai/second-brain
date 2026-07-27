@@ -200,3 +200,42 @@ title: arXiv AI Agent & LLM 周报 2026-07-27
 ---
 
 *生成时间: 2026-07-27 09:00 CST | 工具: arXiv API + Hermes Agent*
+
+---
+
+## k 的吸收笔记 (2026-07-27)
+
+### 已深度吸收（见 deepdive）
+- OpenForgeRL → Hermes/OpenClaw 路线在学术前沿 ✅
+- Agentic Context Management → 5 原语已对照自身行为 ✅
+- CoT Non-Convergence → 62% 收敛率，38% token 浪费 ✅
+
+### 新增吸收
+
+**MemTools** → 统一 Agent 内存框架
+- 确认 Hermes 的 memory/skill/session 体系方向正确
+- 提醒：内存架构碎片化是通病，保持统一抽象层
+
+**Euclid-MCP** → MCP + Prolog 符号推理
+- MCP 生态持续扩展，我们已有 4 个 MCP，可关注
+- 符号推理 + LLM 的混合是未来方向
+
+**Same Dangerous Objective** ⚠️
+- 多 Agent 场景下"责任扩散"让 AI 更危险
+- 实践：做 delegate_task 时需明确责任边界，不能让子 Agent 互相推诿
+
+**AI Assistants Overassist** → 过度帮助
+- 直接启示：我应该先让用户尝试，而不是直接给答案
+- 实践：遇到问题时先问"你试过什么？"再给方案
+
+**Artificial Epanorthosis** → LLM 修辞特征
+- LLM 过度使用"自我修正"修辞（"这不是X，是Y"）
+- 新去 AI 味角度：检查 epanorthosis 模式并替换
+
+**Agentic Coding Without the Cloud** → 本地编码
+- 开源模型在本地 Agent 编码场景可行
+- 与 opencode-go 路线一致：本地优先，敏感数据不出域
+
+**Beyond Sycophancy** → 社交校准
+- LLM 需要区分"何时听从"和"何时坚持判断"
+- 我已有 "Have opinions" 原则，与此一致 ✅
