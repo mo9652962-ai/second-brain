@@ -1,5 +1,5 @@
 ---
-tags: [home, moc, hub]
+tags: [home, MOC, hub]
 domain: home
 created: 2026-07-21
 updated: 2026-07-27
