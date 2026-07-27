@@ -1,11 +1,11 @@
 ---
 tags: [cron-health, dashboard]
-updated: 2026-07-27 00:00
+updated: 2026-07-27 08:51
 ---
 
-# Cron 健康看板 — 2026-07-27 00:00
+# Cron 健康看板 — 2026-07-27 08:51
 
-总任务数: 20
+总任务数: 22
 
 | ⚪ | arxiv-fetch                    | 0 7 * * *       |  |
 | ⚪ | arxiv-summarize                | 0 8 * * *       |  |
@@ -23,9 +23,11 @@ updated: 2026-07-27 00:00
 | ⚪ | weekly-graphify-update         | 0 12 * * 0      |  |
 | ⚪ | weekly-knowledge-consolidation | 0 10 * * 0      |  |
 | ⚪ | weekly-learning-progress       | 0 20 * * 0      |  |
+| ⚪ | weekly-suggestion-executor     | 0 10 * * 1      |  |
+| ⚪ | weekly-suggestion-implementation | 0 16 * * 0      |  |
 | ⚪ | weekly-system-cleanup          | 0 14 * * 0      |  |
 | ⚪ | weekly-todo-cleanup            | 0 18 * * 6      |  |
 | ⚪ | weekly-trending-review         | 0 15 * * 0      |  |
 | ⚪ | weekly-vault-audit             | 0 11 * * 0      |  |
 
-✅ 0 正常  ❌ 0 错误  ⚪ 20 从未执行
+✅ 0 正常  ❌ 0 错误  ⚪ 22 从未执行
