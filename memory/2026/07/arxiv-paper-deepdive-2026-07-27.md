@@ -126,9 +126,32 @@ parent: memory/2026/07/arxiv-agent-llm-2026-07-27.md
 
 ---
 
-## 关联
+## 🔗 关联
 
 - 完整论文列表: [[memory/2026/07/arxiv-agent-llm-2026-07-27|arXiv AI Agent / LLM 论文周报 2026-07-27]]
 - 技术栈: [[knowledge/AI/AI-Agent|AI-Agent 知识域]]
 - 相关 Skill: hermes-agent, hermes-model-configuration, systematic-debugging
 - 上期深度解读: [[memory/2026/07/arxiv-paper-deepdive-2026-07-26|论文深度解读 2026-07-26]]
+
+---
+
+## k 的吸收笔记 (2026-07-27)
+
+### ① OpenForgeRL → 对 Hermes 的影响
+- **OpenClaw 被列为三大 Harness** → 我们的技术路线在学术前沿 ✅
+- **两层解耦（代理层+编排层）** → 做复杂任务时可以 delegate 子任务到隔离环境
+- **RL > SFT 的 Agentic 增益** → 后续如果做策略优化，路径是 RL
+
+### ② CoT 非收敛检测 → 对我回复的影响
+- **62% 收敛率** → 38% 的推理 token 浪费在注定失败的回答上
+- **实践：** 对我自己来说，检测到推理卡壳时应该主动切换策略（换方式、换工具），而不是硬撑到超时
+- **token 50 就可见信号** → 回复开始时如果结构混乱，说明很可能收敛不了，尽早调整
+
+### ③ Agentic Context Management → 对我行为的影响
+- **记忆是生命周期，不是存储** → 五个原语：
+  - ✅ Architecting：已在做（结构化回复）
+  - ✅ Ingesting：已在做（工具输出处理）
+  - ⬜ Scoping：需要改进→不同项目上下文隔离
+  - ⬜ Anticipating：可以更好→预判下一步需要什么信息
+  - ⬜ Compacting：可以更好→更积极地压缩上下文
+- **二次方成本 vs 线性成本** → 超过 10 轮对话后成本显著上升，回复应更精炼
