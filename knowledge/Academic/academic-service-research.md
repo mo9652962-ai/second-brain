@@ -1,3 +1,7 @@
+---
+tags: [academic, market-research, monetization, xianyu]
+domain: Academic
+---
 # 学术论文/PPT 服务 — 市场调研与能力强化
 
 > 基于 2026年7月搜索引擎调研

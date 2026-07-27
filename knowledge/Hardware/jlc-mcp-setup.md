@@ -1,3 +1,7 @@
+---
+tags: [JLCPCB, EDA, MCP, automation, electronics]
+domain: Hardware
+---
 # JLCPCB MCP · 嘉立创 EDA AI 自动化
 
 来源：GitHub hyl64/jlcmcp (161⭐) + 社区教程

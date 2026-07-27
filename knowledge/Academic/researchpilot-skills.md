@@ -1,3 +1,7 @@
+---
+tags: [research, AI-agent, skills, academic-workflow, paper-writing]
+domain: Academic
+---
 # ResearchPilot-Skills · AI 科研全流程 Skill 套件
 
 来源：GitHub LMDHQ-0420/ResearchPilot-Skills

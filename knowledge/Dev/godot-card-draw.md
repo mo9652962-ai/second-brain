@@ -1,3 +1,7 @@
+---
+tags: [godot, game-dev, animation, open-source]
+domain: Programming
+---
 # godot-card-draw · 抽卡动画
 
 来源：GitHub fragule-hub/godot-card-draw (16⭐)

@@ -1,3 +1,7 @@
+---
+tags: [PCB, AI, design-automation, research, hardware]
+domain: Hardware
+---
 # PCB 设计与 AI 自动化 · 十轮研究汇总
 
 来源：10 轮搜索引擎研究

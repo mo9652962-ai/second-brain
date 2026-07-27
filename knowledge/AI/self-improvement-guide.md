@@ -1,3 +1,7 @@
+---
+tags: [self-improvement, hermes, AI-Agent, guide, condensed]
+domain: AI
+---
 # Hermes Agent 自我强化指南
 
 > **完整版见 [[k-self-improvement]]**（11 节深度展开，含定价参考/工具清单/新认知）

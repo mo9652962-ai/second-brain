@@ -1,3 +1,7 @@
+---
+tags: [translation, screen-capture, open-source, realtime]
+domain: Productivity
+---
 # Translumo · 实时屏幕翻译工具
 
 来源：GitHub ramjke/Translumo (5.5k⭐)

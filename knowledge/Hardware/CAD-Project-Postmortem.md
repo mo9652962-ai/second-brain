@@ -1,8 +1,7 @@
 ---
+tags: [CAD, 3d-modeling, engineering, project-postmortem, case-study, build123d, freecad, 3d-printing]
 domain: CAD-Design
 cross-domain: ["programming", "ai-agent"]
-related: [[CAD-Design]], [[Programming]], [[Vibe-Coding]]
-tags: [case-study, postmortem, cad, build123d, freecad, 3d-printing, lessons-learned]
 created: 2026-07-21
 ---
 
@@ -164,8 +163,4 @@ mesh.write("output.stl")
 📁 CAD-存档/                 ← v1-v3 归档
 ```
 
----
-
-_最后更新: 2026-07-21 | 累计迭代: v1-v8 + iStand | 工期: ~5 小时_
----
 > 关联: [[CAD-Design]] · [[Cross-Domain|🔀 知识地图]] | [[HOME|🏠 首页]]

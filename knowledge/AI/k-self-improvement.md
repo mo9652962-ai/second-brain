@@ -1,3 +1,7 @@
+---
+tags: [self-improvement, AI-Agent, knowledge-management, cron]
+domain: AI
+---
 # k 的自我强化 · 2026-07-25 更新
 
 > **关联**: 精简版见 [[self-improvement-guide]]（4 节摘要）

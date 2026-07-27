@@ -18,7 +18,11 @@
 | **github** | stdio | GitHub PR/Issue/代码管理 |
 | **jlcmcp** | stdio | 嘉立创 EDA PCB 自动化 (38 工具) |
 
-## Obsidian MCP 可用功能
+---
+tags: [obsidian, MCP, setup, plugin, knowledge-management]
+domain: Productivity
+---
+# Obsidian MCP 设置
 - 读取/写入笔记
 - 搜索 vault 内容
 - 管理 frontmatter 和标签

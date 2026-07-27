@@ -1,3 +1,7 @@
+---
+tags: [workflow, AI, automation, guide, hermes]
+domain: AI
+---
 # AI 工作流搭建实战指南
 
 来源：10 轮搜索引擎研究 + 现有知识整合

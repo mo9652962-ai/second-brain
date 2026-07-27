@@ -1,3 +1,7 @@
+---
+tags: [monetization, xianyu, pricing, AI-service, costs]
+domain: Academic
+---
 # AI 变现实战手册（最终版·五轮研究整合）
 > 2026-07-25 更新
 >

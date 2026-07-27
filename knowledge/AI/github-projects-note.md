@@ -1,3 +1,7 @@
+---
+tags: [AI, learning, tutor, architecture, deep-learning]
+domain: AI
+---
 # DeepTutor 架构吸收笔记
 
 来源：https://github.com/HKUDS/DeepTutor (28k⭐)
