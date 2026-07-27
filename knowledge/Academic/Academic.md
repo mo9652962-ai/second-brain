@@ -5,6 +5,7 @@ cross-domain: [ai-agent, ppt-design, vibe-coding, workflow]
 related: ["knowledge/AI-Agent", "knowledge/AI-Workflow", "knowledge/PPT-Design", "knowledge/Vibe-Coding"]
 created: 2026-07-21
 updated: 2026-07-23
+status: adopted
 ---
 
 # 学术知识库

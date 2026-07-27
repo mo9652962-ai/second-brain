@@ -3,6 +3,7 @@ tags: [视频剪辑, 开源工具, 学习笔记]
 aliases: [OpenCut, 开源剪映]
 date: 2026-07-22
 source: https://github.com/OpenCut-app/OpenCut
+status: backlog
 ---
 
 # OpenCut — 开源视频剪辑工具

@@ -2,6 +2,7 @@
 tags: [design, wechat-miniprogram, campus, project-plan]
 domain: Programming
 created: 2026-07-24
+status: watch
 ---
 
 # 校园便利盒 — 完整设计方案

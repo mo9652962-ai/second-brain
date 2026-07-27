@@ -3,6 +3,7 @@ tags: [AI编码工具, 开源工具, 学习笔记, xAI]
 aliases: [Grok Build, xAI Coding Agent]
 date: 2026-07-22
 source: https://github.com/xai-org/grok-build
+status: watch
 ---
 
 # Grok Build — xAI 开源 AI 编码 Agent

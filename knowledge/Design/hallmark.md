@@ -3,6 +3,7 @@ tags: [Agent Skills, 设计工程, UI/UX, 反AI味]
 aliases: [Hallmark, Anti-AI-Slop]
 date: 2026-07-27
 source: https://github.com/Nutlope/hallmark
+status: adopted
 ---
 
 # Hallmark — Anti-AI-Slop 设计 Skill

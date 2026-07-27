@@ -1,6 +1,7 @@
 ---
 tags: [translation, screen-capture, open-source, realtime]
 domain: Productivity
+status: abandoned
 ---
 # Translumo · 实时屏幕翻译工具
 

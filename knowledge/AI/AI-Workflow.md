@@ -5,6 +5,7 @@ cross-domain: [hermes-agent, skill-authoring, multi-agent, automation]
 related: ["skills/hermes-agent", "skills/hermes-model-fallback", "skills/hermes-search-config", "skills/test-driven-development", "skills/systematic-debugging"]
 created: 2026-07-23
 updated: 2026-07-23
+status: adopted
 ---
 
 # AI 工作流与 Skill 编排（Hermes Edition）

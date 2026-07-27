@@ -1,6 +1,7 @@
 ---
 tags: [JLCPCB, EDA, MCP, automation, electronics]
 domain: Hardware
+status: adopted
 ---
 # JLCPCB MCP · 嘉立创 EDA AI 自动化
 

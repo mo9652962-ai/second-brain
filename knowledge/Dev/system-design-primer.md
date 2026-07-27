@@ -3,6 +3,7 @@ tags: [系统设计, 分布式, 学习笔记]
 aliases: [System Design Primer, 系统设计入门]
 date: 2026-07-22
 source: https://github.com/donnemartin/system-design-primer
+status: learning
 ---
 
 # 系统设计入门

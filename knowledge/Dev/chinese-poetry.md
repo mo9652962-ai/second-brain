@@ -1,6 +1,7 @@
 ---
 tags: [chinese, poetry, open-source, database]
 domain: Programming
+status: learning
 ---
 # chinese-poetry · 最全古诗词数据库
 

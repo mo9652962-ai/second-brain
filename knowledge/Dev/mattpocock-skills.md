@@ -3,6 +3,7 @@ tags: [Agent Skills, 工程方法论, TDD, 学习笔记]
 aliases: [Matt Pocock Skills, 编程工作流]
 date: 2026-07-22
 source: https://github.com/mattpocock/skills
+status: abandoned
 ---
 
 # Matt Pocock Skills

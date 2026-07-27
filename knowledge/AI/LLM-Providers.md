@@ -5,6 +5,7 @@ cross-domain: [hermes-agent, hermes-model-fallback, hermes-search-config, infras
 related: ["skills/hermes-model-fallback", "skills/hermes-search-config", "skills/hermes-agent"]
 created: 2026-07-23
 updated: 2026-07-23
+status: adopted
 ---
 
 # Hermes LLM & Search Provider 配置

@@ -2,6 +2,7 @@
 tags: [cross-domain, index]
 domain: cross-reference
 created: 2026-07-21
+status: adopted
 ---
 
 # 🔀 交叉领域索引 — 知识串联地图

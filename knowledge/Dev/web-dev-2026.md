@@ -3,6 +3,7 @@ tags: [Web开发, 全栈, 学习笔记]
 aliases: [Web Dev 2026, 前端技术栈]
 date: 2026-07-22
 source: https://javascript.plainenglish.io/the-2026-web-developer-stack-daily-tools-and-workflow-a341162b9644
+status: learning
 ---
 
 # Web 全栈开发 2026 — 学习笔记

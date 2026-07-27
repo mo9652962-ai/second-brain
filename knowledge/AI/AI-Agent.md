@@ -5,6 +5,7 @@ cross-domain: [ppt-design, academic, vibe-coding, workflow, obsidian]
 related: ["knowledge/AI-Workflow", "knowledge/PPT-Design", "knowledge/Academic", "knowledge/Vibe-Coding", "knowledge/Obsidian-Vault"]
 created: 2026-07-23
 updated: 2026-07-23
+status: adopted
 ---
 
 # AI Agent 知识库 — Hermes 视角
