@@ -44,7 +44,7 @@ generated: 2026-07-27 20:00
 | deepseek-v4-pro | ❌ | 不支持 |
 | glm-5.2 | ❌ | 不支持 |
 
-⚠️ **已知限制**: opencode-go 存在 bug #70482（Missing MediaUnderstandingProvider），即使 vision 模型也无法使用 image tool。此项待 sora 决定是否能接受当前限制，或将 vision 任务路由到其他 provider。
+⚠️ **已知限制**: opencode-go 存在 bug `#70482`（Missing MediaUnderstandingProvider），即使 vision 模型也无法使用 image tool。此项待 sora 决定是否能接受当前限制，或将 vision 任务路由到其他 provider。
 
 ## ⏳ 需你处理（未改动原文件）
 

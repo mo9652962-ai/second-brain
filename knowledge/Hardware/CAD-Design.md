@@ -1,5 +1,5 @@
 ---
-tags: [cad, 3d-modeling, engineering, 2026-trends]
+tags: [CAD, 3d-modeling, engineering, 2026-trends]
 domain: cad-design
 cross-domain: [ai-agent, vibe-coding]
 related: ["knowledge/AI-Agent", "knowledge/Vibe-Coding"]

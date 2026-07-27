@@ -1,8 +1,8 @@
 ---
-tags: [home, moc, hub]
+tags: [home, MOC, hub]
 domain: home
 created: 2026-07-21
-updated: 2026-07-27
+updated: 2026-07-28
 ---
 
 # 🏠 Second Brain — 知识中枢
@@ -30,6 +30,7 @@ LIMIT 10
 
 ## 🔧 最近维护
 
+- [[memory/2026/07/2026-07-28-maintenance|2026-07-28 维护报告]] — 仓库健康检查 + 孤立笔记链接
 - [[memory/2026/07/2026-07-27-maintenance|2026-07-27 维护报告]] — 仓库健康检查：全部通过
 - [[memory/2026/07/2026-07-26-maintenance|2026-07-26 维护报告]] — 结构优化 v2 + 批量链接修复
 
@@ -69,7 +70,7 @@ AI 能力架构、Skill 编排、模型供应商策略、Vibe Research
 
 ### 📚 [[knowledge/Academic/Academic|Academic]] — 学术论文与变现
 论文检索、阅读、写作、去AI化、闲鱼接单定价策略
-- **包含**: Academic · ai-monetization-costs · academic-service-research
+- **包含**: Academic · ai-monetization-costs · academic-service-research · [[paper-pipeline-data-contract|论文 Pipeline 数据契约]]
 - **关联**: → AI(AI-Agent) → Design(PPT)
 
 ### 🎨 [[knowledge/Design/PPT-Design|Design]] — PPT 与视觉设计
@@ -89,6 +90,7 @@ Python、Web 开发、系统设计、编程教育
 
 ### 🏠 [[knowledge/Productivity/obsidian-tips|Productivity]] — 效率工具
 Obsidian 笔记系统、效率插件
+- **包含**: obsidian-tips · [[knowledge/Productivity/token-usage-report-20260727|Token 使用报告]]
 - **关联**: → 全部域（元知识）
 
 ---
@@ -111,6 +113,8 @@ Obsidian 笔记系统、效率插件
 - **[[INDEX]]** — 🗺️ vault 全局关联网
 - **[[MEMORY]]** — k 的长期记忆
 - **[[memory/2026/07/2026-07-26-review|memory/2026/07]]** — 每日原始日志（按年月分层，近期回顾可见）
+- **[[memory/2026/07/2026-07-27-daily-cleanup|今日清理报告]]** — 每日清除记录 (07-27)
+- **[[memory/2026/07/2026-07-27-todo-cleanup|今日 TODO 清理]]** — TODO 扫描与归档 (07-27)
 
 ### 🧩 散落知识点关联网
 
