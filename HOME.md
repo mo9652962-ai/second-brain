@@ -133,7 +133,7 @@ HOME.md ──→ 每个知识域（6域）
 
 | 入口 | 位置 | 说明 |
 |:-----|:-----|:------|
-| 📊 **工作流** | [[pipelines/pipeline-overview\|pipelines/]] | 论文·PPT·Skill 触发工作流 |
+| 📊 **工作流** | [[pipelines/pipeline-overview|pipelines/]] | 论文·PPT·Skill 触发工作流 |
 | 📈 **项目** | [[projects/current]] | 当前项目状态与进度 |
 | 📝 **模板** | [[templates/每日笔记模板|templates/]] | 每日笔记/通用笔记模板 |
 | 🧠 **学习** | [[.learnings/LEARNINGS]] | 架构决策 + 最佳实践 |
@@ -148,10 +148,10 @@ HOME.md ──→ 每个知识域（6域）
 
 | 你想做什么？ | 从这里开始 → |
 |-------------|-------------|
-| 做 PPT | [[knowledge/Design/PPT-Design\|Design]] → 看趋势 + 方法论 |
-| 写论文 | [[knowledge/Academic/Academic\|Academic]] → 选对应 skills |
-| 画 PCB | [[knowledge/Hardware/pcb-design-notes\|pcb-design]] → 加载 skill |
-| 配置 Agent | [[knowledge/AI/AI-Agent\|AI]] → 配置要点 |
+| 做 PPT | [[knowledge/Design/PPT-Design|Design]] → 看趋势 + 方法论 |
+| 写论文 | [[knowledge/Academic/Academic|Academic]] → 选对应 skills |
+| 画 PCB | [[knowledge/Hardware/pcb-design-notes|pcb-design]] → 加载 skill |
+| 配置 Agent | [[knowledge/AI/AI-Agent|AI]] → 配置要点 |
 | 看进度 | [[projects/current]] |
 | 查经验 | [[MEMORY]] |
 
