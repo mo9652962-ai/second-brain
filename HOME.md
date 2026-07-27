@@ -2,7 +2,7 @@
 tags: [home, moc, hub]
 domain: home
 created: 2026-07-21
-updated: 2026-07-25
+updated: 2026-07-27
 ---
 
 # 🏠 Second Brain — 知识中枢
@@ -30,7 +30,8 @@ LIMIT 10
 
 ## 🔧 最近维护
 
-- [[2026-07-27-maintenance|2026-07-27 维护报告]] — 仓库健康检查：全部通过
+- [[memory/2026/07/2026-07-27-maintenance|2026-07-27 维护报告]] — 仓库健康检查：全部通过
+- [[memory/2026/07/2026-07-26-maintenance|2026-07-26 维护报告]] — 结构优化 v2 + 批量链接修复
 
 ---
 
