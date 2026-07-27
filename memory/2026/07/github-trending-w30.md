@@ -55,3 +55,30 @@ date: 2026-07-27
 | ✅ 更新 | `knowledge/Dev/grok-build.md` (新增 ACP 对比 + 星标更新) |
 | ✅ 更新 | `knowledge/Dev/mattpocock-skills.md` (星标 + 关联更新) |
 | ✅ 更新 | `knowledge/knowledge-map.md` (4 处更新) |
+
+---
+
+## k 的吸收与应用 (2026-07-27)
+
+### 已落地的
+
+| 项目 | 应用 |
+|:-----|:------|
+| **mattpocock/skills** → `grill-with-docs` | ✅ 已安装，接单时先面试式对齐需求 |
+| **mattpocock/skills** → 完成标准 | ✅ PPT skill 已添加，其他 skill 逐步改进 |
+| **codebase-memory-mcp** RAM-first 理念 | ✅ 回复先用内存处理再写文件 |
+
+### 新吸收的行为改进
+
+**Hallmark 57 道 slop 门 → Pre-emit 自审查**
+回复前快速自检：
+- [ ] 太长？→ 压缩
+- [ ] 过于规整？→ 打破模式
+- [ ] 过度帮助？→ 先问"
+- [ ] 废话？→ 删掉
+
+**ibelick/ui-skills → 垂直切分**
+一个大 skill 不如几个小 skill，保持每个聚焦一个场景
+
+**Grok Build → ACP 协议**
+xAI 的 Agent 通信协议，关注后续与 MCP 的竞合关系
