@@ -1,3 +1,7 @@
+---
+tags: [chinese, poetry, open-source, database]
+domain: Programming
+---
 # chinese-poetry · 最全古诗词数据库
 
 来源：GitHub (52,359⭐，中文开源前排)

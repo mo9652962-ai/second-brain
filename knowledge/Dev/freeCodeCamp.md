@@ -1,8 +1,7 @@
 ---
+tags: [编程, 学习, web-development, freeCodeCamp, open-source, education]
 domain: 编程
 cross-domain: ["ai-agent", "vibe-coding", "programming"]
-related: [[Programming]], [[AI-Agent]], [[Vibe-Coding]], [[AI-Workflow]]
-tags: [open-source, education, full-stack, web-development, learn-to-code]
 created: 2026-07-21
 source: "github.com/freeCodeCamp/freeCodeCamp + Tavily 全网搜索"
 ---

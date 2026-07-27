@@ -1,4 +1,6 @@
 ---
+tags: [productivity, tools, automation, adopted]
+domain: Productivity
 status: adopted
 ---
 

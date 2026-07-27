@@ -1,3 +1,7 @@
+---
+tags: [PCB, hardware, EDA, design-notes]
+domain: Hardware
+---
 # PCB 设计学习笔记
 
 来源：10 轮搜索引擎研究 + 整合成 skill

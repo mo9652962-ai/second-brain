@@ -1,4 +1,6 @@
 ---
+tags: [writing, AI-resistance, storytelling, backlog]
+domain: Productivity
 status: backlog
 note: 以后拿来写小说用
 ---

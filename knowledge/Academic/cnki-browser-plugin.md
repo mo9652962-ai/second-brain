@@ -1,3 +1,7 @@
+---
+tags: [cnki, browser-plugin, academic, research-tool]
+domain: Academic
+---
 # 科研工具：攻玉学术·知网浏览器插件
 
 来源：小黑盒 "吃太饱骑士"
