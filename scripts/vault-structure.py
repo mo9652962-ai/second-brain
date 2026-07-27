@@ -5,7 +5,9 @@ import os, re, sys, json
 from collections import defaultdict, Counter
 from datetime import datetime
 
-VAULT = r"%USERPROFILE%\.openclaw\workspace"
+VAULT = os.environ.get('VAULT_PATH', r"%USERPROFILE%\.openclaw\workspace")
+if not os.path.exists(VAULT):
+    VAULT = os.getcwd()  # 在 CI 中 fallback 到当前目录
 os.chdir(VAULT)
 
 IGNORE_DIRS = {'.git', '.obsidian', 'node_modules', '.hermes', 'scripts', 'templates'}
