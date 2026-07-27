@@ -1,3 +1,7 @@
+---
+tags: [research, AI, collaboration, academic, LLM]
+domain: Academic
+---
 # AI 科研协作：110 亿 Token 的经验
 
 来源：小黑盒 "吃太饱骑士"

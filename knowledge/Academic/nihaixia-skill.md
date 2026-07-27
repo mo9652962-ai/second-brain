@@ -1,3 +1,7 @@
+---
+tags: [中医, TCM, 经方, AI-skill, 学习笔记]
+domain: Academic
+---
 # 倪海厦 Skill · 中医经方 AI 技能包
 
 来源：小黑盒 "软件格律诗"

@@ -1,4 +1,8 @@
-# AI 工具参考
+---
+tags: [design, AI-tools, reference, productivity]
+domain: Design
+---
+# AI 设计工具参考
 
 来源：社区推荐 + 个人研究
 更新：2026-07-25

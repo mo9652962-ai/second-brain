@@ -1,3 +1,7 @@
+---
+tags: [research, methodology, tools, deep-dive, AI-workflow]
+domain: AI
+---
 # Vibe-Research 十轮深度探索总结
 
 > 基于 vibe-research.md 中的 15+ 个工具，10 轮搜索引擎深度调研

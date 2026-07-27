@@ -1,3 +1,7 @@
+---
+tags: [AI编码工具, programming, vibe-coding, productivity]
+domain: Programming
+---
 # Ponytail · AI 编程极简原则
 
 来源：小黑盒 (50k⭐)
