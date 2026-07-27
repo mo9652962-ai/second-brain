@@ -1,0 +1,16 @@
+name: vault-ci
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [dev]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check wikilinks
+        run: python3 scripts/check_wikilinks.py
