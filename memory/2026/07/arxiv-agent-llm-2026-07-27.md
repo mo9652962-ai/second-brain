@@ -183,6 +183,12 @@ title: arXiv AI Agent & LLM 周报 2026-07-27
 
 ---
 
+## 精选论文深度解读
+
+📝 [[memory/2026/07/arxiv-paper-deepdive-2026-07-27|论文深度解读 2026-07-27]] — OpenForgeRL / Non-Convergence Detection / Agent Context Lifecycle
+
+---
+
 ## 本周趋势观察
 
 1. **Agent 上下文管理成为热点**: 多篇论文聚焦 Agent 内存和上下文管理, 说明社区认识到这是 Agent 落地的关键瓶颈
