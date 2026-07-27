@@ -1,6 +1,7 @@
 ---
 tags: [cnki, browser-plugin, academic, research-tool]
 domain: Academic
+status: watch
 ---
 # 科研工具：攻玉学术·知网浏览器插件
 

@@ -3,6 +3,7 @@ tags: [AI编码工具, MCP, 知识图谱, 学习笔记]
 aliases: [Codebase Memory MCP, DeusData]
 date: 2026-07-27
 source: https://github.com/DeusData/codebase-memory-mcp
+status: watch
 ---
 
 # Codebase Memory MCP — 代码知识图谱引擎

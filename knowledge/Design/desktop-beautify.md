@@ -2,6 +2,7 @@
 tags: [knowledge, windows, desktop, beautify]
 domain: AI-Workflow
 created: 2026-07-24
+status: adopted
 ---
 
 # Windows 桌面美化方案

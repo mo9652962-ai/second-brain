@@ -4,6 +4,7 @@ domain: 编程
 cross-domain: ["ai-agent", "vibe-coding", "programming"]
 created: 2026-07-21
 source: "github.com/freeCodeCamp/freeCodeCamp + Tavily 全网搜索"
+status: learning
 ---
 
 # freeCodeCamp — 全球最大开源编程学习平台

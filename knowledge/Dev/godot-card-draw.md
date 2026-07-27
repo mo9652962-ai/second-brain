@@ -1,6 +1,7 @@
 ---
 tags: [godot, game-dev, animation, open-source]
 domain: Programming
+status: learning
 ---
 # godot-card-draw · 抽卡动画
 

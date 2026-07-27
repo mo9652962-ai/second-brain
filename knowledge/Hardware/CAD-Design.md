@@ -5,6 +5,7 @@ cross-domain: [ai-agent, vibe-coding]
 related: ["knowledge/AI-Agent", "knowledge/Vibe-Coding"]
 created: 2026-07-21
 updated: 2026-07-21
+status: adopted
 ---
 
 # CAD 设计与 3D 建模知识库

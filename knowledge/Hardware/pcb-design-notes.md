@@ -1,6 +1,7 @@
 ---
 tags: [PCB, hardware, EDA, design-notes]
 domain: Hardware
+status: adopted
 ---
 # PCB 设计学习笔记
 
