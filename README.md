@@ -15,14 +15,21 @@
 │   ├── Dev/           # 软件开发 / 极简编程
 │   ├── Hardware/      # PCB / CAD / 嵌入式
 │   └── Productivity/  # 效率工具 / 方法论
-├── skills/             # Hermes Agent Skills（可安装）
+├── skills/             # Hermes Agent Skills
 ├── memory/             # 每日日志 / 反思 / 周回顾
 │   └── YYYY/MM/       # 时间线存档
 ├── .learnings/         # LEARNINGS 记录
 ├── projects/           # 项目文档
+├── pipelines/          # 工作流 Pipeline 文档
+├── scripts/            # 辅助脚本
+├── templates/          # 模板
+├── concepts/           # 核心概念
+├── portfolio/          # 作品集
+├── .hermes/            # Hermes Agent 配置
 ├── knowledge-map.md   # 🌐 知识地图（核心索引）
 ├── SOUL.md            # AI 行为准则
-└── README.md          # 本文
+├── README.md          # 本文
+└── MEMORY.md          # 持久记忆
 ```
 
 ## 🤖 自动化体系
