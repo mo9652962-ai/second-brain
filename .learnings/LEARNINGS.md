@@ -1251,3 +1251,74 @@ AI Engineer World's Fair 2026 提炼的五大趋势：
 - Recurrence-Count: 1
 - First-Seen: 2026-07-21
 - Last-Seen: 2026-07-21
+
+---
+
+## [LRN-20260727-001] best_practice
+
+**Logged**: 2026-07-27T08:53:00+08:00
+**Priority**: high
+**Status**: pending
+**Area**: config
+
+### Summary
+实用 Agent 构建 7 步生产指南：评估集先于代码，≤8 工具，max_steps=10，抓幻觉工具调用
+
+### Details
+来自 kay-rottmann.de 2026-04 生产级 Agent 构建指南：
+1. **7 步法**: (1) 窄用例 → (2) 工具+数据源 → (3) 评测集先行 → (4) 100 行循环 → (5) 迭代至评测通过 → (6) 人工审核 → (7) 上线
+2. **工具 ≤ 8 个**: 超过则分层为子 Agent
+3. **工具描述精确**: "获取客户资料"→"返回主数据+最近10单，或404"
+4. **max_steps = 10**: 需要 30 步说明用例过宽
+5. **幻觉工具处理**: 捕获不存在的工具调用并反馈可用列表
+6. **3-8 次/次运行**: well-scoped 用例标准
+7. **'Skipping eval = demo, not agent'**: 评测集是 Agent，不是演示
+
+### Relation to Existing
+- 与我 PPT 6 轮迭代（v1→v6）在理念上一致
+- 可推广到所有 Agent 任务：最小可行 → 迭代验证 → 增强
+- 与目前已有的 self-improvement loop 互补
+
+### Suggested Action
+- 在构建新的 Agent 功能时应用此 7 步法
+- 确保每次 Agent 任务有明确退出条件（max_steps）
+- 工具描述遵循「精确+边界条件」规范
+
+### Metadata
+- Source: web_search (kay-rottmann.de)
+- Tags: agent-building, production-guide, eval-first, best-practice
+- Pattern-Key: config.agent-build-7-step
+- Recurrence-Count: 1
+- First-Seen: 2026-07-27
+- Last-Seen: 2026-07-27
+
+---
+
+## [LRN-20260727-002] knowledge_gap
+
+**Logged**: 2026-07-27T08:53:00+08:00
+**Priority**: medium
+**Status**: pending
+**Area**: config
+
+### Summary
+OpenClaw SkillSpector (NVIDIA 合作) + SSRF deny policy + Sandbox confinement 安全强化
+
+### Details
+1. NVIDIA SkillSpector 于 2026-06-01 上线，自动检测所有 ClawHub skills 中的隐藏指令
+2. 与 skill-vetter (@spclaudehome) 形成互补：平台级 + 安装前深度审计
+3. SSRF explicit deny policy: 新 URL 需加入 `files.urlAllowlist` 白名单
+4. Webhook auth-failure throttling: 429 后等待 60s
+5. Sandbox confinement: 技能只能写入 `skills/` 目录
+
+### Suggested Action
+- 安装新 skill 前先用 skill-vetter，配合 SkillSpector 平台级扫描
+- 审查当前安全配置确保 SSRF deny policy 就绪
+
+### Metadata
+- Source: web_search
+- Tags: security, skillspector, clawhub, skill-vetter, ssrf
+- Pattern-Key: config.skillspector
+- Recurrence-Count: 1
+- First-Seen: 2026-07-27
+- Last-Seen: 2026-07-27
