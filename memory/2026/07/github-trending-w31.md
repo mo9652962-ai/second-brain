@@ -5,7 +5,7 @@ date: 2026-07-27
 
 # GitHub 周报 · W31 (2026-07-27)
 
-> 主题：大佬们下场了。李博杰AI Agent书+16.6k, Moonshot入局, Andrew Ng新项目
+> 主题：AI Agent书+16.6k, Moonshot入局, Andrew Ng新项目
 
 ---
 

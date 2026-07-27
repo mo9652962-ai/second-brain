@@ -30,6 +30,7 @@ LIMIT 10
 
 ## 🔧 最近维护
 
+- [[memory/2026/07/2026-07-28-maintenance-2|2026-07-28 维护报告 #2]] — 新增孤立笔记链接
 - [[memory/2026/07/2026-07-28-maintenance|2026-07-28 维护报告]] — 仓库健康检查 + 孤立笔记链接
 - [[memory/2026/07/2026-07-27-maintenance|2026-07-27 维护报告]] — 仓库健康检查：全部通过
 - [[memory/2026/07/2026-07-26-maintenance|2026-07-26 维护报告]] — 结构优化 v2 + 批量链接修复
@@ -90,7 +91,7 @@ Python、Web 开发、系统设计、编程教育
 
 ### 🏠 [[knowledge/Productivity/obsidian-tips|Productivity]] — 效率工具
 Obsidian 笔记系统、效率插件
-- **包含**: obsidian-tips · [[knowledge/Productivity/token-usage-report-20260727|Token 使用报告]]
+- **包含**: obsidian-tips · [[knowledge/Productivity/token-usage-report-20260727|Token 使用报告]] · [[knowledge/Productivity/ai-blogger-10round-research|AI博主10轮研究]]
 - **关联**: → 全部域（元知识）
 
 ---
@@ -115,6 +116,9 @@ Obsidian 笔记系统、效率插件
 - **[[memory/2026/07/2026-07-26-review|memory/2026/07]]** — 每日原始日志（按年月分层，近期回顾可见）
 - **[[memory/2026/07/2026-07-27-daily-cleanup|今日清理报告]]** — 每日清除记录 (07-27)
 - **[[memory/2026/07/2026-07-27-todo-cleanup|今日 TODO 清理]]** — TODO 扫描与归档 (07-27)
+- **[[memory/2026/07/github-trending-w30|GitHub W30 周报]]** — 07-20 热榜速览
+- **[[memory/2026/07/github-trending-w31|GitHub W31 周报]]** — 07-27 热榜速览
+- **[[memory/2026/07/github-trending-w31-v2|GitHub W31 评估]]** — W31 项目研究与应用评估
 
 ### 🧩 散落知识点关联网
 
