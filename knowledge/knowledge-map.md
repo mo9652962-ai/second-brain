@@ -7,7 +7,7 @@ date: 2026-07-22
 
 # 🗺️ 知识地图 — Knowledge Map
 
-> 所有知识领域的索引与关联。最后更新: 2026-07-26（W30 新增 30+ 知识点、2 个新 Skill、7 个知识域同步）
+> 所有知识领域的索引与关联。最后更新: 2026-07-27（W30 终结整理 — 本周 GitHub Trending 5 大 AI/Dev 项目入库）
 
 ---
 
@@ -51,6 +51,8 @@ graph TD
     B --> B2[AIRI 数字伙伴]
     B --> B3[Grok Build]
     B --> B4[OpenClaw 配置]
+    B --> B5[Codebase Memory MCP ⭐]
+    B --> B6[UI Skills + Hallmark ⭐]
     C[🛠️ 工具与产品] --> C1[OpenCut 视频剪辑]
     C --> C2[大模型供应商]
     C --> C3[模型选择指南]
@@ -97,11 +99,14 @@ Matt Pocock 方法论     Grill+TDD 工作流
 | 领域 | 笔记 | 相关配置/工具 | 掌握程度 |
 |:----|:----|:------------|:--------:|
 | Agent Skills 方法论 | [[mattpocock-skills]] | engineering-workflow | 📖 学习 + 🛠️ 应用 |
-| 行为改进 | [[mattpocock-methodology]] | [[../SOUL]] | 🛠️ 已采纳 |
-| Agent 自我进化 | [[k-self-improvement]] · [[self-improvement-guide]] | Hermes Memory | 🛠️ 新增 |
-| AI VTuber | [[airi]] | — | 📖 参考 |
-| xAI 编码 Agent | [[grok-build]] | — | 📖 参考 |
-| **AI Agent 深度研究** 🔥 | `.learnings/LEARNINGS.md` | — | 🟢 **深度吸收** |
+|| Agent Skills 方法论 | [[mattpocock-skills]] | engineering-workflow | 📖 学习 + 🛠️ 应用 |
+|| 行为改进 | [[mattpocock-methodology]] | [[../SOUL]] | 🛠️ 已采纳 |
+|| 代码智能(新) | [[codebase-memory-mcp]] ⭐ | MCP 服务器 | 🛠️ 值得安装 |
+|| 反AI味设计(新) | [[hallmark]] ⭐ | Agent Skill | 🛠️ 方法论迁移 |
+|| 设计工程师(新) | [[ibelick-ui-skills]] ⭐ | UI Skills CLI | 📖 学习 |
+|| AI VTuber | [[airi]] | — | 📖 参考 |
+|| xAI 编码 Agent | [[grok-build]] | — | 📖 参考 |
+|| **AI Agent 深度研究** 🔥 | `.learnings/LEARNINGS.md`
 | **Context Engineering** | LRN-20260724-001 | SOUL.md/MEMORY.md | 🟡 理解 |
 | **Multi-Agent 编排** | LRN-20260724-003 | Skill Workshop | 🟡 理解 |
 | **Memory 工程** | LRN-20260720-001/005/011 | SESSION-STATE.md | 🟡 理解 + 部分实践 |
@@ -158,13 +163,15 @@ Fallback 链: opencode-go(6层) → SiliconFlow(2层) → DeepSeek直连 → Ope
 
 | 方法论 | 笔记来源 | 已应用到的 skill | 核心价值 |
 |:------|:--------|:---------------|:--------|
-| **Grill 先行** | [[mattpocock-methodology]] | 8051, CAD, engineering-workflow | 消除理解偏差 |
-| **完成标准** | [[mattpocock-methodology]] | 所有 skill | 防提前结束 |
-| **渐进式披露** | [[mattpocock-skills]] | 待改进 | 减少上下文消耗 |
-| **引导词** | [[mattpocock-skills]] | engineering-workflow | 压缩 token |
-| **双轴审查** | [[mattpocock-skills]] | engineering-workflow | 代码质量 |
-| **极简编程** | [[ponytail]] | 编程全场景 | 能少写就少写 |
-| **上下文工程** | [[k-self-improvement]] | Agent 回复 | 上下文 > 提示词 |
+|| **Grill 先行** | [[mattpocock-methodology]] | 8051, CAD, engineering-workflow | 消除理解偏差 |
+|| **完成标准** | [[mattpocock-methodology]] | 所有 skill | 防提前结束 |
+|| **渐进式披露** | [[mattpocock-skills]] | 待改进 | 减少上下文消耗 |
+|| **引导词** | [[mattpocock-skills]] | engineering-workflow | 压缩 token |
+|| **双轴审查** | [[mattpocock-skills]] | engineering-workflow | 代码质量 |
+|| **反AI味设计** | [[hallmark]] ⭐ | UI/前端降AI味 | 57道Slop检测门 |
+|| **设计工程师思维** | [[ibelick-ui-skills]] ⭐ | UI Skill 分类组织 | 垂直切分 vs 大一统 |
+|| **极简编程** | [[ponytail]] | 编程全场景 | 能少写就少写 |
+|| **上下文工程** | [[k-self-improvement]] | Agent 回复 | 上下文 > 提示词 |
 
 ---
 
@@ -173,10 +180,13 @@ Fallback 链: opencode-go(6层) → SiliconFlow(2层) → DeepSeek直连 → Ope
 | 笔记 | 上游知识 | 下游应用 | 平行参考 |
 |:----|:--------|:--------|:--------|
 | [[system-design-primer]] | — | 系统架构决策 | [[mattpocock-skills]] |
-| [[mattpocock-skills]] | 工程经验 | [[mattpocock-methodology]] | engineering-workflow |
-| [[mattpocock-methodology]] | [[mattpocock-skills]] | 8051/CAD/workflow skill | [[../AGENTS]] |
-| [[airi]] | AI Agent 技术 | 多供应商集成参考 | [[grok-build]] |
-| [[grok-build]] | AI 编码 Agent | 竞品分析 | [[airi]] |
+|| [[mattpocock-skills]] | 工程经验 | [[mattpocock-methodology]] | engineering-workflow | [[ibelick-ui-skills]] |
+|| [[mattpocock-methodology]] | [[mattpocock-skills]] | 8051/CAD/workflow skill | [[../AGENTS]] |
+|| [[airi]] | AI Agent 技术 | 多供应商集成参考 | [[grok-build]] |
+|| [[grok-build]] | AI 编码 Agent | 竞品分析 | [[airi]] |
+|| [[codebase-memory-mcp]] ⭐ | MCP 生态 | Agent 代码智能 | [[grok-build]] |
+|| [[hallmark]] ⭐ | 反AI味设计 | UI/前端降AI味 | [[ibelick-ui-skills]] · [[PPT-Design]] |
+|| [[ibelick-ui-skills]] ⭐ | 设计工程 | Agent UI 技能 | [[hallmark]] · [[mattpocock-skills]] |
 | [[opencut]] | 视频编辑 | 自动化视频管线 | — |
 | [[k-self-improvement]] | 搜索引擎研究 | Agent 行为优化 | [[self-improvement-guide]] |
 | [[ai-monetization-costs]] | 闲鱼市场调研 | 变现落地执行 | [[monetization-analysis]] · [[academic-service-research]] |
