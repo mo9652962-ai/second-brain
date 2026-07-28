@@ -17,7 +17,8 @@ mcp = FastMCP("Memvid")
 def create_memory() -> str:
     """创建一个新的空记忆文件"""
     if not MEMORY_FILE.exists():
-        memvid.create(str(MEMORY_FILE))
+        mv = memvid.create(str(MEMORY_FILE))
+        mv.close()
         return f"✅ 已创建记忆文件: {MEMORY_FILE}"
     return f"ℹ️  记忆文件已存在: {MEMORY_FILE}"
 
@@ -33,7 +34,11 @@ def put_memory(content: str, title: str = "", metadata: str = "") -> str:
         metadata: 可选元数据（JSON 字符串）
     """
     mv = memvid.open(str(MEMORY_FILE))
-    result = mv.put(text=content, title=title or None, metadata=metadata or {})
+    result = mv.put(
+        text=content, 
+        title=title or None, 
+        metadata=metadata or {}
+    )
     mv.close()  # 关闭即自动提交
     return f"✅ 已保存记忆 (ID: {result})"
 
@@ -49,20 +54,14 @@ def search_memory(query: str, k: int = 5) -> str:
     """
     mv = memvid.open(str(MEMORY_FILE))
     result = mv.find(query, k=k)
-    hits = result.hits if hasattr(result, 'hits') else result.get('hits', [])
-    
-    if not hits:
-        mv.close()
-        return "❌ 没有找到相关记忆"
-    
-    output = [f"🔍 搜索: '{query}' (找到 {len(hits)} 条)"]
-    for i, hit in enumerate(hits, 1):
-        content = hit.content if hasattr(hit, 'content') else hit.get('content', '')
-        score = hit.score if hasattr(hit, 'score') else hit.get('score', 0)
-        output.append(f"\n{i}. (相似度: {score:.2f})")
-        output.append(f"   {content[:200]}...")
-    
     mv.close()
+    
+    if not result:
+        return "❌ 未找到匹配的记忆"
+    
+    output = [f"✅ 找到 {len(result)} 条相关记忆:\n"]
+    for i, r in enumerate(result, 1):
+        output.append(f"{i}. {r.content[:100]}...")
     return "\n".join(output)
 
 
@@ -75,8 +74,12 @@ def memory_stats() -> str:
     mv = memvid.open(str(MEMORY_FILE))
     stats = mv.stats()  # 返回字典
     size_mb = MEMORY_FILE.stat().st_size / 1024 / 1024
-    total_frames = stats.get('frame_count', stats.get('total_frames', stats.get('frames', 'N/A')))
+    total_frames = stats.get(
+        'frame_count', 
+        stats.get('total_frames', stats.get('frames', 'N/A'))
+    )
     mv.close()
+    
     return f"""📊 Memvid 记忆统计
 
 文件: {MEMORY_FILE}
@@ -96,18 +99,18 @@ def ask_memory(question: str) -> str:
     """
     mv = memvid.open(str(MEMORY_FILE))
     result = mv.ask(question)
+    mv.close()
     
     # 处理对象或字典返回
     if hasattr(result, 'answer'):
         answer = result.answer
-        confidence = result.confidence
+        confidence = result.confidence if hasattr(result, 'confidence') else 0
         sources = len(result.sources) if hasattr(result, 'sources') else 0
     else:
         answer = result.get('answer', '无法回答')
         confidence = result.get('confidence', 0)
         sources = len(result.get('sources', []))
     
-    mv.close()
     return f"""🧠 Memvid 回答
 
 问: {question}
@@ -122,7 +125,10 @@ if __name__ == "__main__":
     # 确保记忆文件存在
     if not MEMORY_FILE.exists():
         mv = memvid.create(str(MEMORY_FILE))
-        mv.put(text="这是 Second Brain 的第一条记忆，记录于 2026 年 7 月 28 日。Second Brain 是基于 Obsidian + Hermes 的个人知识管理系统，拥有 8,248 个代码节点和 62,226 条关系。", metadata={"type": "system"})
+        mv.put(
+            text="这是 Second Brain 的第一条记忆，记录于 2026 年 7 月 28 日。Second Brain 是基于 Obsidian + Hermes 的个人知识管理系统，拥有 8,248 个代码节点和 62,226 条关系。", 
+            metadata={"type": "system"}
+        )
         mv.close()  # 关闭即自动提交
         print(f"✅ 已创建初始化记忆文件: {MEMORY_FILE}")
     
