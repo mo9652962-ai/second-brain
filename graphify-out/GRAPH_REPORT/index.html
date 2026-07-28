@@ -1,0 +1,1604 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="AI Agent 第二大脑 | Hermes 七大自举系统 | 硬件/PCB/单片机全链路知识库 | 学术写作工作流 | 全中文 Obsidian 知识库">
+      
+      
+        <meta name="author" content="mo9652962">
+      
+      
+        <link rel="canonical" href="https://mo9652962-ai.github.io/second-brain/graphify-out/GRAPH_REPORT/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Graph Report - . (2026-07-23) - Second Brain 知识库</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#graph-report-2026-07-23" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="Second Brain 知识库" class="md-header__button md-logo" aria-label="Second Brain 知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Second Brain 知识库
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Graph Report - . (2026-07-23)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换到深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换到浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../skills/hermes/tool-call-bootstrapping/" class="md-tabs__link">
+          
+  
+  
+  🤖 Hermes 自举系统
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../skills/hardware/PCB-Design-Automation-2026/" class="md-tabs__link">
+          
+  
+  
+  🔧 硬件工程
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../skills/ai/mlops-llm-training-pipeline/" class="md-tabs__link">
+          
+  
+  
+  🧠 AI / MLOps
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../skills/dev/cross-platform-mobile-development-2026/" class="md-tabs__link">
+          
+  
+  
+  📱 移动端 & 安全
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../skills/general/knowledge-domain-roadmap/" class="md-tabs__link">
+          
+  
+  
+  📚 通用知识
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Second Brain 知识库" class="md-nav__button md-logo" aria-label="Second Brain 知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Second Brain 知识库
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 Hermes 自举系统
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🤖 Hermes 自举系统
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/hermes/tool-call-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    工具调用自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/hermes/code-quality-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    代码质量自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/hermes/output-style-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    输出风格自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/hermes/context-management-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    上下文管理自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/hermes/github-seo-optimization-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub SEO 优化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔧 硬件工程
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🔧 硬件工程
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/hardware/PCB-Design-Automation-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PCB 设计自动化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/hardware/CAD-Design-Complete-Guide-v2.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CAD 设计完整指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/hardware/Microcontroller-Edge-AI-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    单片机与边缘 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/hardware/Hardware-Startup-Open-Source-Ecosystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    硬件创业与开源生态
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧠 AI / MLOps
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🧠 AI / MLOps
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/ai/mlops-llm-training-pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MLOps & LLM 训练流水线
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📱 移动端 & 安全
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📱 移动端 & 安全
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/dev/cross-platform-mobile-development-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跨平台移动端开发
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/dev/ctf-cybersecurity-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CTF 网络安全入门
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📚 通用知识
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📚 通用知识
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/general/knowledge-domain-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识域扩展路线图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/general/community-best-practices-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    社区最佳实践索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/general/bilingual-terminology-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中英双语术语对照表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="graph-report-2026-07-23">Graph Report - .  (2026-07-23)<a class="headerlink" href="#graph-report-2026-07-23" title="Permanent link">&para;</a></h1>
+<h2 id="corpus-check">Corpus Check<a class="headerlink" href="#corpus-check" title="Permanent link">&para;</a></h2>
+<ul>
+<li>cluster-only mode — file stats not available</li>
+</ul>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<ul>
+<li>1421 nodes · 4451 edges · 111 communities (78 shown, 33 thin omitted)</li>
+<li>Extraction: 92% EXTRACTED · 8% INFERRED · 0% AMBIGUOUS · INFERRED: 350 edges (avg confidence: 0.51)</li>
+<li>Token cost: 0 input · 0 output</li>
+</ul>
+<h2 id="graph-freshness">Graph Freshness<a class="headerlink" href="#graph-freshness" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Built from commit: <code>e7c5d3f6</code></li>
+<li>Run <code>git rev-parse HEAD</code> and compare to check if the graph is stale.</li>
+<li>Run <code>graphify update .</code> after code changes (no API cost).</li>
+</ul>
+<h2 id="community-hubs-navigation">Community Hubs (Navigation)<a class="headerlink" href="#community-hubs-navigation" title="Permanent link">&para;</a></h2>
+<ul>
+<li>main.js</li>
+<li>i</li>
+<li>slice</li>
+<li>join</li>
+<li>constructor</li>
+<li>AI-Agent - Hermes Agent Knowledge</li>
+<li>toString</li>
+<li>getRepo</li>
+<li>parts_library.py</li>
+<li>yr</li>
+<li>createEventHandlers</li>
+<li>push</li>
+<li>log</li>
+<li>read</li>
+<li>e</li>
+<li>display</li>
+<li>addLineAuthorInfoSettings</li>
+<li>FD</li>
+<li>dR</li>
+<li>_s</li>
+<li>generateFileHtml</li>
+<li>O</li>
+<li>resolve</li>
+<li>ua</li>
+<li>app.json</li>
+<li>addEventListener</li>
+<li>lr</li>
+<li>pull</li>
+<li>Hr</li>
+<li>s5</li>
+<li>q6</li>
+<li>zg</li>
+<li>Er</li>
+<li>write</li>
+<li>tN</li>
+<li>phone_stand_v3.py</li>
+<li>lH</li>
+<li>commit</li>
+<li>updateRemoteRefs</li>
+<li>getRelativeRepoPath</li>
+<li>T3</li>
+<li>._update</li>
+<li>Ib</li>
+<li>obsidian-git/manifest.json</li>
+<li>Portfolio Overview</li>
+<li>$r</li>
+<li>phone_stand_v5.py</li>
+<li>phone_stand_v6.py</li>
+<li>Paper Pipeline v1.0</li>
+<li>OpenClaw</li>
+<li>gE</li>
+<li>flush</li>
+<li>dI</li>
+<li>KF</li>
+<li>Bn</li>
+<li>na</li>
+<li>j6</li>
+<li>AnuPpuccin/manifest.json</li>
+<li>Wasp/manifest.json</li>
+<li>ai_engine.py</li>
+<li>"src/lib/simple-git-api.ts"</li>
+<li>u8</li>
+<li>Eo</li>
+<li>y5</li>
+<li>connectedCallback</li>
+<li>hP</li>
+<li>_entryToBuffer</li>
+<li>"src/lib/responses/StatusSummary.ts"</li>
+<li>Multi-Agent Orchestration</li>
+<li>OpenCut</li>
+<li>Bb</li>
+<li>filterCommon</li>
+<li>createHunk</li>
+<li>st</li>
+<li>mount</li>
+<li>k2</li>
+<li>PH</li>
+<li>updateRevertButtons</li>
+<li>phone_stand_v4.py</li>
+<li>Vector+Graph Memory Paradigm</li>
+<li>A2</li>
+<li>HF</li>
+<li>calcSigns</li>
+<li>editor</li>
+<li>ensureInitialized</li>
+<li>g5</li>
+<li>onActiveLeafChange</li>
+<li>gu</li>
+<li>openDiff</li>
+<li>ug</li>
+<li>"src/lib/tasks/check-is-repo.ts"</li>
+<li>Qv</li>
+<li>"src/lib/tasks/count-objects.ts"</li>
+<li>phone_stand.py</li>
+<li>phone_stand_pro.py</li>
+<li>phone_stand_v7.py</li>
+<li>phone_stand_v8.py</li>
+<li>k (AI Assistant)</li>
+<li>2026-07-21 23:47 Session</li>
+<li>2026-07-23 Session Summary</li>
+<li>Academic Service Research</li>
+<li>OpenRouter Free Models</li>
+<li>GitHub</li>
+<li>Obsidian</li>
+<li>GitHub Web Dev AI Notes</li>
+<li>Hermes Session 2026-07-23</li>
+<li>sora (User)</li>
+<li>Daily Note Template</li>
+<li>General Note Template</li>
+</ul>
+<h2 id="god-nodes-most-connected-your-core-abstractions">God Nodes (most connected - your core abstractions)<a class="headerlink" href="#god-nodes-most-connected-your-core-abstractions" title="Permanent link">&para;</a></h2>
+<ol>
+<li><code>push()</code> - 168 edges</li>
+<li><code>i()</code> - 129 edges</li>
+<li><code>e()</code> - 88 edges</li>
+<li><code>slice()</code> - 84 edges</li>
+<li><code>get()</code> - 58 edges</li>
+<li><code>toString()</code> - 56 edges</li>
+<li><code>u()</code> - 55 edges</li>
+<li><code>join()</code> - 55 edges</li>
+<li><code>ie()</code> - 54 edges</li>
+<li><code>constructor()</code> - 47 edges</li>
+</ol>
+<h2 id="surprising-connections-you-probably-didnt-know-these">Surprising Connections (you probably didn't know these)<a class="headerlink" href="#surprising-connections-you-probably-didnt-know-these" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>AGENTS.md - Workspace Rules</code> --references--&gt; <code>DREAMS.md - Dream Diary</code>  [EXTRACTED]
+  AGENTS.md → DREAMS.md</li>
+<li><code>AGENTS.md - Workspace Rules</code> --references--&gt; <code>HEARTBEAT.md - Heartbeat Checklist</code>  [EXTRACTED]
+  AGENTS.md → HEARTBEAT.md</li>
+<li><code>AGENTS.md - Workspace Rules</code> --references--&gt; <code>IDENTITY.md - Who Am I</code>  [EXTRACTED]
+  AGENTS.md → IDENTITY.md</li>
+<li><code>AGENTS.md - Workspace Rules</code> --references--&gt; <code>SESSION-STATE.md - Active Working Memory</code>  [EXTRACTED]
+  AGENTS.md → SESSION-STATE.md</li>
+<li><code>AGENTS.md - Workspace Rules</code> --references--&gt; <code>SOUL.md - Core Identity</code>  [EXTRACTED]
+  AGENTS.md → SOUL.md</li>
+</ul>
+<h2 id="import-cycles">Import Cycles<a class="headerlink" href="#import-cycles" title="Permanent link">&para;</a></h2>
+<ul>
+<li>None detected.</li>
+</ul>
+<h2 id="hyperedges-group-relationships">Hyperedges (group relationships)<a class="headerlink" href="#hyperedges-group-relationships" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Second Brain Knowledge Domains</strong> — knowledge_ai_agent, knowledge_ai_workflow, knowledge_academic, knowledge_ppt_design, knowledge_vibe_coding, knowledge_programming, knowledge_freecodecamp, knowledge_8051_mcu, knowledge_cad_design, knowledge_llm_providers [EXTRACTED 1.00]</li>
+<li><strong>Agent Identity &amp; Workspace Core</strong> — agents_md, identity_md, soul_md, user_md, session_state_md, memory_md, tools_md, heartbeat_md [EXTRACTED 1.00]</li>
+<li><strong>Self-Improvement Learning System</strong> — learnings_learnings_md, learnings_errors_md, learnings_feature_requests_md, memory_md, memory_knowledge_map [INFERRED 0.85]</li>
+<li><strong>Portfolio Projects</strong> — portfolio_index_PortfolioIndex, portfolio_parametric_gearbox_readme_ParametricGearbox, portfolio_stc89c52_thermostat_readme_STC89C52Thermostat, portfolio_url_shortener_design_readme_URLShortenerDesign [EXTRACTED 1.00]</li>
+<li><strong>Paper Pipeline Skills Group</strong> — pipelines_paper_pipeline_PaperPipeline, pipelines_paper_pipeline_CnkiScholar, pipelines_paper_pipeline_CnkiAdvancedSearch, memory_dreaming_light_2026_07_22_AcademicWriting [EXTRACTED 1.00]</li>
+<li><strong>Model Fallback Components</strong> — memory_dreaming_light_2026_07_23_FallbackChain, memory_dreaming_light_2026_07_23_DeepSeekV4Flash, memory_dreaming_light_2026_07_23_OpenRouterFreeModels [EXTRACTED 1.00]</li>
+</ul>
+<h2 id="communities-111-total-33-thin-omitted">Communities (111 total, 33 thin omitted)<a class="headerlink" href="#communities-111-total-33-thin-omitted" title="Permanent link">&para;</a></h2>
+<h3 id="community-0-mainjs">Community 0 - "main.js"<a class="headerlink" href="#community-0-mainjs" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.01
+Nodes (25): _addPattern(), C0(), C4(), defer_effect(), F0(), HM(), Jh(), LA() (+17 more)</p>
+<h3 id="community-1-i">Community 1 - "i"<a class="headerlink" href="#community-1-i" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.05
+Nodes (141): A(), add(), ak(), aN(), AP(), append(), Bg(), bk() (+133 more)</p>
+<h3 id="community-2-slice">Community 2 - "slice"<a class="headerlink" href="#community-2-slice" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.05
+Nodes (70): _accumulate(), _addEntry(), bd(), byte(), chunk(), deleteSection(), e5(), eN() (+62 more)</p>
+<h3 id="community-3-join">Community 3 - "join"<a class="headerlink" href="#community-3-join" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.05
+Nodes (42): adaptTextForFakeCommit(), da(), f4(), g3(), getAvailableLocalBranchName(), getCursorHunk(), getGutterSpacingFallbackLength(), getHunk() (+34 more)</p>
+<h3 id="community-4-constructor">Community 4 - "constructor"<a class="headerlink" href="#community-4-constructor" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.07
+Nodes (41): AE(), applyPatch(), Aw(), B3(), bP(), bShouldBeEditable(), constructor(), create() (+33 more)</p>
+<h3 id="community-5-ai-agent-hermes-agent-knowledge">Community 5 - "AI-Agent - Hermes Agent Knowledge"<a class="headerlink" href="#community-5-ai-agent-hermes-agent-knowledge" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.10
+Nodes (36): AGENTS.md - Workspace Rules, DREAMS.md - Dream Diary, HEARTBEAT.md - Heartbeat Checklist, HOME.md - Second Brain Hub, IDENTITY.md - Who Am I, 8051-MCU - Embedded Development, Academic - Paper Services, AI-Agent - Hermes Agent Knowledge (+28 more)</p>
+<h3 id="community-6-tostring">Community 6 - "toString"<a class="headerlink" href="#community-6-tostring" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.08
+Nodes (31): aB(), Ag(), connect(), Db(), De(), demux(), destroy(), discover() (+23 more)</p>
+<h3 id="community-7-getrepo">Community 7 - "getRepo"<a class="headerlink" href="#community-7-getrepo" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.14
+Nodes (32): branchInfo(), canPush(), checkout(), deleteBranch(), discard(), discardAll(), getConfig(), getCurrentRemote() (+24 more)</p>
+<h3 id="community-8-parts_librarypy">Community 8 - "parts_library.py"<a class="headerlink" href="#community-8-parts_librarypy" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.11
+Nodes (24): full_pipeline(), generate_assembly(), AI-CAD Pipeline v0.3 — 装配 + 切片全自动   自然语言 → 多零件装配 → STEP/STL → Cura 切片 → G-code, 一句话 → 多零件装配     例: "M6 螺栓配螺母和垫圈", STL → G-code (PrusaSlicer CLI), 完整流水线:       描述 → 3D 模型 → STL → G-code → 报告, slice_to_gcode(), CADIntentParser (+16 more)</p>
+<h3 id="community-9-yr">Community 9 - "yr"<a class="headerlink" href="#community-9-yr" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.09
+Nodes (24): Ax(), BR(), createFilter(), eE(), eH(), exec(), filter(), ID() (+16 more)</p>
+<h3 id="community-10-createeventhandlers">Community 10 - "createEventHandlers"<a class="headerlink" href="#community-10-createeventhandlers" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.10
+Nodes (27): activateCodeMirrorExtensions(), activateFeature(), changeToNewFilepath(), computeSigns(), conditionallyActivateBySettings(), createCssRefreshHandler(), createEventHandlers(), createFileOpenEvent() (+19 more)</p>
+<h3 id="community-11-push">Community 11 - "push"<a class="headerlink" href="#community-11-push" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.09
+Nodes (25): _8(), a8(), convertErrors(), createPatch(), EL(), fI(), getUntrackedPaths(), Iv() (+17 more)</p>
+<h3 id="community-12-log">Community 12 - "log"<a class="headerlink" href="#community-12-log" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.11
+Nodes (24): beforeSaveSettings(), formatPath(), getFileChangesCount(), getFileStatusResult(), getRelativeVaultPath(), getStagedFiles(), loadSettings(), log() (+16 more)</p>
+<h3 id="community-13-read">Community 13 - "read"<a class="headerlink" href="#community-13-read" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.18
+Nodes (23): acquire(), d0(), encode(), FL(), Fs(), gk(), H(), Hg() (+15 more)</p>
+<h3 id="community-14-e">Community 14 - "e"<a class="headerlink" href="#community-14-e" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.09
+Nodes (23): c3(), c6(), d6(), e(), f6(), f8(), hE(), m$() (+15 more)</p>
+<h3 id="community-15-display">Community 15 - "display"<a class="headerlink" href="#community-15-display" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.11
+Nodes (23): checkRequirements(), display(), getEnvVars(), getGitPath(), getHostname(), getPATHPaths(), getPluginDisabled(), getUsername() (+15 more)</p>
+<h3 id="community-16-addlineauthorinfosettings">Community 16 - "addLineAuthorInfoSettings"<a class="headerlink" href="#community-16-addlineauthorinfosettings" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.10
+Nodes (22): a5(), activateLineAuthoring(), addLineAuthorInfoSettings(), cA(), colorSettingPreviewDesc(), configureLineAuthorShowStatus(), createColorSetting(), createGutterContextMenuHandler() (+14 more)</p>
+<h3 id="community-17-fd">Community 17 - "FD"<a class="headerlink" href="#community-17-fd" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.15
+Nodes (22): aD(), CD(), Cx(), $D(), dx(), ED(), FD(), Fr() (+14 more)</p>
+<h3 id="community-18-dr">Community 18 - "dR"<a class="headerlink" href="#community-18-dr" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.16
+Nodes (21): addFileToGitignore(), addTask(), av(), cloneNewRepo(), createBranch(), createNewRepo(), dR(), editRemotes() (+13 more)</p>
+<h3 id="community-19-_s">Community 19 - "_s"<a class="headerlink" href="#community-19-_s" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.10
+Nodes (21): apply(), AR(), B1(), B4(), cO(), CR(), Do(), Gx() (+13 more)</p>
+<h3 id="community-20-generatefilehtml">Community 20 - "generateFileHtml"<a class="headerlink" href="#community-20-generatefilehtml" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.12
+Nodes (21): applyLineGroupping(), applyRematchMatching(), Bl(), dN(), generateEmptyDiff(), generateFileHtml(), generateLineHtml(), generateSingleHtml() (+13 more)</p>
+<h3 id="community-21-o">Community 21 - "O"<a class="headerlink" href="#community-21-o" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.14
+Nodes (3): jt(), k0(), O()</p>
+<h3 id="community-22-resolve">Community 22 - "resolve"<a class="headerlink" href="#community-22-resolve" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.25
+Nodes (20): aS(), $b(), ck(), exists(), expand(), ga(), iS(), jg() (+12 more)</p>
+<h3 id="community-23-ua">Community 23 - "ua"<a class="headerlink" href="#community-23-ua" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.12
+Nodes (19): addToPath(), aO(), buildValues(), castInput(), diff(), diffWithOptionsObj(), extractCommon(), Iw() (+11 more)</p>
+<h3 id="community-24-appjson">Community 24 - "app.json"<a class="headerlink" href="#community-24-appjson" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.12
+Nodes (16): alwaysUpdateLinks, attachmentFolderPath, newFileFolderPath, newFileLocation, promptDelete, searchInclude, showUnsupportedFiles, userIgnoreFilters (+8 more)</p>
+<h3 id="community-25-addeventlistener">Community 25 - "addEventListener"<a class="headerlink" href="#community-25-addeventlistener" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.12
+Nodes (17): $0(), $2(), addEventListener(), c5(), computeDom(), createHtmlNode(), D2(), D5() (+9 more)</p>
+<h3 id="community-26-lr">Community 26 - "lr"<a class="headerlink" href="#community-26-lr" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.17
+Nodes (16): bT(), bv(), cH(), i8(), iC(), jv(), lr(), Lv() (+8 more)</p>
+<h3 id="community-27-pull">Community 27 - "pull"<a class="headerlink" href="#community-27-pull" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.29
+Nodes (17): clone(), commitAndSync(), displayError(), displayMessage(), error(), fetch(), getProgressText(), handleNoNetworkError() (+9 more)</p>
+<h3 id="community-28-hr">Community 28 - "Hr"<a class="headerlink" href="#community-28-hr" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.13
+Nodes (16): bH(), e6(), gH(), HH(), Hr(), i6(), nh(), o6() (+8 more)</p>
+<h3 id="community-29-s5">Community 29 - "s5"<a class="headerlink" href="#community-29-s5" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.14
+Nodes (15): A6(), build(), CP(), f2(), IP(), k5(), lP(), MP() (+7 more)</p>
+<h3 id="community-30-q6">Community 30 - "q6"<a class="headerlink" href="#community-30-q6" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.14
+Nodes (14): AC(), BA(), dC(), fC(), H6(), K6(), LC(), Mv() (+6 more)</p>
+<h3 id="community-31-zg">Community 31 - "zg"<a class="headerlink" href="#community-31-zg" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.21
+Nodes (14): CS(), entries(), et(), fromPack(), i3(), kk(), LE(), PL() (+6 more)</p>
+<h3 id="community-32-er">Community 32 - "Er"<a class="headerlink" href="#community-32-er" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.15
+Nodes (13): Er(), g6(), hv(), JC(), L6(), p6(), q8(), "src/lib/tasks/clone.ts"() (+5 more)</p>
+<h3 id="community-33-write">Community 33 - "write"<a class="headerlink" href="#community-33-write" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.26
+Nodes (12): askpass(), getStashSHA(), gS(), mkdir(), Ng(), readStashCommit(), readStashReflogs(), rm() (+4 more)</p>
+<h3 id="community-34-tn">Community 34 - "tN"<a class="headerlink" href="#community-34-tn" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.24
+Nodes (11): cN(), copy(), deleteRef(), deleteRefs(), kN(), L0(), readSlice(), readUInt8() (+3 more)</p>
+<h3 id="community-35-phone_stand_v3py">Community 35 - "phone_stand_v3.py"<a class="headerlink" href="#community-35-phone_stand_v3py" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.29
+Nodes (10): build_backplate(), build_cable_channel(), build_clamp(), build_hinge_pin(), build_hinge_pivot(), build_holder(), build_honeycomb_base(), Part (+2 more)</p>
+<h3 id="community-36-lh">Community 36 - "lH"<a class="headerlink" href="#community-36-lh" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.24
+Nodes (10): _6(), dT(), e4(), fH(), J5(), lH(), mT(), Rw() (+2 more)</p>
+<h3 id="community-37-commit">Community 37 - "commit"<a class="headerlink" href="#community-37-commit" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.22
+Nodes (10): checkAuthorInfo(), commit(), commitAll(), displayFromNow(), displayState(), getConflict(), getPausedAutomatics(), getSubmodulePaths() (+2 more)</p>
+<h3 id="community-38-updateremoterefs">Community 38 - "updateRemoteRefs"<a class="headerlink" href="#community-38-updateremoterefs" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.22
+Nodes (10): eB(), getall(), listRefs(), localNamespaces(), OL(), readdirDeep(), translate(), translateOne() (+2 more)</p>
+<h3 id="community-39-getrelativerepopath">Community 39 - "getRelativeRepoPath"<a class="headerlink" href="#community-39-getrelativerepopath" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.33
+Nodes (9): addAskPassScriptToExclude(), blame(), computeLineAuthorInfo(), E2(), getRelativeRepoPath(), getSubmoduleOfFile(), hashObject(), isTracked() (+1 more)</p>
+<h3 id="community-40-t3">Community 40 - "T3"<a class="headerlink" href="#community-40-t3" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.22
+Nodes (9): D3(), E3(), gl(), j3(), k3(), P3(), T3(), u3() (+1 more)</p>
+<h3 id="community-41-_update">Community 41 - "._update"<a class="headerlink" href="#community-41-_update" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.22
+Nodes (4): Ec(), lD(), oD(), sD()</p>
+<h3 id="community-42-ib">Community 42 - "Ib"<a class="headerlink" href="#community-42-ib" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.25
+Nodes (8): em(), Ib(), Jp(), ln(), qF(), TL(), WF(), zS()</p>
+<h3 id="community-43-obsidian-gitmanifestjson">Community 43 - "obsidian-git/manifest.json"<a class="headerlink" href="#community-43-obsidian-gitmanifestjson" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.22
+Nodes (8): author, authorUrl, description, fundingUrl, id, isDesktopOnly, name, version</p>
+<h3 id="community-44-portfolio-overview">Community 44 - "Portfolio Overview"<a class="headerlink" href="#community-44-portfolio-overview" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.25
+Nodes (8): 8051 Embedded Dev skill, CAD Design Master skill, System Design Primer, Web Dev 2026, Portfolio Overview, Parametric Gearbox, STC89C52 Thermostat, URL Shortener Design</p>
+<h3 id="community-46-phone_stand_v5py">Community 46 - "phone_stand_v5.py"<a class="headerlink" href="#community-46-phone_stand_v5py" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.36
+Nodes (7): build_adjustable_holder(), build_angle_detents(), build_folding_backplate(), build_swivel_base(), Part, ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━   手机支架 v5.0 — 全功能旗舰版   灵感: 碳素钢折, 可调高度托架     height_level: 1-4 对应不同高度档位</p>
+<h3 id="community-47-phone_stand_v6py">Community 47 - "phone_stand_v6.py"<a class="headerlink" href="#community-47-phone_stand_v6py" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.39
+Nodes (7): build_3d_holder(), build_cable_passage(), build_folding_backplate(), build_rotating_base(), build_side_wings(), Part, ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━   手机支架 v6.0 — 融合版 (v3结构 + v5功能)</p>
+<h3 id="community-48-paper-pipeline-v10">Community 48 - "Paper Pipeline v1.0"<a class="headerlink" href="#community-48-paper-pipeline-v10" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.29
+Nodes (7): Academic Writing skill, PPT Design skill set, CNKI Advanced Search skill, CNKI Scholar skill, Paper Pipeline v1.0, PPT Pipeline v1.0, Skill Triggers v1.0</p>
+<h3 id="community-49-openclaw">Community 49 - "OpenClaw"<a class="headerlink" href="#community-49-openclaw" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.29
+Nodes (7): deepseek-v4-flash, Model Fallback Chain, OpenClaw, k (AI assistant), sora, Current Projects, Hermes Agent</p>
+<h3 id="community-50-ge">Community 50 - "gE"<a class="headerlink" href="#community-50-ge" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.29
+Nodes (7): $1(), CL(), gE(), jO(), U1(), UE(), WO()</p>
+<h3 id="community-51-flush">Community 51 - "flush"<a class="headerlink" href="#community-51-flush" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.29
+Nodes (7): C2(), clear(), delim(), flush(), io(), Ob(), qR()</p>
+<h3 id="community-52-di">Community 52 - "dI"<a class="headerlink" href="#community-52-di" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.33
+Nodes (6): dI(), eI(), o0(), Pf(), RR(), tI()</p>
+<h3 id="community-53-kf">Community 53 - "KF"<a class="headerlink" href="#community-53-kf" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.33
+Nodes (6): aI(), KF(), nI(), oI(), rI(), sI()</p>
+<h3 id="community-54-bn">Community 54 - "Bn"<a class="headerlink" href="#community-54-bn" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.40
+Nodes (6): Bn(), consider(), Fb(), Qp(), tm(), zF()</p>
+<h3 id="community-55-na">Community 55 - "na"<a class="headerlink" href="#community-55-na" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.33
+Nodes (3): Bw(), na(), Tw()</p>
+<h3 id="community-56-j6">Community 56 - "j6"<a class="headerlink" href="#community-56-j6" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.33
+Nodes (6): ew(), g2(), j6(), r5(), t5(), v2()</p>
+<h3 id="community-57-anuppuccinmanifestjson">Community 57 - "AnuPpuccin/manifest.json"<a class="headerlink" href="#community-57-anuppuccinmanifestjson" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.33
+Nodes (5): author, authorUrl, minAppVersion, name, version</p>
+<h3 id="community-58-waspmanifestjson">Community 58 - "Wasp/manifest.json"<a class="headerlink" href="#community-58-waspmanifestjson" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.33
+Nodes (5): author, authorUrl, minAppVersion, name, version</p>
+<h3 id="community-59-ai_enginepy">Community 59 - "ai_engine.py"<a class="headerlink" href="#community-59-ai_enginepy" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.33
+Nodes (5): ai_generate_and_run(), generate_from_prompt(), AI-CAD Pipeline — AI 驱动代码生成器 v0.2 让 AI 直接生成 build123d Python 代码，而非匹配预设零件库。  这才是真, 根据自然语言描述生成 build123d 代码 → 执行 → 导出模型      这个函数本身由 AI Agent (k) 在对话中调用：     1. k 理, 执行 AI 生成的 build123d 代码，导出模型</p>
+<h3 id="community-60-srclibsimple-git-apits">Community 60 - ""src/lib/simple-git-api.ts""<a class="headerlink" href="#community-60-srclibsimple-git-apits" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.40
+Nodes (5): C8(), dH(), j8(), "src/lib/simple-git-api.ts"(), xH()</p>
+<h3 id="community-61-u8">Community 61 - "u8"<a class="headerlink" href="#community-61-u8" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.40
+Nodes (5): d8(), h8(), m8(), p8(), u8()</p>
+<h3 id="community-62-eo">Community 62 - "Eo"<a class="headerlink" href="#community-62-eo" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.40
+Nodes (6): bC(), Eo(), lI(), Qm(), wc(), xO()</p>
+<h3 id="community-63-y5">Community 63 - "y5"<a class="headerlink" href="#community-63-y5" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.50
+Nodes (4): advance(), reset(), x5(), y5()</p>
+<h3 id="community-64-connectedcallback">Community 64 - "connectedCallback"<a class="headerlink" href="#community-64-connectedcallback" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.50
+Nodes (4): attributeChangedCallback(), connectedCallback(), $$g_p(), tF()</p>
+<h3 id="community-65-hp">Community 65 - "hP"<a class="headerlink" href="#community-65-hp" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.50
+Nodes (4): dP(), hP(), updateA(), updateB()</p>
+<h3 id="community-66-_entrytobuffer">Community 66 - "_entryToBuffer"<a class="headerlink" href="#community-66-_entrytobuffer" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.50
+Nodes (4): _entryToBuffer(), $L(), writeUInt16BE(), writeUInt32BE()</p>
+<h3 id="community-67-srclibresponsesstatussummaryts">Community 67 - ""src/lib/responses/StatusSummary.ts""<a class="headerlink" href="#community-67-srclibresponsesstatussummaryts" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.67
+Nodes (4): gv(), Jr(), kH(), "src/lib/responses/StatusSummary.ts"()</p>
+<h3 id="community-68-multi-agent-orchestration">Community 68 - "Multi-Agent Orchestration"<a class="headerlink" href="#community-68-multi-agent-orchestration" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.67
+Nodes (3): AI Agent 7 Trends, Multi-Agent Orchestration, Plan-and-Execute</p>
+<h3 id="community-69-opencut">Community 69 - "OpenCut"<a class="headerlink" href="#community-69-opencut" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.67
+Nodes (3): CapCut (剪映), MCP Server, OpenCut</p>
+<h3 id="community-71-filtercommon">Community 71 - "filterCommon"<a class="headerlink" href="#community-71-filtercommon" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.67
+Nodes (3): compare(), computeStagedHunks(), filterCommon()</p>
+<h3 id="community-72-createhunk">Community 72 - "createHunk"<a class="headerlink" href="#community-72-createhunk" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.67
+Nodes (3): createHunk(), createPartialHunk(), parseDiffLine()</p>
+<h3 id="community-73-st">Community 73 - "st"<a class="headerlink" href="#community-73-st" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.67
+Nodes (3): gC(), mC(), st()</p>
+<h3 id="community-74-mount">Community 74 - "mount"<a class="headerlink" href="#community-74-mount" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.67
+Nodes (3): getRules(), mount(), setNonce()</p>
+<h3 id="community-75-k2">Community 75 - "k2"<a class="headerlink" href="#community-75-k2" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.67
+Nodes (3): k2(), notifyComputationResultToSubscribers(), notifyLineAuthoring()</p>
+<h3 id="community-76-ph">Community 76 - "PH"<a class="headerlink" href="#community-76-ph" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.67
+Nodes (3): l5(), PH(), sw()</p>
+<h3 id="community-77-updaterevertbuttons">Community 77 - "updateRevertButtons"<a class="headerlink" href="#community-77-updaterevertbuttons" title="Permanent link">&para;</a></h3>
+<p>Cohesion: 0.67
+Nodes (3): renderRevertButton(), updateRevertButtons(), yP()</p>
+<h2 id="knowledge-gaps">Knowledge Gaps<a class="headerlink" href="#knowledge-gaps" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>76 isolated node(s):</strong> <code>.clawhub/</code>, <code>.learnings/</code>, <code>.skillkit/</code>, <code>skills/</code>, <code>*.md</code> (+71 more)
+  These have ≤1 connection - possible missing edges or undocumented components.</li>
+<li><strong>33 thin communities (&lt;3 nodes) omitted from report</strong> — run <code>graphify query</code> to explore isolated nodes.</li>
+</ul>
+<h2 id="suggested-questions">Suggested Questions<a class="headerlink" href="#suggested-questions" title="Permanent link">&para;</a></h2>
+<p><em>Questions this graph is uniquely positioned to answer:</em></p>
+<ul>
+<li><strong>Why does <code>O()</code> connect <code>O</code> to <code>main.js</code>, <code>slice</code>, <code>join</code>, <code>toString</code>, <code>Bb</code>, <code>._update</code>, <code>push</code>, <code>$r</code>, <code>flush</code>, <code>dI</code>, <code>resolve</code>, <code>na</code>, <code>Bn</code>, <code>addEventListener</code>?</strong>
+  <em>High betweenness centrality (0.024) - this node is a cross-community bridge.</em></li>
+<li><strong>Why does <code>push()</code> connect <code>push</code> to <code>main.js</code>, <code>i</code>, <code>slice</code>, <code>join</code>, <code>constructor</code>, <code>toString</code>, <code>getRepo</code>, <code>yr</code>, <code>log</code>, <code>read</code>, <code>e</code>, <code>display</code>, <code>FD</code>, <code>dR</code>, <code>_s</code>, <code>generateFileHtml</code>, <code>O</code>, <code>ua</code>, <code>addEventListener</code>, <code>lr</code>, <code>pull</code>, <code>Hr</code>, <code>s5</code>, <code>zg</code>, <code>Er</code>, <code>lH</code>, <code>commit</code>, <code>updateRemoteRefs</code>, <code>getRelativeRepoPath</code>, <code>T3</code>, <code>Ib</code>, <code>flush</code>, <code>dI</code>, <code>Bn</code>, <code>na</code>, <code>u8</code>, <code>Eo</code>, <code>hP</code>, <code>"src/lib/responses/StatusSummary.ts"</code>, <code>Bb</code>, <code>filterCommon</code>, <code>calcSigns</code>, <code>ug</code>?</strong>
+  <em>High betweenness centrality (0.013) - this node is a cross-community bridge.</em></li>
+<li><strong>Why does <code>pa()</code> connect <code>join</code> to <code>main.js</code>?</strong>
+  <em>High betweenness centrality (0.010) - this node is a cross-community bridge.</em></li>
+<li><strong>Are the 100 inferred relationships involving <code>i()</code> (e.g. with <code>main.js</code> and <code>_6()</code>) actually correct?</strong>
+  <em><code>i()</code> has 100 INFERRED edges - model-reasoned connections that need verification.</em></li>
+<li><strong>Are the 62 inferred relationships involving <code>e()</code> (e.g. with <code>$b()</code> and <code>c3()</code>) actually correct?</strong>
+  <em><code>e()</code> has 62 INFERRED edges - model-reasoned connections that need verification.</em></li>
+<li><strong>What connects <code>.clawhub/</code>, <code>.learnings/</code>, <code>.skillkit/</code> to the rest of the system?</strong>
+  <em>76 weakly-connected nodes found - possible documentation gaps or missing edges.</em></li>
+<li><strong>Should <code>main.js</code> be split into smaller, more focused modules?</strong>
+  <em>Cohesion score 0.011834319526627219 - nodes in this community are weakly interconnected.</em></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

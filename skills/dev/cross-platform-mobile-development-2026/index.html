@@ -1,0 +1,1902 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="移动端跨平台开发 2026：Flutter vs React Native 深度对比、技术选型、学习路径、AI 集成最佳实践">
+      
+      
+        <meta name="author" content="mo9652962">
+      
+      
+        <link rel="canonical" href="https://mo9652962-ai.github.io/second-brain/skills/dev/cross-platform-mobile-development-2026/">
+      
+      
+        <link rel="prev" href="../../ai/mlops-llm-training-pipeline/">
+      
+      
+        <link rel="next" href="../ctf-cybersecurity-roadmap/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>跨平台移动端开发 - Second Brain 知识库</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2026" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="Second Brain 知识库" class="md-header__button md-logo" aria-label="Second Brain 知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Second Brain 知识库
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              跨平台移动端开发
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换到深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换到浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../hermes/tool-call-bootstrapping/" class="md-tabs__link">
+          
+  
+  
+  🤖 Hermes 自举系统
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../hardware/PCB-Design-Automation-2026/" class="md-tabs__link">
+          
+  
+  
+  🔧 硬件工程
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ai/mlops-llm-training-pipeline/" class="md-tabs__link">
+          
+  
+  
+  🧠 AI / MLOps
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  📱 移动端 & 安全
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../general/knowledge-domain-roadmap/" class="md-tabs__link">
+          
+  
+  
+  📚 通用知识
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Second Brain 知识库" class="md-nav__button md-logo" aria-label="Second Brain 知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Second Brain 知识库
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 Hermes 自举系统
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🤖 Hermes 自举系统
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hermes/tool-call-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    工具调用自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hermes/code-quality-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    代码质量自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hermes/output-style-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    输出风格自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hermes/context-management-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    上下文管理自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hermes/github-seo-optimization-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub SEO 优化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔧 硬件工程
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🔧 硬件工程
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/PCB-Design-Automation-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PCB 设计自动化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/CAD-Design-Complete-Guide-v2.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CAD 设计完整指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/Microcontroller-Edge-AI-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    单片机与边缘 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/Hardware-Startup-Open-Source-Ecosystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    硬件创业与开源生态
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧠 AI / MLOps
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🧠 AI / MLOps
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai/mlops-llm-training-pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MLOps & LLM 训练流水线
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📱 移动端 & 安全
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📱 移动端 & 安全
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跨平台移动端开发
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跨平台移动端开发
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 目录
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 2026 技术格局
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 2026 技术格局">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        两大生产级框架
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        其他选项（不推荐作为首选）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-flutter-vs-react-native" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Flutter vs React Native 全方位对比
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Flutter vs React Native 全方位对比">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心维度对比
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 技术选型决策树
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 技术选型决策树">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2026_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 2026 年的选择建议
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        场景化推荐
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-react-native-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. React Native 2026 新架构
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. React Native 2026 新架构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        最大的好消息：桥接瓶颈终于解决了！
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#react-native-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        React Native 2026 项目模板
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-flutter-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Flutter 2026 技术进展
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Flutter 2026 技术进展">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#impeller" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Impeller 渲染引擎
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flutter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flutter 正在从「移动端优先」变成「全平台」
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. AI 集成最佳实践
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. AI 集成最佳实践">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2026-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2026 年移动端 AI 的三种模式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#react-native-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        React Native AI 开发现状
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flutter-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flutter AI 开发现状
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 学习路径建议
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. 学习路径建议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#react-native" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        如果你选 React Native
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flutter_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        如果你选 Flutter
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 最终建议
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ctf-cybersecurity-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CTF 网络安全入门
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📚 通用知识
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📚 通用知识
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../general/knowledge-domain-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识域扩展路线图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../general/community-best-practices-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    社区最佳实践索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../general/bilingual-terminology-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中英双语术语对照表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="2026">📱 跨平台移动端开发 2026<a class="headerlink" href="#2026" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>Flutter vs React Native 深度对比与选型指南</strong></p>
+<p>基于 2026 年生产级实践数据</p>
+</blockquote>
+<hr />
+<h2 id="_1">📋 目录<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#1-2026-技术格局">2026 技术格局</a></li>
+<li><a href="#2-flutter-vs-react-native-全方位对比">Flutter vs React Native 全方位对比</a></li>
+<li><a href="#3-技术选型决策树">技术选型决策树</a></li>
+<li><a href="#4-react-native-2026-新架构">React Native 2026 新架构</a></li>
+<li><a href="#5-flutter-2026-技术进展">Flutter 2026 技术进展</a></li>
+<li><a href="#6-ai-集成最佳实践">AI 集成最佳实践</a></li>
+<li><a href="#7-学习路径建议">学习路径建议</a></li>
+</ol>
+<hr />
+<h2 id="1-2026">1. 2026 技术格局<a class="headerlink" href="#1-2026" title="Permanent link">&para;</a></h2>
+<h3 id="_2">两大生产级框架<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>框架</th>
+<th>背后公司</th>
+<th>核心优势</th>
+<th>代表应用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>React Native</strong></td>
+<td>Meta</td>
+<td>JavaScript 生态、AI SDK 支持、人才池大</td>
+<td>？？？</td>
+</tr>
+<tr>
+<td><strong>Flutter</strong></td>
+<td>Google</td>
+<td>UI 一致性、图形性能、多平台支持</td>
+<td>Google Classroom、Google Pay</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_3">其他选项（不推荐作为首选）<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>框架</th>
+<th>状态</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.NET MAUI</td>
+<td>企业向</td>
+<td>微软生态内用用，社区活力一般</td>
+</tr>
+<tr>
+<td>Uno Platform</td>
+<td>小众</td>
+<td>C# 生态，6 平台支持，市场份额小</td>
+</tr>
+<tr>
+<td>Kotlin Multiplatform</td>
+<td>原生 UI</td>
+<td>适合已有 Kotlin 团队，不是纯跨平台</td>
+</tr>
+<tr>
+<td>原生开发 (Swift/Kotlin)</td>
+<td>性能天花板</td>
+<td>成本 2 倍，需要两个团队</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-flutter-vs-react-native">2. Flutter vs React Native 全方位对比<a class="headerlink" href="#2-flutter-vs-react-native" title="Permanent link">&para;</a></h2>
+<h3 id="_4">核心维度对比<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>React Native</th>
+<th>Flutter</th>
+<th>胜者</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>渲染引擎</strong></td>
+<td>原生 UI 组件</td>
+<td>自定义 Canvas (Impeller)</td>
+<td>看需求</td>
+</tr>
+<tr>
+<td><strong>UI 一致性</strong></td>
+<td>平台原生风格，iOS/Android 有差异</td>
+<td>像素级完全一致</td>
+<td>✅ Flutter</td>
+</tr>
+<tr>
+<td><strong>动画性能</strong></td>
+<td>复杂动画容易掉帧</td>
+<td>稳定 120fps，图形密集场景更强</td>
+<td>✅ Flutter</td>
+</tr>
+<tr>
+<td><strong>JS 生态</strong></td>
+<td>完整 npm 生态（100万+ 包）</td>
+<td>Dart 包生态（~10万）</td>
+<td>✅ React Native</td>
+</tr>
+<tr>
+<td><strong>AI SDK 支持</strong></td>
+<td>所有 AI SDK 都是 JS/TS 优先</td>
+<td>需要写桥接</td>
+<td>✅ React Native 大胜</td>
+</tr>
+<tr>
+<td><strong>人才池</strong></td>
+<td>JS 开发者全球 1000 万+</td>
+<td>Dart 开发者 ~100 万</td>
+<td>✅ React Native 10× 优势</td>
+</tr>
+<tr>
+<td><strong>热重载</strong></td>
+<td>都有，都很好用</td>
+<td>都有，都很好用</td>
+<td>平局</td>
+</tr>
+<tr>
+<td><strong>发布体积</strong></td>
+<td>稍大</td>
+<td>更可控</td>
+<td>差不多</td>
+</tr>
+<tr>
+<td><strong>第三方库质量</strong></td>
+<td>量大但参差不齐</td>
+<td>量少但质量普遍更高</td>
+<td>各有优劣</td>
+</tr>
+<tr>
+<td><strong>新功能跟进速度</strong></td>
+<td>Meta 内部先狗食，然后开源</td>
+<td>Google 节奏有时飘忽</td>
+<td>看运气</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3">3. 技术选型决策树<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<h3 id="2026_1">🎯 2026 年的选择建议<a class="headerlink" href="#2026_1" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>你的应用 AI 功能重不重要？
+│
+├─ 非常重要（OpenAI/Anthropic/LangChain 深度集成）
+│  └─ ✅ 选 React Native（JS 生态优势碾压）
+│
+├─ 一般重要（调用几个 API 就行）
+│  │
+│  ├─ 你的团队会不会 JS/TS？
+│  │  ├─ 会 → React Native（上手快）
+│  │  └─ 不会 → 看下面
+│  │
+│  └─ UI 是不是重度定制/动画密集？
+│     ├─ 是 → ✅ Flutter
+│     └─ 不是 → 都可以，看团队偏好
+│
+└─ 完全不需要 AI
+   └─ 两个都可以，哪个团队熟用哪个
+</code></pre></div>
+
+<h3 id="_5">场景化推荐<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>应用类型</th>
+<th>推荐框架</th>
+<th>理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AI 助手 / 智能应用</strong></td>
+<td>React Native ✅</td>
+<td>所有 AI SDK 都是 JS-first</td>
+</tr>
+<tr>
+<td><strong>设计工具 / 图形应用</strong></td>
+<td>Flutter ✅</td>
+<td>自定义渲染性能强</td>
+</tr>
+<tr>
+<td><strong>电商 / 内容应用</strong></td>
+<td>都可以</td>
+<td>两个都能很好胜任</td>
+</tr>
+<tr>
+<td><strong>企业内部应用</strong></td>
+<td>看团队技术栈</td>
+<td>哪个熟用哪个</td>
+</tr>
+<tr>
+<td><strong>游戏 / 动画密集</strong></td>
+<td>Flutter ✅</td>
+<td>Skia 引擎优势</td>
+</tr>
+<tr>
+<td><strong>需要大量 npm 包</strong></td>
+<td>React Native ✅</td>
+<td>生态碾压</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4-react-native-2026">4. React Native 2026 新架构<a class="headerlink" href="#4-react-native-2026" title="Permanent link">&para;</a></h2>
+<h3 id="_6">最大的好消息：桥接瓶颈终于解决了！<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="mf">2015</span><span class="o">-</span><span class="mf">2023</span><span class="p">:</span><span class="w"> </span><span class="n">旧架构</span><span class="err">（</span><span class="n">JavaScript</span><span class="w"> </span><span class="n">Bridge</span><span class="err">）</span>
+<span class="w">  </span><span class="n">问题</span><span class="err">：</span><span class="n">JS</span><span class="w"> </span><span class="n">和原生通信的瓶颈</span><span class="err">，</span><span class="n">复杂动画掉帧</span><span class="err">，</span><span class="n">列表卡顿</span>
+
+<span class="mf">2024</span><span class="o">-</span><span class="mf">2026</span><span class="p">:</span><span class="w"> </span><span class="n">新架构</span><span class="err">（</span><span class="n">Fabric</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">TurboModules</span><span class="err">）</span>
+<span class="w">  </span><span class="err">✅</span><span class="w"> </span><span class="n">JSI</span><span class="err">（</span><span class="n">JavaScript</span><span class="w"> </span><span class="nb">Int</span><span class="n">erface</span><span class="err">）</span><span class="n">直接通信</span><span class="err">，</span><span class="n">没有序列化开销</span>
+<span class="w">  </span><span class="err">✅</span><span class="w"> </span><span class="n">Fabric</span><span class="w"> </span><span class="n">渲染器</span><span class="err">，</span><span class="n">同步</span><span class="w"> </span><span class="n">UI</span><span class="w"> </span><span class="n">线程</span>
+<span class="w">  </span><span class="err">✅</span><span class="w"> </span><span class="n">TurboModules</span><span class="w"> </span><span class="n">按需加载</span><span class="err">，</span><span class="n">启动速度快</span><span class="w"> </span><span class="mf">30</span><span class="o">-</span><span class="mf">50</span><span class="err">%</span>
+
+<span class="mf">2026</span><span class="w"> </span><span class="n">年现状</span><span class="err">：</span><span class="n">新架构已经稳定</span><span class="err">，</span><span class="n">主流库都已迁移完成</span>
+<span class="w">  </span><span class="err">→</span><span class="w"> </span><span class="n">跨平台和原生的性能差距</span><span class="err">，</span><span class="n">终于真正缩小到几乎不可察觉</span>
+</code></pre></div>
+
+<h3 id="react-native-2026">React Native 2026 项目模板<a class="headerlink" href="#react-native-2026" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># 2026 标准启动方式</span>
+npx<span class="w"> </span>react-native@latest<span class="w"> </span>init<span class="w"> </span>MyApp
+<span class="c1"># 自动启用新架构，不需要手动改了</span>
+
+<span class="c1"># 带 TypeScript + 常用配置</span>
+npx<span class="w"> </span>react-native<span class="w"> </span>init<span class="w"> </span>MyApp<span class="w"> </span>--template<span class="w"> </span>react-native-template-typescript
+
+<span class="c1"># AI 应用推荐模板</span>
+npx<span class="w"> </span>create-expo-app<span class="w"> </span>MyApp
+<span class="c1"># Expo 是 RN 之上的最佳实践封装，2026 年已经非常成熟</span>
+</code></pre></div>
+
+<hr />
+<h2 id="5-flutter-2026">5. Flutter 2026 技术进展<a class="headerlink" href="#5-flutter-2026" title="Permanent link">&para;</a></h2>
+<h3 id="impeller">Impeller 渲染引擎<a class="headerlink" href="#impeller" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>Flutter 3.x → Impeller 取代 Skia
+  ✅ iOS/Android 全平台稳定
+  ✅ 稳定 120fps，着色器编译零卡顿
+  ✅ 以前 Skia 的「第一次动画会卡一下」问题彻底解决
+
+2026 年现状：Flutter 的性能优势比 2020 年时更大了
+  复杂动画场景下，优势依然明显
+</code></pre></div>
+
+<h3 id="flutter">Flutter 正在从「移动端优先」变成「全平台」<a class="headerlink" href="#flutter" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>iOS ✅
+Android ✅
+Web ✅ (生产可用)
+Windows ✅
+macOS ✅
+Linux ✅
+嵌入式 → 正在推进
+</code></pre></div>
+
+<hr />
+<h2 id="6-ai">6. AI 集成最佳实践<a class="headerlink" href="#6-ai" title="Permanent link">&para;</a></h2>
+<h3 id="2026-ai">2026 年移动端 AI 的三种模式<a class="headerlink" href="#2026-ai" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>实现方式</th>
+<th>适用场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>云端 API</strong></td>
+<td>OpenAI/Anthropic/方舟 SDK</td>
+<td>90% 的应用，最简单</td>
+</tr>
+<tr>
+<td><strong>端侧推理</strong></td>
+<td>ONNX Runtime / MLC LLM</td>
+<td>隐私敏感、离线使用</td>
+</tr>
+<tr>
+<td><strong>混合模式</strong></td>
+<td>简单任务端侧跑，复杂任务调云端</td>
+<td>最佳平衡</td>
+</tr>
+</tbody>
+</table>
+<h3 id="react-native-ai">React Native AI 开发现状<a class="headerlink" href="#react-native-ai" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>✅ OpenAI SDK: npm install openai → 直接用
+✅ Anthropic SDK: 同样直接支持
+✅ Vercel AI SDK: 完美支持
+✅ LangChain JS: 可以用（注意包大小）
+
+结论：React Native 是目前移动端 AI 开发的最佳选择
+  几乎零成本接入整个 JS AI 生态
+</code></pre></div>
+
+<h3 id="flutter-ai">Flutter AI 开发现状<a class="headerlink" href="#flutter-ai" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>⚠️ 需要写平台通道，或者用社区封装的包
+  质量参差不齐，更新总是比 JS SDK 慢 1-3 个月
+
+结论：AI 不是核心功能的话没问题
+  AI 是核心卖点的话，选 React Native 更省心
+</code></pre></div>
+
+<hr />
+<h2 id="7">7. 学习路径建议<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+<h3 id="react-native">如果你选 React Native<a class="headerlink" href="#react-native" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>前置知识：JavaScript / TypeScript + React
+
+阶段 1（1 周）：
+  ✅ 学会基础的 React Native 组件（View/Text/Image/StyleSheet）
+  ✅ 用 Expo 跑起来你的第一个应用
+  ✅ 理解 Flexbox 布局（和 Web 几乎一样）
+
+阶段 2（2-4 周）：
+  ✅ 导航 React Navigation
+  ✅ 状态管理（Zustand 是 2026 年的主流选择）
+  ✅ 网络请求（fetch / axios）
+  ✅ 接入一个 AI SDK（比如 OpenAI）
+
+阶段 3（进阶）：
+  ✅ 原生模块开发（需要时再学）
+  ✅ 性能优化（列表、内存、启动速度）
+  ✅ 构建发布流程
+</code></pre></div>
+
+<h3 id="flutter_1">如果你选 Flutter<a class="headerlink" href="#flutter_1" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>前置知识：Dart 语言（和 JS/Java/C# 很像，1 周就能上手）
+
+阶段 1（1 周）：
+  ✅ Dart 基础语法
+  ✅ Widget 概念（一切都是 Widget）
+  ✅ 基础布局（Row/Column/Container）
+  ✅ 热重载工作流
+
+阶段 2（2-4 周）：
+  ✅ 状态管理（Provider / Riverpod）
+  ✅ 网络请求（Dio）
+  ✅ 导航（GoRouter）
+  ✅ 常用 UI 组件库
+
+阶段 3（进阶）：
+  ✅ 自定义绘制（Canvas）
+  ✅ 性能优化
+  ✅ 平台通道开发
+</code></pre></div>
+
+<hr />
+<h2 id="_7">💡 最终建议<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p><strong>两个框架都已经非常成熟，没有错误的选择。</strong></p>
+<ul>
+<li><strong>如果你团队懂 JS/TS，或者要做 AI 功能 → 选 React Native</strong></li>
+<li><strong>如果你要做重度定制 UI，或者讨厌 JS 生态的混乱 → 选 Flutter</strong></li>
+<li><strong>不要纠结超过 1 天，选一个开始写代码最重要！</strong></li>
+</ul>
+<p>两个框架都能支撑百万级 DAU 的应用，2026 年了，框架已经不是瓶颈，人才和工程化才是。</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

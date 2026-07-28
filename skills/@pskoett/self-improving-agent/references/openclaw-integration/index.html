@@ -1,0 +1,1499 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="AI Agent 第二大脑 | Hermes 七大自举系统 | 硬件/PCB/单片机全链路知识库 | 学术写作工作流 | 全中文 Obsidian 知识库">
+      
+      
+        <meta name="author" content="mo9652962">
+      
+      
+        <link rel="canonical" href="https://mo9652962-ai.github.io/second-brain/skills/%40pskoett/self-improving-agent/references/openclaw-integration/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>OpenClaw Integration - Second Brain 知识库</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#openclaw-integration" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../../../.." title="Second Brain 知识库" class="md-header__button md-logo" aria-label="Second Brain 知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Second Brain 知识库
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              OpenClaw Integration
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换到深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换到浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../hermes/tool-call-bootstrapping/" class="md-tabs__link">
+          
+  
+  
+  🤖 Hermes 自举系统
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../hardware/PCB-Design-Automation-2026/" class="md-tabs__link">
+          
+  
+  
+  🔧 硬件工程
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../ai/mlops-llm-training-pipeline/" class="md-tabs__link">
+          
+  
+  
+  🧠 AI / MLOps
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../dev/cross-platform-mobile-development-2026/" class="md-tabs__link">
+          
+  
+  
+  📱 移动端 & 安全
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../general/knowledge-domain-roadmap/" class="md-tabs__link">
+          
+  
+  
+  📚 通用知识
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="Second Brain 知识库" class="md-nav__button md-logo" aria-label="Second Brain 知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Second Brain 知识库
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 Hermes 自举系统
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🤖 Hermes 自举系统
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hermes/tool-call-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    工具调用自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hermes/code-quality-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    代码质量自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hermes/output-style-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    输出风格自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hermes/context-management-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    上下文管理自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hermes/github-seo-optimization-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub SEO 优化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔧 硬件工程
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🔧 硬件工程
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hardware/PCB-Design-Automation-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PCB 设计自动化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hardware/CAD-Design-Complete-Guide-v2.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CAD 设计完整指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hardware/Microcontroller-Edge-AI-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    单片机与边缘 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hardware/Hardware-Startup-Open-Source-Ecosystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    硬件创业与开源生态
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧠 AI / MLOps
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🧠 AI / MLOps
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ai/mlops-llm-training-pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MLOps & LLM 训练流水线
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📱 移动端 & 安全
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📱 移动端 & 安全
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../dev/cross-platform-mobile-development-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跨平台移动端开发
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../dev/ctf-cybersecurity-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CTF 网络安全入门
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📚 通用知识
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📚 通用知识
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/knowledge-domain-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识域扩展路线图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/community-best-practices-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    社区最佳实践索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/bilingual-terminology-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中英双语术语对照表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="openclaw-integration">OpenClaw Integration<a class="headerlink" href="#openclaw-integration" title="Permanent link">&para;</a></h1>
+<p>Complete setup and usage guide for integrating the self-improvement skill with OpenClaw.</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>OpenClaw uses workspace-based prompt injection combined with event-driven hooks. Context is injected from workspace files at session start, and hooks can trigger on lifecycle events.</p>
+<h2 id="workspace-structure">Workspace Structure<a class="headerlink" href="#workspace-structure" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code>~/.openclaw/                      
+├── workspace/                   # Working directory
+│   ├── AGENTS.md               # Multi-agent coordination patterns
+│   ├── SOUL.md                 # Behavioral guidelines and personality
+│   ├── TOOLS.md                # Tool capabilities and gotchas
+│   ├── MEMORY.md               # Long-term memory (main session only)
+│   └── memory/                 # Daily memory files
+│       └── YYYY-MM-DD.md
+├── skills/                      # Installed skills
+│   └── &lt;skill-name&gt;/
+│       └── SKILL.md
+└── hooks/                       # Custom hooks
+    └── &lt;hook-name&gt;/
+        ├── HOOK.md
+        └── handler.ts
+</code></pre></div>
+
+<h2 id="quick-setup">Quick Setup<a class="headerlink" href="#quick-setup" title="Permanent link">&para;</a></h2>
+<h3 id="1-install-the-skill">1. Install the Skill<a class="headerlink" href="#1-install-the-skill" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>clawdhub<span class="w"> </span>install<span class="w"> </span>self-improving-agent
+</code></pre></div>
+
+<p>Or copy manually — the skill package is the <code>self-improving-agent/</code>
+subfolder of the repo, not the repo root:</p>
+<div class="codehilite"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/peterskoett/self-improving-agent.git<span class="w"> </span>/tmp/self-improving-agent-repo
+cp<span class="w"> </span>-r<span class="w"> </span>/tmp/self-improving-agent-repo/self-improving-agent<span class="w"> </span>~/.openclaw/skills/self-improving-agent
+</code></pre></div>
+
+<h3 id="2-install-the-hook-optional">2. Install the Hook (Optional)<a class="headerlink" href="#2-install-the-hook-optional" title="Permanent link">&para;</a></h3>
+<p>Copy the hook to OpenClaw's hooks directory:</p>
+<div class="codehilite"><pre><span></span><code>cp<span class="w"> </span>-r<span class="w"> </span>~/.openclaw/skills/self-improving-agent/hooks/openclaw<span class="w"> </span>~/.openclaw/hooks/self-improvement
+</code></pre></div>
+
+<p>Enable the hook:</p>
+<div class="codehilite"><pre><span></span><code>openclaw<span class="w"> </span>hooks<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>self-improvement
+</code></pre></div>
+
+<p>The hook does two things:</p>
+<ul>
+<li><strong><code>agent:bootstrap</code></strong> — injects the self-improvement reminder into session
+  context (and flags auto-detected errors awaiting triage)</li>
+<li><strong><code>command:new</code> / <code>command:reset</code></strong> — sweeps the transcript of the session
+  that just ended for error patterns and appends pending entries to
+  <code>&lt;workspace&gt;/.learnings/ERRORS.md</code> (only if <code>.learnings/</code> exists — see
+  <a href="#error-detection">Error Detection</a>)</li>
+</ul>
+<h3 id="3-create-learning-files">3. Create Learning Files<a class="headerlink" href="#3-create-learning-files" title="Permanent link">&para;</a></h3>
+<p>Create the <code>.learnings/</code> directory in your workspace:</p>
+<div class="codehilite"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>~/.openclaw/workspace/.learnings
+</code></pre></div>
+
+<p>Or in the skill directory:</p>
+<div class="codehilite"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>~/.openclaw/skills/self-improving-agent/.learnings
+</code></pre></div>
+
+<h2 id="injected-prompt-files">Injected Prompt Files<a class="headerlink" href="#injected-prompt-files" title="Permanent link">&para;</a></h2>
+<h3 id="agentsmd">AGENTS.md<a class="headerlink" href="#agentsmd" title="Permanent link">&para;</a></h3>
+<p>Purpose: Multi-agent workflows and delegation patterns.</p>
+<div class="codehilite"><pre><span></span><code><span class="gh"># Agent Coordination</span>
+
+<span class="gu">## Delegation Rules</span>
+<span class="k">-</span><span class="w"> </span>Use explore agent for open-ended codebase questions
+<span class="k">-</span><span class="w"> </span>Spawn sub-agents for long-running tasks
+<span class="k">-</span><span class="w"> </span>Use sessions_send for cross-session communication
+
+<span class="gu">## Session Handoff</span>
+When delegating to another session:
+<span class="k">1.</span> Provide full context in the handoff message
+<span class="k">2.</span> Include relevant file paths
+<span class="k">3.</span> Specify expected output format
+</code></pre></div>
+
+<h3 id="soulmd">SOUL.md<a class="headerlink" href="#soulmd" title="Permanent link">&para;</a></h3>
+<p>Purpose: Behavioral guidelines and communication style.</p>
+<div class="codehilite"><pre><span></span><code><span class="gh"># Behavioral Guidelines</span>
+
+<span class="gu">## Communication Style</span>
+<span class="k">-</span><span class="w"> </span>Be direct and concise
+<span class="k">-</span><span class="w"> </span>Avoid unnecessary caveats and disclaimers
+<span class="k">-</span><span class="w"> </span>Use technical language appropriate to context
+
+<span class="gu">## Error Handling</span>
+<span class="k">-</span><span class="w"> </span>Admit mistakes promptly
+<span class="k">-</span><span class="w"> </span>Provide corrected information immediately
+<span class="k">-</span><span class="w"> </span>Log significant errors to learnings
+</code></pre></div>
+
+<h3 id="toolsmd">TOOLS.md<a class="headerlink" href="#toolsmd" title="Permanent link">&para;</a></h3>
+<p>Purpose: Tool capabilities, integration gotchas, local configuration.</p>
+<div class="codehilite"><pre><span></span><code><span class="gh"># Tool Knowledge</span>
+
+<span class="gu">## Self-Improvement Skill</span>
+Log learnings to <span class="sb">`.learnings/`</span> for continuous improvement.
+
+<span class="gu">## Local Tools</span>
+<span class="k">-</span><span class="w"> </span>Document tool-specific gotchas here
+<span class="k">-</span><span class="w"> </span>Note authentication requirements
+<span class="k">-</span><span class="w"> </span>Track integration quirks
+</code></pre></div>
+
+<h2 id="learning-workflow">Learning Workflow<a class="headerlink" href="#learning-workflow" title="Permanent link">&para;</a></h2>
+<h3 id="capturing-learnings">Capturing Learnings<a class="headerlink" href="#capturing-learnings" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>In-session</strong>: Log to <code>.learnings/</code> as usual</li>
+<li><strong>Cross-session</strong>: Promote to workspace files</li>
+</ol>
+<h3 id="promotion-decision-tree">Promotion Decision Tree<a class="headerlink" href="#promotion-decision-tree" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="n">Is</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">learning</span><span class="w"> </span><span class="n">project</span><span class="o">-</span><span class="n">specific</span><span class="err">?</span>
+<span class="err">├──</span><span class="w"> </span><span class="n">Yes</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="n">Keep</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="o">.</span><span class="n">learnings</span><span class="o">/</span>
+<span class="err">└──</span><span class="w"> </span><span class="n">No</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="n">Is</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="n">behavioral</span><span class="o">/</span><span class="n">style</span><span class="o">-</span><span class="n">related</span><span class="err">?</span>
+<span class="w">    </span><span class="err">├──</span><span class="w"> </span><span class="n">Yes</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="n">Promote</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">SOUL</span><span class="o">.</span><span class="n">md</span>
+<span class="w">    </span><span class="err">└──</span><span class="w"> </span><span class="n">No</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="n">Is</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="k">tool</span><span class="o">-</span><span class="n">related</span><span class="err">?</span>
+<span class="w">        </span><span class="err">├──</span><span class="w"> </span><span class="n">Yes</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="n">Promote</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">TOOLS</span><span class="o">.</span><span class="n">md</span>
+<span class="w">        </span><span class="err">└──</span><span class="w"> </span><span class="n">No</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="n">Promote</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">AGENTS</span><span class="o">.</span><span class="n">md</span><span class="w"> </span><span class="p">(</span><span class="n">workflow</span><span class="p">)</span>
+</code></pre></div>
+
+<h3 id="promotion-format-examples">Promotion Format Examples<a class="headerlink" href="#promotion-format-examples" title="Permanent link">&para;</a></h3>
+<p><strong>From learning:</strong></p>
+<blockquote>
+<p>Git push to GitHub fails without auth configured - triggers desktop prompt</p>
+</blockquote>
+<p><strong>To TOOLS.md:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="gu">## Git</span>
+<span class="k">-</span><span class="w"> </span>Don&#39;t push without confirming auth is configured
+<span class="k">-</span><span class="w"> </span>Use <span class="sb">`gh auth status`</span> to check GitHub CLI auth
+</code></pre></div>
+
+<h2 id="inter-agent-communication">Inter-Agent Communication<a class="headerlink" href="#inter-agent-communication" title="Permanent link">&para;</a></h2>
+<p>OpenClaw provides tools for cross-session communication:</p>
+<p>Use these only when cross-session sharing is explicitly needed and the environment is trusted. Prefer short sanitized summaries over raw transcripts, command output, or secret-bearing content.</p>
+<h3 id="sessions_list">sessions_list<a class="headerlink" href="#sessions_list" title="Permanent link">&para;</a></h3>
+<p>View active and recent sessions:</p>
+<div class="codehilite"><pre><span></span><code>sessions_list(activeMinutes=30, messageLimit=3)
+</code></pre></div>
+
+<h3 id="sessions_history">sessions_history<a class="headerlink" href="#sessions_history" title="Permanent link">&para;</a></h3>
+<p>Read transcript from another session:</p>
+<div class="codehilite"><pre><span></span><code>sessions_history(sessionKey=&quot;session-id&quot;, limit=50)
+</code></pre></div>
+
+<p>Only read another session's transcript when the user explicitly wants shared context or continuation across sessions.</p>
+<h3 id="sessions_send">sessions_send<a class="headerlink" href="#sessions_send" title="Permanent link">&para;</a></h3>
+<p>Send message to another session:</p>
+<div class="codehilite"><pre><span></span><code>sessions_send(sessionKey=&quot;session-id&quot;, message=&quot;Learning: API requires X-Custom-Header&quot;)
+</code></pre></div>
+
+<p>Prefer sending a concise learning summary plus relevant paths rather than forwarding raw transcript content.</p>
+<h3 id="sessions_spawn">sessions_spawn<a class="headerlink" href="#sessions_spawn" title="Permanent link">&para;</a></h3>
+<p>Spawn a background sub-agent:</p>
+<div class="codehilite"><pre><span></span><code>sessions_spawn(task=&quot;Research X and report back&quot;, label=&quot;research&quot;)
+</code></pre></div>
+
+<h2 id="available-hook-events">Available Hook Events<a class="headerlink" href="#available-hook-events" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>When It Fires</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>agent:bootstrap</code></td>
+<td>Before workspace files inject</td>
+</tr>
+<tr>
+<td><code>command:new</code></td>
+<td>When <code>/new</code> command issued</td>
+</tr>
+<tr>
+<td><code>command:reset</code></td>
+<td>When <code>/reset</code> command issued</td>
+</tr>
+<tr>
+<td><code>command:stop</code></td>
+<td>When <code>/stop</code> command issued</td>
+</tr>
+<tr>
+<td><code>gateway:startup</code></td>
+<td>When gateway starts</td>
+</tr>
+<tr>
+<td><code>gateway:shutdown</code></td>
+<td>When gateway shuts down</td>
+</tr>
+<tr>
+<td><code>message:received</code> / <code>message:sent</code></td>
+<td>Around message delivery</td>
+</tr>
+<tr>
+<td><code>session:compact:before</code> / <code>:after</code></td>
+<td>Around session compaction</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Important:</strong> OpenClaw has <strong>no per-tool-call event</strong> — nothing fires after
+each individual tool call, so real-time per-command error detection is not
+possible. Error detection is done at session end instead (see below).</p>
+<h2 id="error-detection">Error Detection<a class="headerlink" href="#error-detection" title="Permanent link">&para;</a></h2>
+<p>The skill's hook (<code>hooks/openclaw/</code>) implements a <strong>session-end error
+sweep</strong>:</p>
+<ol>
+<li>When <code>/new</code> or <code>/reset</code> ends a session, the hook resolves the ended
+   session's transcript from <code>context.previousSessionEntry</code> (falling back to
+   <code>&lt;workspace&gt;/sessions/&lt;sessionId&gt;.jsonl</code>) — the same source OpenClaw's
+   bundled <code>session-memory</code> hook uses.</li>
+<li>The transcript is scanned against a fixed error-pattern list (<code>Error:</code>,
+   <code>command not found</code>, <code>Traceback</code>, <code>npm ERR!</code>, <code>Permission denied</code>, …).</li>
+<li>Matches are appended to <code>&lt;workspace&gt;/.learnings/ERRORS.md</code> as a <code>pending</code>
+   entry with <code>Source: openclaw-error-sweep</code>, containing at most 5 short
+   excerpts (truncated to 200 chars, common secret shapes redacted,
+   duplicates skipped). Each entry is stamped with deterministic
+   <code>Pattern-Key</code> values derived from the matched pattern (for example
+   <code>ModuleNotFoundError</code> → <code>deps.module-not-found</code>), so recurrences can be
+   counted by key during triage — see the Pattern-Key Taxonomy in <code>SKILL.md</code>.</li>
+<li>At the next <code>agent:bootstrap</code>, the injected reminder includes a
+   <strong>pending triage</strong> note so the agent reviews the auto-detected entries —
+   confirming real errors, filling in fixes, or deleting noise.</li>
+</ol>
+<h3 id="enabling-disabling-the-sweep">Enabling / Disabling the Sweep<a class="headerlink" href="#enabling-disabling-the-sweep" title="Permanent link">&para;</a></h3>
+<p>The sweep is opt-in and gated on the <code>.learnings/</code> directory:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Enable</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span>~/.openclaw/workspace/.learnings
+
+<span class="c1"># Disable (reminder injection keeps working)</span>
+rm<span class="w"> </span>-r<span class="w"> </span>~/.openclaw/workspace/.learnings
+</code></pre></div>
+
+<h3 id="sweep-limitations">Sweep Limitations<a class="headerlink" href="#sweep-limitations" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Sessions that are never ended with <code>/new</code> or <code>/reset</code> are not swept.</li>
+<li>Detection happens at session end, not immediately after the failing
+  command — there is no per-tool-call event to hook.</li>
+<li>Pattern matching is heuristic; it can flag false positives such as prose
+  containing the word "failed" — that's what the triage step is for.</li>
+<li>Excerpts are redacted with best-effort rules; treat <code>.learnings/</code> as
+  potentially sensitive and keep it out of version control by default.</li>
+</ul>
+<h2 id="detection-triggers">Detection Triggers<a class="headerlink" href="#detection-triggers" title="Permanent link">&para;</a></h2>
+<h3 id="standard-triggers">Standard Triggers<a class="headerlink" href="#standard-triggers" title="Permanent link">&para;</a></h3>
+<ul>
+<li>User corrections ("No, that's wrong...")</li>
+<li>Command failures (non-zero exit codes)</li>
+<li>API errors</li>
+<li>Knowledge gaps</li>
+</ul>
+<h3 id="openclaw-specific-triggers">OpenClaw-Specific Triggers<a class="headerlink" href="#openclaw-specific-triggers" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Trigger</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tool call error</td>
+<td>Log to TOOLS.md with tool name</td>
+</tr>
+<tr>
+<td>Session handoff confusion</td>
+<td>Log to AGENTS.md with delegation pattern</td>
+</tr>
+<tr>
+<td>Model behavior surprise</td>
+<td>Log to SOUL.md with expected vs actual</td>
+</tr>
+<tr>
+<td>Skill issue</td>
+<td>Log to .learnings/ or report upstream</td>
+</tr>
+</tbody>
+</table>
+<h2 id="verification">Verification<a class="headerlink" href="#verification" title="Permanent link">&para;</a></h2>
+<p>Check hook is registered:</p>
+<div class="codehilite"><pre><span></span><code>openclaw<span class="w"> </span>hooks<span class="w"> </span>list
+</code></pre></div>
+
+<p>Check skill is loaded:</p>
+<div class="codehilite"><pre><span></span><code>openclaw<span class="w"> </span>status
+</code></pre></div>
+
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<h3 id="hook-not-firing">Hook not firing<a class="headerlink" href="#hook-not-firing" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Ensure hooks enabled in config</li>
+<li>Restart gateway after config changes</li>
+<li>Check gateway logs for errors</li>
+</ol>
+<h3 id="learnings-not-persisting">Learnings not persisting<a class="headerlink" href="#learnings-not-persisting" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Verify <code>.learnings/</code> directory exists</li>
+<li>Check file permissions</li>
+<li>Ensure workspace path is configured correctly</li>
+</ol>
+<h3 id="error-sweep-not-writing-entries">Error sweep not writing entries<a class="headerlink" href="#error-sweep-not-writing-entries" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Verify <code>&lt;workspace&gt;/.learnings/</code> exists (the sweep is opt-in and skips
+   silently without it)</li>
+<li>End the session with <code>/new</code> or <code>/reset</code> — the sweep only runs on those
+   commands</li>
+<li>Confirm a transcript exists in <code>&lt;workspace&gt;/sessions/</code></li>
+<li>Run the gateway with <code>SELF_IMPROVEMENT_HOOK_DEBUG=1</code> to surface hook errors</li>
+<li>Remember excerpts already present in <code>ERRORS.md</code> are skipped (dedupe)</li>
+</ol>
+<h3 id="skill-not-loading">Skill not loading<a class="headerlink" href="#skill-not-loading" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Check skill is in skills directory</li>
+<li>Verify SKILL.md has correct frontmatter</li>
+<li>Run <code>openclaw status</code> to see loaded skills</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "toc.integrate"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

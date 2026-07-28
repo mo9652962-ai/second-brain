@@ -1,0 +1,1506 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="PPT Gate 优化器 v3.0：评分+阻断机制。输入PPT输出诊断报告，score<60触发回退重制。Async-First/移动适配/3D一致/卡片评分/AI检测。">
+      
+      
+        <meta name="author" content="mo9652962">
+      
+      
+        <link rel="canonical" href="https://mo9652962-ai.github.io/second-brain/skills/%40smallkeyboy/ppt-optimizer/SKILL/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>PPT 智能优化助手 v3.0（含 Gate 检查） - Second Brain 知识库</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ppt-v30-gate" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../../.." title="Second Brain 知识库" class="md-header__button md-logo" aria-label="Second Brain 知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Second Brain 知识库
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              PPT 智能优化助手 v3.0（含 Gate 检查）
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换到深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换到浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../hermes/tool-call-bootstrapping/" class="md-tabs__link">
+          
+  
+  
+  🤖 Hermes 自举系统
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../hardware/PCB-Design-Automation-2026/" class="md-tabs__link">
+          
+  
+  
+  🔧 硬件工程
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../ai/mlops-llm-training-pipeline/" class="md-tabs__link">
+          
+  
+  
+  🧠 AI / MLOps
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../dev/cross-platform-mobile-development-2026/" class="md-tabs__link">
+          
+  
+  
+  📱 移动端 & 安全
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../general/knowledge-domain-roadmap/" class="md-tabs__link">
+          
+  
+  
+  📚 通用知识
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Second Brain 知识库" class="md-nav__button md-logo" aria-label="Second Brain 知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Second Brain 知识库
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 Hermes 自举系统
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🤖 Hermes 自举系统
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hermes/tool-call-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    工具调用自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hermes/code-quality-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    代码质量自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hermes/output-style-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    输出风格自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hermes/context-management-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    上下文管理自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hermes/github-seo-optimization-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub SEO 优化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔧 硬件工程
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🔧 硬件工程
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hardware/PCB-Design-Automation-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PCB 设计自动化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hardware/CAD-Design-Complete-Guide-v2.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CAD 设计完整指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hardware/Microcontroller-Edge-AI-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    单片机与边缘 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hardware/Hardware-Startup-Open-Source-Ecosystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    硬件创业与开源生态
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧠 AI / MLOps
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🧠 AI / MLOps
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/mlops-llm-training-pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MLOps & LLM 训练流水线
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📱 移动端 & 安全
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📱 移动端 & 安全
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dev/cross-platform-mobile-development-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跨平台移动端开发
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dev/ctf-cybersecurity-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CTF 网络安全入门
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📚 通用知识
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📚 通用知识
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../general/knowledge-domain-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识域扩展路线图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../general/community-best-practices-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    社区最佳实践索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../general/bilingual-terminology-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中英双语术语对照表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ppt-v30-gate">PPT 智能优化助手 v3.0（含 Gate 检查）<a class="headerlink" href="#ppt-v30-gate" title="Permanent link">&para;</a></h1>
+<p>帮助用户快速优化PPT演示文稿，<strong>v3.0新增：Async-First自检、移动端适配、3D一致性、卡片式布局评分、AI图像质量检测。</strong></p>
+<hr />
+<h2 id="2026v30">2026优化标准（v3.0升级）<a class="headerlink" href="#2026v30" title="Permanent link">&para;</a></h2>
+<h3 id="0-async-first">标准0: 🆕 Async-First 独立阅读检查<a class="headerlink" href="#0-async-first" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>检查项</th>
+<th>通过标准</th>
+<th>典型违规</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>标题独立性</td>
+<td>每页标题=完整结论句</td>
+<td>"数据分析"应该改成"Q3核心指标增长35%"</td>
+</tr>
+<tr>
+<td>图表自解释</td>
+<td>所有图表有annotation标注</td>
+<td>纯图表无任何标记文字</td>
+</tr>
+<tr>
+<td>Speaker Notes</td>
+<td>100%页面有Notes</td>
+<td>异步阅读者得不到任何补充信息</td>
+</tr>
+<tr>
+<td>"脱讲自测"</td>
+<td>去掉所有Notes后仍可理解</td>
+<td>提到"这里我们看..."等指代词</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Async-First评分</strong>：
+| 等级 | 描述 |
+|------|------|
+| A | 发送PPT链接给任何人→完全理解，无需讲解 |
+| B | 大体可理解，少数页面需上下文 |
+| C | 强烈依赖演讲者，不适合异步分享 |</p>
+<h3 id="1-15">标准1: 15字标题法则（保持）<a class="headerlink" href="#1-15" title="Permanent link">&para;</a></h3>
+<h3 id="2-one-idea-per-slide">标准2: One Idea Per Slide（保持）<a class="headerlink" href="#2-one-idea-per-slide" title="Permanent link">&para;</a></h3>
+<h3 id="3-451">标准3: 对比度 ≥ 4.5:1（保持）<a class="headerlink" href="#3-451" title="Permanent link">&para;</a></h3>
+<h3 id="6">🆕 标准6: 移动端适配诊断<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>检查项</th>
+<th>阈值</th>
+<th>修正方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>正文最小字号</td>
+<td>≥18pt</td>
+<td>在手机上16pt以下无法阅读</td>
+</tr>
+<tr>
+<td>多列布局</td>
+<td>手机端自动单列</td>
+<td>建议≤2列</td>
+</tr>
+<tr>
+<td>图表系列数</td>
+<td>≤3系列</td>
+<td>手机上多系列混杂</td>
+</tr>
+<tr>
+<td>触控目标</td>
+<td>按钮≥44x44pt</td>
+<td>链接/按钮需触控友好</td>
+</tr>
+<tr>
+<td>页边距</td>
+<td>足够宽</td>
+<td>防止手机浏览器裁切</td>
+</tr>
+</tbody>
+</table>
+<h3 id="7-3d">🆕 标准7: 3D元素一致性<a class="headerlink" href="#7-3d" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>信号</th>
+<th>阈值</th>
+<th>修正</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3D/2D混用率</td>
+<td>&lt;30%混用</td>
+<td>全部3D或全部平面</td>
+</tr>
+<tr>
+<td>3D图标风格</td>
+<td>统一来源</td>
+<td>不混用不同3D库</td>
+</tr>
+<tr>
+<td>3D复杂度</td>
+<td>适中</td>
+<td>低端设备渲染不卡顿</td>
+</tr>
+</tbody>
+</table>
+<h3 id="8">🆕 标准8: 卡片式布局评分<a class="headerlink" href="#8" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>评分</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>模块清晰、可自由排序、每卡片独立完整</td>
+</tr>
+<tr>
+<td>B</td>
+<td>有卡片意识但不够模块化</td>
+</tr>
+<tr>
+<td>C</td>
+<td>传统线性布局, 不适合灵活分享</td>
+</tr>
+</tbody>
+</table>
+<h3 id="5-ai">标准5: AI痕迹检测（升级版，增加新检测项）<a class="headerlink" href="#5-ai" title="Permanent link">&para;</a></h3>
+<p><strong>新增检测信号</strong>：
+| 信号 | 阈值 | 修正 |
+|------|------|------|
+| 🆕 AI图片风格单一 | 同一prompt风格 | 混合2-3种视觉风格 |
+| 🆕 过度使用AI生成图 | &gt;50%页用AI图 | 混入真实照片/截图 |
+| 🆕 完美数据可视化 | 无一异常值 | 加入1-2个"不完美"元素 |</p>
+<hr />
+<h2 id="gate-v30">🚦 Gate 检查机制（v3.0新增）<a class="headerlink" href="#gate-v30" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code>输入PPT → 八标准诊断 → 综合评分
+  │                    │
+  ├─ score &gt;= 60 ───→ ✅ 通过 → 输出优化方案
+  │
+  └─ score &lt; 60 ────→ ❌ 阻断 → 生成修订指令 → 退回重制
+</code></pre></div>
+
+<h3 id="100">评分细则（100分制）<a class="headerlink" href="#100" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>权重</th>
+<th>满分</th>
+<th>检查内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Async-First</td>
+<td>18%</td>
+<td>18</td>
+<td>标题结论性、图表自解释、Notes完整性</td>
+</tr>
+<tr>
+<td>15字标题</td>
+<td>15%</td>
+<td>15</td>
+<td>每页标题≤15字</td>
+</tr>
+<tr>
+<td>One Idea</td>
+<td>15%</td>
+<td>15</td>
+<td>每页单一论点</td>
+</tr>
+<tr>
+<td>对比度</td>
+<td>12%</td>
+<td>12</td>
+<td>文字/背景对比度≥4.5:1</td>
+</tr>
+<tr>
+<td>叙事流</td>
+<td>12%</td>
+<td>12</td>
+<td>页间逻辑连贯</td>
+</tr>
+<tr>
+<td>AI痕迹</td>
+<td>10%</td>
+<td>10</td>
+<td>去AI化程度</td>
+</tr>
+<tr>
+<td>移动适配</td>
+<td>10%</td>
+<td>10</td>
+<td>字号≥18pt、≤2列、触控目标</td>
+</tr>
+<tr>
+<td>3D一致</td>
+<td>5%</td>
+<td>5</td>
+<td>3D/2D不混用</td>
+</tr>
+<tr>
+<td>卡片布局</td>
+<td>3%</td>
+<td>3</td>
+<td>模块化程度</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gate">Gate 阈值<a class="headerlink" href="#gate" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>阈值</th>
+<th>行为</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>默认</td>
+<td>≥60</td>
+<td>通过，输出优化建议</td>
+</tr>
+<tr>
+<td>严格模式</td>
+<td>≥75</td>
+<td>通过，任何单项&lt;50%触发阻断</td>
+</tr>
+<tr>
+<td>紧急模式</td>
+<td>≥50</td>
+<td>通过，仅阻断致命问题</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_1">阻断回退指令<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>当 score &lt; 60 时，输出：</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;gate_passed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">52</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;blocking_issues&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;Async-First: 8/15页标题非结论句 (权重18% → 扣9分)&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;移动适配: 5页字号&lt;18pt (权重10% → 扣7分)&quot;</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;retry_instructions&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1. 将第2,3,5,7,9,11,13,14页标题改为结论句\n2. 将所有正文字号调整至≥18pt\n3. 重新运行 pptx-generator 生成&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h2 id="v30">优化流程（v3.0升级）<a class="headerlink" href="#v30" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code>输入PPT → 八标准诊断 → 综合评分 → Gate检查
+  │                               │
+  │                        ├─&gt;=60 → 优化方案
+  │                        └─&lt;60 → 阻断回退
+  │
+  └─ report.json（每次必输出）
+</code></pre></div>
+
+<h3 id="v30_1">诊断报告格式（v3.0升级版）<a class="headerlink" href="#v30_1" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>📊 PPT诊断报告 v3.0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📖 Async-First: B级 — 5/15页标题非结论句, 3页缺标注
+📝 15字法则: 3/15页标题超字数
+💡 One Idea: 第5,8页含2个论点 → 建议拆页
+🎨 对比度: 第3页正文对比度2.8:1 → 需加深
+📖 叙事流: B级 → 第2→3页间增加过渡
+🤖 AI痕迹: 中 — 6/15页同布局模式
+📱 移动端: 4页字号&lt;18pt, 2页3列布局
+🗿 3D一致性: 无3D元素（若无需则忽略）
+🃏 卡片度: C级 — 传统线性, 建议2个核心页转卡片
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+</code></pre></div>
+
+<hr />
+<h2 id="2026">🆕 2026行业对标<a class="headerlink" href="#2026" title="Permanent link">&para;</a></h2>
+<p>基于当前最佳实践（Gamma、Canva、Copilot、Beautiful.ai），新增对标检查：</p>
+<table>
+<thead>
+<tr>
+<th>对标项</th>
+<th>Gamma标准</th>
+<th>当前PPT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>生成速度</td>
+<td>&lt;60秒完整deck</td>
+<td>—</td>
+</tr>
+<tr>
+<td>卡片式交互</td>
+<td>支持自由浏览</td>
+<td>[是/否]</td>
+</tr>
+<tr>
+<td>Async分享</td>
+<td>链接即完整文档</td>
+<td>[A/B/C]</td>
+</tr>
+<tr>
+<td>AI配图</td>
+<td>自动生成相关视觉</td>
+<td>[是/否]</td>
+</tr>
+<tr>
+<td>移动端</td>
+<td>完全适配</td>
+<td>[是/否]</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>版本</strong>: v3.0.0 | <strong>更新日期</strong>: 2026-07-20</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "toc.integrate"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

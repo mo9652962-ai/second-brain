@@ -1,0 +1,1845 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="PCB 设计自动化全流程 Skill，覆盖 2026 年 AI 工具生态、DFM 最佳实践、高速设计原则、小批量制造选型">
+      
+      
+        <meta name="author" content="mo9652962">
+      
+      
+        <link rel="canonical" href="https://mo9652962-ai.github.io/second-brain/skills/hardware/PCB-Design-Automation-2026/">
+      
+      
+        <link rel="prev" href="../../hermes/github-seo-optimization-2026/">
+      
+      
+        <link rel="next" href="../CAD-Design-Complete-Guide-v2.0/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>PCB 设计自动化 - Second Brain 知识库</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pcb-2026" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="Second Brain 知识库" class="md-header__button md-logo" aria-label="Second Brain 知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Second Brain 知识库
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              PCB 设计自动化
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换到深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换到浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../hermes/tool-call-bootstrapping/" class="md-tabs__link">
+          
+  
+  
+  🤖 Hermes 自举系统
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  🔧 硬件工程
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ai/mlops-llm-training-pipeline/" class="md-tabs__link">
+          
+  
+  
+  🧠 AI / MLOps
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../dev/cross-platform-mobile-development-2026/" class="md-tabs__link">
+          
+  
+  
+  📱 移动端 & 安全
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../general/knowledge-domain-roadmap/" class="md-tabs__link">
+          
+  
+  
+  📚 通用知识
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Second Brain 知识库" class="md-nav__button md-logo" aria-label="Second Brain 知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Second Brain 知识库
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 Hermes 自举系统
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🤖 Hermes 自举系统
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hermes/tool-call-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    工具调用自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hermes/code-quality-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    代码质量自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hermes/output-style-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    输出风格自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hermes/context-management-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    上下文管理自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hermes/github-seo-optimization-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub SEO 优化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔧 硬件工程
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🔧 硬件工程
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PCB 设计自动化
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PCB 设计自动化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#2026-pcb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛠️ 2026 年 PCB 工具矩阵
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-pcb-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 AI PCB 工作流 2026 版
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 AI PCB 工作流 2026 版">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        方案 A：全 AI 驱动（最快上市）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        方案 B：混合工作流（推荐）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dfm-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ DFM 可制造性设计最佳实践 2026
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="✅ DFM 可制造性设计最佳实践 2026">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dfm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        左移原则：DFM 越早介入越好
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心检查清单
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ipc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IPC 标准引用
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pcb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚄 高速 PCB 设计原则
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚄 高速 PCB 设计原则">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        高速判断标准
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        信号完整性核心规则
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        叠层设计推荐（4 层板）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏭 小批量制造商选择指南 2026
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🏭 小批量制造商选择指南 2026">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        制造商矩阵对比
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 设计到交付标准工作流
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 进阶学习路径
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 进阶学习路径">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        入门级（1-2 层板）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        进阶级（4-6 层板）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        专家级（8 层以上 + 高速）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ 常见陷阱
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CAD-Design-Complete-Guide-v2.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CAD 设计完整指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Microcontroller-Edge-AI-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    单片机与边缘 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Hardware-Startup-Open-Source-Ecosystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    硬件创业与开源生态
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧠 AI / MLOps
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🧠 AI / MLOps
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai/mlops-llm-training-pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MLOps & LLM 训练流水线
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📱 移动端 & 安全
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📱 移动端 & 安全
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/cross-platform-mobile-development-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跨平台移动端开发
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/ctf-cybersecurity-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CTF 网络安全入门
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📚 通用知识
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📚 通用知识
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../general/knowledge-domain-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识域扩展路线图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../general/community-best-practices-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    社区最佳实践索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../general/bilingual-terminology-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中英双语术语对照表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="pcb-2026">PCB 设计自动化全流程 2026<a class="headerlink" href="#pcb-2026" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>从原理图到制造交付的完整技术栈，集成 2026 年最新 AI 工具与行业最佳实践</p>
+</blockquote>
+<hr />
+<h2 id="2026-pcb">🛠️ 2026 年 PCB 工具矩阵<a class="headerlink" href="#2026-pcb" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>工具/平台</th>
+<th>类型</th>
+<th>定位</th>
+<th>核心优势</th>
+<th>AI 能力</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>嘉立创 EDA</strong></td>
+<td>国产桌面</td>
+<td>中小团队 + 低成本</td>
+<td>JLCPCB/LCSC 生态无缝衔接</td>
+<td>有（待深入评估）</td>
+</tr>
+<tr>
+<td><strong>KiCad 10</strong></td>
+<td>开源桌面</td>
+<td>专业 + 零成本</td>
+<td>完全离线 + 插件生态</td>
+<td>无原生 AI（可通过 MCP 桥接）</td>
+</tr>
+<tr>
+<td><strong>Flux</strong></td>
+<td>浏览器</td>
+<td>协作 + AI 辅助</td>
+<td>Google Docs 式实时协作</td>
+<td>AI Copilot 内置</td>
+</tr>
+<tr>
+<td><strong>Altium Designer</strong></td>
+<td>商业桌面</td>
+<td>企业级</td>
+<td>高速设计全功能</td>
+<td>AI 辅助布线 + 零件生成</td>
+</tr>
+<tr>
+<td><strong>Quilter AI</strong></td>
+<td>AI 布局引擎</td>
+<td>自动化布局布线</td>
+<td>物理驱动 AI，兼容主流 EDA</td>
+<td>全自动布局 + 关键信号布线</td>
+</tr>
+<tr>
+<td><strong>DeepPCB</strong></td>
+<td>AI 布线</td>
+<td>企业级自动化</td>
+<td>InstaDeep 技术</td>
+<td>自主布线</td>
+</tr>
+<tr>
+<td><strong>ProtoFlow</strong></td>
+<td>AI 原理图</td>
+<td>快速捕捉</td>
+<td>AI 辅助原理图生成</td>
+<td>原理图阶段 AI</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="ai-pcb-2026">🚀 AI PCB 工作流 2026 版<a class="headerlink" href="#ai-pcb-2026" title="Permanent link">&para;</a></h2>
+<h3 id="a-ai">方案 A：全 AI 驱动（最快上市）<a class="headerlink" href="#a-ai" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>阶段 1：原理图捕捉
+└── ProtoFlow AI → 生成原理图网表
+    └── 导出到 KiCad/Altium
+
+阶段 2：布局布线
+└── Quilter AI → 全板自动布局 + 关键信号布线
+    └── 5-6 倍速度提升（传统 27-32 小时 → 5 小时）
+    └── 并行生成多方案候选，择优选择
+
+阶段 3：人工精修 + 验证
+└── 工程师审核关键路径、阻抗控制
+    └── DFM/DRC/ERC 检查
+</code></pre></div>
+
+<h3 id="b">方案 B：混合工作流（推荐）<a class="headerlink" href="#b" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>原理图 → 嘉立创 EDA / KiCad 手动设计
+    ↓
+布局 → 关键器件手动放置 + AI 辅助优化
+    ↓
+布线 → 手动走关键信号 + AI 处理剩余布线
+    ↓
+验证 → AI 辅助 DFM 分析 + 人工审核
+</code></pre></div>
+
+<hr />
+<h2 id="dfm-2026">✅ DFM 可制造性设计最佳实践 2026<a class="headerlink" href="#dfm-2026" title="Permanent link">&para;</a></h2>
+<h3 id="dfm">左移原则：DFM 越早介入越好<a class="headerlink" href="#dfm" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>项目阶段</th>
+<th>必须执行的 DFM 动作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>原理图阶段</strong></td>
+<td>早期与制造商确认叠层方案</td>
+</tr>
+<tr>
+<td><strong>布局开始</strong></td>
+<td>应用更新的 DFM 规则集（IPC-2221 标准）</td>
+</tr>
+<tr>
+<td><strong>布局中期</strong></td>
+<td>跨团队 DFM 检查点</td>
+</tr>
+<tr>
+<td><strong>发布前</strong></td>
+<td>联合设计装配审计 + DFM 全面检查</td>
+</tr>
+<tr>
+<td><strong>量产前</strong></td>
+<td>工厂 CAM 数据验证</td>
+</tr>
+<tr>
+<td><strong>首批次</strong></td>
+<td>反馈到 DFM 规则库持续改进</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_1">核心检查清单<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>必查项：
+1. 线宽与间距优化 → 符合制造商最小工艺
+2. 过孔 DFM 检查 → 孔径/焊盘比例，反焊盘尺寸
+3. 参考平面完整性 → 高速信号下方无分割
+4. 阻抗控制计算 → 50Ω/90Ω/100Ω 差分对
+5. 热焊盘设计 → 防止&quot;冷焊点&quot;
+6. 元件到板边安全距离
+7. 高低元件合理布局（波峰焊方向）
+</code></pre></div>
+
+<h3 id="ipc">IPC 标准引用<a class="headerlink" href="#ipc" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>标准</th>
+<th>适用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IPC-2221</td>
+<td>通用刚性板</td>
+</tr>
+<tr>
+<td>IPC-2222</td>
+<td>刚性板细节</td>
+</tr>
+<tr>
+<td>IPC-2223</td>
+<td>刚挠结合</td>
+</tr>
+<tr>
+<td>IPC-2226</td>
+<td>HDI 高密度互连</td>
+</tr>
+<tr>
+<td>IPC-2228</td>
+<td>高频/RF/微波</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="pcb">🚄 高速 PCB 设计原则<a class="headerlink" href="#pcb" title="Permanent link">&para;</a></h2>
+<h3 id="_2">高速判断标准<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>不是看时钟频率，而是看<strong>信号上升时间</strong>！</p>
+<p><strong>上升时间 &lt; 4× 传输延迟</strong> → 需要高速设计方法</p>
+</blockquote>
+<h3 id="_3">信号完整性核心规则<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="err">【</span><span class="n">强制</span><span class="err">】</span><span class="n">控制阻抗走线</span>
+<span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="mf">50</span><span class="n">Ω</span><span class="w"> </span><span class="n">单端</span><span class="err">，</span><span class="mf">90</span><span class="o">/</span><span class="mf">100</span><span class="n">Ω</span><span class="w"> </span><span class="n">差分对</span>
+<span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">用叠层</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">线宽计算确定</span>
+
+<span class="mf">2.</span><span class="w"> </span><span class="err">【</span><span class="n">强制</span><span class="err">】</span><span class="n">完整参考平面</span>
+<span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">信号层必须紧邻</span><span class="w"> </span><span class="n">GND</span><span class="w"> </span><span class="n">或</span><span class="w"> </span><span class="n">POWER</span><span class="w"> </span><span class="n">平面</span>
+<span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">绝对避免跨分割</span><span class="err">（</span><span class="n">跨平面裂缝</span><span class="err">）</span>
+
+<span class="mf">3.</span><span class="w"> </span><span class="err">【</span><span class="n">推荐</span><span class="err">】</span><span class="n">最小化层切换</span>
+<span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">每次过孔切换</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">阻抗不连续点</span>
+
+<span class="mf">4.</span><span class="w"> </span><span class="err">【</span><span class="n">推荐</span><span class="err">】</span><span class="n">差分对内严格等长</span>
+<span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">长度不匹配</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="n">时序偏斜</span>
+
+<span class="mf">5.</span><span class="w"> </span><span class="err">【</span><span class="n">推荐</span><span class="err">】</span><span class="mf">3</span><span class="n">W</span><span class="w"> </span><span class="n">规则</span>
+<span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">线中心间距</span><span class="w"> </span><span class="err">≥</span><span class="w"> </span><span class="mf">3</span><span class="err">×</span><span class="w"> </span><span class="n">线宽</span><span class="err">，</span><span class="n">减少串扰</span>
+</code></pre></div>
+
+<h3 id="4">叠层设计推荐（4 层板）<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>顶层：信号层（Top）
+↓
+第二层：完整 GND 平面（关键！）
+↓
+第三层：POWER 平面（可分割）
+↓
+底层：信号层（Bottom）
+</code></pre></div>
+
+<hr />
+<h2 id="2026">🏭 小批量制造商选择指南 2026<a class="headerlink" href="#2026" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>项目阶段</th>
+<th>首选制造商</th>
+<th>核心优势</th>
+<th>交期</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>原型阶段</strong></td>
+<td>JLCPCB</td>
+<td>最便宜 + 最快 + 无 MOQ</td>
+<td>24-48h</td>
+</tr>
+<tr>
+<td><strong>小批量试产</strong></td>
+<td>PCBWay</td>
+<td>全服务 turnkey + 工艺最全</td>
+<td>7 天</td>
+</tr>
+<tr>
+<td><strong>开源/IoT 项目</strong></td>
+<td>Seeed Fusion</td>
+<td>开源社区友好 + 一站式 PCBA</td>
+<td>7 天</td>
+</tr>
+<tr>
+<td><strong>认证工业/医疗</strong></td>
+<td>ALLPCB/A-Tech</td>
+<td>UL/IATF/ISO 认证</td>
+<td>12-24h 加急</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_4">制造商矩阵对比<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>厂商</th>
+<th>SMT 装配</th>
+<th>工艺支持</th>
+<th>MOQ</th>
+<th>生态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>JLCPCB</strong></td>
+<td>✅</td>
+<td>1-64 层 / 铝基 / HF</td>
+<td>无</td>
+<td>EasyEDA + LCSC 全链路</td>
+</tr>
+<tr>
+<td><strong>PCBWay</strong></td>
+<td>✅</td>
+<td>HDI / FPC / 刚挠 / 金属芯</td>
+<td>无</td>
+<td>最全面工艺</td>
+</tr>
+<tr>
+<td><strong>Seeed Fusion</strong></td>
+<td>✅</td>
+<td>标准 / 轻定制 FPC</td>
+<td>无</td>
+<td>开源项目支持</td>
+</tr>
+<tr>
+<td><strong>JDBPCB</strong></td>
+<td>✅</td>
+<td>刚性 / 柔性 / 铝基</td>
+<td>无</td>
+<td>24h 极限加急</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_5">💡 设计到交付标准工作流<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">原理图设计</span><span class="err">（</span><span class="n">嘉立创</span><span class="w"> </span><span class="n">EDA</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">KiCad</span><span class="err">）</span>
+<span class="w">    </span><span class="err">↓</span><span class="w"> </span><span class="n">执行</span><span class="w"> </span><span class="n">ERC</span><span class="w"> </span><span class="n">检查</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">元器件选型</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">BOM</span><span class="w"> </span><span class="n">准备</span><span class="err">（</span><span class="n">优先</span><span class="w"> </span><span class="n">LCSC</span><span class="w"> </span><span class="n">有库存型号</span><span class="err">）</span>
+<span class="w">    </span><span class="err">↓</span><span class="w"> </span><span class="n">确认价格与交期</span>
+<span class="mf">3.</span><span class="w"> </span><span class="n">PCB</span><span class="w"> </span><span class="n">布局</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">布线</span>
+<span class="w">    </span><span class="err">↓</span><span class="w"> </span><span class="n">在线</span><span class="w"> </span><span class="n">DRC</span><span class="w"> </span><span class="n">检查</span>
+<span class="mf">4.</span><span class="w"> </span><span class="n">DFM</span><span class="w"> </span><span class="n">预检查</span><span class="err">（</span><span class="n">对照制造商规则</span><span class="err">）</span>
+<span class="w">    </span><span class="err">↓</span><span class="w"> </span><span class="n">特别注意最小线宽</span><span class="o">/</span><span class="n">孔径</span>
+<span class="mf">5.</span><span class="w"> </span><span class="n">导出</span><span class="w"> </span><span class="n">Gerber</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">NC</span><span class="w"> </span><span class="n">Drill</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">BOM</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">坐标文件</span>
+<span class="w">    </span><span class="err">↓</span><span class="w"> </span><span class="n">一键下单</span><span class="err">（</span><span class="n">嘉立创</span><span class="w"> </span><span class="n">EDA</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="n">JLCPCB</span><span class="err">）</span>
+<span class="mf">6.</span><span class="w"> </span><span class="n">制造</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">SMT</span><span class="w"> </span><span class="n">装配</span>
+<span class="w">    </span><span class="err">↓</span><span class="w"> </span><span class="mf">7</span><span class="o">-</span><span class="mf">10</span><span class="w"> </span><span class="n">天</span>
+<span class="mf">7.</span><span class="w"> </span><span class="n">收到样板</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="n">焊接测试</span>
+</code></pre></div>
+
+<hr />
+<h2 id="_6">📚 进阶学习路径<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="1-2">入门级（1-2 层板）<a class="headerlink" href="#1-2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>嘉立创 EDA 基础教程</li>
+<li>BOM 管理技巧</li>
+<li>基础 DFM 规则</li>
+</ul>
+<h3 id="4-6">进阶级（4-6 层板）<a class="headerlink" href="#4-6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>阻抗控制计算</li>
+<li>差分对设计</li>
+<li>电源完整性基础</li>
+<li>EMI/EMC 基础</li>
+</ul>
+<h3 id="8">专家级（8 层以上 + 高速）<a class="headerlink" href="#8" title="Permanent link">&para;</a></h3>
+<ul>
+<li>信号完整性仿真</li>
+<li>电源完整性分析</li>
+<li>3D IC / 芯片封装协同设计</li>
+<li>高速串行总线（PCIe/DDR/USB4）</li>
+</ul>
+<hr />
+<h2 id="_7">⚠️ 常见陷阱<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>忘记与制造商确认叠层</strong><blockquote>
+<p>每家工厂的材料厚度不同，阻抗计算结果也不同</p>
+</blockquote>
+</li>
+<li><strong>布线后才发现元件封装错了</strong><blockquote>
+<p>提前审核封装，特别是 QFN/BGA 的焊盘尺寸</p>
+</blockquote>
+</li>
+<li><strong>不做 3D 检查</strong><blockquote>
+<p>器件高度冲突、外壳干涉问题，投产前才发现就晚了</p>
+</blockquote>
+</li>
+<li><strong>迷信全板自动布线</strong><blockquote>
+<p>2026 年 AI 可以处理大部分，但关键路径仍需人工精修</p>
+</blockquote>
+</li>
+</ol>
+<hr />
+<p><em>基于 2026 年十轮深度研究成果整合创建</em></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
