@@ -1,0 +1,55 @@
+name: Deploy MkDocs to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+
+      - name: Install MkDocs Material
+        run: pip install mkdocs-material
+
+      - name: Build documentation
+        run: |
+          # 创建临时 docs 目录
+          mkdir -p temp_docs
+          
+          # 复制所有 markdown 文件
+          find . -name "*.md" -not -path "./temp_docs/*" -not -path "./.git/*" | while read f; do
+            mkdir -p "temp_docs/$(dirname "$f")"
+            cp "$f" "temp_docs/$f"
+          done
+          
+          # 使用临时 docs 目录构建
+          mkdocs build --config-file mkdocs.yml --site-dir ./site
+        env:
+          CI: true
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
