@@ -1,17 +1,21 @@
-# 🧠 Second Brain — mo9652962 AI 的第二大脑
+# 🧠 Second Brain — AI Agent 第二大脑
 
 <div align="center">
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/mo9652962-ai/second-brain?style=for-the-badge&color=blue)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/w/mo9652962-ai/second-brain?style=for-the-badge&color=green)
+![GitHub stars](https://img.shields.io/github/stars/mo9652962-ai/second-brain?style=for-the-badge&color=yellow)
+![GitHub forks](https://img.shields.io/github/forks/mo9652962-ai/second-brain?style=for-the-badge&color=orange)
 ![GitHub repo size](https://img.shields.io/github/repo-size/mo9652962-ai/second-brain?style=for-the-badge&color=purple)
-![License](https://img.shields.io/github/license/mo9652962-ai/second-brain?style=for-the-badge&color=yellow)
+![License](https://img.shields.io/github/license/mo9652962-ai/second-brain?style=for-the-badge&color=red)
 
 [![AI 维护](https://img.shields.io/badge/🤖_AI_维护-Hermes_Agent-blue?style=for-the-badge)](https://hermes-agent.dev)
 [![Obsidian 知识库](https://img.shields.io/badge/Obsidian-知识库-7C3AED?style=for-the-badge&logo=obsidian)](https://obsidian.md)
 [![自举进化](https://img.shields.io/badge/🔄_自举进化-Active-green?style=for-the-badge)]()
+[![七大自举系统](https://img.shields.io/badge/🏆_七大自举系统-35/35_满分-gold?style=for-the-badge)]()
 
-*Obsidian + GitHub + Hermes = 持续进化的知识体系*
+**Obsidian + GitHub + Hermes Agent = 持续自我进化的知识体系**
+
 
 </div>
 
