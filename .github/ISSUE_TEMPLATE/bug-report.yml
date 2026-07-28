@@ -1,0 +1,57 @@
+name: 🐛 Bug Report
+description: 报告问题、错误、死链、内容过时
+title: "[Bug] 简短描述"
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢你花时间报告问题！AI 会在 24 小时内处理。
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 问题描述
+      description: 清晰简洁地描述问题是什么
+      placeholder: 我在 XX 文件中发现了...
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: 文件位置
+      description: 问题在哪个文件/哪一行？
+      placeholder: skills/hardware/PCB-Design-Automation.md 第 156 行
+    validations:
+      required: false
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 你期望看到什么？
+      description: 如果正常工作应该是什么样的？
+    validations:
+      required: false
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: 问题类型
+      options:
+        - 🔗 链接失效/404
+        - 📝 内容错误/过时
+        - 🎨 格式/显示问题
+        - 🧠 知识关联错误
+        - 🤖 AI 行为问题
+        - ❓ 其他问题
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: 额外信息
+      description: 任何其他相关的上下文、截图、建议
+    validations:
+      required: false
