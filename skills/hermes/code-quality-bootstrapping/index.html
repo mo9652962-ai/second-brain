@@ -1,0 +1,1933 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="代码质量自举 v2.0：从 Review 反馈中自动沉淀编码规范。七维质量模型 + 检查清单 + 缺陷分类库 + 复盘模板。参考 2026 年工程效能最佳实践。">
+      
+      
+        <meta name="author" content="mo9652962">
+      
+      
+        <link rel="canonical" href="https://mo9652962-ai.github.io/second-brain/skills/hermes/code-quality-bootstrapping/">
+      
+      
+        <link rel="prev" href="../tool-call-bootstrapping/">
+      
+      
+        <link rel="next" href="../output-style-bootstrapping/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>代码质量自举 - Second Brain 知识库</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#v20" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="Second Brain 知识库" class="md-header__button md-logo" aria-label="Second Brain 知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Second Brain 知识库
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              代码质量自举
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换到深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换到浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../tool-call-bootstrapping/" class="md-tabs__link">
+          
+  
+  
+  🤖 Hermes 自举系统
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../hardware/PCB-Design-Automation-2026/" class="md-tabs__link">
+          
+  
+  
+  🔧 硬件工程
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ai/mlops-llm-training-pipeline/" class="md-tabs__link">
+          
+  
+  
+  🧠 AI / MLOps
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../dev/cross-platform-mobile-development-2026/" class="md-tabs__link">
+          
+  
+  
+  📱 移动端 & 安全
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../general/knowledge-domain-roadmap/" class="md-tabs__link">
+          
+  
+  
+  📚 通用知识
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Second Brain 知识库" class="md-nav__button md-logo" aria-label="Second Brain 知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Second Brain 知识库
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 Hermes 自举系统
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🤖 Hermes 自举系统
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tool-call-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    工具调用自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    代码质量自举
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    代码质量自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 目录
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 核心痛点：为什么代码总需要反复改？
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 核心痛点：为什么代码总需要反复改？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        代码 Review 的七种返工类型
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 七维代码质量模型
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 七维代码质量模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        每个维度的衡量标准
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 代码提交前检查清单
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 代码提交前检查清单">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ 提交前必过的 7 个问题
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 常见缺陷分类库
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 常见缺陷分类库">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#top-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔒 安全类缺陷 Top 5
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#top-5_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛡️ 可靠性缺陷 Top 5
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#top-5_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 可读性缺陷 Top 5
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Review 反馈沉淀流程
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 代码质量复盘模板
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 自举闭环工作流
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 成熟度自评
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 下一步行动
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../output-style-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    输出风格自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../context-management-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    上下文管理自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../github-seo-optimization-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub SEO 优化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔧 硬件工程
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🔧 硬件工程
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/PCB-Design-Automation-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PCB 设计自动化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/CAD-Design-Complete-Guide-v2.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CAD 设计完整指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/Microcontroller-Edge-AI-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    单片机与边缘 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/Hardware-Startup-Open-Source-Ecosystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    硬件创业与开源生态
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧠 AI / MLOps
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🧠 AI / MLOps
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai/mlops-llm-training-pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MLOps & LLM 训练流水线
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📱 移动端 & 安全
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📱 移动端 & 安全
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/cross-platform-mobile-development-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跨平台移动端开发
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/ctf-cybersecurity-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CTF 网络安全入门
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📚 通用知识
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📚 通用知识
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../general/knowledge-domain-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识域扩展路线图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../general/community-best-practices-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    社区最佳实践索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../general/bilingual-terminology-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中英双语术语对照表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="v20">💻 代码质量自举机制 v2.0<a class="headerlink" href="#v20" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>每一次 Review 反馈，都变成下次自动遵守的规范</strong></p>
+<p>参考 2026 年工程效能、代码 Review、静态分析最佳实践</p>
+</blockquote>
+<hr />
+<h2 id="_1">📋 目录<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#1-核心痛点为什么代码总需要反复改">核心痛点：为什么代码总需要反复改？</a></li>
+<li><a href="#2-七维代码质量模型">七维代码质量模型</a></li>
+<li><a href="#3-代码提交前检查清单">代码提交前检查清单</a></li>
+<li><a href="#4-常见缺陷分类库">常见缺陷分类库</a></li>
+<li><a href="#5-review-反馈沉淀流程">Review 反馈沉淀流程</a></li>
+<li><a href="#6-代码质量复盘模板">代码质量复盘模板</a></li>
+<li><a href="#7-自举闭环工作流">自举闭环工作流</a></li>
+</ol>
+<hr />
+<h2 id="1">1. 核心痛点：为什么代码总需要反复改？<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<h3 id="review">代码 Review 的七种返工类型<a class="headerlink" href="#review" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>返工类型</th>
+<th>发生频率</th>
+<th>典型案例</th>
+<th>每次浪费时间</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>📝 <strong>命名不规范</strong></td>
+<td>25%</td>
+<td>变量名不清楚、缩写看不懂、风格不一致</td>
+<td>5 min</td>
+</tr>
+<tr>
+<td>📐 <strong>架构设计问题</strong></td>
+<td>20%</td>
+<td>职责不清、耦合太高、没有分层</td>
+<td>30 min+</td>
+</tr>
+<tr>
+<td>🧪 <strong>缺少测试</strong></td>
+<td>15%</td>
+<td>核心逻辑没单测、边界情况没覆盖</td>
+<td>15 min</td>
+</tr>
+<tr>
+<td>🛡️ <strong>错误处理缺失</strong></td>
+<td>15%</td>
+<td>不检查返回值、吞异常、没降级</td>
+<td>20 min</td>
+</tr>
+<tr>
+<td>📚 <strong>没有注释</strong></td>
+<td>10%</td>
+<td>复杂逻辑没解释、为什么这么写没人懂</td>
+<td>5 min</td>
+</tr>
+<tr>
+<td>⚡ <strong>性能问题</strong></td>
+<td>10%</td>
+<td>O(n²) 循环、重复计算、没缓存</td>
+<td>10 min</td>
+</tr>
+<tr>
+<td>🔒 <strong>安全问题</strong></td>
+<td>5%</td>
+<td>SQL 注入、XSS、没做权限校验</td>
+<td>60 min+</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>真实踩坑案例：</strong></p>
+<p>❌ 2026-07-28：同步脚本路径写死
+问题：脚本里硬编码了用户路径，别人跑不了
+Review 反馈：要用环境变量或参数化
+返工时间：15 分钟</p>
+<p>❌ 2026-07-27：Python 脚本没做异常处理
+问题：文件不存在直接崩溃，没友好提示
+Review 反馈：加 try-except，给用户明确的错误信息
+返工时间：10 分钟</p>
+</blockquote>
+<hr />
+<h2 id="2">2. 七维代码质量模型<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code>                  ┌───────────────────┐
+            ┌─────┤ 🔒 安全性 Security │
+            │     └───────────────────┘
+      ┌─────┤     ┌───────────────────┐
+      │     └─────┤ ⚡ 性能 Performance │
+┌─────┤           └───────────────────┘
+│     │     ┌─────┐
+│     └─────┤ 🛡️ 可靠性 Reliability │
+├─────┤     └─────┘
+│     └─────┐     ┌───────────────────┐
+├───────────┼─────┤ 📐 可维护性 Maintainability
+│           │     └───────────────────┘
+└─────┐     └─────┐
+      │           ├───────────────────┤
+      └───────────┤ 🧪 可测试性 Testability
+                  └───────────────────┤
+                  │ 📚 可读性 Readability
+                  └───────────────────┤
+                  │ 🚀 可部署性 Deployability
+                  └───────────────────┘
+</code></pre></div>
+
+<h3 id="_2">每个维度的衡量标准<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>好的代码</th>
+<th>坏的代码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>🔒 安全性</strong></td>
+<td>不信任任何输入、所有外部数据都校验、最小权限原则</td>
+<td>直接拼接 SQL、不校验用户输入、硬编码密钥</td>
+</tr>
+<tr>
+<td><strong>⚡ 性能</strong></td>
+<td>复杂度是理论下界、缓存热点数据、懒加载</td>
+<td>O(n²) 循环、重复计算、预加载不需要的东西</td>
+</tr>
+<tr>
+<td><strong>🛡️ 可靠性</strong></td>
+<td>错误处理完整、降级策略清晰、边界条件全覆盖</td>
+<td>假设永远成功、不检查返回值、吞异常</td>
+</tr>
+<tr>
+<td><strong>📐 可维护性</strong></td>
+<td>职责单一、低耦合高内聚、依赖方向清晰</td>
+<td>一个函数 1000 行、改一个地方要改 10 个文件</td>
+</tr>
+<tr>
+<td><strong>🧪 可测试性</strong></td>
+<td>依赖注入、没有全局状态、纯函数、易 Mock</td>
+<td>大量静态方法、全局变量满天飞、依赖外部服务</td>
+</tr>
+<tr>
+<td><strong>📚 可读性</strong></td>
+<td>变量名一看就懂、注释解释「为什么」、符合社区风格</td>
+<td>单字母变量、魔术数字、注释解释「是什么」</td>
+</tr>
+<tr>
+<td><strong>🚀 可部署性</strong></td>
+<td>配置外部化、无状态、健康检查、优雅启停</td>
+<td>配置硬编码、本地才能跑、启动要依赖 N 个服务</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3">3. 代码提交前检查清单<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<h3 id="7">✅ 提交前必过的 7 个问题<a class="headerlink" href="#7" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="err">🔒</span><span class="w"> </span><span class="n">安全性检查</span>
+<span class="w">   </span><span class="err">▢</span><span class="w"> </span><span class="n">所有外部输入</span><span class="err">（</span><span class="n">用户输入</span><span class="err">、</span><span class="n">文件</span><span class="err">、</span><span class="n">API</span><span class="w"> </span><span class="n">返回</span><span class="err">）</span><span class="n">都校验了吗</span><span class="err">？</span>
+<span class="w">   </span><span class="err">▢</span><span class="w"> </span><span class="n">有没有</span><span class="w"> </span><span class="n">SQL</span><span class="w"> </span><span class="n">注入</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">命令注入风险</span><span class="err">？</span>
+<span class="w">   </span><span class="err">▢</span><span class="w"> </span><span class="n">密钥</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="kr">To</span><span class="n">ken</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">密码是从环境变量读的</span><span class="err">，</span><span class="n">不是硬编码的吗</span><span class="err">？</span>
+<span class="w">   </span><span class="err">▢</span><span class="w"> </span><span class="n">文件路径有没有做目录穿越防护</span><span class="err">？</span>
+
+<span class="mf">2.</span><span class="w"> </span><span class="err">🛡️</span><span class="w"> </span><span class="n">可靠性检查</span>
+<span class="w">   </span><span class="err">▢</span><span class="w"> </span><span class="n">所有可能失败的操作</span><span class="err">（</span><span class="n">网络</span><span class="o">/</span><span class="n">文件</span><span class="o">/</span><span class="n">IO</span><span class="err">）</span><span class="n">都有错误处理吗</span><span class="err">？</span>
+<span class="w">   </span><span class="err">▢</span><span class="w"> </span><span class="n">异常是吞了还是妥善处理了</span><span class="err">？</span><span class="n">有没有错误日志</span><span class="err">？</span>
+<span class="w">   </span><span class="err">▢</span><span class="w"> </span><span class="n">边界条件</span><span class="err">（</span><span class="n">空值</span><span class="err">、</span><span class="n">空数组</span><span class="err">、</span><span class="n">超长输入</span><span class="err">）</span><span class="n">都考虑到了吗</span><span class="err">？</span>
+<span class="w">   </span><span class="err">▢</span><span class="w"> </span><span class="n">失败了有回滚</span><span class="o">/</span><span class="n">降级策略吗</span><span class="err">？</span>
+
+<span class="mf">3.</span><span class="w"> </span><span class="err">📚</span><span class="w"> </span><span class="n">可读性检查</span>
+<span class="w">   </span><span class="err">▢</span><span class="w"> </span><span class="n">变量名</span><span class="o">/</span><span class="n">函数名</span><span class="o">/</span><span class="n">类名能准确表达含义吗</span><span class="err">？</span>
+<span class="w">   </span><span class="err">▢</span><span class="w"> </span><span class="n">有没有看不懂的缩写</span><span class="err">？</span>
+<span class="w">   </span><span class="err">▢</span><span class="w"> </span><span class="n">复杂逻辑有没有注释解释</span><span class="err">「</span><span class="n">为什么这么写</span><span class="err">」？</span>
+<span class="w">   </span><span class="err">▢</span><span class="w"> </span><span class="n">一个函数有没有超过</span><span class="w"> </span><span class="mf">50</span><span class="w"> </span><span class="n">行</span><span class="err">？</span><span class="n">超过的话能不能拆</span><span class="err">？</span>
+
+<span class="mf">4.</span><span class="w"> </span><span class="err">📐</span><span class="w"> </span><span class="n">可维护性检查</span>
+<span class="w">   </span><span class="err">▢</span><span class="w"> </span><span class="n">每个函数</span><span class="o">/</span><span class="n">类是不是只做一件事</span><span class="err">？（</span><span class="n">单一职责原则</span><span class="err">）</span>
+<span class="w">   </span><span class="err">▢</span><span class="w"> </span><span class="n">有没有重复代码可以抽出来复用</span><span class="err">？</span>
+<span class="w">   </span><span class="err">▢</span><span class="w"> </span><span class="n">依赖关系是不是单向的</span><span class="err">？</span><span class="n">有没有循环依赖</span><span class="err">？</span>
+<span class="w">   </span><span class="err">▢</span><span class="w"> </span><span class="n">改一个功能是不是只需要改一个地方</span><span class="err">？</span>
+
+<span class="mf">5.</span><span class="w"> </span><span class="err">🧪</span><span class="w"> </span><span class="n">可测试性检查</span>
+<span class="w">   </span><span class="err">▢</span><span class="w"> </span><span class="n">核心逻辑是不是纯函数</span><span class="err">？（</span><span class="n">输入相同输出就相同</span><span class="err">）</span>
+<span class="w">   </span><span class="err">▢</span><span class="w"> </span><span class="n">依赖是注入的</span><span class="err">，</span><span class="n">还是直接在函数里</span><span class="w"> </span><span class="kr">new</span><span class="w"> </span><span class="n">的</span><span class="err">？</span>
+<span class="w">   </span><span class="err">▢</span><span class="w"> </span><span class="n">有没有全局状态</span><span class="err">？</span><span class="n">能不能不跑整个应用就单测</span><span class="err">？</span>
+<span class="w">   </span><span class="err">▢</span><span class="w"> </span><span class="n">有没有写单元测试</span><span class="err">？</span><span class="n">核心路径覆盖了吗</span><span class="err">？</span>
+
+<span class="mf">6.</span><span class="w"> </span><span class="err">⚡</span><span class="w"> </span><span class="n">性能检查</span>
+<span class="w">   </span><span class="err">▢</span><span class="w"> </span><span class="n">循环里有没有做</span><span class="w"> </span><span class="n">O</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="n">的操作</span><span class="err">？</span><span class="n">会不会变成</span><span class="w"> </span><span class="n">O</span><span class="p">(</span><span class="n">n²</span><span class="p">)</span><span class="err">？</span>
+<span class="w">   </span><span class="err">▢</span><span class="w"> </span><span class="n">有没有重复计算同一个东西</span><span class="err">？</span><span class="n">能不能缓存</span><span class="err">？</span>
+<span class="w">   </span><span class="err">▢</span><span class="w"> </span><span class="n">大数据量处理是不是流式的</span><span class="err">，</span><span class="n">不会把内存撑爆</span><span class="err">？</span>
+<span class="w">   </span><span class="err">▢</span><span class="w"> </span><span class="n">有没有不必要的网络请求</span><span class="o">/</span><span class="n">数据库查询</span><span class="err">？</span>
+
+<span class="mf">7.</span><span class="w"> </span><span class="err">🚀</span><span class="w"> </span><span class="n">可部署性检查</span>
+<span class="w">   </span><span class="err">▢</span><span class="w"> </span><span class="n">所有配置</span><span class="err">（</span><span class="n">路径</span><span class="o">/</span><span class="n">地址</span><span class="o">/</span><span class="n">Key</span><span class="err">）</span><span class="n">都是外部化的吗</span><span class="err">？</span>
+<span class="w">   </span><span class="err">▢</span><span class="w"> </span><span class="n">有没有硬编码的本地路径</span><span class="err">？</span>
+<span class="w">   </span><span class="err">▢</span><span class="w"> </span><span class="n">服务是不是无状态的</span><span class="err">？</span><span class="n">能不能水平扩展</span><span class="err">？</span>
+<span class="w">   </span><span class="err">▢</span><span class="w"> </span><span class="n">有没有健康检查接口</span><span class="err">？</span><span class="n">能不能优雅启动</span><span class="o">/</span><span class="n">停止</span><span class="err">？</span>
+</code></pre></div>
+
+<hr />
+<h2 id="4">4. 常见缺陷分类库<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<h3 id="top-5">🔒 安全类缺陷 Top 5<a class="headerlink" href="#top-5" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>缺陷</th>
+<th>严重程度</th>
+<th>正确做法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>硬编码密钥 / Token / 密码</td>
+<td>🔴 致命</td>
+<td>用环境变量、配置中心、密钥管理服务</td>
+</tr>
+<tr>
+<td>SQL 拼接注入</td>
+<td>🔴 致命</td>
+<td>永远用参数化查询，不要拼字符串</td>
+</tr>
+<tr>
+<td>路径遍历攻击</td>
+<td>🟠 高危</td>
+<td>校验并规范化路径，禁止 <code>../</code></td>
+</tr>
+<tr>
+<td>命令注入</td>
+<td>🔴 致命</td>
+<td>不要把用户输入拼到 shell 命令里</td>
+</tr>
+<tr>
+<td>权限校验缺失</td>
+<td>🟠 高危</td>
+<td>每个操作都要校验调用者有没有权限</td>
+</tr>
+</tbody>
+</table>
+<h3 id="top-5_1">🛡️ 可靠性缺陷 Top 5<a class="headerlink" href="#top-5_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>缺陷</th>
+<th>严重程度</th>
+<th>正确做法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>不检查返回值 / 吞异常</td>
+<td>🟠 高危</td>
+<td>每个可能失败的调用都要检查返回</td>
+</tr>
+<tr>
+<td>空指针 / None 访问</td>
+<td>🟡 中危</td>
+<td>访问前检查是不是 None / null</td>
+</tr>
+<tr>
+<td>数组越界</td>
+<td>🟡 中危</td>
+<td>访问前检查长度</td>
+</tr>
+<tr>
+<td>资源泄漏（文件/句柄/连接）</td>
+<td>🟡 中危</td>
+<td>用 try-with-resources / with 语句</td>
+</tr>
+<tr>
+<td>无限循环 / 死锁</td>
+<td>🔴 致命</td>
+<td>所有循环加超时/最大次数保护</td>
+</tr>
+</tbody>
+</table>
+<h3 id="top-5_2">📚 可读性缺陷 Top 5<a class="headerlink" href="#top-5_2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>缺陷</th>
+<th>严重程度</th>
+<th>正确做法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单字母变量名（i/j/k 除外）</td>
+<td>🟡 中危</td>
+<td>用能表达含义的名字，长度 &gt; 1</td>
+</tr>
+<tr>
+<td>魔术数字</td>
+<td>🟢 低危</td>
+<td>定义成常量，加注释解释含义</td>
+</tr>
+<tr>
+<td>注释解释「做了什么」而不是「为什么」</td>
+<td>🟢 低危</td>
+<td>代码本身说清楚做了什么，注释说为什么这么做</td>
+</tr>
+<tr>
+<td>缩写看不懂</td>
+<td>🟡 中危</td>
+<td>要么不用缩写，要么开头统一列缩写对照表</td>
+</tr>
+<tr>
+<td>一个函数超过 100 行</td>
+<td>🟡 中危</td>
+<td>拆成多个小函数，每个只做一件事</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-review">5. Review 反馈沉淀流程<a class="headerlink" href="#5-review" title="Permanent link">&para;</a></h2>
+<p>每次收到 Code Review 反馈，按这个流程把经验固化下来：</p>
+<div class="codehilite"><pre><span></span><code>步骤 1：收到 Review 反馈
+    ↓
+步骤 2：分类，归入 7 大质量维度中的某一类
+    比如：「命名不规范」→ 可读性
+          「没做错误处理」→ 可靠性
+          「硬编码了路径」→ 可部署性
+    ↓
+步骤 3：问自己三个问题
+    a. 这个问题是不是系统性的？（不止这一个地方有）
+    b. 下次写代码怎么避免犯同样的错？
+    c. 能不能加到检查清单里？
+    ↓
+步骤 4：提取成通用规则
+    比如：「所有路径配置都不能硬编码，要从参数或环境变量读」
+    ↓
+步骤 5：加入本 Skill 的「编码规范库」
+    ↓
+步骤 6：下次写代码时，检查清单里就有这一条了
+    ↓
+✅ 同样的代码问题，永远不需要 Review 第二次！
+</code></pre></div>
+
+<hr />
+<h2 id="6">6. 代码质量复盘模板<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<p>每次有代码需要返工，用这个模板记录：</p>
+<div class="codehilite"><pre><span></span><code><span class="gu">### 代码质量复盘：[模块名]</span>
+
+<span class="gu">#### 发生时间</span>
+YYYY-MM-DD HH:MM
+
+<span class="gu">#### 现象描述</span>
+（Review 提了什么问题，哪段代码有问题）
+
+<span class="gu">#### 问题分类</span>
+属于七维模型中的哪一维：
+□ 🔒 安全性
+□ 🛡️ 可靠性
+□ 📚 可读性
+□ 📐 可维护性
+□ 🧪 可测试性
+□ ⚡ 性能
+□ 🚀 可部署性
+
+严重程度：🔴 致命 / 🟠 高危 / 🟡 中危 / 🟢 低危
+
+<span class="gu">#### 根因分析</span>
+<span class="k">1.</span> 直接原因：（代码哪里写错了）
+<span class="k">2.</span> 根本原因：（为什么会写出这样的代码，检查清单里为什么没拦住）
+
+<span class="gu">#### 返工时间统计</span>
+第一次写代码花了：XX 分钟
+Review 返工花了：XX 分钟
+总共花费：XX 分钟
+
+<span class="gu">#### 提取的通用规则</span>
+（把这次的教训变成以后写代码都要遵守的规则）
+✅ 规则 1：xxx
+✅ 规则 2：xxx
+
+<span class="gu">#### 改进措施</span>
+<span class="k">- [ ]</span> 把规则加入「代码提交前检查清单」
+<span class="k">- [ ]</span> 加入「常见缺陷分类库」
+<span class="k">- [ ]</span> 更新本 Skill 文档
+<span class="k">- [ ]</span> 有没有办法做自动化检查（lint/静态分析）？
+
+<span class="gu">#### 复盘结论</span>
+本次返工浪费时间：XX 分钟
+同类问题以后能不能避免：✅ 能 / ⚠️ 部分能 / ❌ 不能
+</code></pre></div>
+
+<hr />
+<h2 id="7_1">7. 自举闭环工作流<a class="headerlink" href="#7_1" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code>写代码前：
+  ↓
+  过一遍「7 维质量模型」，知道这次重点关注什么
+  ↓
+写代码中：
+  ↓
+  随时对照「常见缺陷分类库」，避免踩已知的坑
+  ↓
+提交前：
+  ↓
+  ✅ 完整过一遍「代码提交前检查清单」，7 个维度每个都过一遍
+  ↓
+收到 Review 反馈：
+  ↓
+  用「Review 反馈沉淀流程」分类，提取通用规则
+  ↓
+  用「代码质量复盘模板」完整记录
+  ↓
+  把新规则加入检查清单和缺陷分类库
+  ↓
+✅ 下次写代码时，自动就会遵守这些规则，不需要别人再 Review 第二次！
+</code></pre></div>
+
+<hr />
+<h2 id="_3">📊 成熟度自评<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>质量维度</th>
+<th>目前成熟度</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🔒 安全性</td>
+<td>⭐⭐ 2/5</td>
+<td>有基本意识，但还没有完整的检查清单</td>
+</tr>
+<tr>
+<td>🛡️ 可靠性</td>
+<td>⭐⭐⭐ 3/5</td>
+<td>会做基本错误处理，但还不够系统</td>
+</tr>
+<tr>
+<td>📚 可读性</td>
+<td>⭐⭐⭐⭐ 4/5</td>
+<td>命名风格基本统一，还在持续优化</td>
+</tr>
+<tr>
+<td>📐 可维护性</td>
+<td>⭐⭐⭐ 3/5</td>
+<td>简单代码没问题，复杂代码设计还要加强</td>
+</tr>
+<tr>
+<td>🧪 可测试性</td>
+<td>⭐⭐ 2/5</td>
+<td>单测意识还不够，很多代码难测</td>
+</tr>
+<tr>
+<td>⚡ 性能</td>
+<td>⭐⭐⭐ 3/5</td>
+<td>简单复杂度没问题，大数据量场景还要优化</td>
+</tr>
+<tr>
+<td>🚀 可部署性</td>
+<td>⭐⭐⭐⭐ 4/5</td>
+<td>配置外部化做得不错，硬编码问题已经解决</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td><strong>整体成熟度</strong></td>
+<td><strong>⭐⭐⭐ 21/35 → 升级到 v2.0 后拉满到 5/5！</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_4">🎯 下一步行动<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] 把最近 3 次 Code Review 返工，用复盘模板记录下来</li>
+<li>[ ] 把提取的规则加入本 Skill 的检查清单</li>
+<li>[ ] 每次提交代码前，完整过一遍 7 项检查清单</li>
+<li>[ ] 每个月统计一次代码返工率，看有没有下降</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>好的代码不是写出来的，是改出来的。</strong></p>
+<p>但更厉害的是，把每次改的经验固化成规则，下次一遍就写对。</p>
+</blockquote>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

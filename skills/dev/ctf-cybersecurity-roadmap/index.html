@@ -1,0 +1,1923 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="CTF 网络安全入门 roadmap 2026：Web/密码/逆向/Pwn 从零开始学习路径、平台推荐、工具链指南">
+      
+      
+        <meta name="author" content="mo9652962">
+      
+      
+        <link rel="canonical" href="https://mo9652962-ai.github.io/second-brain/skills/dev/ctf-cybersecurity-roadmap/">
+      
+      
+        <link rel="prev" href="../cross-platform-mobile-development-2026/">
+      
+      
+        <link rel="next" href="../../general/knowledge-domain-roadmap/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>CTF 网络安全入门 - Second Brain 知识库</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ctf-2026" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="Second Brain 知识库" class="md-header__button md-logo" aria-label="Second Brain 知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Second Brain 知识库
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              CTF 网络安全入门
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换到深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换到浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../hermes/tool-call-bootstrapping/" class="md-tabs__link">
+          
+  
+  
+  🤖 Hermes 自举系统
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../hardware/PCB-Design-Automation-2026/" class="md-tabs__link">
+          
+  
+  
+  🔧 硬件工程
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ai/mlops-llm-training-pipeline/" class="md-tabs__link">
+          
+  
+  
+  🧠 AI / MLOps
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../cross-platform-mobile-development-2026/" class="md-tabs__link">
+          
+  
+  
+  📱 移动端 & 安全
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../general/knowledge-domain-roadmap/" class="md-tabs__link">
+          
+  
+  
+  📚 通用知识
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Second Brain 知识库" class="md-nav__button md-logo" aria-label="Second Brain 知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Second Brain 知识库
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 Hermes 自举系统
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🤖 Hermes 自举系统
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hermes/tool-call-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    工具调用自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hermes/code-quality-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    代码质量自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hermes/output-style-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    输出风格自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hermes/context-management-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    上下文管理自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hermes/github-seo-optimization-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub SEO 优化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔧 硬件工程
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🔧 硬件工程
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/PCB-Design-Automation-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PCB 设计自动化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/CAD-Design-Complete-Guide-v2.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CAD 设计完整指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/Microcontroller-Edge-AI-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    单片机与边缘 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/Hardware-Startup-Open-Source-Ecosystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    硬件创业与开源生态
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧠 AI / MLOps
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🧠 AI / MLOps
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai/mlops-llm-training-pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MLOps & LLM 训练流水线
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📱 移动端 & 安全
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📱 移动端 & 安全
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cross-platform-mobile-development-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跨平台移动端开发
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CTF 网络安全入门
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CTF 网络安全入门
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 目录
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-ctf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. CTF 是什么 &amp; 为什么要学
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. CTF 是什么 &amp; 为什么要学">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ctf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        什么是 CTF？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ctf_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        为什么要学 CTF？
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 五大挑战类别详解
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 五大挑战类别详解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 新手优先级排序
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 新手学习顺序推荐
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 新手学习顺序推荐">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        阶段 0：前置基础（1-2 周）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1web-2-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        阶段 1：Web 入门（2-4 周）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#21-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        阶段 2：扩展其他方向（1-3 个月）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        阶段 3：参加真实比赛（长期）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 最佳学习平台汇总
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 最佳学习平台汇总">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🟢 完全免费，新手友好
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 比赛信息
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 必备速查手册
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 第一周上手计划
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 第一周上手计划">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#day-1-2linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Day 1-2：Linux 基础热身
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#day-3-4-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Day 3-4：第一个 Web 题
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#day-5-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Day 5-7：熟悉工具链
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 必备工具链
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 必备工具链">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基础工具（必装）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        操作系统选择
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 从入门到就业路线图
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. 从入门到就业路线图">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#6_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 6 个月目标
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💼 就业路径
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 给新手的建议
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📚 通用知识
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📚 通用知识
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../general/knowledge-domain-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识域扩展路线图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../general/community-best-practices-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    社区最佳实践索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../general/bilingual-terminology-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中英双语术语对照表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ctf-2026">🔐 CTF 网络安全入门指南 2026<a class="headerlink" href="#ctf-2026" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>从零基础到能打比赛的完整学习路径</strong></p>
+<p>游戏化学习，技能直接转化为工作能力</p>
+</blockquote>
+<hr />
+<h2 id="_1">📋 目录<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#1-ctf-是什么--为什么要学">CTF 是什么 &amp; 为什么要学</a></li>
+<li><a href="#2-五大挑战类别详解">五大挑战类别详解</a></li>
+<li><a href="#3-新手学习顺序推荐">新手学习顺序推荐</a></li>
+<li><a href="#4-最佳学习平台汇总">最佳学习平台汇总</a></li>
+<li><a href="#5-第一周上手计划">第一周上手计划</a></li>
+<li><a href="#6-必备工具链">必备工具链</a></li>
+<li><a href="#7-从入门到就业路线图">从入门到就业路线图</a></li>
+</ol>
+<hr />
+<h2 id="1-ctf">1. CTF 是什么 &amp; 为什么要学<a class="headerlink" href="#1-ctf" title="Permanent link">&para;</a></h2>
+<h3 id="ctf">什么是 CTF？<a class="headerlink" href="#ctf" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>Capture The Flag = 夺旗赛
+
+黑客版的「解谜游戏」：
+  给你一个有漏洞的系统/程序/网站
+  你要利用漏洞，找到藏在里面的「flag」（一串字符）
+  提交 flag 得分，上排行榜
+
+形式：
+  🏆 Jeopardy 模式：分类题库，任选挑战，按难度给分（最常见）
+  ⚔️ 攻防模式：互相攻击对方服务器，同时防守自己的（高级比赛）
+</code></pre></div>
+
+<h3 id="ctf_1">为什么要学 CTF？<a class="headerlink" href="#ctf_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>好处</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>✅ 实战技能</strong></td>
+<td>不是纸上谈兵，每个挑战都是真实的漏洞类</td>
+</tr>
+<tr>
+<td><strong>✅ 可验证</strong></td>
+<td>会不会，拿到 flag 才算数，没有嘴炮空间</td>
+</tr>
+<tr>
+<td><strong>✅ 就业加分</strong></td>
+<td>安全行业非常认 CTF 经历，比证书管用</td>
+</tr>
+<tr>
+<td><strong>✅ 游戏化</strong></td>
+<td>像打游戏升级一样学安全，不容易放弃</td>
+</tr>
+<tr>
+<td><strong>✅ 社区</strong></td>
+<td>认识一群技术大佬，人脉资源</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>关键：Web 方向的技能 1:1 转化为真实工作能力</strong></p>
+<p>你在 CTF 里练的 SQL 注入、XSS、权限绕过，就是真实渗透测试每天做的事。</p>
+</blockquote>
+<hr />
+<h2 id="2">2. 五大挑战类别详解<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>难度曲线</th>
+<th>就业相关性</th>
+<th>核心内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🌐 <strong>Web</strong></td>
+<td>🟢 平缓</td>
+<td>✅ 最高</td>
+<td>SQL 注入、XSS、SSRF、反序列化、权限绕过</td>
+</tr>
+<tr>
+<td>🔐 <strong>密码学 (Crypto)</strong></td>
+<td>🟡 中等</td>
+<td>⚠️ 中等</td>
+<td>古典密码、哈希攻击、对称/非对称加密</td>
+</tr>
+<tr>
+<td>🔍 <strong>取证 (Forensics)</strong></td>
+<td>🟢 平缓</td>
+<td>⚠️ 中等</td>
+<td>文件分析、隐写、流量分析、内存取证</td>
+</tr>
+<tr>
+<td>🔧 <strong>逆向工程 (RE)</strong></td>
+<td>🔴 陡峭</td>
+<td>⚠️ 中等</td>
+<td>反汇编、读懂汇编、算法分析、去混淆</td>
+</tr>
+<tr>
+<td>⚙️ <strong>二进制 Pwn</strong></td>
+<td>🔴 最陡峭</td>
+<td>⚠️ 低</td>
+<td>缓冲区溢出、ROP、格式化字符串</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_2">🎯 新手优先级排序<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="err">🌐</span><span class="w"> </span><span class="n">Web</span><span class="w"> </span><span class="nb">Exp</span><span class="n">loitation</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="err">✅</span><span class="w"> </span><span class="n">必学</span><span class="err">，</span><span class="n">入门最简单</span><span class="err">，</span><span class="n">就业相关性最高</span>
+<span class="mf">2.</span><span class="w"> </span><span class="err">🔐</span><span class="w"> </span><span class="n">Crypto</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="n">可选</span><span class="err">，</span><span class="n">数学好的人有优势</span>
+<span class="mf">3.</span><span class="w"> </span><span class="err">🔍</span><span class="w"> </span><span class="kr">For</span><span class="n">ensics</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="n">可选</span><span class="err">，</span><span class="n">喜欢做侦探的人会喜欢</span>
+
+<span class="mf">4.</span><span class="w"> </span><span class="err">🔧</span><span class="w"> </span><span class="n">逆向工程</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="err">⚠️</span><span class="w"> </span><span class="n">进阶再考虑</span><span class="err">，</span><span class="n">门槛高</span>
+<span class="mf">5.</span><span class="w"> </span><span class="err">⚙️</span><span class="w"> </span><span class="n">Pwn</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="err">⚠️</span><span class="w"> </span><span class="n">高手向</span><span class="err">，</span><span class="n">最难</span><span class="err">，</span><span class="n">就业面也相对窄</span>
+</code></pre></div>
+
+<hr />
+<h2 id="3">3. 新手学习顺序推荐<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<h3 id="01-2">阶段 0：前置基础（1-2 周）<a class="headerlink" href="#01-2" title="Permanent link">&para;</a></h3>
+<p><strong>不要跳过这一步！</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="err">✅</span><span class="w"> </span><span class="n">Linux</span><span class="w"> </span><span class="err">基础</span>
+<span class="w">  </span><span class="err">├─</span><span class="w"> </span><span class="err">常用命令：</span><span class="n">ls</span><span class="o">/</span><span class="n">cd</span><span class="o">/</span><span class="n">grep</span><span class="o">/</span><span class="n">find</span><span class="o">/</span><span class="n">strings</span><span class="o">/...</span>
+<span class="w">  </span><span class="err">├─</span><span class="w"> </span><span class="err">文件权限理解</span>
+<span class="w">  </span><span class="err">├─</span><span class="w"> </span><span class="n">Bash</span><span class="w"> </span><span class="err">脚本基础</span>
+<span class="w">  </span><span class="err">└─</span><span class="w"> </span><span class="err">会用</span><span class="w"> </span><span class="n">man</span><span class="o">/</span><span class="n">help</span><span class="w"> </span><span class="err">查文档</span>
+
+<span class="err">✅</span><span class="w"> </span><span class="n">Python</span><span class="w"> </span><span class="err">脚本能力</span>
+<span class="w">  </span><span class="err">├─</span><span class="w"> </span><span class="err">能写</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="err">行以内的脚本</span>
+<span class="w">  </span><span class="err">├─</span><span class="w"> </span><span class="err">会用</span><span class="w"> </span><span class="n">requests</span><span class="w"> </span><span class="err">发包</span>
+<span class="w">  </span><span class="err">└─</span><span class="w"> </span><span class="err">会</span><span class="w"> </span><span class="n">pwntools</span><span class="err">（做</span><span class="w"> </span><span class="n">Pwn</span><span class="w"> </span><span class="err">再学也行）</span>
+
+<span class="err">✅</span><span class="w"> </span><span class="err">网络基础</span>
+<span class="w">  </span><span class="err">├─</span><span class="w"> </span><span class="n">TCP</span><span class="o">/</span><span class="n">IP</span><span class="w"> </span><span class="err">四层模型</span>
+<span class="w">  </span><span class="err">├─</span><span class="w"> </span><span class="n">HTTP</span><span class="o">/</span><span class="n">HTTPS</span><span class="w"> </span><span class="err">协议</span>
+<span class="w">  </span><span class="err">└─</span><span class="w"> </span><span class="err">常用端口号含义</span>
+</code></pre></div>
+
+<h3 id="1web-2-4">阶段 1：Web 入门（2-4 周）<a class="headerlink" href="#1web-2-4" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>✅ OWASP Top 10 逐个理解
+  ├─ 1. SQL 注入
+  ├─ 2. XSS (跨站脚本)
+  ├─ 3. CSRF
+  ├─ 4. SSRF (服务端请求伪造)
+  ├─ 5. 文件上传漏洞
+  ├─ 6. 反序列化
+  ├─ 7. 权限绕过
+  └─ ...
+
+✅ 每个类型至少做 5 道入门题
+✅ 学会用 Burp Suite
+✅ 能独立做中等难度的 Web 题
+</code></pre></div>
+
+<h3 id="21-3">阶段 2：扩展其他方向（1-3 个月）<a class="headerlink" href="#21-3" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>根据兴趣选 1-2 个深入：
+
+喜欢数学 → 🔐 密码学
+喜欢探案 → 🔍 取证
+喜欢拆东西 → 🔧 逆向工程
+喜欢搞破坏 → ⚙️ Pwn
+
+不要贪多，精通 1-2 个方向 &gt; 每个都只会一点
+</code></pre></div>
+
+<h3 id="3_1">阶段 3：参加真实比赛（长期）<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>✅ 先打线上练习赛
+✅ 组队参加正式比赛
+✅ 赛后看大佬的 Writeup
+✅ 每次比赛总结学到的新东西
+</code></pre></div>
+
+<hr />
+<h2 id="4">4. 最佳学习平台汇总<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<h3 id="_3">🟢 完全免费，新手友好<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>平台</th>
+<th>特点</th>
+<th>推荐度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PicoCTF</strong></td>
+<td>卡内基梅隆大学做的，专门给新手，题目设计极佳</td>
+<td>⭐⭐⭐⭐⭐ 首选</td>
+</tr>
+<tr>
+<td><strong>pwn.college</strong></td>
+<td>亚利桑那州立大学，二进制方向最佳免费资源</td>
+<td>⭐⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Hack The Box</strong></td>
+<td>最有名的平台，从入门到高级都有</td>
+<td>⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>TryHackMe</strong></td>
+<td>结构化学习路径，新手体验好</td>
+<td>⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>VulnHub</strong></td>
+<td>下载虚拟机本地打，适合练内网渗透</td>
+<td>⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>OverTheWire</strong></td>
+<td>经典系列，从 Bandit 开始练 Linux 基础</td>
+<td>⭐⭐⭐⭐</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_4">🔍 比赛信息<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>CTFtime.org → 全球所有 CTF 比赛日历
+  看即将到来的比赛
+  看队伍排名
+  看往届比赛的 Writeup
+</code></pre></div>
+
+<h3 id="_5">📚 必备速查手册<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="n">GTFOBins</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="n">Unix</span><span class="w"> </span><span class="err">命令提权速查</span>
+<span class="w">  </span><span class="err">网址：</span><span class="n">gtfobins</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span>
+<span class="w">  </span><span class="err">每个安全从业者都把这个加入书签</span>
+
+<span class="n">LOLBAS</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="n">Windows</span><span class="w"> </span><span class="err">同理</span>
+<span class="n">PayloadAllTheThings</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="err">各种</span><span class="w"> </span><span class="n">Payload</span><span class="w"> </span><span class="err">合集</span>
+</code></pre></div>
+
+<hr />
+<h2 id="5">5. 第一周上手计划<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<h3 id="day-1-2linux">Day 1-2：Linux 基础热身<a class="headerlink" href="#day-1-2linux" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># 玩 OverTheWire: Bandit</span>
+<span class="c1"># 一共 34 关，从最简单的 Linux 命令开始</span>
+<span class="c1"># 通关 = Linux 基础完全够用了</span>
+
+ssh<span class="w"> </span>bandit0@bandit.labs.overthewire.org<span class="w"> </span>-p<span class="w"> </span><span class="m">2220</span>
+<span class="c1"># 密码: bandit0</span>
+
+<span class="c1"># 目标：至少打到第 10 关</span>
+</code></pre></div>
+
+<h3 id="day-3-4-web">Day 3-4：第一个 Web 题<a class="headerlink" href="#day-3-4-web" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>去 PicoCTF 注册账号
+找到 Web Exploitation 分类
+从最简单的题开始做
+目标：至少解 3 道题
+
+过程中学会：
+  ✅ 怎么看网页源代码
+  ✅ 怎么用浏览器开发者工具
+  ✅ 怎么发 HTTP 请求
+  ✅ 什么是 Cookie
+</code></pre></div>
+
+<h3 id="day-5-7">Day 5-7：熟悉工具链<a class="headerlink" href="#day-5-7" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>✅ 安装 Kali Linux（虚拟机就行）
+✅ 学会用 Burp Suite Community Edition
+✅ 学会写简单的 Python 脚本发包
+✅ 试着用 sqlmap 跑一下注入题
+</code></pre></div>
+
+<hr />
+<h2 id="6">6. 必备工具链<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<h3 id="_6">基础工具（必装）<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="err">🌐</span><span class="w"> </span><span class="n">Web</span><span class="w"> </span><span class="err">方向</span>
+<span class="w">  </span><span class="err">├─</span><span class="w"> </span><span class="n">Burp</span><span class="w"> </span><span class="n">Suite</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="err">行业标准，必学</span>
+<span class="w">  </span><span class="err">├─</span><span class="w"> </span><span class="err">浏览器开发者工具（</span><span class="n">F12</span><span class="err">）</span>
+<span class="w">  </span><span class="err">└─</span><span class="w"> </span><span class="n">sqlmap</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="err">自动化注入工具</span>
+
+<span class="err">🔐</span><span class="w"> </span><span class="err">密码学方向</span>
+<span class="w">  </span><span class="err">├─</span><span class="w"> </span><span class="n">CyberChef</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="err">瑞士军刀，各种编码转换</span>
+<span class="w">  </span><span class="err">├─</span><span class="w"> </span><span class="n">gpg</span><span class="o">/</span><span class="n">openssl</span><span class="w"> </span><span class="err">命令行</span>
+<span class="w">  </span><span class="err">└─</span><span class="w"> </span><span class="n">Python</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">pycryptodome</span><span class="w"> </span><span class="err">库</span>
+
+<span class="err">🔍</span><span class="w"> </span><span class="err">取证方向</span>
+<span class="w">  </span><span class="err">├─</span><span class="w"> </span><span class="n">binwalk</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="err">文件分析</span>
+<span class="w">  </span><span class="err">├─</span><span class="w"> </span><span class="n">exiftool</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="err">元数据分析</span>
+<span class="w">  </span><span class="err">├─</span><span class="w"> </span><span class="n">wireshark</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="err">流量分析</span>
+<span class="w">  </span><span class="err">└─</span><span class="w"> </span><span class="n">foremost</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="err">文件分离</span>
+
+<span class="err">🔧</span><span class="w"> </span><span class="err">逆向</span><span class="o">/</span><span class="n">Pwn</span>
+<span class="w">  </span><span class="err">├─</span><span class="w"> </span><span class="n">IDA</span><span class="w"> </span><span class="n">Pro</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Ghidra</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="err">反汇编</span>
+<span class="w">  </span><span class="err">├─</span><span class="w"> </span><span class="n">gdb</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">pwndbg</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="err">调试</span>
+<span class="w">  </span><span class="err">└─</span><span class="w"> </span><span class="n">pwntools</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="err">写利用脚本</span>
+</code></pre></div>
+
+<h3 id="_7">操作系统选择<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>✅ Kali Linux → 推荐新手用，所有工具预装好了
+  不用折腾环境，直接开始做题
+
+✅ Parrot OS → 可选，和 Kali 类似
+
+⚠️ 不要用 Windows 原生做 CTF
+  很多工具没有 Windows 版，用着很痛苦
+  装个虚拟机跑 Linux 是唯一正确选择
+</code></pre></div>
+
+<hr />
+<h2 id="7">7. 从入门到就业路线图<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+<h3 id="6_1">🎯 6 个月目标<a class="headerlink" href="#6_1" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>第 1 个月
+  ✅ Linux 基础过关（OverTheWire Bandit 通关）
+  ✅ 能解入门级 Web 题（SQL 注入、XSS）
+  ✅ 掌握 Burp Suite 基本用法
+
+第 2-3 个月
+  ✅ Web 中难题也能解了
+  ✅ 开始学第二个方向（比如 Crypto）
+  ✅ 参加了第一次线上 CTF 比赛
+
+第 4-6 个月
+  ✅ 有一个主攻方向，其他方向也懂基础
+  ✅ 参加了 3-5 次正式比赛
+  ✅ GitHub 上有自己的 Writeup 仓库
+  ✅ 能在比赛中为团队贡献分数
+</code></pre></div>
+
+<h3 id="_8">💼 就业路径<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>CTF 技能 → 真实工作
+  ├─ Web 方向 → 渗透测试工程师、Web 安全工程师
+  ├─ 取证方向 → 应急响应、安全分析
+  ├─ 逆向方向 → 恶意代码分析、安全研究员
+  └─ Pwn 方向 → 二进制安全研究员、漏洞挖掘
+
+薪资范围（国内 2026）：
+  入门：8-15K
+  1-3 年经验：15-30K
+  3-5 年经验：30-60K+
+  挖洞大佬：上不封顶（一个严重漏洞奖金几十万很正常）
+</code></pre></div>
+
+<hr />
+<h2 id="_9">💡 给新手的建议<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>不要怕看不懂</strong>，每个人都是从 0 开始的</li>
+<li><strong>先看 Writeup 不丢人</strong>，卡了 2 小时以上就去看答案，学到东西最重要</li>
+<li><strong>做笔记！</strong> 每个做过的题写一下思路，以后会忘的</li>
+<li><strong>不要贪多求全</strong>，先精通一个方向</li>
+<li><strong>找同伴一起学</strong>，一个人容易放弃，互相讨论进步快</li>
+<li><strong>享受过程</strong>，解出一道题的那种成就感，是 CTF 最迷人的地方</li>
+</ol>
+<hr />
+<blockquote>
+<p><strong>记住：每一个你解出来的题，都是你简历上的一个亮点。</strong></p>
+</blockquote>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1465 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="图片生成技能，当用户需要生成图片、视觉信息图、创建图像、编辑/修改/调整已有图片时使用此技能。基于中国的API易代理站(https://api.apiyi.com/)的NanoBananaPro模型的图片生成服务，无需访问外网。支持10种宽高比的图片比例（`1:1`、`16:9`、`9:16`、`4:3`、`3:4`、`3:2`、`2:3`、`5:4`、`4:5`、`21:9`等）和3种分辨率（1K、2K、4K），支持文生图和图生图编辑。基于谷歌的NanoBananaPro模型(快速模型)，使用API易国内代理服务访问。">
+      
+      
+        <meta name="author" content="mo9652962">
+      
+      
+        <link rel="canonical" href="https://mo9652962-ai.github.io/second-brain/skills/%40wuchubuzai2018/nano-banana-pro-image-gen/SKILL/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>图片生成与编辑 - Second Brain 知识库</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../../.." title="Second Brain 知识库" class="md-header__button md-logo" aria-label="Second Brain 知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Second Brain 知识库
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              图片生成与编辑
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换到深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换到浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../hermes/tool-call-bootstrapping/" class="md-tabs__link">
+          
+  
+  
+  🤖 Hermes 自举系统
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../hardware/PCB-Design-Automation-2026/" class="md-tabs__link">
+          
+  
+  
+  🔧 硬件工程
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../ai/mlops-llm-training-pipeline/" class="md-tabs__link">
+          
+  
+  
+  🧠 AI / MLOps
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../dev/cross-platform-mobile-development-2026/" class="md-tabs__link">
+          
+  
+  
+  📱 移动端 & 安全
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../general/knowledge-domain-roadmap/" class="md-tabs__link">
+          
+  
+  
+  📚 通用知识
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Second Brain 知识库" class="md-nav__button md-logo" aria-label="Second Brain 知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Second Brain 知识库
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 Hermes 自举系统
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🤖 Hermes 自举系统
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hermes/tool-call-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    工具调用自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hermes/code-quality-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    代码质量自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hermes/output-style-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    输出风格自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hermes/context-management-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    上下文管理自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hermes/github-seo-optimization-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub SEO 优化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔧 硬件工程
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🔧 硬件工程
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hardware/PCB-Design-Automation-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PCB 设计自动化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hardware/CAD-Design-Complete-Guide-v2.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CAD 设计完整指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hardware/Microcontroller-Edge-AI-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    单片机与边缘 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hardware/Hardware-Startup-Open-Source-Ecosystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    硬件创业与开源生态
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧠 AI / MLOps
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🧠 AI / MLOps
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/mlops-llm-training-pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MLOps & LLM 训练流水线
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📱 移动端 & 安全
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📱 移动端 & 安全
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dev/cross-platform-mobile-development-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跨平台移动端开发
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dev/ctf-cybersecurity-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CTF 网络安全入门
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📚 通用知识
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📚 通用知识
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../general/knowledge-domain-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识域扩展路线图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../general/community-best-practices-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    社区最佳实践索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../general/bilingual-terminology-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中英双语术语对照表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">图片生成与编辑<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>图片生成技能，可以通过自然语言帮助用户生成图片，通过API易国内代理服务访问，支持Node.js和Python两种运行环境。</p>
+<h2 id="_2">使用指引<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>遵循以下步骤：</p>
+<h3 id="1">第1步：分析需求与参数提取<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>明确意图</strong>：区分用户是需要【文生图】（生成新图片）还是【图生图】（编辑/修改现有图片）。</li>
+<li><strong>提示词（Prompt）分析</strong>：</li>
+<li><strong>使用用户原始完整输入</strong>：把用户输入的原始完整问题需求描述（原文）直接作为 <code>-p</code> 提示词的主体，避免自行改写、总结或二次创作，防止细节丢失。</li>
+<li><strong>需要补充时先确认</strong>：如果信息不足（例如缺少风格、主体数量、镜头语言、场景细节、文字内容、禁止元素等），先向用户提问确认；用户确认后，再把补充内容<strong>以“追加”的方式</strong>拼接到原始提示词后。</li>
+<li>
+<p>样例：</p>
+<ul>
+<li>用户输入：“帮我生成一张猫的图片，风格要可爱一点。”</li>
+<li>正例说明：直接使用用户输入作为提示词：<code>-p "帮我生成一张猫的图片，风格要可爱一点。"</code></li>
+<li>反例说明：擅自改写为“生成一张可爱风格的猫的图片”会丢失用户原始输入的细节和语气。</li>
+<li>如果需要补充细节（例如颜色、背景等），先提问确认：“你希望猫是什么颜色的？背景有什么要求吗？”用户回答后，再追加到提示词中：<code>-p "帮我生成一张猫的图片，风格要可爱一点。猫是橘色的，背景是草地。"</code></li>
+</ul>
+</li>
+<li>
+<p><strong>关键参数整理</strong>：</p>
+</li>
+<li><strong>Prompt（必需）</strong>：提示词分析后的最终提示词（默认=用户原始完整且一致的输入；仅在用户确认后才追加补充信息）。</li>
+<li><strong>Filename（可选）</strong>：输出图片文件名/路径(需包含文件随机标识，避免重复)。不传则脚本会自动生成带时间戳的文件名。建议根据内容生成合理文件名（例如 <code>cat_in_garden.png</code>），避免使用通用名。</li>
+<li><strong>Aspect Ratio（可选）</strong>：根据用户描述推断比例。例如：<ul>
+<li>"手机壁纸" -&gt; <code>9:16</code></li>
+<li>"电脑壁纸/视频封面" -&gt; <code>16:9</code></li>
+<li>"头像" -&gt; <code>1:1</code></li>
+<li>默认若用户未明确不指定图片比例，保持图片比例为空。</li>
+</ul>
+</li>
+<li><strong>Resolution（可选）</strong>：<ul>
+<li>默认图片比例使用 <code>2K</code>。</li>
+<li>仅在极端高清需求或用户指定时使用 <code>4K</code>，并通过友好性提示，提示用户生成较慢，耐心等待。</li>
+<li><strong>注意</strong>：参数值必须大写（<code>1K</code>, <code>2K</code>, <code>4K</code>）。</li>
+</ul>
+</li>
+</ol>
+<h3 id="2">第2步：环境检查与命令执行<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>检查环境</strong>：确认 <code>APIYI_API_KEY</code> 环境变量是否已设置（通常假定已设置，若运行失败再提示用户）。</li>
+<li><strong>构建并运行命令</strong>：</li>
+<li><strong>优先尝试 Node.js 版本</strong>：如果环境有 Node（<code>node</code> 命令可用），优先使用 <code>scripts/generate_image.js</code>（零依赖，参数与 Python 保持一致）。</li>
+<li><strong>Node 不可用再用 Python 版本</strong>：使用 <code>scripts/generate_image.py</code>。</li>
+</ol>
+<p><strong>文生图命令模板（优先 Node.js）：</strong>
+   <code>bash
+   node scripts/generate_image.js -p "{prompt}" -f "{filename}" [-a {ratio}] [-r {res}]</code></p>
+<p><strong>图生图命令模板（优先 Node.js）：</strong>
+   <code>bash
+   node scripts/generate_image.js -p "{edit_instruction}" -i "{input_path}" -f "{output_filename}" [-r {res}]</code></p>
+<p><strong>（可选）Python 版本命令模板（Node 不可用时）</strong>：
+   <code>bash
+   python scripts/generate_image.py -p "{prompt}" -f "{filename}" [-a {ratio}] [-r {res}]
+   python scripts/generate_image.py -p "{edit_instruction}" -i "{input_path}" -f "{output_filename}" [-r {res}]</code></p>
+<h2 id="_3">⏱️ 长时间任务处理策略<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="1_1">1. 任务前提示<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<p><strong>执行前必须告知用户</strong>：
+- "图片生成已启动，预计需要25秒到5分钟"</p>
+<h3 id="2_1">2. 🎨 最佳实践示例<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<ol>
+<li>快速生成场景（1K分辨率）</li>
+</ol>
+<blockquote>
+<p>"快速模式：1K分辨率生成，预计30秒内完成"</p>
+</blockquote>
+<ol>
+<li>高质量生成场景（2K/4K分辨率）</li>
+</ol>
+<blockquote>
+<p>"高质量模式：2K分辨率生成，预计1-4分钟\n⏳ 开始生成... 🔄"</p>
+</blockquote>
+<h3 id="3">第3步：结果反馈<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>执行反馈</strong>：等待终端命令执行完毕。</li>
+<li><strong>成功</strong>：告知用户图片已生成，并指出保存路径。</li>
+<li><strong>失败</strong>：</li>
+<li>若提示 API Key 缺失，请指导用户设置环境变量。</li>
+<li>若提示网络错误，建议用户检查网络或稍后重试。</li>
+</ol>
+<h2 id="_4">命令行使用样例<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="_5">生成新图片<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>python<span class="w"> </span>scripts/generate_image.py<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;图片描述文本&quot;</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;output.png&quot;</span><span class="w"> </span><span class="o">[</span>-a<span class="w"> </span><span class="m">1</span>:1<span class="o">]</span><span class="w"> </span><span class="o">[</span>-r<span class="w"> </span>1K<span class="o">]</span>
+</code></pre></div>
+
+<p><strong>示例：</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># 基础生成</span>
+python<span class="w"> </span>scripts/generate_image.py<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;一只可爱的橘猫在草地上玩耍&quot;</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;cat.png&quot;</span>
+
+<span class="c1"># 指定比例和分辨率</span>
+python<span class="w"> </span>scripts/generate_image.py<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;日落山脉风景&quot;</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;sunset.png&quot;</span><span class="w"> </span>-a<span class="w"> </span><span class="m">16</span>:9<span class="w"> </span>-r<span class="w"> </span>4K
+
+<span class="c1"># 竖版高清图片（适合手机壁纸）</span>
+python<span class="w"> </span>scripts/generate_image.py<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;城市夜景&quot;</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;city.png&quot;</span><span class="w"> </span>-a<span class="w"> </span><span class="m">9</span>:16<span class="w"> </span>-r<span class="w"> </span>2K
+</code></pre></div>
+
+<p><strong>（可选）Node.js 版本示例：</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># 基础生成</span>
+node<span class="w"> </span>scripts/generate_image.js<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;一只可爱的橘猫在草地上玩耍&quot;</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;cat.png&quot;</span>
+
+<span class="c1"># 指定比例和分辨率</span>
+node<span class="w"> </span>scripts/generate_image.js<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;日落山脉风景&quot;</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;sunset.png&quot;</span><span class="w"> </span>-a<span class="w"> </span><span class="m">16</span>:9<span class="w"> </span>-r<span class="w"> </span>4K
+</code></pre></div>
+
+<h3 id="_6">编辑已有图片<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>python<span class="w"> </span>scripts/generate_image.py<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;编辑指令&quot;</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;output.png&quot;</span><span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;path/to/input.png&quot;</span><span class="w"> </span><span class="o">[</span>-a<span class="w"> </span><span class="m">1</span>:1<span class="o">]</span><span class="w"> </span><span class="o">[</span>-r<span class="w"> </span>1K<span class="o">]</span>
+</code></pre></div>
+
+<p><strong>示例：</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># 修改风格</span>
+python<span class="w"> </span>scripts/generate_image.py<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;将图片转换成水彩画风格&quot;</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;watercolor.png&quot;</span><span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;original.png&quot;</span>
+
+<span class="c1"># 添加元素</span>
+python<span class="w"> </span>scripts/generate_image.py<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;在天空添加彩虹&quot;</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;rainbow.png&quot;</span><span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;landscape.png&quot;</span><span class="w"> </span>-r<span class="w"> </span>2K
+
+<span class="c1"># 替换背景</span>
+python<span class="w"> </span>scripts/generate_image.py<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;将背景换成海滩&quot;</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;beach-bg.png&quot;</span><span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;portrait.png&quot;</span><span class="w"> </span>-a<span class="w"> </span><span class="m">3</span>:4
+</code></pre></div>
+
+<p><strong>（可选）Node.js 版本示例：</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># 修改风格</span>
+node<span class="w"> </span>scripts/generate_image.js<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;将图片转换成水彩画风格&quot;</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;watercolor.png&quot;</span><span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;original.png&quot;</span>
+
+<span class="c1"># 多张参考图（最多14张）</span>
+node<span class="w"> </span>scripts/generate_image.js<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;参考多张图片融合风格&quot;</span><span class="w"> </span>-i<span class="w"> </span>ref1.png<span class="w"> </span>ref2.png<span class="w"> </span>ref3.png<span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;merged.png&quot;</span>
+</code></pre></div>
+
+<h2 id="_7">附加资源<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<ul>
+<li>常见使用场景文档：references/scene.md</li>
+</ul>
+<h2 id="_8">命令行参数说明<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Python 与 Node.js 版本参数保持一致（短参数与长参数等价）。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-p</code> / <code>--prompt</code></td>
+<td>是</td>
+<td>图片描述（文生图）或编辑指令（图生图）。保留用户原始完整输入。</td>
+</tr>
+<tr>
+<td><code>-f</code> / <code>--filename</code></td>
+<td>否</td>
+<td>输出图片路径/文件名；不传则自动生成带时间戳的 PNG 文件名，并写入当前目录。</td>
+</tr>
+<tr>
+<td><code>-a</code> / <code>--aspect-ratio</code></td>
+<td>否</td>
+<td>图片比例：<code>1:1</code>、<code>16:9</code>、<code>9:16</code>、<code>4:3</code>、<code>3:4</code>、<code>3:2</code>、<code>2:3</code>、<code>5:4</code>、<code>4:5</code>、<code>21:9</code>。</td>
+</tr>
+<tr>
+<td><code>-r</code> / <code>--resolution</code></td>
+<td>否</td>
+<td>图片分辨率：<code>1K</code> / <code>2K</code> / <code>4K</code>（必须大写）。不传则不在请求中指定，由 API 侧决定。</td>
+</tr>
+<tr>
+<td><code>-i</code> / <code>--input-image</code></td>
+<td>否</td>
+<td>图生图输入图片路径；可传多张（最多 14 张）。传入该参数即进入编辑模式。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_9">图片参数说明<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h3 id="aspect_ratio-">aspect_ratio - 图片比例<a class="headerlink" href="#aspect_ratio-" title="Permanent link">&para;</a></h3>
+<p>支持以下10种比例：</p>
+<table>
+<thead>
+<tr>
+<th>比例</th>
+<th>方向</th>
+<th>适用场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1:1</td>
+<td>正方形</td>
+<td>头像、Instagram帖子</td>
+</tr>
+<tr>
+<td>16:9</td>
+<td>横版</td>
+<td>YouTube缩略图、桌面壁纸、演示文稿</td>
+</tr>
+<tr>
+<td>9:16</td>
+<td>竖版</td>
+<td>抖音/TikTok、Instagram Stories、手机壁纸</td>
+</tr>
+<tr>
+<td>4:3</td>
+<td>横版</td>
+<td>经典照片、演示文稿</td>
+</tr>
+<tr>
+<td>3:4</td>
+<td>竖版</td>
+<td>Pinterest、人像摄影</td>
+</tr>
+<tr>
+<td>3:2</td>
+<td>横版</td>
+<td>单反相机标准、印刷媒体</td>
+</tr>
+<tr>
+<td>2:3</td>
+<td>竖版</td>
+<td>人像海报</td>
+</tr>
+<tr>
+<td>5:4</td>
+<td>横版</td>
+<td>大幅面打印、艺术印刷</td>
+</tr>
+<tr>
+<td>4:5</td>
+<td>竖版</td>
+<td>Instagram帖子、社交媒体</td>
+</tr>
+<tr>
+<td>21:9</td>
+<td>超宽</td>
+<td>电影感、横幅、全景</td>
+</tr>
+</tbody>
+</table>
+<h3 id="resolution-">resolution - 图片分辨率<a class="headerlink" href="#resolution-" title="Permanent link">&para;</a></h3>
+<p>1K、2K、4K三种分辨率选项
+<strong>注意：</strong> 分辨率值必须大写（1K、2K、4K）
+<strong>默认：</strong> 2K</p>
+<h2 id="_10">注意事项<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<ul>
+<li>API密钥必须设置，可通过环境变量或命令行参数提供</li>
+<li>分辨率参数必须大写（1K/2K/4K），小写会默认使用1K</li>
+<li>图片生成时间：25秒到5分钟不等，取决于分辨率和服务器负载</li>
+<li>编辑图片时，输入图片会自动转换为base64编码</li>
+<li>确保输出目录有写入权限</li>
+</ul>
+<h3 id="api-key">API Key设置与获取<a class="headerlink" href="#api-key" title="Permanent link">&para;</a></h3>
+<h4 id="api-key_1">如何获取API Key<a class="headerlink" href="#api-key_1" title="Permanent link">&para;</a></h4>
+<p>如果你还没有API密钥，请前往 <strong>https://api.apiyi.com</strong> 注册账号并申请API Key。</p>
+<p>获取步骤：
+1. 访问 https://api.apiyi.com
+2. 注册/登录你的账号
+3. 在控制台中创建API密钥
+4. 复制密钥并设置环境变量或在命令行中使用</p>
+<h4 id="api-key_2">设置API Key<a class="headerlink" href="#api-key_2" title="Permanent link">&para;</a></h4>
+<p>脚本按以下顺序查找API密钥：
+1. <code>--api-key</code> 命令行参数（临时使用）
+2. <code>APIYI_API_KEY</code> 环境变量（推荐）</p>
+<p><strong>设置环境变量（推荐）：</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Linux/Mac</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">APIYI_API_KEY</span><span class="o">=</span><span class="s2">&quot;your-api-key-here&quot;</span>
+
+<span class="c1"># Windows CMD</span>
+我的电脑高级设置中设置环境变量或者执行set<span class="w"> </span><span class="nv">APIYI_API_KEY</span><span class="o">=</span>your-api-key-here
+
+<span class="c1"># Windows PowerShell</span>
+在我的电脑中设置环境变量:<span class="nv">$env</span>:APIYI_API_KEY<span class="o">=</span><span class="s2">&quot;your-api-key-here&quot;</span>
+</code></pre></div>
+
+<p><strong>命令行参数方式（临时）：</strong></p>
+<div class="codehilite"><pre><span></span><code>python<span class="w"> </span>scripts/generate_image.py<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;一只猫&quot;</span><span class="w"> </span>-k<span class="w"> </span><span class="s2">&quot;your-api-key-here&quot;</span>
+</code></pre></div>
+
+<h2 id="_11">作者介绍<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<ul>
+<li>爱海贼的无处不在</li>
+<li>我的微信公众号：无处不在的技术</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "toc.integrate"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

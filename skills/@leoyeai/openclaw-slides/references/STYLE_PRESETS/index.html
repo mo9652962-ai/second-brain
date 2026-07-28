@@ -1,0 +1,1695 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="AI Agent 第二大脑 | Hermes 七大自举系统 | 硬件/PCB/单片机全链路知识库 | 学术写作工作流 | 全中文 Obsidian 知识库">
+      
+      
+        <meta name="author" content="mo9652962">
+      
+      
+        <link rel="canonical" href="https://mo9652962-ai.github.io/second-brain/skills/%40leoyeai/openclaw-slides/references/STYLE_PRESETS/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Style Presets Reference - Second Brain 知识库</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#style-presets-reference" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../../../.." title="Second Brain 知识库" class="md-header__button md-logo" aria-label="Second Brain 知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Second Brain 知识库
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Style Presets Reference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换到深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换到浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../hermes/tool-call-bootstrapping/" class="md-tabs__link">
+          
+  
+  
+  🤖 Hermes 自举系统
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../hardware/PCB-Design-Automation-2026/" class="md-tabs__link">
+          
+  
+  
+  🔧 硬件工程
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../ai/mlops-llm-training-pipeline/" class="md-tabs__link">
+          
+  
+  
+  🧠 AI / MLOps
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../dev/cross-platform-mobile-development-2026/" class="md-tabs__link">
+          
+  
+  
+  📱 移动端 & 安全
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../general/knowledge-domain-roadmap/" class="md-tabs__link">
+          
+  
+  
+  📚 通用知识
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="Second Brain 知识库" class="md-nav__button md-logo" aria-label="Second Brain 知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Second Brain 知识库
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 Hermes 自举系统
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🤖 Hermes 自举系统
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hermes/tool-call-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    工具调用自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hermes/code-quality-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    代码质量自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hermes/output-style-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    输出风格自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hermes/context-management-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    上下文管理自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hermes/github-seo-optimization-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub SEO 优化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔧 硬件工程
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🔧 硬件工程
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hardware/PCB-Design-Automation-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PCB 设计自动化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hardware/CAD-Design-Complete-Guide-v2.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CAD 设计完整指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hardware/Microcontroller-Edge-AI-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    单片机与边缘 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hardware/Hardware-Startup-Open-Source-Ecosystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    硬件创业与开源生态
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧠 AI / MLOps
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🧠 AI / MLOps
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ai/mlops-llm-training-pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MLOps & LLM 训练流水线
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📱 移动端 & 安全
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📱 移动端 & 安全
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../dev/cross-platform-mobile-development-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跨平台移动端开发
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../dev/ctf-cybersecurity-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CTF 网络安全入门
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📚 通用知识
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📚 通用知识
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/knowledge-domain-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识域扩展路线图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/community-best-practices-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    社区最佳实践索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../general/bilingual-terminology-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中英双语术语对照表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="style-presets-reference">Style Presets Reference<a class="headerlink" href="#style-presets-reference" title="Permanent link">&para;</a></h1>
+<p>Curated visual styles for Frontend Slides. Each preset is inspired by real design references—no generic "AI slop" aesthetics. <strong>Abstract shapes only—no illustrations.</strong></p>
+<hr />
+<h2 id="critical-viewport-fitting-non-negotiable">⚠️ CRITICAL: Viewport Fitting (Non-Negotiable)<a class="headerlink" href="#critical-viewport-fitting-non-negotiable" title="Permanent link">&para;</a></h2>
+<p><strong>Every slide MUST fit exactly in the viewport. No scrolling within slides, ever.</strong></p>
+<h3 id="content-density-limits-per-slide">Content Density Limits Per Slide<a class="headerlink" href="#content-density-limits-per-slide" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Slide Type</th>
+<th>Maximum Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Title slide</td>
+<td>1 heading + 1 subtitle</td>
+</tr>
+<tr>
+<td>Content slide</td>
+<td>1 heading + 4-6 bullets (max 2 lines each)</td>
+</tr>
+<tr>
+<td>Feature grid</td>
+<td>1 heading + 6 cards (2x3 or 3x2)</td>
+</tr>
+<tr>
+<td>Code slide</td>
+<td>1 heading + 8-10 lines of code</td>
+</tr>
+<tr>
+<td>Quote slide</td>
+<td>1 quote (max 3 lines) + attribution</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Too much content? → Split into multiple slides. Never scroll.</strong></p>
+<h3 id="required-base-css-include-in-all-presentations">Required Base CSS (Include in ALL Presentations)<a class="headerlink" href="#required-base-css-include-in-all-presentations" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="c">/* ===========================================</span>
+<span class="c">   VIEWPORT FITTING: MANDATORY</span>
+<span class="c">   Copy this entire block into every presentation</span>
+<span class="c">   =========================================== */</span>
+
+<span class="c">/* 1. Lock document to viewport */</span>
+<span class="nt">html</span><span class="o">,</span><span class="w"> </span><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+<span class="w">    </span><span class="k">overflow-x</span><span class="p">:</span><span class="w"> </span><span class="kc">hidden</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">html</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">scroll-snap-type</span><span class="p">:</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="kc">mandatory</span><span class="p">;</span>
+<span class="w">    </span><span class="k">scroll-behavior</span><span class="p">:</span><span class="w"> </span><span class="kc">smooth</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* 2. Each slide = exact viewport height */</span>
+<span class="p">.</span><span class="nc">slide</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">vw</span><span class="p">;</span>
+<span class="w">    </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">vh</span><span class="p">;</span>
+<span class="w">    </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="n">dvh</span><span class="p">;</span><span class="w"> </span><span class="c">/* Dynamic viewport for mobile */</span>
+<span class="w">    </span><span class="k">overflow</span><span class="p">:</span><span class="w"> </span><span class="kc">hidden</span><span class="p">;</span><span class="w"> </span><span class="c">/* CRITICAL: No overflow ever */</span>
+<span class="w">    </span><span class="k">scroll-snap-align</span><span class="p">:</span><span class="w"> </span><span class="kc">start</span><span class="p">;</span>
+<span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span>
+<span class="w">    </span><span class="k">flex-direction</span><span class="p">:</span><span class="w"> </span><span class="kc">column</span><span class="p">;</span>
+<span class="w">    </span><span class="k">position</span><span class="p">:</span><span class="w"> </span><span class="kc">relative</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* 3. Content wrapper */</span>
+<span class="p">.</span><span class="nc">slide-content</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">flex</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span>
+<span class="w">    </span><span class="k">flex-direction</span><span class="p">:</span><span class="w"> </span><span class="kc">column</span><span class="p">;</span>
+<span class="w">    </span><span class="k">justify-content</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span>
+<span class="w">    </span><span class="k">max-height</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+<span class="w">    </span><span class="k">overflow</span><span class="p">:</span><span class="w"> </span><span class="kc">hidden</span><span class="p">;</span>
+<span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--slide-padding</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c">/* 4. ALL sizes use clamp() - scales with viewport */</span>
+<span class="p">:</span><span class="nd">root</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c">/* Typography */</span>
+<span class="w">    </span><span class="nv">--title-size</span><span class="p">:</span><span class="w"> </span><span class="nf">clamp</span><span class="p">(</span><span class="mf">1.5</span><span class="kt">rem</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="kt">vw</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="kt">rem</span><span class="p">);</span>
+<span class="w">    </span><span class="nv">--h2-size</span><span class="p">:</span><span class="w"> </span><span class="nf">clamp</span><span class="p">(</span><span class="mf">1.25</span><span class="kt">rem</span><span class="p">,</span><span class="w"> </span><span class="mf">3.5</span><span class="kt">vw</span><span class="p">,</span><span class="w"> </span><span class="mf">2.5</span><span class="kt">rem</span><span class="p">);</span>
+<span class="w">    </span><span class="nv">--body-size</span><span class="p">:</span><span class="w"> </span><span class="nf">clamp</span><span class="p">(</span><span class="mf">0.75</span><span class="kt">rem</span><span class="p">,</span><span class="w"> </span><span class="mf">1.5</span><span class="kt">vw</span><span class="p">,</span><span class="w"> </span><span class="mf">1.125</span><span class="kt">rem</span><span class="p">);</span>
+<span class="w">    </span><span class="nv">--small-size</span><span class="p">:</span><span class="w"> </span><span class="nf">clamp</span><span class="p">(</span><span class="mf">0.65</span><span class="kt">rem</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="kt">vw</span><span class="p">,</span><span class="w"> </span><span class="mf">0.875</span><span class="kt">rem</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c">/* Spacing */</span>
+<span class="w">    </span><span class="nv">--slide-padding</span><span class="p">:</span><span class="w"> </span><span class="nf">clamp</span><span class="p">(</span><span class="mi">1</span><span class="kt">rem</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="kt">vw</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="kt">rem</span><span class="p">);</span>
+<span class="w">    </span><span class="nv">--content-gap</span><span class="p">:</span><span class="w"> </span><span class="nf">clamp</span><span class="p">(</span><span class="mf">0.5</span><span class="kt">rem</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="kt">vw</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="kt">rem</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c">/* 5. Cards/containers use viewport-relative max sizes */</span>
+<span class="p">.</span><span class="nc">card</span><span class="o">,</span><span class="w"> </span><span class="p">.</span><span class="nc">container</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">max-width</span><span class="p">:</span><span class="w"> </span><span class="nf">min</span><span class="p">(</span><span class="mi">90</span><span class="kt">vw</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="kt">px</span><span class="p">);</span>
+<span class="w">    </span><span class="k">max-height</span><span class="p">:</span><span class="w"> </span><span class="nf">min</span><span class="p">(</span><span class="mi">80</span><span class="kt">vh</span><span class="p">,</span><span class="w"> </span><span class="mi">700</span><span class="kt">px</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c">/* 6. Images constrained */</span>
+<span class="nt">img</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">max-width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+<span class="w">    </span><span class="k">max-height</span><span class="p">:</span><span class="w"> </span><span class="nf">min</span><span class="p">(</span><span class="mi">50</span><span class="kt">vh</span><span class="p">,</span><span class="w"> </span><span class="mi">400</span><span class="kt">px</span><span class="p">);</span>
+<span class="w">    </span><span class="k">object-fit</span><span class="p">:</span><span class="w"> </span><span class="kc">contain</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* 7. Grids adapt to space */</span>
+<span class="p">.</span><span class="nc">grid</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="k">grid</span><span class="p">;</span>
+<span class="w">    </span><span class="k">grid-template-columns</span><span class="p">:</span><span class="w"> </span><span class="nf">repeat</span><span class="p">(</span><span class="kc">auto</span><span class="nv">-fit</span><span class="p">,</span><span class="w"> </span><span class="nf">minmax</span><span class="p">(</span><span class="nf">min</span><span class="p">(</span><span class="mi">100</span><span class="kt">%</span><span class="p">,</span><span class="w"> </span><span class="mi">220</span><span class="kt">px</span><span class="p">),</span><span class="w"> </span><span class="mi">1</span><span class="n">fr</span><span class="p">));</span>
+<span class="w">    </span><span class="k">gap</span><span class="p">:</span><span class="w"> </span><span class="nf">clamp</span><span class="p">(</span><span class="mf">0.5</span><span class="kt">rem</span><span class="p">,</span><span class="w"> </span><span class="mf">1.5</span><span class="kt">vw</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="kt">rem</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c">/* ===========================================</span>
+<span class="c">   RESPONSIVE BREAKPOINTS - Height-based</span>
+<span class="c">   =========================================== */</span>
+
+<span class="c">/* Short screens (&lt; 700px height) */</span>
+<span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="o">(</span><span class="nt">max-height</span><span class="o">:</span><span class="w"> </span><span class="nt">700px</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">:</span><span class="nd">root</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nv">--slide-padding</span><span class="p">:</span><span class="w"> </span><span class="nf">clamp</span><span class="p">(</span><span class="mf">0.75</span><span class="kt">rem</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="kt">vw</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="kt">rem</span><span class="p">);</span>
+<span class="w">        </span><span class="nv">--content-gap</span><span class="p">:</span><span class="w"> </span><span class="nf">clamp</span><span class="p">(</span><span class="mf">0.4</span><span class="kt">rem</span><span class="p">,</span><span class="w"> </span><span class="mf">1.5</span><span class="kt">vw</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="kt">rem</span><span class="p">);</span>
+<span class="w">        </span><span class="nv">--title-size</span><span class="p">:</span><span class="w"> </span><span class="nf">clamp</span><span class="p">(</span><span class="mf">1.25</span><span class="kt">rem</span><span class="p">,</span><span class="w"> </span><span class="mf">4.5</span><span class="kt">vw</span><span class="p">,</span><span class="w"> </span><span class="mf">2.5</span><span class="kt">rem</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c">/* Very short (&lt; 600px height) */</span>
+<span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="o">(</span><span class="nt">max-height</span><span class="o">:</span><span class="w"> </span><span class="nt">600px</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">:</span><span class="nd">root</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nv">--slide-padding</span><span class="p">:</span><span class="w"> </span><span class="nf">clamp</span><span class="p">(</span><span class="mf">0.5</span><span class="kt">rem</span><span class="p">,</span><span class="w"> </span><span class="mf">2.5</span><span class="kt">vw</span><span class="p">,</span><span class="w"> </span><span class="mf">1.5</span><span class="kt">rem</span><span class="p">);</span>
+<span class="w">        </span><span class="nv">--title-size</span><span class="p">:</span><span class="w"> </span><span class="nf">clamp</span><span class="p">(</span><span class="mf">1.1</span><span class="kt">rem</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="kt">vw</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="kt">rem</span><span class="p">);</span>
+<span class="w">        </span><span class="nv">--body-size</span><span class="p">:</span><span class="w"> </span><span class="nf">clamp</span><span class="p">(</span><span class="mf">0.7</span><span class="kt">rem</span><span class="p">,</span><span class="w"> </span><span class="mf">1.2</span><span class="kt">vw</span><span class="p">,</span><span class="w"> </span><span class="mf">0.95</span><span class="kt">rem</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="p">.</span><span class="nc">nav-dots</span><span class="o">,</span><span class="w"> </span><span class="p">.</span><span class="nc">keyboard-hint</span><span class="o">,</span><span class="w"> </span><span class="p">.</span><span class="nc">decorative</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c">/* Extremely short - landscape phones (&lt; 500px) */</span>
+<span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="o">(</span><span class="nt">max-height</span><span class="o">:</span><span class="w"> </span><span class="nt">500px</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">:</span><span class="nd">root</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nv">--slide-padding</span><span class="p">:</span><span class="w"> </span><span class="nf">clamp</span><span class="p">(</span><span class="mf">0.4</span><span class="kt">rem</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="kt">vw</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="kt">rem</span><span class="p">);</span>
+<span class="w">        </span><span class="nv">--title-size</span><span class="p">:</span><span class="w"> </span><span class="nf">clamp</span><span class="p">(</span><span class="mi">1</span><span class="kt">rem</span><span class="p">,</span><span class="w"> </span><span class="mf">3.5</span><span class="kt">vw</span><span class="p">,</span><span class="w"> </span><span class="mf">1.5</span><span class="kt">rem</span><span class="p">);</span>
+<span class="w">        </span><span class="nv">--body-size</span><span class="p">:</span><span class="w"> </span><span class="nf">clamp</span><span class="p">(</span><span class="mf">0.65</span><span class="kt">rem</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="kt">vw</span><span class="p">,</span><span class="w"> </span><span class="mf">0.85</span><span class="kt">rem</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c">/* Narrow screens */</span>
+<span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="o">(</span><span class="nt">max-width</span><span class="o">:</span><span class="w"> </span><span class="nt">600px</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">.</span><span class="nc">grid</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">grid-template-columns</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="n">fr</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c">/* Reduced motion */</span>
+<span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="o">(</span><span class="nt">prefers-reduced-motion</span><span class="o">:</span><span class="w"> </span><span class="nt">reduce</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="o">*,</span><span class="w"> </span><span class="o">*</span><span class="p">::</span><span class="nd">before</span><span class="o">,</span><span class="w"> </span><span class="o">*</span><span class="p">::</span><span class="nd">after</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">animation-duration</span><span class="p">:</span><span class="w"> </span><span class="mf">0.01</span><span class="kt">ms</span><span class="w"> </span><span class="cp">!important</span><span class="p">;</span>
+<span class="w">        </span><span class="k">transition-duration</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="kt">s</span><span class="w"> </span><span class="cp">!important</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="viewport-fitting-checklist">Viewport Fitting Checklist<a class="headerlink" href="#viewport-fitting-checklist" title="Permanent link">&para;</a></h3>
+<p>Before finalizing any presentation, verify:</p>
+<ul>
+<li>[ ] Every <code>.slide</code> has <code>height: 100vh; height: 100dvh; overflow: hidden;</code></li>
+<li>[ ] All font sizes use <code>clamp(min, preferred, max)</code></li>
+<li>[ ] All spacing uses <code>clamp()</code> or viewport units</li>
+<li>[ ] Breakpoints exist for heights: 700px, 600px, 500px</li>
+<li>[ ] Content respects density limits (max 6 bullets, max 6 cards)</li>
+<li>[ ] No fixed pixel heights on content elements</li>
+<li>[ ] Images have <code>max-height</code> constraints</li>
+<li>[ ] No negated CSS functions (use <code>calc(-1 * clamp(...))</code> not <code>-clamp(...)</code>)</li>
+</ul>
+<hr />
+<h2 id="dark-themes">Dark Themes<a class="headerlink" href="#dark-themes" title="Permanent link">&para;</a></h2>
+<h3 id="1-bold-signal">1. Bold Signal<a class="headerlink" href="#1-bold-signal" title="Permanent link">&para;</a></h3>
+<p><strong>Vibe:</strong> Confident, bold, modern, high-impact</p>
+<p><strong>Layout:</strong> Colored card on dark gradient. Number top-left, navigation top-right, title bottom-left.</p>
+<p><strong>Typography:</strong>
+- Display: <code>Archivo Black</code> (900)
+- Body: <code>Space Grotesk</code> (400/500)</p>
+<p><strong>Colors:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="p">:</span><span class="nd">root</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nv">--bg-primary</span><span class="p">:</span><span class="w"> </span><span class="mh">#1a1a1a</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--bg-gradient</span><span class="p">:</span><span class="w"> </span><span class="nb">linear-gradient</span><span class="p">(</span><span class="mi">135</span><span class="kt">deg</span><span class="p">,</span><span class="w"> </span><span class="mh">#1a1a1a</span><span class="w"> </span><span class="mi">0</span><span class="kt">%</span><span class="p">,</span><span class="w"> </span><span class="mh">#2d2d2d</span><span class="w"> </span><span class="mi">50</span><span class="kt">%</span><span class="p">,</span><span class="w"> </span><span class="mh">#1a1a1a</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">);</span>
+<span class="w">    </span><span class="nv">--card-bg</span><span class="p">:</span><span class="w"> </span><span class="mh">#FF5722</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--text-primary</span><span class="p">:</span><span class="w"> </span><span class="mh">#ffffff</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--text-on-card</span><span class="p">:</span><span class="w"> </span><span class="mh">#1a1a1a</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><strong>Signature Elements:</strong>
+- Bold colored card as focal point (orange, coral, or vibrant accent)
+- Large section numbers (01, 02, etc.)
+- Navigation breadcrumbs with active/inactive opacity states
+- Grid-based layout for precise alignment</p>
+<hr />
+<h3 id="2-electric-studio">2. Electric Studio<a class="headerlink" href="#2-electric-studio" title="Permanent link">&para;</a></h3>
+<p><strong>Vibe:</strong> Bold, clean, professional, high contrast</p>
+<p><strong>Layout:</strong> Split panel—white top, blue bottom. Brand marks in corners.</p>
+<p><strong>Typography:</strong>
+- Display: <code>Manrope</code> (800)
+- Body: <code>Manrope</code> (400/500)</p>
+<p><strong>Colors:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="p">:</span><span class="nd">root</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nv">--bg-dark</span><span class="p">:</span><span class="w"> </span><span class="mh">#0a0a0a</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--bg-white</span><span class="p">:</span><span class="w"> </span><span class="mh">#ffffff</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--accent-blue</span><span class="p">:</span><span class="w"> </span><span class="mh">#4361ee</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--text-dark</span><span class="p">:</span><span class="w"> </span><span class="mh">#0a0a0a</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--text-light</span><span class="p">:</span><span class="w"> </span><span class="mh">#ffffff</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><strong>Signature Elements:</strong>
+- Two-panel vertical split
+- Accent bar on panel edge
+- Quote typography as hero element
+- Minimal, confident spacing</p>
+<hr />
+<h3 id="3-creative-voltage">3. Creative Voltage<a class="headerlink" href="#3-creative-voltage" title="Permanent link">&para;</a></h3>
+<p><strong>Vibe:</strong> Bold, creative, energetic, retro-modern</p>
+<p><strong>Layout:</strong> Split panels—electric blue left, dark right. Script accents.</p>
+<p><strong>Typography:</strong>
+- Display: <code>Syne</code> (700/800)
+- Mono: <code>Space Mono</code> (400/700)</p>
+<p><strong>Colors:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="p">:</span><span class="nd">root</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nv">--bg-primary</span><span class="p">:</span><span class="w"> </span><span class="mh">#0066ff</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--bg-dark</span><span class="p">:</span><span class="w"> </span><span class="mh">#1a1a2e</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--accent-neon</span><span class="p">:</span><span class="w"> </span><span class="mh">#d4ff00</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--text-light</span><span class="p">:</span><span class="w"> </span><span class="mh">#ffffff</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><strong>Signature Elements:</strong>
+- Electric blue + neon yellow contrast
+- Halftone texture patterns
+- Neon badges/callouts
+- Script typography for creative flair</p>
+<hr />
+<h3 id="4-dark-botanical">4. Dark Botanical<a class="headerlink" href="#4-dark-botanical" title="Permanent link">&para;</a></h3>
+<p><strong>Vibe:</strong> Elegant, sophisticated, artistic, premium</p>
+<p><strong>Layout:</strong> Centered content on dark. Abstract soft shapes in corner.</p>
+<p><strong>Typography:</strong>
+- Display: <code>Cormorant</code> (400/600) — elegant serif
+- Body: <code>IBM Plex Sans</code> (300/400)</p>
+<p><strong>Colors:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="p">:</span><span class="nd">root</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nv">--bg-primary</span><span class="p">:</span><span class="w"> </span><span class="mh">#0f0f0f</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--text-primary</span><span class="p">:</span><span class="w"> </span><span class="mh">#e8e4df</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--text-secondary</span><span class="p">:</span><span class="w"> </span><span class="mh">#9a9590</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--accent-warm</span><span class="p">:</span><span class="w"> </span><span class="mh">#d4a574</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--accent-pink</span><span class="p">:</span><span class="w"> </span><span class="mh">#e8b4b8</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--accent-gold</span><span class="p">:</span><span class="w"> </span><span class="mh">#c9b896</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><strong>Signature Elements:</strong>
+- Abstract soft gradient circles (blurred, overlapping)
+- Warm color accents (pink, gold, terracotta)
+- Thin vertical accent lines
+- Italic signature typography
+- <strong>No illustrations—only abstract CSS shapes</strong></p>
+<hr />
+<h2 id="light-themes">Light Themes<a class="headerlink" href="#light-themes" title="Permanent link">&para;</a></h2>
+<h3 id="5-notebook-tabs">5. Notebook Tabs<a class="headerlink" href="#5-notebook-tabs" title="Permanent link">&para;</a></h3>
+<p><strong>Vibe:</strong> Editorial, organized, elegant, tactile</p>
+<p><strong>Layout:</strong> Cream paper card on dark background. Colorful tabs on right edge.</p>
+<p><strong>Typography:</strong>
+- Display: <code>Bodoni Moda</code> (400/700) — classic editorial
+- Body: <code>DM Sans</code> (400/500)</p>
+<p><strong>Colors:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="p">:</span><span class="nd">root</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nv">--bg-outer</span><span class="p">:</span><span class="w"> </span><span class="mh">#2d2d2d</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--bg-page</span><span class="p">:</span><span class="w"> </span><span class="mh">#f8f6f1</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--text-primary</span><span class="p">:</span><span class="w"> </span><span class="mh">#1a1a1a</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--tab-1</span><span class="p">:</span><span class="w"> </span><span class="mh">#98d4bb</span><span class="p">;</span><span class="w"> </span><span class="c">/* Mint */</span>
+<span class="w">    </span><span class="nv">--tab-2</span><span class="p">:</span><span class="w"> </span><span class="mh">#c7b8ea</span><span class="p">;</span><span class="w"> </span><span class="c">/* Lavender */</span>
+<span class="w">    </span><span class="nv">--tab-3</span><span class="p">:</span><span class="w"> </span><span class="mh">#f4b8c5</span><span class="p">;</span><span class="w"> </span><span class="c">/* Pink */</span>
+<span class="w">    </span><span class="nv">--tab-4</span><span class="p">:</span><span class="w"> </span><span class="mh">#a8d8ea</span><span class="p">;</span><span class="w"> </span><span class="c">/* Sky */</span>
+<span class="w">    </span><span class="nv">--tab-5</span><span class="p">:</span><span class="w"> </span><span class="mh">#ffe6a7</span><span class="p">;</span><span class="w"> </span><span class="c">/* Cream */</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><strong>Signature Elements:</strong>
+- Paper container with subtle shadow
+- Colorful section tabs on right edge (vertical text)
+- Binder hole decorations on left
+- Tab text must scale with viewport: <code>font-size: clamp(0.5rem, 1vh, 0.7rem)</code></p>
+<hr />
+<h3 id="6-pastel-geometry">6. Pastel Geometry<a class="headerlink" href="#6-pastel-geometry" title="Permanent link">&para;</a></h3>
+<p><strong>Vibe:</strong> Friendly, organized, modern, approachable</p>
+<p><strong>Layout:</strong> White card on pastel background. Vertical pills on right edge.</p>
+<p><strong>Typography:</strong>
+- Display: <code>Plus Jakarta Sans</code> (700/800)
+- Body: <code>Plus Jakarta Sans</code> (400/500)</p>
+<p><strong>Colors:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="p">:</span><span class="nd">root</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nv">--bg-primary</span><span class="p">:</span><span class="w"> </span><span class="mh">#c8d9e6</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--card-bg</span><span class="p">:</span><span class="w"> </span><span class="mh">#faf9f7</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--pill-pink</span><span class="p">:</span><span class="w"> </span><span class="mh">#f0b4d4</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--pill-mint</span><span class="p">:</span><span class="w"> </span><span class="mh">#a8d4c4</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--pill-sage</span><span class="p">:</span><span class="w"> </span><span class="mh">#5a7c6a</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--pill-lavender</span><span class="p">:</span><span class="w"> </span><span class="mh">#9b8dc4</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--pill-violet</span><span class="p">:</span><span class="w"> </span><span class="mh">#7c6aad</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><strong>Signature Elements:</strong>
+- Rounded card with soft shadow
+- <strong>Vertical pills on right edge</strong> with varying heights (like tabs)
+- Consistent pill width, heights: short → medium → tall → medium → short
+- Download/action icon in corner</p>
+<hr />
+<h3 id="7-split-pastel">7. Split Pastel<a class="headerlink" href="#7-split-pastel" title="Permanent link">&para;</a></h3>
+<p><strong>Vibe:</strong> Playful, modern, friendly, creative</p>
+<p><strong>Layout:</strong> Two-color vertical split (peach left, lavender right).</p>
+<p><strong>Typography:</strong>
+- Display: <code>Outfit</code> (700/800)
+- Body: <code>Outfit</code> (400/500)</p>
+<p><strong>Colors:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="p">:</span><span class="nd">root</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nv">--bg-peach</span><span class="p">:</span><span class="w"> </span><span class="mh">#f5e6dc</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--bg-lavender</span><span class="p">:</span><span class="w"> </span><span class="mh">#e4dff0</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--text-dark</span><span class="p">:</span><span class="w"> </span><span class="mh">#1a1a1a</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--badge-mint</span><span class="p">:</span><span class="w"> </span><span class="mh">#c8f0d8</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--badge-yellow</span><span class="p">:</span><span class="w"> </span><span class="mh">#f0f0c8</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--badge-pink</span><span class="p">:</span><span class="w"> </span><span class="mh">#f0d4e0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><strong>Signature Elements:</strong>
+- Split background colors
+- Playful badge pills with icons
+- Grid pattern overlay on right panel
+- Rounded CTA buttons</p>
+<hr />
+<h3 id="8-vintage-editorial">8. Vintage Editorial<a class="headerlink" href="#8-vintage-editorial" title="Permanent link">&para;</a></h3>
+<p><strong>Vibe:</strong> Witty, confident, editorial, personality-driven</p>
+<p><strong>Layout:</strong> Centered content on cream. Abstract geometric shapes as accent.</p>
+<p><strong>Typography:</strong>
+- Display: <code>Fraunces</code> (700/900) — distinctive serif
+- Body: <code>Work Sans</code> (400/500)</p>
+<p><strong>Colors:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="p">:</span><span class="nd">root</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nv">--bg-cream</span><span class="p">:</span><span class="w"> </span><span class="mh">#f5f3ee</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--text-primary</span><span class="p">:</span><span class="w"> </span><span class="mh">#1a1a1a</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--text-secondary</span><span class="p">:</span><span class="w"> </span><span class="mh">#555</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--accent-warm</span><span class="p">:</span><span class="w"> </span><span class="mh">#e8d4c0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><strong>Signature Elements:</strong>
+- Abstract geometric shapes (circle outline + line + dot)
+- Bold bordered CTA boxes
+- Witty, conversational copy style
+- <strong>No illustrations—only geometric CSS shapes</strong></p>
+<hr />
+<h2 id="specialty-themes">Specialty Themes<a class="headerlink" href="#specialty-themes" title="Permanent link">&para;</a></h2>
+<h3 id="9-neon-cyber">9. Neon Cyber<a class="headerlink" href="#9-neon-cyber" title="Permanent link">&para;</a></h3>
+<p><strong>Vibe:</strong> Futuristic, techy, confident</p>
+<p><strong>Typography:</strong> <code>Clash Display</code> + <code>Satoshi</code> (Fontshare)</p>
+<p><strong>Colors:</strong> Deep navy (#0a0f1c), cyan accent (#00ffcc), magenta (#ff00aa)</p>
+<p><strong>Signature:</strong> Particle backgrounds, neon glow, grid patterns</p>
+<hr />
+<h3 id="10-terminal-green">10. Terminal Green<a class="headerlink" href="#10-terminal-green" title="Permanent link">&para;</a></h3>
+<p><strong>Vibe:</strong> Developer-focused, hacker aesthetic</p>
+<p><strong>Typography:</strong> <code>JetBrains Mono</code> (monospace only)</p>
+<p><strong>Colors:</strong> GitHub dark (#0d1117), terminal green (#39d353)</p>
+<p><strong>Signature:</strong> Scan lines, blinking cursor, code syntax styling</p>
+<hr />
+<h3 id="11-swiss-modern">11. Swiss Modern<a class="headerlink" href="#11-swiss-modern" title="Permanent link">&para;</a></h3>
+<p><strong>Vibe:</strong> Clean, precise, Bauhaus-inspired</p>
+<p><strong>Typography:</strong> <code>Archivo</code> (800) + <code>Nunito</code> (400)</p>
+<p><strong>Colors:</strong> Pure white, pure black, red accent (#ff3300)</p>
+<p><strong>Signature:</strong> Visible grid, asymmetric layouts, geometric shapes</p>
+<hr />
+<h3 id="12-paper-ink">12. Paper &amp; Ink<a class="headerlink" href="#12-paper-ink" title="Permanent link">&para;</a></h3>
+<p><strong>Vibe:</strong> Editorial, literary, thoughtful</p>
+<p><strong>Typography:</strong> <code>Cormorant Garamond</code> + <code>Source Serif 4</code></p>
+<p><strong>Colors:</strong> Warm cream (#faf9f7), charcoal (#1a1a1a), crimson accent (#c41e3a)</p>
+<p><strong>Signature:</strong> Drop caps, pull quotes, elegant horizontal rules</p>
+<hr />
+<h2 id="font-pairing-quick-reference">Font Pairing Quick Reference<a class="headerlink" href="#font-pairing-quick-reference" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Preset</th>
+<th>Display Font</th>
+<th>Body Font</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bold Signal</td>
+<td>Archivo Black</td>
+<td>Space Grotesk</td>
+<td>Google</td>
+</tr>
+<tr>
+<td>Electric Studio</td>
+<td>Manrope</td>
+<td>Manrope</td>
+<td>Google</td>
+</tr>
+<tr>
+<td>Creative Voltage</td>
+<td>Syne</td>
+<td>Space Mono</td>
+<td>Google</td>
+</tr>
+<tr>
+<td>Dark Botanical</td>
+<td>Cormorant</td>
+<td>IBM Plex Sans</td>
+<td>Google</td>
+</tr>
+<tr>
+<td>Notebook Tabs</td>
+<td>Bodoni Moda</td>
+<td>DM Sans</td>
+<td>Google</td>
+</tr>
+<tr>
+<td>Pastel Geometry</td>
+<td>Plus Jakarta Sans</td>
+<td>Plus Jakarta Sans</td>
+<td>Google</td>
+</tr>
+<tr>
+<td>Split Pastel</td>
+<td>Outfit</td>
+<td>Outfit</td>
+<td>Google</td>
+</tr>
+<tr>
+<td>Vintage Editorial</td>
+<td>Fraunces</td>
+<td>Work Sans</td>
+<td>Google</td>
+</tr>
+<tr>
+<td>Neon Cyber</td>
+<td>Clash Display</td>
+<td>Satoshi</td>
+<td>Fontshare</td>
+</tr>
+<tr>
+<td>Terminal Green</td>
+<td>JetBrains Mono</td>
+<td>JetBrains Mono</td>
+<td>JetBrains</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="do-not-use-generic-ai-patterns">DO NOT USE (Generic AI Patterns)<a class="headerlink" href="#do-not-use-generic-ai-patterns" title="Permanent link">&para;</a></h2>
+<p><strong>Fonts:</strong> Inter, Roboto, Arial, system fonts as display</p>
+<p><strong>Colors:</strong> <code>#6366f1</code> (generic indigo), purple gradients on white</p>
+<p><strong>Layouts:</strong> Everything centered, generic hero sections, identical card grids</p>
+<p><strong>Decorations:</strong> Realistic illustrations, gratuitous glassmorphism, drop shadows without purpose</p>
+<hr />
+<h2 id="css-gotchas-common-mistakes">CSS Gotchas (Common Mistakes)<a class="headerlink" href="#css-gotchas-common-mistakes" title="Permanent link">&para;</a></h2>
+<h3 id="negating-css-functions">Negating CSS Functions<a class="headerlink" href="#negating-css-functions" title="Permanent link">&para;</a></h3>
+<p><strong>WRONG — silently ignored by browsers:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="nt">right</span><span class="o">:</span><span class="w"> </span><span class="nt">-clamp</span><span class="o">(</span><span class="nt">28px</span><span class="o">,</span><span class="w"> </span><span class="nt">3</span><span class="p">.</span><span class="nc">5vw</span><span class="o">,</span><span class="w"> </span><span class="nt">44px</span><span class="o">);</span><span class="w">   </span><span class="c">/* ❌ Invalid! Browser ignores this */</span>
+<span class="nt">margin-left</span><span class="o">:</span><span class="w"> </span><span class="nt">-min</span><span class="o">(</span><span class="nt">10vw</span><span class="o">,</span><span class="w"> </span><span class="nt">100px</span><span class="o">);</span><span class="w">      </span><span class="c">/* ❌ Invalid! */</span>
+<span class="nt">top</span><span class="o">:</span><span class="w"> </span><span class="nt">-max</span><span class="o">(</span><span class="nt">2rem</span><span class="o">,</span><span class="w"> </span><span class="nt">4vh</span><span class="o">);</span><span class="w">                </span><span class="c">/* ❌ Invalid! */</span>
+</code></pre></div>
+
+<p><strong>CORRECT — wrap in <code>calc()</code>:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="nt">right</span><span class="o">:</span><span class="w"> </span><span class="nt">calc</span><span class="o">(</span><span class="nt">-1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nt">clamp</span><span class="o">(</span><span class="nt">28px</span><span class="o">,</span><span class="w"> </span><span class="nt">3</span><span class="p">.</span><span class="nc">5vw</span><span class="o">,</span><span class="w"> </span><span class="nt">44px</span><span class="o">));</span><span class="w">  </span><span class="c">/* ✅ */</span>
+<span class="nt">margin-left</span><span class="o">:</span><span class="w"> </span><span class="nt">calc</span><span class="o">(</span><span class="nt">-1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nt">min</span><span class="o">(</span><span class="nt">10vw</span><span class="o">,</span><span class="w"> </span><span class="nt">100px</span><span class="o">));</span><span class="w">     </span><span class="c">/* ✅ */</span>
+<span class="nt">top</span><span class="o">:</span><span class="w"> </span><span class="nt">calc</span><span class="o">(</span><span class="nt">-1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nt">max</span><span class="o">(</span><span class="nt">2rem</span><span class="o">,</span><span class="w"> </span><span class="nt">4vh</span><span class="o">));</span><span class="w">               </span><span class="c">/* ✅ */</span>
+</code></pre></div>
+
+<p>CSS does not allow a leading <code>-</code> before function names like <code>clamp()</code>, <code>min()</code>, <code>max()</code>. The browser silently discards the entire declaration, causing the property to fall back to its initial/inherited value. This is especially dangerous because there is no console error — the element simply appears in the wrong position.</p>
+<p><strong>Rule: Always use <code>calc(-1 * ...)</code> to negate CSS function values.</strong></p>
+<hr />
+<h2 id="troubleshooting-viewport-issues">Troubleshooting Viewport Issues<a class="headerlink" href="#troubleshooting-viewport-issues" title="Permanent link">&para;</a></h2>
+<h3 id="content-overflows-the-slide">Content Overflows the Slide<a class="headerlink" href="#content-overflows-the-slide" title="Permanent link">&para;</a></h3>
+<p><strong>Symptoms:</strong> Scrollbar appears, content cut off, elements outside viewport</p>
+<p><strong>Solutions:</strong>
+1. Check slide has <code>overflow: hidden</code> (not <code>overflow: auto</code> or <code>visible</code>)
+2. Reduce content — split into multiple slides
+3. Ensure all fonts use <code>clamp()</code> not fixed <code>px</code> or <code>rem</code>
+4. Add/fix height breakpoints for smaller screens
+5. Check images have <code>max-height: min(50vh, 400px)</code></p>
+<h3 id="text-too-small-on-mobile-too-large-on-desktop">Text Too Small on Mobile / Too Large on Desktop<a class="headerlink" href="#text-too-small-on-mobile-too-large-on-desktop" title="Permanent link">&para;</a></h3>
+<p><strong>Symptoms:</strong> Unreadable text on phones, oversized text on big screens</p>
+<p><strong>Solutions:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="c">/* Use clamp with viewport-relative middle value */</span>
+<span class="nt">font-size</span><span class="o">:</span><span class="w"> </span><span class="nt">clamp</span><span class="o">(</span><span class="nt">1rem</span><span class="o">,</span><span class="w"> </span><span class="nt">3vw</span><span class="o">,</span><span class="w"> </span><span class="nt">2</span><span class="p">.</span><span class="nc">5rem</span><span class="o">);</span>
+<span class="c">/*              ↑       ↑      ↑</span>
+<span class="c">            minimum  scales  maximum */</span>
+</code></pre></div>
+
+<h3 id="content-doesnt-fill-short-screens">Content Doesn't Fill Short Screens<a class="headerlink" href="#content-doesnt-fill-short-screens" title="Permanent link">&para;</a></h3>
+<p><strong>Symptoms:</strong> Excessive whitespace on landscape phones or short browser windows</p>
+<p><strong>Solutions:</strong>
+1. Add <code>@media (max-height: 600px)</code> and <code>(max-height: 500px)</code> breakpoints
+2. Reduce padding at smaller heights
+3. Hide decorative elements (<code>display: none</code>)
+4. Consider hiding nav dots and hints on short screens</p>
+<h3 id="testing-recommendations">Testing Recommendations<a class="headerlink" href="#testing-recommendations" title="Permanent link">&para;</a></h3>
+<p>Test at these viewport sizes:
+- <strong>Desktop:</strong> 1920×1080, 1440×900, 1280×720
+- <strong>Tablet:</strong> 1024×768 (landscape), 768×1024 (portrait)
+- <strong>Mobile:</strong> 375×667 (iPhone SE), 414×896 (iPhone 11)
+- <strong>Landscape phone:</strong> 667×375, 896×414</p>
+<p>Use browser DevTools responsive mode to quickly test multiple sizes.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "toc.integrate"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
