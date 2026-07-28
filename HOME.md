@@ -59,9 +59,15 @@ LIMIT 10
              │                 │                   │
              ▼                 ▼                   ▼
      ┌────────────────┐ ┌────────────────┐ ┌─────────────────┐
-     │ 🔧 Hardware/   │ │ 💻 Dev/        │ │ 📋 项目          │
-     │ CAD·PCB·8051    │ │ Python·Web·系统 │ │   当前项目状态    │
-     └────────────────┘ └────────────────┘ └─────────────────┘
+     │ 🔧 Hardware/   │ │ 💻 Dev/        │ │ 🏠 Productivity/│
+     │ CAD·PCB·8051    │ │ Python·Web·系统 │ │  效率·工具       │
+     └────────────────┘ └────────────────┘ └────────┬────────┘
+                                                     │
+                                                     ▼
+                                             ┌─────────────────┐
+                                             │ 🤖 Hermes/      │
+                                             │  Agent 自举·进化  │
+                                             └─────────────────┘
 ```
 
 ---
@@ -98,6 +104,12 @@ Obsidian 笔记系统、效率插件
 - **包含**: obsidian-tips · [[knowledge/Productivity/token-usage-report-20260727|Token 使用报告]] · [[knowledge/Productivity/ai-blogger-10round-research|AI博主10轮研究]]
 - **关联**: → 全部域（元知识）· arXiv 研究 → [[minevalicoder-2607.22471|MineValiCoder]] · [[skill-self-play-2607.22529|Skill Self-Play]]
 
+### 🤖 [[skills/hermes/hermes-workflow-preferences|Hermes]] — Agent 自身进化
+Hermes 工作流优化、Cron 自动化、交互规则沉淀（自举域）
+- **包含**: hermes-workflow-preferences · hermes-automation-patterns · daily-knowledge-absorption-gate
+- **关联**: → 全部域（Agent 方法论）· Productivity（效率工具）
+
+
 ---
 
 ## 🔥 交叉领域
@@ -108,6 +120,7 @@ Obsidian 笔记系统、效率插件
 | **学术PPT** | Design + Academic | 论文答辩、学术汇报 |
 | **嵌入式开发** | Hardware + Dev | 单片机+PCB+编程 |
 | **Skill 编排** | AI + 全部 | Pipeline 化、并行、渐进式加载 |
+| **Agent 自举** | Hermes + Productivity | 用 Hermes 改进 Hermes 自身
 
 ---
 
