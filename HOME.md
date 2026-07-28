@@ -153,19 +153,19 @@ HOME.md ──→ 每个知识域（6域）
      └──→ hermes-session      会话记录
 ```
 
-| 入口 | 位置 | 说明 |
-|:-----|:-----|:------|
-| 📊 **工作流** | [[pipelines/pipeline-overview|pipelines/]] | 论文·PPT·Skill 触发工作流 |
-| 📈 **项目** | [[projects/current]] | 当前项目状态与进度 |
-| 📝 **模板** | [[templates/每日笔记模板|templates/]] | 每日笔记/通用笔记模板 |
-| 📓 **通用模板** | [[通用笔记模板]] | 通用笔记结构参考 |
-| 🧪 **边界测试** | [[light-skills-boundary-test]] | Light Skills 4 情形边界测试报告 |
-| 🗂️ **方法论模板** | [[minimal-methodology-guide]] · [[research-cron-templates]] | 方法论 + 科研 cron 模板 |
-| 🧠 **学习** | [[.learnings/LEARNINGS]] | 架构决策 + 最佳实践 |
-| ❌ **错误** | [[.learnings/ERRORS]] | 踩坑记录与修复方案 |
-| 🗺️ **知识图谱** | [[knowledge/knowledge-map]] | vault 全局知识图谱 |
-| 🔀 **交叉域** | [[knowledge/Cross-Domain]] | 跨域自动索引 |
-| 📝 **缓冲** | [[memory/working-buffer]] | 临时工作笔记 |
+| 入口            | 位置                                                          | 说明                      |                    |
+| :------------ | :---------------------------------------------------------- | :---------------------- | ------------------ |
+| 📊 **工作流**    | [[pipelines/pipeline-overview                               | pipelines/]]            | 论文·PPT·Skill 触发工作流 |
+| 📈 **项目**     | [[projects/current]]                                        | 当前项目状态与进度               |                    |
+| 📝 **模板**     | [[templates/每日笔记模板                                          | templates/]]            | 每日笔记/通用笔记模板        |
+| 📓 **通用模板**   | [[通用笔记模板]]                                                  | 通用笔记结构参考                |                    |
+| 🧪 **边界测试**   | [[light-skills-boundary-test]]                              | Light Skills 4 情形边界测试报告 |                    |
+| 🗂️ **方法论模板** | [[minimal-methodology-guide]] · [[research-cron-templates]] | 方法论 + 科研 cron 模板        |                    |
+| 🧠 **学习**     | [[.learnings/LEARNINGS]]                                    | 架构决策 + 最佳实践             |                    |
+| ❌ **错误**      | [[.learnings/ERRORS]]                                       | 踩坑记录与修复方案               |                    |
+| 🗺️ **知识图谱**  | [[knowledge/knowledge-map]]                                 | vault 全局知识图谱            |                    |
+| 🔀 **交叉域**    | [[knowledge/Cross-Domain]]                                  | 跨域自动索引                  |                    |
+| 📝 **缓冲**     | [[memory/working-buffer]]                                   | 临时工作笔记                  |                    |
 
 ---
 
