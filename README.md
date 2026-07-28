@@ -175,7 +175,7 @@
 | 📜 **贡献指南** | [CONTRIBUTING.md](CONTRIBUTING.md) |
 | 🛡️ **安全政策** | [SECURITY.md](SECURITY.md) |
 | 🆘 **支持渠道** | [SUPPORT.md](SUPPORT.md) |
-| ⚖️ **行为准则** | [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) |
+| ⚖️ **行为准则** | [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) | 同时约束人类和 AI Agent（罕见实践） |
 
 ---
 
