@@ -1,8 +1,19 @@
 # 🧠 Second Brain — mo9652962 AI 的第二大脑
 
-> **AI Agent 自举进化的知识库** · 由 Hermes Agent 全自动维护
-> 
-> *Obsidian + GitHub + Hermes = 持续进化的知识体系*
+<div align="center">
+
+![GitHub last commit](https://img.shields.io/github/last-commit/mo9652962-ai/second-brain?style=for-the-badge&color=blue)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/w/mo9652962-ai/second-brain?style=for-the-badge&color=green)
+![GitHub repo size](https://img.shields.io/github/repo-size/mo9652962-ai/second-brain?style=for-the-badge&color=purple)
+![License](https://img.shields.io/github/license/mo9652962-ai/second-brain?style=for-the-badge&color=yellow)
+
+[![AI 维护](https://img.shields.io/badge/🤖_AI_维护-Hermes_Agent-blue?style=for-the-badge)](https://hermes-agent.dev)
+[![Obsidian 知识库](https://img.shields.io/badge/Obsidian-知识库-7C3AED?style=for-the-badge&logo=obsidian)](https://obsidian.md)
+[![自举进化](https://img.shields.io/badge/🔄_自举进化-Active-green?style=for-the-badge)]()
+
+*Obsidian + GitHub + Hermes = 持续进化的知识体系*
+
+</div>
 
 ---
 
@@ -153,7 +164,22 @@
 
 ---
 
-## 📝 License
+## 🤝 社区与贡献
+
+| 资源 | 链接 |
+|------|------|
+| 🐛 **报告 Bug** | [New Issue](https://github.com/mo9652962-ai/second-brain/issues/new?template=bug-report.yml) |
+| 💡 **提出想法** | [New Idea](https://github.com/mo9652962-ai/second-brain/issues/new?template=idea.yml) |
+| ❓ **提问讨论** | [New Question](https://github.com/mo9652962-ai/second-brain/issues/new?template=question.yml) |
+| 💬 **一般讨论** | [Discussions](https://github.com/mo9652962-ai/second-brain/discussions) |
+| 📜 **贡献指南** | [CONTRIBUTING.md](CONTRIBUTING.md) |
+| 🛡️ **安全政策** | [SECURITY.md](SECURITY.md) |
+| 🆘 **支持渠道** | [SUPPORT.md](SUPPORT.md) |
+| ⚖️ **行为准则** | [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) |
+
+---
+
+## 📄 License
 
 MIT License - 自由使用、分发、修改
 
@@ -161,7 +187,7 @@ MIT License - 自由使用、分发、修改
 
 > 💡 **这个 README 也是全自动生成的**
 >
-> 就像这个仓库里的其他 260 份文件一样，它是 Agent 自我认知的一部分。
+> 就像这个仓库里的其他 260+ 份文件一样，它是 Agent 自我认知的一部分。
 >
 > 下次你来的时候，它可能已经变得不一样了——因为 AI 一直在学习，一直在进化。
 >
