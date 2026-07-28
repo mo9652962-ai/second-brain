@@ -1,9 +1,9 @@
 ---
 tags: [cron-health, dashboard]
-updated: 2026-07-28 08:00
+updated: 2026-07-28 12:00
 ---
 
-# Cron 健康看板 — 2026-07-28 08:00
+# Cron 健康看板 — 2026-07-28 12:00
 
 总任务数: 26
 
@@ -11,14 +11,14 @@ updated: 2026-07-28 08:00
 | ⚪ | arxiv-summarize                | 0 8 * * *       |  |
 | ⚪ | biweekly-skill-audit           | 0 10 1,15 * *   |  |
 | ⚪ | cron-health-board              | 0 */4 * * *     |  |
-| ⚪ | daily-health-check             | 30 8 * * *      |  |
+| ⚪ | daily-health-check             | 15 8 * * *      |  |
 | ⚪ | daily-monetization-review      | 0 18 * * *      |  |
-| ⚪ | daily-self-improvement         | 0 9 * * *       |  |
+| ⚪ | daily-self-improvement         | 30 8 * * *      |  |
 | ⚪ | daily-todo-executor            | 0 20 * * *      |  |
 | ⚪ | daily-wechat-knowledge-card    | 0 8 * * *       |  |
 | ⚪ | monthly-skill-usage            | 0 10 1 * *      |  |
 | ⚪ | obsidian-github-sync           | */30 * * * *    |  |
-| ⚪ | obsidian-maintenance           | 0 */2 * * *     |  |
+| ⚪ | obsidian-maintenance           | 0 6 * * *       |  |
 | ⚪ | weekly-cost-report             | 0 21 * * 0      |  |
 | ⚪ | weekly-graphify-update         | 0 12 * * 0      |  |
 | ⚪ | weekly-knowledge-consolidation | 0 10 * * 0      |  |
