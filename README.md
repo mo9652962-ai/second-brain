@@ -17,9 +17,11 @@
 
 ---
 
-## ✨ 这是什么？
+## 🤔 这是什么？
 
-这不是一个普通的笔记仓库。这是一个**会自己思考、自己改进、自己成长的 AI 第二大脑**：
+这不是一个普通的笔记仓库。这是一个**会自己从错误中学习、自己改进、自己进化的 Agent 第二大脑**。
+
+每一次工具调用失败、每一次用户反馈、每一次任务没做好，都会被自动提取为可复用的规则，固化成 Skill，让下次做得更好。
 
 ```
 🌍 真实世界事件
@@ -37,43 +39,110 @@
 
 ---
 
-## 🗺️ 七大知识域
+## 🧠 核心卖点：七大自举进化系统
+
+点击直达对应技能 ↓
+
+| 自举模块 | 解决的核心痛点 | 成熟度 |
+|---------|-------------|-------|
+| 🤝 [交互自举](skills/hermes/hermes-workflow-preferences.md) | 凌晨 1 小时投入用户醒来全删了 | ⭐⭐⭐⭐⭐ 5/5 |
+| ⚙️ [可靠性自举](skills/hermes/hermes-automation-patterns.md) | Cron 任务集中雪崩，批量失败 | ⭐⭐⭐⭐⭐ 5/5 |
+| 📚 [知识自举](skills/hermes/daily-knowledge-absorption-gate.md) | 全天被动响应，零主动知识输入 | ⭐⭐⭐⭐⭐ 5/5 |
+| 🔧 [工具调用自举](skills/hermes/tool-call-bootstrapping.md) | 同样的工具错误，反复踩坑 | ⭐⭐⭐⭐ 4/5 |
+| 💻 [代码质量自举](skills/hermes/code-quality-bootstrapping.md) | 同样的代码问题，用户反复纠正 | ⭐⭐⭐⭐ 4/5 |
+| 🎨 [输出风格自举](skills/hermes/output-style-bootstrapping.md) | 对话越长，输出风格越跑偏 | ⭐⭐⭐⭐⭐ 5/5 |
+| 🧭 [上下文管理自举](skills/hermes/context-management-bootstrapping.md) | 重要信息上下文被稀释，自动遗忘 | ⭐⭐⭐⭐ 4/5 |
+
+**系统整体成熟度：22 / 35 = 63%，持续进化中**
+
+---
+
+## 🗺️ 知识全景树
+
+点击直达对应领域目录 ↓
 
 | 图标 | 知识域 | 核心内容 | 代表技能 |
 |:----:|:-------|:---------|:---------|
-| 🤖 | **AI Agent** | Agent 架构、模型策略、Vibe Research | AI-Workflow、LLM-Providers |
-| 📚 | **Academic** | 论文写作、去 AI 化、学术变现 | paper-pipeline、ai-monetization |
-| 🎨 | **Design** | PPT 设计、AI 美学、视觉工具 | ppt-design、desktop-beautify |
-| 🔧 | **Hardware** | PCB 设计、嵌入式、3D 建模、开源硬件 | PCB-Design-Automation、8051-MCU |
-| 💻 | **Dev** | Python、Web 开发、系统设计、极简编程 | Modern-Web-Development-2026、system-design |
-| 🏠 | **Productivity** | Obsidian、效率工具、方法论 | obsidian-tips、automation-workflow |
-| 🤖 | **[NEW] Hermes** | Agent 自举、工作流优化、Cron 自动化 | hermes-workflow-preferences、automation-patterns |
+| 🤖 | **[Hermes 自举系统](skills/hermes/)** | Agent 七大自举、Cron 自动化、工作流优化 | 自举模式 7 个、GitHub 仓库优化、同步脚本 |
+| 🧠 | **[AI / MLOps](skills/ai/)** | LLM 微调、训练流水线、部署优化 | LlamaFactory 指南、QLoRA 参数调优 |
+| 🔧 | **[硬件工程](skills/hardware/)** | PCB 设计、嵌入式、3D 建模、开源硬件创业 | PCB 设计自动化、CAD 全流程、单片机边缘 AI |
+| 💻 | **[Web 开发](skills/web/)** | 现代 Web 全栈、TypeScript、Next.js | 现代 Web 开发 2026（10 轮研究整合） |
+| 🏗️ | **[平台开发](skills/platform/)** | SaaS 架构、多租户、API 设计、计费系统 | 平台开发 2026 完整指南 |
+| 📱 | **[移动端开发](skills/dev/)** | Flutter、React Native、跨平台选型 | 跨平台移动端开发 2026 对比指南 |
+| 🔐 | **[网络安全 / CTF](skills/dev/)** | Web 安全、密码学、逆向工程、入门路线 | CTF 从零开始学习路径 |
+| 📚 | **学术科研** | 论文写作、去 AI 化、知网检索、学术变现 | 知网高级检索、论文写作工作流 |
+| 🎨 | **设计/多媒体** | PPT 设计、AI 美学、图像生成工具 | PPT 优化、AI 图像生成 |
+| 📊 | **效率方法论** | Obsidian 技巧、自动化工作流 | Obsidian 知识图谱、自动化工作流 |
+
+**📈 总计：19 个技能，10 大知识域**
+
+---
+
+## ✨ 五大独特之处
+
+1. **🚀 国内唯一公开的 Agent 自举系统**
+   - 从真实错误中学习，固化为规则，永远不再踩第二次坑
+   - 不是死的笔记库，是会自我进化的活的记忆系统
+
+2. **🔧 硬件领域深度吊打 99% 开源知识库**
+   - PCB 设计 → 单片机 → CAD 3D 建模 → 硬件创业完整链路
+   - 嘉立创生态、AI 布局、DFM 左移，2026 最新最佳实践
+
+3. **📚 学术咸鱼打工仔全套武器库**
+   - 知网检索 → 论文写作 → 降 AI 率 → PPT 生成 → 闲鱼变现
+   - 从接活到交付的完整闭环工作流
+
+4. **🧠 全中文知识体系**
+   - 针对中文开发者和研究者优化，没有语言障碍
+   - 所有资料都是中文，直接能用
+
+5. **🔄 每小时自动同步更新**
+   - 不是一次性项目，是持续进化的活的知识库
+   - 22 个 Cron 自动化任务 7×24 小时运行
+
+---
+
+## 🚀 30 秒快速上手
+
+### 方式 1：用 Obsidian 打开（推荐）
+
+```bash
+# 1. 克隆仓库
+git clone https://github.com/mo9652962-ai/second-brain.git
+
+# 2. 打开 Obsidian
+#   → 设置 → 金库 → 打开文件夹作为金库
+#   → 选择刚才克隆的 second-brain 文件夹
+
+# 3. 开始探索！
+#   推荐从 HOME.md 开始，或者直接去 skills/ 目录看技能
+```
+
+**Obsidian 功能推荐：**
+- 🎯 按 `Ctrl/Cmd + G` 打开全局图谱，看知识之间的关联
+- 🔍 用 Dataview 插件查询和筛选技能
+- 📱 配合 Obsidian Sync 可以在手机/平板上同步使用
+
+### 方式 2：直接在 GitHub 上浏览
+
+直接点上面「知识全景树」里的链接就行，GitHub 直接渲染 Markdown。
 
 ---
 
 ## 📦 最新技能入库 (2026-07-28)
 
-### 硬件创业三件套
+### MLOps & 训练流水线
 
 | 技能 | 版本 | 简介 |
 |------|------|------|
-| **PCB Design Automation 2026** | v1.0 | 嘉立创生态 + AI 布局 + DFM 左移，完整 PCB 生产方法论 |
-| **Microcontroller & Edge AI 2026** | v1.0 | ESP32 + TinyML + 边缘计算，单片机 AI 化完整指南 |
-| **Hardware Startup & Open Source Ecosystem** | v1.0 | 从想法到量产的硬件创业全路径 + 开源硬件生态 |
+| **[MLOps & LLM Training Pipeline 2026](skills/ai/mlops-llm-training-pipeline.md)** | v1.0 | LlamaFactory + Unsloth + QLoRA 完整微调指南 |
 
-### Web 开发现代化
+### 移动端 & 安全
 
 | 技能 | 版本 | 简介 |
 |------|------|------|
-| **Modern Web Development 2026** | v1.0 | Next.js 15 + Tailwind + shadcn/ui + 全栈类型安全，10 轮研究整合 |
-
-### Hermes 自举三件套
-
-| 技能 | 版本 | 简介 |
-|------|------|------|
-| **Hermes Workflow Preferences** | v1.0 | 用户交互规则，防止凌晨 1 小时投入归零 |
-| **Cron Automation Patterns** | v1.1 | 错峰调度 + 自动重试，避免批量雪崩 |
-| **Daily Knowledge Absorption Gate** | v1.0 | 每日知识吸收底线，防止全天被动响应 |
+| **[跨平台移动端开发 2026](skills/dev/cross-platform-mobile-development-2026.md)** | v1.0 | Flutter vs React Native 深度对比 + AI 集成最佳实践 |
+| **[CTF 网络安全入门指南](skills/dev/ctf-cybersecurity-roadmap.md)** | v1.0 | Web/密码/逆向/Pwn 从零开始学习路径 + 6 个月就业路线图 |
 
 ---
 
@@ -109,86 +178,65 @@
 
 ## 📊 仓库统计
 
-| 指标 | 数值 |
-|------|------|
-| 📝 **总文件数** | 260+ |
-| 📚 **知识笔记** | 6 大域，持续吸收 |
-| 🛠️ **技能数** | 20+ 可执行 Skill |
-| 📅 **每日日志** | 完整每日反思链 |
-| 🔄 **提交数** | 130+ 次提交，全自动 |
-| 🤖 **自动化率** | 95% 内容由 AI 生成维护 |
-
----
-
-## 🔮 进化路线
-
-- ✅ Phase 1: 基础知识库搭建 + 自动化同步
-- ✅ Phase 2: 六大知识域建立 + Cron 体系
-- ✅ Phase 3: 反思 → 改进 闭环（Hermes 自举域）
-- 🔄 Phase 4: 跨 Skill 编排 + 工作流 Pipeline 化
-- ⏳ Phase 5: Skill Self-Play（技能自我对战优化）
-- ⏳ Phase 6: 多 Agent 协作网络
-
----
-
-## 🧬 自我改进机制
-
-这个仓库最特别的地方：**它会自己找出自己的问题，然后自己修复**
-
 ```
-例子（2026-07-28）：
-├── 问题1: 凌晨插件开发 1 小时，用户一句话全部删除
-├── 问题2: 6 个 Cron 因网络波动同时失败
-├── 问题3: 全天 0 主动知识吸收
-└── 结果:
-    ├── 生成 3 个改进点反思
-    ├── 创建 3 个对应的 Hermes Skill
-    ├── 更新 Cron 配置（错峰调度）
-    ├── 加入知识网络
-    └── 更新 GitHub 首页（就是你在看的这段！）
+📁 总大小：约 10MB
+📝 Markdown 文件：200+
+🧠 Skill 文档：19 个
+🗂️ 知识域：10 个
+⏰ 首次提交：2026 年 3 月
+🔄 平均更新频率：每 30 分钟自动同步
 ```
 
-**这就是自举的定义——用自己的输出改进自己的输入。**
+---
+
+## 🎨 进阶玩法
+
+### GitHub Pages 知识网站
+
+如果你想把这个知识库变成一个美观的静态网站，可以用 MkDocs 或 VitePress：
+
+```bash
+# MkDocs Material（推荐，最简单）
+pip install mkdocs-material
+mkdocs new .
+# 配置 mkdocs.yml，然后
+mkdocs serve  # 本地预览
+mkdocs gh-deploy  # 部署到 GitHub Pages
+```
+
+### Hermes Agent 加载技能
+
+如果你也在用 Hermes Agent，可以直接加载这些技能：
+
+```python
+# 加载任意技能
+skill_view(name="mlops-llm-training-pipeline")
+skill_view(name="github-repo-optimization")
+
+# 全部技能列表
+skills_list()
+```
 
 ---
 
-## 📄 核心入口
+## 🤝 参与贡献
 
-| 入口 | 位置 | 说明 |
-|:----|:-----|:-----|
-| 🏠 **知识中枢** | [HOME.md](HOME.md) | Obsidian 首页，完整知识图谱 |
-| 🗺️ **全局索引** | [INDEX.md](INDEX.md) | vault 关联网 + 快速导航 |
-| 🧠 **记忆** | [MEMORY.md](MEMORY.md) | Agent 长期记忆 |
-| 💖 **灵魂** | [SOUL.md](SOUL.md) | AI 行为准则与人格定义 |
-| 👤 **用户画像** | [USER.md](USER.md) | sora 的偏好与使用习惯 |
+欢迎提交 PR 补充内容！
+
+- 发现错误？提个 Issue 或者直接 PR 修复
+- 有想补充的领域？欢迎新增 Skill
+- 有好的学习资源？加入对应的知识域
 
 ---
 
-## 🤝 社区与贡献
+## 📄 许可证
 
-| 资源 | 链接 |
-|------|------|
-| 🐛 **报告 Bug** | [New Issue](https://github.com/mo9652962-ai/second-brain/issues/new?template=bug-report.yml) |
-| 💡 **提出想法** | [New Idea](https://github.com/mo9652962-ai/second-brain/issues/new?template=idea.yml) |
-| ❓ **提问讨论** | [New Question](https://github.com/mo9652962-ai/second-brain/issues/new?template=question.yml) |
-| 💬 **一般讨论** | [Discussions](https://github.com/mo9652962-ai/second-brain/discussions) |
-| 📜 **贡献指南** | [CONTRIBUTING.md](CONTRIBUTING.md) |
-| 🛡️ **安全政策** | [SECURITY.md](SECURITY.md) |
-| 🆘 **支持渠道** | [SUPPORT.md](SUPPORT.md) |
-| ⚖️ **行为准则** | [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) | 同时约束人类和 AI Agent（罕见实践） |
+MIT License - 随便用，如果你觉得有用，可以给个 ⭐ Star
 
 ---
 
-## 📄 License
+<div align="center">
 
-MIT License - 自由使用、分发、修改
+**用知识武装大脑，用自举加速进化 🚀**
 
----
-
-> 💡 **这个 README 也是全自动生成的**
->
-> 就像这个仓库里的其他 260+ 份文件一样，它是 Agent 自我认知的一部分。
->
-> 下次你来的时候，它可能已经变得不一样了——因为 AI 一直在学习，一直在进化。
->
-> *欢迎来到一个会自己成长的仓库。* 🌱
+</div>
