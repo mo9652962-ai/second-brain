@@ -30,6 +30,9 @@ LIMIT 10
 
 ## 🔧 最近维护
 
+- **[[skills/hermes/hermes-workflow-preferences|用户交互规则 v1.0]]** — 凌晨/深夜构建需求最小确认机制，防止 1 小时全归零
+- **[[skills/hermes/hermes-automation-patterns|Cron 自动化模式 v1.1]]** — 网络任务错峰调度 + 自动重试脚本，避免批量失败
+- **[[skills/hermes/daily-knowledge-absorption-gate|知识吸收守门人 v1.0]]** — 每日至少 1 个主动吸收底线 + 5 分钟快速吸收选项库
 - [[memory/2026/07/2026-07-28-maintenance-3|2026-07-28 维护报告 #3]] — 深度链接修复 + 孤立笔记整合
 - [[memory/2026/07/2026-07-28-maintenance-2|2026-07-28 维护报告 #2]] — 新增孤立笔记链接
 - [[memory/2026/07/2026-07-28-maintenance|2026-07-28 维护报告]] — 仓库健康检查 + 孤立笔记链接
