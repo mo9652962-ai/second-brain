@@ -1322,3 +1322,71 @@ OpenClaw SkillSpector (NVIDIA 合作) + SSRF deny policy + Sandbox confinement �
 - Recurrence-Count: 1
 - First-Seen: 2026-07-27
 - Last-Seen: 2026-07-27
+---
+
+## [LRN-20260728-001] best_practice
+
+**Logged**: 2026-07-28T09:25:00+08:00
+**Priority**: medium
+**Status**: active
+**Area**: delegation
+
+### Title
+Subagent 结果收割与正确性验证
+
+### Problem Summary
+delegate_task 返回的子任务报告包含 actionable 建议，但主上下文窗口可能因 truncation 丢失部分内容。子任务声称的"文件已写入"等操作可能因路径错误而未实际生效。
+
+### Details
+1. 7/27 Ponytail 研究结果的 3 条补强建议因主上下文截断未转化为实际 skill 更新
+2. 子任务中的文件写入路径错误（knowledge/Dev/ ponytail.md vs 实际路径 knowledge/Dev/ponytail.md 小写问题）在总结阶段未被发现
+3. subagent 的"操作已执行"声明应作为待验证 claims 而非事实接受
+
+### Suggested Action
+1. 子任务返回后立即读取 subagent-summary 文件（被 truncation 部分）以捕获遗漏项
+2. 对文件写入、配置变更等有副作用的操作，用 read_file / terminal 做验证
+3. 从子任务报告中提取 action items 并添加到主会话的待办列表
+
+### Metadata
+- Source: session_search + daily-reflection cron
+- Tags: delegation, subagent, verification, file-write, review
+- Pattern-Key: workflow.subagent-verify
+- Recurrence-Count: 1
+- First-Seen: 2026-07-28
+- Last-Seen: 2026-07-28
+
+---
+
+## [LRN-20260728-002] best_practice
+
+**Logged**: 2026-07-28T09:25:00+08:00
+**Priority**: medium
+**Status**: active
+**Area**: cron
+
+### Title
+Vault 维护 cron 频率控制 — 增量检查优于全量扫描
+
+### Problem Summary
+vault-maintenance cron 在非工作时间密集触发（7/28 凌晨到早晨触发 5 次），每次运行全量诊断脚本遍历 280+ 文件，耗时 1-2 分钟。凌晨和早间的连续触发与深夜结果高度重复。
+
+### Details
+1. 7/28 凌晨 00:00 → 输出完整报告，修复 3 个孤立笔记
+2. 7/28 07:37 → 静默（无变化）
+3. 7/28 08:02 → 静默（无变化）
+4. 7/28 08:04 → 静默（无变化）
+5. 7/28 08:56 → 再次输出完整报告（因新日志产生 2 个变化）
+6. 相邻两次全量扫描之间 vault 状态几乎无变化，产生重复工作
+
+### Suggested Action
+1. vault-maintenance 降为每日 1 次（清晨 6:00-7:00）
+2. 健康检查中可包含快速文件计数检查（`find . -name '*.md' | wc -l`），仅计数变化时才触发全量诊断
+3. 或加增量逻辑：距上次全量扫描 < 6 小时则跳过，仅做快速 wikilink 连通性检查
+
+### Metadata
+- Source: session_search + daily-reflection cron
+- Tags: cron, maintenance, performance, obsidian, vault
+- Pattern-Key: cron.vault-maintenance-frequency
+- Recurrence-Count: 1
+- First-Seen: 2026-07-28
+- Last-Seen: 2026-07-28

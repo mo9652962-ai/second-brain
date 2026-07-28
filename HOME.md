@@ -30,6 +30,7 @@ LIMIT 10
 
 ## 🔧 最近维护
 
+- [[memory/2026/07/2026-07-28-maintenance-3|2026-07-28 维护报告 #3]] — 深度链接修复 + 孤立笔记整合
 - [[memory/2026/07/2026-07-28-maintenance-2|2026-07-28 维护报告 #2]] — 新增孤立笔记链接
 - [[memory/2026/07/2026-07-28-maintenance|2026-07-28 维护报告]] — 仓库健康检查 + 孤立笔记链接
 - [[memory/2026/07/2026-07-27-maintenance|2026-07-27 维护报告]] — 仓库健康检查：全部通过
@@ -66,7 +67,7 @@ LIMIT 10
 
 ### 🤖 [[knowledge/AI/AI-Agent|AI]] — Agent 核心
 AI 能力架构、Skill 编排、模型供应商策略、Vibe Research
-- **包含**: AI-Agent · AI-Workflow · LLM-Providers · vibe-research · reverse-prompting · github-projects-note
+- **包含**: AI-Agent · AI-Workflow · LLM-Providers · vibe-research · reverse-prompting · [[github-projects-note|DeepTutor 学习笔记]]
 - **关联**: → Academic → Design → Hardware
 
 ### 📚 [[knowledge/Academic/Academic|Academic]] — 学术论文与变现
@@ -92,7 +93,7 @@ Python、Web 开发、系统设计、编程教育
 ### 🏠 [[knowledge/Productivity/obsidian-tips|Productivity]] — 效率工具
 Obsidian 笔记系统、效率插件
 - **包含**: obsidian-tips · [[knowledge/Productivity/token-usage-report-20260727|Token 使用报告]] · [[knowledge/Productivity/ai-blogger-10round-research|AI博主10轮研究]]
-- **关联**: → 全部域（元知识）
+- **关联**: → 全部域（元知识）· arXiv 研究 → [[minevalicoder-2607.22471|MineValiCoder]] · [[skill-self-play-2607.22529|Skill Self-Play]]
 
 ---
 
@@ -110,7 +111,8 @@ Obsidian 笔记系统、效率插件
 ## 📋 项目与日志
 
 - **[[projects/current]]** — 所有进行中项目实时状态
-- **[[knowledge/Cross-Domain]]** — 交叉领域自动索引
+| **[[knowledge/Cross-Domain]]** — 交叉领域自动索引
+| **[[knowledge/arxiv-digest|arXiv 周报]]** — 15 篇 AI Agent/LLM 论文速览 (07-28)
 - **[[INDEX]]** — 🗺️ vault 全局关联网
 - **[[MEMORY]]** — k 的长期记忆
 - **[[memory/2026/07/2026-07-26-review|memory/2026/07]]** — 每日原始日志（按年月分层，近期回顾可见）
@@ -140,6 +142,9 @@ HOME.md ──→ 每个知识域（6域）
 | 📊 **工作流** | [[pipelines/pipeline-overview|pipelines/]] | 论文·PPT·Skill 触发工作流 |
 | 📈 **项目** | [[projects/current]] | 当前项目状态与进度 |
 | 📝 **模板** | [[templates/每日笔记模板|templates/]] | 每日笔记/通用笔记模板 |
+| 📓 **通用模板** | [[通用笔记模板]] | 通用笔记结构参考 |
+| 🧪 **边界测试** | [[light-skills-boundary-test]] | Light Skills 4 情形边界测试报告 |
+| 🗂️ **方法论模板** | [[minimal-methodology-guide]] · [[research-cron-templates]] | 方法论 + 科研 cron 模板 |
 | 🧠 **学习** | [[.learnings/LEARNINGS]] | 架构决策 + 最佳实践 |
 | ❌ **错误** | [[.learnings/ERRORS]] | 踩坑记录与修复方案 |
 | 🗺️ **知识图谱** | [[knowledge/knowledge-map]] | vault 全局知识图谱 |

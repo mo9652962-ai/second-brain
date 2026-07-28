@@ -7,9 +7,9 @@
 
 | 案例 | 领域 | 技能 | 文件 |
 |:---|:---|:---|:---|
-| 智能温控器 | 嵌入式 | 8051-embedded-dev | `stc89c52-thermostat/` |
-| 参数化齿轮箱 | CAD建模 | cad-design-master | `parametric-gearbox/` |
-| 短链系统设计 | 系统架构 | system-design-primer | `url-shortener-design/` |
+| 智能温控器 | 嵌入式 | 8051-embedded-dev | `stc89c52-thermostat/` → [[stc89c52-thermostat/README]] |
+| 参数化齿轮箱 | CAD建模 | cad-design-master | `parametric-gearbox/` → [[parametric-gearbox/README]] |
+| 短链系统设计 | 系统架构 | system-design-primer | `url-shortener-design/` → [[url-shortener-design/README]] |
 | 学术答辩PPT | 演示设计 | academic-presentation | ⚠️ 待创建 |
 
 ---
