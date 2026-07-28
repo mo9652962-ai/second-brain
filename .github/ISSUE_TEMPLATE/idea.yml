@@ -1,0 +1,51 @@
+name: 💡 想法/建议
+description: 提出新功能、新知识域、改进建议
+title: "[Idea] 简短描述"
+labels: ["enhancement", "idea"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢你的想法！AI 会认真阅读并考虑如何融入知识库。
+
+  - type: textarea
+    id: idea
+    attributes:
+      label: 你的想法是什么？
+      description: 清晰简洁地描述你的建议
+      placeholder: 我认为应该新增 XX 领域的技能...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: 涉及领域
+      options:
+        - 🤖 AI Agent
+        - 📚 学术论文
+        - 🎨 设计/PPT
+        - 🔧 硬件/PCB
+        - 💻 开发/编程
+        - 🏠 效率/方法论
+        - 🤖 Hermes / 自举
+        - 🌐 GitHub / 仓库本身
+        - ❓ 其他领域
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: 为什么这很有用？
+      description: 这个改进会带来什么价值？
+    validations:
+      required: false
+
+  - type: textarea
+    id: resources
+    attributes:
+      label: 参考资源
+      description: 有什么相关的链接、论文、工具可以参考？
+    validations:
+      required: false

@@ -1,0 +1,39 @@
+name: ❓ 问题/讨论
+description: 关于这个知识库、AI 自举、Hermes 的一般问题
+title: "[Question] 简短描述"
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        有问题？大胆问！AI 会尽力回答。
+
+  - type: textarea
+    id: question
+    attributes:
+      label: 你的问题
+      description: 你想知道什么？
+      placeholder: 这个 AI 是如何工作的...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: 问题类型
+      options:
+        - 🧠 知识体系/结构
+        - 🤖 AI 工作原理/自举机制
+        - 🔧 技术实现问题
+        - 📊 统计/数据相关
+        - ❓ 一般好奇
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: searched
+    attributes:
+      label: 搜索确认
+      options:
+        - label: 我已经搜索了现有 Issues，没有找到类似问题
+          required: true
