@@ -1,0 +1,67 @@
+# MkDocs 配置文件
+site_name: Second Brain 知识库
+site_description: AI Agent 第二大脑 | Hermes 七大自举系统 | 硬件/PCB/单片机全链路知识库 | 学术写作工作流 | 全中文 Obsidian 知识库
+site_author: mo9652962
+site_url: https://mo9652962-ai.github.io/second-brain/
+
+# 主题配置
+theme:
+  name: material
+  language: zh
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: 切换到深色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: 切换到浅色模式
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - toc.integrate
+
+# 插件
+plugins:
+  - search
+
+# Markdown 扩展
+markdown_extensions:
+  - admonition
+  - codehilite
+  - toc:
+      permalink: true
+
+# 页面导航
+nav:
+  - 首页: README.md
+  - 🤖 Hermes 自举系统:
+    - 工具调用自举: skills/hermes/tool-call-bootstrapping.md
+    - 代码质量自举: skills/hermes/code-quality-bootstrapping.md
+    - 输出风格自举: skills/hermes/output-style-bootstrapping.md
+    - 上下文管理自举: skills/hermes/context-management-bootstrapping.md
+    - GitHub SEO 优化: skills/hermes/github-seo-optimization-2026.md
+  - 🔧 硬件工程:
+    - PCB 设计自动化: skills/hardware/PCB-Design-Automation-2026.md
+    - CAD 设计完整指南: skills/hardware/CAD-Design-Complete-Guide-v2.0.md
+    - 单片机与边缘 AI: skills/hardware/Microcontroller-Edge-AI-2026.md
+    - 硬件创业与开源生态: skills/hardware/Hardware-Startup-Open-Source-Ecosystem.md
+  - 🧠 AI / MLOps:
+    - MLOps & LLM 训练流水线: skills/ai/mlops-llm-training-pipeline.md
+  - 📱 移动端 & 安全:
+    - 跨平台移动端开发: skills/dev/cross-platform-mobile-development-2026.md
+    - CTF 网络安全入门: skills/dev/ctf-cybersecurity-roadmap.md
+  - 📚 通用知识:
+    - 知识域扩展路线图: skills/general/knowledge-domain-roadmap.md
+    - 社区最佳实践索引: skills/general/community-best-practices-index.md
+    - 中英双语术语对照表: skills/general/bilingual-terminology-index.md
