@@ -1,5 +1,5 @@
 ---
-tags: [MOC, design, PPT, 视觉, UI]
+tags: [MOC, design, ppt, 视觉, UI]
 domain: Design
 created: 2026-07-28
 ---
