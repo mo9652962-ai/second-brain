@@ -177,80 +177,93 @@ class ProblemGenerator:
     # ------------------------------------------------------------------------
     # 口算题生成 (20题/天，5道一行)
     # ------------------------------------------------------------------------
-    def gen_kousuan(self, day, count=20):
-        """生成口算题，难度随天数递增"""
+    def gen_kousuan(self, day, count=15):
+        """生成口算题 - 以两位数乘法为主（第13天风格）"""
         problems = []
-        difficulty = min(3, 1 + day // 15)  # 难度1-3级
-
+        difficulty = min(3, 1 + day // 15)
+        
         for _ in range(count):
-            ptype = random.choice(["乘法", "加减", "混合"])
-
-            if ptype == "乘法":
+            # 90%是两位数乘法，10%是其他口算（确保"两位数乘法口算"名副其实）
+            if random.random() < 0.9:
                 if difficulty == 1:
-                    a = random.randint(10, 30)
+                    a = random.randint(11, 50)
                     b = random.choice([10, 20, 30, 40, 50])
                 elif difficulty == 2:
-                    a = random.randint(11, 50)
-                    b = random.choice([10, 20, 30, 40, 50, 60, 70])
+                    a = random.randint(11, 80)
+                    b = random.choice([10, 20, 30, 40, 50, 60, 70, 80])
                 else:
                     a = random.randint(11, 99)
-                    b = random.randint(2, 9)
+                    b = random.randint(11, 25)  # 简单两位数×两位数
                 problems.append(f"{a} × {b} =")
-
-            elif ptype == "加减":
-                if difficulty == 1:
-                    a = random.randint(100, 500)
-                    b = random.randint(100, 400)
-                elif difficulty == 2:
-                    a = random.randint(200, 800)
-                    b = random.randint(100, 600)
-                else:
-                    a = random.randint(500, 1500)
-                    b = random.randint(300, 1000)
+            else:
+                a = random.randint(100, 500)
+                b = random.randint(100, 400)
                 op = random.choice(["+", "-"])
                 problems.append(f"{a} {op} {b} =")
-
-            else:  # 混合简单运算
-                a = random.randint(5, 20)
-                b = random.randint(2, 9)
-                c = random.randint(10, 50)
-                problems.append(f"{a} × {b} + {c} =")
-
+        
         self.problem_count["口算"] += count
+        return problems
+    
+    def gen_fenshu_kousuan(self, day, count=10):
+        """生成分数口算题（10题）- 返回分子分母元组用于格式化"""
+        problems = []
+        for _ in range(count):
+            denominator = random.choice([10, 8, 6])
+            numerator = random.randint(denominator // 2, denominator - 1)
+            sub = random.randint(1, numerator - 1)
+            # 返回 (分子1, 分母, 分子2)
+            problems.append((numerator, denominator, sub))
+        return problems
+    
+    def gen_time_convert(self, day, count=5):
+        """生成时分秒、年月日换算填空题"""
+        problems = []
+        
+        time_templates = [
+            lambda: f"{random.randint(1, 12)}时{random.choice([0, 15, 20, 30])}分 = (    )分",
+            lambda: f"1分{random.choice([0, 10, 15, 20, 30])}秒 = (    )秒",
+            lambda: f"{random.choice([30, 60, 90, 120, 180])}分 = (    )时",
+            lambda: f"{random.choice([24, 48, 72, 96, 120])}时 = (    )日",
+            lambda: f"7、8、9月一共有(    )天",
+            lambda: f"平年上半年一共(    )天",
+            lambda: f"闰年全年有(    )天",
+            lambda: f"一年有(    )个季度",
+            lambda: f"第三季度一共有(    )天",
+            lambda: f"第二季度一共有(    )天",
+        ]
+        
+        selected = random.sample(time_templates, min(count, len(time_templates)))
+        for template in selected:
+            problems.append(template())
+        
+        self.problem_count["填空"] += count
         return problems
 
     # ------------------------------------------------------------------------
     # 竖式计算题生成 (6题/天)
     # ------------------------------------------------------------------------
-    def gen_shushi(self, day, count=6):
-        """生成竖式计算题，包含乘法和简单除法"""
+    def gen_shushi(self, day, count=10):
+        """生成竖式计算题 - 两位数乘两位数笔算（10题）"""
         problems = []
         difficulty = min(3, 1 + day // 15)
-
+        
         for i in range(count):
-            if i < 4:  # 前4题是乘法
-                if difficulty == 1:
-                    a = random.randint(12, 40)
-                    b = random.randint(11, 30)
-                elif difficulty == 2:
-                    a = random.randint(20, 60)
-                    b = random.randint(15, 50)
-                else:
-                    a = random.randint(30, 99)
-                    b = random.randint(20, 99)
-
-                # 25%概率生成末尾有0的乘法
-                if random.random() < 0.25:
-                    b = random.choice([20, 30, 40, 50, 60, 70, 80, 90])
-
-                problems.append(f"{a} × {b} =")
-            else:  # 后2题是简单除法（有余数）
-                divisor = random.randint(12, 30)
-                quotient = random.randint(3, 15)
-                remainder = random.randint(0, divisor - 1)
-                dividend = divisor * quotient + remainder
-                problems.append(f"{dividend} ÷ {divisor} =")
-
+            if difficulty == 1:
+                a = random.randint(11, 35)
+                b = random.randint(11, 25)
+            elif difficulty == 2:
+                a = random.randint(15, 50)
+                b = random.randint(11, 40)
+            else:
+                a = random.randint(20, 65)
+                b = random.randint(11, 50)
+            
+            # 30%概率生成一个是整十数
+            if random.random() < 0.3:
+                b = random.choice([10, 20, 30, 40, 50, 60])
+            
+            problems.append(f"{a} × {b} =")
+        
         self.problem_count["竖式"] += count
         return problems
 
@@ -318,21 +331,17 @@ class ProblemGenerator:
     # ------------------------------------------------------------------------
     # 应用题生成 (3题/天)
     # ------------------------------------------------------------------------
-    def gen_yingyong(self, day, count=3):
-        """生成情境化应用题，来自16大生活场景"""
-        problems = []
-        used_scenarios = random.sample(list(APPLICATION_SCENARIOS.keys()), count)
-
-        for scenario in used_scenarios:
-            template = random.choice(APPLICATION_SCENARIOS[scenario])
-            price = random.randint(15, 99)
-            num = random.randint(2, 25)
-            people = random.randint(3, 45)
-            problems.append(template.format(price=price, num=num, people=people))
-
+    def gen_yingyong(self, day, count=2):
+        """生成情境化应用题"""
+        problems = [
+            f"水龙头每天浪费{random.randint(10, 20)}千克水，{random.randint(10, 30)}天浪费多少千克水？",
+            f"一块布料平均分成{random.randint(4, 8)}份，用掉{random.randint(2, 5)}份，剩下占几分之几？",
+        ]
         self.problem_count["应用"] += count
         return problems
-
+    
+    # ------------------------------------------------------------------------
+    # 混合运算/脱式计算题目生成器
     # ------------------------------------------------------------------------
     # 复习题生成 (基于艾宾浩斯间隔)
     # ------------------------------------------------------------------------
@@ -520,29 +529,74 @@ class WordGenerator:
                 p.paragraph_format.space_after = Pt(3)
 
     def add_day_content(self, day, start_date, generator):
-        """生成一天的完整内容"""
+        """生成一天的完整内容 - 第13天灵活风格"""
         self.add_title(day, start_date)
 
-        # 口算 (20题，单段落自动换行)
-        kousuan = generator.gen_kousuan(day, 20)
-        self.add_section("一、口算（直接写出得数）", kousuan, single_paragraph=True)
+        # 1. 两位数乘法口算 (15题，单段落自动换行)
+        kousuan = generator.gen_kousuan(day, 15)
+        self.add_section("一、两位数乘法口算", kousuan, single_paragraph=True)
 
-        # 竖式计算 (6题，单列)
-        shushi = generator.gen_shushi(day, 6)
-        self.add_section("二、竖式计算", shushi, cols_per_line=1)
-        for _ in range(3):
-            self.doc.add_paragraph(" ")
+        # 2. 两位数乘两位数笔算 (10题)
+        shushi = generator.gen_shushi(day, 10)
+        self.add_section("二、两位数乘两位数笔算", shushi, cols_per_line=1)
 
-        # 脱式计算 (4题，单列)
-        tuoshi = generator.gen_tuoshi(day, 4)
-        self.add_section("三、脱式计算（注意运算顺序）", tuoshi, cols_per_line=1)
+        # 3. 分数口算 (10题，三行竖式格式 - 两列超紧凑排列)
+        fenshu = generator.gen_fenshu_kousuan(day, 10)
+        
+        # 添加标题
+        p_title = self.doc.add_paragraph("三、分数口算")
+        p_title.runs[0].font.size = Pt(10.5) if p_title.runs else None
+        p_title.paragraph_format.space_before = Pt(2)
+        p_title.paragraph_format.space_after = Pt(1)
+        
+        # 分成两列，每列5题，超紧凑排版
+        col1 = fenshu[:5]
+        col2 = fenshu[5:]
+        
+        # 每行同时生成两列的内容
+        for idx in range(5):
+            num1_1, den_1, num2_1 = col1[idx]
+            if idx < len(col2):
+                num1_2, den_2, num2_2 = col2[idx]
+            else:
+                num1_2, den_2, num2_2 = None, None, None
+            
+            # 分子行（两列）
+            if num1_2 is not None:
+                line = f"  {num1_1:>2}     {num2_1:>2}    {num1_2:>2}     {num2_2:>2}  "
+            else:
+                line = f"  {num1_1:>2}     {num2_1:>2}  "
+            p = self.doc.add_paragraph(line)
+            p.paragraph_format.space_before = Pt(0)
+            p.paragraph_format.space_after = Pt(0)
+            p.runs[0].font.size = Pt(10.5)
+            
+            # 分数线行
+            if num1_2 is not None:
+                line = f"  ──  -  ──  =  ──  -  ──  =  "
+            else:
+                line = f"  ──  -  ──  =  "
+            p = self.doc.add_paragraph(line)
+            p.paragraph_format.space_before = Pt(0)
+            p.paragraph_format.space_after = Pt(0)
+            p.runs[0].font.size = Pt(10.5)
+            
+            # 分母行
+            if num1_2 is not None:
+                line = f"  {den_1:>2}     {den_1:>2}    {den_2:>2}     {den_2:>2}  "
+            else:
+                line = f"  {den_1:>2}     {den_1:>2}  "
+            p = self.doc.add_paragraph(line)
+            p.paragraph_format.space_before = Pt(0)
+            p.paragraph_format.space_after = Pt(3)  # 题间距进一步减小
+            p.runs[0].font.size = Pt(10.5)
 
-        # 填空 (5题，单列)
-        tiankong = generator.gen_tiankong(day, 5)
-        self.add_section("四、填空题", tiankong, cols_per_line=1)
+        # 4. 年月日、时分秒换算填空 (5题)
+        time_convert = generator.gen_time_convert(day, 5)
+        self.add_section("四、年月日、时分秒换算填空", time_convert, cols_per_line=1)
 
-        # 应用 (3题，单列)
-        yingyong = generator.gen_yingyong(day, 3)
+        # 5. 解决问题 (2题)
+        yingyong = generator.gen_yingyong(day, 2)
         self.add_section("五、解决问题", yingyong, cols_per_line=1)
 
         # 分页
