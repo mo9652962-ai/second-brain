@@ -1390,3 +1390,121 @@ vault-maintenance cron 在非工作时间密集触发（7/28 凌晨到早晨触�
 - Recurrence-Count: 1
 - First-Seen: 2026-07-28
 - Last-Seen: 2026-07-28
+
+---
+
+## [LRN-20260729-001] best_practice — Cron 错误模式库与经验式修复
+
+**Logged**: 2026-07-29
+**Priority**: high
+**Status**: resolved
+**Area**: cron, reliability
+
+### 核心原则
+**「遇到过的错误不再重新推理」** — 同类 Cron 错误直接走经验模式，跳过 full 推理链。
+
+### 错误模式库
+
+| 模式 ID | 错误特征 | 根因 | 修复方案 | 首次 | 复现 |
+|--------|---------|------|---------|------|------|
+| **CRON-001** | TimeoutError: idle 602s, waiting for non-streaming API | opencode-go 非流式超 600s | 切 `custom:fangzhou-1` / `doubao-seed-2-0-pro` | 07-29 | 10 |
+| **CRON-002** | RuntimeError: config drifted, provider 'opencode-go' → 'custom' | 全局模型切换导致未 pin | `cronjob update job_id=X model={provider,model}` | 07-29 | 2 |
+| **CRON-003** | FileNotFoundError on /c/Users/... | Cron Python 用 MSYS 路径 | 改原生 `r'C:\Users\...'` | 07-28 | 1 |
+
+### 匹配规则
+
+1. 新错误 → 扫描上表匹配 → 匹配成功直接修（0推理）→ 匹配失败 full 推理 → 添加新模式
+2. 复现 +1 → 触发经验固化提醒
+
+---
+
+## [LRN-20260729-002] best_practice — 浏览器异步验证模式
+
+**Logged**: 2026-07-29
+**Priority**: medium
+**Status**: adopted
+**Area**: browser-automation
+
+### 验证三步法（参考 Desktop-Delta Bench）
+
+1. **等待**: browser_click/type 后等 1-2s（给异步渲染缓冲）
+2. **确认**: browser_snapshot 对比前后 DOM，确认变化
+3. **重试**: 无变化→重试2次。Drag 需检查目标位置坐标
+
+| 操作 | 验证点 | 重试 |
+|-----|-------|------|
+| browser_click | 元素消失/新元素/URL变化 | 2次 |
+| browser_type+Enter | 表单消失/结果页 | 2次 |
+| browser_navigate | title/h1匹配 | 1次 |
+| Drag | 目标坐标变化 | 2次 |
+
+---
+
+## [LRN-20260729-001] best_practice — Cron 错误模式库与经验式修复
+
+**Logged**: 2026-07-29 | **Priority**: high | **Status**: resolved | **Area**: cron, reliability
+
+### 核心原则
+「遇到过的错误不再重新推理」— 同类 Cron 错误直接走经验模式，跳过 full 推理链。
+
+### 错误模式库
+
+| 模式 ID | 错误特征 | 根因 | 修复方案 | 首次 | 复现 |
+|--------|---------|------|---------|------|------|
+| CRON-001 | TimeoutError: idle 602s, waiting for non-streaming API | opencode-go 非流式超 600s | 切 custom:fangzhou-1 / doubao-seed-2-0-pro | 07-29 | 10 |
+| CRON-002 | RuntimeError: config drifted, provider opencode-go→custom | 全局模型切换未pin | cronjob update job_id=X model={provider,model} | 07-29 | 2 |
+| CRON-003 | FileNotFoundError on /c/Users/... | Cron Python用MSYS路径 | 改原生 r'C:\Users\...' | 07-28 | 1 |
+
+### 匹配规则
+
+1. 新错误→扫描上表匹配→匹配成功直接修(0推理)→匹配失败full推理→添加新模式
+2. 复现+1→触发经验固化提醒
+
+---
+
+## [LRN-20260729-002] best_practice — 浏览器异步验证模式
+
+**Logged**: 2026-07-29 | **Priority**: medium | **Status**: adopted | **Area**: browser-automation
+
+### 验证三步法(参考 Desktop-Delta Bench)
+
+1. 等待: browser_click/type后等1-2s(给异步渲染缓冲)
+2. 确认: browser_snapshot对比前后DOM，确认变化
+3. 重试: 无变化→重试2次。Drag需检查目标位置坐标
+
+| 操作 | 验证点 | 重试 |
+|-----|-------|------|
+| browser_click | 元素消失/新元素/URL变化 | 2次 |
+| browser_type+Enter | 表单消失/结果页 | 2次 |
+| browser_navigate | title/h1匹配 | 1次 |
+| Drag | 目标坐标变化 | 2次 |
+
+---
+
+## [LRN-20260729-003] best_practice — Memory 归档与容量监控
+
+**Logged**: 2026-07-29 | **Priority**: medium | **Status**: adopted | **Area**: memory, housekeeping
+
+### 核心原则
+「每日写入前检查总量，月归档清理冗余，容量<85%安全线」
+
+### 归档规则
+
+| 条件 | 行动 |
+|-----|------|
+| memory/ 文件数 > 100 | ⚠️ 警告：触发批量审查 |
+| 单日新增 > 10 个 memory 文件 | ⚠️ 建议压缩合并 |
+| 文件超过 60 天 | 自动移到 memory/.archive/ |
+| 内容标记为 `status: resolved` 且 > 30 天 | 候选归档 |
+| Cron 快照类文件（maintenance/health/todo）> 7 天 | 保留最新 3 份，其余归档 |
+
+### 监控机制
+
+1. 每日回显当前 memory/ 文件数和总量
+2. 超过 80% 内存限制 → 自动触发压缩
+3. 单月文件 > 50 → 建议创建月份索引
+
+### 已建立结构
+- `memory/.archive/` — 过期文件冷存储
+- `memory/dreaming/` — 梦境日志（rem/light/deep）
+- `memory/2026/07/` — 按年月组织的日常文件
