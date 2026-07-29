@@ -132,8 +132,8 @@ class MathWorkbookGUI:
         ttk.Entry(quantity_frame, textvariable=self.kousuan_count_var, width=10).grid(row=0, column=1, sticky='w', pady=5)
         ttk.Label(quantity_frame, text='题', font=self.default_font).grid(row=0, column=2, sticky='w', pady=5)
 
-        # 竖式题
-        ttk.Label(quantity_frame, text='竖式题：', font=self.default_font).grid(row=1, column=0, sticky='w', pady=5)
+        # 笔算题
+        ttk.Label(quantity_frame, text='笔算题：', font=self.default_font).grid(row=1, column=0, sticky='w', pady=5)
         ttk.Entry(quantity_frame, textvariable=self.shushi_count_var, width=10).grid(row=1, column=1, sticky='w', pady=5)
         ttk.Label(quantity_frame, text='题', font=self.default_font).grid(row=1, column=2, sticky='w', pady=5)
 
@@ -399,27 +399,32 @@ class MathWorkbookGUI:
         messagebox.showinfo('提示', '已恢复默认配置！')
 
     def generate_workbook(self):
-        """生成练习册"""
+        """生成练习册（标准教材版）"""
         self.status_var.set('⏳ 正在生成练习册...')
         self.root.update()
 
         try:
-            from generate_math_workbook_functional import MathWorkbookConfig, generate_full_workbook
+            from generate_math_workbook_standard import MathWorkbookConfig, generate_full_workbook
 
             # 更新配置
-            config = MathWorkbookConfig
-            config.TOTAL_DAYS = self.total_days_var.get()
-            config.OUTPUT_FILENAME = f'{self.student_name_var.get()}_数学每日一练_{config.TOTAL_DAYS}天.docx'
-            config.OUTPUT_PATH = os.path.join(
+            MathWorkbookConfig.OUTPUT_FILENAME = f'{self.student_name_var.get()}_数学每日一练_{self.total_days_var.get()}天_标准教材版.docx'
+            MathWorkbookConfig.OUTPUT_FULL_PATH = os.path.join(
                 self.output_path_var.get(),
-                config.OUTPUT_FILENAME
+                MathWorkbookConfig.OUTPUT_FILENAME
             )
+            MathWorkbookConfig.PROBLEMS_PER_DAY = {
+                "口算": self.kousuan_count_var.get(),
+                "竖式": self.shushi_count_var.get(),
+                "分数": self.fraction_count_var.get(),
+                "填空": self.fill_count_var.get(),
+                "应用": self.application_count_var.get(),
+            }
 
             # 生成文档
-            generate_full_workbook()
+            filepath = generate_full_workbook()
 
-            self.status_var.set(f'✅ 练习册已生成: {config.OUTPUT_PATH}')
-            messagebox.showinfo('成功', f'✅ 练习册生成完成！\n\n📂 文件路径：\n{config.OUTPUT_PATH}')
+            self.status_var.set(f'✅ 练习册已生成: {filepath}')
+            messagebox.showinfo('成功', f'✅ 练习册生成完成！\n\n📂 文件路径：\n{filepath}')
 
         except Exception as e:
             self.status_var.set(f'❌ 生成失败: {str(e)}')
