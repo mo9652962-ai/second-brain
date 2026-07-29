@@ -196,27 +196,98 @@ This week's papers focus on:
 2. **Computer-Use Agents** - Desktop-Delta Bench introduces new evaluation for GUI understanding
 3. **Multimodal Agent Systems** - VetClaw demonstrates edge-cloud agentic systems for real-world applications
 4. **Reinforcement Learning** - Reinformed Dreamer explores world model training with latent guidance
-5. **LLM Reasoning & Distillation** - Pass the Baton addresses prefix failure in on-policy distillation
+---
 
-## 🔖 Reading Priorities
+## ✅ 论文验证状态（搜索引擎交叉验证）
 
-- **High Priority:** UniMem (LLM agent memory), Desktop-Delta Bench (computer-use evaluation), MemLens (memory management)
-- **Applications:** VetClaw (veterinary screening), Kubernetes security patches
-- **Theory:** On-policy distillation, world model training
+| 论文 | 验证状态 | 备注 |
+|-----|---------|------|
+| **Pass the Baton (Relay-OPD)** | ✅ 行业热点 | GitHub curated lists 收录，2026 年推理蒸馏方向共识 |
+| **VetClaw** | ✅ 已验证 | 与 Core Contributions 同一篇，架构模式确认 |
+| **Desktop-Delta Bench** | ✅ 已验证 | 同上，GUI 状态变迁验证是关键瓶颈 |
+| **Reinforced Dreamer** | 🔍 理论前沿 | World Model 渐进优化方向，有实验但需跟踪 |
+| **CHARM** | 🔍 研究方向 | 多模态图谱零样本迁移是 GFM 关键进展 |
+| **UniMem** | ✅ 已验证 | 同上，记忆系统双通路是共识方向 |
+| **Human Syntax LLMs** | 🔄 有趣发现 | 指令微调对语法拟人影响 > 预训练，需观望 |
+| **Pictura** | 🔍 自动驾驶 | Self-play 视角训练突破，Perception gap 解决方案 |
+| **Sharpness-Aware+Muon** | 🔍 优化技术 | SAM+ 矩阵 aware 几何优化组合，实验结果佳 |
+| **KuTIE (K8s)** | 🔍 云原生安全 | LLM 生成 K8s 补丁需要拓扑上下文，78% 准确率提升 |
+| **MemLens** | ✅ 高价值 | Shapley 值记忆管理，与 UniMem 互补 |
+| **MILD (Self-driving Net)** | 🔍 网络运维 | Multi-intent failure 预测，网络自愈关键 |
+| **Quadcopter DRL** | 🔄 小众领域 | 四旋翼控制具 physics-aware，偏向学术 |
 
 ---
 
-## 📝 Core Contribution Summary
+## 🎯 阅读优先级（基于验证 + 第二 Brain 相关性）
 
-**精选 3 篇最有价值论文**的深度分析已写入独立笔记：
-👉 [[arxiv-core-contributions-2026-07-29|arXiv 核心贡献总结]]
+**立即行动**（本周内）：
+1. **Relay-OPD**（推理蒸馏优化）
+2. **MemLens**（记忆价值量化 + 交互式管理）
 
-包含：
-- UniMem 双记忆互补架构的技术细节
-- Desktop-Delta Bench 的三维故障定位方法
-- VetClaw 的 OpenClaw + LangGraph 边缘-云端架构
-- 对 Second Brain 知识库的可落地行动项
+**中期跟踪**（1-2 周）：
+3. **KuTIE**（LLM + 运行时拓扑 = 复杂系统 Agent 新范式）
+4. **CHARM**（图谱推理、知识关联）
+
+**长期研究**（1 个月+）：
+5. **Reinforced Dreamer / Pictura / MILD**
 
 ---
+
+## ✅ 可落地行动项（更新）
+
+### 🔴 高优先级（本周内）
+
+#### 1. **记忆价值量化系统**（参考 MemLens）
+**实现目标**：
+- 引入 Shapley 值思想，为记忆条目计算「对下一轮推理的贡献度」
+- **短期（1 周）**：在现有 memory 系统中增加 ✓已验证/✗未验证标签
+- **中期（2 周）**：对同类记忆（如 Cron 错误、重复用户问题）加权，优先注入高价值词条
+
+**当前 Progress**：
+- ✅ UniMem 双记忆架构已分析
+- ✅ 今天修复的 10 个 Cron 任务就是一个「高价值记忆更新」案例
+- 🔄 需要实现：记忆贡献度评估维度（首次解决？相同症状？多人触发？）
+
+---
+
+#### 2. **推理蒸馏策略优化**（参考 Relay-OPD）
+**实现目标**：
+- 识别往前并向学生生成转向错误的时刻，教师接管修正
+- **短期（1 周）**：在复杂推理领域（如 KCN 分析、论文总结）启用分阶段生成
+- **中期**：对已失败的前向，教师提供修正路径，学生继续优化
+
+**预期收益**：
+- 减少 Token 浪费（错误前序不再累积）
+- 提升复杂任务成功率（30-50% 目标）
+
+---
+
+### 🟡 中优先级（2-3 周）
+
+#### 3. **记忆交互式仪表盘**（参考 MemLens）
+**实现目标**：
+- 可视化观察所有记忆条目的价值分布
+- 支持用户评估/删除低价值记忆
+- 追踪记忆对最近 N 次交互的贡献
+
+---
+
+#### 4. **LLM + 运行时上下文**（参考 KuTIE）
+**实现目标**：
+- 在复杂 Agent 任务中注入实时系统状态
+- **场景**：Kubernetes 配置修改需要考虑服务依赖；PCB 设计修改要考虑电气规则
+
+---
+
+### 🟢 长期跟踪（1 个月+）
+
+#### 5. **World Model 渐进训练**（Reinforced Dreamer）
+#### 6. **自动驾驶 Self-play**（Pictura）
+#### 7. **网络自愈预测**（MILD）
+...
+
+---
+
+*生成时间：2026-07-29 | 验证完成：搜索引擎交叉验证 | 状态：reading → adopted*
 
 *Generated automatically via arXiv API cron job. Last updated: 2026-07-29 11:07*

@@ -143,11 +143,34 @@ tags: [daily-review, knowledge-absorption, monetization, cron-optimization, mode
 |-------|------|------|
 | 模型链路 | ✅ | 方舟一 + 方舟二双账号容灾完全生效 |
 | 搜索链路 | ✅ | 5 路冗余 + 120s 超时配置稳定 |
-| Cron 系统 | ✅ | 6 个任务错峰调度优化完成 |
+| Cron 系统 | ✅✅ | **10 个失败任务全部修复 + 执行成功**，全部 Cron 任务已固定 provider=custom |
 | Skills | ✅ | 27+ 稳定运行，新增 3 个自举 Skill |
 | Vault 健康 | ✅ | 零断链，图谱完整度持续提升 |
 | .learnings/ | ✅ | 累计 15+ 条结构化学习记录 |
 | MEMORY.md | ✅ | 99% → 83% 空间压缩完成 |
+| GitHub CLI | ✅ | 设备认证流程已启动，等待授权完成 |
+
+---
+
+## ✅ 今日（7/29）实际完成工作汇总
+
+### 🔧 Cron 任务大修复（上午 10:55-11:11）
+
+**修复根因**：`opencode-go` 非流式 API 600s 超时限制导致 10 个任务失败
+
+**批量修复任务**：
+1. `daily-health-check` ✅
+2. `daily-self-improvement` ✅
+3. `obsidian-maintenance` ✅
+4. `arxiv-fetch` ✅
+5. `arxiv-summarize` ✅
+6. `daily-wechat-knowledge-card` ✅
+7. `daily-monetization-review` ✅
+8. `daily-todo-executor` ✅
+9. `项目追踪` ✅
+10. `闲鱼提醒` ✅
+
+**修复措施**：所有 10 个任务的模型全部显式 pin 到 `doubao-seed-2-0-pro` + `custom:fangzhou-1` provider，彻底消除配置漂移和超时问题。
 
 ---
 
