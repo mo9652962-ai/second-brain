@@ -466,15 +466,12 @@ class WordGenerator:
         style.paragraph_format.space_after = Pt(3)
 
     def add_title(self, day, start_date):
-        """添加每日标题"""
-        date = start_date + timedelta(days=day - 1)
-        date_str = date.strftime("%Y年%m月%d日")
-
+        """添加每日标题（仅显示第几天）"""
         title = self.doc.add_heading(f"三年级数学每日一练  第{day}天", level=1)
 
         info = self.doc.add_paragraph()
         info.alignment = WD_ALIGN_PARAGRAPH.CENTER
-        run = info.add_run(f"日期：{date_str}    姓名：___________    用时：___________    家长签字：___________")
+        run = info.add_run(f"姓名：___________    用时：___________    家长签字：___________")
         run.font.size = Pt(10)
         run.font.color.rgb = RGBColor(128, 128, 128)
 
@@ -488,63 +485,65 @@ class WordGenerator:
             run.font.color.rgb = RGBColor(0, 102, 204)
             run.font.italic = True
 
-    def add_section(self, title, problems, cols=1, show_numbers=True):
-        """添加题目板块"""
+    def add_section(self, title, problems, cols_per_line=5, single_paragraph=False):
+        """添加题目板块（纯段落排版）
+        - single_paragraph: True=所有题目放在同一个段落自动换行；False=每行一个段落
+        """
         # 板块标题
         p = self.doc.add_paragraph()
-        run = p.add_run(f"一、{title}（共{len(problems)}题）")
+        run = p.add_run(title)
         run.font.size = Pt(12)
         run.font.bold = True
         run.font.color.rgb = RGBColor(51, 51, 153)
 
-        if cols == 1:
-            # 单列显示
-            for i, prob in enumerate(problems, 1):
-                p = self.doc.add_paragraph()
-                if show_numbers:
-                    p.add_run(f"{i}. ").bold = True
-                p.add_run(prob)
-                p.paragraph_format.left_indent = Cm(0.5)
+        if single_paragraph:
+            # 所有题目在同一个段落里（用于口算，自动换行）
+            p = self.doc.add_paragraph()
+            for j, prob in enumerate(problems):
+                num = j + 1
+                text = f"{num}. {prob}"
+                if j < len(problems) - 1:
+                    text += "    "  # 题目之间留空格
+                p.add_run(text)
+            p.paragraph_format.space_after = Pt(3)
         else:
-            # 多列显示（用于口算）
-            table = self.doc.add_table(rows=(len(problems) + cols - 1) // cols, cols=cols)
-            table.alignment = WD_TABLE_ALIGNMENT.LEFT
-
-            for i, prob in enumerate(problems):
-                row = i // cols
-                col = i % cols
-                cell = table.cell(row, col)
-                p = cell.paragraphs[0]
-                if show_numbers:
-                    p.add_run(f"{i + 1}. ").bold = True
-                p.add_run(prob)
-                p.paragraph_format.space_after = Pt(2)
+            # 每行cols_per_line题，每个段落一行
+            for i in range(0, len(problems), cols_per_line):
+                p = self.doc.add_paragraph()
+                line_problems = problems[i:i+cols_per_line]
+                for j, prob in enumerate(line_problems):
+                    num = i + j + 1
+                    text = f"{num}. {prob}"
+                    if j < len(line_problems) - 1:
+                        text += "    "  # 题目之间留空格
+                    p.add_run(text)
+                p.paragraph_format.space_after = Pt(3)
 
     def add_day_content(self, day, start_date, generator):
         """生成一天的完整内容"""
         self.add_title(day, start_date)
 
-        # 口算 (20题，4列)
+        # 口算 (20题，单段落自动换行)
         kousuan = generator.gen_kousuan(day, 20)
-        self.add_section("口算（直接写出得数）", kousuan, cols=4)
+        self.add_section("一、口算（直接写出得数）", kousuan, single_paragraph=True)
 
-        # 竖式计算 (6题)
+        # 竖式计算 (6题，单列)
         shushi = generator.gen_shushi(day, 6)
-        self.add_section("竖式计算", shushi)
+        self.add_section("二、竖式计算", shushi, cols_per_line=1)
         for _ in range(3):
             self.doc.add_paragraph(" ")
 
-        # 脱式计算 (4题)
+        # 脱式计算 (4题，单列)
         tuoshi = generator.gen_tuoshi(day, 4)
-        self.add_section("脱式计算（注意运算顺序）", tuoshi)
+        self.add_section("三、脱式计算（注意运算顺序）", tuoshi, cols_per_line=1)
 
-        # 填空 (5题)
+        # 填空 (5题，单列)
         tiankong = generator.gen_tiankong(day, 5)
-        self.add_section("填空题", tiankong)
+        self.add_section("四、填空题", tiankong, cols_per_line=1)
 
-        # 应用 (3题)
+        # 应用 (3题，单列)
         yingyong = generator.gen_yingyong(day, 3)
-        self.add_section("解决问题", yingyong)
+        self.add_section("五、解决问题", yingyong, cols_per_line=1)
 
         # 分页
         if day < 40:
