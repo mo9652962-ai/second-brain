@@ -1,11 +1,11 @@
 ---
 tags: [cron-health, dashboard]
-updated: 2026-07-29 12:00
+updated: 2026-07-29 20:51
 ---
 
-# Cron 健康看板 — 2026-07-29 12:00
+# Cron 健康看板 — 2026-07-29 20:51
 
-总任务数: 27
+总任务数: 28
 
 | ⚪ | GitHub 宝藏挖掘                    | 0 10 * * 0      |  |
 | ⚪ | arxiv-fetch                    | 0 7 * * *       |  |
@@ -17,8 +17,9 @@ updated: 2026-07-29 12:00
 | ⚪ | daily-self-improvement         | 30 8 * * *      |  |
 | ⚪ | daily-todo-executor            | 0 20 * * *      |  |
 | ⚪ | daily-wechat-knowledge-card    | 0 8 * * *       |  |
+| ⚪ | hackernews-daily               | 0 7 * * *       |  |
 | ⚪ | monthly-skill-usage            | 0 10 1 * *      |  |
-| ⚪ | obsidian-github-sync           | */30 * * * *    |  |
+| ⚪ | obsidian-github-sync           | 0 */2 * * *     |  |
 | ⚪ | obsidian-maintenance           | 0 6 * * *       |  |
 | ⚪ | weekly-cost-report             | 0 21 * * 0      |  |
 | ⚪ | weekly-graphify-update         | 0 12 * * 0      |  |
@@ -35,4 +36,4 @@ updated: 2026-07-29 12:00
 | ⚪ | 闲鱼提醒                           | 0 9 * * 1-5     |  |
 | ⚪ | 项目追踪                           | 0 21 * * *      |  |
 
-✅ 0 正常  ❌ 0 错误  ⚪ 27 从未执行
+✅ 0 正常  ❌ 0 错误  ⚪ 28 从未执行

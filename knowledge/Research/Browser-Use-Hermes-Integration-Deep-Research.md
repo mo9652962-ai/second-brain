@@ -345,26 +345,27 @@ mcp_servers:
 
 ## 📋 实施路线图
 
-### 阶段1: 基础安装（本周内）
+### 阶段1: 基础安装（本周内）— ✅ 已完成
 - ✅ uv 包管理器
 - ✅ MarkItDown 文档转换
-- ⬜ 安装 agent-browser CLI (`hermes setup tools` → 浏览器自动化)
-- ⬜ 测试本地模式功能：打开网页、截图、点击
+- ✅ 安装 agent-browser CLI（已确认：`/c/Users/31954/AppData/Roaming/npm/agent-browser`）
+- ✅ Hermes 内置 browser_* 工具已加载（browser_navigate/click/type/snapshot/vision 等 12 个工具）
 
-### 阶段2: MCP 集成（下周）
-- ⬜ 添加 agent-browser MCP 到 Hermes config.yaml
-- ⬜ 测试完整工具集可用性
-- ⬜ 配置 Camofox Docker 反检测模式（可选）
+### 阶段2: MCP 集成（下周）— 🔄 已确认方案
+- ❌ **不配置 agent-browser MCP**（与 Hermes 内置 browser_* 工具完全重复，导致加载超时/运行时冲突）
+- ✅ **使用 Hermes 内置 browser_* 工具** — 完全覆盖 agent-browser MCP 的所有功能
+- ✅ 浏览器异步验证模式已固化（参考 Desktop-Delta Bench + .learnings/LEARNINGS.md LRN-20260729-002）
+- ⬜ 配置 Camofox Docker 反检测模式（遇到反Bot站点时按需启用）
 
-### 阶段3: 知识库自动化（第2-3周）
+### 阶段3: 知识库自动化（第2-3周）— 📋 待排期
 - ⬜ 开发网页→知识库自动抓取脚本
-- ⬜ 配置定时抓取任务
+- ⬜ 配置定时抓取任务（参考 Cron 知识源的定时机制）
 - ⬜ 与 Memvid 记忆层联动，实现搜索即召回
 
-### 阶段4: 高级功能（中长期）
+### 阶段4: 高级功能（中长期）— 📋 待排期
 - ⬜ Browserbase/Browser Use 云服务评估
 - ⬜ n8n MCP 工作流集成
-- ⬜ 多浏览器Profile管理（个人/工作/爬虫分离）
+- ⬜ 多浏览器Profile管理
 
 ---
 
