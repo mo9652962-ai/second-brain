@@ -1,5 +1,5 @@
 ---
-tags: [GitHub, 学习笔记, AI开发, 全栈]
+tags: [github, 学习笔记, AI开发, 全栈]
 aliases: [GitHub Web Dev AI]
 date: 2026-07-22
 status: watch
