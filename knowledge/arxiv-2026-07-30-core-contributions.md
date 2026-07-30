@@ -221,9 +221,17 @@ Theoretical Frontier (Track)
 
 ### 🟢 1 个月+
 
-#### 5. 机器学习 Memory 优化
-- 基于时序自动学习记忆更新
-- 从验证到黄金记忆的分层存储
+| 5. 机器学习 Memory 优化
+|- 基于时序自动学习记忆更新
+|- 从验证到黄金记忆的分层存储
+
+---
+## ✅ 已落实（2026-07-30）
+
+| 论文 | 落实项 | 产出 |
+|------|--------|------|
+| **Relay-OPD** | 中间检查点机制 → hermes-workflow-preferences 规则 #10 | 每3轮checkpoint + Relay-OPD偏移检测 |
+| **MemLens** | 轻量记忆价值量化 → hermes-workflow-preferences 规则 #11 | 3因子评分模型(频率×价值×独特性) |
 
 ---
 
