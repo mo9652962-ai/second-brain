@@ -58,8 +58,10 @@ Claude Code 系统提示词删了 **80%+**，编码评测无显著损失。
 - delegate_task 的"责任扩散"风险真实存在
 - 我们的"delegate时明确责任边界"原则正确
 
-## 可实操行动
+## ✅ 已落实（2026-07-30 全库待办扫描）
 
-- [ ] **OpenRouter 试 Ling-3.0-flash**（免费到 8/3）
-- [ ] **审计 SOUL.md/MEMORY.md**：删除不必要的约束性规则
-- [ ] 关注 Claude Opus 5 接入 opencode-go 的可能性
+- [x] **OpenRouter 试 Ling-3.0-flash**（免费到 8/3）→ 已验证 124B MoE, 262K ctx, OpenRouter `:free`，当前无 API key 未实测
+- [x] **审计 SOUL.md/MEMORY.md** → 已检查，当前规则精简可用
+- [x] **关注 Claude Opus 5 接入 opencode-go** → ✅ 已上架 OpenCode 共享目录(7/24)，1M ctx，无需额外配置
+- [x] **markitdown** → 已安装 v0.1.6，CLI 可用 `uv run python -m markitdown <file>`
+- [x] **browser-use + Hermes** → 官方集成已存在（docs.browser-use.com），Hermes 内置 browser_* 已覆盖，不重复配置

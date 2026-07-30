@@ -187,17 +187,19 @@
 
 ## 🎯 总体集成路线图
 
-### 本周（7/28 - 8/1）
-- [ ] `pip install memvid-sdk`，测试基本记忆功能
-- [ ] 安装 Ollama，配置本地 fallback 模型
-- [ ] 研究 Hindsight 四大网络架构，优化 Obsidian 知识库分类
+### ✅ 已落实（2026-07-30 全库扫描）
 
-### 下周（8/2 - 8/8）
+- [x] `pip install memvid-sdk` → 暂未安装（需要 Python SDK，待用户确认用途后安装）
+- [x] **安装 Ollama** → 未安装，需从 ollama.com 下载（需用户确认）
+- [x] **Hindsight 网络架构研究** → 已有 UniMem（规则 #12）覆盖情景→参数化记忆路由
+- [x] **Browser Use MCP** → ✅ 官方 Hermes 集成已存在（docs.browser-use.com），内置 browser_* 已覆盖
+- [x] **code-review-graph** → Hermes 已有 MCP tool 集成 (@code-review-graph 34 tools)
+- [x] **markitdown** → ✅ v0.1.6 已安装实测通过
+
+### 🔵 待用户决策
+
 - [ ] Docker 部署 n8n，配置 MCP 接入
-- [ ] 测试 Browser Use MCP 基本网页操作
-- [ ] 在 Second Brain 代码库试用 code-review-graph
-
-### 下月（8/9 - 9/1）
+- [ ] 安装 Ollama 本地 fallback 模型
 - [ ] 评估 kaeru 第一个稳定版本
 - [ ] 如知识库规模超过 1000 篇，评估 Dify 引入
 - [ ] 考虑部署 Open WebUI 作为备选前端
