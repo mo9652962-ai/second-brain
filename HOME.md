@@ -105,9 +105,9 @@ Python、Web 开发、系统设计、编程教育
 
 ### 🏠 [[knowledge/Productivity/obsidian-tips|Productivity]] — 效率工具
 Obsidian 笔记系统、效率插件
-- **包含**: obsidian-tips · [[knowledge/Productivity/token-usage-report-20260727|Token 使用报告]] · [[knowledge/Productivity/ai-blogger-10round-research|AI博主10轮研究]]
+- **包含**: obsidian-tips · [[knowledge/Productivity/token-usage-report-20260727|Token 使用报告]] · [[knowledge/Productivity/ai-blogger-10round-research|AI博主10轮研究]] · [[knowledge/Tools/hermes-agent-ecosystem|🔧 工具生态]]
 - **MOC**: [[knowledge/Productivity/MOC-Productivity|🗺️ Productivity MOC]]
-- **关联**: → 全部域（元知识）· arXiv 研究 → [[minevalicoder-2607.22471|MineValiCoder]] · [[skill-self-play-2607.22529|Skill Self-Play]]
+- **关联**: → [[knowledge/AI/MOC-AI|AI 域]] · [[knowledge/Dev/python-ecosystem|Python 生态]] · 全部域（元知识）
 
 ### 🤖 [[skills/hermes/hermes-workflow-preferences|Hermes]] — Agent 自身进化
 Hermes 工作流优化、Cron 自动化、交互规则沉淀（自举域）
