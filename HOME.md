@@ -77,21 +77,25 @@ LIMIT 10
 ### 🤖 [[knowledge/AI/AI-Agent|AI]] — Agent 核心
 AI 能力架构、Skill 编排、模型供应商策略、Vibe Research
 - **包含**: AI-Agent · AI-Workflow · LLM-Providers · vibe-research · reverse-prompting · [[github-projects-note|DeepTutor 学习笔记]]
+- **MOC**: [[knowledge/AI/MOC-AI|🗺️ AI MOC]]
 - **关联**: → Academic → Design → Hardware
 
 ### 📚 [[knowledge/Academic/Academic|Academic]] — 学术论文与变现
 论文检索、阅读、写作、去AI化、闲鱼接单定价策略
 - **包含**: Academic · ai-monetization-costs · academic-service-research · [[paper-pipeline-data-contract|论文 Pipeline 数据契约]]
+- **MOC**: [[knowledge/Academic/MOC-Academic|🗺️ Academic MOC]]
 - **关联**: → AI(AI-Agent) → Design(PPT)
 
 ### 🎨 [[knowledge/Design/PPT-Design|Design]] — PPT 与视觉设计
 2026 设计趋势、工具选型、AI 辅助设计
 - **包含**: PPT-Design · desktop-beautify · ai-tools-reference
+- **MOC**: [[knowledge/Design/MOC-Design|🗺️ Design MOC]]
 - **关联**: → Academic(论文PPT) → AI(AI-Workflow)
 
 ### 🔧 [[knowledge/Hardware/CAD-Design|Hardware]] — 硬件设计
 CAD 3D建模、PCB 设计、8051 单片机
 - **包含**: CAD-Design · pcb-design-notes · 8051-MCU · CAD-Project-Postmortem · opencut
+- **MOC**: [[knowledge/Hardware/MOC-Hardware|🗺️ Hardware MOC]]
 - **关联**: → Dev(编程) → AI(Agent控制)
 
 ### 💻 [[knowledge/Dev/Programming|Dev]] — 开发
@@ -102,6 +106,7 @@ Python、Web 开发、系统设计、编程教育
 ### 🏠 [[knowledge/Productivity/obsidian-tips|Productivity]] — 效率工具
 Obsidian 笔记系统、效率插件
 - **包含**: obsidian-tips · [[knowledge/Productivity/token-usage-report-20260727|Token 使用报告]] · [[knowledge/Productivity/ai-blogger-10round-research|AI博主10轮研究]]
+- **MOC**: [[knowledge/Productivity/MOC-Productivity|🗺️ Productivity MOC]]
 - **关联**: → 全部域（元知识）· arXiv 研究 → [[minevalicoder-2607.22471|MineValiCoder]] · [[skill-self-play-2607.22529|Skill Self-Play]]
 
 ### 🤖 [[skills/hermes/hermes-workflow-preferences|Hermes]] — Agent 自身进化
@@ -136,7 +141,24 @@ Hermes 工作流优化、Cron 自动化、交互规则沉淀（自举域）
 - **[[memory/2026/07/2026-07-27-todo-cleanup|今日 TODO 清理]]** — TODO 扫描与归档 (07-27)
 - **[[memory/2026/07/github-trending-w30|GitHub W30 周报]]** — 07-20 热榜速览
 - **[[memory/2026/07/github-trending-w31|GitHub W31 周报]]** — 07-27 热榜速览
-- **[[memory/2026/07/github-trending-w31-v2|GitHub W31 评估]]** — W31 项目研究与应用评估
+|- **[[memory/2026/07/github-trending-w31-v2|GitHub W31 评估]]** — W31 项目研究与应用评估
+|- **[[knowledge/arxiv-2026-07-30-core-contributions|arXiv 今日速览]]** — AI Agent 核心贡献 (07-30)
+|- **[[knowledge/Daily/hackernews-2026-07-30|HN 今日热点]]** — Hacker News 热门 (07-30)
+|- **[[knowledge/Research/10-Top-AI-Agent-Projects-Deep-Research|AI Agent 项目深度研究]]** — Top10 调研
+|- **[[knowledge/Research/Memvid-n8n-kaeru-Deep-Research|Memvid/n8n/kaeru 深度研究]]** — 自动化工具调研
+|- **[[memory/2026/07/2026-07-30-maintenance|今日维护报告]]** — 仓库健康检查 (07-30)
+|- **[[memory/2026/07/2026-07-30-daily-review|今日回顾]]** — 07-30 知识吸收回顾
+|- **[[memory/2026/07/2026-07-30-daily-todo-cleanup|今日 TODO 清理]]** — 07-30 待办扫描
+|- **[[memory/2026/07/cron-improvement-plan|Cron 改进计划]]** — 自动任务优化方案
+|- **[[research/hermes-mcp-architecture|Hermes MCP 架构调研]]** — MCP 代理架构研究
+|- **[[system/GitHub-Treasure-Hunt-System|GitHub 宝藏系统]]** — 开源探索方法论
+|- **[[research/trackers/charm-graph-transfer|charm-graph 迁移追踪]]** — 代码图谱跟踪
+|- **[[research/trackers/kutie-context-injection|kutie 上下文注入追踪]]** — 上下文管理研究
+|- **[[research/trackers/long-term-model-systems|长期模型系统追踪]]** — 模型演进跟踪
+|- **[[playbooks/browserbase-evaluation|Browserbase 评估]]** — 浏览器自动化评估
+|- **[[playbooks/camofox-docker-setup|Camofox Docker 搭建]]** — Docker 部署方案
+|- **[[playbooks/web-scraping-cron-template|Web Scraping Cron 模板]]** — 自动化爬虫模板
+|- **[[knowledge/Python/Awesome-Lists-Study|Awesome Lists 研究]]** — Python 精品列表学习
 
 ### 🧩 散落知识点关联网
 
