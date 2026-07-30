@@ -13,6 +13,7 @@
 - **Fallback 增强**: Firecrawl（API: fc-7cb095...）— JS 渲染、反爬、结构化提取
 - **web_fetch**: Firecrawl 作为 fallback，处理 JS 重页面
 - **DuckDuckGo**: 国内被墙，不可用
+- **SearXNG**: 本地部署 http://127.0.0.1:8888
 - **超时**: 120s（config: tools.web.search.timeoutSeconds）
 
 ## 图片下载（国内网络）
