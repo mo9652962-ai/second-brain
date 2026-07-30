@@ -16,8 +16,33 @@
 
 **Obsidian + GitHub + Hermes Agent = 持续自我进化的知识体系**
 
+**🎯 适合谁？** 想用 AI 构建第二大脑的个人开发者 · 研究生/科研人员 · AI Agent 爱好者 · 闲鱼接单自由职业者
 
 </div>
+
+---
+
+## 🚀 30 秒快速上手
+
+### 方式 1：用 Obsidian 打开（推荐）
+
+```bash
+# 1. 克隆仓库
+git clone https://github.com/mo9652962-ai/second-brain.git
+
+# 2. 用 Obsidian 打开
+#   → 设置 → 金库 → 打开文件夹作为金库
+#   → 选择 second-brain 文件夹 → 开始探索！
+
+# 3. 推荐起点
+#   HOME.md → 知识中枢，了解全景
+#   skills/  → 直接可用的技能文档
+#   https://second-brain.example.com → MkDocs 在线版
+```
+
+### 方式 2：直接在 GitHub 上看
+
+浏览 `knowledge/`（知识笔记）或 `skills/`（可执行技能），全部用 Markdown 编写，GitHub 直接渲染。
 
 ---
 
@@ -107,33 +132,6 @@
 5. **🔄 每小时自动同步更新**
    - 不是一次性项目，是持续进化的活的知识库
    - 22 个 Cron 自动化任务 7×24 小时运行
-
----
-
-## 🚀 30 秒快速上手
-
-### 方式 1：用 Obsidian 打开（推荐）
-
-```bash
-# 1. 克隆仓库
-git clone https://github.com/mo9652962-ai/second-brain.git
-
-# 2. 打开 Obsidian
-#   → 设置 → 金库 → 打开文件夹作为金库
-#   → 选择刚才克隆的 second-brain 文件夹
-
-# 3. 开始探索！
-#   推荐从 HOME.md 开始，或者直接去 skills/ 目录看技能
-```
-
-**Obsidian 功能推荐：**
-- 🎯 按 `Ctrl/Cmd + G` 打开全局图谱，看知识之间的关联
-- 🔍 用 Dataview 插件查询和筛选技能
-- 📱 配合 Obsidian Sync 可以在手机/平板上同步使用
-
-### 方式 2：直接在 GitHub 上浏览
-
-直接点上面「知识全景树」里的链接就行，GitHub 直接渲染 Markdown。
 
 ---
 
