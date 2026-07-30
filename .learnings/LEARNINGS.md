@@ -1007,7 +1007,7 @@ OpenClaw 安全态势：已知 CVE (2026年1月) + command owner 未配置
 5. **Cross-Component Trust**: 2026.4.x 起远程节点事件默认标记 untrusted
 
 ### Suggested Action
-- [ ] 配置 commands.ownerAllowFrom（需 sora 手动执行，需知道微信用户ID）
+- [x] 配置 commands.ownerAllowFrom（已配置：Nianmokongting）
 - 当前版本安全，CVE 已修复
 - 利用 SkillSpector 审计已安装 skills（可自动化）
 
