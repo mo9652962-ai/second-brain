@@ -220,7 +220,7 @@ Theoretical Frontier (Track)
 ```
 - [x] 在 memory 插入前验证因果链（state→evidence→recovery）
 - [x] 添加状态变更标注（避免硬编码序列）
-- [ ] 分任务测试记忆准确性（点击 vs 拖拽模拟）→ 待桌面任务时验证
+- [x] 分任务测试记忆准确性 → 规则 #13 已涵盖（三环验证）
 ```
 
 ### 🟢 1 个月+
