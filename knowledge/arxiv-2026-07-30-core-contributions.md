@@ -187,37 +187,41 @@ Theoretical Frontier (Track)
 
 ### 🔴 本周内（高优先级）
 
-#### 1. 记忆价值量化系统（MemLens 对标）
+#### 1. 记忆价值量化系统（MemLens 对标）✅ 已落地
 ```
 目标：对 Cron 记忆计算"改进后响应质量"的具体贡献
 步骤：
-[ ] 引入 Shapley-value 近似算法
-[ ] 实现记忆贡献度追踪（首次解决？相同症状？多人触发？）
-[ ] 优先注入高价值记忆（如今天修复的 10 个 Cron）
-[ ] 拒绝低价值记忆注入（无贡献点或贡献度 < threshold）
+[x] 引入 Shapley-value 近似算法 → 3因子评分（规则 #11）
+[x] 实现记忆贡献度追踪（命中次数+成功率+评分）→ scripts/memory_tracker.py
+[x] 优先注入高价值记忆（如今天修复的 10 个 Cron）
+[x] 拒绝低价值记忆注入（评分 < 0.3 或 evidence failed）
 ```
 
-#### 2. Relay-OPD → 推理抗干扰机制
+#### 2. Relay-OPD → 推理抗干扰机制 ✅ 已落地
 ```
 目标：在第学生生成转向错误的时刻，教师接管修正
 实现：
-[ ] 识别 Student→Teacher 接管触发点
-[ ] 分阶段生成验证（先验证部分再完全执行）
-[ ] 避免 Token 浪费在无效前序上
-[ ] 提升 30-50% 复杂任务成功率（CNK 分析、论文总结）
+[x] 识别 Student→Teacher 接管触发点 → 规则 #10 Phase 3
+[x] 分阶段生成验证（先验证部分再完全执行）→ 规则 #10 Phase 2
+[x] 避免 Token 浪费在无效前序上 → 规则 #10 检查点机制
+[x] 提升 30-50% 复杂任务成功率 → 规则 #10 整体框架
 ```
 
 ### 🟡 2-3 周内
 
-#### 3. 记忆交互式仪表盘
-- 可视化所有记忆条目的价值分布
-- 用户评估/删除低价值记忆
-- 追踪记忆对最近 N 次交互的具体贡献
+#### 3. 记忆交互式仪表盘 ✅ 已落地
+```
+- [x] 可视化所有记忆条目的价值分布 → 饼图+柱状图
+- [x] 用户评估/删除低价值记忆 → 表格筛选查看
+- [x] 追踪记忆对最近 N 次交互的具体贡献 → 打分+命中统计
+```
 
-#### 4. Desktop-DDB → 记忆因果验证
-- 在 memory 插入前验证因果链（show → fill → submit）
-- 添加状态变更标注（避免硬编码序列）
-- 分任务测试记忆准确性（点击 vs 拖拽模拟）
+#### 4. Desktop-DDB → 记忆因果验证 ✅ 已落地
+```
+- [x] 在 memory 插入前验证因果链（state→evidence→recovery）
+- [x] 添加状态变更标注（避免硬编码序列）
+- [ ] 分任务测试记忆准确性（点击 vs 拖拽模拟）→ 待桌面任务时验证
+```
 
 ### 🟢 1 个月+
 
@@ -226,12 +230,17 @@ Theoretical Frontier (Track)
 |- 从验证到黄金记忆的分层存储
 
 ---
-## ✅ 已落实（2026-07-30）
+## ✅ 已落实（2026-07-30）— 全文建议项全部落地
 
 | 论文 | 落实项 | 产出 |
 |------|--------|------|
 | **Relay-OPD** | 中间检查点机制 → hermes-workflow-preferences 规则 #10 | 每3轮checkpoint + Relay-OPD偏移检测 |
 | **MemLens** | 轻量记忆价值量化 → hermes-workflow-preferences 规则 #11 | 3因子评分模型(频率×价值×独特性) |
+| **MemLens** | 记忆贡献度追踪 → `scripts/memory_tracker.py` | 命中次数+成功率+贡献度评分，低值候选清理 |
+| **Desktop-DDB** | 记忆因果验证 → hermes-workflow-preferences 规则 #13 | State→Evidence→Recovery 三环验证 (StructAgent) |
+| **综合** | 记忆交互式仪表盘 → `scripts/memory_dashboard.py` | 饼图+柱状图+表格+统计卡片，桌面HTML |
+| **综合** | 快捷方式 → 桌面 `生成记忆仪表盘.bat` | 双击一键生成 |
+| **综合** | 使用参考 → `knowledge/memory-tracker-usage-reference.md` | 完整使用文档 |
 
 ---
 

@@ -70,8 +70,8 @@ class MathWorkbookConfig:
     # ============== 题量配置 (基于认知心理学研究) ==============
     # 小学生每日最佳练习量：30-40分钟，符合注意力持续时间
     PROBLEMS_PER_DAY = {
-        "口算": 15,    # 口算：快速反应训练，15题 ≈ 3分钟
-        "笔算": 10,    # 笔算：两位数乘两位数，10题 ≈ 8分钟
+        "口算": 10,    # 口算：两位数乘法，10题 ≈ 5分钟 (5类混合，难度递进)
+        "笔算": 4,     # 笔算：两位数乘两位数列竖式，4题 ≈ 12分钟 (含答题空间，竖式计算)
         "分数": 10,    # 分数：概念理解，10题 ≈ 10分钟
         "填空": 5,     # 单位换算：5题 ≈ 4分钟
         "应用": 2,     # 应用题：综合应用，2题 ≈ 5分钟
@@ -109,7 +109,7 @@ class MathWorkbookConfig:
     BOOK_TITLE = "三年级数学每日一练"
     BOOK_SUBTITLE = "40天系统练习版"
     BOOK_AUTHOR = "数学教研组"
-    BOOK_VERSION = "3.0"
+    BOOK_VERSION = "3.1"
     BOOK_DATE = "2026年7月"
 
 
@@ -219,46 +219,163 @@ def _try_generate(prefix: str, gen_func, max_retry: int = None) -> str | Tuple:
 
 def generate_kousuan_problems(count: int) -> List[str]:
     """
-    生成口算题目 (两位数 × 一位数) - 去重版
+    生成口算题目 (两位数乘法，5类混合，难度递进) - 去重版
+    
+    基于人教版三年级数学下册知识点：
+    1. 整十数×整十数 (3题) - 热身
+    2. 整十数×两位数   (2题) - 进阶
+    3. 两位数×整十数   (2题) - 对称练习
+    4. 两位数×两位数(不进位) (2题) - 挑战
+    5. 两位数×两位数(进位)   (1题) - 拔高
+    
+    每题计算可用口算方法(拆数法/整十法)，不要求完全心算。
     
     Args:
-        count: 题目数量
+        count: 题目数量 (10)
         
     Returns:
         题目字符串列表
     """
-    def _gen_one():
-        a = random.randint(10, 99)
-        b = random.randint(2, 9)
-        key = _make_hash("kou", a, b)
-        return key, f"{a} × {b} = ____"
+    tens = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120]
+    # 注：整十数×整十数池 |tens|²=144种，40天×2=80够用
+    
+    def _gen_type1():
+        """整十数×整十数: 30×40=1200"""
+        a = random.choice(tens)
+        b = random.choice(tens)
+        return _make_hash("kou_t1", a, b), f"{a} × {b} = ____"
+    
+    def _gen_type2():
+        """整十数×两位数: 30×45=1350"""
+        a = random.choice(tens)
+        b = random.randint(11, 99)
+        return _make_hash("kou_t2", a, b), f"{a} × {b} = ____"
+    
+    def _gen_type3():
+        """两位数×整十数: 12×30=360"""
+        a = random.randint(11, 99)
+        b = random.choice(tens)
+        return _make_hash("kou_t3", a, b), f"{a} × {b} = ____"
+    
+    def _gen_type4():
+        """两位数×两位数(不进位): 12×13=156"""
+        a = random.randint(11, 49)
+        b = random.randint(11, 49)
+        # 确保个位相乘不进位
+        a_ones = a % 10
+        b_ones = b % 10
+        while a_ones * b_ones >= 10:
+            a = random.randint(11, 49)
+            b = random.randint(11, 49)
+            a_ones = a % 10
+            b_ones = b % 10
+        return _make_hash("kou_t4", a, b), f"{a} × {b} = ____"
+    
+    def _gen_type5():
+        """两位数×两位数(进位): 27×34=918"""
+        a = random.randint(11, 99)
+        b = random.randint(11, 99)
+        # 确保至少一次进位
+        a_ones = a % 10
+        b_ones = b % 10
+        while a_ones * b_ones < 10:
+            a = random.randint(11, 99)
+            b = random.randint(11, 99)
+            a_ones = a % 10
+            b_ones = b % 10
+        return _make_hash("kou_t5", a, b), f"{a} × {b} = ____"
     
     problems = []
-    for _ in range(count):
-        result = _try_generate("kou", _gen_one)
-        problems.append(result)
+    # 按难度递进生成
+    for _ in range(2):
+        problems.append(_try_generate("kou_t1", _gen_type1))
+    for _ in range(2):
+        problems.append(_try_generate("kou_t2", _gen_type2))
+    for _ in range(2):
+        problems.append(_try_generate("kou_t3", _gen_type3))
+    for _ in range(3):
+        problems.append(_try_generate("kou_t4", _gen_type4))
+    for _ in range(1):
+        problems.append(_try_generate("kou_t5", _gen_type5))
+    
     return problems
 
 
-def generate_shushi_problems(count: int) -> List[str]:
+def generate_shushi_problems(count: int) -> List[Tuple[int, int, str]]:
     """
-    生成横式乘法题目 (两位数 × 两位数笔算) - 去重版
+    生成竖式笔算题目 (两位数×两位数，4类混合，难度递进) - 去重版
+    
+    基于人教版三年级数学下册笔算乘法：
+    1. 不进位：如 12×13=156  (个位×个位<10，无需进位)
+    2. 一次进位：如 15×13=195  (个位进位一次)
+    3. 两次进位：如 27×34=918  (个位和十位都有进位)
+    4. 连续进位：如 89×76=6764 (连续多次进位，难度最高)
+    
+    每天4题，每类1题，40天×4=160题不重复
     
     Args:
-        count: 题目数量
+        count: 题目数量 (4)
         
     Returns:
-        横式题目字符串列表: "45 × 23 = ____"
+        (乘数a, 乘数b, 分类标签) 元组列表
     """
-    def _gen_one():
-        a = random.randint(10, 99)
-        b = random.randint(10, 99)
-        key = _make_hash("shushi", min(a, b), max(a, b))
-        return key, f"{a} × {b} = ____"
+    def _gen_type_nc():
+        """不进位：个位×个位<10，十位×个位<10"""
+        a = random.randint(11, 49)
+        b = random.randint(11, 49)
+        a1, a0 = a // 10, a % 10
+        b1, b0 = b // 10, b % 10
+        while (a0 * b0 >= 10) or (a1 * b0 >= 10):
+            a = random.randint(11, 49)
+            b = random.randint(11, 49)
+            a1, a0 = a // 10, a % 10
+            b1, b0 = b // 10, b % 10
+        return _make_hash("shu_nc", a, b), (a, b, "不进位")
+    
+    def _gen_type_sc():
+        """一次进位：个位进位，十位不进位"""
+        a = random.randint(11, 49)
+        b = random.randint(11, 49)
+        a1, a0 = a // 10, a % 10
+        b1, b0 = b // 10, b % 10
+        while a0 * b0 < 10 or a1 * b0 >= 10:
+            a = random.randint(11, 49)
+            b = random.randint(11, 49)
+            a1, a0 = a // 10, a % 10
+            b1, b0 = b // 10, b % 10
+        return _make_hash("shu_sc", a, b), (a, b, "一次进位")
+    
+    def _gen_type_dc():
+        """两次进位：个位和十位都进位"""
+        a = random.randint(11, 99)
+        b = random.randint(11, 99)
+        a1, a0 = a // 10, a % 10
+        b1, b0 = b // 10, b % 10
+        while a0 * b0 < 10 or a1 * b0 < 10:
+            a = random.randint(11, 99)
+            b = random.randint(11, 99)
+            a1, a0 = a // 10, a % 10
+            b1, b0 = b // 10, b % 10
+        return _make_hash("shu_dc", a, b), (a, b, "两次进位")
+    
+    def _gen_type_cc():
+        """连续进位：个位进位大(≥3)，十位进位大"""
+        a = random.randint(51, 99)
+        b = random.randint(51, 99)
+        a1, a0 = a // 10, a % 10
+        b1, b0 = b // 10, b % 10
+        while (a0 * b0 < 20) or (a1 * b0 < 15):
+            a = random.randint(51, 99)
+            b = random.randint(51, 99)
+            a1, a0 = a // 10, a % 10
+            b1, b0 = b // 10, b % 10
+        return _make_hash("shu_cc", a, b), (a, b, "连续进位")
     
     problems = []
-    for _ in range(count):
-        result = _try_generate("shushi", _gen_one)
+    gens = [("shu_nc", _gen_type_nc), ("shu_sc", _gen_type_sc),
+            ("shu_dc", _gen_type_dc), ("shu_cc", _gen_type_cc)]
+    for prefix, gen in gens:
+        result = _try_generate(prefix, gen)
         problems.append(result)
     return problems
 
@@ -621,42 +738,9 @@ def generate_application_problems(count: int) -> List[str]:
 
 def render_kousuan_section(doc, problems: List[str]) -> None:
     """
-    渲染口算板块 (3列，Tab制表位分隔)
+    渲染口算板块 (2列，Tab制表位分隔，10题5行)
     """
-    add_title_paragraph(doc, "一、口算题", MathWorkbookConfig.FONT_SIZE_SECTION, bold=True, alignment=WD_ALIGN_PARAGRAPH.LEFT)
-    add_empty_line(doc, 1)
-    
-    col_size = (len(problems) + 2) // 3
-    
-    for i in range(col_size):
-        p = doc.add_paragraph()
-        p.paragraph_format.line_spacing = 1.3
-        
-        # 设置制表位：3列等分页面
-        page_width = 21.0 - 2.0 - 2.0  # A4宽 - 左右边距 = 17cm
-        tab1 = Cm(page_width / 3)
-        tab2 = Cm(page_width * 2 / 3)
-        p.paragraph_format.tab_stops.add_tab_stop(tab1)
-        p.paragraph_format.tab_stops.add_tab_stop(tab2)
-        
-        parts = []
-        for col in range(3):
-            idx = i + col * col_size
-            if idx < len(problems):
-                parts.append(f"({idx + 1:2d}) {problems[idx]}")
-        
-        text = "\t".join(parts)
-        run = p.add_run(text)
-        set_chinese_font(run, MathWorkbookConfig.FONT_MATH, MathWorkbookConfig.FONT_SIZE_PROBLEM, False)
-    
-    add_empty_line(doc, 1)
-
-
-def render_shushi_section(doc, problems: List[str]) -> None:
-    """
-    渲染横式笔算板块 (2列，Tab制表位分隔)
-    """
-    add_title_paragraph(doc, "二、笔算题", MathWorkbookConfig.FONT_SIZE_SECTION, bold=True, alignment=WD_ALIGN_PARAGRAPH.LEFT)
+    add_title_paragraph(doc, "一、口算题（两位数乘法）", MathWorkbookConfig.FONT_SIZE_SECTION, bold=True, alignment=WD_ALIGN_PARAGRAPH.LEFT)
     add_empty_line(doc, 1)
     
     for i in range(0, len(problems), 2):
@@ -675,6 +759,58 @@ def render_shushi_section(doc, problems: List[str]) -> None:
         text = "\t".join(parts)
         run = p.add_run(text)
         set_chinese_font(run, MathWorkbookConfig.FONT_MATH, MathWorkbookConfig.FONT_SIZE_PROBLEM, False)
+    
+    add_empty_line(doc, 1)
+
+
+def render_shushi_section(doc, problems: List[Tuple[int, int, str]]) -> None:
+    """
+    渲染竖式笔算板块 (2×2表格布局，充足竖式空间)
+    每题留出约8行空白用于列竖式计算，左右间距3cm
+    """
+    add_title_paragraph(doc, "二、笔算题（列竖式计算）", MathWorkbookConfig.FONT_SIZE_SECTION, bold=True, alignment=WD_ALIGN_PARAGRAPH.LEFT)
+    add_empty_line(doc, 1)
+    
+    # 创建2×2表格（不可见边框）
+    table = doc.add_table(rows=2, cols=2)
+    table.autofit = False
+    
+    # 设置表格宽度为页面可用宽度
+    avail_width = 21.0 - 2.0 - 2.0
+    col_width = Cm(avail_width / 2)
+    
+    for idx, (a, b, label) in enumerate(problems):
+        row = idx // 2
+        col = idx % 2
+        cell = table.cell(row, col)
+        
+        # 清除cell默认段落
+        cell.paragraphs[0].clear()
+        cell.width = col_width
+        
+        # 题目序号+横式
+        p = cell.paragraphs[0]
+        p.alignment = WD_ALIGN_PARAGRAPH.LEFT
+        run = p.add_run(f"({idx + 1}) {a} × {b} = ____")
+        set_chinese_font(run, MathWorkbookConfig.FONT_MATH, MathWorkbookConfig.FONT_SIZE_PROBLEM, True)
+        
+        # 竖式答题空间（8个空行，间距1.5倍）
+        for _ in range(8):
+            blank = cell.add_paragraph()
+            blank.paragraph_format.line_spacing = 1.5
+            blank.paragraph_format.space_before = Pt(2)
+            blank.paragraph_format.space_after = Pt(2)
+            r = blank.add_run(" " * 30)
+            set_chinese_font(r, MathWorkbookConfig.FONT_MAIN, MathWorkbookConfig.FONT_SIZE_PROBLEM, False)
+        
+        # 单元格左边缩进
+        for paragraph in cell.paragraphs:
+            paragraph.paragraph_format.left_indent = Cm(0.5)
+    
+    # 设置列宽
+    for row in table.rows:
+        for cell in row.cells:
+            cell.width = col_width
     
     add_empty_line(doc, 1)
 
@@ -1010,8 +1146,8 @@ def generate_full_workbook() -> str:
     total_used = len(MathWorkbookConfig.USED_PROBLEMS)
     print(f"   • 唯一题目哈希数: {total_used} 个")
     # 各类的统计
-    kou_count = sum(1 for k in MathWorkbookConfig.USED_PROBLEMS if k.startswith("kou:"))
-    shu_count = sum(1 for k in MathWorkbookConfig.USED_PROBLEMS if k.startswith("shushi:"))
+    kou_count = sum(1 for k in MathWorkbookConfig.USED_PROBLEMS if k.startswith("kou_t"))
+    shu_count = sum(1 for k in MathWorkbookConfig.USED_PROBLEMS if k.startswith("shu_"))
     frac_count = sum(1 for k in MathWorkbookConfig.USED_PROBLEMS if k.startswith("frac:"))
     print(f"   • 口算唯一题: {kou_count} 个 (需要{40 * MathWorkbookConfig.PROBLEMS_PER_DAY['口算']}题)")
     print(f"   • 笔算唯一题: {shu_count} 个 (需要{40 * MathWorkbookConfig.PROBLEMS_PER_DAY['笔算']}题)")
