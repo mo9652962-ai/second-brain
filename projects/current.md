@@ -29,25 +29,31 @@ updated: 2026-07-23
 - [x] TranslucentTB 2026.1（已下载）
 - [x] ExplorerPatcher（已下载）
 - [x] VC++ 运行库全版本（已安装）
+- [x] 随身WiFi选购 → 赫电Pro（399元/年，待下单）
 - [ ] SFC 系统扫描（需管理员权限手动执行）
-- [ ] 桌面美化方案实际部署
+- [ ] 桌面美化方案实际部署（TranslucentTB + Rainmeter 已可安装）
 
 ### 4. AI 变现路径规划
 - [x] 六大路径市场调研
 - [x] 价格定位分析
-- [ ] 闲鱼挂「AI 代做 PPT」
+- [x] 接单工作流 SOP（knowledge/接单工作流-SOP.md）
+- [x] 论文 Pipeline 数据契约（knowledge/论文Pipeline-数据契约.md）
+- [x] 闲鱼解封素材（knowledge/闲鱼解封素材.md）
+- [x] 降AI工具对比（零感AI 1元/千字为主力，笔灵AI备用）
+- [ ] 闲鱼挂「AI 代做 PPT」→ 用安全文案，需你操作
 - [ ] 小红书发「AI PPT 教程」内容
 - [ ] 尝试接论文润色/翻译单
 
 ## 🔀 Skill 编排改进
-- [x] 建立 PPT Pipeline 数据契约（outline.json 已在 ppt-design-2026 §十五）✅
-- [ ] 建立论文 Pipeline 数据契约
-- [ ] 测试 Fan-Out 并行搜索
-- [x] 为 ppt-optimizer 添加 gate 检查（已在 ppt-design-2026 §十三）✅
+- [x] 建立 PPT Pipeline 数据契约 ✅
+- [x] 建立论文 Pipeline 数据契约 ✅
+- [x] 测试 Fan-Out 并行搜索 → 评估结论：delegate_task batch 已足够，无需独立实现
+- [x] 为 ppt-optimizer 添加 gate 检查 ✅
 
 ## 待解决
-- [ ] 随身WiFi选购确认（赫电 Pro / 格行）
+- [x] 随身WiFi选购确认 → 赫电 Pro（399元/年，33元/月，1500G）
 - [ ] SFC 系统扫描（需管理员权限手动执行）
+- [ ] 桌面美化实际部署（winget 一键安装已就绪）
 
 ## 🔗 相关领域
 - [[AI-Agent]] — 基础设施与能力架构
