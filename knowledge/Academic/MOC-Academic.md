@@ -18,8 +18,8 @@ updated: 2026-07-28
 | [[knowledge/Academic/Academic\|📚 学术服务总览]] | 全领域索引 |
 | [[knowledge/Academic/academic-service-research\|🔬 学术服务市场调研]] | 价格/平台/竞争分析 |
 | [[knowledge/Academic/ai-monetization-costs\|💰 AI 工具成本核算]] | 闲鱼接单成本结构 |
-| [[knowledge/Academic/ai-freelance-pricing\|💵 闲鱼定价策略]] | 论文/PPT/PCB 三维定价模型 |
-| [[knowledge/Academic/methodology-audit\|🧪 方法论审计]] | G5 可追溯 + 死亡判据 |
+|| 💵 闲鱼定价策略 | 闲鱼接单成本结构（技能参考） |
+|| 🧪 方法论审计 | G5 可追溯 + 死亡判据（技能参考） |
 
 ---
 

@@ -171,7 +171,7 @@ LLM Agent 在处理**无边界、持续演化的任务流**时，面临**稳定�
 ---
 
 #### 4. **知识库链接**
-- ✅ 将这三篇论文链接到 [[Agent Memory Systems]]、[[Computer-Use Agents]]、[[Agent Architecture]] 三个 MOC 节点
+- ✅ 将这三篇论文链接到 Agent Memory Systems、Computer-Use Agents、Agent Architecture 三个 MOC 节点（待创建对应笔记）
 
 ---
 

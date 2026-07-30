@@ -12,4 +12,4 @@ created: 2026-07-28
 - [[knowledge/Design/desktop-beautify\|桌面美化]]
 - [[knowledge/Design/ai-tools-reference\|AI 工具参考]]
 
-🔗 关联：[[skills/@j-feng12/academic-presentation\|学术PPT技能]]
+🔗 关联：[[skills/@j-feng12/academic-presentation/SKILL.md\|学术PPT技能]]
