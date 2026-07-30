@@ -61,11 +61,11 @@ class MathWorkbookConfig:
     FONT_SIZE_ANSWER_LINE = Pt(11)  # 答题行字号
     FONT_SIZE_INFO = Pt(9)          # 辅助信息字号
     
-    # ============== 行距与间距 (认知负荷优化) ==============
-    LINE_SPACING_PROBLEM = 1.3      # 题目行距 (1.3倍，保护视力)
-    LINE_SPACING_SECTION = 1.5      # 板块间距
-    PARAGRAPH_SPACE_BEFORE = Pt(6)  # 段前距
-    PARAGRAPH_SPACE_AFTER = Pt(6)   # 段后距
+    # ============== 行距与间距 (单页紧凑排版) ==============
+    LINE_SPACING_PROBLEM = 1.15     # 题目行距 (紧凑，单页容纳)
+    LINE_SPACING_SECTION = 1.15     # 板块间距
+    PARAGRAPH_SPACE_BEFORE = Pt(1)  # 段前距 (压缩)
+    PARAGRAPH_SPACE_AFTER = Pt(1)   # 段后距 (压缩)
     
     # ============== 题量配置 (基于认知心理学研究) ==============
     # 小学生每日最佳练习量：30-40分钟，符合注意力持续时间
@@ -741,13 +741,13 @@ def render_kousuan_section(doc, problems: List[str]) -> None:
     渲染口算板块 (2列，Tab制表位分隔，10题5行)
     """
     add_title_paragraph(doc, "一、口算题（两位数乘法）", MathWorkbookConfig.FONT_SIZE_SECTION, bold=True, alignment=WD_ALIGN_PARAGRAPH.LEFT)
-    add_empty_line(doc, 1)
     
     for i in range(0, len(problems), 2):
         p = doc.add_paragraph()
-        p.paragraph_format.line_spacing = 1.5
+        p.paragraph_format.line_spacing = 1.1
+        p.paragraph_format.space_before = Pt(0)
+        p.paragraph_format.space_after = Pt(1)
         
-        # 设置制表位：2列等分
         page_width = 21.0 - 2.0 - 2.0
         tab = Cm(page_width / 2)
         p.paragraph_format.tab_stops.add_tab_stop(tab)
@@ -759,8 +759,6 @@ def render_kousuan_section(doc, problems: List[str]) -> None:
         text = "\t".join(parts)
         run = p.add_run(text)
         set_chinese_font(run, MathWorkbookConfig.FONT_MATH, MathWorkbookConfig.FONT_SIZE_PROBLEM, False)
-    
-    add_empty_line(doc, 1)
 
 
 def render_shushi_section(doc, problems: List[Tuple[int, int, str]]) -> None:
@@ -769,7 +767,6 @@ def render_shushi_section(doc, problems: List[Tuple[int, int, str]]) -> None:
     每题留出约8行空白用于列竖式计算，左右间距3cm
     """
     add_title_paragraph(doc, "二、笔算题（列竖式计算）", MathWorkbookConfig.FONT_SIZE_SECTION, bold=True, alignment=WD_ALIGN_PARAGRAPH.LEFT)
-    add_empty_line(doc, 1)
     
     # 创建2×2表格（不可见边框）
     table = doc.add_table(rows=2, cols=2)
@@ -794,12 +791,12 @@ def render_shushi_section(doc, problems: List[Tuple[int, int, str]]) -> None:
         run = p.add_run(f"({idx + 1}) {a} × {b} = ____")
         set_chinese_font(run, MathWorkbookConfig.FONT_MATH, MathWorkbookConfig.FONT_SIZE_PROBLEM, True)
         
-        # 竖式答题空间（8个空行，间距1.5倍）
-        for _ in range(8):
+        # 竖式答题空间（4个空行，间距1.15倍 — 节约空间，单页容纳）
+        for _ in range(4):
             blank = cell.add_paragraph()
-            blank.paragraph_format.line_spacing = 1.5
-            blank.paragraph_format.space_before = Pt(2)
-            blank.paragraph_format.space_after = Pt(2)
+            blank.paragraph_format.line_spacing = 1.15
+            blank.paragraph_format.space_before = Pt(1)
+            blank.paragraph_format.space_after = Pt(1)
             r = blank.add_run(" " * 30)
             set_chinese_font(r, MathWorkbookConfig.FONT_MAIN, MathWorkbookConfig.FONT_SIZE_PROBLEM, False)
         
@@ -811,8 +808,6 @@ def render_shushi_section(doc, problems: List[Tuple[int, int, str]]) -> None:
     for row in table.rows:
         for cell in row.cells:
             cell.width = col_width
-    
-    add_empty_line(doc, 1)
 
 
 def render_fraction_section(doc, fractions: List[Tuple[int, int, int, int, str]]) -> None:
@@ -821,7 +816,6 @@ def render_fraction_section(doc, fractions: List[Tuple[int, int, int, int, str]]
     运算符来自生成数据，加法和减法正确显示
     """
     add_title_paragraph(doc, "三、分数加减法", MathWorkbookConfig.FONT_SIZE_SECTION, bold=True, alignment=WD_ALIGN_PARAGRAPH.LEFT)
-    add_empty_line(doc, 1)
     
     page_width = 21.0 - 2.0 - 2.0  # 17cm
     half = Cm(page_width / 2)
@@ -871,8 +865,10 @@ def render_fraction_section(doc, fractions: List[Tuple[int, int, int, int, str]]
         for run in p3.runs:
             set_chinese_font(run, MathWorkbookConfig.FONT_MATH, MathWorkbookConfig.FONT_SIZE_PROBLEM, False)
         
-        # 题间空行（隔开每组分数题）
-        add_empty_line(doc, 1)
+        # 题间空行（隔开每组分数题）— 改用小间距
+        p_blank = doc.add_paragraph()
+        p_blank.paragraph_format.space_before = Pt(1)
+        p_blank.paragraph_format.space_after = Pt(1)
 
 
 def render_fill_section(doc, problems: List[str]) -> None:
@@ -884,12 +880,9 @@ def render_fill_section(doc, problems: List[str]) -> None:
         problems: 题目列表
     """
     add_title_paragraph(doc, "四、时间单位换算", MathWorkbookConfig.FONT_SIZE_SECTION, bold=True, alignment=WD_ALIGN_PARAGRAPH.LEFT)
-    add_empty_line(doc, 1)
     
     for i, problem in enumerate(problems, 1):
         add_problem_paragraph(doc, f"{i}. {problem}")
-    
-    add_empty_line(doc, 1)
 
 
 def render_application_section(doc, problems: List[str]) -> None:
@@ -901,13 +894,12 @@ def render_application_section(doc, problems: List[str]) -> None:
         problems: 题目列表
     """
     add_title_paragraph(doc, "五、应用题", MathWorkbookConfig.FONT_SIZE_SECTION, bold=True, alignment=WD_ALIGN_PARAGRAPH.LEFT)
-    add_empty_line(doc, 1)
     
     for i, problem in enumerate(problems, 1):
         add_problem_paragraph(doc, f"{i}. {problem}")
         
-        # 答题空间（3行空白）
-        for _ in range(3):
+        # 答题空间（2行空白）
+        for _ in range(2):
             p = doc.add_paragraph()
             p.paragraph_format.line_spacing = 1.5
             run = p.add_run(" " * 50)
