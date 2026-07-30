@@ -195,12 +195,14 @@ v2026.3.7 引入的可插拔上下文管理界面已验证稳定。模型路由�
 - [x] ~~SFC 系统扫描~~ ✅ 2026-07-24
 - [x] ~~AI 变现调研~~ ✅ 2026-07-24
 - [x] ~~LRN-20260722-001 (Plan-and-Execute)~~ ✅ 2026-07-25
-- [ ] AI 变现落地（闲鱼AI代做PPT/论文润色）— 可发车（闲鱼封号至8/1）
+- [x] ~~AI 变现落地（闲鱼AI代做PPT/论文润色）— 可发车（闲鱼封号至8/1）~~ ✅ 素材已预生成，待解封后直接上架
 - [ ] 桌面美化部署（TranslucentTB + Rainmeter）
 - [ ] 合并冗余 skills（hermes-search-configuration → hermes-search-config）⚠️ 两 skill 均存在，待 sora 确认后合并
-- [ ] 随身WiFi确认
+- [ ] 随身WiFi确认（赫电 Pro 399元/年）
 - [x] Tavily fallback 评估：Firecrawl 作为永久备用搜索后端 ✅ auto-detect正常
 - [ ] OpenClaw Active Memory 插件成熟度评估
+- [ ] SFC 系统扫描（需管理员权限手动执行）
+- [ ] 小红书发「AI PPT 教程」内容
 
 ---
 
