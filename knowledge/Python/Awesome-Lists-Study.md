@@ -174,13 +174,13 @@
 
 ## 📋 下一步行动清单
 
-### 本周可以做
+### ✅ 已落实（2026-07-30）
 
-- [ ] 安装 uv，测试速度提升
-- [ ] 安装 markitdown，测试文件导入
-- [ ] 研究 browser-use 集成到 Hermes 的可行性
+- [x] **安装 uv，测试速度提升** → ✅ uv 0.11.32 已安装，日常使用中
+- [x] **安装 markitdown，测试文件导入** → ✅ v0.1.6 已安装，CLI: `uv run python -m markitdown <file>`
+- [x] **研究 browser-use 集成到 Hermes 的可行性** → ✅ 官方集成已存在（docs.browser-use.com），Hermes 内置 browser_* 已覆盖，无需重复配置
 
-### 本月可以做
+### 🟡 本月待研究（需用户决策）
 
 - [ ] 研究 Graphify，把代码库转成知识图谱
 - [ ] 部署 Activepieces，设计个人自动化流程
