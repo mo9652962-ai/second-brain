@@ -7,7 +7,14 @@ updated: 2026-07-23
 
 ## ✅ 已完成（迁移后）
 
-### 1. Hermes Agent 迁移与配置
+### 1. 三年级数学每日一练生成器
+- 项目: [[projects/math-workbook/README|📐 数学练习册实战项目]]
+- 从零构建 40 天 × 1240 题不重复生成系统
+- 口算 15→10 两位数乘法，笔算 10→4 竖式表格布局
+- 单页紧凑排版 v3.1（行距 1.15，每页容纳全部 5 板块）
+- 所有题目 960/960 不重复 ✅
+
+### 2. Hermes Agent 迁移与配置
 - [x] OpenClaw → Hermes 数据迁移（SOUL/记忆/API密钥/Skills）
 - [x] 模型 fallback 链重构（flash → pro → kimi → qwen → glm）
 - [x] 搜索 5 路冗余（Tavily + Exa + Firecrawl + DDGS + SearXNG）
@@ -15,7 +22,7 @@ updated: 2026-07-23
 - [x] Vault 知识全量学习（35+ 文件，12 知识域）
 - [x] Obsidian ↔ GitHub 自动同步（每 30 分钟）
 
-### 2. 仓库结构化升级
+### 3. 仓库结构化升级
 - [x] 模板体系规范化（通用/知识域/项目/每日）
 - [x] HOME.md 智能索引（Dataview 驱动）
 - [x] 自动维护脚本（每 2 小时）
@@ -40,9 +47,10 @@ updated: 2026-07-23
 - [x] 论文 Pipeline 数据契约（knowledge/论文Pipeline-数据契约.md）
 - [x] 闲鱼解封素材（knowledge/闲鱼解封素材.md）
 - [x] 降AI工具对比（零感AI 1元/千字为主力，笔灵AI备用）
-- [ ] 闲鱼挂「AI 代做 PPT」→ 用安全文案，需你操作
-- [ ] 小红书发「AI PPT 教程」内容
-- [ ] 尝试接论文润色/翻译单
+- [x] 闲鱼上架素材包预生成（knowledge/闲鱼上架素材包-预生成.md）✅ 7/30
+- [ ] 闲鱼挂「AI 代做 PPT」→ **8/1 解封后上架**，素材包已就绪，待 sora 操作
+- [ ] 小红书发「AI PPT 教程」内容（可复用 PPT 样例）
+- [ ] 尝试接论文润色/翻译单（依赖商品上架后引流）
 
 ## 🔀 Skill 编排改进
 - [x] 建立 PPT Pipeline 数据契约 ✅
