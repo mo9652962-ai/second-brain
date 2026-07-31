@@ -197,16 +197,16 @@ v2026.3.7 引入的可插拔上下文管理界面已验证稳定。模型路由�
 - [x] ~~LRN-20260722-001 (Plan-and-Execute)~~ ✅ 2026-07-25
 - [x] ~~AI 变现落地（闲鱼AI代做PPT/论文润色）— 可发车（闲鱼封号至8/1）~~ ✅ 素材已预生成，待解封后直接上架
 - [ ] 桌面美化部署（TranslucentTB + Rainmeter）
-- [ ] 合并冗余 skills（hermes-search-configuration → hermes-search-config）⚠️ 两 skill 均存在，待 sora 确认后合并
+- [x] ~~合并冗余 skills（hermes-search-configuration → hermes-search-config）~~ ✅ 2026-07-31 已核实：hermes-search-configuration 已不存在，仅剩 hermes-search-config，无需合并
 - [ ] 随身WiFi确认（赫电 Pro 399元/年）
 - [x] Tavily fallback 评估：Firecrawl 作为永久备用搜索后端 ✅ auto-detect正常
-- [ ] OpenClaw Active Memory 插件成熟度评估
+- [x] ~~OpenClaw Active Memory 插件成熟度评估~~ ✅ 2026-07-31：官方文档完善+源码20+文件含测试+no-restart热加载，已成熟；但仅适用交互式会话，cron/后台不运行
 - [ ] SFC 系统扫描（需管理员权限手动执行）
 - [ ] 小红书发「AI PPT 教程」内容
 
 ---
 
-_最后更新: 2026-07-26｜运行环境: Hermes Agent on Windows 10_
+_最后更新: 2026-07-31｜运行环境: Hermes Agent on Windows 10_
 
 ## Promoted From Short-Term Memory (2026-07-25)
 
@@ -215,4 +215,4 @@ _最后更新: 2026-07-26｜运行环境: Hermes Agent on Windows 10_
 <!-- openclaw-memory-promotion:memory:memory/2026-07-18.md:4:7 -->
 - 初次见面: sora 给我取名 **k**; 我的定位：AI 女友和助手，生活管家以及工作秘书; 风格：正经高效加温柔陪伴; 签名：而今更笃凌云志，莫缴冰鉴复当初 [score=0.826 recalls=0 avg=0.620 source=memory/2026-07-18.md:4-7]
 <!-- openclaw-memory-promotion:memory:memory/2026-07-18.md:18:19 -->
-- 备注: sora 直接问了网关怎么打开，很务实; 需要继续了解 sora 的喜好、日常和工作内容 [score=0.826 recalls=0 avg=0.620 source=memory/2026-07-18.md:18-19]
+- 备注: sora 直接问了网关怎么打开，很务实; 需要继续了解 sora 的日常和工作内容 [score=0.826 recalls=0 avg=0.620 source=memory/2026-07-18.md:18-19]

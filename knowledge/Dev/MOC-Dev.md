@@ -20,6 +20,13 @@ updated: 2026-07-30
 - [[knowledge/Dev/system-design-primer|系统设计基础]]
 - [[knowledge/Dev/mattpocock-methodology|Matt Pocock 方法论]]
 
+## 📚 备用参考（存档）
+
+- [[knowledge/Dev/awesome-go-reference|Awesome Go]] — Go 生态索引（待 Go 需求启用）
+- [[knowledge/Dev/geolibre-reference|GeoLibre]] — 云原生 GIS（待 GIS 需求启用）
+- [[knowledge/Dev/secret-knowledge-reference|Secret Knowledge]] — 运维/CLI 手册（按需查阅）
+- [[knowledge/Dev/cloudbase-learning-s1-login|CloudBase 学习路径]] — 8 站小程序云开发（s1~s8）
+
 ## 🔗 跨域链接
 
 - [[knowledge/Tools/hermes-agent-ecosystem|工具生态]] — MCP、脚本运行环境
