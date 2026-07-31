@@ -18,7 +18,7 @@
 
 import os
 import random
-from typing import List, Tuple, Optional, Dict, Any
+from typing import List, Tuple
 
 from docx import Document
 from docx.shared import Pt, Cm, RGBColor
@@ -86,9 +86,7 @@ class MathWorkbookConfig:
     # ============== 去重配置 (哈希+预生成池) ==============
     USED_PROBLEMS = set()           # 全局去重集合
     MAX_RETRY = 100                 # 最大重试次数
-    DEDUP_ENABLED = True            # 是否启用去重
-    # 预生成池（确保40天×10道=400道竖式题不重复）
-    SHUSHI_POOL_SIZE = 500          # 竖式题预生成池（2位×2位：8100种可能，取500）
+    # SHUSHI_POOL_SIZE 已废弃（去重走 USED_PROBLEMS 哈希，无需预生成池）
     
     # ============== 艾宾浩斯复习标记 ==============
     REVIEW_MARKS = {
@@ -101,9 +99,14 @@ class MathWorkbookConfig:
     }
     
     # ============== 输出配置 ==============
-    DESKTOP_PATH = r"C:\Users\31954\Desktop"
+    # 平台无关桌面路径（Windows/macOS/Linux 均可用）
+    DESKTOP_PATH = os.path.join(os.path.expanduser("~"), "Desktop")
+    if not os.path.isdir(DESKTOP_PATH):
+        DESKTOP_PATH = os.path.expanduser("~")
     OUTPUT_FILENAME = "三年级数学每日一练40天_标准教材版_v2.docx"
     OUTPUT_FULL_PATH = os.path.join(DESKTOP_PATH, OUTPUT_FILENAME)
+    # 增量保存间隔（天）：每 N 天临时保存一次，防止中途崩溃丢失全部
+    SAVE_EVERY_N_DAYS = 5
     
     # ============== 元数据 ==============
     BOOK_TITLE = "三年级数学每日一练"
@@ -206,15 +209,24 @@ def _try_generate(prefix: str, gen_func, max_retry: int = None) -> str | Tuple:
         
     Returns:
         生成的题目
+        
+    Raises:
+        RuntimeError: 重试耗尽仍未生成唯一题目（防止静默重复）
     """
     max_tries = max_retry or MathWorkbookConfig.MAX_RETRY
+    last_hash = None
     for _ in range(max_tries):
         hash_key, result = gen_func()
+        last_hash = hash_key
         if hash_key not in MathWorkbookConfig.USED_PROBLEMS:
             MathWorkbookConfig.USED_PROBLEMS.add(hash_key)
             return result
-    # 如果重试耗尽，返回最后一个结果（极罕见情况）
-    return result
+    # 重试耗尽：不静默返回可能重复的题目，改为抛异常
+    # 调用方捕获后可从更大池重试或提示用户（比静默重复更安全）
+    raise RuntimeError(
+        f"[{prefix}] 重试 {max_tries} 次仍未生成唯一题目 (最后尝试: {last_hash})。"
+        f"已用 {len(MathWorkbookConfig.USED_PROBLEMS)} 题，请扩大生成池或调整参数。"
+    )
 
 
 def generate_kousuan_problems(count: int) -> List[str]:
@@ -286,17 +298,21 @@ def generate_kousuan_problems(count: int) -> List[str]:
         return _make_hash("kou_t5", a, b), f"{a} × {b} = ____"
     
     problems = []
-    # 按难度递进生成
-    for _ in range(2):
-        problems.append(_try_generate("kou_t1", _gen_type1))
-    for _ in range(2):
-        problems.append(_try_generate("kou_t2", _gen_type2))
-    for _ in range(2):
-        problems.append(_try_generate("kou_t3", _gen_type3))
-    for _ in range(3):
-        problems.append(_try_generate("kou_t4", _gen_type4))
-    for _ in range(1):
-        problems.append(_try_generate("kou_t5", _gen_type5))
+    # 按 count 分配 5 类难度（权重 2:2:2:3:1，count=10 → 2+2+2+3+1）
+    weights = [2, 2, 2, 3, 1]
+    total_w = sum(weights)
+    counts = [max(1, round(count * w / total_w)) for w in weights]
+    # 修正舍入误差：确保总数等于 count
+    diff = count - sum(counts)
+    for i in range(abs(diff)):
+        idx = i % len(counts)
+        counts[idx] += 1 if diff > 0 else -1
+    gens = [("kou_t1", _gen_type1), ("kou_t2", _gen_type2),
+            ("kou_t3", _gen_type3), ("kou_t4", _gen_type4),
+            ("kou_t5", _gen_type5)]
+    for (prefix, gen), n in zip(gens, counts):
+        for _ in range(n):
+            problems.append(_try_generate(prefix, gen))
     
     return problems
 
@@ -374,7 +390,9 @@ def generate_shushi_problems(count: int) -> List[Tuple[int, int, str]]:
     problems = []
     gens = [("shu_nc", _gen_type_nc), ("shu_sc", _gen_type_sc),
             ("shu_dc", _gen_type_dc), ("shu_cc", _gen_type_cc)]
-    for prefix, gen in gens:
+    # 按 count 取对应数量的类型（count=4 → 每类 1 题；count=8 → 每类 2 题）
+    for i in range(count):
+        prefix, gen = gens[i % len(gens)]
         result = _try_generate(prefix, gen)
         problems.append(result)
     return problems
@@ -396,8 +414,9 @@ def generate_fraction_problems(count: int) -> List[Tuple[int, int, int, int, str
     
     def _gen_one(op: str):
         den = random.choice(denominators)
-        n1 = random.randint(1, den - 1) if den > 2 else random.randint(1, den)
-        n2 = random.randint(1, den - 1) if den > 2 else random.randint(1, den)
+        # 统一用 1..denominator-1：避免假分数（如 2/2=1）混入真分数题
+        n1 = random.randint(1, den - 1)
+        n2 = random.randint(1, den - 1)
         if op == '-' and n2 > n1:
             n1, n2 = n2, n1
         key = _make_hash("frac", n1, den, n2, op)
@@ -985,7 +1004,7 @@ def generate_usage_guide(doc) -> None:
         "  2. 口算题建议计时，培养快速反应能力",
         "  3. 竖式计算注意数位对齐，养成好习惯",
         "  4. 分数题先观察再计算，做完记得检查",
-        "  5. 应用题：每天1道乘法(两位数×两位数)+1道分数"""
+        "  5. 应用题：每天1道乘法(两位数×两位数)+1道分数",
         "  6. 时间换算题先记牢进率：1时=60分，1分=60秒",
         "",
         "二、艾宾浩斯复习法",
@@ -1092,7 +1111,6 @@ def generate_full_workbook() -> str:
         del MathWorkbookConfig._mul_pool
         del MathWorkbookConfig._frac_pool_index
         del MathWorkbookConfig._frac_pool
-    dedup_stats = {"口算": 0, "竖式": 0, "分数": 0}
     
     # 1. 初始化文档
     print("[1/5] 初始化文档格式...")
@@ -1107,16 +1125,36 @@ def generate_full_workbook() -> str:
     print("[3/5] 生成使用说明...")
     generate_usage_guide(doc)
     
-    # 4. 生成每日练习
+    # 4. 生成每日练习（每 SAVE_EVERY_N_DAYS 天增量保存一次；单日失败跳过不中断）
     print("[4/5] 正在生成40天练习题...")
+    failed_days = []
+    tmp_files = []
     for day in range(1, 41):
         print(f"       正在生成第 {day:2d} 天...", end='\r')
-        generate_single_day(doc, day)
+        try:
+            generate_single_day(doc, day)
+        except RuntimeError as e:
+            failed_days.append(day)
+            print(f"\n       ⚠️ 第{day}天生成失败，跳过继续: {e}")
+        if day % MathWorkbookConfig.SAVE_EVERY_N_DAYS == 0:
+            tmp_path = MathWorkbookConfig.OUTPUT_FULL_PATH.replace(
+                ".docx", f"_day{day}.docx")
+            doc.save(tmp_path)
+            tmp_files.append(tmp_path)
+            print(f"       [增量保存] 第{day}天 → {os.path.basename(tmp_path)}")
     print()
     
     # 5. 保存文件
     print(f"[5/5] 正在保存到桌面: {MathWorkbookConfig.OUTPUT_FILENAME}...")
     doc.save(MathWorkbookConfig.OUTPUT_FULL_PATH)
+    # 清理临时增量文件（try/finally 等价：成功后立即清理）
+    for tmp in tmp_files:
+        try:
+            os.remove(tmp)
+        except OSError:
+            pass
+    if failed_days:
+        print(f"⚠️ 有 {len(failed_days)} 天失败被跳过: {failed_days}")
     
     print()
     print("=" * 60)
