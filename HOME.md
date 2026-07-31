@@ -34,8 +34,11 @@ LIMIT 10
 - **[[skills/hermes/hermes-automation-patterns|Cron 自动化模式 v1.1]]** — 网络任务错峰调度 + 自动重试脚本，避免批量失败
 - **[[skills/hermes/daily-knowledge-absorption-gate|知识吸收守门人 v1.0]]** — 每日至少 1 个主动吸收底线 + 5 分钟快速吸收选项库
 - [[memory/2026/07/2026-07-28-maintenance-3|2026-07-28 维护报告 #3]] — 深度链接修复 + 孤立笔记整合
-- [[memory/2026/07/2026-07-28-maintenance-2|2026-07-28 维护报告 #2]] — 新增孤立笔记链接
+- [[memory/.archive/maintenance/2026-07-28-maintenance-2|2026-07-28 维护报告 #2]] — 新增孤立笔记链接（已归档）
 - [[memory/2026/07/2026-07-28-maintenance|2026-07-28 维护报告]] — 仓库健康检查 + 孤立笔记链接
+- [[memory/2026/07/2026-07-31-maintenance|2026-07-31 维护报告]] — 链接修复 + 空文件清理
+- [[memory/2026/07/2026-07-30-reflection|🪞 反思日记 07-30]] — 7/30 任务完成与知识吸收回顾
+- [[docs/WPS数学练习册标准化优化指南|WPS 数学练习册标准化指南]] — 排版规范参考
 - [[memory/2026/07/2026-07-27-maintenance|2026-07-27 维护报告]] — 仓库健康检查：全部通过
 - [[memory/2026/07/2026-07-26-maintenance|2026-07-26 维护报告]] — 结构优化 v2 + 批量链接修复
 
