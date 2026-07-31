@@ -31,4 +31,4 @@ updated: 2026-07-30
 ## 📌 最近新增
 
 - [[knowledge/AI/ai-hot-brief-20260725-absorbed|AI 热点简报 07-25]]
-- [[knowledge/AI/ai-freelance-pricing|AI 自由职业定价]]
+- [[knowledge/Academic/ai-monetization-costs|AI 自由职业定价]] — 变现实战手册、价目表
