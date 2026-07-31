@@ -253,18 +253,21 @@ CUA Trajectory (actions + states + reasoning)
 
 ### 🔴 高优先级（本周内）
 
-#### 1. 工具使用 state vs render 审计（参考 StateAct）
-- [ ] 对高频任务（练习册生成、Obsidian 笔记管理、每日待办）统计「直接状态操作 vs 间接读取」比例
-- [ ] 优先改造「有 API 却走截图/文本快照」的路径
+#### 1. 工具使用 state vs render 审计（参考 StateAct）✅ 已落地
+- [x] 对高频任务统计「直接状态操作 vs 间接读取」比例 → 规则 #16 Step 3 每周自检
+- [x] 优先改造「有 API 却走截图/文本快照」的路径 → 规则 #16 状态层优先
+- 产出: `hermes-workflow-preferences` 规则 #16
 
-#### 2. 轨迹记录层调研（参考 OpenForgeRL）
-- [ ] 评估在 Hermes 模型调用链加 proxy 记录层的成本与收益
-- [ ] 输出：一份「自训数据管线」可行性备忘（几百任务量级的门槛是否可达）
+#### 2. 轨迹记录层调研（参考 OpenForgeRL）✅ 已落地
+- [x] 评估在 Hermes 模型调用链加 proxy 记录层的成本与收益 → **结论: 无需 proxy**，state.db 已原生记录
+- [x] 输出：「自训数据管线」可行性备忘 → `knowledge/Research/openforgerl-trace-pipeline-feasibility.md`
+- [x] P0 落地：`scripts/export_traces.py` 导出器（7 天 206 会话 / 77k 消息实测通过）
 
 ### 🟡 中优先级（2-3 周）
 
-#### 3. 评估器可靠性自检清单（参考 OSReward + Mis-Score）
-- [ ] 整理清单（误判率、宽松偏见、任务有效性）→ 加入 `hermes-automation-patterns`
+#### 3. 评估器可靠性自检清单（参考 OSReward + Mis-Score）✅ 已落地
+- [x] 整理清单（误判率、宽松偏见、任务有效性）→ 规则 #17
+- 产出: `hermes-workflow-preferences` 规则 #17
 
 ### 🟢 长期跟踪
 
