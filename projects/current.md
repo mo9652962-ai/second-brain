@@ -83,7 +83,7 @@ updated: 2026-08-01
 - [ ] 尝试接论文润色/翻译单（依赖商品上架后引流）→ 排期 8/4 起观察
 
 ### 🛠️ 工具/知识侧（P2，可选）
-- [ ] Krea2 安装（ComfyUI 搭建 + 14GB int8-convrot 模型下载）→ 排期 8/3+，需安排下载时间
+- [x] Krea2 本地生图部署完成（ComfyUI 0.29 + 官方 FP8 模型 + Triton + 自定义 VAE 解码节点，实测出图 1024×1024 成功）✅ 8/1 深夜
 - [ ] Skill 重复合并（6 组：4 个 openclaw-imports 副本 + image-generation-workflow + miknas-find-skills）→ 待 sora 确认后执行
 - [ ] deepseek-v4-flash 探索 3 项（opencode-go 正式版验证 / Cron 主力切换评估 / Codex CLI 集成）→ 排期 8/4+
 

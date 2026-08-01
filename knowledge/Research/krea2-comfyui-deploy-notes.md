@@ -8,25 +8,60 @@ status: absorbed
 
 > 2026-08-01 部署 · RTX 4060 Laptop 8GB · Windows 10 · ComfyUI 0.29
 
-## ✅ 最终可用方案（2026-08-01 晚上验证成功出图）
+## ✅ 最终可用方案（2026-08-01 深夜验证成功出图 00015）
 
 | 组件 | 文件 | 版本 | 位置 |
 |------|------|------|------|
 | 主模型 | `krea2_turbo_fp8_scaled.safetensors` | 12.24GB (**官方 Comfy-Org 版**) | `models/diffusion_models/` |
 | 文本编码器 | `qwen3vl_4b_bf16.safetensors` | 8.27GB (bf16 版!) | `models/text_encoders/` |
-| VAE | `wan_2.1_vae.safetensors` | 242MB (**不是 qwen_image_vae!**) | `models/vae/` |
+| VAE | **不需要 VAELoader** | 用 `Krea2VAEDecodeOfficial` 节点 (diffusers AutoencoderKLQwenImage) | — |
 
-**关键**:
-1. 用 ComfyUI 0.29 **原生加载器**（UNETLoader + CLIPLoader type=krea2）
-2. **必须 `--enable-triton-backend` 启动**（否则 FP8 量化走降级路径→乱码！）
-3. **VAE 用 wan_2.1_vae**（qwen_image_vae 在 ComfyUI 0.29 加载异常→恒定灰图）
-4. KSampler 后加 `Krea2LatentTo5D` 自定义节点（4D→5D latent）
-5. **CFG 0.0**（Turbo 蒸馏模型） + er_sde + 8 步
+## 📜 商用许可（2026-08-01 研究确认）
+
+**Krea 2 Community License：免费商用**，条件是**公司年收入 < $100 万美元**（trailing 12 个月，含关联实体全部收入）。满足则无需企业许可即可：
+- 自托管运行 Krea2（本地/自建服务器）✅
+- 用于商业项目（为客户生成资产）✅
+- 微调 / 嵌入产品 ✅
+
+**sora 场景**：闲鱼 PPT 代做 / 论文配图 / 数学练习册插图 → **完全合规**（年收入远低于门槛）。
+> ⚠️ 超出门槛需联系 `opensource@krea.ai` 购买商业许可。
+> 官方来源：https://www.krea.ai/krea-2-licensing
+
+## 🎨 官方风格 LoRA（2026-08-01 研究整理）
+
+下载源：`Comfy-Org/Krea-2/loras` → 放 `models/loras/`，用 LoraLoaderModelOnly + 触发词，强度 1.0：
+
+| LoRA | 触发词 | 用途 |
+|------|--------|------|
+| krea2_darkbrush | `monochrome ink wash style` | 黑白水墨插画 |
+| krea2_dotmatrix | `monochrome stippling style` | 单色点阵 |
+| krea2_kidsdrawing | `naive expressive sketch style` | 儿童手绘风 |
+| krea2_neondrip | `textured abstract style` | 霓虹抽象 |
+| krea2_rainywindow | `rainy window style` | 雨窗氛围 |
+| krea2_retroanime | `purple retro anime style` | 复古动漫 |
+| krea2_softwatercolor | `art deco watercolor style` | 水彩装饰风 |
+| krea2_sunsetblur | `ethereal motion blur style` | 日落虚化 |
+| krea2_vintagetarot | `vintage tarot style` | 复古塔罗 |
+| krea2_style_reference | — | 风格参考（图生图） |
+
+## 🔍 已知问题（社区确认）
+
+- **GitHub issue #14717** "Artefacts when running Krea 2"（2026-07-01）：噪声伪影与我们的乱码问题同源，社区仍未解决（标注 User Support）。**我们的 Triton + 官方 VAE 节点方案是有效 workaround**。
+- **JSON 区域提示词**：Krea2 的 Qwen3-VL 编码器支持 Ideogram 式结构化提示（bounding box + 调色板），可用 `Ideogram4PromptBuilderKJ` 节点（需安装 Krea2 JSON pack）。
+
+## ✅ 关键部署结论
+ 1. 用 ComfyUI 0.29 **原生加载器**（UNETLoader + CLIPLoader type=krea2）
+ 2. **必须 `--enable-triton-backend` 启动**（否则 FP8 量化走降级路径→乱码！）
+ 3. **VAE 用自定义节点 `Krea2VAEDecodeOfficial`**（ComfyUI 0.29 的 WanVAE 加载 qwen_image_vae 恒定输出=bug）
+ 4. KSampler 后接 `Krea2LatentTo5D` → `Krea2LatentProcessOut`（**std 必须用官方值 2.8184...**，写 0.85 会出黑图）→ `Krea2VAEDecodeOfficial`
+ 5. **CFG 1.0**（参考 AlperKTS workflow） + er_sde + 8 步 + ConditioningZeroOut 负面
+ 6. **8GB 显存必须 `--lowvram` 启动**（否则 1024×1024 OOM 崩溃/黑图；实测 512×512 稳定）
 
 ### 一键出图
 ```bash
 py -3.12 ~/.openclaw/workspace/scripts/krea2-gen.py "提示词" -o 输出目录
 # 启动 ComfyUI 必须带: --enable-triton-backend
+# 依赖: pip install diffusers (官方 Qwen VAE 解码器)
 ```
 
 ### 可用 workflow（API 模式）
