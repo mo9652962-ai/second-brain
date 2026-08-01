@@ -1,11 +1,11 @@
 ---
 tags: [cron-health, dashboard]
-updated: 2026-08-01 12:00
+updated: 2026-08-01 20:58
 ---
 
-# Cron 健康看板 — 2026-08-01 12:00
+# Cron 健康看板 — 2026-08-01 20:58
 
-总任务数: 28
+总任务数: 29
 
 | ⚪ | GitHub 宝藏挖掘                    | 30 12 * * 0     |  |
 | ⚪ | arxiv-fetch                    | 0 7 * * *       |  |
@@ -31,19 +31,20 @@ updated: 2026-08-01 12:00
 | ⚪ | weekly-todo-cleanup            | 0 18 * * 6      |  |
 | ⚪ | weekly-trending-review         | 30 13 * * 0     |  |
 | ⚪ | weekly-vault-audit             | 45 12 * * 0     |  |
+| ⚪ | 提醒安装 Lyricify 歌词工具             | once at 2026-08-02 09:00 |  |
 | ⚪ | 文献周报                           | 0 7 * * 1       |  |
 | ⚪ | 组会报告                           | 0 20 * * 0      |  |
 | ⚪ | 闲鱼提醒                           | 30 7 * * 1-5    |  |
 | ⚪ | 项目追踪                           | 0 21 * * *      |  |
 
-✅ 0 正常  ❌ 0 错误  ⚪ 28 从未执行
+✅ 0 正常  ❌ 0 错误  ⚪ 29 从未执行
 
 ## 🌐 网络健康指数 (🟡)
 
 亚健康 — 1/3 不可达
 
-连通率: 67% | 平均延迟: 199ms
+连通率: 67% | 平均延迟: 169ms
 
   ❌ opencode-go: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING]
-  🟡 siliconflow: HTTP 401 (195ms, reachable)
-  🟡 deepseek: HTTP 401 (204ms, reachable)
+  🟡 siliconflow: HTTP 401 (194ms, reachable)
+  🟡 deepseek: HTTP 401 (143ms, reachable)
