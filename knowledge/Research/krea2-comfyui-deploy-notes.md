@@ -8,15 +8,26 @@ status: absorbed
 
 > 2026-08-01 部署 · RTX 4060 Laptop 8GB · Windows 10 · ComfyUI 0.29
 
-## ✅ 最终可用方案
+## ✅ 最终可用方案（2026-08-01 晚上验证成功出图）
 
 | 组件 | 文件 | 版本 | 位置 |
 |------|------|------|------|
-| 主模型 | `Krea2_Turbo_convrot_int8mixed.safetensors` | 12.02GB (Winnougan ctq 版) | `models/diffusion_models/` |
+| 主模型 | `krea2_turbo_fp8_scaled.safetensors` | 12.24GB (**官方 Comfy-Org 版**) | `models/diffusion_models/` |
 | 文本编码器 | `qwen3vl_4b_bf16.safetensors` | 8.27GB (bf16 版!) | `models/text_encoders/` |
-| VAE | `qwen_image_vae.safetensors` | 242MB | `models/vae/` |
+| VAE | `wan_2.1_vae.safetensors` | 242MB (**不是 qwen_image_vae!**) | `models/vae/` |
 
-**关键**: 用 ComfyUI 0.29 **原生加载器**（UNETLoader + CLIPLoader type=krea2），不用 INT8-Fast 自定义节点。
+**关键**:
+1. 用 ComfyUI 0.29 **原生加载器**（UNETLoader + CLIPLoader type=krea2）
+2. **必须 `--enable-triton-backend` 启动**（否则 FP8 量化走降级路径→乱码！）
+3. **VAE 用 wan_2.1_vae**（qwen_image_vae 在 ComfyUI 0.29 加载异常→恒定灰图）
+4. KSampler 后加 `Krea2LatentTo5D` 自定义节点（4D→5D latent）
+5. **CFG 0.0**（Turbo 蒸馏模型） + er_sde + 8 步
+
+### 一键出图
+```bash
+py -3.12 ~/.openclaw/workspace/scripts/krea2-gen.py "提示词" -o 输出目录
+# 启动 ComfyUI 必须带: --enable-triton-backend
+```
 
 ### 可用 workflow（API 模式）
 ```json

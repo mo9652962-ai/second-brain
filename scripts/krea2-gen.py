@@ -34,6 +34,7 @@ from pathlib import Path
 DEFAULT_URL = "http://127.0.0.1:8188"
 MODEL_NAME = "krea2_turbo_fp8_scaled.safetensors"
 CLIP_NAME = "qwen3vl_4b_bf16.safetensors"
+# Krea2 的正确 VAE: qwen_image_vae（配合 Krea2LatentProcessOut 反归一化后正常出图）
 VAE_NAME = "qwen_image_vae.safetensors"
 # Turbo 是蒸馏模型：不需要负面提示词（官方文档明确 "negative prompt not required"）
 DEFAULT_NEGATIVE = ""
@@ -44,7 +45,7 @@ def build_workflow(prompt: str, negative: str, width: int, height: int,
     """构建 Krea2 生图 workflow（ComfyUI 0.29 原生加载器）"""
     return {
         "3": {"class_type": "UNETLoader", "inputs": {
-            "unet_name": MODEL_NAME, "weight_dtype": "default"}},
+            "unet_name": MODEL_NAME, "weight_dtype": "fp8_e4m3fn"}},
         "4": {"class_type": "CLIPLoader", "inputs": {
             "clip_name": CLIP_NAME, "type": "krea2", "device": "default"}},
         "5": {"class_type": "VAELoader", "inputs": {
@@ -59,8 +60,12 @@ def build_workflow(prompt: str, negative: str, width: int, height: int,
             "model": ["3", 0], "positive": ["6", 0], "negative": ["6b", 0],
             "latent_image": ["7", 0], "seed": seed, "steps": steps, "cfg": cfg,
             "sampler_name": "er_sde", "scheduler": "simple", "denoise": 1.0}},
-        "9": {"class_type": "VAEDecode", "inputs": {
-            "samples": ["8", 0], "vae": ["5", 0]}},
+        "8b": {"class_type": "Krea2LatentTo5D", "inputs": {
+            "latent": ["8", 0]}},
+        "8c": {"class_type": "Krea2LatentProcessOut", "inputs": {
+            "latent": ["8b", 0]}},
+        "9": {"class_type": "Krea2VAEDecodeOfficial", "inputs": {
+            "samples": ["8c", 0]}},
         "10": {"class_type": "SaveImage", "inputs": {
             "filename_prefix": "krea2_gen", "images": ["9", 0]}},
     }
@@ -123,7 +128,7 @@ def main():
     parser.add_argument("-n", "--count", type=int, default=1, help="生成数量")
     parser.add_argument("--size", default="1024x1024", help="分辨率 WxH")
     parser.add_argument("--steps", type=int, default=8, help="采样步数")
-    parser.add_argument("--cfg", type=float, default=1.0, help="CFG scale")
+    parser.add_argument("--cfg", type=float, default=0.0, help="CFG scale (Turbo 蒸馏模型用 0.0)")
     parser.add_argument("--negative", default=DEFAULT_NEGATIVE, help="负面提示词")
     parser.add_argument("--url", default=DEFAULT_URL, help="ComfyUI 地址")
     parser.add_argument("--poll-interval", type=int, default=5, help="轮询间隔")
@@ -142,7 +147,8 @@ def main():
         http_json(f"{args.url}/system_stats", timeout=5)
     except Exception:
         print("❌ ComfyUI 未运行！请先启动:")
-        print("   cd C:\\Users\\31954\\ComfyUI && env -u PYTHONPATH ./venv/Scripts/python.exe main.py --listen 127.0.0.1 --port 8188")
+        print("   cd C:\\Users\\31954\\ComfyUI && env -u PYTHONPATH ./venv/Scripts/python.exe main.py --listen 127.0.0.1 --port 8188 --enable-triton-backend")
+        print("   ⚠️ 必须带 --enable-triton-backend，否则 FP8 量化推理输出乱码")
         sys.exit(1)
 
     # 输出目录（确保绝对路径）
