@@ -147,8 +147,9 @@ def main():
         http_json(f"{args.url}/system_stats", timeout=5)
     except Exception:
         print("❌ ComfyUI 未运行！请先启动:")
-        print("   cd C:\\Users\\31954\\ComfyUI && env -u PYTHONPATH ./venv/Scripts/python.exe main.py --listen 127.0.0.1 --port 8188 --enable-triton-backend")
-        print("   ⚠️ 必须带 --enable-triton-backend，否则 FP8 量化推理输出乱码")
+        print("   cd C:\\Users\\31954\\ComfyUI && env -u PYTHONPATH ./venv/Scripts/python.exe main.py --listen 127.0.0.1 --port 8188 --enable-triton-backend --lowvram")
+        print("   ⚠️ 必须带 --enable-triton-backend（否则 FP8 量化推理输出乱码）")
+        print("   ⚠️ 8GB 显存必须带 --lowvram（否则 1024x1024 OOM 崩溃/黑图）")
         sys.exit(1)
 
     # 输出目录（确保绝对路径）

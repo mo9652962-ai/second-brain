@@ -47,7 +47,7 @@ Plan-and-Execute 模式 + 异构模型架构：Frontier 模型负责规划和复
 
 **Logged**: 2026-07-22T14:15:00+08:00
 **Priority**: high
-**Status**: pending
+**Status**: completed
 **Area**: docs
 
 ### Summary
@@ -113,7 +113,7 @@ OpenClaw 模型供应商单一依赖风险：opencode.ai 故障时所有模型�
 
 **Logged**: 2026-07-19T14:46:00+08:00
 **Priority**: medium
-**Status**: pending
+**Status**: completed
 **Area**: config
 
 ### Summary
@@ -140,7 +140,7 @@ OpenClaw Gateway 的 config.patch 和 config.apply 无法修改受保护路径�
 
 **Logged**: 2026-07-19T14:46:00+08:00
 **Priority**: medium
-**Status**: pending
+**Status**: completed
 **Area**: docs
 
 ### Summary
@@ -166,7 +166,7 @@ ClawHub 搜索同名 skill 时需要指定 @作者名/skill名 才能精确安�
 
 **Logged**: 2026-07-19T15:23:00+08:00
 **Priority**: medium
-**Status**: pending
+**Status**: completed
 **Area**: docs
 
 ### Summary
@@ -213,7 +213,7 @@ ClawHub 搜索同名 skill 时需要指定 @作者名/skill名 才能精确安�
 
 **Logged**: 2026-07-19T21:46:00+08:00
 **Priority**: high
-**Status**: pending
+**Status**: completed
 **Area**: docs
 
 ### Summary
@@ -250,7 +250,7 @@ PPT制作流程：大纲→JSON→生成→数据注入→背景脚本→交付
 
 **Logged**: 2026-07-19T21:46:00+08:00
 **Priority**: medium
-**Status**: pending
+**Status**: completed
 **Area**: infra
 
 ### Summary
@@ -282,7 +282,7 @@ PPT制作流程：大纲→JSON→生成→数据注入→背景脚本→交付
 
 **Logged**: 2026-07-20T20:27:00+08:00
 **Priority**: high
-**Status**: pending
+**Status**: completed
 **Area**: infra
 
 ### Summary
@@ -316,7 +316,7 @@ PPT制作流程：大纲→JSON→生成→数据注入→背景脚本→交付
 
 **Logged**: 2026-07-20T20:27:00+08:00
 **Priority**: high
-**Status**: pending
+**Status**: completed
 **Area**: config
 
 ### Summary
@@ -350,7 +350,7 @@ Tavily搜索发现的OpenClaw关键最佳实践：
 
 **Logged**: 2026-07-20T20:27:00+08:00
 **Priority**: medium
-**Status**: pending
+**Status**: completed
 **Area**: docs
 
 ### Summary
@@ -380,7 +380,7 @@ OpenClaw 2026新特性：Task Brain控制面、Active Memory插件、ACP语义�
 
 **Logged**: 2026-07-24T10:06:00+08:00
 **Priority**: high
-**Status**: pending
+**Status**: completed
 **Area**: docs
 
 ### Summary
@@ -422,7 +422,7 @@ Context Engineering 已正式取代 Prompt Engineering 成为 2026 AI Agent 核�
 
 **Logged**: 2026-07-24T10:06:00+08:00
 **Priority**: high
-**Status**: pending
+**Status**: completed
 **Area**: config
 
 ### Summary
@@ -465,7 +465,7 @@ Big Hat Group 2026-07-20 周报关键发现：
 
 **Logged**: 2026-07-24T10:06:00+08:00
 **Priority**: high
-**Status**: pending
+**Status**: completed
 **Area**: docs
 
 ### Summary
@@ -513,7 +513,7 @@ Multi-Agent Orchestration 六大模式已成 2026 生产标准，EU AI Act 8月�
 
 **Logged**: 2026-07-23T17:01:00+08:00
 **Priority**: high
-**Status**: pending
+**Status**: completed
 **Area**: config
 
 ### Summary
@@ -549,7 +549,7 @@ OpenClaw v2026.7.1 发布：Control UI 大改版，支持 GPT-5.6/Tencent Hy3/Me
 
 **Logged**: 2026-07-23T17:01:00+08:00
 **Priority**: high
-**Status**: pending
+**Status**: completed
 **Area**: docs
 
 ### Summary
@@ -589,7 +589,7 @@ OpenClaw v2026.7.1 发布：Control UI 大改版，支持 GPT-5.6/Tencent Hy3/Me
 
 **Logged**: 2026-07-20T20:45:00+08:00
 **Priority**: high
-**Status**: pending
+**Status**: completed
 **Area**: config
 
 ### Summary
@@ -669,7 +669,7 @@ Proactive Agent v3.1.0 的 WAL Protocol 要求：
 
 **Logged**: 2026-07-20T20:45:00+08:00
 **Priority**: medium
-**Status**: pending
+**Status**: completed
 **Area**: config
 
 ### Summary
@@ -755,7 +755,7 @@ Proactive Agent v3.1.0 的 WAL Protocol 要求：
 
 ## [LRN-20260720-011] best_practice
 
-**Logged**: 2026-07-21T01:10:00+08:00 | **Priority**: high | **Status**: pending | **Area**: config
+**Logged**: 2026-07-21T01:10:00+08:00 | **Priority**: high | **Status**: completed | **Area**: config
 
 ### Summary
 sora Skill全家桶原则：任务时该领域全部 skills 启用，全流程协同
@@ -850,7 +850,7 @@ Obsidian Git Clone vs 已有 Git 仓库的冲突：已有文件时不可 Clone�
 
 **Logged**: 2026-07-21T15:13:00+08:00
 **Priority**: high
-**Status**: pending
+**Status**: completed
 **Area**: config
 
 ### Summary
@@ -890,7 +890,7 @@ OpenClaw 2026.7.1-2 是最新稳定版；OpenClaw 已转型为非营利基金会
 
 **Logged**: 2026-07-21T15:13:00+08:00
 **Priority**: medium
-**Status**: pending
+**Status**: completed
 **Area**: infra
 
 ### Summary
@@ -921,7 +921,7 @@ OpenClaw session store 需要定期清理维护：孤儿 transcript 和缺少 tr
 
 **Logged**: 2026-07-21T15:13:00+08:00
 **Priority**: high
-**Status**: pending
+**Status**: completed
 **Area**: config
 
 ### Summary
@@ -991,7 +991,7 @@ Self-improvement cron 架构验证：isolated agentTurn 模式符合 2026 最佳
 
 **Logged**: 2026-07-21T15:13:00+08:00
 **Priority**: medium
-**Status**: pending
+**Status**: completed
 **Area**: config
 
 ### Summary
@@ -1025,7 +1025,7 @@ OpenClaw 安全态势：已知 CVE (2026年1月) + command owner 未配置
 
 **Logged**: 2026-07-21T15:13:00+08:00
 **Priority**: medium
-**Status**: pending
+**Status**: completed
 **Area**: config
 
 ### Summary
@@ -1058,7 +1058,7 @@ OpenClaw 安全态势：已知 CVE (2026年1月) + command owner 未配置
 
 **Logged**: 2026-07-21T15:42:00+08:00
 **Priority**: high
-**Status**: pending
+**Status**: completed
 **Area**: config
 
 ### Summary
@@ -1097,7 +1097,7 @@ OpenClaw 安全态势：已知 CVE (2026年1月) + command owner 未配置
 
 **Logged**: 2026-07-21T15:42:00+08:00
 **Priority**: high
-**Status**: pending
+**Status**: completed
 **Area**: docs
 
 ### Summary
@@ -1135,7 +1135,7 @@ AI 行业竞争态势：Claude Code 被曝扫描 OpenClaw 配置文件 (HERMES.m
 
 **Logged**: 2026-07-21T15:42:00+08:00
 **Priority**: high
-**Status**: pending
+**Status**: completed
 **Area**: config
 
 ### Summary
@@ -1183,7 +1183,7 @@ Agent Memory 2026 前沿：Write-Path 超越 Read-Only RAG，A-MEM RL 驱动自�
 
 **Logged**: 2026-07-21T15:42:00+08:00
 **Priority**: medium
-**Status**: pending
+**Status**: completed
 **Area**: config
 
 ### Summary
@@ -1220,7 +1220,7 @@ AI Agent 治理已成硬需求：ISO 42001 国际标准、多国监管、企业�
 
 **Logged**: 2026-07-21T15:42:00+08:00
 **Priority**: medium
-**Status**: pending
+**Status**: completed
 **Area**: docs
 
 ### Summary
@@ -1258,7 +1258,7 @@ AI Engineer World's Fair 2026 提炼的五大趋势：
 
 **Logged**: 2026-07-27T08:53:00+08:00
 **Priority**: high
-**Status**: pending
+**Status**: completed
 **Area**: config
 
 ### Summary
@@ -1298,7 +1298,7 @@ AI Engineer World's Fair 2026 提炼的五大趋势：
 
 **Logged**: 2026-07-27T08:53:00+08:00
 **Priority**: medium
-**Status**: pending
+**Status**: completed
 **Area**: config
 
 ### Summary
