@@ -76,10 +76,11 @@
 
 # 已登记条目
 
-## [NRR-20260731-001] jcode — Rust Agent harness 因 SAC 封杀被评估为不适用
+## [NRR-20260731-001] jcode — Claude OAuth 违反 Anthropic ToS（非"SAC 封杀"）
 
 **Logged**: 2026-07-31T22:00:00+08:00
-**Status**: recorded
+**Updated**: 2026-08-01T00:30:00+08:00（热榜复核修正）
+**Status**: updated
 **Domain**: tool-eval
 **Category**: abandoned-dead-end
 
@@ -87,24 +88,29 @@
 jcode（Rust 内存高效 Agent harness）能替代 opencode-go 作为 Hermes 的执行后端，降低内存占用。
 
 ### Method
-- 评估：GitHub 项目研究（star 14.5k）+ 社区讨论
-- 发现：该项目被 SAC（某安全组织）封杀
-- 上下文：2026-07 工具评估期间
+- 评估：GitHub 项目研究（star 14.6k 2026-08-01）+ 多篇独立评测
+- 发现：项目已进入 GitHub Trending（本周 +3,351★），但有明确风险
 
 ### Expected vs Actual
-- **预期**: 内存占用更低，可作为轻量 harness 使用
-- **实际**: 项目被 SAC 封杀，存在合规/安全风险，评估终止
+- **预期**: 内存占用更低（27.8MB/session vs Claude Code 386.6MB），可作为轻量 harness 使用
+- **实际**: 技术性能确实顶尖（单 session 27.8MB PSS、启动 14ms），**但 `jcode login --provider claude` 的 OAuth 流程违反 Anthropic ToS**——Anthropic 已封禁过使用"未经授权第三方工具"的账户，账号封禁风险真实存在
 
-### Interpretation
-封杀原因与项目性质相关，继续使用有未知风险。这不是方法失败，而是外部因素（安全组织裁定）导致的方向放弃——典型死胡同。
+### Interpretation（修正记录 2026-08-01）
+❌ 原记录误判为"SAC（某安全组织）封杀"——经热榜复核，**没有 SAC 封杀这回事**，真实风险是：
+1. **Claude OAuth 违规**（汇智网/多家评测证实 Anthropic 已执行过封禁）
+2. Benchmark 数字（20x/63x）未经过独立第三方复现
+3. 早期项目，可能有破坏性变更
+
+✅ 正确用法：不通过 OAuth 复用订阅，改用 **ANTHROPIC_API_KEY 直连**（无 ToS 风险）或其他 provider（Copilot/Gemini/Ollama）
 
 ### Lessons Learned
-1. 工具评估不只看 star 和技术，还要查安全/合规状态
-2. abandoned 结论要记录完整评估过程（三态更新：adopted→abandoned + 原因）
+1. 工具评估不能只看单一来源——"封杀"传言需核实（本次误记）
+2. 热榜出现是复核阴性结果的触发信号（NRR 更新机制）
+3. 技术强 ≠ 安全：性能第一（27.8MB）但 ToS 风险必须标注
 
 ### Source
-- 来源任务: 2026-07 GitHub Trending 工具评估
-- 证据链接: https://github.com/1jehuang/jcode（已存档至 knowledge/Research/）
+- 来源任务: 2026-07 GitHub Trending 工具评估 + 2026-08-01 热榜复核
+- 证据链接: https://github.com/1jehuang/jcode + https://www.hubwiz.com/blog/jcode-the-fastest-open-source-coding-agent/（OAuth ToS 风险分析）
 
 ---
 *第一条登记 · 2026-07-31 回填*
