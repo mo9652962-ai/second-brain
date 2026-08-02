@@ -203,7 +203,7 @@ v2026.3.7 引入的可插拔上下文管理界面已验证稳定。模型路由�
 - [x] ~~OpenClaw Active Memory 插件成熟度评估~~ ✅ 2026-07-31：官方文档完善+源码20+文件含测试+no-restart热加载，已成熟；但仅适用交互式会话，cron/后台不运行
 - [ ] 桌面美化实际部署（TranslucentTB + Rainmeter 安装包已就绪）→ 待 sora 执行
 - [ ] 小红书发「AI PPT 教程」内容 → 排期 8/3（依赖 PPT 样例素材）
-- [ ] Krea2 安装（ComfyUI + 14GB 模型下载）→ 排期 8/3+
+- [x] ~~Krea2 安装（ComfyUI + 14GB 模型下载）~~ ✅ 2026-08-02：8/1 深夜已部署完成（见 projects/current.md），待办过时
 - [ ] Skill 重复合并（6 组，8/1 审计识别）→ 待 sora 确认
 
 ---
