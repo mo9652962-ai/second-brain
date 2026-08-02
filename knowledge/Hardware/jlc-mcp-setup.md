@@ -41,3 +41,6 @@ Hermes ──MCP──→ jlcmcp (38 tools) ──WebSocket──→ relay.js �
 - 差分对/等长 (6)：pcb_create_diff_pair
 - 原理图 (3)：sch_get_netlist
 - 计算器 (2)：calc_impedance / calc_trace_width
+
+---
+> 关联: [[pcb-design-notes]]（PCB 学习笔记） · [[pcb-ai-research]]（AI 自动化研究） | [[HOME|🏠 首页]]

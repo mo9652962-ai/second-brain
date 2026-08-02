@@ -251,3 +251,6 @@ status: learning
 - [可扩展性视频讲座](https://www.youtube.com/watch?v=-W9F__D3oY4)
 - [互动式编程面试挑战](https://github.com/donnemartin/interactive-coding-challenges)
 - [系统设计模板](https://leetcode.com/discuss/career/229177/My-System-Design-Template)
+
+---
+> 关联: [[system-design-primer-study]]（社区文章研究） | [[HOME|🏠 首页]]

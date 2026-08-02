@@ -106,3 +106,6 @@ cd /c/Users/31954/ComfyUI && env -u PYTHONPATH ./venv/Scripts/python.exe main.py
 # 访问 GUI: http://127.0.0.1:8188
 # 模型放: models/diffusion_models/ + text_encoders/ + vae/
 ```
+
+---
+> 关联: [[krea2-local-image-gen-study]]（模型研究笔记） | [[HOME|🏠 首页]]

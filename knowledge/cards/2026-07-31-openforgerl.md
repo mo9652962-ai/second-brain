@@ -56,3 +56,5 @@ Agent Harness (OpenClaw/Codex/Claude Code)
 ---
 
 *卡片来源：当天知识库精选 · arxiv-2026-07-31-core-contributions（🥇 精选）*
+
+> **延伸**: [[openforgerl-trace-pipeline-feasibility]]（自训数据管线可行性备忘）
