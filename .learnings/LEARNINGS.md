@@ -1513,7 +1513,7 @@ vault-maintenance cron 在非工作时间密集触发（7/28 凌晨到早晨触�
 
 ## [LRN-20260801-001] knowledge_gap
 
-**Logged**: 2026-08-01T08:00+08:00 | **Priority**: medium | **Status**: active | **Area**: infra
+**Logged**: 2026-08-01T08:00+08:00 | **Priority**: medium | **Status**: resolved | **Area**: infra
 
 ### Summary
 Tavily API 用量配额耗尽 (432 plan limit exceeded) — 搜索主力后端单点故障
@@ -1523,6 +1523,10 @@ Tavily API 用量配额耗尽 (432 plan limit exceeded) — 搜索主力后端�
 
 ### Suggested Action
 1) 监控配额重置周期；2) 升级 Tavily plan 或申请额度；3) 实施搜索请求去重 + 语义缓存 (0.92 阈值) 减少 20-40% 调用；4) 批量搜索控制并发 ≤3 (避免 ERR-20260721-001 复现)
+
+### Resolution
+- **Resolved**: 2026-08-02T11:20:00+08:00
+- **Notes**: 8/2 自改进 cron Tavily 搜索成功（advanced 深度），配额已重置或 fallback 生效。保持语义缓存 + 并发≤3 的预防措施以防再次触及限制。5 路冗余架构（Tavily/Exa/Firecrawl/DDGS/SearXNG）作为常态保障。
 
 ### Metadata
 - Tags: tavily, quota, search, rate-limit, fallback

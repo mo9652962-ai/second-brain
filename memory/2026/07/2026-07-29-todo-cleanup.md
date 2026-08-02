@@ -12,7 +12,7 @@ generated: 2026-07-29 10:30
 | 文件 | 待办项 | 理由 |
 |:-----|:-------|:-----|
 | memory/2026/07/2026-07-28.md | Obsidian Vault 断链修复 | ✅ 已由 07-28 维护 cron 处理，零断链确认 |
-| memory/2026/07/2026-07-21.md | 探索 opencode-go 是否有更多vision模型 | ✅ 已调研并更新结论（kimi-k2.7/minimax-m3/qwen3.7-plus支持，但有bug #70482） |
+| memory/2026/07/2026-07-21.md | 探索 opencode-go 是否有更多vision模型 | ✅ 已调研并更新结论（kimi-k2.7/minimax-m3/qwen3.7-plus支持，但有bug `#70482`） |
 | memory/2026/07/2026-07-27-todo-cleanup.md | 探索 opencode-go 是否有更多vision模型 | ✅ 已调研完成 |
 
 ### 扫描范围更新

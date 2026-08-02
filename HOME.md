@@ -162,6 +162,16 @@ Hermes 工作流优化、Cron 自动化、交互规则沉淀（自举域）
 |- **[[playbooks/camofox-docker-setup|Camofox Docker 搭建]]** — Docker 部署方案
 |- **[[playbooks/web-scraping-cron-template|Web Scraping Cron 模板]]** — 自动化爬虫模板
 |- **[[knowledge/Python/Awesome-Lists-Study|Awesome Lists 研究]]** — Python 精品列表学习
+|- **[[memory/2026/07/2026-07-31-daily-review|今日回顾]]** — 07-31 知识吸收回顾
+|- **[[memory/2026/07/2026-07-31-daily-todo-cleanup|今日 TODO 清理]]** — 07-31 待办扫描
+|- **[[memory/2026/07/2026-07-31-xianyu-todo-executor|闲鱼待办执行]]** — 07-31 闲鱼任务执行
+|- **[[memory/2026/08/2026-08-01-daily-review|今日回顾]]** — 08-01 知识吸收回顾
+|- **[[memory/2026/08/2026-08-01-daily-todo-cleanup|今日 TODO 清理]]** — 08-01 待办扫描
+|- **[[memory/2026/08/2026-08-01-todo-cleanup|TODO 清理]]** — 08-01 补充待办扫描
+|- **[[memory/2026/08/2026-08-01-reflection|反思日记]]** — 08-01 自我反思
+|- **[[memory/2026/08/2026-08-02|今日日志]]** — 08-02 自我完善记录
+|- **[[health/HEALTH_REPORT-2026-08-01|系统健康报告]]** — 08-01 健康检查
+|- **[[research/arxiv-weekly-2026-08-02|arXiv 周报]]** — 08-02 论文速览
 
 ### 🧩 散落知识点关联网
 
