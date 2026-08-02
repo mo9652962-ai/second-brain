@@ -79,3 +79,6 @@ function buildMarketCategoryWhere(_, category) {
 ---
 
 *第 5 站完成 · 下一步: 第 6 站 adminPanel + webAdminHandlers 管理后台*
+
+---
+> **CloudBase 学习路径系列**: [[cloudbase-learning-s1-login|① 登录]] · [[cloudbase-learning-s2-contentcheck|② 内容安全]] · [[cloudbase-learning-s3-dboperations|③ 统一CRUD]] · [[cloudbase-learning-s4-notifysender|④ 订阅消息]] · [[cloudbase-learning-s5-marketcategories|⑤ 分类体系]] · [[cloudbase-learning-s6-adminpanel|⑥ 管理后台]] · [[cloudbase-learning-s7-analytics|⑦ 数据看板]] · [[cloudbase-learning-s8-activity|⑧ 活动专区]] | [[HOME|🏠 首页]]

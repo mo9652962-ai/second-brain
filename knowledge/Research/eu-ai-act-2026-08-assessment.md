@@ -46,5 +46,6 @@ source: web_search 2026-08-01（salt.security / mckennaconsultants / CSA / artif
 
 ## 关联
 
+- 🃏 知识卡片：[[2026-08-02-eu-ai-act|EU AI Act 生效日卡片]]（8/2 精选）
 - MEMORY.md「AI Agent 生产部署 8 大最佳实践」→ Bounded Autonomy（置信度阈值 + 人工升级路径）天然对齐 Art.14
 - 技能 `hermes-automation-patterns` → 日志/心跳监控可复用为合规日志基础

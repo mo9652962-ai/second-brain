@@ -303,4 +303,4 @@ curl -X POST https://api.tavily.com/search \
 - Firecrawl — https://firecrawl.dev
 - SearXNGforWindows — https://github.com/mbaozi/SearXNGforWindows
 ---
-> 关联: [[AI-Agent]] · [[Cross-Domain]] · [[Cross-Domain|🔀 知识地图]] | [[HOME|🏠 首页]]
+> 关联: [[AI-Agent]] · [[deepseek-v4-flash-0731-upgrade]] · [[Cross-Domain]] · [[Cross-Domain|🔀 知识地图]] | [[HOME|🏠 首页]]

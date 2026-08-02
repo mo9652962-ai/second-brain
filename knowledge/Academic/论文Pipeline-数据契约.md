@@ -6,6 +6,8 @@ status: draft
 
 # 论文 Pipeline 数据契约
 
+> 精简版（原始 JSON 输入契约）见 [[paper-pipeline-data-contract]]
+
 ## 一、接稿阶段
 
 ### 输入数据契约

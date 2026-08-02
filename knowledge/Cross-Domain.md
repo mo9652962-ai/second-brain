@@ -139,6 +139,47 @@ PPT 设计(PPT-Design)
     = 学术服务变现闭环
 ```
 
+### 场景九：论文接单流水线（W31 新增）
+
+```
+接单SOP(接单工作流-SOP)
+    + 数据契约(论文Pipeline-数据契约)
+    + 降AI工具(降AI工具对比速查表)
+    + 素材包(闲鱼上架素材包-预生成)
+    + 合规评估(eu-ai-act-2026-08-assessment)
+    = 从接单到交付的全流程标准化
+```
+
+### 场景十：本地 AI 生图（W31 新增）
+
+```
+模型研究(krea2-local-image-gen-study)
+    + 本地部署(krea2-comfyui-deploy-notes)
+    + GPU 硬件(RTX 4060 8GB)
+    + 设计应用(MOC-Design)
+    = 免费无限生图 → 接单/内容创作
+```
+
+### 场景十一：小程序云开发全链路（W31 新增）
+
+```
+学习系列(cloudbase-learning-s1~s8)
+    + 项目研究(xiaoyuanbianlihe-project-study)
+    + 工程模式(hallotickets-project-study)
+    + 设计方案(campus-box-design)
+    = 从零到上线的微信小程序能力
+```
+
+### 场景十二：研究吸收流水线（W31 新增）
+
+```
+每日速览(knowledge/Daily)
+    + 研究笔记(knowledge/Research)
+    + 知识卡片(knowledge/cards)
+    + Research MOC(MOC-Research)
+    = learn → research → apply 落地闭环
+```
+
 ---
 
 ## 📊 关联矩阵
@@ -178,6 +219,11 @@ SORT domain ASC
 | 🎯 **ponytail** | [[ponytail]] | 极简编程 / 方法论 |
 | 🔧 **show-me-the-story** | [[show-me-the-story]] | 长篇小说 / 去AI味 |
 | 🛠️ **ai-tools-reference** | [[ai-tools-reference]] | AI工具目录 / 设计 / 视频 |
+| 📋 **接单工作流-SOP** | [[knowledge/Academic/接单工作流-SOP\|接单SOP]] | 学术 / 变现 / 交付 |
+| ⚖️ **eu-ai-act-2026-08-assessment** | [[knowledge/Research/eu-ai-act-2026-08-assessment\|EU AI Act]] | AI / 合规 / 多Agent |
+| 🎨 **krea2-local-image-gen-study** | [[knowledge/Research/krea2-local-image-gen-study\|Krea2]] | 设计 / 本地生图 / GPU |
+| 🧩 **cloudbase-learning-s1-login** | [[knowledge/Dev/cloudbase-learning-s1-login\|CloudBase系列]] | 小程序 / 云开发 / 项目 |
+| 🔬 **MOC-Research** | [[knowledge/Research/MOC-Research\|研究域MOC]] | 全部域（研究吸收） |
 
 ---
 

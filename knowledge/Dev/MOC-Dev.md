@@ -19,6 +19,23 @@ updated: 2026-07-30
 - [[knowledge/Dev/web-dev-2026|Web Dev 2026]]
 - [[knowledge/Dev/system-design-primer|系统设计基础]]
 - [[knowledge/Dev/mattpocock-methodology|Matt Pocock 方法论]]
+- [[knowledge/Dev/Vibe-Coding|Vibe Coding]]
+- [[knowledge/Dev/codebase-memory-mcp|Codebase Memory MCP]] — 代码知识图谱
+
+## 🆕 本周新增（07-27 ~ 08-02）
+
+- [[knowledge/Dev/system-prompts-reference/README|System Prompts 存档]] — Claude/GPT-5.6/DeepSeek/Hermes 精选提示词
+- [[knowledge/Dev/mcp-spec-2026-07-28|MCP 规范候选版]] — 最大规模协议升级
+- [[knowledge/Dev/context-compaction-params-reference|上下文压缩参数参考]] — OpenFic 吸收
+- [[knowledge/Dev/trellis-3d-reference|TRELLIS 3D 生成]] — 微软 3D 模型（备查）
+- [[knowledge/Dev/awesome-go-reference|Awesome Go]] · [[knowledge/Dev/geolibre-reference|GeoLibre]] · [[knowledge/Dev/secret-knowledge-reference|Secret Knowledge]] — 备用参考三件套
+
+## 📦 吸收笔记归档
+
+- [[knowledge/Dev/agentsview-absorbed|AgentsView 吸收]] — 会话分析平台
+- [[knowledge/Dev/codex-2week-game-absorbed|Codex 两周游戏吸收]] — AI 编码工作流
+- [[knowledge/Dev/light-skills-absorbed|Light Skills 吸收]] — 科研全流程 Skills 包
+- [[knowledge/Dev/ponytail-absorbed|Ponytail 吸收补强]] — 极简编程原则
 
 ## 📚 备用参考（存档）
 
