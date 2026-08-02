@@ -4,7 +4,7 @@ import os, sys, json, csv, requests
 from datetime import datetime
 from pathlib import Path
 
-WORKSPACE = Path("/c/Users/31954/.openclaw/workspace")
+WORKSPACE = Path(os.path.expanduser("~")) / ".openclaw" / "workspace"
 RESEARCH_DIR = WORKSPACE / "knowledge" / "Research"
 TRACKING_FILE = RESEARCH_DIR / "github-projects-tracking.csv"
 GITHUB_API = "https://api.github.com"

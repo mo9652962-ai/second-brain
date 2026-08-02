@@ -113,3 +113,6 @@ posts: {
 - [ ] 动手实践：创建自己的 CloudBase 环境，从 login 开始部署
 - [ ] 对照 `scripts/deploy-cloud-functions.ps1` 部署脚本
 - [ ] 有客户需求时用 `references/miniprogram-order-scaffold.md` 报价接单
+
+---
+> **CloudBase 学习路径系列**: [[cloudbase-learning-s1-login|① 登录]] · [[cloudbase-learning-s2-contentcheck|② 内容安全]] · [[cloudbase-learning-s3-dboperations|③ 统一CRUD]] · [[cloudbase-learning-s4-notifysender|④ 订阅消息]] · [[cloudbase-learning-s5-marketcategories|⑤ 分类体系]] · [[cloudbase-learning-s6-adminpanel|⑥ 管理后台]] · [[cloudbase-learning-s7-analytics|⑦ 数据看板]] · [[cloudbase-learning-s8-activity|⑧ 活动专区]] | [[HOME|🏠 首页]]

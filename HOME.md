@@ -38,6 +38,9 @@ LIMIT 10
 - [[memory/2026/07/2026-07-28-maintenance|2026-07-28 维护报告]] — 仓库健康检查 + 孤立笔记链接
 - [[memory/2026/07/2026-07-31-maintenance|2026-07-31 维护报告]] — 链接修复 + 空文件清理
 - [[memory/2026/07/2026-07-30-reflection|🪞 反思日记 07-30]] — 7/30 任务完成与知识吸收回顾
+- [[memory/2026/08/2026-08-02-maintenance|2026-08-02 维护报告]] — 空壳清理 + 游离日志归位 + 推送分支修复
+- [[memory/2026/08/weekly-2026-08-02|📚 W31 周度整理报告]] — 13 文件归域 + Research MOC 创建 + 47 孤儿补链
+- [[knowledge/Research/MOC-Research|🔬 Research MOC 创建]] — 36 篇研究笔记索引化（W31 新建）
 - [[docs/WPS数学练习册标准化优化指南|WPS 数学练习册标准化指南]] — 排版规范参考
 - [[memory/2026/07/2026-07-27-maintenance|2026-07-27 维护报告]] — 仓库健康检查：全部通过
 - [[memory/2026/07/2026-07-26-maintenance|2026-07-26 维护报告]] — 结构优化 v2 + 批量链接修复
@@ -75,7 +78,7 @@ LIMIT 10
 
 ---
 
-## 📁 六大知识域
+## 📁 七大知识域
 
 ### 🤖 [[knowledge/AI/AI-Agent|AI]] — Agent 核心
 AI 能力架构、Skill 编排、模型供应商策略、Vibe Research
@@ -116,6 +119,11 @@ Obsidian 笔记系统、效率插件
 Hermes 工作流优化、Cron 自动化、交互规则沉淀（自举域）
 - **包含**: hermes-workflow-preferences · hermes-automation-patterns · daily-knowledge-absorption-gate
 - **关联**: → 全部域（Agent 方法论）· Productivity（效率工具）
+
+### 🔬 [[knowledge/Research/MOC-Research|Research]] — 外部调研
+web 研究、GitHub 热榜、深度调研的落地笔记（W31 新建域）
+- **包含**: MOC-Research · 36 篇研究笔记（日报热榜/深度研究/文章研究/工具部署）
+- **关联**: → AI → Academic → 全部域（learn→research→apply）
 
 
 ---
@@ -173,6 +181,13 @@ Hermes 工作流优化、Cron 自动化、交互规则沉淀（自举域）
 |- **[[health/HEALTH_REPORT-2026-08-01|系统健康报告]]** — 08-01 健康检查
 |- **[[research/arxiv-weekly-2026-08-02|arXiv 周报]]** — 08-02 论文速览
 |- **[[memory/2026/08/2026-08-02-maintenance|今日维护报告]]** — 仓库健康检查 (08-02)
+|- **[[memory/2026/08/weekly-2026-08-02|W31 周度整理报告]]** — 本周知识库整合
+|- **[[knowledge/Research/MOC-Research|🔬 研究域 MOC]]** — 36 篇研究笔记索引
+|- **[[knowledge/Daily/hackernews-2026-08-02|HN 今日热点]]** — Hacker News 热门 (08-02)
+|- **[[knowledge/cards/2026-08-02-eu-ai-act|EU AI Act 生效卡片]]** — 今日法规生效精选
+|- **[[knowledge/Research/GitHub-Weekly-2026-08-02|GitHub 宝藏挖掘]]** — 08-02 周报
+|- **[[knowledge/AI/deepseek-v4-flash-0731-upgrade|DeepSeek V4 Flash 升级]]** — 模型能力跃升
+|- **[[knowledge/Hardware/jlc-mcp-setup|JLCPCB MCP]]** — 嘉立创 EDA AI 自动化
 
 ### 🧩 散落知识点关联网
 
@@ -250,8 +265,8 @@ SORT file.folder ASC
 
 | 指标 | 数值 |
 |------|------|
-| 知识域 | 6 域 + 1 中枢 |
-| knowledge 文件 | ~25 篇 |
+| 知识域 | 7 域 + 1 中枢（+ Research 研究域） |
+| knowledge 文件 | ~160 篇 |
 | Skills 生态 | 93 全活跃 |
 | 记忆系统 | MEMORY + 每日日志 |
 | Git 备份 | github.com/mo9652962-ai/second-brain |

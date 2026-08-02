@@ -8,7 +8,7 @@ status: adopted
 
 # 🗺️ 知识地图 — Knowledge Map
 
-> 所有知识领域的索引与关联。最后更新: 2026-07-27（W30 终结整理 — 本周 GitHub Trending 5 大 AI/Dev 项目入库）
+> 所有知识领域的索引与关联。最后更新: 2026-08-02（W31 周度整理 — 13 个散落文件归域 + Research MOC 创建 + 47 个孤儿补链）
 
 ---
 
@@ -71,6 +71,33 @@ graph TD
     B3 -.-> B4
     C2 -.-> B4
 ```
+
+---
+
+## 🆕 W31 新增速览（2026-07-27 ~ 08-02）
+
+> 本周内容量极大：36 篇研究笔记 + 8 篇 CloudBase 系列 + 4 篇 System Prompts 存档 + 2 张知识卡片 + 每日 HN 速览。
+
+### 各域本周新增
+
+| 域 | 新增重点 | 入口 |
+|:---|:---------|:-----|
+| 🔬 Research（新 MOC） | 36 篇研究笔记（日报热榜/深度研究/文章研究/工具部署） | [[knowledge/Research/MOC-Research\|MOC-Research]] |
+| 📚 Academic | 接单 SOP · 论文 Pipeline 数据契约（合并）· 降AI工具速查 · 闲鱼素材包 · EU AI Act | [[knowledge/Academic/MOC-Academic\|MOC-Academic]] |
+| 🤖 AI | DeepSeek V4 Flash 升级 · AI 科研五元解耦 | [[knowledge/AI/MOC-AI\|MOC-AI]] |
+| 💻 Dev | CloudBase 8 站学习系列 · System Prompts 存档 · MCP 规范候选版 · TRELLIS 3D | [[knowledge/Dev/MOC-Dev\|MOC-Dev]] |
+| 🔧 Hardware | JLCPCB MCP（38 工具） | [[knowledge/Hardware/MOC-Hardware\|MOC-Hardware]] |
+| 🎨 Design | Krea2 本地生图研究 + ComfyUI 部署 | [[knowledge/Design/MOC-Design\|MOC-Design]] |
+| 🏠 Productivity | 记忆贡献度追踪 · Token 报告 · Obsidian MCP | [[knowledge/Productivity/MOC-Productivity\|MOC-Productivity]] |
+| 📅 Daily / 🃏 Cards | HN 速览 ×4 · 知识卡片 ×2（OpenForgeRL / EU AI Act） | [[knowledge/Daily/hackernews-2026-08-02\|HN 08-02]] · [[knowledge/cards/2026-08-02-eu-ai-act\|卡片 08-02]] |
+
+### 本周关键研究主题
+
+1. **EU AI Act 8/2 生效** — 多 Agent 场景合规评估（[[knowledge/Research/eu-ai-act-2026-08-assessment|评估]] + [[knowledge/cards/2026-08-02-eu-ai-act|卡片]]）
+2. **Krea2 本地生图** — 模型研究 → ComfyUI 部署踩坑全记录（RTX 4060 8GB 满足）
+3. **自训数据管线** — OpenForgeRL 轨迹导出实测（7 天 206 会话）
+4. **Claude Max 支付漏洞事件** — 20x 扣费事件研究
+5. **CloudBase 小程序云开发** — 校园便利盒 8 站拆解学习
 
 ---
 
@@ -195,6 +222,12 @@ MCP 生态: GitHub + Filesystem + JLCPCB(38工具) + Obsidian(笔记操作)
 | [[vibe-research]] | GitHub 社区研究 | AI 科研工具选型 | [[researchpilot-skills]] · [[ai-research-collaboration]] |
 | [[campus-box-design]] | 微信小程序开发 | 校园服务平台 MVP | wechat-miniprogram-cloudbase（skill，未安装本地） |
 | [[ponytail]] | 社区最佳实践 | 编程极简原则 | engineering-workflow |
+| [[deepseek-v4-flash-0731-upgrade]] | 官方 API 验证 | 模型 fallback 链更新 | [[LLM-Providers]] |
+| [[jlc-mcp-setup]] | JLCPCB EDA | PCB 设计自动化 | [[pcb-design-notes]] · [[pcb-ai-research]] |
+| [[eu-ai-act-2026-08-assessment]] | EU AI Act 法规 | 多 Agent 合规基线 | [[2026-08-02-eu-ai-act\|知识卡片]] |
+| [[krea2-local-image-gen-study]] | 生图模型研究 | 本地 ComfyUI 部署 | [[krea2-comfyui-deploy-notes]] |
+| [[cloudbase-learning-s1-login]] | 微信小程序云开发 | 校园便利盒复刻 | [[xiaoyuanbianlihe-project-study]] |
+| [[openforgerl-trace-pipeline-feasibility]] | 轨迹导出实测 | 自训数据管线设计 | [[2026-07-31-openforgerl\|知识卡片]] |
 
 ---
 
@@ -208,13 +241,15 @@ MCP 生态: GitHub + Filesystem + JLCPCB(38工具) + Obsidian(笔记操作)
 
 | 等级 | 领域 |
 |:---:|:-----|
-| 🛠️ **可执行** | 系统设计、软件工程工作流、嵌入式、CAD、模型选型、Agent自我进化、**Hermes 配置体系**、**PPT 设计**、**学术写作**、**Vault 运维** |
-| 📖 **学习** | 视频编辑、AI VTuber 架构、Agent Skills 方法论、极简编程、创意开发、微信小程序、设计工具集、**Context Engineering**、**Multi-Agent 编排**、**Memory 工程**、**Agent 治理/合规** |
-| 🔬 **关注** | Grok Build（竞品）、多模态模型、Edge AI on MCU、AI长篇小说工具、**Agent 互操作标准**、**OpenClaw Active Memory** |
+| 🛠️ **可执行** | 系统设计、软件工程工作流、嵌入式、CAD、模型选型、Agent自我进化、**Hermes 配置体系**、**PPT 设计**、**学术写作**、**Vault 运维**、**论文 Pipeline 接单**、**CloudBase 小程序** |
+| 📖 **学习** | 视频编辑、AI VTuber 架构、Agent Skills 方法论、极简编程、创意开发、微信小程序、设计工具集、**Context Engineering**、**Multi-Agent 编排**、**Memory 工程**、**Agent 治理/合规**、**Research 研究域（36 篇）**、**EU AI Act 合规**、**Krea2 本地生图** |
+| 🔬 **关注** | Grok Build（竞品）、多模态模型、Edge AI on MCU、AI长篇小说工具、**Agent 互操作标准**、**OpenClaw Active Memory**、**MCP 规范候选版** |
 
 ---
 
-|> **W30 亮点**: 24+ 知识点的系统性吸收，2 个新 Skill 创建，配置体系全面加固，Vault 健康归零，MCP 生态扩展至 4 个服务器（GitHub/Filesystem/JLCPCB/Obsidian），8 级 fallback 链无 OpenRouter。详情见 [[../memory/2026/07/weekly-2026-07-26|本周学习总结]]。
+|> **W30 亮点**: 24+ 知识点的系统性吸收，2 个新 Skill 创建，配置体系全面加固，Vault 健康归零，MCP 生态扩展至 4 个服务器（GitHub/Filesystem/JLCPCB/Obsidian），8 级 fallback 链无 OpenRouter。详情见 [[../memory/2026/07/weekly-2026-07-26|W30 周学习总结]]。
+>
+> **W31 亮点**: 36 篇研究笔记入库（新 Research MOC）、CloudBase 8 站系列、论文接单全流程沉淀（SOP+数据契约+素材包）、EU AI Act 合规评估、Krea2 本地生图跑通。周度整理见 [[../memory/2026/08/weekly-2026-08-02|W31 周度整理报告]]。
 
 ---
 [[HOME|🏠 返回首页]]
