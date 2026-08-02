@@ -16,19 +16,25 @@ status: absorbed
 | 文本编码器 | `qwen3vl_4b_bf16.safetensors` | 8.27GB (bf16 版!) | `models/text_encoders/` |
 | VAE | `qwen_image_vae.safetensors` + **自定义 Krea2VAEDecodeOfficial** | diffusers AutoencoderKLQwenImage | — |
 
-### 🎯 关键修复（2026-08-02 十轮研究结论）
+### 🎯 关键修复（2026-08-02 十轮研究最终结论）
 
-1. **weight_dtype 必须 `default`**！`fp8_e4m3fn`/`fp8_e5m2` 在 RTX 4060 上反量化坏掉 → **全黑图**
-2. **CFG 必须 1.0**！脚本默认曾误设为 0.0 → 黑图
-3. **8GB 显存只能用 512×512 采样**！1024 采样 latent 通道退化（无内容）→ 黑图
-4. **512 出图后 `--upscale2x` PIL LANCZOS 放大到 1024**（8GB 卡高清方案）
-5. latent 处理链路（To5D + ProcessOut）**是正确的**——diffusers `_decode` 内部不做 latents 缩放，必须手动 x*std+mean
-6. ComfyUI 0.29 原生 VAELoader 加载 qwen_image_vae **恒定输出灰图（bug 仍在）** → 必须用 diffusers 自定义节点
-7. 官方 workflow 无 latent 转换节点（0.3.5x 版本原生 VAE 已可用）——**升级 ComfyUI 后可用官方链路**
+1. **必须 `--lowvram` 启动**！无 lowvram 时 bf16 全精度权重 12.5GB > 8GB 显存 → 权重 offload 出错 → **纯黑图（亮度 0）**
+2. **weight_dtype=default 或 fp8_e4m3fn 均可**（lowvram 下都正常；fp8 权重 6.3GB 可完整驻留）
+3. **CFG 必须 1.0**！Turbo 蒸馏模型用 0 会黑图
+4. **Krea2 1024 直接采样 = 必然黑图**（模型从零噪声高分辨率采样退化，8GB 卡无解）
+5. **hires latent 二次采样（denoise 0.5）= 全白图**（蒸馏模型不支持部分 denoise）
+6. **8GB 卡最优解：512 采样 + 4x-UltraSharp AI 超分 → 2048**（锐度比 LANCZOS 高 30-64%）
+7. latent 处理链路（To5D + ProcessOut）正确——diffusers `_decode` 内部不做 latents 缩放
+8. ComfyUI 0.29 原生 VAELoader 加载 qwen_image_vae 恒定输出灰图（bug 仍在）
+9. 之前误判"fp8 黑图"实为**无 lowvram 时显存溢出**；误判"1024 黑图因显存"实为**模型采样退化**
 
 ### ✅ 稳定命令
 ```bash
-py -3.12 scripts/krea2-gen.py "提示词" --size 512x512 --cfg 1.0 --upscale2x
+# 启动 ComfyUI（必须 --lowvram）
+cd C:\Users\31954\ComfyUI && env -u PYTHONPATH ./venv/Scripts/python.exe main.py --listen 127.0.0.1 --port 8188 --enable-triton-backend --lowvram
+
+# 生成（512 基础 + AI 超分 2048）
+py -3.12 scripts/krea2-gen.py "提示词" --hires
 ```
 
 ## 📜 商用许可（2026-08-01 研究确认）
