@@ -8,13 +8,28 @@ status: absorbed
 
 > 2026-08-01 部署 · RTX 4060 Laptop 8GB · Windows 10 · ComfyUI 0.29
 
-## ✅ 最终可用方案（2026-08-01 深夜验证成功出图 00015）
+## ✅ 最终可用方案（2026-08-02 十轮研究定版）
 
 | 组件 | 文件 | 版本 | 位置 |
 |------|------|------|------|
 | 主模型 | `krea2_turbo_fp8_scaled.safetensors` | 12.24GB (**官方 Comfy-Org 版**) | `models/diffusion_models/` |
 | 文本编码器 | `qwen3vl_4b_bf16.safetensors` | 8.27GB (bf16 版!) | `models/text_encoders/` |
-| VAE | **不需要 VAELoader** | 用 `Krea2VAEDecodeOfficial` 节点 (diffusers AutoencoderKLQwenImage) | — |
+| VAE | `qwen_image_vae.safetensors` + **自定义 Krea2VAEDecodeOfficial** | diffusers AutoencoderKLQwenImage | — |
+
+### 🎯 关键修复（2026-08-02 十轮研究结论）
+
+1. **weight_dtype 必须 `default`**！`fp8_e4m3fn`/`fp8_e5m2` 在 RTX 4060 上反量化坏掉 → **全黑图**
+2. **CFG 必须 1.0**！脚本默认曾误设为 0.0 → 黑图
+3. **8GB 显存只能用 512×512 采样**！1024 采样 latent 通道退化（无内容）→ 黑图
+4. **512 出图后 `--upscale2x` PIL LANCZOS 放大到 1024**（8GB 卡高清方案）
+5. latent 处理链路（To5D + ProcessOut）**是正确的**——diffusers `_decode` 内部不做 latents 缩放，必须手动 x*std+mean
+6. ComfyUI 0.29 原生 VAELoader 加载 qwen_image_vae **恒定输出灰图（bug 仍在）** → 必须用 diffusers 自定义节点
+7. 官方 workflow 无 latent 转换节点（0.3.5x 版本原生 VAE 已可用）——**升级 ComfyUI 后可用官方链路**
+
+### ✅ 稳定命令
+```bash
+py -3.12 scripts/krea2-gen.py "提示词" --size 512x512 --cfg 1.0 --upscale2x
+```
 
 ## 📜 商用许可（2026-08-01 研究确认）
 

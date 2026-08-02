@@ -137,13 +137,14 @@ def main():
     parser.add_argument("-o", "--output", default=None, help="输出目录")
     parser.add_argument("-s", "--seed", type=int, default=None, help="随机种子")
     parser.add_argument("-n", "--count", type=int, default=1, help="生成数量")
-    parser.add_argument("--size", default="1024x1024", help="分辨率 WxH")
+    parser.add_argument("--size", default="512x512", help="分辨率 WxH（8GB 显存建议 512x512，1024 会黑图）")
     parser.add_argument("--steps", type=int, default=8, help="采样步数")
     parser.add_argument("--cfg", type=float, default=1.0, help="CFG scale (Turbo 蒸馏模型用 1.0，0 会导致黑图)")
     parser.add_argument("--negative", default=DEFAULT_NEGATIVE, help="负面提示词")
     parser.add_argument("--url", default=DEFAULT_URL, help="ComfyUI 地址")
     parser.add_argument("--poll-interval", type=int, default=5, help="轮询间隔")
     parser.add_argument("--timeout", type=int, default=600, help="超时秒")
+    parser.add_argument("--upscale2x", action="store_true", help="512 出图后 PIL 高质量放大 2x（8GB 卡的高清方案）")
     args = parser.parse_args()
 
     # 解析尺寸
@@ -206,8 +207,19 @@ def main():
                     dst = output_dir / filename
                     import shutil
                     shutil.copy2(src, dst)
-                    saved.append(dst)
-                    print(f"✅ 已保存: {dst}")
+                    # 2x 放大（8GB 卡高清方案）
+                    if args.upscale2x:
+                        from PIL import Image
+                        im = Image.open(dst)
+                        w2, h2 = im.size[0] * 2, im.size[1] * 2
+                        im2 = im.resize((w2, h2), Image.LANCZOS)
+                        dst2 = dst.with_name(dst.stem + "_2x.png")
+                        im2.save(dst2)
+                        saved.append(dst2)
+                        print(f"✅ 已保存: {dst} → 2x: {dst2}")
+                    else:
+                        saved.append(dst)
+                        print(f"✅ 已保存: {dst}")
                 else:
                     print(f"✅ 已生成 (未找到文件: {src})")
         elif done["status"] == "error":
