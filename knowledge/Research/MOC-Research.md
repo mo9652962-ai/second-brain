@@ -28,6 +28,12 @@ status: adopted
 | [[github-weekly-2026-07-31-5projects]] | 本周 5 项目（苹果微软） | 07-31 |
 | [[GitHub-Weekly-2026-08-02]] | GitHub 宝藏挖掘 | 08-02 |
 | [[github-trending-2026-08-02-study]] | 今日热门研究（Kimi-K3/qm/waste/rescript） | 08-02 |
+| [[github-trending-2026-08-02-weekly-5projects]] | 本周 Trending 精选（open-code-review/book-to-skill/openwork/text-to-cad/i-have-adhd） | 08-02 |
+| [[qm-scope-methodology]] | qm 方法论：Scope 隔离 → 多人协作（AI 域） | 08-02 |
+| [[arxiv-week32-2026-08-02-study]] | arXiv W32 研究（Frontis-MA1/OpenForgeRL/AgentRadio/OSReward） | 08-02 |
+| [[openmle-four-operators-methodology]] | OpenMLE 四算子方法论（Draft/Improve/Debug/Crossover） | 08-02 |
+| [[agentradio-five-phase-orchestration]] | AgentRadio 五阶段分工 → 多 Agent 编排 | 08-02 |
+| [[security-risk-assessment-2026-08-02]] | 安全风险评估（OpenClaw/ComfyUI/profile 隔离） | 08-02 |
 | [[skillhub-5skills-study]] | SkillHub 5 个 Skill 研究 | 08-01 |
 
 ## 🔬 深度研究
