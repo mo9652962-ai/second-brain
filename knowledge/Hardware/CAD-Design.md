@@ -20,7 +20,7 @@ status: adopted
 | **agentcad** | @jdilla1277 | CLI + build123d/CadQuery | STEP/STL/GLB 导出，版本追踪 |
 | **cad** | @bytesagain-lab | 纯参考文档 | 零依赖，纯文档输出 |
 | **build123d CAD** | @rawwerks (MCP) | build123d Python | 齿轮库、螺纹、紧固件 |
-| **text-to-cad** | @earthtojake | Agent Skill 集合 | 7.6K GitHub Stars |
+| **text-to-cad** | @earthtojake | Agent Skill 集合 | 12.3K GitHub Stars（08-02 更新，本周 +1.9K） |
 | **blender-render** | @lzyling | Blender | STL/OBJ 渲染 |
 | **cli-anything** | @ntaffffff | CLI 通用包装 | 可控制 Blender/GIMP 等 |
 

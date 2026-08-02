@@ -38,6 +38,28 @@ status: draft
 - [ ] 确认付款方式（先付50%定金）
 - [ ] 确认客户是否面向 EU 市场（涉及则先做 EU AI Act 风险分级）
 
+### 1.4 客户隔离（Hermes profile）⭐ 2026-08-02 新增
+**原则**：每个客户一个独立 profile，上下文永不串单。
+
+```bash
+# 接新单时（一次性）
+hermes profile create client-XX --description "客户XX：<服务类型>，<主题>，<截止>"
+
+# 该客户工作期间
+hermes -p client-XX        # 用客户专属会话处理
+```
+
+**验证过的隔离机制**（2026-08-02 P2 实测）：
+- 每个 profile 有独立 memories/sessions/cron/skills/workspace
+- client-1 写入客户数据 → default 全局记忆 0 匹配 ✅
+- 跨 profile 写记忆需显式确认（cross_profile guard 软保护）
+
+**何时用**：
+- ✅ 论文降重（客户原文 + 关键词敏感）
+- ✅ 定制练习册（学校/年级信息）
+- ⚠️ 简单 PPT/PCB 可不用（无敏感上下文）
+- 交付后：客户资料留在 profile 内，不清理（可复用老客户关系）
+
 ## 二、执行中
 
 ### 2.1 论文降AI率
@@ -73,6 +95,7 @@ status: draft
 - [ ] 收尾款
 - [ ] 请求好评
 - [ ] 记录到 Obsidian（接单记录模板）
+- [ ] （如用了 profile）在 client-XX 记忆里更新交付状态，便于老客户复购时快速调出上下文
 
 ### 3.2 好评话术
 ```
