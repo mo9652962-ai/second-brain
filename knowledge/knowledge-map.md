@@ -194,7 +194,7 @@ MCP 生态: GitHub + Filesystem + JLCPCB(38工具) + Obsidian(笔记操作)
 |:------|:--------|:---------------|:--------|
 || **Grill 先行** | [[mattpocock-methodology]] | 8051, CAD, engineering-workflow | 消除理解偏差 |
 || **完成标准** | [[mattpocock-methodology]] | 所有 skill | 防提前结束 |
-|| **渐进式披露** | [[mattpocock-skills]] | 待改进 | 减少上下文消耗 |
+|| **渐进式披露** | [[mattpocock-skills]] | ✅ 已应用 (07-27) | 减少上下文消耗 |
 || **引导词** | [[mattpocock-skills]] | engineering-workflow | 压缩 token |
 || **双轴审查** | [[mattpocock-skills]] | engineering-workflow | 代码质量 |
 || **反AI味设计** | [[hallmark]] ⭐ | UI/前端降AI味 | 57道Slop检测门 |
@@ -228,6 +228,7 @@ MCP 生态: GitHub + Filesystem + JLCPCB(38工具) + Obsidian(笔记操作)
 | [[krea2-local-image-gen-study]] | 生图模型研究 | 本地 ComfyUI 部署 | [[krea2-comfyui-deploy-notes]] |
 | [[cloudbase-learning-s1-login]] | 微信小程序云开发 | 校园便利盒复刻 | [[xiaoyuanbianlihe-project-study]] |
 | [[openforgerl-trace-pipeline-feasibility]] | 轨迹导出实测 | 自训数据管线设计 | [[2026-07-31-openforgerl\|知识卡片]] |
+| [[github-trending-2026-08-02-weekly-5projects]] | GitHub 本周 Trending 精选 | Agent 工具链趋势观察 | [[github-trending-2026-08-02-study]] · [[github-weekly-2026-07-31-5projects]] |
 
 ---
 
