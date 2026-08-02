@@ -68,3 +68,6 @@ OpenFic 明确区分自己与 SillyTavern（抽卡生成）、Claude Code（编�
 
 - 如果要写小说，OpenFic + DeepSeek（他说几乎没有限制）可以试试
 - show-me-the-story 标记为 backlog，OpenFic 可能是更好的选择
+
+---
+> 关联: [[openfic-study]]（完整研究笔记） | [[HOME|🏠 首页]]

@@ -37,4 +37,4 @@ status: adopted
 - **[[CAD-Design]]** — 3D 建模与 CAD 设计
 
 ---
-> 关联: [[8051-MCU]] · [[CAD-Design]] · [[Cross-Domain|🔀 知识地图]] | [[HOME|🏠 首页]]
+> 关联: [[8051-MCU]] · [[CAD-Design]] · [[jlc-mcp-setup]] · [[Cross-Domain|🔀 知识地图]] | [[HOME|🏠 首页]]

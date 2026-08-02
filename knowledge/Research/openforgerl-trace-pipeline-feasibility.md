@@ -85,3 +85,6 @@ uv run python scripts/export_traces.py --model deepseek-v4-flash --days 30 --out
 ---
 
 *备忘完成：2026-07-31 · 状态: P0 落地，P1+ 按需推进*
+
+---
+> 关联: [[2026-07-31-openforgerl|知识卡片]] | [[HOME|🏠 首页]]

@@ -21,6 +21,20 @@ updated: 2026-07-28
 || 💵 闲鱼定价策略 | 闲鱼接单成本结构（技能参考） |
 || 🧪 方法论审计 | G5 可追溯 + 死亡判据（技能参考） |
 
+## 🆕 本周新增（07-27 ~ 08-02）
+
+| 笔记 | 简介 |
+|------|------|
+| [[knowledge/Academic/降AI工具对比速查表\|🛠 降AI工具速查]] | 零感/笔灵/森克兰特价格对比 |
+| [[knowledge/Academic/接单工作流-SOP\|📋 接单工作流 SOP]] | 接单全流程标准化 |
+| [[knowledge/Academic/论文Pipeline-数据契约\|📦 论文 Pipeline 数据契约]] | 报价/状态机/质量门禁（完整版） |
+| [[knowledge/Academic/paper-pipeline-data-contract\|📄 原始输入契约]] | 精简版 JSON 契约 |
+| [[knowledge/Academic/闲鱼上架素材包-预生成\|📦 闲鱼上架素材包]] | 商品文案/红线，复制即上架 |
+| [[knowledge/Academic/闲鱼解封素材\|🔓 闲鱼解封素材]] | 解封申诉素材 |
+| [[knowledge/Academic/cnki-browser-plugin\|🔍 知网插件]] | 攻玉学术浏览器插件 |
+| [[knowledge/Academic/researchpilot-skills\|🧪 ResearchPilot]] | AI 科研 7 阶段 Skill 套件 |
+| [[knowledge/Research/eu-ai-act-2026-08-assessment\|⚖️ EU AI Act 评估]] | 8/2 生效合规评估（跨域） |
+
 ---
 
 ## 🔗 跨域关联

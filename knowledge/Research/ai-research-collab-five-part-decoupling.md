@@ -79,3 +79,6 @@ AI 科研协作的关键不只是模型能力，而是**项目如何被表达**�
 - 解决"边执行边记录"导致的顾此失彼
 
 **结论**：文章用 110 亿 Token 验证了我们 Second Brain 体系的正确方向——我们的 Obsidian + Hermes + .learnings 分层记忆正是"五元解耦"的实践形态。
+
+---
+> 关联: [[ai-research-collaboration]]（110亿Token原始经验） | [[HOME|🏠 首页]]
