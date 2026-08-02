@@ -77,7 +77,7 @@ type: daily-review
 
 ### 🟢 P2：cron 改进项转 todo（10min）
 
-- [ ] 把 `cron-improvement-plan` 3 项未完成项转为可跟踪任务（时间调整脚本 / retry script / 每日吸收底线检查）
+- [x] 把 `cron-improvement-plan` 3 项未完成项转为可跟踪任务（时间调整脚本 / retry script / 每日吸收底线检查）✅ 8/3：3 项均落地——错峰调度已生效、scripts/cron-retry-wrapper.sh 已落地、daily-self-improvement 已含吸收检查）
 
 ### ⏳ P3：衍生变现（依赖上架引流）
 
