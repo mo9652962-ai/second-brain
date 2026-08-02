@@ -64,7 +64,7 @@ status: adopted
 | ⑥ | opencode-go | glm-5.2 | 国产 1M 上下文 |
 | ⑦ | siliconflow | Qwen/Qwen3.5-4B | 轻量回退 |
 | ⑧ | siliconflow | DeepSeek-V4-Pro | 硅基流动回退 |
-| ⑨ | deepseek 直连 | deepseek-chat | 最后兜底 |
+| ⑨ | deepseek 直连 | deepseek-v4-flash | 最后兜底 |
 
 ### 容灾链逻辑
 
@@ -87,7 +87,7 @@ status: adopted
            │ 故障
            ▼
 ┌─ 最终防线 (DeepSeek 直连) ───────────┐
-│  api.deepseek.com / deepseek-chat     │ ← 兜底
+│  api.deepseek.com / deepseek-v4-flash  │ ← 兜底
 └──────────────────────────────────────┘
 ```
 
@@ -99,6 +99,7 @@ status: adopted
 ### 更新记录
 - 2026-07-26: 移除 OpenRouter（402），改为 8 级链
 - 2026-07-26: opencode-go 补 key_env，修复 cron 401
+- 2026-08-03: deepseek 直连模型 deepseek-chat → deepseek-v4-flash（旧别名已退役，fallback 链第 8 项对齐实际 config）
 
 ---
 
@@ -133,7 +134,7 @@ fallback_model:
   - provider: deepseek
     base_url: https://api.deepseek.com
     key_env: DEEPSEEK_API_KEY
-    model: deepseek-chat
+    model: deepseek-v4-flash
 
 # 默认模型设置
 model:
