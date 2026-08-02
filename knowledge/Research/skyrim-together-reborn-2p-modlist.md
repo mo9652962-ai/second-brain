@@ -40,7 +40,7 @@ date: 2026-08-02
 | 1 | **CBBE** 身形 | https://www.nexusmods.com/skyrimspecialedition/mods/198 | ✅ 社区确认安全（纯身形） |
 | 2 | **Fair Skin Complexion** 皮肤 | https://www.nexusmods.com/skyrimspecialedition/mods/516 | ✅ 纯纹理，安全 |
 | 3 | **KS Hairdos** 发型 | https://www.nexusmods.com/skyrimspecialedition/mods/6817 | ⚠️ 发型可用，但改 facegen 的头发在 1.8 前有兼容风险（见下方说明） |
-| 4 | ~~Bijin AIO~~ NPC 美化 | ~~https://www.nexusmods.com/skyrimspecialedition/mods/1986~~ | ⚠️ **官方标记 "Can cause issues"**（#111）：改 facegen → NPC 土豆脸/紫发。**1.8 已部分修复**（re-enabled bUseFaceGenPreprocessedHeads），但仍有风险，建议**先不加** |
+| 4 | ~~Bijin AIO~~ NPC 美化 | ~~https://www.nexusmods.com/skyrimspecialedition/mods/1986~~ | ⚠️ **官方标记 "Can cause issues"**（`#111`）：改 facegen → NPC 土豆脸/紫发。**1.8 已部分修复**（re-enabled bUseFaceGenPreprocessedHeads），但仍有风险，建议**先不加** |
 
 > 💡 **facegen 规则**：凡是**替换 NPC 脸部网格/预计算头型**的 mod（Bijin、Pandorable、NPC 美化包）在联机下都可能不同步。纯**玩家角色**美化（CBBE 身形、皮肤纹理、KS Hairdos 发型）只影响自己画面，安全。
 
