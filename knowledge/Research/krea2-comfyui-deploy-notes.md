@@ -46,7 +46,7 @@ status: absorbed
 
 ## 🔍 已知问题（社区确认）
 
-- **GitHub issue #14717** "Artefacts when running Krea 2"（2026-07-01）：噪声伪影与我们的乱码问题同源，社区仍未解决（标注 User Support）。**我们的 Triton + 官方 VAE 节点方案是有效 workaround**。
+- **GitHub issue `#14717`** "Artefacts when running Krea 2"（2026-07-01）：噪声伪影与我们的乱码问题同源，社区仍未解决（标注 User Support）。**我们的 Triton + 官方 VAE 节点方案是有效 workaround**。
 - **JSON 区域提示词**：Krea2 的 Qwen3-VL 编码器支持 Ideogram 式结构化提示（bounding box + 调色板），可用 `Ideogram4PromptBuilderKJ` 节点（需安装 Krea2 JSON pack）。
 
 ## ✅ 关键部署结论
