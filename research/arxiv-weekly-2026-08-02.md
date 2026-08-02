@@ -335,6 +335,10 @@ This week's papers focus on:
 
 ---
 
-*生成时间:2026-08-02 | 数据源:arXiv API (export.arxiv.org) | 验证:搜索引擎交叉验证 | 状态:reading*
+*生成时间:2026-08-02 | 数据源:arXiv API (export.arxiv.org) | 验证:搜索引擎交叉验证 | 状态:reading → processed*
 
 *Generated automatically via arXiv API cron job (arxiv-weekly-digest skill). Last updated: 2026-08-02*
+
+---
+
+**已处理：** 核心贡献精选 3 篇（Frontis-MA1 / AgentRadio / Σ-Mem）→ 📄 `knowledge/arXiv/arxiv-2026-08-02-core-contributions.md`（2026-08-02 arxiv-summarize）

@@ -27,6 +27,7 @@ status: adopted
 | [[github-trending-2026-08-01-7projects]] | 热榜 7 项目（AI Agent/网关） | 08-01 |
 | [[github-weekly-2026-07-31-5projects]] | 本周 5 项目（苹果微软） | 07-31 |
 | [[GitHub-Weekly-2026-08-02]] | GitHub 宝藏挖掘 | 08-02 |
+| [[github-trending-2026-08-02-study]] | 今日热门研究（Kimi-K3/qm/waste/rescript） | 08-02 |
 | [[skillhub-5skills-study]] | SkillHub 5 个 Skill 研究 | 08-01 |
 
 ## 🔬 深度研究
