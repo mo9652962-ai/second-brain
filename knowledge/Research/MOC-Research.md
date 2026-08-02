@@ -35,6 +35,8 @@ status: adopted
 | [[agentradio-five-phase-orchestration]] | AgentRadio 五阶段分工 → 多 Agent 编排 | 08-02 |
 | [[security-risk-assessment-2026-08-02]] | 安全风险评估（OpenClaw/ComfyUI/profile 隔离） | 08-02 |
 | [[skillhub-5skills-study]] | SkillHub 5 个 Skill 研究 | 08-01 |
+| [[graphify-weekly-2026-08-02]] | Graphify 图谱周更新（W31） | 08-02 |
+| [[组会报告-2026-08-02]] | 组会报告 W31 复盘 / W32 展望 | 08-02 |
 
 ## 🔬 深度研究
 
@@ -76,6 +78,7 @@ status: adopted
 | [[xiaoyuanbianlihe-project-study]] | 校园便利盒项目研究 | 07-31 |
 | [[hallotickets-project-study]] | HalloTickets 工程模式 | 07-31 |
 | [[skyrim-together-reborn-2p-modlist]] | Skyrim 联机模组清单 | 08-02 |
+| [[game-launch-crash-guide-2026-08-02]] | This War of Mine 崩溃修复指南 | 08-02 |
 
 ---
 
