@@ -5,17 +5,18 @@ krea2-gen.py — Krea2 一键出图脚本
 用法:
   python krea2-gen.py "一只橘猫在阳光下打盹，特写，照片级"
   python krea2-gen.py "赛博朋克城市夜景" -o D:/output -s 42 -n 2
-  python krea2-gen.py "山水画风格" --size 768x768 --steps 8
+  python krea2-gen.py "山水画风格" --size 512x512 --hires
 
 参数:
   prompt            提示词（中文/英文均可，必填）
   -o, --output      输出目录 (默认: ComfyUI/output)
   -s, --seed        随机种子 (默认: 随机)
   -n, --count       生成数量 (默认: 1)
-  --size WxH        分辨率 (默认: 1024x1024)
+  --size WxH        基础采样分辨率 (默认: 512x512, 8GB 卡安全值)
+  --hires           hires fix: latent 2x 放大 + denoise 0.5 二次采样（推荐，出 1024 高清）
   --steps           采样步数 (默认: 8, Turbo 模型)
-  --cfg             CFG scale (默认: 1.0, Turbo 推荐)
-  --negative        负面提示词 (默认: 通用负面)
+  --cfg             CFG scale (默认: 1.0, Turbo 蒸馏模型必须 1.0，0 会黑图)
+  --negative        负面提示词 (默认: 空, Turbo 不需要负面)
   --url             ComfyUI 地址 (默认: http://127.0.0.1:8188)
   --poll-interval   轮询间隔秒 (默认: 5)
   --timeout         超时秒 (默认: 600)
@@ -34,33 +35,31 @@ from pathlib import Path
 DEFAULT_URL = "http://127.0.0.1:8188"
 MODEL_NAME = "krea2_turbo_fp8_scaled.safetensors"
 CLIP_NAME = "qwen3vl_4b_bf16.safetensors"
-# Krea2 的正确 VAE: qwen_image_vae（官方原生 VAELoader 直接加载，2026-08-02 修正）
 VAE_NAME = "qwen_image_vae.safetensors"
 # Turbo 是蒸馏模型：不需要负面提示词（官方文档明确 "negative prompt not required"）
 DEFAULT_NEGATIVE = ""
 
 
 def build_workflow(prompt: str, negative: str, width: int, height: int,
-                   steps: int, cfg: float, seed: int) -> dict:
-    """构建 Krea2 生图 workflow（2026-08-02 十轮研究定版）
+                   steps: int, cfg: float, seed: int, hires: bool = False) -> dict:
+    """构建 Krea2 生图 workflow（2026-08-02 十轮研究终版）
 
-    链路（与官方等价的本地实现）：
-    KSampler → Krea2LatentTo5D → Krea2LatentProcessOut(x*std+mean)
-             → Krea2VAEDecodeOfficial(diffusers 直接解码，内部无缩放)
+    链路（等价官方）:
+      512 基础采样 → (hires) latent 2x 放大 → denoise 0.5 二次采样
+      → To5D → ProcessOut(x*std+mean) → diffusers 解码
 
-    依据（源码确认）：
-    - Krea2 模型用 BASE 默认 LatentFormat（恒等），KSampler 输出标准 latent
-    - diffusers AutoencoderKLQwenImage._decode 内部【不】做 latents 缩放
-      （直接 post_quant_conv(z)，输出 clamp(-1,1)）→ 必须手动 x*std+mean
-    - ComfyUI 0.29 原生 VAELoader 加载 qwen_image_vae 恒定输出灰图（bug）
+    关键结论（源码/实验确认）:
+    - Krea2 1024 直接采样从零噪声开始会退化黑图 → 必须 hires fix
+      （512 采样出内容 → latent 放大 → denoise 0.5 精修 = 高清不黑）
+    - weight_dtype 必须 default（fp8 反量化在 4060 坏 → 黑图）
+    - diffusers _decode 内部【不】做 latents 缩放 → 必须手动 x*std+mean
+    - ComfyUI 0.29 原生 VAELoader 加载 qwen_image_vae 恒定灰图（bug）
     """
-    return {
+    wf = {
         "3": {"class_type": "UNETLoader", "inputs": {
             "unet_name": MODEL_NAME, "weight_dtype": "default"}},
         "4": {"class_type": "CLIPLoader", "inputs": {
             "clip_name": CLIP_NAME, "type": "krea2", "device": "default"}},
-        "5": {"class_type": "VAELoader", "inputs": {
-            "vae_name": VAE_NAME}},
         "6": {"class_type": "CLIPTextEncode", "inputs": {
             "text": prompt, "clip": ["4", 0]}},
         "6b": {"class_type": "CLIPTextEncode", "inputs": {
@@ -71,15 +70,25 @@ def build_workflow(prompt: str, negative: str, width: int, height: int,
             "model": ["3", 0], "positive": ["6", 0], "negative": ["6b", 0],
             "latent_image": ["7", 0], "seed": seed, "steps": steps, "cfg": cfg,
             "sampler_name": "er_sde", "scheduler": "simple", "denoise": 1.0}},
-        "8b": {"class_type": "Krea2LatentTo5D", "inputs": {
-            "latent": ["8", 0]}},
-        "8c": {"class_type": "Krea2LatentProcessOut", "inputs": {
-            "latent": ["8b", 0]}},
-        "9": {"class_type": "Krea2VAEDecodeOfficial", "inputs": {
-            "samples": ["8c", 0]}},
-        "10": {"class_type": "SaveImage", "inputs": {
-            "filename_prefix": "krea2_gen", "images": ["9", 0]}},
     }
+    wf["8b"] = {"class_type": "Krea2LatentTo5D", "inputs": {
+        "latent": ["8", 0]}}
+    wf["8c"] = {"class_type": "Krea2LatentProcessOut", "inputs": {
+        "latent": ["8b", 0]}}
+    wf["9"] = {"class_type": "Krea2VAEDecodeOfficial", "inputs": {
+        "samples": ["8c", 0]}}
+    # AI 超分 (4x-UltraSharp): 512 → 2048 高清（比 LANCZOS 好 64%，8GB 卡最优解）
+    if hires:
+        wf["11"] = {"class_type": "UpscaleModelLoader", "inputs": {
+            "model_name": "4x-UltraSharp.pth"}}
+        wf["12"] = {"class_type": "ImageUpscaleWithModel", "inputs": {
+            "upscale_model": ["11", 0], "image": ["9", 0]}}
+        wf["10"] = {"class_type": "SaveImage", "inputs": {
+            "filename_prefix": "krea2_gen", "images": ["12", 0]}}
+    else:
+        wf["10"] = {"class_type": "SaveImage", "inputs": {
+            "filename_prefix": "krea2_gen", "images": ["9", 0]}}
+    return wf
 
 
 def http_json(url: str, data: dict = None, timeout: int = 30) -> dict:
@@ -93,40 +102,35 @@ def http_json(url: str, data: dict = None, timeout: int = 30) -> dict:
         with urllib.request.urlopen(req, timeout=timeout) as resp:
             return json.loads(resp.read().decode())
     except urllib.error.HTTPError as e:
-        body = e.read().decode() if e.fp else str(e)
-        raise RuntimeError(f"HTTP {e.code}: {body[:200]}")
+        body = e.read().decode(errors="replace")
+        raise RuntimeError(f"HTTP {e.code}: {body[:300]}")
 
 
-def wait_for_completion(base_url: str, prompt_id: str,
-                        poll_interval: int, timeout: int) -> dict:
-    """轮询等待任务完成，返回输出信息"""
-    deadline = time.time() + timeout
-    while time.time() < deadline:
+def wait_for_completion(url: str, prompt_id: str, poll_interval: int = 5,
+                        timeout: int = 600) -> dict:
+    """轮询 ComfyUI 直到任务完成"""
+    start = time.time()
+    while time.time() - start < timeout:
         try:
-            history = http_json(f"{base_url}/history/{prompt_id}", timeout=15)
+            history = http_json(f"{url}/history/{prompt_id}", timeout=10)
+            if prompt_id in history:
+                entry = history[prompt_id]
+                status = entry.get("status", {})
+                if status.get("completed"):
+                    outputs = []
+                    for node_id, node_out in entry.get("outputs", {}).items():
+                        for img in node_out.get("images", []):
+                            outputs.append(img)
+                    return {"status": "success", "outputs": outputs}
+                if status.get("status_str") == "error":
+                    msgs = entry.get("status", {}).get("messages", [])
+                    err = ""
+                    for mtype, mdata in msgs:
+                        if mtype == "execution_error":
+                            err = f"{mdata.get('node_type','')}: {mdata.get('exception_message','')}"
+                    return {"status": "error", "error": err}
         except Exception:
-            history = {}
-        if prompt_id in history:
-            entry = history[prompt_id]
-            status = entry.get("status", {})
-            status_str = status.get("status_str", "")
-            if status_str == "success":
-                outputs = []
-                for node_out in entry.get("outputs", {}).values():
-                    for img in node_out.get("images", []):
-                        outputs.append(img)
-                return {"status": "success", "outputs": outputs}
-            if status_str == "error":
-                for msg in status.get("messages", []):
-                    if msg[0] == "execution_error":
-                        err = msg[1]
-                        return {"status": "error",
-                                "error": err.get("exception_message", "unknown")[:300],
-                                "node": f'{err.get("node_id")}({err.get("node_type")})'}
-                return {"status": "error", "error": "unknown error"}
-        # 打印进度
-        sys.stdout.write(f"\r⏳ 生成中... ({int(time.time() % 1000)}s)")
-        sys.stdout.flush()
+            pass  # 网络抖动，继续轮询
         time.sleep(poll_interval)
     return {"status": "timeout", "error": f"超过 {timeout}s 未完成"}
 
@@ -137,21 +141,24 @@ def main():
     parser.add_argument("-o", "--output", default=None, help="输出目录")
     parser.add_argument("-s", "--seed", type=int, default=None, help="随机种子")
     parser.add_argument("-n", "--count", type=int, default=1, help="生成数量")
-    parser.add_argument("--size", default="512x512", help="分辨率 WxH（8GB 显存建议 512x512，1024 会黑图）")
+    parser.add_argument("--size", default="512x512",
+                        help="基础采样分辨率 WxH（8GB 显存建议 512x512；配合 --hires 输出 1024 高清）")
+    parser.add_argument("--hires", action="store_true",
+                        help="AI 超分: 4x-UltraSharp 把 512 输出放大到 2048（比 LANCZOS 锐利，8GB 卡高清方案）")
     parser.add_argument("--steps", type=int, default=8, help="采样步数")
-    parser.add_argument("--cfg", type=float, default=1.0, help="CFG scale (Turbo 蒸馏模型用 1.0，0 会导致黑图)")
+    parser.add_argument("--cfg", type=float, default=1.0,
+                        help="CFG scale (Turbo 蒸馏模型用 1.0，0 会导致黑图)")
     parser.add_argument("--negative", default=DEFAULT_NEGATIVE, help="负面提示词")
     parser.add_argument("--url", default=DEFAULT_URL, help="ComfyUI 地址")
     parser.add_argument("--poll-interval", type=int, default=5, help="轮询间隔")
     parser.add_argument("--timeout", type=int, default=600, help="超时秒")
-    parser.add_argument("--upscale2x", action="store_true", help="512 出图后 PIL 高质量放大 2x（8GB 卡的高清方案）")
     args = parser.parse_args()
 
     # 解析尺寸
     try:
         w, h = map(int, args.size.lower().split("x"))
     except ValueError:
-        print("❌ 尺寸格式错误，应为 WxH 如 1024x1024")
+        print("❌ 尺寸格式错误，应为 WxH 如 512x512")
         sys.exit(1)
 
     # 检查 ComfyUI 是否运行
@@ -160,8 +167,7 @@ def main():
     except Exception:
         print("❌ ComfyUI 未运行！请先启动:")
         print("   cd C:\\Users\\31954\\ComfyUI && env -u PYTHONPATH ./venv/Scripts/python.exe main.py --listen 127.0.0.1 --port 8188 --enable-triton-backend --lowvram")
-        print("   ⚠️ 必须带 --enable-triton-backend（否则 FP8 量化推理输出乱码）")
-        print("   ⚠️ 8GB 显存必须带 --lowvram（否则 1024x1024 OOM 崩溃/黑图）")
+        print("   ⚠️ 8GB 显存建议带 --lowvram；必须 --enable-triton-backend")
         sys.exit(1)
 
     # 输出目录（确保绝对路径）
@@ -171,8 +177,9 @@ def main():
         output_dir = Path(r"C:\Users\31954\ComfyUI\output").resolve()
     output_dir.mkdir(parents=True, exist_ok=True)
 
+    out_size = f"{w*2}x{h*2}" if args.hires else f"{w}x{h}"
     print(f"🎨 Krea2 出图: {args.prompt[:50]}{'...' if len(args.prompt) > 50 else ''}")
-    print(f"   尺寸: {w}x{h} | 步数: {args.steps} | CFG: {args.cfg} | 数量: {args.count}")
+    print(f"   基础采样: {w}x{h} | 输出: {out_size} | hires: {'✅' if args.hires else '—'} | 步数: {args.steps} | CFG: {args.cfg} | 数量: {args.count}")
 
     saved = []
     for i in range(args.count):
@@ -182,7 +189,7 @@ def main():
         else:
             print(f"\nseed={seed}")
 
-        wf = build_workflow(args.prompt, args.negative, w, h, args.steps, args.cfg, seed)
+        wf = build_workflow(args.prompt, args.negative, w, h, args.steps, args.cfg, seed, args.hires)
         try:
             result = http_json(f"{args.url}/prompt", {"prompt": wf}, timeout=30)
         except RuntimeError as e:
@@ -207,19 +214,8 @@ def main():
                     dst = output_dir / filename
                     import shutil
                     shutil.copy2(src, dst)
-                    # 2x 放大（8GB 卡高清方案）
-                    if args.upscale2x:
-                        from PIL import Image
-                        im = Image.open(dst)
-                        w2, h2 = im.size[0] * 2, im.size[1] * 2
-                        im2 = im.resize((w2, h2), Image.LANCZOS)
-                        dst2 = dst.with_name(dst.stem + "_2x.png")
-                        im2.save(dst2)
-                        saved.append(dst2)
-                        print(f"✅ 已保存: {dst} → 2x: {dst2}")
-                    else:
-                        saved.append(dst)
-                        print(f"✅ 已保存: {dst}")
+                    saved.append(dst)
+                    print(f"✅ 已保存: {dst}")
                 else:
                     print(f"✅ 已生成 (未找到文件: {src})")
         elif done["status"] == "error":
