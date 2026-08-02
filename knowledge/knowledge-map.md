@@ -88,7 +88,7 @@ graph TD
 | 💻 Dev | CloudBase 8 站学习系列 · System Prompts 存档 · MCP 规范候选版 · TRELLIS 3D | [[knowledge/Dev/MOC-Dev\|MOC-Dev]] |
 | 🔧 Hardware | JLCPCB MCP（38 工具） | [[knowledge/Hardware/MOC-Hardware\|MOC-Hardware]] |
 | 🎨 Design | Krea2 本地生图研究 + ComfyUI 部署 | [[knowledge/Design/MOC-Design\|MOC-Design]] |
-| 🏠 Productivity | 记忆贡献度追踪 · Token 报告 · Obsidian MCP | [[knowledge/Productivity/MOC-Productivity\|MOC-Productivity]] |
+| 🏠 Productivity | 记忆贡献度追踪 · Token 报告（W31 周报新增）· Obsidian MCP | [[knowledge/Productivity/MOC-Productivity\|MOC-Productivity]] · [[knowledge/Productivity/token-usage-report-20260802\|Token周报W31]] |
 | 📅 Daily / 🃏 Cards | HN 速览 ×4 · 知识卡片 ×2（OpenForgeRL / EU AI Act） | [[knowledge/Daily/hackernews-2026-08-02\|HN 08-02]] · [[knowledge/cards/2026-08-02-eu-ai-act\|卡片 08-02]] |
 
 ### 本周关键研究主题
