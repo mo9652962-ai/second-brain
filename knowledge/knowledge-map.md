@@ -8,7 +8,7 @@ status: adopted
 
 # 🗺️ 知识地图 — Knowledge Map
 
-> 所有知识领域的索引与关联。最后更新: 2026-08-02（W31 周度整理 — 13 个散落文件归域 + Research MOC 创建 + 47 个孤儿补链）
+> 所有知识领域的索引与关联。最后更新: 2026-08-02（W31 周度整理 — 13 个散落文件归域 + Research MOC 创建 + 47 个孤儿补链 + 周学习回顾掌握度更新）
 
 ---
 
@@ -242,15 +242,15 @@ MCP 生态: GitHub + Filesystem + JLCPCB(38工具) + Obsidian(笔记操作)
 
 | 等级 | 领域 |
 |:---:|:-----|
-| 🛠️ **可执行** | 系统设计、软件工程工作流、嵌入式、CAD、模型选型、Agent自我进化、**Hermes 配置体系**、**PPT 设计**、**学术写作**、**Vault 运维**、**论文 Pipeline 接单**、**CloudBase 小程序** |
-| 📖 **学习** | 视频编辑、AI VTuber 架构、Agent Skills 方法论、极简编程、创意开发、微信小程序、设计工具集、**Context Engineering**、**Multi-Agent 编排**、**Memory 工程**、**Agent 治理/合规**、**Research 研究域（36 篇）**、**EU AI Act 合规**、**Krea2 本地生图** |
+| 🛠️ **可执行** | 系统设计、软件工程工作流、嵌入式、CAD、模型选型、Agent自我进化、**Hermes 配置体系**、**PPT 设计**、**学术写作**、**Vault 运维**、**论文 Pipeline 接单**、**CloudBase 小程序**、**闲鱼变现/接单**、**本地生图 (Krea2/ComfyUI)** |
+| 📖 **学习** | 视频编辑、AI VTuber 架构、Agent Skills 方法论、极简编程、创意开发、微信小程序、设计工具集、**Context Engineering**、**Multi-Agent 编排**、**Memory 工程**、**Agent 治理/合规**、**Research 研究域（36 篇）**、**EU AI Act 合规** |
 | 🔬 **关注** | Grok Build（竞品）、多模态模型、Edge AI on MCU、AI长篇小说工具、**Agent 互操作标准**、**OpenClaw Active Memory**、**MCP 规范候选版** |
 
 ---
 
 |> **W30 亮点**: 24+ 知识点的系统性吸收，2 个新 Skill 创建，配置体系全面加固，Vault 健康归零，MCP 生态扩展至 4 个服务器（GitHub/Filesystem/JLCPCB/Obsidian），8 级 fallback 链无 OpenRouter。详情见 [[../memory/2026/07/weekly-2026-07-26|W30 周学习总结]]。
 >
-> **W31 亮点**: 36 篇研究笔记入库（新 Research MOC）、CloudBase 8 站系列、论文接单全流程沉淀（SOP+数据契约+素材包）、EU AI Act 合规评估、Krea2 本地生图跑通。周度整理见 [[../memory/2026/08/weekly-2026-08-02|W31 周度整理报告]]。
+> **W31 亮点**: 36 篇研究笔记入库（新 Research MOC）、CloudBase 8 站系列、论文接单全流程沉淀（SOP+数据契约+素材包）、EU AI Act 合规评估、Krea2 本地生图跑通、闲鱼变现体系从研究准备跃迁到可执行。周度整理见 [[../memory/2026/08/weekly-2026-08-02|W31 周度整理报告]]，学习回顾见 [[../memory/2026/08/weekly-learning-2026-08-02|W31 学习回顾]]。
 
 ---
 [[HOME|🏠 返回首页]]
