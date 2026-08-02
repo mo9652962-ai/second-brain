@@ -5,7 +5,7 @@ date: 2026-08-02
 
 # 📋 每日待办执行报告 2026-08-02
 
-> 执行时间：2026-08-02 晚 · 遵循 daily-todo-execution 流程
+> 执行时间：2026-08-02 晚 · 遵循 daily-todo-execution 流程 · 当日两次执行合并
 
 ## ✅ 已执行
 
@@ -22,6 +22,10 @@ date: 2026-08-02
 - LRN-20260801-001（Tavily 配额）：已 resolved ✅（cron 今早已处理）
 - 磁盘：207G 可用（54%）✅
 
+### 4. 晚间全库待办扫描（追加执行）
+- [x] **Krea2 安装待办标记完成** → ✅ `MEMORY.md` 中「Krea2 安装（ComfyUI + 14GB 模型下载）→ 排期 8/3+」已过时（8/1 深夜已部署完成，见 projects/current.md），标记 `[x]` 并注明原因
+- 🔍 全库扫描 34 个文件含待办（排除 .git/.obsidian/memory/.learnings/skills/templates），逐一分类
+
 ## ⏳ 需 sora 处理（今日到期 P0）
 
 | 项 | 说明 | 预计耗时 |
@@ -34,10 +38,21 @@ date: 2026-08-02
 ## 📅 后续排期（非今日）
 - 8/3：小红书 AI PPT 教程（依赖 PPT 样例）
 - 8/4+：Codex CLI 集成 / deepseek 剩余探索
-- 待确认：Skill 重复合并（6 组）、随身 WiFi 下单、桌面美化部署
+- 待确认：Skill 重复合并（6 组）、随身 WiFi 下单、桌面美化部署、安全审计 cron 排期
+
+## ⏳ 需你确认/决策（长期收集项，未动原文件）
+- 研究跟踪（8/5 更新）：CHARM 图谱零样本迁移、KuTIE 上下文注入（trackers/ 2 文件，各 3 项）
+- 工具部署决策：n8n + MCP / Ollama fallback / Activepieces / ActivityWatch / Graphify（knowledge/Python/Awesome-Lists-Study.md + 10-Top-AI-Agent-Projects）
+- AI 博主冷启动：B 站账号注册、主页完善、第 1 视频选题、OBS+剪映配置（projects/ai-blogger/ 4 文件）
+- 内容发布清单：system-comparison-content（掘金/CSDN/B站/封面图）
+- 条件触发项（暂不处理）：EU AI Act 多 Agent 三件套（仅做产品时）、Trellis-3D/GeoLibre/awesome-go（接单时）
 
 ## 📊 统计
-- 扫描文件：35 个含待办 → 已执行 3 项 / 需 sora 4 项 / 条件性 1 项（eu-ai-act 三件套）/ 模板类跳过（SOP 接单清单、论文 Pipeline 等）
+- 扫描文件：34 个含待办（排除模板/心跳后）
+- 待办总数：约 164 条
+- 已执行：4 项（含本次 Krea2 标记）
+- 需 sora 处理：4 项今日 P0 + 8 项近期排期 + 5 项待确认
+- 模板/检查清单跳过：SOP 接单清单、论文 Pipeline 质量门禁、WPS 打印预览清单、blogger 发布检查项、skill 检查表等约 150 条（85%+ 为模板类，非真实待办）
 
 ---
 _由 k (Hermes) 每日任务执行 | 2026-08-02_
