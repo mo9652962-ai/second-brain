@@ -147,7 +147,7 @@ plugin already exists: %USERPROFILE%\.openclaw\npm\projects\openclaw-firecrawl-p
 
 **Logged**: 2026-07-21T01:10:00+08:00
 **Priority**: medium
-**Status**: unresolved
+**Status**: resolved
 **Area**: infra
 
 ### Summary

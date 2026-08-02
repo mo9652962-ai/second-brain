@@ -50,9 +50,9 @@ status: adopted
 3. **记忆更新**：模型信息 + 注意事项
 
 ### 可继续探索 🔍
-- [ ] opencode-go 代理是否已自动切到正式版（模型名不变，需实测 agent 任务对比）
-- [ ] 是否把 Cron 任务的主力从 doubao 换到 v4-flash（成本更低 + Agent 更强）
-- [ ] Codex CLI 集成（官方已适配，Windows 一键脚本可用）
+- [x] opencode-go 代理是否已自动切到正式版（模型名不变，需实测 agent 任务对比）✅ 8/2 确认：26 个 cron 任务已全部 pin 到 deepseek-v4-flash，opencode-go 已生效
+- [x] 是否把 Cron 任务的主力从 doubao 换到 v4-flash（成本更低 + Agent 更强）✅ 8/2 确认：cron jobs.json 26/26 已用 v4-flash
+- [ ] Codex CLI 集成（官方已适配，Windows 一键脚本可用）→ 排期 8/4+
 
 ## 关键教训
 
