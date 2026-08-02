@@ -188,6 +188,12 @@ web 研究、GitHub 热榜、深度调研的落地笔记（W31 新建域）
 |- **[[knowledge/Research/GitHub-Weekly-2026-08-02|GitHub 宝藏挖掘]]** — 08-02 周报
 |- **[[knowledge/AI/deepseek-v4-flash-0731-upgrade|DeepSeek V4 Flash 升级]]** — 模型能力跃升
 |- **[[knowledge/Hardware/jlc-mcp-setup|JLCPCB MCP]]** — 嘉立创 EDA AI 自动化
+|- **[[memory/2026/08/2026-08-02-daily-review|今日回顾]]** — 08-02 知识吸收回顾
+|- **[[memory/2026/08/2026-08-02-todo-cleanup|今日 TODO 清理]]** — 08-02 待办扫描
+|- **[[memory/2026/08/github-trending-w31-v3|GitHub W31 周报 v3]]** — 08-02 weekly 口径
+|- **[[memory/2026/08/2026-08-03-research-apply|每日研究应用]]** — 08-03 learn→research→apply
+|- **[[memory/2026/08/2026-08-03-todo-cleanup|今日 TODO 清理]]** — 08-03 待办落实
+|- **[[memory/2026/08/2026-08-03-maintenance|今日维护报告]]** — 仓库健康检查 (08-03)
 
 ### 🧩 散落知识点关联网
 
