@@ -182,7 +182,7 @@
 
 ### 🟡 本月待研究（需用户决策）
 
-- [ ] 研究 Graphify，把代码库转成知识图谱
+- [x] 研究 Graphify，把代码库转成知识图谱 → ✅ 已落实（2026-07-31）：graphify skill + graphify-out/（graph.json + GRAPH_REPORT.md）已产出，obsidian 图谱维护已集成
 - [ ] 部署 Activepieces，设计个人自动化流程
 - [ ] 部署 ActivityWatch，开始收集时间数据
 

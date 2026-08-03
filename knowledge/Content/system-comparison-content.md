@@ -188,6 +188,6 @@ publish_target: B站 + 掘金/CSDN
 
 ## 数据引用核验（发布前确认）
 
-- [ ] microsoft/ai-agents-for-beginners：70.5k★（2026-07-31 实测）
-- [ ] datawhalechina/hello-agents：68.9k★（2026-07-31 实测）
-- [ ] 对照表 8 项命中状态与 knowledge/Research/github-ai-selfstudy-system.md 一致
+- [x] microsoft/ai-agents-for-beginners：70.5k★（2026-07-31 实测）→ ✅ 08-03 核验：现 70.8k★（3 天 +0.3k，正常增长）
+- [x] datawhalechina/hello-agents：68.9k★（2026-07-31 实测）→ ✅ 08-03 核验：现 69.8k★（3 天 +0.9k，正常增长）
+- [x] 对照表 8 项命中状态与 knowledge/Research/github-ai-selfstudy-system.md 一致 → ✅ 08-03 核验：两文件 8 项对照表完全一致
