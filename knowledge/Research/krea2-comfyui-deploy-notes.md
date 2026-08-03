@@ -8,34 +8,56 @@ status: absorbed
 
 > 2026-08-01 部署 · RTX 4060 Laptop 8GB · Windows 10 · ComfyUI 0.29
 
-## ✅ 最终可用方案（2026-08-02 十轮研究定版）
+## ✅ 最终可用方案（2026-08-03 修复版 — 修正 08-02 版关键错误）
+
+> ⚠️ **2026-08-03 重大修复**：08-02 笔记的 ProcessOut 结论已过时！
+> ComfyUI 0.29 的 Krea2 类绑定 `Wan21 latent_format`，KSampler 输出时**自动**
+> process_out (x*std+mean)。旧版笔记要求手动 ProcessOut = **双重缩放** →
+> latent 值爆炸 (±10) → 解码 clamp → **全白图**。
+> 实测 debug：KSampler 输出 std≈1.8 已可直接解码，ProcessOut 后 std≈3.9 爆炸。
 
 | 组件 | 文件 | 版本 | 位置 |
 |------|------|------|------|
 | 主模型 | `krea2_turbo_fp8_scaled.safetensors` | 12.24GB (**官方 Comfy-Org 版**) | `models/diffusion_models/` |
-| 文本编码器 | `qwen3vl_4b_bf16.safetensors` | 8.27GB (bf16 版!) | `models/text_encoders/` |
+| 文本编码器 | `qwen3vl_4b_fp8_scaled.safetensors` | 4.88GB (**官方推荐 fp8_scaled 版!**) | `models/text_encoders/` |
 | VAE | `qwen_image_vae.safetensors` + **自定义 Krea2VAEDecodeOfficial** | diffusers AutoencoderKLQwenImage | — |
+| 风格 LoRA | `krea2_darkbrush.safetensors` 等 | 官方 Comfy-Org/Krea-2/loras | `models/loras/` |
 
-### 🎯 关键修复（2026-08-02 十轮研究最终结论）
+### 🎯 关键修复（2026-08-03 实测终版）
 
 1. **必须 `--lowvram` 启动**！无 lowvram 时 bf16 全精度权重 12.5GB > 8GB 显存 → 权重 offload 出错 → **纯黑图（亮度 0）**
-2. **weight_dtype=default 或 fp8_e4m3fn 均可**（lowvram 下都正常；fp8 权重 6.3GB 可完整驻留）
-3. **CFG 必须 1.0**！Turbo 蒸馏模型用 0 会黑图
-4. **Krea2 1024 直接采样 = 必然黑图**（模型从零噪声高分辨率采样退化，8GB 卡无解）
-5. **hires latent 二次采样（denoise 0.5）= 全白图**（蒸馏模型不支持部分 denoise）
-6. **8GB 卡最优解：512 采样 + 4x-UltraSharp AI 超分 → 2048**（锐度比 LANCZOS 高 30-64%）
-7. latent 处理链路（To5D + ProcessOut）正确——diffusers `_decode` 内部不做 latents 缩放
-8. ComfyUI 0.29 原生 VAELoader 加载 qwen_image_vae 恒定输出灰图（bug 仍在）
-9. 之前误判"fp8 黑图"实为**无 lowvram 时显存溢出**；误判"1024 黑图因显存"实为**模型采样退化**
+2. **必须 `--enable-triton-backend`**！否则 FP8 量化走降级路径 → 乱码/全白
+3. **必须 `env -u PYTHONPATH` 启动**！Hermes 的 PYTHONPATH 污染 → numpy 崩溃
+4. **必须装 accelerate**！否则 diffusers VAE 解码报 "low cpu memory usage" 警告
+5. **CFG 1.0-3.0**（Turbo 蒸馏模型 1.0 起；复杂主题建议 2-3，低 CFG 会出空白）
+6. **KSampler 输出已自动缩放，禁止 ProcessOut**（08-03 实测：双重缩放 → 全白）
+7. **原生 VAELoader + VAEDecode = 灰图**（qwen_image_vae 需 diffusers 自定义解码节点）
+8. **1024 直接采样 = 灰图退化**（8GB 卡无解，512/768 基础采样）
+9. **512 出内容但细节受限**；hires 4x-UltraSharp 超分只放大模糊不增细节（8GB 卡质量天花板）
+10. **写实风格生成良好**；水墨 darkbrush LoRA 低对比风格在 512 下难出细节
 
 ### ✅ 稳定命令
 ```bash
-# 启动 ComfyUI（必须 --lowvram）
-cd C:\Users\31954\ComfyUI && env -u PYTHONPATH ./venv/Scripts/python.exe main.py --listen 127.0.0.1 --port 8188 --enable-triton-backend --lowvram
+# 一键启动（推荐：start-comfyui.sh 已固化代理+venv+全部参数）
+cd C:\Users\31954\ComfyUI && bash start-comfyui.sh
 
-# 生成（512 基础 + AI 超分 2048）
-py -3.12 scripts/krea2-gen.py "提示词" --hires
+# 等价手动命令（代理用环境变量，ComfyUI 没有 --proxy 参数！）
+cd C:\Users\31954\ComfyUI && HTTP_PROXY=http://127.0.0.1:7890 HTTPS_PROXY=http://127.0.0.1:7890 \
+  env -u PYTHONPATH ./venv/Scripts/python.exe main.py --listen 127.0.0.1 --port 8188 \
+  --enable-triton-backend --lowvram
+
+# 生成（512 基础 + 4x 超分；复杂主题建议 --cfg 2-3）
+py -3.12 scripts/krea2-gen.py "提示词" --hires --cfg 2.5
+# 风格 LoRA（官方触发词 + strength 1.0）
+py -3.12 scripts/krea2-gen.py "monochrome ink wash style, ..." --lora krea2_darkbrush.safetensors --cfg 2.5
 ```
+
+### 🌐 代理说明（2026-08-03 补充）
+- **HF/GitHub 直连被墙** → 必须走 FlClash 代理 `127.0.0.1:7890`
+- **ComfyUI 没有 `--proxy` 参数**（那是 curl 的）！正确方式是环境变量：
+  `HTTP_PROXY`/`HTTPS_PROXY`/`ALL_PROXY` + `NO_PROXY=127.0.0.1,localhost`
+- `start-comfyui.sh` 已固化代理，即使 FlClash 系统代理开关变化也能兜底
+- 验证：`curl -x http://127.0.0.1:7890 https://huggingface.co` 应返回 200
 
 ## 📜 商用许可（2026-08-01 研究确认）
 

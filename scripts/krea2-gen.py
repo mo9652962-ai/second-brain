@@ -34,49 +34,59 @@ from pathlib import Path
 # ============ 配置 ============
 DEFAULT_URL = "http://127.0.0.1:8188"
 MODEL_NAME = "krea2_turbo_fp8_scaled.safetensors"
-CLIP_NAME = "qwen3vl_4b_bf16.safetensors"
+CLIP_NAME = "qwen3vl_4b_fp8_scaled.safetensors"  # 2026-08-03: 官方模板推荐 fp8_scaled 编码器
 VAE_NAME = "qwen_image_vae.safetensors"
 # Turbo 是蒸馏模型：不需要负面提示词（官方文档明确 "negative prompt not required"）
 DEFAULT_NEGATIVE = ""
 
 
 def build_workflow(prompt: str, negative: str, width: int, height: int,
-                   steps: int, cfg: float, seed: int, hires: bool = False) -> dict:
-    """构建 Krea2 生图 workflow（2026-08-02 十轮研究终版）
+                   steps: int, cfg: float, seed: int, hires: bool = False,
+                   lora: str = None, lora_strength: float = 1.0) -> dict:
+    """构建 Krea2 生图 workflow（2026-08-03 修复版）
 
-    链路（等价官方）:
-      512 基础采样 → (hires) latent 2x 放大 → denoise 0.5 二次采样
-      → To5D → ProcessOut(x*std+mean) → diffusers 解码
+    链路（ComfyUI 0.29 官方模板等价）:
+      512 基础采样 → To5D → diffusers VAE 解码 → (hires) 4x-UltraSharp 超分
 
-    关键结论（源码/实验确认）:
-    - Krea2 1024 直接采样从零噪声开始会退化黑图 → 必须 hires fix
-      （512 采样出内容 → latent 放大 → denoise 0.5 精修 = 高清不黑）
-    - weight_dtype 必须 default（fp8 反量化在 4060 坏 → 黑图）
-    - diffusers _decode 内部【不】做 latents 缩放 → 必须手动 x*std+mean
-    - ComfyUI 0.29 原生 VAELoader 加载 qwen_image_vae 恒定灰图（bug）
+    2026-08-03 关键修复（相对旧部署笔记）:
+    - 【移除 ProcessOut】Krea2 类已绑定 Wan21 latent_format，KSampler 输出时
+      自动 process_out (x*std+mean)。再加 ProcessOut = 双重缩放 → 值爆炸 → 全白
+    - 【fp8_scaled 编码器】官方模板推荐 qwen3vl_4b_fp8_scaled.safetensors
+      （bf16 版在 0.29 反而有问题）
+    - 【原生 VAELoader 灰图 bug 仍在】qwen_image_vae 需 diffusers 解码
+    - 【1024 直接采样灰图】8GB 卡必须 512/768 基础采样
+    - 【CFG 建议 1.0-3.0】蒸馏模型低 CFG 会出空白，复杂主题建议 2-3
     """
     wf = {
         "3": {"class_type": "UNETLoader", "inputs": {
             "unet_name": MODEL_NAME, "weight_dtype": "default"}},
-        "4": {"class_type": "CLIPLoader", "inputs": {
-            "clip_name": CLIP_NAME, "type": "krea2", "device": "default"}},
-        "6": {"class_type": "CLIPTextEncode", "inputs": {
-            "text": prompt, "clip": ["4", 0]}},
-        "6b": {"class_type": "CLIPTextEncode", "inputs": {
-            "text": negative, "clip": ["4", 0]}},
-        "7": {"class_type": "EmptyLatentImage", "inputs": {
-            "width": width, "height": height, "batch_size": 1}},
-        "8": {"class_type": "KSampler", "inputs": {
-            "model": ["3", 0], "positive": ["6", 0], "negative": ["6b", 0],
-            "latent_image": ["7", 0], "seed": seed, "steps": steps, "cfg": cfg,
-            "sampler_name": "er_sde", "scheduler": "simple", "denoise": 1.0}},
     }
+    # 可选风格 LoRA（官方: LoraLoaderModelOnly + 触发词 + strength 1.0）
+    model_ref = ["3", 0]
+    if lora:
+        wf["3b"] = {"class_type": "LoraLoaderModelOnly", "inputs": {
+            "model": ["3", 0], "lora_name": lora, "strength_model": lora_strength}}
+        model_ref = ["3b", 0]
+    wf["4"] = {"class_type": "CLIPLoader", "inputs": {
+        "clip_name": CLIP_NAME, "type": "krea2", "device": "default"}}
+    wf["6"] = {"class_type": "CLIPTextEncode", "inputs": {
+        "text": prompt, "clip": ["4", 0]}}
+    wf["6b"] = {"class_type": "CLIPTextEncode", "inputs": {
+        "text": negative, "clip": ["4", 0]}}
+    wf["7"] = {"class_type": "EmptyLatentImage", "inputs": {
+        "width": width, "height": height, "batch_size": 1}}
+    wf["8"] = {"class_type": "KSampler", "inputs": {
+        "model": model_ref, "positive": ["6", 0], "negative": ["6b", 0],
+        "latent_image": ["7", 0], "seed": seed, "steps": steps, "cfg": cfg,
+        "sampler_name": "er_sde", "scheduler": "simple", "denoise": 1.0}}
     wf["8b"] = {"class_type": "Krea2LatentTo5D", "inputs": {
         "latent": ["8", 0]}}
-    wf["8c"] = {"class_type": "Krea2LatentProcessOut", "inputs": {
-        "latent": ["8b", 0]}}
+    # 2026-08-03 修复（ComfyUI 0.29）:
+    # - Krea2 类已绑定 Wan21 latent_format, KSampler 输出时自动 process_out (x*std+mean)
+    # - 再加 ProcessOut = 双重缩放 → 值爆炸 → 全白图（旧版 ComfyUI 才需要 ProcessOut）
+    # - 原生 VAELoader 加载 qwen_image_vae 结构不匹配 → 灰图（需 diffusers 解码）
     wf["9"] = {"class_type": "Krea2VAEDecodeOfficial", "inputs": {
-        "samples": ["8c", 0]}}
+        "samples": ["8b", 0]}}
     # AI 超分 (4x-UltraSharp): 512 → 2048 高清（比 LANCZOS 好 64%，8GB 卡最优解）
     if hires:
         wf["11"] = {"class_type": "UpscaleModelLoader", "inputs": {
@@ -149,6 +159,9 @@ def main():
     parser.add_argument("--cfg", type=float, default=1.0,
                         help="CFG scale (Turbo 蒸馏模型用 1.0，0 会导致黑图)")
     parser.add_argument("--negative", default=DEFAULT_NEGATIVE, help="负面提示词")
+    parser.add_argument("--lora", default=None,
+                        help="风格 LoRA 文件名（如 krea2_darkbrush.safetensors）")
+    parser.add_argument("--lora-strength", type=float, default=1.0, help="LoRA 强度")
     parser.add_argument("--url", default=DEFAULT_URL, help="ComfyUI 地址")
     parser.add_argument("--poll-interval", type=int, default=5, help="轮询间隔")
     parser.add_argument("--timeout", type=int, default=600, help="超时秒")
@@ -189,7 +202,7 @@ def main():
         else:
             print(f"\nseed={seed}")
 
-        wf = build_workflow(args.prompt, args.negative, w, h, args.steps, args.cfg, seed, args.hires)
+        wf = build_workflow(args.prompt, args.negative, w, h, args.steps, args.cfg, seed, args.hires, args.lora, args.lora_strength)
         try:
             result = http_json(f"{args.url}/prompt", {"prompt": wf}, timeout=30)
         except RuntimeError as e:
