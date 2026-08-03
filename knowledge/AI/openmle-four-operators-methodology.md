@@ -12,6 +12,17 @@ status: adopted
 > 核心：AI4AI 递归自改进 = **四个程序进化算子**（Draft/Improve/Debug/Crossover）循环作用
 > 本文映射到 sora 的 Second Brain 七大自举系统，**根据自身情况落地**
 
+### 外部证据（2026-08-03 研究验证）
+
+| 证据 | 链接 | 说明 |
+|------|------|------|
+| Frontis-MA1 开源仓库 | [FrontisAI/OpenRSI](https://github.com/FrontisAI/OpenRSI) | 35B 权重 + OpenMLE 全套（Gym/RL/Evo）开源 |
+| arXiv 论文 | [2607.28568](https://arxiv.org/abs/2607.28568) | Frontis-MA1 原始论文 |
+| RSI 行业佐证 | [CSA 安全影响报告](https://labs.cloudsecurityalliance.org/wp-content/uploads/2026/06/AI_recursive_self_improvement_security_implications_v1.0-csa-styled.pdf) | Anthropic「When AI Builds Itself」+ OpenAI GPT-5.3-Codex 自引用开发披露 |
+| 实操案例 | [AIDE² 首次 RSI 实证](https://www.weco.ai/blog/first-evidence-of-recursive-self-improvement) | 生产 fraud 检测管线 F1 +17.7%，变更全部可审计 |
+
+> ⚠️ 硬件参考：Frontis-MA1 每任务 12h / 单 RTX 4090 12GB 可跑；本机 RTX 4060 8GB 接近可行但吃紧，部署等更强 GPU。
+
 ## 一句话
 
 Frontis-MA1 证明：AI 自我改进不需要玄学，就是**四个明确算子循环执行**——我们的知识自举系统已有类似的雏形（learn→research→apply），本文把它形式化为可审计的四算子流水线。
