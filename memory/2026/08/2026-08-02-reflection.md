@@ -83,9 +83,9 @@ type: reflection
 
 ## 🎯 本周（W32）应用这 3 个改进
 
-- [ ] 改进 1：Krea2 生成脚本预置量化验收（亮度/边缘强度检查）→ 下次出图直接跑校验
-- [ ] 改进 2：健康检查 cron 加 git ahead/behind 告警；改 config 后抽查文档同步
-- [ ] 改进 3：闲鱼上架拆出「sora 15 分钟操作清单」+ 主图模板先行
+- [x] 改进 1：Krea2 生成脚本预置量化验收（亮度/边缘强度检查）✅ 8/3：krea2-gen.py 已加 --verify 量化验收（亮度/边缘/白黑占比），3 张主图实测 PASS
+- [x] 改进 2：健康检查 cron 加 git ahead/behind 告警 ✅ 8/3：hermes-health-check.md 已加 Git 同步状态巡检步骤（领先/落后/未提交数），命令实测有效
+- [x] 改进 3：闲鱼上架拆出「sora 15 分钟操作清单」+ 主图模板先行 ✅ 8/3：上架操作清单已生成 outputs/xianyu-master/上架素材包/，主图 3 张已产出
 
 ---
 

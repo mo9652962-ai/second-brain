@@ -145,6 +145,51 @@ def wait_for_completion(url: str, prompt_id: str, poll_interval: int = 5,
     return {"status": "timeout", "error": f"超过 {timeout}s 未完成"}
 
 
+def verify_image(path, brightness_lo=8, brightness_hi=250, edge_min=2.0):
+    """量化验收：亮度均值 + 边缘强度，检测全白/全黑/空白图（2026-08-03 反思改进1落地）
+
+    返回 (ok, metrics, msg)
+      metrics: {'brightness': float, 'edges': float, 'white_ratio': float, 'black_ratio': float}
+    判定:
+      - 全白/全黑（亮度均值越界 或 white/black 占比 > 90%）→ fail
+      - 空白图（边缘强度过低，几乎无纹理）→ fail
+    """
+    try:
+        from PIL import Image, ImageFilter, ImageStat
+        import numpy as np
+    except ImportError:
+        return None, {}, "PIL/numpy 未安装，跳过量化验收"
+    try:
+        img = Image.open(path).convert("L")
+    except Exception as e:
+        return False, {}, f"无法打开图片: {e}"
+    stat = ImageStat.Stat(img)
+    brightness = stat.mean[0]
+    edge_stat = ImageStat.Stat(img.filter(ImageFilter.FIND_EDGES))
+    edge_mean = edge_stat.mean[0]
+    arr = np.asarray(img, dtype=np.uint8)
+    white_ratio = float((arr > 250).sum() / arr.size)
+    black_ratio = float((arr < 5).sum() / arr.size)
+    metrics = {
+        "brightness": round(brightness, 1),
+        "edges": round(edge_mean, 2),
+        "white_ratio": round(white_ratio, 4),
+        "black_ratio": round(black_ratio, 4),
+    }
+    reasons = []
+    if brightness < brightness_lo or brightness > brightness_hi:
+        reasons.append(f"亮度越界 {brightness:.1f}（有效区间 {brightness_lo}-{brightness_hi}）")
+    if white_ratio > 0.9:
+        reasons.append(f"全白嫌疑（白像素占比 {white_ratio:.1%}）")
+    if black_ratio > 0.9:
+        reasons.append(f"全黑嫌疑（黑像素占比 {black_ratio:.1%}）")
+    if edge_mean < edge_min:
+        reasons.append(f"边缘强度过低 {edge_mean:.2f}（< {edge_min}，疑似空白/纯色图）")
+    ok = not reasons
+    msg = "✅ 通过" if ok else "❌ " + "; ".join(reasons)
+    return ok, metrics, msg
+
+
 def main():
     parser = argparse.ArgumentParser(description="Krea2 一键出图")
     parser.add_argument("prompt", help="提示词（中文/英文均可）")
@@ -165,6 +210,8 @@ def main():
     parser.add_argument("--url", default=DEFAULT_URL, help="ComfyUI 地址")
     parser.add_argument("--poll-interval", type=int, default=5, help="轮询间隔")
     parser.add_argument("--timeout", type=int, default=600, help="超时秒")
+    parser.add_argument("--verify", action="store_true",
+                        help="生成后量化验收（亮度/边缘强度，检测全白/全黑/空白图，2026-08-03 反思改进1）")
     args = parser.parse_args()
 
     # 解析尺寸
@@ -195,6 +242,7 @@ def main():
     print(f"   基础采样: {w}x{h} | 输出: {out_size} | hires: {'✅' if args.hires else '—'} | 步数: {args.steps} | CFG: {args.cfg} | 数量: {args.count}")
 
     saved = []
+    failed_verify = []
     for i in range(args.count):
         seed = args.seed if args.seed is not None else random.randint(0, 2**31)
         if args.count > 1:
@@ -229,6 +277,14 @@ def main():
                     shutil.copy2(src, dst)
                     saved.append(dst)
                     print(f"✅ 已保存: {dst}")
+                    if args.verify:
+                        ok, m, msg = verify_image(str(dst))
+                        if m:
+                            print(f"   📊 验收: {msg} 亮度={m['brightness']} 边缘={m['edges']} 白比={m['white_ratio']} 黑比={m['black_ratio']}")
+                        else:
+                            print(f"   📊 验收: {msg}")
+                        if ok is False:
+                            failed_verify.append(dst)
                 else:
                     print(f"✅ 已生成 (未找到文件: {src})")
         elif done["status"] == "error":
@@ -241,6 +297,12 @@ def main():
     print(f"\n🎉 完成！共 {len(saved)} 张图片")
     for s in saved:
         print(f"   {s}")
+
+    if failed_verify:
+        print(f"\n❌ {len(failed_verify)} 张未通过量化验收：")
+        for f in failed_verify:
+            print(f"   {f}")
+        sys.exit(2)
 
 
 if __name__ == "__main__":
