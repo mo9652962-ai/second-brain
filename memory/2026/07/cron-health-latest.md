@@ -1,11 +1,11 @@
 ---
 tags: [cron-health, dashboard]
-updated: 2026-08-03 12:00
+updated: 2026-08-03 16:00
 ---
 
-# Cron 健康看板 — 2026-08-03 12:00
+# Cron 健康看板 — 2026-08-03 16:00
 
-总任务数: 27
+总任务数: 26
 
 | ⚪ | GitHub 宝藏挖掘                    | 30 12 * * 0     |  |
 | ⚪ | arxiv-fetch                    | 0 7 * * *       |  |
@@ -25,7 +25,6 @@ updated: 2026-08-03 12:00
 | ⚪ | weekly-graphify-update         | 0 12 * * 0      |  |
 | ⚪ | weekly-knowledge-consolidation | 15 12 * * 0     |  |
 | ⚪ | weekly-learning-progress       | 0 20 * * 0      |  |
-| ⚪ | weekly-suggestion-executor     | 0 12 * * 1      |  |
 | ⚪ | weekly-suggestion-implementation | 45 13 * * 0     |  |
 | ⚪ | weekly-system-cleanup          | 15 13 * * 0     |  |
 | ⚪ | weekly-todo-cleanup            | 0 18 * * 6      |  |
@@ -35,14 +34,14 @@ updated: 2026-08-03 12:00
 | ⚪ | 闲鱼提醒                           | 30 7 * * 1-5    |  |
 | ⚪ | 项目追踪                           | 0 21 * * *      |  |
 
-✅ 0 正常  ❌ 0 错误  ⚪ 27 从未执行
+✅ 0 正常  ❌ 0 错误  ⚪ 26 从未执行
 
 ## 🌐 网络健康指数 (🟡)
 
 亚健康 — 1/3 不可达
 
-连通率: 67% | 平均延迟: 204ms
+连通率: 67% | 平均延迟: 311ms
 
-  ❌ opencode-go: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING]
-  🟡 siliconflow: HTTP 401 (188ms, reachable)
-  🟡 deepseek: HTTP 401 (220ms, reachable)
+  ❌ opencode-go: <urlopen error [Errno 11001] getaddrinfo failed>
+  🟡 siliconflow: HTTP 401 (446ms, reachable)
+  🟡 deepseek: HTTP 401 (177ms, reachable)
