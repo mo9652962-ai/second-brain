@@ -199,7 +199,7 @@ CUA Trajectory (actions + states + reasoning)
   OS-Shepherd-100K（开源推理标注语料）
         │
         ▼
-  OS-Shepherd 9B / 35B —— 30-60% 更低成本匹配商用 judge
+  OS-Shepherd 9B / 35B —— 30-60× 更低成本匹配商用 judge（2026-08-03 修正：原文是倍率不是百分比）
 ```
 
 | 组件 | 职责 |
@@ -216,13 +216,13 @@ CUA Trajectory (actions + states + reasoning)
 | SOTA VLM judge 可靠性 | 均未达理想 judge 水平 |
 | 宽松偏见 | 系统性：**失败轨迹被标成成功** |
 | 可信 judge 成本 | 太贵，无法规模化 |
-| OS-Shepherd 性价比 | 以 **30-60% 更低成本** 匹配商用 judge |
+| OS-Shepherd 性价比 | 以 **30-60× 更低成本** 匹配商用 judge（2026-08-03 修正）|
 
 ### 与 sora 的关联 🔗
 
 1. **评估器可靠性自检** — 任何自动化评估（CUA 任务、论文总结、代码审查）都要先问：评估器自身的误判率是多少？宽松偏见是否存在？（与同周 Mis-Score 论文的 **15.3% FAIL 误判** 相互印证）
 2. **奖励信号设计** — 若做 RL/微调，奖励模型要防 reward hacking；FaithEyes 的 helpful-tool ratio 是另一个思路
-3. **开源替代商用** — 30-60% 成本差的模式，和我们的低成本模型路线（opencode-go 等）一致
+3. **开源替代商用** — 30-60× 成本差的模式（2026-08-03 修正），和我们的低成本模型路线（opencode-go 等）一致
 
 **可借鉴到：** `hermes-automation-patterns` 增加「评估器可靠性自检清单」
 
