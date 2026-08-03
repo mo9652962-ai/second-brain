@@ -68,13 +68,20 @@ status: adopted
 
 ## 🎯 Apply 结论
 
-| 行动 | 内容 | 优先级 |
-|------|------|:---:|
-| **OpenMLE 四算子映射** | Draft/Improve/Debug/Crossover → Second Brain 自举系统方法论（可写笔记） | 🔴 本周 |
-| **AgentRadio 协议** | 五阶段分工协议 → 多 Agent cron 链设计参考 | 🟡 2-3 周 |
-| **harness 特性沉淀** | 记录 Hermes harness 特性（tool surface/approval/fallback）为 skill | 🔴 本周 |
-| **OS-Shepherd** | 收藏，未来 CUA 评估用 | 🟢 长期 |
-| **记忆可信度加权** | Σ-Mem 论文：按可靠性加权记忆 → 我们的 memory 体系可借鉴 | 🟡 2-3 周 |
+| 行动 | 内容 | 优先级 | 落实状态（2026-08-03）|
+|------|------|:---:|:---:|
+| **OpenMLE 四算子映射** | Draft/Improve/Debug/Crossover → Second Brain 自举系统方法论 | 🔴 本周 | ✅ 已建 skill `openmle-four-operators-bootstrapping` |
+| **AgentRadio 协议** | 五阶段分工协议 → 多 Agent cron 链设计参考 | 🟡 2-3 周 | ✅ 已有笔记 `knowledge/AI/agentradio-five-phase-orchestration.md`（08-02）|
+| **harness 特性沉淀** | 记录 Hermes harness 特性（tool surface/approval/fallback）为 skill | 🔴 本周 | ✅ 已有 skill `hermes-harness-profile`（08-02，OpenForgeRL 启示）|
+| **OS-Shepherd** | 收藏，未来 CUA 评估用 | 🟢 长期 | ✅ 已收藏于 07-31 核心贡献；**数据修正**：30-60×（非 30-60%）|
+| **记忆可信度加权** | Σ-Mem 论文：按可靠性加权记忆 → memory 体系借鉴 | 🟡 2-3 周 | ✅ 已融入 skill `context-management-bootstrapping` v2.2（可信度字段+加权投票）|
+
+### 2026-08-03 落实补充（搜索引擎验证）
+- **Frontis-MA1 四算子**：OpenRSI 官方页确认 Base 39.39→Evo 60.61→Evo-Max 71.21；单卡 12GB 可跑 ✅
+- **OpenForgeRL**：YouTube 综述+HF 论文页确认 proxy 模式（拦截模型调用转训练数据，不动 harness 代码）✅
+- **AgentRadio**：Opus 4.6 确认四 agent 62.1% vs 单 agent 32.3% ✅
+- **OSReward/OS-Shepherd**：arXiv HTML 确认 30-60× 成本降低（周报原文"30-60%"有误，已修正）✅
+- **Σ-Mem**：HF 论文页确认可靠性记忆 + Weyl 不等式稳定更新 ✅
 
 ## 📌 与已有体系的衔接
 - OpenForgeRL proxy 模式 ↔ `trajectory-export-pipeline`（OpenForgeRL 自训数据，7/31 已验证 state.db 原生轨迹）
