@@ -1,9 +1,9 @@
 ---
 tags: [cron-health, dashboard]
-updated: 2026-08-03 16:00
+updated: 2026-08-03 20:00
 ---
 
-# Cron 健康看板 — 2026-08-03 16:00
+# Cron 健康看板 — 2026-08-03 20:00
 
 总任务数: 26
 
@@ -40,8 +40,8 @@ updated: 2026-08-03 16:00
 
 亚健康 — 1/3 不可达
 
-连通率: 67% | 平均延迟: 311ms
+连通率: 67% | 平均延迟: 204ms
 
-  ❌ opencode-go: <urlopen error [Errno 11001] getaddrinfo failed>
-  🟡 siliconflow: HTTP 401 (446ms, reachable)
-  🟡 deepseek: HTTP 401 (177ms, reachable)
+  ❌ opencode-go: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING]
+  🟡 siliconflow: HTTP 401 (212ms, reachable)
+  🟡 deepseek: HTTP 401 (197ms, reachable)

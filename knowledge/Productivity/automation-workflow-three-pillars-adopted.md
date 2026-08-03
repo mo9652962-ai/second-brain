@@ -129,7 +129,7 @@ date: 2026-07-28
 ```markdown
 ## 🔒 Waiting for User
 
-- [ ] 闲鱼安全文案风格确认（已阻塞 7 天）→ 素材已预生成至 `knowledge/闲鱼上架素材包-预生成.md`
+- [x] 闲鱼安全文案风格确认 ✅ 8/3：已过时——7/29 安全文案 v2 已升级（projects/current.md）+ 素材包已预生成
 - [ ] 随身 WiFi 赫电 Pro 是否下单确认
 - [ ] 桌面美化部署是否现在开始（TranslucentTB + Rainmeter 已可安装）
 
