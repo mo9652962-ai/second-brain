@@ -48,6 +48,9 @@ status: adopted
 | [[ai-research-collab-five-part-decoupling]] | AI 科研协作五元解耦 | 08-01 |
 | [[hermes-context-audit-2026-07-31]] | Hermes 上下文消耗审计 | 07-31 |
 | [[skill-audit-2026-08-01]] | 双周技能审计 | 08-01 |
+| [[orca-misscore-reliability-2026-08-03]] | ORCA-bench 可靠性研究 | 08-03 |
+| [[tapo-meta-finance-2026-08-03]] | TAPO/Meta-Task/FinanceHarness 研究 | 08-03 |
+| [[s4mp-business-model-imitation-10round-2026-08-03]] | S4MP 模式模仿十轮研究 | 08-03 |
 
 ## 📝 文章研究
 
