@@ -242,9 +242,9 @@ VeriSkill 直接服务 skill 自举：现有的 self-evolution 方法在程序�
 长期
     ├── ORCA-bench [✅] 多信号交叉诊断已注入 hermes-automation-patterns（静默失败检测升级）
     ├── Benchmarks Mis-Score [✅] 评估器审计已注入 service-quality（三问检查 + 第5种边界测试）
-    ├── TAPO [🔍] Agent RL 过渡监督（动作→下一观测预测）
-    ├── Meta-Task [🔍] 终端任务合成（Terminal-Bench 2.0）
-    └── FinanceHarness [🔍] 金融 deep research 闭环（防泄漏基准设计）
+    ├── TAPO [✅] 行动后果预测已注入 hermes-automation-patterns（排障预测→实际对比）
+    ├── Meta-Task [⏳] backlog — 无终端 agent 训练管线，记录不落地
+    └── FinanceHarness [✅] point-in-time 数据截止标注已注入 knowledge-absorption（研究笔记规范）
 ```
 
 ## 🚀 落地行动清单（待办）
