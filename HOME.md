@@ -194,6 +194,10 @@ web 研究、GitHub 热榜、深度调研的落地笔记（W31 新建域）
 |- **[[memory/2026/08/2026-08-03-research-apply|每日研究应用]]** — 08-03 learn→research→apply
 |- **[[memory/2026/08/2026-08-03-todo-cleanup|今日 TODO 清理]]** — 08-03 待办落实
 |- **[[memory/2026/08/2026-08-03-maintenance|今日维护报告]]** — 仓库健康检查 (08-03)
+|- **[[knowledge/Daily/hackernews-2026-08-03|HN 今日热点]]** — Hacker News 热门 (08-03)
+|- **[[memory/2026/08/2026-08-03-daily-review|今日回顾]]** — 08-03 知识吸收回顾
+|- **[[memory/2026/08/2026-08-03-xianyu-todo-executor|闲鱼待办执行]]** — 08-03 闲鱼任务执行
+|- **[[memory/2026/08/2026-08-04-maintenance|今日维护报告]]** — 仓库健康检查 (08-04)
 
 ### 🧩 散落知识点关联网
 
