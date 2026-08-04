@@ -51,6 +51,7 @@ status: adopted
 | [[orca-misscore-reliability-2026-08-03]] | ORCA-bench 可靠性研究 | 08-03 |
 | [[tapo-meta-finance-2026-08-03]] | TAPO/Meta-Task/FinanceHarness 研究 | 08-03 |
 | [[s4mp-business-model-imitation-10round-2026-08-03]] | S4MP 模式模仿十轮研究 | 08-03 |
+| [[s4mp-protocol-network-100round-2026-08-05]] | S4MP 网络协议 100 轮虚拟验证 | 08-05 |
 
 ## 📝 文章研究
 

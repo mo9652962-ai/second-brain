@@ -17,7 +17,7 @@ type: vault-maintenance
 | 断裂 Embed | ✅ 通过 | 0 |
 | 空/近空文件 | ✅ 确认保留 | 2 (均为有意占位) |
 | 标签大小写不一致 | ✅ 通过 | 0 |
-| Inline Tag 泄漏 | ✅ 通过 | #6B7B8D (DREAMS.md 创意写作, 已记录) |
+| Inline Tag 泄漏 | ✅ 通过 | `#6B7B8D` (DREAMS.md 创意写作, 已记录) |
 | `.base` 残留 | ✅ 通过 | 0 |
 | 孤立笔记 | 🔧 已链接 | 12→12 (全部 -absorbed 有意保留) |
 
