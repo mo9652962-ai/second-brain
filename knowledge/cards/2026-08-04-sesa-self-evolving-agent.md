@@ -35,8 +35,8 @@ source: "[[research/arxiv-weekly-2026-08-04]]"
 
 ## 行动项
 
-- [ ] P2：skill 沉淀时加「触发场景」字段，形成技能→行为→结果的自查闭环
-- [ ] P2：周度「挑战者」自检——从近 7 天失败中挑 1 个场景出变体题主动演练
+- [x] P2：skill 沉淀时加「触发场景」字段，形成技能→行为→结果的自查闭环 → ✅ 2026-08-04 已落地（self-improving-agent 新增 Trigger Scenario 区块）
+- [x] P2：周度「挑战者」自检——从近 7 天失败中挑 1 个场景出变体题主动演练 → ✅ 2026-08-04 已落地（self-improving-agent 新增 Weekly Challenger Self-Check 章节）
 
 ## 为什么重要
 
