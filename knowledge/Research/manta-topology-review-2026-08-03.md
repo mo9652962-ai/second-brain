@@ -135,7 +135,7 @@ MANTA 核心约束：`Agents ≤ Budget`、`Mutations ≤ 1 per run`、`Operatio
 
 ## 四、试点任务清单（下次执行时对照）
 
-- [ ] arxiv-summarize cron prompt 增加「动态拓扑」段落
+- [x] arxiv-summarize cron prompt 增加「动态拓扑」段落 ✅ 8/5：jobs.json 核查已含「拓扑+动态」
 - [ ] 记录一次执行中的拓扑变更（哪个监控点触发了 mutation）
 - [ ] 评估：变更后质量/成本 vs 固定拓扑（用周报完成度对比）
 
