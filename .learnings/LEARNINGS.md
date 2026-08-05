@@ -1534,3 +1534,103 @@ Tavily API 用量配额耗尽 (432 plan limit exceeded) — 搜索主力后端�
 - Recurrence-Count: 1
 - First-Seen: 2026-08-01
 - Last-Seen: 2026-08-01
+
+---
+
+## [LRN-20260803-001] best_practice
+
+**Logged**: 2026-08-05T08:40:00+08:00
+**Priority**: high
+**Status**: resolved
+**Area**: comfyui
+
+### Summary
+Krea2 全白图根因：ComfyUI 0.29 内置 Krea2 类已自动执行 process_out，旧笔记手动接 ProcessOut 节点 → 双重缩放 → VAE clamp 全白
+
+### Details
+1. ComfyUI 0.29 内置 Krea2 类自带 process_out，旧教程/旧笔记要求手动接 ProcessOut 节点，两者叠加造成双重缩放
+2. 双重缩放后 VAE 输出被 clamp 到无效范围 → 出图全白
+3. 修复：禁 ProcessOut + fp8_scaled + --lowvram 启动；VAE 用 Krea2VAEDecodeOfficial
+
+### Suggested Action
+- 升级 ComfyUI 后先查内置类行为再沿用旧笔记（版本敏感）
+- 全白图排查顺序：双重缩放 → VAE 类型 → lowvram
+
+### Metadata
+- Source: local debugging
+- Tags: comfyui, krea2, vae, white-image, double-scaling
+- Pattern-Key: comfyui.krea2-double-scaling
+- Recurrence-Count: 1
+- First-Seen: 2026-08-03
+- Last-Seen: 2026-08-03
+
+### Resolution
+- **Resolved**: 2026-08-05T08:40:00+08:00
+- **Notes**: 8/3 反思要求补记，8/4 断档未执行，8/5 reflection cron 亲手收口（LRN 断档连续第 2 天教训）。细节见 comfyui-troubleshooting skill。
+
+---
+
+## [LRN-20260804-001] insight
+
+**Logged**: 2026-08-05T08:40:00+08:00
+**Priority**: high
+**Status**: resolved
+**Area**: infra
+
+### Summary
+GitHub Token 401 真因：config.yaml token 与 git 凭据管理器是两份独立凭证——git push 正常 ≠ MCP token 有效
+
+### Details
+1. git push 一直正常但 MCP 调用 GitHub API 报 401，原因是两套凭证互相独立
+2. 从 Windows git 凭据管理器提取有效 token（scope: repo+workflow）更新 config.yaml，MCP 实测返回 commits 正常
+3. 环境清单需区分「git 侧凭证」与「API 侧 token」，健康检查只看 git push 会漏报
+
+### Suggested Action
+- GitHub 相关 401 排查先确认是哪一侧凭证（git 凭据管理器 vs config.yaml token）
+- 健康检查增加 MCP API 实测项而非仅 git push
+
+### Metadata
+- Source: local debugging
+- Tags: github, token, 401, credential-manager, mcp
+- Pattern-Key: infra.github-dual-credential
+- Recurrence-Count: 1
+- First-Seen: 2026-08-04
+- Last-Seen: 2026-08-04
+
+### Resolution
+- **Resolved**: 2026-08-05T08:40:00+08:00
+- **Notes**: 故障 J 已固化进 hermes-automation-patterns skill；本条为 .learnings 归档（8/4 当日漏记，8/5 补）。
+
+---
+
+## [LRN-20260804-002] insight
+
+**Logged**: 2026-08-05T08:40:00+08:00
+**Priority**: high
+**Status**: resolved
+**Area**: s4mp
+
+### Summary
+S4MP KeyError:2 根因：反编译源码确认 active_sims[message.player_id] 用 player_id 作 key，客机重连后 player_id 递增（1→2）→ 主机侧 KeyError
+
+### Details
+1. 症状：主机侧 KeyError:2，客机重连后出现
+2. 反编译 S4MP 源码确认：host 权威架构用 active_sims[message.player_id] 索引，player_id 每次重连递增
+3. 十轮研究交叉验证 S4MP 架构：host 权威 / 同家庭各控不同 sim / 旅行需全员+暂停时间
+4. 对齐路线：sim_id→player_id 握手 → 旅行两阶段确认 → v5.2 sim_id 多 sim 同步
+
+### Suggested Action
+- 自制 mod 与 S4MP 对齐第一步：sim_id 字段 + 同家庭多 sim 位置同步
+- 重连场景测试需覆盖 player_id 递增路径
+
+### Metadata
+- Source: web_search + decompile
+- Tags: s4mp, multiplayer, keyerror, player-id, decompile
+- Pattern-Key: s4mp.player-id-reconnect
+- Recurrence-Count: 1
+- First-Seen: 2026-08-04
+- Last-Seen: 2026-08-04
+
+### Resolution
+- **Resolved**: 2026-08-05T08:40:00+08:00
+- **Notes**: 完整十轮研究见 knowledge/Research/s4mp-multiplayer-10round-2026-08-04.md；8/4 当日漏记，8/5 补。
