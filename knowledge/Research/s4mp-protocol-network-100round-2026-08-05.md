@@ -321,3 +321,284 @@ v9.16: HMAC 消息签名 + 握手密钥交换（跨网安全）
 - **测试体系**：15 套件 237 断言（端到端 TCP + 传输层 + 协议语义 + 生命周期 + 纯逻辑 + 内存/GUI/配置/fuzz + UDP 发现 + 迟滞阈值 + 容错 + 场景切换 + 版本协商 + 批处理 + 健康 + 帧校验 + 签名闭环）
 - **真机验证**：双机 LAN 实测（建房/加入/聊天/位置同步）+ 双机排障（NameError/版本不兼容）
 - **最大短板**：跨网真机验证（UPnP/STUN 代码就绪但从未在真实公网环境跑通）
+
+
+## 十六、外部架构建议的逐项研究验证（2026-08-05 web 研究）
+
+> 来源：用户提供的一份"S4MP 类联机框架从零设计建议"（Master Server 可选 / 同步操作 / Hook API / 网络库选型 / Host Authority / Tick / Save / 分阶段开发）。逐项用 web 搜索验证 + 对照我们实现。
+
+### 0. 许可边界确认（最重要）
+- **S4MP = All Rights Reserved（保留所有权利），非开源**（CurseForge 页面明确标注 License: All Rights Reserved）
+- **不能**：复制其代码 / 反编译其 mod 后再发布
+- **可以**：借鉴设计思路（架构/流程），自己实现全部代码；反编译**游戏本身 API**（Data/Simulation/Gameplay 的 pyc）做 hook 是合法 mod 开发
+- **我们的合规状态**：✅ 全部自研（pickle 帧/HMAC/房间系统/启动器都是自己写的），只参考 S4MP 的设计思想（host 权威/房间码/同家庭多控），反编译对象是游戏 API 不是 S4MP——合规
+
+### 1. Master Server（建议：可选）
+| 研究 | 结论 |
+|:-----|:-----|
+| Unity Master Server Kit / Dedicated Server Kit | master server = 认证 + 房间列表 + matchmaking，spawn 独立 game server 实例 |
+| Unity listen server 文档 | **listen server（房主托管）= 免费、无需基础设施、LAN 首选**；需 port forwarding 才能跨网 |
+| AccelByte P2P vs Relay vs Dedicated | P2P 便宜、dedicated 贵、relay 居中；从 early access 到 live service 最终会走向 dedicated |
+| **我们现状** | ✅ **listen server 模式**（房主托管 + 局域网 UDP 发现 + 房间码 + UPnP 跨网）——完全符合"小规模免费优先"的行业建议 |
+| **候选增强** | 跨网房间列表 Master Server（部署成本高，非必须；有朋友约玩用房间码足够） |
+
+### 2. 同步"操作/状态"而非整个游戏（建议核心思想）
+| 研究 | 结论 |
+|:-----|:-----|
+| gamedev.stackexchange 51522 | **state sync 简单**（新客户端发全量 state 即加入）；event sync 需更多重发/流控逻辑 |
+| ruoyusun.com Game Networking Demystified | 核心问题 = "发的是游戏状态还是输入"；没有金架构，大多混合 |
+| Deterministic Lockstep 论文 | 三种同步方法：lockstep（只传命令）/ snapshot interpolation（host 跑模拟广播快照）/ state-sync 混合 |
+| **我们现状** | ✅ **状态同步为主**（位置 Delta/需求/金钱/心情/时间）+ 事件同步（聊天/旅行/准备/存档）——正是行业推荐的混合模式 |
+| **差距** | ❌ 交互队列事件同步未做（S4MP 深度协议，需 hook interaction 系统 + pie menu + 目标选择）——复杂度高，保持远期 |
+
+### 3. 网络库选型（建议：ENet/LiteNetLib/WebSocket 别自己写 socket）
+| 研究 | 结论 |
+|:-----|:-----|
+| StackOverflow WebSockets UDP benchmarks | WebSocket 基于 TCP，有 TCP 同样优缺点；实时游戏偏好 UDP 是历史惯性 |
+| CodeSmile TCP/UDP/WebSocket 详解 | 游戏偏好不可靠 UDP；可靠 UDP（ACK/重发）需传输层实现（Unity Transport） |
+| gamedev 120054 / AWS re:Post | 低丢包下 TCP 延迟与 UDP 几乎无差；ENet 缺文档、KCP 中文社区流行 |
+| **我们现状** | ✅ 自写 TCP + pickle 帧，**已实现 ENet 等效能力**：可靠传输（TCP 自带）+ 帧 CRC 校验（防损坏）+ 消息优先级 + HMAC 签名（防伪造）+ 8MB 帧上限 |
+| **评估** | 🔧 换库收益低：游戏内嵌 Python 3.7 环境装 ENet/LiteNetLib 有兼容风险；我们自写的帧协议已覆盖 ENet 核心能力。**保留现状**，WebSocket 仅当未来需要浏览器端才考虑 |
+
+### 4. Host Authority（建议：Host 是唯一真相）
+| 结论 | 我们现状 |
+|:-----|:---------|
+| 行业标准：server-authoritative（服务器权威）防作弊 + 一致性 | ✅ 完全对齐：时间（GameClock hook 主机掌控）、房间（host 建/踢/转交）、存档（host 分发）、广播（host 中继）|
+
+### 5. Tick 同步（建议 5-20Hz）
+| 研究 | 结论 |
+|:-----|:-----|
+| Donnybrook 论文 | p2p 更新按 n² 增长（Quake III ~12n kb/s/player），16-32 人上限 |
+| Monstarlab | 状态同步 200-300ms 延迟可接受（RPG），50ms 才敏感（RTS）|
+| **我们现状** | ✅ 2-5Hz（0.2-0.5s 自适应）+ 快照插值（v7.0）——低 tick + 插值 = Gaffer 标准做法，Sims4 慢节奏完全够 |
+| **候选** | 可测 10Hz 提升平滑度（低优先，插值已覆盖观感）|
+
+### 6. Save 同步（建议：避免 A/B 存档冲突）
+| 研究 | 结论 |
+|:-----|:-----|
+| LWW（Last-Write-Wins）/ Cassandra / Vector Clock | LWW 最简单但有数据丢失风险；Vector Clock 复杂防丢失 |
+| **我们现状** | ✅ **host 权威分发**（房主存档是唯一真相，天然无冲突）+ base64 分块 + SHA256 完整性 + 缺块自动重传 + 本地 .bak 备份——优于 LWW 场景（不是双方同时写）|
+| **候选** | 可加"存档版本号对比"提示（客户端存档比房主旧时提醒），低优先 |
+
+### 7. 2-12 人扩展可行性
+| 结论 | 依据 |
+|:-----|:-----|
+| **LAN 12 人可行** | 我们 star topology（每 client 直连 host）避免 n² 全互联；状态同步 ~12n kb/s 量级 → 12 人 LAN 轻松 |
+| 跨网 12 人需 host 上行 ~1-2 Mbps | 家庭宽带够；但 host 是玩家机器（非数据中心）→ 延迟/稳定性由 host 网络决定（gamedev 67738 确认这是 listen server 的固有限制）|
+| 防作弊 | host 权威天然防作弊（client 不能改世界）✅ |
+
+### 8. 分阶段开发路线对照（我们已走完）
+| 建议阶段 | 我们的版本 |
+|:---------|:-----------|
+| 1. 连接+聊天验证网络层 | v4.2 ✅ |
+| 2. 时间/暂停/倍速同步 | v5.5 ✅ |
+| 3. Sim 移动+交互队列 | 移动 ✅（v4.9+）；交互队列 ❌（远期候选）|
+| 4. 需求值/背包/关系 | 需求/金钱/心情 ✅（v7.1/v8.2/v8.4）；背包/关系 ❌（候选）|
+| 5. Build/Buy + 存档同步 | 存档 ✅（v6.2）；Build/Buy ❌（复杂度高）|
+| 6. 断线重连/状态恢复/版本校验 | ✅（v7.0 重连 + v9.12 版本协商 + v9.16 HMAC）|
+
+### 总结论
+- **架构建议与我们实现高度一致**（listen server + host 权威 + 状态同步为主 + 分阶段）——方向被行业实践验证 ✅
+- **真正差距**：交互队列事件同步（阶段 3 后半）、背包/关系同步（阶段 4 后半）、Build/Buy（阶段 5 后半）——都是 S4MP 深度协议，复杂度高，保持远期候选
+- **不建议换的**：网络库（自写 TCP 已等效 ENet 能力）、Master Server（小规模房间码足够）
+- **合规**：All Rights Reserved 下借鉴设计思路 + 自研实现 = 完全合法
+
+
+## 十七、三大深度同步领域可行性研究（2026-08-05 web 研究 + 游戏 pyc 反编译）
+
+> 对「交互队列事件同步 / 背包关系同步 / Build-Buy 同步」三项远期候选做系统性验证。
+> 方法：web 搜索（竞品行为 + 社区库）+ **直接反编译游戏 pyc 确认 API**（uncompyle6 + dis 字节码探测，比 web 更准）。
+
+### 一、交互队列事件同步（阶段 3 后半）—— 🟡 中高可行性（比预期好）
+
+**反编译 `interactions/si_state.pyc`（dis 字节码探测）确认 API：**
+| 能力 | API | 用途 |
+|:-----|:-----|:-----|
+| 读交互列表 | `all_si_gen()` / `queued_interactions` / `queued_super_interactions_gen` | 遍历当前交互 |
+| 读交互状态 | `started` / `start_time` / `is_finishing` / `interaction` | 同步生命周期 |
+| 查询 | `find_interaction_by_id` / `get_interaction_type` / `get_si_by_affordance` | 定位交互 |
+| **写（执行交互）** | **`push_super_affordance`** | 对端执行同款交互 |
+| 取消 | `cancel` / `on_interaction_canceled` | 同步取消 |
+
+**务实版方案**（比 S4MP 全流程简单）：
+1. Hook 交互启动事件（`sim.si_state` 的交互加入）→ 广播 `{type:"interaction", sim_id, affordance_id, target_id}`
+2. 对端收到 → `sim.si_state.push_super_affordance(...)` 执行同款交互 → **看到对方小人在做饭/聊天**
+3. **回环抑制**（关键，同位置同步 echo suppression）：对端 push 的交互会触发本地 hook 又广播回去 → 需要 `_applied_interaction_ts` 抑制窗口
+4. 交互参数序列化：affordance 类型 ID + target 对象 ID（两端同存档 → 对象 ID 天然对齐 ✓）
+
+**复杂度点**：交互参数多样性（姿势/道具/目标）、双方同控一 Sim 的冲突（host 权威裁决）、交互 ID 对齐。工作量 ~2-3 天。
+
+### 二、背包/关系同步（阶段 4 后半）—— 🟢 背包低中 / 🟡 关系中
+
+**背包（S4CL 开源库 CC BY 4.0 证明 API 存在）：**
+- `CommonSimInventoryUtils.get_all_objects_in_inventory_gen(sim_info)` / `add_to_inventory(sim_info, definition_id, count)` / `move_object_to_inventory`
+- 务实版：读背包物品（definition_id + count）→ 广播 → 对端 add_to_inventory——**和 stats_sync（需求/技能）同一模式**，低复杂度
+- 两端同存档 → 对象 ID 天然对齐 ✓；工作量大半天~1 天
+
+**关系（反编译 `relationships/relationship_tracker.pyc` 成功，API 完整）：**
+| 能力 | API |
+|:-----|:-----|
+| 读分数 | `get_relationship_score(target_sim_id, track)` / `get_relationship_track` |
+| 写分数 | `set_relationship_score` / `add_relationship_score` |
+| 读关系位 | `get_all_bits` / `has_bit` / `has_bits` |
+| **写关系位** | **`add_relationship_bit(target, bit, force_add)` / `remove_relationship_bit`** |
+| 创建 | `create_relationship(target_sim_id)` |
+
+- 务实版：读分数 + bits → 广播 → 对端 set/add——和 stats_sync 几乎一样
+- 复杂度点：关系**双向**（A→B 和 B→A 都同步）、关系位 tuning ID、双方同时改同一关系的冲突（host 权威 + 阈值过滤，同 stats_sync 迟滞）。工作量 ~1-2 天
+
+### 三、Build/Buy 同步（阶段 5 后半）—— 🔴 高（两家竞品都不做 build）
+
+**决定性证据（两个竞品行为一致）：**
+| 来源 | 原话 |
+|:-----|:-----|
+| Reddit r/simsmultiplayer（S4MP 社区）| "build mode doesn't sync in real time with the rest of the players, **buy mode fully works** for everyone; furnishing, rotating, etc." |
+| SimSync FAQ（竞品 mod）| "Buy mode works but is in an **experimental** phase. **Build mode will cause issues and is not recommended.** The host controls items placed in buy mode." |
+
+**结论**：
+- **Buy（家具放置/旋转/移动）**：两家都做到了（S4MP 完全可用、SimSync 实验性）——对象 position/rotation 广播，中复杂度 ~2-3 天
+- **Build（墙/地板/房间编辑）**：**两家都不做**——建筑操作是离散编辑事件流 + 全局重绘，复杂度爆炸，**明确不做**（和我们的评估一致）
+
+### 四、实施优先级建议
+| 优先级 | 项目 | 复杂度 | 工作量 | 价值 |
+|:---:|:-----|:-----|:---:|:-----|
+| 🥇 | **交互队列事件同步** | 🟡 中高 | 2-3 天 | **最高**（"看到对方做饭/聊天"= 真正一起生活）|
+| 🥈 | 背包同步 | 🟢 低中 | 0.5-1 天 | 高（摸对方背包/共享物品）|
+| 🥉 | 关系同步 | 🟡 中 | 1-2 天 | 中（依赖交互同步先做，否则关系变化少）|
+| 4 | Buy 家具同步 | 🟡 中 | 2-3 天 | 中（S4MP 也实验性）|
+| ❌ | Build 建筑同步 | 🔴 极高 | — | **不做**（两家竞品都不做）|
+
+### 五、方法论沉淀
+- **验证可行性最可靠手段 = 反编译游戏 pyc 确认 API**（uncompyle6 对复杂控制流会失败 → 用 `dis` 字节码探测 `co_names` 提取关键 API 名，快速确认能力存在）
+- **竞品行为是可行性金标准**：S4MP 和 SimSync 都不做的功能（build mode）→ 大概率复杂度超出投入价值
+- **务实版原则**：能"读状态→广播→写状态"的（背包/关系/需求）都是低-中复杂度；要"hook 操作事件流"的（交互/Build）都是高复杂度——先做读写的，再做事件的
+
+
+## 十八、v9.17 四大深度同步模块落地（2026-08-05 实施）
+
+> §17 研究结论直接落地——四个新模块全部实现 + 虚拟测试 25/25 + 16 套件回归全过。
+
+### 新增模块（13 模块）
+| 模块 | 同步内容 | 核心 API（反编译确认） | 广播消息 |
+|:-----|:---------|:----------------------|:---------|
+| `interaction_sync.py` | 交互队列事件（🥇 看到对方做饭/聊天）| `sim.push_super_affordance(aff, target, ctx)` + `si_state.sis_actor_gen()` | `{type:interaction, sim_id, affordance, target_id}` |
+| `inventory_sync.py` | 背包物品（🥈 互相给东西）| `inventory_component` 迭代 + `player_try_add_object` / `try_remove_object_by_id` | `{type:inventory, sim_id, items:{def_id:count}}` |
+| `relationship_sync.py` | 关系分数+bits（🥉 交朋友双方显示）| `get/set_relationship_score` + `add_relationship_bit(force_add)` | `{type:relationship, sim_a, sim_b, score, bits}` |
+| `buy_sync.py` | Buy 家具位置/旋转（阶段 5 后半）| `object.location.clone` + `set_location` + `yaw_to_quaternion` | `{type:object_pos, obj_id, x,y,z,rot}` |
+
+### 设计要点（踩坑沉淀）
+- **回环抑制**（interaction_sync）：对端 push 的交互会触发本端检测又广播回去 → `_applied_ts[sim_id]` 3s 窗口跳过（同位置同步 echo suppression 思路）
+- **迟滞阈值**（inventory/relationship）：接收端差异 <阈值 时反向修正广播（防双向打架）；≥阈值 才应用
+- **Buy 只同步家具**：排除 Floor/Wall/Stairs 等建筑类（Build 不做——竞品共识）
+- **互斥参考**：`sim_info._sim = self` 缓存（get_sim_instance 返回同一实例）——mock 测试关键
+- **静态方法绑定坑**：mock 类属性赋 lambda/函数会被绑定成实例方法（self 自动传入）→ 必须 staticmethod
+- **InteractionContext**：`InteractionContext(sim, SOURCE_SCRIPT, PRIORITY_MEDIUM)` 构造——mock 要有 __init__
+
+### 集成
+- `network._process_incoming` + 4 种新 mtype 分发（interaction/inventory/relationship/object_pos）
+- `sync.mp_sync` 自动带起 4 个模块（同 mood 模式）
+- 命令：`mp_intsync` / `mp_invsync` / `mp_relsync` / `mp_buysync`
+- **v9.17 字节数 69,194B（13 模块）**；测试 `tools/virtual_test_v917.py` 25/25；全套 16 套件通过
+
+### 真机待验证（最大短板延续）
+- 交互同步：`push_super_affordance` 在真实游戏里对端执行是否正常（context 构造、AOP test 通过性）
+- 背包补物品：`create_new_object` + `player_try_add_object` 真实可用性
+- 关系 bits：STATISTIC instance manager 查 bit 的 guid64 路径
+- 双机实测优先级：交互同步 > 背包 > 关系 > Buy
+
+
+## 十九、第二份架构建议的逐项验证（2026-08-05 web 研究）——四项目分离 / TCP+UDP / MessagePack / 五层模块化
+
+> 来源：用户提供的第二份架构建议（SimSync.Server/Client/Mod/Launcher 四项目分离 + TCP+UDP 混合 + MessagePack + Event Capture/Networking/Replication/Conflict Resolution/Versioning 五层）。针对"仅供自己和朋友用"场景逐项验证。
+
+### 1. 四项目分离（独立 Server）—— 🟢 建议正确但对我们过度设计
+| 研究 | 结论 |
+|:-----|:-----|
+| Unity Netcode listen server 文档 | **"Listen servers are best suited for a smaller player group (< 12) and games that don't require a persistent world"**——我们正是 <12 朋友场景 |
+| Epic/Unreal 论坛 | listen server = 免费、玩家电脑当服务器；dedicated 要服务器成本 |
+| 游戏联机经验（40% 流量案例）| **私人朋友 P2P/房主托管足够**（朋友间不担心主机掉线破坏体验）|
+| **决策** | ✅ **保持房主托管**——独立服务器要部署/维护/跨网处理，对 2-12 人朋友联机是过度设计。S4MP 用独立服务器是为**公开 12 人**，我们自用不需要 |
+
+### 2. TCP+UDP 混合 —— 🟡 建议正确但对我们收益低
+| 研究 | 结论 |
+|:-----|:-----|
+| Gaffer (Glenn Fiedler) | UDP 用于位置（可丢包取最新），TCP 用于可靠有序命令——FPS 级需求 |
+| pvigier blog | **"Many successful games, such as World of Warcraft, Minecraft or Terraria, use TCP"**——非实时游戏 TCP 完全够用；LAN 下 TCP 延迟几乎无差 |
+| gamedev 59703 | UDP 用于时间敏感（移动），TCP 用于不敏感（心跳/交易）；取决于游戏类型 |
+| **决策** | ✅ **保持纯 TCP**——Sims4 是慢节奏模拟（非 FPS），位置 2-5Hz + 阈值过滤后 TCP 延迟无感；UDP 要自己实现可靠性/顺序/重连，复杂度高收益低。已配 TCP_NODELAY + 自适应频率 |
+
+### 3. MessagePack —— 🟡 性能好但换不动
+| 研究 | 结论 |
+|:-----|:-----|
+| MessagePack benchmark | 比 JSON 快 ~4x；protobuf 更小但需 IDL；MessagePack 类型系统完整 |
+| HN 讨论 | protobuf 比 MessagePack 更小但灵活性差；自描述格式 vs 外部 schema |
+| **决策** | ✅ **保持 pickle**——我们实测 pickle 2.8x JSON（C 实现，Python 原生最快）；瓶颈是消息频率不是序列化。MessagePack 在 Python 里的收益（相对 pickle）不足以支付协议升级成本。**未来跨语言（C# 服务器）时才考虑** |
+
+### 4. 统一数据包格式 —— ✅ 已对齐
+建议 `{packet, tick, player, sim, ...}` = 我们的 `{type, ts, sender_pid, ...}`——字段语义完全一致（消息类型/时间戳/发送者/目标）。位置消息带 seq 序号、交互带 affordance+target——**已实现等效协议**。
+
+### 5. 五层模块化架构 —— ✅ 已天然实现（映射）
+| 建议层 | 我们的实现 |
+|:-------|:-----------|
+| Event Capture（事件采集）| 10 个监听模块（sync/stats/mood/money/interaction/inventory/relationship/buy/clock/lobby）|
+| Networking（网络层）| network.py（帧协议 + CRC + HMAC + 优先级 + 批处理）|
+| Replication（状态复制）| _process_incoming 分发 + 各模块 process_message 应用 |
+| Conflict Resolution（冲突解决）| host 权威 + 迟滞阈值（stats/relationship）+ 回环抑制（interaction）+ 阈值过滤 |
+| Versioning（版本兼容）| PROTO_VERSION 协商 + version_mismatch + HMAC 握手 |
+
+### 6. 同步频率表 —— ✅ 已对齐（甚至更省）
+建议：位置 10Hz / 交互事件 / 需求 1Hz / 金钱变化时。我们：位置 2-5Hz（自适应 + 插值）/ 交互事件驱动 / 需求 8s / 金钱变化阈值——**慢节奏游戏用更低频率 + 插值 = 更省带宽**（Gaffer snapshot interpolation 标准）。
+
+### 7. 存档 SHA256 —— ✅ 已实现
+host 分发 + SHA256 校验 + 缺块自动重传（v9.4/v9.5）——比建议的"SHA256 检查后下载"更完整。
+
+### 总结论
+- **这份建议的架构方向我们已实现 90%**（统一数据包 ✅ / 五层模块化 ✅ / 频率设计 ✅ / 存档校验 ✅）
+- **两个"建议但不必做"**：独立服务器（<12 人朋友场景 listen server 是行业推荐）、TCP+UDP 混合（WoW/Minecraft 纯 TCP 先例）
+- **真正差距 = 0 项架构级**——剩余都是真机验证（push_super_affordance/背包/关系 API 调用链）
+- **方法论**：架构建议要对照"目标场景规模"评估——**12 人朋友联机 ≠ 公开 12 人服务器**，行业对这两种场景的推荐截然不同（listen server vs dedicated）
+
+
+## 二十、v9.18 启动器房间系统（2026-08-05 百轮研究 + 实施）
+
+> 用户设想：房主在启动器创建房间（**不启动游戏**）→ 房间列表显示房主+用户名 → 对端通过房间码/IP 进入 → 显示对端名字 → 全员准备 → 同步存档 → **最后才启动游戏**。所有房间操作在启动器完成。
+
+### 百轮研究（47 查询）关键确认
+| 研究 | 结论 |
+|:-----|:-----|
+| S4MP 官方流程（simscommunity.info / CurseForge）| "Host → choose save file → Room created + room code → clients join by code → save synced → Everyone's Connected → Start Game → load save" —— **= 用户设想完全一致** |
+| EOS Lobby/Session 分离 | **Lobby = 玩家控制的预游戏聚集（启动器房间），Session = 游戏内** —— 正是"启动器房间 + 游戏"模型 |
+| Nakama lobby | READY_OP_CODE + all_ready 检查（全员 ready 才允许开始）|
+| SaveSync（Steam 工具）| co-op 存档先同步后玩（host 分发 + 校验）|
+| 房间生命周期 | 最后玩家离开自动清理（Unity 文档）|
+
+### 架构：启动器房间层（`room_protocol.py`，独立于游戏/GUI）
+```
+房主启动器: RoomServer (TCP 7660)  ←── RoomClient 加入者启动器
+    房间阶段: join/ready/members/save_sync/start_game（JSON 行协议）
+    游戏阶段: start_game → 双方写 mod 配置 → 启动游戏 → mod 自动连接 7655
+```
+- **状态机**：waiting → ready（全员准备）→ syncing（存档同步）→ synced → launching
+- **协议消息**：join/joined/join_rejected/ready/members/save_sync_start/save_chunk/save_sync_done/start_game/leave
+- **存档同步**：host 选存档 → base64 分块（64KB）→ SHA256 校验 → client 写 Saves + .bak 备份
+- **开始游戏**：host 广播 start_game（含 host_ip/game_port）→ 双方写 mod 配置（host/join + IP）→ 启动游戏 → mod auto-apply 连接
+
+### launcher.py 集成
+- `_launch` 分流：host → `_create_room()`（RoomServer + 房间页，**不启动游戏**）；join → `_join_room()`（RoomClient）
+- 连接页新增「玩家名」「房间码」输入框
+- 房间页优先显示启动器房间状态（`_refresh_room_protocol`：房间码/成员/准备/状态机），回退 mod 状态文件
+- 按钮：我准备（_toggle_ready）/ 同步存档(房主)（_sync_save）/ 开始游戏(房主)（_start_game → _start_game_after_room）
+- 离开房间（_leave_room）清理 server/client + 回连接页
+
+### 坑与修复
+- **PyInstaller 没自动收集 room_protocol.py**（try/except import 分析失败）→ 手动复制到 `dist/启动联机/_internal/` + 验证可导入——**打包后必须验证依赖模块在 _internal**
+- **get_host_ip 虚拟网卡**：UDP 探测返回 28.0.0.1（FlClash 代理）→ 改枚举本机 IP 优先 192.168/10/172.16 网段
+- **测试时序**：存档同步后 client 拼装需要 ~1s，测试 sleep 要给足
+
+### 测试（tools/virtual_test_v918.py，23/23）
+A. 房间码（200 个 6 位无易混淆）· B-E. 真实 TCP 全流程（join/成员/ready/SHA256 存档/start_game/错误码拒绝/断开清理）· H. **100 轮循环压力**（建房-加入-准备-离开 ×100 全成功）
+
+### v9.18 交付
+- mod 70,774B（13 模块，游戏内同步未变）+ 启动器 v9.18（房间系统）+ room_protocol.py
+- 分享版 zip 含 room_protocol（手动复制 _internal）+ 新使用说明（房间流程 4 阶段）
+- **双机验证待做**：两台电脑启动器建房→加入→准备→同步存档→开始游戏→mod 自动连接
