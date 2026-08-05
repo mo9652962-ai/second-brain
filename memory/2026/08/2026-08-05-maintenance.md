@@ -30,7 +30,7 @@ date: 2026-08-05
 ## 二、断链误报说明（15 处，均不动）
 
 1. `skills/hermes/github-repo-optimization.md:116-137`（14 处）— 全部在模板代码块内，Obsidian 不解析
-2. `knowledge/Dev/system-prompts-reference/claude-code-opus-5.md:45` — Claude Code 系统提示词原文示例（`- [Title](file.md) — hook`）
+2. `knowledge/Dev/system-prompts-reference/claude-code-opus-5.md:45` — Claude Code 系统提示词原文示例（`- Title(file.md) — hook`），非仓库文件链接
 3. `memory/2026/08/2026-08-03-maintenance.md:48` — 上期维护笔记引述同一 verbatim 示例
 
 ## 三、保留项

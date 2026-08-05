@@ -45,7 +45,7 @@ type: maintenance
 ## 三、断链误报说明（14 处，均不动）
 
 1. `skills/hermes/github-repo-optimization.md:116-137`（13 处）— 全部在模板代码块内，Obsidian 不解析，技能文档 2026-07-31 已标注为误报
-2. `knowledge/Dev/system-prompts-reference/claude-code-opus-5.md:45` — Claude Code 系统提示词原文示例（`- [Title](file.md) — hook`），非仓库文件链接
+2. `knowledge/Dev/system-prompts-reference/claude-code-opus-5.md:45` — Claude Code 系统提示词原文示例（`- Title(file.md) — hook`），非仓库文件链接
 
 ## 四、验证
 

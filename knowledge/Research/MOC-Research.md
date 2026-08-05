@@ -52,6 +52,12 @@ status: adopted
 | [[tapo-meta-finance-2026-08-03]] | TAPO/Meta-Task/FinanceHarness 研究 | 08-03 |
 | [[s4mp-business-model-imitation-10round-2026-08-03]] | S4MP 模式模仿十轮研究 | 08-03 |
 | [[s4mp-protocol-network-100round-2026-08-05]] | S4MP 网络协议 100 轮虚拟验证 | 08-05 |
+| [[s4mp-architecture-analysis-2026-08-05]] | S4MP 架构分析（基准测试） | 08-05 |
+| [[s4mp-round2-2026-08-06]] | S4MP 第二轮架构研究 | 08-06 |
+| [[simsync-pake-upgrade]] | SimSync PAKE 加密升级方案 | 08-06 |
+| [[self-upgrade-roundup-2026-08-05]] | 自我升级研究综述（记忆/序列化） | 08-05 |
+| [[skill-audit-2026-08-05]] | 月度技能使用审计 | 08-05 |
+| [[ai-agent-self-强化-2026-08-06]] | AI Agent 自我强化研究 | 08-06 |
 
 ## 📝 文章研究
 
@@ -69,6 +75,8 @@ status: adopted
 | [[openfic-study]] | Vibe Writing 工具 | 07-31 |
 | [[python-100-days-study]] | Python-100-Days | 07-31 |
 | [[system-design-primer-study]] | 系统设计入门文章 | 07-31 |
+| [[ai-blogger-monetization-2026-08-06]] | AI 博主变现研究（B站/闲鱼） | 08-06 |
+| [[english-machine-improvements-2026-08-06]] | 英语刷题机改进研究 | 08-06 |
 
 ## 🛠️ 工具研究 / 部署
 
