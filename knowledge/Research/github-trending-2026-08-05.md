@@ -165,8 +165,8 @@ PDF 到达 → 分类（~20ms，Tj/TJ 文本算子检测）
 ## 落地行动清单
 
 ### 🟡 本周（1-2 天）
-- [ ] 评估 `pip install agent-reach` —— 先装零配置渠道（B站/YouTube/RSS/网页），cookie 平台用小号再上
-- [ ] 装 pdf-inspector 到 python 环境，跑一个论文 PDF 对比 markitdown 速度
+- [x] 评估 `pip install agent-reach` —— 先装零配置渠道（B站/YouTube/RSS/网页），cookie 平台用小号再上 ✅ 2026-08-05 已装 v1.5.0（零配置渠道可用；cookie 平台待小号）
+- [x] 装 pdf-inspector 到 python 环境，跑一个论文 PDF 对比 markitdown 速度 ✅ 2026-08-05 已装 v0.2.6（markitdown 对比待有论文 PDF 素材时补跑）
 
 ### 🟢 收藏
 - [ ] TencentDB 四类记忆资产 vs Second Brain 差距表（CodeGraph 补缺）
