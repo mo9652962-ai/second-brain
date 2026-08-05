@@ -1,11 +1,11 @@
 ---
 tags: [cron-health, dashboard]
-updated: 2026-08-05 16:00
+updated: 2026-08-05 20:00
 ---
 
-# Cron 健康看板 — 2026-08-05 16:00
+# Cron 健康看板 — 2026-08-05 20:00
 
-总任务数: 26
+总任务数: 29
 
 | ⚪ | GitHub 宝藏挖掘                    | 30 12 * * 0     |  |
 | ⚪ | arxiv-fetch                    | 0 7 * * *       |  |
@@ -17,10 +17,13 @@ updated: 2026-08-05 16:00
 | ⚪ | daily-self-improvement         | 30 8 * * *      |  |
 | ⚪ | daily-todo-executor            | 0 20 * * *      |  |
 | ⚪ | daily-wechat-knowledge-card    | 0 8 * * *       |  |
+| ⚪ | deterministic-verify           | 30 21 * * *     |  |
+| ⚪ | github-trending-rss            | 30 18 * * *     |  |
 | ⚪ | hackernews-daily               | 0 7 * * *       |  |
 | ⚪ | monthly-skill-usage            | 15 12 1 * *     |  |
 | ⚪ | obsidian-github-sync           | 0 */2 * * *     |  |
 | ⚪ | obsidian-maintenance           | 0 6 * * *       |  |
+| ⚪ | security-audit                 | 30 8 * * 0      |  |
 | ⚪ | weekly-cost-report             | 0 21 * * 0      |  |
 | ⚪ | weekly-graphify-update         | 0 12 * * 0      |  |
 | ⚪ | weekly-knowledge-consolidation | 15 12 * * 0     |  |
@@ -34,14 +37,14 @@ updated: 2026-08-05 16:00
 | ⚪ | 闲鱼提醒                           | 30 7 * * 1-5    |  |
 | ⚪ | 项目追踪                           | 0 21 * * *      |  |
 
-✅ 0 正常  ❌ 0 错误  ⚪ 26 从未执行
+✅ 0 正常  ❌ 0 错误  ⚪ 29 从未执行
 
 ## 🌐 网络健康指数 (🟡)
 
 亚健康 — 1/3 不可达
 
-连通率: 67% | 平均延迟: 202ms
+连通率: 67% | 平均延迟: 173ms
 
   ❌ opencode-go: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING]
-  🟡 siliconflow: HTTP 401 (230ms, reachable)
-  🟡 deepseek: HTTP 401 (175ms, reachable)
+  🟡 siliconflow: HTTP 401 (194ms, reachable)
+  🟡 deepseek: HTTP 401 (153ms, reachable)

@@ -237,7 +237,7 @@ Agent 可靠性
 
 ### 🔴 高优先级（本周）
 - [x] `hermes-automation-patterns` 增加「确定性验证哨兵」模式（2026-08-05 已 patch）
-- [ ] 为高频 cron 任务加确定性验证（重算总和/必需调用覆盖），先于训练检测器
+- [x] 为高频 cron 任务加确定性验证（重算总和/必需调用覆盖），先于训练检测器 ✅ 2026-08-05 已落地（deterministic-verify cron 813411a9, `30 21 * * *`, no_agent）
 
 ### 🟡 中优先级（2-3 周）
 - [ ] `daily-knowledge-absorption-gate` 加记忆条目 outcome 标注（✅/❌），低价值降权

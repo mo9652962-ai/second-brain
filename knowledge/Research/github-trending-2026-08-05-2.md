@@ -195,7 +195,7 @@ Brainstorm（需求对齐）→ Plan（设计图）→ 独立分支环境
 ## 落地行动清单
 
 ### 🟡 本周（1-2 天）
-- [ ] 装 text-to-cad 技能库（软链接映射给 Hermes），跑 1 个 benchmark 验证（L 支架）
+- [x] 装 text-to-cad 技能库（软链接映射给 Hermes），跑 1 个 benchmark 验证（L 支架）✅ 2026-08-05 已装（hermes skills/text-to-cad + text2cad-cad）+ L 支架 benchmark 5/5
 - [ ] 研究 croc PAKE → SimSync 房间码派生加密密钥（已有 HKDF 基础，升级成本低）
 
 ### 🟢 收藏
