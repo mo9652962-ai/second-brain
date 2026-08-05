@@ -11,7 +11,7 @@ tags:
   - agent-memory
 created: 2026-08-05
 updated: 2026-08-05
-status: reading
+status: processed
 source: https://arxiv.org/
 domain: research
 ---
@@ -380,3 +380,12 @@ LLM-agent evaluations often produce task outcomes long before the full benchmark
 *生成时间：2026-08-05 | 数据源：arXiv API (export.arxiv.org) | 验证：搜索引擎交叉验证 | 状态：reading*
 
 *Generated automatically via arXiv API cron job (arxiv skill). Last updated: 2026-08-05*
+
+---
+
+## 已处理：核心贡献精选 3 篇 → 📄 knowledge/arXiv/arxiv-2026-08-05-core-contributions.md
+
+- 🥇 Real-Time Detection and Repair of LLM Agent Failures（→ hermes-automation-patterns 确定性验证哨兵已落地）
+- 🥈 RoMeRL（→ Second Brain 记忆体系语义坐标）
+- 🥉 SWE-Touch（→ 桌面插件共享工作区感知）
+

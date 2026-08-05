@@ -1,7 +1,7 @@
 ---
 tags: [research, openforgerl, trajectory, rl-training, feasibility]
 created: 2026-07-31
-status: complete
+status: complete-p1-p2
 ---
 
 # 自训数据管线可行性备忘 — OpenForgeRL 轨迹记录层
@@ -61,13 +61,19 @@ uv run python scripts/export_traces.py --model deepseek-v4-flash --days 30 --out
 - ✅ 数据量门槛（论文: 几百到几千任务；当前 7 天 206，月累积 800+）
 - ✅ 多种模型轨迹（deepseek-v4-flash/pro、doubao、kimi-k3 等 9 种）
 
-### 待建设（P1+）
-| 项 | 说明 | 优先级 |
-|----|------|:------:|
-| **轨迹标注** | 给每条轨迹标成功/失败（可用 OSReward 思路，但先防宽松偏见） | 🔴 高 |
-| **数据清洗** | 过滤超长/截断/异常会话，统一格式 | 🟡 中 |
-| **RL 训练环境** | veRL/OpenRLHF + GPU 训练（成本考量） | 🟢 低 |
-| **K8s rollout** | 规模化需容器编排（当前单机足够） | 🟢 低 |
+### 待建设状态（2026-08-05 更新）
+| 项 | 说明 | 优先级 | 状态 |
+|----|------|:------:|:----:|
+| **轨迹标注** |  已落地——结构化判定（success/error 字段）优先于关键词 | 🔴 高 | ✅ 完成 |
+| **数据清洗** | 同脚本——超长/过多消息/过短过滤；阈值 MAX_TOKENS=200k, MAX_MSGS=2000 | 🟡 中 | ✅ 完成 |
+| **RL 训练环境** | veRL/OpenRLHF + GPU 训练（成本考量） | 🟢 低 | ⏳ 待定 |
+| **K8s rollout** | 规模化需容器编排（当前单机足够） | 🟢 低 | ⏳ 待定 |
+
+### 标注实测（2026-08-05，7 天 173 轨迹）
+- 清洗后 144 条（丢弃 29：长期桌面会话 13100 消息 + 300k+ tokens 超长）
+- 分布：success 62% / fail 3% / uncertain 35%
+- 关键坑：**关键词误判**——web_search 摘要里的 "Error"、search_files 的 `{"total_count": 0}` 不是失败；改为 JSON 结构化判定（`success:false` / `error` 字段）后 fail 49%→3%
+- uncertain 35% 保守保留（OSReward 防宽松偏见原则：不确定不硬标）
 
 ### 替代路径（更务实）
 ```
