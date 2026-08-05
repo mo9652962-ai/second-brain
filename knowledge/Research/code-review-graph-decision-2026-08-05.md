@@ -55,7 +55,7 @@ code-review-graph mcp serve        # MCP 服务（Hermes 可接）
 - [x] pip install code-review-graph
 - [x] init --repo（已注册 Claude/OpenCode/Gemini hooks）
 - [x] build 建图（1127 files 全量）
-- [ ] Hermes 接入 MCP（`code-review-graph mcp serve` → config.yaml mcp_servers）
+- [x] Hermes 接入 MCP（`code-review-graph mcp serve` → config.yaml mcp_servers）✅ 2026-08-05 已配置（config.yaml mcp_servers.code-review-graph: uvx code-review-graph serve）
 - [ ] 与 SimSync 开发流程集成（review 前跑 impact 分析）
 
 ---

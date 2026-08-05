@@ -95,7 +95,7 @@ updated: 2026-08-05
 | 桌面美化实际部署 | 🔒 安装包已就绪 | TranslucentTB + Rainmeter winget 一键安装已就绪 |
 | SFC 系统扫描 | 🔒 需管理员权限 | 7/24 曾标记完成，7/27 后重复录入，待 sora 确认是否重跑 |
 | 零感 AI 付费实测（1元/千字） | 🔒 需付费+测试稿 | 卡片 2026-08-03：降 AI 率主推工具定标，验 1 篇知网 98% 稿后写入 SOP |
-| 安全审计 cron 排期（每周扫 skill 新增+端口） | 🔒 需确认 | 方案已备（cron `0 9 * * 1` + SkillSpector/端口扫描），一句话确认即创建 |
+| 安全审计 cron 排期（每周扫 skill 新增+端口） | ✅ 已完成 8/5 | security-audit cron 已挂载（`30 8 * * 0` no_agent + security_audit.py），无需再操作 |
 
 ## 🔗 相关领域
 - [[AI-Agent]] — 基础设施与能力架构
