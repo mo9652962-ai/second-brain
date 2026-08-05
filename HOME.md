@@ -206,6 +206,15 @@ web 研究、GitHub 热榜、深度调研的落地笔记（W31 新建域）
 - **[[memory/2026/08/2026-08-05-daily-review|今日回顾]]** — 08-05 知识吸收回顾
 - **[[memory/2026/08/2026-08-05-todo-cleanup|今日 TODO 清理]]** — 08-05 待办扫描
 - **[[memory/2026/08/2026-08-05-xianyu-todo-executor|闲鱼待办执行]]** — 08-05 闲鱼任务执行
+- **[[knowledge/cards/2026-08-05-agent-reliability-toolmaze|Agent 可靠性卡片]]** — 工具失败恢复研究 (08-05)
+- **[[knowledge/cards/2026-08-06-ai-daily|AI 日报 08-05]]** — 模型/融资热点卡片
+- **[[knowledge/cards/2026-08-06-deepseek-v4-flash-official|DeepSeek V4-Flash 正式版]]** — 模型能力卡片
+- **[[knowledge/cards/2026-08-06-minimax-h3|MiniMax H3]]** — 视频编辑开源模型卡片
+- **[[knowledge/Daily/hackernews-2026-08-05|HN 今日热点]]** — Hacker News 热门 (08-05)
+- **[[knowledge/writing-material/独立开发陷阱与开源协作|独立开发陷阱]]** — 学生应先学协作写作素材
+- **[[memory/2026/08/2026-08-04-reflection|反思日记]]** — 08-04 自我反思
+- **[[memory/2026/08/health-2026-08-05|健康巡检报告]]** — 08-05 系统健康检查
+- **[[memory/2026/08/2026-08-06-maintenance|今日维护报告]]** — 仓库健康检查 (08-06)
 
 ### 🧩 散落知识点关联网
 
