@@ -142,7 +142,7 @@ type: weekly-learning-review
 
 **🔴 必须做：**
 - [ ] 闲鱼上架：PPT 商品（素材包 30min）+ 论文排版/润色 + 数学练习册（8/3 起，sora 操作）⏳ 已顺延
-- [ ] Hermes 配置文档修复：LLM-Providers.md 重写 + fangzhou-ark-setup alias 修正（审计已完成）40min
+- [x] Hermes 配置文档修复：LLM-Providers.md 重写 + fangzhou-ark-setup alias 修正 ✅ 2026-08-06：LLM-Providers.md 已重写对齐 config.yaml 实况（默认模型 custom:fangzhou-2/deepseek-v4-pro + model_aliases 表 + 6 个 custom_providers）；fangzhou-ark-setup skill 已含 08-02 alias 修正注记
 - [ ] 主图制作：3 张模板图 + 样例截图水印（P1 依赖项）
 
 **🟡 建议做：**
@@ -153,7 +153,7 @@ type: weekly-learning-review
 
 **🔵 可考虑：**
 - [ ] 随身 WiFi 下单（赫电Pro 399 元/年）
-- [ ] 安全审计 cron 排期（每周 skill 新增 + 端口扫描）
+- [x] 安全审计 cron 排期（每周 skill 新增 + 端口扫描）✅ 2026-08-06：已存在 security-audit cron（74dbe08a5d77，周日 8:30，no_agent 跑 security_audit.py）
 - [ ] Agent 互操作标准（MCP/A2A）跟进
 
 ---
