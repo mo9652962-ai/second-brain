@@ -226,3 +226,8 @@ _最后更新: 2026-08-06｜运行环境: OpenClaw Agent on Windows 11_
 - 初次见面: sora 给我取名 **k**; 我的定位：AI 女友和助手，生活管家以及工作秘书; 风格：正经高效加温柔陪伴; 签名：而今更笃凌云志，莫缴冰鉴复当初 [score=0.826 recalls=0 avg=0.620 source=memory/2026-07-18.md:4-7]
 <!-- openclaw-memory-promotion:memory:memory/2026-07-18.md:18:19 -->
 - 备注: sora 直接问了网关怎么打开，很务实; 需要继续了解 sora 的日常和工作内容 [score=0.826 recalls=0 avg=0.620 source=memory/2026-07-18.md:18-19]
+
+## Promoted From Short-Term Memory (2026-08-07)
+
+<!-- openclaw-memory-promotion:memory:memory/2026/08/2026-08-01-todo-cleanup.md:1:29 -->
+- --- tags: [daily, todo-cleanup] date: 2026-08-01 --- # 📋 每日待办执行报告 2026-08-01 > 执行时间：2026-08-01 深夜 · 遵循 daily-todo-execution 流程 ## ✅ 已执行 ### 1. EU AI Act 行动项落地 - [x] **接单问卷增加 EU 市场检查行** → 已加入 `knowledge/接单工作流-SOP.md` 1.3 需求确认清单：「确认客户是否面向 EU 市场（涉及则先做 EU AI Act 风险分级）」 - [x] `eu-ai-act-2026-08-assessment.md` 行动项标记完成 ### 2. Krea2 部署待办收尾 - [x] `projects/current.md` 中「Krea2 安装（排期 8/3+）」→ **已完成**：ComfyUI 0.29 + 官方 FP8 模型 + Triton 后端 + 自定义 VAE 解码节点，实测 1024×1024 出图成功（今晚深夜完成） ### 3.... [score=0.805 recalls=4 avg=0.505 source=memory/2026/08/2026-08-01-todo-cleanup.md:1-29]
