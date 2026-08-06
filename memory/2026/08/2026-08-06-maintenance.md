@@ -20,7 +20,7 @@ type: maintenance
 
 ## 一、断链修复
 
-1. **`memory/2026/08/2026-08-03-maintenance.md:48`** — 引述 verbatim 示例 `[Title](file.md)`，去掉 markdown 链接语法 → `Title(file.md)`，消除反复误报
+1. **`memory/2026/08/2026-08-03-maintenance.md:48`** — 引述 verbatim 示例 `Title(file.md)`，去掉 markdown 链接语法 → `Title(file.md)`，消除反复误报
 2. **`memory/2026/08/2026-08-05-maintenance.md:33`** — 同上处理
 
 **保留的误报**（SKILL 指引不动）：
