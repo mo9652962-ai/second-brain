@@ -169,9 +169,9 @@ PDF 到达 → 分类（~20ms，Tj/TJ 文本算子检测）
 - [x] 装 pdf-inspector 到 python 环境，跑一个论文 PDF 对比 markitdown 速度 ✅ 2026-08-05 已装 v0.2.6（markitdown 对比待有论文 PDF 素材时补跑）
 
 ### 🟢 收藏
-- [ ] TencentDB 四类记忆资产 vs Second Brain 差距表（CodeGraph 补缺）
-- [ ] AirLLM 记录在案（RTX 4060 8GB 可跑 70B，实时场景不考虑）
-- [ ] reverse-skill 的"路由+自举"架构参考
+- [x] TencentDB 四类记忆资产 vs Second Brain 差距表（CodeGraph 补缺）✅ 2026-08-06 已收藏备查：TencentDB-Memory 借鉴点 = 统一索引/结构化记忆，待 Second Brain 扩容 >1000 篇时再对照落地
+- [x] AirLLM 记录在案（RTX 4060 8GB 可跑 70B，实时场景不考虑）✅ 2026-08-06 已记录：本地推理备选，仅离线/研究场景
+- [x] reverse-skill 的"路由+自举"架构参考 ✅ 2026-08-06 已收藏：技能路由+自举模式，与 hermes-smart-model-router 思路同源
 
 ---
 

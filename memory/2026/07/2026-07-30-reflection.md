@@ -86,9 +86,9 @@ created_date: 2026-07-31
 **问题表现：**
 7/28 的 cron 批量失败教训催生了 `cron-improvement-plan.md`，但截至 7/30：
 - [x] 错峰分析完成
-- [ ] 实施 cron 时间调整（需手动修改）
-- [ ] 添加 retry script
-- [ ] 每日吸收底线加入 cron 检查
+- [x] 实施 cron 时间调整 ✅ 2026-08-06：29 个任务已全部错峰（7:00-22:00 分散，DeepSeek 峰谷定价谷段排布，见 hermes-automation-patterns）
+- [x] 添加 retry script ✅ 2026-08-06：cron-retry-wrapper.sh 已落地（hermes-automation-patterns §3，11 项行为测试全过）
+- [x] 每日吸收底线加入 cron 检查 ✅ 2026-08-06：daily-knowledge-absorption-gate 技能 v2.0 常驻 + 反思 cron（4836b598 每日 8:30）覆盖，8/6 再增 outcome 标注降权
 **4 项只完成 1 项**，而且 7/30 当天 cron 全部正常，容易产生「系统已经好了」的错觉。
 
 **根因分析：**

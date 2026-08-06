@@ -240,7 +240,7 @@ Agent 可靠性
 - [x] 为高频 cron 任务加确定性验证（重算总和/必需调用覆盖），先于训练检测器 ✅ 2026-08-05 已落地（deterministic-verify cron 813411a9, `30 21 * * *`, no_agent）
 
 ### 🟡 中优先级（2-3 周）
-- [ ] `daily-knowledge-absorption-gate` 加记忆条目 outcome 标注（✅/❌），低价值降权
+- [x] `daily-knowledge-absorption-gate` 加记忆条目 outcome 标注（✅/❌），低价值降权 ✅ 2026-08-06：技能 §5 新增 outcome 标注体系（✅/⚠️/❌/📌 + 月度降权规则 + 周度 ✅ 占比 KPI）
 - [ ] 桌面插件/agent 运行时检测用户并发文件修改（SWE-Touch ①变更检测）
 
 ### 🟢 长期跟踪
