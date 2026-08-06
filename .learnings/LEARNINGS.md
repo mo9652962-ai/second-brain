@@ -1537,6 +1537,50 @@ Tavily API 用量配额耗尽 (432 plan limit exceeded) — 搜索主力后端�
 
 ---
 
+## [LRN-20260806-001] best_practice
+
+**Logged**: 2026-08-06T13:16:00+08:00
+**Priority**: high
+**Status**: active
+**Area**: docs
+
+### Summary
+Graph Engineering 取代 Loop Engineering 成为 2026-07 Agent 架构新范式：多阶段并行执行 + 精确反馈路由 + 图结构成为一等设计对象
+
+### Details
+来自 Flowtivity (2026-07-25) 深度分析，综合 OpenClaw 社区实践：
+1. **演变时间线**:
+   - Mid 2025: **Context Engineering** — 上下文窗口成为杠杆
+   - June 2026: **Loop Engineering** (Addy Osmani) — plan→act→observe→retry 循环
+   - July 2026: **Graph Engineering** (Peter Steinberger/@steipete) — 多阶段并行，精确路由
+2. **核心差异**:
+   - Loop: 串行循环，一个接一个
+   - Graph: 多阶段并行执行，反馈经特定路径路由（非全循环），节点间结构 = 节点本身
+3. **社区验证**: steipete 7/18 推特获 2.9M 浏览，48h 内产生 3 个竞争定义 + 虚假 Stanford $3.1M 研究
+4. **实践共识** (Eugeniu Ghelbur): small typed core + cheap indexing + hybrid retrieval + temporal supersession — 全部可在 markdown 文件上实现
+5. **OpenClaw 关联**: Codex Remote Coding Sessions (v2026.7.2 beta) 是 Graph 架构的实践——桌面⇄节点⇄云 worker 分布式执行
+
+### Relevance to k
+- 当前 cron 体系是 Loop 架构（每天顺序执行 self-improvement → daily-summary → morning-brief）
+- 未来可演进为 Graph：research → analyze → update → verify 并行 pipeline
+- sessions_spawn 已支持子 Agent 并行，可做 graph 原语
+- Graph 思维已在 PPT 制作 pipeline 中有雏形（outline→generate→optimize→inject 链式）
+
+### Suggested Action
+- 理解 Graph vs Loop 差异，评估哪些 workflow 适合并行化
+- 关注 OpenClaw v2026.7.2 的 Remote Coding Sessions（Graph 原生能力）
+- 在构建新 workflow 时优先考虑 graph 结构而非 loop
+
+### Metadata
+- Source: web_search (Flowtivity, GitHub Releases, OpenClaw Blog)
+- Tags: graph-engineering, loop-engineering, paradigm-shift, steipete, parallel-execution
+- Pattern-Key: config.graph-engineering
+- Recurrence-Count: 1
+- First-Seen: 2026-08-06
+- Last-Seen: 2026-08-06
+
+---
+
 ## [LRN-20260803-001] best_practice
 
 **Logged**: 2026-08-05T08:40:00+08:00

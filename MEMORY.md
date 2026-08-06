@@ -118,10 +118,18 @@ v2026.3.7 引入的可插拔上下文管理界面已验证稳定。模型路由�
 - **Graph Memory 生态成熟**: Mem0/Letta/Cognee/Zep 等 10+ 框架，Write-Path > Read-Only RAG
 - **OpenClaw 2026.7.1**: Control UI 大改，GPT-5.6/Hy3/Muse 支持，Codex 工作流，但有 Gateway 稳定性问题
 - **OpenClaw 2026.7.2 beta**: Remote Coding Sessions，分布式 Agent 执行（桌面⇄节点⇄云 worker）
+- **OpenClaw Extended-Stable (2026-07-31)**: 月度稳定版 YYYY.M.33 + Maturity Scorecard 公开评分，迈向 LTS；直接回应 55.4% 企业可靠性顾虑
+- **⚠️ 稳定性预警 (2026-08)**: 社区反馈 v2026.7.1 更新后 Gateway 频繁崩溃无法启动；大版本升级前等 2-4 周社区验证
+- **Graph Engineering > Loop Engineering (2026-07)**: 多阶段并行执行 + 精确反馈路由取代串行循环；图结构成为一等设计对象；Codex Remote Sessions 是 Graph 的 OpenClaw 实践
 - **Multi-Agent 六大编排模式**: Sequential / Fan-out / Debate / Supervisor / Marketplace / Mesh
 - **EU AI Act 8月生效**: 多 Agent 编排归类 high-risk，需 HITL+审计+身份管理
 - **AutoGen 进入维护模式**: 已合并到 Microsoft Agent Framework（2026-02 RC）
 - **CrewAI**: 44.3K stars, 5.2M 月下载，最活跃多 Agent 框架
+
+### Agentic Primitives > Glue Code (2026)
+InformationWeek 报告：企业从脆弱的手工胶水脚本转向标准化 Agent 原语。
+- 工具的质量和可发现性（well-documented API）> Agent 自身的推理能力
+- 与 OpenClaw Skill Workshop + ClawHub 生态方向一致
 
 ### AI Agent 生产部署 8 大最佳实践 (2026)
 1. 全链路监控（技术指标 + 业务指标 + AI 专属指标）
@@ -208,7 +216,7 @@ v2026.3.7 引入的可插拔上下文管理界面已验证稳定。模型路由�
 
 ---
 
-_最后更新: 2026-07-31｜运行环境: Hermes Agent on Windows 10_
+_最后更新: 2026-08-06｜运行环境: OpenClaw Agent on Windows 11_
 
 ## Promoted From Short-Term Memory (2026-07-25)
 
