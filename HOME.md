@@ -222,7 +222,9 @@ web 研究、GitHub 热榜、深度调研的落地笔记（W31 新建域）
 - **[[memory/2026/08/2026-08-06-daily-review|今日回顾]]** — 08-06 知识吸收回顾 + 明日变现行动项
 - **[[knowledge/arXiv/arxiv-2026-08-06-agent-llm|arXiv 今日速览]]** — 14 篇 AI Agent/LLM 论文 (08-06)
 - **[[memory/2026/08/2026-08-07-maintenance|今日维护报告]]** — 仓库健康检查 (08-07)
+- **[[memory/2026/08/2026-08-08-maintenance|今日维护报告]]** — 仓库健康检查 (08-08)
 - **[[knowledge/Daily/hackernews-2026-08-06|HN 今日热点]]** — Hacker News 热门 (08-06)
+- **[[knowledge/Daily/hackernews-2026-08-07|HN 今日热点]]** — Hacker News 热门 (08-07)
 - **[[memory/2026/08/2026-08-05-reflection|反思日记]]** — 08-05 自我反思
 - **[[memory/2026/08/2026-08-06-reflection|反思日记]]** — 08-06 自我反思（3 改进点当场落地：xianyu 微步骤清单 / bat 检查清单 / web_extract 比例）
 - **[[memory/2026/08/health-2026-08-06|健康巡检报告]]** — 08-06 系统健康检查
