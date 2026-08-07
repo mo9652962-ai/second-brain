@@ -119,9 +119,19 @@ v2026.3.7 引入的可插拔上下文管理界面已验证稳定。模型路由�
 - **OpenClaw 2026.7.1**: Control UI 大改，GPT-5.6/Hy3/Muse 支持，Codex 工作流，但有 Gateway 稳定性问题
 - **OpenClaw 2026.7.2 beta**: Remote Coding Sessions，分布式 Agent 执行（桌面⇄节点⇄云 worker）
 - **OpenClaw Extended-Stable (2026-07-31)**: 月度稳定版 YYYY.M.33 + Maturity Scorecard 公开评分，迈向 LTS；直接回应 55.4% 企业可靠性顾虑
+  - **375K stars, 78.2K forks, 136 releases**; 被 OpenAI 收购（创始人 Peter Steinberger 入职）；OpenClaw Foundation 非营利化
+  - **NVIDIA SkillSpector** (2026-06-01): 所有 ClawHub skills 自动扫描隐藏指令
+  - **Hotfix v2026.7.1-2** (2026-08-04): npm plugin singleton-array metadata 兼容修复
 - **⚠️ 稳定性预警 (2026-08)**: 社区反馈 v2026.7.1 更新后 Gateway 频繁崩溃无法启动；大版本升级前等 2-4 周社区验证
 - **Graph Engineering > Loop Engineering (2026-07)**: 多阶段并行执行 + 精确反馈路由取代串行循环；图结构成为一等设计对象；Codex Remote Sessions 是 Graph 的 OpenClaw 实践
+  - **演进时间线**: Context Engineering (mid-2025) → Loop Engineering (June 2026, Addy Osmani) → Graph Engineering (July 2026, Peter Steinberger/@steipete)
+  - **核心差异**: Loop 串行循环 vs Graph 多阶段并行 + 精确反馈路由（非全循环回退）
+  - **社区验证**: steipete 7/18 推文获 2.9M 浏览，48h 内产生 3 个竞争定义 + 虚假 Stanford 研究
+  - **实践共识** (Eugeniu Ghelbur): small typed core + cheap indexing + hybrid retrieval + temporal supersession — 全部可在 markdown 文件上实现
 - **Multi-Agent 六大编排模式**: Sequential / Fan-out / Debate / Supervisor / Marketplace / Mesh
+- **EU AI Act 8月生效**: 多 Agent 编排归类 high-risk，需 HITL+审计+身份管理
+- **AutoGen 进入维护模式**: 已合并到 Microsoft Agent Framework（2026-02 RC）
+- **CrewAI**: 44.3K stars, 5.2M 月下载，最活跃多 Agent 框架
 - **EU AI Act 8月生效**: 多 Agent 编排归类 high-risk，需 HITL+审计+身份管理
 - **AutoGen 进入维护模式**: 已合并到 Microsoft Agent Framework（2026-02 RC）
 - **CrewAI**: 44.3K stars, 5.2M 月下载，最活跃多 Agent 框架
@@ -130,6 +140,7 @@ v2026.3.7 引入的可插拔上下文管理界面已验证稳定。模型路由�
 InformationWeek 报告：企业从脆弱的手工胶水脚本转向标准化 Agent 原语。
 - 工具的质量和可发现性（well-documented API）> Agent 自身的推理能力
 - 与 OpenClaw Skill Workshop + ClawHub 生态方向一致
+- **Voice AI 成为 GenAI 最快增长细分** (CB Insights 2026)
 
 ### AI Agent 生产部署 8 大最佳实践 (2026)
 1. 全链路监控（技术指标 + 业务指标 + AI 专属指标）
