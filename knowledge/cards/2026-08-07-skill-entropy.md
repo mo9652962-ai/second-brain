@@ -36,8 +36,24 @@ status: adopted
 
 ## 行动项
 
-- [ ] 审视技能库是否存在「技能孤岛」：一个技能调用另一个技能时有没有损耗（可先用 graphify 看技能引用图）
+- [x] 审视技能库是否存在「技能孤岛」：一个技能调用另一个技能时有没有损耗（可先用 graphify 看技能引用图）
 - [ ] （可选）把 Skill²-Bench 思路迁移到刷题机：评估题型切换（cloze→reading→paragraph_matching）的衔接质量
+
+## ✅ 审视结论（2026-08-07 daily-todo-executor 落地）
+
+**技能熵真实存在，主要来源 = 来源重复 + 近义重复（≥6 组、30+ 技能）**：
+
+| 组 | 技能 | 说明 |
+|:---|:-----|:-----|
+| ① openclaw-imports 副本 | 8051-embedded-dev / cad-design-master / engineering-workflow / web-dev-2026 | 与顶层同名技能 100% 重复，纯冗余 |
+| ② 水墨 UI | chinese-aesthetic-web-ui / chinese-ink-wash-ui / ink-wash-ui-theming / ink-wash-web-ui-theming / ink-wash-ui-design | 5 个同域技能，内容高度重叠 |
+| ③ 找技能 | find-skills ×2（@guipi888 + @miknasbh-stack） | 双副本 |
+| ④ CAD | cad / cad-design-complete-guide / cad-design-master / text-to-cad / text2cad-cad / implicit-cad / cad-viewer / step-parts | 8+ 个，部分为工具/MCP 类（可保留） |
+| ⑤ Sims4 | sims4-mod-development / sims4-mp-protocol-engineering / sims4-mp-regression-testing / sims4-launcher-dev / sims4-mp-launcher-dev / s4mp-protocol-engineering / sims-4-modding-multiplayer | 7 个，可合并为 1-2 个 |
+| ⑥ 论文写作 | academic-paper-writing / paper-writing-workflow / sci-paper-three-pass / chinese-academic-writing / academic-presentation | 5 个，互为补充但可收敛 |
+
+**孤岛观察**：多数技能 SKILL.md 无 cross-reference；切换损耗主要在「每次切换都要重新 skill_view 全文加载」——与卡片「技能编排 > 技能获取」主题一致。
+**合并动作**：与 `projects/current.md`「Skill 重复合并 6 组（待 sora 一句话确认）」一致，确认后按 ①→②→③→⑤→⑥ 优先级执行；④ 因含工具类暂缓。
 
 ## 为什么重要
 
