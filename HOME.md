@@ -156,6 +156,7 @@ web 研究、GitHub 热榜、深度调研的落地笔记（W31 新建域）
 |- **[[knowledge/arxiv-2026-07-30-core-contributions|arXiv 今日速览]]** — AI Agent 核心贡献 (07-30)
 |- **[[knowledge/Daily/hackernews-2026-07-30|HN 今日热点]]** — Hacker News 热门 (07-30)
 |- **[[knowledge/Research/10-Top-AI-Agent-Projects-Deep-Research|AI Agent 项目深度研究]]** — Top10 调研
+|- **[[knowledge/Research/AI早报学习-2026-08-08|AI早报学习 08-08]]** — ChainDrop供应链攻击验证 + Cloudflare OS + Qwen-Image-3.0-Pro
 |- **[[knowledge/Research/Memvid-n8n-kaeru-Deep-Research|Memvid/n8n/kaeru 深度研究]]** — 自动化工具调研
 |- **[[memory/2026/07/2026-07-30-maintenance|今日维护报告]]** — 仓库健康检查 (07-30)
 |- **[[memory/2026/07/2026-07-30-daily-review|今日回顾]]** — 07-30 知识吸收回顾
