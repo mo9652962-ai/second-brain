@@ -142,6 +142,7 @@ web 研究、GitHub 热榜、深度调研的落地笔记（W31 新建域）
 
 ## 📋 项目与日志
 
+- **[[knowledge/cards/2026-08-08-qwen-image-pro|🃏 知识卡片 08-08]]** — Qwen-Image-3.0-Pro：配图成本 0.2 元/张 + 带字图新商品线
 - **[[projects/current]]** — 所有进行中项目实时状态
 | **[[knowledge/Cross-Domain]]** — 交叉领域自动索引
 | **[[knowledge/arxiv-digest|arXiv 周报]]** — 15 篇 AI Agent/LLM 论文速览 (07-28)
