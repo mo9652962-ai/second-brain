@@ -262,12 +262,13 @@ Agent B（前台任务：读文件）           Agent C（前台任务：跑构�
 **当前 Progress**：
 - ✅ 四算子架构已分析（Draft/Improve/Debug/Crossover ↔ 知识流程映射表）
 - ✅ 确认开源权重 + 单卡可复现（本机 4060 8GB 可评估 30B 量化）
-- 🔄 待落地：把四算子写进知识吸收 skill 的方法论章节
+- ✅ 已落地（2026-08-08）：daily-knowledge-absorption-gate §4.5 四算子知识自举已写入
 
 #### 2. 后台任务被动感知模式（参考 AgentRadio）
 **实现目标**：
 - 借鉴 wait-for-mention：后台 cron/子代理不打断前台对话，但关键发现即时汇入
 - **短期（1 周）**：检查现有 cron 通知模式——哪些是「阶段边界同步」（等任务结束才报告），能否改成「关键事件即时汇入」
+- ✅ 评估完成（2026-08-08）：31 个 cron 全部 deliver=local 不打断前台；关键事件已通过 obsidian-github-sync 即时落库，被动感知已满足
 - **中期**：评估多子代理并行任务（delegate_task）的消息层设计
 
 **预期收益**：
