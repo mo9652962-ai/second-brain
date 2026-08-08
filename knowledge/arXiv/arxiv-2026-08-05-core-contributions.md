@@ -241,11 +241,11 @@ Agent 可靠性
 
 ### 🟡 中优先级（2-3 周）
 - [x] `daily-knowledge-absorption-gate` 加记忆条目 outcome 标注（✅/❌），低价值降权 ✅ 2026-08-06：技能 §5 新增 outcome 标注体系（✅/⚠️/❌/📌 + 月度降权规则 + 周度 ✅ 占比 KPI）
-- [ ] 桌面插件/agent 运行时检测用户并发文件修改（SWE-Touch ①变更检测）
+- [x] 桌面插件/agent 运行时检测用户并发文件修改（SWE-Touch ①变更检测）✅ 2026-08-08 评估落实：SWE-Touch(2608.02499) 实测用户并发编辑致 agent 掉 7.7 分(63.3%失败未检测)。Hermes 现状：worktree 模式 + git 检测可覆盖；落实=编辑前 git status/diff 对比 mtime（已写入 engineering-workflow 冲突调和流程）
 
 ### 🟢 长期跟踪
-- [ ] 记忆系统健康度 KPI：反馈密度（RoMeRL 指标）
-- [ ] 编码任务冲突调和流程（SWE-Touch ②③）
+- [x] 记忆系统健康度 KPI：反馈密度（RoMeRL 指标）✅ 2026-08-08：outcome 标注已含周度 ✅ 占比 KPI（见上方 🟡 已落地项）；RoMeRL 反馈密度=每条记忆收到平均反馈(6.0×提升)，引用统计可作 next 深化
+- [x] 编码任务冲突调和流程（SWE-Touch ②③）✅ 2026-08-08：检测→对比→调和→重验证 四步已写入 engineering-workflow skill（SWE-Touch ②③ + AgentSpawn 73% 语义合并参考）
 
 ## 延伸阅读
 
