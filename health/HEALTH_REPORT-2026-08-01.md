@@ -123,3 +123,6 @@ hermes cron update 1b7f96681587 provider=custom:fangzhou-1 model=deepseek-v4-pro
 - 当前 cron 会话本身运行于 deepseek 官方 provider，说明 DeepSeek 兜底通道工作正常
 
 *报告由 Hermes Agent 自动生成*
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

@@ -197,3 +197,6 @@ export_step(assemble_gearbox(), "gearbox.step")
 ## 生成日期
 
 2026-07-22 | 由 cad-design-master skill 生成
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

@@ -22,7 +22,14 @@ DIR_MOC = {
     "knowledge/Productivity": "MOC-Productivity",
     "knowledge/Archive": "knowledge-map", "knowledge/Daily": "knowledge-map",
     "knowledge/Content": "knowledge-map", "knowledge/cards": "knowledge-map",
+    "knowledge/arXiv": "MOC-Research", "knowledge/Python": "MOC-Dev",
+    "knowledge/Tools": "knowledge-map", "knowledge/writing-material": "knowledge-map",
     "memory": "knowledge-map", "concepts": "knowledge-map",
+    "research": "MOC-Research", "docs": "knowledge-map",
+    "health": "knowledge-map", "playbooks": "knowledge-map",
+    "portfolio": "knowledge-map", "projects": "knowledge-map",
+    "templates": "knowledge-map", "traces": "knowledge-map",
+    "system": "knowledge-map",
 }
 
 LINK_RE = re.compile(r"\[\[([^\]|#]+)")
@@ -33,7 +40,8 @@ def scan_md_files():
         f for f in VAULT.rglob("*.md")
         if ".git" not in str(f) and ".obsidian" not in str(f)
         and ".venv" not in str(f) and "MOC-" not in f.name
-        and f.name not in ("Home.md", "README.md")
+        and not (f.name == "README.md" and f.parent == VAULT)
+        and f.name not in ("Home.md",)
     ]
 
 

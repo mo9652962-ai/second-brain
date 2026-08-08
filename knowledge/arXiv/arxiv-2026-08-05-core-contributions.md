@@ -256,3 +256,6 @@ Agent 可靠性
 ---
 
 *来源：arxiv-weekly-2026-08-05（Week 32，27 篇）| 交叉验证：arXiv 页 + HF papers + chatpaper + GitHub | 状态：adopted*
+
+---
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]

@@ -389,3 +389,5 @@ LLM-agent evaluations often produce task outcomes long before the full benchmark
 - 🥈 RoMeRL（→ Second Brain 记忆体系语义坐标）
 - 🥉 SWE-Touch（→ 桌面插件共享工作区感知）
 
+---
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]

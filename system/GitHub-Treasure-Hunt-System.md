@@ -213,3 +213,6 @@ python scripts/github_treasure_hunt.py --trend 30
 
 *本系统是 Second Brain「知识自举」模块的核心组件*
 *2026 年 7 月 28 日 启动*
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

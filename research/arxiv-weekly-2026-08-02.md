@@ -342,3 +342,6 @@ This week's papers focus on:
 ---
 
 **已处理：** 核心贡献精选 3 篇（Frontis-MA1 / AgentRadio / Σ-Mem）→ 📄 `knowledge/arXiv/arxiv-2026-08-02-core-contributions.md`（2026-08-02 arxiv-summarize）
+
+---
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]

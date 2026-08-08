@@ -238,3 +238,6 @@ USB-TTL      STC89C52RC
 
 ## 生成日期
 2026-07-22 | 由 8051-embedded-dev skill 生成
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]
