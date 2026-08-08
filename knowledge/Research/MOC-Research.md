@@ -1,5 +1,5 @@
 ---
-tags: [MOC, Research, 索引]
+tags: [MOC, research, 索引]
 aliases: [研究地图, Research MOC]
 created: 2026-08-09
 ---

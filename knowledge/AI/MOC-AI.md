@@ -1,5 +1,5 @@
 ---
-tags: [MOC, AI, agent, LLM, 工作流, 模型]
+tags: [MOC, AI, Agent, LLM, 工作流, 模型]
 domain: AI
 created: 2026-07-28
 updated: 2026-07-30

@@ -1,5 +1,5 @@
 ---
-tags: [Agent Skills, 设计工程, UI/UX, 学习笔记]
+tags: [Agent skills, 设计工程, UI/UX, 学习笔记]
 aliases: [UI Skills, Design Engineer Skills, ibelick]
 date: 2026-07-27
 source: https://github.com/ibelick/ui-skills

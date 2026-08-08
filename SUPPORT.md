@@ -63,7 +63,7 @@
 ### 3. **用 Obsidian 链接格式**
 如果你引用仓库内的文件：
 ```md
-查看 [[skills/hardware/PCB-Design-Automation.md]] 中的 DFM 部分
+查看 [[skills/hardware/PCB-Design-Automation-2026.md]] 中的 DFM 部分
 ```
 AI 可以直接理解并跳转查看。
 

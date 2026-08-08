@@ -1,5 +1,5 @@
 ---
-tags: [content, blog, video, bilibili, ai-agent]
+tags: [content, blog, video, bilibili, AI-Agent]
 created: 2026-07-31
 status: draft
 publish_target: B站 + 掘金/CSDN

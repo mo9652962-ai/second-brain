@@ -1,5 +1,5 @@
 ---
-tags: [周报, GitHub Trending, 2026-08-02]
+tags: [周报, github trending, 2026-08-02]
 date: 2026-08-02
 ---
 

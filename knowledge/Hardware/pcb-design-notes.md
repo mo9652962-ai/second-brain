@@ -1,5 +1,5 @@
 ---
-tags: [PCB, hardware, EDA, design-notes]
+tags: [pcb, hardware, EDA, design-notes]
 domain: Hardware
 status: adopted
 ---

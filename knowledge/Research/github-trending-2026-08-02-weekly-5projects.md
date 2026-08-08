@@ -1,5 +1,5 @@
 ---
-tags: [github, trending, weekly, research, ai-agent, code-review, cad, skills]
+tags: [github, trending, weekly, research, AI-Agent, code-review, CAD, skills]
 aliases: [github-trending-weekly-2026-08-02]
 date: 2026-08-02
 source: https://github.com/trending?since=weekly
