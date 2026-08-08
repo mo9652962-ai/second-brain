@@ -114,7 +114,8 @@ qm "everything it does is audited" + EU AI Act 审计日志要求：
    - client-1 有独立 `memories/` `sessions/` `cron/` `skills/` `workspace/`
    - 写入假数据"客户 A 论文需求"到 client-1/memories/MEMORY.md → **default 全局 MEMORY.md 0 匹配** = 文件级隔离 ✅
    - ⚠️ 注意：跨 profile 写记忆会触发 Hermes 软保护（cross_profile guard），需显式确认
-3. 下一步：接单工作流 SOP 增加"按客户开 profile"步骤
+3. ✅ **接单工作流 SOP 增加"按客户开 profile"步骤**（2026-08-08 确认已落实）：
+   - `knowledge/Academic/接单工作流-SOP.md` 已有 §1.4 客户隔离（Hermes profile）
 
 ---
 
