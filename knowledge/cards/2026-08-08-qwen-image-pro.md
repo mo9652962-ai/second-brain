@@ -36,7 +36,7 @@ status: fresh
 
 ## 行动项
 
-- [ ] 🟡 P1：接入百炼 API 测 1 张，验证 0.25 元成本 + 中文文字渲染实际效果（见 AI早报待办）
+- [x] 🟡 P1：接入百炼 API 测 1 张，验证 0.25 元成本 + 中文文字渲染实际效果（见 AI早报待办）→ ✅ **08-08 实测通过**：qwen-image-3.0-pro 同步端点（multimodal-generation/generation）出图 1024×1024，约 75s，输出 `outputs/qwen-image-test/2026-08-08-qwen-image-3.0-pro-test.png`；奶茶店海报中文文字渲染全对（标题/副标题/商品名+¥价格），视觉审查无错别字，可直接商用
 - [ ] 若文字渲染达标 → 闲鱼新增「带字海报/菜单」商品线，样例素材 2–3 张
 - [ ] 把「配图走 Qwen-Image」写入 PPT/素材交付 SOP 的成本基准
 
