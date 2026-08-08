@@ -80,3 +80,6 @@ status: absorbed
 
 ---
 > 关联: [[3-ai-projects-study]]（同批小黑盒项目研究） | [[HOME|🏠 首页]]
+
+---
+> 🗺️ 属于 [[MOC-Research|🔬 研究笔记]] · [[knowledge-map|🗺️ 知识地图]]

@@ -60,3 +60,6 @@ status: absorbed
 ## 📄 产出
 - llama-cpp 技能更新（GGUF 兼容性章节）
 - 本笔记存档
+
+---
+> 🗺️ 属于 [[MOC-Research|🔬 研究笔记]] · [[knowledge-map|🗺️ 知识地图]]

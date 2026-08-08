@@ -55,3 +55,6 @@ type: vault-suggestion-executor
 
 ---
 _由 k (vault-suggestion-executor cron) 生成 · 2026-08-05_
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

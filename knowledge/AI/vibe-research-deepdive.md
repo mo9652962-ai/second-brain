@@ -64,3 +64,6 @@ domain: AI
 | ✅ **集成** RefChecker | 论文服务时验引用真伪 |
 | ⏳ **关注** EvoScientist 架构 | 方向已验证，我们的自进化路线正确 |
 | ❌ **不装** STORM / AI-Scientist / RD-Agent | 太重，与闲鱼变现方向偏离 |
+
+---
+> 🗺️ 属于 [[MOC-AI]] · [[Home|🏠 Home]]

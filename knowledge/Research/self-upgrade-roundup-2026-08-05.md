@@ -72,3 +72,6 @@ domain: research
 ---
 
 *汇总完成：2026-08-05 · 下一轮候选：PAKE v9.19 实施、Hermes MCP 接入 code-review-graph*
+
+---
+> 🗺️ 属于 [[MOC-Research|🔬 研究笔记]] · [[knowledge-map|🗺️ 知识地图]]

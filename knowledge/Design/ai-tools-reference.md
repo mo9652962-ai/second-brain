@@ -63,3 +63,6 @@ domain: Design
 | **skills.sh** | Vercel 出品，精品路线 | skills.sh |
 | **GitHub anthropics/skills** | 官方仓库，153k⭐ | github.com/anthropics/skills |
 | **魔搭社区** | 阿里云，国内生态 | modelscope.cn |
+
+---
+> 🗺️ 属于 [[MOC-Design]] · [[Home|🏠 Home]]

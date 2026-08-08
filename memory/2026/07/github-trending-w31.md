@@ -48,3 +48,6 @@ date: 2026-07-27
 ### ③ code-review-graph
 本地优先的代码知识图谱MCP工具。
 **→ 评估**：理念跟codebase-memory-mcp一致，不重复安装
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

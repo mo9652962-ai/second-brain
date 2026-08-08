@@ -116,3 +116,6 @@ domain: research
 ---
 
 *研究完成：2026-08-05 · 状态: proposed（建议 v9.19 实施，优先级低于真机验证）*
+
+---
+> 🗺️ 属于 [[MOC-Research|🔬 研究笔记]] · [[knowledge-map|🗺️ 知识地图]]

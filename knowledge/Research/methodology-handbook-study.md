@@ -65,3 +65,6 @@ license: CC BY 4.0
 - Research：web_search ×2 验证 EMF 限制 + LLM 审查盲区
 - Apply：8 条并入规则 #23，量化研究 3 条存档待需要时启用
 - 符合 CC BY 4.0：吸收的是原则（非逐字复制），引用已标注来源
+
+---
+> 🗺️ 属于 [[MOC-Research|🔬 研究笔记]] · [[knowledge-map|🗺️ 知识地图]]

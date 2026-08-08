@@ -23,3 +23,6 @@
 ## 链接
 - 在线阅读：https://workbuddy.homes/
 - 开源仓库：https://github.com/AlephAITech/WorkBuddyGuide
+
+---
+> 🗺️ 属于 [[MOC-Productivity]] · [[Home|🏠 Home]]

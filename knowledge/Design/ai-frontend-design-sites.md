@@ -20,3 +20,6 @@
 - **不是 AI 不行，是喂给 AI 的"素材"不对味**——给 AI 截图参考比文字描述效果好十倍
 - 技术栈主流是 **React + Tailwind + Framer Motion**
 - 工作流：找灵感（Godly/Design Spells）→ 调素材（ShaderGradient/Unicorn UI）→ 用提示词生成（MotionSites/Variant）→ 落地
+
+---
+> 🗺️ 属于 [[MOC-Design]] · [[Home|🏠 Home]]

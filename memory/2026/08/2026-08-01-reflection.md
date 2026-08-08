@@ -105,3 +105,6 @@ reviewed_date: 2026-08-01
 ---
 
 _生成: self-improvement cron · k (Hermes) · 2026-08-02_
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

@@ -34,3 +34,6 @@ https://github.com/codecrafters-io/build-your-own-x
 https://github.com/AIDC-AI/Pixelle-Video
 AI 自动生成短视频：输入主题→文案→分镜→渲染
 有视频生成需求时可用
+
+---
+> 🗺️ 属于 [[MOC-AI]] · [[Home|🏠 Home]]

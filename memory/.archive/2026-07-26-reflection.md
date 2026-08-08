@@ -117,3 +117,5 @@ tags: [reflection, self-improvement, weekly-review]
 
 本周 Hermes 自身的架构稳定性（cron、fallback、搜索冗余）终于达到一个比较扎实的状态，但"找的太多，吃的太少"——知识库扩张速度远超消化速度。需要从"宽度优先"切换到"深度优先"，每个新发现的工具/方法至少要经过一次实际试用才能算真正吸收。
 
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

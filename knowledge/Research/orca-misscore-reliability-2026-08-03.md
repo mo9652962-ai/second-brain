@@ -126,3 +126,6 @@ source: arxiv-2026-08-03-core-contributions
 ---
 
 *Generated 2026-08-03 | 对应 arxiv-2026-08-03-core-contributions.md 长期跟踪 | 状态: adopted（2 项落地进行中）*
+
+---
+> 🗺️ 属于 [[MOC-Research|🔬 研究笔记]] · [[knowledge-map|🗺️ 知识地图]]

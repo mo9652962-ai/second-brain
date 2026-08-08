@@ -63,3 +63,6 @@ date: 2026-07-27
 ## 可实操行动
 - 参考四要素模板统一 knowledge/ 中的笔记结构
 - 大笔记拆小（如 AI-Agent.md 可拆成更聚焦的子笔记）
+
+---
+> 🗺️ 属于 [[MOC-Productivity]] · [[Home|🏠 Home]]

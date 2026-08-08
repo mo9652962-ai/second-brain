@@ -159,3 +159,6 @@ tags: [daily-review, knowledge-absorption, monetization, xianyu, cron]
 ---
 
 _生成：2026-07-30 18:00 | 由 daily-monetization-review cron 自动触发_
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

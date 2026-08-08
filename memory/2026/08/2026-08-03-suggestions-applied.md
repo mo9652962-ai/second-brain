@@ -85,3 +85,6 @@ status: applied
 - 若 8/3 晚间 sora 已上架 → 勾选 P0 5 项
 - Skill 合并 / 安全审计 cron 一旦确认 → 立即执行（方案已备）
 - Codex CLI 8/4 排期 → 届时按 deepseek 官方 Win 一键脚本安装
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

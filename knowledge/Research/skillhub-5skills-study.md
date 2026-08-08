@@ -61,3 +61,6 @@ status: absorbed
 - 2 个已有覆盖（systematic-debugging / mcp-builder）
 - 1 个伦理不碰（create-ex）
 - 1 个待定（ui-ux-pro-max）
+
+---
+> 🗺️ 属于 [[MOC-Research|🔬 研究笔记]] · [[knowledge-map|🗺️ 知识地图]]

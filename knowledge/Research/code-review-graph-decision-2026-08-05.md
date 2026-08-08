@@ -61,3 +61,6 @@ code-review-graph mcp serve        # MCP 服务（Hermes 可接）
 ---
 
 *决策完成：2026-08-05 · 已替代 codebase-memory-mcp 定位*
+
+---
+> 🗺️ 属于 [[MOC-Research|🔬 研究笔记]] · [[knowledge-map|🗺️ 知识地图]]

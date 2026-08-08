@@ -55,3 +55,6 @@ skill-name/
 | **json-canvas** | 创建/编辑 .canvas 文件（Obsidian Canvas） |
 | **obsidian-cli** | 通过 CLI 交互 Obsidian |
 | **defuddle** | 从网页提取干净 markdown |
+
+---
+> 🗺️ 属于 [[MOC-Productivity]] · [[Home|🏠 Home]]

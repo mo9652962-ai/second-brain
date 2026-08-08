@@ -45,3 +45,6 @@ type: research
 | 🟢 P2 | k 的 plan 技能补"可验收标准+链接验证"模板 |
 
 _生成: k (Hermes) · 2026-08-08 · learn→research→apply_
+
+---
+> 🗺️ 属于 [[MOC-Research|🔬 研究笔记]] · [[knowledge-map|🗺️ 知识地图]]

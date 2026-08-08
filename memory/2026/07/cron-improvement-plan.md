@@ -39,3 +39,6 @@ source: 2026-07-29-reflection + 全库扫描
 - [x] 实施 cron 时间调整（已通过 cron-health-board 看板验证错峰生效：arxiv 07:00 / wechat 08:00 / health 08:15 / self-improve 08:30 / 闲鱼 09:00）
 - [x] 添加 retry script（scripts/cron-retry-wrapper.sh 已落地 2026-08-01，v2.0 模板）
 - [x] 每日吸收底线加入 cron 检查（daily-self-improvement 任务 prompt 已含「今日知识吸收检查」章节，2026-08-03 确认）
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

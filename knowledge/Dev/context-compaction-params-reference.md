@@ -44,3 +44,6 @@ source: syrizelink/OpenFic (Apache-2.0)
 
 ---
 *2026-07-31 · OpenFic 上下文压缩模块吸收*
+
+---
+> 🗺️ 属于 [[MOC-Dev]] · [[Home|🏠 Home]]

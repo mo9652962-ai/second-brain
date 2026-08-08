@@ -22,3 +22,6 @@ status: abandoned
 2. `Alt+Q` 框选要翻译的屏幕区域
 3. `~` 键开始实时翻译
 4. 翻译引擎：Google / DeepL（免费，无需 Key）
+
+---
+> 🗺️ 属于 [[MOC-Productivity]] · [[Home|🏠 Home]]

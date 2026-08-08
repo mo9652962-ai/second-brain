@@ -80,3 +80,6 @@ tool: ecc-context-budget (适配 Hermes)
 
 ---
 *2026-07-31 · ECC context-budget 技能适配 Hermes 首次审计*
+
+---
+> 🗺️ 属于 [[MOC-Research|🔬 研究笔记]] · [[knowledge-map|🗺️ 知识地图]]

@@ -46,3 +46,6 @@ status: adopted
 - 自动分类：首条消息 `hello` → bridge，`command` → mcp
 - 按 commandId 路由往返消息
 - 替代了官方文档误导的 OpenClaw gateway
+
+---
+> 🗺️ 属于 [[MOC-Hardware]] · [[Home|🏠 Home]]

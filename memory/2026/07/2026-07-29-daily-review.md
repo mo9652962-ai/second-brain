@@ -191,3 +191,6 @@ tags: [daily-review, knowledge-absorption, monetization, cron-optimization, mode
 ---
 
 _生成：2026-07-29 23:00 | 由 daily-knowledge-review cron 自动触发_
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

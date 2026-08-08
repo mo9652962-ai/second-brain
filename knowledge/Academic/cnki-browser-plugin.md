@@ -30,3 +30,6 @@ status: watch
 - 模型：`mimo-v2-flash`（快速）/ `mimo-v2-pro`（深度推理）
 - 兼容 OpenAI 格式，可用在 Codex / Claude Code / OpenClaw 等工具
 - 认证方式：Header `api-key: $KEY` 或 `Authorization: Bearer $KEY`
+
+---
+> 🗺️ 属于 [[MOC-Academic]] · [[Home|🏠 Home]]

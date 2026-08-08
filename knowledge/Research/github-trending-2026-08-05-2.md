@@ -207,3 +207,6 @@ Brainstorm（需求对齐）→ Plan（设计图）→ 独立分支环境
 ---
 
 *来源：GitHub Trending 第二次（sora 分享）+ web_search 交叉验证 | 状态：adopted*
+
+---
+> 🗺️ 属于 [[MOC-Research|🔬 研究笔记]] · [[knowledge-map|🗺️ 知识地图]]

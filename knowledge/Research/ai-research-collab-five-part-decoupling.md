@@ -82,3 +82,6 @@ AI 科研协作的关键不只是模型能力，而是**项目如何被表达**�
 
 ---
 > 关联: [[ai-research-collaboration]]（110亿Token原始经验） | [[HOME|🏠 首页]]
+
+---
+> 🗺️ 属于 [[MOC-Research|🔬 研究笔记]] · [[knowledge-map|🗺️ 知识地图]]

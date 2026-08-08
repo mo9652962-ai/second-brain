@@ -44,3 +44,6 @@
 ---
 
 *本笔记由 Hermes cron 自动生成 · 仅保留 AI/ML/编程/开源相关条目*
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

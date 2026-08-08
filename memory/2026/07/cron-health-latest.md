@@ -50,3 +50,6 @@ updated: 2026-08-09 00:00
   ❌ opencode-go: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING]
   🟡 siliconflow: HTTP 401 (214ms, reachable)
   🟡 deepseek: HTTP 401 (284ms, reachable)
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

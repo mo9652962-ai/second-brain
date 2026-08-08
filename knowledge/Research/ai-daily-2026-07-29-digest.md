@@ -56,3 +56,6 @@ status: absorbed
 
 - **2 项已落地**（MCP 规范 + 规则 #17 扩展），1 项验证行业共识（Gemini 预算控制 = 我们的成本护栏）
 - 值得关注：MCP Apps 生态（未来 Hermes 可能支持）、Laguna 本地模型（有 33B+ 显存时）
+
+---
+> 🗺️ 属于 [[MOC-Research|🔬 研究笔记]] · [[knowledge-map|🗺️ 知识地图]]

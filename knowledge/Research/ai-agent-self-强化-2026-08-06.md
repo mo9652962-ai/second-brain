@@ -45,3 +45,6 @@ status: applied
 ## 下一步可做
 - 定期 memory 健康检查（操作性→skill，腾空间）
 - 技能去重（工具库庞大，curator 可跑）
+
+---
+> 🗺️ 属于 [[MOC-Research|🔬 研究笔记]] · [[knowledge-map|🗺️ 知识地图]]

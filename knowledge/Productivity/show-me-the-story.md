@@ -46,3 +46,6 @@ note: 以后拿来写小说用
 - 与 academic-paper-writing 的去AI味思路相似但面向小说
 
 > 关联: academic-paper-writing（skill，去AI味方法论互补）
+
+---
+> 🗺️ 属于 [[MOC-Productivity]] · [[Home|🏠 Home]]

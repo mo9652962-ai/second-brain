@@ -134,3 +134,6 @@ icacls "%USERPROFILE%\AppData\Local\hermes\.env" /inheritance:r /grant:r "<USER>
 
 ---
 *2026-08-02 · 安全风险评估 · 结论：基础防护到位（127.0.0.1），3 个 P0 加固项待执行*
+
+---
+> 🗺️ 属于 [[MOC-Research|🔬 研究笔记]] · [[knowledge-map|🗺️ 知识地图]]

@@ -57,3 +57,6 @@ type: research
 MiMo-V2.5 是国内可用的 DeepSeek 平价替代，但**性能弱于 DeepSeek V4-Flash**。sora 的当前配置（DeepSeek V4-Flash 主 + 火山/硅流容灾）无需变更。唯一值得留意的：**MiMo TTS/ASR 免费期**——做语音功能时可白嫖。
 
 _生成: k (Hermes) · 2026-08-08_
+
+---
+> 🗺️ 属于 [[MOC-Research|🔬 研究笔记]] · [[knowledge-map|🗺️ 知识地图]]

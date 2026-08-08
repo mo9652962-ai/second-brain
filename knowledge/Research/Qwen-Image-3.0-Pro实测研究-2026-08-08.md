@@ -51,3 +51,6 @@ type: research
 - 关键配置已记：dashscope.aliyuncs.com/api/v1
 
 _生成: k (Hermes) · 2026-08-08 · learn→research→apply_
+
+---
+> 🗺️ 属于 [[MOC-Research|🔬 研究笔记]] · [[knowledge-map|🗺️ 知识地图]]

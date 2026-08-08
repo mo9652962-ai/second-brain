@@ -92,3 +92,6 @@ delegate_task(tasks=[搜索, 分析, 写作]) → 汇总
 ```
 判断任务类型 → 论文/academic / PPT/design / PCB/hardware
 ```
+
+---
+> 🗺️ 属于 [[MOC-AI]] · [[Home|🏠 Home]]

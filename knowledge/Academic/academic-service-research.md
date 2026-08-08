@@ -188,3 +188,6 @@ domain: Academic
 | **research-paper-writer** | LobeHub | IEEE/ACM 论文框架 | ⚠️ 我们已有9个论文skill，可能重复 |
 
 > **结论**: 我们的 skill 覆盖已足够全面，不需要新装。重点是**用好现有的**。
+
+---
+> 🗺️ 属于 [[MOC-Academic]] · [[Home|🏠 Home]]
