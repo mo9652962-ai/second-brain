@@ -42,3 +42,6 @@ domain: Academic
 
 ## 来源
 - 攻玉学术·知网插件：jadense.com/plugin/browser-extension
+
+---
+> 🗺️ 属于 [[MOC-Academic]] · [[Home|🏠 Home]]

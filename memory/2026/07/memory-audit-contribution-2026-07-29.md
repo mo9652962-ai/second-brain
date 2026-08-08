@@ -40,3 +40,6 @@ status: adopted
 - 📦 下次压缩时优先归档：4条（得分0.5）
 
 *下次审计：每月第一日 cron 自动触发*
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

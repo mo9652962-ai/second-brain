@@ -70,3 +70,6 @@ skills_list 中可见：context-budget、continuous-learning-v2、delivery-gate�
 ## 结论
 - **1 项落地**：ECC 安装 + 4 技能导入（解决上次网络失败的遗留任务）
 - 其余 4 项存档（2 项与现有体系重复，2 项暂无场景）
+
+---
+> 🗺️ 属于 [[MOC-Research|🔬 研究笔记]] · [[knowledge-map|🗺️ 知识地图]]

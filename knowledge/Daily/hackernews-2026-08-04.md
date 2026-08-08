@@ -27,3 +27,6 @@ The Register 评论文章：AI 泡沫正在破裂但市场尚未察觉，从估�
 
 ### 8. [Rust project goals: Immobile types and guaranteed destructors](https://github.com/rust-lang/rust-project-goals/blob/main/src/2026/move-trait.md) — 115 分 / 35 评论
 Rust 2026 项目目标提出 "Move trait"（不可移动类型与保证析构）设计，旨在解决类型在资源移动后的析构保证问题，是语言核心演进方向之一。
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

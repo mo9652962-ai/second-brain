@@ -46,3 +46,6 @@ date: 2026-07-27
 
 - **andrewyng/openworker** — Andrew Ng，README 还没写
 - **open-seo** — SEO开源替代，如有自建站需求再用
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

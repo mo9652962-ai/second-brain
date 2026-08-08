@@ -43,3 +43,6 @@ type: vault-maintenance
 
 - `HOME.md`: 新增 4 条 wikilink
 - 本维护笔记: `memory/2026/07/2026-07-28-maintenance-2.md`
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

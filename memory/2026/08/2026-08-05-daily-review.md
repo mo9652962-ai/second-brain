@@ -67,3 +67,6 @@ type: daily-review
 
 ---
 _生成: daily-knowledge-review cron · k (Hermes) · 2026-08-05_
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

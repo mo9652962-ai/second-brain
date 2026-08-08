@@ -92,3 +92,6 @@ domain: AI
 ---
 
 *研究完成：2026-08-05 · 状态: adopted（3 项落地建议）*
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

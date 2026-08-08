@@ -66,3 +66,6 @@ source: 小黑盒《本地部署AI生成无审查内容（16）Krea2生图》
 
 ---
 > 关联: [[krea2-comfyui-deploy-notes]]（本地部署完整踩坑） | [[HOME|🏠 首页]]
+
+---
+> 🗺️ 属于 [[MOC-Research|🔬 研究笔记]] · [[knowledge-map|🗺️ 知识地图]]

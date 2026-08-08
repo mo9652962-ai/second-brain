@@ -60,3 +60,6 @@ bash install-zh.sh   # 中文版
 - ResearchPilot 偏**实验驱动**（ML/CV/NLP方向），全流程管理 idea→code→paper
 - academic-paper-writing 偏**写作驱动**，精修论文语言和结构
 - 可互补：实验阶段用 ResearchPilot，精修阶段用 academic-paper-writing
+
+---
+> 🗺️ 属于 [[MOC-Academic]] · [[Home|🏠 Home]]

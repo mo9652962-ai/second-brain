@@ -80,3 +80,6 @@ trust: low 的内容：
 ---
 
 *研究完成：2026-08-05 · 状态: adopted（防御规则已落实 knowledge-absorption）*
+
+---
+> 🗺️ 属于 [[MOC-Research|🔬 研究笔记]] · [[knowledge-map|🗺️ 知识地图]]

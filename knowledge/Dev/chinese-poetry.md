@@ -35,3 +35,6 @@ npx chinese-poetry-server
 ```
 
 或直接去 Releases 下载压缩包。
+
+---
+> 🗺️ 属于 [[MOC-Dev]] · [[Home|🏠 Home]]

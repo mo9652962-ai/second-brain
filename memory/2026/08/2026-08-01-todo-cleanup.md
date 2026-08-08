@@ -59,3 +59,6 @@ date: 2026-08-01
 - 流程参考：`hermes-automation-patterns/references/daily-todo-execution.md`
 
 _由 k (Hermes) 每日任务生成_
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

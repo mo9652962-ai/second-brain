@@ -51,3 +51,6 @@ status: learning
 - [The 2026 Web Developer Stack](https://javascript.plainenglish.io/the-2026-web-developer-stack-daily-tools-and-workflow-a341162b9644)
 - [Next.js 15 Docs](https://nextjs.org/docs)
 - [Biome](https://biomejs.dev)
+
+---
+> 🗺️ 属于 [[MOC-Dev]] · [[Home|🏠 Home]]

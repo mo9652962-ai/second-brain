@@ -59,3 +59,6 @@ source: https://github.com/powerycy/goutoujunshi
 - 项目真实且有方法论价值：**核心不是恋爱话术，是"反脑补决策框架"**
 - 已导入 skill + 吸收为规则 #24（通用化）
 - 按需加载架构与我们现有规则互为印证
+
+---
+> 🗺️ 属于 [[MOC-Research|🔬 研究笔记]] · [[knowledge-map|🗺️ 知识地图]]

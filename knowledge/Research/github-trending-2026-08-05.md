@@ -176,3 +176,6 @@ PDF 到达 → 分类（~20ms，Tj/TJ 文本算子检测）
 ---
 
 *来源：GitHub Trending（sora 分享）+ web_search 交叉验证 | 状态：adopted*
+
+---
+> 🗺️ 属于 [[MOC-Research|🔬 研究笔记]] · [[knowledge-map|🗺️ 知识地图]]

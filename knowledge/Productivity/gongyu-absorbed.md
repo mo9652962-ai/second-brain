@@ -40,3 +40,6 @@ date: 2026-07-27
 ## ❌ 不安装攻玉
 
 结论：**不装。** 攻玉是面向个人的 SaaS 工具，我们有 Hermes + Obsidian + cron 已经全覆盖了。方法论值得吸收，但不需要再装一个平台。
+
+---
+> 🗺️ 属于 [[MOC-Productivity]] · [[Home|🏠 Home]]

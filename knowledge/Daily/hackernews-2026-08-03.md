@@ -21,3 +21,6 @@ AI 可见性调查：仅 8.9% 的网站屏蔽 AI 爬虫，但 94.8% 的网站从
 
 ### 6. [The Vanishing Page: AI Firms Scan Then Destroy Rare Book Editions](https://dallasexpress.com/national/the-vanishing-page-ai-firms-scan-then-destroy-rare-book-editions/) — 13 分 / 讨论中
 AI 公司为训练模型扫描稀有古籍后损毁原书：报道指出部分机构以"数字化保存"为名拆书扫描，导致实体珍本消失，引发数据获取伦理争议。
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

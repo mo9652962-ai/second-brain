@@ -50,3 +50,6 @@ type: research
 | 🟢 P2 | ZCode 体验评估 | 可装 Windows exe 试 GLM-5.2 编辑器（非必需）|
 
 _生成: k (Hermes) · 2026-08-08 · learn→research→apply_
+
+---
+> 🗺️ 属于 [[MOC-Research|🔬 研究笔记]] · [[knowledge-map|🗺️ 知识地图]]

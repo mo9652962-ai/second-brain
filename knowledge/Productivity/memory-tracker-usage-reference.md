@@ -75,3 +75,6 @@ uv run python scripts/memory_dashboard.py --serve 8080
 
 - 规则 #11 轻量记忆价值量化（3因子评分模型）
 - 规则 #13 记忆因果验证（State→Evidence→Recovery 三环）
+
+---
+> 🗺️ 属于 [[MOC-Productivity]] · [[Home|🏠 Home]]

@@ -40,3 +40,6 @@ created: 2026-07-27
 
 1. **知识文件 tags 规范化**：分批次为知识域文件添加 frontmatter（先为高频引用文件：k-self-improvement、vibe-research、ponytail、pcb-design-notes）
 2. **Dreaming 系统轻量化**：`memory/dreaming/light/` 中仅有 "No notable updates." 的文件可考虑下次自动跳过创建
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

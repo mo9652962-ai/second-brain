@@ -47,3 +47,6 @@ domain: graphify
 
 - 本次发现并修复：上次图谱包含大量 `.obsidian/plugins/*/main.js` 混淆代码节点（78%），已过滤，避免污染社区检测
 - Token 消耗: ~20.2M in / 0.7M out（16 个提取 subagent）
+
+---
+> 🗺️ 属于 [[MOC-Research|🔬 研究笔记]] · [[knowledge-map|🗺️ 知识地图]]

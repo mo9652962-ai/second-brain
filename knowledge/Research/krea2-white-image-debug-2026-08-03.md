@@ -77,3 +77,6 @@ def process_out(self, latent):
 
 ---
 _生成: Krea2 全白图排障 · k (Hermes) · 2026-08-03_
+
+---
+> 🗺️ 属于 [[MOC-Research|🔬 研究笔记]] · [[knowledge-map|🗺️ 知识地图]]

@@ -49,3 +49,6 @@ type: vault-maintenance
 - `HOME.md` 已修改: updated 日期 + 新链接 + 维护条目
 - `vault-structure.py` 已修复: Windows 路径兼容
 - 新维护笔记: `memory/2026/07/2026-07-28-maintenance.md`
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

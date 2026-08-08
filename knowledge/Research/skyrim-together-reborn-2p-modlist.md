@@ -95,3 +95,6 @@ date: 2026-08-02
 - 安装视频（2026）：https://www.youtube.com/watch?v=Lpdt474o7Sg
 - 图文教程：https://www.windowscentral.com/gaming/skyrim-together-reborn-mod-how-to-play-download-install-and-make-a-server
 - 兼容性清单视频：https://www.youtube.com/watch?v=JpAI_TX2WAc
+
+---
+> 🗺️ 属于 [[MOC-Research|🔬 研究笔记]] · [[knowledge-map|🗺️ 知识地图]]

@@ -51,3 +51,6 @@ status: absorbed
 - 15 个项目中 2 个高契合、3 个存档关注、8 个与现有体系重叠/无关、2 个已研究过
 - 今日最大收获：**text-to-cad 的 CAD 技能**（与我们的 CAD 方向直接打通）
 - 次优：ESP32-Bit-Pirate（待硬件）
+
+---
+> 🗺️ 属于 [[MOC-Research|🔬 研究笔记]] · [[knowledge-map|🗺️ 知识地图]]

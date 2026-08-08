@@ -168,3 +168,6 @@ source: arxiv-2026-08-03-core-contributions
 ---
 
 *Generated 2026-08-03 | 对应 arxiv-2026-08-03-core-contributions.md 长期跟踪 | 状态: adopted（TAPO 落地 + FinanceHarness 借鉴 + Meta-Task backlog）*
+
+---
+> 🗺️ 属于 [[MOC-Research|🔬 研究笔记]] · [[knowledge-map|🗺️ 知识地图]]

@@ -40,3 +40,6 @@ winget install AgentsView
 ## 建议
 
 装一个看看 token 都花在哪了，尤其是 cron 任务的消耗占比。
+
+---
+> 🗺️ 属于 [[MOC-Dev]] · [[Home|🏠 Home]]

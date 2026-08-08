@@ -64,3 +64,6 @@ source: https://github.com/usekaneo/kaneo
 - 对我们：**不安装**（无 Docker + 已有轻量任务体系）
 - 理念（极简/工具隐形/数据自有）已吸收
 - 未来团队协作/接单项目管理场景可再评估
+
+---
+> 🗺️ 属于 [[MOC-Research|🔬 研究笔记]] · [[knowledge-map|🗺️ 知识地图]]

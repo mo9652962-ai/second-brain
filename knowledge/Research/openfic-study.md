@@ -55,3 +55,6 @@ license: Apache-2.0
 
 ---
 > 关联: [[openfic-absorbed]]（吸收补强） | [[HOME|🏠 首页]]
+
+---
+> 🗺️ 属于 [[MOC-Research|🔬 研究笔记]] · [[knowledge-map|🗺️ 知识地图]]

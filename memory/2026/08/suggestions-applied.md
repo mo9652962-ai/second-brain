@@ -67,3 +67,6 @@ status: applied
 
 - P2 安全审计 cron 待 sora 确认后创建
 - 6 项人工待办待 sora 处理，处理后从对应笔记勾选
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

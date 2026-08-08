@@ -74,3 +74,6 @@ type: research
 
 ---
 _生成: k (Hermes) · 2026-08-08 · 08-06/08-07 两期 agent-llm 速览精华_
+
+---
+> 🗺️ 属于 [[MOC-Research|🔬 研究笔记]] · [[knowledge-map|🗺️ 知识地图]]

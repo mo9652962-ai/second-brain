@@ -61,3 +61,6 @@ type: daily-review
 | 达标判定 | ✅ 达标（4/4） |
 
 _生成: daily-knowledge-review cron · k (Hermes) · 2026-08-04_
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

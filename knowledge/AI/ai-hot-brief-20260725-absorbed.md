@@ -65,3 +65,6 @@ Claude Code 系统提示词删了 **80%+**，编码评测无显著损失。
 - [x] **关注 Claude Opus 5 接入 opencode-go** → ✅ 已上架 OpenCode 共享目录(7/24)，1M ctx，无需额外配置
 - [x] **markitdown** → 已安装 v0.1.6，CLI 可用 `uv run python -m markitdown <file>`
 - [x] **browser-use + Hermes** → 官方集成已存在（docs.browser-use.com），Hermes 内置 browser_* 已覆盖，不重复配置
+
+---
+> 🗺️ 属于 [[MOC-AI]] · [[Home|🏠 Home]]

@@ -62,3 +62,6 @@ function makeDeterministicId(scope, ...parts) {
 ---
 
 *研究完成 2026-07-31 · learn→research→apply 全流程 · 三项全部落地*
+
+---
+> 🗺️ 属于 [[MOC-Research|🔬 研究笔记]] · [[knowledge-map|🗺️ 知识地图]]

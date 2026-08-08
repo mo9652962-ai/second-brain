@@ -61,3 +61,6 @@ source: https://github.com/jackfrued/Python-100-Days
 - **对我们：按需参考知识源，不下载不学习**——我们已有的技能体系覆盖了日常 Python 工作
 - 对博主身份：这是长青选题（Python 就业/100 天路线），可参考做内容
 - 对新手：是好资源，但我们不是目标用户
+
+---
+> 🗺️ 属于 [[MOC-Research|🔬 研究笔记]] · [[knowledge-map|🗺️ 知识地图]]

@@ -149,3 +149,6 @@ MANTA 核心约束：`Agents ≤ Budget`、`Mutations ≤ 1 per run`、`Operatio
 ---
 
 *Generated 2026-08-03 | 对应 arxiv-2026-08-03-core-contributions.md 🥇 MANTA | 状态: 待 cron 试点*
+
+---
+> 🗺️ 属于 [[MOC-Research|🔬 研究笔记]] · [[knowledge-map|🗺️ 知识地图]]

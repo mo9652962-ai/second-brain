@@ -55,3 +55,6 @@ source: https://github.com/WXRIW/Lyricify-App
 - **对我们 = 无前置条件的工具，当前不装**（用户无音乐播放器）
 - 技术参考价值已存档（Lyrics-Helper 多格式解析架构）
 - 若未来安装 Spotify/QQ音乐 + 想提升歌词体验，装 Lyricify Lite（轻量通用）即可
+
+---
+> 🗺️ 属于 [[MOC-Research|🔬 研究笔记]] · [[knowledge-map|🗺️ 知识地图]]

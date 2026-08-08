@@ -111,3 +111,6 @@ status: fresh
 | 10 | State2State | 环境派生目标训练，无需人工任务设计 |
 
 **行动项**: ① 用 ASTELD 六轴评估我们 Hermes 配置（找设计空白）；② 技能库执行 skill-library-audit（防污染退化）；③ Skill-Use 触发瓶颈 → 检查技能 description 自包含性。
+
+---
+> 🗺️ 属于 [[MOC-Research|🔬 研究笔记]] · [[knowledge-map|🗺️ 知识地图]]

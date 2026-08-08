@@ -138,3 +138,6 @@ status: adopted
 ---
 
 *吸收完成：2026-07-29 | 下次更新：自动 Cron 运行*
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

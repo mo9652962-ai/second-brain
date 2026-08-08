@@ -55,3 +55,6 @@ status: absorbed
 - 文章面向准大一新生，四层架构逻辑清晰，但 star 数据过时（低估 2-4 倍）
 - 对我们的增量价值：① 确认体系知识覆盖度 ② 存档 4 个学习项目 ③ 博主选题参考
 - 无需安装任何新工具（GitHub Copilot 我们不缺——Hermes 本身就是更强的 Copilot）
+
+---
+> 🗺️ 属于 [[MOC-Research|🔬 研究笔记]] · [[knowledge-map|🗺️ 知识地图]]

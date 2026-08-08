@@ -152,3 +152,6 @@ cd /c/Users/31954/ComfyUI && env -u PYTHONPATH ./venv/Scripts/python.exe main.py
 
 ---
 > 关联: [[krea2-local-image-gen-study]]（模型研究笔记） | [[HOME|🏠 首页]]
+
+---
+> 🗺️ 属于 [[MOC-Research|🔬 研究笔记]] · [[knowledge-map|🗺️ 知识地图]]

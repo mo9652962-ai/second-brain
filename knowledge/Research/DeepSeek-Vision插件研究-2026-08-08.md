@@ -51,3 +51,6 @@ type: research
 | 🟢 P2 | 原生视觉模型评估 | 找 sora 主链可用的视觉 key（替代 wrapper 路线）|
 
 _生成: k (Hermes) · 2026-08-08 · learn→research→apply_
+
+---
+> 🗺️ 属于 [[MOC-Research|🔬 研究笔记]] · [[knowledge-map|🗺️ 知识地图]]

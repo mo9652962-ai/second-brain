@@ -66,3 +66,6 @@ source: https://github.com/tkslucas/Neodisk
 - 项目真实但 macOS-only，对我们（Windows）**不安装**
 - 若 Windows 磁盘告急，推荐 **WizTree**（NTFS MFT 直读，比 DaisyDisk 类工具快得多）
 - 设计理念（只读）已吸收——自动化工具的高风险操作交还人工
+
+---
+> 🗺️ 属于 [[MOC-Research|🔬 研究笔记]] · [[knowledge-map|🗺️ 知识地图]]

@@ -90,3 +90,6 @@ status: adopted
 
 ---
 *2026-08-02 · arxiv W32 周报深度研究 · 4/4 论文交叉验证通过*
+
+---
+> 🗺️ 属于 [[MOC-Research|🔬 研究笔记]] · [[knowledge-map|🗺️ 知识地图]]

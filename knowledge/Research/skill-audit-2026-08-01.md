@@ -62,3 +62,6 @@ tags: [skill-audit]
 4. **siliconflow-media 补充 402 故障说明**
 
 > 按审计规则，以上合并/删除操作均需 sora 确认后执行。本次仅完成 8 处过时模型名修正。
+
+---
+> 🗺️ 属于 [[MOC-Research|🔬 研究笔记]] · [[knowledge-map|🗺️ 知识地图]]

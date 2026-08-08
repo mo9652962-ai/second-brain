@@ -81,3 +81,6 @@ AI Agent → 打开浏览器 → 操作网页 → 提取数据 → 完成任务
 2. **Prompt→App 模式成熟**：Bolt.new 验证了"描述即应用"的可行性
 3. **Agent 全流程仍复杂**：PingCAP 方案需要多工具编排，但方向明确
 4. **Awesome List 是金矿**：awesome-ai-agents-2026 有 340+ 资源可深入
+
+---
+> 🗺️ 属于 [[MOC-AI]] · [[Home|🏠 Home]]

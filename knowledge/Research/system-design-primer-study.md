@@ -51,3 +51,6 @@ status: absorbed
 
 ---
 > 关联: [[system-design-primer]]（知识库主笔记） | [[HOME|🏠 首页]]
+
+---
+> 🗺️ 属于 [[MOC-Research|🔬 研究笔记]] · [[knowledge-map|🗺️ 知识地图]]
