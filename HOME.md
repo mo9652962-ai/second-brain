@@ -142,6 +142,7 @@ web 研究、GitHub 热榜、深度调研的落地笔记（W31 新建域）
 
 ## 📋 项目与日志
 
+- **[[memory/2026/08/2026-08-07-reflection|🪞 反思日记 08-07]]** — 刷题机晚间大改造回顾 + 3 改进点（安静期误报/SQL口径/闲鱼第8天）
 - **[[knowledge/cards/2026-08-08-qwen-image-pro|🃏 知识卡片 08-08]]** — Qwen-Image-3.0-Pro：配图成本 0.2 元/张 + 带字图新商品线
 - **[[projects/current]]** — 所有进行中项目实时状态
 | **[[knowledge/Cross-Domain]]** — 交叉领域自动索引
