@@ -291,3 +291,6 @@ This week's papers focus on:
 *生成时间：2026-07-29 | 验证完成：搜索引擎交叉验证 | 状态：reading → adopted*
 
 *Generated automatically via arXiv API cron job. Last updated: 2026-07-29 11:07*
+
+---
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]

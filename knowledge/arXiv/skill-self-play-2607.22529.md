@@ -66,3 +66,6 @@ LLM 训练正从人工设计转向交互驱动的自我进化。但现有自进�
 ---
 
 *吸收状态: adopted — 与 Hermes Skill 体系直接相关，已纳入 skill 设计方法论*
+
+---
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]

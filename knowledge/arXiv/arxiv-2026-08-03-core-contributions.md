@@ -302,3 +302,6 @@ VeriSkill 直接服务 skill 自举：现有的 self-evolution 方法在程序�
 ---
 
 *Generated via arxiv-summarize cron (arxiv-fetch 2026-08-03 输出) + 搜索引擎交叉验证 | Last updated: 2026-08-03*
+
+---
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]

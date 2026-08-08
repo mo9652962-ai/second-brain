@@ -76,3 +76,6 @@ cronjob create \
   --prompt "检索上周最新论文..." \
   --skills light-literature-search,arxiv
 ```
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

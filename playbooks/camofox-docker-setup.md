@@ -66,3 +66,6 @@ curl http://localhost:9377/health
 ---
 
 *预案创建：2026-07-29 | 下次更新：首次启用后记录耗时*
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

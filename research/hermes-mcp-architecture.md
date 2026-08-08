@@ -128,3 +128,6 @@ source: VetClaw paper + OpenClaw vs Hermes comparison + 2026 行业最佳实践
 ---
 
 *架构确认：2026-07-29 | 参考：VetClaw (2607.26042) + OpenClaw vs Hermes 对比 + NemoClaw*
+
+---
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]

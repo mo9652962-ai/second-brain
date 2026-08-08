@@ -310,3 +310,6 @@ Agent B（前台任务：读文件）           Agent C（前台任务：跑构�
 ---
 
 *Generated via arxiv-summarize cron (arxiv-fetch 2026-08-02 输出) + 搜索引擎交叉验证 | Last updated: 2026-08-02*
+
+---
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]

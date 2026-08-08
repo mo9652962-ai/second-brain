@@ -294,3 +294,6 @@ Chemistry literature synthesis often requires assembling specific findings scatt
 ---
 
 **已处理：** 核心贡献精选 3 篇（OpenForgeRL / StateAct / OSReward）→ 📄 `knowledge/arxiv-2026-07-31-core-contributions.md`（2026-07-31 arxiv-summarize）
+
+---
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]

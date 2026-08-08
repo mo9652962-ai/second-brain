@@ -263,3 +263,6 @@ Theoretical Frontier (Track)
 ---
 
 *Generated via arxiv API + web search validation | Last updated: 2026-07-30*
+
+---
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]

@@ -271,3 +271,6 @@ Memory-augmented LLM-based agents are vulnerable to memory injection attacks: Ag
 **已处理:** 核心贡献精选 3 篇 → 📄 `knowledge/arXiv/arxiv-2026-08-03-core-contributions.md`（MANTA / VeriSkill / MIND）
 
 *Generated automatically via arXiv API cron job. Last updated: 2026-08-03*
+
+---
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]

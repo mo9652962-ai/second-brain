@@ -35,3 +35,6 @@
 ## 来源
 - 仓库：https://github.com/asgeirtj/system_prompts_leaks (CC0-1.0)
 - 注意：这些是社区抓取的快照，非官方字节级精确版本
+
+---
+> 🗺️ 属于 [[MOC-Dev]] · [[Home|🏠 Home]]

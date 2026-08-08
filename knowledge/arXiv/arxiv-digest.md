@@ -171,3 +171,6 @@
 > A central design principle in modern machine learning and artificial intelligence is to align a model's inductive bias with the structure of its input data. For matrix-valued inputs, relevant matrix-level relationships can be characterised through spectral values and spectral subspaces; however, common coordinate-wise rotation-gate data-encoding unitaries used in most quantum machine learning models do not explicitly construct such a matrix-level...
 
 ---
+
+---
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]
