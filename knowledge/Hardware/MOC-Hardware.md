@@ -1,5 +1,5 @@
 ---
-tags: [MOC, hardware, PCB, 嵌入式, 单片机, CAD]
+tags: [MOC, hardware, pcb, 嵌入式, 单片机, CAD]
 domain: Hardware
 created: 2026-07-28
 ---

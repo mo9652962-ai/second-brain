@@ -30,5 +30,5 @@ created: 2026-07-26
 1. 知识笔记写入 `knowledge/` 对应目录
 2. 每日日志写入 `memory/YYYY/MM/`
 3. 交叉引用使用 `[[wikilink]]` 语法
-4. 标签使用小写连字符格式（如 `#ai-agent`）
+4. 标签使用小写连字符格式（如 `#AI-Agent`）
 5. 新知识吸收后更新 `knowledge/knowledge-map.md`

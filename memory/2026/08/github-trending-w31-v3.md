@@ -1,5 +1,5 @@
 ---
-tags: [周报, GitHub Trending, W31]
+tags: [周报, github trending, W31]
 date: 2026-08-02
 ---
 

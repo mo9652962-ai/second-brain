@@ -1,5 +1,5 @@
 ---
-tags: [AI编码工具, MCP, 知识图谱, 学习笔记]
+tags: [AI编码工具, mcp, 知识图谱, 学习笔记]
 aliases: [Codebase Memory MCP, DeusData]
 date: 2026-07-27
 source: https://github.com/DeusData/codebase-memory-mcp

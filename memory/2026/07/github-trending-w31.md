@@ -1,5 +1,5 @@
 ---
-tags: [weekly-trending, w31, github]
+tags: [weekly-trending, W31, github]
 date: 2026-07-27
 ---
 

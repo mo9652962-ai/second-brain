@@ -1,5 +1,5 @@
 ---
-tags: [methodology, ai-agent, multi-agent, architecture, qm]
+tags: [methodology, AI-Agent, multi-agent, architecture, qm]
 aliases: [qm-scope-methodology, hermes-multi-user-scope]
 date: 2026-08-02
 source: https://github.com/yc-software/qm
@@ -123,7 +123,7 @@ qm "everything it does is audited" + EU AI Act 审计日志要求：
 - [[eu-ai-act-2026-08-assessment]] — EU AI Act 三件套（审计/人工升级/透明度）
 - [[AI-Agent]] — Hermes 架构总览
 - [[github-trending-2026-08-02-study]] — qm 原始研究
-- [[../memory/2026/08/2026-08-02-eu-ai-act|EU AI Act 卡片]]
+- [[2026-08-02-eu-ai-act|EU AI Act 卡片]]
 
 ---
 *2026-08-02 · 从 yc-software/qm 提炼 · 待实施 P2 试点验证*

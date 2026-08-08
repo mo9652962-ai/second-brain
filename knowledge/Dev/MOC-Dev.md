@@ -1,5 +1,5 @@
 ---
-tags: [MOC, dev, 编程, Python, Web, 系统设计]
+tags: [MOC, dev, 编程, python, web, 系统设计]
 domain: Dev
 created: 2026-07-28
 updated: 2026-07-30

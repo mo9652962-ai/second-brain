@@ -1,5 +1,5 @@
 ---
-tags: [Agent Skills, 工程方法论, 工作流优化]
+tags: [Agent skills, 工程方法论, 工作流优化]
 aliases: [Matt Pocock 方法论, Grill 先行, 行为改进]
 date: 2026-07-22
 source: https://github.com/mattpocock/skills
