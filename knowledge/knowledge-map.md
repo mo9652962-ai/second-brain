@@ -309,3 +309,5 @@ MCP 生态: GitHub + Filesystem + JLCPCB(38工具) + Obsidian(笔记操作)
 
 > [[PCB-EMC-SI-热设计千轮研究-2026-08-08]] — EMC/SI/热设计规则 + 空调板v2升级清单
 > [[嘉立创自动化问题千轮研究-2026-08-08]] — jlc-mcp根因(PCB页+Enable命令+版本3.x)+官方方案
+
+> [[arXiv-agent-llm精选速览-2026-08-08]] — 20篇→10篇精选+落地映射(PAST-Bench/HiGram/CoPlan/注入检查)
