@@ -9,7 +9,7 @@ status: watch
 # Codebase Memory MCP — 代码知识图谱引擎
 
 > 来源: [DeusData/codebase-memory-mcp](https://github.com/DeusData/codebase-memory-mcp)
-> ⭐ 33.3K | 论文: [arXiv:2603.27277](https://arxiv.org/abs/2603.27277)
+> ⭐ 38.2K | 论文: [arXiv:2603.27277](https://arxiv.org/abs/2603.27277)
 > 学习时间: 2026-07-27 | 所属知识网络: [[knowledge-map]] | 相关: [[AI-Agent]] | 本周期刊精选
 
 ## 简介
