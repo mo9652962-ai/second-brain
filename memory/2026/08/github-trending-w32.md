@@ -47,3 +47,6 @@ date: 2026-08-09
 
 ---
 *2026-08-09 · github-trending-digest 技能流程 · 脚本口径（W31 weekly 口径见 github-trending-w31-v3.md）*
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]
