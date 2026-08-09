@@ -83,7 +83,7 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 | 🎨 [输出风格自举](skills/hermes/output-style-bootstrapping.md) | 对话越长，输出风格越跑偏 | ⭐⭐⭐⭐⭐ 5/5 |
 | 🧭 [上下文管理自举](skills/hermes/context-management-bootstrapping.md) | 重要信息上下文被稀释，自动遗忘 | ⭐⭐⭐⭐ 4/5 |
 
-**系统整体成熟度：22 / 35 = 63%，持续进化中**
+**系统整体成熟度：32 / 35 = 91%，持续进化中**
 
 ---
 
@@ -104,7 +104,7 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 | 🎨 | **设计/多媒体** | PPT 设计、AI 美学、图像生成工具 | PPT 优化、AI 图像生成 |
 | 📊 | **效率方法论** | Obsidian 技巧、自动化工作流 | Obsidian 知识图谱、自动化工作流 |
 
-**📈 总计：19 个技能，10 大知识域**
+**📈 总计：30 个自建技能文档 · 10 大知识域 · 26 个外部技能集参考**
 
 ---
 
@@ -128,7 +128,7 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 
 5. **🔄 每小时自动同步更新**
    - 不是一次性项目，是持续进化的活的知识库
-   - 22 个 Cron 自动化任务 7×24 小时运行
+   - 32 个 Cron 自动化任务 7×24 小时运行
 
 ---
 
@@ -175,18 +175,18 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 | **知识库引擎** | Obsidian (Dataview + Graph View) |
 | **版本控制** | Git + GitHub (每 30 分钟自动同步) |
 | **MCP 服务** | GitHub · Filesystem · JLCPCB · Obsidian · Browser |
-| **自动化引擎** | Hermes Cron Scheduler (22 个定时任务) |
+| **自动化引擎** | Hermes Cron Scheduler (32 个定时任务) |
 
 ---
 
 ## 📊 仓库统计
 
 ```
-📁 总大小：约 10MB
-📝 Markdown 文件：200+
-🧠 Skill 文档：19 个
+📁 仓库体积：约 190MB（含附件与图片）
+📝 Markdown 文件：608 个（正文约 0.6 MB）
+🧠 自建 Skill 文档：30 个（11 个领域目录）
 🗂️ 知识域：10 个
-⏰ 首次提交：2026 年 3 月
+⏰ 首次提交：2026 年 7 月
 🔄 平均更新频率：每 30 分钟自动同步
 ```
 
