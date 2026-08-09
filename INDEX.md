@@ -58,6 +58,8 @@ updated: 2026-08-08
 | Productivity | 效率 |
 | Python | Python 工具链 |
 | Research | 研究笔记（2026-08 密集写入） |
+| Tools | 工具参考（浏览器自动化/Awesome 列表等） |
+| writing-material | 写作素材 |
 | Cross-Domain.md | 跨域链接 |
 
 ## 项目与系统
@@ -75,7 +77,7 @@ updated: 2026-08-08
 | health/ | 健康检查 |
 | site/ | 站点相关 |
 | concepts/ | 概念笔记 |
-| research/ | 顶层研究目录 |
+| research/ | 研究追踪器（trackers/，arXiv 长期追踪） |
 | outputs/ | 输出产物 |
 | mcp/ | MCP 配置 |
 | skills/ | 技能 |

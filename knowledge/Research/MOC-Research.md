@@ -9,7 +9,7 @@ created: 2026-08-09
 > 所有研究笔记的索引与入口。自动按主题分组。
 > 回到 [[knowledge-map|🗺️ 知识地图]] · [[Home|🏠 Home]]
 
-**共 94 篇研究笔记** · 最后更新: 2026-08-09
+**共 96 篇研究笔记** · 最后更新: 2026-08-09（W32 周度整理）
 
 ## 其他
 
@@ -68,6 +68,7 @@ created: 2026-08-09
 - [[github-trending-2026-08-02-weekly-5projects]]
 - [[github-trending-25-projects]]
 - [[github-weekly-2026-07-31-5projects]]
+- [[GitHub-Weekly-2026-08-09]]
 - [[goutoujunshi-study]]
 - [[kaneo-study]]
 - [[krea2-local-image-gen-study]]
@@ -110,6 +111,8 @@ created: 2026-08-09
 - [[arxiv-agent-llm-2026-08-08]]
 - [[arXiv-agent-llm精选速览-2026-08-08]]
 - [[arxiv-week32-2026-08-02-study]]
+- [[arxiv-weekly-2026-07-29]] · [[arxiv-weekly-2026-07-31]] · [[arxiv-weekly-2026-08-02]] · [[arxiv-weekly-2026-08-03]] · [[arxiv-weekly-2026-08-04]] · [[arxiv-weekly-2026-08-05]]（W32 从 research/ 迁入）
+- [[arxiv-2026-07-29-core-contributions]] · [[arxiv-digest]] · [[minevalicoder-2607.22471]] · [[skill-self-play-2607.22529]]
 
 ## 视觉
 
@@ -156,7 +159,14 @@ created: 2026-08-09
 ## 周报
 
 - [[组会报告-2026-08-02]]
+- [[graphify-weekly-2026-08-09]]
 
 ## 其他
 
 - [[竞品研究-安卓刷题机fork-2026-08-09]]
+
+## 追踪器
+
+- [[charm-graph-transfer]]
+- [[kutie-context-injection]]
+- [[long-term-model-systems]]

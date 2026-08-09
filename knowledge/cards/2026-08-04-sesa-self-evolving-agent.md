@@ -8,7 +8,7 @@ tags:
   - memory
   - research
 created: 2026-08-04
-source: "[[research/arxiv-weekly-2026-08-04]]"
+source: "[[arxiv-weekly-2026-08-04]]"
 ---
 
 # 🃏 知识卡片 · SESA：让 Agent 自己出题、解题、把失败写成技能再进化
@@ -46,4 +46,4 @@ source: "[[research/arxiv-weekly-2026-08-04]]"
 
 ---
 
-*卡片来源：当天知识库精选 · research/arxiv-weekly-2026-08-04（🥇 与自举体系直接呼应 + 可行动性最强）*
+*卡片来源：当天知识库精选 · [[arxiv-weekly-2026-08-04]]（🥇 与自举体系直接呼应 + 可行动性最强）*
