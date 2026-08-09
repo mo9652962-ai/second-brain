@@ -132,24 +132,24 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 
 ---
 
-## 📦 最新技能入库 (2026-07-28)
+## 📦 最新技能入库 (2026-08-09)
 
-### MLOps & 训练流水线
-
-| 技能 | 版本 | 简介 |
-|------|------|------|
-| **[MLOps & LLM Training Pipeline 2026](skills/ai/mlops-llm-training-pipeline.md)** | v1.0 | LlamaFactory + Unsloth + QLoRA 完整微调指南 |
-
-### 移动端 & 安全
+### 竞品研究与回收
 
 | 技能 | 版本 | 简介 |
 |------|------|------|
-| **[跨平台移动端开发 2026](skills/dev/cross-platform-mobile-development-2026.md)** | v1.0 | Flutter vs React Native 深度对比 + AI 集成最佳实践 |
-| **[CTF 网络安全入门指南](skills/dev/ctf-cybersecurity-roadmap.md)** | v1.0 | Web/密码/逆向/Pwn 从零开始学习路径 + 6 个月就业路线图 |
+| **[竞品研究：安卓刷题机 fork](knowledge/Research/竞品研究-安卓刷题机fork-2026-08-09.md)** | v1.0 | 9 项可回收功能清单（听力音频/选项打乱/错题迭代/安全存储） |
+| **[USB-UART 转换器设计复盘](knowledge/Hardware/USB-UART转换器设计复盘-2026-08-08.md)** | v1.0 | CH340G + USB-C + LDO 经典设计拆解 + SKiDL 复刻方案 |
+
+### 每日自动化优化（新增）
+
+| 脚本 | 说明 |
+|------|------|
+| **[daily_vault_optimize.py](scripts/daily_vault_optimize.py)** | 每日 08:30 自动补链孤立笔记、更新 MOC 索引、知识地图日期、git push |
 
 ---
 
-## 🤖 自动化体系 (22 个 Cron)
+## 🤖 自动化体系 (每日优化 Cron)
 
 | 频率 | 时间 | 任务 | 核心功能 |
 |:----|:----|:-----|:---------|
