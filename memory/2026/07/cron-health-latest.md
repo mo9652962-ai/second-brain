@@ -51,3 +51,6 @@ updated: 2026-08-11 20:00
   🟡 opencode-go: HTTP 400 (2411ms, reachable)
   🟡 siliconflow: HTTP 401 (343ms, reachable)
   🟡 deepseek: HTTP 401 (250ms, reachable)
+
+---
+> 🗺️ 属于 [[memory/2026/07|07]] · [[Home|🏠 Home]]
