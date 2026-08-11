@@ -51,7 +51,7 @@ status: completed
 
 - `knowledge/论文Pipeline-数据契约.md`、`knowledge/接单工作流-SOP.md` — 交付标准/SOP 检查清单，非待办
 - `projects/ai-blogger/*`（content-template/strategy/tools-setup/README）— 内容发布清单 + 路线图，非每日待办
-- `knowledge/Python/Awesome-Lists-Study.md`、`knowledge/Research/10-Top-AI-Agent-Projects-Deep-Research.md` — 长期技术路线图（n8n/Ollama/Dify 等），属阶段性目标而非日清项
+- `knowledge/Dev/Awesome-Lists-Study.md`、`knowledge/Research/10-Top-AI-Agent-Projects-Deep-Research.md` — 长期技术路线图（n8n/Ollama/Dify 等），属阶段性目标而非日清项
 - `research/trackers/*`（kutie-context-injection、charm-graph-transfer）— 周计划研究 tracker，非每日待办
 - `system/GitHub-Treasure-Hunt-System.md` — 示例占位（"尝试项目 A"）
 - `knowledge/Dev/mattpocock-methodology.md` — skill 质量检查清单

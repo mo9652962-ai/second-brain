@@ -79,7 +79,7 @@ type: reflection
 
 | # | 检查项 | 结果 | 证据 |
 |:-:|--------|:----:|------|
-| 1 | knowledge/ 昨日新增 | ✅ **5 篇实质** | `knowledge/Research/s4mp-multiplayer-10round-2026-08-04.md`（十轮研究）、`knowledge/cards/2026-08-04-sesa-self-evolving-agent.md`、`knowledge/Daily/hackernews-2026-08-04.md`、`knowledge/Research/tapo-meta-finance-2026-08-03.md`、`knowledge/arXiv/arxiv-2026-08-03-core-contributions.md`（find 实测 mtime） |
+| 1 | knowledge/ 昨日新增 | ✅ **5 篇实质** | `knowledge/Research/s4mp-multiplayer-10round-2026-08-04.md`（十轮研究）、`knowledge/cards/2026-08-04-sesa-self-evolving-agent.md`、`knowledge/Daily/hackernews-2026-08-04.md`、`knowledge/Research/tapo-meta-finance-2026-08-03.md`、`knowledge/Research/arxiv-2026-08-03-core-contributions.md`（find 实测 mtime） |
 | 2 | skills/ 昨日更新 | ✅ **9 个 SKILL.md** | `AppData/Local/hermes/skills/` 下 self-improving-agent（SESA 2 行动项落地）、hermes-automation-patterns（故障 J：GitHub Token 双凭证）、sims-4-modding-multiplayer、knowledge-absorption 等（find 实测 mtime） |
 | 3 | memory/ 昨日 absorbed/learning/pitfall/trialed 条目 | ✅ **10 个文件** | `memory/2026/08/2026-08-04-todo-cleanup.md`（3 论文验证 + 2 行动项注入）、`2026-08-04-xianyu-todo-executor.md`、`2026-08-04-maintenance.md`、`2026-08-04-daily-review.md`、health + dreaming×3 + 根级日报；⚠️ 命名上无 absorbed/learning/pitfall/trialed 子目录（仓库惯例存 .learnings/ 与日报，而 .learnings/ 断档——见改进点 1） |
 | 4 | 昨日 web_search 次数与成果 | ✅ **218 次**（SQLite 全天实测；daily-review 生成时点值为 79） | 成果：S4MP KeyError:2 根因（十轮研究+反编译交叉验证）、SESA/Analytic Memory/SeekBrain 3 论文验证、GitHub Token 双凭证修复、arXiv 周报 15 篇精选 5 篇验证通过 |

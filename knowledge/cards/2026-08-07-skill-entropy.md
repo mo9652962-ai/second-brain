@@ -8,7 +8,7 @@ tags:
   - skill
   - research
 created: 2026-08-07
-source: "[[knowledge/arXiv/arxiv-2026-08-07-agent-llm]]"
+source: "[[knowledge/Research/arxiv-2026-08-07-agent-llm]]"
 status: adopted
 ---
 

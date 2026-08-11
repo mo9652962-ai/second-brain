@@ -42,7 +42,7 @@ date: 2026-08-02
 
 ## ⏳ 需你确认/决策（长期收集项，未动原文件）
 - 研究跟踪（8/5 更新）：CHARM 图谱零样本迁移、KuTIE 上下文注入（trackers/ 2 文件，各 3 项）
-- 工具部署决策：n8n + MCP / Ollama fallback / Activepieces / ActivityWatch / Graphify（knowledge/Python/Awesome-Lists-Study.md + 10-Top-AI-Agent-Projects）
+- 工具部署决策：n8n + MCP / Ollama fallback / Activepieces / ActivityWatch / Graphify（knowledge/Dev/Awesome-Lists-Study.md + 10-Top-AI-Agent-Projects）
 - AI 博主冷启动：B 站账号注册、主页完善、第 1 视频选题、OBS+剪映配置（projects/ai-blogger/ 4 文件）
 - 内容发布清单：system-comparison-content（掘金/CSDN/B站/封面图）
 - 条件触发项（暂不处理）：EU AI Act 多 Agent 三件套（仅做产品时）、Trellis-3D/GeoLibre/awesome-go（接单时）

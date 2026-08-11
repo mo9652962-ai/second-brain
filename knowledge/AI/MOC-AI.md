@@ -8,7 +8,7 @@ updated: 2026-07-30
 # 🤖 AI 知识域 — Agent 架构
 
 > 🏠 [[HOME]] | 🚀 [[knowledge/Productivity/obsidian-tips|Productivity]] | 📚 [[knowledge/Academic/MOC-Academic|Academic]]
-> 🔧 [[knowledge/Dev/python-ecosystem|Python 生态]] | 🛠 [[knowledge/Tools/hermes-agent-ecosystem|工具生态]]
+> 🔧 [[knowledge/Dev/python-ecosystem|Python 生态]] | 🛠 [[knowledge/AI/hermes-agent-ecosystem|工具生态]]
 
 ---
 
@@ -24,7 +24,7 @@ updated: 2026-07-30
 ## 🔗 跨域链接
 
 - [[knowledge/Dev/python-ecosystem|Python 生态]] — 脚本开发、包管理
-- [[knowledge/Tools/hermes-agent-ecosystem|工具生态]] — Hermes 配置、MCP 工具
+- [[knowledge/AI/hermes-agent-ecosystem|工具生态]] — Hermes 配置、MCP 工具
 - [[knowledge/Dev/system-design-primer|系统设计]] — Agent 架构模式
 - [[knowledge/Productivity/automation-workflow-three-pillars-adopted|自动化三支柱]] — Cron/自举方法论
 

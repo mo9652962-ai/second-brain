@@ -160,7 +160,7 @@ source: export.arxiv.org API
 
 ## 🔗 关联
 
-- 上一份核心贡献精选: [[knowledge/arXiv/arxiv-2026-08-05-core-contributions|arXiv 核心贡献 08-05]]
-- 上期速览: [[knowledge/arXiv/arxiv-2026-08-06-agent-llm|arXiv 今日速览 08-06]]
-- 总索引: [[knowledge/arXiv/arxiv-digest|arXiv Digest]]
+- 上一份核心贡献精选: [[knowledge/Research/arxiv-2026-08-05-core-contributions|arXiv 核心贡献 08-05]]
+- 上期速览: [[knowledge/Research/arxiv-2026-08-06-agent-llm|arXiv 今日速览 08-06]]
+- 总索引: [[knowledge/Research/arxiv-digest|arXiv Digest]]
 - 回到: [[HOME]]

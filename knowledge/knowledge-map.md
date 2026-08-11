@@ -10,7 +10,7 @@ status: adopted
 
 > 入口: [[Home|🏠 Home]] · 返回总索引
 
-> 所有知识领域的索引与关联。最后更新: 2026-08-09（W32 周度整理 — 8 个散落文件归域 + MOC-Research 补齐 + 本周新增归挂 + 索引更新）
+> 所有知识领域的索引与关联。最后更新: 2026-08-11（知识链分支整合: arXiv/writing-material/Python/Tools/Content 并入主域, 17→12 域））
 
 ---
 
@@ -114,7 +114,7 @@ graph TD
 | 域 | 新增重点 | 入口 |
 |:---|:---------|:-----|
 | 🔬 Research | 22+ 篇研究笔记（S4MP 协议/PCB 千轮/AI 模型实测/移动端方向） | [[knowledge/Research/MOC-Research\|MOC-Research]] |
-| 📚 arXiv（归域） | arxiv-weekly×6 + core-contributions×2 从 research/ 顶层迁入，命名统一 | [[knowledge/arXiv/arxiv-weekly-2026-08-05\|arxiv-weekly 08-05]] |
+| 📚 arXiv（归域） | arxiv-weekly×6 + core-contributions×2 从 research/ 顶层迁入，命名统一 | [[knowledge/Research/arxiv-weekly-2026-08-05\|arxiv-weekly 08-05]] |
 | 🤖 AI | DeepSeek V4 Flash ARC Prize 登顶（89.0%）· 模型实测矩阵（MiMo/MuseSpark/Qwen-Image） | [[knowledge/cards/2026-08-09-deepseek-v4-flash-arc-prize\|卡片 08-09]] |
 | 💻 Dev（归域） | hermes-mcp-architecture 从 research/ 迁入 · codebase-memory-mcp | [[knowledge/Dev/hermes-mcp-architecture\|hermes-mcp 架构]] |
 | 🔧 Hardware | 嘉立创自动化问题根因（版本 2.x vs 3.x）· SKiDL 网表双轨闭环 · PCB EMC/SI/热设计 | [[knowledge/Hardware/MOC-Hardware\|MOC-Hardware]] |
@@ -125,7 +125,7 @@ graph TD
 
 1. **S4MP/SimSync 联机协议** — 100 轮网络协议 + 商业模式仿制 + 拓扑审查（[[knowledge/Research/s4mp-protocol-network-100round-2026-08-05|协议研究]]）
 2. **PCB 自动化双轨闭环** — SKiDL 网表（KiCad10 导入 EasyEDA 不丢网络）+ 嘉立创官方 Run API Gateway（[[knowledge/Research/双轨闭环路线图-SKiDL网表-2026-08-08|路线图]]）
-3. **arXiv 周报归域** — arxiv-weekly×6 从 research/ 顶层迁入 knowledge/arXiv/，命名与 core-contributions 统一
+3. **arXiv 周报归域** — arxiv-weekly×6 从 research/ 顶层迁入 knowledge/Research/，命名与 core-contributions 统一
 4. **DeepSeek V4 Flash 外部背书** — ARC Prize 登顶（89.0%/$0.02），验证生产默认模型选型
 5. **移动端开发方向** — 破解 AI UI 同质化（截图回归 + 全界面遍历 + 竖屏独立布局）
 

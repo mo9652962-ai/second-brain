@@ -96,7 +96,7 @@ status: completed
 - `knowledge/论文Pipeline-数据契约.md`、`knowledge/接单工作流-SOP.md` — SOP/交付标准检查清单
 - `knowledge/AI/deepseek-v4-flash-0731-upgrade.md` — 探索性 3 项，已转入 current.md P1
 - `system/GitHub-Treasure-Hunt-System.md` — 示例占位
-- `knowledge/Content/system-comparison-content.md` — 内容发布计划（博客/视频版），属 ai-blogger 路线图
+- `knowledge/Archive/system-comparison-content.md` — 内容发布计划（博客/视频版），属 ai-blogger 路线图
 
 ---
 
