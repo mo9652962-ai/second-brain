@@ -42,7 +42,7 @@ type: maintenance
 | knowledge/cards/2026-08-05-agent-reliability-toolmaze | Agent 可靠性卡片 |
 | knowledge/cards/2026-08-06-ai-daily / deepseek-v4-flash-official / minimax-h3 | 每日卡片×3 |
 | knowledge/Daily/hackernews-2026-08-05 | HN 日报 |
-| knowledge/writing-material/独立开发陷阱与开源协作 | 写作素材 |
+| knowledge/Academic/独立开发陷阱与开源协作 | 写作素材 |
 | memory/2026/08/2026-08-04-reflection | 反思日记 |
 | memory/2026/08/health-2026-08-05 | 健康巡检 |
 

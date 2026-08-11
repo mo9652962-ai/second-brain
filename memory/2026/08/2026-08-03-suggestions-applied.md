@@ -74,8 +74,8 @@ status: applied
 
 | 文件 | 变更 |
 |:-----|:-----|
-| `knowledge/Content/system-comparison-content.md` | 数据引用核验 3 项 [x] + 实测值 |
-| `knowledge/Python/Awesome-Lists-Study.md` | Graphify 待办 [x] |
+| `knowledge/Archive/system-comparison-content.md` | 数据引用核验 3 项 [x] + 实测值 |
+| `knowledge/Dev/Awesome-Lists-Study.md` | Graphify 待办 [x] |
 | `knowledge/Dev/mcp-spec-2026-07-28.md` | 迁移清单加评估注记（本栈不适用） |
 | `projects/current.md` | P0 到期标注 + Skill 合并复核 + Codex 预检 + 待办表 +2 行 + 更新日期 |
 | `memory/2026/08/2026-08-03-suggestions-applied.md` | 本报告 |

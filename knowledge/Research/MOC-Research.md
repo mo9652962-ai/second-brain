@@ -9,9 +9,17 @@ created: 2026-08-09
 > 所有研究笔记的索引与入口。自动按主题分组。
 > 回到 [[knowledge-map|🗺️ 知识地图]] · [[Home|🏠 Home]]
 
-**共 96 篇研究笔记** · 最后更新: 2026-08-09（W32 周度整理）
+**共 114 篇研究笔记** · 最后更新: 2026-08-11（分支整合: arXiv 17 篇并入 Research））
 
 ## 其他
+- [[arxiv-2026-07-30-core-contributions]]
+- [[arxiv-2026-07-31-core-contributions]]
+- [[arxiv-2026-08-02-core-contributions]]
+- [[arxiv-2026-08-03-core-contributions]]
+- [[arxiv-2026-08-05-core-contributions]]
+- [[arxiv-2026-08-06-agent-llm]]
+- [[arxiv-2026-08-07-agent-llm]]
+- [[英语刷题机Android版竞品研究-2026-08-10]]
 
 - [[10-Top-AI-Agent-Projects-Deep-Research]]
 - [[20个ChatGPTPrompt研究-2026-08-08]]

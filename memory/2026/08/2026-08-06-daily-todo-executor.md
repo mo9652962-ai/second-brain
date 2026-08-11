@@ -16,7 +16,7 @@ status: completed
 | # | 待办 | 位置 | 处理方式 |
 |:--|:-----|:-----|:---------|
 | 1 | Hermes 配置文档修复：LLM-Providers.md 重写 + fangzhou-ark-setup alias 修正 | `memory/2026/08/weekly-learning-2026-08-02.md` L145 | ✅ 重写 `knowledge/AI/LLM-Providers.md` 对齐 config.yaml 实况（默认模型 → custom:fangzhou-2/deepseek-v4-pro；新增 model_aliases 表；6 个 custom_providers；29 个 cron 任务）；fangzhou-ark-setup skill 已含 08-02 alias 修正注记 → 标记 `[x]` |
-| 2 | `daily-knowledge-absorption-gate` 加记忆条目 outcome 标注（✅/❌），低价值降权 | `knowledge/arXiv/arxiv-2026-08-05-core-contributions.md` L243 | ✅ 技能 §5 新增 outcome 标注体系（✅/⚠️/❌/📌 + 月度降权 + 周度 ✅ 占比 KPI）→ 标记 `[x]` |
+| 2 | `daily-knowledge-absorption-gate` 加记忆条目 outcome 标注（✅/❌），低价值降权 | `knowledge/Research/arxiv-2026-08-05-core-contributions.md` L243 | ✅ 技能 §5 新增 outcome 标注体系（✅/⚠️/❌/📌 + 月度降权 + 周度 ✅ 占比 KPI）→ 标记 `[x]` |
 | 3 | TencentDB 差距表 / AirLLM 记录 / reverse-skill 参考（3 项收藏） | `knowledge/Research/github-trending-2026-08-05.md` L172-174 | ✅ 收藏落地并标注：TencentDB 借鉴点=统一索引/结构化记忆（>1000 篇时对照）；AirLLM=RTX 4060 可跑 70B 仅离线研究；reverse-skill=路由+自举同源 → 全部 `[x]` |
 | 4 | 实施 cron 时间调整（需手动修改） | `memory/2026/07/2026-07-30-reflection.md` L89 | ✅ 已落地：29 任务全部错峰 + 谷段排布 → 标记 `[x]` |
 | 5 | 添加 retry script | `memory/2026/07/2026-07-30-reflection.md` L90 | ✅ 已落地：cron-retry-wrapper.sh（hermes-automation-patterns §3）→ 标记 `[x]` |

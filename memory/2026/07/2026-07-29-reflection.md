@@ -140,7 +140,7 @@ previous_file_note: >
 | `knowledge/Daily/2026-07-29-每日回顾.md` | 18:03 | 每日回顾 |
 | `knowledge/AI/github-web-dev-ai.md` | 11:02 | AI+Web开发交叉知识 |
 | `knowledge/Research/Browser-Use-Hermes-Integration-Deep-Research.md` | 13:45 | 浏览器自动化深度研究 |
-| `knowledge/Tools/browser-automation-best-practices.md` | 13:46 | 浏览器自动化最佳实践 |
+| `knowledge/AI/browser-automation-best-practices.md` | 13:46 | 浏览器自动化最佳实践 |
 | `knowledge/论文Pipeline-数据契约.md` | 12:47 | 论文接单标准化 |
 | `knowledge/接单工作流-SOP.md` | 12:51 | 接单SOP |
 | `knowledge/闲鱼解封素材.md` | 12:47 | 闲鱼素材 |

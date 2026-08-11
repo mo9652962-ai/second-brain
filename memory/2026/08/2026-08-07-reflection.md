@@ -88,7 +88,7 @@ type: reflection
 
 | # | 检查项 | 结果 | 证据 |
 |:-:|--------|:----:|------|
-| 1 | knowledge/ 昨日新增 | ✅ **3 个实质文件** | `knowledge/arXiv/arxiv-2026-08-07-agent-llm.md`（15 篇速览）、`knowledge/cards/2026-08-07-skill-entropy.md`（技能熵卡片：Qwen3-4B 34.4%→68.4%，已含技能孤岛审视 6 组 30+ 技能）、`knowledge/Daily/hackernews-2026-08-07.md`（Zed DeltaDB/Discovery Loop/DeepMind）——find 实测 mtime |
+| 1 | knowledge/ 昨日新增 | ✅ **3 个实质文件** | `knowledge/Research/arxiv-2026-08-07-agent-llm.md`（15 篇速览）、`knowledge/cards/2026-08-07-skill-entropy.md`（技能熵卡片：Qwen3-4B 34.4%→68.4%，已含技能孤岛审视 6 组 30+ 技能）、`knowledge/Daily/hackernews-2026-08-07.md`（Zed DeltaDB/Discovery Loop/DeepMind）——find 实测 mtime |
 | 2 | skills/ 昨日更新 | ✅ **20 个 SKILL.md** | 部署版 `AppData/Local/hermes/skills/`：水墨 UI 系（chinese-aesthetic-web-ui/ink-wash-ui-design 等 5）、题库系（esq/exam-question-bank-import 等 4）、sims4-launcher-dev（bat 检查清单 L389）、sims4-mp-protocol-engineering、xianyu-monetization（微步骤清单 L171）、hermes 系 5（ai-api-provider-evaluation/skill-library-audit/hermes-configuration-patterns 等）、arxiv-weekly-digest、multiplayer-networking-debug、web-development 系——find mtime + skill_manage 4 次 |
 | 3 | memory/ 昨日 absorbed/learning/pitfall/trialed 条目 | ✅ **7 个文件** | `2026-08-07.md`（自完善日报）、`-daily-review.md`、`-daily-todo-executor.md`（4 项自动执行 + P0 第 8 天推进）、`-maintenance.md`（断链 0/空壳 3/孤儿 3 已链 HOME）、`-xianyu-todo-executor.md`（素材核对 100% 就绪）、`dreaming/light + rem` |
 | 4 | 昨日 web_search 次数与成果 | ✅ **21 次（SQLite 实锤）/ 145 次（daily-review 时点值）** | 成果：刷题机水墨 UI v2.7（8 板块独立主题 + 免 Python 打包 Electron+PyInstaller health 200 + 基元律动 14 模型配置验证 10/10）——晚间六轮千轮研究的主要搜索在 execute_code/子代理内执行未全落库；白天成果：skill-entropy 卡片（含技能孤岛审视落地）、arXiv 三信号（Argus 78% SWE-Bench Pro）、HN 三连、闲鱼待办核查 |

@@ -31,8 +31,8 @@ type: vault-maintenance
 
 | 孤立笔记 | 添加到位置 | 原因 |
 |----------|-----------|------|
-| `knowledge/arXiv/minevalicoder-2607.22471.md` | HOME.md Productivity 域「关联」 | MineValiCoder 论文吸收 |
-| `knowledge/arXiv/skill-self-play-2607.22529.md` | HOME.md Productivity 域「关联」 | Skill Self-Play 论文吸收 |
+| `knowledge/Research/minevalicoder-2607.22471.md` | HOME.md Productivity 域「关联」 | MineValiCoder 论文吸收 |
+| `knowledge/Research/skill-self-play-2607.22529.md` | HOME.md Productivity 域「关联」 | Skill Self-Play 论文吸收 |
 | `knowledge/arxiv-digest.md` | HOME.md 项目与日志 | arXiv 周报入口 |
 | `knowledge/AI/github-projects-note.md` | HOME.md AI 域「包含」 | DeepTutor 学习笔记 |
 | `pipelines/paper-pipeline.md` | pipelines/pipeline-overview.md | 论文工作流定义 |

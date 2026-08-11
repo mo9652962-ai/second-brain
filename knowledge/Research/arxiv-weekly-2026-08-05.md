@@ -383,7 +383,7 @@ LLM-agent evaluations often produce task outcomes long before the full benchmark
 
 ---
 
-## 已处理：核心贡献精选 3 篇 → 📄 knowledge/arXiv/arxiv-2026-08-05-core-contributions.md
+## 已处理：核心贡献精选 3 篇 → 📄 knowledge/Research/arxiv-2026-08-05-core-contributions.md
 
 - 🥇 Real-Time Detection and Repair of LLM Agent Failures（→ hermes-automation-patterns 确定性验证哨兵已落地）
 - 🥈 RoMeRL（→ Second Brain 记忆体系语义坐标）
