@@ -141,20 +141,20 @@ type: weekly-learning-review
 ## 📌 下周优先项 (W32 8/3-8/9)
 
 **🔴 必须做：**
-- [ ] 闲鱼上架：PPT 商品（素材包 30min）+ 论文排版/润色 + 数学练习册（8/3 起，sora 操作）⏳ 已顺延
+- [x] ~~闲鱼上架~~ ✅ 已迁移至 projects/current.md 统一追踪
 - [x] Hermes 配置文档修复：LLM-Providers.md 重写 + fangzhou-ark-setup alias 修正 ✅ 2026-08-06：LLM-Providers.md 已重写对齐 config.yaml 实况（默认模型 custom:fangzhou-2/deepseek-v4-pro + model_aliases 表 + 6 个 custom_providers）；fangzhou-ark-setup skill 已含 08-02 alias 修正注记
-- [ ] 主图制作：3 张模板图 + 样例截图水印（P1 依赖项）
+- [x] ~~主图制作~~ ✅ 主图1-3 已生成（outputs/xianyu-master/上架素材包/主图1-3.png）
 
 **🟡 建议做：**
-- [ ] 小红书「AI PPT 教程」首篇（依赖 PPT 样例 2-3 个）
-- [ ] 零感 AI 实测（1 元/千字验证）→ 定主推降AI工具
-- [ ] xiaozhi-esp32 采购清单（ESP32-S3 ~¥15）→ 语音助手成品
-- [ ] Skill 重复合并 6 组（8/1 审计识别，待 sora 确认）
+- [x] ~~小红书「AI PPT 教程」~~ ✅ 已迁移至 projects/current.md 统一追踪
+- [x] ~~零感 AI 实测~~ ✅ 已迁移至 projects/current.md 统一追踪
+- [x] ~~xiaozhi-esp32 采购清单~~ ✅ 已迁移至 MEMORY.md 统一追踪
+- [x] ~~Skill 重复合并~~ ✅ 已迁移至 MEMORY.md 统一追踪
 
 **🔵 可考虑：**
-- [ ] 随身 WiFi 下单（赫电Pro 399 元/年）
+- [x] ~~随身 WiFi 下单~~ ✅ 已迁移至 MEMORY.md 统一追踪
 - [x] 安全审计 cron 排期（每周 skill 新增 + 端口扫描）✅ 2026-08-06：已存在 security-audit cron（74dbe08a5d77，周日 8:30，no_agent 跑 security_audit.py）
-- [ ] Agent 互操作标准（MCP/A2A）跟进
+- [x] ~~Agent 互操作标准~~ ✅ 长期追踪项，暂无具体行动
 
 ---
 
