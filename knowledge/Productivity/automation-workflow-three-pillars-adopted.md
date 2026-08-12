@@ -130,8 +130,8 @@ date: 2026-07-28
 ## 🔒 Waiting for User
 
 - [x] 闲鱼安全文案风格确认 ✅ 8/3：已过时——7/29 安全文案 v2 已升级（projects/current.md）+ 素材包已预生成
-- [ ] 随身 WiFi 赫电 Pro 是否下单确认
-- [ ] 桌面美化部署是否现在开始（TranslucentTB + Rainmeter 已可安装）
+- [x] ~~随身 WiFi 赫电 Pro 是否下单确认~~ ✅ 选型已确认（赫电Pro 399元/年），待 sora 下单，已迁移至 MEMORY.md
+- [x] ~~桌面美化部署是否现在开始~~ ✅ 已迁移至 MEMORY.md 统一追踪（安装包已就绪，待 sora 执行）（TranslucentTB + Rainmeter 已可安装）
 
 只有当用户主动问及或状态变化时才重新提及，不每日反复催促。
 ```
