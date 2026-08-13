@@ -132,20 +132,24 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 
 ---
 
-## 📦 最新技能入库 (2026-08-09)
+## 📦 最新技能入库 (2026-08-13)
 
-### 竞品研究与回收
+### 研究笔记
 
 | 技能 | 版本 | 简介 |
 |------|------|------|
+| **[Agent 自进化研究](knowledge/Research/agent-self-evolution-research-2026-08-12.md)** | v1.0 | ACL 2026 自进化论文深度解读——五大机制（自我微调/自修/自我推理/元认知/数据生成） |
+| **[技能审计](knowledge/Research/skill-audit-2026-08-12.md)** | v1.0 | 全库技能一致性审计——识别过时/重复/缺失技能 |
+| **[技能写作最佳实践](knowledge/Research/skill-authoring-best-practices-2026-08-12.md)** | v1.0 | 技能文档规范——结构/命名/触发条件/验收标准 |
 | **[竞品研究：安卓刷题机 fork](knowledge/Research/竞品研究-安卓刷题机fork-2026-08-09.md)** | v1.0 | 9 项可回收功能清单（听力音频/选项打乱/错题迭代/安全存储） |
+| **[英语刷题机 Android 版竞品研究](knowledge/Research/英语刷题机Android版竞品研究-2026-08-10.md)** | v1.0 | 千轮竞品研究——差距分析 + 借鉴执行建议 |
 | **[USB-UART 转换器设计复盘](knowledge/Hardware/USB-UART转换器设计复盘-2026-08-08.md)** | v1.0 | CH340G + USB-C + LDO 经典设计拆解 + SKiDL 复刻方案 |
 
-### 每日自动化优化（新增）
+### 每日自动化优化
 
 | 脚本 | 说明 |
 |------|------|
-| **[daily_vault_optimize.py](scripts/daily_vault_optimize.py)** | 每日 08:30 自动补链孤立笔记、更新 MOC 索引、知识地图日期、git push |
+| **[daily_vault_optimize.py](scripts/daily_vault_optimize.py)** | 每日自动补链孤立笔记、更新 MOC 索引、知识地图日期、git push |
 
 ---
 
@@ -182,9 +186,9 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 ## 📊 仓库统计
 
 ```
-📁 仓库体积：约 190MB（含附件与图片）
-📝 Markdown 文件：608 个（正文约 0.6 MB）
-🧠 自建 Skill 文档：30 个（11 个领域目录）
+📁 仓库体积：约 660MB（含附件与图片）
+📝 Markdown 文件：635 个（正文约 0.7 MB）
+🧠 自建 Skill 文档：30 个（12 个领域目录）
 🗂️ 知识域：10 个
 ⏰ 首次提交：2026 年 7 月
 🔄 平均更新频率：每 30 分钟自动同步
