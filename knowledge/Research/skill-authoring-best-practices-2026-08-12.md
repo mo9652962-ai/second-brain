@@ -60,3 +60,6 @@ type: research
 - Anthropic: Complete Guide to Building Skills for Claude
 - smcleod: Writing and Reviewing Agent Skills
 - Microsoft: Agent Skills
+
+---
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]

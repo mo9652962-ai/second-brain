@@ -9,7 +9,7 @@ created: 2026-08-09
 > 所有研究笔记的索引与入口。自动按主题分组。
 > 回到 [[knowledge-map|🗺️ 知识地图]] · [[Home|🏠 Home]]
 
-**共 114 篇研究笔记** · 最后更新: 2026-08-11（分支整合: arXiv 17 篇并入 Research））
+**共 117 篇研究笔记** · 最后更新: 2026-08-11（分支整合: arXiv 17 篇并入 Research））
 
 ## 其他
 - [[arxiv-2026-07-30-core-contributions]]
@@ -178,3 +178,9 @@ created: 2026-08-09
 - [[charm-graph-transfer]]
 - [[kutie-context-injection]]
 - [[long-term-model-systems]]
+
+## 其他
+
+- [[agent-self-evolution-research-2026-08-12]]
+- [[skill-audit-2026-08-12]]
+- [[skill-authoring-best-practices-2026-08-12]]
