@@ -84,14 +84,14 @@ graph TD
 
 | 域 | 新增重点 | 入口 |
 |:---|:---------|:-----|
-| 🔬 Research（新 MOC） | 36 篇研究笔记（日报热榜/深度研究/文章研究/工具部署） | [[knowledge/Research/MOC-Research\|MOC-Research]] |
-| 📚 Academic | 接单 SOP · 论文 Pipeline 数据契约（合并）· 降AI工具速查 · 闲鱼素材包 · EU AI Act | [[knowledge/Academic/MOC-Academic\|MOC-Academic]] |
-| 🤖 AI | DeepSeek V4 Flash 升级 · AI 科研五元解耦 | [[knowledge/AI/MOC-AI\|MOC-AI]] |
-| 💻 Dev | CloudBase 8 站学习系列 · System Prompts 存档 · MCP 规范候选版 · TRELLIS 3D | [[knowledge/Dev/MOC-Dev\|MOC-Dev]] |
-| 🔧 Hardware | JLCPCB MCP（38 工具） | [[knowledge/Hardware/MOC-Hardware\|MOC-Hardware]] |
-| 🎨 Design | Krea2 本地生图研究 + ComfyUI 部署 | [[knowledge/Design/MOC-Design\|MOC-Design]] |
-| 🏠 Productivity | 记忆贡献度追踪 · Token 报告（W31 周报新增）· Obsidian MCP | [[knowledge/Productivity/MOC-Productivity\|MOC-Productivity]] · [[knowledge/Productivity/token-usage-report-20260802\|Token周报W31]] |
-| 📅 Daily / 🃏 Cards | HN 速览 ×5 · 知识卡片 ×2（OpenForgeRL / EU AI Act） | [[knowledge/Daily/hackernews-2026-08-02\|HN 08-02]] · [[knowledge/Daily/hackernews-2026-08-03\|HN 08-03]] · [[knowledge/cards/2026-08-02-eu-ai-act\|卡片 08-02]] |
+| 🔬 Research（新 MOC） | 36 篇研究笔记（日报热榜/深度研究/文章研究/工具部署） | [[knowledge/Research/MOC-Research]] |
+| 📚 Academic | 接单 SOP · 论文 Pipeline 数据契约（合并）· 降AI工具速查 · 闲鱼素材包 · EU AI Act | [[knowledge/Academic/MOC-Academic]] |
+| 🤖 AI | DeepSeek V4 Flash 升级 · AI 科研五元解耦 | [[knowledge/AI/MOC-AI]] |
+| 💻 Dev | CloudBase 8 站学习系列 · System Prompts 存档 · MCP 规范候选版 · TRELLIS 3D | [[knowledge/Dev/MOC-Dev]] |
+| 🔧 Hardware | JLCPCB MCP（38 工具） | [[knowledge/Hardware/MOC-Hardware]] |
+| 🎨 Design | Krea2 本地生图研究 + ComfyUI 部署 | [[knowledge/Design/MOC-Design]] |
+| 🏠 Productivity | 记忆贡献度追踪 · Token 报告（W31 周报新增）· Obsidian MCP | [[knowledge/Productivity/MOC-Productivity]] · [[knowledge/Productivity/token-usage-report-20260802]] |
+| 📅 Daily / 🃏 Cards | HN 速览 ×5 · 知识卡片 ×2（OpenForgeRL / EU AI Act） | [[knowledge/Daily/hackernews-2026-08-02]] · [[knowledge/Daily/hackernews-2026-08-03]] · [[knowledge/cards/2026-08-02-eu-ai-act]] |
 
 ### 本周关键研究主题
 
@@ -113,13 +113,13 @@ graph TD
 
 | 域 | 新增重点 | 入口 |
 |:---|:---------|:-----|
-| 🔬 Research | 22+ 篇研究笔记（S4MP 协议/PCB 千轮/AI 模型实测/移动端方向） | [[knowledge/Research/MOC-Research\|MOC-Research]] |
-| 📚 arXiv（归域） | arxiv-weekly×6 + core-contributions×2 从 research/ 顶层迁入，命名统一 | [[knowledge/Research/arxiv-weekly-2026-08-05\|arxiv-weekly 08-05]] |
-| 🤖 AI | DeepSeek V4 Flash ARC Prize 登顶（89.0%）· 模型实测矩阵（MiMo/MuseSpark/Qwen-Image） | [[knowledge/cards/2026-08-09-deepseek-v4-flash-arc-prize\|卡片 08-09]] |
-| 💻 Dev（归域） | hermes-mcp-architecture 从 research/ 迁入 · codebase-memory-mcp | [[knowledge/Dev/hermes-mcp-architecture\|hermes-mcp 架构]] |
-| 🔧 Hardware | 嘉立创自动化问题根因（版本 2.x vs 3.x）· SKiDL 网表双轨闭环 · PCB EMC/SI/热设计 | [[knowledge/Hardware/MOC-Hardware\|MOC-Hardware]] |
-| 🃏 Cards | 知识卡片 ×7（协议版本协商/SESA/零内存/深度求索/ARC Prize） | [[knowledge/cards/2026-08-09-deepseek-v4-flash-arc-prize\|卡片 08-09]] |
-| 📅 Daily | HN 速览 ×7（08-03 ~ 08-09） | [[knowledge/Daily/hackernews-2026-08-09\|HN 08-09]] |
+| 🔬 Research | 22+ 篇研究笔记（S4MP 协议/PCB 千轮/AI 模型实测/移动端方向） | [[knowledge/Research/MOC-Research]] |
+| 📚 arXiv（归域） | arxiv-weekly×6 + core-contributions×2 从 research/ 顶层迁入，命名统一 | [[knowledge/Research/arxiv-weekly-2026-08-05]] |
+| 🤖 AI | DeepSeek V4 Flash ARC Prize 登顶（89.0%）· 模型实测矩阵（MiMo/MuseSpark/Qwen-Image） | [[knowledge/cards/2026-08-09-deepseek-v4-flash-arc-prize]] |
+| 💻 Dev（归域） | hermes-mcp-architecture 从 research/ 迁入 · codebase-memory-mcp | [[knowledge/Dev/hermes-mcp-architecture]] |
+| 🔧 Hardware | 嘉立创自动化问题根因（版本 2.x vs 3.x）· SKiDL 网表双轨闭环 · PCB EMC/SI/热设计 | [[knowledge/Hardware/MOC-Hardware]] |
+| 🃏 Cards | 知识卡片 ×7（协议版本协商/SESA/零内存/深度求索/ARC Prize） | [[knowledge/cards/2026-08-09-deepseek-v4-flash-arc-prize]] |
+| 📅 Daily | HN 速览 ×7（08-03 ~ 08-09） | [[knowledge/Daily/hackernews-2026-08-09]] |
 
 ### 本周关键研究主题
 
@@ -255,10 +255,10 @@ MCP 生态: GitHub + Filesystem + JLCPCB(38工具) + Obsidian(笔记操作)
 | [[ponytail]] | 社区最佳实践 | 编程极简原则 | engineering-workflow |
 | [[deepseek-v4-flash-0731-upgrade]] | 官方 API 验证 | 模型 fallback 链更新 | [[LLM-Providers]] |
 | [[jlc-mcp-setup]] | JLCPCB EDA | PCB 设计自动化 | [[pcb-design-notes]] · [[pcb-ai-research]] |
-| [[eu-ai-act-2026-08-assessment]] | EU AI Act 法规 | 多 Agent 合规基线 | [[2026-08-02-eu-ai-act\|知识卡片]] |
+| [[eu-ai-act-2026-08-assessment]] | EU AI Act 法规 | 多 Agent 合规基线 | [[2026-08-02-eu-ai-act]] |
 | [[krea2-local-image-gen-study]] | 生图模型研究 | 本地 ComfyUI 部署 | [[krea2-comfyui-deploy-notes]] |
 | [[cloudbase-learning-s1-login]] | 微信小程序云开发 | 校园便利盒复刻 | [[xiaoyuanbianlihe-project-study]] |
-| [[openforgerl-trace-pipeline-feasibility]] | 轨迹导出实测 | 自训数据管线设计 | [[2026-07-31-openforgerl\|知识卡片]] |
+| [[openforgerl-trace-pipeline-feasibility]] | 轨迹导出实测 | 自训数据管线设计 | [[2026-07-31-openforgerl]] |
 | [[github-trending-2026-08-02-weekly-5projects]] | GitHub 本周 Trending 精选 | Agent 工具链趋势观察 | [[github-trending-2026-08-02-study]] · [[github-weekly-2026-07-31-5projects]] |
 
 ---

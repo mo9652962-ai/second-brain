@@ -103,7 +103,7 @@ github-treasure-hunt ──→ weekly-trending-review
 ## 关联
 - [[arxiv-week32-2026-08-02-study]] — AgentRadio 原始研究
 - [[openmle-four-operators-methodology]] — 同批方法论（Crossover 产物）
-- [[hermes-automation-patterns]] — cron 可靠性模式
+- [[hermes-automation-patterns]] (技能) — cron 可靠性模式
 
 ---
 *2026-08-02 · 从 AgentRadio 提炼 · 五阶段分工 v1*
