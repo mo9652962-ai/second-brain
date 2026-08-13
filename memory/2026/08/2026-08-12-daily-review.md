@@ -64,3 +64,6 @@ type: daily-review
 > 今日主线：凌晨刷题机竞品研究落实三连（AI 文章练词 / 听力精听+快捷键 / 全量语境标注）→ 下午日常 cron 维护 + 模型切换 → 发现闲鱼 P0 顺延第 12 天 & 备用 provider 批量失效
 
 _生成: daily-knowledge-review cron · k (Hermes) · 2026-08-12_
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

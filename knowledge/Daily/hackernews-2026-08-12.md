@@ -39,3 +39,6 @@
 ---
 
 *本日共筛选 8 条 AI/ML/编程/开源相关内容，源自 Hacker News 首页 Top 10。*
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

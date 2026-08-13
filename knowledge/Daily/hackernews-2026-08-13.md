@@ -63,3 +63,6 @@
 - **AI 模型密集发布**：DeepSeek V4 Pro、Qwen3.8-2.4T、Grok 4.6 同日霸榜，大模型竞争白热化
 - **AI 安全隐忧**：冒充 AI 爬虫进行攻击、AI 对软件工程就业的影响（#22, 658pts）成为热门话题
 - **底层技术深度**：SQLite 16年 bug、HTML over WebSockets 等硬核技术帖热度高，HN 社区技术品味依旧
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]
