@@ -13,7 +13,7 @@ created: 2026-07-26
 
 2. **修复断裂链接**
    - HOME.md:108 `[[memory/2026/07]]` → `[[memory/2026/07/2026-07-26-review|memory/2026/07]]`
-   - HOME.md:129 `[[templates/]]` → `[[templates/每日笔记模板|templates/]]`
+   - HOME.md:129 `[[templates]]` → `[[templates/每日笔记模板|templates/]]`
    - AI-Agent.md:162 `[[Obsidian-Vault]]` → 新建概念笔记
    - AI-Agent.md:168 arXiv 周报链接修复相对路径
    - nihaixia-skill.md:44 通用链接 → 全路径链接

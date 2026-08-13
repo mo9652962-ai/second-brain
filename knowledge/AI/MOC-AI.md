@@ -17,7 +17,7 @@ updated: 2026-07-30
 - [[knowledge/AI/AI-Agent|AI Agent 总览]]
 - [[knowledge/AI/AI-Workflow|AI 工作流]]
 - [[knowledge/AI/LLM-Providers|LLM 供应商策略]]
-- [[knowledge/AI/Vibe-Coding|Vibe Coding 哲学]]
+- [[Vibe-Coding]]
 - 模型供应商选型（技能参考）
 - Hermes 模型配置（技能参考）
 
