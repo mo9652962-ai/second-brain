@@ -1,5 +1,5 @@
 ---
-tags: [research, github, skill, relationship, methodology]
+tags: [research, github, skills, relationship, methodology]
 created: 2026-07-31
 status: absorbed
 source: https://github.com/powerycy/goutoujunshi

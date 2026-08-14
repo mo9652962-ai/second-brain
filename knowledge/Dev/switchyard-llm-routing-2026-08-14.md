@@ -45,4 +45,4 @@ clients ──OpenAI/Anthropic API──▶ Switchyard ──provider-native for
 | 值得安装 | 🟡 观察——sora 无需起独立网关，但「统一协议 + 翻译」思路应回归 Hermes 配置设计 |
 | 趋势判断 | 多模型路由成标配；NVIDIA 押注「本地 + 跨模型路由」→ RTX 本地推理生态 |
 
-> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]] · 平行参考：[[hermes-smart-model-router]] · [[hermes-provider-matrix]]
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]] · 平行参考：`hermes-smart-model-router` · `hermes-provider-matrix`

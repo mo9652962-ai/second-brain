@@ -1,5 +1,5 @@
 ---
-tags: [absorbed, tool, agentsview, analytics]
+tags: [absorbed, tools, agentsview, analytics]
 source: AgentsView (kenn-io) · 4.4k⭐
 status: adopted
 date: 2026-07-27

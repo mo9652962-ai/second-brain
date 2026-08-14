@@ -1,7 +1,7 @@
 ---
 name: Modern-Web-Development-2026
 description: 现代网站开发完整技能手册 2026，覆盖元框架、运行时、AI 编码、UI 组件、类型安全、性能优化、CMS、部署、工作流、安全
-tags: [Web开发, Next.js, TypeScript, tRPC, Tailwind, shadcn/ui, AI编码, 性能优化]
+tags: [web开发, Next.js, TypeScript, tRPC, Tailwind, shadcn/ui, AI编码, 性能优化]
 category: Web
 created: 2026-07-28
 updated: 2026-07-28

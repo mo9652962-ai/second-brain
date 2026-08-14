@@ -1,5 +1,5 @@
 ---
-tags: [AI-Infra, Knowledge-Graph, Graph-RAG, Provenance, Governance, 决策智能]
+tags: [AI-Infra, knowledge-graph, Graph-RAG, Provenance, Governance, 决策智能]
 aliases: [semantica, Context Graph, Graph-Native Infrastructure]
 date: 2026-08-14
 source: https://github.com/semantica-agi/semantica

@@ -291,7 +291,7 @@ MCP 生态: GitHub + Filesystem + JLCPCB(38工具) + Obsidian(笔记操作)
 | [[openforgerl-trace-pipeline-feasibility]] | 轨迹导出实测 | 自训数据管线设计 | [[2026-07-31-openforgerl]] |
 | [[github-trending-2026-08-02-weekly-5projects]] | GitHub 本周 Trending 精选 | Agent 工具链趋势观察 | [[github-trending-2026-08-02-study]] · [[github-weekly-2026-07-31-5projects]] |
 | [[prime-agent-rlm-2026-08-14]] (W33) | RLM+自改进 | Hermes memory/skills 参考 | [[mattpocock-skills]] · [[codebase-memory-mcp]] |
-| [[switchyard-llm-routing-2026-08-14]] (W33) | 模型路由 | Hermes 多供应商配置 | [[hermes-smart-model-router]] · [[hermes-provider-matrix]] |
+| [[switchyard-llm-routing-2026-08-14]] (W33) | 模型路由 | Hermes 多供应商配置 | `hermes-smart-model-router` · `hermes-provider-matrix` |
 | [[agent-skills-addyosmani-2026-08-14]] (W33) | Agent 技能工程 | Hermes skill 治理 | [[agent-skills-methodology-absorbed]] · [[mattpocock-skills]] |
 
 ---
