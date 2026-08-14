@@ -37,7 +37,7 @@ status: adopted
 ## 行动项
 
 - [x] 审视技能库是否存在「技能孤岛」：一个技能调用另一个技能时有没有损耗（可先用 graphify 看技能引用图）
-- [ ] （可选）把 Skill²-Bench 思路迁移到刷题机：评估题型切换（cloze→reading→paragraph_matching）的衔接质量
+- [ ] （可选）把 Skill²-Bench 思路迁移到刷题机：评估题型切换（cloze→reading→paragraph_matching）的衔接质量 → ⏳ 待评估（可选优化，等刷题机功能稳定后再做）
 
 ## ✅ 审视结论（2026-08-07 daily-todo-executor 落地）
 

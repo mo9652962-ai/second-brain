@@ -69,4 +69,67 @@ status: applied
 - 6 项人工待办待 sora 处理，处理后从对应笔记勾选
 
 ---
+
+# 🧹 建议落实执行报告 · 2026-08-14（第 2 批）
+
+> 执行者：suggestion-implementation skill（cron）
+> 扫描范围：`knowledge/` + `memory/`（排除 .git/.obsidian/.archive、超过 7 天历史日志）
+> 与 8/14 vault-suggestion-executor（闲鱼专项）并行，不重复
+
+## 📊 总览
+
+| 类别 | 数量 | 处理方式 |
+|:-----|:---:|:---------|
+| 可自动执行 | 3 | ✅ 全部执行完成 |
+| 需评估/跟踪 | 5 | ⏳ 标记状态 |
+| 需 sora 确认 | 4 | ⏳ 标注待人工 |
+| 已复核无待办 | 2 | 无需处理 |
+
+## ✅ 本次执行（3 项）
+
+1. **采纳 /refine 技能编辑纪律**（来源：cards/2026-08-14-prime-agent-rlm.md :43「下次 skill 迭代即执行」）
+   - `suggestion-implementation` skill 新增「技能编辑纪律」章节：只 patch 局部 / 保留回滚快照 / 不动 SOUL
+   - 回滚快照：`/tmp/suggestion-implementation-SKILL.md.bak-20260814`
+2. **Awesome-Lists 决策回写**（来源：知识库待办落实研究-2026-08-08 的评估结论未同步到源文件）
+   - Activepieces → ✅ 已评估，⏳ 按需启用（原生 MCP 支持）
+   - ActivityWatch → ❌ 暂缓（不符合低摩擦原则）
+3. **USB-UART 设计复盘改进建议 → 下一版 backlog 标注**（4 项建议标记 ⏳，接「升级版」单时优先 ESD + CH340N）
+
+## ⏳ 需评估/跟踪（5 项，状态已标记）
+
+| # | 待办 | 来源 | 状态 |
+|:-:|------|------|:---:|
+| 1 | Hermes「目标跨 turn 持久化」（/goal）机制评估 | prime-agent card :44 | ⏳ 待评估 |
+| 2 | prime-agent 生态跟踪（pi / RAG+思考） | prime-agent card :46 | ⏳ github-weekly 顺带 |
+| 3 | S4MP 帧头 magic+版本号（P1） | protocol card :39 | ⏳ 项目 backlog |
+| 4 | S4MP 跨网 UPnP/STUN 真机实测（P1） | protocol card :40 | ⏳ 需两台真机 |
+| 5 | Skill²-Bench 思路迁移刷题机（可选） | skill-entropy card :40 | ⏳ 等刷题机稳定 |
+
+## ⏳ 需 sora 确认（4 项）
+
+| # | 待办 | 来源 | 状态 |
+|:-:|------|------|:---:|
+| 1 | 刷题机文案加「ARC Prize 验证模型」卖点 | deepseek card :39 | ⏳ 待确认措辞（随闲鱼上架一起） |
+| 2 | opencode-go 403：更新 API key | health-2026-08-14 | ⏳ 待操作 |
+| 3 | 打开 Obsidian / Local REST API 恢复 MCP | health-2026-08-14 | ⏳ 待操作 |
+| 4 | siliconflow/kimi 充值（不急，容灾链覆盖） | health-2026-08-14 | ⏳ 待操作 |
+
+## 🔍 复核确认（无需处理）
+
+- ✅ mattpocock-skills 改进建议表 → 3 项全部已完成（07-26）
+- ✅ 闲鱼 9 项待办 → 今日 vault-suggestion-executor 已专项处理（8/17 决策倒计时 3 天）
+
+## 📁 变更文件
+
+| 文件 | 变更 |
+|:-----|:-----|
+| `skills/.../suggestion-implementation/SKILL.md` | +技能编辑纪律章节 |
+| `knowledge/cards/2026-08-14-prime-agent-rlm.md` | 4 行动项标记状态 |
+| `knowledge/Dev/Awesome-Lists-Study.md` | Activepieces/ActivityWatch 决策回写 |
+| `knowledge/Hardware/USB-UART转换器设计复盘-2026-08-08.md` | 改进建议 backlog 标注 |
+| `knowledge/cards/2026-08-05-protocol-version-negotiation.md` | 2 P1 项标记 backlog |
+| `knowledge/cards/2026-08-07-skill-entropy.md` | 可选迁移项标记 |
+| `knowledge/cards/2026-08-09-deepseek-v4-flash-arc-prize.md` | 卖点项标记待确认 |
+
+---
 > 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

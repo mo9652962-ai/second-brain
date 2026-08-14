@@ -45,9 +45,9 @@ source: "https://geolibre.app/"
 
 ## 何时启用
 
-- [ ] 接到 GIS/地图/地理数据可视化单
-- [ ] 需要快速展示 GeoJSON/GeoParquet 数据
-- [ ] 空间数据分析需求
+- [x] 接到 GIS/地图/地理数据可视化单 (参考清单)
+- [x] 需要快速展示 GeoJSON/GeoParquet 数据 (参考清单)
+- [x] 空间数据分析需求 (参考清单)
 
 ## 限制（研究确认）
 

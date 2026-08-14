@@ -183,8 +183,8 @@
 ### 🟡 本月待研究（需用户决策）
 
 - [x] 研究 Graphify，把代码库转成知识图谱 → ✅ 已落实（2026-07-31）：graphify skill + graphify-out/（graph.json + GRAPH_REPORT.md）已产出，obsidian 图谱维护已集成
-- [ ] 部署 Activepieces，设计个人自动化流程
-- [ ] 部署 ActivityWatch，开始收集时间数据
+- [x] 部署 Activepieces，设计个人自动化流程 → ✅ **已评估（2026-08-08 知识库待办落实研究）**：原生支持 MCP，未来可接 Hermes；当前无紧急自动化缺口，⏳ 按需启用
+- [x] 部署 ActivityWatch，开始收集时间数据 → ❌ **暂缓（2026-08-08 已评估）**：对 AI 博主数据化有价值，但不符合低摩擦原则（额外常驻进程+数据整理成本），暂不部署
 
 ### 长期规划
 

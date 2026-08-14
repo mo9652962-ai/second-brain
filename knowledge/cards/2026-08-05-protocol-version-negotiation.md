@@ -36,8 +36,8 @@ source: "[[knowledge/Research/s4mp-protocol-network-100round-2026-08-05]]"
 ## 行动项
 
 - [x] v9.16 跨网安全闭环：HMAC-SHA256 消息签名 + HKDF 握手密钥交换（先验签再反序列化），15 套件 237 断言全过
-- [ ] P1：S4MP 帧头加 magic number + 协议版本（固定偏移），收端先读 magic → 结构化 version_mismatch（含"请更新到 vX"）而非裸断连
-- [ ] P1：跨网真机验证 UPnP/STUN（代码就绪但从未公网实测——当前最大短板）
+- [ ] P1：S4MP 帧头加 magic number + 协议版本（固定偏移），收端先读 magic → 结构化 version_mismatch（含"请更新到 vX"）而非裸断连 → ⏳ 项目 backlog（需改协议层+双端同版本发布，等开发窗口）
+- [ ] P1：跨网真机验证 UPnP/STUN（代码就绪但从未公网实测——当前最大短板）→ ⏳ 项目 backlog（需 sora 两台真机+公网环境实测）
 
 ## 为什么重要
 
