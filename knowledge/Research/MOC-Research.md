@@ -107,6 +107,7 @@ created: 2026-08-09
 - [[ai-daily-2026-08-01-digest]]
 - [[AI早报学习-2026-08-08]]
 - [[knowledge/Daily/hackernews-2026-08-09|HN 08-09]] · [[knowledge/cards/2026-08-09-deepseek-v4-flash-arc-prize|知识卡片 08-09]]
+- [[knowledge/AI/prime-agent-rlm-2026-08-14|Prime Agent RLM 08-14]] · [[knowledge/cards/2026-08-14-prime-agent-rlm|知识卡片 08-14]]
 
 ## 文章研读
 
