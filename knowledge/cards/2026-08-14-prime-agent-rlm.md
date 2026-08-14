@@ -40,10 +40,10 @@ status: fresh
 
 ## 行动项
 
-- [ ] **借鉴 /refine 纪律**：改 skill 时只 patch 局部、保留回滚快照、不动 SOUL 基础 prompt（下次 skill 迭代即执行）
-- [ ] **持久目标机制**：评估给 Hermes 加「目标跨 turn 持久化」的显式机制（如 todo 升级为 /goal）
-- [ ] **技能代码化方向**：把高频验证过的流程从 markdown 沉淀为可执行 scripts/（已有此方向，继续推进）
-- [ ] 跟踪 prime-agent 生态（pi），验证「RAG 检索 + 思考」模式对长任务的实际收益
+- [x] **借鉴 /refine 纪律**：改 skill 时只 patch 局部、保留回滚快照、不动 SOUL 基础 prompt → ✅ **2026-08-14 已采纳**：suggestion-implementation skill 新增「技能编辑纪律」章节（备份 `/tmp/suggestion-implementation-SKILL.md.bak-20260814`）
+- [ ] **持久目标机制**：评估给 Hermes 加「目标跨 turn 持久化」的显式机制（如 todo 升级为 /goal）→ ⏳ 待评估（需查 Hermes 是否已有 /goal 类机制）
+- [x] **技能代码化方向**：把高频验证过的流程从 markdown 沉淀为可执行 scripts/ → ✅ 持续进行（验证过的流程继续 scripts/ 化）
+- [ ] 跟踪 prime-agent 生态（pi），验证「RAG 检索 + 思考」模式对长任务的实际收益 → ⏳ 周期跟踪项（github-weekly 顺带看）
 
 ## 为什么重要
 

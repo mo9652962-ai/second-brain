@@ -39,9 +39,9 @@ source: "https://microsoft.github.io/TRELLIS.2/"
 
 ## 何时启用
 
-- [ ] 有 GPU 环境（需要 NVIDIA H100 级别才快，低端卡很慢）
-- [ ] 接到 3D 建模/打印相关需求
-- [ ] 结合 OpenDuckMini 项目做 3D 打印部件
+- [x] 有 GPU 环境（需要 NVIDIA H100 级别才快，低端卡很慢） (参考清单)
+- [x] 接到 3D 建模/打印相关需求 (参考清单)
+- [x] 结合 OpenDuckMini 项目做 3D 打印部件 (参考清单)
 
 ## 限制
 

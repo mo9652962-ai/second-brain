@@ -227,7 +227,7 @@ InformationWeek 报告：企业从脆弱的手工胶水脚本转向标准化 Age
 
 ---
 
-_最后更新: 2026-08-06｜运行环境: OpenClaw Agent on Windows 11_
+_最后更新: 2026-08-14｜运行环境: OpenClaw Agent on Windows 11_
 
 ## Promoted From Short-Term Memory (2026-07-25)
 

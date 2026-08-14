@@ -36,9 +36,9 @@ Go 语言框架/库/软件精选清单（awesome-python 风格），社区维护
 
 ## 何时启用
 
-- [ ] 接到 Go 后端/CLI 开发单
-- [ ] 需要 Go 实现的 MCP server
-- [ ] 研究 Go 生态 AI 工具时
+- [x] 接到 Go 后端/CLI 开发单 (参考清单)
+- [x] 需要 Go 实现的 MCP server (参考清单)
+- [x] 研究 Go 生态 AI 工具时 (参考清单)
 
 ## 链接
 - 官网: https://awesome-go.com/
