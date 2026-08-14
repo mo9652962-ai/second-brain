@@ -1531,9 +1531,13 @@ Tavily API 用量配额耗尽 (432 plan limit exceeded) — 搜索主力后端�
 ### Metadata
 - Tags: tavily, quota, search, rate-limit, fallback
 - Pattern-Key: infra.tavily-quota
-- Recurrence-Count: 1
+- Recurrence-Count: 2
 - First-Seen: 2026-08-01
-- Last-Seen: 2026-08-01
+- Last-Seen: 2026-08-14
+
+### 2026-08-14 Recurrence Note
+- **复现**: 8/14 自改进 cron 首次 web_search 即返回 432 (plan limit exceeded)。**Firecrawl 当场无缝接管**，搜索任务未阻塞——验证 5 路冗余降级可靠性。
+- **结论**: 此模式为 `Recurrence-Count: 2`，已确认周期性复发，非偶发。**语义缓存 (0.92 嵌入相似度阈值) 落地成为下一步优先级**，以根除高频搜索导致的配额耗尽，而非每次靠降级兜底。
 
 ---
 
