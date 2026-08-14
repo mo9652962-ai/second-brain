@@ -39,6 +39,7 @@ created: 2026-08-09
 - [[memory/2026/08/2026-08-13-vault-suggestion-executor|🧹 08-13 建议执行器报告]]
 - [[memory/2026/08/2026-08-13-daily-review|📋 08-13 每日回顾]] — Top 5 发现 + 闲鱼行动项（剩 4 天） — 闲鱼专项扫描，距 8/17 决策剩 4 天
 - [[memory/2026/08/2026-08-14-vault-suggestion-executor|🧹 08-14 建议执行器报告]] — 闲鱼专项扫描，距 8/17 决策剩 3 天（连续顺延第 14 天）
+- [[memory/2026/08/2026-08-14-daily-review|📋 08-14 每日回顾]] — arxiv Agent 18 篇速览 + 闲鱼距决策剩 3 天（AaLLM 电路设计/QuoteBench 评测陷阱）
 
 ## 🧭 核心区域
 
