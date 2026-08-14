@@ -1,5 +1,5 @@
 ---
-tags: [concept, obsidian, vault, knowledge-management]
+tags: [concepts, obsidian, vault, knowledge-management]
 aliases: [Vault 使用指南]
 created: 2026-07-26
 ---

@@ -1,5 +1,5 @@
 ---
-tags: [research, github, trending, ecc, Agent]
+tags: [research, github, trending, ecc, agent]
 created: 2026-07-31
 status: absorbed
 ---

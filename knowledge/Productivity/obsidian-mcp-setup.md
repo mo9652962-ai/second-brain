@@ -19,7 +19,7 @@
 | **jlcmcp** | stdio | 嘉立创 EDA PCB 自动化 (38 工具) |
 
 ---
-tags: [obsidian, MCP, setup, plugin, knowledge-management]
+tags: [obsidian, mcp, setup, plugin, knowledge-management]
 domain: Productivity
 ---
 # Obsidian MCP 设置

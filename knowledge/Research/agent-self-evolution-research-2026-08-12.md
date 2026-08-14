@@ -1,5 +1,5 @@
 ---
-tags: [research, self-evolution, agent, skill, ACL-2026]
+tags: [research, self-evolution, agent, skills, ACL-2026]
 created: 2026-08-12
 type: research
 ---

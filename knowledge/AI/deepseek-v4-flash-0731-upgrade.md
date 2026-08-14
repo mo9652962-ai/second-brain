@@ -1,5 +1,5 @@
 ---
-tags: [research, deepseek, model, Agent, benchmark]
+tags: [research, deepseek, model, agent, benchmark]
 created: 2026-07-31
 status: adopted
 ---

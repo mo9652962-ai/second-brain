@@ -45,10 +45,10 @@ created: 2026-08-09
 ## 🧭 核心区域
 
 - [[memory|🧠 记忆]] — 长期记忆与用户画像
-- [[concepts|💡 概念]] — 常青概念卡片
-- [[projects|📦 项目]] — 进行中项目
-- [[portfolio|🎯 作品集]] — 交付案例
-- [[health|💚 健康]] — 自举健康检查
+- [[concepts/MOC-Concepts|💡 概念]] — 常青概念卡片
+- [[projects/MOC-Projects|📦 项目]] — 进行中项目
+- [[portfolio/MOC-Portfolio|🎯 作品集]] — 交付案例
+- [[health/MOC-Health|💚 健康]] — 自举健康检查
 
 ---
 

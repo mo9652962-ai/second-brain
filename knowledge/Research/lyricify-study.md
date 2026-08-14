@@ -1,5 +1,5 @@
 ---
-tags: [research, github, article-study, lyricify, tool]
+tags: [research, github, article-study, lyricify, tools]
 created: 2026-07-31
 status: absorbed
 source: https://github.com/WXRIW/Lyricify-App

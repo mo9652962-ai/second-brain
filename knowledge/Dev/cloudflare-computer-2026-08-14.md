@@ -40,4 +40,4 @@ Durable Object(sandbox 主控)             computerd(daemon, 沙箱容器内)
 | 值得安装 | 🔵 关注——sora 本地自动化为主，暂不需要云端电脑；借鉴权限边界设计 |
 | 趋势判断 | 「agent 拥有可信电脑」成为头部大厂基建方向（Cloudflare/Deno 竞速）|
 
-> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]] · 平行参考：[[browser-automation]] · [[celld]](trending 同周)
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]] · 平行参考：`browser-automation` · `celld`(trending 同周)

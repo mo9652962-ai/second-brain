@@ -1,5 +1,5 @@
 ---
-tags: [monetization, xianyu, pricing, AI-service, costs]
+tags: [monetization, xianyu, pricing, AI-service, cost]
 domain: Academic
 ---
 # AI 变现实战手册（最终版·五轮研究整合）
