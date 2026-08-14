@@ -165,3 +165,6 @@ GitHub-Treasure-Hunt-System.md — 示例格式中的占位符，不修改。
 ---
 
 *扫描时间：2026-08-13 · 排除 skills/、.github/、memory 历史报告、dreaming/、模板占位符*
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]
