@@ -132,6 +132,31 @@ graph TD
 ---
 
 
+## 🆕 W33 新增速览（2026-08-10 ~ 08-14）
+
+> 本周主线：GitHub 热榜全新面孔（自改进 RLM Agent 领跑 +12k⭐）+ ACL 2026 自我进化五篇 + 刷题机竞品两轮落地 + W33 API 成本根因闭环。学习回顾见 [[../memory/2026/08/weekly-learning-2026-08-14|W33 学习回顾]]。
+
+### 各域本周新增
+
+| 域 | 新增重点 | 入口 |
+|:---|:---------|:-----|
+| 🔬 Research | GitHub-Weekly-W33（prime-agent/semantica/agent-skills/cloudflare-computer/switchyard）+ arXiv 18 篇速览 + ACL 2026 五篇合成 + 竞品研究第1轮 | [[knowledge/Research/GitHub-Weekly-2026-08-14]] · [[knowledge/Research/arxiv-2026-08-14-agent-llm]] |
+| 🤖 AI | **Prime Agent RLM**（+12,476⭐/周，与 Hermes 一一对应）· Semantica 图原生（PROV-O provenance） | [[knowledge/AI/prime-agent-rlm-2026-08-14]] · [[knowledge/AI/semantica-graph-native-2026-08-14]] |
+| 💻 Dev | addyosmani agent-skills（四原则+链接门禁）· Switchyard 路由网关 · Cloudflare computer 沙箱 | [[knowledge/Dev/agent-skills-addyosmani-2026-08-14]] · [[knowledge/Dev/switchyard-llm-routing-2026-08-14]] |
+| 📊 成本 | W33 API 成本报告（glm-5.2 兜底异常 ¥55 + CNY/USD 记账 bug 修正） | [[knowledge/Productivity/token-usage-report-20260814]] |
+| 🃏 Cards | 知识卡片 ×2（ACL 自我进化 / Prime Agent RLM） | [[knowledge/cards/2026-08-13-agent-self-evolution-acl2026]] · [[knowledge/cards/2026-08-14-prime-agent-rlm]] |
+| 📅 Daily | HN 速览 ×3（08-07 补 / 08-12 / 08-13 / 08-14） | [[knowledge/Daily/hackernews-2026-08-14]] |
+
+### 本周关键研究主题
+
+1. **自改进 RLM Agent 主战场** — Prime Agent（RLM + Continual Harness + /refine 可回滚自改进）与 Hermes memory/skills/cron/subagent 一一对应（[[knowledge/AI/prime-agent-rlm-2026-08-14|研究]] + [[knowledge/cards/2026-08-14-prime-agent-rlm|卡片]]）
+2. **Agent 自我进化范式转变 (ACL 2026)** — SkillDAG/SkillGen/SkillSmith/COVE/AgeMem 五篇：技能图+反模式记忆+工具协同+量化验证（[[knowledge/cards/2026-08-13-agent-self-evolution-acl2026|卡片]]）
+3. **刷题机竞品两轮** — Android 版千轮（响应式/底部导航/更新清单）+ 第2轮落地 19/19（AI 文章练词/听力精听/快捷键/标注 100%）
+4. **W33 成本根因闭环** — 供应商故障链 → glm-5.2 高价兜底 + 记账口径 bug（CNY 记 USD 虚高 7 倍）
+5. **知识链 17→12 域整合** — arXiv/writing-material/Python/Tools/Content 并入主域，MOC 更新
+
+---
+
 ## ① 💻 工程与开发
 
 | 领域 | 笔记 | 相关 skill | 掌握程度 |
@@ -164,7 +189,11 @@ Matt Pocock 方法论     Grill+TDD 工作流
 || 反AI味设计(新) | [[hallmark]] ⭐ | Agent Skill | 🛠️ 方法论迁移 |
 || 设计工程师(新) | [[ibelick-ui-skills]] ⭐ | UI Skills CLI | 📖 学习 |
 || AI VTuber | [[airi]] | — | 📖 参考 |
-|| xAI 编码 Agent | [[grok-build]] | — | 📖 参考 |
+||| xAI 编码 Agent | [[grok-build]] | — | 📖 参考 |
+||| 自改进RLM Agent (W33) | [[prime-agent-rlm-2026-08-14]] ⭐ | memory/skills/cron 自举 | 🟡 关注 |
+||| 图原生+可审计 (W33) | [[semantica-graph-native-2026-08-14]] ⭐ | graphify/Obsidian | 🟡 关注 |
+||| 生产级技能(W33) | [[agent-skills-addyosmani-2026-08-14]] ⭐ | Hermes skills 治理 | 🟢 参考 |
+||| Agent 云电脑 (W33) | [[cloudflare-computer-2026-08-14]] | browser-automation | 🔵 关注 |
 || **AI Agent 深度研究** 🔥 | `.learnings/LEARNINGS.md`
 | **Context Engineering** | LRN-20260724-001 | SOUL.md/MEMORY.md | 🟡 理解 |
 | **Multi-Agent 编排** | LRN-20260724-003 | Skill Workshop | 🟡 理解 |
@@ -206,6 +235,7 @@ MCP 生态: GitHub + Filesystem + JLCPCB(38工具) + Obsidian(笔记操作)
 | 在线小工具                 | [[delphitools]] · [[6-online-tools]] · [[translumo]]  | 日常效率       |      📖 新增      |
 | AI 写作工具               | [[show-me-the-story]]                                 | 长篇小说/去AI味  |      📖 新增      |
 | 简历设计                  | [[ai-resume-prompt]]                                  | AI生图简历     |      📖 新增      |
+| 模型路由网关 (W33)         | [[switchyard-llm-routing-2026-08-14]]                  | 多供应商路由/fallback |    🟡 参考      |
 
 ### 模型分层体系
 
@@ -260,6 +290,9 @@ MCP 生态: GitHub + Filesystem + JLCPCB(38工具) + Obsidian(笔记操作)
 | [[cloudbase-learning-s1-login]] | 微信小程序云开发 | 校园便利盒复刻 | [[xiaoyuanbianlihe-project-study]] |
 | [[openforgerl-trace-pipeline-feasibility]] | 轨迹导出实测 | 自训数据管线设计 | [[2026-07-31-openforgerl]] |
 | [[github-trending-2026-08-02-weekly-5projects]] | GitHub 本周 Trending 精选 | Agent 工具链趋势观察 | [[github-trending-2026-08-02-study]] · [[github-weekly-2026-07-31-5projects]] |
+| [[prime-agent-rlm-2026-08-14]] (W33) | RLM+自改进 | Hermes memory/skills 参考 | [[mattpocock-skills]] · [[codebase-memory-mcp]] |
+| [[switchyard-llm-routing-2026-08-14]] (W33) | 模型路由 | Hermes 多供应商配置 | [[hermes-smart-model-router]] · [[hermes-provider-matrix]] |
+| [[agent-skills-addyosmani-2026-08-14]] (W33) | Agent 技能工程 | Hermes skill 治理 | [[agent-skills-methodology-absorbed]] · [[mattpocock-skills]] |
 
 ---
 
