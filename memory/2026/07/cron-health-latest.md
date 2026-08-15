@@ -1,11 +1,11 @@
 ---
 tags: [cron-health, dashboard]
-updated: 2026-08-15 20:00
+updated: 2026-08-16 00:00
 ---
 
-# Cron 健康看板 — 2026-08-15 20:00
+# Cron 健康看板 — 2026-08-16 00:00
 
-总任务数: 36
+总任务数: 37
 
 | ⚪ | AI测评周报                         | 0 9 * * 1       |  |
 | ⚪ | GitHub 宝藏挖掘                    | 30 12 * * 0     |  |
@@ -40,18 +40,19 @@ updated: 2026-08-15 20:00
 | ⚪ | 每日仓库+知识库优化                     | 0 10 * * *      |  |
 | ⚪ | 每日学习回顾-晚间22点                   | 0 22 * * *      |  |
 | ⚪ | 每日学习计划-早晨8点                    | 10 8 * * *      |  |
+| ⚪ | 每日股票深度分析                       | 0 18 * * 1-5    |  |
 | ⚪ | 组会报告                           | 0 20 * * 0      |  |
 | ⚪ | 闲鱼提醒                           | 30 7 * * 1-5    |  |
 | ⚪ | 项目追踪                           | 0 21 * * *      |  |
 
-✅ 0 正常  ❌ 0 错误  ⚪ 36 从未执行
+✅ 0 正常  ❌ 0 错误  ⚪ 37 从未执行
 
 ## 🌐 网络健康指数 (🟡)
 
 亚健康 — 1/3 不可达
 
-连通率: 67% | 平均延迟: 268ms
+连通率: 67% | 平均延迟: 236ms
 
-  ❌ opencode-go: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING]
-  🟡 siliconflow: HTTP 401 (286ms, reachable)
-  🟡 deepseek: HTTP 401 (251ms, reachable)
+  ❌ opencode-go: <urlopen error [Errno 11001] getaddrinfo failed>
+  🟡 siliconflow: HTTP 401 (210ms, reachable)
+  🟡 deepseek: HTTP 401 (263ms, reachable)
