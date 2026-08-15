@@ -1,12 +1,13 @@
 ---
 tags: [cron-health, dashboard]
-updated: 2026-08-15 16:00
+updated: 2026-08-15 20:00
 ---
 
-# Cron 健康看板 — 2026-08-15 16:00
+# Cron 健康看板 — 2026-08-15 20:00
 
-总任务数: 34
+总任务数: 36
 
+| ⚪ | AI测评周报                         | 0 9 * * 1       |  |
 | ⚪ | GitHub 宝藏挖掘                    | 30 12 * * 0     |  |
 | ⚪ | arxiv-fetch                    | 30 6 * * *      |  |
 | ⚪ | arxiv-summarize                | 0 13 * * 0      |  |
@@ -34,6 +35,7 @@ updated: 2026-08-15 16:00
 | ⚪ | weekly-system-cleanup          | 15 13 * * 0     |  |
 | ⚪ | weekly-todo-cleanup            | 0 18 * * 6      |  |
 | ⚪ | weekly-trending-review         | 30 13 * * 0     |  |
+| ⚪ | 墨题每日代码巡检                       | 45 18 * * *     |  |
 | ⚪ | 文献周报                           | 45 7 * * 1      |  |
 | ⚪ | 每日仓库+知识库优化                     | 0 10 * * *      |  |
 | ⚪ | 每日学习回顾-晚间22点                   | 0 22 * * *      |  |
@@ -42,14 +44,14 @@ updated: 2026-08-15 16:00
 | ⚪ | 闲鱼提醒                           | 30 7 * * 1-5    |  |
 | ⚪ | 项目追踪                           | 0 21 * * *      |  |
 
-✅ 0 正常  ❌ 0 错误  ⚪ 34 从未执行
+✅ 0 正常  ❌ 0 错误  ⚪ 36 从未执行
 
 ## 🌐 网络健康指数 (🟡)
 
 亚健康 — 1/3 不可达
 
-连通率: 67% | 平均延迟: 355ms
+连通率: 67% | 平均延迟: 268ms
 
   ❌ opencode-go: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING]
-  🟡 siliconflow: HTTP 401 (372ms, reachable)
-  🟡 deepseek: HTTP 401 (337ms, reachable)
+  🟡 siliconflow: HTTP 401 (286ms, reachable)
+  🟡 deepseek: HTTP 401 (251ms, reachable)
