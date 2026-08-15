@@ -68,3 +68,31 @@
 
 *生成：Hermes cron · light-literature-search 方法论 · 2026-08-14*
 *原始数据：C:\Users\31954\week_arxiv_openalex.json / week_abstracts.json（临时文件，可删）*
+
+---
+
+## k 的吸收笔记 (2026-08-15)
+
+> 学习路径：web_search 验证 5 篇核心论文（AaLLM / Beyond Final Scores / OmniScientist / Embedder's Dilemma / Not Worth Another Token），全部 arXiv 原文可查，数据采信。
+
+### 已应用的
+| 洞察 | 应用 |
+|:-----|:------|
+| **Embedder's Dilemma**（2608.12875）：嵌入模型与 LLM 整体打平（77.6 vs 77.2）但 LLM 贵 1431x；推理 token 占成本 28-81% | **任务分工原则**：相似/分类/聚类用嵌入模型（如 Qwen3-E-4B $0.07），推理型检索才用 LLM；DeepSeek-V4-Flash 是成本最优 LLM（$3/轮）——确认 sora 默认 flash 模型选型正确 ✅ |
+| **Not Worth Another Token**（2608.08389）：早期剪枝 > 后期压缩——Post-Retrieval MMR 省 69.5% token 质量仅降 2.1%；两阶段 CD+SC 质量还反升 +1.64 | **长任务上下文管理原则**：检索结果先剪枝再进上下文（去掉低价值/冗余分支），比事后压缩省得多；三阶段 MMR 极限省 73.3% |
+| **Beyond Final Scores**（2608.13417）：agent 更像「工程优化器」非「自主研究者」；经验复用双刃剑 | **评估视角**：评估自家系统不只盯最终分数，用过程指标（Solution Framing/Execution/Feedback Control）；memory/skills 复用前要甄别「经验是否值得复用」 |
+| **AaLLM**（2608.13472）：三 agent（Designer/Critic/Evaluator）仲裁 + RAG + SPICE 闭环，SPICE 调用减 3-4.5x、墙钟减 40x | **PCB/电路方向参考**（backlog）：模拟电路 sizing 端到端自动化；同领域 AnalogAgent（97.4% Pass@1）/MenTeR（84.2%）可一并参考 |
+
+### 新吸收的行为改进
+- **Embedder's Dilemma** → Hermes 配置 review 时：记忆检索/知识库语义搜索优先嵌入模型，不拿 LLM 当 embedding 用；长任务里降低 reasoning budget 保检索质量
+- **Not Worth Another Token** → 千轮研究/深度研究流程中：搜索返回后先做相关性去重剪枝（MMR 思路）再继续，不把原始堆料全塞上下文
+- **Beyond Final Scores** → agent-self-evaluation 技能注入「过程指标」视角：评任务完成质量看 提出方向/执行/反馈控制 三环，不只结果
+- **Practice Makes Unsafe**（2608.12851）→ skill 自举安全警示：自改进 agent 会把「不安全的成功」固化成技能——Hermes 的 skill 沉淀要带来源追溯，避免把偶然成功当通用规则
+
+### 仍需改进的
+- ⬜ **AaLLM → 深度评估**：如果 sora 要做电路设计自动化（模拟方向），值得十轮深挖 AaLLM + AnalogAgent + MenTeR 三套框架选型；当前 PCB 兴趣主要是数字布局布线，暂 backlog
+- ⬜ **OmniScientist**（2608.13558）→ trial：感知层 + 确定性流水线 + idea/rigour/claim 三道代码检查——与 light-research 系列（research-ethics/light-paper-writing 质量门）方向一致，可对照补强「代码内检查」环节
+- ⬜ **SteerBench-Work**（2608.12654）→ 关注：30 模型条件中 28.1% 误拒已授权 vs 1.0% 误放不安全——Hermes 审批策略设计时避免过度拒绝
+
+### 数据截止点（data-cutoff）
+- 数据截止：2026-08-15（本吸收笔记检索/验证数据不晚于该日）
