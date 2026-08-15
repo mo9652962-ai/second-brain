@@ -10,7 +10,7 @@ status: adopted
 
 > 入口: [[Home|🏠 Home]] · 返回总索引
 
-> 所有知识领域的索引与关联。最后更新: 2026-08-14（知识链分支整合: arXiv/writing-material/Python/Tools/Content 并入主域, 17→12 域））
+> 所有知识领域的索引与关联。最后更新: 2026-08-15（知识链分支整合 10→7 域：Academic→Research、AI→Dev、Design→Hardware，dreaming 压平））
 
 ---
 
@@ -85,11 +85,11 @@ graph TD
 | 域 | 新增重点 | 入口 |
 |:---|:---------|:-----|
 | 🔬 Research（新 MOC） | 36 篇研究笔记（日报热榜/深度研究/文章研究/工具部署） | [[knowledge/Research/MOC-Research]] |
-| 📚 Academic | 接单 SOP · 论文 Pipeline 数据契约（合并）· 降AI工具速查 · 闲鱼素材包 · EU AI Act | [[knowledge/Academic/MOC-Academic]] |
-| 🤖 AI | DeepSeek V4 Flash 升级 · AI 科研五元解耦 | [[knowledge/AI/MOC-AI]] |
+| 📚 Academic | 接单 SOP · 论文 Pipeline 数据契约（合并）· 降AI工具速查 · 闲鱼素材包 · EU AI Act | [[knowledge/Research/MOC-Research]] |
+| 🤖 AI | DeepSeek V4 Flash 升级 · AI 科研五元解耦 | [[knowledge/Dev/MOC-Dev]] |
 | 💻 Dev | CloudBase 8 站学习系列 · System Prompts 存档 · MCP 规范候选版 · TRELLIS 3D | [[knowledge/Dev/MOC-Dev]] |
 | 🔧 Hardware | JLCPCB MCP（38 工具） | [[knowledge/Hardware/MOC-Hardware]] |
-| 🎨 Design | Krea2 本地生图研究 + ComfyUI 部署 | [[knowledge/Design/MOC-Design]] |
+| 🎨 Design | Krea2 本地生图研究 + ComfyUI 部署 | [[knowledge/Hardware/MOC-Hardware]] |
 | 🏠 Productivity | 记忆贡献度追踪 · Token 报告（W31 周报新增）· Obsidian MCP | [[knowledge/Productivity/MOC-Productivity]] · [[knowledge/Productivity/token-usage-report-20260802]] |
 | 📅 Daily / 🃏 Cards | HN 速览 ×5 · 知识卡片 ×2（OpenForgeRL / EU AI Act） | [[knowledge/Daily/hackernews-2026-08-02]] · [[knowledge/Daily/hackernews-2026-08-03]] · [[knowledge/cards/2026-08-02-eu-ai-act]] |
 
@@ -141,7 +141,7 @@ graph TD
 | 域 | 新增重点 | 入口 |
 |:---|:---------|:-----|
 | 🔬 Research | GitHub-Weekly-W33（prime-agent/semantica/agent-skills/cloudflare-computer/switchyard）+ arXiv 18 篇速览 + ACL 2026 五篇合成 + 竞品研究第1轮 | [[knowledge/Research/GitHub-Weekly-2026-08-14]] · [[knowledge/Research/arxiv-2026-08-14-agent-llm]] |
-| 🤖 AI | **Prime Agent RLM**（+12,476⭐/周，与 Hermes 一一对应）· Semantica 图原生（PROV-O provenance） | [[knowledge/AI/prime-agent-rlm-2026-08-14]] · [[knowledge/AI/semantica-graph-native-2026-08-14]] |
+| 🤖 AI | **Prime Agent RLM**（+12,476⭐/周，与 Hermes 一一对应）· Semantica 图原生（PROV-O provenance） | [[knowledge/Dev/prime-agent-rlm-2026-08-14]] · [[knowledge/Dev/semantica-graph-native-2026-08-14]] |
 | 💻 Dev | addyosmani agent-skills（四原则+链接门禁）· Switchyard 路由网关 · Cloudflare computer 沙箱 | [[knowledge/Dev/agent-skills-addyosmani-2026-08-14]] · [[knowledge/Dev/switchyard-llm-routing-2026-08-14]] |
 | 📊 成本 | W33 API 成本报告（glm-5.2 兜底异常 ¥55 + CNY/USD 记账 bug 修正） | [[knowledge/Productivity/token-usage-report-20260814]] |
 | 🃏 Cards | 知识卡片 ×2（ACL 自我进化 / Prime Agent RLM） | [[knowledge/cards/2026-08-13-agent-self-evolution-acl2026]] · [[knowledge/cards/2026-08-14-prime-agent-rlm]] |
@@ -149,7 +149,7 @@ graph TD
 
 ### 本周关键研究主题
 
-1. **自改进 RLM Agent 主战场** — Prime Agent（RLM + Continual Harness + /refine 可回滚自改进）与 Hermes memory/skills/cron/subagent 一一对应（[[knowledge/AI/prime-agent-rlm-2026-08-14|研究]] + [[knowledge/cards/2026-08-14-prime-agent-rlm|卡片]]）
+1. **自改进 RLM Agent 主战场** — Prime Agent（RLM + Continual Harness + /refine 可回滚自改进）与 Hermes memory/skills/cron/subagent 一一对应（[[knowledge/Dev/prime-agent-rlm-2026-08-14|研究]] + [[knowledge/cards/2026-08-14-prime-agent-rlm|卡片]]）
 2. **Agent 自我进化范式转变 (ACL 2026)** — SkillDAG/SkillGen/SkillSmith/COVE/AgeMem 五篇：技能图+反模式记忆+工具协同+量化验证（[[knowledge/cards/2026-08-13-agent-self-evolution-acl2026|卡片]]）
 3. **刷题机竞品两轮** — Android 版千轮（响应式/底部导航/更新清单）+ 第2轮落地 19/19（AI 文章练词/听力精听/快捷键/标注 100%）
 4. **W33 成本根因闭环** — 供应商故障链 → glm-5.2 高价兜底 + 记账口径 bug（CNY 记 USD 虚高 7 倍）

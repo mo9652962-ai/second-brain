@@ -26,14 +26,14 @@ type: vault-maintenance
 
 ### 2. 空文件确认保留
 - `.learnings/FEATURE_REQUESTS.md` — 功能请求跟踪占位符, 注解说明"空状态 — 暂无待处理"
-- `memory/dreaming/light/2026-07-27.md` — 每日梦境日志, 标记"No notable updates"
+- `memory/dreaming/light-2026-07-27.md` — 每日梦境日志, 标记"No notable updates"
 
 ### 3. 孤立笔记链接修复
 从 HOME.md 新增以下链接:
 
 | 孤立笔记 | 添加到 HOME.md 位置 | 原因 |
 |----------|---------------------|------|
-| `knowledge/Academic/paper-pipeline-data-contract.md` | Academic 域「包含」列表 | 论文 Pipeline 数据契约 |
+| `knowledge/Research/paper-pipeline-data-contract.md` | Academic 域「包含」列表 | 论文 Pipeline 数据契约 |
 | `knowledge/Productivity/token-usage-report-20260727.md` | Productivity 域「包含」列表 | Token 使用报告 |
 | `memory/2026/07/2026-07-27-daily-cleanup.md` | 项目与日志「今日清理报告」 | 每日清除记录 |
 | `memory/2026/07/2026-07-27-todo-cleanup.md` | 项目与日志「今日 TODO 清理」 | TODO 扫描与归档 |

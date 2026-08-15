@@ -25,7 +25,7 @@ date: 2026-08-14
 5. **Agent 云基础设施竞速**：Cloudflare(computer) × Deno(celld, +1.8k) 都押注「给 agent 可信电脑 + 分布式持久化」。
 
 ## 文件操作清单
-- ✅ 新建 5 篇笔记：`knowledge/AI/prime-agent-rlm-2026-08-14.md`、`knowledge/AI/semantica-graph-native-2026-08-14.md`、`knowledge/Dev/agent-skills-addyosmani-2026-08-14.md`、`knowledge/Dev/switchyard-llm-routing-2026-08-14.md`、`knowledge/Dev/cloudflare-computer-2026-08-14.md`
+- ✅ 新建 5 篇笔记：`knowledge/Dev/prime-agent-rlm-2026-08-14.md`、`knowledge/Dev/semantica-graph-native-2026-08-14.md`、`knowledge/Dev/agent-skills-addyosmani-2026-08-14.md`、`knowledge/Dev/switchyard-llm-routing-2026-08-14.md`、`knowledge/Dev/cloudflare-computer-2026-08-14.md`
 - ✅ 更新 `knowledge/knowledge-map.md`（新增 W33 条目）
 - ✅ 追加 `knowledge/Research/github-projects-tracking.csv`
 - ⚠️ TencentDB-Agent-Memory **不新建笔记**（08-05/08-08 已深度评估，结论「验证体系/不迁移/只读参考」），仅跟踪 star delta：**12k → 21.5k（+9.5k，增速猛）**

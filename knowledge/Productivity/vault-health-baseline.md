@@ -24,8 +24,8 @@ Converted skill-name wikilinks to plain text across 9 files:
 | File | Converted Links |
 |------|----------------|
 | `knowledge/knowledge-map.md` | 9 skill refs: engineering-workflow, test-driven-development, 8051-embedded-dev, cad-design-master, wechat-miniprogram-cloudbase |
-| `knowledge/AI/AI-Workflow.md` | 5 skill refs: hermes-agent, hermes-model-fallback, hermes-search-config, test-driven-development, systematic-debugging |
-| `knowledge/AI/LLM-Providers.md` | 3 skill refs: hermes-model-fallback, hermes-search-config, hermes-agent |
+| `knowledge/Dev/AI-Workflow.md` | 5 skill refs: hermes-agent, hermes-model-fallback, hermes-search-config, test-driven-development, systematic-debugging |
+| `knowledge/Dev/LLM-Providers.md` | 3 skill refs: hermes-model-fallback, hermes-search-config, hermes-agent |
 | `knowledge/Dev/mattpocock-methodology.md` | 1: engineering-workflow |
 | `knowledge/Dev/mattpocock-skills.md` | 1: engineering-workflow |
 | `knowledge/Dev/ponytail.md` | 1: engineering-workflow |

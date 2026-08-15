@@ -95,8 +95,8 @@
 
 | 类别 | 文件 | 说明 |
 |:-----|:-----|:-----|
-| SOP 模板 | knowledge/Academic/接单工作流-SOP.md | 接单流程检查清单（使用时逐项打勾） |
-| SOP 模板 | knowledge/Academic/论文Pipeline-数据契约.md | 质量检查清单（使用时逐项打勾） |
+| SOP 模板 | knowledge/Research/接单工作流-SOP.md | 接单流程检查清单（使用时逐项打勾） |
+| SOP 模板 | knowledge/Research/论文Pipeline-数据契约.md | 质量检查清单（使用时逐项打勾） |
 | 方法论参考 | knowledge/Dev/mattpocock-methodology.md | Skill 改进检查表（修改 skill 时对照） |
 | 方法论参考 | knowledge/Dev/context-compaction-params-reference.md | 压缩参数落地建议（参考用） |
 | 方法论参考 | knowledge/Dev/mcp-spec-2026-07-28.md | MCP 迁移清单（参考用） |

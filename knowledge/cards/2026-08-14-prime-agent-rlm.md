@@ -8,7 +8,7 @@ tags:
   - self-improving
   - Hermes
 created: 2026-08-14
-source: "[[knowledge/AI/prime-agent-rlm-2026-08-14]]"
+source: "[[knowledge/Dev/prime-agent-rlm-2026-08-14]]"
 status: fresh
 ---
 
@@ -53,4 +53,4 @@ status: fresh
 
 ---
 
-*卡片来源：当天知识库精选 · [[knowledge/AI/prime-agent-rlm-2026-08-14]]（🥇 GitHub 热榜增长第一 + 与 Hermes 体系直接对标 + 4 条可落地行动项）*
+*卡片来源：当天知识库精选 · [[knowledge/Dev/prime-agent-rlm-2026-08-14]]（🥇 GitHub 热榜增长第一 + 与 Hermes 体系直接对标 + 4 条可落地行动项）*

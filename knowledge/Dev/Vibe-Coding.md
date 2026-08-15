@@ -2,7 +2,7 @@
 tags: [coding, tools, windows]
 domain: vibe-coding
 cross-domain: [ai-agent, ppt-design, academic]
-related: ["knowledge/AI-Agent", "knowledge/AI-Workflow", "knowledge/PPT-Design", "knowledge/Academic"]
+related: ["knowledge/AI-Agent", "knowledge/AI-Workflow", "knowledge/PPT-Design", "knowledge/Research"]
 created: 2026-07-21
 updated: 2026-07-23
 status: adopted

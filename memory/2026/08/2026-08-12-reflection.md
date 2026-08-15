@@ -92,8 +92,8 @@ type: reflection
 | 文件 | 含相关条目 |
 |:-----|:-----------|
 | `memory/2026/08/2026-08-12-daily-todo-executor.md` | ✅ 含 learning 相关内容（待办去重策略） |
-| `memory/dreaming/light/2026-08-12.md` | ✅ 13 个 staged candidates（OpenClaw 架构更新 / 行业趋势 / 可推广模式） |
-| `memory/dreaming/deep/2026-08-12.md` | ⚪ 0 个 promoted（无晋升） |
+| `memory/dreaming/light-2026-08-12.md` | ✅ 13 个 staged candidates（OpenClaw 架构更新 / 行业趋势 / 可推广模式） |
+| `memory/dreaming/deep-2026-08-12.md` | ⚪ 0 个 promoted（无晋升） |
 
 **✅ 有条目** — 达标（light sleep 13 个 candidates staged，虽然 deep sleep 0 晋升）
 

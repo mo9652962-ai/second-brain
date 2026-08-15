@@ -94,7 +94,7 @@ status: completed
 - `research/trackers/charm-graph-transfer.md`、`kutie-context-injection.md` — 周计划研究 tracker（第 1/2 周），保持原样
 - `knowledge/Dev/cloudbase-learning-s1~s8` — 微信小程序学习路径笔记，非待办
 - `knowledge/论文Pipeline-数据契约.md`、`knowledge/接单工作流-SOP.md` — SOP/交付标准检查清单
-- `knowledge/AI/deepseek-v4-flash-0731-upgrade.md` — 探索性 3 项，已转入 current.md P1
+- `knowledge/Dev/deepseek-v4-flash-0731-upgrade.md` — 探索性 3 项，已转入 current.md P1
 - `system/GitHub-Treasure-Hunt-System.md` — 示例占位
 - `knowledge/Archive/system-comparison-content.md` — 内容发布计划（博客/视频版），属 ai-blogger 路线图
 

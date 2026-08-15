@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - README: QuickStart 移到顶部，添加"适合谁"定位说明 (#2)
 - CHANGELOG.md: 首次创建，遵循 Keep a Changelog 格式
 - Python 知识域: `knowledge/Dev/python-ecosystem.md`
-- 工具知识域: `knowledge/AI/hermes-agent-ecosystem.md`
+- 工具知识域: `knowledge/Dev/hermes-agent-ecosystem.md`
 - 记忆贡献度追踪: `scripts/memory_tracker.py` + `scripts/memory_dashboard.py`
 - 练习册口算 15→10 两位数乘法，笔算 10→4 竖式表格 (#1)
 
@@ -20,7 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - 知识库维护: 清理 21 个空文件 + 6 个空目录，归档 14 个旧记忆文件
 - 跨域链接增强: AI↔Dev↔Productivity 双向链，HOME 更新引用
-- MOC-AI/MOC-Dev: 添加跨域导航
+- MOC-Dev/MOC-Dev: 添加跨域导航
 
 ### Fixed
 

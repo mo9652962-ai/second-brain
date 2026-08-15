@@ -32,14 +32,14 @@ created: 2026-07-27
 
 ## 未修复项（有意保留）
 
-- **Dreaming 系统**：`memory/dreaming/light/2026-07-27.md`（37 字节，仅 "No notable updates."）— 属于自动生成系统文件，保持原样
+- **Dreaming 系统**：`memory/dreaming/light-2026-07-27.md`（37 字节，仅 "No notable updates."）— 属于自动生成系统文件，保持原样
 - **24 个 knowledge 文件缺少 tags**：`academic-service-research.md`、`k-self-improvement.md`、`vibe-research.md`、`ponytail.md` 等 — 这些文件没有 YAML frontmatter，添加 tags 需要结构性变更，建议下次维护时统一处理
 - **33 个 memory 文件缺少 tags**：2026-07-18 之前的 daily logs 和 dreaming 系列文件 — 属于按日期组织的日志，tags 为锦上添花
 
 ## 建议
 
 1. **知识文件 tags 规范化**：分批次为知识域文件添加 frontmatter（先为高频引用文件：k-self-improvement、vibe-research、ponytail、pcb-design-notes）
-2. **Dreaming 系统轻量化**：`memory/dreaming/light/` 中仅有 "No notable updates." 的文件可考虑下次自动跳过创建
+2. **Dreaming 系统轻量化**：`memory/dreaming/light-` 中仅有 "No notable updates." 的文件可考虑下次自动跳过创建
 
 ---
 > 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

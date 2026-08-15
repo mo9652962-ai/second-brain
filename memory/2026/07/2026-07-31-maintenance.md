@@ -22,15 +22,15 @@ type: vault-maintenance
 
 ## 处理明细
 
-1. **修复断裂 wikilink**（`knowledge/AI/MOC-AI.md:34`）
-   - `[[knowledge/AI/ai-freelance-pricing|AI 自由职业定价]]` → 目标笔记不存在（该主题仅存在于 Hermes skill）
-   - 重定向至实际笔记：`[[knowledge/Academic/ai-monetization-costs|AI 自由职业定价]]`（AI 变现实战手册·价目表）
+1. **修复断裂 wikilink**（`knowledge/Dev/MOC-Dev.md:34`）
+   - `[[knowledge/Dev/ai-freelance-pricing|AI 自由职业定价]]` → 目标笔记不存在（该主题仅存在于 Hermes skill）
+   - 重定向至实际笔记：`[[knowledge/Research/ai-monetization-costs|AI 自由职业定价]]`（AI 变现实战手册·价目表）
 
 2. **清理空文件**（`memory/2026/07/2026-07-28-maintenance-2.md`，0 字节）
    - 真实内容已归档于 `memory/.archive/maintenance/2026-07-28-maintenance-2.md`
    - HOME.md 对应链接重定向至归档版本
 
-3. **清理 dreaming 空壳**（`memory/dreaming/deep/2026-07-31.md`，103 字节）
+3. **清理 dreaming 空壳**（`memory/dreaming/deep-2026-07-31.md`，103 字节）
    - 内容仅为 "Ranked 0 candidate(s)"，无实质记录 → 按维护规范删除
 
 4. **孤儿笔记补链**（2 篇）

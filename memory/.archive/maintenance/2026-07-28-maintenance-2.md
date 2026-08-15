@@ -36,7 +36,7 @@ type: vault-maintenance
 
 ### 2. 保留项确认
 
-- **空文件**: `.learnings/FEATURE_REQUESTS.md` (功能请求占位) + `memory/dreaming/light/2026-07-27.md` (梦境日志)
+- **空文件**: `.learnings/FEATURE_REQUESTS.md` (功能请求占位) + `memory/dreaming/light-2026-07-27.md` (梦境日志)
 - **12 个 `-absorbed` 文件**: 政策有意保留为参考痕迹, 不设反向链接
 
 ### 3. Git 同步

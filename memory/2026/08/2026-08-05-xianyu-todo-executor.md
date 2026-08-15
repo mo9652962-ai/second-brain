@@ -28,7 +28,7 @@ type: vault-suggestion-executor
 
 ## 关键发现
 
-1. **万事俱备只欠操作（第 5 天）**：素材包（knowledge/Academic/闲鱼上架素材包-预生成.md，07-30 就绪）+ 主图 3 张（outputs/xianyu-master/上架素材包/主图1-3.png，08-03 生成）+ 安全文案红线 v2 全部 100% 就绪，sora 登录复制上架即可，预计 ~80min 清空 P0。
+1. **万事俱备只欠操作（第 5 天）**：素材包（knowledge/Research/闲鱼上架素材包-预生成.md，07-30 就绪）+ 主图 3 张（outputs/xianyu-master/上架素材包/主图1-3.png，08-03 生成）+ 安全文案红线 v2 全部 100% 就绪，sora 登录复制上架即可，预计 ~80min 清空 P0。
 2. **无新增可自动执行项**：8/4 → 8/5 无新建议产生；当前所有遗留项均为「需用户操作 / 依赖外部条件」。
 3. **source-level fix 跟进**：08-05 maintenance 报告指出 daily-review / todo-cleanup / xianyu-todo-executor 三个 cron 创建笔记后未链接 HOME.md，导致连续 3 天反复成为孤儿。本报告已落实：生成后立即向 HOME.md「项目与日志」区追加链接 ✅；vault-suggestion-executor skill 已补该步骤。
 4. **非闲鱼待办**（不重复处理，已有承接）：Skill 重复合并 6 组（待一句话确认）、零感 AI 付费实测（需付费）、随身 WiFi 下单（阻塞 8 天+）、桌面美化部署（安装包就绪）、安全审计 cron 排期（待确认）。

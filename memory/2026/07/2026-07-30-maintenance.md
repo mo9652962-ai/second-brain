@@ -23,11 +23,11 @@ created: 2026-07-30
 
 | 文件 | 修复内容 | 操作 |
 |:----|:---------|:----|
-| `MOC-Academic.md` | `[[knowledge/Academic/ai-freelance-pricing]]` → 纯文本（技能参考，无 vault 笔记） | 替换 |
-| `MOC-Academic.md` | `[[knowledge/Academic/methodology-audit]]` → 纯文本（技能参考） | 替换 |
-| `MOC-AI.md` | `[[knowledge/AI/model-supplier-strategy]]` → 纯文本（技能参考） | 替换 |
-| `MOC-AI.md` | `[[knowledge/AI/hermes-model-configuration]]` → 纯文本（技能参考） | 替换 |
-| `MOC-Design.md` | `[[skills/@j-feng12/academic-presentation]]` → `[[.../SKILL.md]]`（指向实际文件） | 修复路径 |
+| `MOC-Research.md` | `[[knowledge/Research/ai-freelance-pricing]]` → 纯文本（技能参考，无 vault 笔记） | 替换 |
+| `MOC-Research.md` | `[[knowledge/Research/methodology-audit]]` → 纯文本（技能参考） | 替换 |
+| `MOC-Dev.md` | `[[knowledge/Dev/model-supplier-strategy]]` → 纯文本（技能参考） | 替换 |
+| `MOC-Dev.md` | `[[knowledge/Dev/hermes-model-configuration]]` → 纯文本（技能参考） | 替换 |
+| `MOC-Hardware.md` | `[[skills/@j-feng12/academic-presentation]]` → `[[.../SKILL.md]]`（指向实际文件） | 修复路径 |
 | `arxiv-2026-07-29.md` | `[[Agent Memory Systems]]` 等 3 个 → 纯文本（待创建笔记） | 替换 |
 
 ### 2. 添加 HOME.md 入链 (19 个孤立笔记消除)
@@ -54,7 +54,7 @@ created: 2026-07-30
 ## Git 变更
 
 - `HOME.md` — 新增入链 19 处
-- `MOC-Academic.md`, `MOC-AI.md`, `MOC-Design.md` — 修复损坏链接
+- `MOC-Research.md`, `MOC-Dev.md`, `MOC-Hardware.md` — 修复损坏链接
 - `research/arxiv-core-contributions-2026-07-29.md` — 移除损坏链接
 
 ---

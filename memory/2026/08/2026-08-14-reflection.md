@@ -77,7 +77,7 @@ type: reflection
 **✅ 有，15+ 篇实质产出**：
 - 新笔记：`arxiv-2026-08-14-agent-llm`（18 篇速览）、`ai-weekly-literature-2026-08-14`（周报）、`GitHub-Weekly-2026-08-14`、`hackernews-2026-08-14`、`prime-agent-rlm-2026-08-14`、`semantica-graph-native-2026-08-14`、`switchyard-llm-routing-2026-08-14`、`cloudflare-computer-2026-08-14`、`agent-skills-addyosmani-2026-08-14`、`Token节省千轮研究-2026-08-14`、`三角洲干员转场教程研究-2026-08-14`
 - 卡片：`2026-08-14-prime-agent-rlm.md`
-- 更新：`knowledge-map.md`、`MOC-AI.md`、`MOC-Research.md`、`8051-MCU.md`、`token-usage-report-20260814.md`
+- 更新：`knowledge-map.md`、`MOC-Dev.md`、`MOC-Research.md`、`8051-MCU.md`、`token-usage-report-20260814.md`
 
 ### 2️⃣ skills/ 昨天有没有更新
 

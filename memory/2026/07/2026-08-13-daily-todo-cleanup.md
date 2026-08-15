@@ -100,7 +100,7 @@
 | 2026-08-08-qwen-image-pro.md | 2 | 文字海报商品线 + PPT SOP 成本基准 |
 | 2026-08-09-deepseek-v4-flash-arc-prize.md | 1 | 闲鱼文案加 ARC Prize 卖点（待确认措辞）|
 
-### 📋 knowledge/Academic/ — 接单工作流 SOP（模板型）
+### 📋 knowledge/Research/ — 接单工作流 SOP（模板型）
 
 | 文件 | 待办数 | 说明 |
 |:---|---:|:---|

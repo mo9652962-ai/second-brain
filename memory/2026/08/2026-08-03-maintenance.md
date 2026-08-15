@@ -22,9 +22,9 @@ type: maintenance
 
 均为 2026-08-03 凌晨 dreaming 模块自动生成、≤200 字节的空壳（无实质内容，符合删除标准）：
 
-- `memory/dreaming/deep/2026-08-03.md`（103 B，Ranked 0 candidate）
-- `memory/dreaming/light/2026-08-03.md`（37 B，No notable updates）
-- `memory/dreaming/rem/2026-08-03.md`（128 B，No strong patterns）
+- `memory/dreaming/deep-2026-08-03.md`（103 B，Ranked 0 candidate）
+- `memory/dreaming/light-2026-08-03.md`（37 B，No notable updates）
+- `memory/dreaming/rem-2026-08-03.md`（128 B，No strong patterns）
 
 已保留 12 个有实质内容的梦境记录（07-21 ~ 08-02）。
 
