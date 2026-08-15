@@ -21,7 +21,7 @@ tags: [maintenance, vault-health, cron]
 ## ✅ 本次修复
 
 1. **删除 dreaming 空壳笔记（3 个）**
-   - `memory/dreaming/deep/2026-08-01.md`、`deep/2026-08-02.md`、`rem/2026-08-02.md`
+   - `memory/dreaming/deep-2026-08-01.md`、`deep/2026-08-02.md`、`rem/2026-08-02.md`
    - 均为 frontmatter + "Ranked 0 candidate(s)" 空壳，无实质内容
 
 2. **移动游离日志（1 个）**

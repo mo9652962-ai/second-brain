@@ -34,7 +34,7 @@ type: vault-maintenance
 | `knowledge/Research/minevalicoder-2607.22471.md` | HOME.md Productivity 域「关联」 | MineValiCoder 论文吸收 |
 | `knowledge/Research/skill-self-play-2607.22529.md` | HOME.md Productivity 域「关联」 | Skill Self-Play 论文吸收 |
 | `knowledge/arxiv-digest.md` | HOME.md 项目与日志 | arXiv 周报入口 |
-| `knowledge/AI/github-projects-note.md` | HOME.md AI 域「包含」 | DeepTutor 学习笔记 |
+| `knowledge/Dev/github-projects-note.md` | HOME.md AI 域「包含」 | DeepTutor 学习笔记 |
 | `pipelines/paper-pipeline.md` | pipelines/pipeline-overview.md | 论文工作流定义 |
 | `pipelines/ppt-pipeline.md` | pipelines/pipeline-overview.md | PPT 工作流定义 |
 | `pipelines/skill-triggers.md` | pipelines/pipeline-overview.md | Skill 触发词映射 |
@@ -57,7 +57,7 @@ type: vault-maintenance
 
 ### 4. 保留项确认
 
-- **空文件**: `.learnings/FEATURE_REQUESTS.md` (功能请求占位) + `memory/dreaming/light/2026-07-28.md` (梦境日志)
+- **空文件**: `.learnings/FEATURE_REQUESTS.md` (功能请求占位) + `memory/dreaming/light-2026-07-28.md` (梦境日志)
 - **教学示例**: `[[wikilink]]` (concepts/Obsidian-Vault.md), `[[wiki link]]` (knowledge/Cross-Domain.md) — 均为文档示例
 - **CSS 色值**: `#FFFFFF` 在 skill 参考文件中是颜色代码而非标签
 

@@ -76,8 +76,8 @@
 
 | 类别 | 文件 | 项数 |
 |:-----|:-----|:----:|
-| 接单 SOP | knowledge/Academic/接单工作流-SOP.md | 12 |
-| 论文 Pipeline | knowledge/Academic/论文Pipeline-数据契约.md | 9 |
+| 接单 SOP | knowledge/Research/接单工作流-SOP.md | 12 |
+| 论文 Pipeline | knowledge/Research/论文Pipeline-数据契约.md | 9 |
 | CloudBase 学习 | knowledge/Dev/cloudbase-learning-s1~s8 | ~30 |
 | AI 博主策略 | projects/ai-blogger/strategy.md + content-template.md + tools-setup.md | ~30 |
 | 研究追踪 | knowledge/Research/* | ~40 |

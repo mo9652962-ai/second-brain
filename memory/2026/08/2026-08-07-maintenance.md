@@ -21,7 +21,7 @@ type: maintenance
 ## 一、断链修复
 
 1. **`memory/2026/08/2026-08-06-maintenance.md:23`** — 引述 verbatim 示例残留方括号链接语法，去掉 `[...]` 括号 → `Title(file.md)`，消除反复误报
-2. **`memory/dreaming/light/2026-08-07.md:243`** — 同上模式（dreaming 嵌入的维护报告文本），同样处理
+2. **`memory/dreaming/light-2026-08-07.md:243`** — 同上模式（dreaming 嵌入的维护报告文本），同样处理
 
 **保留的误报**（SKILL 指引不动）：
 - `knowledge/Dev/system-prompts-reference/claude-code-opus-5.md:45` — Claude Code 系统提示词原文 verbatim 副本
@@ -30,9 +30,9 @@ type: maintenance
 ## 二、空文件清理
 
 删除 3 个 dreaming 空壳（≤200 字节，仅有 frontmatter + Ranked 0 candidate，且 light 笔记无 wikilink 引用，安全删除）：
-- `memory/dreaming/deep/2026-08-04.md` (159B)
-- `memory/dreaming/deep/2026-08-06.md` (107B)
-- `memory/dreaming/deep/2026-08-07.md` (154B)
+- `memory/dreaming/deep-2026-08-04.md` (159B)
+- `memory/dreaming/deep-2026-08-06.md` (107B)
+- `memory/dreaming/deep-2026-08-07.md` (154B)
 
 ## 三、孤儿笔记链接
 

@@ -16,7 +16,7 @@ tags: [reflection, self-improvement, daily-review, tuesday]
 **主要产出：**
 - 6 项待办落实：Hermes 更新确认、memory 压缩(99%→83%)、18个知识文件加 tags、零感AI 调研、技能冗余扫描、空文件清理
 - 3 工具并行研究：Ponytail(✅已吸收)、OpenCut(⏸backlog)、Show Me The Story(🔬trial)
-- 知识吸收：Hallmark 57 道 slop 检测门 → 入库 knowledge/Design/
+- 知识吸收：Hallmark 57 道 slop 检测门 → 入库 knowledge/Hardware/
 - HITL 交互：GitHub W30 学习吸收、Hermes 源码更新、arXiv 深度解读
 - Vault 维护：4 次扫描(含跨日)，0 断裂链接，Windows 路径 bug 修复
 

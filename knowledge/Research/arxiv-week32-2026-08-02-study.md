@@ -71,7 +71,7 @@ status: adopted
 | 行动 | 内容 | 优先级 | 落实状态（2026-08-03）|
 |------|------|:---:|:---:|
 | **OpenMLE 四算子映射** | Draft/Improve/Debug/Crossover → Second Brain 自举系统方法论 | 🔴 本周 | ✅ 已建 skill `openmle-four-operators-bootstrapping` |
-| **AgentRadio 协议** | 五阶段分工协议 → 多 Agent cron 链设计参考 | 🟡 2-3 周 | ✅ 已有笔记 `knowledge/AI/agentradio-five-phase-orchestration.md`（08-02）|
+| **AgentRadio 协议** | 五阶段分工协议 → 多 Agent cron 链设计参考 | 🟡 2-3 周 | ✅ 已有笔记 `knowledge/Dev/agentradio-five-phase-orchestration.md`（08-02）|
 | **harness 特性沉淀** | 记录 Hermes harness 特性（tool surface/approval/fallback）为 skill | 🔴 本周 | ✅ 已有 skill `hermes-harness-profile`（08-02，OpenForgeRL 启示）|
 | **OS-Shepherd** | 收藏，未来 CUA 评估用 | 🟢 长期 | ✅ 已收藏于 07-31 核心贡献；**数据修正**：30-60×（非 30-60%）|
 | **记忆可信度加权** | Σ-Mem 论文：按可靠性加权记忆 → memory 体系借鉴 | 🟡 2-3 周 | ✅ 已融入 skill `context-management-bootstrapping` v2.2（可信度字段+加权投票）|

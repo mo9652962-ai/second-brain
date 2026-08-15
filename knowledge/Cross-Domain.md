@@ -156,7 +156,7 @@ PPT 设计(PPT-Design)
 模型研究(krea2-local-image-gen-study)
     + 本地部署(krea2-comfyui-deploy-notes)
     + GPU 硬件(RTX 4060 8GB)
-    + 设计应用(MOC-Design)
+    + 设计应用(MOC-Hardware)
     = 免费无限生图 → 接单/内容创作
 ```
 
@@ -219,7 +219,7 @@ SORT domain ASC
 | 🎯 **ponytail** | [[ponytail]] | 极简编程 / 方法论 |
 | 🔧 **show-me-the-story** | [[show-me-the-story]] | 长篇小说 / 去AI味 |
 | 🛠️ **ai-tools-reference** | [[ai-tools-reference]] | AI工具目录 / 设计 / 视频 |
-| 📋 **接单工作流-SOP** | [[knowledge/Academic/接单工作流-SOP]] | 学术 / 变现 / 交付 |
+| 📋 **接单工作流-SOP** | [[knowledge/Research/接单工作流-SOP]] | 学术 / 变现 / 交付 |
 | ⚖️ **eu-ai-act-2026-08-assessment** | [[knowledge/Research/eu-ai-act-2026-08-assessment]] | AI / 合规 / 多Agent |
 | 🎨 **krea2-local-image-gen-study** | [[knowledge/Research/krea2-local-image-gen-study]] | 设计 / 本地生图 / GPU |
 | 🧩 **cloudbase-learning-s1-login** | [[knowledge/Dev/cloudbase-learning-s1-login]] | 小程序 / 云开发 / 项目 |

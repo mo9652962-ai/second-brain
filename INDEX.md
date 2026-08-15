@@ -8,7 +8,7 @@ updated: 2026-08-08
 # 🗺️ vault 全局关联网
 
 > 这里是 Obsidian 仓库的完整结构图，从 HOME 出发，串联所有知识。
-> 2026-08-08 更新：知识域扩展至 14 个，622+ 笔记。
+> 2026-08-15 更新：知识域收敛至 7 个子域（10→7 合并：Research/Academic、Dev/AI、Hardware/Design）。
 
 ## 入口 → 所有节点
 
@@ -41,25 +41,17 @@ updated: 2026-08-08
 | [[MEMORY]] | 持久记忆（用户偏好/环境/教训） |
 | [[CHANGELOG]] | 变更记录 |
 
-## 知识域清单（knowledge/ 14 个子域）
+## 知识域清单（knowledge/ 7 个子域，2026-08-15 收敛：10→7）
 
 | 子域 | 内容 |
 |:---|:---|
-| Academic | 学术研究 |
-| AI | AI 技术与模型 |
-| arXiv | arXiv 论文 |
-| Archive | 归档 |
-| cards | 知识卡片 |
-| Content | 内容创作 |
-| Daily | 每日记录 |
-| Design | 设计 |
-| Dev | 开发 |
-| Hardware | 硬件（PCB/单片机） |
+| Research | 研究+学术（原 Research/Academic 合并） |
+| Dev | 开发+AI（原 Dev/AI 合并） |
+| Hardware | 硬件+设计（原 Hardware/Design 合并） |
 | Productivity | 效率 |
-| Python | Python 工具链 |
-| Research | 研究笔记（2026-08 密集写入） |
-| Tools | 工具参考（浏览器自动化/Awesome 列表等） |
-| writing-material | 写作素材 |
+| Daily | 每日记录 |
+| cards | 知识卡片 |
+| Archive | 归档 |
 | Cross-Domain.md | 跨域链接 |
 
 ## 项目与系统

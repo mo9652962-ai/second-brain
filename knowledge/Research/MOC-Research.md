@@ -107,7 +107,7 @@ created: 2026-08-09
 - [[ai-daily-2026-08-01-digest]]
 - [[AI早报学习-2026-08-08]]
 - [[knowledge/Daily/hackernews-2026-08-09|HN 08-09]] · [[knowledge/cards/2026-08-09-deepseek-v4-flash-arc-prize|知识卡片 08-09]]
-- [[knowledge/AI/prime-agent-rlm-2026-08-14|Prime Agent RLM 08-14]] · [[knowledge/cards/2026-08-14-prime-agent-rlm|知识卡片 08-14]]
+- [[knowledge/Dev/prime-agent-rlm-2026-08-14|Prime Agent RLM 08-14]] · [[knowledge/cards/2026-08-14-prime-agent-rlm|知识卡片 08-14]]
 
 ## 文章研读
 
@@ -185,3 +185,56 @@ created: 2026-08-09
 - [[agent-self-evolution-research-2026-08-12]]
 - [[skill-audit-2026-08-12]]
 - [[skill-authoring-best-practices-2026-08-12]]
+
+---
+
+## 🎓 学术域（原 Academic）
+
+# 📚 学术知识域 — 论文全生命周期
+
+> 🏠 [[HOME]] | 🗺️ [[INDEX]] | 📚 回到全局关联网
+
+---
+
+## 🎯 本域核心笔记
+
+| 笔记 | 简介 |
+|------|------|
+| [[knowledge/Research/Academic]] | 全领域索引 |
+| [[knowledge/Research/academic-service-research]] | 价格/平台/竞争分析 |
+| [[knowledge/Research/ai-monetization-costs]] | 闲鱼接单成本结构 |
+|| 💵 闲鱼定价策略 | 闲鱼接单成本结构（技能参考） |
+|| 🧪 方法论审计 | G5 可追溯 + 死亡判据（技能参考） |
+
+## 🆕 本周新增（07-27 ~ 08-02）
+
+| 笔记 | 简介 |
+|------|------|
+| [[knowledge/Research/降AI工具对比速查表]] | 零感/笔灵/森克兰特价格对比 |
+| [[knowledge/Research/接单工作流-SOP]] | 接单全流程标准化 |
+| [[knowledge/Research/论文Pipeline-数据契约]] | 报价/状态机/质量门禁（完整版） |
+| [[knowledge/Research/paper-pipeline-data-contract]] | 精简版 JSON 契约 |
+| [[knowledge/Research/闲鱼上架素材包-预生成]] | 商品文案/红线，复制即上架 |
+| [[knowledge/Research/闲鱼解封素材]] | 解封申诉素材 |
+| [[knowledge/Research/cnki-browser-plugin]] | 攻玉学术浏览器插件 |
+| [[knowledge/Research/researchpilot-skills]] | AI 科研 7 阶段 Skill 套件 |
+| [[knowledge/Research/eu-ai-act-2026-08-assessment]] | 8/2 生效合规评估（跨域） |
+
+---
+
+## 🔗 跨域关联
+
+- 🤖 [[knowledge/Dev/AI-Agent]] — AI 辅助论文写作
+- 🎨 [[knowledge/Hardware/PPT-Design]] — 论文答辩 PPT
+- 🏠 [[knowledge/Productivity/obsidian-tips]] — Obsidian 知识管理
+- 🔧 [[skills/hardware/PCB-Design-Automation-2026]] — 硬件设计自动化
+
+---
+
+## 📖 工作流
+
+1. [[pipelines/paper-pipeline]] — 从选题到投稿
+2. [[pipelines/pipeline-overview]] — 论文/PPT/技能编排
+
+---
+*MOC 节点 — 见图谱中的 📚 Academic 锚点*

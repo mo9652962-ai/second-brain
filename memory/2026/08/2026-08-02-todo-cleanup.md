@@ -12,7 +12,7 @@ date: 2026-08-02
 ### 1. DeepSeek v4-flash 探索项验证（2 项完成）
 - [x] **opencode-go 是否已自动切正式版** → ✅ 确认：cron jobs.json **26/26 任务已 pin 到 deepseek-v4-flash**
 - [x] **Cron 主力是否已换 v4-flash** → ✅ 确认：全部任务已用 v4-flash（成本更低 + Agent 更强）
-- 📄 更新：`knowledge/AI/deepseek-v4-flash-0731-upgrade.md` + `projects/current.md`（仅剩 Codex CLI 集成，排期 8/4+）
+- 📄 更新：`knowledge/Dev/deepseek-v4-flash-0731-upgrade.md` + `projects/current.md`（仅剩 Codex CLI 集成，排期 8/4+）
 
 ### 2. ERRORS.md 状态一致性修复
 - [x] **ERR-20260720-005**（memory_search embedding 超时）：已有 Resolution 记录（7/21 修复成功）但头部 Status 仍为 unresolved → **修正为 resolved**
@@ -30,7 +30,7 @@ date: 2026-08-02
 
 | 项 | 说明 | 预计耗时 |
 |:---|:-----|:---:|
-| **闲鱼上架「AI 代做 PPT」** | 素材包已就绪（`knowledge/Academic/闲鱼上架素材包-预生成.md`），**今日（8/2）到期** | 30min |
+| **闲鱼上架「AI 代做 PPT」** | 素材包已就绪（`knowledge/Research/闲鱼上架素材包-预生成.md`），**今日（8/2）到期** | 30min |
 | 主图制作 3 张 + 样例水印 | 依赖上架 | 20min |
 | 同步上架「论文排版/润色」 | 素材已有 | 15min |
 | 数学练习册定制文案 | 35元/份 | 10min |

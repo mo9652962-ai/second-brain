@@ -6,7 +6,7 @@ created: 2026-07-28
 
 # 🏠 效率域 — 生产力与方法论
 
-> 🏠 [[HOME]] | 🤖 [[knowledge/AI/MOC-AI]] | 📚 [[knowledge/Academic/MOC-Academic]]
+> 🏠 [[HOME]] | 🤖 [[knowledge/Dev/MOC-Dev]] | 📚 [[knowledge/Research/MOC-Research]]
 
 ## 🧠 核心工具
 - [[knowledge/Productivity/obsidian-tips]]

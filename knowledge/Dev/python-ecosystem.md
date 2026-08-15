@@ -50,4 +50,4 @@ Hermes 目前使用 **opencode-go** 作为主力 provider，Python 环境主要�
 - 练习册/docx 生成
 - 自定义工具（memory_tracker/dashboard）
 
-[[MOC-Dev]] · [[knowledge/AI/hermes-agent-ecosystem|Hermes 工具生态]]
+[[MOC-Dev]] · [[knowledge/Dev/hermes-agent-ecosystem|Hermes 工具生态]]

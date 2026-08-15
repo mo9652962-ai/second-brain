@@ -50,8 +50,8 @@ date: 2026-07-27
 | 操作 | 文件 |
 |:---:|:----|
 | ✅ 新建 | `knowledge/Dev/codebase-memory-mcp.md` |
-| ✅ 新建 | `knowledge/Design/hallmark.md` |
-| ✅ 新建 | `knowledge/Design/ibelick-ui-skills.md` |
+| ✅ 新建 | `knowledge/Hardware/hallmark.md` |
+| ✅ 新建 | `knowledge/Hardware/ibelick-ui-skills.md` |
 | ✅ 更新 | `knowledge/Dev/grok-build.md` (新增 ACP 对比 + 星标更新) |
 | ✅ 更新 | `knowledge/Dev/mattpocock-skills.md` (星标 + 关联更新) |
 | ✅ 更新 | `knowledge/knowledge-map.md` (4 处更新) |

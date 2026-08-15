@@ -29,7 +29,7 @@ type: vault-suggestion-executor
 
 ## 关键发现
 
-1. **素材 100% 就绪，瓶颈纯在操作**：素材包（knowledge/Academic/闲鱼上架素材包-预生成.md）+ 安全文案 v2（projects/ai-blogger/xianyu-safe-listings.md）完整可用，只需 sora 登录闲鱼复制上架。
+1. **素材 100% 就绪，瓶颈纯在操作**：素材包（knowledge/Research/闲鱼上架素材包-预生成.md）+ 安全文案 v2（projects/ai-blogger/xianyu-safe-listings.md）完整可用，只需 sora 登录闲鱼复制上架。
 2. **PPT 样例无法由我自动化产出**：已核实本机无 LibreOffice、无 python-pptx，pptx→png 渲染不可行；WPS 打开 → 导出图片是最短路径（每页截图 30 秒）。
 3. **新发现无关待办**（非闲鱼，仅供下次 suggestion-implementation 参考）：system-comparison-content.md 有内容发布待办（博客/视频/封面图），cloudbase-learning 系列有 4 个未部署云函数——均已有关联 cron/项目承接，不重复处理。
 

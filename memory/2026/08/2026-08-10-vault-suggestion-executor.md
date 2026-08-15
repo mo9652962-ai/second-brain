@@ -65,7 +65,7 @@ status: completed
 ## 关联
 
 - 操作清单：[[outputs/xianyu-master/上架素材包/上架操作清单]]
-- 文案模板：[[knowledge/Academic/闲鱼上架素材包-预生成]]
+- 文案模板：[[knowledge/Research/闲鱼上架素材包-预生成]]
 - 安全红线：[[projects/ai-blogger/xianyu-safe-listings]]
 - 项目状态：[[projects/current]]
 - 返回首页：[[HOME]]

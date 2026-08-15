@@ -14,10 +14,10 @@ source: daily-todo-executor cron
 | 2 | memory/2026/07/cron-improvement-plan.md · 每日吸收底线加入 cron 检查 | 标记完成 ✅ 已落地：daily-self-improvement 任务 prompt 已含「今日知识吸收检查」章节（jobs.json 实测确认） |
 | 3 | memory/2026/07/2026-07-31-daily-review.md · cron-improvement-plan 3 项转可跟踪任务 | 标记完成 ✅ 3 项全部落地：① 错峰调度已生效（cron-health-board 验证）② scripts/cron-retry-wrapper.sh 已落地 ③ 每日吸收底线已入 cron |
 | 4 | memory/2026/07/2026-07-31.md · memory-pruning 周六执行 | 标记完成 ✅ 8/1 已执行：扫描 memory/ 无 60 天前文件，无需归档（证据：2026-08-01.md L42） |
-| 5 | knowledge/AI/LLM-Providers.md · 容灾链第 9 级 deepseek-chat | 修正 → deepseek-v4-flash（旧别名已退役，对齐实际 config.yaml fallback 链第 8 项） |
-| 6 | knowledge/AI/LLM-Providers.md · 容灾链逻辑图 deepseek-chat | 修正 → deepseek-v4-flash |
-| 7 | knowledge/AI/LLM-Providers.md · config yaml 示例 deepseek-chat | 修正 → deepseek-v4-flash |
-| 8 | knowledge/AI/LLM-Providers.md · 更新记录 | 追加 2026-08-03 条目（weekly-learning L145 文档修复任务的 alias 部分 8/2 已由 fangzhou-ark-setup 实况备注完成） |
+| 5 | knowledge/Dev/LLM-Providers.md · 容灾链第 9 级 deepseek-chat | 修正 → deepseek-v4-flash（旧别名已退役，对齐实际 config.yaml fallback 链第 8 项） |
+| 6 | knowledge/Dev/LLM-Providers.md · 容灾链逻辑图 deepseek-chat | 修正 → deepseek-v4-flash |
+| 7 | knowledge/Dev/LLM-Providers.md · config yaml 示例 deepseek-chat | 修正 → deepseek-v4-flash |
+| 8 | knowledge/Dev/LLM-Providers.md · 更新记录 | 追加 2026-08-03 条目（weekly-learning L145 文档修复任务的 alias 部分 8/2 已由 fangzhou-ark-setup 实况备注完成） |
 
 **另确认（无需改动）**：
 - memory_search 性能观察（7/30、7/31 遗留）：gateway.log 无 embedding 相关错误、config.yaml 无残留 embeddingBatchTimeout → 修复后无新异常，观察项持续有效

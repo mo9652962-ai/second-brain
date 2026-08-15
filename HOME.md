@@ -7,7 +7,7 @@ created: 2026-08-09
 # 🏠 Home — 第二大脑入口
 
 > **知识网络从这里开始。** 每个知识域一个 MOC 锚点，全部双向链接。
-> 最后更新: 2026-08-13（每日知识库优化 + README 更新）
+> 最后更新: 2026-08-15（知识域收敛 10→7：Research/Academic、Dev/AI、Hardware/Design 合并，dreaming 压平）
 
 ---
 
@@ -20,12 +20,12 @@ created: 2026-08-09
 
 | 领域 | MOC | 说明 |
 |:---|:---|:---|
-| 🤖 AI / Agent | [[MOC-AI]] | AI Agent 研究、Hermes 自举、提示词 |
+| 🤖 AI / Agent | [[MOC-Dev]] | AI Agent 研究、Hermes 自举、提示词 |
 | 💻 开发 | [[MOC-Dev]] | Web 开发、工具链、DevOps |
-| 🔬 研究 | [[MOC-Research]] | 94 篇研究笔记（千轮研究/竞品/趋势）|
-| 🎓 学术 | [[MOC-Academic]] | 论文写作、降 AI 味、期刊 |
+| 🔬 研究 | [[MOC-Research]] | 136 篇研究笔记（含学术域）|
+| 🎓 学术 | [[MOC-Research]] | 论文写作、降 AI 味、期刊 |
 | ⚡ 硬件 | [[MOC-Hardware]] | PCB、单片机、嵌入式 |
-| 🎨 设计 | [[MOC-Design]] | UI 设计、水墨美学、主题 |
+| 🎨 设计 | [[MOC-Hardware]] | UI 设计、水墨美学、主题 |
 | 📈 生产力 | [[MOC-Productivity]] | 工作流、变现、闲鱼 |
 
 ## 📋 项目与日志

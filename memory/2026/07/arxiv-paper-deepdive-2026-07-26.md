@@ -131,5 +131,5 @@ parent: memory/2026/07/arxiv-agent-llm-2026-07-26.md
 ## 关联
 
 - 完整论文列表: [[memory/2026/07/arxiv-agent-llm-2026-07-26|arXiv AI Agent / LLM 论文周报 2026-07-26]]
-- 技术栈: [[knowledge/AI/AI-Agent|AI-Agent 知识域]]
+- 技术栈: [[knowledge/Dev/AI-Agent|AI-Agent 知识域]]
 - 相关 Skill: systematic-debugging, hermes-agent

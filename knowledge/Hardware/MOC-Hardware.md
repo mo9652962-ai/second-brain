@@ -6,7 +6,7 @@ created: 2026-07-28
 
 # 🔧 硬件域 — PCB/CAD/嵌入式
 
-> 🏠 [[HOME]] | 💻 [[knowledge/Dev/MOC-Dev]] | 🤖 [[knowledge/AI/MOC-AI]]
+> 🏠 [[HOME]] | 💻 [[knowledge/Dev/MOC-Dev]] | 🤖 [[knowledge/Dev/MOC-Dev]]
 
 - [[knowledge/Hardware/CAD-Design]]
 - [[knowledge/Hardware/pcb-design-notes]]
@@ -21,3 +21,25 @@ created: 2026-07-28
 
 - [[knowledge/Hardware/jlc-mcp-setup]] — 嘉立创 EDA AI 自动化（38 工具）
 - [[knowledge/Hardware/opencut]] — 开源视频剪辑（备查）
+
+---
+
+## 🎨 设计域（原 Design）
+
+# 🎨 设计域 — PPT 与视觉
+
+> 🏠 [[HOME]] | 📚 [[knowledge/Research/MOC-Research]] | 🏠 [[knowledge/Productivity/obsidian-tips]]
+
+- [[knowledge/Hardware/PPT-Design]]
+- [[knowledge/Hardware/desktop-beautify]]
+- [[knowledge/Hardware/ai-tools-reference]]
+- [[knowledge/Hardware/hallmark]] — 57 道反 AI Slop 检测门
+- [[knowledge/Hardware/ibelick-ui-skills]] — 设计工程师 Agent Skills
+
+## 🆕 本周新增
+
+- [[knowledge/Research/krea2-local-image-gen-study]] — 本地生图研究
+- [[knowledge/Research/krea2-comfyui-deploy-notes]] — 本地部署踩坑记录
+- [[knowledge/Hardware/PPT-Design]] — 趋势/工具/方法论更新
+
+🔗 关联：[[skills/@j-feng12/academic-presentation/SKILL.md]] · [[knowledge/Research/MOC-Research|🔬 研究域]]

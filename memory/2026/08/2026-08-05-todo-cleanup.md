@@ -18,7 +18,7 @@ type: todo-cleanup
 
 | # | 事项 | 处理 | 证据 |
 |:-:|:-----|:-----|:-----|
-| 1 | **Codex CLI 集成**（deepseek-v4-flash 探索项最后一块） | ✅ 完成并标记 `[x]` | `npm install -g @openai/codex` 成功，`codex-cli 0.146.0` 可用（node v22.23.2/npm 12.0.2）；更新 `knowledge/AI/deepseek-v4-flash-0731-upgrade.md` L55 + `projects/current.md` |
+| 1 | **Codex CLI 集成**（deepseek-v4-flash 探索项最后一块） | ✅ 完成并标记 `[x]` | `npm install -g @openai/codex` 成功，`codex-cli 0.146.0` 可用（node v22.23.2/npm 12.0.2）；更新 `knowledge/Dev/deepseek-v4-flash-0731-upgrade.md` L55 + `projects/current.md` |
 | 2 | **arxiv-summarize 动态拓扑核查**（manta-topology-review L138） | ✅ 完成并标记 `[x]` | jobs.json 核查：arxiv-summarize prompt 已含「拓扑+动态」，无需再改 |
 | 3 | **projects/current.md 排期刷新** | ✅ 6 处替换 | 闲鱼三件套排期 8/4 → **8/5（连续顺延第 5 天）**；Codex 子项状态更新；frontmatter updated=2026-08-05 |
 | 4 | **MEMORY.md 排期刷新** | ✅ 2 处替换 | 闲鱼排期 8/3→**8/5**、小红书 8/3→**8/5+** |

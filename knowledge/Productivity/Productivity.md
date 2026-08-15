@@ -25,6 +25,6 @@ status: adopted
 
 ## 关联域
 
-- **[[knowledge/Design/PPT-Design|Design]]** — PPT 制作（输出型生产力）
-- **[[knowledge/Academic/Academic|Academic]]** — 学术写作（学术型生产力）
-- **[[knowledge/AI/AI-Agent|AI]]** — Agent 自动化（技术型生产力）
+- **[[knowledge/Hardware/PPT-Design|Design]]** — PPT 制作（输出型生产力）
+- **[[knowledge/Research/Academic|Academic]]** — 学术写作（学术型生产力）
+- **[[knowledge/Dev/AI-Agent|AI]]** — Agent 自动化（技术型生产力）

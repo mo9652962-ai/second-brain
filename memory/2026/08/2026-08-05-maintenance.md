@@ -35,7 +35,7 @@ date: 2026-08-05
 
 ## 三、保留项
 
-- `memory/dreaming/deep/2026-08-04.md`（<200B 但有实质内容 "Repaired recall artifacts"，非空壳，保留）
+- `memory/dreaming/deep-2026-08-04.md`（<200B 但有实质内容 "Repaired recall artifacts"，非空壳，保留）
 - 其余 dreaming/light|rem 笔记均有实质内容，无空壳
 
 ## 四、验证

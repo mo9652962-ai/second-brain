@@ -42,11 +42,11 @@ updated: 2026-08-05
 ### 5. AI 变现路径规划（素材齐备，待上架）
 - [x] 六大路径市场调研
 - [x] 价格定位分析
-- [x] 接单工作流 SOP（knowledge/Academic/接单工作流-SOP.md）
-- [x] 论文 Pipeline 数据契约（knowledge/Academic/论文Pipeline-数据契约.md）
-- [x] 闲鱼解封素材（knowledge/Academic/闲鱼解封素材.md）
+- [x] 接单工作流 SOP（knowledge/Research/接单工作流-SOP.md）
+- [x] 论文 Pipeline 数据契约（knowledge/Research/论文Pipeline-数据契约.md）
+- [x] 闲鱼解封素材（knowledge/Research/闲鱼解封素材.md）
 - [x] 降AI工具对比（零感AI 1元/千字为主力，笔灵AI备用）
-- [x] 闲鱼上架素材包预生成（knowledge/Academic/闲鱼上架素材包-预生成.md）✅ 7/30
+- [x] 闲鱼上架素材包预生成（knowledge/Research/闲鱼上架素材包-预生成.md）✅ 7/30
 - [x] 闲鱼安全文案 v2 升级（暗号版+去价格+引导私聊）✅ 7/29
 
 ### 6. 本周工具/知识落地（7/28–8/1）

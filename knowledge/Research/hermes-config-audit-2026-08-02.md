@@ -34,7 +34,7 @@ status: report
 
 ### A. 知识库文档（knowledge/）
 
-#### 1. `knowledge/AI/LLM-Providers.md` — 严重过时（updated 仍为 07-23）
+#### 1. `knowledge/Dev/LLM-Providers.md` — 严重过时（updated 仍为 07-23）
 | 文档写的 | 实际 | 影响 |
 |---------|------|------|
 | 主力模型 `deepseek-v4-flash` / opencode-go | `deepseek-v4-pro` / custom:fangzhou-2（default_model=doubao-seed-2-0-pro/fangzhou-1） | 主模型已切换为方舟，文档还停在 opencode-go 时代 |
@@ -45,11 +45,11 @@ status: report
 | 环境变量列出 OPENROUTER_API_KEY | OpenRouter 07-26 已从 fallback 移除 | key 残留在 .env 未清理 |
 | 未覆盖 | auxiliary 10 项、model_aliases 9 项、smart_model_routing、vision 块 | 文档缺整块新配置 |
 
-#### 2. `knowledge/AI/hermes-agent-ecosystem.md` — 轻微偏差
+#### 2. `knowledge/Dev/hermes-agent-ecosystem.md` — 轻微偏差
 - "opencode-go | 主 provider（deepseek-v4-flash/pro）🟢 通过火山方舟" → **混淆**：opencode-go 是独立网关 `https://opencode.ai/zen/go/v1`，并非"通过火山方舟"；当前主默认已是方舟（fangzhou-1/2）
 - "Cron 任务: 28 个" ✅ 正确，无需改
 
-#### 3. `knowledge/AI/deepseek-v4-flash-0731-upgrade.md` — 基本准确
+#### 3. `knowledge/Dev/deepseek-v4-flash-0731-upgrade.md` — 基本准确
 - "26 个 cron 任务已全部 pin 到 v4-flash" → 实际 28 个任务中 26 个 pin（2 个未指定模型）。建议改为"26/28"避免误读总任务数。
 
 ### B. 技能文档（skills/）
@@ -86,14 +86,14 @@ status: report
 
 | 优先级 | 文件 | 改动内容 |
 |:---:|------|---------|
-| P0 | `knowledge/AI/LLM-Providers.md` | 全面重写：主力模型=方舟双账户、fallback 末级=v4-flash、cron=28、skills=193、补 auxiliary/aliases 章节 |
+| P0 | `knowledge/Dev/LLM-Providers.md` | 全面重写：主力模型=方舟双账户、fallback 末级=v4-flash、cron=28、skills=193、补 auxiliary/aliases 章节 |
 | P0 | `hermes/fangzhou-ark-setup/SKILL.md` | 第 87-88 行 alias pro/flash 改 `custom:fangzhou-2` |
 | P1 | `hermes-smart-model-router/SKILL.md` | 主模型去掉 ark-code-latest、视觉模型改 doubao-vision-pro-32k-241028、auxiliary provider 改 fangzhou-2 |
-| P1 | `knowledge/AI/hermes-agent-ecosystem.md` | 修正 opencode-go"通过火山方舟"表述，标注当前主 provider=方舟 |
+| P1 | `knowledge/Dev/hermes-agent-ecosystem.md` | 修正 opencode-go"通过火山方舟"表述，标注当前主 provider=方舟 |
 | P2 | `hermes-model-strengths/SKILL.md` | fallback ⑧ 级去掉 OpenRouter，改为 deepseek-v4-flash 直连 |
 | P2 | `low-cost-model-guide/SKILL.md` | 去掉 OpenRouter 三路表述 |
 | P2 | `model-supplier-strategy/SKILL.md` | 主模型行去掉 ark-code-latest，注明实际两个 default |
-| P2 | `knowledge/AI/deepseek-v4-flash-0731-upgrade.md` | "26 个"改为"26/28 个 cron 任务" |
+| P2 | `knowledge/Dev/deepseek-v4-flash-0731-upgrade.md` | "26 个"改为"26/28 个 cron 任务" |
 
 ---
 

@@ -38,8 +38,8 @@ created: 2026-08-13
 |------|--------|
 | `knowledge/Cross-Domain.md` | 4 |
 | `knowledge/knowledge-map.md` | 14 |
-| `knowledge/Academic/MOC-Academic.md` | 16 |
-| `knowledge/Design/MOC-Design.md` | 9 |
+| `knowledge/Research/MOC-Research.md` | 16 |
+| `knowledge/Hardware/MOC-Hardware.md` | 9 |
 | `knowledge/Hardware/MOC-Hardware.md` | 10 |
 | `knowledge/Productivity/MOC-Productivity.md` | 15 |
 | `memory/.archive/2026-07-26-maintenance.md` | 1 |
@@ -48,15 +48,15 @@ created: 2026-08-13
 
 | 文件 | 修复前 | 修复后 |
 |------|--------|--------|
-| `TOOLS.md:38` | `[[knowledge/AI-Workflow]]` | `[[knowledge/AI/AI-Workflow]]` |
+| `TOOLS.md:38` | `[[knowledge/AI-Workflow]]` | `[[knowledge/Dev/AI-Workflow]]` |
 | `knowledge/cards/2026-07-31-openforgerl.md:11` | `[[knowledge/arxiv-2026-07-31-core-contributions]]` | `[[arxiv-2026-07-31-core-contributions]]` |
-| `knowledge/AI/MOC-AI.md:20` | `[[knowledge/AI/Vibe-Coding\|Vibe Coding 哲学]]` | `[[Vibe-Coding]]` |
+| `knowledge/Dev/MOC-Dev.md:20` | `[[knowledge/Dev/Vibe-Coding\|Vibe Coding 哲学]]` | `[[Vibe-Coding]]` |
 
 ### 2.3 技能引用标注（1 文件）
 
 | 文件 | 修复 |
 |------|------|
-| `knowledge/AI/agentradio-five-phase-orchestration.md:106` | `[[hermes-automation-patterns]]` → 标注"(技能)" |
+| `knowledge/Dev/agentradio-five-phase-orchestration.md:106` | `[[hermes-automation-patterns]]` → 标注"(技能)" |
 
 ## 3. 剩余"断裂"链接分析
 
@@ -95,7 +95,7 @@ created: 2026-08-13
 
 ## 5. 建议后续维护
 
-1. **MOC 链接风格统一**：部分 MOC 使用全路径 `[[knowledge/AI/AI-Agent]]`，部分使用短名 `[[AI-Agent]]`。建议统一为短名（Obsidian 默认 shortest path 解析）
+1. **MOC 链接风格统一**：部分 MOC 使用全路径 `[[knowledge/Dev/AI-Agent]]`，部分使用短名 `[[AI-Agent]]`。建议统一为短名（Obsidian 默认 shortest path 解析）
 2. **.archive 文件清理**：`memory/.archive/` 下有大量历史维护日志，可考虑定期归档压缩
 3. **C 代码标签隔离**：`8051-MCU.md` 中的 C 代码 `#include`/`#define` 被 Obsidian 识别为标签，可用 ` ```c ` 代码块包裹避免
 
