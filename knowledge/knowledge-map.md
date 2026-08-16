@@ -166,7 +166,7 @@ graph TD
 
 | 域 | 新增重点 | 入口 |
 |:---|:---------|:-----|
-| 🤖 Dev | **AgentScope 评测放量**（小君 AI 测评/架构参考 PawBench/深度测试/部署测试 4 篇）+ AI 测评内容素材库 + harness 十轮强化/联合工作 + 墨题 P0/P1 设计稿 + Token 节省千轮研究 | [[knowledge/Dev/agentscope-小君AI测评-千轮研究-2026-08-15]] · [[knowledge/Dev/墨题-P0错题AI诊断设计稿-2026-08-15]] |
+| 🤖 Dev | **AgentScope 评测放量**（小君 AI 测评/架构参考 PawBench/深度测试/部署测试 4 篇）+ AI 测评内容素材库 + harness 十轮强化/联合工作 + 墨题 P0/P1 设计稿 + Token 节省千轮研究 + **GitHub Trending 精选 4 篇**（diagram-design 图表/needle 端侧模型/google-skills/code-graph-rag） | [[knowledge/Dev/agentscope-小君AI测评-千轮研究-2026-08-15]] · [[knowledge/Dev/墨题-P0错题AI诊断设计稿-2026-08-15]] · [[knowledge/Dev/diagram-design-2026-08-16]] · [[knowledge/Dev/needle-tiny-model-2026-08-16]] · [[knowledge/Dev/google-skills-2026-08-16]] · [[knowledge/Dev/code-graph-rag-2026-08-16]] |
 | 🔬 Research | GitHub-Weekly-08-16 + arXiv 08-16 补全 15 篇（SkillEvo/CrEST/Faraday）+ 研究跟踪器归位 ×3 + 剪映转场教程归位 | [[knowledge/Research/GitHub-Weekly-2026-08-16]] · [[knowledge/Research/arxiv-2026-08-16-agent-llm]] |
 | 🧠 人设 | k-soul-persona 2026-08-15 迭代（浓亲密度 + 负面情绪许可 + 口头禅 5 条） | [[knowledge/Dev/k-soul-persona-2026-08-15]] |
 | 📈 Finance | 每日股票分析 cron 落地（akshare → DeepSeek → 知识库） | [[knowledge/Finance/每日股票分析-2026-08-15]] |
@@ -178,7 +178,8 @@ graph TD
 2. **AgentScope 评测矩阵** — 小君 AI 千轮测评 + PawBench 架构参考 + 深度测试 + 部署测试四连，沉淀 AI 测评内容素材库
 3. **墨题 P0/P1 设计** — 错题 AI 诊断设计稿（12 分类归因）+ AI 服务层架构（3 库模式/DPAPI/降级链）+ career-ops 借鉴
 4. **闲鱼 8/17 决策** — P0 上架连续顺延至 8/17 最后期限，素材已 100% 就绪
-5. **股票分析 cron 上线** — 每日 18:00 akshare 采集 → DeepSeek 决策报告 → knowledge/Finance/
+5. **股票分析 cron 上线** — 每日 18:00 akshare 采集 → DeepSeek 决策报告 → knowledge/Finance/
+6. **GitHub Trending 精选** — diagram-design（+14.7k 增长王，无 Mermaid-slop 图表）/ needle（14MB 端侧模型）/ google/skills（Agent Skills 官方生态）/ code-graph-rag（代码图谱 RAG），周报见 [[../memory/2026/08/github-trending-w34|W34 GitHub 周报]]
 
 ---
 ## ① 💻 工程与开发
@@ -217,7 +218,11 @@ Matt Pocock 方法论     Grill+TDD 工作流
 ||| 自改进RLM Agent (W33) | [[prime-agent-rlm-2026-08-14]] ⭐ | memory/skills/cron 自举 | 🟡 关注 |
 ||| 图原生+可审计 (W33) | [[semantica-graph-native-2026-08-14]] ⭐ | graphify/Obsidian | 🟡 关注 |
 ||| 生产级技能(W33) | [[agent-skills-addyosmani-2026-08-14]] ⭐ | Hermes skills 治理 | 🟢 参考 |
-||| Agent 云电脑 (W33) | [[cloudflare-computer-2026-08-14]] | browser-automation | 🔵 关注 |
+||| Agent 云电脑 (W33) | [[cloudflare-computer-2026-08-14]] | browser-automation | 🔵 关注 |
+||| 编辑级图表 (W34) | [[diagram-design-2026-08-16]] ⭐ | ppt-design/baoyu-infographic | 🟢 参考 |
+||| 端侧 14MB 模型 (W34) | [[needle-tiny-model-2026-08-16]] ⭐ | 本地LLM/边缘AI | 🟡 关注 |
+||| Google 官方 Skills (W34) | [[google-skills-2026-08-16]] ⭐ | Agent Skills 标准 | 🔵 关注 |
+||| 代码图谱 RAG (W34) | [[code-graph-rag-2026-08-16]] | code-review-graph MCP | 🔵 关注 |
 || **AI Agent 深度研究** 🔥 | `.learnings/LEARNINGS.md`
 | **Context Engineering** | LRN-20260724-001 | SOUL.md/MEMORY.md | 🟡 理解 |
 | **Multi-Agent 编排** | LRN-20260724-003 | Skill Workshop | 🟡 理解 |

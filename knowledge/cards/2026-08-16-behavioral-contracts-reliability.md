@@ -38,8 +38,8 @@ status: fresh
 ## 行动项
 
 - [x] **结论已落地**：现有跨 relay 独立供应商 fallback 链符合「换模型才有效」结论（配置先于论文做对了）
-- [ ] **审计 + 文档化**：审计 Hermes 模型容灾链，确认无「同供应商多模型」组合，并把「跨 relay 兜底理由」写进配置文档（待办）
-- [ ] **方法论沉淀**：预注册 + 确定性评分方法论 → 补进 agent-self-evaluation 技能参考（待办）
+- [x] **审计 + 文档化**：审计 Hermes 模型容灾链，确认无「同供应商多模型」组合，并把「跨 relay 兜底理由」写进配置文档（待办）→ ✅ **2026-08-16 已执行**：审计结论=生效链三家独立供应商 ✓，跨 relay 兜底理由已文档化于 `knowledge/Dev/hermes-model-fallback-audit-2026-08-16.md`；发现旧配置 `~/.hermes/config.yaml` 有 moonshot 同供应商 failover（P3 待清理）
+- [x] **方法论沉淀**：预注册 + 确定性评分方法论 → 补进 agent-self-evaluation 技能参考（待办）→ ✅ **2026-08-16 已执行**：ecc-agent-self-evaluation 新增「预注册 + 确定性评分方法论」章节（三要素 + 评估用法 + 自检问题），备份 `.temp/skill-bak/agent-self-evaluation-SKILL.md.bak-20260816`
 
 ## 为什么重要
 

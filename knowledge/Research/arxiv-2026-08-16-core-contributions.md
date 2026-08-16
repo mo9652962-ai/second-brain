@@ -240,10 +240,10 @@ SkillEvo 双支柱
 
 ## 落地行动清单
 
-- [ ] **待办**：Reconcile Once → Obsidian 知识管护轻量版评估——给 knowledge/ 笔记引入「权威值」标注（同一指标多处引用时以最高信任来源为准），试点 1 个月
-- [ ] **待办**：Behavioral Contracts II → 审计 Hermes 模型容灾链，确认不存在「同供应商多模型」fallback 组合（跨 relay 独立供应商组合已正确，需文档化理由）
-- [ ] **待办**：SkillEvo → 给技能维护流程（knowledge-absorption）增加「多轮模拟追问」反馈环节：新技能/大改技能后用 3-5 轮连续追问验证，而非单次评测
-- [ ] **待办**：Behavioral Contracts II 的预注册 + 确定性评分方法论 → 沉淀到 agent-self-evaluation 技能参考
+- [x] **待办**：Reconcile Once → Obsidian 知识管护轻量版评估——给 knowledge/ 笔记引入「权威值」标注（同一指标多处引用时以最高信任来源为准），试点 1 个月 → ✅ **2026-08-16 已执行**：knowledge-absorption 技能新增「权威值标注」试点规则（触发/标注/冲突处理/不扩散，试点至 2026-09-16 评估）
+- [x] **待办**：Behavioral Contracts II → 审计 Hermes 模型容灾链，确认不存在「同供应商多模型」fallback 组合（跨 relay 独立供应商组合已正确，需文档化理由）→ ✅ **2026-08-16 已执行**：审计结论=生效链三家独立供应商 ✓；跨 relay 兜底理由文档化于 `knowledge/Dev/hermes-model-fallback-audit-2026-08-16.md`
+- [x] **待办**：SkillEvo → 给技能维护流程（knowledge-absorption）增加「多轮模拟追问」反馈环节：新技能/大改技能后用 3-5 轮连续追问验证，而非单次评测 → ✅ **2026-08-16 已执行**：knowledge-absorption 新增「多轮模拟追问反馈环节」章节（5 步做法）
+- [x] **待办**：Behavioral Contracts II 的预注册 + 确定性评分方法论 → 沉淀到 agent-self-evaluation 技能参考 → ✅ **2026-08-16 已执行**：ecc-agent-self-evaluation 新增「预注册 + 确定性评分方法论」章节
 
 ## 延伸阅读
 
