@@ -201,4 +201,4 @@ skill_manage(action='create'|'patch'|'edit') → 维护知识
 - **[[../../memory/2026/07/arxiv-agent-llm-2026-07-26|2026-07-26 周报]]**（NOOA, PATS, GRADRAG, Euclid-MCP, PRO-LONG, AgentDebugX 等 39 篇）
 
 ---
-> 关联: [[AI-Workflow]] · [[ai-workflow-guide]] · [[LLM-Providers]] · [[Cross-Domain|🔀 知识地图]] · [[k-self-improvement]] · [[self-improvement-guide]] | [[HOME|🏠 首页]]
+> 关联: [[AI-Workflow]] · [[ai-tools-landscape]] · [[LLM-Providers]] · [[Cross-Domain|🔀 知识地图]] · [[k-self-improvement]] · [[self-improvement-guide]] | [[HOME|🏠 首页]]
