@@ -7,7 +7,7 @@ created: 2026-08-09
 # 🏠 Home — 第二大脑入口
 
 > **知识网络从这里开始。** 每个知识域一个 MOC 锚点，全部双向链接。
-> 最后更新: 2026-08-15（知识域收敛 10→7：Research/Academic、Dev/AI、Hardware/Design 合并，dreaming 压平）
+> 最后更新: 2026-08-16（W34 周度整理：memory 归位 + MOC 补链 + Finance MOC 新建）
 
 ---
 
@@ -43,6 +43,7 @@ created: 2026-08-09
 - [[memory/2026/08/weekly-learning-2026-08-14|📚 W33 周学习回顾]] — Agent 前沿对照 + 刷题机竞品两轮 + 成本根因闭环
 - [[memory/2026/08/2026-08-15-daily-review|📋 08-15 每日回顾]] — 内容变现资产大放量：AgentScope 测试+PR、AI测评素材库、墨题 P0/P1、harness 十轮；闲鱼距 8/17 决策剩 2 天
 - [[knowledge/Research/arxiv-2026-08-16-agent-llm|arXiv 今日速览]] — 15 篇 AI Agent/LLM 论文（08-13 池补全：SkillEvo/CrEST/Reconcile Once/Faraday）
+- [[memory/2026/08/weekly-2026-08-16|📚 W34 周度整理]] — memory 归位 6 + research 归位 3 + MOC×5 更新 + Finance MOC 新建
 
 ## 🧭 核心区域
 

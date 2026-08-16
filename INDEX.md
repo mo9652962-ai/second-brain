@@ -2,7 +2,7 @@
 tags: [MOC, index, vault-guide]
 domain: home
 created: 2026-07-25
-updated: 2026-08-08
+updated: 2026-08-16
 ---
 
 # 🗺️ vault 全局关联网
@@ -22,12 +22,12 @@ updated: 2026-08-08
               ▼                ▼                ▼
       ┌────────────┐   ┌──────────────┐   ┌───────────┐
       │ 📚 知识域  │   │ 📋 项目      │   │ 🧩 系统    │
-      │ 14 个子域  │   │ projects/    │   │ 配置/脚本  │
-      │ 622+ 笔记  │   │ 知识点       │   │ 文档/模板  │
+      │ 7 个子域   │   │ projects/    │   │ 配置/脚本  │
+      │ 690+ 笔记  │   │ 知识点       │   │ 文档/模板  │
       └─────┬──────┘   └──────────────┘   └─────┬─────┘
             │                                   │
             ▼                                   ▼
-  knowledge/ 14 域                system/ docs/ scripts/
+  knowledge/ 7 域                 system/ docs/ scripts/
   (含 knowledge-map.md MOC)       templates/ playbooks/
 ```
 

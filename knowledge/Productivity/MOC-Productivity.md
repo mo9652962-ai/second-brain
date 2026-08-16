@@ -30,3 +30,10 @@ created: 2026-07-28
 - [[pipelines/pipeline-overview]]
 - [[skills/hermes/hermes-workflow-preferences]]
 - [[skills/hermes/daily-knowledge-absorption-gate]]
+
+## 🆕 W34 新增补链（2026-08-16 周度整理）
+
+- [[knowledge/Productivity/token-usage-report-20260802|Token 用量报告 08-02]]
+- [[knowledge/Productivity/token-usage-report-20260814|Token 用量报告 08-14]] — W33 成本根因闭环
+- [[knowledge/Productivity/vault-health-baseline|Vault 健康基线]]
+- [[knowledge/Productivity/workbuddy-bluebook|WorkBuddy 蓝皮书]]
