@@ -51,7 +51,7 @@ updated: 2026-08-16
 - [[goutoujunshi-study]] — 狗头军师：验证 + 吸收
 - [[negative-results-registry-study]] — AI 协作阴性结果登记册
 - [[skillhub-5skills-study]] — SkillHub 精选 5 技能
-- [[openfic-study]] — OpenFic 上下文压缩研究（+ [[openfic-absorbed|吸收笔记]]）
+- [[openfic-study]] — OpenFic 上下文压缩研究（+ [[openfic-study|吸收笔记]]）
 - [[system-design-primer-study]] — 系统设计 primer 研读（对照 [[system-design-primer|Dev 速览版]]）
 - [[python-100-days-study]] — Python-100-Days 学习路线评估
 - [[free-programming-books-zh-study]] — 400 本免费中文编程书
