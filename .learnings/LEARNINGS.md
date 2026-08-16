@@ -1539,6 +1539,11 @@ Tavily API 用量配额耗尽 (432 plan limit exceeded) — 搜索主力后端�
 - **复现**: 8/14 自改进 cron 首次 web_search 即返回 432 (plan limit exceeded)。**Firecrawl 当场无缝接管**，搜索任务未阻塞——验证 5 路冗余降级可靠性。
 - **结论**: 此模式为 `Recurrence-Count: 2`，已确认周期性复发，非偶发。**语义缓存 (0.92 嵌入相似度阈值) 落地成为下一步优先级**，以根除高频搜索导致的配额耗尽，而非每次靠降级兜底。
 
+### 2026-08-16 Recurrence Note (3rd independent confirmation)
+- **复现**: 8/16 自改进 cron 首次 tavily_search 即返回 432。Firecrawl 再次无缝接管，搜索未阻塞。
+- **结论**: `Recurrence-Count: 3`。3 次独立确认，配额周期性耗尽已成常态而非异常。语义缓存仍是唯一治本方案，但 5 路冗余降级已反复证明足够可靠，可低位处理。
+- **附带观察**: Firecrawl 关键时刻搜索结果质量足够（firecrawl.dev 官方趋势 + symphony-solutions 深度报告），可作为 Tavily 之外的常态主力候选，不只当 fallback。
+
 ---
 
 ## [LRN-20260806-001] best_practice
@@ -1648,6 +1653,37 @@ GitHub Token 401 真因：config.yaml token 与 git 凭据管理器是两份独�
 ### Resolution
 - **Resolved**: 2026-08-05T08:40:00+08:00
 - **Notes**: 故障 J 已固化进 hermes-automation-patterns skill；本条为 .learnings 归档（8/4 当日漏记，8/5 补）。
+
+---
+
+## [LRN-20260816-001] knowledge_gap
+
+**Logged**: 2026-08-16T13:49:00+08:00
+**Priority**: medium
+**Status**: active
+**Area**: tools
+
+### Summary
+MCP token 开销远超 CLI/直接 API：CLI ~200 token/命令 vs MCP 32K-82K token，日常工具调用应优先 CLI
+
+### Details
+1. MCP 相比 CLI 有显著 token 开销（schema loading + context cost）
+2. Perplexity 内部已验证此问题，弃 MCP 改用直接 API + CLI
+3. Firecrawl 数据显示 MCP token 差：CLI 200 token/命令 vs MCP 32,000-82,000 token 等效操作
+4. 但 MCP 在 OAuth、多租户、企业治理场景仍是正确选择（2026 复苏，单月 +35% 用量）
+5. 对 Claude Code 类 agent，path-scoped rules + CLAUDE.md trimming + model routing 可砍 token 成本 77-91%
+
+### Suggested Action
+- 工具调用优先 CLI/直接 API（控 token），MCP 仅用于需要 OAuth/多租户/治理的场景
+- 与 LRN-20260721-009 (agent 互操作标准) 互补理解
+
+### Metadata
+- Source: firecrawl_search (firecrawl.dev)
+- Tags: mcp, cli, token-efficiency, cost-optimization
+- Pattern-Key: tools.mcp-token-overhead
+- Recurrence-Count: 1
+- First-Seen: 2026-08-16
+- Last-Seen: 2026-08-16
 
 ---
 
