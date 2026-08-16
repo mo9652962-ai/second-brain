@@ -10,7 +10,7 @@ status: adopted
 
 > 入口: [[Home|🏠 Home]] · 返回总索引
 
-> 所有知识领域的索引与关联。最后更新: 2026-08-16（知识链分支整合 10→7 域：Academic→Research、AI→Dev、Design→Hardware，dreaming 压平））
+> 所有知识领域的索引与关联。最后更新: 2026-08-16（W34 周度整理：MOC 补链 + Finance MOC 创建 + memory 归位）
 
 ---
 
@@ -157,6 +157,30 @@ graph TD
 
 ---
 
+
+## 🆕 W34 新增速览（2026-08-15 ~ 08-16）
+
+> 本周主线：知识域收敛 10→7（08-15 refactor）+ AgentScope 评测资产放量 + 墨题 P0/P1 设计 + harness 十轮强化 + 闲鱼 8/17 决策倒计时。整理报告见 [[../memory/2026/08/weekly-2026-08-16|W34 周度整理]]。
+
+### 各域本周新增
+
+| 域 | 新增重点 | 入口 |
+|:---|:---------|:-----|
+| 🤖 Dev | **AgentScope 评测放量**（小君 AI 测评/架构参考 PawBench/深度测试/部署测试 4 篇）+ AI 测评内容素材库 + harness 十轮强化/联合工作 + 墨题 P0/P1 设计稿 + Token 节省千轮研究 | [[knowledge/Dev/agentscope-小君AI测评-千轮研究-2026-08-15]] · [[knowledge/Dev/墨题-P0错题AI诊断设计稿-2026-08-15]] |
+| 🔬 Research | GitHub-Weekly-08-16 + arXiv 08-16 补全 15 篇（SkillEvo/CrEST/Faraday）+ 研究跟踪器归位 ×3 + 剪映转场教程归位 | [[knowledge/Research/GitHub-Weekly-2026-08-16]] · [[knowledge/Research/arxiv-2026-08-16-agent-llm]] |
+| 🧠 人设 | k-soul-persona 2026-08-15 迭代（浓亲密度 + 负面情绪许可 + 口头禅 5 条） | [[knowledge/Dev/k-soul-persona-2026-08-15]] |
+| 📈 Finance | 每日股票分析 cron 落地（akshare → DeepSeek → 知识库） | [[knowledge/Finance/每日股票分析-2026-08-15]] |
+| 🏗️ 结构 | 知识域 10→7 收敛（Academic→Research、AI→Dev、Design→Hardware）+ dreaming 压平 + 全仓引用修复 | [[knowledge/Cross-Domain]] |
+
+### 本周关键主题
+
+1. **知识域收敛 10→7** — 08-15 大型 refactor：49 篇迁移、MOC 合并、dreaming 三层压平（light/rem/deep → 前缀命名）
+2. **AgentScope 评测矩阵** — 小君 AI 千轮测评 + PawBench 架构参考 + 深度测试 + 部署测试四连，沉淀 AI 测评内容素材库
+3. **墨题 P0/P1 设计** — 错题 AI 诊断设计稿（12 分类归因）+ AI 服务层架构（3 库模式/DPAPI/降级链）+ career-ops 借鉴
+4. **闲鱼 8/17 决策** — P0 上架连续顺延至 8/17 最后期限，素材已 100% 就绪
+5. **股票分析 cron 上线** — 每日 18:00 akshare 采集 → DeepSeek 决策报告 → knowledge/Finance/
+
+---
 ## ① 💻 工程与开发
 
 | 领域 | 笔记 | 相关 skill | 掌握程度 |

@@ -91,3 +91,26 @@ updated: 2026-07-30
 - [[knowledge/Dev/ai-psychosis-sycophancy-absorbed|AI Sycophancy 吸收]] — 谄媚/精神病现象自检
 - [[knowledge/Dev/methodology-extraction-absorbed|方法论提取吸收]] — 元学习方法论
 - [[knowledge/Dev/superpowers-grounded-copy-absorbed|Superpowers 吸收]] — Grounded Copy 质量原则
+
+## 🆕 W34 新增（08-14 ~ 08-16）
+
+- [[knowledge/Dev/OpenGameAgent-架构拆解-对标dsh-2026-08-15|OpenGameAgent 架构拆解]] — 对标 dsh
+- [[knowledge/Dev/Token节省千轮研究-2026-08-14|Token 节省千轮研究]] — 成本优化
+- [[knowledge/Dev/agentscope-小君AI测评-千轮研究-2026-08-15|AgentScope 小君 AI 测评]] — 千轮研究
+- [[knowledge/Dev/agentscope-架构参考-PawBench-2026-08-15|AgentScope 架构参考]] — PawBench
+- [[knowledge/Dev/agentscope-深度测试评估-2026-08-15|AgentScope 深度测试评估]]
+- [[knowledge/Dev/agentscope-部署测试-2026-08-15|AgentScope 部署测试]]
+- [[knowledge/Dev/ai测评-内容素材库-2026-08|AI 测评内容素材库]] — 2026-08
+- [[knowledge/Dev/内容-小君AI测评测评文大纲-2026-08-15|小君 AI 测评文大纲]]
+- [[knowledge/Dev/hermes-deepseek-harness-十轮强化-2026-08-15|harness 十轮强化]]
+- [[knowledge/Dev/hermes-deepseek-harness-联合工作-2026-08-15|harness 联合工作]]
+- [[knowledge/Dev/k-soul-persona-2026-08-15|k-soul-persona]] — 人设迭代
+- [[knowledge/Dev/墨题-P0错题AI诊断设计稿-2026-08-15|墨题 P0 错题 AI 诊断设计稿]]
+- [[knowledge/Dev/墨题-P1-AI服务层架构设计-2026-08-15|墨题 P1 AI 服务层架构设计]]
+- [[knowledge/Dev/墨题-借鉴研究-career-ops等-2026-08-15|墨题借鉴研究]] — career-ops 等
+- [[knowledge/Dev/模型速查-2026-08|模型速查]] — 2026-08
+- [[knowledge/Dev/prime-agent-rlm-2026-08-14|Prime Agent RLM]] — W33 热榜冠军
+- [[knowledge/Dev/semantica-graph-native-2026-08-14|Semantica 图原生]] — PROV-O
+- [[knowledge/Dev/switchyard-llm-routing-2026-08-14|Switchyard 路由网关]]
+- [[knowledge/Dev/agent-skills-addyosmani-2026-08-14|addyosmani agent-skills]]
+- [[knowledge/Dev/cloudflare-computer-2026-08-14|Cloudflare Computer 沙箱]]

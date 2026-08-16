@@ -43,3 +43,9 @@ created: 2026-07-28
 - [[knowledge/Hardware/PPT-Design]] — 趋势/工具/方法论更新
 
 🔗 关联：[[skills/@j-feng12/academic-presentation/SKILL.md]] · [[knowledge/Research/MOC-Research|🔬 研究域]]
+
+## 🆕 W34 新增补链（2026-08-16 周度整理）
+
+- [[knowledge/Hardware/USB-UART转换器设计复盘-2026-08-08|USB-UART 转换器设计复盘]]
+- [[knowledge/Hardware/ai-frontend-design-sites|AI 前端设计站点]]
+- [[knowledge/Hardware/ai-resume-prompt|AI 简历 Prompt]]

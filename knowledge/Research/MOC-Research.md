@@ -9,7 +9,17 @@ created: 2026-08-09
 > 所有研究笔记的索引与入口。自动按主题分组。
 > 回到 [[knowledge-map|🗺️ 知识地图]] · [[Home|🏠 Home]]
 
-**共 135 篇研究笔记** · 最后更新: 2026-08-12（新增：Agent 自进化/技能审计/技能写作最佳实践）
+**共 141 篇研究笔记** · 最后更新: 2026-08-16（W34：GitHub-Weekly-08-16 / arXiv 08-16 补全 / 研究跟踪器归位）
+
+
+## 🆕 W34 新增补链（2026-08-16 周度整理）
+
+- [[GitHub-Weekly-2026-08-16]] — W34 GitHub 热榜
+- [[arxiv-2026-08-16-agent-llm]] — arXiv 08-16 速览（08-13 池补全 15 篇）
+- [[charm-graph-transfer]] — CHARM 多模态图谱跟踪（归位自 research/trackers）
+- [[kutie-context-injection]] — KuTIE 上下文跟踪（归位自 research/trackers）
+- [[long-term-model-systems]] — 模型体系三件套跟踪（归位自 research/trackers）
+- [[三角洲干员明天过后转场教程研究-2026-08-14]] — 剪映转场教程研究（自 Hardware 归位）
 
 ## 其他
 - [[arxiv-2026-07-30-core-contributions]]
@@ -107,7 +117,8 @@ created: 2026-08-09
 - [[ai-daily-2026-08-01-digest]]
 - [[AI早报学习-2026-08-08]]
 - [[knowledge/Daily/hackernews-2026-08-09|HN 08-09]] · [[knowledge/cards/2026-08-09-deepseek-v4-flash-arc-prize|知识卡片 08-09]]
-- [[knowledge/Dev/prime-agent-rlm-2026-08-14|Prime Agent RLM 08-14]] · [[knowledge/cards/2026-08-14-prime-agent-rlm|知识卡片 08-14]]
+- [[knowledge/Dev/prime-agent-rlm-2026-08-14|Prime Agent RLM 08-14]]
+- [[knowledge/Daily/hackernews-2026-08-12|HN 08-12]] — 本周 Daily 速览补链 · [[knowledge/cards/2026-08-14-prime-agent-rlm|知识卡片 08-14]]
 
 ## 文章研读
 
