@@ -72,3 +72,6 @@ status: adopted
 
 ---
 *关联：skill `hermes-deepseek-harness` · knowledge/Dev/hermes-deepseek-harness-联合工作-2026-08-15.md · 数据截止 2026-08-15*
+
+---
+> 🗺️ 属于 [[MOC-Dev]] · [[Home|🏠 Home]]

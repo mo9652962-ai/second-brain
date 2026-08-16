@@ -97,3 +97,6 @@ status: adopted
 - github.com/zylon-ai/private-gpt
 - github.com/meilisearch/meilisearch
 - 小君AI测评部署测试报告（推荐来源）
+
+---
+> 🗺️ 属于 [[MOC-Dev]] · [[Home|🏠 Home]]

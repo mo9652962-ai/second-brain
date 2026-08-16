@@ -62,3 +62,6 @@ dsh ── 深度编码 / 多步工具 / PTC 模式
 
 ---
 *关联：skill `hermes-deepseek-harness`（完整 SOP + Pitfalls）· 数据截止 2026-08-15*
+
+---
+> 🗺️ 属于 [[MOC-Dev]] · [[Home|🏠 Home]]
