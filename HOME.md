@@ -44,6 +44,7 @@ created: 2026-08-09
 - [[memory/2026/08/2026-08-15-daily-review|📋 08-15 每日回顾]] — 内容变现资产大放量：AgentScope 测试+PR、AI测评素材库、墨题 P0/P1、harness 十轮；闲鱼距 8/17 决策剩 2 天
 - [[knowledge/Research/arxiv-2026-08-16-agent-llm|arXiv 今日速览]] — 15 篇 AI Agent/LLM 论文（08-13 池补全：SkillEvo/CrEST/Reconcile Once/Faraday）
 - [[memory/2026/08/weekly-2026-08-16|📚 W34 周度整理]] — memory 归位 6 + research 归位 3 + MOC×5 更新 + Finance MOC 新建
+- [[memory/2026/08/weekly-learning-2026-08-16|📚 W34 学习回顾]] — AgentScope 实证测评提 PR + 墨题学习型设计 + Behavioral Contracts 落地容灾
 
 ## 🧭 核心区域
 
