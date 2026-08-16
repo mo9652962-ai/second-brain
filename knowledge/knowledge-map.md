@@ -12,6 +12,21 @@ status: adopted
 
 > 所有知识领域的索引与关联。最后更新: 2026-08-16（W34 周度整理：MOC 补链 + Finance MOC 创建 + memory 归位）
 
+## 🧭 MOC 总入口（2026-08-16 起，新建 MOC 必须在此挂载）
+
+| 域 / 主题切片 | 入口 | 规模 |
+|:---|:---|:---|
+| 🔬 Research（域） | [[MOC-Research]] | 143 篇 |
+| 🐙 GitHub 研究（主题切片） | [[MOC-GitHub]] | 42 篇 |
+| 🛡️ 网络安全（主题切片） | [[MOC-Security]] | 12 篇 |
+| 💻 Dev（域） | [[MOC-Dev]] | 93 篇 |
+| 🔧 Hardware（域） | [[MOC-Hardware]] | 16 篇 |
+| 🏠 Productivity（域） | [[MOC-Productivity]] | 22 篇 |
+| 📈 Finance（域） | [[MOC-Finance]] | 2 篇 |
+
+> 主题切片 MOC（如 GitHub/安全）横跨多个目录收拢同主题笔记，域 MOC 管目录、主题 MOC 管切片，双层导航。
+> 重构总体方案见 [[知识库重构方案-2026-08-16|《知识库重构方案》]]；孤立/重复扫描：`python scripts/vault-orphan-duplicate-scan.py --scope knowledge`
+
 ---
 
 ## 🌐 Web 开发
