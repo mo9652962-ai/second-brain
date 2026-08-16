@@ -15,8 +15,8 @@ type: daily-review
 | 1 | **arXiv 18 篇 Agent/LLM 速览**：QuoteBench（评估工具型 Agent 必须报告配置/生成契约/执行路径，匹配分数会掩盖执行失败）；AutoDesign（元 harness 优化 $3/40min 达会议海报质量）；Vero（仓库级形式化验证仍远未达标 27/43） | ⭐⭐⭐⭐⭐ | [[knowledge/Research/arxiv-2026-08-14-agent-llm]] |
 | 2 | **AaLLM：模拟电路设计多 Agent 框架**（拓扑生成→sizing，Designer/Critic/Evaluator 三 Agent 反馈 + RAG 知识库，SPICE 调用减 3-4.5x）— 与 sora 的 PCB/模拟电路接单兴趣直接相关，工程范式可迁移 | ⭐⭐⭐⭐⭐ | 同上 #7 论文 |
 | 3 | **Gricean Retreat 幻觉新解释**：模型内部已有「知识边界」信号，但生成时不消费它 →「边界意识→生成耦合」是幻觉缓解抓手 | ⭐⭐⭐⭐ | 同上 #12 论文 |
-| 4 | **5 路搜索冗余降级实测生效**：Tavily 432 配额复发 → Firecrawl 无缝接管，搜索未阻塞；但语义检索质量 Tavily 最优，语义缓存仍未落地 | ⭐⭐⭐⭐ | [[memory/2026-08-14]] |
-| 5 | **新 Agent 最佳实践**（MindStudio 200h）：画 Agent 图再构建 / Agent 间用结构化 JSON 而非墙文本 / 每季度审计 Agent 权限 | ⭐⭐⭐⭐ | [[memory/2026-08-14]] |
+| 4 | **5 路搜索冗余降级实测生效**：Tavily 432 配额复发 → Firecrawl 无缝接管，搜索未阻塞；但语义检索质量 Tavily 最优，语义缓存仍未落地 | ⭐⭐⭐⭐ | [[memory/2026/08/2026-08-14]] |
+| 5 | **新 Agent 最佳实践**（MindStudio 200h）：画 Agent 图再构建 / Agent 间用结构化 JSON 而非墙文本 / 每季度审计 Agent 权限 | ⭐⭐⭐⭐ | [[memory/2026/08/2026-08-14]] |
 
 ## 其他重要进展
 
