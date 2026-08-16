@@ -42,6 +42,7 @@ created: 2026-08-09
 - [[memory/2026/08/2026-08-14-daily-review|📋 08-14 每日回顾]] — arxiv Agent 18 篇速览 + 闲鱼距决策剩 3 天（AaLLM 电路设计/QuoteBench 评测陷阱）
 - [[memory/2026/08/weekly-learning-2026-08-14|📚 W33 周学习回顾]] — Agent 前沿对照 + 刷题机竞品两轮 + 成本根因闭环
 - [[memory/2026/08/2026-08-15-daily-review|📋 08-15 每日回顾]] — 内容变现资产大放量：AgentScope 测试+PR、AI测评素材库、墨题 P0/P1、harness 十轮；闲鱼距 8/17 决策剩 2 天
+- [[knowledge/Research/arxiv-2026-08-16-agent-llm|arXiv 今日速览]] — 15 篇 AI Agent/LLM 论文（08-13 池补全：SkillEvo/CrEST/Reconcile Once/Faraday）
 
 ## 🧭 核心区域
 
