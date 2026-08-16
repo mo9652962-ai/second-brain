@@ -41,7 +41,7 @@ status: fresh
 ## 行动项
 
 - [x] **借鉴 /refine 纪律**：改 skill 时只 patch 局部、保留回滚快照、不动 SOUL 基础 prompt → ✅ **2026-08-14 已采纳**：suggestion-implementation skill 新增「技能编辑纪律」章节（备份 `/tmp/suggestion-implementation-SKILL.md.bak-20260814`）
-- [ ] **持久目标机制**：评估给 Hermes 加「目标跨 turn 持久化」的显式机制（如 todo 升级为 /goal）→ ⏳ 待评估（需查 Hermes 是否已有 /goal 类机制）
+- [x] **持久目标机制**：评估给 Hermes 加「目标跨 turn 持久化」的显式机制（如 todo 升级为 /goal）→ ✅ **2026-08-16 已评估结案**：**Hermes 已原生支持 `/goal`**（Ralph loop，参考 [Persistent Goals 文档](https://hermes-agent.nousresearch.com/docs/user-guide/features/goals)）——跨 turn 持久化 + judge 自动判断 + completion contract + `/subgoal` + quality gates + `goals.max_turns` 配置，状态存 SessionDB.state_meta 可跨 /resume。**无需自建，直接用即可**（todo 用于会话内任务列表，/goal 用于跨 turn 持续目标，二者互补）
 - [x] **技能代码化方向**：把高频验证过的流程从 markdown 沉淀为可执行 scripts/ → ✅ 持续进行（验证过的流程继续 scripts/ 化）
 - [ ] 跟踪 prime-agent 生态（pi），验证「RAG 检索 + 思考」模式对长任务的实际收益 → ⏳ 周期跟踪项（github-weekly 顺带看）
 
