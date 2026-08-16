@@ -49,3 +49,6 @@ created: 2026-08-16
 
 ---
 *生成: k (Hermes) · 2026-08-16 · suggestion-implementation 自动执行*
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]
