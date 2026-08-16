@@ -128,6 +128,7 @@ hermes -p client-XX        # 用客户专属会话处理
 | python-docx | Word生成 | 免费 |
 | EasyEDA Pro | PCB设计 | 免费 |
 | jlcmcp MCP | PCB自动化 | 免费 |
+| qwen-image-3.0-pro（百炼） | PPT/素材配图 | 0.25元/张（中文文字渲染强，可商用） |
 
 ## 五、风险控制
 
