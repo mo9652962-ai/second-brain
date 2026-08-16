@@ -44,3 +44,19 @@
 
 ---
 > 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]
+
+---
+## 周报处理评估（2026-08-17 k 追加）
+
+用户确认处理。5 项目逐项评估结论：
+
+| 项目 | 结论 | 依据 |
+|:---|:---|:---|
+| mattpocock/skills | ✅ 已吸收（7-22 起） | mattpocock-methodology.md + engineering-workflow + grill-with-docs 全是它的适配 |
+| stablyai/orca | ❌ 不装 | 已有 Hermes+dsh 桌面端；用户偏好轻量自建 |
+| firecrawl | ❌ 不需要 | Hermes 已有 web_extract/web_search |
+| HKUDS/DeepTutor | ✅ 已评估 | github-projects-note.md 架构吸收笔记 |
+| 3b1b/manim | ⏸️ 暂缓 | LaTeX 环境成本高，B站教学暂未启动 |
+
+**唯一增量落地**：wayfinder（多会话大任务规划）模式 → 已补进 engineering-workflow 技能 §⑥.8。
+触发条件：任务大到一个 agent 会话装不下且路线不清；地图=Obsidian 笔记，决策 ticket=Hermes todo。
