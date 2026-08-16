@@ -126,24 +126,22 @@ git clone https://github.com/mo9652962-ai/second-brain.git
    - 针对中文开发者和研究者优化，没有语言障碍
    - 所有资料都是中文，直接能用
 
-5. **🔄 每小时自动同步更新**
+5. **🔄 每 30 分钟自动同步更新**
    - 不是一次性项目，是持续进化的活的知识库
    - 32 个 Cron 自动化任务 7×24 小时运行
 
 ---
 
-## 📦 最新技能入库 (2026-08-13)
+## 📦 最新技能入库 (2026-08-16)
 
 ### 研究笔记
 
 | 技能 | 版本 | 简介 |
 |------|------|------|
-| **[Agent 自进化研究](knowledge/Research/agent-self-evolution-research-2026-08-12.md)** | v1.0 | ACL 2026 自进化论文深度解读——五大机制（自我微调/自修/自我推理/元认知/数据生成） |
-| **[技能审计](knowledge/Research/skill-audit-2026-08-12.md)** | v1.0 | 全库技能一致性审计——识别过时/重复/缺失技能 |
-| **[技能写作最佳实践](knowledge/Research/skill-authoring-best-practices-2026-08-12.md)** | v1.0 | 技能文档规范——结构/命名/触发条件/验收标准 |
-| **[竞品研究：安卓刷题机 fork](knowledge/Research/竞品研究-安卓刷题机fork-2026-08-09.md)** | v1.0 | 9 项可回收功能清单（听力音频/选项打乱/错题迭代/安全存储） |
-| **[英语刷题机 Android 版竞品研究](knowledge/Research/英语刷题机Android版竞品研究-2026-08-10.md)** | v1.0 | 千轮竞品研究——差距分析 + 借鉴执行建议 |
-| **[USB-UART 转换器设计复盘](knowledge/Hardware/USB-UART转换器设计复盘-2026-08-08.md)** | v1.0 | CH340G + USB-C + LDO 经典设计拆解 + SKiDL 复刻方案 |
+| **[arXiv AI Agent / LLM 速览](knowledge/Research/arxiv-2026-08-16-agent-llm.md)** | v1.0 | 08-13 提交池补全——收集 53 篇去重 → 精选 15 篇 + 简评 5 篇（Agent 自我改进/训练） |
+| **[arXiv 核心贡献精选](knowledge/Research/arxiv-2026-08-16-core-contributions.md)** | v1.0 | 行为契约/SkillEvo 等核心贡献深度解读（reliability/memory/skill 主题） |
+| **[GitHub 宝藏挖掘周更](knowledge/Research/GitHub-Weekly-2026-08-16.md)** | v1.0 | Top 5 高星仓库（codebase-memory-mcp / nanobot / code-review-graph 等） |
+| **[每日日志 08-16](memory/2026/2026-08-16.md)** | v1.0 | 新会话首日环境自检 + 记忆继承 + 模型策略记录 |
 
 ### 每日自动化优化
 
@@ -186,8 +184,8 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 ## 📊 仓库统计
 
 ```
-📁 仓库体积：约 660MB（含附件与图片）
-📝 Markdown 文件：635 个（正文约 0.7 MB）
+📁 仓库体积：约 180MB（含附件与图片）
+📝 Markdown 文件：719 个（正文约 0.7 MB）
 🧠 自建 Skill 文档：30 个（12 个领域目录）
 🗂️ 知识域：10 个
 ⏰ 首次提交：2026 年 7 月
