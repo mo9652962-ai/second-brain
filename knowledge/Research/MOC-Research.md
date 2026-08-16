@@ -9,7 +9,7 @@ created: 2026-08-09
 > 所有研究笔记的索引与入口。自动按主题分组。
 > 回到 [[knowledge-map|🗺️ 知识地图]] · [[Home|🏠 Home]]
 
-**共 120 篇研究笔记** · 最后更新: 2026-08-12（新增：Agent 自进化/技能审计/技能写作最佳实践）
+**共 135 篇研究笔记** · 最后更新: 2026-08-12（新增：Agent 自进化/技能审计/技能写作最佳实践）
 
 ## 其他
 - [[arxiv-2026-07-30-core-contributions]]
@@ -238,3 +238,24 @@ created: 2026-08-09
 
 ---
 *MOC 节点 — 见图谱中的 📚 Academic 锚点*
+
+## 其他
+
+- [[Academic]]
+- [[GitHub-Weekly-2026-08-14]]
+- [[academic-service-research]]
+- [[ai-monetization-costs]]
+- [[ai-research-collaboration]]
+- [[ai-weekly-literature-2026-08-14]]
+- [[arxiv-2026-08-14-agent-llm]]
+- [[cnki-browser-plugin]]
+- [[monetization-analysis]]
+- [[nihaixia-skill]]
+- [[paper-pipeline-data-contract]]
+- [[researchpilot-skills]]
+- [[接单工作流-SOP]]
+- [[独立开发陷阱与开源协作]]
+- [[论文Pipeline-数据契约]]
+- [[闲鱼上架素材包-预生成]]
+- [[闲鱼解封素材]]
+- [[降AI工具对比速查表]]

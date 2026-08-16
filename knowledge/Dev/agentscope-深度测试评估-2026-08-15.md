@@ -77,3 +77,6 @@ status: adopted
 - schema 校验严格（id/name/kind/summary/capabilities/tags/stack/platforms/sourceUrl 全要）
 - 坏连接测试：selectedConnectionId 指向不存在 → 503；但会 fallback 到默认连接
 - git-bash 中文 JSON 会 GBK 乱码 → 用 Python requests（UTF-8 安全）
+
+---
+> 🗺️ 属于 [[MOC-Dev]] · [[Home|🏠 Home]]

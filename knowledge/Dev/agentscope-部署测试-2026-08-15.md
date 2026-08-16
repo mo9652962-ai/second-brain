@@ -66,3 +66,6 @@ npm run dev   # → http://localhost:3000
 - 端口占用处理：kill 旧进程后 3000/3001 可能残留，新实例自动跳到 3001/3002（netstat 查 PID 后 taskkill）
 - 生产部署：npm run build + npm start
 - 测试数据（.agentscope/）被 gitignore，不污染仓库
+
+---
+> 🗺️ 属于 [[MOC-Dev]] · [[Home|🏠 Home]]

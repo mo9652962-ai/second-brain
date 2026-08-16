@@ -66,3 +66,6 @@ status: completed
 ---
 
 _生成: daily-todo-executor cron · k (Hermes) · 2026-08-15_
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

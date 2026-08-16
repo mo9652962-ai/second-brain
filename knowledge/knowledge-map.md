@@ -10,7 +10,7 @@ status: adopted
 
 > 入口: [[Home|🏠 Home]] · 返回总索引
 
-> 所有知识领域的索引与关联。最后更新: 2026-08-15（知识链分支整合 10→7 域：Academic→Research、AI→Dev、Design→Hardware，dreaming 压平））
+> 所有知识领域的索引与关联。最后更新: 2026-08-16（知识链分支整合 10→7 域：Academic→Research、AI→Dev、Design→Hardware，dreaming 压平））
 
 ---
 

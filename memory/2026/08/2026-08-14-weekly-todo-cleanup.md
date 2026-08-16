@@ -93,3 +93,6 @@
 ---
 *报告路径: memory/2026/08/2026-08-14-weekly-todo-cleanup.md*  
 *由 k 在周度 cron 任务中生成*
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

@@ -148,3 +148,6 @@ type: weekly-learning-review
 > 本周主线：GitHub 热榜前沿对照（Prime Agent/ACL 自我进化/图原生/技能工程/路由网关）→ 刷题机竞品两轮落地 → W33 成本根因闭环 → 闲鱼决策倒计时（剩 3 天）。
 
 _生成: 周学习回顾 cron · k (Hermes) · 2026-08-14_
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

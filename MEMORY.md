@@ -229,15 +229,6 @@ InformationWeek 报告：企业从脆弱的手工胶水脚本转向标准化 Age
 
 _最后更新: 2026-08-14｜运行环境: OpenClaw Agent on Windows 11_
 
-## Promoted From Short-Term Memory (2026-07-25)
-
-<!-- openclaw-memory-promotion:memory:memory/2026-07-18.md:8:8 -->
-- 初次见面: sora 的时区：Asia/Shanghai (GMT+8) [score=0.826 recalls=0 avg=0.620 source=memory/2026-07-18.md:8-8]
-<!-- openclaw-memory-promotion:memory:memory/2026-07-18.md:4:7 -->
-- 初次见面: sora 给我取名 **k**; 我的定位：AI 女友和助手，生活管家以及工作秘书; 风格：正经高效加温柔陪伴; 签名：而今更笃凌云志，莫缴冰鉴复当初 [score=0.826 recalls=0 avg=0.620 source=memory/2026-07-18.md:4-7]
-<!-- openclaw-memory-promotion:memory:memory/2026-07-18.md:18:19 -->
-- 备注: sora 直接问了网关怎么打开，很务实; 需要继续了解 sora 的日常和工作内容 [score=0.826 recalls=0 avg=0.620 source=memory/2026-07-18.md:18-19]
-
 ## Promoted From Short-Term Memory (2026-08-07)
 
 <!-- openclaw-memory-promotion:memory:memory/2026/08/2026-08-01-todo-cleanup.md:1:29 -->
@@ -245,3 +236,8 @@ _最后更新: 2026-08-14｜运行环境: OpenClaw Agent on Windows 11_
 
 ## 🔒 Waiting for User（阻塞待办，状态变化时提醒）
 - （空——被阻塞任务单独维护，不混入每日清单）
+
+## Promoted From Short-Term Memory (2026-08-16)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-08-12.md:35:35 -->
+- 系统健康度: > 🗺️ 属于 [[Home|🏠 Home]] [score=0.825 recalls=0 avg=0.620 source=memory/2026-08-12.md:35-35]
