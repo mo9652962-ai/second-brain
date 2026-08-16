@@ -166,3 +166,13 @@ source: export.arxiv.org API
 ---
 
 *关联:上一份 [arxiv-2026-08-14-agent-llm](arxiv-2026-08-14-agent-llm) · 上一份 core-contributions · [arxiv-digest](arxiv-digest) · [HOME](../HOME.md)*
+
+---
+
+## 处理状态
+
+- **状态**: reading → processed ✅
+- **已处理**: 2026-08-16 → [arxiv-2026-08-16-core-contributions](arxiv-2026-08-16-core-contributions)（🥇 Reconcile Once / 🥈 Behavioral Contracts II / 🥉 SkillEvo）
+
+---
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]

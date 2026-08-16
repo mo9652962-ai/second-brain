@@ -1328,7 +1328,7 @@ OpenClaw SkillSpector (NVIDIA 合作) + SSRF deny policy + Sandbox confinement �
 
 **Logged**: 2026-07-28T09:25:00+08:00
 **Priority**: medium
-**Status**: active
+**Status**: resolved
 **Area**: delegation
 
 ### Title
@@ -1357,11 +1357,15 @@ delegate_task 返回的子任务报告包含 actionable 建议，但主上下文
 
 ---
 
+### Resolution
+- **Resolved**: 2026-08-16
+- **Notes**: 已落实（2026-08-16）：Hermes 系统提示已内化「Child summaries are SELF-REPORTS，外部副作用需验证 handle」——delegate_task 返回后验证文件写入/路径，action items 提取进待办
+
 ## [LRN-20260728-002] best_practice
 
 **Logged**: 2026-07-28T09:25:00+08:00
 **Priority**: medium
-**Status**: active
+**Status**: resolved
 **Area**: cron
 
 ### Title
@@ -1392,6 +1396,10 @@ vault-maintenance cron 在非工作时间密集触发（7/28 凌晨到早晨触�
 - Last-Seen: 2026-07-28
 
 ---
+
+### Resolution
+- **Resolved**: 2026-08-16
+- **Notes**: 已落实（2026-08-16）：obsidian-maintenance cron 已是每日 1 次 06:00（0 6 * * *），符合「清晨 6:00-7:00 + 每日 1 次」建议；高频重复触发问题已解决
 
 ## [LRN-20260729-001] best_practice — Cron 错误模式库与经验式修复
 
@@ -1550,7 +1558,7 @@ Tavily API 用量配额耗尽 (432 plan limit exceeded) — 搜索主力后端�
 
 **Logged**: 2026-08-06T13:16:00+08:00
 **Priority**: high
-**Status**: active
+**Status**: adopted
 **Area**: docs
 
 ### Summary
@@ -1589,6 +1597,10 @@ Graph Engineering 取代 Loop Engineering 成为 2026-07 Agent 架构新范式�
 - Last-Seen: 2026-08-06
 
 ---
+
+### Resolution
+- **Resolved**: 2026-08-16
+- **Notes**: 已采纳（2026-08-16）：Graph Engineering 作为新 workflow 设计原则——并行 pipeline 优先（Hermes delegate_task 可作 graph 原语）；股票分析 cron = 数据采集→分析 两阶段链式，未来可并行化
 
 ## [LRN-20260803-001] best_practice
 
@@ -1660,7 +1672,7 @@ GitHub Token 401 真因：config.yaml token 与 git 凭据管理器是两份独�
 
 **Logged**: 2026-08-16T13:49:00+08:00
 **Priority**: medium
-**Status**: active
+**Status**: resolved
 **Area**: tools
 
 ### Summary
@@ -1686,6 +1698,10 @@ MCP token 开销远超 CLI/直接 API：CLI ~200 token/命令 vs MCP 32K-82K tok
 - Last-Seen: 2026-08-16
 
 ---
+
+### Resolution
+- **Resolved**: 2026-08-16
+- **Notes**: 已落实（2026-08-16）：禁用重复 MCP server jlceda（38 个重复工具，与 jlcmcp 同文件）——每次 API 调用节省 38 个工具 schema 的 token 开销；MCP 保留 jlcmcp/github/filesystem/obsidian 等实际使用的
 
 ## [LRN-20260804-002] insight
 

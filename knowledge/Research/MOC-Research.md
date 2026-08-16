@@ -27,6 +27,7 @@ created: 2026-08-09
 - [[arxiv-2026-08-02-core-contributions]]
 - [[arxiv-2026-08-03-core-contributions]]
 - [[arxiv-2026-08-05-core-contributions]]
+- [[arxiv-2026-08-16-core-contributions]] — 08-16 核心贡献（Reconcile Once / Behavioral Contracts II / SkillEvo）
 - [[arxiv-2026-08-06-agent-llm]]
 - [[arxiv-2026-08-07-agent-llm]]
 - [[英语刷题机Android版竞品研究-2026-08-10]]
