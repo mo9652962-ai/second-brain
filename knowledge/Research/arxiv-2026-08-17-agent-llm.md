@@ -144,3 +144,6 @@ source: export.arxiv.org API
 3. **跨会话记忆成显学**：Handover of ICL State + When Personal Memory Has No Single Answer——记忆交接与冲突处理是两个互补问题。
 4. **安全治理协议化**：Mandato 把 agent 授权从应用代码提升到协议层（MCP 生态）。
 5. **弃权机制**：Never the Number 主张「不确定就不给数」，是事实性输出的正确姿势。
+
+---
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]
