@@ -105,3 +105,6 @@ reviewed_date: 2026-08-16
 ---
 
 *由 k (Hermes) · daily reflection cron · 2026-08-17 回顾 2026-08-16*
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

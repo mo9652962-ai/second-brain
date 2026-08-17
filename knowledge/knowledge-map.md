@@ -10,7 +10,7 @@ status: adopted
 
 > 入口: [[Home|🏠 Home]] · 返回总索引
 
-> 所有知识领域的索引与关联。最后更新: 2026-08-16（W34 周度整理：MOC 补链 + Finance MOC 创建 + memory 归位）
+> 所有知识领域的索引与关联。最后更新: 2026-08-17（W34 周度整理：MOC 补链 + Finance MOC 创建 + memory 归位）
 
 ## 🧭 MOC 总入口（2026-08-16 起，新建 MOC 必须在此挂载）
 
