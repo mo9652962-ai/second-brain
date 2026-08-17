@@ -1,9 +1,9 @@
 ---
 tags: [cron-health, dashboard]
-updated: 2026-08-17 00:00
+updated: 2026-08-17 12:50
 ---
 
-# Cron 健康看板 — 2026-08-17 00:00
+# Cron 健康看板 — 2026-08-17 12:50
 
 总任务数: 38
 
@@ -52,8 +52,8 @@ updated: 2026-08-17 00:00
 
 亚健康 — 1/3 不可达
 
-连通率: 67% | 平均延迟: 264ms
+连通率: 67% | 平均延迟: 265ms
 
   ❌ opencode-go: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING]
-  🟡 siliconflow: HTTP 401 (323ms, reachable)
-  🟡 deepseek: HTTP 401 (204ms, reachable)
+  🟡 siliconflow: HTTP 401 (314ms, reachable)
+  🟡 deepseek: HTTP 401 (215ms, reachable)

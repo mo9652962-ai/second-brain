@@ -118,6 +118,13 @@ v2026.3.7 引入的可插拔上下文管理界面已验证稳定。模型路由�
 - **Graph Memory 生态成熟**: Mem0/Letta/Cognee/Zep 等 10+ 框架，Write-Path > Read-Only RAG
 - **OpenClaw 2026.7.1**: Control UI 大改，GPT-5.6/Hy3/Muse 支持，Codex 工作流，但有 Gateway 稳定性问题
 - **OpenClaw 2026.7.2 beta**: Remote Coding Sessions，分布式 Agent 执行（桌面⇄节点⇄云 worker）
+- **OpenClaw 2026.8.1-beta.2 (2026-08-15/16)**: 新版本已发布（当前 beta 阶段，暂不升级）
+  - **SQLite 快照备份/恢复**（`openclaw backup sqlite create|list|verify|restore`）→ 正式版后可作为 vault 备份补充（当前靠 GitHub 同步）
+  - **Secret egress host binding**：密钥绑定精确 HTTPS 出口宿主，防明文外泄（安全强化）
+  - **GPT-5.6 Ultra / Sol/Terra/Luna** 原子化模型+运行时切换
+  - **Plugin 安装 provenance 警告**：任意可执行插件需显式 --force 确认（印证 skill-vetting 实践）
+  - **Fish Audio S2.1** 语音合成 / 本地模型设置（Ollama/llama.cpp/LM Studio）选项
+  - 遵循 LRN-20260724-002：大版本升级等 2-4 周社区验证后再评估
 - **OpenClaw Extended-Stable (2026-07-31)**: 月度稳定版 YYYY.M.33 + Maturity Scorecard 公开评分，迈向 LTS；直接回应 55.4% 企业可靠性顾虑
   - **375K stars, 78.2K forks, 136 releases**; 被 OpenAI 收购（创始人 Peter Steinberger 入职）；OpenClaw Foundation 非营利化
   - **NVIDIA SkillSpector** (2026-06-01): 所有 ClawHub skills 自动扫描隐藏指令
@@ -227,7 +234,7 @@ InformationWeek 报告：企业从脆弱的手工胶水脚本转向标准化 Age
 
 ---
 
-_最后更新: 2026-08-14｜运行环境: OpenClaw Agent on Windows 11_
+_最后更新: 2026-08-17｜运行环境: OpenClaw Agent on Windows 11_
 
 ## Promoted From Short-Term Memory (2026-08-07)
 
