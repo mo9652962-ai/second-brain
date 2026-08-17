@@ -132,15 +132,17 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 
 ---
 
-## 📦 最新技能入库 (2026-08-16)
+## 📦 最新技能入库 (2026-08-16 ~ 2026-08-17)
 
 ### 研究笔记
 
 | 技能 | 版本 | 简介 |
 |------|------|------|
+| **[arXiv AI Agent / LLM 速览](knowledge/Research/arxiv-2026-08-17-agent-llm.md)** | v1.0 | 08-14 提交池——收集 30+ 篇 → 精选 14 篇（Agent 长期执行/恢复/跨会话记忆交接） |
 | **[arXiv AI Agent / LLM 速览](knowledge/Research/arxiv-2026-08-16-agent-llm.md)** | v1.0 | 08-13 提交池补全——收集 53 篇去重 → 精选 15 篇 + 简评 5 篇（Agent 自我改进/训练） |
 | **[arXiv 核心贡献精选](knowledge/Research/arxiv-2026-08-16-core-contributions.md)** | v1.0 | 行为契约/SkillEvo 等核心贡献深度解读（reliability/memory/skill 主题） |
 | **[GitHub 宝藏挖掘周更](knowledge/Research/GitHub-Weekly-2026-08-16.md)** | v1.0 | Top 5 高星仓库（codebase-memory-mcp / nanobot / code-review-graph 等） |
+| **[每日日志 08-17](memory/2026/2026-08-17.md)** | v1.0 | 闲鱼变现决策日 + 自研路由实证 + AI 模型价格战 + PCB 蓝海确认 |
 | **[每日日志 08-16](memory/2026/2026-08-16.md)** | v1.0 | 新会话首日环境自检 + 记忆继承 + 模型策略记录 |
 
 ### 每日自动化优化
