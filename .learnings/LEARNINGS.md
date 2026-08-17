@@ -1539,9 +1539,9 @@ Tavily API 用量配额耗尽 (432 plan limit exceeded) — 搜索主力后端�
 ### Metadata
 - Tags: tavily, quota, search, rate-limit, fallback
 - Pattern-Key: infra.tavily-quota
-- Recurrence-Count: 2
+- Recurrence-Count: 4
 - First-Seen: 2026-08-01
-- Last-Seen: 2026-08-14
+- Last-Seen: 2026-08-17
 
 ### 2026-08-14 Recurrence Note
 - **复现**: 8/14 自改进 cron 首次 web_search 即返回 432 (plan limit exceeded)。**Firecrawl 当场无缝接管**，搜索任务未阻塞——验证 5 路冗余降级可靠性。
@@ -1551,6 +1551,10 @@ Tavily API 用量配额耗尽 (432 plan limit exceeded) — 搜索主力后端�
 - **复现**: 8/16 自改进 cron 首次 tavily_search 即返回 432。Firecrawl 再次无缝接管，搜索未阻塞。
 - **结论**: `Recurrence-Count: 3`。3 次独立确认，配额周期性耗尽已成常态而非异常。语义缓存仍是唯一治本方案，但 5 路冗余降级已反复证明足够可靠，可低位处理。
 - **附带观察**: Firecrawl 关键时刻搜索结果质量足够（firecrawl.dev 官方趋势 + symphony-solutions 深度报告），可作为 Tavily 之外的常态主力候选，不只当 fallback。
+
+### 2026-08-17 Recurrence Note (4th independent confirmation)
+- **复现**: 8/17 自改进 cron 首次两个并发 tavily_search 均返回 432。Firecrawl 再次无缝接管（成功搜到 OpenClaw 2026.8.1 发布、Google/Microsoft Blue Prism 趋势报告），搜索完全未阻塞。
+- **结论**: `Recurrence-Count: 4`。4 天 3 次复发（8/14/15/16 + 今日 8/17），已是高频周期性问题。**语义缓存落地优先级再上调**：它直接决定能否摆脱对配额型主搜索后端的反复依赖。Firecrawl 经 4 次实战验证，已事实上成为常态主力后端。
 
 ---
 
