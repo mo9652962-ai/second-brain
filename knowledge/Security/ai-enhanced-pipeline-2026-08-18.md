@@ -35,3 +35,6 @@ unveilr.exe "C:\Users\31954\Documents\WeChat Files\<wx>\Applet\<appid>" -o ./out
 
 ## 红线
 只测 SRC 授权 scope；AI 发现的密钥验证只读、不碰数据；不利用他人密钥。
+
+---
+> 🗺️ 属于 [[MOC-Security]] · [[Home|🏠 Home]]

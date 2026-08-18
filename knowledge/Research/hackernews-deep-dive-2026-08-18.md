@@ -100,3 +100,6 @@ Wiz 红队演示: AI 生成代码的 "Autofix" 建议被利用
 | 模型选型: 短任务便宜/长任务贵（GPT-5.6 教训）| ✅ 已内化 |
 | DuckDB 列入未来数据分析候选 | ⬜ backlog |
 | AI 辅助开发攻击面 → 补进 SRC 研究 | ⬜ 待补 |
+
+---
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]

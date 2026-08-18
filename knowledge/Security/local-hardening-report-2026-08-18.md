@@ -51,3 +51,6 @@ Defender 实时保护关闭是因为 McAfee 接管。需确认：
 1. 确认 McAfee 状态（关键！杀软不能没有）
 2. 有空执行：Bitwarden + 2FA + 备份
 3. 防御技能已沉淀：src-bug-hunting「防御能力速查」章节
+
+---
+> 🗺️ 属于 [[MOC-Security]] · [[Home|🏠 Home]]
