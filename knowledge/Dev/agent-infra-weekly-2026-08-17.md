@@ -1,5 +1,5 @@
 ---
-tags: [GitHub, Agent, 基建, 研究笔记, 2026-08]
+tags: [github, agent, 基建, 研究笔记, 2026-08]
 domain: AI
 ---
 

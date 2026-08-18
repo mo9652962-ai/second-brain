@@ -1,5 +1,5 @@
 ---
-tags: [code-RAG, knowledge-graph, monorepo, MCP, tree-sitter, W34]
+tags: [code-RAG, knowledge-graph, monorepo, mcp, tree-sitter, W34]
 aliases: [code-graph-rag, cgr]
 date: 2026-08-16
 source: https://github.com/vitali87/code-graph-rag
