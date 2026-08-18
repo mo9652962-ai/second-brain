@@ -1,5 +1,5 @@
 ---
-tags: [MOC, GitHub, research, 索引]
+tags: [MOC, github, research, 索引]
 aliases: [GitHub 研究地图, GitHub MOC, GitHub宝藏挖掘]
 domain: Research
 created: 2026-08-16

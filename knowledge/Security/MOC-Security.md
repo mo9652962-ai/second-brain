@@ -1,5 +1,5 @@
 ---
-tags: [MOC, Security, 网络安全, 索引]
+tags: [MOC, security, 网络安全, 索引]
 aliases: [安全地图, Security MOC, 网络安全 MOC]
 domain: Security
 created: 2026-08-16

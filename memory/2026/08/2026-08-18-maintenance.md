@@ -63,6 +63,20 @@ MOC-Research「其他」区补 `arxiv-2026-08-18-agent-llm`。
 
 另修维护笔记自身：文档旧断链示例的 `[[]]` wikilink 语法已剥离（防自己成为下轮断链来源，技能 Pitfall 已知模式）。
 
+## 三点六、标签归一（最终验证发现，5 组大小写变体）
+
+ad-hoc 验证脚本发现 frontmatter tags 大小写变体（Obsidian 标签大小写敏感），按多数派/惯例统一到小写：
+
+| 变体 | 归一 | 依据 |
+|:---|:---|:---|
+| GitHub(3) → github(21) | github | 多数派 |
+| Agent(2) → agent(3) | agent | 多数派 |
+| MCP(1) → mcp(6) | mcp | 多数派 |
+| Godot(1) → godot(1) | godot | 平局按 vault 小写惯例 |
+| Security(1) → security(8) | security | 多数派 |
+
+涉及 6 个文件（agent-infra-weekly、spacetime-diagram-edge、MOC-GitHub、code-graph-rag、game-engine-ai-research、MOC-Security）。只改 frontmatter `tags:` 行，不碰 inline tag。full-vault-diagnostic 未报这些（其标签检查只查连字符模式），ad-hoc 全量扫描才抓到——后续诊断需覆盖全量 frontmatter tags。
+
 ## 四、脚本修复（防复发）
 
 `scripts/daily_vault_optimize.py` DIR_MOC 清理：

@@ -1,5 +1,5 @@
 ---
-tags: [GitHub, Agent, 编程范式, 图表, 边缘AI, 研究笔记, 2026-08]
+tags: [github, agent, 编程范式, 图表, 边缘AI, 研究笔记, 2026-08]
 domain: AI
 ---
 
