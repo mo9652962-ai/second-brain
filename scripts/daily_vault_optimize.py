@@ -21,6 +21,8 @@ DIR_MOC = {
     "knowledge/Hardware": "MOC-Hardware",
     "knowledge/Productivity": "MOC-Productivity",
     "knowledge/Security": "MOC-Security",
+    "knowledge/Finance": "MOC-Finance",
+    "knowledge/Creative": "knowledge-map",
     "knowledge/Archive": "knowledge-map", "knowledge/Daily": "knowledge-map",
     "knowledge/cards": "knowledge-map",
     "memory": "knowledge-map", "concepts": "knowledge-map",
