@@ -295,3 +295,43 @@ Session-end sweep detected 1 possible error in the previous OpenClaw session.
 - Pattern-Key: runtime.failure
 
 ---
+
+## [ERR-20260818-001] flclash-proxy-corrupted 🆕
+
+**Logged**: 2026-08-18T12:04:00+08:00
+**Priority**: high
+**Status**: open
+**Area**: infra
+
+### Summary
+FlClash 7890 代理端口 LISTENING 但流量不通（curl 走它 = 000/exit 56），导致 health_provider_check 假警报全 FAIL
+
+### Error/Findings
+```
+FlClashCore.exe (PID 30756) 监听 7890，但经代理 curl 全失败（连接被重置）
+health_provider_check.py 统一走 127.0.0.1:7890 → 全 FAIL 为假警报
+直连实测：deepseek 401 / tokenrhythm(jiyuanlvdong) 401 / baidu 200 —— 外网与 provider 均可达
+消息网关冻结：gateway.log 自 8-16 02:24 无输出（QQBot max reconnect / weixin poll error）
+```
+
+### Root Cause
+1. FlClash 代理进程异常（端口监听但数据转发失效）——可能因长时间运行/节点失效
+2. 连带影响依赖代理的消息网关（QQ/微信）离线
+
+### Impact
+- health_provider_check 被误导为全 FAIL（假警报，非真实 provider 故障）
+- 消息通道（QQ/微信）疑似离线，不影响 cron/agent 核心
+
+### Suggested Fix
+1. **重启 FlClash** 恢复 7890 代理（首选）
+2. health_provider_check 脚本改直连或先 curl 实测 7890 再判读（防此类假警报）
+3. 重启 FlClash 后重启 gateway 观察消息通道 reconnect
+4. 修复 cache-hit-monitor 脚本引用（cron 关联脚本已不存在）
+
+### Metadata
+- Source: health-relay 巡检
+- Pattern-Key: infra.proxy-corrupted
+- First-Seen: 2026-08-18
+- See Also: ERR-20260719-001 (provider outage)
+
+---

@@ -277,3 +277,4 @@ created: 2026-08-09
 
 - [[MOC-GitHub]]
 - [[arxiv-2026-08-17-agent-llm]]
+- [[arxiv-2026-08-18-agent-llm]]

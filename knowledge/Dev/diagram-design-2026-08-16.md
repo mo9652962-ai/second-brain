@@ -41,4 +41,4 @@ status: watch
 | 值得安装 | 🟢 参考——不整体装 Claude Code 插件，但「图表样式库 + 品牌 token + 对比度门禁」三个方法论应落地到 ppt-design / baoyu-infographic |
 | 趋势判断 | AI 生成图表的「去模板化」成为新战场，编辑级设计成为卖点 |
 
-> 🗺️ 属于 [[MOC-Dev]] · [[Home|🏠 Home]] · 平行参考：[[agent-skills-addyosmani-2026-08-14]]（多 agent skill 工程化）· [[ppt-design-2026]] · [[baoyu-infographic]]
+> 🗺️ 属于 [[MOC-Dev]] · [[Home|🏠 Home]] · 平行参考：[[agent-skills-addyosmani-2026-08-14]]（多 agent skill 工程化）· `ppt-design-2026` · `baoyu-infographic`

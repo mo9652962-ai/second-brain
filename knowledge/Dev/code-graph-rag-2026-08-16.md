@@ -41,4 +41,4 @@ status: watch
 | 值得安装 | 🔵 不装——与 code-review-graph 功能重叠，但关注动态调用追踪进展 |
 | 趋势判断 | 代码图谱 RAG 赛道拥挤（codebase-memory-mcp / code-review-graph / code-graph-rag），「动态+静态混合」是差异化方向 |
 
-> 🗺️ 属于 [[MOC-Dev]] · [[Home|🏠 Home]] · 平行参考：[[codebase-memory-mcp]]（已入库）· [[code-review-graph]]（sora 已装 MCP）· [[semantica-graph-native-2026-08-14]]（图原生 AI 基础设施）
+> 🗺️ 属于 [[MOC-Dev]] · [[Home|🏠 Home]] · 平行参考：[[codebase-memory-mcp]]（已入库）· `code-review-graph`（sora 已装 MCP）· [[semantica-graph-native-2026-08-14]]（图原生 AI 基础设施）

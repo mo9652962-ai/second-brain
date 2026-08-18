@@ -16,14 +16,13 @@ import sys
 VAULT = pathlib.Path(r"C:\Users\31954\.openclaw\workspace")
 
 DIR_MOC = {
-    "knowledge/Research": "MOC-Research", "knowledge/AI": "MOC-AI",
-    "knowledge/Dev": "MOC-Dev", "knowledge/Academic": "MOC-Academic",
-    "knowledge/Hardware": "MOC-Hardware", "knowledge/Design": "MOC-Design",
+    "knowledge/Research": "MOC-Research",
+    "knowledge/Dev": "MOC-Dev",
+    "knowledge/Hardware": "MOC-Hardware",
     "knowledge/Productivity": "MOC-Productivity",
+    "knowledge/Security": "MOC-Security",
     "knowledge/Archive": "knowledge-map", "knowledge/Daily": "knowledge-map",
-    "knowledge/Content": "knowledge-map", "knowledge/cards": "knowledge-map",
-    "knowledge/arXiv": "MOC-Research", "knowledge/Python": "MOC-Dev",
-    "knowledge/Tools": "knowledge-map", "knowledge/writing-material": "knowledge-map",
+    "knowledge/cards": "knowledge-map",
     "memory": "knowledge-map", "concepts": "knowledge-map",
     "research": "MOC-Research", "docs": "knowledge-map",
     "health": "knowledge-map", "playbooks": "knowledge-map",

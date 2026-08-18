@@ -2,7 +2,7 @@
 tags: [MOC, dev, 编程, python, web, 系统设计]
 domain: Dev
 created: 2026-07-28
-updated: 2026-07-30
+updated: 2026-08-18
 ---
 
 # 💻 开发域 — 编程与系统
@@ -21,6 +21,7 @@ updated: 2026-07-30
 - [[knowledge/Dev/mattpocock-methodology|Matt Pocock 方法论]]
 - [[knowledge/Dev/Vibe-Coding|Vibe Coding]]
 - [[knowledge/Dev/codebase-memory-mcp|Codebase Memory MCP]] — 代码知识图谱
+- [[knowledge/Dev/link-content-fetch-2026-08-17|链接内容抓取]] — 四层兜底方案（web_extract→Jina→Playwright→登录）
 
 ## 🆕 本周新增（07-27 ~ 08-02）
 
@@ -85,6 +86,7 @@ updated: 2026-07-30
 - [[knowledge/Research/ai-research-collab-five-part-decoupling|AI 科研五元解耦]] — 110 亿 Token 协作模式
 - [[knowledge/Dev/system-prompts-reference/README|System Prompts 存档]] — Claude/GPT/DeepSeek/Hermes 提示词参考
 - [[knowledge/Research/MOC-Research|🔬 研究域 MOC]] — 本周 36 篇研究笔记索引
+- [[knowledge/Dev/AI漫剧制作全流程|AI 漫剧制作全流程]] — AI 内容创作 SOP + 工具矩阵
 
 ## 📦 吸收笔记归档
 
