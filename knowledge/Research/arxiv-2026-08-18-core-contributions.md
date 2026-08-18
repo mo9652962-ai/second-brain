@@ -268,3 +268,6 @@ FinanceAgentBench v1.1: 76.00（超 GPT-5.6-Sol 56.79）
 | 指令简洁性: 给 agent 的指令越短越有效（107→20 行翻 4 倍）| ✅ 已内化（skill description 规范同源）|
 | 生图路由系统化: 参考 GenRouter 三组件（画像/匹配/过滤）| ⬜ 待办 |
 | 股票报告加数据来源标注（MintHarness 证据理念）| ⬜ 待办（下次股票 cron 时）|
+
+---
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]

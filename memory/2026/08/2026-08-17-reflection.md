@@ -125,3 +125,6 @@ type: reflection
 ---
 
 _生成: daily-reflection cron · k (Hermes) · 2026-08-18 回顾 2026-08-17_
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

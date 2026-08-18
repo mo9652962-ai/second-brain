@@ -27,3 +27,6 @@
 
 ## 红线
 DVWA 随便打；真实 SRC：只测授权/注入只证明/越权≤5条/XSS 只 console.log/上传证明即可。
+
+---
+> 🗺️ 属于 [[MOC-Security]] · [[Home|🏠 Home]]

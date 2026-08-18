@@ -38,3 +38,6 @@
 - 发现：4 个 API signkey 硬编码（CWE-798），签名算法 MD5(signkey+ts+salt) 可离线伪造
 - POC：poc_signkey.py 本地验证 4/4 通过
 - 提交路径：注册补天 → 教育公益 → 查授权 → 实际验证 → 报告
+
+---
+> 🗺️ 属于 [[MOC-Security]] · [[Home|🏠 Home]]

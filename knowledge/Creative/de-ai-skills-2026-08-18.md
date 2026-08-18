@@ -73,3 +73,6 @@
 ④ ai-flavor-remover: 深度重写(结构化分析+优化)
 ⑤ 人工: 添加自己知道的真实细节(最强武器)
 ```
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

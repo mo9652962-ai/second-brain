@@ -42,3 +42,6 @@
 
 ChatGPT/Claude ¥145/月 vs DeepSeek API ¥60/月 vs API+编程 ¥180 内
 日常任务差距很小，复杂推理有差距。
+
+---
+> 🗺️ 属于 [[MOC-Dev]] · [[Home|🏠 Home]]
