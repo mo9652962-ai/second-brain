@@ -264,7 +264,7 @@ SkillEvo 双支柱
 
 ---
 
-*关联: [arxiv-2026-08-16-agent-llm](arxiv-2026-08-16-agent-llm) · 上一份 [arxiv-2026-08-05-core-contributions](arxiv-2026-08-05-core-contributions) · [arxiv-digest](arxiv-digest) · [HOME](../HOME.md)*
+*关联: [arxiv-2026-08-16-agent-llm](arxiv-2026-08-16-agent-llm) · 上一份 [arxiv-2026-08-05-core-contributions](arxiv-2026-08-05-core-contributions) · [arxiv-digest](arxiv-digest) · [HOME](../../HOME.md)*
 
 ---
 > 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]

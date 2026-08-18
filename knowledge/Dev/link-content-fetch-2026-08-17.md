@@ -47,3 +47,6 @@ Firecrawl 24/25 > MDisBetter 23 > Jina Reader 21 > Trafilatura 19 > Readability 
 - Hermes web_extract 支持 tavily/firecrawl/exa/searxng，**无内置 jina**
 - Jina 是零配置 curl 前缀，无需改核心——按 footprint ladder 走技能方案
 - 已建 `link-content-fetch` 技能含四层方案 + 通用 Playwright 拦截模板
+
+---
+> 🗺️ 属于 [[MOC-Dev]] · [[Home|🏠 Home]]

@@ -7,7 +7,7 @@ domain: AI
 
 > 来源：小红书周榜「本周 GitHub 最猛 7 个项目，Agent 基建开始卷了」
 > 研究方法：web_search 实证（star/README/架构/部署成本）→ 与现有栈对照 → 落地增量
-> 相关: [[GitHub-Weekly-2026-08-16]] | [[engineering-workflow]] | [[mattpocock-methodology]]
+> 相关: [[GitHub-Weekly-2026-08-16]] | `engineering-workflow` | [[mattpocock-methodology]]
 
 ## 趋势观察（原文）
 

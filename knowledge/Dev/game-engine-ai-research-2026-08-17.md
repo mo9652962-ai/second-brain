@@ -7,7 +7,7 @@ domain: AI
 
 > 来源：小红书周榜「做游戏听起来很高门槛？2026 开源生态已砍到很低」
 > 方法：GitHub API 实证 + AI 游戏开发生态调研
-> 相关: [[agent-infra-weekly-2026-08-17]] | [[engineering-workflow]]
+> 相关: [[agent-infra-weekly-2026-08-17]] | `engineering-workflow`
 
 ## 5 引擎实证数据（GitHub API 实时）
 

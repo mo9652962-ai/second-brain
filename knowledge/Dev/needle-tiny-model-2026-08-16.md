@@ -43,4 +43,4 @@ status: watch
 | 值得安装 | 🟡 关注——不装（无端侧部署场景），但「合成-微调-打包」管线方法论可沉淀 |
 | 趋势判断 | 端侧模型走向「小到能进单片机」，工具调用是主卖点；2026 下半年边缘 agent 会继续升温 |
 
-> 🗺️ 属于 [[MOC-Dev]] · [[Home|🏠 Home]] · 平行参考：[[local-llm-inference]]（本地推理）· [[microcontroller-edge-ai]] · [[8051-embedded-dev]]
+> 🗺️ 属于 [[MOC-Dev]] · [[Home|🏠 Home]] · 平行参考：`local-llm-inference`（本地推理）· `microcontroller-edge-ai` · `8051-embedded-dev`

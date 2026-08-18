@@ -1556,6 +1556,10 @@ Tavily API 用量配额耗尽 (432 plan limit exceeded) — 搜索主力后端�
 - **复现**: 8/17 自改进 cron 首次两个并发 tavily_search 均返回 432。Firecrawl 再次无缝接管（成功搜到 OpenClaw 2026.8.1 发布、Google/Microsoft Blue Prism 趋势报告），搜索完全未阻塞。
 - **结论**: `Recurrence-Count: 4`。4 天 3 次复发（8/14/15/16 + 今日 8/17），已是高频周期性问题。**语义缓存落地优先级再上调**：它直接决定能否摆脱对配额型主搜索后端的反复依赖。Firecrawl 经 4 次实战验证，已事实上成为常态主力后端。
 
+### 2026-08-18 Recurrence Note (5th independent confirmation)
+- **复现**: 8/18 自改进 cron 首次两个并发 tavily_search 均返回 432。Firecrawl 再次无缝接管（成功搜到 AI Agent 2026 best practices + OpenClaw 记忆增强指南），搜索完全未阻塞。
+- **结论**: `Recurrence-Count: 5`。连续 5 天复发（8/14-8/18），Tavily 配额周期性耗尽已成常态。语义缓存仍是治本方案，但 5 路冗余已在连续 5 个工作日验证足够可靠，可维持低位处理。Firecrawl 连续 5 次实测可靠，正式确立为常态主力搜索后端。#1
+
 ---
 
 ## [LRN-20260806-001] best_practice
