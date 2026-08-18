@@ -121,6 +121,7 @@ created: 2026-08-09
 - [[knowledge/Dev/prime-agent-rlm-2026-08-14|Prime Agent RLM 08-14]]
 - [[knowledge/Daily/hackernews-2026-08-12|HN 08-12]] — 本周 Daily 速览补链 · [[knowledge/cards/2026-08-14-prime-agent-rlm|知识卡片 08-14]]
 - [[knowledge/Research/arxiv-2026-08-16-core-contributions|arXiv 核心贡献 08-16]] · [[knowledge/cards/2026-08-16-behavioral-contracts-reliability|知识卡片 08-16]]
+- [[knowledge/Research/arxiv-2026-08-18-agent-llm|arXiv Agent/LLM 08-18]] · [[knowledge/cards/2026-08-18-multi-agent-coordination|知识卡片 08-18]]
 
 ## 文章研读
 
