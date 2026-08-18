@@ -55,3 +55,6 @@
 - 墨星写作（世界观功能与设定原则）：mx-xz.com
 - Bloomverse（长篇小说设定方法）：hivelore.com
 - 中国作家网（诡秘之主/凡人修仙传评论）：chinawriter.com.cn
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

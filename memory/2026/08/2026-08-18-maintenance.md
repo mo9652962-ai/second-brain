@@ -21,14 +21,14 @@ created: 2026-08-18
 ## 一、断链修复（9 处 wikilink + 2 处 markdown）
 
 **技能名 wikilink → 纯文本反引号（8 处，Hermes 技能非 vault 笔记）：**
-- `agent-infra-weekly-2026-08-17.md`：`[[engineering-workflow]]`
-- `code-graph-rag-2026-08-16.md`：`[[code-review-graph]]`
-- `diagram-design-2026-08-16.md`：`[[ppt-design-2026]]`、`[[baoyu-infographic]]`
-- `game-engine-ai-research-2026-08-17.md`：`[[engineering-workflow]]`
-- `needle-tiny-model-2026-08-16.md`：`[[local-llm-inference]]`、`[[microcontroller-edge-ai]]`、`[[8051-embedded-dev]]`
+- `agent-infra-weekly-2026-08-17.md`：`engineering-workflow`
+- `code-graph-rag-2026-08-16.md`：`code-review-graph`
+- `diagram-design-2026-08-16.md`：`ppt-design-2026`、`baoyu-infographic`
+- `game-engine-ai-research-2026-08-17.md`：`engineering-workflow`
+- `needle-tiny-model-2026-08-16.md`：`local-llm-inference`、`microcontroller-edge-ai`、`8051-embedded-dev`
 
 **MOC 不存在（1 处）：**
-- `knowledge/AI漫剧制作全流程.md`：`[[MOC-AI]]`（AI 域已合并为空）→ `[[MOC-Dev]]`；文件已 `git mv` 归入 `knowledge/Dev/`，MOC-Dev 补索引行
+- `knowledge/AI漫剧制作全流程.md`：`MOC-AI`（AI 域已合并为空）→ `[[MOC-Dev]]`；文件已 `git mv` 归入 `knowledge/Dev/`，MOC-Dev 补索引行
 
 **markdown 相对路径（2 处）：**
 - `arxiv-2026-08-16-agent-llm.md`、`arxiv-2026-08-16-core-contributions.md`：`[HOME](../HOME.md)` 从 `knowledge/Research/` 解析到不存在的 `knowledge/HOME.md` → `[HOME](../../HOME.md)`（指向 vault 根）
@@ -53,6 +53,15 @@ created: 2026-08-18
 
 MOC-Security 新建「🌐 Web 安全 / SRC 挖洞」分区，计数 12 → 15。
 MOC-Research「其他」区补 `arxiv-2026-08-18-agent-llm`。
+
+## 三点五、验证补漏（ad-hoc 验证发现）
+
+验证脚本（hermes-verify-vault-maintenance-2026-08-18.py）抓出 DIR_MOC 两个真实盲区：
+
+- `knowledge/Finance/` 有 MOC-Finance 但映射缺失（08-15/08-17 两篇每日股票分析从未被补链）→ 新增映射 `knowledge/Finance: MOC-Finance`，补链 2 篇 + MOC-Finance 索引补 08-17
+- `knowledge/Creative/` 有文件但无映射无 MOC（novel-worldbuilding 孤立）→ 新增映射 `knowledge/Creative: knowledge-map`，补链 1 篇
+
+另修维护笔记自身：文档旧断链示例的 `[[]]` wikilink 语法已剥离（防自己成为下轮断链来源，技能 Pitfall 已知模式）。
 
 ## 四、脚本修复（防复发）
 
