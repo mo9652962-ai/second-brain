@@ -132,16 +132,20 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 
 ---
 
-## 📦 最新技能入库 (2026-08-16 ~ 2026-08-17)
+## 📦 最新技能入库 (2026-08-17 ~ 2026-08-18)
 
 ### 研究笔记
 
 | 技能 | 版本 | 简介 |
 |------|------|------|
+| **[HN 今日深挖](knowledge/Research/hackernews-deep-dive-2026-08-18.md)** | v1.0 | GPT-5.6 Sol/Terra/Luna 价格战 + DuckDB v2.0 + Copilot Autofix 攻陷深挖 |
+| **[arXiv AI Agent / LLM 速览](knowledge/Research/arxiv-2026-08-18-agent-llm.md)** | v1.0 | 08-15 提交池——17 篇精选（多 agent 协作/编码 agent 工作集） |
+| **[arXiv 核心贡献精选](knowledge/Research/arxiv-2026-08-18-core-contributions.md)** | v1.0 | When Agents Coordinate 等 2 篇全文验证（文件协调省 42% token） |
 | **[arXiv AI Agent / LLM 速览](knowledge/Research/arxiv-2026-08-17-agent-llm.md)** | v1.0 | 08-14 提交池——收集 30+ 篇 → 精选 14 篇（Agent 长期执行/恢复/跨会话记忆交接） |
 | **[arXiv AI Agent / LLM 速览](knowledge/Research/arxiv-2026-08-16-agent-llm.md)** | v1.0 | 08-13 提交池补全——收集 53 篇去重 → 精选 15 篇 + 简评 5 篇（Agent 自我改进/训练） |
 | **[arXiv 核心贡献精选](knowledge/Research/arxiv-2026-08-16-core-contributions.md)** | v1.0 | 行为契约/SkillEvo 等核心贡献深度解读（reliability/memory/skill 主题） |
 | **[GitHub 宝藏挖掘周更](knowledge/Research/GitHub-Weekly-2026-08-16.md)** | v1.0 | Top 5 高星仓库（codebase-memory-mcp / nanobot / code-review-graph 等） |
+| **[每日日志 08-18](memory/2026/2026-08-18.md)** | v1.0 | 知识库优化日 + 安全研究批量入库（SRC/提权/防护） |
 | **[每日日志 08-17](memory/2026/2026-08-17.md)** | v1.0 | 闲鱼变现决策日 + 自研路由实证 + AI 模型价格战 + PCB 蓝海确认 |
 | **[每日日志 08-16](memory/2026/2026-08-16.md)** | v1.0 | 新会话首日环境自检 + 记忆继承 + 模型策略记录 |
 
@@ -187,7 +191,7 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 
 ```
 📁 仓库体积：约 180MB（含附件与图片）
-📝 Markdown 文件：719 个（正文约 0.7 MB）
+📝 Markdown 文件：772 个（正文约 0.8 MB）
 🧠 自建 Skill 文档：30 个（12 个领域目录）
 🗂️ 知识域：10 个
 ⏰ 首次提交：2026 年 7 月
