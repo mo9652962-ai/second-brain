@@ -55,6 +55,7 @@ created: 2026-08-09
 
 - [[memory/2026/08/2026-08-19-maintenance|🔧 08-19 维护]] — 断链 2 修 · 空壳 13 删 · 标签 0 冲突 · MOC 补链 15
 - [[memory/2026/08/2026-08-19-vault-suggestion-executor|🧹 08-19 建议执行器报告]] — 闲鱼决策悬置第 18 天：素材第 8 次核对 100% 就绪，随时 30min 上架
+- [[memory/2026/08/2026-08-19-daily-review|📊 08-19 每日回顾]] — 安全/SRC 知识深挖 + SOP 体系建成 + 基础设施健康预警
 - [[knowledge/Research/arxiv-2026-08-19-agent-llm|arXiv 今日速览]] — 08-17 池补全 14 篇（Zetta 闭环 harness / Bounded Agents 委派安全 / HarnessEval-W 证据树评测）
 
 ## 🧭 核心区域
