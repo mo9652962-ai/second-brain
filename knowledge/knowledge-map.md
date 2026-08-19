@@ -10,7 +10,7 @@ status: adopted
 
 > 入口: [[Home|🏠 Home]] · 返回总索引
 
-> 所有知识领域的索引与关联。最后更新: 2026-08-18（W34 周度整理：MOC 补链 + Finance MOC 创建 + memory 归位）
+> 所有知识领域的索引与关联。最后更新: 2026-08-19（W34 周度整理：MOC 补链 + Finance MOC 创建 + memory 归位）
 
 ## 🧭 MOC 总入口（2026-08-16 起，新建 MOC 必须在此挂载）
 
@@ -172,6 +172,20 @@ graph TD
 
 ---
 
+
+## 🆕 W35 新增速览（2026-08-17 ~ 08-18）
+
+> 本周主线：SRC 挖洞/渗透安全批量入库（8 篇）+ 去 AI 味技能研究 + Lossless Scaling 游戏工具 + 墨题巡检。
+
+| 域 | 新增重点 | 入口 |
+|:---|:---------|:-----|
+| 🛡️ Security | SRC 挖洞/提权渗透/防御加固/DVWA 靶场/逻辑漏洞 ×8 | [[knowledge/Security/MOC-Security]] |
+| 🎨 Creative | 去 AI 味开源技能研究（小黑盒帖子 + 千轮研究） | [[knowledge/Creative/de-ai-skills-2026-08-18]] |
+| 📅 Daily | HN 速览补链（08-08/08-16）· 今日产出学习 | [[knowledge/Daily/hackernews-2026-08-16]] · [[knowledge/Daily/hackernews-2026-08-08]] · [[knowledge/Daily/daily-output-study-2026-08-18]] |
+| 🎮 Gaming | Lossless Scaling（无损缩放/小黄鸭）研究 | [[knowledge/gaming/lossless-scaling-2026-08-18]] |
+| 💻 Dev | 墨题每日巡检 08-18 | [[knowledge/Dev/墨题每日巡检-2026-08-18]] |
+
+---
 
 ## 🆕 W34 新增速览（2026-08-15 ~ 08-16）
 

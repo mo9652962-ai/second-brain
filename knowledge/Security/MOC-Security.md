@@ -3,7 +3,7 @@ tags: [MOC, security, 网络安全, 索引]
 aliases: [安全地图, Security MOC, 网络安全 MOC]
 domain: Security
 created: 2026-08-16
-updated: 2026-08-16
+updated: 2026-08-19
 ---
 
 # 🛡️ 网络安全 MOC — Security Map
@@ -11,7 +11,7 @@ updated: 2026-08-16
 > 网络安全主题的总入口：威胁研究 / Web 安全 / Agent 安全 / 本机加固 / 合规。
 > [[knowledge-map|🗺️ 知识地图]] · [[MOC-Research|🔬 Research MOC]] · [[MOC-GitHub|🐙 GitHub 研究 MOC]]
 
-**共 15 篇相关笔记** · 最后更新：2026-08-18（本 MOC 随《[[知识库重构方案-2026-08-16|知识库重构方案]]》创建，收拢散落在 Security / Research / cards / Dev 四处的安全主题笔记）
+**共 23 篇相关笔记** · 最后更新：2026-08-18（本 MOC 随《[[知识库重构方案-2026-08-16|知识库重构方案]]》创建，收拢散落在 Security / Research / cards / Dev 四处的安全主题笔记）
 
 ---
 
@@ -65,6 +65,17 @@ updated: 2026-08-16
 
 1. 5 篇安全笔记从 Research/ 迁入 Security/（[[知识库重构方案-2026-08-16|方案·迁移清单]] #3~#7）
 2. 新安全笔记落盘时挂本 MOC；威胁类命名统一 `威胁名-YYYY-MM-DD`
+
+## 🆕 2026-08-17/18 新增（8 篇）
+
+- [[knowledge/Security/dvwa-practice-2026-08-17|DVWA 靶场实战]] — 七漏洞全通关
+- [[knowledge/Security/src-bounty-and-boundaries-2026-08-17|挖洞平台收益机制 + 安全边界]] — 千轮研究沉淀
+- [[knowledge/Security/logic-vulns-first-order-2026-08-18|逻辑漏洞 + 首单流程]] — 千轮研究
+- [[knowledge/Security/privesc-lateral-movement-2026-08-18|提权 + 内网渗透]] — 系统性知识
+- [[knowledge/Security/ai-enhanced-pipeline-2026-08-18|AI 增强挖洞流水线]] — 落地
+- [[knowledge/Security/browser-search-automation-2026-08-18|浏览器搜索 + 自动化增强]] — 千轮研究
+- [[knowledge/Security/local-hardening-report-2026-08-18|本机安全加固检查报告]]
+- [[knowledge/Security/defense-capabilities-2026-08-18|防御能力研究]] — 八轮千轮研究
 
 ---
 
