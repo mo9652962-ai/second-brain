@@ -31,7 +31,7 @@ created: 2026-08-18
 - `knowledge/AI漫剧制作全流程.md`：`MOC-AI`（AI 域已合并为空）→ `[[MOC-Dev]]`；文件已 `git mv` 归入 `knowledge/Dev/`，MOC-Dev 补索引行
 
 **markdown 相对路径（2 处）：**
-- `arxiv-2026-08-16-agent-llm.md`、`arxiv-2026-08-16-core-contributions.md`：`[HOME](../HOME.md)` 从 `knowledge/Research/` 解析到不存在的 `knowledge/HOME.md` → `[HOME](../../HOME.md)`（指向 vault 根）
+- `arxiv-2026-08-16-agent-llm.md`、`arxiv-2026-08-16-core-contributions.md`：`HOME(../HOME.md)` 从 `knowledge/Research/` 解析到不存在的 `knowledge/HOME.md` → `HOME(../../HOME.md)`（指向 vault 根）
 
 **保留的假阳性（不修）：** `claude-code-opus-5.md:45 [file.md]`（verbatim system prompt 示例）、`skills/hermes/github-repo-optimization.md` 13 处（fenced code block 模板示例）
 

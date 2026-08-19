@@ -130,6 +130,8 @@ v2026.3.7 引入的可插拔上下文管理界面已验证稳定。模型路由�
   - **NVIDIA SkillSpector** (2026-06-01): 所有 ClawHub skills 自动扫描隐藏指令
   - **Hotfix v2026.7.1-2** (2026-08-04): npm plugin singleton-array metadata 兼容修复
 - **⚠️ 稳定性预警 (2026-08)**: 社区反馈 v2026.7.1 更新后 Gateway 频繁崩溃无法启动；大版本升级前等 2-4 周社区验证
+- **Agent 框架 2026-08 大整合**: 头部框架定型（LangGraph 1.x / Microsoft Agent Framework 1.0 / Claude Agent SDK / OpenAI Agents SDK / ADK 2.0 / CrewAI 1.14.7）；MCP+A2A 已成 table stakes（10 大框架全支持 MCP，A2A 超 150 组织）；LangGraph 新增 node caching + deferred nodes + pre/post model hooks（context trimming/guardrails/PII）——印证生产原语（durable state/subagents/harness-first）是 2026 主旋律
+- **Hermes Agent (NousResearch, 2026)**: ~220K stars；以「持久记忆 + 自动生成 skills」为核心卖点，与我们的记忆架构方向高度契合——作为参考实现定期关注（注意与 runtime 同商标 Hermes）
 - **Graph Engineering > Loop Engineering (2026-07)**: 多阶段并行执行 + 精确反馈路由取代串行循环；图结构成为一等设计对象；Codex Remote Sessions 是 Graph 的 OpenClaw 实践
   - **演进时间线**: Context Engineering (mid-2025) → Loop Engineering (June 2026, Addy Osmani) → Graph Engineering (July 2026, Peter Steinberger/@steipete)
   - **核心差异**: Loop 串行循环 vs Graph 多阶段并行 + 精确反馈路由（非全循环回退）
@@ -234,7 +236,7 @@ InformationWeek 报告：企业从脆弱的手工胶水脚本转向标准化 Age
 
 ---
 
-_最后更新: 2026-08-17｜运行环境: OpenClaw Agent on Windows 11_
+_最后更新: 2026-08-19｜运行环境: OpenClaw Agent on Windows 11_
 
 ## Promoted From Short-Term Memory (2026-08-07)
 

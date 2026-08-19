@@ -51,7 +51,8 @@ created: 2026-08-09
 - [[memory/2026/08/weekly-learning-2026-08-16|📚 W34 学习回顾]] — AgentScope 实证测评提 PR + 墨题学习型设计 + Behavioral Contracts 落地容灾
 - [[memory/2026/08/2026-08-18-vault-suggestion-executor|🧹 08-18 建议执行器报告]] — 🔴 闲鱼 8/17 决策日已过 1 天：素材第 7 次核对 100% 就绪，今日最后窗口，待 sora 决策上架 or 放弃
 - [[memory/2026/08/2026-08-18-maintenance|🔧 08-18 维护]] — 断链 9→0 · 空壳 2 删 · 孤立 4 补链 · DIR_MOC 清理
-- [[memory/2026/08/2026-08-18-daily-review|📋 08-18 每日回顾]] — 安全/SRC 变现研究日：信息泄露首单 SOP + 网安 offer 路径 + AI 红队工具选型 + 多 agent 协作背书 · 🔴 闲鱼 8/18 最后窗口待拍板
+- [[memory/2026/08/2026-08-18-daily-review|📋 08-18 每日回顾]] — 安全/SRC 变现研究日：信息泄露首单 SOP + 网安 offer 路径 + AI 红队工具选型 + 多 agent 协作背书 · 🔴 闲鱼 8/18 最后窗口待拍板
+- [[memory/2026/08/2026-08-19-maintenance|🔧 08-19 维护]] — 断链 2 修 · 空壳 13 删 · 标签 0 冲突 · MOC 补链 15
 
 ## 🧭 核心区域
 
