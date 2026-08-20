@@ -1,5 +1,5 @@
 ---
-tags: [programming, python, AI-Agent, engineering]
+tags: [programming, python, ai-agent, engineering]
 domain: 编程
 cross-domain: ["AI-Agent", "AI-Workflow", "CAD-Design"]
 related: [[AI-Agent]], [[AI-Workflow]], [[CAD-Design]], [[Vibe-Coding]]

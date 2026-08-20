@@ -1,5 +1,5 @@
 ---
-tags: [methodology, AI-Agent, multi-agent, architecture, qm]
+tags: [methodology, ai-agent, multi-agent, architecture, qm]
 aliases: [qm-scope-methodology, hermes-multi-user-scope]
 date: 2026-08-02
 source: https://github.com/yc-software/qm

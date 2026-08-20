@@ -1,6 +1,6 @@
 ---
 date: 2026-07-26
-tags: [arxiv, paper-summary, AI-Agent, LLM, debugging, RL]
+tags: [arxiv, paper-summary, ai-agent, LLM, debugging, RL]
 source: arXiv digest 2026-07-26
 parent: memory/2026/07/arxiv-agent-llm-2026-07-26.md
 ---

@@ -1,5 +1,5 @@
 ---
-tags: [github, trending, research, AI-Agent, kimi, video-editing]
+tags: [github, trending, research, ai-agent, kimi, video-editing]
 aliases: [github-trending-2026-08-02]
 date: 2026-08-02
 source: https://github.com/trending
