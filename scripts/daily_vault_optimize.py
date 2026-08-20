@@ -144,14 +144,20 @@ def main():
         )
         print("commit:", r.stdout.strip()[-80:] if r.returncode == 0 else r.stderr.strip()[-80:])
         if r.returncode == 0:
-            r = subprocess.run(
-                ["git", "-C", str(VAULT), "push", "origin", "main"],
-                capture_output=True, text=True, timeout=120,
-                env={**__import__("os").environ,
-                     "HTTPS_PROXY": "http://127.0.0.1:7890",
-                     "HTTP_PROXY": "http://127.0.0.1:7890"},
-            )
-            print("push:", r.stdout.strip()[-60:] or r.stderr.strip()[-60:])
+            push_ok = False
+            for attempt in range(3):
+                r = subprocess.run(
+                    ["git", "-C", str(VAULT), "push", "origin", "main"],
+                    capture_output=True, text=True, timeout=120,
+                    env={**__import__("os").environ,
+                         "HTTPS_PROXY": "http://127.0.0.1:7890",
+                         "HTTP_PROXY": "http://127.0.0.1:7890"},
+                )
+                if r.returncode == 0:
+                    push_ok = True
+                    break
+                print(f"push 第{attempt+1}次失败: {r.stderr.strip()[-80:]}，重试…")
+            print("push:", "OK" if push_ok else f"失败（3次）: {r.stderr.strip()[-80:]}")
     elif args.commit:
         print("无变更，跳过提交")
     else:
