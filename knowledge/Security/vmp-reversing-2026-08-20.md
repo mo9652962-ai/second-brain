@@ -85,3 +85,6 @@
 - **防御视角**：理解 VMP 反调试/虚拟化原理 → 自己写程序时知道怎么保护（Android 逆向同理）
 - **安卓逆向标签**：视频带 #安卓逆向——VMP 在 Android SO 层同样使用（VMP SDK for Android）
 - 学习路径参考：看雪课程《VMProtect分析与调试器插件开发》（x32/x64Dbg 插件开发 + Handler 识别）
+
+---
+> 🗺️ 属于 [[MOC-Security]] · [[Home|🏠 Home]]
