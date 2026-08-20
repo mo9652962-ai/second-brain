@@ -59,7 +59,7 @@ Fuzz 发现 → 提供具体模糊过程和参数构造来源
 ```
 
 ## 关联知识
-- [[src-bug-hunting]]（技能，报告模板已同步）
+- `src-bug-hunting`（技能，报告模板已同步）
 - [[ai-enhanced-pipeline-2026-08-18]]（AI 报告合规红线）
 - [[t3-first-bounty-2026-08-18]]（T3 首单提交规范）
 

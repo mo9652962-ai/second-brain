@@ -144,6 +144,7 @@ v2026.3.7 引入的可插拔上下文管理界面已验证稳定。模型路由�
 - **EU AI Act 8月生效**: 多 Agent 编排归类 high-risk，需 HITL+审计+身份管理
 - **AutoGen 进入维护模式**: 已合并到 Microsoft Agent Framework（2026-02 RC）
 - **CrewAI**: 44.3K stars, 5.2M 月下载，最活跃多 Agent 框架
+- **Gartner 2026-08 新预测**: AI inference cost 每 agentic workflow 至 2028 增超 5 倍——成本控制升为「生存项」，直接背书我们的 cheap-model tiering + semantic caching 低成本护城河（见 LRN-20260820-001）
 
 ### Agentic Primitives > Glue Code (2026)
 InformationWeek 报告：企业从脆弱的手工胶水脚本转向标准化 Agent 原语。
@@ -224,7 +225,7 @@ InformationWeek 报告：企业从脆弱的手工胶水脚本转向标准化 Age
 - [x] ~~AI 变现调研~~ ✅ 2026-07-24
 - [x] ~~LRN-20260722-001 (Plan-and-Execute)~~ ✅ 2026-07-25
 - [x] ~~AI 变现落地（闲鱼AI代做PPT/论文润色）— 可发车（闲鱼封号至8/1）~~ ✅ 素材已预生成，8/1 解封日已过，上架排期 8/2
-- [ ] 闲鱼上架「AI 代做 PPT」→ **8/18 最后窗口**（8/17 决策日已过，连续顺延第 17 天；素材包+主图第 7 次核对 100% 就绪，30min；见 projects/current.md）
+- [ ] 闲鱼上架「AI 代做 PPT」→ **决策悬置第 19 天**（8/18 最后窗口已过近 2 天；素材包+主图第 9 次核对 100% 就绪，30min；见 projects/current.md）
 - [x] ~~合并冗余 skills（hermes-search-configuration → hermes-search-config）~~ ✅ 2026-07-31 已核实：hermes-search-configuration 已不存在，仅剩 hermes-search-config，无需合并
 - [ ] 随身WiFi下单确认（赫电 Pro 399元/年，选型已确认）→ 待 sora 确认
 - [x] Tavily fallback 评估：Firecrawl 作为永久备用搜索后端 ✅ auto-detect正常
@@ -236,7 +237,7 @@ InformationWeek 报告：企业从脆弱的手工胶水脚本转向标准化 Age
 
 ---
 
-_最后更新: 2026-08-19｜运行环境: OpenClaw Agent on Windows 11_
+_最后更新: 2026-08-20｜运行环境: OpenClaw Agent on Windows 11_
 
 ## Promoted From Short-Term Memory (2026-08-07)
 
