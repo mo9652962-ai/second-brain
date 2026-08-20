@@ -52,3 +52,6 @@ cd <小说目录> && ainovel-cli.exe   # 全自动跑初稿，产物 {cwd}/outpu
 - 技能：creative/novel-pipeline（新）
 - 关联：novel-worldbuilding + related_skills 补 novel-pipeline
 - 临时克隆：已清理（ai-novel-run/）
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]
