@@ -1,5 +1,5 @@
 ---
-tags: [arxiv, research, AI-Agent, RL, multi-agent, weekly]
+tags: [arxiv, research, ai-agent, RL, multi-agent, weekly]
 aliases: [arxiv-week32-study-2026-08-02]
 date: 2026-08-02
 source: arxiv-fetch cron 产出

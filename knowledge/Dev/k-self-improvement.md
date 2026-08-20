@@ -1,5 +1,5 @@
 ---
-tags: [self-improvement, AI-Agent, knowledge-management, cron]
+tags: [self-improvement, ai-agent, knowledge-management, cron]
 domain: AI
 ---
 # k 的自我强化 · 2026-07-25 更新

@@ -1,5 +1,5 @@
 ---
-tags: [research, AI-Agent, skills, academic-workflow, paper-writing]
+tags: [research, ai-agent, skills, academic-workflow, paper-writing]
 domain: Academic
 status: adopted
 ---

@@ -1,5 +1,5 @@
 ---
-tags: [arxiv, research, AI-Agent, LLM, daily]
+tags: [arxiv, research, ai-agent, LLM, daily]
 aliases: [arxiv-agent-llm-2026-08-08]
 date: 2026-08-08
 source: arxiv-fetch cron 产出

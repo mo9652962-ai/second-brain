@@ -2,7 +2,7 @@
 date: 2026-07-27
 type: arxiv-digest
 category: weekly
-tags: [arxiv, AI-Agent, LLM, cs.AI, cs.CL, cs.LG]
+tags: [arxiv, ai-agent, LLM, cs.AI, cs.CL, cs.LG]
 title: arXiv AI Agent & LLM 周报 2026-07-27
 ---
 

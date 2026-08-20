@@ -1,5 +1,5 @@
 ---
-tags: [AI-Agent, RLM, self-improving, long-running, 记忆工程, skills]
+tags: [ai-agent, RLM, self-improving, long-running, 记忆工程, skills]
 aliases: [prime-agent, RLM, Recursive Language Model, Continual Harness]
 date: 2026-08-14
 source: https://github.com/PrimeIntellect-ai/prime-agent

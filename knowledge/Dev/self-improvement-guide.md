@@ -1,5 +1,5 @@
 ---
-tags: [self-improvement, hermes, AI-Agent, guide, condensed]
+tags: [self-improvement, hermes, ai-agent, guide, condensed]
 domain: AI
 ---
 # Hermes Agent 自我强化指南

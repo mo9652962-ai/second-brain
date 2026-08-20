@@ -1,5 +1,5 @@
 ---
-tags: [AI-Agent, hermes-agent]
+tags: [ai-agent, hermes-agent]
 domain: ai-agent
 cross-domain: [ppt-design, academic, vibe-coding, workflow, obsidian]
 related: ["knowledge/AI-Workflow", "knowledge/PPT-Design", "knowledge/Research", "knowledge/Vibe-Coding", "knowledge/Obsidian-Vault"]

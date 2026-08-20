@@ -132,12 +132,14 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 
 ---
 
-## 📦 最新技能入库 (2026-08-18 ~ 2026-08-19)
+## 📦 最新技能入库 (2026-08-19 ~ 2026-08-20)
 
 ### 研究笔记
 
 | 技能 | 版本 | 简介 |
 |------|------|------|
+| **[arXiv AI Agent / LLM 速览](knowledge/Research/arxiv-2026-08-20-agent-llm.md)** | v1.0 | 08-18+08-19 双池全量 652 篇 → 20 强相关（Harness 原生 RL 三剑客 SPADE 等） |
+| **[每日日志 08-20](memory/2026-08-20.md)** | v1.0 | 补跑研究日：HarnessRisk 直接评测 Hermes + Gartner 推理成本 5x + 方舟-2 配额耗尽 |
 | **[arXiv AI Agent / LLM 速览](knowledge/Research/arxiv-2026-08-19-agent-llm.md)** | v1.0 | 08-17 提交池补全——358 篇全量收集 → 补录 14 篇强相关（Zetta 自进化/Bounded Agents 授权安全） |
 | **[HN 今日深挖](knowledge/Research/hackernews-deep-dive-2026-08-18.md)** | v1.0 | GPT-5.6 Sol/Terra/Luna 价格战 + DuckDB v2.0 + Copilot Autofix 攻陷深挖 |
 | **[arXiv AI Agent / LLM 速览](knowledge/Research/arxiv-2026-08-18-agent-llm.md)** | v1.0 | 08-15 提交池——17 篇精选（多 agent 协作/编码 agent 工作集） |
@@ -193,7 +195,7 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 
 ```
 📁 仓库体积：约 180MB（含附件与图片）
-📝 Markdown 文件：774 个（正文约 0.8 MB）
+📝 Markdown 文件：808 个（正文约 0.8 MB）
 🧠 自建 Skill 文档：30 个（11 个领域目录）
 🗂️ 知识域：10 个
 ⏰ 首次提交：2026 年 7 月

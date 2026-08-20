@@ -1,6 +1,6 @@
 ---
 date: 2026-07-26
-tags: [arxiv, AI-Agent, LLM, weekly-digest]
+tags: [arxiv, ai-agent, LLM, weekly-digest]
 source: arXiv API (cs.AI, cs.CL, cs.LG)
 ---
 
