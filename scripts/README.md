@@ -35,10 +35,11 @@
 | vault-structure.py | vault 结构分析 | 08-06 | 在用 |
 | web-archive.py | 网页存档 | 08-06 | 在用 |
 | xianyu-master-gen.py | 闲鱼上架素材包生成 | 08-06 | 在用 |
+| cache_hit_monitor.py | 缓存命中率监控（no_agent cron 用，位于 AppData/Local/hermes/scripts/，非本目录） | 08-20 | ✅ 修好（见下） |
 | vault-audit-report.json | vault 审计报告（数据文件，非脚本） | 08-06 | 数据 |
 
 ## 已删除/迁移记录
 
 | 脚本 | 删除/迁移时间 | 原因/替代品 |
 |:-----|:------------|:-----------|
-| cache-hit-monitor | 2026-08 发现缺失 | 无源码可恢复（8/18 反思教训）；如重建需登记回本表 |
+| cache-hit-monitor | 2026-08 曾推断缺失 | ⚠️ 更正（08-20）：脚本认错位置——实际在 `AppData/Local/hermes/scripts/cache_hit_monitor.py` 仍在；cron 挂因是 `script` 字段误把参数 `--days 3 --threshold 50` 一起写进文件名导致「Script not found」。已修：脚本默认值改为 days=3/threshold=50，jobs.json 的 script 字段改回裸文件名。08-20 daily-todo-executor 修复 |
