@@ -1560,6 +1560,11 @@ Tavily API 用量配额耗尽 (432 plan limit exceeded) — 搜索主力后端�
 - **复现**: 8/18 自改进 cron 首次两个并发 tavily_search 均返回 432。Firecrawl 再次无缝接管（成功搜到 AI Agent 2026 best practices + OpenClaw 记忆增强指南），搜索完全未阻塞。
 - **结论**: `Recurrence-Count: 5`。连续 5 天复发（8/14-8/18），Tavily 配额周期性耗尽已成常态。语义缓存仍是治本方案，但 5 路冗余已在连续 5 个工作日验证足够可靠，可维持低位处理。Firecrawl 连续 5 次实测可靠，正式确立为常态主力搜索后端。#1
 
+### 2026-08-20 Recurrence Note (7th independent confirmation)
+- **复现**: 8/20 自改进 cron 首次两个并发 tavily_search 均返回 432。Firecrawl 首次尝试 fetch failed，重试后成功接管（成功搜到 Gartner 2026 最新 press release：AI inference cost/agentic workflow 5x by 2028 + 40% 企业 app task-specific agents）。web_search 也超时。
+- **结论**: `Recurrence-Count: 7`。连续 7 个工作日复发（8/14-8/20），Tavily 配额周期性耗尽彻底常态。语义缓存仍是治本项，但 5 路冗余连续 7 天实测足够可靠，维持低位处理。Firecrawl 常态主力多一次实锤。
+- **本次观察**: Firecrawl 首次也 fetch failed（非 Tavily 专属故障），重试一次即成功——提示 Firecrawl 单次偶发失败可重试，不需立即切其他后端。
+
 ### 2026-08-19 Recurrence Note (6th independent confirmation)
 - **复现**: 8/19 自改进 cron 首次两个并发 tavily_search 均返回 432。Firecrawl 再次无缝接管（成功搜到 Agent 框架 2026-08 整合趋势 + OpenClaw 记忆增强/缓存方案），搜索完全未阻塞。
 - **结论**: `Recurrence-Count: 6`。连续 6 个工作日复发（8/14-8/19），Tavily 配额周期性耗尽已 100% 确认常态。语义缓存仍是唯一治本项，但 5 路冗余连续 6 天实测足够可靠，维持低位处理不变。Firecrawl 已为事实上的常态主力后端。#2
@@ -1746,3 +1751,33 @@ S4MP KeyError:2 根因：反编译源码确认 active_sims[message.player_id] �
 ### Resolution
 - **Resolved**: 2026-08-05T08:40:00+08:00
 - **Notes**: 完整十轮研究见 knowledge/Research/s4mp-multiplayer-10round-2026-08-04.md；8/4 当日漏记，8/5 补。
+
+## [LRN-20260820-001] insight
+
+**Logged**: 2026-08-20T13:28:00+08:00 | **Priority**: medium | **Status**: completed | **Area**: config
+
+### Summary
+Gartner 2026-08 新预测：AI inference cost 每 agentic workflow 至 2028 将增超 5 倍——成本控制从「优化项」升级为「生存项」
+
+### Details
+来自 Firecrawl 检索到的 Gartner 官方 press release (2026-08-17)：
+1. **AI inference costs per agentic workflow 将增超 5 倍 (through 2028)**
+2. 背景：企业从单 agent 走向 agentic ecosystem，每个 workflow 的推理调用量与 token 消耗同步暴涨
+3. 同批 Gartner 洞察：40% 企业 app 2026 将含 task-specific AI agents（已录 MEMORY）；AI 成为采购专用 category management 领域 (8/18)
+
+### 对 k 的验证/启发
+- ✅ **直接背书既有成本优化方向**：cheap-model tiering + semantic caching + prompt caching（LRN-20260721-008 / LRN-20260722-001）正是应对推理成本 5x 的药方
+- ⚠️ Tavily 配额周期性耗尽（连续 7 工作日）也是「推理/调用成本不可控」的微观缩影——语义缓存落地优先级应保持高位
+- 📌 结论：在 agent 越用越贵的大趋势下，我们的低成本架构（主力 flash + 心跳 mimo + 跨供应商 fallback）是正确护城河，应继续强化而非放松
+
+### Suggested Action
+- 保持语义缓存落地为 P1（根治 Tavily 配额 + 对未来推理成本 5x 的预防）
+- 持续跟踪 model routing / caching 的新工具（CacheBlend、prompt caching 服务）
+
+### Metadata
+- Source: firecrawl_search (gartner.com press release 2026-08-17)
+- Tags: gartner, inference-cost, cost-optimization, agentic-workflow, 2026
+- Pattern-Key: config.gartner-inference-cost-5x
+- Recurrence-Count: 1
+- First-Seen: 2026-08-20
+- Last-Seen: 2026-08-20
