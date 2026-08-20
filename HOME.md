@@ -61,6 +61,9 @@ created: 2026-08-09
 - [[knowledge/Research/arxiv-2026-08-20-agent-llm|arXiv 今日速览]] — 20 篇 AI Agent/LLM 论文（08-18+08-19 新池：HarnessRL 三剑客 / HarnessRisk 含 Hermes 评测 / TTS 开放域瓶颈）
 
 ## 🧭 核心区域
+- [[memory/2026/08/2026-08-19-reflection|🔍 08-19 反思]] — 行动项 3/3 未落地（反思≠执行第 3 次复发）；Tavily 第 6 次复发；SRC 三方向收敛为补天聚焦 · scripts 登记表当场补建
+
+## 🧭 核心区域
 
 - [[memory|🧠 记忆]] — 长期记忆与用户画像
 - [[concepts/MOC-Concepts|💡 概念]] — 常青概念卡片
