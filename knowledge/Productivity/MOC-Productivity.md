@@ -37,3 +37,11 @@ created: 2026-07-28
 - [[knowledge/Productivity/token-usage-report-20260814|Token 用量报告 08-14]] — W33 成本根因闭环
 - [[knowledge/Productivity/vault-health-baseline|Vault 健康基线]]
 - [[knowledge/Productivity/workbuddy-bluebook|WorkBuddy 蓝皮书]]
+
+## 🆕 08-21 接单变现闭环（千轮研究验证版）
+
+- [[knowledge/Productivity/交付成本库|交付成本库]] — 每单记录→时薪/利润率→反哺定价（没记录=定价赌博）
+- [[knowledge/Productivity/freelance-quote-4questions-2026-08-21|报价 4 问]] — 闲鱼接单报价第一课
+- [[knowledge/Productivity/AI生成页面不等于项目完成-交付认知|AI 生成≠交付]] — 客户买的是确定性不是代码
+- [[knowledge/Productivity/github-monetization-2026-08-20|GitHub 变现研究]] — 开源私有化+部署订阅
+- [[knowledge/Content/选题池|选题池 66 题]] — 内容库存，先查库存再临时找题

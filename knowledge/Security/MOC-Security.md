@@ -3,7 +3,7 @@ tags: [MOC, security, 网络安全, 索引]
 aliases: [安全地图, Security MOC, 网络安全 MOC]
 domain: Security
 created: 2026-08-16
-updated: 2026-08-19
+updated: 2026-08-21
 ---
 
 # 🛡️ 网络安全 MOC — Security Map
@@ -76,6 +76,18 @@ updated: 2026-08-19
 - [[knowledge/Security/browser-search-automation-2026-08-18|浏览器搜索 + 自动化增强]] — 千轮研究
 - [[knowledge/Security/local-hardening-report-2026-08-18|本机安全加固检查报告]]
 - [[knowledge/Security/defense-capabilities-2026-08-18|防御能力研究]] — 八轮千轮研究
+
+## 🆕 2026-08-21 新增（接口安全系列 + 部署安全 — 攻防一体）
+
+> 程序员Orion + 千轮研究（OWASP Top10 2025 验证）——每篇都是双杀：接单交付对照 + SRC 武器库。
+
+- [[knowledge/Security/文件上传四层检查-攻防一体|文件上传四层检查]] — webshell 伪装后缀 → 白名单/随机名/物理分离
+- [[knowledge/Security/验证码接口防护-限流熔断|验证码限流熔断]] — 短信轰炸防御（后端 4 层保护）
+- [[knowledge/Security/数据库公网裸奔-找死|数据库公网裸奔]] — 3306 暴露 → VPC 私有子网
+- [[knowledge/Security/SQL注入-参数化查询|SQL 注入参数化]] — 手动拼接=扔炸弹，ORM 非免死金牌
+- [[knowledge/Security/Git密钥泄露-轮换|Git 历史泄密]] — .env 提交 → 密钥轮换
+- [[knowledge/Security/OSS公共读-隐私泄露|OSS 公共读]] — 公私分桶 + 签名 URL
+- [[knowledge/Security/日志泄露-脱敏|日志脱敏]] — 统一 Logger + 敏感字段脱敏
 
 ---
 
