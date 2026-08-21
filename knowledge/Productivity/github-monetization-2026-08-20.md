@@ -73,7 +73,7 @@ date: 2026-08-20
 - [ ] 测试私有化部署流程（Docker 部署 → 模板化 → 定价）
 - [ ] 作为 B 站选题：「用 GitHub 开源项目月入过万？实操拆解」
 
-> 关联: [[ai-freelance-pricing]] · [[github-project-evaluation]] · [[xianyu-monetization]]
+> 关联: `ai-freelance-pricing` · `github-project-evaluation` · `xianyu-monetization`
 
 ---
 *来源视频：https://v.douyin.com/M3w3J1jq7G0/ · 处理：SenseVoice 转写 + Exa 研究补充 · k (Hermes) 2026-08-20*
