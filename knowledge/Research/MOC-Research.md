@@ -123,6 +123,7 @@ created: 2026-08-09
 - [[knowledge/Research/arxiv-2026-08-16-core-contributions|arXiv 核心贡献 08-16]] · [[knowledge/cards/2026-08-16-behavioral-contracts-reliability|知识卡片 08-16]]
 - [[knowledge/Research/arxiv-2026-08-18-agent-llm|arXiv Agent/LLM 08-18]] · [[knowledge/cards/2026-08-18-multi-agent-coordination|知识卡片 08-18]]- [[knowledge/Research/arxiv-2026-08-19-agent-llm|arXiv Agent/LLM 08-19 补录]] · [[knowledge/cards/2026-08-19-bounded-agents-delegation-security|知识卡片 08-19]]
 - [[knowledge/Research/arxiv-2026-08-20-agent-llm|arXiv Agent/LLM 08-20]] · [[knowledge/cards/2026-08-20-hermes-harnessrisk-security|知识卡片 08-20]]
+- [[knowledge/Research/arxiv-2026-08-21-agent-llm|arXiv Agent/LLM 08-21 补录]] · [[knowledge/cards/2026-08-21-github-monetization|知识卡片 08-21]]
 
 ## 文章研读
 
