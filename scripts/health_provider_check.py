@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
-"""Hermes provider connectivity check - no secrets printed."""
-import json, os, re, ssl, sys, time, urllib.request, urllib.error
+"""Hermes provider connectivity check - no secrets printed.
+Verified 2026-08-09: reads config.yaml custom_providers + .env key_env,
+POSTs minimal chat/completions (max_tokens=1), prints status/latency/model only.
+"""
+import json, os, re, time, urllib.request, urllib.error
 
 CONFIG = r"C:/Users/31954/AppData/Local/hermes/config.yaml"
 ENV = r"C:/Users/31954/AppData/Local/hermes/.env"
@@ -49,6 +52,27 @@ def resolve_key(prov, env):
         key = env.get(m.group(1), "")
     return key.strip() if key else ""
 
+def _balance_flag(code, msg):
+    """Detect balance shortage from an HTTP error body. Relays (keylink/
+    jiyuanlvdong) report '剩余额度: ¥0.05' inside the error text, no separate
+    balance endpoint. Returns an alarm suffix or ''. """
+    if code not in (402, 403, 429):
+        return ""
+    low = (msg or "").lower()
+    kw = ("额度", "余额", "balance", "insufficient balance",
+          "suspended", "credits", "quota", "预扣", "余额不足")
+    if not any(k in low for k in kw):
+        return ""
+    m = re.search(r"[¥￥]?\s*([0-9]+(?:\.[0-9]+)?)\s*元?", (msg or ""))
+    amount = ""
+    if m:
+        try:
+            v = float(m.group(1))
+            amount = f"¥{v:.2f}" if v < 100 else f"¥{v:,.0f}"
+        except Exception:
+            amount = m.group(1)
+    return f" [⚠️余额告警{' ' + amount if amount else ''}]"
+
 def test(base_url, api_key, model, timeout=20):
     url = base_url.rstrip("/") + "/chat/completions"
     body = json.dumps({
@@ -70,10 +94,15 @@ def test(base_url, api_key, model, timeout=20):
     except urllib.error.HTTPError as e:
         dt = time.time() - t0
         try:
-            msg = json.loads(e.read().decode()).get("error", {}).get("message", "")[:120]
+            raw = e.read().decode(errors="ignore")
+            try:
+                msg = json.loads(raw).get("error", {}).get("message", "")[:200]
+            except Exception:
+                msg = raw[:200]
         except Exception:
             msg = e.reason
-        return f"HTTP {e.code} {dt*1000:6.0f}ms  {msg}"
+        flag = _balance_flag(e.code, msg)
+        return f"HTTP {e.code} {dt*1000:6.0f}ms  {msg}{flag}"
     except Exception as e:
         dt = time.time() - t0
         return f"FAIL {dt*1000:6.0f}ms  {str(e)[:120]}"
@@ -81,9 +110,7 @@ def test(base_url, api_key, model, timeout=20):
 env = load_env(ENV)
 provs = load_providers()
 
-# test matrix: provider name -> (base_url, model) - resolved after load
 results = []
-tested = set()
 
 # built-in providers first
 builtin = [
@@ -107,7 +134,7 @@ for p in provs:
     if not url:
         results.append((pname, "SKIP (no base_url)"))
         continue
-    # choose a model from config if available
+    # choose a reliable model per provider (models[0] may be a YAML-string artifact)
     models = p.get("models", [])
     model = models[0] if models else "deepseek-v4-flash"
     if pname == "jiyuanlvdong":

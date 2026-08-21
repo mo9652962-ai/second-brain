@@ -116,14 +116,14 @@ updated: 2026-08-21
 
 
 ### 🧭 8/18 反思行动项（daily-reflection 2026-08-17 升级，执行者必读）
-- [ ] P1 语义缓存最小版落地（同 query 24h 去重中间件，估时 30min）→ 根治 Tavily 配额第 4 次复发（.learnings Recurrence Note 4th confirmation，已顺延 17 天）
+- [x] P1 语义缓存最小版落地（同 query 24h 去重中间件，估时 30min）→ ✅ 8/21 由 P0 落地一并完成（见下）
 - [ ] P1 墨题巡检 git status 硬检查脚本化（未提交改动即报警）→ 把「巡检发现」变「预防」（8/16 反思已列未落地）
 - [ ] P1 hermes-health-check 加产物 stat 检查（产出型 cron 当日文件缺失即告警，不标全绿）→ 根治 8-17 五产物缺失被「全绿」掩盖（8/8 同类坑复发）
 
 ## 🔒 待用户操作（不催促，状态变化时提醒）
 ### 🧭 8/20 反思行动项（daily-reflection 复盘 8-19，执行者必读）
-- [ ] P0 语义缓存最小版落地——硬截止 8/22（从 P1 升级：Tavily 第 6 次复发 + Gartner 推理成本 5x 预防；同 query 24h 去重中间件，估时 30min）
-- [ ] P1 health_provider_check.py 加余额阈值告警（keylink 余额 ¥0.05 险裸奔 + jiyuanlvdong 504×3；余额 <¥1 标红，防「兜底成功」掩盖根因）
+- [x] P0 语义缓存最小版落地——✅ 8/21 完成（硬截止 8/22 前）：原实现只挂 tavily provider、实际流量走 exa/searxng/firecrawl 兜底时从未命中（cache 文件从未生成）；已在 `web_tools.py::web_search_tool` chokepoint 上移统一缓存覆盖全部后端，实测 exact 命中生效，submit `84d813bf2`
+- [x] P1 health_provider_check.py 加余额阈值告警 → ✅ 8/21：新增 `_balance_flag` 解析 HTTP 402/403/429 错误体中的「额度/余额」信息（keylink/jiyuanlvdong 中转站内嵌无独立端点），余额不足自动标 ⚠️。实测 kimi suspended / fangzhou-2 quota(8/28 重置) 被正确标红；keylink 已恢复 OK（¥0.05 裸奔解除）
 - [ ] P1 SRC 侦察收敛：聚焦补天 1 个有效漏洞解锁实战认证，单目标时间盒 2h 超时换目标（联想/小程序/T3 三方向均无有效产出）
 - [x] scripts/ 登记表 → ✅ 8/20 反思当场创建 scripts/README.md（杜绝脚本无声消失）
 
