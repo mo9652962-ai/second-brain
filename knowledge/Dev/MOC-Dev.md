@@ -2,7 +2,7 @@
 tags: [MOC, dev, 编程, python, web, 系统设计]
 domain: Dev
 created: 2026-07-28
-updated: 2026-08-18
+updated: 2026-08-21
 ---
 
 # 💻 开发域 — 编程与系统
@@ -117,3 +117,29 @@ updated: 2026-08-18
 - [[knowledge/Dev/agent-skills-addyosmani-2026-08-14|addyosmani agent-skills]]
 - [[knowledge/Dev/cloudflare-computer-2026-08-14|Cloudflare Computer 沙箱]]
 - [[knowledge/Dev/墨题每日巡检-2026-08-18|墨题每日巡检 08-18]]
+
+## 🛡️ 开发避坑系列（2026-08-21 千轮研究落地 — OWASP/大厂事故验证）
+
+> 程序员Orion「开发 B 坑」系列 29 项 + 千轮研究新增 3 项 = **写码前扫坑清单 32 项**。写代码前先扫一遍，交付翻车率直降。
+
+- [[knowledge/Development/写码前扫坑清单|📋 写码前扫坑清单（32 项总纲）]] — **软件流开工第一步**
+- [[knowledge/Development/接口契约-上线即合同|接口契约]] — 上线接口=合同，v1/v2 并存
+- [[knowledge/Development/空catch吞异常|空 catch 吞异常]] — 静默失败=把 bug 塞地毯下
+- [[knowledge/Development/并发超卖-条件更新兜底|并发超卖]] — 乐观锁 UPDATE WHERE stock>0
+- [[knowledge/Development/缓存一致性-先更库后删缓存|缓存一致性]] — 先更库后删缓存 + TTL 随机抖动
+- [[knowledge/Development/连接池配置-不是越大越好|连接池配置]] — core×2+spindle，3s 超时
+- [[knowledge/Development/数据库连接池|数据库连接池]] — 复用连接防耗尽
+- [[knowledge/Development/深分页-游标分页|深分页]] — LIMIT OFFSET 陷阱 → 游标分页
+- [[knowledge/Development/微服务超时防雪崩|微服务超时防雪崩]] — 全链路超时防线
+- [[knowledge/Development/单体优先-架构演进铁律|单体优先]] — 小项目硬上微服务=灾难
+- [[knowledge/Development/循环调外部API-批量与队列|循环调外部 API]] — 自我 DDoS → 批量/队列
+- [[knowledge/Development/循环插入与缓存-两个夺命坑|循环插库+本地缓存]] — 批量 SQL + Redis 全局缓存
+- [[knowledge/Development/事务内网络IO-本地消息表|事务内网络 IO]] — 本地消息表 + 异步投递
+- [[knowledge/Development/幂等跨状态-状态机|幂等跨状态]] — 幂等 key 含状态机维度
+- [[knowledge/Development/超时重试-幂等|超时重试幂等]] — 幂等键 + 指数退避
+- [[knowledge/Development/分布式定时任务-锁|分布式定时任务]] — Redis 分布式锁
+- [[knowledge/Development/操作审计-盲盒系统|操作审计]] — 防盲盒系统，记录谁/何时/改了啥
+- [[knowledge/Development/状态枚举替代布尔|状态枚举替代 Boolean]] — 给业务留活路
+- [[knowledge/Development/小程序虚拟支付400排查|虚拟支付 400 排查]] — product ID 空值
+- [[knowledge/Development/soft-delete-method-2026-08-21|软删除]] — deleted_at 时间戳
+- [[knowledge/Development/代码审查铁律-跑通不等于交付|代码审查铁律]] — 跑通≠交付，PR+门禁
