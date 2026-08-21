@@ -61,6 +61,7 @@ created: 2026-08-09
 - [[memory/2026/08/2026-08-20-daily-review|📊 08-20 每日回顾]] — 补跑研究日：HarnessRisk 直接评测 Hermes + Gartner 推理成本 5x + 方舟-2 配额耗尽靠 fallback 扛
 - [[knowledge/Research/arxiv-2026-08-20-agent-llm|arXiv 今日速览]] — 20 篇 AI Agent/LLM 论文（08-18+08-19 新池：HarnessRL 三剑客 / HarnessRisk 含 Hermes 评测 / TTS 开放域瓶颈）
 - [[knowledge/Research/arxiv-2026-08-21-agent-llm|arXiv 今日速览]] — 补全 17 篇 AI Agent/LLM 论文（同池漏网：Co-RL / Continual RLVR / D²ACCI / StartupBench / Wuying-Browser 等）
+- [[memory/2026/08/2026-08-21-daily-review|📋 08-21 每日回顾]] — SRC AI 挖洞三工具落地 + 接单报价 4 问 + 开源私有化变现；🔴 闲鱼决策悬置第 20 天待拍板
 
 ## 🧭 核心区域
 - [[memory/2026/08/2026-08-19-reflection|🔍 08-19 反思]] — 行动项 3/3 未落地（反思≠执行第 3 次复发）；Tavily 第 6 次复发；SRC 三方向收敛为补天聚焦 · scripts 登记表当场补建
