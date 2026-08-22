@@ -79,14 +79,21 @@ def update_moc_research() -> int:
     files = [f for f in files if f.name != "MOC-Research.md"]
     names = {f.stem for f in files}
     current = moc_path.read_text(encoding="utf-8")
-    # 已索引的
-    indexed = set(re.findall(r"\[\[([^\]|#]+)", current))
-    missing = names - indexed
+    # 已索引的：链接统一取 stem（兼容 [[path/note|display]] 形式），避免重复索引
+    indexed = {ln.rsplit("/", 1)[-1] for ln in re.findall(r"\[\[([^\]|#]+)", current)}
+    missing = sorted(names - indexed)
     if not missing:
         return 0
-    # 简单追加到"其他"组尾部（按文件名排序）
-    add_lines = ["## 其他", ""] + [f"- [[{m}]]" for m in sorted(missing)]
-    current = current.rstrip() + "\n\n" + "\n".join(add_lines) + "\n"
+    # 若文件末尾已是 "## 其他" 小节，则合并进去；否则追加新小节
+    # 避免每次运行都追加一个 "## 其他" 头
+    tail = current.rstrip()
+    m = re.search(r"(## 其他\s*\n(?:- \[\[[^\n]*\]\]\s*\n?)*)$", tail)
+    if m:
+        add_lines = "".join(f"- [[{name}]]\n" for name in missing)
+        current = tail[: m.start()] + m.group(1).rstrip() + "\n" + add_lines + "\n"
+    else:
+        add_lines = ["## 其他", ""] + [f"- [[{name}]]" for name in missing]
+        current = tail + "\n\n" + "\n".join(add_lines) + "\n"
     # 更新计数行
     current = re.sub(r"\*\*共 \d+ 篇研究笔记\*\*", f"**共 {len(files)} 篇研究笔记**", current)
     moc_path.write_text(current, encoding="utf-8")
