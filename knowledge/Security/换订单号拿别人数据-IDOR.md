@@ -61,3 +61,6 @@ def get_order(order_id):
 - bizlogic_lab.py 靶场（越权 IDOR 模块）
 - src-bug-hunting 技能 IDOR 章节
 - `Security/前端隐藏不等于安全-后端鉴权.md` / `Security/接口三件套-攻防一体.md`
+
+---
+> 🗺️ 属于 [[MOC-Security]] · [[Home|🏠 Home]]

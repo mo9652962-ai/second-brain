@@ -51,3 +51,6 @@ SELECT * FROM users WHERE deleted_at IS NULL;
 
 - 软删除数据 = 隐藏攻击面：接口没过滤 `deleted_at IS NULL` → IDOR 查「已删除」数据 / 数据残留泄露
 - 测试删除接口时：观察是物理删（DELETE）还是软删（UPDATE）→ 软删后可尝试数据恢复漏洞
+
+---
+> 🗺️ 属于 [[MOC-Dev]] · [[Home|🏠 Home]]

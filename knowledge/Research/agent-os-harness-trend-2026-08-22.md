@@ -88,3 +88,6 @@ Harness = 包在 foundation model 外部的 runtime substrate，11 项职责：�
 - arXiv 2605.13357《AI Harness Engineering》
 - arXiv 2606.01508《Agent Operating Systems (AOS)》
 - LangChain《The Anatomy of an Agent Harness》
+
+---
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]

@@ -45,3 +45,6 @@ date: 2026-08-21
 
 - `pcb-design` / `kicad-automated-pcb` / `skidl-schematic-automation` 技能
 - 记忆：AI PCB 工作流（ProtoFlow→KiCad→DeepPCB→JLCPCB）
+
+---
+> 🗺️ 属于 [[MOC-Hardware]] · [[Home|🏠 Home]]
