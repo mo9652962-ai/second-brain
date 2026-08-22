@@ -145,6 +145,7 @@ v2026.3.7 引入的可插拔上下文管理界面已验证稳定。模型路由�
 - **AutoGen 进入维护模式**: 已合并到 Microsoft Agent Framework（2026-02 RC）
 - **CrewAI**: 44.3K stars, 5.2M 月下载，最活跃多 Agent 框架
 - **Gartner 2026-08 新预测**: AI inference cost 每 agentic workflow 至 2028 增超 5 倍——成本控制升为「生存项」，直接背书我们的 cheap-model tiering + semantic caching 低成本护城河（见 LRN-20260820-001）
+- **Self-hosted Agent 安全=治理自建 (2026-08)**: reco.ai「OpenClaw Security Crisis」+ Anthropic eval 事故回顾 + NVIDIA NemoClaw 三源同证。开源可审计 ≠ 数据安全；越流行越成攻击面。回应方案：NemoClaw/OpenShell 进程级沙箱 + 最小特权 + 本地模型（见 LRN-20260822-001）——直接背书 HarnessRisk 评测（Hermes Harness Configuration 最脆弱）的 P1 配置面收紧行动项
 
 ### Agentic Primitives > Glue Code (2026)
 InformationWeek 报告：企业从脆弱的手工胶水脚本转向标准化 Agent 原语。
@@ -225,7 +226,8 @@ InformationWeek 报告：企业从脆弱的手工胶水脚本转向标准化 Age
 - [x] ~~AI 变现调研~~ ✅ 2026-07-24
 - [x] ~~LRN-20260722-001 (Plan-and-Execute)~~ ✅ 2026-07-25
 - [x] ~~AI 变现落地（闲鱼AI代做PPT/论文润色）— 可发车（闲鱼封号至8/1）~~ ✅ 素材已预生成，8/1 解封日已过，上架排期 8/2
-- [ ] 闲鱼上架「AI 代做 PPT」→ **决策悬置第 19 天**（8/18 最后窗口已过近 2 天；素材包+主图第 9 次核对 100% 就绪，30min；见 projects/current.md）
+- [ ] 闲鱼上架「AI 代做 PPT」→ **决策悬置第 20 天**（8/18 最后窗口已过近 4 天；素材包+主图第 10 次核对 100% 就绪，30min；见 projects/current.md）
+- [ ] **语义缓存最小版落地（硬截止 8/22）**：根治 Tavily 配额复发（连续 8 工作日）+ 预防 Gartner 推理成本 5x。8/22 已到截止仍未落地，P1 持续
 - [x] ~~合并冗余 skills（hermes-search-configuration → hermes-search-config）~~ ✅ 2026-07-31 已核实：hermes-search-configuration 已不存在，仅剩 hermes-search-config，无需合并
 - [ ] 随身WiFi下单确认（赫电 Pro 399元/年，选型已确认）→ 待 sora 确认
 - [x] Tavily fallback 评估：Firecrawl 作为永久备用搜索后端 ✅ auto-detect正常
@@ -237,7 +239,7 @@ InformationWeek 报告：企业从脆弱的手工胶水脚本转向标准化 Age
 
 ---
 
-_最后更新: 2026-08-20｜运行环境: OpenClaw Agent on Windows 11_
+_最后更新: 2026-08-22｜运行环境: OpenClaw Agent on Windows 11_
 
 ## Promoted From Short-Term Memory (2026-08-07)
 
