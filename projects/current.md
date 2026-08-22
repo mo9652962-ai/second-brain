@@ -1,11 +1,11 @@
 ﻿---
 tags: [projects, active]
-updated: 2026-08-21
+updated: 2026-08-22
 ---
 
 # 当前项目状态
 
-> 本周（8/9–8/15）周度清理：完成项已归档，未完成项重新排期。完整报告见 `memory/2026/08/2026-08-15-weekly-todo-cleanup.md`
+> 本周（8/16–8/22）周度清理：完成项已归档，未完成项重新排期。完整报告见 `memory/2026/08/2026-08-22-weekly-todo-cleanup.md`
 
 ## ✅ 已完成（归档）
 
@@ -95,10 +95,35 @@ updated: 2026-08-21
 - [x] 模型速查表 + keylink 强模型接入（官方 ID 避坑、v4-pro 性价比王）→ knowledge/Dev/模型速查-2026-08.md ✅ 8/15
 - [x] 健康巡检（8/14）：系统基本健康，核心链路在线；4 项待处理
 
+### 8. 本周（8/16–8/22）完成项
+
+**🏦 语义缓存 + 余额告警（P0/P1，8/21 真落地）**
+- 语义缓存最小版 P0 真落地（硬截止 8/22 前）：根因=原实现只挂 tavily provider、流量走 exa/searxng/firecrawl 兜底时从未命中（cache 文件从未生成）；已在 `web_tools.py::web_search_tool` 统一 chokepoint 上移覆盖全 8 后端，实测 exact 命中生效，submit feat/smart-routing `84d813bf2`（根治 Tavily 连续 8 工作日配额复发 + 应对 Gartner 推理成本 5x）
+- health_provider_check.py 加余额阈值告警：`_balance_flag` 解析 HTTP 402/403/429 错误体「额度/余额」词（keylink/jiyuanlvdong 中转站内嵌无独立端点）；实测 kimi suspended / fangzhou-2 quota(8/28 重置) 正确标红；keylink 已恢复 OK（¥0.05 裸奔解除）
+
+**🔐 墨题上线安全自审（8/22，自家生产资产）**
+- v9.30 四洞全修 + 11/11 冒烟 + v9.30b 全路由扫描 22/22（13 文件已推 GitHub）：核心教训「认证框架存在 ≠ 路由被保护」——业务路由漏挂 `require_user`/漏加 `WHERE user_id`；多人模式（EPM_AUTH=1）已全路由 user_id 隔离 → knowledge/Security/墨题安全自审-2026-08-22.md
+
+**🏴 网安/SRC 研究（8/18–22）**
+- 网安资料库千轮研究收官：350 文件/3.35GB → 13 份笔记（JSRC 企业实战分享 + 8 份面试题库 + Rootkit 内核 + 2026 挖洞蓝海：AI 应用 prompt injection +540% / 写操作 IDOR 41.7% / 云默认配置）→ knowledge/Research/网安资料库-综合研究-2026-08-22.md + D:\网安资料库\
+- SRC AI 挖洞三工具落地（无 Docker 墙内方案 8/21）：VulnClaw 0.3.8 scan+report 跑通（扫 127.0.0.1:8765）/ SRC-Hunter localhost:8080 / AutoSRC venv 就绪；基元律动 OpenAI 兼容 key 配好 → src-ai-automation + src-recon-scanning skill
+- 校园便利盒小程序挖洞实测（8/22）：高危×1（后台公开+直连 DB）+ 中危×2（用户枚举/getTempFileUrls 越权）+ 低危×1（硬编码 envID），12 项验证通过；跑通小程序云函数专项方法论七步 → src-bug-hunting 复用
+- SRC 信息泄露首单 SOP 沉淀（8/18）：F12 Network 面板过滤 User 省 90% 时间；报告打码规范（手机号留前后两位）→ src-info-leak-first-order-sop-2026-08-18.md
+
+**🧠 Agent/研究（8/16–22）**
+- Agent OS 趋势：DeepSeek Harness（14.9 万★）+ OpenAI Codex Harness 同周开源成 Agent「操作系统层」；ARC-AGI-3 仅调 Harness 13.3%→38.3%、Token 省 6 倍 → knowledge/Research/agent-os-harness-trend-2026-08-22.md
+- smart_model_routing 死占位实锤（8/17）：官方 PR #1550 声称 main 已实现实为空壳（无代码读取）→ 自研轻量路由落地（agent/smart_routing.py，feat/smart-routing `f937ddb2c`），5 类决策信号 + 意图动词表防误路由
+- 六域千轮研究增强入库（8/22）：PCB（KiCad 10 Allegro/PADS 导入器=接单救星，Quilter 物理检查最强，ProtoFlow→KiCad→DeepPCB→JLCPCB 2026 标准组合）· Finance · PPT（多 Agent 流水线/客户要原生 PPTX/cl伏达→Gamma）· 开发 · CAD · 小程序 · Content（B 站知识区变现路径）
+- SOP 知识体系从 0 到 1（8/19）：6 篇 SOP（故障排查/深度调研/dsh升级/SRC侦察/小程序审计/AI代码审查）+ 5 维 Schema + 演进日志；SOP-007 知识赋能方法论（8/22，紧凑优先省 90%）→ knowledge/SOP/
+- 《小君AI测评》测评文初稿（8/16，~1700 字：3 坑+PR 故事+竞品对比）→ knowledge/Dev/内容-小君AI测评测评文初稿-2026-08-16.md；发布前待 sora 选标题+配截图
+
+**🔧 基础设施维护（8/20）**
+- cache-hit-monitor cron 修复：根因 jobs.json 中 `script` 字段误含参数（`cache_hit_monitor.py --days 3 --threshold 50`）致 `Script not found`；改回裸文件名 + 脚本默认值等价，38 jobs 回读 OK
+- scripts/README.md 登记表创建（8/20）：杜绝脚本无声消失；修正 cache_hit_monitor 条目（曾被误记「已删除/无源码」实为 cron 字段写错）
 ## 🔄 进行中 / 已重新排期
 
-### 🎯 闲鱼上架（P0，**8/18 最后窗口已过 3 天——决策悬置第 20 天**，连续顺延第 19 天）
-- [ ] 上架「AI 代做 PPT」商品 → 🔴 **决策悬置第 20 天（8/18 最后窗口已过 3 天）**：素材连续第 10 次核对通过（100% 就绪，8/6 生成无损坏）；决策「上架（30min）or 放弃」，操作清单见 outputs/xianyu-master/上架素材包/
+### 🎯 闲鱼上架（P0，**8/18 最后窗口已过 4 天——决策悬置第 21 天**，连续顺延第 20 天）
+- [ ] 上架「AI 代做 PPT」商品 → 🔴 **决策悬置第 21 天（8/18 最后窗口已过 4 天）**：素材连续第 10 次核对通过（100% 就绪，8/6 生成无损坏）；决策「上架（30min）or 放弃」，操作清单见 outputs/xianyu-master/上架素材包/
 - [x] 主图制作：3 张模板图（前后对比/价格表/服务承诺）→ ✅ 08-03 已生成：`outputs/xianyu-master/上架素材包/`（主图1-3，750×1000 3:4，思源黑体+蓝橙撞色+无极限词）→ 上架时直接上传，无需再做
 - [ ] 同步上架「论文排版/润色」商品（素材包已有现成文案）→ 顺延 8/17 同批上
 - [ ] 补 PPT 样例素材：从现有作品提 2-3 个样例页 + 「仅供参考」水印 → portfolio/ → 需 sora 手动导出截图（无 LibreOffice/python-pptx 渲染，无法自动化）→ 上架操作清单已注明详情图可复用主图2/3 兜底
@@ -128,7 +153,7 @@ updated: 2026-08-21
 - [x] scripts/ 登记表 → ✅ 8/20 反思当场创建 scripts/README.md（杜绝脚本无声消失）
 
 ### 🧭 8/21 反思行动项（daily-reflection 复盘 8-20，执行者必读）
-- 🔴 语义缓存最小版（同 query 24h 去重中间件）→ **今日落地，截止 8/22 前必须交付**（Tavily 第 7 次复发 + Gartner 推理成本 5x 预防；纯 agent 可执行 30min，本轮反思判定「执行调度缺失」）
+- [x] 语义缓存最小版（同 query 24h 去重中间件）→ ✅ 8/21 落地交付（见上方 8/20 反思项，commit `84d813bf2`，统一 chokepoint 覆盖全 8 后端）
 - ⏳ 主 provider default 切换 → fangzhou-2 月度配额耗尽（HTTP 429，8/28 才重置），切 deepseek 官方/jiyuanlvdong（436ms 最快；k 可做 10min）
 - ⏳ health_provider_check.py 余额阈值告警最小版 → 先做能 fetch 的 provider + fetch 失败标红（连续第 2 轮补齐，keylink ¥0.05 险裸奔收口）
 - 🔧 agent 可执行项分类 → projects 待办分「agent 可执行/需 sora」，executor 对 agent 可执行项直接跑（根治「反思≠执行」第 4 复发）
@@ -137,7 +162,7 @@ updated: 2026-08-21
 
 | 项 | 状态 | 说明 |
 |:---|:-----|:-----|
-| 闲鱼上架决策「上架 or 放弃」 | 🔴 决策悬置第 20 天（8/18 窗口已过 3 天） | 素材连续第 10 次核对 100% 就绪；随时可 30min 上架 |
+| 闲鱼上架决策「上架 or 放弃」 | 🔴 决策悬置第 21 天（8/18 窗口已过 4 天） | 素材连续第 10 次核对 100% 就绪；随时可 30min 上架 |
 | 随身WiFi下单（赫电 Pro 399元/年） | 🔒 选型已确认 | 33元/月 1500G，待确认下单（阻塞 8 天+） |
 | 桌面美化实际部署 | 🔒 安装包已就绪 | TranslucentTB + Rainmeter winget 一键安装已就绪 |
 | SFC 系统扫描 | 🔒 需管理员权限 | 7/24 曾标记完成，7/27 后重复录入，待 sora 确认是否重跑 |
@@ -157,7 +182,7 @@ updated: 2026-08-21
 
 ---
 
-_由 k (Hermes) 在每次会话结束时更新 | 最后更新: 2026-08-21（daily-reflection cron 复盘 08-20：语义缓存/provider 切换/余额告警三项登记）_
+_由 k (Hermes) 在每次会话结束时更新 | 最后更新: 2026-08-22（weekly-todo-cleanup cron：8/16–8/22 完成项归档 + 未完成项重新排期）_
 
 ---
 
