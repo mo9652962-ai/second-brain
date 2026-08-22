@@ -39,3 +39,6 @@ date: 2026-08-21
 - `vocabulary-data-pipeline` / `vocabulary-db-enrichment` 技能（限速/并发/WAL）
 - `Security/验证码接口防护-限流熔断.md`（同一原理的防守面：接口被刷 vs 你刷别人）
 - 接单交付：外部 API 对接 = 批量/队列铁律
+
+---
+> 🗺️ 属于 [[MOC-Dev]] · [[Home|🏠 Home]]

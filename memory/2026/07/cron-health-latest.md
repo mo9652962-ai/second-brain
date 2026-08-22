@@ -57,3 +57,6 @@ updated: 2026-08-22 20:00
   ❌ opencode-go: <urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE
   🟡 siliconflow: HTTP 401 (319ms, reachable)
   🟡 deepseek: HTTP 401 (209ms, reachable)
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

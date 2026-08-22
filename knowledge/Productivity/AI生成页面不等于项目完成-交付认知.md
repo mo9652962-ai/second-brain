@@ -44,3 +44,6 @@ date: 2026-08-21
 
 - `D:\paper-service\方案-论文套餐-v1.md`（套餐定价 = 交付+维护+负责）
 - `Security/接口三件套-攻防一体.md` / `Security/换订单号拿别人数据-IDOR.md` / `Security/前端隐藏不等于安全-后端鉴权.md`
+
+---
+> 🗺️ 属于 [[MOC-Productivity]] · [[Home|🏠 Home]]

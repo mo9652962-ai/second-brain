@@ -66,3 +66,6 @@ status: completed
 - P0 语义缓存代码 8/17 已存在但未生效——**本次根因（只在 tavily provider 挂了缓存）已根治**；8/20 反思判"未落地"得到证实并闭环。
 
 _生成: 2026-08-21 20:15 | 由 daily-todo-executor cron 自动触发_
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

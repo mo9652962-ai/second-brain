@@ -71,3 +71,6 @@ L3 资源 (按需): references/ scripts/ templates/（需要才读）
 - Finance 2026（A股/量化/数据源）
 - PPT 2026（新趋势/工具）
 - 开发 2026（后端最佳实践）
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

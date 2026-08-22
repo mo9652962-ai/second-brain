@@ -52,3 +52,6 @@ type: daily-review
 **今日主线**：为自己产品打补丁（墨题安全自审 4 洞修复）→ 吃透一套网安资料库（350 文件/13 笔记）→ 做 AI 最前沿趋势研究（Harness OS）并顺手挖了个真实小程序 4 洞 → 千强研究 6 域增强收尾。变现待办仍卡在闲鱼上架决策（第 20 天悬置）。
 
 _生成: daily-knowledge-review cron · k (Hermes) · 2026-08-22_
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

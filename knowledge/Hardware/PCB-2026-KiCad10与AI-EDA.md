@@ -76,3 +76,6 @@
 - pcb-design 技能（已注入）
 - 记忆：AI PCB 工作流（ProtoFlow→KiCad→DeepPCB→JLCPCB）
 - knowledge/Hardware/AI-PCB设计前沿-pcbflow对比.md（上一轮 PCB Flow 研究）
+
+---
+> 🗺️ 属于 [[MOC-Hardware]] · [[Home|🏠 Home]]
