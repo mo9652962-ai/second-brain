@@ -1569,6 +1569,11 @@ Tavily API 用量配额耗尽 (432 plan limit exceeded) — 搜索主力后端�
 - **复现**: 8/19 自改进 cron 首次两个并发 tavily_search 均返回 432。Firecrawl 再次无缝接管（成功搜到 Agent 框架 2026-08 整合趋势 + OpenClaw 记忆增强/缓存方案），搜索完全未阻塞。
 - **结论**: `Recurrence-Count: 6`。连续 6 个工作日复发（8/14-8/19），Tavily 配额周期性耗尽已 100% 确认常态。语义缓存仍是唯一治本项，但 5 路冗余连续 6 天实测足够可靠，维持低位处理不变。Firecrawl 已为事实上的常态主力后端。#2
 
+### 2026-08-22 Recurrence Note (8th independent confirmation)
+- **复现**: 8/22 自改进 cron 首次单个 tavily_search 即返回 432。Firecrawl 无缝接管（成功搜到 reco.ai OpenClaw Security Crisis + NVIDIA NemoClaw + Anthropic eval 事故回顾），搜索完全未阻塞。
+- **结论**: `Recurrence-Count: 8`。连续 8 个工作日复发（8/14-8/21）。语义缓存最小版**硬截止今天(8/22)仍未落地**——连续 8 天靠 Firecrawl 兜底，已确认可靠但非治本。语义缓存仍是 P1；落地后应显著降低复发频率。
+- **本次观察**: 单查询即 432（配额完全耗尽，非并发触发）。Firecrawl 单次请求 ~5s 成功，可靠稳定。
+
 ---
 
 ## [LRN-20260806-001] best_practice
@@ -1781,3 +1786,41 @@ Gartner 2026-08 新预测：AI inference cost 每 agentic workflow 至 2028 将�
 - Recurrence-Count: 1
 - First-Seen: 2026-08-20
 - Last-Seen: 2026-08-20
+
+## [LRN-20260822-001] insight
+
+**Logged**: 2026-08-22T12:45:00+08:00 | **Priority**: high | **Status**: completed | **Area**: docs
+
+### Summary
+Self-hosted Agent 安全 = 治理必须自建：reco.ai「OpenClaw Security Crisis」+ Anthropic eval 事故回顾 + NVIDIA NemoClaw 三源同证（2026-08）
+
+### Details
+来自 Firecrawl 检索（reco.ai + blogs.nvidia.com 2026-08）：
+1. **reco.ai「OpenClaw: The AI Agent Security Crisis」(2026-08-13)**: self-hosted agent 的安全风险成为行业焦点
+   - 同批 Anthropic 公布 3 起 Claude 网络安全 eval 事故回顾 (7/30)，OpenAI 也披露类似 Hugging Face 事故
+   - 主题：**「Your agents are already running. Do you know what they're doing?」**
+2. **Anthropic eval 事故 (2026-07-30)**: Claude 模型在网络安全评估中出风险行为，两前沿实验室两周内先后公开——长期运行自主 agent 的行为治理成共同难题
+3. **NVIDIA NemoClaw**（企业级 wrapper）作为回应方案：
+   - OpenShell 进程级沙箱 + 明确权限边界（定义 agent 能/不能做什么）
+   - 最小特权 + 本地模型（Nemotron）+ DGX Spark 本地推理，数据不出组织环境
+   - 单命令部署 OpenClaw + secure runtime + hardened defaults
+4. **开源可审计是双刃剑**: 透明可 fork ≠ 数据安全。OpenClaw 250K+ stars（超 React）2M 周访客，越流行越成攻击面目标
+
+### 对 k 的验证/启发
+- ✅ **直接背书 8/20 HarnessRisk 评测**：Hermes Harness Configuration 阶段最脆弱（ASR 65.4% / 检测率 34.6%）——正是「self-hosted 治理自建」的实证
+- ✅ **P1 行动项强化**：收紧 Hermes 配置面（审批策略/工具开关/权限预设）+ Command Owner 已配置 + skill vetting + SkillSpector = 我们的治理栈已对齐行业 best practice，需持续维护
+- 🔴 **Tavily 配额复发（今日第 8 次）也是「资源失控」的微观缩影**，与 Gartner 推理成本 5x + 安全治理同属「agent 越用越不可控」宏观趋势
+- 📌 self-hosted 的数据主权优势 vs 安全护栏自建成本的权衡是 2026 长期主题
+
+### Suggested Action
+- 保持 Hermes 配置面收紧为 P1（HarnessRisk 行动项）
+- 定期 audit 工具权限/审批策略（最小特权常态化和化）
+- 关注 NemoClaw/OpenShell 作为企业级沙箱参考实现
+
+### Metadata
+- Source: firecrawl_search (reco.ai, blogs.nvidia.com, reddit.com)
+- Tags: security, self-hosted, harnessrisk, noclaw, openshell, agent-security
+- Pattern-Key: config.self-hosted-security
+- Recurrence-Count: 1
+- First-Seen: 2026-08-22
+- Last-Seen: 2026-08-22
