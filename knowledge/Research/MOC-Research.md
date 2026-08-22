@@ -9,7 +9,7 @@ created: 2026-08-09
 > 所有研究笔记的索引与入口。自动按主题分组。
 > 回到 [[knowledge-map|🗺️ 知识地图]] · [[Home|🏠 Home]]
 
-**共 153 篇研究笔记** · 最后更新: 2026-08-16（W34：GitHub-Weekly-08-16 / arXiv 08-16 补全 / 研究跟踪器归位）
+**共 154 篇研究笔记** · 最后更新: 2026-08-22（每日优化自动索引 + 重复小节合并）
 
 
 ## 🆕 W34 新增补链（2026-08-16 周度整理）
@@ -21,12 +21,6 @@ created: 2026-08-09
 - [[long-term-model-systems]] — 模型体系三件套跟踪（归位自 research/trackers）
 - [[三角洲干员明天过后转场教程研究-2026-08-14]] — 剪映转场教程研究（自 Hardware 归位）
 
-## 其他
-- [[arxiv-2026-07-30-core-contributions]]
-- [[arxiv-2026-07-31-core-contributions]]
-- [[arxiv-2026-08-02-core-contributions]]
-- [[arxiv-2026-08-03-core-contributions]]
-- [[arxiv-2026-08-05-core-contributions]]
 - [[arxiv-2026-08-16-core-contributions]] — 08-16 核心贡献（Reconcile Once / Behavioral Contracts II / SkillEvo）
 - [[arxiv-2026-08-06-agent-llm]]
 - [[arxiv-2026-08-07-agent-llm]]
@@ -55,7 +49,6 @@ created: 2026-08-09
 - [[manta-topology-review-2026-08-03]]
 - [[Memvid-n8n-kaeru-Deep-Research]]
 - [[MiMo-V2.5研究-2026-08-08]]
-- [[MOC-Research]]
 - [[MuseSpark价格战-2026-08-08]]
 - [[openforgerl-trace-pipeline-feasibility]]
 - [[orca-misscore-reliability-2026-08-03]]
@@ -186,28 +179,17 @@ created: 2026-08-09
 - [[组会报告-2026-08-02]]
 - [[graphify-weekly-2026-08-09]]
 
-## 其他
-
-- [[竞品研究-安卓刷题机fork-2026-08-09]]
-- [[arxiv-2026-08-18-core-contributions]]
-
 ## 追踪器
 
 - [[charm-graph-transfer]]
 - [[kutie-context-injection]]
 - [[long-term-model-systems]]
 
-## 其他
-
-- [[agent-self-evolution-research-2026-08-12]]
-- [[skill-audit-2026-08-12]]
-- [[skill-authoring-best-practices-2026-08-12]]
-
 ---
 
 ## 🎓 学术域（原 Academic）
 
-# 📚 学术知识域 — 论文全生命周期
+### 📚 学术知识域 — 论文全生命周期
 
 > 🏠 [[HOME]] | 🗺️ [[INDEX]] | 📚 回到全局关联网
 
@@ -256,48 +238,44 @@ created: 2026-08-09
 ---
 *MOC 节点 — 见图谱中的 📚 Academic 锚点*
 
+
 ## 其他
 
 - [[Academic]]
-- [[GitHub-Weekly-2026-08-14]]
 - [[academic-service-research]]
+- [[agent-os-harness-trend-2026-08-22]]
+- [[agent-self-evolution-research-2026-08-12]]
 - [[ai-monetization-costs]]
 - [[ai-research-collaboration]]
 - [[ai-weekly-literature-2026-08-14]]
+- [[arxiv-2026-07-30-core-contributions]]
+- [[arxiv-2026-07-31-core-contributions]]
+- [[arxiv-2026-08-02-core-contributions]]
+- [[arxiv-2026-08-03-core-contributions]]
+- [[arxiv-2026-08-05-core-contributions]]
 - [[arxiv-2026-08-14-agent-llm]]
+- [[arxiv-2026-08-17-agent-llm]]
+- [[arxiv-2026-08-18-agent-llm]]
+- [[arxiv-2026-08-18-core-contributions]]
+- [[arxiv-2026-08-19-agent-llm]]
+- [[arxiv-2026-08-20-agent-llm]]
+- [[arxiv-2026-08-21-agent-llm]]
 - [[cnki-browser-plugin]]
+- [[GitHub-Weekly-2026-08-14]]
+- [[hackernews-deep-dive-2026-08-18]]
+- [[MOC-GitHub]]
 - [[monetization-analysis]]
 - [[nihaixia-skill]]
 - [[paper-pipeline-data-contract]]
 - [[researchpilot-skills]]
+- [[skill-audit-2026-08-12]]
+- [[skill-authoring-best-practices-2026-08-12]]
 - [[接单工作流-SOP]]
 - [[独立开发陷阱与开源协作]]
+- [[竞品研究-安卓刷题机fork-2026-08-09]]
+- [[网安资料库-入口]]
+- [[网安资料库-综合研究-2026-08-22]]
 - [[论文Pipeline-数据契约]]
 - [[闲鱼上架素材包-预生成]]
 - [[闲鱼解封素材]]
 - [[降AI工具对比速查表]]
-
-## 其他
-
-- [[MOC-GitHub]]
-- [[arxiv-2026-08-17-agent-llm]]
-- [[arxiv-2026-08-18-agent-llm]]
-
-## 其他
-
-- [[hackernews-deep-dive-2026-08-18]]
-
-## 其他
-
-- [[arxiv-2026-08-19-agent-llm]]
-
-## 其他
-
-- [[arxiv-2026-08-20-agent-llm]]
-
-## 其他
-
-- [[agent-os-harness-trend-2026-08-22]]
-- [[arxiv-2026-08-21-agent-llm]]
-- [[网安资料库-入口]]
-- [[网安资料库-综合研究-2026-08-22]]

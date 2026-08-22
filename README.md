@@ -132,12 +132,17 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 
 ---
 
-## 📦 最新技能入库 (2026-08-19 ~ 2026-08-20)
+## 📦 最新技能入库 (2026-08-16 ~ 2026-08-22)
 
 ### 研究笔记
 
 | 技能 | 版本 | 简介 |
 |------|------|------|
+| **[每日日志 08-22](memory/2026-08-22.md)** | v1.0 | Tavily 配额第 8 次复发（连续 8 工作日）→ Firecrawl 兜底稳定 + reco/Anthropic/NVIDIA Agent 安全多源同证 |
+| **[每日日志 08-21](memory/2026-08-21.md)** | v1.0 | HarnessRisk 评测 Hermes（ASR 65.4%/配置面最脆弱）+ Gartner 推理成本 5x + 语义缓存硬截止 |
+| **[Agent OS / Harness 趋势](knowledge/Research/agent-os-harness-trend-2026-08-22.md)** | v1.0 | 面试视角：Agent 操作系统层出现愈发清晰——Harness 原生 RL 三剑客 SPADE 等 |
+| **[网安资料库综合研究](knowledge/Research/网安资料库-综合研究-2026-08-22.md)** | v1.0 | 350 文件 / 3.35 GB AI 网安资料全量下载、解压、结构化学习完成 |
+| **[arXiv AI Agent / LLM 速览](knowledge/Research/arxiv-2026-08-21-agent-llm.md)** | v1.0 | 08-18+08-19 同池 652 篇比对 → 补录 17 篇强相关漏网（不重写已收录） |
 | **[arXiv AI Agent / LLM 速览](knowledge/Research/arxiv-2026-08-20-agent-llm.md)** | v1.0 | 08-18+08-19 双池全量 652 篇 → 20 强相关（Harness 原生 RL 三剑客 SPADE 等） |
 | **[每日日志 08-20](memory/2026-08-20.md)** | v1.0 | 补跑研究日：HarnessRisk 直接评测 Hermes + Gartner 推理成本 5x + 方舟-2 配额耗尽 |
 | **[arXiv AI Agent / LLM 速览](knowledge/Research/arxiv-2026-08-19-agent-llm.md)** | v1.0 | 08-17 提交池补全——358 篇全量收集 → 补录 14 篇强相关（Zetta 自进化/Bounded Agents 授权安全） |
@@ -195,7 +200,7 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 
 ```
 📁 仓库体积：约 180MB（含附件与图片）
-📝 Markdown 文件：808 个（正文约 0.8 MB）
+📝 Markdown 文件：892 个（正文约 4.6 MB）
 🧠 自建 Skill 文档：30 个（11 个领域目录）
 🗂️ 知识域：10 个
 ⏰ 首次提交：2026 年 7 月
