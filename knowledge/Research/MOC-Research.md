@@ -261,6 +261,7 @@ created: 2026-08-09
 - [[arxiv-2026-08-19-agent-llm]]
 - [[arxiv-2026-08-20-agent-llm]]
 - [[arxiv-2026-08-21-agent-llm]]
+- [[arxiv-2026-08-21-core-contributions]]
 - [[cnki-browser-plugin]]
 - [[GitHub-Weekly-2026-08-14]]
 - [[hackernews-deep-dive-2026-08-18]]
