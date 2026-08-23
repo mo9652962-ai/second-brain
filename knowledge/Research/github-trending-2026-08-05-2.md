@@ -196,13 +196,13 @@ Brainstorm（需求对齐）→ Plan（设计图）→ 独立分支环境
 
 ### 🟡 本周（1-2 天）
 - [x] 装 text-to-cad 技能库（软链接映射给 Hermes），跑 1 个 benchmark 验证（L 支架）✅ 2026-08-05 已装（hermes skills/text-to-cad + text2cad-cad）+ L 支架 benchmark 5/5
-- [ ] 研究 croc PAKE → SimSync 房间码派生加密密钥（已有 HKDF 基础，升级成本低）
+- [x] ~~croc PAKE~~ 📖 研究候选参考清单（不计 backlog）
 
 ### 🟢 收藏
-- [ ] superpowers SDD 对照 engineering-workflow（fix-loop 换手机制）
-- [ ] uber/ADR Sensor 遥测架构（agent 工具调用审计）
-- [ ] Pumpkin MC 服务器架构（高并发/插件系统参考）
-- [ ] likec4（SimSync 文档配图）
+- [x] ~~superpowers SDD~~ 📖 研究候选参考清单（不计 backlog）
+- [x] ~~ADR Sensor~~ 📖 研究候选参考清单（不计 backlog）
+- [x] ~~Pumpkin MC~~ 📖 研究候选参考清单（不计 backlog）
+- [x] ~~likec4~~ 📖 研究候选参考清单（不计 backlog）
 
 ---
 

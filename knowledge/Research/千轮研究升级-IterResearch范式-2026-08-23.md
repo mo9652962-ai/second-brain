@@ -142,9 +142,9 @@ WebResearcher 的 test-time scaling：N 个 agent 并行独立研究 → Fusion 
 ## 六、落地行动
 
 - [x] 本研究本身即按新范式执行（演化报告式写作 + 覆盖率清单式选源）
-- [ ] 把「升级点 1-3」写入 knowledge-absorption 的 references/multi-round-research-framework.md
-- [ ] 下次千轮研究实战验证演化报告 vs 旧模式的输出质量差
-- [ ] 关注 Tongyi DeepResearch 量化版进展（若出 Q3 以下小量化 → 评估 4060 可行性）
+- [x] 把「升级点 1-3」写入 knowledge-absorption 的 references/multi-round-research-framework.md ✅ 2026-08-23 16:29 已写入（v2 三大升级节）
+- [x] ~~下次千轮研究实战验证演化报告 vs 旧模式的输出质量差~~ 📖 条件触发参考（下次千轮研究时验证）
+- [x] ~~关注 Tongyi DeepResearch 量化版进展（若出 Q3 以下小量化 → 评估 4060 可行性）~~ 📖 条件触发参考（出量化版时评估）
 
 ## 落地条件与触发器
 - 落地条件：下一次 sora 发起千轮研究任务时

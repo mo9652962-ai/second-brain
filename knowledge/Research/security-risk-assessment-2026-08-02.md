@@ -109,7 +109,7 @@ icacls "C:\Users\31954\AppData\Local\hermes\.env" /inheritance:r /grant:r "31954
 - [x] **依赖审计**：uv audit 扫描 — ✅ 2026-08-02 执行：105 包无已知漏洞
 
 ### 🟢 P2（长期）
-- [ ] **对外多租户**：容器级隔离方案预研（仅当未来做产品）
+- [x] ~~对外多租户：容器级隔离方案预研~~ 📖 条件触发参考（仅当未来做产品）
 - [x] **安全审计 cron**：每周自动扫描 skill 新增 + 监听端口变化 ✅ 2026-08-05 已挂载（jobs.json 74dbe08a, `30 8 * * 0`, no_agent, security_audit.py）
 
 ---

@@ -39,8 +39,8 @@ status: fresh
 ## 行动项
 
 - [x] arxiv 原文已入库（`knowledge/Research/arxiv-2026-08-18-agent-llm.md` 精选 17 篇）
-- [ ] 审一遍当前 dsh/ZCode 协作流程：确认无 coordinator 依赖、任务文件共享模式保持（预计 5 分钟，无则跳过）
-- [ ] 后续大规模并行委派时：用共享文件/上下文清单替代重复传参（delegate_task context 字段复用）
+- [x] ~~审一遍当前 dsh/ZCode 协作流程~~ ✅ 2026-08-23 核验通过：无 coordinator 依赖；任务文件共享模式保持（zcode-task-*.md 桌面 + delegate context 复用）
+- [x] ~~后续大规模并行委派时用共享文件/上下文清单~~ 📖 原则参考（已内化于协作流程）
 
 ## 为什么重要
 

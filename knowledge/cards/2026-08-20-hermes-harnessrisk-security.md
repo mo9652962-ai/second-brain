@@ -46,9 +46,9 @@ status: fresh
 
 ## 行动项
 
-- [ ] 阅读 HarnessRisk 论文细节，了解哪些攻击向量在 Hermes 上成功率最高（尤其是 Configuration 阶段）
-- [ ] 检查 Hermes 配置：`hermes config` 查看当前审批策略、工具开关、权限设置——看是否有可收紧的安全配置面
-- [ ] 后续内容选题素材：「你的 AI 助手比你想象中更脆弱——HarnessRisk 实测 Hermes 攻击成功率 65%」
+- [x] ~~阅读 HarnessRisk 论文细节~~ ✅ 细节已覆盖（arxiv-2026-08-20-agent-llm.md：配置阶段最脆弱、Hermes+DeepSeek-V4-Pro ASR 65.4%）+ 配置检查 8/23 完成
+- [x] ~~检查 Hermes 配置：审批策略/工具开关/权限~~ ✅ 2026-08-23 检查完成：redact_secrets:true + approval_classifier + delegation 受限(3/1) + command_allowlist；建议见报告
+- [x] ~~后续内容选题素材：HarnessRisk~~ 📖 内容选题候选参考（可并入 B 站选题池）
 
 ## 为什么重要
 
