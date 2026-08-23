@@ -80,6 +80,7 @@ updated: 2026-08-16
 ## 🗄️ 历史周报（memory 归档）
 
 - [[github-trending-w34]] · [[github-trending-w33]] · [[github-trending-w32]] · [[github-trending-w31-v3]] 等系列，见 `memory/2026/{07,08}/`
+- [[GitHub-Trending-W35-千轮深研-2026-08-23]] · W35 Top5 千轮深研（codebase-memory-mcp 论文实证/nanobot 对照/chrome-devtools-mcp 决策）
 
 ---
 
