@@ -236,6 +236,25 @@ graph TD
 6. **GitHub Trending 精选** — diagram-design（+14.7k 增长王，无 Mermaid-slop 图表）/ needle（14MB 端侧模型）/ google/skills（Agent Skills 官方生态）/ code-graph-rag（代码图谱 RAG），周报见 [[../memory/2026/08/github-trending-w34|W34 GitHub 周报]]
 
 ---
+## 🆕 W35 新增速览（2026-08-17 ~ 08-23）
+
+> 本周主线：GitHub 跨厂商 Agent 记忆主线（ai-memory/OpenViking）+ 硬件×模型匹配工具（llmfit）+ 图表赛道连涨（diagram-design 第二周 +8.5k）。周报见 [[../memory/2026/08/github-trending-w35|W35 GitHub 周报]]。
+
+### 各域本周新增
+
+| 域 | 新增重点 | 入口 |
+|:---|:---------|:-----|
+| 🤖 Dev | **跨 Agent 记忆**（ai-memory：11 agents×75 hooks 统一记忆层，借鉴 Hermes 自改进循环）+ **硬件×模型匹配**（llmfit：MoE 感知估算 + 社区 PR 基准流） | [[knowledge/Dev/ai-memory-cross-agent-2026-08-23]] · [[knowledge/Dev/llmfit-hardware-matching-2026-08-23]] |
+
+### 本周关键主题
+
+1. **跨厂商 Agent 记忆成主线** — ai-memory（+2.4k）/ OpenViking（+3.0k，字节上下文数据库）/ TencentDB 记忆引擎三线并进；ai-memory README 明确借鉴 Hermes Agent 自改进循环
+2. **硬件×模型匹配工具化** — llmfit 33.5k：本地推理普及后的选型痛点，MoE 感知估算 + 社区基准数据资产化
+3. **图表赛道连续第二周暴涨** — diagram-design 18.9k→25.4k，编辑级图表成主流诉求，与 sora PPT/信息图技能方向一致
+4. **周榜新面孔少** — 15 项目中仅 ai-memory、llmfit 未入库，其余全连榜/已覆盖，方向验证为主
+
+---
+
 ## ① 💻 工程与开发
 
 | 领域 | 笔记 | 相关 skill | 掌握程度 |
