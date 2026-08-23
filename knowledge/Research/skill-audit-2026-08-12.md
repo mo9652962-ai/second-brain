@@ -49,9 +49,9 @@ type: audit
 大多数 agent 创建技能描述无触发词——这是下一批优化目标。当前已修复最关键的 11 个（空描述 + 极短描述）。
 
 ## 📋 建议操作
-- [ ] 合并 4 对 openclaw-imports 重复（删除副本，保留顶层同名技能）
-- [ ] 保留 @okaris/ai-image-generation 覆盖顶层旧版
-- [ ] 下一轮批量优化 121 个无触发词技能（优先级低，按需处理）
+- [x] ~~合并 4 对 openclaw-imports 重复~~ ✅ 已迁移 projects/current.md L141 统一追踪（8/3 复核：实际每 skill 3 副本，待 sora 确认）
+- [x] ~~保留 @okaris/ai-image-generation 覆盖顶层旧版~~ ✅ 审计结论已采纳（顶层 ai-image-generation 技能在册）
+- [x] ~~下一轮批量优化 121 个无触发词技能~~ 📖 低优先级参考（按需处理，不计 backlog）
 
 ## 说明
 - 社区 hub 技能（27 个）未修改——由原作者维护

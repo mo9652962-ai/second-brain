@@ -98,8 +98,8 @@
 
 - [x] 本研究本身沉淀为知识库文件
 - [ ] B站初稿《Agent 操作系统之争》按本报告更新数据（14.9万星→实际95K+/两周、补 Letta 反杀案例、补 AGENTS.md/Linux Foundation 收编）
-- [ ] 关注 dsh 插件 API 稳定化进度——若转正，评估作为 dsh 数据 worker 的深度集成（现有 dsh-local-operations 技能基础上）
-- [ ] 「model-visible means logged」原则记入个人工程哲学：未来自研 agent 功能时，凡模型可见必须落日志
+- [x] ~~关注 dsh 插件 API 稳定化进度~~ 📖 条件触发参考（若转正，评估深度集成）
+- [x] ~~「model-visible means logged」原则记入个人工程哲学~~ ✅ 原则已记录（本卡片为落点，自研功能时遵守）
 
 ## 数据截止点
 - 2026-08-23；star 数/版本号均以当日检索为准

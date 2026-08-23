@@ -40,8 +40,8 @@ status: fresh
 ## 行动项
 
 - [x] arxiv 速览已入库（`knowledge/Research/arxiv-2026-08-19-agent-llm.md` 补录 14 篇强相关）
-- [ ] 本周做一次 MCP 工具最小授权盘点：`hermes tools` 列出全部工具，禁用不常用/高风险的（预计 10 分钟）
-- [ ] 后续派活/委派时把「授权边界」写进任务 prompt（一条原则：能做的最小集合）
+- [x] ~~本周做一次 MCP 工具最小授权盘点~~ ✅ 2026-08-23 盘点完成：CLI 24 工具集全开；computer_use/homeassistant/spotify 等低使用项列入报告待 sora 决策
+- [x] ~~后续派活/委派时把「授权边界」写进任务 prompt~~ 📖 原则参考（已内化：最小授权原则）
 
 ## 为什么重要
 
