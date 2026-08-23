@@ -1,14 +1,15 @@
 ---
 tags: [cron-health, dashboard]
-updated: 2026-08-23 00:00
+updated: 2026-08-23 11:58
 ---
 
-# Cron 健康看板 — 2026-08-23 00:00
+# Cron 健康看板 — 2026-08-23 11:58
 
-总任务数: 38
+总任务数: 39
 
 | ⚪ | AI测评周报                         | 0 8 * * 1       |  |
 | ⚪ | GitHub 宝藏挖掘                    | 30 12 * * 0     |  |
+| ⚪ | TencentDB Agent Memory 两周复核    | once at 2026-09-05 09:00 |  |
 | ⚪ | arxiv-fetch                    | 30 6 * * *      |  |
 | ⚪ | arxiv-summarize                | 0 13 * * 0      |  |
 | ⚪ | biweekly-skill-audit           | 30 12 1,15 * *  |  |
@@ -46,14 +47,14 @@ updated: 2026-08-23 00:00
 | ⚪ | 闲鱼提醒                           | 30 7 * * 1-5    |  |
 | ⚪ | 项目追踪                           | 0 21 * * *      |  |
 
-✅ 0 正常  ❌ 0 错误  ⚪ 38 从未执行
+✅ 0 正常  ❌ 0 错误  ⚪ 39 从未执行
 
 ## 🌐 网络健康指数 (🟡)
 
-亚健康 — 1/3 不可达
+亚健康 — 3/3 不可达
 
-连通率: 67% | 平均延迟: 259ms
+连通率: 0% | 平均延迟: 0ms
 
-  ❌ opencode-go: <urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE
-  🟡 siliconflow: HTTP 401 (287ms, reachable)
-  🟡 deepseek: HTTP 401 (230ms, reachable)
+  ❌ opencode-go: <urlopen error [WinError 10054] 远程主机强迫关闭了一个现有的连接。>
+  ❌ siliconflow: <urlopen error [WinError 10054] 远程主机强迫关闭了一个现有的连接。>
+  ❌ deepseek: <urlopen error [WinError 10054] 远程主机强迫关闭了一个现有的连接。>
