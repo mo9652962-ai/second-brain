@@ -1,4 +1,4 @@
-﻿---
+---
 tags: [Home, MOC, 入口]
 aliases: [首页, Home, 第二大脑]
 created: 2026-08-09
