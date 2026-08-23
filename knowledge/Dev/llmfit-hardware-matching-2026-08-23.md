@@ -75,3 +75,15 @@ llmfit list --fit     # 列出本机可跑模型
 
 ---
 > 🗺️ 属于 [[MOC-Dev]] · [[MOC-GitHub]] · [[HOME|🏠 Home]]
+
+## k 的吸收笔记 (2026-08-23)
+
+### 已应用的
+| 洞察 | 应用 |
+|:-----|:------|
+| 硬件→模型估算决策表 | 已固化为 local-llm-inference-windows 技能「4060 8GB 快速决策表」章节（估算公式：GGUF×1.15 ≤ 显存×0.85）|
+| 社区 PR 基准流（数据即资产）| 记入产品化灵感库：交付成本库可借鉴自动开 PR 模式 |
+| SignPath.io 免费 Windows 签名 | 刷题机/Electron 发布的 SmartScreen 拦截解法候选 |
+
+### 仍需改进的
+- ⬜ 实跑 llmfit list --fit 验证估算表与实测一致（触发器：下次本地模型选型时顺带）

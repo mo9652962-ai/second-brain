@@ -83,3 +83,15 @@ ai-memory agent add claude-code   # 接入 Claude Code hooks
 
 ---
 > 🗺️ 属于 [[MOC-Dev]] · [[MOC-GitHub]] · [[HOME|🏠 Home]]
+
+## k 的吸收笔记 (2026-08-23)
+
+### 已应用的
+| 洞察 | 应用 |
+|:-----|:------|
+| 统一 markdown-on-disk + 各 agent hooks = 交接从文档升级为自动同步层 | 对照现有方案：Mnemon（路径A）vs ai-memory（路径B）——当前 AGENTS.md 手工交接够用，**决策：观察不装**（Windows 非一等公民 + hooks 矩阵未稳定）|
+| auto-improve 的 schema 双保险（enum 约束 + 归一化兜底）| 沉淀进 skill-evolution 实践：自举产生的规则字段必须 enum 约束，不信自由文本 |
+| compile-not-retrieve 哲学 | 与 TencentDB 记忆引擎（检索式）互补——长任务把相关记忆直接编译进上下文，已用于墨题 AGENTS.md 交接模式 |
+
+### 仍需改进的
+- ⬜ Windows hooks 一等公民支持后重评（触发器：ai-memory release notes 提及 windows parity test 通过）
