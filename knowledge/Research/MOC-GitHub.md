@@ -17,6 +17,7 @@ updated: 2026-08-16
 
 ## 📅 周报系列（W31 起，每周一篇）
 
+- [[GitHub-Weekly-2026-08-23]] — W35：ai-memory 跨 Agent 记忆 / llmfit 硬件×模型匹配（周报 [[../memory/2026/08/github-trending-w35|W35 周报]]）
 - [[GitHub-Weekly-2026-08-16]] — W34：diagram-design 图表（+14.7k 增长王）/ needle 14MB 端侧模型 / google-skills / code-graph-rag
 - [[agent-infra-weekly-2026-08-17]] — Agent 基建化周榜：电脑、记忆、图谱、长任务状态开卷（Dev 域）
 - [[GitHub-Weekly-2026-08-14]] — W33：自改进 RLM Agent 领跑（prime-agent +12k⭐）+ semantica / agent-skills / cloudflare-computer / switchyard
