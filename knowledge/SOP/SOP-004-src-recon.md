@@ -67,4 +67,4 @@
 | 2026-08-19 | 新建 | 联想 SRC 第一轮侦察全流程复盘（391 子域→48 存活→16 深挖）|
 
 ---
-> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]
+> 🗺️ 属于 [[SOP-INDEX]] · [[knowledge-map]] · [[Home|🏠 Home]]

@@ -61,4 +61,4 @@
 | 2026-08-19 | 新建 | 联想商城小程序反编译审计流程（unveilr 链）|
 
 ---
-> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]
+> 🗺️ 属于 [[SOP-INDEX]] · [[knowledge-map]] · [[Home|🏠 Home]]

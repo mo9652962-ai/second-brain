@@ -73,4 +73,4 @@ L3 资源 (按需): references/ scripts/ templates/（需要才读）
 - 开发 2026（后端最佳实践）
 
 ---
-> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]
+> 🗺️ 属于 [[SOP-INDEX]] · [[knowledge-map]] · [[Home|🏠 Home]]

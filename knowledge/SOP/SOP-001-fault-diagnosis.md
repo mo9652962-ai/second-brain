@@ -58,4 +58,4 @@
 | 2026-08-19 | 新建 | 初始化排障与根因定位标准工作流 |
 
 ---
-> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]
+> 🗺️ 属于 [[SOP-INDEX]] · [[knowledge-map]] · [[Home|🏠 Home]]

@@ -18,12 +18,13 @@
 
 | SOP ID | 分类 | 名称 | 状态 | 最近触发 |
 |:---|:---|:---|:---|:---|
-| SOP-001 | OPS | 复杂多步故障排查与根因修复 | Active | 2026-08-19 |
-| SOP-002 | RES | 技术与研报深度调研自闭环 | Active | 2026-08-19 |
-| SOP-003 | OPS | dsh 升级（npm 12 ETARGET 绕道）| Active | 2026-08-19 |
-| SOP-004 | SEC | SRC 资产侦察标准流程 | Active | 2026-08-19 |
-| SOP-005 | OPS | 小程序反编译密钥审计 | Active | 2026-08-19 |
-| SOP-006 | DEV | AI 代码审查协作流程（Gemini 第二意见）| Active | 2026-08-19 |
+| SOP-001 | OPS | [[SOP-001-fault-diagnosis\|复杂多步故障排查与根因修复]] | Active | 2026-08-19 |
+| SOP-002 | RES | [[SOP-002-deep-research\|技术与研报深度调研自闭环]] | Active | 2026-08-19 |
+| SOP-003 | OPS | [[SOP-003-dsh-upgrade\|dsh 升级（npm 12 ETARGET 绕道）]] | Active | 2026-08-19 |
+| SOP-004 | SEC | [[SOP-004-src-recon\|SRC 资产侦察标准流程]] | Active | 2026-08-19 |
+| SOP-005 | OPS | [[SOP-005-miniapp-audit\|小程序反编译密钥审计]] | Active | 2026-08-19 |
+| SOP-006 | DEV | [[SOP-006-ai-code-review\|AI 代码审查协作流程（Gemini 第二意见）]] | Active | 2026-08-19 |
+| SOP-007 | RES | [[SOP-007-knowledge-empowerment\|知识赋能：知识库手册/复盘蒸馏为实战技能]] | Active | 2026-08-22 |
 
 ## 文件结构
 
@@ -35,6 +36,8 @@ knowledge/SOP/
   SOP-003-dsh-upgrade.md
   SOP-004-src-recon.md
   SOP-005-miniapp-audit.md
+  SOP-006-ai-code-review.md
+  SOP-007-knowledge-empowerment.md
   archive/                   ← 归档区（60 天未触发）
 ```
 

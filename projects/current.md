@@ -83,6 +83,7 @@ updated: 2026-08-22
 **📚 墨题刷题机设计（8/15）**
 - [x] P0 错题 AI 诊断设计稿：单题归因已有 80%，补「归因聚合→诊断报告层」；diagnostic_report 聚合 + 水平评估 1-5 + 推荐练习闭环 + 变化视图
 - [x] P1 AI 服务层架构设计：ai_router 任务路由 + ai_usage 用量 + 降级链
+- [ ] 安全待决策项（BOLA/IDOR 等暂缓）→ [[knowledge/Projects/墨题安全待决策-2026-08-19]]
 
 **🔧 系统/知识基础设施（8/14–15）**
 - [x] fallback 链改造：glm-5.2（¥8/M）→ keylink/deepseek-v4-flash 跨 relay 兜底（jiyuanlvdong 挂时切 keylink 而非高价 glm）✅ 8/14
