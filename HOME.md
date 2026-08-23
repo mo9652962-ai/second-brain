@@ -1,4 +1,4 @@
----
+﻿---
 tags: [Home, MOC, 入口]
 aliases: [首页, Home, 第二大脑]
 created: 2026-08-09
@@ -59,6 +59,7 @@ created: 2026-08-09
 - [[memory/2026/08/2026-08-19-daily-review|📊 08-19 每日回顾]] — 安全/SRC 知识深挖 + SOP 体系建成 + 基础设施健康预警
 - [[knowledge/Research/arxiv-2026-08-19-agent-llm|arXiv 今日速览]] — 08-17 池补全 14 篇（Zetta 闭环 harness / Bounded Agents 委派安全 / HarnessEval-W 证据树评测）
 - [[memory/2026/08/2026-08-20-vault-suggestion-executor|🧹 08-20 建议执行器报告]] — 闲鱼决策悬置第 19 天：素材第 9 次核对 100% 就绪，随时 30min 上架
+- [[memory/2026/08/2026-08-23-vault-suggestion-executor|🧹 08-23 建议执行器报告]] — 落地 6 项（墨题巡检 cron pin 修复 / 报价话术 / 搭网站商品素材 / Agent OS B 站初稿）；发现 8/23 cron 集体 Connection error
 - [[memory/2026/08/2026-08-20-daily-review|📊 08-20 每日回顾]] — 补跑研究日：HarnessRisk 直接评测 Hermes + Gartner 推理成本 5x + 方舟-2 配额耗尽靠 fallback 扛
 - [[knowledge/Research/arxiv-2026-08-20-agent-llm|arXiv 今日速览]] — 20 篇 AI Agent/LLM 论文（08-18+08-19 新池：HarnessRL 三剑客 / HarnessRisk 含 Hermes 评测 / TTS 开放域瓶颈）
 - [[knowledge/Research/arxiv-2026-08-21-agent-llm|arXiv 今日速览]] — 补全 17 篇 AI Agent/LLM 论文（同池漏网：Co-RL / Continual RLVR / D²ACCI / StartupBench / Wuying-Browser 等）

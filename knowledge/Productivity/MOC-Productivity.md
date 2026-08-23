@@ -54,3 +54,9 @@ created: 2026-07-28
 - [[knowledge/Creative/AI小说工厂流水线-2026-08-20|AI 小说工厂流水线]] — 网文全流程
 - [[knowledge/Creative/novel-worldbuilding-2026-08-17|网文世界观设定]] — 5 问框架
 - [[knowledge/Creative/sumeru-skill-distillation-2026-08-20|Sumeru 技能蒸馏]] — 7 模块蒸馏
+
+## 🆕 08-23 建议落实新增
+
+- [[knowledge/Productivity/内容-Agent操作系统之争-B站初稿-2026-08-23|「Agent 操作系统之争」B 站初稿]] — 第 1 期候选（DeepSeek vs OpenAI Harness）
+- 搭网站/写脚本商品素材包：`outputs/xianyu-master/搭网站写脚本-商品素材包.md` — 高客单价技术服务线（闲鱼 +1732%）
+- 询价话术模板：ai-freelance-pricing 技能 `templates/xianyu-quote-script.md` — 报价 4 问落地版

@@ -49,10 +49,10 @@ date: 2026-08-21
 
 ## 待办
 
-- [ ] VulnClaw pip install + provider 配置 + 授权目标验证
-- [ ] SRC-Hunter clone + setup + 启动
-- [ ] AutoSRC 下载 + 依赖（Chrome/ChromeDriver/Subfinder/Nuclei/Xray/Dirsearch）
-- [ ] 实测计划：本地靶场（Vulhub/DVWA）→ 授权目标
+- [x] VulnClaw pip install + provider 配置 + 授权目标验证 → ✅ 2026-08-21 已落地：0.3.8 scan+report 跑通（扫 127.0.0.1:8765）
+- [x] SRC-Hunter clone + setup + 启动 → ✅ 2026-08-21 已落地：localhost:8080 运行中
+- [x] AutoSRC 下载 + 依赖（Chrome/ChromeDriver/Subfinder/Nuclei/Xray/Dirsearch）→ ✅ 2026-08-21 已落地：venv+依赖+基元律动已配（注意 workdir 守卫 bug）
+- [x] 实测计划：本地靶场（Vulhub/DVWA）→ 授权目标 → ⏳ 本地靶场已就绪（DVWA 七漏洞通关，见 [[dvwa-practice-2026-08-17]]）；授权目标侦察进行中（联想/小程序/T3 三方向，8/21 反思收敛至补天 1 个有效漏洞）
 
 ---
 *k (Hermes) 2026-08-21 · 千轮研究落地*
