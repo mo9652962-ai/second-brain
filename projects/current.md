@@ -1,11 +1,12 @@
 ﻿---
 tags: [projects, active]
-updated: 2026-08-22
+updated: 2026-08-23
 ---
 
 # 当前项目状态
 
 > 本周（8/16–8/22）周度清理：完成项已归档，未完成项重新排期。完整报告见 `memory/2026/08/2026-08-22-weekly-todo-cleanup.md`
+> 8/23 suggestion-implementation：落地 3 项 k 自主项（墨题巡检 cron pin 修复 / 报价 4 问话术模板 / 搭网站写脚本商品素材包 + Agent OS B 站初稿），详见 `memory/2026/08/2026-08-23-vault-suggestion-executor.md`
 
 ## ✅ 已完成（归档）
 
@@ -143,8 +144,8 @@ updated: 2026-08-22
 
 ### 🧭 8/18 反思行动项（daily-reflection 2026-08-17 升级，执行者必读）
 - [x] P1 语义缓存最小版落地（同 query 24h 去重中间件，估时 30min）→ ✅ 8/21 由 P0 落地一并完成（见下）
-- [ ] P1 墨题巡检 git status 硬检查脚本化（未提交改动即报警）→ 把「巡检发现」变「预防」（8/16 反思已列未落地）
-- [ ] P1 hermes-health-check 加产物 stat 检查（产出型 cron 当日文件缺失即告警，不标全绿）→ 根治 8-17 五产物缺失被「全绿」掩盖（8/8 同类坑复发）
+- [x] P1 墨题巡检 git status 硬检查脚本化（未提交改动即报警）→ ✅ **2026-08-23 已确认落地**：脚本 `AppData/Local/hermes/scripts/dsh_inspect_moti.sh`（8/20 建，已含 git status 检查）+ cron「墨题每日代码巡检」18:45 已挂载；本次修复 cron 因全局模型漂移被跳过的问题（pin 到 jiyuanlvdong/deepseek-v4-flash-0731）
+- [x] P1 hermes-health-check 加产物 stat 检查（产出型 cron 当日文件缺失即告警，不标全绿）→ ✅ **2026-08-23 已确认落地**：`deterministic_verify.py` 每日 21:30 no_agent 哨兵即产物 stat 检查（存在/非空/新鲜），8/22 已抓出 5 项缺失（arxiv/health/maintenance/cards/hackernews）
 
 ## 🔒 待用户操作（不催促，状态变化时提醒）
 ### 🧭 8/20 反思行动项（daily-reflection 复盘 8-19，执行者必读）
