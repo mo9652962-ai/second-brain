@@ -58,6 +58,7 @@ status: adopted
 > [[researchpilot-skills]] — AI科研全流程7阶段Skill套件
 > [[vibe-research]] — AI辅助科研9阶段工具推荐清单
 > [[nihaixia-skill]] — 倪海厦中医经方AI技能包
+> [[knowledge/AI/数模国赛-AI提示词库-2026|数模国赛 AI 提示词库]] — 26 国赛必备提示词（云顶数模 08-23 整理）
 
 ## 📂 领域总览
 
