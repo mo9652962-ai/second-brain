@@ -10,19 +10,19 @@ status: adopted
 
 > 入口: [[Home|🏠 Home]] · 返回总索引
 
-> 所有知识领域的索引与关联。最后更新: 2026-08-22（W34 周度整理：MOC 补链 + Finance MOC 创建 + memory 归位）
+> 所有知识领域的索引与关联。最后更新: 2026-08-23（W35 周度整理：网安/开发/META/SOP 批量挂载 + memory 归位）
 
 ## 🧭 MOC 总入口（2026-08-16 起，新建 MOC 必须在此挂载）
 
 | 域 / 主题切片 | 入口 | 规模 |
 |:---|:---|:---|
-| 🔬 Research（域） | [[MOC-Research]] | 143 篇 |
+| 🔬 Research（域） | [[MOC-Research]] | 154 篇 |
 | 🐙 GitHub 研究（主题切片） | [[MOC-GitHub]] | 42 篇 |
-| 🛡️ 网络安全（主题切片） | [[MOC-Security]] | 12 篇 |
-| 💻 Dev（域） | [[MOC-Dev]] | 93 篇 |
-| 🔧 Hardware（域） | [[MOC-Hardware]] | 16 篇 |
-| 🏠 Productivity（域） | [[MOC-Productivity]] | 22 篇 |
-| 📈 Finance（域） | [[MOC-Finance]] | 2 篇 |
+| 🛡️ 网络安全（主题切片） | [[MOC-Security]] | 49 篇 |
+| 💻 Dev（域） | [[MOC-Dev]] | 101+23 篇 |
+| 🔧 Hardware（域） | [[MOC-Hardware]] | 19 篇 |
+| 🏠 Productivity（域） | [[MOC-Productivity]] | 27 篇 |
+| 📈 Finance（域） | [[MOC-Finance]] | 6 篇 |
 
 > 主题切片 MOC（如 GitHub/安全）横跨多个目录收拢同主题笔记，域 MOC 管目录、主题 MOC 管切片，双层导航。
 > 重构总体方案见 [[知识库重构方案-2026-08-16|《知识库重构方案》]]；孤立/重复扫描：`python scripts/vault-orphan-duplicate-scan.py --scope knowledge`
@@ -41,6 +41,8 @@ status: adopted
 > [[godot-card-draw]] — Godot 4 抽卡动画
 > [[chinese-poetry]] — 最全古诗词数据库（5.5万+首）
 > [[campus-box-design]] — 微信小程序校园服务平台设计
+> [[knowledge/gaming/bannerlord-upgrade-plan-2026-08-20|bannerlord-upgrade-plan]] — 骑砍2 升级计划（e1.4.7→v2 路线）
+> [[knowledge/gaming/bannerlord-gemini-loadout-2026-08-20|bannerlord-gemini-loadout]] — 骑砍2 Gemini 配装研究
 > 对应 skill: engineering-workflow · test-driven-development
 
 ## 💰 变现分析
@@ -187,6 +189,27 @@ graph TD
 
 ---
 
+## 🆕 W35 续（2026-08-19 ~ 08-22 批量入库）
+
+> 网安资料库收官 + SRC 自动化 + SOP 知识体系 0→1 + 后端开发坑系列 32 项 + 千轮增强六域。整理报告见 [[../memory/2026/08/weekly-2026-08-23|W35 周度整理]]。
+
+| 域 | 新增重点 | 入口 |
+|:---|:---------|:-----|
+| 🛡️ Security | SRC 自动化三工具/联想侦察/OSINT/网安自学路线 + 校园便利盒挖洞实战 + 墨题安全自审/防破解 + 手机木马 RAT 攻防 ×26 | [[knowledge/Security/MOC-Security]] |
+| 📜 SOP | SOP 知识体系 0→1：7 篇 SOP + 5 维 Schema + 演进日志 | [[knowledge/SOP/SOP-INDEX]] |
+| 🔬 Research | 网安资料库综合研究（350 文件/3.35GB）+ agent-os-harness 趋势 | [[knowledge/Research/网安资料库-入口]] · [[knowledge/Research/agent-os-harness-trend-2026-08-22]] |
+| 💻 Dev | 后端开发坑系列 32 项（写码前扫坑清单）+ 墨题巡检 08-17/20/21 + Gemini Spark 指南 | [[knowledge/Development/写码前扫坑清单]] · [[knowledge/Dev/墨题每日巡检-2026-08-21]] |
+| 🧠 META | 技能生产链全景图 + 千轮自我强化 + 沉淀验证与应用 | [[knowledge/META/技能生产链全景图-2026-08-21]] |
+| 🔧 Hardware | PCB 2026 KiCad10+AI-EDA + CAD 千轮增强 + AI-PCB 前沿对比 | [[knowledge/Hardware/PCB-2026-KiCad10与AI-EDA]] |
+| 🏠 Productivity | 交付成本库 + 报价 4 问 + PPT 2026 千轮增强 + GitHub 变现 | [[knowledge/Productivity/交付成本库]] |
+| 🤖 AI | TencentDB Agent Memory 评估（记忆引擎） | [[knowledge/AI/TencentDB-Agent-Memory-评估-2026-08-22]] |
+| 📈 Finance | 股票分析千轮研究增强 | [[knowledge/Finance/股票分析-2026-千轮研究增强]] |
+| 🎮 Gaming | 骑砍2 升级计划 + Gemini 配装 | [[knowledge/gaming/bannerlord-upgrade-plan-2026-08-20]] |
+| 📅 Daily | HN 速览 08-17/18/19/21 | [[knowledge/Daily/hackernews-2026-08-21]] |
+| 🎨 Creative/Content | AI 小说流水线 + 网文世界观 + 内容创作 B 站变现 + 去 AI 味 39 类检测 | [[knowledge/Creative/AI小说工厂流水线-2026-08-20]] · [[knowledge/Content/内容创作-2026-B站变现增强]] |
+
+---
+
 ## 🆕 W34 新增速览（2026-08-15 ~ 08-16）
 
 > 本周主线：知识域收敛 10→7（08-15 refactor）+ AgentScope 评测资产放量 + 墨题 P0/P1 设计 + harness 十轮强化 + 闲鱼 8/17 决策倒计时。整理报告见 [[../memory/2026/08/weekly-2026-08-16|W34 周度整理]]，学习回顾见 [[../memory/2026/08/weekly-learning-2026-08-16|W34 学习回顾]]。
@@ -253,6 +276,7 @@ Matt Pocock 方法论     Grill+TDD 工作流
 ||| 编辑级图表 (W34) | [[diagram-design-2026-08-16]] ⭐ | ppt-design/baoyu-infographic | 🟢 参考 |
 
 ||| 端侧 14MB 模型 (W34) | [[needle-tiny-model-2026-08-16]] ⭐ | 本地LLM/边缘AI | 🟡 关注 |
+||| 记忆引擎评估 (W35) | [[knowledge/AI/TencentDB-Agent-Memory-评估-2026-08-22\|TencentDB Agent Memory 评估]] ⭐ | TencentDB 记忆引擎 | 🟢 已部署 |
 
 ||| Google 官方 Skills (W34) | [[google-skills-2026-08-16]] ⭐ | Agent Skills 标准 | 🔵 关注 |
 
@@ -325,6 +349,10 @@ MCP 生态: GitHub + Filesystem + JLCPCB(38工具) + Obsidian(笔记操作)
 || **设计工程师思维** | [[ibelick-ui-skills]] ⭐ | UI Skill 分类组织 | 垂直切分 vs 大一统 |
 || **极简编程** | [[ponytail]] | 编程全场景 | 能少写就少写 |
 || **上下文工程** | [[k-self-improvement]] | Agent 回复 | 上下文 > 提示词 |
+| **SOP 知识体系** | [[knowledge/SOP/SOP-INDEX\|SOP 索引]] | SOP-001~007 | 经验→程序化技能（8-19 建立） |
+| **技能生产链** | [[knowledge/META/技能生产链全景图-2026-08-21\|技能生产链全景]] | skill-pipeline | 9 流派×6 段质检门 |
+| **千轮自我强化** | [[knowledge/META/千轮自我强化-技能自进化研究-2026-08-21\|技能自进化]] | skill-evolution | ERL+SkillHone+SkillOpt+ReMe |
+| **沉淀验证与应用** | [[knowledge/META/千轮研究-沉淀验证与应用-2026-08-21\|沉淀验证与应用]] | — | 千轮研究闭环 |
 
 ---
 

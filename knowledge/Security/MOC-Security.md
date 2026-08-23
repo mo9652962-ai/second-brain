@@ -89,6 +89,42 @@ updated: 2026-08-21
 - [[knowledge/Security/OSS公共读-隐私泄露|OSS 公共读]] — 公私分桶 + 签名 URL
 - [[knowledge/Security/日志泄露-脱敏|日志脱敏]] — 统一 Logger + 敏感字段脱敏
 
+## 🆕 2026-08-18 补遗 + 08-19/20 新增（SRC 进阶 + 逆向 + 学习路线）
+
+> 联想 SRC 实战 + 报告规范 + 网安学习路线 + 逆向（VMP/SO）——SRC 从入门到报告的链路补全。
+
+- [[knowledge/Security/ai-redteam-tools-compare-2026-08-18|AI 红队工作台全景对比]] — 红队工具横向
+- [[knowledge/Security/src-info-leak-first-order-sop-2026-08-18|SRC 信息泄露首单 SOP]] — 双视频学习沉淀
+- [[knowledge/Security/src-newbie-guide-2026-08-19|SRC 新手从 0 到第一个洞]] — 入门链路
+- [[knowledge/Security/src-report-format-2026-08-19|漏洞报告格式规范]] — 补天 2026-07 公告
+- [[knowledge/Security/lenovo-src-assets-2026-08-19|联想 SRC 子域名资产清单]] — 资产测绘实战
+- [[knowledge/Security/lenovo-src-recon-2026-08-19|联想 SRC 侦察报告]] — 侦察流程
+- [[knowledge/Security/nmap-tutorial-2026-08-20|Nmap 保姆级教程]] — 端口扫描（安全小子）
+- [[knowledge/Security/网安自学避坑-2026-08-20|网安自学 7 坑]] — 避坑（网络安全黑卡）
+- [[knowledge/Security/cybersec-entry-path-2026-08-18|双非本科入局网安]] — 视频学习笔记
+- [[knowledge/Security/cybersecurity-offer-path-2026-08-18|网安 Offer 路径研究]] — 就业路径
+- [[knowledge/Security/cyber-skills-817-compare-2026-08-20|817 网安技能库对照]] — 技能对照
+- [[knowledge/Security/vmp-reversing-2026-08-20|VMP 脱壳学习]] — 逆向（洛洛-软件开发）
+- [[knowledge/Security/android-so-vmp-reversing-2026-08-20|安卓 SO 层 VMP 逆向]] — 千轮研究
+
+## 🆕 2026-08-21/22 新增（SRC 自动化 + 攻防实战 + 墨题自查）
+
+> 程序员Orion 接口安全系列（攻防一体）+ SRC 自动化三工具 + 校园便利盒挖洞实战 + 墨题安全自审/防破解。
+
+- [[knowledge/Security/osint-username-maigret-2026-08-21|OSINT 用户名搜索]] — Maigret 3000+ 平台（我是王青青）
+- [[knowledge/Security/src-3month-roadmap-2026-08-21|SRC 3 个月路线 + 业务逻辑靶场]] — 路线图（周小粥）
+- [[knowledge/Security/src-ai-automation-3tools-2026-08-21|SRC 自动化挖洞三工具]] — VulnClaw/SRC-Hunter/AutoSRC 落地
+- [[knowledge/Security/接口三件套-攻防一体|接口三件套]] — 鉴权/限流/幂等攻防（程序员Orion）
+- [[knowledge/Security/前端隐藏不等于安全-后端鉴权|前端隐藏 ≠ 安全]] — 后端鉴权才是真（程序员Orion）
+- [[knowledge/Security/换订单号拿别人数据-IDOR|IDOR 越权]] — 换订单号拿别人数据（程序员Orion）
+- [[knowledge/Security/小程序-2026-开发与挖洞增强|微信小程序开发与挖洞增强]] — 2026 千轮研究
+- [[knowledge/Security/挖洞实战-校园便利盒-2026-08-22|校园便利盒挖洞实战]] — 首个授权挖洞实战报告
+- [[knowledge/Security/校园便利盒攻防-2026-08-22|校园便利盒攻防分析]] — 完整攻防复盘
+- [[knowledge/Security/卡密系统攻防-AI辅助逆向-2026-08-22|卡密系统攻防 + AI 逆向]] — 卡密体系分析
+- [[knowledge/Security/手机木马RAT攻防-2026-08-22|手机木马 RAT 攻防全景]] — 防御视角
+- [[knowledge/Security/墨题安全自审-2026-08-22|墨题安全自审报告]] — 4 洞修复
+- [[knowledge/Security/墨题防破解自查-2026-08-22|墨题防破解自查]] — 加固清单
+
 ---
 
 [[HOME|🏠 返回首页]]

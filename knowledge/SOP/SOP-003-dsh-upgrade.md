@@ -63,4 +63,4 @@
 | 2026-08-19 | 新建 | dsh rc.6→rc.7 升级完整踩坑记录（npm 12 ETARGET）|
 
 ---
-> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]
+> 🗺️ 属于 [[SOP-INDEX]] · [[knowledge-map]] · [[Home|🏠 Home]]

@@ -56,4 +56,4 @@
 | 2026-08-19 | 新建 | 初始化深度技术研报与交叉验证工作流 |
 
 ---
-> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]
+> 🗺️ 属于 [[SOP-INDEX]] · [[knowledge-map]] · [[Home|🏠 Home]]

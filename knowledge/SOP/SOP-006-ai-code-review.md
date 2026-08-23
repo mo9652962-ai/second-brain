@@ -58,4 +58,4 @@
 | 2026-08-19 | 新建 | Sims4 协议 Gemini 审查闭环（9 项发现→验证→修复→测试→push）|
 
 ---
-> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]
+> 🗺️ 属于 [[SOP-INDEX]] · [[knowledge-map]] · [[Home|🏠 Home]]

@@ -22,6 +22,12 @@ created: 2026-07-28
 - [[knowledge/Hardware/jlc-mcp-setup]] — 嘉立创 EDA AI 自动化（38 工具）
 - [[knowledge/Hardware/opencut]] — 开源视频剪辑（备查）
 
+## 🆕 W35 新增（08-19 ~ 08-22 千轮研究增强）
+
+- [[knowledge/Hardware/PCB-2026-KiCad10与AI-EDA|PCB 2026：KiCad 10 与 AI EDA]] — 工具链全景
+- [[knowledge/Hardware/CAD-2026-千轮研究增强|CAD 2026 千轮研究增强]] — CAD 自动化方法论
+- [[knowledge/Hardware/AI-PCB设计前沿-pcbflow对比|AI-PCB 设计前沿]] — ProtoFlow/DeepPCB/Quilter 对比
+
 ---
 
 ## 🎨 设计域（原 Design）

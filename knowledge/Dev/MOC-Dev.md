@@ -143,3 +143,21 @@ updated: 2026-08-21
 - [[knowledge/Development/小程序虚拟支付400排查|虚拟支付 400 排查]] — product ID 空值
 - [[knowledge/Development/soft-delete-method-2026-08-21|软删除]] — deleted_at 时间戳
 - [[knowledge/Development/代码审查铁律-跑通不等于交付|代码审查铁律]] — 跑通≠交付，PR+门禁
+- [[knowledge/Development/后端开发-2026-千轮研究增强|后端开发 2026 千轮研究增强]] — 坑系列全景汇总（08-22）
+- [[knowledge/Development/高吞吐韧性-可观测性|高吞吐韧性·可观测性]] — 三高系统设计（08-22）
+
+## 🩺 墨题项目巡检（W35）
+
+> 墨题每日巡检 cron 产出，挂项目索引（[[../projects/current|项目追踪]]）。
+
+- [[knowledge/Dev/墨题每日巡检-2026-08-17|墨题每日巡检 08-17]]
+- [[knowledge/Dev/墨题每日巡检-2026-08-20|墨题每日巡检 08-20]]
+- [[knowledge/Dev/墨题每日巡检-2026-08-21|墨题每日巡检 08-21]]
+
+## 🆕 W35 Dev 研究补链（08-17 ~ 08-20）
+
+- [[knowledge/Dev/deepseek-api-clients-2026-08-17|DeepSeek API 客户端选型]] — 6 款横评
+- [[knowledge/Dev/douyin-fetch-enhancement-2026-08-17|抖音抓取增强]] — Playwright 拦截
+- [[knowledge/Dev/spacetime-diagram-edge-2026-08-17|时空图边缘研究]] — 事件溯源
+- [[knowledge/Dev/gemini-spark-guide-2026-08-19|Gemini Spark 指南]] — 千轮研究
+- [[knowledge/Dev/开源项目速览实证-2026-08-20|开源项目速览实证 5 连]] — GitHub API 实测

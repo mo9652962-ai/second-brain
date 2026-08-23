@@ -45,3 +45,12 @@ created: 2026-07-28
 - [[knowledge/Productivity/AI生成页面不等于项目完成-交付认知|AI 生成≠交付]] — 客户买的是确定性不是代码
 - [[knowledge/Productivity/github-monetization-2026-08-20|GitHub 变现研究]] — 开源私有化+部署订阅
 - [[knowledge/Content/选题池|选题池 66 题]] — 内容库存，先查库存再临时找题
+
+## 🆕 W35 新增（08-20 ~ 08-22 内容创作 + 千轮增强）
+
+- [[knowledge/Productivity/PPT-2026-千轮研究增强|PPT 2026 千轮研究增强]] — 设计方法论升级（08-22）
+- [[knowledge/Content/内容创作-2026-B站变现增强|内容创作 2026 B 站变现增强]] — 博主变现链路
+- [[knowledge/Content/去AI味2026强化-39类检测|去 AI 味 2026 强化（39 类检测）]] — 检测清单
+- [[knowledge/Creative/AI小说工厂流水线-2026-08-20|AI 小说工厂流水线]] — 网文全流程
+- [[knowledge/Creative/novel-worldbuilding-2026-08-17|网文世界观设定]] — 5 问框架
+- [[knowledge/Creative/sumeru-skill-distillation-2026-08-20|Sumeru 技能蒸馏]] — 7 模块蒸馏

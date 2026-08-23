@@ -49,6 +49,7 @@ created: 2026-08-09
 - [[knowledge/Research/arxiv-2026-08-16-agent-llm|arXiv 今日速览]] — 15 篇 AI Agent/LLM 论文（08-13 池补全：SkillEvo/CrEST/Reconcile Once/Faraday）
 - [[memory/2026/08/weekly-2026-08-16|📚 W34 周度整理]] — memory 归位 6 + research 归位 3 + MOC×5 更新 + Finance MOC 新建
 - [[memory/2026/08/weekly-learning-2026-08-16|📚 W34 学习回顾]] — AgentScope 实证测评提 PR + 墨题学习型设计 + Behavioral Contracts 落地容灾
+- [[memory/2026/08/weekly-2026-08-23|📚 W35 周度整理]] — 网安/开发/META/SOP 批量挂载 + memory 归位 + 孤立 95→31
 - [[memory/2026/08/2026-08-18-vault-suggestion-executor|🧹 08-18 建议执行器报告]] — 🔴 闲鱼 8/17 决策日已过 1 天：素材第 7 次核对 100% 就绪，今日最后窗口，待 sora 决策上架 or 放弃
 - [[memory/2026/08/2026-08-18-maintenance|🔧 08-18 维护]] — 断链 9→0 · 空壳 2 删 · 孤立 4 补链 · DIR_MOC 清理
 - [[memory/2026/08/2026-08-18-daily-review|📋 08-18 每日回顾]] — 安全/SRC 变现研究日：信息泄露首单 SOP + 网安 offer 路径 + AI 红队工具选型 + 多 agent 协作背书 · 🔴 闲鱼 8/18 最后窗口待拍板
