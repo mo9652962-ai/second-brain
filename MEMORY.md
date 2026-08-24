@@ -226,7 +226,7 @@ InformationWeek 报告：企业从脆弱的手工胶水脚本转向标准化 Age
 - [x] ~~AI 变现调研~~ ✅ 2026-07-24
 - [x] ~~LRN-20260722-001 (Plan-and-Execute)~~ ✅ 2026-07-25
 - [x] ~~AI 变现落地（闲鱼AI代做PPT/论文润色）— 可发车（闲鱼封号至8/1）~~ ✅ 素材已预生成，8/1 解封日已过，上架排期 8/2
-- [ ] 闲鱼上架「AI 代做 PPT」→ **决策悬置第 21 天**（8/18 最后窗口已过近 4 天；素材包+主图第 10 次核对 100% 就绪，30min；见 projects/current.md）
+- [ ] 闲鱼上架「AI 代做 PPT」→ **决策悬置第 22 天**（8/18 最后窗口已过近 6 天；素材包+主图第 10+ 次核对 100% 就绪，30min；**注意合规**：2026-06-01 起「经营性卖家」新规——同款反复售出>5 次/年发>30 件 或 年售>10 万任一被标记；台账标题避开「代做/包过/破解」敏感词；见 projects/current.md + knowledge/Research/自选课题千轮研究x20）
 - [x] ~~语义缓存最小版落地（根治 Tavily 配额 + 预防 Gartner 5x）~~ ✅ 2026-08-21：统一 chokepoint 覆盖全 8 后端（commit 84d813bf2），根治连续 8 工作日配额复发
 - [x] ~~合并冗余 skills（hermes-search-configuration → hermes-search-config）~~ ✅ 2026-07-31 已核实：hermes-search-configuration 已不存在，仅剩 hermes-search-config，无需合并
 - [ ] 随身WiFi下单确认（赫电 Pro 399元/年，选型已确认）→ 待 sora 确认
@@ -253,3 +253,88 @@ _最后更新: 2026-08-22｜运行环境: OpenClaw Agent on Windows 11_
 
 <!-- openclaw-memory-promotion:memory:memory/2026-08-12.md:35:35 -->
 - 系统健康度: > 🗺️ 属于 [[Home|🏠 Home]] [score=0.825 recalls=0 avg=0.620 source=memory/2026-08-12.md:35-35]
+
+## Promoted From Short-Term Memory (Memory Pruning 2026-08-24)
+
+<!-- Content extracted from daily notes older than 30 days (before 2026-07-25) -->
+
+### Key Insights from July 2026
+
+#### OpenClaw Architecture Evolution
+- **Multi-Agent Framework Standardization (July 2026)**: By July 2026, major agent frameworks had converged on LangGraph 1.x, Microsoft Agent Framework 1.0, Claude Agent SDK, OpenAI Agents SDK, ADK 2.0, and CrewAI 1.14.7 as industry standards, with MCP+A2A becoming table stakes for interoperability.
+
+- **Graph Engineering Paradigm Shift**: The industry moved from Loop Engineering (June 2026) to Graph Engineering (July 2026), emphasizing multi-stage parallel execution with precise feedback routing over sequential loops, making graph structures first-class design objects.
+
+- **Memory Architecture Maturation**: Write-Path > Read-Only RAG emerged as the 2026 standard for memory systems, with frameworks like Mem0, Letta, Cognee, and Zep providing mature graph memory solutions that prioritize write-path capabilities over read-only retrieval.
+
+#### OpenClaw-Specific Developments
+- **Extended-Stable Release**: OpenClaw Extended-Stable (2026-07-31) introduced monthly stable releases with maturity scoring, addressing enterprise reliability concerns and moving toward LTS status.
+
+- **NVIDIA SkillSpector Integration**: Starting June 2026, all ClawHub skills began automatic scanning for hidden instructions, significantly improving supply chain security for the OpenClaw ecosystem.
+
+- **Gateway Stability Improvements**: Hotfix v2026.7.1-2 (August 4, 2026) resolved npm plugin singleton-array metadata compatibility issues that had caused instability in the 2026.7.1 release.
+
+#### Knowledge and Skills Development
+- **Skill Ecosystem Growth**: By July 2026, the OpenClaw skills ecosystem had expanded to 27+ installed skills plus 8 self-built skills, covering academic paper writing (9 skills), PPT creation (6 skills), image generation (7 skills), self-improvement (3 skills), search (3 skills), engineering workflow (1 skill), and academic writing (1 skill).
+
+- **CAD Full-Stack Development**: July 2026 saw completion of a full CAD stack including 6 major CAD software packages (FreeCAD, Blender, Fusion 360, etc.) and 7 Python CAD libraries, enabling an end-to-end AI-CAD pipeline from natural language to STEP+STL export.
+
+- **5RMB/Month Low-Cost Model Access**: Research identified affordable model access options including SiliconFlow (¥2/M output), DeepSeek direct connection (¥1/M), and ZhiPu GLM-4-Flash (free), with coding plans from providers like WuJinQiong offering ¥19.9/month access.
+
+#### System Engineering Practices
+- **Bounded Autonomy Adoption**: The industry increasingly adopted confidence thresholds and human escalation paths (Bounded Autonomy) as a production best practice for AI agents, verified through multiple independent sources in July-August 2026.
+
+- **Hybrid Automation (AI+RPA)**: Recognition emerged that the most effective automation combines AI handling unpredictable elements with RPA handling core predictable workflows, particularly for enterprise adoption.
+
+- **Security-by-Default for Agents**: Frameworks began emphasizing ambient/autonomous security built into agents from the ground up, with each agent requiring person-level protection measures.
+
+### Important Learnings
+
+#### Search Architecture
+- **5-Layer Search Redundancy**: By July 2026, OpenClaw implemented a 5-layer search redundancy system: Tavily (primary) + Exa + Firecrawl + DDGS (via VPN) + SearXNG (local instance), providing resilience against individual service failures.
+
+- **Tavily Quota Management**: Experience with Tavily API quota exhaustion (HTTP 432) led to implementing semantic caching (0.92 similarity threshold) to reduce LLM calls by 20-40% and batch search concurrency control (≤3 requests) to avoid rate limiting.
+
+#### Model Management
+- **Cross-Provider Fallback Chains**: OpenClaw established robust cross-provider fallback chains: opencode-go → DeepSeek direct → OpenRouter, providing 11-level fallback protection against single points of failure.
+
+- **Task-Aware Model Routing**: While initially implemented as manual judgment, the industry trend moved toward intelligent model routing that matches task complexity to model capability and cost, achieving 60-70% cost optimization.
+
+#### Memory Systems
+- **Vector+Graph Hybrid Memory**: The production standard for memory systems evolved to vector+graph hybrid approaches, combining the strengths of both paradigms for better recall and relationship reasoning.
+
+- **Persistent Context Techniques**: Methods like Just-In-Time RL and A-MEM (RL-driven adaptive memory) demonstrated significant efficiency gains (91.6% accuracy, 4x fewer tokens, 91% lower latency) compared to full-context approaches.
+
+### Completed Projects and Experiments
+
+#### AI-Driven CAD Automation
+- Successfully implemented an AI-CAD pipeline: Natural Language → AI Agent Reasoning → build123d Code Generation → Execution → STEP+STL Export
+- Created a parameterized parts library with 7 standard components (hex bolts/nuts/washers/L-brackets/gears/springs/flanges)
+- Verified through 5/5 test cases including M6×30 bolts, M8 nuts, 20-tooth gears, DN50 flanges, and 40×50 L-brackets
+- Advanced to real-time AI code generation where the AI (k) reasons and writes build123d code dynamically rather than using preset mappings
+
+#### Desktop Automation and Optimization
+- Researched and deployed desktop beautification toolchain: Rainmeter v4.5.26, TranslucentTB 2026.1, and ExplorerPatcher
+- Created comprehensive CAD workflow: Concept Design (Fusion 360/FreeCAD) → Parametric Modeling (build123d/FreeCAD) → 3D Rendering (Blender) → 3D Printing Slicing (Cura/PrusaSlicer) → Engineering Drawings (FreeCAD TechDraw + DXF)
+
+### Status Updates and Resolved Issues
+
+#### Memory Search
+- Fixed embedding provider timeout through increased embeddingBatchTimeoutSeconds (90s) and reindexing, achieving 1-second response times.
+
+#### System Health
+- Completed 7 historical backlog items by July 22, 2026, entering a "knowledge execution" phase where learning was actively applied rather than just accumulated.
+
+#### Self-Improvement Systems
+- The self-improving-agent skill reached maturity with deep saturation of learning records (35+ learnings), shifting focus from knowledge collection to knowledge execution.
+
+### Pending Items Requiring User Attention
+
+#### Pending User Actions
+- **Random WiFi Purchase Decision**: Hesong Pro 399元/年 random WiFi purchase confirmation pending user verification (model selection already confirmed)
+- **Skill Consolidation Review**: Review of 6 identified duplicate skill groups from August 1, 2026 audit pending user confirmation
+- **Desktop Beautification Deployment**: Actual deployment of TranslucentTB + Rainmeter installation pending user execution (packages already prepared)
+- **Xiaohongshu Content Creation**: AI PPT tutorial content creation for Xiaohongshu platform pending scheduling (dependent on PPT sample materials)
+
+> *Automatically promoted from memory pruning of daily notes older than 30 days (before 2026-07-25)*
+> *Processed: 2026-08-24 09:00 Asia/Shanghai*
