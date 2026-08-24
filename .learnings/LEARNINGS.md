@@ -1574,6 +1574,12 @@ Tavily API 用量配额耗尽 (432 plan limit exceeded) — 搜索主力后端�
 - **结论**: `Recurrence-Count: 8`。连续 8 个工作日复发（8/14-8/21）。语义缓存最小版**硬截止今天(8/22)仍未落地**——连续 8 天靠 Firecrawl 兜底，已确认可靠但非治本。语义缓存仍是 P1；落地后应显著降低复发频率。
 - **本次观察**: 单查询即 432（配额完全耗尽，非并发触发）。Firecrawl 单次请求 ~5s 成功，可靠稳定。
 
+### 2026-08-24 Recurrence Note (9th independent confirmation) — 附带语义缓存真落地
+- **复现**: 8/24 自改进 cron 首次 tavily_search 即返回 432。Firecrawl 当场无缝接管（成功搜到 o-mega.ai OpenClaw 2026 Guide + OpenClaw Blog + OWASP GenAI RSAC 2026），搜索完全未阻塞。
+- **关键更新**: 8/21 daily-todo-executor 已在 `tools/web_tools.py::web_search_tool()` L722 `provider.search()` 统一 chokepoint 加两级缓存（exact + n-gram 近似），**覆盖全部 8 个后端**（早先 8/17 方案仅接 tavily provider，因实际常走 exa/searxng/firecrawl 兜底而从未生效）。这是**真正的语义/搜索缓存落地**——此前 8 次复发的治本方案已实现并覆盖兜底后端，未来复发频率应显著下降。
+- **结论**: `Recurrence-Count: 9`。Tavily 配额周期性耗尽已完全常态，但治本措施（chokepoint 全后端缓存）已落地。维持 Firecrawl 常态主力；下次复发时应验证缓存确实拦截。（8/23 无复发记录，可能缓存已开始兜住部分高频查询）
+- **本次观察**: Firecrawl 单次 ~7.4s 成功，o-mega.ai guide 内容质量高（含 extended-stable 频道、Anthropic token ban、Opus 5/Kimi K3 支持等 8/24 可沉淀新知识）。
+
 ---
 
 ## [LRN-20260806-001] best_practice
@@ -1786,6 +1792,44 @@ Gartner 2026-08 新预测：AI inference cost 每 agentic workflow 至 2028 将�
 - Recurrence-Count: 1
 - First-Seen: 2026-08-20
 - Last-Seen: 2026-08-20
+
+## [LRN-20260824-001] insight
+
+**Logged**: 2026-08-24T08:47:00+08:00 | **Priority**: medium | **Status**: completed | **Area**: docs
+
+### Summary
+OpenClaw 2026-08 走向企业运维线：extended-stable 发布频道 + maturity scorecard；Anthropic 封订阅 token（4/4）致成本 10-50x；新前沿模型支持 Opus 5/Kimi K3/GPT-5.6
+
+### Details
+来自 o-mega.ai《OpenClaw Guide 2026》(2026-08) + OpenClaw Blog 综合：
+1. **extended-stable 发布频道**: 从 2026.6.11 派生的 2026.6.33 起每月回传修复，面向 business-critical 运营商；maturity scorecard 按质量/完成度给特性评分——项目从「enthusiast」转向「enterprise operator」定位
+2. **Anthropic 2026-04-04 封第三方工具订阅 token**: 约 135K OpenClaw 实例受影响，metered billing 后成本涨 10-50x；Anthropic 理由：单自主实例日耗 $1,000-$5,000 平价比计量
+3. **新模型支持**: Claude Opus 5、Kimi K3、GPT-5.6 family (Sol/Terra/Luna) 已入 OpenClaw
+4. **OpenClaw 2026.6.6**: 浏览器会话安全强化（CDP session attach、WebSocket validation、loopback MCP transport 检查）
+5. **OWASP GenAI Security (RSAC 2026)**: agentic red teaming taxonomy + MCP server security guide 发布
+6. **合规时代开启**: 中国限制政府机器用 OpenClaw + 同期叫停一桩 $2-3B agent 收购；「已记录并约束 agent 行为的运营商将受益，否则昂贵」
+7. **许可 + 81K forks 使软件不可被单一裁决 kill**
+
+### 对 k 的启发/验证
+- ✅ 当前 v2026.7.1-2 主线合理；business-critical 场景可考虑 extended-stable
+- ✅ Anthropic token ban → 验证我们多供应商 fallback 链（pro→kimi→qwen→glm，非仅 Anthropic）的正确性，避免单供应商成本/供应锁定
+- ✅ 安全强化方向（browser 会话、MCP 检查、OWASP taxonomy）与我们的 HarnessRisk 收紧 / skill vetting 同向
+- ✅ China 监管 → self-hosted 数据主权 + 日志审计优势再次背书
+
+### Suggested Action
+- 大版本升级前评估 extended-stable 频道（若要求生产稳定）
+- 保持多供应商（非 Anthropic 单点）以免疫订阅 token ban
+- 继续收紧 Hermes 配置面（OWASP agentic red teaming 作为审计参考）
+
+### Metadata
+- Source: firecrawl_search (o-mega.ai, openclawai.io/blog)
+- Tags: openclaw, extended-stable, anthropic-ban, opus5, kimi-k3, owasm
+- Pattern-Key: config.openclaw-enterprise-line
+- Recurrence-Count: 1
+- First-Seen: 2026-08-24
+- Last-Seen: 2026-08-24
+
+---
 
 ## [LRN-20260822-001] insight
 
