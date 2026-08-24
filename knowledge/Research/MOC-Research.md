@@ -118,6 +118,7 @@ created: 2026-08-09
 - [[knowledge/Research/arxiv-2026-08-20-agent-llm|arXiv Agent/LLM 08-20]] · [[knowledge/cards/2026-08-20-hermes-harnessrisk-security|知识卡片 08-20]]
 - [[knowledge/Research/arxiv-2026-08-21-agent-llm|arXiv Agent/LLM 08-21 补录]] · [[knowledge/cards/2026-08-21-github-monetization|知识卡片 08-21]]
 - [[knowledge/Daily/hackernews-2026-08-17|HN 08-17]] · [[knowledge/Daily/hackernews-2026-08-18|HN 08-18]] · [[knowledge/Daily/hackernews-2026-08-19|HN 08-19]] · [[knowledge/Daily/hackernews-2026-08-21|HN 08-21]] — W35 Daily 速览补链
+- [[memory/2026/08/2026-08-24|自我完善 08-24]] · [[knowledge/cards/2026-08-24-anthropic-token-ban|知识卡片 08-24]]
 
 ## 文章研读
 
