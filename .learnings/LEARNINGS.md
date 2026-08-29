@@ -1574,6 +1574,11 @@ Tavily API 用量配额耗尽 (432 plan limit exceeded) — 搜索主力后端�
 - **结论**: `Recurrence-Count: 8`。连续 8 个工作日复发（8/14-8/21）。语义缓存最小版**硬截止今天(8/22)仍未落地**——连续 8 天靠 Firecrawl 兜底，已确认可靠但非治本。语义缓存仍是 P1；落地后应显著降低复发频率。
 - **本次观察**: 单查询即 432（配额完全耗尽，非并发触发）。Firecrawl 单次请求 ~5s 成功，可靠稳定。
 
+### 2026-08-29 Recurrence Note (10th independent confirmation) — 缓存对全新查询不拦截
+- **复现**: 8/29 自改进 cron 首次单个 tavily_search 即返回 432。Firecrawl 当场无缝接管（成功搜到 Context Studios 生产指南 + Petronella changelog，含 134 MCP tools、2026.4.14 版本、Task Brain flows list 等），搜索完全未阻塞。
+- **关键验证**: 语义缓存 (8/21 落地) 未拦截本次查询——因为本次是全新查询词，缓存仅对近似重复查询生效。**结论: 语义缓存只能降低重复查询的复发频率，无法根治全新查询的配额耗尽**。配额本身仍是硬上限，根治只能升 plan 或降搜索量。
+- **结论**: `Recurrence-Count: 10`。连续 10 个工作日复发（8/14-8/29）。Firecrawl 连续 10 次实战验证可靠，已完全确认常态主力。语义缓存定位下调为「降频辅助」而非「治本」——配额型后端的硬天花板无法靠缓存消除，长期需评估 Tavily plan 升级或 Quota 替代。
+
 ### 2026-08-24 Recurrence Note (9th independent confirmation) — 附带语义缓存真落地
 - **复现**: 8/24 自改进 cron 首次 tavily_search 即返回 432。Firecrawl 当场无缝接管（成功搜到 o-mega.ai OpenClaw 2026 Guide + OpenClaw Blog + OWASP GenAI RSAC 2026），搜索完全未阻塞。
 - **关键更新**: 8/21 daily-todo-executor 已在 `tools/web_tools.py::web_search_tool()` L722 `provider.search()` 统一 chokepoint 加两级缓存（exact + n-gram 近似），**覆盖全部 8 个后端**（早先 8/17 方案仅接 tavily provider，因实际常走 exa/searxng/firecrawl 兜底而从未生效）。这是**真正的语义/搜索缓存落地**——此前 8 次复发的治本方案已实现并覆盖兜底后端，未来复发频率应显著下降。
