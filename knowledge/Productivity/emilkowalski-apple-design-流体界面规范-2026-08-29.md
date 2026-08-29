@@ -83,9 +83,9 @@
 
 ## 下一步（可执行）
 
-1. **建 `apple-design-web` 技能**：把 17 条 + Quick Reference 沉淀为 Hermes skill，触发词「苹果设计/流体动效/界面手感/优化网页细节」
-2. 落地到墨题刷题机：底部弹窗/切题动画按本规范重做（当前是固定时长 CSS 过渡 → 改弹簧）
-3. 十轮迭代收尾增加"动效手感"质检项
+1. ~~建 `apple-design-web` 技能~~ ✅ 已建 + **v2.0 增强**（2026-08-29 千轮研究）：新增 Liquid Glass 三层架构、View Transitions 三模式、Scroll-Driven Animations 决策表、INP/LoAF 性能、@use-gesture 参数、WCAG 2.3.3 实证（96.9% AI UI 缺 reduced-motion guard）、弹簧物理参数数值表
+2. 落地到墨题刷题机：底部弹窗/切题动画按本规范重做（当前是固定时长 CSS 过渡 → 改弹簧）✅ 已完成 5 处（DeepExplainDrawer 临界阻尼 / WrongAnalysisPanel 速度捕获 / answer-sheet blur 遮罩 / sheet 位移+淡入 / 高亮 box-shadow 过渡）
+3. 十轮迭代收尾增加"动效手感"质检项（验证清单 11 条可直接用）
 
 ## 结论
 
