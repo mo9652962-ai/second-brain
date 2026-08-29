@@ -60,3 +60,8 @@ created: 2026-07-28
 - [[knowledge/Productivity/内容-Agent操作系统之争-B站初稿-2026-08-23|「Agent 操作系统之争」B 站初稿]] — 第 1 期候选（DeepSeek vs OpenAI Harness）
 - 搭网站/写脚本商品素材包：`outputs/xianyu-master/搭网站写脚本-商品素材包.md` — 高客单价技术服务线（闲鱼 +1732%）
 - 询价话术模板：ai-freelance-pricing 技能 `templates/xianyu-quote-script.md` — 报价 4 问落地版
+
+## 🆕 08-29 新增
+
+- [[knowledge/Productivity/emilkowalski-apple-design-流体界面规范-2026-08-29|Apple Design 流体界面规范]] — WWDC 动效手感 → Web 落地（emilkowalski/skills 33.3k★），配套技能 `apple-design-web`
+
