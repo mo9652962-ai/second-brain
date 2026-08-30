@@ -152,3 +152,6 @@ WebResearcher 的 test-time scaling：N 个 agent 并行独立研究 → Fusion 
 
 ---
 *k (Hermes) · 2026-08-23 · 用 IterResearch 范式研究 IterResearch*
+
+---
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]

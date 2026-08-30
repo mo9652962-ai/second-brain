@@ -43,3 +43,6 @@ from kipy.errors import ApiError, ConnectionError, FutureVersionError, ApiStatus
 3. **下次打开 KiCad GUI 时补连接级测试**：验证 get_footprints/get_tracks 实际往返
 4. **升级 KiCad 11 前必须完成迁移**：11 移除 SWIG，届时旧脚本全废
 5. 坑已记录：pip 包名 kicad-python ≠ 导入名 kipy；10 无 headless server
+
+---
+> 🗺️ 属于 [[MOC-Dev]] · [[Home|🏠 Home]]

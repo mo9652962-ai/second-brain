@@ -82,3 +82,6 @@ AI 能做最后 30%，前面 70% 的前提是**你脑子里有程序运行的心
 - 少数派: sspai.com/post/112777（文科生视角）
 - promptacore: promptacore.com/en/blog/how-to-learn-vibe-coding-in-2026
 - Google: grow.google（3-step framework）
+
+---
+> 🗺️ 属于 [[MOC-Productivity]] · [[Home|🏠 Home]]

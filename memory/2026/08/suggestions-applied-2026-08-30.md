@@ -113,3 +113,6 @@ status: completed
 ---
 
 _生成: suggestion-implementation cron · k · 2026-08-30_
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

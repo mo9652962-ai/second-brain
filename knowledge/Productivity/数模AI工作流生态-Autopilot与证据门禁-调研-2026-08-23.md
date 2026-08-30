@@ -41,3 +41,6 @@
 - AutoMCM-Pro: github.com/RealSeaberry/AutoMCM-Pro（2025A题 demo 144 项验证）
 - MathModel-Skill: github.com/yushui2022/MathModel-Skill
 - math-modeling.skill: github.com/ai-lcs/math-modeling.skill
+
+---
+> 🗺️ 属于 [[MOC-Productivity]] · [[Home|🏠 Home]]

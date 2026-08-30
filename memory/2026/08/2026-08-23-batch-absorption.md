@@ -28,3 +28,6 @@
 
 ---
 *k (Hermes) · 2026-08-23 · learn→research→apply*
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

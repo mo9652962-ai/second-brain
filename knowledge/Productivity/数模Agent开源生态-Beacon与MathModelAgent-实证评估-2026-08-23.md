@@ -60,3 +60,6 @@ Analyst → Modeler → Model Critic(重试) → Coder → Sensitivity
 
 - GitHub API/codeload 在本机代理下不通（HTTP 000），web_extract 走 Hermes 通道可读页面/raw
 - 下载 zip 需代理正常后：codeload.github.com/<owner>/<repo>/zip/refs/heads/main
+
+---
+> 🗺️ 属于 [[MOC-Productivity]] · [[Home|🏠 Home]]
