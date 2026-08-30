@@ -334,4 +334,9 @@ health_provider_check.py 统一走 127.0.0.1:7890 → 全 FAIL 为假警报
 - First-Seen: 2026-08-18
 - See Also: ERR-20260719-001 (provider outage)
 
+### Status Update (2026-08-30)
+- **self-improvement recurrence**: 连续第 4 次高亮为 P0 待办（8/18→8/25→8/29→8/30）
+- 根因仍未清除：需 sora 在物理机重启 FlClash（7890 端口监听但数据转发失效）→ 重启后观察 gateway 消息通道（QQ/微信）重连
+- 此待办为唯一需人工介入的阻塞点，k 无法自理，继续悬空高亮
+
 ---
