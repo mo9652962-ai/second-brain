@@ -62,3 +62,6 @@ type: daily-inspect
 - 脚本退出码：0 ✅
 - 运行方式：cron 自动派活（2026-08-30，本轮为当日第二次巡检）
 - 无 FAIL 标记、无语法错误、无阻塞问题
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

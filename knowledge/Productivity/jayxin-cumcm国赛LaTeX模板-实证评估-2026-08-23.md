@@ -50,3 +50,6 @@
 
 - GitHub zip：`https://codeload.github.com/jayxin/cumcm/zip/refs/heads/main`（本机代理对 codeload 不通，需开代理后下载或用 TeXPage 在线导入）
 - 在线编译：TeXPage 选编译器 xelatex + TeXLive 2023 + 主文档 main.tex
+
+---
+> 🗺️ 属于 [[MOC-Productivity]] · [[Home|🏠 Home]]

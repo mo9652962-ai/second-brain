@@ -95,3 +95,6 @@ AI 搭小程序前端 = **先写规格（Spec）当合同，再让 AI 按合同�
 - CSDN uniapp-vue3-skills：把流程沉淀为 Skill（docs 承载事实）
 - 左诗右码：四步搭建法 Prompt 清单（定基调/定颜值/造轮子/写业务）
 - 优码云：企业级三端交付拆解
+
+---
+> 🗺️ 属于 [[MOC-Productivity]] · [[Home|🏠 Home]]

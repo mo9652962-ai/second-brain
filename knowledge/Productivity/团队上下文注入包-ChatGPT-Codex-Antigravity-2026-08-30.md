@@ -34,3 +34,6 @@
 - 我在 Windows 10 + git-bash，GMT+8
 - 主要项目：墨题（英语刷题机，D:\english-multiple-choice-practice-machine，Vue3+Vite+FastAPI）
 - 业务：闲鱼接单（论文/PPT/PCB）+ AI 博主（B站）+ 考研备考
+
+---
+> 🗺️ 属于 [[MOC-Productivity]] · [[Home|🏠 Home]]

@@ -45,3 +45,6 @@
   - 5 核心组件 JSDoc：AppToast（经 toast 服务调用不直接 import）/ ListeningPlayer（tracks/seekable/timerPaused）/ WrongAnalysisPanel（questionIds/scopeTitle/unitIds/autoLoad）/ QuestionBankSwitcher（emit changed）/ DictationMode（words）
   - 类型检查 vue-tsc ✅ 零错误
   - **效果**：Antigravity/Codex 改墨题前端时不再猜组件 API、不发明 props、不造平行组件
+
+---
+> 🗺️ 属于 [[MOC-Productivity]] · [[Home|🏠 Home]]
