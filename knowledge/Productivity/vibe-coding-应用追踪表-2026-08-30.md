@@ -37,3 +37,11 @@
 - 2026-08-30：第二批 3 视频研究完成；#7 Context Engineering 是最大增量（少返工方法论）；#9 量化仅技术参考
 
 | 10 | **AI 原生组件库**（让 AI 听懂控件）| ⭐高 | ✅ 已沉淀 | `做控件让AI工具听懂-AI原生组件库-2026-08-30.md`。**落点：墨题 frontend 加根 AGENTS.md registry + 5-8 核心组件 JSDoc**（Antigravity/Codex 改前端时不再猜组件 API）|
+
+## 应用记录（2026-08-30 #10 已落地）
+
+- ✅ **#10 墨题组件文档化已应用**：
+  - 根 `frontend/AGENTS.md`（技术栈固定 + 17 组件 registry + 组件约定 7 条 + 目录速查 + 验证命令）
+  - 5 核心组件 JSDoc：AppToast（经 toast 服务调用不直接 import）/ ListeningPlayer（tracks/seekable/timerPaused）/ WrongAnalysisPanel（questionIds/scopeTitle/unitIds/autoLoad）/ QuestionBankSwitcher（emit changed）/ DictationMode（words）
+  - 类型检查 vue-tsc ✅ 零错误
+  - **效果**：Antigravity/Codex 改墨题前端时不再猜组件 API、不发明 props、不造平行组件
