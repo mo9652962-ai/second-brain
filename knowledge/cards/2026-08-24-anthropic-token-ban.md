@@ -37,7 +37,7 @@ status: fresh
 ## 行动项
 
 - [x] ~~事件数字多源核实~~ ✅ TechCrunch / The Verge / The Register 交叉验证（135K 实例、$20→$236、单日 $109.55 均来自原文报道）
-- [ ] **Hermes 配置面收紧**：按 OWASP MCP security guide 审计已启用的 MCP server / 工具开关（P1，与 8/23 反思「工具禁用决策」合并执行）
+- [x] **Hermes 配置面收紧**：按 OWASP MCP security guide 审计已启用的 MCP server / 工具开关 → ✅ 2026-08-30 已执行：6 启用 MCP 全部本地/官方（code-review-graph/filesystem/github/jlcmcp/memvid/obsidian 均 loopback 或官方包）、jlceda 已禁用、无远程 MCP、OWASP 清单通过；唯一观察项 filesystem 根目录=C:\Users\31954 权限面大（设计需求，知悉接受）→ 详见 suggestions-applied-2026-08-30 报告
 - [ ] **继续跟踪 OpenClaw extended-stable 频道**（2026.6.33 起每月回传修复 + maturity scorecard）——若未来跑 business-critical 长驻 agent，考虑切 extended-stable
 
 ## 为什么重要

@@ -158,13 +158,13 @@ updated: 2026-08-23
 - [x] 语义缓存最小版（同 query 24h 去重中间件）→ ✅ 8/21 落地交付（见上方 8/20 反思项，commit `84d813bf2`，统一 chokepoint 覆盖全 8 后端）
 - ⏳ 主 provider default 切换 → fangzhou-2 月度配额耗尽（HTTP 429，8/28 才重置），切 deepseek 官方/jiyuanlvdong（436ms 最快；k 可做 10min）
 - ⏳ health_provider_check.py 余额阈值告警最小版 → 先做能 fetch 的 provider + fetch 失败标红（连续第 2 轮补齐，keylink ¥0.05 险裸奔收口）
-- 🔧 agent 可执行项分类 → projects 待办分「agent 可执行/需 sora」，executor 对 agent 可执行项直接跑（根治「反思≠执行」第 4 复发）
+- ✅ agent 可执行项分类 → projects 待办分「agent 可执行/需 sora」，executor 对 agent 可执行项直接跑（根治「反思≠执行」第 4 复发）→ ✅ **2026-08-30 已落地**：suggestion-implementation + vault-suggestion-executor 分类表新增「🤖 agent 可执行→直接执行」行
 
 ### 🧭 8/24 反思行动项（daily-reflection 复盘 8-23，执行者必读）
 - 🔴 闲鱼决策倒计时机制 → sora 待决项 >7 天降周检点（不再每日刷屏）；8/31 前无决策则 k 先做合规改造子集（敏感词清单/同款频次控制/数模标题改写）；「经营性卖家」新规量化标准 patch 进 xianyu-monetization 技能（同款>5次/年发>30件/年销10万，敏感词红线）
 - ⏳ cron 批量失败联动诊断 → 同窗口 ≥3 个 cron Connection error 时自动跑 FlClash 代理诊断（7890/fake-ip/直连规则）+ 中转站健康检查，不再「观察即可」；hermes-health-check 加对应分支；reflection cron 加失败重试/次日补跑（8-21、8-22 反思缺档是连续性事故）
-- ⏳ 内容数字核对门 → 初稿具体数字（星标/金额/日期/百分比）写时 web_search 核验；wewrite-review 发布门加「数据新旧检查」（>7 天数字引用标待核）；dsh 两周 95K+（8/23 实测）入库作废旧值 14.9 万
-- 🔧 agent 可执行项分类（连续第 2 轮 open）→ projects 待办分「agent 可执行/需 sora」，executor 对 agent 可执行项直接跑
+- ✅ 内容数字核对门 → 初稿具体数字（星标/金额/日期/百分比）写时 web_search 核验；wewrite-review 发布门加「数据新旧检查」（>7 天数字引用标待核）；dsh 两周 95K+（8/23 实测）入库作废旧值 14.9 万 → ✅ **2026-08-30 已落地**：wewrite-review 第 2 节新增「数据新旧检查」段落（>7 天数字标待核 + 官方源/二手源标注 + 发布门检查项）；8/30 数据溯源卡规则同步 patch 进 daily-knowledge-review
+- 🔧 agent 可执行项分类（连续第 2 轮 open）→ projects 待办分「agent 可执行/需 sora」，executor 对 agent 可执行项直接跑 → ✅ **2026-08-30 已落地**（见 8/21 反思项同条，双技能已 patch，闭环）
 
 ## 🔒 待用户操作（不催促，状态变化时提醒）
 

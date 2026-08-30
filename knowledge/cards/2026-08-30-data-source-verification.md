@@ -35,9 +35,9 @@ status: fresh
 
 ## 行动项
 
-- [ ] **评新项目时**：star 数以 GitHub 官方 repo 页为准（或 `gh repo view --json stargazersCount`），不引用二手站数字
-- [ ] **数字入卡**：知识卡片/日报中带数字的 claim 标注「官方源 / 二手源」；二手源数字未核验时注明
-- [ ] **本次冲突已记录**：openclaw 行情以官方 repo 为准，第三方站 180K 不作数
+- [x] **评新项目时**：star 数以 GitHub 官方 repo 页为准（或 `gh repo view --json stargazersCount`），不引用二手站数字 → ✅ 2026-08-30 已 patch 进 github-project-evaluation Pitfalls（含 8/30 实例：180K vs 368K）
+- [x] **数字入卡**：知识卡片/日报中带数字的 claim 标注「官方源 / 二手源」；二手源数字未核验时注明 → ✅ 2026-08-30 已 patch 进 daily-knowledge-review 选择标准第 6 条
+- [x] **本次冲突已记录**：openclaw 行情以官方 repo 为准，第三方站 180K 不作数 → ✅ 2026-08-30 已执行（本卡 + LRN-20260801-001 Recurrence 11th）
 
 ## 为什么重要
 
