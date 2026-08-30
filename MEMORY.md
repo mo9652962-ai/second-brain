@@ -226,7 +226,7 @@ InformationWeek 报告：企业从脆弱的手工胶水脚本转向标准化 Age
 - [x] ~~AI 变现调研~~ ✅ 2026-07-24
 - [x] ~~LRN-20260722-001 (Plan-and-Execute)~~ ✅ 2026-07-25
 - [x] ~~AI 变现落地（闲鱼AI代做PPT/论文润色）— 可发车（闲鱼封号至8/1）~~ ✅ 素材已预生成，8/1 解封日已过，上架排期 8/2
-- [ ] 闲鱼上架「AI 代做 PPT」→ **决策悬置第 22 天**（8/18 最后窗口已过近 6 天；素材包+主图第 10+ 次核对 100% 就绪，30min；**注意合规**：2026-06-01 起「经营性卖家」新规——同款反复售出>5 次/年发>30 件 或 年售>10 万任一被标记；台账标题避开「代做/包过/破解」敏感词；见 projects/current.md + knowledge/Research/自选课题千轮研究x20）
+- [ ] 闲鱼上架「AI 代做 PPT」→ **决策悬置第 32 天，8/31 决策到期**（素材包+主图 100% 就绪，30min；合规已备：经营性卖家新规量化+敏感词清单+同款频次控制+数模标题改写 → xianyu-monetization v1.2.0；见 projects/current.md）
 - [x] ~~语义缓存最小版落地（根治 Tavily 配额 + 预防 Gartner 5x）~~ ✅ 2026-08-21：统一 chokepoint 覆盖全 8 后端（commit 84d813bf2），根治连续 8 工作日配额复发
 - [x] ~~合并冗余 skills（hermes-search-configuration → hermes-search-config）~~ ✅ 2026-07-31 已核实：hermes-search-configuration 已不存在，仅剩 hermes-search-config，无需合并
 - [ ] 随身WiFi下单确认（赫电 Pro 399元/年，选型已确认）→ 待 sora 确认
@@ -239,7 +239,7 @@ InformationWeek 报告：企业从脆弱的手工胶水脚本转向标准化 Age
 
 ---
 
-_最后更新: 2026-08-22｜运行环境: OpenClaw Agent on Windows 11_
+_最后更新: 2026-08-30｜运行环境: OpenClaw Agent on Windows 11_
 
 ## Promoted From Short-Term Memory (2026-08-07)
 
