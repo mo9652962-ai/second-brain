@@ -1,3 +1,12 @@
+---
+title: "ChatGPT Custom Instructions (sora 团队上下文)"
+type: note
+domain: Productivity
+status: active
+tags: [knowledge/productivity]
+source: null
+date: 2026-08-30
+---
 # ChatGPT Custom Instructions (sora 团队上下文)
 
 > 用途：粘贴到 ChatGPT 设置 → Custom Instructions。让 ChatGPT 作为 sora AI 团队的外部审查官。

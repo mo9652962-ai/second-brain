@@ -1,8 +1,10 @@
 ---
 tags: [MOC, dev, 编程, python, web, 系统设计]
 domain: Dev
+type: moc
+status: active
 created: 2026-07-28
-updated: 2026-08-21
+updated: 2026-08-31
 ---
 
 # 💻 开发域 — 编程与系统
@@ -148,7 +150,7 @@ updated: 2026-08-21
 
 ## 🩺 墨题项目巡检（W35）
 
-> 墨题每日巡检 cron 产出，挂项目索引（[[../projects/current|项目追踪]]）。
+> 墨题每日巡检 cron 产出，挂项目索引（[[../../projects/current|项目追踪]]）。
 
 - [[knowledge/Dev/墨题每日巡检-2026-08-17|墨题每日巡检 08-17]]
 - [[knowledge/Dev/墨题每日巡检-2026-08-20|墨题每日巡检 08-20]]
@@ -161,3 +163,7 @@ updated: 2026-08-21
 - [[knowledge/Dev/spacetime-diagram-edge-2026-08-17|时空图边缘研究]] — 事件溯源
 - [[knowledge/Dev/gemini-spark-guide-2026-08-19|Gemini Spark 指南]] — 千轮研究
 - [[knowledge/Dev/开源项目速览实证-2026-08-20|开源项目速览实证 5 连]] — GitHub API 实测
+
+## 🧭 入口治理
+
+- [[../MOC-Inbox|待接入/孤立笔记审阅入口]]

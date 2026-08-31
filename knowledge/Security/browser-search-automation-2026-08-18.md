@@ -1,3 +1,12 @@
+---
+title: "浏览器搜索 + 自动化增强（2026-08-18 千轮研究）"
+type: note
+domain: Security
+status: active
+tags: [knowledge/security]
+source: null
+date: 2026-08-18
+---
 # 浏览器搜索 + 自动化增强（2026-08-18 千轮研究）
 
 > 技能：`browser-automation`（新增「浏览器搜索增强 / AI 代理工具矩阵 / Hermes 登录 5 方案」章节）

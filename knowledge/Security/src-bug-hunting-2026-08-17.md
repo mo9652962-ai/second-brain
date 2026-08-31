@@ -1,3 +1,12 @@
+---
+title: "SRC 漏洞挖掘 · 千轮研究（2026-08-17）"
+type: note
+domain: Security
+status: active
+tags: [knowledge/security]
+source: null
+date: 2026-08-17
+---
 # SRC 漏洞挖掘 · 千轮研究（2026-08-17）
 
 > 来源：抖音「白帽小七」5小时挖高危漏洞视频（章节要点）+ gm7.org/CN-SEC/CSDN/腾讯云 9 路交叉验证

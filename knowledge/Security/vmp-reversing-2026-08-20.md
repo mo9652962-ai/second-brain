@@ -1,3 +1,12 @@
+---
+title: "VMP 脱壳学习笔记（洛洛-软件开发 · 抖音 2026-08-20）"
+type: note
+domain: Security
+status: active
+tags: [knowledge/security]
+source: null
+date: 2026-08-20
+---
 # VMP 脱壳学习笔记（洛洛-软件开发 · 抖音 2026-08-20）
 
 > 来源：抖音 @洛洛-软件开发《更新一期vmp学习必看思路》（04:18，逆向开发/安卓逆向/软件破解）

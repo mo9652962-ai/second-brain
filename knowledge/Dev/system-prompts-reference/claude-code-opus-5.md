@@ -1,3 +1,11 @@
+---
+title: "System prompt"
+type: note
+domain: Dev
+status: active
+tags: [knowledge/dev]
+source: null
+---
 # System prompt
 
 You are Claude Code, Anthropic's official CLI for Claude.

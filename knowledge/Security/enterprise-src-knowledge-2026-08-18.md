@@ -1,3 +1,12 @@
+---
+title: "企业 SRC 系统性知识（2026-08-18 五轮千轮研究）"
+type: note
+domain: Security
+status: active
+tags: [knowledge/security]
+source: null
+date: 2026-08-18
+---
 # 企业 SRC 系统性知识（2026-08-18 五轮千轮研究）
 
 > 覆盖：平台全景 / 挖洞策略 / 审核规则 / 实战案例 / 合规成长

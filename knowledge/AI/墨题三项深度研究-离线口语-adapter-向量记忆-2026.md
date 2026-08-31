@@ -1,3 +1,11 @@
+---
+title: "墨题三项深度研究：离线口语 / 多模型 adapter / 本地向量记忆"
+type: note
+domain: AI
+status: active
+tags: [knowledge/ai]
+source: null
+---
 # 墨题三项深度研究：离线口语 / 多模型 adapter / 本地向量记忆
 
 > 研究：k · 2026-08-23 · 源码实证（本地 clone：D:\xsai-transformers / D:\xsai / D:\duckdb-wasm / D:\airi）

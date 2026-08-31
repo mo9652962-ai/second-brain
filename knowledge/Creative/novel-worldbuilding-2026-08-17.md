@@ -1,3 +1,12 @@
+---
+title: "网文世界观设定 · 千轮研究（2026-08-17）"
+type: note
+domain: Creative
+status: active
+tags: [knowledge/creative]
+source: null
+date: 2026-08-17
+---
 # 网文世界观设定 · 千轮研究（2026-08-17）
 
 > 来源：抖音「啊云啊·写小说关键点③设定好世界观」主题启发 + 网文俱乐部/网文666/墨星写作/Bloomverse + 三大现象级作品实证

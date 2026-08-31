@@ -1,3 +1,12 @@
+---
+title: "挖洞平台收益机制 + 安全边界（2026-08-17 千轮研究沉淀）"
+type: note
+domain: Security
+status: active
+tags: [knowledge/security]
+source: null
+date: 2026-08-17
+---
 # 挖洞平台收益机制 + 安全边界（2026-08-17 千轮研究沉淀）
 
 > 来源：360SRC 奖励标准、腾讯 TSRC 微信专项、银联 USRC、字节 SRC 测试规范、最高检/两高解释、真实判例

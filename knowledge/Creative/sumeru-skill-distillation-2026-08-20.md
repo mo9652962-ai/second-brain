@@ -1,3 +1,12 @@
+---
+title: "sumeru 技能蒸馏（2026-08-20）"
+type: note
+domain: Creative
+status: active
+tags: [knowledge/creative]
+source: null
+date: 2026-08-20
+---
 # sumeru 技能蒸馏（2026-08-20）
 
 > 来源：xindoo/sumeru（129★，7 个 Claude Code Skill 模块——与抖音「AI 小说工厂 7 条产线」视频吻合）

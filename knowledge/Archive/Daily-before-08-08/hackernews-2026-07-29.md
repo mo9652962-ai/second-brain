@@ -1,3 +1,12 @@
+---
+title: "Hacker News 今日精选 — 2026-07-29"
+type: archive
+domain: Archive
+status: archived
+tags: [knowledge/archive]
+source: null
+date: 2026-07-29
+---
 # Hacker News 今日精选 — 2026-07-29
 
 ## AI/编程/开源精选

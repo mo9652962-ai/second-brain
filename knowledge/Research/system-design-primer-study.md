@@ -6,6 +6,8 @@ status: absorbed
 
 # 《AI 时代程序员最硬核的能力》— system-design-primer 研究
 
+> 主笔记：[[knowledge/Dev/system-design-primer]]；本页保留文章来源、验证结果与吸收记录。
+
 > 来源：小黑盒文章（前沿情报站 07-19）· 2026-07-31 验证 + 吸收
 
 ## 项目验证

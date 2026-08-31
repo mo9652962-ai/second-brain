@@ -2,11 +2,19 @@
 
 tags: [索引, MOC, 知识网络]
 
+title: 知识地图
+
+type: moc
+
+domain: META
+
 aliases: [知识地图, Knowledge Map, 知识网络]
 
 date: 2026-07-22
 
 status: adopted
+
+updated: 2026-08-31
 
 ---
 
@@ -45,6 +53,8 @@ status: adopted
 | 🔧 Hardware（域） | [[MOC-Hardware]] | 21 篇 |
 
 | 🏠 Productivity（域） | [[MOC-Productivity]] | 41 篇 |
+| 🧭 入口治理 | [[MOC-Inbox]] | 53 篇待接入笔记 |
+| 🔁 重复审阅 | [[MOC-Duplicate-Review]] | 0 组逐字重复；相似标题按时间/用途保留 |
 
 | 📈 Finance（域） | [[MOC-Finance]] | 7 篇 |
 
@@ -220,7 +230,7 @@ graph TD
 
 | 🏠 Productivity | 记忆贡献度追踪 · Token 报告（W31 周报新增）· Obsidian MCP | [[knowledge/Productivity/MOC-Productivity]] · [[knowledge/Productivity/token-usage-report-20260802]] |
 
-| 📅 Daily / 🃏 Cards | HN 速览 ×5 · 知识卡片 ×2（OpenForgeRL / EU AI Act） | [[knowledge/Daily/hackernews-2026-08-02]] · [[knowledge/Daily/hackernews-2026-08-03]] · [[knowledge/cards/2026-08-02-eu-ai-act]] |
+| 📅 Daily / 🃏 Cards | HN 速览 ×5 · 知识卡片 ×2（OpenForgeRL / EU AI Act） | [[knowledge/Archive/Daily-before-08-08/hackernews-2026-08-02]] · [[knowledge/Archive/Daily-before-08-08/hackernews-2026-08-03]] · [[knowledge/cards/2026-08-02-eu-ai-act]] |
 
 
 
@@ -853,11 +863,11 @@ MCP 生态: GitHub + Filesystem + JLCPCB(38工具) + Obsidian(笔记操作)
 
 
 
-|> **W30 亮点**: 24+ 知识点的系统性吸收，2 个新 Skill 创建，配置体系全面加固，Vault 健康归零，MCP 生态扩展至 4 个服务器（GitHub/Filesystem/JLCPCB/Obsidian），8 级 fallback 链无 OpenRouter。详情见 [[../memory/2026/07/weekly-2026-07-26|W30 周学习总结]]。
+|> **W30 亮点**: 24+ 知识点的系统性吸收，2 个新 Skill 创建，配置体系全面加固，Vault 健康归零，MCP 生态扩展至 4 个服务器（GitHub/Filesystem/JLCPCB/Obsidian），8 级 fallback 链无 OpenRouter。详情见 [[../memory/archive/2026-07/weekly-2026-07-26|W30 周学习总结]]。
 
 >
 
-> **W31 亮点**: 36 篇研究笔记入库（新 Research MOC）、CloudBase 8 站系列、论文接单全流程沉淀（SOP+数据契约+素材包）、EU AI Act 合规评估、Krea2 本地生图跑通、闲鱼变现体系从研究准备跃迁到可执行。周度整理见 [[../memory/2026/08/weekly-2026-08-02|W31 周度整理报告]]，学习回顾见 [[../memory/2026/08/weekly-learning-2026-08-02|W31 学习回顾]]。
+> **W31 亮点**: 36 篇研究笔记入库（新 Research MOC）、CloudBase 8 站系列、论文接单全流程沉淀（SOP+数据契约+素材包）、EU AI Act 合规评估、Krea2 本地生图跑通、闲鱼变现体系从研究准备跃迁到可执行。周度整理见 [[../memory/archive/2026-08-before-08/weekly-2026-08-02|W31 周度整理报告]]，学习回顾见 [[../memory/archive/2026-08-before-08/weekly-learning-2026-08-02|W31 学习回顾]]。
 
 
 

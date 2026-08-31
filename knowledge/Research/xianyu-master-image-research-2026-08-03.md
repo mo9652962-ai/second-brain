@@ -1,3 +1,12 @@
+---
+title: "十轮研究：闲鱼主图美化与格式优化 · 2026-08-03"
+type: note
+domain: Research
+status: active
+tags: [knowledge/research]
+source: null
+date: 2026-08-03
+---
 # 十轮研究：闲鱼主图美化与格式优化 · 2026-08-03
 
 > 对已生成的 3 张闲鱼主图进行「搜索引擎十轮研究 → 美化 + 格式调整」全流程

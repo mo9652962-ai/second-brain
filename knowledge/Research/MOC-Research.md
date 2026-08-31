@@ -1,7 +1,11 @@
 ---
 tags: [MOC, research, 索引]
 aliases: [研究地图, Research MOC]
+type: moc
+domain: Research
+status: active
 created: 2026-08-09
+updated: 2026-08-31
 ---
 
 # 🔬 研究笔记 MOC — Research Map
@@ -9,7 +13,7 @@ created: 2026-08-09
 > 所有研究笔记的索引与入口。自动按主题分组。
 > 回到 [[knowledge-map|🗺️ 知识地图]] · [[Home|🏠 Home]]
 
-**共 166 篇研究笔记** · 最后更新: 2026-08-22（每日优化自动索引 + 重复小节合并）
+**共 167 篇研究笔记** · 最后更新: 2026-08-31（入口治理、元数据补齐与新增研究笔记）
 
 
 ## 🆕 W34 新增补链（2026-08-16 周度整理）
@@ -295,4 +299,8 @@ created: 2026-08-09
 - [[自选课题千轮研究x20-应用性评估-2026-08-23]]
 - [[ai-weekly-literature-2026-08-31]]
 - [[arxiv-2026-08-31-agent-llm]]
+
+## 🧭 入口治理
+
+- [[../MOC-Inbox|待接入/孤立笔记审阅入口]]
 

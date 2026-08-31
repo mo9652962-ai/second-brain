@@ -1,3 +1,11 @@
+---
+title: "Obsidian 笔记知识（第三方经验）"
+type: note
+domain: Productivity
+status: active
+tags: [knowledge/productivity]
+source: null
+---
 # Obsidian 笔记知识（第三方经验）
 
 来源：社区分享

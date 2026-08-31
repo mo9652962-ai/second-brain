@@ -1,3 +1,12 @@
+---
+title: "DVWA 靶场实战（2026-08-17 七漏洞全通关）"
+type: note
+domain: Security
+status: active
+tags: [knowledge/security]
+source: null
+date: 2026-08-17
+---
 # DVWA 靶场实战（2026-08-17 七漏洞全通关）
 
 > 技能：`src-bug-hunting` → 「DVWA 靶场实战」章节 + `scripts/dvwa_practice.py`

@@ -1,3 +1,11 @@
+---
+title: "WorkBuddy 蓝皮书 · AI 办公工作流实战手册"
+type: note
+domain: Productivity
+status: active
+tags: [knowledge/productivity]
+source: null
+---
 # WorkBuddy 蓝皮书 · AI 办公工作流实战手册
 
 来源：小黑盒 "软件格律诗"

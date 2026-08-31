@@ -1,3 +1,12 @@
+---
+title: "SRC 挖洞系统性知识体系（2026-08-18 六轮千轮研究）"
+type: note
+domain: Security
+status: active
+tags: [knowledge/security]
+source: null
+date: 2026-08-18
+---
 # SRC 挖洞系统性知识体系（2026-08-18 六轮千轮研究）
 
 > 覆盖：信息收集 / 漏洞挖掘 / 工具链 / 实战方法论 / 报告提交 / 平台合规

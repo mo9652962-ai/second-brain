@@ -1,3 +1,11 @@
+---
+title: "SOP 知识库索引（Hermes Learning Loop）"
+type: sop
+domain: SOP
+status: active
+tags: [knowledge/sop]
+source: null
+---
 # SOP 知识库索引（Hermes Learning Loop）
 
 > 体系: 借鉴 Nous Research Hermes Agent 闭环自进化 + 程序性技能架构

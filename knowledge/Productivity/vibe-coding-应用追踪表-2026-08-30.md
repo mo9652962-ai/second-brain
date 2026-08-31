@@ -1,3 +1,12 @@
+---
+title: "Vibe Coding 应用追踪表（2026-08-30 建，持续更新）"
+type: note
+domain: Productivity
+status: active
+tags: [knowledge/productivity]
+source: null
+date: 2026-08-30
+---
 # Vibe Coding 应用追踪表（2026-08-30 建，持续更新）
 
 > 目的：把抖音「敲代码的小虾米」两期 Vibe Coding 知识**落到可执行**，不收藏即止。

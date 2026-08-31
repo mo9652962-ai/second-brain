@@ -1,3 +1,12 @@
+---
+title: "AI 文献周报 · 2026-08-24 ~ 2026-08-30"
+type: note
+domain: Research
+status: active
+tags: [knowledge/research]
+source: null
+date: 2026-08-31
+---
 # AI 文献周报 · 2026-08-24 ~ 2026-08-30
 
 > 方向：AI Agent / 大模型(LLM) / 科研工具(AI for Science)

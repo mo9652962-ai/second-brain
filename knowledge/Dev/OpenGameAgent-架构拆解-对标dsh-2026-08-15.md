@@ -1,3 +1,12 @@
+---
+title: "OpenGameAgent 架构拆解 — 对标 DeepSeek Harness"
+type: note
+domain: Dev
+status: active
+tags: [knowledge/dev]
+source: null
+date: 2026-08-15
+---
 # OpenGameAgent 架构拆解 — 对标 DeepSeek Harness
 
 > 研究日期：2026-08-15 | 来源：GitHub EricSun0218/OpenGameAgent（C#/.NET 8，Apache-2.0，⭐23）

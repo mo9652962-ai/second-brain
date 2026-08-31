@@ -1,3 +1,12 @@
+---
+title: "去 AI 味开源技能研究（2026-08-18 小黑盒帖子 + 千轮研究）"
+type: note
+domain: Creative
+status: active
+tags: [knowledge/creative]
+source: null
+date: 2026-08-18
+---
 # 去 AI 味开源技能研究（2026-08-18 小黑盒帖子 + 千轮研究）
 
 > 来源: 小黑盒「吃太饱骑士」《整理了十个高星开源"去AI味"技能还有心得》

@@ -1,7 +1,10 @@
 ---
 tags: [MOC, productivity, obsidian, 效率, 自动化, 方法论]
 domain: Productivity
+type: moc
+status: active
 created: 2026-07-28
+updated: 2026-08-31
 ---
 
 # 🏠 效率域 — 生产力与方法论
@@ -77,5 +80,9 @@ created: 2026-07-28
 - [[knowledge/Productivity/数模AI工作流生态-Autopilot与证据门禁-调研-2026-08-23|数模 AI 工作流生态]] — AutoMCM-Pro Autopilot / 证据门禁 / 代码自证
 - [[knowledge/Productivity/jayxin-cumcm国赛LaTeX模板-实证评估-2026-08-23|国赛 LaTeX 模板实证]] — jayxin/cumcm（高端交付可加价）
 - 数模交付质量门禁 `quality_gate.py` — G1 占位符 / G2 代码自证 / G3 证据追溯 / G4 AI 声明（shumo 技能已记录用法）
+
+## 🧭 入口治理
+
+- [[../MOC-Inbox|待接入/孤立笔记审阅入口]]
 
 

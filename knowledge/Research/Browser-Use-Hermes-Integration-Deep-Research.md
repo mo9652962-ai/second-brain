@@ -1,3 +1,11 @@
+---
+title: "Browser-Use + Hermes 浏览器自动化深度研究报告"
+type: note
+domain: Research
+status: active
+tags: [knowledge/research]
+source: null
+---
 # Browser-Use + Hermes 浏览器自动化深度研究报告
 
 > 研究日期：2026-07-28

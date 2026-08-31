@@ -1,3 +1,11 @@
+---
+title: "AI 求职简历提示词 · 高级设计排版"
+type: note
+domain: Hardware
+status: active
+tags: [knowledge/hardware]
+source: null
+---
 # AI 求职简历提示词 · 高级设计排版
 
 来源：社区分享

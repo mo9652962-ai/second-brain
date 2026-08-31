@@ -1,3 +1,11 @@
+---
+title: "知识赋能方法论（Skill Engineering 2026）"
+type: sop
+domain: SOP
+status: active
+tags: [knowledge/sop]
+source: null
+---
 # 知识赋能方法论（Skill Engineering 2026）
 
 > 2026-08-22 | 搜索引擎研究 | 来源：SoK Agentic Skills + Arize 6 规则 + Google ADK + Red Hat ACE + SKILL-KD

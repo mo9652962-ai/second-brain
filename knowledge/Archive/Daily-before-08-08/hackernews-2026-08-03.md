@@ -1,3 +1,12 @@
+---
+title: "Hacker News 今日精选 — 2026-08-03"
+type: archive
+domain: Archive
+status: archived
+tags: [knowledge/archive]
+source: null
+date: 2026-08-03
+---
 # Hacker News 今日精选 — 2026-08-03
 
 > 数据来源：[news.ycombinator.com](https://news.ycombinator.com) · 抓取时间：2026-08-03 · 筛选范围：AI/ML/编程/开源（已跳过组织政治、招聘、机械工程等无关内容）

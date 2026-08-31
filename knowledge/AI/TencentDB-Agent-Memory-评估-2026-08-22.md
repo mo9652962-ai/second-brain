@@ -1,3 +1,12 @@
+---
+title: "TencentDB Agent Memory 评估（2026-08-22）"
+type: note
+domain: AI
+status: active
+tags: [knowledge/ai]
+source: null
+date: 2026-08-22
+---
 # TencentDB Agent Memory 评估（2026-08-22）
 
 > 来源：抖音「AI产品破壁者-小易」视频（省61% Token / 成功率+51%）+ GitHub/腾讯云官方文档研究

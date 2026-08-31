@@ -1,3 +1,12 @@
+---
+title: "联想 SRC 侦察报告（2026-08-19）"
+type: note
+domain: Security
+status: active
+tags: [knowledge/security]
+source: null
+date: 2026-08-19
+---
 # 联想 SRC 侦察报告（2026-08-19）
 
 > 日期: 2026-08-19

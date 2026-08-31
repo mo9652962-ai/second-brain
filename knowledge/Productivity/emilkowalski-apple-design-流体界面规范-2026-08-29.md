@@ -1,3 +1,12 @@
+---
+title: "emilkowalski/skills — Apple Design 流体界面规范（Web 落地）· 实证评估"
+type: note
+domain: Productivity
+status: active
+tags: [knowledge/productivity]
+source: null
+date: 2026-08-29
+---
 # emilkowalski/skills — Apple Design 流体界面规范（Web 落地）· 实证评估
 
 > 来源：抖音「赛博山姆」《苹果设计规则 skill 优化网页细节》→ 溯源到 `emilkowalski/skills` 仓库（GitHub 33.3k★，MIT，2026-08 更新）。

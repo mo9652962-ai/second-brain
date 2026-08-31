@@ -1,3 +1,11 @@
+---
+title: "AIRI 三核心技术深研：CCV3 色卡体系 / 记忆设计 / xsai 生态"
+type: note
+domain: AI
+status: active
+tags: [knowledge/ai]
+source: null
+---
 # AIRI 三核心技术深研：CCV3 色卡体系 / 记忆设计 / xsai 生态
 
 > 来源：抖音 @代码侦探《属于你的开源AI角色 AIRI》→ GitHub moeru-ai/airi（⭐44.8k, MIT）

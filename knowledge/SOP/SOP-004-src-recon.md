@@ -1,3 +1,11 @@
+---
+title: "SOP-004: SRC 资产侦察标准流程"
+type: sop
+domain: SOP
+status: active
+tags: [knowledge/sop]
+source: null
+---
 # SOP-004: SRC 资产侦察标准流程
 
 - **ID**: SOP-004

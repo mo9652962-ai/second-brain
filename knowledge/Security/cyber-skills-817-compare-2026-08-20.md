@@ -1,3 +1,12 @@
+---
+title: "817 网安技能库对照（2026-08-20）"
+type: note
+domain: Security
+status: active
+tags: [knowledge/security]
+source: null
+date: 2026-08-20
+---
 # 817 网安技能库对照（2026-08-20）
 
 > 来源：mukul975/Anthropic-Cybersecurity-Skills（27,747★，Apache 2.0，agentskills.io 标准）

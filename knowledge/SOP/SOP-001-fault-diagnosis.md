@@ -1,3 +1,11 @@
+---
+title: "SOP-001: 复杂多步故障排查与根因修复标准流程"
+type: sop
+domain: SOP
+status: active
+tags: [knowledge/sop]
+source: null
+---
 # SOP-001: 复杂多步故障排查与根因修复标准流程
 
 - **ID**: SOP-001

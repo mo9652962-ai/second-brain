@@ -1,3 +1,11 @@
+---
+title: "记忆贡献度追踪系统 — 使用参考"
+type: note
+domain: Productivity
+status: active
+tags: [knowledge/productivity]
+source: null
+---
 # 记忆贡献度追踪系统 — 使用参考
 
 ## 架构

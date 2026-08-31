@@ -1,3 +1,12 @@
+---
+title: "SRC 信息泄露首单实战 SOP（2026-08-18 双视频学习沉淀）"
+type: note
+domain: Security
+status: active
+tags: [knowledge/security]
+source: null
+date: 2026-08-18
+---
 # SRC 信息泄露首单实战 SOP（2026-08-18 双视频学习沉淀）
 
 > 来源：成哥《5分钟挖SRC信息泄露漏洞》(7.56万赞) + 网安小宇《放假挖洞2k+》

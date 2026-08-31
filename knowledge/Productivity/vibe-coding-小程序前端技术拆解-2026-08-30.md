@@ -1,3 +1,12 @@
+---
+title: "Vibe Coding 技术拆解：用 AI 搭建小程序前端框架（2026-08-30）"
+type: note
+domain: Productivity
+status: active
+tags: [knowledge/productivity]
+source: null
+date: 2026-08-30
+---
 # Vibe Coding 技术拆解：用 AI 搭建小程序前端框架（2026-08-30）
 
 > 来源：抖音「敲代码的小虾米」《Vibe Coding技术拆解：用AI搭建一套小程序的前端架》（9min，6032赞）

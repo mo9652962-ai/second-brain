@@ -1,3 +1,12 @@
+---
+title: "Lossless Scaling（无损缩放/小黄鸭）研究（2026-08-18 五轮千轮研究）"
+type: note
+domain: gaming
+status: active
+tags: [knowledge/gaming]
+source: null
+date: 2026-08-18
+---
 # Lossless Scaling（无损缩放/小黄鸭）研究（2026-08-18 五轮千轮研究）
 
 > Steam ¥29（史低 ¥4），36,665 评测 90% 特别好评

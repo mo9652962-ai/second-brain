@@ -1,3 +1,12 @@
+---
+title: "DeepSeek API 客户端 · 千轮研究（2026-08-17）"
+type: note
+domain: Dev
+status: active
+tags: [knowledge/dev]
+source: null
+date: 2026-08-17
+---
 # DeepSeek API 客户端 · 千轮研究（2026-08-17）
 
 > 来源：抖音「2,4,6-三硝基甲苯」6款可接DeepSeek API的软件（评论区情报）+ unifyllm/人工大黑/gkmix 2026 实测

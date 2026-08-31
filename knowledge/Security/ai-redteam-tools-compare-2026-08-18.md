@@ -1,3 +1,12 @@
+---
+title: "AI 红队工作台全景对比（2026-08-18 研究）"
+type: note
+domain: Security
+status: active
+tags: [knowledge/security]
+source: null
+date: 2026-08-18
+---
 # AI 红队工作台全景对比（2026-08-18 研究）
 
 > 覆盖：主流 AI 渗透/红队工具形态 + 选型决策树 + 对 sora 工具链的定位

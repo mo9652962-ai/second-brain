@@ -1,3 +1,12 @@
+---
+title: "双非本科网络安全 Offer 路径研究（2026-08-18）"
+type: note
+domain: Security
+status: active
+tags: [knowledge/security]
+source: null
+date: 2026-08-18
+---
 # 双非本科网络安全 Offer 路径研究（2026-08-18）
 
 > 来源：白帽小七抖音视频（双非本科拿下网络安全offer）+ 3 轮千轮研究

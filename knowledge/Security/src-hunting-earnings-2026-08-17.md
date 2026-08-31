@@ -1,3 +1,12 @@
+---
+title: "纯挖洞赚赏金 · 深度研究（2026-08-17）"
+type: note
+domain: Security
+status: active
+tags: [knowledge/security]
+source: null
+date: 2026-08-17
+---
 # 纯挖洞赚赏金 · 深度研究（2026-08-17）
 
 > 触发：sora 问「纯挖洞赚赏金怎么做」

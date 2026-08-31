@@ -1,7 +1,10 @@
 ---
 tags: [MOC, hardware, pcb, 嵌入式, 单片机, CAD]
 domain: Hardware
+type: moc
+status: active
 created: 2026-07-28
+updated: 2026-08-31
 ---
 
 # 🔧 硬件域 — PCB/CAD/嵌入式
@@ -60,3 +63,7 @@ created: 2026-07-28
 - [[knowledge/Hardware/USB-UART转换器设计复盘-2026-08-08|USB-UART 转换器设计复盘]]
 - [[knowledge/Hardware/ai-frontend-design-sites|AI 前端设计站点]]
 - [[knowledge/Hardware/ai-resume-prompt|AI 简历 Prompt]]
+
+## 🧭 入口治理
+
+- [[../MOC-Inbox|待接入/孤立笔记审阅入口]]

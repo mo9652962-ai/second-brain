@@ -1,3 +1,12 @@
+---
+title: "逻辑漏洞 + 首单流程研究（2026-08-18 千轮研究）"
+type: note
+domain: Security
+status: active
+tags: [knowledge/security]
+source: null
+date: 2026-08-18
+---
 # 逻辑漏洞 + 首单流程研究（2026-08-18 千轮研究）
 
 > 技能：`src-bug-hunting`（新增「逻辑漏洞案例库 / high 档武器库 / SRC 首单流程」三章）
