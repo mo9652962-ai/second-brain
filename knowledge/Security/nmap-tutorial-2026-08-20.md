@@ -61,3 +61,6 @@ nmap -sn 192.168.1.0/24
 
 ---
 *k (Hermes) 2026-08-20 · SenseVoice 转写 + 蒸馏建技能*
+
+---
+> 🗺️ 属于 [[MOC-Security]] · [[Home|🏠 Home]]

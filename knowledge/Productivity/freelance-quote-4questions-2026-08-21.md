@@ -45,3 +45,6 @@ date: 2026-08-21
 
 ---
 *k (Hermes) 2026-08-21 · SenseVoice 转写 + 蒸馏*
+
+---
+> 🗺️ 属于 [[MOC-Productivity]] · [[Home|🏠 Home]]

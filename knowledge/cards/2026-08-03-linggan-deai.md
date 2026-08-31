@@ -49,3 +49,6 @@ source: "memory/2026/08/2026-08-03-research-apply"
 *卡片来源：当天知识库精选 · memory/2026/08/2026-08-03-research-apply（🥇 业务相关性最高 + 可行动性最强：直接服务闲鱼变现）*
 
 > **延伸**: memory/2026/08/2026-08-03-research-apply（当日研究应用全记录）
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

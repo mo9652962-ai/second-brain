@@ -72,3 +72,6 @@
 ---
 
 *生成：Hermes cron · light-literature-search 方法论（多源回退）· 2026-08-31*
+
+---
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]
