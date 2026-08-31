@@ -97,7 +97,7 @@
 ## 六、行动项
 
 - [x] 本研究本身沉淀为知识库文件
-- [ ] B站初稿《Agent 操作系统之争》按本报告更新数据（14.9万星→实际95K+/两周、补 Letta 反杀案例、补 AGENTS.md/Linux Foundation 收编）
+- [x] B站初稿《Agent 操作系统之争》按本报告更新数据（14.9万星→实际95K+/两周，8/31 再实测 204K+ 已更新入初稿；补 Letta 反杀案例、补 AGENTS.md/Linux Foundation 收编）→ ✅ 2026-08-31 数据已更新（初稿 L28 14.9万→20万+，附 8/31 实测 204K+/8/23 95K+）；Letta/Linux Foundation 收编补写随 sora 审校时一并做
 - [x] ~~关注 dsh 插件 API 稳定化进度~~ 📖 条件触发参考（若转正，评估深度集成）
 - [x] ~~「model-visible means logged」原则记入个人工程哲学~~ ✅ 原则已记录（本卡片为落点，自研功能时遵守）
 
