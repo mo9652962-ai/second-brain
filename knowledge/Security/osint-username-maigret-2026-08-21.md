@@ -56,3 +56,6 @@ maigret user --ai                # AI 调查摘要
 
 ---
 *k (Hermes) 2026-08-21 · SenseVoice 转写 + 工具实证*
+
+---
+> 🗺️ 属于 [[MOC-Security]] · [[Home|🏠 Home]]

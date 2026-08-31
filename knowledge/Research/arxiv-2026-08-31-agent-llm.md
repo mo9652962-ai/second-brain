@@ -329,3 +329,6 @@ source: export.arxiv.org API
 ---
 
 *本速览由 cron 自动生成：08-20→08-28 九日窗口全量收集（3071 篇）→ 关键词过滤（1255）→ 人工精选（28 主条目 + 16 简评）→ 关键论文交叉验证。数据源 export.arxiv.org。*
+
+---
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]
