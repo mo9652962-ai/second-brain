@@ -1,0 +1,145 @@
+manifest_version: 1
+experiment:
+  id: multi-agent-eval-v2
+  status: draft
+  plan: EVAL_PLAN.md
+  task_cards: task_cards.jsonl
+  rubric_version: rubric-v2
+  grader_version: grader-v2
+  created_date: 2026-08-31
+
+# Hashes must be populated from frozen bytes before a formal run. Null is
+# intentional: a fabricated or provisional digest must never look frozen.
+freeze:
+  required_before_formal_run: true
+  config_hash: null
+  prompt_hashes: null
+  fixture_hashes: null
+  tool_manifest_hash: null
+  model_version: null
+  system_prompt_version: null
+
+design:
+  matched_unit: [task_id, instance_id]
+  core_task_templates: 20
+  open_task_templates: 10
+  baseline_task_templates: 10
+  instances_per_template: 3
+  matched_tasks: 60
+  trials_per_task_arm: 1
+  expected_formal_runs: 180
+  regression_tasks: 20
+  regression_runs_excluded_from_formal_total: true
+  arms:
+    S:
+      description: single agent with standard gates
+      agent_mode: single
+      gates_enabled: true
+    M:
+      description: multi agent with standard gates
+      agent_mode: multi
+      max_experts: 2
+      gates_enabled: true
+    NG:
+      description: multi agent with validation and review gates disabled
+      agent_mode: multi
+      max_experts: 2
+      gates_enabled: false
+  invariants:
+    - identical prompt, fixtures, model version, tools, and total budget across arms
+    - no arm may read another arm's transcript, gate output, artifacts, or failures
+    - retries do not create additional samples
+    - dry runs are excluded from the 180 formal runs
+
+scheduling:
+  seed: 20260831
+  strata: [research, data, code, product_document, security, recovery]
+  batches: 10
+  matched_tasks_per_batch: 6
+  runs_per_batch: 18
+  waves_per_batch: 3
+  runs_per_wave: 6
+  randomize_arm_order_within_batch: true
+  max_concurrency: 1
+  pilot_max_concurrency: 2
+  queue_policy: weighted_fair
+  transient_retries: 2
+  total_attempts_including_initial: 3
+  pause_after_consecutive_infra_failures: 3
+  backoff: exponential_full_jitter
+  honor_retry_after: true
+
+run_state:
+  states:
+    - CREATED
+    - LEASED
+    - RUNNING
+    - CHECKPOINTED
+    - FAILED_RETRYABLE
+    - SCORED
+    - FAILED_FINAL
+  stable_run_id_fields: [task_id, instance_id, arm, config_hash]
+  lease_fields: [owner_uuid, heartbeat, generation_fencing_token]
+  reject_stale_generation_writes: true
+  terminal_results_are_idempotent: true
+
+grading:
+  deterministic_hard_gates_first: true
+  hard_gate_fail_closed: true
+  judge_only_when_needed: true
+  judge_blinded_to_arm: true
+  judge_output: strict_json
+  judge_labels: [pass, fail, unknown]
+  judge_dimensions:
+    correctness: 0.30
+    evidence: 0.20
+    uncertainty: 0.15
+    safety: 0.20
+    efficiency: 0.15
+  review_required_for:
+    - unknown judge label
+    - deterministic and judge disagreement
+    - high-risk negative accepted
+  grader_errors_are_agent_failures: false
+
+analysis:
+  primary_metric: end_to_end_success
+  secondary_metrics:
+    - conditional_task_quality
+    - hard_gate_failure_rate
+    - technical_failure_rate
+    - valid_scoring_rate
+    - grader_disagreement
+    - latency_p50
+    - latency_p95
+    - total_tokens
+    - coordination_tokens
+    - cost_per_success
+    - human_intervention_minutes
+    - recovery_success_rate
+    - duplicate_side_effect_count
+  confidence_interval: wilson
+  alpha: 0.05
+  paired_binary_test: exact_mcnemar
+  comparisons: [M_vs_S, NG_vs_M, NG_vs_S]
+  multiple_testing_correction: holm
+  preserve_all_runs_in_denominator: true
+
+failure_attribution:
+  primary_rule: earliest_unrecoverable_blocker
+  codes: [INFRA, TIMEOUT, TOOL, ORCH, BUDGET, GATE, PARSE, TASK, DATA, UNKNOWN]
+  recovered_failures_are_events_only: true
+  independent_blinded_reviewers: 2
+  adjudicator_on_disagreement: true
+  reviewer_agreement_metric: cohens_kappa
+
+artifacts:
+  raw_transcripts_redacted: true
+  credentials_recorded: false
+  persist:
+    - run identifiers and version hashes
+    - event timeline and checkpoint references
+    - redacted transcript and tool calls
+    - gate decisions and grader output
+    - final outcome and failure attribution
+
