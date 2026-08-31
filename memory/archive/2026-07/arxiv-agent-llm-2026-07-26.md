@@ -129,7 +129,7 @@ Grace Hui Yang et al. — LLM agentic system 从研究到生产部署综述。
 
 ## 精选论文深度解读
 
-📝 [[memory/2026/07/arxiv-paper-deepdive-2026-07-26|论文深度解读 2026-07-26]] — NOOA / Dark Room in GRPO / AgentDebugX
+📝 [[memory/archive/2026-07/arxiv-paper-deepdive-2026-07-26|论文深度解读 2026-07-26]] — NOOA / Dark Room in GRPO / AgentDebugX
 |
 ## k 的学习笔记 (2026-07-26)
 

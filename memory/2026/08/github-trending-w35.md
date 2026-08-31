@@ -6,7 +6,7 @@ type: weekly-trending-report
 
 # GitHub 周报 — 2026-08-23（W35）
 
-> 本周周榜：2 个新面孔精选入库（ai-memory / llmfit）+ 连榜跟踪（OpenViking/diagram-design/semantica/Switchyard）。同日脚本产物见 [[../knowledge/Research/GitHub-Weekly-2026-08-23|GitHub-Weekly-2026-08-23]]（topic 口径 Top5，互引互补）。
+> 本周周榜：2 个新面孔精选入库（ai-memory / llmfit）+ 连榜跟踪（OpenViking/diagram-design/semantica/Switchyard）。同日脚本产物见 [[../../knowledge/Research/GitHub-Weekly-2026-08-23|GitHub-Weekly-2026-08-23]]（topic 口径 Top5，互引互补）。
 
 ## 项目详情表
 

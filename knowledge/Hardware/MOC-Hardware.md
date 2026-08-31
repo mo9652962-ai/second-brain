@@ -56,7 +56,7 @@ updated: 2026-08-31
 - [[knowledge/Research/krea2-comfyui-deploy-notes]] — 本地部署踩坑记录
 - [[knowledge/Hardware/PPT-Design]] — 趋势/工具/方法论更新
 
-🔗 关联：[[skills/@j-feng12/academic-presentation/SKILL.md]] · [[knowledge/Research/MOC-Research|🔬 研究域]]
+🔗 关联：学术答辩 PPT 技能（待创建） · [[knowledge/Research/MOC-Research|🔬 研究域]]
 
 ## 🆕 W34 新增补链（2026-08-16 周度整理）
 

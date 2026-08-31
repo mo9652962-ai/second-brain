@@ -83,7 +83,7 @@ source: scripts/vault-orphan-duplicate-scan.py
 
 ## 🎓 Education
 
-- [[knowledge/Education/桂航飞行器质量与可靠性-考研考证路线图-2026-08]]
+- 桂航飞行器质量与可靠性考研考证路线图（待补充）
 
 ## 🧠 META
 

@@ -781,7 +781,7 @@ MCP 生态: GitHub + Filesystem + JLCPCB(38工具) + Obsidian(笔记操作)
 
 || [[mattpocock-skills]] | 工程经验 | [[mattpocock-methodology]] | engineering-workflow | [[ibelick-ui-skills]] |
 
-|| [[mattpocock-methodology]] | [[mattpocock-skills]] | 8051/CAD/workflow skill | [[../AGENTS]] |
+|| [[mattpocock-methodology]] | [[mattpocock-skills]] | 8051/CAD/workflow skill | 仓库外交接文档 |
 
 || [[airi]] | AI Agent 技术 | 多供应商集成参考 | [[grok-build]] |
 
