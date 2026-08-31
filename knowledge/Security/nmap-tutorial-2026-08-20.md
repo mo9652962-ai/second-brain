@@ -55,8 +55,8 @@ nmap -sn 192.168.1.0/24
 
 ## 关联
 
-- [[src-recon-scanning]]（子域侦察——Nmap 是 IP/端口层）
-- [[src-bug-hunting]]（拿到端口后挖漏洞）
+- `src-recon-scanning`（子域侦察——Nmap 是 IP/端口层）
+- `src-bug-hunting`（拿到端口后挖漏洞）
 - 安全技能：`security/nmap-scanning`
 
 ---

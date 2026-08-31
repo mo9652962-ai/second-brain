@@ -1,5 +1,5 @@
 ---
-tags: [src, 自动化挖洞, ai, 漏洞挖掘, vulnclaw]
+tags: [src, 自动化挖洞, AI, 漏洞挖掘, vulnclaw]
 domain: Security
 status: fresh
 date: 2026-08-21

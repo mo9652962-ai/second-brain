@@ -50,4 +50,4 @@ type: maintenance
 
 full-vault-diagnostic 复跑：vault 自有文件全部通过；剩余仅 .venv/.hermes 基础设施噪音与 2 类 SKILL 明确的保留误报。
 
-> 文件层见 [[memory/2026/08/2026-08-06-maintenance|2026-08-06 维护报告]] · [[HOME|🏠 首页]]
+> 文件层见 `memory/2026/08/2026-08-06-maintenance`（2026-08-06 维护报告，已归档删除） · [[HOME|🏠 首页]]

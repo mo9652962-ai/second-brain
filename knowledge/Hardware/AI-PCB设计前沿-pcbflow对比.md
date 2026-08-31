@@ -1,5 +1,5 @@
 ---
-tags: [千轮研究, PCB, AI设计, pcbflow, 验证门控]
+tags: [千轮研究, pcb, AI设计, pcbflow, 验证门控]
 domain: Hardware
 status: fresh
 date: 2026-08-21
