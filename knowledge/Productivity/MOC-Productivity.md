@@ -64,4 +64,18 @@ created: 2026-07-28
 ## 🆕 08-29 新增
 
 - [[knowledge/Productivity/emilkowalski-apple-design-流体界面规范-2026-08-29|Apple Design 流体界面规范]] — WWDC 动效手感 → Web 落地（emilkowalski/skills 33.3k★），配套技能 `apple-design-web`
+## 🆕 W36 新增（08-24 ~ 08-30：Vibe Coding + Agent 工作流 + 数模）
+
+- [[knowledge/Productivity/vibe-coding-要不要学代码-2026-08-30|Vibe Coding 要不要学代码]] — 门槛换了位置，不是门槛没了
+- [[knowledge/Productivity/vibe-coding-小程序前端技术拆解-2026-08-30|Vibe Coding 小程序前端拆解]] — SDD（Spec 驱动开发）
+- [[knowledge/Productivity/vibe-coding-应用追踪表-2026-08-30|Vibe Coding 应用追踪表]] — 知识落地执行追踪
+- [[knowledge/Productivity/手搓万物-顶级开发师-VibeCoding到AgenticEngineering-2026-08-30|手搓万物 → 顶级开发师]] — Vibe Coding → Agentic Engineering
+- [[knowledge/Productivity/做控件让AI工具听懂-AI原生组件库-2026-08-30|做控件让 AI 听懂（AI-native 组件库）]] — LLM-readable 组件文档
+- [[knowledge/Productivity/团队上下文注入包-ChatGPT-Codex-Antigravity-2026-08-30|团队上下文注入包]] — ChatGPT Custom Instructions（sora AI 团队外部审查官）
+- [[knowledge/Productivity/agent少返工-ContextEngineering-2026-08-30|Agent 少返工 80%：Context Engineering]] — 上下文工程方法论
+- [[knowledge/Productivity/数模Agent开源生态-Beacon与MathModelAgent-实证评估-2026-08-23|数模 Agent 开源生态实证]] — Beacon 34★ / MathModelAgent 3674★（生产工具）
+- [[knowledge/Productivity/数模AI工作流生态-Autopilot与证据门禁-调研-2026-08-23|数模 AI 工作流生态]] — AutoMCM-Pro Autopilot / 证据门禁 / 代码自证
+- [[knowledge/Productivity/jayxin-cumcm国赛LaTeX模板-实证评估-2026-08-23|国赛 LaTeX 模板实证]] — jayxin/cumcm（高端交付可加价）
+- 数模交付质量门禁 `quality_gate.py` — G1 占位符 / G2 代码自证 / G3 证据追溯 / G4 AI 声明（shumo 技能已记录用法）
+
 
