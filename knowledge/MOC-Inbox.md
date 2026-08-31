@@ -103,6 +103,7 @@ source: scripts/vault-orphan-duplicate-scan.py
 
 ## 🔬 Research
 
+- [[knowledge/Research/Agent记忆系统千轮研究-2026-08-31]]
 - [[knowledge/Research/cron产出学习研究-2026-08-31]]
 - [[knowledge/Research/联合工作千轮研究升级-2026-08-31]]
 
