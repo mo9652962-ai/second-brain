@@ -138,13 +138,13 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 
 | 技能 | 版本 | 简介 |
 |------|------|------|
-| **[每日日志 08-22](memory/2026-08-22.md)** | v1.0 | Tavily 配额第 8 次复发（连续 8 工作日）→ Firecrawl 兜底稳定 + reco/Anthropic/NVIDIA Agent 安全多源同证 |
-| **[每日日志 08-21](memory/2026-08-21.md)** | v1.0 | HarnessRisk 评测 Hermes（ASR 65.4%/配置面最脆弱）+ Gartner 推理成本 5x + 语义缓存硬截止 |
+| **[每日日志 08-22](memory/2026/08/2026-08-22.md)** | v1.0 | Tavily 配额第 8 次复发（连续 8 工作日）→ Firecrawl 兜底稳定 + reco/Anthropic/NVIDIA Agent 安全多源同证 |
+| **[每日日志 08-21](memory/2026/08/2026-08-21.md)** | v1.0 | HarnessRisk 评测 Hermes（ASR 65.4%/配置面最脆弱）+ Gartner 推理成本 5x + 语义缓存硬截止 |
 | **[Agent OS / Harness 趋势](knowledge/Research/agent-os-harness-trend-2026-08-22.md)** | v1.0 | 面试视角：Agent 操作系统层出现愈发清晰——Harness 原生 RL 三剑客 SPADE 等 |
 | **[网安资料库综合研究](knowledge/Research/网安资料库-综合研究-2026-08-22.md)** | v1.0 | 350 文件 / 3.35 GB AI 网安资料全量下载、解压、结构化学习完成 |
 | **[arXiv AI Agent / LLM 速览](knowledge/Research/arxiv-2026-08-21-agent-llm.md)** | v1.0 | 08-18+08-19 同池 652 篇比对 → 补录 17 篇强相关漏网（不重写已收录） |
 | **[arXiv AI Agent / LLM 速览](knowledge/Research/arxiv-2026-08-20-agent-llm.md)** | v1.0 | 08-18+08-19 双池全量 652 篇 → 20 强相关（Harness 原生 RL 三剑客 SPADE 等） |
-| **[每日日志 08-20](memory/2026-08-20.md)** | v1.0 | 补跑研究日：HarnessRisk 直接评测 Hermes + Gartner 推理成本 5x + 方舟-2 配额耗尽 |
+| **[每日日志 08-20](memory/2026/08/2026-08-20.md)** | v1.0 | 补跑研究日：HarnessRisk 直接评测 Hermes + Gartner 推理成本 5x + 方舟-2 配额耗尽 |
 | **[arXiv AI Agent / LLM 速览](knowledge/Research/arxiv-2026-08-19-agent-llm.md)** | v1.0 | 08-17 提交池补全——358 篇全量收集 → 补录 14 篇强相关（Zetta 自进化/Bounded Agents 授权安全） |
 | **[HN 今日深挖](knowledge/Research/hackernews-deep-dive-2026-08-18.md)** | v1.0 | GPT-5.6 Sol/Terra/Luna 价格战 + DuckDB v2.0 + Copilot Autofix 攻陷深挖 |
 | **[arXiv AI Agent / LLM 速览](knowledge/Research/arxiv-2026-08-18-agent-llm.md)** | v1.0 | 08-15 提交池——17 篇精选（多 agent 协作/编码 agent 工作集） |
@@ -153,10 +153,10 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 | **[arXiv AI Agent / LLM 速览](knowledge/Research/arxiv-2026-08-16-agent-llm.md)** | v1.0 | 08-13 提交池补全——收集 53 篇去重 → 精选 15 篇 + 简评 5 篇（Agent 自我改进/训练） |
 | **[arXiv 核心贡献精选](knowledge/Research/arxiv-2026-08-16-core-contributions.md)** | v1.0 | 行为契约/SkillEvo 等核心贡献深度解读（reliability/memory/skill 主题） |
 | **[GitHub 宝藏挖掘周更](knowledge/Research/GitHub-Weekly-2026-08-16.md)** | v1.0 | Top 5 高星仓库（codebase-memory-mcp / nanobot / code-review-graph 等） |
-| **[每日日志 08-19](memory/2026-08-19.md)** | v1.0 | SOP 知识体系建成 + arXiv 补录 14 篇 + SRC 安全体系 5 篇 |
+| **[每日日志 08-19](memory/2026/08/2026-08-19.md)** | v1.0 | SOP 知识体系建成 + arXiv 补录 14 篇 + SRC 安全体系 5 篇 |
 | **[每日日志 08-18](memory/2026/08/2026-08-18.md)** | v1.0 | 知识库优化日 + 安全研究批量入库（SRC/提权/防护） |
-| **[每日日志 08-17](memory/2026/2026-08-17.md)** | v1.0 | 闲鱼变现决策日 + 自研路由实证 + AI 模型价格战 + PCB 蓝海确认 |
-| **[每日日志 08-16](memory/2026/2026-08-16.md)** | v1.0 | 新会话首日环境自检 + 记忆继承 + 模型策略记录 |
+| **[每日日志 08-17](memory/2026/08/2026-08-17.md)** | v1.0 | 闲鱼变现决策日 + 自研路由实证 + AI 模型价格战 + PCB 蓝海确认 |
+| **[每日日志 08-16](memory/2026/08/2026-08-16.md)** | v1.0 | 新会话首日环境自检 + 记忆继承 + 模型策略记录 |
 
 ### 每日自动化优化
 

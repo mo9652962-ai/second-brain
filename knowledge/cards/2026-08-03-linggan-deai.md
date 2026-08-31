@@ -7,7 +7,7 @@ tags:
   - xianyu
   - monetization
 created: 2026-08-03
-source: "[[memory/2026/08/2026-08-03-research-apply]]"
+source: "memory/2026/08/2026-08-03-research-apply"
 ---
 
 # 🃏 知识卡片 · 降 AI 味工具定标：零感 AI 横评四维第一，1 元/千字可主推
@@ -48,4 +48,4 @@ source: "[[memory/2026/08/2026-08-03-research-apply]]"
 
 *卡片来源：当天知识库精选 · memory/2026/08/2026-08-03-research-apply（🥇 业务相关性最高 + 可行动性最强：直接服务闲鱼变现）*
 
-> **延伸**: [[memory/2026/08/2026-08-03-research-apply]]（当日研究应用全记录）
+> **延伸**: memory/2026/08/2026-08-03-research-apply（当日研究应用全记录）

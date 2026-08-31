@@ -39,9 +39,9 @@ date: 2026-08-21
 
 ## 关联
 
-- [[ai-freelance-pricing]]（定价/运营技能——已补 4 问）
-- [[grill-with-docs]]（面试式需求对齐方法论——4 问是它的接单话术落地）
-- [[xianyu-monetization]]
+- `ai-freelance-pricing`（定价/运营技能——已补 4 问）
+- `grill-with-docs`（面试式需求对齐方法论——4 问是它的接单话术落地）
+- `xianyu-monetization`
 
 ---
 *k (Hermes) 2026-08-21 · SenseVoice 转写 + 蒸馏*

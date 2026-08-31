@@ -1,5 +1,5 @@
 ---
-tags: [中医, TCM, 经方, AI-skill, 学习笔记]
+tags: [中医, TCM, 经方, ai-skill, 学习笔记]
 domain: Academic
 status: abandoned
 ---

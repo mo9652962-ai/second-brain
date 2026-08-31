@@ -51,7 +51,7 @@ maigret user --ai                # AI 调查摘要
 
 ## 关联
 
-- [[src-recon-scanning]]（资产层）· [[nmap-scanning]]（端口层）· [[src-bug-hunting]]
+- `src-recon-scanning`（资产层）· `nmap-scanning`（端口层）· `src-bug-hunting`
 - 技能：`security/osint-username-search`
 
 ---

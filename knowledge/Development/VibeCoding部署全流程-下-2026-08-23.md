@@ -61,7 +61,7 @@ source: 抖音 @敲代码的小虾米《Vibe Coding项目部署全流程：下�
 ## 📦 沉淀
 
 1. 本文件：knowledge/Development/VibeCoding部署全流程-下-2026-08-23.md
-2. 关联：[[nextjs-deploy-test]] / [[multi-end-ai-provider-config]]（部署技能族）
+2. 关联：`nextjs-deploy-test` / `multi-end-ai-provider-config`（部署技能族）
 3. 待办（轻量）：hermes-health-check 的巡检清单加「云资源账单」一项（下次触发时顺带）
 
 ---
