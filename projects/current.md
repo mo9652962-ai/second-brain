@@ -147,6 +147,12 @@ updated: 2026-08-23
 - [x] P1 墨题巡检 git status 硬检查脚本化（未提交改动即报警）→ ✅ **2026-08-23 已确认落地**：脚本 `AppData/Local/hermes/scripts/dsh_inspect_moti.sh`（8/20 建，已含 git status 检查）+ cron「墨题每日代码巡检」18:45 已挂载；本次修复 cron 因全局模型漂移被跳过的问题（pin 到 jiyuanlvdong/deepseek-v4-flash-0731）
 - [x] P1 hermes-health-check 加产物 stat 检查（产出型 cron 当日文件缺失即告警，不标全绿）→ ✅ **2026-08-23 已确认落地**：`deterministic_verify.py` 每日 21:30 no_agent 哨兵即产物 stat 检查（存在/非空/新鲜），8/22 已抓出 5 项缺失（arxiv/health/maintenance/cards/hackernews）
 
+### 🧭 8/31 反思行动项（daily-reflection 复盘 8-30，执行者必读）
+- 🛠️ 排障时间盒规则：接排障任务设 2h 时间盒，确定性 bug（偏移一致）直转重装/卸载决策；patch bannerlord-modding + windows-game-crash-troubleshooting（agent 可做 30min）
+- ⏳ cron 批量失败联动诊断（连续第 2 轮升级 P1）：patch hermes-health-check 加「批量失败→FlClash 诊断」分支 + reflection 补跑机制硬截止（agent 可做 30min，杜绝 8-24~8-29 缺档复发）
+- 📌 会话卫生规则：单会话 >800 msgs 主动建议 /new；压缩重放不重复执行历史指令；「/new 开新会话」从 🔒 降为 ⏳ k 可建议
+- 🔴 闲鱼上架决策 8/31 到期（悬置 32 天，合规子集已备 xianyu-monetization v1.2.0，30min 可上架）
+
 ## 🔒 待用户操作（不催促，状态变化时提醒）
 ### 🧭 8/20 反思行动项（daily-reflection 复盘 8-19，执行者必读）
 - [x] P0 语义缓存最小版落地——✅ 8/21 完成（硬截止 8/22 前）：原实现只挂 tavily provider、实际流量走 exa/searxng/firecrawl 兜底时从未命中（cache 文件从未生成）；已在 `web_tools.py::web_search_tool` chokepoint 上移统一缓存覆盖全部后端，实测 exact 命中生效，submit `84d813bf2`

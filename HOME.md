@@ -49,6 +49,7 @@ created: 2026-08-09
 - [[memory/2026/08/2026-08-17-daily-review|📋 08-17 每日回顾]] — smart_model_routing 死占位实锤+自研落地 · AI 价格分层素材 · PCB 变现工具链 · arXiv 长程 Agent；闲鱼决策日已到期（顺延 16 天）
 - [[knowledge/Research/arxiv-2026-08-16-agent-llm|arXiv 今日速览]] — 15 篇 AI Agent/LLM 论文（08-13 池补全：SkillEvo/CrEST/Reconcile Once/Faraday）
 - [[memory/2026/08/2026-08-30-daily-review|📋 08-30 每日回顾]] — 联合工作 v1.3 升级日：Antigravity 程序化接入 + 多Agent协作增强 + AI原生组件库落点墨题；闲鱼决策 8/31 到期（悬置 32 天）
+- [[memory/2026/08/2026-08-30-reflection|🪞 08-30 反思日记]] — 联合工作 v1.3 升级日；3 改进点：排障无时间盒(19h)/cron联动诊断未落地(缺档6天)/会话卫生(1911msgs压缩重放)；知识吸收 4/4 全中达标
 - [[memory/2026/08/weekly-2026-08-16|📚 W34 周度整理]] — memory 归位 6 + research 归位 3 + MOC×5 更新 + Finance MOC 新建
 - [[memory/2026/08/weekly-learning-2026-08-16|📚 W34 学习回顾]] — AgentScope 实证测评提 PR + 墨题学习型设计 + Behavioral Contracts 落地容灾
 - [[memory/2026/08/weekly-2026-08-23|📚 W35 周度整理]] — 网安/开发/META/SOP 批量挂载 + memory 归位 + 孤立 95→31
