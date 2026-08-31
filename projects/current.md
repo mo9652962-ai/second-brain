@@ -148,10 +148,10 @@ updated: 2026-08-23
 - [x] P1 hermes-health-check 加产物 stat 检查（产出型 cron 当日文件缺失即告警，不标全绿）→ ✅ **2026-08-23 已确认落地**：`deterministic_verify.py` 每日 21:30 no_agent 哨兵即产物 stat 检查（存在/非空/新鲜），8/22 已抓出 5 项缺失（arxiv/health/maintenance/cards/hackernews）
 
 ### 🧭 8/31 反思行动项（daily-reflection 复盘 8-30，执行者必读）
-- 🛠️ 排障时间盒规则：接排障任务设 2h 时间盒，确定性 bug（偏移一致）直转重装/卸载决策；patch bannerlord-modding + windows-game-crash-troubleshooting（agent 可做 30min）
-- ⏳ cron 批量失败联动诊断（连续第 2 轮升级 P1）：patch hermes-health-check 加「批量失败→FlClash 诊断」分支 + reflection 补跑机制硬截止（agent 可做 30min，杜绝 8-24~8-29 缺档复发）
-- 📌 会话卫生规则：单会话 >800 msgs 主动建议 /new；压缩重放不重复执行历史指令；「/new 开新会话」从 🔒 降为 ⏳ k 可建议
-- 🔴 闲鱼上架决策 8/31 到期（悬置 32 天，合规子集已备 xianyu-monetization v1.2.0，30min 可上架）
+- ✅ 排障时间盒规则：2h 时间盒 + 确定性 bug 直转重装/卸载决策——✅ 2026-08-31 daily-todo-executor 落地：bannerlord-modding 加「⏱️ 排障时间盒止损线」章节（偏移一致→直转止损）+ windows-game-crash-troubleshooting 已含同规则（8/31 反思当场已加）
+- ✅ cron 批量失败联动诊断（连续第 2 轮升级 P1）：patch hermes-health-check 加「批量失败→FlClash 诊断」分支 + reflection 补跑机制——✅ 2026-08-31 daily-todo-executor 落地：cron_stats.py 新增 batch_failure_check（同 1h 窗口 ≥3 失败自动分流：Connection→FlClash 诊断 / 429·quota→provider 配额诊断）+ SKILL.md 双处补录；8/31 实测抓出 429 批量限流真因（晨 8:58 + 午后 13:34 两窗，非网络）
+- 📌 会话卫生规则：单会话 >800 msgs 主动建议 /new；压缩重放不重复执行历史指令；「/new 开新会话」从 🔒 降为 ⏳ k 可建议（agent 主动提，sora 点头即切）
+- 🔴 闲鱼上架决策 8/31 到期（悬置 32 天，合规子集已备 xianyu-monetization v1.2.0，30min 可上架）——8/31 xianyu-vault-suggestion-executor 已出决策包，等 sora 拍板
 
 ## 🔒 待用户操作（不催促，状态变化时提醒）
 ### 🧭 8/20 反思行动项（daily-reflection 复盘 8-19，执行者必读）
