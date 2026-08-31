@@ -106,4 +106,30 @@ status: completed
 - 返回首页：[[HOME]]
 
 ---
+
+## 🕗 20:00 定时运行复查（daily-todo-executor 主排程）
+
+> 15:15 那轮为提前执行；本轮 20:00 为 cron 主排程。按 freshness guard 复核，未重复执行，仅处理新增自动项 + 核验。
+
+### ✅ 本次新增自动执行（2 项）
+
+1. **P1 cron 输出路径漂移 → 闭环**（`projects/current.md` L154 标记 `[x]`）：
+   - 核验：`daily-self-improvement` prompt 已是 `memory/YYYY/MM/YYYY-MM-DD-reflection.md`，今日 8/30-reflection 落点正确；`daily-summary` / `memory-pruning` 两 job **已不存在**于 jobs.json（W36 已处理）
+   - **新发现并修复 2 处硬编码月份 drift**（同 P1 类别）：
+     - `daily-todo-executor` 自身 prompt 残留 `memory/2026/07/`（7 月遗留路径）→ `hermes cron edit 6031a54d1f4e` 改为 `memory/YYYY/MM/`
+     - `墨题每日代码巡检` prompt 硬编码 `memory/2026/08/moti-daily-inspect.md`（9 月必漂移）→ `hermes cron edit 8585ddb871b4` 改为 `memory/YYYY/MM/moti-daily-inspect.md`
+   - 均已通过官方 CLI 持久化并二次读取验证 ✅
+
+### 🔍 核验结果（15:15 轮无回归）
+
+- git 树干净（仅 cron-health-board 20:00 看板待下轮 auto-sync）；15:15 提交 21ed835/a7d0739 已推送
+- xianyu 素材、今日报告、技能 patch 均在位
+
+### 📡 新观察（20:00 轮新增）
+
+1. **18:01 daily-monetization-review `RuntimeError: Connection error`**——单发连接故障（前后 18:30/19:08/20:00 任务均 ok），非批量故障；明日 18:00 自动重跑
+2. **18:03 每日股票深度分析「行情数据获取失败」**——数据源连接/取数失败（5 只自选股均失败），明日开盘后重跑验证
+3. **模型关闭信号已确认但被 fallback 接住**：14:50 `HTTP 400: 模型已关闭：deepseek-v4-flash` 后，15:37 daily-wechat-knowledge-card 正常产出知识卡片（fallback 链 jiyuanlvdong-2/deepseek-v4-flash-0731 生效）✅；默认模型 `deepseek-v4-flash` 在 fangzhou-2 已不可用，后续若高频报错需考虑把全局默认切到 `deepseek-v4-flash-0731`
+
+---
 *由 k (Hermes) · daily-todo-executor cron · 2026-08-31*
