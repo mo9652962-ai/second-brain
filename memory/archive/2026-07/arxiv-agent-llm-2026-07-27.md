@@ -185,7 +185,7 @@ title: arXiv AI Agent & LLM 周报 2026-07-27
 
 ## 精选论文深度解读
 
-📝 [[memory/2026/07/arxiv-paper-deepdive-2026-07-27|论文深度解读 2026-07-27]] — OpenForgeRL / Non-Convergence Detection / Agent Context Lifecycle
+📝 [[memory/archive/2026-07/arxiv-paper-deepdive-2026-07-27|论文深度解读 2026-07-27]] — OpenForgeRL / Non-Convergence Detection / Agent Context Lifecycle
 
 ---
 
