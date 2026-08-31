@@ -22,7 +22,7 @@ status: adopted
 
 
 
-> 所有知识领域的索引与关联。最后更新: 2026-08-31（W35 周度整理：网安/开发/META/SOP 批量挂载 + memory 归位）
+> 所有知识领域的索引与关联。最后更新: 2026-08-31（W36 周度整理：Vibe Coding/Agent 工作流 + 数模实证 + 量化交易入库 + memory 归位）
 
 
 
@@ -34,19 +34,19 @@ status: adopted
 
 |:---|:---|:---|
 
-| 🔬 Research（域） | [[MOC-Research]] | 154 篇 |
+| 🔬 Research（域） | [[MOC-Research]] | 167 篇 |
 
 | 🐙 GitHub 研究（主题切片） | [[MOC-GitHub]] | 42 篇 |
 
-| 🛡️ 网络安全（主题切片） | [[MOC-Security]] | 49 篇 |
+| 🛡️ 网络安全（主题切片） | [[MOC-Security]] | 50 篇 |
 
 | 💻 Dev（域） | [[MOC-Dev]] | 101+23 篇 |
 
-| 🔧 Hardware（域） | [[MOC-Hardware]] | 19 篇 |
+| 🔧 Hardware（域） | [[MOC-Hardware]] | 21 篇 |
 
-| 🏠 Productivity（域） | [[MOC-Productivity]] | 27 篇 |
+| 🏠 Productivity（域） | [[MOC-Productivity]] | 41 篇 |
 
-| 📈 Finance（域） | [[MOC-Finance]] | 6 篇 |
+| 📈 Finance（域） | [[MOC-Finance]] | 7 篇 |
 
 
 
@@ -424,6 +424,28 @@ graph TD
 
 
 
+## 🆕 W36 新增速览（2026-08-24 ~ 08-30）
+
+> 本周主线：Vibe Coding / Agent 工作流方法论批量入库（Context Engineering / SDD / AI-native 组件库）+ 联合工作 v1.3 升级（Antigravity 程序化接入）+ 数模 Agent 生态实证 + 量化交易缠论系统。整理报告见 [[../memory/2026/08/weekly-2026-08-31|W36 周度整理]]。
+
+| 域 | 新增重点 | 入口 |
+
+|:---|:---------|:-----|
+
+| 🏠 Productivity | Vibe Coding 系列（要不要学代码/小程序拆解/应用追踪表）+ 手搓万物→顶级开发师 + AI-native 组件库 + 团队上下文注入包 + Context Engineering ×7 | [[knowledge/Productivity/MOC-Productivity]] |
+
+| 🔬 Research | 多 Agent 协作增强千轮研究 + 联合工作 v1.3（Antigravity 程序化）+ ai-weekly-literature + arXiv 08-31 + GitHub-Weekly 08-30 | [[knowledge/Research/MOC-Research]] |
+
+| 📈 Finance | 量化交易：缠论 + Codex + 50亿 token 落地 | [[knowledge/Finance/量化交易-缠论Codex-50亿token-2026-08-30]] |
+
+| 🔧 Hardware | ESP32S3 万年历 AI 开发 + 对标借鉴：治具自动出图（DRC 生产门禁 + Golden Sample） | [[knowledge/Hardware/MOC-Hardware]] |
+
+| 🃏 cards | Anthropic 封订阅 token / 数据源验证经验 | [[knowledge/cards/2026-08-30-data-source-verification]] |
+
+| 📅 Daily | HN 速览 08-24 / 08-31 | [[knowledge/Daily/hackernews-2026-08-31]] |
+
+---
+
 ## 🆕 W34 新增速览（2026-08-15 ~ 08-16）
 
 
@@ -556,6 +578,8 @@ Matt Pocock 方法论     Grill+TDD 工作流
 || 设计工程师(新) | [[ibelick-ui-skills]] ⭐ | UI Skills CLI | 📖 学习 |
 
 || AI VTuber | [[airi]] | — | 📖 参考 |
+
+| AI 生态工具调研 | [[knowledge/AI/AIRI生态-18工具研究-哪些有用-2026\|AIRI 生态 18 工具]] | 墨题 VAD/口语 | 🟢 已落地 |
 
 ||| xAI 编码 Agent | [[grok-build]] | — | 📖 参考 |
 

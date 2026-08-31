@@ -27,6 +27,11 @@ created: 2026-07-28
 - [[knowledge/Hardware/PCB-2026-KiCad10与AI-EDA|PCB 2026：KiCad 10 与 AI EDA]] — 工具链全景
 - [[knowledge/Hardware/CAD-2026-千轮研究增强|CAD 2026 千轮研究增强]] — CAD 自动化方法论
 - [[knowledge/Hardware/AI-PCB设计前沿-pcbflow对比|AI-PCB 设计前沿]] — ProtoFlow/DeepPCB/Quilter 对比
+## 🆕 W36 新增（08-24 ~ 08-30）
+
+- [[knowledge/Hardware/ESP32万年历AI开发-调研-2026-08-23|ESP32S3 万年历 AI 开发调研]] — lunar-calendar-service MCP + lunar-python（闲鱼热门单）
+- [[knowledge/Hardware/对标借鉴-治具自动出图-2026-08-30|对标借鉴：治具自动出图]] — wave-soldering-fixture-designer → pcb-fixture-automation 补强（DRC 生产门禁 + Golden Sample 验证）
+
 
 ---
 
