@@ -1,3 +1,12 @@
+---
+title: "抖音学习研究：Agent 少返工 80% 的核心方法论（Context Engineering）"
+type: note
+domain: Productivity
+status: active
+tags: [knowledge/productivity]
+source: null
+date: 2026-08-30
+---
 # 抖音学习研究：Agent 少返工 80% 的核心方法论（Context Engineering）
 
 > 来源：抖音 @叙白《只需一句话，让你的agent少返工80%》https://v.douyin.com/7gEACgrl24Q/ （89s，973赞）

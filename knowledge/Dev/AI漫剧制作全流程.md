@@ -1,3 +1,11 @@
+---
+title: "AI 漫剧制作全流程（学习笔记 2026-08）"
+type: note
+domain: Dev
+status: active
+tags: [knowledge/dev]
+source: null
+---
 # AI 漫剧制作全流程（学习笔记 2026-08）
 
 > 来源：抖音教程《AI漫剧制作教程全流程拆解》+ B站/36氪/腾讯新闻全网研究

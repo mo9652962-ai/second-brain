@@ -1,3 +1,12 @@
+---
+title: "GitHub Trending W35 学习研究 · 千轮深研（2026-08-23）"
+type: note
+domain: Research
+status: active
+tags: [knowledge/research]
+source: null
+date: 2026-08-23
+---
 # GitHub Trending W35 学习研究 · 千轮深研（2026-08-23）
 
 > 触发：sora「github-trending-w35 进行学习研究」

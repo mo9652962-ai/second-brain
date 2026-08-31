@@ -1,3 +1,12 @@
+---
+title: "Gemini Spark 使用指南（千轮研究 2026-08-19）"
+type: note
+domain: Dev
+status: active
+tags: [knowledge/dev]
+source: null
+date: 2026-08-19
+---
 # Gemini Spark 使用指南（千轮研究 2026-08-19）
 
 > 来源: 官方帮助文档 + 台湾媒体实测（104職場力/遠見）+ 大陆可用性实测报告

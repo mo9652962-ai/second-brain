@@ -1,3 +1,12 @@
+---
+title: "本机安全加固检查报告（2026-08-18）"
+type: note
+domain: Security
+status: active
+tags: [knowledge/security]
+source: null
+date: 2026-08-18
+---
 # 本机安全加固检查报告（2026-08-18）
 
 > 执行：8 项立即执行清单的可自动化部分

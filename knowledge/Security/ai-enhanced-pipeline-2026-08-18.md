@@ -1,3 +1,12 @@
+---
+title: "AI 增强挖洞流水线（2026-08-18 落地）"
+type: note
+domain: Security
+status: active
+tags: [knowledge/security]
+source: null
+date: 2026-08-18
+---
 # AI 增强挖洞流水线（2026-08-18 落地）
 
 > 技能：`src-bug-hunting` → 「AI 增强流水线」章节 + `scripts/ai_secret_scan.py`

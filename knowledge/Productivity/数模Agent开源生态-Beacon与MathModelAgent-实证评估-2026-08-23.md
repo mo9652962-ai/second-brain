@@ -1,3 +1,12 @@
+---
+title: "数模 Agent 开源生态实证评估（2026-08-23）"
+type: note
+domain: Productivity
+status: active
+tags: [knowledge/productivity]
+source: null
+date: 2026-08-23
+---
 # 数模 Agent 开源生态实证评估（2026-08-23）
 
 > 来源：抖音「雾离欢」作品（2026-07-07 发布，播放 7.1K）→ 数模 agent Beacon 开源

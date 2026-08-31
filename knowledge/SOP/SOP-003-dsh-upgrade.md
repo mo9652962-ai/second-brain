@@ -1,3 +1,11 @@
+---
+title: "SOP-003: dsh 升级（npm 12 ETARGET 绕道方案）"
+type: sop
+domain: SOP
+status: active
+tags: [knowledge/sop]
+source: null
+---
 # SOP-003: dsh 升级（npm 12 ETARGET 绕道方案）
 
 - **ID**: SOP-003

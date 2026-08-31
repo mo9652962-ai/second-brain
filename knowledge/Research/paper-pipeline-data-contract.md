@@ -1,3 +1,11 @@
+---
+title: "论文处理 Pipeline 数据契约"
+type: note
+domain: Research
+status: active
+tags: [knowledge/research]
+source: null
+---
 # 论文处理 Pipeline 数据契约
 
 > ⚠️ **完整版见 [[论文Pipeline-数据契约]]**（接单全流程：报价公式/状态机/质量门禁/工具链/异常处理）

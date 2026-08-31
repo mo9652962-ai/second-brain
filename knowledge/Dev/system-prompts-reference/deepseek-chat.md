@@ -1,3 +1,11 @@
+---
+title: "deepseek-chat"
+type: note
+domain: Dev
+status: active
+tags: [knowledge/dev]
+source: null
+---
 Current date: 2026-07-14  
 User location: Iceland
 

@@ -1,3 +1,11 @@
+---
+title: "AI 前端效率 · 7 个设计资源站"
+type: note
+domain: Hardware
+status: active
+tags: [knowledge/hardware]
+source: null
+---
 # AI 前端效率 · 7 个设计资源站
 
 来源：小黑盒

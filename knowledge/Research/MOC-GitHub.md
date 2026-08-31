@@ -2,8 +2,10 @@
 tags: [MOC, github, research, 索引]
 aliases: [GitHub 研究地图, GitHub MOC, GitHub宝藏挖掘]
 domain: Research
+type: moc
+status: active
 created: 2026-08-16
-updated: 2026-08-16
+updated: 2026-08-31
 ---
 
 # 🐙 GitHub 研究 MOC — GitHub Treasure Map
@@ -17,7 +19,7 @@ updated: 2026-08-16
 
 ## 📅 周报系列（W31 起，每周一篇）
 
-- [[GitHub-Weekly-2026-08-23]] — W35：ai-memory 跨 Agent 记忆 / llmfit 硬件×模型匹配（周报 [[../memory/2026/08/github-trending-w35|W35 周报]]）
+- [[GitHub-Weekly-2026-08-23]] — W35：ai-memory 跨 Agent 记忆 / llmfit 硬件×模型匹配（周报 [[../../memory/2026/08/github-trending-w35|W35 周报]]）
 - [[GitHub-Weekly-2026-08-16]] — W34：diagram-design 图表（+14.7k 增长王）/ needle 14MB 端侧模型 / google-skills / code-graph-rag
 - [[agent-infra-weekly-2026-08-17]] — Agent 基建化周榜：电脑、记忆、图谱、长任务状态开卷（Dev 域）
 - [[GitHub-Weekly-2026-08-14]] — W33：自改进 RLM Agent 领跑（prime-agent +12k⭐）+ semantica / agent-skills / cloudflare-computer / switchyard
@@ -90,6 +92,10 @@ updated: 2026-08-16
 2. 待改名 5 篇（[[GitHub热榜-2026-08-08]]、[[GitHub周榜-2026-08-08]]、[[github-weekly-2026-07-31-5projects]] 等）见 [[知识库重构方案-2026-08-16|知识库重构方案·第六节]]
 3. 新 GitHub 研究笔记落盘 → 本 MOC 对应分区挂链（周报区 / 单项目研读区 / 深读区三选一）
 4. 单项目深读从热榜笔记沉淀为独立笔记时，在原周报内留下指向新笔记的反向链接
+
+## 🧭 入口治理
+
+- [[../MOC-Inbox|待接入/孤立笔记审阅入口]]
 
 ---
 

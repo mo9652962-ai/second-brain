@@ -1,3 +1,11 @@
+---
+title: "Vault Health Baseline (2026-07-26)"
+type: note
+domain: Productivity
+status: active
+tags: [knowledge/productivity]
+source: null
+---
 # Vault Health Baseline (2026-07-26)
 
 Current structural state of sora's Obsidian vault

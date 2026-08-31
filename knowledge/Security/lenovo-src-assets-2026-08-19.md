@@ -1,3 +1,12 @@
+---
+title: "联想 SRC 子域名资产清单（2026-08-19）"
+type: note
+domain: Security
+status: active
+tags: [knowledge/security]
+source: null
+date: 2026-08-19
+---
 # 联想 SRC 子域名资产清单（2026-08-19）
 
 > 来源: OneForAll 扫描 lenovo.com（进程被杀，Certificate+Dataset 模块已完成）

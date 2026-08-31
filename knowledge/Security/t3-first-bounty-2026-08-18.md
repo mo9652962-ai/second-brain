@@ -1,3 +1,12 @@
+---
+title: "T3 首单全记录（2026-08-18）"
+type: note
+domain: Security
+status: active
+tags: [knowledge/security]
+source: null
+date: 2026-08-18
+---
 # T3 首单全记录（2026-08-18）
 
 > 里程碑：sora 第一个真实 SRC 漏洞提交（T3SRC，漏洞盒子）

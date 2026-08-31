@@ -1,3 +1,11 @@
+---
+title: "SOP-005: 小程序反编译密钥审计流程"
+type: sop
+domain: SOP
+status: active
+tags: [knowledge/sop]
+source: null
+---
 # SOP-005: 小程序反编译密钥审计流程
 
 - **ID**: SOP-005

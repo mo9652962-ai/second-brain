@@ -1,3 +1,12 @@
+---
+title: "防御能力研究（2026-08-18 八轮千轮研究完整版）"
+type: note
+domain: Security
+status: active
+tags: [knowledge/security]
+source: null
+date: 2026-08-18
+---
 # 防御能力研究（2026-08-18 八轮千轮研究完整版）
 
 > 攻击端→防御端视角：知道防御方怎么想，才能知道怎么突破 & 怎么保护自己

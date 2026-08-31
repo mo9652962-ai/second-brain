@@ -1,3 +1,11 @@
+---
+title: "AI 博主 · 10 轮研究全览"
+type: note
+domain: Productivity
+status: active
+tags: [knowledge/productivity]
+source: null
+---
 # AI 博主 · 10 轮研究全览
 
 > 2026-07-27 · 覆盖 6 个领域 + 定位 + 变现 + 竞品 + 路线图

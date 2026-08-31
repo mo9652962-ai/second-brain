@@ -1,3 +1,12 @@
+---
+title: "Hacker News 今日精选 — 2026-07-31"
+type: archive
+domain: Archive
+status: archived
+tags: [knowledge/archive]
+source: null
+date: 2026-07-31
+---
 # Hacker News 今日精选 — 2026-07-31
 
 > 来源: [news.ycombinator.com](https://news.ycombinator.com) · 抓取时间: 2026-07-31

@@ -1,3 +1,12 @@
+---
+title: "安卓 SO 层 VMP 逆向研究（2026-08-20 千轮研究）"
+type: note
+domain: Security
+status: active
+tags: [knowledge/security]
+source: null
+date: 2026-08-20
+---
 # 安卓 SO 层 VMP 逆向研究（2026-08-20 千轮研究）
 
 > 承接：VMP 脱壳学习笔记（PC 版，vmp-reversing-2026-08-20.md）→ 安卓 SO 层专题

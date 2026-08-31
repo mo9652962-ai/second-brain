@@ -1,3 +1,12 @@
+---
+title: "Vibe Coding 要不要学代码？又该学什么？（2026-08-30）"
+type: note
+domain: Productivity
+status: active
+tags: [knowledge/productivity]
+source: null
+date: 2026-08-30
+---
 # Vibe Coding 要不要学代码？又该学什么？（2026-08-30）
 
 > 来源：抖音「敲代码的小虾米」视频（12min，5914赞）+ 千轮研究（AI空间站/少数派/51CTO/36氪/Google/The New Stack/promptacore 等）

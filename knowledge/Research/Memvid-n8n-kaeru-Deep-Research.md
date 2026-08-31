@@ -1,3 +1,11 @@
+---
+title: "Memvid + n8n MCP + kaeru 十轮深度研究"
+type: note
+domain: Research
+status: active
+tags: [knowledge/research]
+source: null
+---
 # Memvid + n8n MCP + kaeru 十轮深度研究
 
 ## 📊 研究概况

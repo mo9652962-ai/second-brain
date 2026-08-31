@@ -1,3 +1,11 @@
+---
+title: "Obsidian Local REST API + MCP 配置"
+type: note
+domain: Productivity
+status: active
+tags: [knowledge/productivity]
+source: null
+---
 # Obsidian Local REST API + MCP 配置
 
 来源：Obsidian 社区插件

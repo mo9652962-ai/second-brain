@@ -1,7 +1,10 @@
 ---
 tags: [MOC, finance, 股票, 分析]
 domain: Finance
+type: moc
+status: active
 created: 2026-08-16
+updated: 2026-08-31
 ---
 
 # 📈 金融域 — 股票分析
@@ -26,3 +29,7 @@ created: 2026-08-16
 
 ---
 *MOC 节点 — Finance 域索引（2026-08-16 周度整理创建）*
+
+## 🧭 入口治理
+
+- [[../MOC-Inbox|待接入/孤立笔记审阅入口]]

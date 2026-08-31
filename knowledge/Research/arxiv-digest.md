@@ -1,3 +1,11 @@
+---
+title: "arXiv AI Agent / LLM 周报"
+type: note
+domain: Research
+status: active
+tags: [knowledge/research]
+source: null
+---
 # arXiv AI Agent / LLM 周报
 ---
 - **最新一期**: [[ai-weekly-literature-2026-08-31|2026-08-31 周报]]（AI Agent / 大模型 / 科研工具 · 多源检索）

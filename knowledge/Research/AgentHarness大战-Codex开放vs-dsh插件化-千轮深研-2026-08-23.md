@@ -1,3 +1,12 @@
+---
+title: "Agent Harness 大战——Codex 开放 vs dsh 一切皆插件（千轮深研 2026-08-23）"
+type: note
+domain: Research
+status: active
+tags: [knowledge/research]
+source: null
+date: 2026-08-23
+---
 # Agent Harness 大战——Codex 开放 vs dsh 一切皆插件（千轮深研 2026-08-23）
 
 > 触发：sora「进行千轮研究和学习」→ 选定课题：2026 年 Agent Harness（智能体运行时）层的竞争格局

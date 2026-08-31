@@ -1,3 +1,12 @@
+---
+title: "jayxin/cumcm 国赛 LaTeX 模板实证评估（2026-08-23）"
+type: note
+domain: Productivity
+status: active
+tags: [knowledge/productivity]
+source: null
+date: 2026-08-23
+---
 # jayxin/cumcm 国赛 LaTeX 模板实证评估（2026-08-23）
 
 > 来源：抖音「云顶数模」图文作品（2026-08-23 发布，粉丝 7982）推荐 → GitHub jayxin/cumcm

@@ -1,3 +1,12 @@
+---
+title: "Krea2 全白图排障报告 · 2026-08-03"
+type: note
+domain: Research
+status: active
+tags: [knowledge/research]
+source: null
+date: 2026-08-03
+---
 # Krea2 全白图排障报告 · 2026-08-03
 
 > 症状：Krea2 生成全白/全黑/灰图 → 逐步定位 → **双重缩放 root cause**

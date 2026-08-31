@@ -1,3 +1,11 @@
+---
+title: "System Prompts 精选存档"
+type: note
+domain: Dev
+status: active
+tags: [knowledge/dev]
+source: null
+---
 # System Prompts 精选存档
 
 > 来源：asgeirtj/system_prompts_leaks (42K★, CC0-1.0) · 2026-08-01 精选

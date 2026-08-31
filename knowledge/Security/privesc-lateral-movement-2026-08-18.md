@@ -1,3 +1,12 @@
+---
+title: "提权 + 内网渗透 系统性知识（2026-08-18 五轮千轮研究）"
+type: note
+domain: Security
+status: active
+tags: [knowledge/security]
+source: null
+date: 2026-08-18
+---
 # 提权 + 内网渗透 系统性知识（2026-08-18 五轮千轮研究）
 
 > 覆盖：提权基础 / Windows 提权 / Linux 提权 / 内网渗透 / AD 攻击链

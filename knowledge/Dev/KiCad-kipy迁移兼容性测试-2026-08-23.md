@@ -1,3 +1,12 @@
+---
+title: "KiCad SWIG→kipy(IPC API) 迁移兼容性测试报告（2026-08-23）"
+type: note
+domain: Dev
+status: active
+tags: [knowledge/dev]
+source: null
+date: 2026-08-23
+---
 # KiCad SWIG→kipy(IPC API) 迁移兼容性测试报告（2026-08-23）
 
 ## 测试结论

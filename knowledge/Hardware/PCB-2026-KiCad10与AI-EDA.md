@@ -1,3 +1,11 @@
+---
+title: "2026 PCB 设计千轮研究增强"
+type: note
+domain: Hardware
+status: active
+tags: [knowledge/hardware]
+source: null
+---
 # 2026 PCB 设计千轮研究增强
 
 > 2026-08-22 | 搜索引擎研究 | KiCad 10 发布 + AI EDA 2026 格局

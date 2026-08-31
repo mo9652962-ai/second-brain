@@ -1,3 +1,11 @@
+---
+title: "工具消化 · 十轮研究落地版"
+type: note
+domain: Productivity
+status: active
+tags: [knowledge/productivity]
+source: null
+---
 # 工具消化 · 十轮研究落地版
 
 原则：优先考虑能否应用/吸收强化自身

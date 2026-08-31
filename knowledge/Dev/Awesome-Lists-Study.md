@@ -1,3 +1,11 @@
+---
+title: "Awesome Python & Awesome Self-hosted 学习笔记"
+type: note
+domain: Dev
+status: active
+tags: [knowledge/dev]
+source: null
+---
 # Awesome Python & Awesome Self-hosted 学习笔记
 
 ## 📚 学习来源

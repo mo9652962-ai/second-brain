@@ -1,3 +1,12 @@
+---
+title: "Hacker News 今日精选 — 2026-08-14"
+type: daily
+domain: Daily
+status: active
+tags: [knowledge/daily]
+source: null
+date: 2026-08-14
+---
 # Hacker News 今日精选 — 2026-08-14
 
 > 来源：https://news.ycombinator.com | 抓取时间：2026-08-14

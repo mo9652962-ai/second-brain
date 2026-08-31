@@ -1,3 +1,12 @@
+---
+title: "抖音视频抓取能力增强 · 千轮研究（2026-08-17）"
+type: note
+domain: Dev
+status: active
+tags: [knowledge/dev]
+source: null
+date: 2026-08-17
+---
 # 抖音视频抓取能力增强 · 千轮研究（2026-08-17）
 
 > 触发：用户问「抓取信息的能力能增强吗」——此前抖音链接（浮石·SolidWorks仿生机器人）curl/web_extract 都拿不到空壳

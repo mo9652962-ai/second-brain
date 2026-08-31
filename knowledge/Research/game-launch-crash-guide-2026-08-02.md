@@ -1,3 +1,12 @@
+---
+title: "This War of Mine 崩溃修复指南（gameoverlayrenderer64.dll + 0xc00000fd）"
+type: note
+domain: Research
+status: active
+tags: [knowledge/research]
+source: null
+date: 2026-08-02
+---
 # This War of Mine 崩溃修复指南（gameoverlayrenderer64.dll + 0xc00000fd）
 
 > 2026-08-02 · 基于搜索引擎验证的公开资料 · 适配 Windows 10/11

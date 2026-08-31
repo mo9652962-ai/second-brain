@@ -1,3 +1,12 @@
+---
+title: "抖音学习研究：手搓万物成为顶级开发师（Vibe Coding → Agentic Engineering）"
+type: note
+domain: Productivity
+status: active
+tags: [knowledge/productivity]
+source: null
+date: 2026-08-30
+---
 # 抖音学习研究：手搓万物成为顶级开发师（Vibe Coding → Agentic Engineering）
 
 > 来源：抖音 @瑟兰迪尔《教你手搓万物，成为顶级开发师》https://v.douyin.com/4ZmN8YxBceY/ （22s，2847赞）

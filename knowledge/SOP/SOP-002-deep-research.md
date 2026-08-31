@@ -1,3 +1,11 @@
+---
+title: "SOP-002: 技术与研报深度调研自闭环流程"
+type: sop
+domain: SOP
+status: active
+tags: [knowledge/sop]
+source: null
+---
 # SOP-002: 技术与研报深度调研自闭环流程
 
 - **ID**: SOP-002

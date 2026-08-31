@@ -1,3 +1,12 @@
+---
+title: "Agent 操作系统层：Harness 趋势研究（面试视角）"
+type: note
+domain: Research
+status: active
+tags: [knowledge/research]
+source: null
+date: 2026-08-22
+---
 # Agent 操作系统层：Harness 趋势研究（面试视角）
 
 > 来源：抖音 @划水的青蛙《Agent的操作系统层的出现愈发清晰》（2026-08-21）

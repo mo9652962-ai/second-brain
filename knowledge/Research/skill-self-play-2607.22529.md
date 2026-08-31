@@ -1,3 +1,11 @@
+---
+title: "Skill Self-Play: Pushing the Frontier of LLM Capability with Co-Evolving Skills"
+type: note
+domain: Research
+status: active
+tags: [knowledge/research]
+source: null
+---
 # Skill Self-Play: Pushing the Frontier of LLM Capability with Co-Evolving Skills
 
 | 元数据 |  |

@@ -1,3 +1,12 @@
+---
+title: "GitHub 宝藏挖掘 - 2026-08-23"
+type: note
+domain: Research
+status: active
+tags: [knowledge/research]
+source: null
+date: 2026-08-23
+---
 # GitHub 宝藏挖掘 - 2026-08-23
 
 ## Top 5

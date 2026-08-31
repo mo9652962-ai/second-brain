@@ -1,3 +1,12 @@
+---
+title: "千轮研究 · 深度研究智能体范式（IterResearch/WebResearcher）——2026-08-23"
+type: note
+domain: Research
+status: active
+tags: [knowledge/research]
+source: null
+date: 2026-08-23
+---
 # 千轮研究 · 深度研究智能体范式（IterResearch/WebResearcher）——2026-08-23
 
 > 研究触发：sora「进行千轮研究和学习」→ 选定主题：深度研究（Deep Research）智能体本身的方法论前沿

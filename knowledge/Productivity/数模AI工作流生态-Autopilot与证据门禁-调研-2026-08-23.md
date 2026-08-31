@@ -1,3 +1,12 @@
+---
+title: "数模竞赛「真正会用 AI」工作流生态调研（2026-08-23）"
+type: note
+domain: Productivity
+status: active
+tags: [knowledge/productivity]
+source: null
+date: 2026-08-23
+---
 # 数模竞赛「真正会用 AI」工作流生态调研（2026-08-23）
 
 > 来源：抖音「Baby横空出世」作品——在数模竞赛里真正会用 AI 是什么体验（把琐碎环节交给 AI）

@@ -1,3 +1,12 @@
+---
+title: "链接内容抓取能力增强 · 千轮研究（2026-08-17）"
+type: note
+domain: Dev
+status: active
+tags: [knowledge/dev]
+source: null
+date: 2026-08-17
+---
 # 链接内容抓取能力增强 · 千轮研究（2026-08-17）
 
 > 触发：用户问「增强从链接获取内容的能力，比如小黑盒类似的链接」

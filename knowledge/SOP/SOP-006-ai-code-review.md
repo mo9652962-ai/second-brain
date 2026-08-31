@@ -1,3 +1,11 @@
+---
+title: "SOP-006: AI 代码审查协作流程（Gemini 第二意见）"
+type: sop
+domain: SOP
+status: active
+tags: [knowledge/sop]
+source: null
+---
 # SOP-006: AI 代码审查协作流程（Gemini 第二意见）
 
 - **ID**: SOP-006

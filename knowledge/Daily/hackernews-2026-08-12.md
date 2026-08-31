@@ -1,3 +1,12 @@
+---
+title: "Hacker News 今日精选 — 2026-08-12"
+type: daily
+domain: Daily
+status: active
+tags: [knowledge/daily]
+source: null
+date: 2026-08-12
+---
 # Hacker News 今日精选 — 2026-08-12
 
 > 来源：https://news.ycombinator.com | 筛选：AI/ML/编程/开源相关

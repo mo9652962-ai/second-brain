@@ -2,8 +2,10 @@
 tags: [MOC, security, 网络安全, 索引]
 aliases: [安全地图, Security MOC, 网络安全 MOC]
 domain: Security
+type: moc
+status: active
 created: 2026-08-16
-updated: 2026-08-21
+updated: 2026-08-31
 ---
 
 # 🛡️ 网络安全 MOC — Security Map
@@ -128,3 +130,7 @@ updated: 2026-08-21
 ---
 
 [[HOME|🏠 返回首页]]
+
+## 🧭 入口治理
+
+- [[../MOC-Inbox|待接入/孤立笔记审阅入口]]

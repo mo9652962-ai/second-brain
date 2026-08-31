@@ -1,3 +1,12 @@
+---
+title: "MiMo-V2.5 系列客观评估（2026-08 千轮研究）"
+type: note
+domain: Research
+status: active
+tags: [knowledge/research]
+source: null
+date: 2026-08-08
+---
 # MiMo-V2.5 系列客观评估（2026-08 千轮研究）
 
 > 来源：mimo.xiaomi.com 官方 + HuggingFace + CSDN/TRAE/今日头条实测 + 多源 benchmark 交叉验证

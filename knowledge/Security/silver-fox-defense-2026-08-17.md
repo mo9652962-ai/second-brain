@@ -1,3 +1,12 @@
+---
+title: "银狐木马预防 · 千轮研究（2026-08-17）"
+type: note
+domain: Security
+status: active
+tags: [knowledge/security]
+source: null
+date: 2026-08-17
+---
 # 银狐木马预防 · 千轮研究（2026-08-17）
 
 > 来源：公安部网安局 5 起典型案例 + 北京大学通告 + 国家病毒应急中心预警 + 360 年度报告 + 安天追踪 + CN-SEC 分析
