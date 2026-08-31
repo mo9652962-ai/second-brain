@@ -27,6 +27,14 @@ DIR_MOC = {
     "knowledge/Creative": "knowledge-map",
     "knowledge/Archive": "knowledge-map", "knowledge/Daily": "knowledge-map",
     "knowledge/cards": "knowledge-map",
+    # 无独立 MOC 的域 → 挂到 MOC-Inbox（待接入/孤立审阅入口）
+    "knowledge/AI": "MOC-Inbox",
+    "knowledge/Content": "MOC-Inbox",
+    "knowledge/Education": "MOC-Inbox",
+    "knowledge/Development": "MOC-Inbox",
+    "knowledge/gaming": "MOC-Inbox",
+    "knowledge/META": "MOC-Inbox",
+    "knowledge/Product": "MOC-Inbox",
     "memory": "knowledge-map", "concepts": "knowledge-map",
     "research": "MOC-Research", "docs": "knowledge-map",
     "health": "knowledge-map", "playbooks": "knowledge-map",
@@ -85,12 +93,27 @@ def update_moc_research() -> int:
     if not missing:
         return 0
     # 若文件末尾已是 "## 其他" 小节，则合并进去；否则追加新小节
-    # 避免每次运行都追加一个 "## 其他" 头
+    # 用行解析代替正则，避免灾难性回溯（(?:...)*$ 在长文件上会指数级回溯挂死）
     tail = current.rstrip()
-    m = re.search(r"(## 其他\s*\n(?:- \[\[[^\n]*\]\]\s*\n?)*)$", tail)
-    if m:
-        add_lines = "".join(f"- [[{name}]]\n" for name in missing)
-        current = tail[: m.start()] + m.group(1).rstrip() + "\n" + add_lines + "\n"
+    lines = tail.split("\n")
+    other_idx = None
+    for i in range(len(lines) - 1, -1, -1):
+        if lines[i].strip() == "## 其他":
+            other_idx = i
+            break
+    if other_idx is not None:
+        # 找到 "## 其他" 小节的结束位置（下一个 "## " 标题，或文件末尾）
+        end = len(lines)
+        for j in range(other_idx + 1, len(lines)):
+            if lines[j].startswith("## "):
+                end = j
+                break
+        # 去掉小节末尾空行
+        while end > other_idx + 1 and lines[end - 1].strip() == "":
+            end -= 1
+        add_lines = [f"- [[{name}]]" for name in missing]
+        new_lines = lines[:end] + add_lines + lines[end:]
+        current = "\n".join(new_lines) + "\n"
     else:
         add_lines = ["## 其他", ""] + [f"- [[{name}]]" for name in missing]
         current = tail + "\n\n" + "\n".join(add_lines) + "\n"

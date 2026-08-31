@@ -44,3 +44,6 @@ Harmony → ButterLib(2.10.4) → UIExtenderEx → MCM → 官方模块 → Bett
 
 ---
 *k 2026-08-20*
+
+---
+> 🗺️ 属于 [[MOC-Inbox]] · [[Home|🏠 Home]]

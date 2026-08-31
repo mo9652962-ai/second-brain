@@ -56,3 +56,6 @@ Harmony → ButterLib(升 v2.10.4) → UIExtenderEx → MCM → [官方模块]
 
 ---
 *k (Hermes) 2026-08-20 · 问题包 → Gemini → 逐条验证落地*
+
+---
+> 🗺️ 属于 [[MOC-Inbox]] · [[Home|🏠 Home]]

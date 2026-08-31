@@ -150,3 +150,6 @@ interface AiriExtension {
 - 仓库：D:\airi（本地 clone，5199 文件）
 - 官方文档：airi.moeru.ai/docs
 - 角色卡模板：docs/content/en/docs/manual/tamagotchi/character-card-template.md
+
+---
+> 🗺️ 属于 [[MOC-Inbox]] · [[Home|🏠 Home]]

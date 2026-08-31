@@ -529,3 +529,6 @@ Semantic Scholar API 限流了。我换用 Semantic Scholar 网页搜索方式�
 - 任务书要求"三类事件名"，但论文原文描述的是 Task Ledger 包含的**三类内容类别（content categories）**：Facts、Guesses、Plan，而非"事件类型（event types）"。
 - 论文中未出现 "Task Ledger 的事件类型" 这一分类概念。最接近"事件"的描述是 Progress Ledger 的五个问题（task complete? looping? forward progress? which agent next? what instruction?），以及 Section 4.1 的 outer/inner loop 机制。
 - 如需字面匹配验证，请以论文 Figure 2 caption 原文为准：`"facts, guesses, and plan"`。
+
+---
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]
