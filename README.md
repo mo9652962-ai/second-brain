@@ -140,6 +140,9 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 |------|------|------|
 | **[AI 文献周报 08-24~08-30](knowledge/Research/ai-weekly-literature-2026-08-31.md)** | v1.0 | 多源检索（arXiv+OpenAlex+Crossref）15 篇精选 + 精读 3 + 趋势 6；arXiv 冻结实测标注 |
 | **[arXiv 速览 08-31](knowledge/Research/arxiv-2026-08-31-agent-llm.md)** | v1.0 | 08-20→08-28 池补全，28 主 + 16 简评（WikiSkill/MCP-Universe RL/SymTrace 等） |
+| **[多AgentEval 全量基线](knowledge/Research/多AgentEval全量基线-最终-2026-08-31.md)** | v1.0 | 多 Agent 评测体系全量基线落地（冒烟→第一批→20 查询→全量→第三批 A 类调研） |
+| **[Agent 记忆系统千轮研究](knowledge/Research/Agent记忆系统千轮研究-2026-08-31.md)** | v1.0 | 千轮研究：Agent 记忆分层/持久化/跨会话交接 |
+| **[cron 产出学习研究](knowledge/Research/cron产出学习研究-2026-08-31.md)** | v1.0 | 每日 cron 产出整理与学习闭环研究 |
 | **[多 Agent 协作增强](knowledge/Research/多Agent协作增强-千轮研究-2026-08-30.md)** | v1.0 | 千轮研究：六种编排模式定位 + multi-agent-research v1.0→v1.1 增强 |
 | **[联合工作升级 v1.3](knowledge/Research/联合工作升级-v1.3-Antigravity程序化接入-2026-08-30.md)** | v1.0 | Antigravity 程序化接入 + AI 原生组件库落点墨题 |
 | **[每日日志 08-22](memory/2026/08/2026-08-22.md)** | v1.0 | Tavily 配额第 8 次复发（连续 8 工作日）→ Firecrawl 兜底稳定 + reco/Anthropic/NVIDIA Agent 安全多源同证 |
