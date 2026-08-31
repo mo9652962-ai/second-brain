@@ -151,6 +151,7 @@ updated: 2026-08-23
 - ✅ 排障时间盒规则：2h 时间盒 + 确定性 bug 直转重装/卸载决策——✅ 2026-08-31 daily-todo-executor 落地：bannerlord-modding 加「⏱️ 排障时间盒止损线」章节（偏移一致→直转止损）+ windows-game-crash-troubleshooting 已含同规则（8/31 反思当场已加）
 - ✅ cron 批量失败联动诊断（连续第 2 轮升级 P1）：patch hermes-health-check 加「批量失败→FlClash 诊断」分支 + reflection 补跑机制——✅ 2026-08-31 daily-todo-executor 落地：cron_stats.py 新增 batch_failure_check（同 1h 窗口 ≥3 失败自动分流：Connection→FlClash 诊断 / 429·quota→provider 配额诊断）+ SKILL.md 双处补录；8/31 实测抓出 429 批量限流真因（晨 8:58 + 午后 13:34 两窗，非网络）
 - 📌 会话卫生规则：单会话 >800 msgs 主动建议 /new；压缩重放不重复执行历史指令；「/new 开新会话」从 🔒 降为 ⏳ k 可建议（agent 主动提，sora 点头即切）
+- [ ] P1 修 cron 输出路径漂移（连续第 3 周复发，W36 已再归位 4 个）：daily-summary / daily-self-improvement / memory-pruning 输出硬编码根级 `memory/YYYY-MM-DD.md` → 改 `memory/YYYY/MM/` （k 可做 30min，见 W36 周度整理报告）
 - 🔴 闲鱼上架决策 8/31 到期（悬置 32 天，合规子集已备 xianyu-monetization v1.2.0，30min 可上架）——8/31 xianyu-vault-suggestion-executor 已出决策包，等 sora 拍板
 
 ## 🔒 待用户操作（不催促，状态变化时提醒）
