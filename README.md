@@ -9,7 +9,7 @@
 
 [![AI 维护](https://img.shields.io/badge/🤖_AI_维护-Hermes_Agent-blue?style=flat-square)](https://hermes-agent.dev)
 [![自举进化](https://img.shields.io/badge/🔄_自举进化-Active-green?style=flat-square)]()
-[![七大自举系统](https://img.shields.io/badge/🏆_七大自举系统-35_项-gold?style=flat-square)]()
+[![七大自举系统](https://img.shields.io/badge/🏆_七大自举系统-32_项-gold?style=flat-square)]()
 
 **Obsidian + GitHub + Hermes Agent = 持续自我进化的知识体系**
 
@@ -104,7 +104,7 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 | 🎨 | **设计/多媒体** | PPT 设计、AI 美学、图像生成工具 | PPT 优化、AI 图像生成 |
 | 📊 | **效率方法论** | Obsidian 技巧、自动化工作流 | Obsidian 知识图谱、自动化工作流 |
 
-**📈 总计：30 个自建技能文档 · 10 大知识域 · 26 个外部技能集参考**
+**📈 总计：30 个自建技能文档 · 11 大知识域 · 26 个外部技能集参考**
 
 ---
 
@@ -132,12 +132,16 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 
 ---
 
-## 📦 最新技能入库 (2026-08-16 ~ 2026-08-22)
+## 📦 最新技能入库 (2026-08-16 ~ 2026-08-31)
 
 ### 研究笔记
 
 | 技能 | 版本 | 简介 |
 |------|------|------|
+| **[AI 文献周报 08-24~08-30](knowledge/Research/ai-weekly-literature-2026-08-31.md)** | v1.0 | 多源检索（arXiv+OpenAlex+Crossref）15 篇精选 + 精读 3 + 趋势 6；arXiv 冻结实测标注 |
+| **[arXiv 速览 08-31](knowledge/Research/arxiv-2026-08-31-agent-llm.md)** | v1.0 | 08-20→08-28 池补全，28 主 + 16 简评（WikiSkill/MCP-Universe RL/SymTrace 等） |
+| **[多 Agent 协作增强](knowledge/Research/多Agent协作增强-千轮研究-2026-08-30.md)** | v1.0 | 千轮研究：六种编排模式定位 + multi-agent-research v1.0→v1.1 增强 |
+| **[联合工作升级 v1.3](knowledge/Research/联合工作升级-v1.3-Antigravity程序化接入-2026-08-30.md)** | v1.0 | Antigravity 程序化接入 + AI 原生组件库落点墨题 |
 | **[每日日志 08-22](memory/2026/08/2026-08-22.md)** | v1.0 | Tavily 配额第 8 次复发（连续 8 工作日）→ Firecrawl 兜底稳定 + reco/Anthropic/NVIDIA Agent 安全多源同证 |
 | **[每日日志 08-21](memory/2026/08/2026-08-21.md)** | v1.0 | HarnessRisk 评测 Hermes（ASR 65.4%/配置面最脆弱）+ Gartner 推理成本 5x + 语义缓存硬截止 |
 | **[Agent OS / Harness 趋势](knowledge/Research/agent-os-harness-trend-2026-08-22.md)** | v1.0 | 面试视角：Agent 操作系统层出现愈发清晰——Harness 原生 RL 三剑客 SPADE 等 |
@@ -200,9 +204,9 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 
 ```
 📁 仓库体积：约 180MB（含附件与图片）
-📝 Markdown 文件：892 个（正文约 4.6 MB）
+📝 Markdown 文件：949 个（正文约 4.6 MB）
 🧠 自建 Skill 文档：30 个（11 个领域目录）
-🗂️ 知识域：10 个
+🗂️ 知识域：11 个
 ⏰ 首次提交：2026 年 7 月
 🔄 平均更新频率：每 30 分钟自动同步
 ```
