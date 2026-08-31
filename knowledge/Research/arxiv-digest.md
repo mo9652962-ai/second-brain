@@ -1,6 +1,7 @@
 # arXiv AI Agent / LLM 周报
 ---
-- **最新一期**: [[ai-weekly-literature-2026-08-14|2026-08-14 周报]]（AI Agent / 大模型 / 科研工具 · 多源检索）
+- **最新一期**: [[ai-weekly-literature-2026-08-31|2026-08-31 周报]]（AI Agent / 大模型 / 科研工具 · 多源检索）
+- **上一期**: [[ai-weekly-literature-2026-08-14|2026-08-14 周报]]
 - **检索时间**: 2026-07-28 07:44 GMT+8
 - **论文数量**: 15 篇
 - **分类范围**: cs.AI, cs.CL, cs.LG, cs.MA, cs.SE, cs.RO, cs.HC
