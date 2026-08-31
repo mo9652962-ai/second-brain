@@ -5,7 +5,7 @@ date: 2026-08-16
 
 # GitHub 周报 — 2026-08-16（W34）
 
-> 本周周榜：4 个新面孔精选入库 + 5 个连榜跟踪（08-14 已入库）+ paperclip 甄别。同日脚本产物见 [[../knowledge/Research/GitHub-Weekly-2026-08-16|GitHub-Weekly-2026-08-16]]（新建仓库口径，互引互补）。
+> 本周周榜：4 个新面孔精选入库 + 5 个连榜跟踪（08-14 已入库）+ paperclip 甄别。同日脚本产物见 [[../../../knowledge/Research/GitHub-Weekly-2026-08-16|GitHub-Weekly-2026-08-16]]（新建仓库口径，互引互补）。
 
 ## 项目详情表
 
