@@ -55,5 +55,11 @@ date: 2026-08-30
   - 类型检查 vue-tsc ✅ 零错误
   - **效果**：Antigravity/Codex 改墨题前端时不再猜组件 API、不发明 props、不造平行组件
 
+| 11 | **AI 全栈项目实战**（Summer Checkin 自习室）| ⭐中高 | ✅ 已沉淀 | `AI全栈项目-SummerCheckin自习室平台-2026-08-31.md`。**启发：墨题加聊天/实时推送 → 参考 WebSocket Sidecar；大文件上传 → OSS 预签名直传；AI 模块表设计参考 agentrun/agentstep 审计链** |
+
+## 新增更新记录（2026-08-31）
+
+- #11 Summer Checkin 研究完成：抖音图文「我要成为react大神」第一个全栈 AI Agent 项目（48⭐）。核心增量：**WebSocket Sidecar 方案**（独立服务+Cookie 鉴权+幂等）、**OSS 预签名直传**（减服务器带宽）、**AI Agent 表审计链**（agentrun/agentstep/agentdecision/agenttoolcall 四表落执行轨迹）。模型路由/Agent 编排我们已超越。
+
 ---
 > 🗺️ 属于 [[MOC-Productivity]] · [[Home|🏠 Home]]
