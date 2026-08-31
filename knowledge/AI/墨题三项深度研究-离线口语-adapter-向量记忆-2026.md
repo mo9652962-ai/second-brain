@@ -192,3 +192,6 @@ const db = drizzle('duckdb-wasm://?bundles=import-url', { schema })
 - D:\duckdb-wasm（FLOAT[] 向量实证）
 - D:\airi（use-duck-db.ts / providers 56 adapter）
 - 已落地：墨题 frontend/src/libs/vad/ + SpeakingView.vue
+
+---
+> 🗺️ 属于 [[MOC-Inbox]] · [[Home|🏠 Home]]

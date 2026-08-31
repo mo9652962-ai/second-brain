@@ -33,3 +33,6 @@
 - dsh 缺 DEEPSEEK_API_KEY → 无法派发（记录：需要配 key）
 - 反重力 agentapi CLI 有 project_id bug → D 类暂用 k 生成 + grader 验证（或人工 IDE）
 - WorkBuddy 任务包：B2/B3/B4 三个任务合并一个任务包派发（数据类适合批量）
+
+---
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]
