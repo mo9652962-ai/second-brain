@@ -69,6 +69,7 @@ created: 2026-08-09
 - [[memory/2026/08/2026-08-21-daily-review|📋 08-21 每日回顾]] — SRC AI 挖洞三工具落地 + 接单报价 4 问 + 开源私有化变现；🔴 闲鱼决策悬置第 20 天待拍板
 - [[memory/2026/08/2026-08-22-daily-review|📋 08-22 每日回顾]] — 墨题安全自审 4 洞修复 · 网安资料库千轮收官 · Agent OS/Harness 趋势 · 校园便利盒挖洞 4 洞 + 素材第 10 次核对 100% 就绪
 - [[memory/2026/08/suggestions-applied-2026-08-30|🧹 08-30 建议落实]] — 数据溯源卡 3 条入技能 + MCP 安全审计 6 server 全绿 + 数字核对门/agent 分类落地
+- [[knowledge/Research/arxiv-2026-08-31-agent-llm|arXiv 补全速览]] — 28 篇 AI Agent/LLM 论文（08-20→08-28 九日窗口补录：WikiSkill / The Empire harness 收敛 / Safety Does Not Compose / MCP-Universe RL / AI4AI-Bench / Collaboration Tax）
 
 ## 🧭 核心区域
 - [[memory/2026/08/2026-08-19-reflection|🔍 08-19 反思]] — 行动项 3/3 未落地（反思≠执行第 3 次复发）；Tavily 第 6 次复发；SRC 三方向收敛为补天聚焦 · scripts 登记表当场补建
