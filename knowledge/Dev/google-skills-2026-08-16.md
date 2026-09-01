@@ -1,5 +1,5 @@
 ---
-tags: [Agent-Skills, google, skills.sh, 生态, W34]
+tags: [agent-skills, google, skills.sh, 生态, W34]
 aliases: [google-skills, google-agent-skills]
 date: 2026-08-16
 source: https://github.com/google/skills
