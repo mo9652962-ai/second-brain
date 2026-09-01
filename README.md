@@ -132,12 +132,15 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 
 ---
 
-## 📦 最新技能入库 (2026-08-16 ~ 2026-08-31)
+## 📦 最新技能入库 (2026-08-16 ~ 2026-09-01)
 
 ### 研究笔记
 
 | 技能 | 版本 | 简介 |
 |------|------|------|
+| **[arXiv AI Agent / LLM 速览 09-01](knowledge/Research/arxiv-2026-09-01-agent-llm.md)** | v1.0 | 08-29→08-30 新窗口 2 日池（arXiv 索引推进）AI Agent/LLM 强相关速览 |
+| **[双周技能审计 09-01](knowledge/Research/skill-audit-2026-09-01.md)** | v1.0 | 446 Skills（agent 337）审计：14 技能/21 patch 退役模型别名 deepseek-chat→v4-flash 修复 |
+| **[HN 今日深挖 09-01](knowledge/Daily/hackernews-2026-09-01.md)** | v1.0 | Top10 筛 5 条：MV2 扩展下架含 UBO / BirdNet 边缘 AI 鸟类识别等 |
 | **[AI 文献周报 08-24~08-30](knowledge/Research/ai-weekly-literature-2026-08-31.md)** | v1.0 | 多源检索（arXiv+OpenAlex+Crossref）15 篇精选 + 精读 3 + 趋势 6；arXiv 冻结实测标注 |
 | **[arXiv 速览 08-31](knowledge/Research/arxiv-2026-08-31-agent-llm.md)** | v1.0 | 08-20→08-28 池补全，28 主 + 16 简评（WikiSkill/MCP-Universe RL/SymTrace 等） |
 | **[多AgentEval 全量基线](knowledge/Research/多AgentEval全量基线-最终-2026-08-31.md)** | v1.0 | 多 Agent 评测体系全量基线落地（冒烟→第一批→20 查询→全量→第三批 A 类调研） |
@@ -207,7 +210,7 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 
 ```
 📁 仓库体积：约 180MB（含附件与图片）
-📝 Markdown 文件：949 个（正文约 4.6 MB）
+📝 Markdown 文件：985 个（正文约 4.6 MB）
 🧠 自建 Skill 文档：30 个（11 个领域目录）
 🗂️ 知识域：11 个
 ⏰ 首次提交：2026 年 7 月

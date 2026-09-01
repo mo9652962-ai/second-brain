@@ -1,5 +1,5 @@
 ---
-tags: [research, article-study, AI-workflow, cost-control]
+tags: [research, article-study, ai-workflow, cost-control]
 created: 2026-07-31
 status: absorbed
 ---

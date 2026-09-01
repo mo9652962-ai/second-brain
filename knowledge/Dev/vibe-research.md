@@ -1,5 +1,5 @@
 ---
-tags: [research, AI-workflow, academic, methodology]
+tags: [research, ai-workflow, academic, methodology]
 domain: AI
 ---
 # Vibe-Research：AI 辅助科研全流程
