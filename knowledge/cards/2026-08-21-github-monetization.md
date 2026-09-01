@@ -8,7 +8,7 @@ tags:
   - 变现
   - business-model
 created: 2026-08-21
-source: "[[knowledge/Productivity/github-monetization-2026-08-20.md]]"
+source: "[[knowledge/Productivity/github-monetization-2026-08-20]]"
 ---
 
 # 🃏 知识卡片 · 用开源项目变现：别做红海，做「私有化部署 + 订阅」
@@ -46,4 +46,4 @@ source: "[[knowledge/Productivity/github-monetization-2026-08-20.md]]"
 
 ---
 
-*卡片来源：当天知识库精选 · [[knowledge/Productivity/github-monetization-2026-08-20.md|github-monetization 落库]]（🥇 变现业务相关性最高 + 明确产品化行动项 + 独立实证；亚军：当日 arXiv 速览 …-30% 完成度/难度静态可预测，补全性质）*
+*卡片来源：当天知识库精选 · [[knowledge/Productivity/github-monetization-2026-08-20|github-monetization 落库]]（🥇 变现业务相关性最高 + 明确产品化行动项 + 独立实证；亚军：当日 arXiv 速览 …-30% 完成度/难度静态可预测，补全性质）*
