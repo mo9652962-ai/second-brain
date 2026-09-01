@@ -19,7 +19,7 @@ source: export.arxiv.org API
 > **检索时间**: 2026-09-01 GMT+8
 > **窗口**: 08-29 → 08-30 两日（arXiv 索引自 08-28T17:56Z 推进至 08-30T08:17Z；上一份 08-31 速览只覆盖到 08-28，本次为新窗口首次收录）
 > **收集**: 6 类别时间窗全量 → 08-29 238 篇 + 08-30 242 篇唯一（cs.AI 一次瞬时 SSL 错误已重试补齐）= **480 篇**
-> **精选**: 关键词命中 ~304 篇 → 人工筛出 **31 主条目 + 17 简评**（仅保留 LLM/AI Agent 本体相关，剔除离题 CV/调度/博弈）
+> **精选**: 关键词命中 ~304 篇 → 人工筛出 **31 主条目 + 16 简评**（仅保留 LLM/AI Agent 本体相关，剔除离题 CV/调度/博弈）
 > **数据源**: [export.arxiv.org](https://export.arxiv.org)
 
 ---
@@ -314,13 +314,12 @@ source: export.arxiv.org API
 | 8 | [2608.29464](https://arxiv.org/abs/2608.29464v1) | CoT Faithfulness Varies with Preference Cues | FACE-Eval（5100 样本）：工具返回/隐式线索比用户消息/显式线索更少被 CoT 言说，监控可靠性存疑 |
 | 9 | [2608.29483](https://arxiv.org/abs/2608.29483v1) | GeoAgent | VLM 地理定位的具身导航基准：国家/大洲级行、区域级差，存在发达/发展中地区偏差 |
 | 10 | [2608.29621](https://arxiv.org/abs/2608.29621v1) | CineForge | 自进化视频生产 agent：CPPE 跨故事策略进化，CineScope 4.024→4.380、review LLM 调用减 37% |
-| 11 | [2608.29357](https://arxiv.org/abs/2608.29357v1) | LiteSearch-VL | 小多模态搜索 agent：轨迹蒸馏到 2B/4B 转移"行为契约"，瓶颈在答案验证而非检索深度 |
-| 12 | [2608.29058](https://arxiv.org/abs/2608.29058v1) | RouteSparse | 输入条件化稀疏注意力路由：128K prompt 下 6.5x prefill 提速、RULER 只掉 0.2（vs 固定路由掉 1.6） |
-| 13 | [2608.29252](https://arxiv.org/abs/2608.29252v1) | Dynamic Important Example Mining (DIEM) | 梯度对齐重要性估计 + 约束 batch 重加权，让 RFT 数据利用随训练自适应 |
-| 14 | [2608.29575](https://arxiv.org/abs/2608.29575v1) | SemTrace | 源接地语义水印：从受保护文档构造二元事实签名，检测生成文本是否受其影响，不偏 token 概率 |
-| 15 | [2608.29978](https://arxiv.org/abs/2608.29978v1) | Evolutionary Soups | 进化算法训练 MoE gating，推理时按隐藏态动态合并专家，多目标对齐 |
-| 16 | [2608.30035](https://arxiv.org/abs/2608.30035v1) | Multi-Solver Disagreement Rewards | 用异构多求解器分歧做 Challenger 奖励，破单模型采样不确定性奖励坍缩 |
-| 17 | [2608.29897](https://arxiv.org/abs/2608.29897v1) | When History Is Multimodal | 重思长程 agent 上下文管理：视觉渲染作为记忆载体的公平受控对比 |
+| 11 | [2608.29058](https://arxiv.org/abs/2608.29058v1) | RouteSparse | 输入条件化稀疏注意力路由：128K prompt 下 6.5x prefill 提速、RULER 只掉 0.2（vs 固定路由掉 1.6） |
+| 12 | [2608.29252](https://arxiv.org/abs/2608.29252v1) | Dynamic Important Example Mining (DIEM) | 梯度对齐重要性估计 + 约束 batch 重加权，让 RFT 数据利用随训练自适应 |
+| 13 | [2608.29575](https://arxiv.org/abs/2608.29575v1) | SemTrace | 源接地语义水印：从受保护文档构造二元事实签名，检测生成文本是否受其影响，不偏 token 概率 |
+| 14 | [2608.29978](https://arxiv.org/abs/2608.29978v1) | Evolutionary Soups | 进化算法训练 MoE gating，推理时按隐藏态动态合并专家，多目标对齐 |
+| 15 | [2608.30035](https://arxiv.org/abs/2608.30035v1) | Multi-Solver Disagreement Rewards | 用异构多求解器分歧做 Challenger 奖励，破单模型采样不确定性奖励坍缩 |
+| 16 | [2608.29897](https://arxiv.org/abs/2608.29897v1) | When History Is Multimodal | 重思长程 agent 上下文管理：视觉渲染作为记忆载体的公平受控对比 |
 
 ---
 
@@ -350,7 +349,7 @@ source: export.arxiv.org API
 
 ---
 
-*本速览由 cron 自动生成：08-29→08-30 两日窗口全量收集（480 篇）→ 关键词过滤（~304 篇）→ 人工精选（31 主条目 + 17 简评）→ 关键论文交叉验证。数据源 export.arxiv.org。*
+*本速览由 cron 自动生成：08-29→08-30 两日窗口全量收集（480 篇）→ 关键词过滤（~304 篇）→ 人工精选（31 主条目 + 16 简评）→ 关键论文交叉验证。数据源 export.arxiv.org。*
 
 ---
 > 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]
