@@ -155,6 +155,12 @@ updated: 2026-08-23
 - 🔴 闲鱼上架决策 8/31 到期（悬置 32 天，合规子集已备 xianyu-monetization v1.2.0，30min 可上架）——8/31 xianyu-vault-suggestion-executor 已出决策包，等 sora 拍板
 
 ## 🔒 待用户操作（不催促，状态变化时提醒）
+### 🧭 9/1 反思行动项（daily-reflection 复盘 8-31，执行者必读）
+- 🔴 会话卫生 P0（连续第 2 轮升级）：主会话 20260822_125036 已 3082 msgs（8-31 一日 +1171）必须 /new；k 直接建议不再等点头；压缩重放标记不重复执行历史指令（agent 可做，5min）
+- ⏳ 8-9am cron 429 错峰：8-9 点窗口 9 个 cron 挤堆（8-31 晨八连 429 + 午后四连，20/54 失败）；第一批 3 个当场分散（daily-self-improvement 8:30→6:45 / daily-health-check 8:45→15:45 / cron-alert-watchdog 9:00→6:30）+ patch hermes-automation-patterns 加 429 错峰硬规则（agent 可做，30min）
+- ⏳ 主模型可用性验证：fangzhou-2 /v1/models 查 deepseek-v4-flash 是否下架（8-31 14:50 400 模型已关闭）→ P1 切换决策；jiyuanlvdong 余额查 + 充值提醒（8-31 21:00 402）（agent 可做，15min）
+- ⏳ 产出型 cron 补位：daily-review 08-31 缺失（18:00 双 Connection error，三度复发）→ 缺失自动补生成落脚本（agent 可做，30min）
+- 🔴 闲鱼上架决策 9/1 推送升级（悬置 33 天，合规子集已备 xianyu-monetization v1.2.0，30min 可上架）——升级主动推送，等 sora 拍板
 ### 🧭 8/20 反思行动项（daily-reflection 复盘 8-19，执行者必读）
 - [x] P0 语义缓存最小版落地——✅ 8/21 完成（硬截止 8/22 前）：原实现只挂 tavily provider、实际流量走 exa/searxng/firecrawl 兜底时从未命中（cache 文件从未生成）；已在 `web_tools.py::web_search_tool` chokepoint 上移统一缓存覆盖全部后端，实测 exact 命中生效，submit `84d813bf2`
 - [x] P1 health_provider_check.py 加余额阈值告警 → ✅ 8/21：新增 `_balance_flag` 解析 HTTP 402/403/429 错误体中的「额度/余额」信息（keylink/jiyuanlvdong 中转站内嵌无独立端点），余额不足自动标 ⚠️。实测 kimi suspended / fangzhou-2 quota(8/28 重置) 被正确标红；keylink 已恢复 OK（¥0.05 裸奔解除）
