@@ -4,7 +4,7 @@ domain: Finance
 type: moc
 status: active
 created: 2026-08-16
-updated: 2026-08-31
+updated: 2026-09-01
 ---
 
 # 📈 金融域 — 股票分析
@@ -18,6 +18,7 @@ updated: 2026-08-31
 - [[knowledge/Finance/每日股票分析-2026-08-17|每日股票分析 08-17]]
 - [[knowledge/Finance/每日股票分析-2026-08-18|每日股票分析 08-18]]
 - [[knowledge/Finance/每日股票分析-2026-08-19|每日股票分析 08-19]] — 旭创放量暴跌，防御优先
+- [[knowledge/Finance/每日股票分析-2026-09-01|每日股票分析 09-01]] — 企稳修复，宁德破位
 
 ## 📊 方法论增强
 
