@@ -187,4 +187,4 @@ class ModelPool:
 3. **时间**：现在开工 Phase 1，还是先存方案书以后排期？
 
 ---
-> 🗺️ 属于 [[MOC-Development]] · 关联 [[AI全栈项目-SummerCheckin自习室平台-2026-08-31]] · [[Home|🏠 Home]]
+> 🗺️ 属于 [[MOC-Dev]] · 关联 [[AI全栈项目-SummerCheckin自习室平台-2026-08-31]] · [[Home|🏠 Home]]
