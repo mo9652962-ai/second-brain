@@ -11,7 +11,8 @@ date: 2026-08-31
 
 > 目标：评估如何复现「AI 学习平台 Summer Checkin」的核心功能（Agent 智能体 / RAG / 聊天室 / Model Pool）
 > 来源研究：`AI全栈项目-SummerCheckin自习室平台-2026-08-31.md`（已 clone 实证，48⭐/MIT）
-> 决策待定：sora 确认路线后进入实施
+> 决策已定：**墨题增量路线**，Codex 执行，k 审验
+> **Phase 1 已完成（2026-09-01，commit `c676d44a`）**；Phase 2/3 待排期
 
 ---
 
