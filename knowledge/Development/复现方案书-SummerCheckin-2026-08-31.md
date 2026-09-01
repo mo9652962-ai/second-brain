@@ -14,7 +14,8 @@ date: 2026-08-31
 > 决策已定：**墨题增量路线**，Codex 执行，k 审验
 > **Phase 1 已完成（2026-09-01，commit `c676d44a`）**：Agent Runtime + Model Pool
 > **Phase 2 已完成（2026-09-01，commit `7e88e9f9`）**：RAG 知识库（embedding 走 DashScope text-embedding-v4 实测 dim=1024，检索召回 score 0.654）
-> Phase 3 待排期：WebSocket 聊天室
+> **Phase 3 已完成（2026-09-01，commit `cfb107a0`）**：WebSocket 聊天室 + @AI 流式（阿墨人设，WS 7/7 实测通过）
+> **Summer Checkin 复现全部落地 ✅**
 
 ---
 
