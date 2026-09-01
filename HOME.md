@@ -51,6 +51,7 @@ created: 2026-08-09
 - [[memory/2026/08/2026-08-30-daily-review|📋 08-30 每日回顾]] — 联合工作 v1.3 升级日：Antigravity 程序化接入 + 多Agent协作增强 + AI原生组件库落点墨题；闲鱼决策 8/31 到期（悬置 32 天）
 - [[memory/2026/08/2026-08-31-xianyu-vault-suggestion-executor|🧹 08-31 闲鱼专项建议执行报告]] — 🔴 闲鱼上架决策 8/31 今日到期（悬置 33 天）：决策包 30 秒版 + 上架就绪清单 + 未完成待办 6 项
 - [[memory/2026/08/2026-08-30-reflection|🪞 08-30 反思日记]] — 联合工作 v1.3 升级日；3 改进点：排障无时间盒(19h)/cron联动诊断未落地(缺档6天)/会话卫生(1911msgs压缩重放)；知识吸收 4/4 全中达标
+- [[memory/2026/08/2026-08-31-reflection|🪞 08-31 反思日记]] — 多 Agent Eval 全量基线 20/20 + 反思行动项 2/2 闭环；3 改进点：会话卫生(3082msgs连2轮未执行)/cron 429 错峰未根治(20/54失败)/主模型下架+fallback余额双风险；知识吸收 4/4 达标
 - [[memory/2026/08/weekly-2026-08-16|📚 W34 周度整理]] — memory 归位 6 + research 归位 3 + MOC×5 更新 + Finance MOC 新建
 - [[memory/2026/08/weekly-learning-2026-08-16|📚 W34 学习回顾]] — AgentScope 实证测评提 PR + 墨题学习型设计 + Behavioral Contracts 落地容灾
 - [[memory/2026/08/weekly-2026-08-23|📚 W35 周度整理]] — 网安/开发/META/SOP 批量挂载 + memory 归位 + 孤立 95→31
