@@ -424,3 +424,5 @@ grader/rubric version, policy decision id
 
 只有在这三项都能由配对数据、可复核 grader、脱敏 transcript 和明确统计方法支持时，才应把某类任务纳入默认多 Agent 路由。
 
+---
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]
