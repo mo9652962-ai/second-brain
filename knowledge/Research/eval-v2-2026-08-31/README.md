@@ -100,3 +100,5 @@ formal design is 20 task templates × 3 instances × 3 arms = 180 matched runs.
 Dry runs, retries, and the separate Regression-20 suite do not increase that
 sample count. External side effects must remain simulated or dry-run only.
 
+---
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]
