@@ -132,12 +132,13 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 
 ---
 
-## 📦 最新技能入库 (2026-08-16 ~ 2026-09-01)
+## 📦 最新技能入库 (2026-08-16 ~ 2026-09-02)
 
 ### 研究笔记
 
 | 技能 | 版本 | 简介 |
 |------|------|------|
+| **[多Agent协作增强 v2.7](knowledge/Research/多Agent协作增强v2.7-千轮研究-2026-09-02.md)** | v2.7 | 千轮研究第二轮：交接结构化>叙述压缩（50实例硬数据）+ 上下文工程补全，与 v2.6/v1.5/v1.4 体系闭环 |
 | **[arXiv AI Agent / LLM 速览 09-01](knowledge/Research/arxiv-2026-09-01-agent-llm.md)** | v1.0 | 08-29→08-30 新窗口 2 日池（arXiv 索引推进）AI Agent/LLM 强相关速览 |
 | **[双周技能审计 09-01](knowledge/Research/skill-audit-2026-09-01.md)** | v1.0 | 446 Skills（agent 337）审计：14 技能/21 patch 退役模型别名 deepseek-chat→v4-flash 修复 |
 | **[HN 今日深挖 09-01](knowledge/Daily/hackernews-2026-09-01.md)** | v1.0 | Top10 筛 5 条：MV2 扩展下架含 UBO / BirdNet 边缘 AI 鸟类识别等 |
@@ -210,7 +211,7 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 
 ```
 📁 仓库体积：约 180MB（含附件与图片）
-📝 Markdown 文件：985 个（正文约 4.6 MB）
+📝 Markdown 文件：961 个（正文约 4.6 MB）
 🧠 自建 Skill 文档：30 个（11 个领域目录）
 🗂️ 知识域：11 个
 ⏰ 首次提交：2026 年 7 月

@@ -1,5 +1,5 @@
 ---
-tags: [research, AI, collaboration, academic, LLM]
+tags: [research, ai, collaboration, academic, LLM]
 domain: Academic
 ---
 # AI 科研协作：110 亿 Token 的经验
