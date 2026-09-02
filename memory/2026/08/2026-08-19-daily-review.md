@@ -1,5 +1,5 @@
 ---
-tags: [daily-review, knowledge-absorption, xianyu, monetization, security, SOP, cron]
+tags: [daily-review, knowledge-absorption, xianyu, monetization, security, sop, cron]
 created: 2026-08-19
 type: daily-review
 ---

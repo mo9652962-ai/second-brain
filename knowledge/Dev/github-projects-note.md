@@ -1,5 +1,5 @@
 ---
-tags: [AI, learning, tutor, architecture, deep-learning]
+tags: [ai, learning, tutor, architecture, deep-learning]
 domain: AI
 ---
 # DeepTutor 架构吸收笔记

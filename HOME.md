@@ -60,6 +60,7 @@ created: 2026-08-09
 - [[memory/2026/08/2026-08-18-maintenance|🔧 08-18 维护]] — 断链 9→0 · 空壳 2 删 · 孤立 4 补链 · DIR_MOC 清理
 - [[memory/2026/08/2026-08-31-maintenance|🔧 08-31 维护]] — 断链 25→0 · README 路径 6 修 · 标签 6 组归一（ai→AI/llm→LLM/pcb/redis）· 空文件 0
 - [[memory/2026/09/2026-09-01-maintenance|🔧 09-01 维护]] — 断链 10→0（5 真修 + 5 误报，修审计脚本 .md bug）· 空文件 0 · 标签 0 冲突
+- [[memory/2026/09/2026-09-02-maintenance|🔧 09-02 维护]] — 断链 0 真 · 空壳 21 删 · 标签 0 冲突 · 根级日志归位 · 孤立 18%
 - [[memory/2026/08/2026-08-18-daily-review|📋 08-18 每日回顾]] — 安全/SRC 变现研究日：信息泄露首单 SOP + 网安 offer 路径 + AI 红队工具选型 + 多 agent 协作背书 · 🔴 闲鱼 8/18 最后窗口待拍板
 
 - [[memory/2026/08/2026-08-19-maintenance|🔧 08-19 维护]] — 断链 2 修 · 空壳 13 删 · 标签 0 冲突 · MOC 补链 15
@@ -77,6 +78,9 @@ created: 2026-08-09
 - [[knowledge/Research/arxiv-2026-08-31-agent-llm|arXiv 补全速览]] — 28 篇 AI Agent/LLM 论文（08-20→08-28 九日窗口补录：WikiSkill / The Empire harness 收敛 / Safety Does Not Compose / MCP-Universe RL / AI4AI-Bench / Collaboration Tax）
 - [[knowledge/Research/arxiv-2026-09-01-agent-llm|arXiv 今日速览]] — 31 篇 AI Agent/LLM 论文（08-29+08-30 新窗口：Agent Zero Memory 溯源记忆 / SearchWiki wiki 导航 / APIFlow-Bench / Facts Without Rules 交接泄漏 / Safe to Resume 回滚攻击）
 - [[memory/2026/09/2026-09-01-daily-review|📋 09-01 每日回顾]] — Agent Zero Memory 溯源记忆双 SOTA + GitHub 私有化变现卡片 + 技能双周审计 14技能21patch + 闲鱼素材第 12 次核验；🔴 闲鱼上架决策悬置 34 天待拍板
+- [[memory/2026/09/2026-09-02-vault-suggestion-executor|🧹 09-02 闲鱼专项建议执行报告]] — 闲鱼上架决策悬置第 34 天（等 sora 一句话拍板）+ 主图尺寸勘误 750×750 + 今日 3 项优先级计划
+- [[memory/2026/09/2026-09-02-daily-todo-executor|📋 09-02 每日待办落实]] — 9/2 反思行动项 3/3 落地（patch daily-knowledge-review reconcile + Tavily 降级拍板 + FlClash 推送）+ 陈旧待办剔除（主模型验证已闭环）+ 闲鱼悬置 34 天
+- [[knowledge/Research/arxiv-2026-09-02-agent-llm|arXiv 今日速览]] — 35 篇 AI Agent/LLM 论文（08-31+09-01 新窗口：Gated-Memory Routing / EvoSkill Injection 技能安全 / Explore More Drift Less / Harness-of-Harness / SoK MAS 安全 / Compile Don't Memorize）
 
 ## 🧭 核心区域
 - [[memory/2026/08/2026-08-19-reflection|🔍 08-19 反思]] — 行动项 3/3 未落地（反思≠执行第 3 次复发）；Tavily 第 6 次复发；SRC 三方向收敛为补天聚焦 · scripts 登记表当场补建
