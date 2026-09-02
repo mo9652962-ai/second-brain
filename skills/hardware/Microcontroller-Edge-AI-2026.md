@@ -1,7 +1,7 @@
 ---
 name: Microcontroller-Edge-AI-2026
 description: 单片机与边缘 AI 全栈开发 2026 版，覆盖 ESP32 / STM32 / RISC-V / TinyML / Zephyr 生态
-tags: [MCU, 嵌入式, RISC-V, TinyML, Edge AI, esp32, STM32, Zephyr]
+tags: [MCU, 嵌入式, RISC-V, TinyML, Edge ai, esp32, STM32, Zephyr]
 category: Hardware
 created: 2026-07-28
 updated: 2026-07-28

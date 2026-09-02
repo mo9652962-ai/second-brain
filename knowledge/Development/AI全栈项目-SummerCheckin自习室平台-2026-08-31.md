@@ -100,7 +100,7 @@ date: 2026-08-31
 
 ## 元信息
 
-- 话题：#全栈 #Agent #ai #vibecoding #vibecoding大赏
+- 话题：#全栈 #agent #ai #vibecoding #vibecoding大赏
 - 发布时间：2026-08-30
 - 抓取时间：2026-08-31 22:40（Playwright 拦截 RENDER_DATA 成功）
 

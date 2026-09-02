@@ -1,5 +1,5 @@
 ---
-tags: [pcb, AI, design-automation, research, hardware]
+tags: [pcb, ai, design-automation, research, hardware]
 domain: Hardware
 status: adopted
 ---
