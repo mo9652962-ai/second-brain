@@ -1,5 +1,5 @@
 ---
-tags: [workflow, AI, automation, guide, hermes]
+tags: [workflow, ai, automation, guide, hermes]
 domain: AI
 ---
 # AI 工作流搭建实战指南

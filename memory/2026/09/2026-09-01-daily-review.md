@@ -23,7 +23,7 @@ type: daily-review
 
 ## 其他重要进展
 
-- **Obsidian 结构维护**：断链 10 → 0（5 真实修复 + 5 脚本误报），顺带修了 `vault_link_audit.py` 的 `.md` 后缀误报 bug（`[[path/note.md]]` 被误判断链），空文件 0、标签冲突 0，孤立率 16% 健康线内 → `memory/2026/09/2026-09-01-maintenance.md`
+- **Obsidian 结构维护**：断链 10 → 0（5 真实修复 + 5 脚本误报），顺带修了 `vault_link_audit.py` 的 `.md` 后缀误报 bug（``path/note.md`` 被误判断链），空文件 0、标签冲突 0，孤立率 16% 健康线内 → `memory/2026/09/2026-09-01-maintenance.md`
 - **闲鱼素材第 12 次核验 PASS**：3 张主图 PIL 实测 750×750 方形（51-56KB 无损坏）+ 上架操作清单在位 —— ⚠️ projects/current.md 记录的「750×1000 3:4」已过时，上架时按实测 750×750 用图
 - **health 巡检**：主链路 custom:fangzhou-2 OK(1.9s) + fallback jiyuanlvdong-2 OK，磁盘/内存健康；异常集中在 keylink 余额 ¥0.0047 将尽 + 8/31 两产物缺失未补跑（daily-monetization-review / daily-wechat-knowledge-card）
 - **8-9am cron 429 错峰首批已落地**：daily-self-improvement 8:30→6:45 / daily-health-check 8:45→15:45 / cron-alert-watchdog 9:00→6:30（9/1 反思行动项）
@@ -61,3 +61,6 @@ type: daily-review
 ---
 
 _生成: daily-knowledge-review cron · k (Hermes) · 2026-09-01_
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

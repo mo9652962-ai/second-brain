@@ -1,7 +1,7 @@
 ---
 name: PCB-Design-Automation-2026
 description: PCB 设计自动化全流程 Skill，覆盖 2026 年 AI 工具生态、DFM 最佳实践、高速设计原则、小批量制造选型
-tags: [pcb, EDA, AI, 硬件设计, DFM, 高速设计]
+tags: [pcb, EDA, ai, 硬件设计, DFM, 高速设计]
 category: Hardware
 created: 2026-07-28
 updated: 2026-07-28

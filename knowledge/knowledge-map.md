@@ -30,7 +30,7 @@ updated: 2026-08-31
 
 
 
-> 所有知识领域的索引与关联。最后更新: 2026-09-01（W36 周度整理：Vibe Coding/Agent 工作流 + 数模实证 + 量化交易入库 + memory 归位）
+> 所有知识领域的索引与关联。最后更新: 2026-09-02（W36 周度整理：Vibe Coding/Agent 工作流 + 数模实证 + 量化交易入库 + memory 归位）
 
 
 
@@ -781,7 +781,7 @@ MCP 生态: GitHub + Filesystem + JLCPCB(38工具) + Obsidian(笔记操作)
 
 || [[mattpocock-skills]] | 工程经验 | [[mattpocock-methodology]] | engineering-workflow | [[ibelick-ui-skills]] |
 
-|| [[mattpocock-methodology]] | [[mattpocock-skills]] | 8051/CAD/workflow skill | 仓库外交接文档 |
+|| [[mattpocock-methodology]] | [[mattpocock-skills]] | 8051/CAD/workflow skill | [[../AGENTS]] |
 
 || [[airi]] | AI Agent 技术 | 多供应商集成参考 | [[grok-build]] |
 

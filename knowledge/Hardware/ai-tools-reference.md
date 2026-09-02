@@ -1,5 +1,5 @@
 ---
-tags: [design, AI-tools, reference, productivity]
+tags: [design, ai-tools, reference, productivity]
 domain: Design
 ---
 # AI 设计工具参考

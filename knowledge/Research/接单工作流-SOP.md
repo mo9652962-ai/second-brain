@@ -1,5 +1,5 @@
 ---
-tags: [workflow, SOP, freelancing, xianyu]
+tags: [workflow, sop, freelancing, xianyu]
 created: 2026-07-30
 status: draft
 ---
