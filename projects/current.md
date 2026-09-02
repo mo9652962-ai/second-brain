@@ -1,6 +1,6 @@
 ﻿---
 tags: [projects, active]
-updated: 2026-08-23
+updated: 2026-09-02
 ---
 
 # 当前项目状态
@@ -125,8 +125,8 @@ updated: 2026-08-23
 ## 🔄 进行中 / 已重新排期
 
 ### 🎯 闲鱼上架（P0，**决策悬置第 32 天，8/31 决策到期**，连续顺延第 30+ 天）
-- [ ] 上架「AI 代做 PPT」商品 → 🔴 **决策悬置第 33 天，8/31 决策到期＝今日**：素材 100% 就绪（8/6 生成无损坏）；决策「上架（30min）or 放弃」，操作清单见 outputs/xianyu-master/上架素材包/；合规改造子集已就绪（敏感词清单/同款频次控制/数模标题改写 → xianyu-monetization v1.2.0）；8/31 vault-suggestion-executor 已出决策包 → memory/2026/08/2026-08-31-xianyu-vault-suggestion-executor.md
-- [x] 主图制作：3 张模板图（前后对比/价格表/服务承诺）→ ✅ 08-03 已生成：`outputs/xianyu-master/上架素材包/`（主图1-3，750×1000 3:4，思源黑体+蓝橙撞色+无极限词）→ 上架时直接上传，无需再做
+- [ ] 上架「AI 代做 PPT」商品 → 🔴 **决策悬置第 34 天（8/31 到期已过；≥7 天规则→周检点，9/1 已升级主动推送，等 sora 一句话拍板）**：素材 100% 就绪（8/6 生成无损坏，9/1 第 12 次核验 PASS）；决策「上架（30min）or 放弃」，操作清单见 outputs/xianyu-master/上架素材包/；合规改造子集已就绪（敏感词清单/同款频次控制/数模标题改写 → xianyu-monetization v1.2.0）；决策包见 memory/2026/08/2026-08-31-xianyu-vault-suggestion-executor.md + 9/2 复核 memory/2026/09/2026-09-02-vault-suggestion-executor.md
+- [x] 主图制作：3 张模板图（前后对比/价格表/服务承诺）→ ✅ 08-03 已生成：`outputs/xianyu-master/上架素材包/`（主图1-3，**实测 750×750 方形 51-57KB**，思源黑体+蓝橙撞色+无极限词）→ 上架时直接上传，无需再做
 - [ ] 同步上架「论文排版/润色」商品（素材包已有现成文案）→ 顺延 8/17 同批上
 - [ ] 补 PPT 样例素材：从现有作品提 2-3 个样例页 + 「仅供参考」水印 → portfolio/ → 需 sora 手动导出截图（无 LibreOffice/python-pptx 渲染，无法自动化）→ 上架操作清单已注明详情图可复用主图2/3 兜底
 - [ ] 数学练习册定制文案挂载（35元/份）→ 顺延 8/17 顺带
@@ -165,6 +165,11 @@ updated: 2026-08-23
 - ✅ 主模型可用性验证：fangzhou-2 /models 无 `deepseek-v4-flash` 别名（仅版本化 `-ga-260731`），但**真实推理仍路由成功**（8/31 的 400 为瞬时，非下架）；jiyuanlvdong-2 推理 HTTP 200 正常 ✅ → 无需全局切主模型
 - ✅ 产出型 cron 补位：8/31 daily-review 缺失已补写 `memory/2026/08/2026-08-31-daily-review.md`（基于 8/31 reflection 实测）；patch hermes-automation-patterns 加「产出型 cron 失败补位硬规则」✅
 - 🔴 闲鱼上架决策 9/1 推送升级（悬置 33 天，合规子集已备 xianyu-monetization v1.2.0，30min 可上架）——升级主动推送，等 sora 拍板
+### 🧭 9/2 反思行动项（daily-reflection 复盘 9-01，执行者必读）
+- 🛠️ patch daily-knowledge-review：明日行动项生成前 reconcile projects/current.md 的 ✅ 状态，剔除陈旧待办（9/1 实测踩中：主模型验证 20:06 已完成，22:39 daily-review 仍列为 9/2 待办，差点误报）（agent 可做，20min）
+- 🛠️ Tavily 决策拍板：配额耗尽连续 12 工作日，「评估 plan 升级」一直未决——降级为末位备选（Firecrawl→DDGS→SearXNG→Tavily），从「评估」改「已执行」（agent 可做，10min）
+- 🛠️ FlClash 升级推送 + 影响面评估：连续 5 次标 P0 无触达闭环——给 sora 单条醒目请求（30 秒重启操作清单）+ 消息网关离线影响面核查，按结果降级定性（agent 可做，15min）
+- 🔴 闲鱼上架决策（悬置第 34 天）：决策包 100% 就绪，30min 复制粘贴可上 3 商品（PPT 30-80 / 论文 30 / 练习册 35），合规红线已内置——等 sora 拍板
 ### 🧭 8/20 反思行动项（daily-reflection 复盘 8-19，执行者必读）
 - [x] P0 语义缓存最小版落地——✅ 8/21 完成（硬截止 8/22 前）：原实现只挂 tavily provider、实际流量走 exa/searxng/firecrawl 兜底时从未命中（cache 文件从未生成）；已在 `web_tools.py::web_search_tool` chokepoint 上移统一缓存覆盖全部后端，实测 exact 命中生效，submit `84d813bf2`
 - [x] P1 health_provider_check.py 加余额阈值告警 → ✅ 8/21：新增 `_balance_flag` 解析 HTTP 402/403/429 错误体中的「额度/余额」信息（keylink/jiyuanlvdong 中转站内嵌无独立端点），余额不足自动标 ⚠️。实测 kimi suspended / fangzhou-2 quota(8/28 重置) 被正确标红；keylink 已恢复 OK（¥0.05 裸奔解除）
@@ -207,7 +212,7 @@ updated: 2026-08-23
 
 ---
 
-_由 k (Hermes) 在每次会话结束时更新 | 最后更新: 2026-08-22（weekly-todo-cleanup cron：8/16–8/22 完成项归档 + 未完成项重新排期）_
+_由 k (Hermes) 在每次会话结束时更新 | 最后更新: 2026-09-02（vault-suggestion-executor cron：闲鱼专项复核 + 主图尺寸勘误）_
 
 ---
 
