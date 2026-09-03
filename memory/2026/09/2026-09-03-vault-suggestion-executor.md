@@ -46,9 +46,9 @@ status: completed
 
 1. **「搭网站/写脚本」主图 3 张生成**（素材包待办 #2，agent 可执行直接落地）：
    - 脚本 `scripts/xianyu-web-main-gen.py`（复用 PPT 主图十轮研究风格：3:4→实际 750×750 方形、思源黑体、蓝橙撞色、emoji 单独渲染）
-   - 输出 `outputs/xianyu-master/上架素材包/网站主图{1-3}.png`（前后对比/价格表/服务承诺，67-76KB）
+   - 输出 `outputs/xianyu-master/上架素材包/网站主图{1-3}.png`（前后对比/价格表/服务承诺，48-63KB）
    - 3 张 vision_analyze 全部 PASS（文字清晰、卡片对齐、emoji 真实渲染、CTA 完整）
-   - ⚠️ 尺寸说明：脚本按 750×1000 输出，实际生成 750×750（与 PPT 主图一致，闲鱼移动端 1:1 亦可）。上架时直接上传。
+   - ✅ 尺寸 750×750（1:1 方形）与 PPT 主图一致（ad-hoc 验证脚本实测校验通过；初版误用 3:4 已修正）
 2. **脚本登记**：`scripts/README.md` 新增 xianyu-web-main-gen.py 条目（杜绝脚本无声消失）
 3. **素材包待办更新**：`搭网站写脚本-商品素材包.md` 主图生成项 ✅
 4. **决策状态更新**：projects/current.md 决策期改「悬置第 35 天」
