@@ -35,6 +35,7 @@
 | vault-structure.py | vault 结构分析 | 08-06 | 在用 |
 | web-archive.py | 网页存档 | 08-06 | 在用 |
 | xianyu-master-gen.py | 闲鱼上架素材包生成 | 08-06 | 在用 |
+| xianyu-web-main-gen.py | 闲鱼「搭网站/写脚本」主图生成（复用 PPT 主图风格） | 09-03 | 在用 |
 | cache_hit_monitor.py | 缓存命中率监控（no_agent cron 用，位于 AppData/Local/hermes/scripts/，非本目录） | 08-20 | ✅ 修好（见下） |
 | vault-audit-report.json | vault 审计报告（数据文件，非脚本） | 08-06 | 数据 |
 
