@@ -81,6 +81,7 @@ created: 2026-08-09
 - [[memory/2026/09/2026-09-02-vault-suggestion-executor|🧹 09-02 闲鱼专项建议执行报告]] — 闲鱼上架决策悬置第 34 天（等 sora 一句话拍板）+ 主图尺寸勘误 750×750 + 今日 3 项优先级计划
 - [[memory/2026/09/2026-09-02-daily-todo-executor|📋 09-02 每日待办落实]] — 9/2 反思行动项 3/3 落地（patch daily-knowledge-review reconcile + Tavily 降级拍板 + FlClash 推送）+ 陈旧待办剔除（主模型验证已闭环）+ 闲鱼悬置 34 天
 - [[knowledge/Research/arxiv-2026-09-02-agent-llm|arXiv 今日速览]] — 35 篇 AI Agent/LLM 论文（08-31+09-01 新窗口：Gated-Memory Routing / EvoSkill Injection 技能安全 / Explore More Drift Less / Harness-of-Harness / SoK MAS 安全 / Compile Don't Memorize）
+- [[memory/2026/09/2026-09-02-reflection|🪞 09-02 反思日记]] — 多Agent v2.7 千轮 + SRC ROI 实证归零 + 墨题上云无 Docker；3 改进点：每日笔记断档 / web_extract 8.3% 连续3次<15% / 闲鱼 34 天缺 fallback；知识吸收 4/4 达标
 
 ## 🧭 核心区域
 - [[memory/2026/08/2026-08-19-reflection|🔍 08-19 反思]] — 行动项 3/3 未落地（反思≠执行第 3 次复发）；Tavily 第 6 次复发；SRC 三方向收敛为补天聚焦 · scripts 登记表当场补建

@@ -166,10 +166,15 @@ updated: 2026-09-02
 - ✅ 产出型 cron 补位：8/31 daily-review 缺失已补写 `memory/2026/08/2026-08-31-daily-review.md`（基于 8/31 reflection 实测）；patch hermes-automation-patterns 加「产出型 cron 失败补位硬规则」✅
 - 🔴 闲鱼上架决策 9/1 推送升级（悬置 33 天，合规子集已备 xianyu-monetization v1.2.0，30min 可上架）——升级主动推送，等 sora 拍板
 ### 🧭 9/2 反思行动项（daily-reflection 复盘 9-01，执行者必读）
-- 🛠️ patch daily-knowledge-review：明日行动项生成前 reconcile projects/current.md 的 ✅ 状态，剔除陈旧待办（9/1 实测踩中：主模型验证 20:06 已完成，22:39 daily-review 仍列为 9/2 待办，差点误报）（agent 可做，20min）
+- ✅ patch daily-knowledge-review：明日行动项生成前 reconcile projects/current.md 的 ✅ 状态，剔除陈旧待办（9/1 实测踩中：主模型验证 20:06 已完成，22:39 daily-review 仍列为 9/2 待办，差点误报）（agent 可做，20min）
 - ✅ Tavily 决策拍板（2026-09-02 daily-todo-executor 落地）：配额耗尽连续 12 工作日，「评估 plan 升级」正式拍板——降级为末位备选（Firecrawl→DDGS→SearXNG→Tavily），从「评估」改「已执行」；运行时 web.backend=exa + extract_backend=firecrawl 已不依赖 Tavily 主用，仅作兜底；若 sora 想保留再补 30 天成本对比，默认路径零成本
 - ✅ FlClash 升级推送（2026-09-02 daily-todo-executor 已在当日报告置顶单条醒目请求，30 秒重启操作清单见报告）：连续 5 次标 P0 无触达闭环→本次单条推送已输出；消息网关离线影响面核查 + 降级定性待 sora 重启 FlClash 后核验
 - 🔴 闲鱼上架决策（悬置第 34 天）：决策包 100% 就绪，30min 复制粘贴可上 3 商品（PPT 30-80 / 论文 30 / 练习册 35），合规红线已内置——等 sora 拍板
+### 🧭 9/3 反思行动项（daily-reflection 复盘 9-02，执行者必读）
+- ✅ 每日笔记补写（2026-09-02 reflection 当场）：memory/2026/09/2026-09-02.md 已补写（9/2 self-improvement 输出为 self-improvement.md 而未写主文件）；patch daily-self-improvement 读路径为 memory/YYYY/MM/ 待执行（agent 可做，10min）
+- ✅ patch daily-knowledge-review 评分表加深验证判定列（2026-09-02 reflection 当场执行）：API 直调/视频转写日标注「等效深度豁免」
+- 🔒 闲鱼决策包 30 秒二选一（悬置第 35 天起）：上架 → k 给 5 步操作清单；放弃 → k 归档素材包 + 标记 [决策:放弃]；9/9 周检点仍无决策 → k 默认推进合规改造子集（敏感词/数模标题改写已在 xianyu-monetization v1.2.0）
+- 🔴 FlClash 重启后核验降级定性（30 秒）：重启后 k 核查 7890 转发 + 消息网关，确认离线影响面，必要时 P0→P2
 ### 🧭 8/20 反思行动项（daily-reflection 复盘 8-19，执行者必读）
 - [x] P0 语义缓存最小版落地——✅ 8/21 完成（硬截止 8/22 前）：原实现只挂 tavily provider、实际流量走 exa/searxng/firecrawl 兜底时从未命中（cache 文件从未生成）；已在 `web_tools.py::web_search_tool` chokepoint 上移统一缓存覆盖全部后端，实测 exact 命中生效，submit `84d813bf2`
 - [x] P1 health_provider_check.py 加余额阈值告警 → ✅ 8/21：新增 `_balance_flag` 解析 HTTP 402/403/429 错误体中的「额度/余额」信息（keylink/jiyuanlvdong 中转站内嵌无独立端点），余额不足自动标 ⚠️。实测 kimi suspended / fangzhou-2 quota(8/28 重置) 被正确标红；keylink 已恢复 OK（¥0.05 裸奔解除）
@@ -212,7 +217,7 @@ updated: 2026-09-02
 
 ---
 
-_由 k (Hermes) 在每次会话结束时更新 | 最后更新: 2026-09-02（vault-suggestion-executor cron：闲鱼专项复核 + 主图尺寸勘误）_
+_由 k (Hermes) 在每次会话结束时更新 | 最后更新: 2026-09-03（daily-reflection cron：登记 9/3 反思行动项 + 9/2 反思项 #1 补标 ✅）_
 
 ---
 
