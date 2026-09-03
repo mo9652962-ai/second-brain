@@ -2,7 +2,7 @@
 """闲鱼「搭网站/写脚本」商品主图生成器 — 复用 PPT 主图风格（2026-09-03）
 =============================================================
 基于 xianyu-master-gen.py v2 十轮研究结论：
-  1. 尺寸 750×1000 (3:4) 移动端主推
+  1. 尺寸 750×750 (1:1 方形) — 与 PPT 主图一致
   2. 思源黑体 (OFL) + Segoe UI Emoji（emoji 单独渲染）
   3. 卖点聚焦 ≤3
   4. 蓝橙撞色 + 无极限词/无引流信息
@@ -12,7 +12,7 @@ import os
 from PIL import Image, ImageDraw, ImageFont
 
 OUT_DIR = r"C:\Users\31954\.openclaw\workspace\outputs\xianyu-master\上架素材包"
-W, H = 750, 1000  # 3:4
+W, H = 750, 750  # 1:1 方形 —— 与 PPT 主图实测规格一致（9/2 勘误：实际为 750×750，非 3:4）
 
 FONT_BOLD = r"C:\Windows\Fonts\SourceHanSansSC-Bold.otf"
 FONT_REG  = r"C:\Windows\Fonts\SourceHanSansSC-Regular.otf"
@@ -92,7 +92,7 @@ def make_before_after():
 
     cta(d, 840, "立即咨询 · 免费评估", "官网 / 落地页 / 小程序")
     img.save(os.path.join(OUT_DIR, "网站主图1-前后对比.png"))
-    print("✅ 网站主图1-前后对比.png (3:4)")
+    print("✅ 网站主图1-前后对比.png (1:1)")
 
 # ============ 图 2：价格表 ============
 def make_price():
@@ -130,7 +130,7 @@ def make_price():
 
     cta(d, 780, "199 元起 · 点「我想要」估价", "免费评估需求")
     img.save(os.path.join(OUT_DIR, "网站主图2-价格表.png"))
-    print("✅ 网站主图2-价格表.png (3:4)")
+    print("✅ 网站主图2-价格表.png (1:1)")
 
 # ============ 图 3：服务承诺 ============
 def make_service():
@@ -170,7 +170,7 @@ def make_service():
 
     cta(d, 820, "免费评估需求 · 立即定制", "点「我想要」开始")
     img.save(os.path.join(OUT_DIR, "网站主图3-服务承诺.png"))
-    print("✅ 网站主图3-服务承诺.png (3:4)")
+    print("✅ 网站主图3-服务承诺.png (1:1)")
 
 if __name__ == "__main__":
     os.makedirs(OUT_DIR, exist_ok=True)
