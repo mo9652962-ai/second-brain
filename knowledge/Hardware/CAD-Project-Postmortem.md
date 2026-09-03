@@ -1,5 +1,5 @@
 ---
-tags: [CAD, 3d-modeling, engineering, project-postmortem, case-study, build123d, freecad, 3d-printing]
+tags: [cad, 3d-modeling, engineering, project-postmortem, case-study, build123d, freecad, 3d-printing]
 domain: CAD-Design
 cross-domain: ["programming", "ai-agent"]
 created: 2026-07-21

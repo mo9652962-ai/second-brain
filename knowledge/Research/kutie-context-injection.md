@@ -1,6 +1,6 @@
 ---
 date: 2026-07-29
-tags: [research-tracker, kutie, context-engineering, LLM]
+tags: [research-tracker, kutie, context-engineering, llm]
 source: arXiv 2607.25995v1
 status: tracking
 priority: 🟡 中（2周内研究）

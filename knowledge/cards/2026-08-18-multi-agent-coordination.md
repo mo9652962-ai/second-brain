@@ -6,7 +6,7 @@ tags:
   - ai-agent
   - multi-agent
   - collaboration
-  - Hermes
+  - hermes
 created: 2026-08-18
 source: "[[knowledge/Research/arxiv-2026-08-18-agent-llm]]"
 status: fresh
