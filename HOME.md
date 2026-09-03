@@ -85,6 +85,8 @@ created: 2026-08-09
 - [[memory/2026/09/2026-09-02-reflection|🪞 09-02 反思日记]] — 多Agent v2.7 千轮 + SRC ROI 实证归零 + 墨题上云无 Docker；3 改进点：每日笔记断档 / web_extract 8.3% 连续3次<15% / 闲鱼 34 天缺 fallback；知识吸收 4/4 达标
 - [[knowledge/Research/arxiv-2026-09-03-agent-llm|arXiv 今日速览]] — 27+12 篇 AI Agent/LLM 论文（09-02 新窗口：SafeEvolve harness-策略安全共进化 / LLM-judge 不是 oracle / SkillGLoW 程序族技能 / SCX Router 0.6B 流式路由 / Repo-To-Skill 仓库蒸馏 5000+ 技能）
 
+- [[memory/2026/09/2026-09-03-daily-review|📋 09-03 每日回顾]] — 闲鱼素材闭环(网站主图3张+第13次核验PASS) · arXiv 09-03 速览 27+12 · HN AI引用污染警示 · 健康巡检 402 定位
+
 ## 🧭 核心区域
 - [[memory/2026/08/2026-08-19-reflection|🔍 08-19 反思]] — 行动项 3/3 未落地（反思≠执行第 3 次复发）；Tavily 第 6 次复发；SRC 三方向收敛为补天聚焦 · scripts 登记表当场补建
 
