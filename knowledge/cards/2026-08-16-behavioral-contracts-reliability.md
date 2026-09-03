@@ -6,7 +6,7 @@ tags:
   - ai-agent
   - reliability
   - model-fallback
-  - Hermes
+  - hermes
 created: 2026-08-16
 source: "[[knowledge/Research/arxiv-2026-08-16-core-contributions]]"
 status: fresh

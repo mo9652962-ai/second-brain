@@ -7,7 +7,7 @@ tags:
   - security
   - multi-agent
   - authorization
-  - MCP
+  - mcp
 created: 2026-08-19
 source: "[[knowledge/Research/arxiv-2026-08-19-agent-llm]]"
 status: fresh
