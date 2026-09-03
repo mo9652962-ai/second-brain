@@ -1,13 +1,68 @@
 ---
 tags: [moti, daily-inspect, cron, code-review]
 created: 2026-09-01
-updated: 2026-09-02
+updated: 2026-09-03
 type: daily-inspect
 ---
 
 # 🔍 墨题每日巡检日志
 
 > 巡检脚本：`dsh_inspect_moti.sh`（[1/4] Git → [2/4] 后端 → [3/4] 前端 → [4/4] 移动端）
+
+## 2026-09-03（周四）✅ 通过
+
+### ✅ 结论置顶
+
+**巡检通过：无阻塞问题（无 FAIL、无语法错误）。** 四类检查全绿。唯一关注项：8 处未提交改动，其中 **4 个未跟踪新文件**——`certificates` 证书功能（`routers/certificates.py` + `services/certificates.py`）、`deploy/` 目录、`scripts/smoke_enterprise.py`——疑似一批「证书/考卷」新功能代码（与 09-01 的 agent 三文件同模式），且 `database.py`（+45 新表 schema）与 `main.py`（+2 路由注册）已同步修改，新功能可能已接线。建议尽快 review + 提交，避免与后续改动混在一起。
+
+### [1/4] Git 状态
+
+- **未提交改动：8 处**（4 个已修改 + 4 个未跟踪）
+  - 已修改 4：
+    - `M backend/app/database.py`（+45）
+    - `M backend/app/main.py`（+2）
+    - `M backend/app/routers/exam.py`（+22/-1）
+    - `M backend/app/routers/papers.py`（+106/-1）
+  - 未跟踪 4（⚠️ 新文件）：
+    - `?? backend/app/routers/certificates.py`
+    - `?? backend/app/services/certificates.py`
+    - `?? deploy/`（整目录）
+    - `?? scripts/smoke_enterprise.py`
+- **最近提交**（main，HEAD = 3dbeeac）：
+  - `3dbeeac` chore: 移除误创建的 shell 语法文件名垃圾文件（relay-check 目录内，Windows 无法落盘）
+  - `d14e2d6` fix(test-infra): 根目录 pytest 无脑全绿 + wrong_analysis 按用户隔离 + 题库管理 admin 校验
+  - `caa4514` fix(auth): 补齐用户数据隔离缺口——20 表路由/服务层 user_id 过滤 + 首账号遗留数据全量迁移
+
+### [2/4] 后端健康
+
+- ✅ `backend/app/main.py` 存在
+- ✅ Python 语法全部通过（含未提交的 certificates 新文件）
+
+### [3/4] 前端健康
+
+- ✅ `App.vue` 存在
+- ✅ `router.ts` 存在
+- ✅ scripts：dev / build / preview
+
+### [4/4] 移动端检查
+
+- ✅ `capacitor.config.ts` 存在
+- ✅ `android/` 目录存在
+
+### ⚠️ 关注项（非阻塞）
+
+| 项 | 说明 | 建议 |
+|:---|:-----|:-----|
+| 8 处未提交改动 | 4 修改（database/main/exam/papers，共 +173）+ 4 新文件（certificates 路由/服务 + deploy/ + smoke_enterprise.py）| certificates 疑似新功能（db schema + 路由已接线），尽快 review + 提交，避免混入后续改动 |
+| deploy/ + smoke_enterprise.py | 部署脚本 + 冒烟测试脚本，未跟踪 | 确认是否为本仓库正式资产，是则入库，否则移出项目根 |
+
+### 📌 巡检记录
+
+- 脚本退出码：0 ✅
+- 运行方式：cron 自动派活（2026-09-03）
+- 无 FAIL 标记、无语法错误、无阻塞问题
+
+---
 
 ## 2026-09-02（周三）✅ 通过
 
