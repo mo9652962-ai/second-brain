@@ -13,7 +13,7 @@ created: 2026-08-19
 | 文件 | 问题 | 处理 |
 |:---|:---|:---|
 | `README.md:148` | 每日日志 08-18 链接指向 `memory/2026/2026-08-18.md`（少一层 `08/`） | 字节级修复 → `memory/2026/08/2026-08-18.md` |
-| `memory/2026/08/2026-08-18-maintenance.md:34` | 上轮文档示例 `[HOME](../HOME.md)` / `[HOME](../../HOME.md)` 被诊断反复误报 | 剥离方括号 → `HOME(../HOME.md)` / `HOME(../../HOME.md)`（纯文本保留信息） |
+| `memory/2026/08/2026-08-18-maintenance.md:34` | 上轮文档示例 `HOME(../HOME.md)` / `HOME(../../HOME.md)` 被诊断反复误报 | 剥离方括号 → `HOME(../HOME.md)` / `HOME(../../HOME.md)`（纯文本保留信息） |
 
 **保留误报（不修）：** `claude-code-opus-5.md:45 [file.md]`（verbatim system prompt 示例）、`skills/hermes/github-repo-optimization.md` 13 处（fenced code block 模板示例）——均为技能误报表明确 LEAVE AS-IS 类别。
 

@@ -1,5 +1,5 @@
 ---
-tags: [github, LLM, local-llm, hardware, benchmark, rust, 研究笔记, 2026-08]
+tags: [github, llm, local-llm, hardware, benchmark, rust, 研究笔记, 2026-08]
 domain: Dev
 aliases: [llmfit, 硬件模型匹配, 本地模型选型]
 date: 2026-08-23

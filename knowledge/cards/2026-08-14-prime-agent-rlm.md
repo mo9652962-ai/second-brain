@@ -6,7 +6,7 @@ tags:
   - ai-agent
   - RLM
   - self-improving
-  - Hermes
+  - hermes
 created: 2026-08-14
 source: "[[knowledge/Dev/prime-agent-rlm-2026-08-14]]"
 status: fresh

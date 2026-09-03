@@ -128,16 +128,18 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 
 5. **🔄 每 30 分钟自动同步更新**
    - 不是一次性项目，是持续进化的活的知识库
-   - 32 个 Cron 自动化任务 7×24 小时运行
+   - 41 个 Cron 自动化任务 7×24 小时运行
 
 ---
 
-## 📦 最新技能入库 (2026-08-16 ~ 2026-09-02)
+## 📦 最新技能入库 (2026-08-16 ~ 2026-09-03)
 
 ### 研究笔记
 
 | 技能 | 版本 | 简介 |
 |------|------|------|
+| **[arXiv AI Agent / LLM 速览 09-03](knowledge/Research/arxiv-2026-09-03-agent-llm.md)** | v1.0 | 09-02 单日池 328 篇 → 27 主条目 + 12 简评（索引推进至 2609.02885） |
+| **[AI 逆向 × Skill/MCP 阿里 v2 滑块](knowledge/Research/AI逆向-skill-mcp-阿里v2滑块-2026-09-03.md)** | v1.0 | 抖音实战 + 8 路检索交叉：Skill 给脑 + MCP 给手 + 多轮采样拟合，沉淀 ai-assisted-reversing v1.1 |
 | **[多Agent协作增强 v2.7](knowledge/Research/多Agent协作增强v2.7-千轮研究-2026-09-02.md)** | v2.7 | 千轮研究第二轮：交接结构化>叙述压缩（50实例硬数据）+ 上下文工程补全，与 v2.6/v1.5/v1.4 体系闭环 |
 | **[arXiv AI Agent / LLM 速览 09-01](knowledge/Research/arxiv-2026-09-01-agent-llm.md)** | v1.0 | 08-29→08-30 新窗口 2 日池（arXiv 索引推进）AI Agent/LLM 强相关速览 |
 | **[双周技能审计 09-01](knowledge/Research/skill-audit-2026-09-01.md)** | v1.0 | 446 Skills（agent 337）审计：14 技能/21 patch 退役模型别名 deepseek-chat→v4-flash 修复 |
@@ -203,7 +205,7 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 | **知识库引擎** | Obsidian (Dataview + Graph View) |
 | **版本控制** | Git + GitHub (每 30 分钟自动同步) |
 | **MCP 服务** | GitHub · Filesystem · JLCPCB · Obsidian · Browser |
-| **自动化引擎** | Hermes Cron Scheduler (32 个定时任务) |
+| **自动化引擎** | Hermes Cron Scheduler (41 个定时任务) |
 
 ---
 
@@ -211,7 +213,7 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 
 ```
 📁 仓库体积：约 180MB（含附件与图片）
-📝 Markdown 文件：961 个（正文约 4.6 MB）
+📝 Markdown 文件：987 个（正文约 5.4 MB）
 🧠 自建 Skill 文档：30 个（11 个领域目录）
 🗂️ 知识域：11 个
 ⏰ 首次提交：2026 年 7 月

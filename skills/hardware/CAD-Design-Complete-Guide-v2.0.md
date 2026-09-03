@@ -2,7 +2,7 @@
 date: 2026-07-28
 domain: 硬件设计
 version: 2.0
-tags: [CAD, 2D绘图, 3D建模, BIM, CAM, 3D打印]
+tags: [cad, 2D绘图, 3D建模, BIM, CAM, 3D打印]
 ---
 
 # 🎨 CAD 设计全流程指南 v2.0 (2026)

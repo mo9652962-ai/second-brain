@@ -1,6 +1,6 @@
 ---
 date: 2026-07-27
-tags: [arxiv, paper-summary, ai-agent, LLM, reasoning, context-management, RL]
+tags: [arxiv, paper-summary, ai-agent, llm, reasoning, context-management, rl]
 source: arXiv digest 2026-07-27
 parent: memory/2026/07/arxiv-agent-llm-2026-07-27.md
 ---

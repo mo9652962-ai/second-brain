@@ -1,5 +1,5 @@
 ---
-tags: [MOC, hardware, pcb, 嵌入式, 单片机, CAD]
+tags: [MOC, hardware, pcb, 嵌入式, 单片机, cad]
 domain: Hardware
 type: moc
 status: active

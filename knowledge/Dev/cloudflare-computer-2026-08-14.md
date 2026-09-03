@@ -1,5 +1,5 @@
 ---
-tags: [agent-Infra, Cloudflare, Sandbox, VFS, Computer-agent, RPC]
+tags: [agent-infra, Cloudflare, Sandbox, VFS, Computer-agent, RPC]
 aliases: [cloudflare-computer, computer(cloudflare)]
 date: 2026-08-14
 source: https://github.com/cloudflare/computer

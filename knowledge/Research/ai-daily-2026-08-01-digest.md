@@ -1,5 +1,5 @@
 ---
-tags: [research, ai-daily, digest, LLM, ocr, security]
+tags: [research, ai-daily, digest, llm, ocr, security]
 created: 2026-08-01
 status: absorbed
 ---
