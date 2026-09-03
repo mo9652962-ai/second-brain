@@ -60,3 +60,6 @@ updated: 2026-09-03 11:24
   ❌ opencode-go: <urlopen error [WinError 10054] 远程主机强迫关闭了一个现有的连接。>
   ❌ siliconflow: <urlopen error [WinError 10054] 远程主机强迫关闭了一个现有的连接。>
   ❌ deepseek: <urlopen error [WinError 10054] 远程主机强迫关闭了一个现有的连接。>
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]
