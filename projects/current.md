@@ -175,6 +175,11 @@ updated: 2026-09-02
 - ✅ patch daily-knowledge-review 评分表加深验证判定列（2026-09-02 reflection 当场执行）：API 直调/视频转写日标注「等效深度豁免」
 - 🔒 闲鱼决策包 30 秒二选一（悬置第 35 天起）：上架 → k 给 5 步操作清单；放弃 → k 归档素材包 + 标记 [决策:放弃]；9/9 周检点仍无决策 → k 默认推进合规改造子集（敏感词/数模标题改写已在 xianyu-monetization v1.2.0）
 - ✅ FlClash 7890 转发 k 核验（2026-09-03 20:03 daily-todo-executor 实测）：`curl -x http://127.0.0.1:7890 https://www.google.com` → **302 正常**，代理链路已恢复；FlClashCore 今晨 11:23 启动。消息网关离线影响面仍待 sora 确认重启后核验（必要时 P0→P2）
+### 🧭 9/4 反思行动项（daily-reflection 复盘 9-03，执行者必读）
+- 🛠️ 闲鱼决策拆小 + fallback 提前（2026-09-03 reflection 提出，agent 可做 + sora 一句话）：拆「先上 1 个商品（PPT 30-80 档）试水」最小可逆动作（素材 6 图 13 次核验 PASS / 合规 0 缺口 / 30min 可逆）；fallback 从 9/9 提前到 **9/6 仍无决策 → k 默认推进合规改造子集**（敏感词/数模标题改写已在 xianyu-monetization v1.2.0）
+- 🛠️ 确定性校验固化（2026-09-03 reflection 提出，agent 可做 20min）：patch ai-image-generation / xianyu-monetization / douyin-ai-blogger——生成类交付必须 stat/读 PNG 头确定性校验（9/3 主图 3:4 误用 vision 三连 PASS 未抓出，靠 PNG 头才发现的教训），视觉模型仅作辅助审美判断；scripts/README 强制登记校验命令
+- 🛠️ MCP parked 降噪（2026-09-03 reflection 提出，agent 可做）：暂停 MCP errors.log 每 5 分钟刷屏 + health 降级高亮；准备 1 分钟解除清单 🔒 sora 打开 Obsidian + 启用 Local REST API + reconnect
+- 🔴 FlClash 重启后核验消息网关影响面（需 sora 30 秒）：k 已核验 7890 转发 302 正常，重启后确认离线影响面→降级定性（P0→P2）
 ### 🧭 8/20 反思行动项（daily-reflection 复盘 8-19，执行者必读）
 - [x] P0 语义缓存最小版落地——✅ 8/21 完成（硬截止 8/22 前）：原实现只挂 tavily provider、实际流量走 exa/searxng/firecrawl 兜底时从未命中（cache 文件从未生成）；已在 `web_tools.py::web_search_tool` chokepoint 上移统一缓存覆盖全部后端，实测 exact 命中生效，submit `84d813bf2`
 - [x] P1 health_provider_check.py 加余额阈值告警 → ✅ 8/21：新增 `_balance_flag` 解析 HTTP 402/403/429 错误体中的「额度/余额」信息（keylink/jiyuanlvdong 中转站内嵌无独立端点），余额不足自动标 ⚠️。实测 kimi suspended / fangzhou-2 quota(8/28 重置) 被正确标红；keylink 已恢复 OK（¥0.05 裸奔解除）
