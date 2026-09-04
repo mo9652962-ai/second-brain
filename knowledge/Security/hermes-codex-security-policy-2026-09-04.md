@@ -84,8 +84,36 @@ MAX_STEPS=12，达到即 STOP，不得无限重试
 - **任务包功能描述禁区**：不写「自动挖洞/批量扫描/凭据抓取/绕过检测/隐藏运行」——即使任务内容是防御性的，描述也保持中性
 - **高风险任务模式**：只读沙箱 + 逐步人工审批（read-only / on-request 限制性配置，与 Codex 官方文档建议一致）
 - **依赖策略**：提前锁定版本并尽量离线缓存；减少每个任务临时安装、访问陌生外部服务
-- **网络出口**：尽量使用稳定可信出口，避免代理 IP 频繁跳变——这只是降低误报的运营措施，**不代表 FlClash 已被确认为原因**
+- **网络出口**：尽量使用稳定可信出口，避免代理 IP 频繁跳变——这只是降低误报的运营措施，不代表 FlClash 已被确认为原因
 - **申诉事实纪律**：不把未验证的「代理 IP 被封」写成申诉事实；若支持团队询问，作为待核实假设说明
+
+### 官方文档对照实证（2026-09-04 子代理审查 + 本机 config 核验）
+
+**Codex 官方文档关键原文（github.com/openai/codex sandbox.md）**：
+- *"In workspace-write, network is disabled by default unless enabled in config (`[sandbox_workspace_write].network_access = true`)"*
+- 官方推荐安全组合：`--sandbox read-only --ask-for-approval on-request`（安全只读浏览）/ `--sandbox read-only --ask-for-approval never`（CI 只读）/ `--sandbox workspace-write --ask-for-approval on-request`（改代码但高风险动作需批准）
+- **避免 `danger-full-access` / `--yolo`**：完全绕过沙箱和审批（官方不建议）
+- Windows 沙箱为 **experimental**：AppContainer 限制，world-writable 目录挡不住写
+
+**本机 `~/.codex/config.toml` 实证（9/4 核验）**：
+- `sandbox_workspace_write.network_access = False` ✅ 网络默认已关（沙箱内禁止联网）
+- `approval_policy = on-request` + `approvals_reviewer = auto_review` ✅ 高风险动作走审查
+- `web_search = live` ⚠️ **此开关允许 Codex 联网搜索**——这是当前配置下唯一显式联网通道
+- `windows.sandbox = elevated` ⚠️ Windows 沙箱本身是 experimental
+
+**结论**：之前用 `codex exec --sandbox workspace-write` 跑的任务，沙箱内网络已被禁；真正的联网通道是 `web_search = live` + 任务文本触发的搜索行为。这解释了「网络滥用」警告的来源之一。
+
+### 推荐配置（官方原文 + 本机适配）
+```toml
+# ~/.codex/config.toml（观察期建议）
+approval_policy = "on-request"        # 高风险动作人工批准（已符合）
+approvals_reviewer = "auto_review"    # 自动审查（已符合）
+sandbox_mode = "read-only"            # 观察期：只读为主；需改代码时临时切 workspace-write
+web_search = "off"                    # 关闭显式联网通道（观察期）
+[sandbox_workspace_write]
+network_access = false                # 保持网络关闭（已符合）
+```
+> 注意：`--sandbox read-only` 与 `--ask-for-approval never` 组合 = 官方推荐 CI 只读模式，适合代码审查类任务。
 
 ### 替代执行路径
 | 任务类型 | 替代方案 |
