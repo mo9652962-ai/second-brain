@@ -67,9 +67,11 @@ Agent 不得自行添加域名/IP/修改 DNS/更改代理/切换出口节点；�
 MAX_STEPS=12，达到即 STOP，不得无限重试
 禁止自主发生：Scan → Find → Exploit → Escalate → Pivot
 
-## ⚠️ OpenAI 供应商红线（2026-09-04 警告信后新增）
+## ⚠️ OpenAI 供应商红线（2026-09-04 警告信后新增，**当日已申诉澄清**）
 
 **背景**：sora 收到 OpenAI 官方警告信，Codex 使用被标记「Network Abuse」——Codex 沙箱的高频自动化网络活动（npm/pip install、git、外部 API 调用）被自动检测系统判定为违规模式，再犯将停用服务访问。
+**✅ 申诉结果（2026-09-04 当日）**：官方确认是**误报/错报警告**，账号无处罚。
+**✅ 已全面恢复（2026-09-04）**：`web_search` 已恢复 `live`，下方「Codex 使用铁律」的临时限制（降频/禁敏感词/依赖离线/墨题不走 Codex）**全部解除**，Codex 正常编码任务恢复使用。本段保留作为事件记录，日常执行以「核心原则 / Policy Gate」常态基线为准。
 
 ### Codex 使用铁律
 1. **Codex 只跑纯本地代码任务**：读文件/改代码/本地测试/本地构建（L0-L1）
@@ -98,7 +100,7 @@ MAX_STEPS=12，达到即 STOP，不得无限重试
 **本机 `~/.codex/config.toml` 实证（9/4 核验）**：
 - `sandbox_workspace_write.network_access = False` ✅ 网络默认已关（沙箱内禁止联网）
 - `approval_policy = on-request` + `approvals_reviewer = auto_review` ✅ 高风险动作走审查
-- `web_search = live` ⚠️ **此开关允许 Codex 联网搜索**——这是当前配置下唯一显式联网通道
+- `web_search = disabled` ⚠️（2026-09-04 已关闭——**注意合法值只有 disabled/cached/indexed/live，写 `off` 会导致 config_load 失败**，ChatGPT 桌面端直接卡启动）
 - `windows.sandbox = elevated` ⚠️ Windows 沙箱本身是 experimental
 
 **结论**：之前用 `codex exec --sandbox workspace-write` 跑的任务，沙箱内网络已被禁；真正的联网通道是 `web_search = live` + 任务文本触发的搜索行为。这解释了「网络滥用」警告的来源之一。
@@ -109,7 +111,7 @@ MAX_STEPS=12，达到即 STOP，不得无限重试
 approval_policy = "on-request"        # 高风险动作人工批准（已符合）
 approvals_reviewer = "auto_review"    # 自动审查（已符合）
 sandbox_mode = "read-only"            # 观察期：只读为主；需改代码时临时切 workspace-write
-web_search = "off"                    # 关闭显式联网通道（观察期）
+web_search = "disabled"               # 关闭显式联网通道（观察期；合法值 disabled/cached/indexed/live，无 off）
 [sandbox_workspace_write]
 network_access = false                # 保持网络关闭（已符合）
 ```
