@@ -125,6 +125,7 @@ updated: 2026-09-01
 - [[memory/2026/08/2026-08-30|自我完善 08-30]] · [[knowledge/cards/2026-08-30-data-source-verification|知识卡片 08-30]]
 - [[memory/2026/08/2026-08-24|自我完善 08-24]] · [[knowledge/cards/2026-08-24-anthropic-token-ban|知识卡片 08-24]]
 
+- [[knowledge/Productivity/闲鱼运营千轮研究-2026-09-04|闲鱼运营千轮研究 09-04]] · [[knowledge/cards/2026-09-04-xianyu-operation-algorithm|知识卡片 09-04]]
 ## 文章研读
 
 - [[ai-literature-search-pitfalls-study]]
