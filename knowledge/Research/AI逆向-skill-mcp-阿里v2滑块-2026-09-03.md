@@ -1,3 +1,15 @@
+---
+tags:
+  - research
+  - security
+  - reverse-engineering
+  - ai-agent
+  - mcp
+type: research
+created: 2026-09-03
+status: adopted
+---
+
 # AI 逆向 × Skill/MCP：阿里 v2 滑块实战研究
 
 > 来源：抖音「青木教Python」《AI逆向没有skill和mcp加持！连阿里v2滑块门都摸不到》+ 8 路搜索引擎交叉研究
@@ -90,6 +102,3 @@ AI   干活（多轮采样 → 拟合 → 自检 → 落地代码）
 - 学习目的是「知道验证码怎么被破 → 知道怎么防」（防御者思维）与爬虫自动化研究
 - 不针对具体线上业务目标实施绕过；不提供用于攻击第三方系统的工具
 - 阿里 v2 滑块分析仅作技术原理研究参考
-
----
-> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]
