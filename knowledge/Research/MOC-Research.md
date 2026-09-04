@@ -13,7 +13,7 @@ updated: 2026-09-01
 > 所有研究笔记的索引与入口。自动按主题分组。
 > 回到 [[knowledge-map|🗺️ 知识地图]] · [[Home|🏠 Home]]
 
-**共 183 篇研究笔记** · 最后更新: 2026-09-01（每日增量索引）
+**共 184 篇研究笔记** · 最后更新: 2026-09-01（每日增量索引）
 
 
 ## 🆕 W34 新增补链（2026-08-16 周度整理）
@@ -125,6 +125,7 @@ updated: 2026-09-01
 - [[memory/2026/08/2026-08-30|自我完善 08-30]] · [[knowledge/cards/2026-08-30-data-source-verification|知识卡片 08-30]]
 - [[memory/2026/08/2026-08-24|自我完善 08-24]] · [[knowledge/cards/2026-08-24-anthropic-token-ban|知识卡片 08-24]]
 
+- [[knowledge/Productivity/闲鱼运营千轮研究-2026-09-04|闲鱼运营千轮研究 09-04]] · [[knowledge/cards/2026-09-04-xianyu-operation-algorithm|知识卡片 09-04]]
 ## 文章研读
 
 - [[ai-literature-search-pitfalls-study]]
@@ -316,6 +317,7 @@ updated: 2026-09-01
 - [[多Agent协作增强v2.7-千轮研究-2026-09-02]]
 - [[arxiv-2026-09-03-agent-llm]]
 - [[AI逆向-skill-mcp-阿里v2滑块-2026-09-03]]
+- [[arxiv-2026-09-04-agent-llm]]
 
 ## 🧭 入口治理
 
