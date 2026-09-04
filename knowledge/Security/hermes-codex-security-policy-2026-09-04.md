@@ -130,3 +130,6 @@ network_access = false                # 保持网络关闭（已符合）
 2. 涉安全/授权边界任务默认 REVIEW_REQUIRED，等 sora 明确批准再下发
 3. 派活包内嵌授权边界段（scope/禁止项/验证等级上限）
 4. 挖洞产出只用于授权目标，不进公开仓库，报告人工核验
+
+---
+> 🗺️ 属于 [[MOC-Security]] · [[Home|🏠 Home]]
