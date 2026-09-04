@@ -89,6 +89,7 @@ created: 2026-08-09
 
 - [[memory/2026/09/2026-09-03-daily-review|📋 09-03 每日回顾]] — 闲鱼素材闭环(网站主图3张+第13次核验PASS) · arXiv 09-03 速览 27+12 · HN AI引用污染警示 · 健康巡检 402 定位
 - [[knowledge/Research/arxiv-2026-09-04-agent-llm|arXiv 今日速览]] — 24+12 篇 AI Agent/LLM 论文（09-03+09-04 双日补全：LLM judge 先自检再上岗 / 表示层对齐防对抗 / 100-agent 作弊-吹哨涌现 / HEART 工具原语成本-85% / agent 腐烂几何律）
+- [[memory/2026/09/2026-09-04-daily-review|📋 09-04 每日回顾]] — 闲鱼变现深度日：千轮研究推流算法 · 子代理推翻「最低档引流」+ OCR 机审 · L2 标题主图重做 · Codex 安全红线 · 上架决策拆小试水(fallback 9/6)
 
 ## 🧭 核心区域
 - [[memory/2026/08/2026-08-19-reflection|🔍 08-19 反思]] — 行动项 3/3 未落地（反思≠执行第 3 次复发）；Tavily 第 6 次复发；SRC 三方向收敛为补天聚焦 · scripts 登记表当场补建
