@@ -25,11 +25,11 @@ created: 2026-09-02
 
 清理的 8 处均为**维护笔记里文档化的示例链接**（技能规范：文档化断链示例必须剥离 `[[` `]]` 方括号，否则每次诊断反复误报）：
 
-- `memory/2026/09/2026-09-01-maintenance.md`：`[[MOC-Development]]`（昨日已修为 `[[MOC-Dev]]` 的旧链示例）、`[[multi-agent-research]]`（技能名）、`[[path/note.md]]`（审计脚本 bug 示例）
-- `memory/2026/09/2026-09-01-daily-review.md`：`[[path/note.md]]`
-- `memory/2026/08/2026-08-13-vault-maintenance.md`：`[[path\]]`/`[[path]]`（尾部反斜杠修复示例）、`[[wikilink]]`/`[[name]]`（模板占位符示例）
+- `memory/2026/09/2026-09-01-maintenance.md`：`MOC-Development`（昨日已修为 `MOC-Dev` 的旧链示例）、`multi-agent-research`（技能名）、`path/note.md`（审计脚本 bug 示例）
+- `memory/2026/09/2026-09-01-daily-review.md`：`path/note.md`
+- `memory/2026/08/2026-08-13-vault-maintenance.md`：`path\`/`path`（尾部反斜杠修复示例）、`wikilink`/`name`（模板占位符示例）
 
-保留的假阳性（合法，不修）：`[[wikilink]]`/`[[wiki link]]`/`[[name]]`/`[[skill-name]]` 等教学式语法描述、`memory/.archive/` 冻结历史、系统提示词 verbatim 示例、社区技能卡 `artifact/*.md` 引用。
+保留的假阳性（合法，不修）：`wikilink`/`wiki link`/`name`/`skill-name` 等教学式语法描述、`memory/.archive/` 冻结历史、系统提示词 verbatim 示例、社区技能卡 `artifact/*.md` 引用。
 
 ## 🗑️ 空壳清理
 
