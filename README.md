@@ -132,12 +132,14 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 
 ---
 
-## 📦 最新技能入库 (2026-08-16 ~ 2026-09-03)
+## 📦 最新技能入库 (2026-08-16 ~ 2026-09-04)
 
 ### 研究笔记
 
 | 技能 | 版本 | 简介 |
 |------|------|------|
+| **[arXiv AI Agent / LLM 速览 09-04](knowledge/Research/arxiv-2026-09-04-agent-llm.md)** | v1.0 | 09-03+09-04 双日池 925 篇 → 24 主条目 + 12 简评（API 429 限流改走 HTML 抓取，索引推进至 09-04） |
+| **[HN 今日深挖 09-04](knowledge/Daily/hackernews-2026-09-04.md)** | v1.0 | Top10 筛 7 条：GPT-6 Astra / Qwen 3.8 @1500 t/s / K2 Horizon 六模型集群 / Antigravity TOS 等 |
 | **[arXiv AI Agent / LLM 速览 09-03](knowledge/Research/arxiv-2026-09-03-agent-llm.md)** | v1.0 | 09-02 单日池 328 篇 → 27 主条目 + 12 简评（索引推进至 2609.02885） |
 | **[AI 逆向 × Skill/MCP 阿里 v2 滑块](knowledge/Research/AI逆向-skill-mcp-阿里v2滑块-2026-09-03.md)** | v1.0 | 抖音实战 + 8 路检索交叉：Skill 给脑 + MCP 给手 + 多轮采样拟合，沉淀 ai-assisted-reversing v1.1 |
 | **[多Agent协作增强 v2.7](knowledge/Research/多Agent协作增强v2.7-千轮研究-2026-09-02.md)** | v2.7 | 千轮研究第二轮：交接结构化>叙述压缩（50实例硬数据）+ 上下文工程补全，与 v2.6/v1.5/v1.4 体系闭环 |
@@ -213,7 +215,7 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 
 ```
 📁 仓库体积：约 180MB（含附件与图片）
-📝 Markdown 文件：987 个（正文约 5.4 MB）
+📝 Markdown 文件：1000 个（正文约 5.4 MB）
 🧠 自建 Skill 文档：30 个（11 个领域目录）
 🗂️ 知识域：11 个
 ⏰ 首次提交：2026 年 7 月
