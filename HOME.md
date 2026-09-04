@@ -80,12 +80,14 @@ created: 2026-08-09
 - [[memory/2026/09/2026-09-01-daily-review|📋 09-01 每日回顾]] — Agent Zero Memory 溯源记忆双 SOTA + GitHub 私有化变现卡片 + 技能双周审计 14技能21patch + 闲鱼素材第 12 次核验；🔴 闲鱼上架决策悬置 34 天待拍板
 - [[memory/2026/09/2026-09-02-vault-suggestion-executor|🧹 09-02 闲鱼专项建议执行报告]] — 闲鱼上架决策悬置第 34 天（等 sora 一句话拍板）+ 主图尺寸勘误 750×750 + 今日 3 项优先级计划
 - [[memory/2026/09/2026-09-03-vault-suggestion-executor|🧹 09-03 闲鱼专项建议执行报告]] — 闲鱼上架决策悬置第 35 天 + 「搭网站/写脚本」主图 3 张生成（vision 全 PASS）+ 今日 3 项优先级计划
+- [[memory/2026/09/2026-09-04-vault-suggestion-executor|🧹 09-04 闲鱼专项建议执行报告]] — 闲鱼上架决策拆小为「PPT 1 商品试水」30min 可逆 + 上架清单两段式升级（试水版+5 商品全量版）+ 6 图 PNG 头核验全 PASS + fallback 提前至 9/6
 - [[memory/2026/09/2026-09-02-daily-todo-executor|📋 09-02 每日待办落实]] — 9/2 反思行动项 3/3 落地（patch daily-knowledge-review reconcile + Tavily 降级拍板 + FlClash 推送）+ 陈旧待办剔除（主模型验证已闭环）+ 闲鱼悬置 34 天
 - [[knowledge/Research/arxiv-2026-09-02-agent-llm|arXiv 今日速览]] — 35 篇 AI Agent/LLM 论文（08-31+09-01 新窗口：Gated-Memory Routing / EvoSkill Injection 技能安全 / Explore More Drift Less / Harness-of-Harness / SoK MAS 安全 / Compile Don't Memorize）
 - [[memory/2026/09/2026-09-02-reflection|🪞 09-02 反思日记]] — 多Agent v2.7 千轮 + SRC ROI 实证归零 + 墨题上云无 Docker；3 改进点：每日笔记断档 / web_extract 8.3% 连续3次<15% / 闲鱼 34 天缺 fallback；知识吸收 4/4 达标
 - [[knowledge/Research/arxiv-2026-09-03-agent-llm|arXiv 今日速览]] — 27+12 篇 AI Agent/LLM 论文（09-02 新窗口：SafeEvolve harness-策略安全共进化 / LLM-judge 不是 oracle / SkillGLoW 程序族技能 / SCX Router 0.6B 流式路由 / Repo-To-Skill 仓库蒸馏 5000+ 技能）
 
 - [[memory/2026/09/2026-09-03-daily-review|📋 09-03 每日回顾]] — 闲鱼素材闭环(网站主图3张+第13次核验PASS) · arXiv 09-03 速览 27+12 · HN AI引用污染警示 · 健康巡检 402 定位
+- [[knowledge/Research/arxiv-2026-09-04-agent-llm|arXiv 今日速览]] — 24+12 篇 AI Agent/LLM 论文（09-03+09-04 双日补全：LLM judge 先自检再上岗 / 表示层对齐防对抗 / 100-agent 作弊-吹哨涌现 / HEART 工具原语成本-85% / agent 腐烂几何律）
 
 ## 🧭 核心区域
 - [[memory/2026/08/2026-08-19-reflection|🔍 08-19 反思]] — 行动项 3/3 未落地（反思≠执行第 3 次复发）；Tavily 第 6 次复发；SRC 三方向收敛为补天聚焦 · scripts 登记表当场补建
