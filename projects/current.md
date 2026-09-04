@@ -125,7 +125,7 @@ updated: 2026-09-02
 ## 🔄 进行中 / 已重新排期
 
 ### 🎯 闲鱼上架（P0，**决策悬置第 35 天，8/31 决策到期已过**，连续顺延第 30+ 天）
-- [ ] 上架「AI 代做 PPT」商品 → 🔴 **决策悬置第 35 天（8/31 到期已过；≥7 天规则→周检点，9/1 已升级主动推送，等 sora 一句话拍板）**：素材 100% 就绪（8/6 生成无损坏，9/1 第 12 次核验 PASS）；决策「上架（30min）or 放弃」，操作清单见 outputs/xianyu-master/上架素材包/；合规改造子集已就绪（敏感词清单/同款频次控制/数模标题改写 → xianyu-monetization v1.2.0）；决策包见 memory/2026/08/2026-08-31-xianyu-vault-suggestion-executor.md + 9/2 复核 memory/2026/09/2026-09-02-vault-suggestion-executor.md + 9/3 复核 memory/2026/09/2026-09-03-vault-suggestion-executor.md
+- [ ] 上架「AI 代做 PPT」商品 → 🔴 **决策悬置第 36 天（8/31 到期已过；9/4 已拆小为「先上 1 个商品试水」30min 最小可逆动作，试水版清单已备；fallback 提前至 9/6 仍无决策 → k 默认推进合规改造子集）**：素材 100% 就绪（6 图 9/4 PNG 头实测 750×750 全 PASS）；操作清单已升级两段式（试水版 + 5 商品全量版）见 outputs/xianyu-master/上架素材包/上架操作清单.md；合规改造子集已就绪（敏感词清单/同款频次控制/数模标题改写 → xianyu-monetization v1.2.0）；决策包见 memory/2026/08/2026-08-31-xianyu-vault-suggestion-executor.md + 9/4 复核 memory/2026/09/2026-09-04-vault-suggestion-executor.md
 - [x] 主图制作：3 张模板图（前后对比/价格表/服务承诺）→ ✅ 08-03 已生成：`outputs/xianyu-master/上架素材包/`（主图1-3，**实测 750×750 方形 51-57KB**，思源黑体+蓝橙撞色+无极限词）→ 上架时直接上传，无需再做
 - [ ] 同步上架「论文排版/润色」商品（素材包已有现成文案）→ 顺延 8/17 同批上
 - [ ] 补 PPT 样例素材：从现有作品提 2-3 个样例页 + 「仅供参考」水印 → portfolio/ → 需 sora 手动导出截图（无 LibreOffice/python-pptx 渲染，无法自动化）→ 上架操作清单已注明详情图可复用主图2/3 兜底
