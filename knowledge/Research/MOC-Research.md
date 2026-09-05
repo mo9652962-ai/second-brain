@@ -5,7 +5,7 @@ type: moc
 domain: Research
 status: active
 created: 2026-08-09
-updated: 2026-09-01
+updated: 2026-09-05
 ---
 
 # 🔬 研究笔记 MOC — Research Map
@@ -13,7 +13,7 @@ updated: 2026-09-01
 > 所有研究笔记的索引与入口。自动按主题分组。
 > 回到 [[knowledge-map|🗺️ 知识地图]] · [[Home|🏠 Home]]
 
-**共 185 篇研究笔记** · 最后更新: 2026-09-01（每日增量索引）
+**共 186 篇研究笔记** · 最后更新: 2026-09-05（每日增量索引）
 
 
 ## 🆕 W34 新增补链（2026-08-16 周度整理）
@@ -324,6 +324,6 @@ updated: 2026-09-01
 ## 🧭 入口治理
 
 - [[../MOC-Inbox|待接入/孤立笔记审阅入口]]
-- [[Research/闲鱼方案第三方验证报告-WorkBuddy-2026-09-04]]
+- [[闲鱼方案第三方验证报告-WorkBuddy-2026-09-04]]
 - [[Research/eval-v2-2026-08-31/EVAL_PLAN]]
 - [[Research/eval-v2-2026-08-31/README]]
