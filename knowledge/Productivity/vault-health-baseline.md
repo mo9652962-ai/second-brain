@@ -15,7 +15,7 @@ at `C:\Users\31954\.openclaw\workspace`.
 
 | Check | Count | Notes |
 |-------|-------|-------|
-| Broken wikilinks | 0 | All `[[skill-name]]` refs converted to plain text |
+| Broken wikilinks | 0 | All ``skill-name`` refs converted to plain text |
 | Broken markdown links | 0 (vault) | 13 in skills/ (community skill cards, not vault content) |
 | Empty notes | 0 | All clean |
 | Orphan notes | 0 | All linked from index notes |

@@ -27,10 +27,13 @@ updated: 2026-08-31
 - [[knowledge/Productivity/ai-blogger-10round-research]]
 - [[knowledge/Productivity/agent-skills-methodology-absorbed]]
 - [[knowledge/Productivity/gongyu-absorbed]]
+- [[Development/墨题上云部署方案-无Docker-2026-09-02]]
+- [[Development/复现方案书-SummerCheckin-2026-08-31]]
+- [[Projects/墨题安全待决策-2026-08-19]]
 - [[knowledge/Productivity/english-grammar-organization-absorbed]]
 
 ## 🔗 方法论
-- [[pipelines/pipeline-overview]]
+- pipelines/pipeline-overview(待建)
 - [[skills/hermes/hermes-workflow-preferences]]
 - [[skills/hermes/daily-knowledge-absorption-gate]]
 

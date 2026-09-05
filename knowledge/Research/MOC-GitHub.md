@@ -13,7 +13,7 @@ updated: 2026-08-31
 > GitHub 主题切片总入口：周报 / 趋势日榜 / 单项目研读 / 热榜深读 / 资源清单。
 > [[knowledge-map|🗺️ 知识地图]] · [[MOC-Research|🔬 Research MOC（父域）]] · [[MOC-Security|🛡️ Security MOC]]
 
-**共 42 篇相关笔记** · 最后更新：2026-08-16（本 MOC 随《[[知识库重构方案-2026-08-16|知识库重构方案]]》创建，收拢散落在 Research 25 篇 + Dev 12 篇 + memory 周报系列的 GitHub 主题笔记）
+**共 42 篇相关笔记** · 最后更新：2026-08-16（本 MOC 随《知识库重构方案(已删)》创建，收拢散落在 Research 25 篇 + Dev 12 篇 + memory 周报系列的 GitHub 主题笔记）
 
 ---
 
@@ -81,7 +81,7 @@ updated: 2026-08-31
 
 ## 🗄️ 历史周报（memory 归档）
 
-- [[github-trending-w34]] · [[github-trending-w33]] · [[github-trending-w32]] · [[github-trending-w31-v3]] 等系列，见 `memory/2026/{07,08}/`
+- github-trending-w34(已删) · github-trending-w33(已删) · github-trending-w32(已删) · github-trending-w31-v3(已删) 等系列，见 `memory/2026/{07,08}/`
 - [[GitHub-Trending-W35-千轮深研-2026-08-23]] · W35 Top5 千轮深研（codebase-memory-mcp 论文实证/nanobot 对照/chrome-devtools-mcp 决策）
 
 ---
@@ -89,7 +89,7 @@ updated: 2026-08-31
 ## 📌 维护规范（引用重构方案）
 
 1. **周报统一命名 `GitHub-Weekly-YYYY-MM-DD`**；日榜统一 `github-trending-YYYY-MM-DD[-daily/-weekly/-batchN]`；禁用 `-2` 裸后缀
-2. 待改名 5 篇（[[GitHub热榜-2026-08-08]]、[[GitHub周榜-2026-08-08]]、[[github-weekly-2026-07-31-5projects]] 等）见 [[知识库重构方案-2026-08-16|知识库重构方案·第六节]]
+2. 待改名 5 篇（[[GitHub热榜-2026-08-08]]、[[GitHub周榜-2026-08-08]]、[[github-weekly-2026-07-31-5projects]] 等）见 知识库重构方案·第六节(原方案已删)
 3. 新 GitHub 研究笔记落盘 → 本 MOC 对应分区挂链（周报区 / 单项目研读区 / 深读区三选一）
 4. 单项目深读从热榜笔记沉淀为独立笔记时，在原周报内留下指向新笔记的反向链接
 

@@ -1,11 +1,11 @@
 ---
 tags: [cron-health, dashboard]
-updated: 2026-09-04 20:00
+updated: 2026-09-05 20:00
 ---
 
-# Cron 健康看板 — 2026-09-04 20:00
+# Cron 健康看板 — 2026-09-05 20:00
 
-总任务数: 41
+总任务数: 42
 
 | ⚪ | AI测评周报                         | 0 8 * * 1       |  |
 | ⚪ | GitHub 宝藏挖掘                    | 30 12 * * 0     |  |
@@ -24,6 +24,7 @@ updated: 2026-09-04 20:00
 | ⚪ | deterministic-verify           | 30 21 * * *     |  |
 | ⚪ | github-trending-rss            | 30 18 * * *     |  |
 | ⚪ | hackernews-daily               | 15 7 * * *      |  |
+| ⚪ | knowledge-lint-weekly          | 0 9 * * 0       |  |
 | ⚪ | memory-crystal-consolidation   | 0 2 * * 2       |  |
 | ⚪ | monthly-skill-usage            | 15 12 1 * *     |  |
 | ⚪ | obsidian-github-sync           | 0 */2 * * *     |  |
@@ -49,17 +50,17 @@ updated: 2026-09-04 20:00
 | ⚪ | 闲鱼提醒                           | 30 7 * * 1-5    |  |
 | ⚪ | 项目追踪                           | 0 21 * * *      |  |
 
-✅ 0 正常  ❌ 0 错误  ⚪ 41 从未执行
+✅ 0 正常  ❌ 0 错误  ⚪ 42 从未执行
 
 ## 🌐 网络健康指数 (🟡)
 
 亚健康 — 1/3 不可达
 
-连通率: 67% | 平均延迟: 1617ms
+连通率: 67% | 平均延迟: 200ms
 
   ❌ opencode-go: <urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE
-  🟡 siliconflow: HTTP 401 (1926ms, reachable)
-  🟡 deepseek: HTTP 401 (1307ms, reachable)
+  🟡 siliconflow: HTTP 401 (198ms, reachable)
+  🟡 deepseek: HTTP 401 (202ms, reachable)
 
 ---
 > 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]
