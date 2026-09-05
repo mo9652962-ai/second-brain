@@ -3,7 +3,7 @@ title: 知识库操作日志
 type: 日志
 created: 2026-09-05
 updated: 2026-09-05
-tags: [META, 知识库治理]
+tags: [meta, 知识库治理]
 ---
 
 # 🕐 知识库操作日志 — Knowledge Log
@@ -49,3 +49,5 @@ tags: [META, 知识库治理]
 - 核心：假阳性税（FP→忽略→mute→召回归零）、Precision/Recall 4 问、wiki-lint 现代实践 5 参考
 - 产出：knowledge/AI/工具精度方法论-假阳性税与知识库Lint-2026-09-05.md
 - 反哺：knowledge-lint skill 新增精度方法论章节 + backlog（issue caps/severity/stale_claim）
+
+## [2026-09-05] lint | 断链0·空文件0·标签冲突0·孤立1挂载MOC-Research(arxiv-09-05-agent-llm)·META→meta归一(3文件)

@@ -3,7 +3,7 @@ title: 知识库查询依据规则
 type: 规则
 created: 2026-09-05
 updated: 2026-09-05
-tags: [META, 知识库治理]
+tags: [meta, 知识库治理]
 ---
 
 # 📌 知识库查询依据规则 — Query Attribution Rules
