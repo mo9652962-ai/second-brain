@@ -146,6 +146,9 @@ v2026.3.7 引入的可插拔上下文管理界面已验证稳定。模型路由�
 - **CrewAI**: 44.3K stars, 5.2M 月下载，最活跃多 Agent 框架
 - **Gartner 2026-08 新预测**: AI inference cost 每 agentic workflow 至 2028 增超 5 倍——成本控制升为「生存项」，直接背书我们的 cheap-model tiering + semantic caching 低成本护城河（见 LRN-20260820-001）
 - **Self-hosted Agent 安全=治理自建 (2026-08)**: reco.ai「OpenClaw Security Crisis」+ Anthropic eval 事故回顾 + NVIDIA NemoClaw 三源同证。开源可审计 ≠ 数据安全；越流行越成攻击面。回应方案：NemoClaw/OpenShell 进程级沙箱 + 最小特权 + 本地模型（见 LRN-20260822-001）——直接背书 HarnessRisk 评测（Hermes Harness Configuration 最脆弱）的 P1 配置面收紧行动项
+- **OpenClaw 2.0 发布 (v2026.8.1)**: 简化安装流程，增强协作 Agent 能力，支持多 Agent 编排，符合 Graph Engineering 范式（见 Tavily 搜索结果 2026-09-05）。
+- **Local-First 与 Model-Agnostic 趋势**: 用户推动数据本地化和框架供应商独立性，OpenClaw 的多供应商 fallback 和自托管架构天然契合。
+- **编码 Agent 采用领跑**: Claude Code、Devin、Cursor 等成为开发者首选，推荐在技术任务中优先使用 coding agent skills.
 
 ### Agentic Primitives > Glue Code (2026)
 InformationWeek 报告：企业从脆弱的手工胶水脚本转向标准化 Agent 原语。
