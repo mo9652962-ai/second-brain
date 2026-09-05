@@ -51,3 +51,18 @@ tags: [meta, 知识库治理]
 - 反哺：knowledge-lint skill 新增精度方法论章节 + backlog（issue caps/severity/stale_claim）
 
 ## [2026-09-05] lint | 断链0·空文件0·标签冲突0·孤立1挂载MOC-Research(arxiv-09-05-agent-llm)·META→meta归一(3文件)
+
+## [2026-09-05] ingest | 运动曲线学习研究
+
+- 触发：抖音「设计师PPM：动效丝滑的关键就是要懂运动曲线」
+- 5+ 源研究（M3 官方 / iOS / IBM / Ant Design / 社区实践）
+- 产出：knowledge/Productivity/运动曲线-easing-动效丝滑关键-2026-09-05.md
+- 反哺：apple-design-web skill 新增「4b 运动曲线」章节
+
+## [2026-09-05] ingest | 网站公网部署学习研究
+
+- 触发：抖音「写代码的码农：网站做完怎么让别人访问」（完整章节要点）
+- 研究：Vercel 官方 DNS 细节 + 5 坑 + Cloudflare 中国加速方案 + 域名注册商对比
+- 产出：knowledge/Development/网站公网部署全流程-Vercel-CDN-域名-2026-09-05.md
+- 反哺：fastapi-cloud-deploy skill 补前端托管面
+- 关键发现：Vercel Hobby 免费仅限非商业用途——墨题商业化前需定前端平台

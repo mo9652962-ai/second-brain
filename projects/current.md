@@ -138,7 +138,7 @@ updated: 2026-09-02
 
 ### 🛠️ 工具/知识侧（P2，可选）
 - [x] Krea2 本地生图部署完成（ComfyUI 0.29 + 官方 FP8 模型 + Triton + 自定义 VAE 解码节点，实测出图 1024×1024 成功）✅ 8/1 深夜
-- [ ] Skill 重复合并（6 组：4 个 openclaw-imports 副本 + image-generation-workflow + miknas-find-skills）→ ✅ 08-03 复核：重复确认存在（实际每 skill 3 副本）→ **待 sora 一句话确认即执行**
+- [x] Skill 重复合并（6 组）→ ✅ **2026-09-05 实际执行**（真相核对：旧快照过期，实际 1 真重复 + 1 重叠 + 1 残留）：① image-generation-workflow 独有章节（CellCog/国内代理/本地部署 5561 字符）合并进 ai-image-generation v1.1，旧版归档 .archive/ ② miknas-find-skills 归档（guipi888 六层搜索为主入口，备份保留）③ openclaw-imports 45B 残留归档；备份 .backup/skill-merge-2026-09-05/
 - [x] deepseek-v4-flash 探索 3 项：opencode-go 验证 ✅ + Cron 主力切换 ✅（8/2 确认 26/26 已用 v4-flash）+ Codex CLI 集成 ✅ 8/5：codex-cli 0.146.0 已装（npm -g @openai/codex）
 
 

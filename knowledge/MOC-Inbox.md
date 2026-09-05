@@ -69,6 +69,7 @@ source: scripts/vault-orphan-duplicate-scan.py
 - [[Daily/hackernews-2026-09-02]]
 - [[Daily/hackernews-2026-09-03]]
 - [[Daily/hackernews-2026-09-04]]
+- [[Daily/hackernews-2026-09-05]]
 ## 💻 Dev
 
 - [[knowledge/Dev/agentradio-five-phase-orchestration]]
