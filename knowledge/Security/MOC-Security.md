@@ -13,7 +13,7 @@ updated: 2026-08-31
 > 网络安全主题的总入口：威胁研究 / Web 安全 / Agent 安全 / 本机加固 / 合规。
 > [[knowledge-map|🗺️ 知识地图]] · [[MOC-Research|🔬 Research MOC]] · [[MOC-GitHub|🐙 GitHub 研究 MOC]]
 
-**共 23 篇相关笔记** · 最后更新：2026-08-18（本 MOC 随《[[知识库重构方案-2026-08-16|知识库重构方案]]》创建，收拢散落在 Security / Research / cards / Dev 四处的安全主题笔记）
+**共 23 篇相关笔记** · 最后更新：2026-08-18（本 MOC 随《知识库重构方案(已删)》创建，收拢散落在 Security / Research / cards / Dev 四处的安全主题笔记）
 
 ---
 
@@ -28,6 +28,7 @@ updated: 2026-08-31
 - [[src-bug-hunting-2026-08-17]] — SRC 漏洞挖掘实战方法论：平台选型 + 5 类新手漏洞 + 六步流程 + 报告模板
 - [[src-hunting-earnings-2026-08-17]] — SRC 挖洞收益路径：0-1 月入门 → 3 月+ 冲击高危；只挖授权范围
 
+- [[Security/SRC批量初筛最小闭环验证-真洞转化率趋零-2026-09-02]]
 ## 🤖 Agent / AI 安全线（跨域收拢）
 
 - [[agent-memory-injection-2026-08-05]] — Agent 记忆注入攻击：查询只读注入，记忆是攻击面
@@ -35,6 +36,7 @@ updated: 2026-08-31
 - [[2026-08-05-zero-mem|卡片：Zero-Mem]] — 零 token 记忆架构；反向警示 ICLR 2026 Memory Injection Attacks（记忆操作即攻击面）
 - [[10-Top-AI-Agent-Projects-Deep-Research]] — Top10 Agent 项目深研：含 ClawHavoc 供应链攻击、审计发现 12% 技能为恶意的生态风险段
 
+- [[Security/hermes-codex-security-policy-2026-09-04]]
 ## 🏠 本机与运维安全
 
 - [[security-risk-assessment-2026-08-02]] — 落实项目风险评估：网关 18789 / ComfyUI 8188 均仅监听 127.0.0.1（对照 OpenClaw 85% 实例暴露公网的教训），3 个待加固风险点
@@ -65,7 +67,7 @@ updated: 2026-08-31
 
 ## 📌 待办（引用重构方案）
 
-1. ~~5 篇安全笔记从 Research/ 迁入 Security/（[[知识库重构方案-2026-08-16|方案·迁移清单]] #3~#7）~~ → ✅ **2026-08-23 已执行**：Research/ 已无安全笔记（grep 实证），Security/ 现有 40+ 篇（含 8-17~8-22 全部新增），迁移完成
+1. ~~5 篇安全笔记从 Research/ 迁入 Security/（方案·迁移清单(原为知识库重构方案章节) #3~#7）~~ → ✅ **2026-08-23 已执行**：Research/ 已无安全笔记（grep 实证），Security/ 现有 40+ 篇（含 8-17~8-22 全部新增），迁移完成
 2. 新安全笔记落盘时挂本 MOC；威胁类命名统一 `威胁名-YYYY-MM-DD` → ✅ **持续生效**：8-17 起新增 8 篇均按此约定命名并挂 MOC（见下方 🆕 列表）
 
 ## 🆕 2026-08-17/18 新增（8 篇）

@@ -240,8 +240,8 @@ updated: 2026-09-01
 
 ## 📖 工作流
 
-1. [[pipelines/paper-pipeline]] — 从选题到投稿
-2. [[pipelines/pipeline-overview]] — 论文/PPT/技能编排
+1. pipelines/paper-pipeline(待建) — 从选题到投稿
+2. pipelines/pipeline-overview(待建) — 论文/PPT/技能编排
 
 ---
 *MOC 节点 — 见图谱中的 📚 Academic 锚点*
@@ -322,3 +322,6 @@ updated: 2026-09-01
 ## 🧭 入口治理
 
 - [[../MOC-Inbox|待接入/孤立笔记审阅入口]]
+- [[Research/闲鱼方案第三方验证报告-WorkBuddy-2026-09-04]]
+- [[Research/eval-v2-2026-08-31/EVAL_PLAN]]
+- [[Research/eval-v2-2026-08-31/README]]

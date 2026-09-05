@@ -192,7 +192,7 @@ skill_manage(action='create'|'patch'|'edit') → 维护知识
 3. **语义记忆**：提炼后的知识和规律
 - **[[Academic]]** — 学术检索/阅读/写作全流程
 - **[[Vibe-Coding]]** — Hermes 运行环境、工具链与系统维护
-- **[[Obsidian-Vault]]** — Vault 使用指南与双轨记忆策略
+- **Obsidian 仓库** — Vault 使用指南与双轨记忆策略
 - **[[projects/current]]** — 当前所有项目的实时状态
 |- **[[HOME]]** — 返回知识中枢
 

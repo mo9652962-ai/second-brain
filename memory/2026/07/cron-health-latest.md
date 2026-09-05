@@ -1,9 +1,9 @@
 ---
 tags: [cron-health, dashboard]
-updated: 2026-09-04 20:00
+updated: 2026-09-05 00:00
 ---
 
-# Cron 健康看板 — 2026-09-04 20:00
+# Cron 健康看板 — 2026-09-05 00:00
 
 总任务数: 41
 
@@ -53,13 +53,10 @@ updated: 2026-09-04 20:00
 
 ## 🌐 网络健康指数 (🟡)
 
-亚健康 — 1/3 不可达
+亚健康 — 3/3 不可达
 
-连通率: 67% | 平均延迟: 1617ms
+连通率: 0% | 平均延迟: 0ms
 
-  ❌ opencode-go: <urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE
-  🟡 siliconflow: HTTP 401 (1926ms, reachable)
-  🟡 deepseek: HTTP 401 (1307ms, reachable)
-
----
-> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]
+  ❌ opencode-go: <urlopen error _ssl.c:999: The handshake operation
+  ❌ siliconflow: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING]
+  ❌ deepseek: <urlopen error _ssl.c:999: The handshake operation
