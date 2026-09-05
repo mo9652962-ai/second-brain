@@ -66,12 +66,12 @@ type: audit
 
 ## 📋 建议操作
 - [ ] 合并 `cad` 三副本 → 保留顶层增强版（8-22，含千轮研究），删 text-to-cad/cad 与 text2cad-cad
-- [ ] 删 @miknasbh-stack/miknas-find-skills（被 guipi888 完全替代）
-- [ ] 合并 image-generation-workflow → 顶层 ai-image-generation
+- [x] 删 @miknasbh-stack/miknas-find-skills（被 guipi888 完全替代）✅ 2026-09-05 已归档（.archive/miknas-find-skills-archived-2026-09-05）
+- [x] 合并 image-generation-workflow → 顶层 ai-image-generation ✅ 2026-09-05 已合并归档（.archive/image-generation-workflow-merged-2026-09-05）
 - [ ] 合并 fangzhou-ark-config / hermes/fangzhou-ark-setup
 - [ ] 合并 android-automation / uiautomator2-android-automation
 - [ ] 合并 hermes-search-config / hermes-web-search-config
-- [ ] 清理空目录 @evolinkai @nitishgargiitd + openclaw-imports 残留
+- [x] 清理空目录 @evolinkai @nitishgargiitd + openclaw-imports 残留 ✅ 2026-09-05：openclaw-imports 已归档（.archive/openclaw-imports-residue-2026-09-05）+ @evolinkai/@nitishgargiitd 空目录已清理
 - [ ] 观察：agent 技能 8 月净增 ~125 个，建议下月审查技能库膨胀（加载变慢）
 
 ## 说明

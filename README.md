@@ -132,12 +132,14 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 
 ---
 
-## 📦 最新技能入库 (2026-08-16 ~ 2026-09-04)
+## 📦 最新技能入库 (2026-08-16 ~ 2026-09-05)
 
 ### 研究笔记
 
 | 技能 | 版本 | 简介 |
 |------|------|------|
+| **[HN 今日深挖 09-05](knowledge/Daily/hackernews-2026-09-05.md)** | v1.0 | Top10 筛 7 条：OpenAI agent 留言板 / 费马大定理形式化 / Chromium 沙箱 RCE / eInk 自行车电脑 / IBM Bob / AI 设计电路板基准 / GPT-6 Astra 上 OpenRouter |
+| **[arXiv AI Agent / LLM 速览 09-05](knowledge/Research/arxiv-2026-09-05-agent-llm.md)** | v1.0 | 09-04 双日池补全性质：索引冻结无新提交，补录同池漏网强相关论文（不重写已收录） |
 | **[arXiv AI Agent / LLM 速览 09-04](knowledge/Research/arxiv-2026-09-04-agent-llm.md)** | v1.0 | 09-03+09-04 双日池 925 篇 → 24 主条目 + 12 简评（API 429 限流改走 HTML 抓取，索引推进至 09-04） |
 | **[HN 今日深挖 09-04](knowledge/Daily/hackernews-2026-09-04.md)** | v1.0 | Top10 筛 7 条：GPT-6 Astra / Qwen 3.8 @1500 t/s / K2 Horizon 六模型集群 / Antigravity TOS 等 |
 | **[arXiv AI Agent / LLM 速览 09-03](knowledge/Research/arxiv-2026-09-03-agent-llm.md)** | v1.0 | 09-02 单日池 328 篇 → 27 主条目 + 12 简评（索引推进至 2609.02885） |

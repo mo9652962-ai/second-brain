@@ -90,36 +90,47 @@ def update_moc_research() -> int:
     # 已索引的：链接统一取 stem（兼容 [[path/note|display]] 形式），避免重复索引
     indexed = {ln.rsplit("/", 1)[-1] for ln in re.findall(r"\[\[([^\]|#]+)", current)}
     missing = sorted(names - indexed)
-    if not missing:
-        return 0
-    # 若文件末尾已是 "## 其他" 小节，则合并进去；否则追加新小节
-    # 用行解析代替正则，避免灾难性回溯（(?:...)*$ 在长文件上会指数级回溯挂死）
-    tail = current.rstrip()
-    lines = tail.split("\n")
-    other_idx = None
-    for i in range(len(lines) - 1, -1, -1):
-        if lines[i].strip() == "## 其他":
-            other_idx = i
-            break
-    if other_idx is not None:
-        # 找到 "## 其他" 小节的结束位置（下一个 "## " 标题，或文件末尾）
-        end = len(lines)
-        for j in range(other_idx + 1, len(lines)):
-            if lines[j].startswith("## "):
-                end = j
+    changed = False
+    if missing:
+        # 若文件末尾已是 "## 其他" 小节，则合并进去；否则追加新小节
+        # 用行解析代替正则，避免灾难性回溯（(?:...)*$ 在长文件上会指数级回溯挂死）
+        tail = current.rstrip()
+        lines = tail.split("\n")
+        other_idx = None
+        for i in range(len(lines) - 1, -1, -1):
+            if lines[i].strip() == "## 其他":
+                other_idx = i
                 break
-        # 去掉小节末尾空行
-        while end > other_idx + 1 and lines[end - 1].strip() == "":
-            end -= 1
-        add_lines = [f"- [[{name}]]" for name in missing]
-        new_lines = lines[:end] + add_lines + lines[end:]
-        current = "\n".join(new_lines) + "\n"
-    else:
-        add_lines = ["## 其他", ""] + [f"- [[{name}]]" for name in missing]
-        current = tail + "\n\n" + "\n".join(add_lines) + "\n"
-    # 更新计数行
-    current = re.sub(r"\*\*共 \d+ 篇研究笔记\*\*", f"**共 {len(files)} 篇研究笔记**", current)
-    moc_path.write_text(current, encoding="utf-8")
+        if other_idx is not None:
+            # 找到 "## 其他" 小节的结束位置（下一个 "## " 标题，或文件末尾）
+            end = len(lines)
+            for j in range(other_idx + 1, len(lines)):
+                if lines[j].startswith("## "):
+                    end = j
+                    break
+            # 去掉小节末尾空行
+            while end > other_idx + 1 and lines[end - 1].strip() == "":
+                end -= 1
+            add_lines = [f"- [[{name}]]" for name in missing]
+            new_lines = lines[:end] + add_lines + lines[end:]
+            current = "\n".join(new_lines) + "\n"
+        else:
+            add_lines = ["## 其他", ""] + [f"- [[{name}]]" for name in missing]
+            current = tail + "\n\n" + "\n".join(add_lines) + "\n"
+        changed = True
+    # 计数行始终刷新（无新笔记时数量也可能因增删漂移，如 185→186）
+    refreshed = re.sub(r"\*\*共 \d+ 篇研究笔记\*\*", f"**共 {len(files)} 篇研究笔记**", current)
+    if refreshed != current:
+        current = refreshed
+        changed = True
+    # frontmatter updated 日期始终刷新
+    today = datetime.date.today().strftime("%Y-%m-%d")
+    refreshed = re.sub(r"^updated: [0-9-]+", f"updated: {today}", current, count=1, flags=re.M)
+    if refreshed != current:
+        current = refreshed
+        changed = True
+    if changed:
+        moc_path.write_text(current, encoding="utf-8")
     return len(missing)
 
 
