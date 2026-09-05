@@ -1,12 +1,13 @@
 ﻿---
 tags: [projects, active]
-updated: 2026-09-02
+updated: 2026-09-05
 ---
 
 # 当前项目状态
 
 > 本周（8/16–8/22）周度清理：完成项已归档，未完成项重新排期。完整报告见 `memory/2026/08/2026-08-22-weekly-todo-cleanup.md`
-> 8/23 suggestion-implementation：落地 3 项 k 自主项（墨题巡检 cron pin 修复 / 报价 4 问话术模板 / 搭网站写脚本商品素材包 + Agent OS B 站初稿），详见 `memory/2026/08/2026-08-23-vault-suggestion-executor.md`
+> 8/23 suggestion-implementation：落地 3 项 k 自主项
+> 本周（9/1–9/5）周度清理：完成项已归档至 Section 9，未完成项重新排期（闲鱼决策 9/6 fallback 触发）。完整报告见 `memory/2026/09/2026-09-05-weekly-todo-cleanup.md`（墨题巡检 cron pin 修复 / 报价 4 问话术模板 / 搭网站写脚本商品素材包 + Agent OS B 站初稿），详见 `memory/2026/08/2026-08-23-vault-suggestion-executor.md`
 
 ## ✅ 已完成（归档）
 
@@ -122,10 +123,48 @@ updated: 2026-09-02
 **🔧 基础设施维护（8/20）**
 - cache-hit-monitor cron 修复：根因 jobs.json 中 `script` 字段误含参数（`cache_hit_monitor.py --days 3 --threshold 50`）致 `Script not found`；改回裸文件名 + 脚本默认值等价，38 jobs 回读 OK
 - scripts/README.md 登记表创建（8/20）：杜绝脚本无声消失；修正 cache_hit_monitor 条目（曾被误记「已删除/无源码」实为 cron 字段写错）
+### 9. 本周（9/1–9/5）完成项
+
+**🗓️ 系统可靠性 / cron 容灾（9/1–9/3）**
+- [x] 8–9am cron 429 错峰首批真落地（9/1）：daily-self-improvement 8:30→6:45 / daily-health-check 8:45→15:45 / cron-alert-watchdog 9:00→6:30，hermes cron edit 持久化 + jobs.json 回读验证 `schedule.expr`+`next_run_at` ✅
+- [x] 主模型可用性验证（9/1）：fangzhou-2 /models 无 `deepseek-v4-flash` 别名但真实推理路由成功（8/31 400 为瞬时非下架）；jiyuanlvdong-2 推理 HTTP 200 ✅
+- [x] 8/31 daily-review 补位 + patch hermes-automation-patterns 双规则（429 错峰硬规则 + 产出型 cron 失败补位）✅ 9/1
+- [x] patch daily-knowledge-review reconcile 硬规则（明日行动项生成前读 current.md 剔除当日已✅项）✅ 9/2
+- [x] Tavily 决策拍板（9/2）：配额耗尽连续 12 工作日「评估」改「已执行」——降级末位备选（Firecrawl→DDGS→SearXNG→Tavily），运行时 web.backend=exa + extract_backend=firecrawl ✅
+- [x] daily-wechat-knowledge-card repoint → fangzhou-2（9/3，jobs.json 回读验证 ✅）
+- [x] FlClash 7890 转发核验恢复（9/3）：`curl -x 127.0.0.1:7890 google` → 302 正常，代理链路恢复；消息网关离线影响面定性待 sora 重启后确认
+
+**🧠 知识 / 研究（9/1–9/5）**
+- [x] 9/2 反思三标杆日收口：多Agent v2.7 千轮 / SRC ROI 实证归零 / 墨题上云无 Docker ✅
+- [x] arXiv 09-05 Agent/LLM 速览 20+8 篇（索引冻结补录同池漏网：Agent 记忆授权洗白 / HookPry 供应链 / OPD-then-RL / 测量伪影判定）→ `knowledge/Research/arxiv-2026-09-05-agent-llm.md` ✅ 9/5
+- [x] HN 09-04 精选：GPT-6 Astra（1437 分）绝对热点 + K2 Horizon 开源 6 模型集群 + Antigravity TOS 第三方使用→封号警示 ✅
+- [x] 知识卡 09-04：闲鱼推流算法（5 分钟回复率=流量生死线）→ `knowledge/cards/2026-09-04-xianyu-operation-algorithm.md` ✅
+- [x] OpenClaw 2.0 发布捕获（Local-First / Model-Agnostic / Graph Engineering 范式）→ LRN-20260905-001 ✅ 9/5
+- [x] 每日笔记断档补写（9/2 当场）：`memory/2026/09/2026-09-02.md` + daily-self-improvement 读路径 patch 登记 ✅
+
+**🎨 闲鱼素材 / 决策（9/1–9/5）**
+- [x] 素材核验第 12→14 次 PASS（9/1、9/3、9/4、9/5）：6 图 PNG 头实测 750×750 全 PASS（PPT 3 + 网站 3）✅
+- [x] 「搭网站/写脚本」商品主图 3 张生成（9/3，750×750 验证，初版 3:4 已修正）✅
+- [x] 主图1 安全版重生成（9/4）：「PPT 代做」→「演示文稿排版」，PNG 头实测 750×750 + vision 复核无敏感字 ✅
+- [x] 上架操作清单两段式升级（9/4）：试水版 + 5 商品全量版 → `outputs/xianyu-master/上架素材包/上架操作清单.md` ✅
+- [x] L2 重做清单（9/4）：5 商品标题去敏感词 + 前 15 字核心词 + 变体「同货不同形」（3 套主图差异化/错时上架/价格梯度）✅
+- [x] 闲鱼决策拆小 + fallback 提前（9/4）：拆「先上 1 个 PPT 商品试水」30min 最小可逆动作（下架即回退）；fallback 提前至 9/6 仍无决策 → k 默认推进合规改造子集 ✅
+
+**🛠️ 工具 / 维护（9/1–9/5）**
+- [x] Skill 重复合并 6 组实际执行（9/5，真相核对：1 真重复 + 1 重叠 + 1 残留）：image-generation-workflow 独有章节并入 ai-image-generation v1.1 + miknas-find-skills 归档 + openclaw-imports 45B 残留归档；备份 `.backup/skill-merge-2026-09-05/` ✅
+- [x] knowledge-lint 2 检测器 bug 修复 + 6 pitfalls 固化进 skill（9/5）✅
+- [x] obsidian 结构维护（9/1、9/3）：断链 10→0 + vault_link_audit.py `.md` 后缀误报 bug 修复；断链 0 / 清 dreaming 空壳 / 标签 src 归一（SRC→src）✅
+- [x] 确定性校验固化（9/4）：patch ai-image-generation + douyin-ai-blogger + scripts/README 三处（生成交付必须 stat/PNG 头校验，vision 仅辅助审美）✅
+- [x] MCP parked 降噪（9/4）：patch hermes-health-check 降级高亮 + 1 分钟解除清单（打开 Obsidian → Local REST API → /mcp reconnect）✅
+- [x] SRC 侦察收敛评估后放弃（9/3）：sora 暂停 SRC 方向（批量初筛 ROI≈0），工具保留可复用 ✅
+
+**📚 墨题商业线（9/5）**
+- [x] Codex P1-1 后端数据层（orders/plans/payments）+ 前端 v13 奖级图标线性化并行推进；ZCode 3 亿额度计划已排（题库 AI 精讲批量生成 2132 题为第一梯队）✅
+
 ## 🔄 进行中 / 已重新排期
 
-### 🎯 闲鱼上架（P0，**决策悬置第 36 天，8/31 决策到期已过**，连续顺延第 30+ 天）
-- [ ] 上架「AI 代做 PPT」商品 → 🔴 **决策悬置第 36 天（8/31 到期已过；9/4 已拆小为「先上 1 个商品试水」30min 最小可逆动作，试水版清单已备；fallback 提前至 9/6 仍无决策 → k 默认推进合规改造子集）**：素材 100% 就绪（6 图 9/4 PNG 头实测 750×750 全 PASS）；操作清单已升级两段式（试水版 + 5 商品全量版）见 outputs/xianyu-master/上架素材包/上架操作清单.md；合规改造子集已就绪（敏感词清单/同款频次控制/数模标题改写 → xianyu-monetization v1.2.0）；决策包见 memory/2026/08/2026-08-31-xianyu-vault-suggestion-executor.md + 9/4 复核 memory/2026/09/2026-09-04-vault-suggestion-executor.md
+### 🎯 闲鱼上架（P0，**决策悬置第 37 天，8/31 决策到期已过**，连续顺延第 30+ 天）
+- [ ] 上架「AI 代做 PPT」商品 → 🔴 **决策悬置第 37 天（8/31 到期已过；9/4 已拆小为「先上 1 个商品试水」30min 最小可逆动作，试水版清单已备；fallback 提前至 9/6 仍无决策 → k 默认推进合规改造子集）**：素材 100% 就绪（6 图 9/4 PNG 头实测 750×750 全 PASS）；操作清单已升级两段式（试水版 + 5 商品全量版）见 outputs/xianyu-master/上架素材包/上架操作清单.md；合规改造子集已就绪（敏感词清单/同款频次控制/数模标题改写 → xianyu-monetization v1.2.0）；决策包见 memory/2026/08/2026-08-31-xianyu-vault-suggestion-executor.md + 9/4 复核 memory/2026/09/2026-09-04-vault-suggestion-executor.md
 - [x] 主图制作：3 张模板图（前后对比/价格表/服务承诺）→ ✅ 08-03 已生成：`outputs/xianyu-master/上架素材包/`（主图1-3，**实测 750×750 方形 51-57KB**，思源黑体+蓝橙撞色+无极限词）→ 上架时直接上传，无需再做
 - [ ] 同步上架「论文排版/润色」商品（素材包已有现成文案）→ 顺延 8/17 同批上
 - [ ] 补 PPT 样例素材：从现有作品提 2-3 个样例页 + 「仅供参考」水印 → portfolio/ → 需 sora 手动导出截图（无 LibreOffice/python-pptx 渲染，无法自动化）→ 上架操作清单已注明详情图可复用主图2/3 兜底
@@ -169,11 +208,11 @@ updated: 2026-09-02
 - ✅ patch daily-knowledge-review：明日行动项生成前 reconcile projects/current.md 的 ✅ 状态，剔除陈旧待办（9/1 实测踩中：主模型验证 20:06 已完成，22:39 daily-review 仍列为 9/2 待办，差点误报）（agent 可做，20min）
 - ✅ Tavily 决策拍板（2026-09-02 daily-todo-executor 落地）：配额耗尽连续 12 工作日，「评估 plan 升级」正式拍板——降级为末位备选（Firecrawl→DDGS→SearXNG→Tavily），从「评估」改「已执行」；运行时 web.backend=exa + extract_backend=firecrawl 已不依赖 Tavily 主用，仅作兜底；若 sora 想保留再补 30 天成本对比，默认路径零成本
 - ✅ FlClash 升级推送（2026-09-02 daily-todo-executor 已在当日报告置顶单条醒目请求，30 秒重启操作清单见报告）：连续 5 次标 P0 无触达闭环→本次单条推送已输出；消息网关离线影响面核查 + 降级定性待 sora 重启 FlClash 后核验
-- 🔴 闲鱼上架决策（悬置第 36 天）：决策包 100% 就绪，30min 复制粘贴可上 3 商品（PPT 30-80 / 论文 30 / 练习册 35），合规红线已内置——等 sora 拍板
+- 🔴 闲鱼上架决策（悬置第 37 天）：决策包 100% 就绪，30min 复制粘贴可上 3 商品（PPT 30-80 / 论文 30 / 练习册 35），合规红线已内置——等 sora 拍板
 ### 🧭 9/3 反思行动项（daily-reflection 复盘 9-02，执行者必读）
 - ✅ 每日笔记补写（2026-09-02 reflection 当场）：memory/2026/09/2026-09-02.md 已补写（9/2 self-improvement 输出为 self-improvement.md 而未写主文件）；patch daily-self-improvement 读路径为 memory/YYYY/MM/ 待执行（agent 可做，10min）
 - ✅ patch daily-knowledge-review 评分表加深验证判定列（2026-09-02 reflection 当场执行）：API 直调/视频转写日标注「等效深度豁免」
-- 🔒 闲鱼决策包 30 秒二选一（悬置第 36 天起）：上架 → k 给 5 步操作清单；放弃 → k 归档素材包 + 标记 [决策:放弃]；9/6 fallback 仍无决策 → k 默认推进合规改造子集（敏感词/数模标题改写已在 xianyu-monetization v1.2.0）
+- 🔒 闲鱼决策包 30 秒二选一（悬置第 37 天起）：上架 → k 给 5 步操作清单；放弃 → k 归档素材包 + 标记 [决策:放弃]；9/6 fallback 仍无决策 → k 默认推进合规改造子集（敏感词/数模标题改写已在 xianyu-monetization v1.2.0）
 - ✅ FlClash 7890 转发 k 核验（2026-09-03 20:03 daily-todo-executor 实测）：`curl -x http://127.0.0.1:7890 https://www.google.com` → **302 正常**，代理链路已恢复；FlClashCore 今晨 11:23 启动。消息网关离线影响面仍待 sora 确认重启后核验（必要时 P0→P2）
 ### 🧭 9/4 反思行动项（daily-reflection 复盘 9-03，执行者必读）
 - ✅ 闲鱼决策拆小 + fallback 提前（2026-09-04 vault-suggestion-executor 落地）：拆「先上 1 个商品（PPT 30-80 档）试水」最小可逆动作（素材 6 图 13 次核验 PASS / 合规 0 缺口 / 30min 可逆）；fallback 从 9/9 提前到 **9/6 仍无决策 → k 默认推进合规改造子集**（敏感词/数模标题改写已在 xianyu-monetization v1.2.0）；试水版 + 全量版两段式操作清单已备 outputs/xianyu-master/上架素材包/上架操作清单.md
@@ -207,15 +246,17 @@ updated: 2026-09-02
 
 | 项 | 状态 | 说明 |
 |:---|:-----|:-----|
-| 闲鱼上架决策「上架 or 放弃」 | 🔴 决策悬置第 36 天（8/31 到期已过，fallback 9/6） | 素材 100% 就绪；合规子集已备（xianyu-monetization v1.2.0）；8/24 倒计时机制生效 |
+| 闲鱼上架决策「上架 or 放弃」 | 🔴 决策悬置第 37 天（8/31 到期已过，fallback 9/6） | 素材 100% 就绪；合规子集已备（xianyu-monetization v1.2.0）；8/24 倒计时机制生效 |
 | 随身WiFi下单（赫电 Pro 399元/年） | 🔒 选型已确认 | 33元/月 1500G，待确认下单（阻塞 8 天+） |
 | 桌面美化实际部署 | 🔒 安装包已就绪 | TranslucentTB + Rainmeter winget 一键安装已就绪 |
 | SFC 系统扫描 | 🔒 需管理员权限 | 7/24 曾标记完成，7/27 后重复录入，待 sora 确认是否重跑 |
 | 零感 AI 付费实测（1元/千字） | 🔒 需付费+测试稿 | 卡片 2026-08-03：降 AI 率主推工具定标，验 1 篇知网 98% 稿后写入 SOP |
 | DeepSeek 直连充值 | 🔒 余额 ¥7.25 | 8/14 cron 记录；需充值恢复容灾深度 |
+| jiyuanlvdong-2 余额充值 | 🔒 余额枯竭（9/4 起 402） | fallback 链备用节点，主链 fangzhou-2 不受影响；9/5 健康巡检已标红 |
+| 多 provider 402 余额枯竭 | 🔒 需充值 | deepseek官方 / siliconflow / moonshot / dengzhen 均 402（9/5 巡检），主链 + 一级 fallback 不受影响，容灾深度减薄 |
 | `/new` 开新会话 | 🔒 长会话烧钱 | 「对话历史回顾」1M tokens 接近上限，压缩反复失败 |
 | 打开 Obsidian（恢复 MCP） | 🔒 27123 端口无监听 | 依赖 Obsidian 的 cron 会失败 |
-| 8/28 确认 fangzhou-2 配额恢复 | 📅 到时提醒 | 月配额 8/28 重置 |
+| fangzhou-2 配额恢复 | ✅ 已恢复（9/5 实测） | 主链 custom:fangzhou-2 实测 1264ms OK，月配额重置生效，无需操作 |
 | 安全审计 cron 排期 | ✅ 已完成 8/5 | security-audit cron 已挂载（`30 8 * * 0` no_agent + security_audit.py），无需再操作 |
 
 ## 🔗 相关领域
@@ -227,7 +268,7 @@ updated: 2026-09-02
 
 ---
 
-_由 k (Hermes) 在每次会话结束时更新 | 最后更新: 2026-09-05（daily-reflection：9/5 反思行动项登记 + fallback 升级可执行试水上架）_
+_由 k (Hermes) 在每次会话结束时更新 | 最后更新: 2026-09-05（weekly-todo-cleanup：Section 9 归档 + 闲鱼决策第 37 天、9/6 fallback 触发 + 待用户表更新）_
 
 ---
 
