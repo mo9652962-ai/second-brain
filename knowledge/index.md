@@ -50,8 +50,10 @@ tags: [meta, 知识库治理]
 |:---|:---|:---|
 | 查询依据规则 | [[META/KNOWLEDGE-QUERY-RULES]] | 回答必须标来源页面（query 纪律） |
 | 体检脚本 | `META/scripts/knowledge-lint.py` | 只读扫描断链/孤立/缺 frontmatter/重复 |
-| 知识库方法论 | [[AI/知识库-AI不翻知识库根因-2026-09-04]] |
-| 工具精度方法论 | [[AI/工具精度方法论-假阳性税与知识库Lint-2026-09-05]] | 「差的不是资料是最上面那层规则」+ AGENTS.md 实践 |
+| 知识库方法论 | [[AI/知识库-AI不翻知识库根因-2026-09-04]] | 「差的不是资料是最上面那层规则」+ AGENTS.md 实践 |
+| 工具精度方法论 | [[AI/工具精度方法论-假阳性税与知识库Lint-2026-09-05]] | 假阳性税 + Precision/Recall 4 问 |
+| 运动曲线/动效 | [[Productivity/运动曲线-easing-动效丝滑关键-2026-09-05]] | cubic-bezier 曲线表 + M3/iOS 官方体系 |
+| 公网部署 | [[Development/网站公网部署全流程-Vercel-CDN-域名-2026-09-05]] | Vercel+域名+Cloudflare 全流程 |
 | 操作时间线 | [[log]] | 所有 ingest/lint/query 的 append-only 记录 |
 
 ## 📐 使用规则（AI 必读）
