@@ -229,7 +229,7 @@ InformationWeek 报告：企业从脆弱的手工胶水脚本转向标准化 Age
 - [x] ~~AI 变现调研~~ ✅ 2026-07-24
 - [x] ~~LRN-20260722-001 (Plan-and-Execute)~~ ✅ 2026-07-25
 - [x] ~~AI 变现落地（闲鱼AI代做PPT/论文润色）— 可发车（闲鱼封号至8/1）~~ ✅ 素材已预生成，8/1 解封日已过，上架排期 8/2
-- [ ] 闲鱼上架「AI 代做 PPT」→ **决策悬置第 36 天，8/31 到期已过（fallback 9/6 → k 默认推进合规子集）**（素材包+主图 100% 就绪，30min；主图1 已重生成安全版去「代做」；合规已备：经营性卖家新规量化+敏感词清单+同款频次控制+数模标题改写 → xianyu-monetization v1.2.0；见 projects/current.md）
+- [ ] 闲鱼上架「AI 代做 PPT」→ **决策悬置第 37 天，8/31 到期已过（fallback 9/6 → k 默认推进合规子集）**（素材包+主图 100% 就绪，30min；主图1 已重生成安全版去「代做」；合规已备：经营性卖家新规量化+敏感词清单+同款频次控制+数模标题改写 → xianyu-monetization v1.2.0；见 projects/current.md）
 - [x] ~~语义缓存最小版落地（根治 Tavily 配额 + 预防 Gartner 5x）~~ ✅ 2026-08-21：统一 chokepoint 覆盖全 8 后端（commit 84d813bf2），根治连续 8 工作日配额复发
 - [x] ~~合并冗余 skills（hermes-search-configuration → hermes-search-config）~~ ✅ 2026-07-31 已核实：hermes-search-configuration 已不存在，仅剩 hermes-search-config，无需合并
 - [ ] 随身WiFi下单确认（赫电 Pro 399元/年，选型已确认）→ 待 sora 确认
