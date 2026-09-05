@@ -180,6 +180,11 @@ updated: 2026-09-02
 - ✅ 确定性校验固化（2026-09-04 daily-todo-executor 落地）：patch ai-image-generation（新增「生成交付确定性校验」硬规则小节）/ douyin-ai-blogger（Pitfall 9）/ scripts/README（校验规则登记）三处完成；xianyu-monetization 9/3 已闭环——生成类交付必须 stat/读 PNG 头确定性校验（9/3 主图 3:4 误用 vision 三连 PASS 未抓出，靠 PNG 头才发现的教训），视觉模型仅作辅助审美判断；今日主图1 安全版即按此规则 PIL 确定性生成 + PNG 头校验 PASS
 - ✅ MCP parked 降噪 agent 部分（2026-09-04 daily-todo-executor 落地）：patch hermes-health-check 新增「MCP parked 降级高亮」规则（按待关注处理、不逐次红色高亮）+ 1 分钟解除清单（打开 Obsidian → 启用 Local REST API → /mcp reconnect）；🔒 sora 部分：打开 Obsidian 解除 parked（1 分钟清单已备）
 - 🔴 FlClash 重启后核验消息网关影响面（需 sora 30 秒）：k 已核验 7890 转发 302 正常，重启后确认离线影响面→降级定性（P0→P2）
+### 🧭 9/5 反思行动项（daily-reflection 复盘 9-04，执行者必读）
+- 🛠️ fallback 升级为可执行试水上架（2026-09-05 daily-reflection 登记）：9/6 无决策 → k 默认执行试水版上架前置（主图1 安全版 + 标题文案 + 违禁词全量过一遍 → 推送上架操作清单），合规改造子集降级为「sora 明确不试水才执行」；复查试水版清单每一步产出物路径指向最新文件（主图1 已换安全版）——agent 可做 20min，9/6 触发
+- 🛠️ PIL 确定性生成兜底固化：查 .env 生图 key 状态（XAI/FAL 存在待 health 巡检实测）→ 条幅重绘脚本沉淀 vault scripts/（如 gen_xianyu_main_image_safe.py）+ 登记 scripts/README + patch ai-image-generation「外部 API 失效 → PIL 确定性兜底」双路径——agent 可做 20min
+- 🔒 首次交互置顶三连（需 sora 30 秒×3）：MCP 解除（打开 Obsidian + Local REST API + reconnect，1min）/ FlClash 重启核验影响面（30s）/ 闲鱼试水决策（一句话二选一）——9/4 有 58 条真实交互仍 4 天未解除，触达失效，9/5 起随每次交互置顶；连续 2 天交互未解除 → 换 desktop 通知/微信通道
+
 ### 🧭 8/20 反思行动项（daily-reflection 复盘 8-19，执行者必读）
 - [x] P0 语义缓存最小版落地——✅ 8/21 完成（硬截止 8/22 前）：原实现只挂 tavily provider、实际流量走 exa/searxng/firecrawl 兜底时从未命中（cache 文件从未生成）；已在 `web_tools.py::web_search_tool` chokepoint 上移统一缓存覆盖全部后端，实测 exact 命中生效，submit `84d813bf2`
 - [x] P1 health_provider_check.py 加余额阈值告警 → ✅ 8/21：新增 `_balance_flag` 解析 HTTP 402/403/429 错误体中的「额度/余额」信息（keylink/jiyuanlvdong 中转站内嵌无独立端点），余额不足自动标 ⚠️。实测 kimi suspended / fangzhou-2 quota(8/28 重置) 被正确标红；keylink 已恢复 OK（¥0.05 裸奔解除）
@@ -222,7 +227,7 @@ updated: 2026-09-02
 
 ---
 
-_由 k (Hermes) 在每次会话结束时更新 | 最后更新: 2026-09-03（vault-suggestion-executor：闲鱼专项复核 + 搭网站主图 3 张生成）_
+_由 k (Hermes) 在每次会话结束时更新 | 最后更新: 2026-09-05（daily-reflection：9/5 反思行动项登记 + fallback 升级可执行试水上架）_
 
 ---
 
