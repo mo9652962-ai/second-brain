@@ -42,3 +42,10 @@ tags: [META, 知识库治理]
 - 断链 0 / 孤立 0 / 缺 frontmatter 0
 - 处理原则：只报告不自动修；新问题由 k 在下次会话处理
 
+
+## [2026-09-05] ingest | 工具精度方法论学习研究
+
+- 触发：知识库清理实战（lint 43 误报 vs 14 实际）→ 6 源搜索引擎研究
+- 核心：假阳性税（FP→忽略→mute→召回归零）、Precision/Recall 4 问、wiki-lint 现代实践 5 参考
+- 产出：knowledge/AI/工具精度方法论-假阳性税与知识库Lint-2026-09-05.md
+- 反哺：knowledge-lint skill 新增精度方法论章节 + backlog（issue caps/severity/stale_claim）

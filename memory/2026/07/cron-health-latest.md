@@ -1,11 +1,11 @@
 ---
 tags: [cron-health, dashboard]
-updated: 2026-09-05 00:00
+updated: 2026-09-05 12:12
 ---
 
-# Cron 健康看板 — 2026-09-05 00:00
+# Cron 健康看板 — 2026-09-05 12:12
 
-总任务数: 41
+总任务数: 42
 
 | ⚪ | AI测评周报                         | 0 8 * * 1       |  |
 | ⚪ | GitHub 宝藏挖掘                    | 30 12 * * 0     |  |
@@ -24,6 +24,7 @@ updated: 2026-09-05 00:00
 | ⚪ | deterministic-verify           | 30 21 * * *     |  |
 | ⚪ | github-trending-rss            | 30 18 * * *     |  |
 | ⚪ | hackernews-daily               | 15 7 * * *      |  |
+| ⚪ | knowledge-lint-weekly          | 0 9 * * 0       |  |
 | ⚪ | memory-crystal-consolidation   | 0 2 * * 2       |  |
 | ⚪ | monthly-skill-usage            | 15 12 1 * *     |  |
 | ⚪ | obsidian-github-sync           | 0 */2 * * *     |  |
@@ -49,7 +50,7 @@ updated: 2026-09-05 00:00
 | ⚪ | 闲鱼提醒                           | 30 7 * * 1-5    |  |
 | ⚪ | 项目追踪                           | 0 21 * * *      |  |
 
-✅ 0 正常  ❌ 0 错误  ⚪ 41 从未执行
+✅ 0 正常  ❌ 0 错误  ⚪ 42 从未执行
 
 ## 🌐 网络健康指数 (🟡)
 
@@ -57,6 +58,6 @@ updated: 2026-09-05 00:00
 
 连通率: 0% | 平均延迟: 0ms
 
-  ❌ opencode-go: <urlopen error _ssl.c:999: The handshake operation
-  ❌ siliconflow: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING]
-  ❌ deepseek: <urlopen error _ssl.c:999: The handshake operation
+  ❌ opencode-go: <urlopen error [WinError 10054] 远程主机强迫关闭了一个现有的连接。>
+  ❌ siliconflow: <urlopen error [WinError 10054] 远程主机强迫关闭了一个现有的连接。>
+  ❌ deepseek: <urlopen error [WinError 10053] 你的主机中的软件中止了一个已建立的连
