@@ -37,6 +37,7 @@
 | web-archive.py | 网页存档 | 08-06 | 在用 |
 | xianyu-master-gen.py | 闲鱼上架素材包生成 | 08-06 | 在用 |
 | xianyu-web-main-gen.py | 闲鱼「搭网站/写脚本」主图生成（复用 PPT 主图风格） | 09-03 | 在用 |
+| gen_xianyu_main_image_safe.py | 闲鱼主图「安全版」确定性兜底（纯 PIL 条幅重绘，去敏感词；外部生图 API 失效时用；PNG 头+尺寸自检） | 09-05 | 在用 |
 | cache_hit_monitor.py | 缓存命中率监控（no_agent cron 用，位于 AppData/Local/hermes/scripts/，非本目录） | 08-20 | ✅ 修好（见下） |
 | vault-audit-report.json | vault 审计报告（数据文件，非脚本） | 08-06 | 数据 |
 

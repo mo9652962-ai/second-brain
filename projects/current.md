@@ -220,8 +220,8 @@ updated: 2026-09-05
 - ✅ MCP parked 降噪 agent 部分（2026-09-04 daily-todo-executor 落地）：patch hermes-health-check 新增「MCP parked 降级高亮」规则（按待关注处理、不逐次红色高亮）+ 1 分钟解除清单（打开 Obsidian → 启用 Local REST API → /mcp reconnect）；🔒 sora 部分：打开 Obsidian 解除 parked（1 分钟清单已备）
 - 🔴 FlClash 重启后核验消息网关影响面（需 sora 30 秒）：k 已核验 7890 转发 302 正常，重启后确认离线影响面→降级定性（P0→P2）
 ### 🧭 9/5 反思行动项（daily-reflection 复盘 9-04，执行者必读）
-- 🛠️ fallback 升级为可执行试水上架（2026-09-05 daily-reflection 登记）：9/6 无决策 → k 默认执行试水版上架前置（主图1 安全版 + 标题文案 + 违禁词全量过一遍 → 推送上架操作清单），合规改造子集降级为「sora 明确不试水才执行」；复查试水版清单每一步产出物路径指向最新文件（主图1 已换安全版）——agent 可做 20min，9/6 触发
-- 🛠️ PIL 确定性生成兜底固化：查 .env 生图 key 状态（XAI/FAL 存在待 health 巡检实测）→ 条幅重绘脚本沉淀 vault scripts/（如 gen_xianyu_main_image_safe.py）+ 登记 scripts/README + patch ai-image-generation「外部 API 失效 → PIL 确定性兜底」双路径——agent 可做 20min
+- ✅ fallback 升级为可执行试水上架（2026-09-05 daily-reflection 登记）——2026-09-05 daily-todo-executor 落地：试水版清单全程复查，主图1 安全版 750×750 PNG 头 PASS（53KB）+ vision 无「代做」残留；文案模板断链已修复（knowledge/Academic/ → knowledge/Research/）：9/6 无决策 → k 默认执行试水版上架前置（主图1 安全版 + 标题文案 + 违禁词全量过一遍 → 推送上架操作清单），合规改造子集降级为「sora 明确不试水才执行」；复查试水版清单每一步产出物路径指向最新文件（主图1 已换安全版）——agent 可做 20min，9/6 触发
+- ✅ PIL 确定性生成兜底固化（2026-09-05 daily-todo-executor 落地）：.env key 实测 XAI invalid（Incorrect API key）+ FAL TOP_UP 锁定 → 外部生图确认不可用；沉淀 scripts/gen_xianyu_main_image_safe.py（纯 PIL 条幅重绘，750×750 PASS，vision 复核无敏感词）+ scripts/README 登记 + patch ai-image-generation「外部 API 失效 → PIL 兜底」双路径→ 条幅重绘脚本沉淀 vault scripts/（如 gen_xianyu_main_image_safe.py）+ 登记 scripts/README + patch ai-image-generation「外部 API 失效 → PIL 确定性兜底」双路径——agent 可做 20min
 - 🔒 首次交互置顶三连（需 sora 30 秒×3）：MCP 解除（打开 Obsidian + Local REST API + reconnect，1min）/ FlClash 重启核验影响面（30s）/ 闲鱼试水决策（一句话二选一）——9/4 有 58 条真实交互仍 4 天未解除，触达失效，9/5 起随每次交互置顶；连续 2 天交互未解除 → 换 desktop 通知/微信通道
 
 ### 🧭 8/20 反思行动项（daily-reflection 复盘 8-19，执行者必读）

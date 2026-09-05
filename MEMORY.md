@@ -238,7 +238,7 @@ InformationWeek 报告：企业从脆弱的手工胶水脚本转向标准化 Age
 - [ ] 桌面美化实际部署（TranslucentTB + Rainmeter 安装包已就绪）→ 待 sora 执行
 - [ ] 小红书发「AI PPT 教程」内容 → 排期 8/7+（依赖 PPT 样例素材）
 - [x] ~~Krea2 安装（ComfyUI + 14GB 模型下载）~~ ✅ 2026-08-02：8/1 深夜已部署完成（见 projects/current.md），待办过时
-- [ ] Skill 重复合并（6 组，8/1 审计识别）→ 待 sora 确认
+- [x] ~~Skill 重复合并（6 组，8/1 审计识别）~~ ✅ 2026-09-05 已执行（真相核对：1 真重复 + 1 重叠 + 1 残留——image-generation-workflow 并入 ai-image-generation v1.1 / miknas-find-skills 归档 / openclaw-imports 归档）
 
 ---
 
