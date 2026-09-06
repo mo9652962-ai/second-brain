@@ -173,3 +173,6 @@ period: 2026-09-01 ~ 2026-09-06
 ---
 
 _生成: k @ 2026-09-06 · weekly-learning-review cron_
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]
