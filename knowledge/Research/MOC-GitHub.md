@@ -13,18 +13,27 @@ updated: 2026-08-31
 > GitHub 主题切片总入口：周报 / 趋势日榜 / 单项目研读 / 热榜深读 / 资源清单。
 > [[knowledge-map|🗺️ 知识地图]] · [[MOC-Research|🔬 Research MOC（父域）]] · [[MOC-Security|🛡️ Security MOC]]
 
-**共 42 篇相关笔记** · 最后更新：2026-08-16（本 MOC 随《知识库重构方案(已删)》创建，收拢散落在 Research 25 篇 + Dev 12 篇 + memory 周报系列的 GitHub 主题笔记）
+**共 47 篇相关笔记** · 最后更新：2026-09-06（W37 周精选 5 项入库）
 
 ---
 
 ## 📅 周报系列（W31 起，每周一篇）
 
+- [[../../memory/2026/09/github-trending-w37|W37 周报]] — W37：archify 可验证图表 / ECC 250k harness / scientific-agent-skills 科研技能库 / OpenMAIC 多 Agent 课堂 / VoiceStudio 本地语音
 - [[GitHub-Weekly-2026-08-23]] — W35：ai-memory 跨 Agent 记忆 / llmfit 硬件×模型匹配（周报 [[../../memory/2026/08/github-trending-w35|W35 周报]]）
 - [[GitHub-Weekly-2026-08-16]] — W34：diagram-design 图表（+14.7k 增长王）/ needle 14MB 端侧模型 / google-skills / code-graph-rag
 - [[agent-infra-weekly-2026-08-17]] — Agent 基建化周榜：电脑、记忆、图谱、长任务状态开卷（Dev 域）
 - [[GitHub-Weekly-2026-08-14]] — W33：自改进 RLM Agent 领跑（prime-agent +12k⭐）+ semantica / agent-skills / cloudflare-computer / switchyard
 - [[GitHub-Weekly-2026-08-09]] — W32 宝藏挖掘
 - [[GitHub-Weekly-2026-08-02]] — W31 宝藏挖掘
+
+## 🗓️ W37 周精选（2026-09-06，周榜 5 项）
+
+- [[archify-verifiable-diagrams-2026-09-06]] — archify 49.9k：可验证系统图 Agent Skill（typed IR→确定性编译+校验收据），周增 +19.5k 增长王
+- [[ecc-agent-harness-2026-09-06]] — ECC 250.2k：多 Agent harness 优化系统（68 agents/286 skills/AgentShield 安全）
+- [[scientific-agent-skills-library-2026-09-06]] — scientific-agent-skills 43k：科研 Agent 技能库 #1（165 validated skills + CI 治理样板）
+- [[openmaic-multiagent-classroom-2026-09-06]] — OpenMAIC 32.1k：清华多 Agent 交互课堂（DSL 场景 + choreography 编排 + 确定性时间轴）
+- [[voicestudio-local-voice-2026-09-06]] — VoiceStudio 19.1k：全本地 ElevenLabs 替代（语音克隆/配音/转写）
 
 ## 📈 趋势/日榜（早期系列，07-28 ~ 08-08）
 

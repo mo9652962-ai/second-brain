@@ -34,7 +34,7 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 # 3. 推荐起点
 #   HOME.md → 知识中枢，了解全景
 #   skills/  → 直接可用的技能文档
-#   https://second-brain.example.com → MkDocs 在线版
+#   INDEX.md → 全库索引
 ```
 
 ### 方式 2：直接在 GitHub 上看
@@ -132,12 +132,17 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 
 ---
 
-## 📦 最新技能入库 (2026-08-16 ~ 2026-09-05)
+## 📦 最新技能入库 (2026-08-16 ~ 2026-09-06)
 
 ### 研究笔记
 
 | 技能 | 版本 | 简介 |
 |------|------|------|
+| **[HN 今日深挖 09-06](knowledge/Daily/hackernews-2026-09-06.md)** | v1.0 | Top10 筛 7 条：OpenAI agent 串通交流日志（1.8 万条）/ Chromium 沙箱 RCE（CVE-2026-85046）/ Nitter 实例反增 |
+| **[arXiv 核心贡献精选 09-06](knowledge/Research/arxiv-2026-09-06-core-contributions.md)** | v1.0 | 09-03+09-04 同池补全 15+9 篇；跨簇精选 3 篇：Harness Engineering / Delegation Without Trust / Runtime-Independent Persistent Agents |
+| **[arXiv AI Agent / LLM 速览 09-06](knowledge/Research/arxiv-2026-09-06-agent-llm.md)** | v1.0 | 09-03+09-04 同池补全（索引冻结无新提交），速览 15 主 + 9 简评 |
+| **[GitHub 宝藏挖掘周更 09-06](knowledge/Research/GitHub-Weekly-2026-09-06.md)** | v1.0 | Top 5 高星仓库（codebase-memory-mcp / nanobot / code-review-graph 等） |
+| **[Graphify 知识图谱周更 09-06](knowledge/Research/graphify-weekly-2026-09-06.md)** | v1.0 | 3 周积累图谱周更（2026-08-16 → 09-06，21 天） |
 | **[HN 今日深挖 09-05](knowledge/Daily/hackernews-2026-09-05.md)** | v1.0 | Top10 筛 7 条：OpenAI agent 留言板 / 费马大定理形式化 / Chromium 沙箱 RCE / eInk 自行车电脑 / IBM Bob / AI 设计电路板基准 / GPT-6 Astra 上 OpenRouter |
 | **[arXiv AI Agent / LLM 速览 09-05](knowledge/Research/arxiv-2026-09-05-agent-llm.md)** | v1.0 | 09-04 双日池补全性质：索引冻结无新提交，补录同池漏网强相关论文（不重写已收录） |
 | **[arXiv AI Agent / LLM 速览 09-04](knowledge/Research/arxiv-2026-09-04-agent-llm.md)** | v1.0 | 09-03+09-04 双日池 925 篇 → 24 主条目 + 12 简评（API 429 限流改走 HTML 抓取，索引推进至 09-04） |
@@ -216,8 +221,8 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 ## 📊 仓库统计
 
 ```
-📁 仓库体积：约 180MB（含附件与图片）
-📝 Markdown 文件：1000 个（正文约 5.4 MB）
+📁 仓库体积：约 205MB（含附件与图片）
+📝 Markdown 文件：1045 个（正文约 5.4 MB）
 🧠 自建 Skill 文档：30 个（11 个领域目录）
 🗂️ 知识域：11 个
 ⏰ 首次提交：2026 年 7 月
