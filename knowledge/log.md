@@ -78,3 +78,12 @@ tags: [meta, 知识库治理]
 - 修正：MOC-Research 3 链接从「入口治理」误区移入「评测」区
 - 索引：knowledge-map W37 区 + index（Research 186 / 总 532）+ MOC-Inbox 状态（孤立 0）
 - 报告：memory/2026/09/weekly-2026-09-06.md
+
+## [2026-09-06] lint | 例行体检修复（cron）
+
+- 体检：断链 0 / 缺 frontmatter 0 / 空页 0 / 孤立 0（修复后）/ duplicate 1（低风险保留）
+- 挂载：MOC-Research 补挂 [[arxiv-2026-09-06-agent-llm]]（速览页孤立 → 0）
+- 标签一致性：`ai agent`→`ai-agent`（Dev/airi.md）· `github trending`→`github-trending`（Research/GitHub-Weekly-2026-08-14.md）
+- 清理：git rm `Research/MOC-Research.md.bak`（8-10 旧残渣）+ 根目录 4 个 `.temp-*.py`（标注 safe to delete）
+- 保留说明：duplicate 'readme'（Dev/system-prompts-reference 与 Research/eval-v2-2026-08-31 各一 README，均以完整路径引用，Obsidian 解析不冲突，低风险不处理）
+
