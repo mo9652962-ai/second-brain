@@ -127,6 +127,7 @@ updated: 2026-09-05
 
 - [[knowledge/Productivity/闲鱼运营千轮研究-2026-09-04|闲鱼运营千轮研究 09-04]] · [[knowledge/cards/2026-09-04-xianyu-operation-algorithm|知识卡片 09-04]]
 - [[knowledge/AI/工具精度方法论-假阳性税与知识库Lint-2026-09-05|工具精度方法论 09-05]] · [[knowledge/cards/2026-09-05-false-positive-tax|知识卡片 09-05]]
+- [[knowledge/Research/arxiv-2026-09-06-core-contributions|arXiv 核心贡献 09-06]] · [[knowledge/cards/2026-09-06-harness-engineering|知识卡片 09-06]]
 ## 文章研读
 
 - [[ai-literature-search-pitfalls-study]]
