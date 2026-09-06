@@ -1,5 +1,5 @@
 ---
-tags: [AI, Agent-Skills, 科研, 技能库, 学术, GitHub-Trending, W37]
+tags: [ai, agent-skills, 科研, 技能库, 学术, github-trending, W37]
 aliases: [scientific-agent-skills, K-Dense, 科研技能库]
 date: 2026-09-06
 source: https://github.com/K-Dense-AI/scientific-agent-skills

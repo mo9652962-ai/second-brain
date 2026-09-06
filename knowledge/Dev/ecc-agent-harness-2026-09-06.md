@@ -1,5 +1,5 @@
 ---
-tags: [Dev, Agent, harness, Codex, Claude-Code, 安全, GitHub-Trending, W37]
+tags: [dev, agent, harness, Codex, Claude-Code, 安全, github-trending, W37]
 aliases: [ECC, agent-harness, 多Agent工具箱]
 date: 2026-09-06
 source: https://github.com/affaan-m/ECC

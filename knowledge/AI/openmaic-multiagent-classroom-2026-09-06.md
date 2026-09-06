@@ -1,5 +1,5 @@
 ---
-tags: [AI, 多Agent, 教育, 编排, 时间轴, GitHub-Trending, W37]
+tags: [ai, 多Agent, 教育, 编排, 时间轴, github-trending, W37]
 aliases: [OpenMAIC, 多智能体课堂, MAIC]
 date: 2026-09-06
 source: https://github.com/THU-MAIC/OpenMAIC
