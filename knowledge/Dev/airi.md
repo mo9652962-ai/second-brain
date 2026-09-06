@@ -1,5 +1,5 @@
 ---
-tags: [ai VTuber, 开源工具, 学习笔记, ai agent]
+tags: [ai VTuber, 开源工具, 学习笔记, ai-agent]
 aliases: [Airi, Project AIRI, アイリ]
 date: 2026-07-22
 source: https://github.com/moeru-ai/airi
