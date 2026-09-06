@@ -1,5 +1,5 @@
 ---
-tags: [AI, TTS, 语音克隆, 本地化, 短视频, 配音, GitHub-Trending, W37]
+tags: [ai, TTS, 语音克隆, 本地化, 短视频, 配音, github-trending, W37]
 aliases: [VoiceStudio, 本地语音工作台]
 date: 2026-09-06
 source: https://github.com/debpalash/VoiceStudio

@@ -1,5 +1,5 @@
 ---
-tags: [Dev, 图表, Agent-Skill, 架构图, 可视化, GitHub-Trending, W37]
+tags: [dev, 图表, agent-skills, 架构图, 可视化, github-trending, W37]
 aliases: [archify, 可验证架构图, 确定性图表编译]
 date: 2026-09-06
 source: https://github.com/tt-a1i/archify
