@@ -84,8 +84,12 @@ updated: 2026-08-31
 - [[knowledge/Productivity/jayxin-cumcm国赛LaTeX模板-实证评估-2026-08-23|国赛 LaTeX 模板实证]] — jayxin/cumcm（高端交付可加价）
 - 数模交付质量门禁 `quality_gate.py` — G1 占位符 / G2 代码自证 / G3 证据追溯 / G4 AI 声明（shumo 技能已记录用法）
 
+## 🆕 W37 新增（08-31 ~ 09-06：部署 + 动效 + 闲鱼运营）
+
+- [[knowledge/Productivity/运动曲线-easing-动效丝滑关键-2026-09-05|运动曲线 easing（动效丝滑关键）]] — cubic-bezier 曲线表 + M3/iOS 官方体系，配套技能 `apple-design-web` 已补 4b 章节
+- [[knowledge/Productivity/闲鱼运营千轮研究-2026-09-04|闲鱼运营千轮研究 09-04]] — 推流算法点击率分层 / 5 分钟回复率阈值 / 经营红线，9 条落地建议（当日知识卡片源）
+- [[knowledge/Development/网站公网部署全流程-Vercel-CDN-域名-2026-09-05|网站公网部署全流程]] — Vercel + 域名 + Cloudflare 中国加速，5 坑（Vercel Hobby 免费仅限非商业用途）
+- [[knowledge/Development/墨题上云部署方案-无Docker-2026-09-02|墨题上云部署方案（无 Docker）]] — 本机无虚拟化约束下的部署选型
+- [[knowledge/Projects/墨题安全待决策-2026-08-19|墨题安全待决策]] — 登录/鉴权/用户隔离决策记录
+
 ## 🧭 入口治理
-
-- [[../MOC-Inbox|待接入/孤立笔记审阅入口]]
-
-

@@ -67,6 +67,7 @@ updated: 2026-08-31
 ## 🎯 核心笔记
 
 - [[knowledge/Dev/AI-Agent|AI Agent 总览]]
+- [[knowledge/AI/知识库-AI不翻知识库根因-2026-09-04|知识库-AI 不翻知识库根因]] — 差的不是资料是最上面那层规则（知识库治理）
 - [[knowledge/Dev/AI-Workflow|AI 工作流]]
 - [[knowledge/Dev/LLM-Providers|LLM 供应商策略]]
 - [[Vibe-Coding]]

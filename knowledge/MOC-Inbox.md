@@ -5,7 +5,7 @@ type: moc
 domain: META
 status: active
 created: 2026-08-31
-updated: 2026-08-31
+updated: 2026-09-06
 tags:
   - meta/moc
   - knowledge/inbox
@@ -17,7 +17,7 @@ source: scripts/vault-orphan-duplicate-scan.py
 
 > 这是一个可审阅的中间入口，不是删除清单。它收拢当前没有入链的知识笔记，先保证每篇笔记可达，再按主题、状态和复用价值逐步接入领域 MOC。
 
-**本次扫描：53 篇无入链笔记（2026-08-31）**
+**本次扫描：53 篇无入链笔记（2026-08-31）→ 2026-09-06 周检：**孤立 0**（已全部接入 MOC / 入口治理），本页保留为历史索引**
 
 ## 使用规则
 

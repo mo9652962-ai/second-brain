@@ -174,6 +174,10 @@ updated: 2026-09-05
 ## 评测
 
 - [[Qwen-Image-3.0-Pro实测研究-2026-08-08]]
+- [[闲鱼方案第三方验证报告-WorkBuddy-2026-09-04]]
+- [[Research/eval-v2-2026-08-31/EVAL_PLAN]]
+- [[Research/eval-v2-2026-08-31/README]]
+
 
 ## 模型 API
 
@@ -324,6 +328,3 @@ updated: 2026-09-05
 ## 🧭 入口治理
 
 - [[../MOC-Inbox|待接入/孤立笔记审阅入口]]
-- [[闲鱼方案第三方验证报告-WorkBuddy-2026-09-04]]
-- [[Research/eval-v2-2026-08-31/EVAL_PLAN]]
-- [[Research/eval-v2-2026-08-31/README]]

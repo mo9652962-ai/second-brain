@@ -70,7 +70,7 @@ updated: 2026-09-04
 
 
 
-> 所有知识领域的索引与关联。最后更新: 2026-09-04（W36 周度整理：Vibe Coding/Agent 工作流 + 数模实证 + 量化交易入库 + memory 归位）
+> 所有知识领域的索引与关联。最后更新: 2026-09-06（W37 周度整理：Vibe Coding/Agent 工作流 + 数模实证 + 量化交易入库 + memory 归位）
 
 
 
@@ -921,6 +921,21 @@ graph TD
 ---
 
 
+
+## 🆕 W37 新增速览（2026-08-31 ~ 09-06）
+
+> 本周主线：墨题上云/公网部署落地（无 Docker 方案 + Vercel/CDN/域名全流程）+ 闲鱼运营千轮研究（推流算法点击率分层）+ 工具精度方法论（假阳性税，反哺 knowledge-lint）+ 多 Agent Eval 基线 v2（20 查询）。整理报告见 [[../memory/2026/09/weekly-2026-09-06|W37 周度整理]]。
+
+| 域 | 新增重点 | 入口 |
+|:---|:---------|:-----|
+| 🏠 Productivity | 闲鱼运营千轮研究 09-04 + 运动曲线 easing（动效）+ Vault 健康基线 | [[knowledge/Productivity/MOC-Productivity]] |
+| 🛠 Development | 墨题上云部署方案（无 Docker）+ 网站公网部署全流程（Vercel+CDN+域名）| [[knowledge/Development/墨题上云部署方案-无Docker-2026-09-02]] |
+| 🔬 Research | 多 Agent Eval 基线 v2 + arXiv 09-03/04/05 速览 + 工具精度方法论（假阳性税）| [[knowledge/Research/MOC-Research]] |
+| 🔐 Security | hermes-codex-security-policy 09-04 + SRC 批量初筛收敛 | [[knowledge/Security/MOC-Security]] |
+| 🤖 AI | 知识库-AI 不翻知识库根因 + 工具精度方法论 | [[knowledge/AI/工具精度方法论-假阳性税与知识库Lint-2026-09-05]] |
+| 🃏 cards | 闲鱼运营算法 / 假阳性税知识卡片 | [[knowledge/cards/2026-09-04-xianyu-operation-algorithm]] |
+
+---
 
 ## 🆕 W34 新增速览（2026-08-15 ~ 08-16）
 
