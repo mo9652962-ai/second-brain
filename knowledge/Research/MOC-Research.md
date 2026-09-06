@@ -5,7 +5,7 @@ type: moc
 domain: Research
 status: active
 created: 2026-08-09
-updated: 2026-09-05
+updated: 2026-09-06
 ---
 
 # 🔬 研究笔记 MOC — Research Map
@@ -13,7 +13,7 @@ updated: 2026-09-05
 > 所有研究笔记的索引与入口。自动按主题分组。
 > 回到 [[knowledge-map|🗺️ 知识地图]] · [[Home|🏠 Home]]
 
-**共 186 篇研究笔记** · 最后更新: 2026-09-05（每日增量索引）
+**共 190 篇研究笔记** · 最后更新: 2026-09-05（每日增量索引）
 
 
 ## 🆕 W34 新增补链（2026-08-16 周度整理）
@@ -327,6 +327,8 @@ updated: 2026-09-05
 - [[arxiv-2026-09-05-agent-llm]]
 - [[arxiv-2026-09-06-core-contributions]] — 精选 3 篇（Harness Engineering / Delegation Without Trust / Persistent Agents）
 - [[arxiv-2026-09-06-agent-llm]] — 速览 15 主 + 9 简评（补全性质）
+- [[GitHub-Weekly-2026-09-06]]
+- [[graphify-weekly-2026-09-06]]
 
 ## 🧭 入口治理
 
