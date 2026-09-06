@@ -29,6 +29,7 @@ created: 2026-08-09
 | 📈 生产力 | [[MOC-Productivity]] | 工作流、变现、闲鱼 |
 
 ## 📋 项目与日志
+- [[memory/2026/09/2026-09-06-daily-review|📋 09-06 每日回顾]] — arxiv harness 三连深挖 + GitHub W37 五项目 + 闲鱼试水 fallback 硬触发日（素材第 15 次核验 PASS）+ 知识吸收全面达标
 
 - [[projects/current|📦 当前项目]] — 进行中项目与 P0 待办（闲鱼上架/变现）
 - [[memory/2026/08/2026-08-10-vault-suggestion-executor|🧹 08-10 建议执行器报告]] — 闲鱼降级方案第 1 周复盘
