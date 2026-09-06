@@ -10,14 +10,14 @@ tags: [meta, 知识库治理]
 
 > 内容导向目录（Karpathy LLM-Wiki 规范）：每个知识域一行摘要。
 > 用途：**回答前先读这里定位页面，再深入**——这是 AI 翻库的第一入口。
-> 最后更新: 2026-09-05 | 页面总数: 522 | 由 knowledge-lint 维护
+> 最后更新: 2026-09-06 | 页面总数: 532 | 由 knowledge-lint 维护
 
 ## 🧭 MOC 入口（主导航）
 
 | 域 | 入口 | 规模 | 摘要 |
 |:---|:---|:---|:---|
-| 总地图 | [[knowledge-map]] | 522 | 全知识领域索引，W36 起新增 MOC 必须挂载 |
-| Research | [[MOC-Research]] | 167 | 研究域：千轮研究、多Agent、GitHub 调研、AI 论文 |
+| 总地图 | [[knowledge-map]] | 532 | 全知识领域索引，W36 起新增 MOC 必须挂载 |
+| Research | [[MOC-Research]] | 186 | 研究域：千轮研究、多Agent、GitHub 调研、AI 论文 |
 | GitHub | [[MOC-GitHub]] | 42 | GitHub 项目实证研究（clone→测→评→可PR） |
 | Security | [[MOC-Security]] | 50 | 网络安全：SRC/逆向/防御/合规 |
 | Dev | [[MOC-Dev]] | 101+23 | 开发域：软件工程/前端/后端/系统 |

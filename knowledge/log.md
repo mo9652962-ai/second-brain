@@ -66,3 +66,15 @@ tags: [meta, 知识库治理]
 - 产出：knowledge/Development/网站公网部署全流程-Vercel-CDN-域名-2026-09-05.md
 - 反哺：fastapi-cloud-deploy skill 补前端托管面
 - 关键发现：Vercel Hobby 免费仅限非商业用途——墨题商业化前需定前端平台
+## [2026-09-06] lint | 每周例行体检
+
+- 断链 0 / 孤立 0 / 缺 frontmatter 0
+- 处理原则：只报告不自动修；新问题由 k 在下次会话处理
+
+## [2026-09-06] 整理 | W37 周度整理
+
+- 本周新增 ~45 篇实质笔记（arXiv×6 + HN×6 + 多Agent Eval×8 + 部署/闲鱼/方法论）
+- 补挂：MOC-Productivity W37 区 +5 · MOC-Dev AI 域 +1（知识库根因）
+- 修正：MOC-Research 3 链接从「入口治理」误区移入「评测」区
+- 索引：knowledge-map W37 区 + index（Research 186 / 总 532）+ MOC-Inbox 状态（孤立 0）
+- 报告：memory/2026/09/weekly-2026-09-06.md
