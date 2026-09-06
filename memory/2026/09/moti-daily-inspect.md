@@ -1,13 +1,51 @@
 ---
 tags: [moti, daily-inspect, cron, code-review]
 created: 2026-09-04
-updated: 2026-09-05
+updated: 2026-09-06
 type: daily-inspect
 ---
 
 # 🔍 墨题每日巡检日志
 
 > 巡检脚本：`dsh_inspect_moti.sh`（[1/4] Git → [2/4] 后端 → [3/4] 前端 → [4/4] 移动端）
+
+## 2026-09-06（周日）✅ 通过
+
+### ✅ 结论置顶
+
+**巡检通过：无阻塞问题（无 FAIL、无语法错误）。** Git 干净，最近提交集中在发布/导入/安全三条线：electron-builder 禁用自动 publish + 发布步骤幂等化、ESQ 跨平台 zip 反斜杠修复（Linux 导入 422）、移除硬编码 API Key 改环境变量 + ESQ CI 调试 workflow。后端/前端/移动端健康检查全部通过。
+
+### [1/4] Git 状态
+
+- **未提交改动：0 处**（Git 干净 ✅）
+- **最近提交**（main）：
+  - `f870132` ci(release): 构建时禁用 electron-builder 自动 publish + 发布步骤幂等化
+  - `2aaf026` fix(esq): 修复跨平台 zip 条目名反斜杠导致 Linux 导入 422
+  - `3739768` fix(security): 移除硬编码 API Key 改为环境变量读取 + 添加 ESQ CI 调试 workflow
+
+### [2/4] 后端健康
+
+- ✅ `backend/app/main.py` 存在
+- ✅ Python 语法全部通过
+
+### [3/4] 前端健康
+
+- ✅ `App.vue` 存在
+- ✅ `router.ts` 存在
+- ✅ scripts：dev / build / preview
+
+### [4/4] 移动端检查
+
+- ✅ `capacitor.config.ts` 存在
+- ✅ `android/` 目录存在
+
+### 📌 巡检记录
+
+- 脚本退出码：0 ✅
+- 运行方式：cron 自动派活（2026-09-06）
+- 无 FAIL 标记、无语法错误、无阻塞问题
+
+---
 
 ## 2026-09-05（周六）✅ 通过
 
