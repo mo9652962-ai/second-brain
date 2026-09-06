@@ -66,3 +66,24 @@ tags: [meta, 知识库治理]
 - 产出：knowledge/Development/网站公网部署全流程-Vercel-CDN-域名-2026-09-05.md
 - 反哺：fastapi-cloud-deploy skill 补前端托管面
 - 关键发现：Vercel Hobby 免费仅限非商业用途——墨题商业化前需定前端平台
+## [2026-09-06] lint | 每周例行体检
+
+- 断链 0 / 孤立 0 / 缺 frontmatter 0
+- 处理原则：只报告不自动修；新问题由 k 在下次会话处理
+
+## [2026-09-06] 整理 | W37 周度整理
+
+- 本周新增 ~45 篇实质笔记（arXiv×6 + HN×6 + 多Agent Eval×8 + 部署/闲鱼/方法论）
+- 补挂：MOC-Productivity W37 区 +5 · MOC-Dev AI 域 +1（知识库根因）
+- 修正：MOC-Research 3 链接从「入口治理」误区移入「评测」区
+- 索引：knowledge-map W37 区 + index（Research 186 / 总 532）+ MOC-Inbox 状态（孤立 0）
+- 报告：memory/2026/09/weekly-2026-09-06.md
+
+## [2026-09-06] lint | 例行体检修复（cron）
+
+- 体检：断链 0 / 缺 frontmatter 0 / 空页 0 / 孤立 0（修复后）/ duplicate 1（低风险保留）
+- 挂载：MOC-Research 补挂 [[arxiv-2026-09-06-agent-llm]]（速览页孤立 → 0）
+- 标签一致性：`ai agent`→`ai-agent`（Dev/airi.md）· `github trending`→`github-trending`（Research/GitHub-Weekly-2026-08-14.md）
+- 清理：git rm `Research/MOC-Research.md.bak`（8-10 旧残渣）+ 根目录 4 个 `.temp-*.py`（标注 safe to delete）
+- 保留说明：duplicate 'readme'（Dev/system-prompts-reference 与 Research/eval-v2-2026-08-31 各一 README，均以完整路径引用，Obsidian 解析不冲突，低风险不处理）
+

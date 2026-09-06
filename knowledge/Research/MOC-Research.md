@@ -5,7 +5,7 @@ type: moc
 domain: Research
 status: active
 created: 2026-08-09
-updated: 2026-09-05
+updated: 2026-09-06
 ---
 
 # 🔬 研究笔记 MOC — Research Map
@@ -13,7 +13,7 @@ updated: 2026-09-05
 > 所有研究笔记的索引与入口。自动按主题分组。
 > 回到 [[knowledge-map|🗺️ 知识地图]] · [[Home|🏠 Home]]
 
-**共 186 篇研究笔记** · 最后更新: 2026-09-05（每日增量索引）
+**共 190 篇研究笔记** · 最后更新: 2026-09-06（每日增量索引）
 
 
 ## 🆕 W34 新增补链（2026-08-16 周度整理）
@@ -127,6 +127,7 @@ updated: 2026-09-05
 
 - [[knowledge/Productivity/闲鱼运营千轮研究-2026-09-04|闲鱼运营千轮研究 09-04]] · [[knowledge/cards/2026-09-04-xianyu-operation-algorithm|知识卡片 09-04]]
 - [[knowledge/AI/工具精度方法论-假阳性税与知识库Lint-2026-09-05|工具精度方法论 09-05]] · [[knowledge/cards/2026-09-05-false-positive-tax|知识卡片 09-05]]
+- [[knowledge/Research/arxiv-2026-09-06-core-contributions|arXiv 核心贡献 09-06]] · [[knowledge/cards/2026-09-06-harness-engineering|知识卡片 09-06]]
 ## 文章研读
 
 - [[ai-literature-search-pitfalls-study]]
@@ -174,6 +175,10 @@ updated: 2026-09-05
 ## 评测
 
 - [[Qwen-Image-3.0-Pro实测研究-2026-08-08]]
+- [[闲鱼方案第三方验证报告-WorkBuddy-2026-09-04]]
+- [[Research/eval-v2-2026-08-31/EVAL_PLAN]]
+- [[Research/eval-v2-2026-08-31/README]]
+
 
 ## 模型 API
 
@@ -320,10 +325,11 @@ updated: 2026-09-05
 - [[AI逆向-skill-mcp-阿里v2滑块-2026-09-03]]
 - [[arxiv-2026-09-04-agent-llm]]
 - [[arxiv-2026-09-05-agent-llm]]
+- [[arxiv-2026-09-06-core-contributions]] — 精选 3 篇（Harness Engineering / Delegation Without Trust / Persistent Agents）
+- [[arxiv-2026-09-06-agent-llm]] — 速览 15 主 + 9 简评（补全性质）
+- [[GitHub-Weekly-2026-09-06]]
+- [[graphify-weekly-2026-09-06]]
 
 ## 🧭 入口治理
 
 - [[../MOC-Inbox|待接入/孤立笔记审阅入口]]
-- [[闲鱼方案第三方验证报告-WorkBuddy-2026-09-04]]
-- [[Research/eval-v2-2026-08-31/EVAL_PLAN]]
-- [[Research/eval-v2-2026-08-31/README]]

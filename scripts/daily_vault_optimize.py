@@ -126,6 +126,8 @@ def update_moc_research() -> int:
     # frontmatter updated 日期始终刷新
     today = datetime.date.today().strftime("%Y-%m-%d")
     refreshed = re.sub(r"^updated: [0-9-]+", f"updated: {today}", current, count=1, flags=re.M)
+    # 正文头部「最后更新: 」也同步刷新（避免 frontmatter 与正文日期不一致）
+    refreshed = re.sub(r"最后更新: [0-9-]+", f"最后更新: {today}", refreshed, count=1)
     if refreshed != current:
         current = refreshed
         changed = True

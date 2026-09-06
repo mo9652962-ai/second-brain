@@ -7,7 +7,7 @@ created: 2026-08-09
 # 🏠 Home — 第二大脑入口
 
 > **知识网络从这里开始。** 每个知识域一个 MOC 锚点，全部双向链接。
-> 最后更新: 2026-09-05（09-05 每日回顾补链）
+> 最后更新: 2026-09-06
 
 ---
 
@@ -29,6 +29,7 @@ created: 2026-08-09
 | 📈 生产力 | [[MOC-Productivity]] | 工作流、变现、闲鱼 |
 
 ## 📋 项目与日志
+- [[memory/2026/09/2026-09-06-daily-review|📋 09-06 每日回顾]] — arxiv harness 三连深挖 + GitHub W37 五项目 + 闲鱼试水 fallback 硬触发日（素材第 15 次核验 PASS）+ 知识吸收全面达标
 
 - [[projects/current|📦 当前项目]] — 进行中项目与 P0 待办（闲鱼上架/变现）
 - [[memory/2026/08/2026-08-10-vault-suggestion-executor|🧹 08-10 建议执行器报告]] — 闲鱼降级方案第 1 周复盘
@@ -56,6 +57,7 @@ created: 2026-08-09
 - [[memory/2026/08/weekly-learning-2026-08-16|📚 W34 学习回顾]] — AgentScope 实证测评提 PR + 墨题学习型设计 + Behavioral Contracts 落地容灾
 - [[memory/2026/08/weekly-2026-08-23|📚 W35 周度整理]] — 网安/开发/META/SOP 批量挂载 + memory 归位 + 孤立 95→31
 - [[memory/2026/08/weekly-2026-08-31|📚 W36 周度整理]] — Vibe Coding/Agent 工作流 + 数模实证 + 量化交易入库 + memory 归位 4
+- [[memory/2026/09/weekly-2026-09-06|📚 W37 周度整理]] — 墨题部署落地 + 闲鱼运营深化 + 工具精度方法论 + SRC 收敛
 - [[memory/2026/08/2026-08-18-vault-suggestion-executor|🧹 08-18 建议执行器报告]] — 🔴 闲鱼 8/17 决策日已过 1 天：素材第 7 次核对 100% 就绪，今日最后窗口，待 sora 决策上架 or 放弃
 - [[memory/2026/08/2026-08-18-maintenance|🔧 08-18 维护]] — 断链 9→0 · 空壳 2 删 · 孤立 4 补链 · DIR_MOC 清理
 - [[memory/2026/08/2026-08-31-maintenance|🔧 08-31 维护]] — 断链 25→0 · README 路径 6 修 · 标签 6 组归一（ai→AI/llm→LLM/pcb/redis）· 空文件 0
@@ -93,6 +95,7 @@ created: 2026-08-09
 - [[memory/2026/09/2026-09-04-reflection|🗞️ 09-04 反思日记]] — 闲鱼变现深度日；3 改进点：fallback 升级可执行试水上架(9/6)／PIL 稳定性生成兜底固化／首次交互置顶三连；知识吸收 4/4 达标
 - [[knowledge/Research/arxiv-2026-09-05-agent-llm|arXiv 补全速览]] — 20+8 篇 AI Agent/LLM 论文（09-05 索引冻结补录同池漏网：Agent 记忆授权洗白 / hook 供应链攻击 / OPD-then-RL / 测量伪影判定）
 - [[memory/2026/09/2026-09-05-daily-review|📋 09-05 每日回顾]] — 工具精度方法论日（假阳性税/检测器2bug）· 网站部署+动效两研究 · 墨题部署拍板（前端Vercel+后端云）· 素材第14次核验 · 试水fallback明日触发
+- [[knowledge/Research/arxiv-2026-09-06-agent-llm|arXiv 补全速览]] — 15+9 篇 AI Agent/LLM 论文（09-06 索引续冻结补录同池漏网：Harness Engineering 解剖 11 系统含 Hermes/OpenClaw / Delegation Without Trust 委派授权 / Persistent Agents 跨运行时记忆 / AgentProv 行为指纹审计）
 
 ## 🧭 核心区域
 - [[memory/2026/08/2026-08-19-reflection|🔍 08-19 反思]] — 行动项 3/3 未落地（反思≠执行第 3 次复发）；Tavily 第 6 次复发；SRC 三方向收敛为补天聚焦 · scripts 登记表当场补建
