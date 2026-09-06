@@ -200,6 +200,8 @@ source: arxiv.org list pages + abs pages（API 429 限流期间，补全性质�
 - 🟡 **任何「加 X 有效」先过 control 审查**：01519 的 +87.4→+7.2、00038 的 outcome-only 盲区——k 的评估/验收/交付质量门先问「改的真是声称的东西吗、对照组变量齐吗」再信增益数字
 - 🟢 **待深读**：00006 Harness Engineering、00267 Delegation Without Trust、00546 Persistent Agents、00052 AgentProv、01519 Guardrails validity → 进 core-contributions 候选
 
+**已处理：** 核心贡献精选 3 篇（Harness Engineering 2609.00006 / Delegation Without Trust 2609.00267 / Runtime-Independent Persistent Agents 2609.00546）→ 📄 knowledge/Research/arxiv-2026-09-06-core-contributions.md（2026-09-06 arxiv-summarize；00052 AgentProv / 01519 Guardrails validity 已入延伸阅读 + 落地行动清单）
+
 ---
 
 *本速览由 cron 自动生成：09-06 索引继续冻结（API 最新 09-03T17:59Z、list 页无 09-05/09-06 分组、API 429 限流）→ 09-05 速览补录 21+8 仍未盖满同池 → 窗口全量 924 篇比对 covered_ids 得 821 未覆盖 → 标题粗筛剔除领域应用 → 逐篇抓 abs 页人工精选（15 主条目 + 9 简评，全部为新覆盖）→ 关键论文 web_search 交叉验证。数据源 arxiv.org + export.arxiv.org。*

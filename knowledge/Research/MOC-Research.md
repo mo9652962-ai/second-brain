@@ -324,6 +324,7 @@ updated: 2026-09-05
 - [[AI逆向-skill-mcp-阿里v2滑块-2026-09-03]]
 - [[arxiv-2026-09-04-agent-llm]]
 - [[arxiv-2026-09-05-agent-llm]]
+- [[arxiv-2026-09-06-core-contributions]] — 精选 3 篇（Harness Engineering / Delegation Without Trust / Persistent Agents）
 
 ## 🧭 入口治理
 
