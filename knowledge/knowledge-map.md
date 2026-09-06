@@ -70,7 +70,7 @@ updated: 2026-09-04
 
 
 
-> 所有知识领域的索引与关联。最后更新: 2026-09-06（W37 周度整理：Vibe Coding/Agent 工作流 + 数模实证 + 量化交易入库 + memory 归位）
+> 所有知识领域的索引与关联。最后更新: 2026-09-06（W37 周度整理：Vibe Coding/Agent 工作流 + 数模实证 + 量化交易入库 + memory 归位 + GitHub Trending 5 项入库）
 
 
 
@@ -1068,6 +1068,25 @@ graph TD
 3. **图表赛道连续第二周暴涨** — diagram-design 18.9k→25.4k，编辑级图表成主流诉求，与 sora PPT/信息图技能方向一致
 
 4. **周榜新面孔少** — 15 项目中仅 ai-memory、llmfit 未入库，其余全连榜/已覆盖，方向验证为主
+
+## 🆕 W37 GitHub Trending（2026-08-31 ~ 09-06）
+
+> 本周 GitHub Trending 精选 5 项入库：可验证系统图（archify，周增 +19.5k 增长王）/ 多 Agent harness（ECC 250k★）/ 科研 Agent 技能库（scientific-agent-skills）/ 清华多 Agent 课堂（OpenMAIC）/ 本地语音工作台（VoiceStudio）。周报见 [[../memory/2026/09/github-trending-w37|W37 GitHub 周报]]。
+
+| 项目 | ★ / 周Δ | 一句话定位 | 入库笔记 |
+|:--|:--|:--|:--|
+| **tt-a1i/archify** | 49.9k / +19,480 | 可验证架构图 Agent Skill：typed JSON IR → 确定性编译 + 校验收据 + Before/Delta/After 评审 | [[knowledge/Dev/archify-verifiable-diagrams-2026-09-06]] |
+| **affaan-m/ECC** | 250.2k / +5,445 | 多 Agent harness 优化系统：68 agents + 286 skills + AgentShield 安全扫描，覆盖 Codex/Claude/Antigravity | [[knowledge/Dev/ecc-agent-harness-2026-09-06]] |
+| **K-Dense-AI/scientific-agent-skills** | 43.0k / +5,491 | 科研 Agent 技能库 #1：165 validated skills + 100+ 数据库，技能库 CI 治理样板 | [[knowledge/AI/scientific-agent-skills-library-2026-09-06]] |
+| **THU-MAIC/OpenMAIC** | 32.1k / +10,109 | 清华多 Agent 交互课堂：DSL 场景引擎 + choreography 编排规范 + 确定性时间轴 | [[knowledge/AI/openmaic-multiagent-classroom-2026-09-06]] |
+| **debpalash/VoiceStudio** | 19.1k / +6,761 | 全本地 ElevenLabs 替代：语音克隆/视频配音/转写，646 语言 | [[knowledge/AI/voicestudio-local-voice-2026-09-06]] |
+
+### 本周关键主题
+
+1. **可验证/可审计成为 Agent 产物新标准** — archify 的「校验证据链」、ECC 的 AgentShield 安全扫描、scientific-agent-skills 的「validated skills」：同一信号 = 生成物必须带证明，与 sora 质量门禁思路一致
+2. **Agent Skills 标准生态成熟** — archify / scientific-agent-skills / patent-disclosure-skill（7.5k★ 中文专利技能）全是 Agent Skill 形态，SKILL.md 单文件 + npx skills add 一键装——sora 的技能体系正处同一标准
+3. **多 Agent 编排从 prompt 走向 spec** — OpenMAIC 的 choreography 单一事实源 + 纯解释器，是防多 agent 行为漂移的工程化答案
+4. **本地化工具爆发但硬件受限** — VoiceStudio 全本地语音、ECC 多 harness：本地优先趋势明确，但 RTX4060 8GB/16GB 内存是现实瓶颈
 
 
 
