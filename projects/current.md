@@ -1,6 +1,6 @@
 ﻿---
 tags: [projects, active]
-updated: 2026-09-05
+updated: 2026-09-06
 ---
 
 # 当前项目状态
@@ -228,6 +228,7 @@ updated: 2026-09-05
 - 🔒 首次交互置顶三连（机制第 2 天失效，随 9/6 反思推送置顶 P0）：① MCP 解除（打开 Obsidian + Local REST API + /mcp reconnect，1min）② FlClash 重启核验影响面（30s）③ 闲鱼试水决策（一句话二选一，9/6 fallback 硬触发）——9/5 有 35 条真实交互仍未解除，9/7 仍不解除 → 换 desktop 通知/微信推送通道（k 可做：推送脚本登记 cron）
 - 🔒 外部生图修复排期（3 路径全断实测：XAI key invalid / FAL TOP_UP 锁定 / SILICONFLOW 30001 余额不足 + 30003 FLUX disabled）：XAI 换有效 key / FAL 充值 / SILICONFLOW 充值；k 侧已 patch siliconflow-media 刷新「余额 3000+」假就绪（2026-09-06 已做）
 - ✅ web_extract 豁免验证门（2026-09-06 已 patch daily-knowledge-review）：豁免需端点+条数证据；纯 web 研究 Top 发现写库前强制 ≥1 次原文验证——后续研究类 cron 按新门自检
+- ⏳ 9/6 daily-self-improvement 提出 3 项自动化建议 → 2026-09-06 suggestion-implementation 评估：均需前置评估/确认，登记待评估（不仓促执行）——① stock-analysis cron 并行化（Graph pipeline，重构生产 cron 需先验证基线+确认工作流）② OpenClaw Active Memory 插件评估（工具采纳类，7/31 已做成熟度评估，需试用）③ 全链路监控指标体系（方案产出类，需确认范围，daily-review 已部分覆盖）；完整标注见 memory/2026/09/2026-09-06.md §6
 
 ### 🧭 8/20 反思行动项（daily-reflection 复盘 8-19，执行者必读）
 - [x] P0 语义缓存最小版落地——✅ 8/21 完成（硬截止 8/22 前）：原实现只挂 tavily provider、实际流量走 exa/searxng/firecrawl 兜底时从未命中（cache 文件从未生成）；已在 `web_tools.py::web_search_tool` chokepoint 上移统一缓存覆盖全部后端，实测 exact 命中生效，submit `84d813bf2`
