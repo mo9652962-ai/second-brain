@@ -85,6 +85,8 @@ updated: 2026-08-31
 - 数模交付质量门禁 `quality_gate.py` — G1 占位符 / G2 代码自证 / G3 证据追溯 / G4 AI 声明（shumo 技能已记录用法）
 
 ## 🆕 W37 新增（08-31 ~ 09-06：部署 + 动效 + 闲鱼运营）
+- [[knowledge/Productivity/system-cleanup-report-20260906|系统清理报告 09-06]] — 释放约 7GB
+- [[knowledge/Productivity/token-usage-report-20260906|Token 用量报告 09-06]]
 
 - [[knowledge/Productivity/运动曲线-easing-动效丝滑关键-2026-09-05|运动曲线 easing（动效丝滑关键）]] — cubic-bezier 曲线表 + M3/iOS 官方体系，配套技能 `apple-design-web` 已补 4b 章节
 - [[knowledge/Productivity/闲鱼运营千轮研究-2026-09-04|闲鱼运营千轮研究 09-04]] — 推流算法点击率分层 / 5 分钟回复率阈值 / 经营红线，9 条落地建议（当日知识卡片源）
