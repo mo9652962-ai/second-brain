@@ -89,7 +89,7 @@ v1 åŸå‹ â†’ v2 æ•°æ®æ³¨å…¥ â†’ v3 å›¾ç‰‡æ–¹æ¡ˆ â†’ v4 å®æ™¯æ›¿æ¢ â†’ v5 æ‰“
 ### OpenClaw ç”Ÿæ€åˆ†åŒ–ï¼ˆ2026.7ï¼‰
 OpenClaw ä»å•ä¸€æ¡†æ¶æ‰©å±•ä¸º 5 ä¸ªå‘è¡Œç‰ˆï¼Œè¦†ç›–ä¸åŒåœºæ™¯ï¼š
 - **OpenClaw Core** (åŸç‰ˆ): TypeScript æ¡†æ¶ï¼Œæœ€å¤§ç¤¾åŒº 368K starsï¼ŒSelf-hosted
-- **NanoClaw** (Qwibit.ai): å®‰å…¨ä¼˜å…ˆ forkï¼Œä»… 700 LOCï¼Œå¼ºåˆ¶ Docker/Apple å®¹å™¨éš”ç¦»ï¼ŒRCE é˜²æŠ¤
+- **NanoClaw** (Qwibit.ai): å®‰å…¨ä¼˜å…ˆ forkï¼Œä»… 700 LOCï¼Œå¼ºåˆ¶ Docker/Apple å®¹å™¨éš”ç¦»ï¼Œå¼ºåˆ¶ Docker/Apple å®¹å™¨éš”ç¦»ï¼ŒRCE é˜²æŠ¤
 - **ZeroClaw**: Rust å®Œå…¨é‡å†™ï¼Œ3.4MB äºŒè¿›åˆ¶ï¼Œ10ms å¯åŠ¨ï¼Œè¾¹ç¼˜ IoT åœºæ™¯
 - **NemoClaw** (NVIDIA): ä¼ä¸šçº§ wrapperï¼ŒOpenShell è¿›ç¨‹çº§æ²™ç®± + æœ€å°ç‰¹æƒï¼ŒGTC 2026 å‘å¸ƒ
 - **Taskade Genesis**: æ— ä»£ç äº‘å¹³å°ï¼ŒWorkspace DNA æŒä¹…åŒ–è®°å¿†ï¼ŒSOC 2 åˆè§„ï¼Œ$6/æœˆèµ·
@@ -240,7 +240,7 @@ InformationWeek æŠ¥å‘Šï¼šä¼ä¸šä»è„†å¼±çš„æ‰‹å·¥èƒ¶æ°´è„šæœ¬è½¬å‘æ ‡å‡†åŒ– Age
 - [x] ~~Krea2 å®‰è£…ï¼ˆComfyUI + 14GB æ¨¡å‹ä¸‹è½½ï¼‰~~ âœ… 2026-08-02ï¼š8/1 æ·±å¤œå·²éƒ¨ç½²å®Œæˆï¼ˆè§ projects/current.mdï¼‰ï¼Œå¾…åŠè¿‡æ—¶
 - [x] ~~Skill é‡å¤åˆå¹¶ï¼ˆ6 ç»„ï¼Œ8/1 å®¡è®¡è¯†åˆ«ï¼‰~~ âœ… 2026-09-05 å·²æ‰§è¡Œï¼ˆçœŸç›¸æ ¸å¯¹ï¼š1 çœŸé‡å¤ + 1 é‡å  + 1 æ®‹ç•™â€”â€”image-generation-workflow å¹¶å…¥ ai-image-generation v1.1 / miknas-find-skills å½’æ¡£ / openclaw-imports å½’æ¡£ï¼‰
 
----
+--- 
 
 _æœ€åæ›´æ–°: 2026-08-30ï½œè¿è¡Œç¯å¢ƒ: OpenClaw Agent on Windows 11_
 
@@ -250,4 +250,32 @@ _æœ€åæ›´æ–°: 2026-08-30ï½œè¿è¡Œç¯å¢ƒ: OpenClaw Agent on Windows 11_
 ## Promoted From Short-Term Memory (2026-08-31)
 
 <!-- openclaw-memory-promotion:memory:memory/2026-08-25.md:39:41 -->
-- âœ… LEARNINGS.md å¯æ¨å¹¿æ¨¡å¼ï¼ˆæœ€æ–° 5 æ¡ï¼‰: | LRN-20260820-001 | insight | Gartner 2026-08ï¼šAgentic workflow æ¨ç†æˆæœ¬è‡³ 2028 å¢ 5x | âœ… éªŒè¯ï¼šä½æˆæœ¬æ¶æ„ä¸ºæ­£ç¡®æŠ¤åŸæ²³ | | LRN-20260816-001 | knowledge_gap | MCP token å¼€é”€ 32K-82K vs CLI ~200 tokenï¼Œæ—¥å¸¸å·¥å…·è°ƒç”¨ä¼˜å…ˆ CLI | âœ… è½åœ°ï¼šç¦ç”¨é‡å¤ MCP server (jlceda)ï¼ŒèŠ‚çœ 38 å·¥å…· schema | | LRN-20260806-001 | best_practice | Graph Engineering > Loop Engineeringï¼šå¹¶è¡Œ pipeline ä¼˜å…ˆï¼Œsessions_spawn å¯ä½œ graph åŸè¯­ | âœ… é‡‡çº³ï¼šè‚¡ç¥¨åˆ†æ cron ä¸¤é˜¶æ®µé“¾å¼ï¼Œæœªæ¥å¹¶è¡ŒåŒ– | [score=0.826 recalls=0 avg=0.620 source=memory/2026-08-25.md:39-41]
+- âœ… LEARNINGS.md å¯æ¨å¹¿æ¨¡å¼ï¼ˆæœ€æ–° 5 æ¡ï¼‰: | LRN-20260820-001 | insight | Gartner 2026-08ï¼šAgentic workflow æ¨ç†æˆæœ¬è‡³ 2028 å¢ 5x | âœ… éªŒè¯ï¼šä½æˆæœ¬æ¶æ„ä¸ºæ­£ç¡®æŠ¤åŸæ²³ | | LRN-20260816-001 | knowledge_gap | MCP token å¼€é”€ 32K-82K vs CLI ~200 tokenï¼Œæ—¥å¸¸å·¥å…·è°ƒç”¨ä¼˜å…ˆ CLI | âœ… è½åœ°ï¼šç¦ç”¨é‡å¤ MCP server (jlceda)ï¼ŒèŠ‚çœ 38 å·¥å…· schema | | LRN-20260806-001 | best_practice | Graph Engineering > Loop Engineeringï¼šå¹¶è¡Œ pipeline ä¼˜å…ˆï¼Œsessions_spawn å¯ä½œ graph åŸè¯­ | âœ… é‡‡çº³ï¼šè‚¡ç¥¨åˆ†æ cron ä¸¤é˜¶æ®µé“¾å¼ï¼Œæœªæ¥å¹¶è¡ŒåŒ– | [score=0.826 recalls=0 avg=0.620 source=memory/2026-08-25.md:39-41]# #   `m¢^ëh  d a i l y   n o t e s   »“.agP(”ëR‚ut[—4U9pxv}2 0 2 6 - 0 8 - 0 7   tå0–S•?  
+ # # #   É“è0œV  2 0 2 6 - 0 7 - 2 5   w”EàœW9p}\}gÃ“å0T~ 
+  
+ * * O“½bmeY“ bG^•? *  
+ 1 .   T a v i l y   1 0 0 6 1   ¸“zO;u  2   ¶oK%}7 / 2 4 - 7 / 2 5 •? %’? ¼“Ån¨PT“»qXQÇ•¬ 5pØ~ØXÇ“8Y,UÂ“Ä‰å 
+ 2 .   -”è0vÉ~â®u¸[6ƒêc#Z^S³[Wi^Sğb  %’? . l e a r n i n g s /   Â“èV0  1 2 4 8   tƒ\ëæ)”? 3 5 +   É“? l e a r n i n g s / e r r o r s  
+ 3 .   O p e n C l a w   "”¸q¬ xOáQR“×Uò[  %’? `m¡^]“m¬ —YØUfpµ“A%MwR“? 5   “mDàB_t€\—X•Wo r e / N a n o / Z e r o / N e m o / T a s k a d e •? 4 .   C o n t e x t E n g i n e e r i n g   İYEÿ!}Op©NS  %’? v 2 0 2 6 . 3 . 7   (”? C o n t e x t E n g i n e   ¸[ågYs‡tzOSe\mCr_"”?  
+ # # #   É“è0œV  2 0 2 6 - 0 8 - 0 6   Ä“¸qane“?  
+ * * |”¨Q!}ş~DÊg2Z²pBv•? *  
+ 1 .   * * G r a p h   E n g i n e e r i n g   >   L o o p   E n g i n e e r i n g * *   %’? `mBZşRÈ“¬ ²•ˆ]ææ(”? A g e n t   Ë“5‚/p|”¨Q!}^gá) 
+       -   Ã“Xÿhş~!S0}C o n t e x t   E n g i n e e r i n g   ( m i d - 2 0 2 5 )   +’? L o o p   E n g i n e e r i n g   ( J u n e   2 0 2 6 )   +’? G r a p h   E n g i n e e r i n g   ( J u l y   2 0 2 6 )  
+       -   Í“?z>~•,l?æÃ•5‚Œášğ`åµ“Få  +   î~gR Y“‰]íæºtâqe  +   e“gR¨|Ë“ìRpnì—£àšW“m?•át3 îát?  
+ 2 .   * * O p e n C l a w   |mwO{ş~DšW”·q³[^g áœ`* *   %’? “m„0Ü‘O“½bmeÇm3 _ 
+       -   E x t e n d e d - S t a b l e   R e l e a s e s   ( Y Y Y Y . M . 3 3 ,   È“X³[)   +’? igXœ`  L T S  
+       -   M a t u r i t y   S c o r e c a r d   O“ á}‡tëRW  +’? e“²p2||mwO{Y“âlo¬“G0Ï”?  
+ 3 .   * * A g e n t i c   P r i m i t i v e s   Y“&h,U  G l u e   C o d e * *   %’? t|\{`m›^¬ ~\şZs”5‚	ct”-lpn†’ˆ]FmZ“b¬ ~\#rQ“×Uò[  A g e n t   X“»qâá  +   Â“èV0V“? A P I †’?       -   “m? O p e n C l a w   S k i l l   W o r k s h o p   +   C l a w H u b   "”¸q¬ yOßgZ“bôzw”?       -   ¸[å0ÿS(”îRİ]²•Ó_ğbY“âB_”Hr¬ ? >   A g e n t   w”Gàé—(”ìR9^”ÚUXQT“?  
+ * * p?şÄ{tg}Ç“X[Êg•? *  
+ -   Â“gƒå  L E A R N I N G S . m d   [ L R N - 2 0 2 6 0 8 0 6 - 0 0 1 ] :   G r a p h   E n g i n e e r i n g   |”¨Q!}^gá) 
+ -   M E M O R Y . m d   ¸[ÉS?mÂ“.^0}Â“gƒå†’ƒ\å“m3l{á-”ã0¬ ‡]÷sz”? G r a p h   E n g i n e e r i n g   É“ÿ0m 
+ -   tå0–S†’k[p e n C l a w   ”XpnT“&1¬ uO¬ ‡]÷sz”¦P0}E x t e n d e d - S t a b l e / M a t u r i t y   S c o r e c a r d  
+ -   #Zò‹ŞY  A g e n t i c   P r i m i t i v e s   Òt*[Z 
+ -   #Zò‹ŞY  O p e n C l a w   Ë~²Q~u¬“Cm«•¬ ğhîRá 
+  
+ * * ğ[mTÙY”5‚¬ ŠO0}* *  
+ -   P 0 •%Xıhxi:{¬ I[I   `mEÿÛN  P P T †’]}•3l[~bá0ä[ARÇà  7   ¶oK%}ñ~³rWoO“%1(lDàg_Z±r{Ë“¹‹}8 / 7   È“¬ Z“¢^anÄ•6a} 
+ -   ï~dƒº|”5‚¬ ŠO0}¯Y3 7pİYEÿ6r†’yO³`ñ~? 5   ºtâQUcmk(lBà¬ <Nk i l l s   2 7 +   9pYÊå´“*a‹}ï~? -   ¸“zO;uO“k†^e•? / 5   d a i l y   n o t e   Y“âXQÈ“Y!}t.^}Ç•¬ YtšPBvÄ“âÁ`´“*a¯Y3 !} 
+  
+ - - -  
+ 
