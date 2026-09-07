@@ -1,3 +1,10 @@
+---
+date: 2026-09-06
+tags: [周报, API成本, Token用量, 存储, 运维监控]
+aliases: [API成本周报W36, weekly-cost-report-2026W36]
+status: adopted
+---
+
 # 本周 API 成本报告
 
 > 统计周期：2026-09-01 ~ 2026-09-06
@@ -93,7 +100,7 @@
 
 - [ ] 监控 glm-5 使用场景，评估是否可用 deepseek-v4-flash 替代
 - [ ] 关注 state.db 增长速度，接近 1GB 时考虑清理旧会话
-- [ ] jiyuanlvdong-2 作为备用链路，成本可控
+- [x] jiyuanlvdong-2 作为备用链路，成本可控 ✅ 已配置（fallback=jiyuanlvdong-2 实测可用，见 Hermes 配置）
 
 ---
 

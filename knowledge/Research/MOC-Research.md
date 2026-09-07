@@ -5,7 +5,7 @@ type: moc
 domain: Research
 status: active
 created: 2026-08-09
-updated: 2026-09-06
+updated: 2026-09-07
 ---
 
 # 🔬 研究笔记 MOC — Research Map
@@ -13,7 +13,7 @@ updated: 2026-09-06
 > 所有研究笔记的索引与入口。自动按主题分组。
 > 回到 [[knowledge-map|🗺️ 知识地图]] · [[Home|🏠 Home]]
 
-**共 190 篇研究笔记** · 最后更新: 2026-09-06（每日增量索引）
+**共 191 篇研究笔记** · 最后更新: 2026-09-07（每日增量索引）
 
 
 ## 🆕 W34 新增补链（2026-08-16 周度整理）
@@ -128,6 +128,7 @@ updated: 2026-09-06
 - [[knowledge/Productivity/闲鱼运营千轮研究-2026-09-04|闲鱼运营千轮研究 09-04]] · [[knowledge/cards/2026-09-04-xianyu-operation-algorithm|知识卡片 09-04]]
 - [[knowledge/AI/工具精度方法论-假阳性税与知识库Lint-2026-09-05|工具精度方法论 09-05]] · [[knowledge/cards/2026-09-05-false-positive-tax|知识卡片 09-05]]
 - [[knowledge/Research/arxiv-2026-09-06-core-contributions|arXiv 核心贡献 09-06]] · [[knowledge/cards/2026-09-06-harness-engineering|知识卡片 09-06]]
+- [[knowledge/Research/arxiv-2026-09-07-agent-llm|arXiv Agent/LLM 09-07]] · [[knowledge/Daily/hackernews-2026-09-07|HN 09-07]] · [[knowledge/cards/2026-09-07-memory-portability|知识卡片 09-07]]
 ## 文章研读
 
 - [[ai-literature-search-pitfalls-study]]
@@ -327,6 +328,7 @@ updated: 2026-09-06
 - [[arxiv-2026-09-05-agent-llm]]
 - [[arxiv-2026-09-06-core-contributions]] — 精选 3 篇（Harness Engineering / Delegation Without Trust / Persistent Agents）
 - [[arxiv-2026-09-06-agent-llm]] — 速览 15 主 + 9 简评（补全性质）
+- [[arxiv-2026-09-07-agent-llm]]
 - [[GitHub-Weekly-2026-09-06]]
 - [[graphify-weekly-2026-09-06]]
 

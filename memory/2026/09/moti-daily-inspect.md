@@ -1,13 +1,51 @@
 ---
 tags: [moti, daily-inspect, cron, code-review]
 created: 2026-09-04
-updated: 2026-09-06
+updated: 2026-09-07
 type: daily-inspect
 ---
 
 # 🔍 墨题每日巡检日志
 
 > 巡检脚本：`dsh_inspect_moti.sh`（[1/4] Git → [2/4] 后端 → [3/4] 前端 → [4/4] 移动端）
+
+## 2026-09-07（周一）✅ 通过
+
+### ✅ 结论置顶
+
+**巡检通过：无阻塞问题（无 FAIL、无语法错误）。** Git 干净，最近提交集中在 docs（llms.txt / README v3.0 仓库优化，GEO 方向）+ 前端体验增强（v49-v51 键盘优先做题 + 触觉反馈 + 答题进度发丝线）。后端/前端/移动端健康检查全部通过。
+
+### [1/4] Git 状态
+
+- **未提交改动：0 处**（Git 干净 ✅）
+- **最近提交**（main）：
+  - `8b6c9f6` docs: add llms.txt for AI engine discoverability (GEO)
+  - `7a1eab5` docs: v3.0 repo optimization — hero banner, star CTA/history, 3-step quick start, competitor table, GEO first paragraph
+  - `1e77cb2` feat(ui): v49-v51 第二轮研究增强 — 键盘优先做题(ExamView 补齐 A-D/箭头, PracticeView 回落当前题+按可见字母章匹配乱序选项+桌面键位提示) + 触觉反馈渐进增强(haptics服务: 选答10ms/答对20ms/答错双脉冲, feature-detect) + 答题进度发丝线(练习页/考试页)
+
+### [2/4] 后端健康
+
+- ✅ `backend/app/main.py` 存在
+- ✅ Python 语法全部通过
+
+### [3/4] 前端健康
+
+- ✅ `App.vue` 存在
+- ✅ `router.ts` 存在
+- ✅ scripts：dev / build / preview
+
+### [4/4] 移动端检查
+
+- ✅ `capacitor.config.ts` 存在
+- ✅ `android/` 目录存在
+
+### 📌 巡检记录
+
+- 脚本退出码：0 ✅
+- 运行方式：cron 自动派活（2026-09-07）
+- 无 FAIL 标记、无语法错误、无阻塞问题
+
+---
 
 ## 2026-09-06（周日）✅ 通过
 

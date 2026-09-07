@@ -1,3 +1,13 @@
+---
+title: "系统清理报告 2026-09-06"
+type: note
+domain: Productivity
+status: active
+tags: [knowledge/productivity]
+source: null
+date: 2026-09-06
+---
+
 # 系统清理报告 2026-09-06
 
 **结论：共释放约 7 GB，C 盘已用 248G → 241G（使用率 56% → 54%，可用 200G → 207G）**
