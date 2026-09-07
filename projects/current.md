@@ -208,11 +208,11 @@ updated: 2026-09-07
 - ✅ patch daily-knowledge-review：明日行动项生成前 reconcile projects/current.md 的 ✅ 状态，剔除陈旧待办（9/1 实测踩中：主模型验证 20:06 已完成，22:39 daily-review 仍列为 9/2 待办，差点误报）（agent 可做，20min）
 - ✅ Tavily 决策拍板（2026-09-02 daily-todo-executor 落地）：配额耗尽连续 12 工作日，「评估 plan 升级」正式拍板——降级为末位备选（Firecrawl→DDGS→SearXNG→Tavily），从「评估」改「已执行」；运行时 web.backend=exa + extract_backend=firecrawl 已不依赖 Tavily 主用，仅作兜底；若 sora 想保留再补 30 天成本对比，默认路径零成本
 - ✅ FlClash 升级推送（2026-09-02 daily-todo-executor 已在当日报告置顶单条醒目请求，30 秒重启操作清单见报告）：连续 5 次标 P0 无触达闭环→本次单条推送已输出；消息网关离线影响面核查 + 降级定性待 sora 重启 FlClash 后核验
-- 🔴 闲鱼上架决策（悬置第 37 天）：决策包 100% 就绪，30min 复制粘贴可上 3 商品（PPT 30-80 / 论文 30 / 练习册 35），合规红线已内置——等 sora 拍板
+- 🔴 闲鱼上架决策（悬置第 38 天）：决策包 100% 就绪，30min 复制粘贴可上 3 商品（PPT 30-80 / 论文 30 / 练习册 35），合规红线已内置——等 sora 拍板
 ### 🧭 9/3 反思行动项（daily-reflection 复盘 9-02，执行者必读）
 - ✅ 每日笔记补写（2026-09-02 reflection 当场）：memory/2026/09/2026-09-02.md 已补写（9/2 self-improvement 输出为 self-improvement.md 而未写主文件）；patch daily-self-improvement 读路径为 memory/YYYY/MM/ 待执行（agent 可做，10min）
 - ✅ patch daily-knowledge-review 评分表加深验证判定列（2026-09-02 reflection 当场执行）：API 直调/视频转写日标注「等效深度豁免」
-- 🔒 闲鱼决策包 30 秒二选一（悬置第 37 天起）：上架 → k 给 5 步操作清单；放弃 → k 归档素材包 + 标记 [决策:放弃]；9/6 fallback 仍无决策 → k 默认推进合规改造子集（敏感词/数模标题改写已在 xianyu-monetization v1.2.0）
+- 🔒 闲鱼决策包 30 秒二选一（悬置第 38 天起）：上架 → k 给 5 步操作清单；放弃 → k 归档素材包 + 标记 [决策:放弃]；9/6 fallback 仍无决策 → k 默认推进合规改造子集（敏感词/数模标题改写已在 xianyu-monetization v1.2.0）
 - ✅ FlClash 7890 转发 k 核验（2026-09-03 20:03 daily-todo-executor 实测）：`curl -x http://127.0.0.1:7890 https://www.google.com` → **302 正常**，代理链路已恢复；FlClashCore 今晨 11:23 启动。消息网关离线影响面仍待 sora 确认重启后核验（必要时 P0→P2）
 ### 🧭 9/4 反思行动项（daily-reflection 复盘 9-03，执行者必读）
 - ✅ 闲鱼决策拆小 + fallback 提前（2026-09-04 vault-suggestion-executor 落地）：拆「先上 1 个商品（PPT 30-80 档）试水」最小可逆动作（素材 6 图 13 次核验 PASS / 合规 0 缺口 / 30min 可逆）；fallback 从 9/9 提前到 **9/6 仍无决策 → k 默认推进合规改造子集**（敏感词/数模标题改写已在 xianyu-monetization v1.2.0）；试水版 + 全量版两段式操作清单已备 outputs/xianyu-master/上架素材包/上架操作清单.md
@@ -259,7 +259,7 @@ updated: 2026-09-07
 
 | 项 | 状态 | 说明 |
 |:---|:-----|:-----|
-| 闲鱼上架决策「上架 or 放弃」 | 🔴 决策悬置第 37 天（8/31 到期已过，fallback 9/6） | 素材 100% 就绪；合规子集已备（xianyu-monetization v1.2.0）；8/24 倒计时机制生效 |
+| 闲鱼上架决策「上架 or 放弃」 | 🔴 决策悬置第 38 天（8/31 到期已过，fallback 9/6） | 素材 100% 就绪；合规子集已备（xianyu-monetization v1.2.0）；8/24 倒计时机制生效 |
 | 随身WiFi下单（赫电 Pro 399元/年） | 🔒 选型已确认 | 33元/月 1500G，待确认下单（阻塞 8 天+） |
 | 桌面美化实际部署 | 🔒 安装包已就绪 | TranslucentTB + Rainmeter winget 一键安装已就绪 |
 | SFC 系统扫描 | 🔒 需管理员权限 | 7/24 曾标记完成，7/27 后重复录入，待 sora 确认是否重跑 |

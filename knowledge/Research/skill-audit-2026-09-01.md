@@ -65,7 +65,7 @@ type: audit
 - `openclaw-imports/` 仅剩 DESCRIPTION.md（08-12 报告的 4 组顶层副本已解决）→ 目录可删
 
 ## 📋 建议操作
-- [ ] 合并 `cad` 三副本 → 保留顶层增强版（8-22，含千轮研究），删 text-to-cad/cad 与 text2cad-cad
+- [x] 合并 `cad` 三副本 → 保留顶层增强版（8-22，含千轮研究），删 text-to-cad/cad 与 text2cad-cad ✅ 2026-09-07 daily-todo-executor 落地（顶层 cad 验证为严格超集：SKILL.md 111 行含千轮研究增强 + freecad-automation + references/scripts 全一致，rm -rf 两副本）
 - [x] 删 @miknasbh-stack/miknas-find-skills（被 guipi888 完全替代）✅ 2026-09-05 已归档（.archive/miknas-find-skills-archived-2026-09-05）
 - [x] 合并 image-generation-workflow → 顶层 ai-image-generation ✅ 2026-09-05 已合并归档（.archive/image-generation-workflow-merged-2026-09-05）
 - [ ] 合并 fangzhou-ark-config / hermes/fangzhou-ark-setup
