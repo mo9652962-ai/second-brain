@@ -97,6 +97,7 @@ created: 2026-08-09
 - [[knowledge/Research/arxiv-2026-09-05-agent-llm|arXiv 补全速览]] — 20+8 篇 AI Agent/LLM 论文（09-05 索引冻结补录同池漏网：Agent 记忆授权洗白 / hook 供应链攻击 / OPD-then-RL / 测量伪影判定）
 - [[memory/2026/09/2026-09-05-daily-review|📋 09-05 每日回顾]] — 工具精度方法论日（假阳性税/检测器2bug）· 网站部署+动效两研究 · 墨题部署拍板（前端Vercel+后端云）· 素材第14次核验 · 试水fallback明日触发
 - [[knowledge/Research/arxiv-2026-09-06-agent-llm|arXiv 补全速览]] — 15+9 篇 AI Agent/LLM 论文（09-06 索引续冻结补录同池漏网：Harness Engineering 解剖 11 系统含 Hermes/OpenClaw / Delegation Without Trust 委派授权 / Persistent Agents 跨运行时记忆 / AgentProv 行为指纹审计）
+- [[knowledge/Research/arxiv-2026-09-07-agent-llm|arXiv 今日速览]] — 22+10 篇 AI Agent/LLM 论文（09-07 新窗口索引解冻：Multi-Harness RL credit assignment / HackProbe reward hacking 监视器 / 记忆可移植性 / CoSkill+Trace2Tower 技能演化四连 / CONTINUITY 安全契约）
 
 ## 🧭 核心区域
 - [[memory/2026/08/2026-08-19-reflection|🔍 08-19 反思]] — 行动项 3/3 未落地（反思≠执行第 3 次复发）；Tavily 第 6 次复发；SRC 三方向收敛为补天聚焦 · scripts 登记表当场补建
