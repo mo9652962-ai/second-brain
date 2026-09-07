@@ -1,3 +1,10 @@
+---
+date: 2026-09-06
+tags: [周报, API成本, Token用量, 存储, 运维监控]
+aliases: [API成本周报W36, weekly-cost-report-2026W36]
+status: adopted
+---
+
 # 本周 API 成本报告
 
 > 统计周期：2026-09-01 ~ 2026-09-06

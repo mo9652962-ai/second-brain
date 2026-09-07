@@ -87,3 +87,19 @@ tags: [meta, 知识库治理]
 - 清理：git rm `Research/MOC-Research.md.bak`（8-10 旧残渣）+ 根目录 4 个 `.temp-*.py`（标注 safe to delete）
 - 保留说明：duplicate 'readme'（Dev/system-prompts-reference 与 Research/eval-v2-2026-08-31 各一 README，均以完整路径引用，Obsidian 解析不冲突，低风险不处理）
 
+
+## [2026-09-07] lint | 例行体检 + 修复（cron 手动触发）
+
+- 扫描 546 页；备份至 `.backup/knowledge-lint-20260907/`
+- 断链 0 / 空文件 0 / 极小页(<100字符) 0 / stale 0
+- 修复缺 frontmatter 3 个（与同系列格式对齐）：
+  - `Productivity/system-cleanup-report-20260906`（仿 08-23）
+  - `Productivity/token-usage-report-20260906`（仿 08-23，tags: 周报/API成本/Token用量）
+  - `Research/GitHub-Weekly-2026-09-06`（仿 08-30，tags: knowledge/research）
+- 挂载孤立页 4 个（幂等，未删页）：
+  - `Daily/hackernews-2026-09-06` → MOC-Inbox（续 09-05 序列）
+  - `Productivity/token-usage-report-20260906` + `system-cleanup-report-20260906` → MOC-Productivity（W37 区）
+  - `Research/arxiv-2026-09-07-agent-llm` → MOC-Research（续 09-06 序列）
+- 标签一致性：新增 frontmatter 全部采用域标签体系（knowledge/<domain>），与同系列一致
+- 剩余：1 组重复文件名（`Dev/system-prompts-reference/README` vs `Research/eval-v2-2026-08-31/README`）——均为全路径引用、无短链歧义，低风险忽略
+- 结果：断链 0 / 缺 frontmatter 0 / 孤立 0（TOTAL ISSUES: 1，低风险）

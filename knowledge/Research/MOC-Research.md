@@ -327,6 +327,7 @@ updated: 2026-09-06
 - [[arxiv-2026-09-05-agent-llm]]
 - [[arxiv-2026-09-06-core-contributions]] — 精选 3 篇（Harness Engineering / Delegation Without Trust / Persistent Agents）
 - [[arxiv-2026-09-06-agent-llm]] — 速览 15 主 + 9 简评（补全性质）
+- [[arxiv-2026-09-07-agent-llm]]
 - [[GitHub-Weekly-2026-09-06]]
 - [[graphify-weekly-2026-09-06]]
 
