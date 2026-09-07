@@ -89,7 +89,7 @@ v1 原型 → v2 数据注入 → v3 图片方案 → v4 实景替换 → v5 打
 ### OpenClaw 生态分化（2026.7）
 OpenClaw 从单一框架扩展为 5 个发行版，覆盖不同场景：
 - **OpenClaw Core** (原版): TypeScript 框架，最大社区 368K stars，Self-hosted
-- **NanoClaw** (Qwibit.ai): 安全优先 fork，仅 700 LOC，强制 Docker/Apple 容器隔离，RCE 防护
+- **NanoClaw** (Qwibit.ai): 安全优先 fork，仅 700 LOC，强制 Docker/Apple 容器隔离，强制 Docker/Apple 容器隔离，RCE 防护
 - **ZeroClaw**: Rust 完全重写，3.4MB 二进制，10ms 启动，边缘 IoT 场景
 - **NemoClaw** (NVIDIA): 企业级 wrapper，OpenShell 进程级沙箱 + 最小特权，GTC 2026 发布
 - **Taskade Genesis**: 无代码云平台，Workspace DNA 持久化记忆，SOC 2 合规，$6/月起
@@ -229,7 +229,7 @@ InformationWeek 报告：企业从脆弱的手工胶水脚本转向标准化 Age
 - [x] ~~AI 变现调研~~ ✅ 2026-07-24
 - [x] ~~LRN-20260722-001 (Plan-and-Execute)~~ ✅ 2026-07-25
 - [x] ~~AI 变现落地（闲鱼AI代做PPT/论文润色）— 可发车（闲鱼封号至8/1）~~ ✅ 素材已预生成，8/1 解封日已过，上架排期 8/2
-- [ ] 闲鱼上架「AI 代做 PPT」→ **决策悬置第 37 天，8/31 到期已过（fallback 9/6 → k 默认推进合规子集）**（素材包+主图 100% 就绪，30min；主图1 已重生成安全版去「代做」；合规已备：经营性卖家新规量化+敏感词清单+同款频次控制+数模标题改写 → xianyu-monetization v1.2.0；见 projects/current.md）
+- [ ] 闲鱼上架「AI 代做 PPT」→ **决策悬置第 38 天，8/31 到期已过（fallback 9/6 → k 默认推进合规子集）**（素材包+主图 100% 就绪，30min；主图1 已重生成安全版去「代做」；合规已备：经营性卖家新规量化+敏感词清单+同款频次控制+数模标题改写 → xianyu-monetization v1.2.0；见 projects/current.md）
 - [x] ~~语义缓存最小版落地（根治 Tavily 配额 + 预防 Gartner 5x）~~ ✅ 2026-08-21：统一 chokepoint 覆盖全 8 后端（commit 84d813bf2），根治连续 8 工作日配额复发
 - [x] ~~合并冗余 skills（hermes-search-configuration → hermes-search-config）~~ ✅ 2026-07-31 已核实：hermes-search-configuration 已不存在，仅剩 hermes-search-config，无需合并
 - [ ] 随身WiFi下单确认（赫电 Pro 399元/年，选型已确认）→ 待 sora 确认
@@ -240,7 +240,7 @@ InformationWeek 报告：企业从脆弱的手工胶水脚本转向标准化 Age
 - [x] ~~Krea2 安装（ComfyUI + 14GB 模型下载）~~ ✅ 2026-08-02：8/1 深夜已部署完成（见 projects/current.md），待办过时
 - [x] ~~Skill 重复合并（6 组，8/1 审计识别）~~ ✅ 2026-09-05 已执行（真相核对：1 真重复 + 1 重叠 + 1 残留——image-generation-workflow 并入 ai-image-generation v1.1 / miknas-find-skills 归档 / openclaw-imports 归档）
 
----
+--- 
 
 _最后更新: 2026-08-30｜运行环境: OpenClaw Agent on Windows 11_
 
@@ -250,4 +250,32 @@ _最后更新: 2026-08-30｜运行环境: OpenClaw Agent on Windows 11_
 ## Promoted From Short-Term Memory (2026-08-31)
 
 <!-- openclaw-memory-promotion:memory:memory/2026-08-25.md:39:41 -->
-- ✅ LEARNINGS.md 可推广模式（最新 5 条）: | LRN-20260820-001 | insight | Gartner 2026-08：Agentic workflow 推理成本至 2028 增 5x | ✅ 验证：低成本架构为正确护城河 | | LRN-20260816-001 | knowledge_gap | MCP token 开销 32K-82K vs CLI ~200 token，日常工具调用优先 CLI | ✅ 落地：禁用重复 MCP server (jlceda)，节省 38 工具 schema | | LRN-20260806-001 | best_practice | Graph Engineering > Loop Engineering：并行 pipeline 优先，sessions_spawn 可作 graph 原语 | ✅ 采纳：股票分析 cron 两阶段链式，未来并行化 | [score=0.826 recalls=0 avg=0.620 source=memory/2026-08-25.md:39-41]
+- ✅ LEARNINGS.md 可推广模式（最新 5 条）: | LRN-20260820-001 | insight | Gartner 2026-08：Agentic workflow 推理成本至 2028 增 5x | ✅ 验证：低成本架构为正确护城河 | | LRN-20260816-001 | knowledge_gap | MCP token 开销 32K-82K vs CLI ~200 token，日常工具调用优先 CLI | ✅ 落地：禁用重复 MCP server (jlceda)，节省 38 工具 schema | | LRN-20260806-001 | best_practice | Graph Engineering > Loop Engineering：并行 pipeline 优先，sessions_spawn 可作 graph 原语 | ✅ 采纳：股票分析 cron 两阶段链式，未来并行化 | [score=0.826 recalls=0 avg=0.620 source=memory/2026-08-25.md:39-41]# #   `m�^�h  d a i l y   n o t e s   ��.agP(��R�u�t[�4U9pxv}2 0 2 6 - 0 8 - 0 7   t�0�S�?  
+ # # #   ɓ�0�V  2 0 2 6 - 0 7 - 2 5   w�E��W9p}\}gÓ�0T~ 
+  
+ * * O��bmeY� bG^�? *  
+ 1 .   T a v i l y   1 0 0 6 1   ��zO;u  2   �oK%}7 / 2 4 - 7 / 2 5 �? %�? ���n�PT��qXQǕ� 5p�~�XǓ8Y,Uĉ� 
+ 2 .   -��0v�~�u�[6��c#Z^S�[Wi^S�b  %�? . l e a r n i n g s /   �V0  1 2 4 8   t�\��)�? 3 5 +   ɓ? l e a r n i n g s / e r r o r s  
+ 3 .   O p e n C l a w   "��q� xO�QR��U�[  %�? `m�^]�m� �Y�Ufp��A%MwR�? 5   �mD�B_t�\�X�Wo r e / N a n o / Z e r o / N e m o / T a s k a d e �? 4 .   C o n t e x t E n g i n e e r i n g   �YE�!}Op��NS  %�? v 2 0 2 6 . 3 . 7   (�? C o n t e x t E n g i n e   �[�gYs�tzOSe\mCr_"�?  
+ # # #   ɓ�0�V  2 0 2 6 - 0 8 - 0 6   ē�qane�?  
+ * * |��Q!}�~D�g2Z�pBv�? *  
+ 1 .   * * G r a p h   E n g i n e e r i n g   >   L o o p   E n g i n e e r i n g * *   %�? `mBZ�Rȓ� ���]��(�? A g e n t   ˓5�/p|��Q!}^g�) 
+       -   ÓX�h�~!S0}C o n t e x t   E n g i n e e r i n g   ( m i d - 2 0 2 5 )   +�? L o o p   E n g i n e e r i n g   ( J u n e   2 0 2 6 )   +�? G r a p h   E n g i n e e r i n g   ( J u l y   2 0 2 6 )  
+       -   ͓?z>~�,l?�Õ5��រ�`嵓F�  +   �~gR Y��]��t�qe  +   e�gR�|˓�Rpn엣��W�m?���t3 ��t?  
+ 2 .   * * O p e n C l a w   |mwO{�~D�W��q�[^g �`* *   %�? �m�0ܑO��bme�m3 _ 
+       -   E x t e n d e d - S t a b l e   R e l e a s e s   ( Y Y Y Y . M . 3 3 ,   ȓX�[)   +�? igX�`  L T S  
+       -   M a t u r i t y   S c o r e c a r d   O� �}�t�R�W  +�? e��p2||mwO{Y��lo��G0ϔ?  
+ 3 .   * * A g e n t i c   P r i m i t i v e s   Y�&h,U  G l u e   C o d e * *   %�? t|\{`m�^� ~\�Zs�5�	ct�-lpn���]FmZ�b� ~\#rQ��U�[  A g e n t   X��q��  +   �V0V�? A P I ��?       -   �m? O p e n C l a w   S k i l l   W o r k s h o p   +   C l a w H u b   "��q� yO�gZ�b�zw�?       -   �[�0�S(��R�]���_�bY��B_�Hr� ? >   A g e n t   w�G��(��R9^��UXQT�?  
+ * * p?��{�tg�}ǓX[�g�? *  
+ -   g��  L E A R N I N G S . m d   [ L R N - 2 0 2 6 0 8 0 6 - 0 0 1 ] :   G r a p h   E n g i n e e r i n g   |��Q!}^g�) 
+ -   M E M O R Y . m d   �[�S?m.^0}g�冒�\�m3l{�-��0� �]�sz�? G r a p h   E n g i n e e r i n g   ɓ�0m 
+ -   t�0�S��k[p e n C l a w   �XpnT�&1� uO� �]�sz��P0}E x t e n d e d - S t a b l e / M a t u r i t y   S c o r e c a r d  
+ -   #Z��Y  A g e n t i c   P r i m i t i v e s   �t*[Z 
+ -   #Z��Y  O p e n C l a w   �~�Q~u��Cm��� �h�R� 
+  
+ * * �[mT�Y�5�� �O0}* *  
+ -   P 0 �%X�hxi:{� I[I   `mE��N  P P T ���]}�3l[~b�0�[AR��  7   �oK%}�~�rWoO�%1(lD�g_Z�r{˓��}8 / 7   ȓ� Z��^anĕ6a} 
+ -   �~d��|�5�� �O0}�Y3 7p�YE�6r��yO�`�~? 5   �t�QUcmk(lB� <Nk i l l s   2 7 +   9pY�崓*a�}�~? -   ��zO;uO�k�^e�? / 5   d a i l y   n o t e   Y��XQȓY!}�t.^}Ǖ� Yt�PBvē��`��*a��Y3 !} 
+  
+ - - -  
+ 

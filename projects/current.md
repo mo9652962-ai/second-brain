@@ -1,6 +1,6 @@
 ﻿---
 tags: [projects, active]
-updated: 2026-09-06
+updated: 2026-09-07
 ---
 
 # 当前项目状态
@@ -163,8 +163,8 @@ updated: 2026-09-06
 
 ## 🔄 进行中 / 已重新排期
 
-### 🎯 闲鱼上架（P0，**决策悬置第 37 天，8/31 决策到期已过**，连续顺延第 30+ 天）
-- [ ] 上架「AI 代做 PPT」商品 → 🔴 **决策悬置第 37 天（8/31 到期已过；9/4 已拆小为「先上 1 个商品试水」30min 最小可逆动作，试水版清单已备；fallback 提前至 9/6 仍无决策 → k 默认推进合规改造子集）**：素材 100% 就绪（6 图 9/4 PNG 头实测 750×750 全 PASS）；操作清单已升级两段式（试水版 + 5 商品全量版）见 outputs/xianyu-master/上架素材包/上架操作清单.md；合规改造子集已就绪（敏感词清单/同款频次控制/数模标题改写 → xianyu-monetization v1.2.0）；决策包见 memory/2026/08/2026-08-31-xianyu-vault-suggestion-executor.md + 9/4 复核 memory/2026/09/2026-09-04-vault-suggestion-executor.md
+### 🎯 闲鱼上架（P0，**决策悬置第 38 天，9/6 fallback 硬触发已过**，连续顺延第 30+ 天）
+- [ ] 上架「AI 代做 PPT」商品 → 🔴 **决策悬置第 38 天（8/31 到期已过；9/4 已拆小为「先上 1 个商品试水」30min 最小可逆动作；9/6 fallback 硬触发日已过——k 侧试水前置 100% 就绪，实际上架是外部经营动作，等 sora 一句话拍板（试水/放弃/再缓）；9/7 触达升级触发：若仍无决策 → 换 desktop 通知/微信推送通道）**：素材 100% 就绪（6 图 PNG 头实测 750×750 全 PASS，第 15 次核验）；操作清单两段式（试水版 + 5 商品全量版）见 outputs/xianyu-master/上架素材包/上架操作清单.md；合规子集 v1.2.0（敏感词/同款频次/数模标题改写）；决策包见 memory/2026/08/2026-08-31-xianyu-vault-suggestion-executor.md + 9/4 复核 memory/2026/09/2026-09-04-vault-suggestion-executor.md + 9/7 报告 memory/2026/09/2026-09-07-vault-suggestion-executor.md
 - [x] 主图制作：3 张模板图（前后对比/价格表/服务承诺）→ ✅ 08-03 已生成：`outputs/xianyu-master/上架素材包/`（主图1-3，**实测 750×750 方形 51-57KB**，思源黑体+蓝橙撞色+无极限词）→ 上架时直接上传，无需再做
 - [ ] 同步上架「论文排版/润色」商品（素材包已有现成文案）→ 顺延 8/17 同批上
 - [ ] 补 PPT 样例素材：从现有作品提 2-3 个样例页 + 「仅供参考」水印 → portfolio/ → 需 sora 手动导出截图（无 LibreOffice/python-pptx 渲染，无法自动化）→ 上架操作清单已注明详情图可复用主图2/3 兜底
@@ -208,11 +208,11 @@ updated: 2026-09-06
 - ✅ patch daily-knowledge-review：明日行动项生成前 reconcile projects/current.md 的 ✅ 状态，剔除陈旧待办（9/1 实测踩中：主模型验证 20:06 已完成，22:39 daily-review 仍列为 9/2 待办，差点误报）（agent 可做，20min）
 - ✅ Tavily 决策拍板（2026-09-02 daily-todo-executor 落地）：配额耗尽连续 12 工作日，「评估 plan 升级」正式拍板——降级为末位备选（Firecrawl→DDGS→SearXNG→Tavily），从「评估」改「已执行」；运行时 web.backend=exa + extract_backend=firecrawl 已不依赖 Tavily 主用，仅作兜底；若 sora 想保留再补 30 天成本对比，默认路径零成本
 - ✅ FlClash 升级推送（2026-09-02 daily-todo-executor 已在当日报告置顶单条醒目请求，30 秒重启操作清单见报告）：连续 5 次标 P0 无触达闭环→本次单条推送已输出；消息网关离线影响面核查 + 降级定性待 sora 重启 FlClash 后核验
-- 🔴 闲鱼上架决策（悬置第 37 天）：决策包 100% 就绪，30min 复制粘贴可上 3 商品（PPT 30-80 / 论文 30 / 练习册 35），合规红线已内置——等 sora 拍板
+- 🔴 闲鱼上架决策（悬置第 38 天）：决策包 100% 就绪，30min 复制粘贴可上 3 商品（PPT 30-80 / 论文 30 / 练习册 35），合规红线已内置——等 sora 拍板
 ### 🧭 9/3 反思行动项（daily-reflection 复盘 9-02，执行者必读）
 - ✅ 每日笔记补写（2026-09-02 reflection 当场）：memory/2026/09/2026-09-02.md 已补写（9/2 self-improvement 输出为 self-improvement.md 而未写主文件）；patch daily-self-improvement 读路径为 memory/YYYY/MM/ 待执行（agent 可做，10min）
 - ✅ patch daily-knowledge-review 评分表加深验证判定列（2026-09-02 reflection 当场执行）：API 直调/视频转写日标注「等效深度豁免」
-- 🔒 闲鱼决策包 30 秒二选一（悬置第 37 天起）：上架 → k 给 5 步操作清单；放弃 → k 归档素材包 + 标记 [决策:放弃]；9/6 fallback 仍无决策 → k 默认推进合规改造子集（敏感词/数模标题改写已在 xianyu-monetization v1.2.0）
+- 🔒 闲鱼决策包 30 秒二选一（悬置第 38 天起）：上架 → k 给 5 步操作清单；放弃 → k 归档素材包 + 标记 [决策:放弃]；9/6 fallback 仍无决策 → k 默认推进合规改造子集（敏感词/数模标题改写已在 xianyu-monetization v1.2.0）
 - ✅ FlClash 7890 转发 k 核验（2026-09-03 20:03 daily-todo-executor 实测）：`curl -x http://127.0.0.1:7890 https://www.google.com` → **302 正常**，代理链路已恢复；FlClashCore 今晨 11:23 启动。消息网关离线影响面仍待 sora 确认重启后核验（必要时 P0→P2）
 ### 🧭 9/4 反思行动项（daily-reflection 复盘 9-03，执行者必读）
 - ✅ 闲鱼决策拆小 + fallback 提前（2026-09-04 vault-suggestion-executor 落地）：拆「先上 1 个商品（PPT 30-80 档）试水」最小可逆动作（素材 6 图 13 次核验 PASS / 合规 0 缺口 / 30min 可逆）；fallback 从 9/9 提前到 **9/6 仍无决策 → k 默认推进合规改造子集**（敏感词/数模标题改写已在 xianyu-monetization v1.2.0）；试水版 + 全量版两段式操作清单已备 outputs/xianyu-master/上架素材包/上架操作清单.md
@@ -227,9 +227,15 @@ updated: 2026-09-06
 ### 🧭 9/6 反思行动项（daily-reflection 复盘 9-05，执行者必读）
 - 🔒 首次交互置顶三连（机制第 2 天失效，随 9/6 反思推送置顶 P0）：① MCP 解除（打开 Obsidian + Local REST API + /mcp reconnect，1min）② FlClash 重启核验影响面（30s）③ 闲鱼试水决策（一句话二选一，9/6 fallback 硬触发）——9/5 有 35 条真实交互仍未解除，9/7 仍不解除 → 换 desktop 通知/微信推送通道（k 可做：推送脚本登记 cron）
 - ✅ FlClash 代理层核验（2026-09-06 daily-todo-executor 实测）：FlClashCore 9/6 13:20:38 已重启，7890 转发探针 `curl -x http://127.0.0.1:7890 https://www.google.com` → HTTP 200（1.08s）→ **代理链路恢复确认，「重启」动作已被 sora 完成**；仅剩消息网关影响面降级定性（P0→P2）待 sora 一句话确认
+
 - 🔒 外部生图修复排期（3 路径全断实测：XAI key invalid / FAL TOP_UP 锁定 / SILICONFLOW 30001 余额不足 + 30003 FLUX disabled）：XAI 换有效 key / FAL 充值 / SILICONFLOW 充值；k 侧已 patch siliconflow-media 刷新「余额 3000+」假就绪（2026-09-06 已做）
 - ✅ web_extract 豁免验证门（2026-09-06 已 patch daily-knowledge-review）：豁免需端点+条数证据；纯 web 研究 Top 发现写库前强制 ≥1 次原文验证——后续研究类 cron 按新门自检
 - ⏳ 9/6 daily-self-improvement 提出 3 项自动化建议 → 2026-09-06 suggestion-implementation 评估：均需前置评估/确认，登记待评估（不仓促执行）——① stock-analysis cron 并行化（Graph pipeline，重构生产 cron 需先验证基线+确认工作流）② OpenClaw Active Memory 插件评估（工具采纳类，7/31 已做成熟度评估，需试用）③ 全链路监控指标体系（方案产出类，需确认范围，daily-review 已部分覆盖）；完整标注见 memory/2026/09/2026-09-06.md §6
+
+### 🧭 9/7 反思行动项（vault-suggestion-executor 闲鱼专项，执行者必读）
+- 🔴 闲鱼试水决策（悬置第 38 天，9/6 fallback 硬触发日已过）：k 侧试水前置 100% 就绪（主图1 安全版 750×750 + 违禁词全过 + 第 15 次核验 PASS），实际上架是外部经营动作，等 sora 一句话二选一（试水/放弃/再缓）——再顺延仅消耗注意力成本，30min 可逆
+- 🔄 触达升级触发（2026-09-07 vault-suggestion-executor 落地）：9/7 仍无决策 → 换 desktop 通知/微信推送通道。已核实「闲鱼提醒」cron（工作日 7:30，deliver local）今日运行中 = 提醒在触达；微信推送通道无现成脚本（无 serverchan/pushplus/ntfy 基础设施）——真正新增微信推送需 sora 提供通道凭据（serverchan/pushplus token），标记 ⏳ 需 sora
+- ⏳ 3 项自动化建议（stock-analysis 并行化 / OpenClaw Active Memory / 全链路监控）仍待评估，不仓促执行（9/6 已登记）
 
 ### 🧭 8/20 反思行动项（daily-reflection 复盘 8-19，执行者必读）
 - [x] P0 语义缓存最小版落地——✅ 8/21 完成（硬截止 8/22 前）：原实现只挂 tavily provider、实际流量走 exa/searxng/firecrawl 兜底时从未命中（cache 文件从未生成）；已在 `web_tools.py::web_search_tool` chokepoint 上移统一缓存覆盖全部后端，实测 exact 命中生效，submit `84d813bf2`
@@ -253,7 +259,7 @@ updated: 2026-09-06
 
 | 项 | 状态 | 说明 |
 |:---|:-----|:-----|
-| 闲鱼上架决策「上架 or 放弃」 | 🔴 决策悬置第 37 天（8/31 到期已过，fallback 9/6） | 素材 100% 就绪；合规子集已备（xianyu-monetization v1.2.0）；8/24 倒计时机制生效 |
+| 闲鱼上架决策「上架 or 放弃」 | 🔴 决策悬置第 38 天（8/31 到期已过，fallback 9/6） | 素材 100% 就绪；合规子集已备（xianyu-monetization v1.2.0）；8/24 倒计时机制生效 |
 | 随身WiFi下单（赫电 Pro 399元/年） | 🔒 选型已确认 | 33元/月 1500G，待确认下单（阻塞 8 天+） |
 | 桌面美化实际部署 | 🔒 安装包已就绪 | TranslucentTB + Rainmeter winget 一键安装已就绪 |
 | SFC 系统扫描 | 🔒 需管理员权限 | 7/24 曾标记完成，7/27 后重复录入，待 sora 确认是否重跑 |

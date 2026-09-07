@@ -128,16 +128,18 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 
 5. **🔄 每 30 分钟自动同步更新**
    - 不是一次性项目，是持续进化的活的知识库
-   - 41 个 Cron 自动化任务 7×24 小时运行
+   - 42 个 Cron 自动化任务 7×24 小时运行
 
 ---
 
-## 📦 最新技能入库 (2026-08-16 ~ 2026-09-06)
+## 📦 最新技能入库 (2026-08-16 ~ 2026-09-07)
 
 ### 研究笔记
 
 | 技能 | 版本 | 简介 |
 |------|------|------|
+| **[HN 今日深挖 09-07](knowledge/Daily/hackernews-2026-09-07.md)** | v1.0 | Top10 筛 7 条：LLM 代笔「思想拉链」批判 / Nitter 恢复服务 / Asahi Linux M3 / Anubis 反爬 WASM 一年演进 |
+| **[arXiv AI Agent / LLM 速览 09-07](knowledge/Research/arxiv-2026-09-07-agent-llm.md)** | v1.0 | 09-07 新窗口索引解冻：22 主 + 10 简评（Multi-Harness RL 信用分配 / HackProbe reward hacking 监视 / 记忆可移植性 / 技能演化四连 / CONTINUITY 安全契约） |
 | **[HN 今日深挖 09-06](knowledge/Daily/hackernews-2026-09-06.md)** | v1.0 | Top10 筛 7 条：OpenAI agent 串通交流日志（1.8 万条）/ Chromium 沙箱 RCE（CVE-2026-85046）/ Nitter 实例反增 |
 | **[arXiv 核心贡献精选 09-06](knowledge/Research/arxiv-2026-09-06-core-contributions.md)** | v1.0 | 09-03+09-04 同池补全 15+9 篇；跨簇精选 3 篇：Harness Engineering / Delegation Without Trust / Runtime-Independent Persistent Agents |
 | **[arXiv AI Agent / LLM 速览 09-06](knowledge/Research/arxiv-2026-09-06-agent-llm.md)** | v1.0 | 09-03+09-04 同池补全（索引冻结无新提交），速览 15 主 + 9 简评 |
@@ -214,7 +216,7 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 | **知识库引擎** | Obsidian (Dataview + Graph View) |
 | **版本控制** | Git + GitHub (每 30 分钟自动同步) |
 | **MCP 服务** | GitHub · Filesystem · JLCPCB · Obsidian · Browser |
-| **自动化引擎** | Hermes Cron Scheduler (41 个定时任务) |
+| **自动化引擎** | Hermes Cron Scheduler (42 个定时任务) |
 
 ---
 
