@@ -31,6 +31,7 @@ created: 2026-08-09
 ## 📋 项目与日志
 - [[memory/2026/09/2026-09-07-vault-suggestion-executor|🧹 09-07 闲鱼专项建议执行报告]] — 闲鱼决策悬置第 38 天（9/6 fallback 已过）+ 触达升级触发核实 + 今日 3 项优先级计划
 - [[memory/2026/09/2026-09-07-daily-review|📋 09-07 每日回顾]] — arXiv 索引解冻 480 篇新窗口 + 记忆可移植性卡片 + 闲鱼试水决策悬置第 38 天
+- [[memory/2026/09/2026-09-07-daily-todo-executor|📋 09-07 每日待办落实]] — 闲鱼第 37→38 天漂移修复 4 处 + cad 技能三副本合并落地（删 text-to-cad/text2cad-cad）+ token-usage/纪律打勾
 - [[memory/2026/09/2026-09-06-daily-review|📋 09-06 每日回顾]] — arxiv harness 三连深挖 + GitHub W37 五项目 + 闲鱼试水 fallback 硬触发日（素材第 15 次核验 PASS）+ 知识吸收全面达标
 
 - [[projects/current|📦 当前项目]] — 进行中项目与 P0 待办（闲鱼上架/变现）

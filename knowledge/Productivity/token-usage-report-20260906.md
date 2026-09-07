@@ -100,7 +100,7 @@ status: adopted
 
 - [ ] 监控 glm-5 使用场景，评估是否可用 deepseek-v4-flash 替代
 - [ ] 关注 state.db 增长速度，接近 1GB 时考虑清理旧会话
-- [ ] jiyuanlvdong-2 作为备用链路，成本可控
+- [x] jiyuanlvdong-2 作为备用链路，成本可控 ✅ 已配置（fallback=jiyuanlvdong-2 实测可用，见 Hermes 配置）
 
 ---
 
