@@ -62,3 +62,6 @@ updated: 2026-09-08 20:00
   ❌ opencode-go: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING]
   ❌ siliconflow: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING]
   ❌ deepseek: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING]
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]
