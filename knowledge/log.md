@@ -103,3 +103,17 @@ tags: [meta, 知识库治理]
 - 标签一致性：新增 frontmatter 全部采用域标签体系（knowledge/<domain>），与同系列一致
 - 剩余：1 组重复文件名（`Dev/system-prompts-reference/README` vs `Research/eval-v2-2026-08-31/README`）——均为全路径引用、无短链歧义，低风险忽略
 - 结果：断链 0 / 缺 frontmatter 0 / 孤立 0（TOTAL ISSUES: 1，低风险）
+
+## [2026-09-08] lint | 断链修复 + 孤立挂载 + 标签统一
+
+- **断链修复 33+7 处**（全仓库 3114 链接严格扫描）：
+  - 缺 `knowledge/` 前缀 26 处（index.md 5、MOC-Inbox 9、MOC-Productivity 3、MOC-Security 2、MOC-Research 2、工具精度方法论 2、网站公网部署 1、运动曲线 1、portfolio 3→改 `portfolio/` 前缀）
+  - 相对路径层数错误 8 处：`github-trending-w35/w37` 的 `[[../knowledge/...]]` → `[[../../../knowledge/...]]`（memory/YYYY/MM/ 出发需 3 层）
+  - 真断链转纯文本 4 处：knowledge-map 的 3 个 archive 周报（archive 目录已清理）+ AI-Agent 的 arxiv-agent-llm-2026-07-26（文件已归档移除）
+  - 周报内部路径修正 1 处：weekly-2026-08-16 `[[memory/2026-08-14]]` → `[[memory/2026/08/2026-08-14]]`
+- **孤立页挂载 2 个**（幂等，未删页）：`Research/arxiv-2026-09-08-agent-llm`、`Research/黑盒热榜5项目实证研究-2026-09-08` → MOC-Research（续 09-08 序列）
+- **补 frontmatter 1 个**：`Research/黑盒热榜5项目实证研究-2026-09-08`（tags: [research, github, 实证研究, github-trending, W37]）
+- **标签一致性**：`codex` → `Codex`（codex-2week-game-absorbed.md，与主流大写统一）
+- **空文件**：全仓库 0 字节 md = 0，无需清理（dreaming/light/2026-09-08.md 曾被并发写入瞬间报 0 字节，实际 37 字节非空）
+- **说明**：`Research/eval-v2-2026-08-31/README` 仍报孤立系 lint 的 README 重名检测盲区——MOC-Research 已有全路径入链，Obsidian 实际有效
+- **结果**：断链 0 / 缺 frontmatter 0 / 孤立 1（lint 盲区）/ 重复文件名 1 组（低风险忽略）

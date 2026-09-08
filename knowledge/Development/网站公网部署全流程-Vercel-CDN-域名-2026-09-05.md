@@ -119,6 +119,6 @@ curl -vI https://yourdomain.com 2>&1 | grep -E 'subject:|issuer:|HTTP'
 
 ## 关联
 
-- [[Development/墨题上云部署方案-无Docker-2026-09-02]] — 墨题后端云服务器方案
+- [[knowledge/Development/墨题上云部署方案-无Docker-2026-09-02]] — 墨题后端云服务器方案
 - skill: fastapi-cloud-deploy（后端部署；本笔记补前端面）
 - skill: modern-web-development / web-dev-2026（建站方法论）
