@@ -5,8 +5,8 @@ POSTs minimal chat/completions (max_tokens=1), prints status/latency/model only.
 """
 import json, os, re, time, urllib.request, urllib.error
 
-CONFIG = r"C:/Users/31954/AppData/Local/hermes/config.yaml"
-ENV = r"C:/Users/31954/AppData/Local/hermes/.env"
+CONFIG = r"%USERPROFILE%/AppData/Local/hermes/config.yaml"
+ENV = r"%USERPROFILE%/AppData/Local/hermes/.env"
 
 def load_env(path):
     env = {}

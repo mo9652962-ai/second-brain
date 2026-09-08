@@ -2,8 +2,8 @@ import os
 import re
 from pathlib import Path
 
-VAULT_SKILLS = Path(r"C:\Users\31954\.openclaw\workspace\skills")
-SYSTEM_SKILLS = Path(r"C:\Users\31954\AppData\Local\Hermes\skills")
+VAULT_SKILLS = Path(r"%USERPROFILE%\.openclaw\workspace\skills")
+SYSTEM_SKILLS = Path(r"%USERPROFILE%\AppData\Local\Hermes\skills")
 
 CATEGORIES = ["hardware", "web", "platform", "hermes"]
 
