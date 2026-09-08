@@ -91,7 +91,7 @@ status: adopted
 
 ## 💾 存储使用
 
-### Obsidian 知识库（%USERPROFILE%\.openclaw\workspace）
+### Obsidian 知识库（~\.openclaw\workspace）
 
 | 位置 | 大小 | 说明 |
 |:-----|-----:|:-----|

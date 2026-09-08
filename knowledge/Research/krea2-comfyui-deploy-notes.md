@@ -39,10 +39,10 @@ status: absorbed
 ### ✅ 稳定命令
 ```bash
 # 一键启动（推荐：start-comfyui.sh 已固化代理+venv+全部参数）
-cd %USERPROFILE%\ComfyUI && bash start-comfyui.sh
+cd ~\ComfyUI && bash start-comfyui.sh
 
 # 等价手动命令（代理用环境变量，ComfyUI 没有 --proxy 参数！）
-cd %USERPROFILE%\ComfyUI && HTTP_PROXY=http://127.0.0.1:7890 HTTPS_PROXY=http://127.0.0.1:7890 \
+cd ~\ComfyUI && HTTP_PROXY=http://127.0.0.1:7890 HTTPS_PROXY=http://127.0.0.1:7890 \
   env -u PYTHONPATH ./venv/Scripts/python.exe main.py --listen 127.0.0.1 --port 8188 \
   --enable-triton-backend --lowvram
 

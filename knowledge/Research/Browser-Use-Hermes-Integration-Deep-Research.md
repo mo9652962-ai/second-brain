@@ -58,7 +58,7 @@ mcp_servers:
   browser:
     command: "npx"
     args: ["-y", "@agent-browser/mcp", "--tools", "core,network,react"]
-    cwd: %USERPROFILE%
+    cwd: ~
     
   # HTTP 模式 - 远程 MCP 服务器
   remote_service:
@@ -154,7 +154,7 @@ mcp_servers:
   browser-mcp:
     command: "agent-browser"
     args: ["mcp", "--tools", "core,network"]
-    cwd: %USERPROFILE%
+    cwd: ~
 
 browser:
   # 本地模式，无需API Key
