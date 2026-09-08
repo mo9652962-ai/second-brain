@@ -226,7 +226,7 @@ def main():
         http_json(f"{args.url}/system_stats", timeout=5)
     except Exception:
         print("❌ ComfyUI 未运行！请先启动:")
-        print("   cd C:\\Users\\31954\\ComfyUI && env -u PYTHONPATH ./venv/Scripts/python.exe main.py --listen 127.0.0.1 --port 8188 --enable-triton-backend --lowvram")
+        print("   cd %USERPROFILE%\\ComfyUI && env -u PYTHONPATH ./venv/Scripts/python.exe main.py --listen 127.0.0.1 --port 8188 --enable-triton-backend --lowvram")
         print("   ⚠️ 8GB 显存建议带 --lowvram；必须 --enable-triton-backend")
         sys.exit(1)
 
