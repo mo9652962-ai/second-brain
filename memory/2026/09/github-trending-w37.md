@@ -1,5 +1,5 @@
 ---
-tags: [周报, GitHub Trending, W37]
+tags: [周报, github-trending, W37]
 date: 2026-09-06
 type: weekly-trending-report
 ---
@@ -71,7 +71,7 @@ type: weekly-trending-report
 ## 文件操作清单
 
 - ✅ 新建 5 篇笔记：`knowledge/Dev/archify-verifiable-diagrams-2026-09-06.md`、`knowledge/Dev/ecc-agent-harness-2026-09-06.md`、`knowledge/AI/scientific-agent-skills-library-2026-09-06.md`、`knowledge/AI/openmaic-multiagent-classroom-2026-09-06.md`、`knowledge/AI/voicestudio-local-voice-2026-09-06.md`
-- ✅ 更新 `knowledge/knowledge-map.md`（W37 GitHub Trending 区块 + 头部日期）
+- ✅ 更新 `knowledge/knowledge-map.md`（W37 github-trending 区块 + 头部日期）
 - ✅ 补链 `knowledge/Research/MOC-GitHub.md`（W37 周报 + 周精选 5 项）
 - ✅ 追加 `knowledge/Research/github-projects-tracking.csv`（5 个新项目行，带去重守卫；同日脚本快照 23 行共存不冲突）
 - ✅ 自动脚本产物 `knowledge/Research/GitHub-Weekly-2026-09-06.md`（topic 口径 Top5，全部连榜）

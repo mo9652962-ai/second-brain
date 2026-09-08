@@ -50,7 +50,7 @@ date: 2026-08-31
 
 ## 三、审计脚本误报确认（无需处理）
 
-`[[MEMORY.md]]` ×2、`[[knowledge/Productivity/github-monetization-2026-08-20.md]]` ×2 —— 目标文件实际存在且被 git 跟踪，是 `vault_link_audit.py` 对带 `.md` 后缀链接目标的解析 bug，非真断链。
+`[[MEMORY]]` ×2、`[[knowledge/Productivity/github-monetization-2026-08-20.md]]` ×2 —— 目标文件实际存在且被 git 跟踪，是 `vault_link_audit.py` 对带 `.md` 后缀链接目标的解析 bug，非真断链。
 
 ## 四、隔离记录
 

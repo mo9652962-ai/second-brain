@@ -48,8 +48,8 @@ created: 2026-08-13
 
 | 文件 | 修复前 | 修复后 |
 |------|--------|--------|
-| `TOOLS.md:38` | `[[knowledge/AI-Workflow]]` | `[[knowledge/Dev/AI-Workflow]]` |
-| `knowledge/cards/2026-07-31-openforgerl.md:11` | `[[knowledge/arxiv-2026-07-31-core-contributions]]` | `[[arxiv-2026-07-31-core-contributions]]` |
+| `TOOLS.md:38` | `knowledge/AI-Workflow` | `[[knowledge/Dev/AI-Workflow]]` |
+| `knowledge/cards/2026-07-31-openforgerl.md:11` | `knowledge/arxiv-2026-07-31-core-contributions` | `[[arxiv-2026-07-31-core-contributions]]` |
 | `knowledge/Dev/MOC-Dev.md:20` | `[[knowledge/Dev/Vibe-Coding\|Vibe Coding 哲学]]` | `[[Vibe-Coding]]` |
 
 ### 2.3 技能引用标注（1 文件）
@@ -65,7 +65,7 @@ created: 2026-08-13
 | 类别 | 数量 | 状态 |
 |------|------|------|
 | 路径可解析（文件按 basename 存在） | 1499 | ✅ Obsidian 自动解析 |
-| 文件夹链接（`[[projects]]` 等指向目录） | 4 | ✅ 目录存在 |
+| 文件夹链接（`projects` 等指向目录） | 4 | ✅ 目录存在 |
 | 维护日志描述性文本（.archive） | 6 | ✅ 历史记录，非导航 |
 | 模板占位符（`wikilink`/`name` 等） | 26 | ✅ 文档示例 |
 | **真正断裂** | **0** | ✅ 全部已修复或可解析 |

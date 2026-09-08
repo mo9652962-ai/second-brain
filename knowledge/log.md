@@ -108,12 +108,22 @@ tags: [meta, 知识库治理]
 
 - **断链修复 33+7 处**（全仓库 3114 链接严格扫描）：
   - 缺 `knowledge/` 前缀 26 处（index.md 5、MOC-Inbox 9、MOC-Productivity 3、MOC-Security 2、MOC-Research 2、工具精度方法论 2、网站公网部署 1、运动曲线 1、portfolio 3→改 `portfolio/` 前缀）
-  - 相对路径层数错误 8 处：`github-trending-w35/w37` 的 `[[../knowledge/...]]` → `[[../../../knowledge/...]]`（memory/YYYY/MM/ 出发需 3 层）
+  - 相对路径层数错误 8 处：`github-trending-w35/w37` 的 `../knowledge/...` → `../../../knowledge/...`（memory/YYYY/MM/ 出发需 3 层）
   - 真断链转纯文本 4 处：knowledge-map 的 3 个 archive 周报（archive 目录已清理）+ AI-Agent 的 arxiv-agent-llm-2026-07-26（文件已归档移除）
-  - 周报内部路径修正 1 处：weekly-2026-08-16 `[[memory/2026-08-14]]` → `[[memory/2026/08/2026-08-14]]`
+  - 周报内部路径修正 1 处：weekly-2026-08-16 `memory/2026-08-14` → `[[memory/2026/08/2026-08-14]]`
 - **孤立页挂载 2 个**（幂等，未删页）：`Research/arxiv-2026-09-08-agent-llm`、`Research/黑盒热榜5项目实证研究-2026-09-08` → MOC-Research（续 09-08 序列）
 - **补 frontmatter 1 个**：`Research/黑盒热榜5项目实证研究-2026-09-08`（tags: [research, github, 实证研究, github-trending, W37]）
 - **标签一致性**：`codex` → `Codex`（codex-2week-game-absorbed.md，与主流大写统一）
 - **空文件**：全仓库 0 字节 md = 0，无需清理（dreaming/light/2026-09-08.md 曾被并发写入瞬间报 0 字节，实际 37 字节非空）
 - **说明**：`Research/eval-v2-2026-08-31/README` 仍报孤立系 lint 的 README 重名检测盲区——MOC-Research 已有全路径入链，Obsidian 实际有效
 - **结果**：断链 0 / 缺 frontmatter 0 / 孤立 1（lint 盲区）/ 重复文件名 1 组（低风险忽略）
+
+## [2026-09-08] lint | 例行体检（断链16处修复 + 空壳清理 + 标签统一 + 孤立挂载）
+
+- **断链修复 16 处**：dreaming 快照剥括号 6（light-08-06/07 的 health-2026-07-24 等）+ 维护笔记文档示例剥括号 8（log.md 3、08-13-maintenance 3、09-04-maintenance 2）+ `[[MEMORY.md]]`→`[[MEMORY]]` 5（含 1 带别名）
+- **空壳清理 3 个**：dreaming light/deep/rem 09-08（无 footer + 计数 0）；09-05~07 带 footer 保留
+- **标签统一 6 处**：`github trending`→`github-trending`（W31~35）×5、`GitHub Trending`→`github-trending`（W37）×1
+- **孤立挂载 4 个**：GitHub-Weekly-09-08→MOC-GitHub、skill-audit-09-08→MOC-Research、CAD自动化MCP参考→MOC-Dev、hackernews-09-08→knowledge-map；均挂 HOME.md
+- **补 frontmatter 2 个**：CAD自动化MCP参考-pascal-09-08、GitHub-Weekly-09-08
+- **遗留**：eval-v2 README 报孤立 = lint README 重名盲区（MOC-Research 全路径入链有效）；09-04-maintenance「剥离 `[[` `]]`」为规则 prose 保留
+- 详见 [[memory/2026/09/2026-09-08-vault-maintenance|2026-09-08 维护笔记]]

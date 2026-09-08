@@ -321,6 +321,7 @@ updated: 2026-09-07
 - [[GPT强化方案-Codex实现-检验记录-2026-08-31]]
 - [[arxiv-2026-09-01-agent-llm]]
 - [[skill-audit-2026-09-01]]
+- [[skill-audit-2026-09-08]]
 - [[arxiv-2026-09-02-agent-llm]]
 - [[多Agent协作增强v2.7-千轮研究-2026-09-02]]
 - [[arxiv-2026-09-03-agent-llm]]
