@@ -75,7 +75,7 @@ class AIGrader:
             try:
                 from kimi_api import KimiAPI
                 self.kimi_client = KimiAPI(
-                    api_key='sk-kcWs7KsFkwnx5xY862fyIacqN2Wlf9I39YFB56WPLnGb22mD'
+                    api_key=os.environ.get('KIMI_API_KEY', '')
                 )
                 print('✅ Kimi AI 深度分析已启用')
             except Exception as e:
