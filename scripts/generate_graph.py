@@ -17,7 +17,7 @@ for cand in ["Microsoft YaHei", "SimHei", "SimSun", "Noto Sans CJK SC"]:
         continue
 plt.rcParams["axes.unicode_minus"] = False
 
-root = pathlib.Path(r"C:\Users\31954\.openclaw\workspace")
+root = pathlib.Path(r"%USERPROFILE%\.openclaw\workspace")
 exclude_dirs = {".git", ".obsidian", ".venv", "graphify-out", ".code-review-graph", "node_modules", "outputs", "__pycache__", ".trash"}
 
 def iter_md(base):

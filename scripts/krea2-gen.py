@@ -234,7 +234,7 @@ def main():
     if args.output:
         output_dir = Path(args.output).resolve()
     else:
-        output_dir = Path(r"C:\Users\31954\ComfyUI\output").resolve()
+        output_dir = Path(r"%USERPROFILE%\ComfyUI\output").resolve()
     output_dir.mkdir(parents=True, exist_ok=True)
 
     out_size = f"{w*2}x{h*2}" if args.hires else f"{w}x{h}"
@@ -270,7 +270,7 @@ def main():
                 filename = img["filename"]
                 subfolder = img.get("subfolder", "")
                 # ComfyUI 输出在 output/ 目录（用绝对路径避免拼接错误）
-                src = Path(r"C:\Users\31954\ComfyUI\output") / subfolder / filename
+                src = Path(r"%USERPROFILE%\ComfyUI\output") / subfolder / filename
                 if src.exists():
                     dst = output_dir / filename
                     import shutil

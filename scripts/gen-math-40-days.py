@@ -244,7 +244,7 @@ for i, (mo, d) in enumerate(dates):
     output.append(block)
 
 full = "\n".join(output)
-with open(r"C:\Users\31954\Desktop\三年级数学每日一练40天_优化版.md", "w", encoding="utf-8") as f:
+with open(r"%USERPROFILE%\Desktop\三年级数学每日一练40天_优化版.md", "w", encoding="utf-8") as f:
     f.write(full)
 
 print(f"Done! {len(output)} days, {len(full)} chars")

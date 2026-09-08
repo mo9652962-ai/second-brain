@@ -13,7 +13,7 @@ import re
 import subprocess
 import sys
 
-VAULT = pathlib.Path(r"C:\Users\31954\.openclaw\workspace")
+VAULT = pathlib.Path(r"%USERPROFILE%\.openclaw\workspace")
 
 DIR_MOC = {
     "knowledge/Research": "MOC-Research",

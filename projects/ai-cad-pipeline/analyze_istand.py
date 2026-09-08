@@ -1,6 +1,6 @@
 import Mesh, os
 
-ref = r"C:\Users\31954\Desktop\CAD-手机支架\iStand_reference"
+ref = r"%USERPROFILE%\Desktop\CAD-手机支架\iStand_reference"
 
 # 列出所有 stl
 for f in sorted(os.listdir(ref)):

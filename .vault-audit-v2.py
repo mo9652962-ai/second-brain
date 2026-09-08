@@ -4,7 +4,7 @@ import os, re, json
 from collections import defaultdict
 from pathlib import Path
 
-VAULT = Path(r"C:\Users\31954\.openclaw\workspace")
+VAULT = Path(r"%USERPROFILE%\.openclaw\workspace")
 EXCLUDE_DIRS = {'.git', 'node_modules', '.trash', '.obsidian', '__pycache__', '.venv', '.claude', '.codebuddy', '.gemini', '.qoder', '.clawhub', '.skillkit', '.hermes', '.learnings', '.temp', '.github', '.code-review-graph', 'site', 'graphify-out'}
 
 # ── Collect all files ──
