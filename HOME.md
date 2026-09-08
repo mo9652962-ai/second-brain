@@ -7,7 +7,7 @@ created: 2026-08-09
 # 🏠 Home — 第二大脑入口
 
 > **知识网络从这里开始。** 每个知识域一个 MOC 锚点，全部双向链接。
-> 最后更新: 2026-09-07 (daily-review)
+> 最后更新: 2026-09-08 (daily-review)
 
 ---
 
@@ -38,6 +38,7 @@ created: 2026-08-09
 - [[memory/2026/09/2026-09-08-vault-suggestion-executor|🧹 09-08 闲鱼专项建议执行报告]] — 闲鱼决策悬置第 39 天（连续顺延 30+ 天）+ 触达 cron 复核健康 + 今日 3 项优先级计划- [[knowledge/Research/arxiv-2026-09-08-agent-llm|arXiv 09-08 补全速览]] — 14 主条目 + 8 简评（09-07 窗口补全：系统级风险 04373 / BeaconKV / 窄边界安全 04482 / First Things First 05224）
 
 - [[memory/2026/09/2026-09-07-daily-review|📋 09-07 每日回顾]] — arXiv 索引解冻 480 篇新窗口 + 记忆可移植性卡片 + 闲鱼试水决策悬置第 38 天
+- [[memory/2026/09/2026-09-08-daily-review|📋 09-08 每日回顾]] — 黑箱 5 项目实证研究（CAD MCP + AI 营销技能库双落点） + 月度技能审计 + 闲鱼试水悬置第 39 天
 - [[memory/2026/09/2026-09-07-daily-todo-executor|📋 09-07 每日待办落实]] — 闲鱼第 37→38 天漂移修复 4 处 + cad 技能三副本合并落地（删 text-to-cad/text2cad-cad）+ token-usage/纪律打勾
 - [[memory/2026/09/2026-09-06-daily-review|📋 09-06 每日回顾]] — arxiv harness 三连深挖 + GitHub W37 五项目 + 闲鱼试水 fallback 硬触发日（素材第 15 次核验 PASS）+ 知识吸收全面达标
 
