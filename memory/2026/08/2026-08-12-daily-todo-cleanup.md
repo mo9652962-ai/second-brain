@@ -1,6 +1,6 @@
 # 📋 每日待办落实报告 (2026-08-12)
 
-> Cron 自动执行 · 工作目录: %USERPROFILE%\.openclaw\workspace
+> Cron 自动执行 · 工作目录: ~\.openclaw\workspace
 
 ---
 

@@ -128,16 +128,21 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 
 5. **🔄 每 30 分钟自动同步更新**
    - 不是一次性项目，是持续进化的活的知识库
-   - 42 个 Cron 自动化任务 7×24 小时运行
+   - 44 个 Cron 自动化任务 7×24 小时运行
 
 ---
 
-## 📦 最新技能入库 (2026-08-16 ~ 2026-09-07)
+## 📦 最新技能入库 (2026-08-16 ~ 2026-09-08)
 
 ### 研究笔记
 
 | 技能 | 版本 | 简介 |
 |------|------|------|
+| **[HN 今日深挖 09-08](knowledge/Daily/hackernews-2026-09-08.md)** | v1.0 | Top10 筛 5 条：bzip3 精神继承者 / WeatherNext 3 实时观测 / Ladybird 8 月报 / NixOS「信任信任」攻击 |
+| **[黑盒热榜 5 项目实证 09-08](knowledge/Research/黑盒热榜5项目实证研究-2026-09-08.md)** | v1.0 | GitHub API 验 star + clone 读码：5 项目 3 个值得抄（marketing-skills/DeerFlow/pascal-editor），LunaTV 借技术不碰本体 |
+| **[GitHub 宝藏挖掘周更 09-08](knowledge/Research/GitHub-Weekly-2026-09-08.md)** | v1.0 | Top 5 高星仓库（codebase-memory-mcp 42.6k★ 等） |
+| **[技能使用审计 09-08](knowledge/Research/skill-audit-2026-09-08.md)** | v1.0 | 392 技能登记 / 本月 97 实际使用 / 79 stale / 98 从未用，TOP 10 排行 |
+| **[CAD 自动化 MCP 参考（pascal）](knowledge/Development/CAD自动化MCP参考-pascal-2026-09-08.md)** | v1.0 | pascal/editor 22.4k★ 实证：31 个 MCP 语义建造工具 + CLI，借鉴到 CAD/PCB 自动化 |
 | **[HN 今日深挖 09-07](knowledge/Daily/hackernews-2026-09-07.md)** | v1.0 | Top10 筛 7 条：LLM 代笔「思想拉链」批判 / Nitter 恢复服务 / Asahi Linux M3 / Anubis 反爬 WASM 一年演进 |
 | **[arXiv AI Agent / LLM 速览 09-07](knowledge/Research/arxiv-2026-09-07-agent-llm.md)** | v1.0 | 09-07 新窗口索引解冻：22 主 + 10 简评（Multi-Harness RL 信用分配 / HackProbe reward hacking 监视 / 记忆可移植性 / 技能演化四连 / CONTINUITY 安全契约） |
 | **[HN 今日深挖 09-06](knowledge/Daily/hackernews-2026-09-06.md)** | v1.0 | Top10 筛 7 条：OpenAI agent 串通交流日志（1.8 万条）/ Chromium 沙箱 RCE（CVE-2026-85046）/ Nitter 实例反增 |
@@ -216,7 +221,7 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 | **知识库引擎** | Obsidian (Dataview + Graph View) |
 | **版本控制** | Git + GitHub (每 30 分钟自动同步) |
 | **MCP 服务** | GitHub · Filesystem · JLCPCB · Obsidian · Browser |
-| **自动化引擎** | Hermes Cron Scheduler (42 个定时任务) |
+| **自动化引擎** | Hermes Cron Scheduler (44 个定时任务) |
 
 ---
 
@@ -224,7 +229,7 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 
 ```
 📁 仓库体积：约 205MB（含附件与图片）
-📝 Markdown 文件：1045 个（正文约 5.4 MB）
+📝 Markdown 文件：1046 个（正文约 5.4 MB）
 🧠 自建 Skill 文档：30 个（11 个领域目录）
 🗂️ 知识域：11 个
 ⏰ 首次提交：2026 年 7 月

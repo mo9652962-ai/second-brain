@@ -33,7 +33,7 @@ date: 2026-09-01
 
 **脚本误报（5 条，未改内容，已修脚本）：**
 - `[[knowledge/Productivity/github-monetization-2026-08-20.md]]` ×2（cards/2026-08-21）— 文件存在，Obsidian 可解析带 .md 的路径式链接。顺带做了风格规范化：去掉 `.md` 后缀，脚本不再误报
-- `[[MEMORY.md]]` ×3（memory/2026/08/ todo-cleanup + 08-31 日志）— MEMORY.md 存在且能解析，历史笔记，保持原样
+- `[[MEMORY]]` ×3（memory/2026/08/ todo-cleanup + 08-31 日志）— MEMORY.md 存在且能解析，历史笔记，保持原样
 
 **⚠️ 脚本 bug 修复（vault_link_audit.py）：** `base = target...split('/')[-1]` 未 strip `.md` 后缀，导致 ``path/note.md``（Obsidian 可解析）被误报为断链。已在 base 计算后加 `.md` 剥离逻辑。下次运行不再误报该类链接。
 

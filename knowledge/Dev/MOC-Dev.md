@@ -90,6 +90,7 @@ updated: 2026-08-31
 - [[knowledge/Dev/system-prompts-reference/README|System Prompts 存档]] — Claude/GPT/DeepSeek/Hermes 提示词参考
 - [[knowledge/Research/MOC-Research|🔬 研究域 MOC]] — 本周 36 篇研究笔记索引
 - [[knowledge/Dev/AI漫剧制作全流程|AI 漫剧制作全流程]] — AI 内容创作 SOP + 工具矩阵
+- [[knowledge/Development/CAD自动化MCP参考-pascal-2026-09-08|CAD 自动化 MCP 参考]] — pascal/editor 31 个 MCP 工具实证（CAD/PCB 自动化方向）
 
 ## 📦 吸收笔记归档
 

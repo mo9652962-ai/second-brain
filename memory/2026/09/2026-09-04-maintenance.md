@@ -28,7 +28,7 @@ created: 2026-09-04
 - `knowledge/Cross-Domain.md` 的 `[[wiki link]]`、`secret-knowledge-reference.md` 的 `[[:space:]]`、`vault-health-baseline.md` 的 `[[skill-name]]` —— 教学式语法描述
 - `memory/2026/09/2026-09-02-maintenance.md` 第 26 行 prose 里的方括号说明 —— 描述性文字
 
-**已修**：昨日（09-02）维护笔记里 8 处反引号包裹的文档化示例链接 + 1 处 `[[wiki link]]`，按技能规范剥离 `[[` `]]` 方括号（`[[MOC-Development]]` → `MOC-Development` 等），否则每次诊断反复误报。dreaming `light-2026-08-15.md` 截断链接 `[[memory/2026/08/sug...` 剥除悬空 `[[`。
+**已修**：昨日（09-02）维护笔记里 8 处反引号包裹的文档化示例链接 + 1 处 `[[wiki link]]`，按技能规范剥离 `[[` `]]` 方括号（`MOC-Development` → `MOC-Development` 等），否则每次诊断反复误报。dreaming `light-2026-08-15.md` 截断链接 `memory/2026/08/sug...` 剥除悬空 `[[`。
 
 ## 🗑️ 空壳清理
 

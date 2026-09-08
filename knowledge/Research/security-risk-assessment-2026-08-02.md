@@ -59,7 +59,7 @@ status: adopted
 **加固**（P0）：
 ```bash
 # 收紧 .env 权限（Windows: icacls）
-icacls "%USERPROFILE%\AppData\Local\hermes\.env" /inheritance:r /grant:r "<USER>:(R)"
+icacls "~\AppData\Local\hermes\.env" /inheritance:r /grant:r "<USER>:(R)"
 # 检查记忆文件是否含明文 key（应只有位置说明，无真实 key）
 ```
 
