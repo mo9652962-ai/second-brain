@@ -46,7 +46,7 @@ date: 2026-08-21
 
 DVWA 没有业务逻辑模块 → 自建 Flask 靶场：
 
-**位置**：`C:\Users\31954\AppData\Local\hermes\skills\security\web-security-lab-setup\scripts\bizlogic_lab.py`
+**位置**：`~\AppData\Local\hermes\skills\security\web-security-lab-setup\scripts\bizlogic_lab.py`
 **启动**：`python bizlogic_lab.py`（127.0.0.1:8090）
 **演示**：`python bizlogic_lab.py --demo`
 

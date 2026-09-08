@@ -58,7 +58,7 @@ mcp_servers:
   browser:
     command: "npx"
     args: ["-y", "@agent-browser/mcp", "--tools", "core,network,react"]
-    cwd: C:/Users/31954
+    cwd: ~
     
   # HTTP 模式 - 远程 MCP 服务器
   remote_service:
@@ -154,7 +154,7 @@ mcp_servers:
   browser-mcp:
     command: "agent-browser"
     args: ["mcp", "--tools", "core,network"]
-    cwd: C:/Users/31954
+    cwd: ~
 
 browser:
   # 本地模式，无需API Key
@@ -356,7 +356,7 @@ mcp_servers:
 ### 阶段1: 基础安装（本周内）— ✅ 已完成
 - ✅ uv 包管理器
 - ✅ MarkItDown 文档转换
-- ✅ 安装 agent-browser CLI（已确认：`/c/Users/31954/AppData/Roaming/npm/agent-browser`）
+- ✅ 安装 agent-browser CLI（已确认：`~/AppData/Roaming/npm/agent-browser`）
 - ✅ Hermes 内置 browser_* 工具已加载（browser_navigate/click/type/snapshot/vision 等 12 个工具）
 
 ### 阶段2: MCP 集成（下周）— 🔄 已确认方案

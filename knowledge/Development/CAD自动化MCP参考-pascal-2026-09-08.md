@@ -142,6 +142,6 @@ Site → Building → Level → Wall → Item(门/窗)
 ---
 
 ## 六、文件索引
-- 完整 pascal 报告：`C:\Users\31954\pascalorg-editor-research.md`
+- 完整 pascal 报告：`~\pascalorg-editor-research.md`
 - 5 项目综合：`knowledge/Research/黑盒热榜5项目实证研究-2026-09-08.md`
 - PCB Flow Autonomy Ladder 原文：`https://github.com/NijoP/pcbflow/blob/main/docs/04_HUMAN_IN_THE_LOOP.md`

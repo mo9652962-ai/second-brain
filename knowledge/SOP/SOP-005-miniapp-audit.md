@@ -23,11 +23,11 @@ source: null
 
 ```
 ① 获取小程序包（微信 4.0+ 新版路径）:
-   C:\Users\31954\AppData\Roaming\Tencent\xwechat\radium\users\<hash>\applet\packages\
+   ~\AppData\Roaming\Tencent\xwechat\radium\users\<hash>\applet\packages\
    → 按修改时间找最新（=刚打开的小程序）
    → wxapkg 在 <appid>/<version>/__APP__.wxapkg
 ② 反编译:
-   cd C:\Users\31954\tools\unveilr
+   cd ~\tools\unveilr
    ./unveilr.exe wx -i <appid> -f -o <输出目录> <wxapkg路径>
    ⚠️ 必须 -i 指定 appid（目录名），否则报 wxAppId must be required
 ③ 密钥扫描:

@@ -37,7 +37,7 @@ schedule: "0 9 * * 0"  # 每周日早上 9 点
 description: "每周挖掘 GitHub 上的高价值 AI 和知识管理项目"
 enabled: true
 command: >
-  cd /c/Users/31954/.openclaw/workspace &&
+  cd ~/.openclaw/workspace &&
   python scripts/github_treasure_hunt.py
 output_notification:
   enabled: true

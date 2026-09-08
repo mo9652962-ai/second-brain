@@ -39,7 +39,7 @@ Python 后端（引擎编排）
 1. **抖音 AI 视频配音本地化候选**。sora 的短视频流水线（douyin-ai-practical-video）目前配音靠云端 TTS；VoiceStudio 可本地克隆/合成，省 API 费、可无限试音。**但**：AGPL-3.0（商用需开源衍生）+ RTX4060 8GB / 16GB 内存紧张（OmniVoice 系大模型）——评估为先，先试转写/轻量 TTS，语音克隆最后。
 2. **「后端指纹握手防陈旧代码」= 前端缓存失效排查同思路**。sora 的 frontend-deploy-cache / spa-frontend-cache-updates 解决「用户看不到新版」——VoiceStudio 用「指纹对比」判定后端是否旧代码，比版本号更可靠（版本号一个 release 周期内不变）。可搬进墨题的部署验证。
 3. **双轨发布 Preview/Stable**：预览通道先吃新特性、稳定通道保交付——适合墨题内测版 vs 正式版的分发策略。
-4. **CJK 路径修复经验**：Windows 非英文用户名导致 venv/.pth 解析失败——sora 本机就是 CJK 路径环境（C:\Users\31954），装这类本地工具时留意 uv 可执行路径坑。
+4. **CJK 路径修复经验**：Windows 非英文用户名导致 venv/.pth 解析失败——sora 本机就是 CJK 路径环境（~），装这类本地工具时留意 uv 可执行路径坑。
 
 ## 安装/验证
 

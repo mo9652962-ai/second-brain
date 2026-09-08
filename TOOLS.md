@@ -64,8 +64,8 @@
 
 - **OS**: Windows 11 (x64)
 - **Shell**: PowerShell（注意：不支持 `||` 和 `&&`，用 `;` 或 `if/else` 替代）
-- **Workspace**: `C:\Users\31954\.openclaw\workspace`
-- **Config**: `C:\Users\31954\.openclaw\openclaw.json`
+- **Workspace**: `~\.openclaw\workspace`
+- **Config**: `~\.openclaw\openclaw.json`
 
 ## PowerShell Gotchas
 

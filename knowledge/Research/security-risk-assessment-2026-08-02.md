@@ -59,7 +59,7 @@ status: adopted
 **加固**（P0）：
 ```bash
 # 收紧 .env 权限（Windows: icacls）
-icacls "C:\Users\31954\AppData\Local\hermes\.env" /inheritance:r /grant:r "31954:(R)"
+icacls "~\AppData\Local\hermes\.env" /inheritance:r /grant:r "<USER>:(R)"
 # 检查记忆文件是否含明文 key（应只有位置说明，无真实 key）
 ```
 
@@ -100,7 +100,7 @@ icacls "C:\Users\31954\AppData\Local\hermes\.env" /inheritance:r /grant:r "31954
 
 ### 🔴 P0（本周执行）
 - [x] **Skill 来源审计**：120 个 skill 分类（官方/自写/市场导入），市场导入逐个审查 — ✅ 2026-08-02 执行：121 目录 = 28 市场导入(@前缀) + 93 官方/自写；抽查 5 个关键文件（tavily/siliconflow/handler/security-audit）均为正常 API 调用或安全工具，无外传/混淆/下载执行
-- [x] **.env 权限收紧**：icacls 只允许当前用户 — ✅ 2026-08-02 执行：`icacls .env /inheritance:r /grant:r "31954:(R)"`，验证仅 NK\31954 可读
+- [x] **.env 权限收紧**：icacls 只允许当前用户 — ✅ 2026-08-02 执行：`icacls .env /inheritance:r /grant:r "<USER>:(R)"`，验证仅 NK\<USER> 可读
 - [x] **记忆文件密钥检查**：确认 MEMORY.md 无明文 key — ✅ 2026-08-02 执行：全库扫描仅 2 处命中（api.json=脱敏占位、LLM-Providers.md=sk-xxx 示例），无真实密钥；**附加发现** api.json 曾被 git 跟踪 → 已 `git rm --cached` + .gitignore 加 api.json + 推送 dev
 
 ### 🟡 P1（2 周内）

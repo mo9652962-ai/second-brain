@@ -6,7 +6,7 @@ status: abandoned
 # Translumo · 实时屏幕翻译工具
 
 来源：GitHub ramjke/Translumo (5.5k⭐)
-安装：`C:\Users\31954\Downloads\Translumo\Translumo.exe`
+安装：`~\Downloads\Translumo\Translumo.exe`
 
 ## 快捷键
 

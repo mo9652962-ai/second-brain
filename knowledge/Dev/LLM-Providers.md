@@ -187,7 +187,7 @@ SEARXNG_URL=http://127.0.0.1:8888
 # 检查 fallback 链是否有效
 python -c "
 import yaml
-c = yaml.safe_load(open(r'C:\Users\31954\AppData\Local\hermes\config.yaml', encoding='utf-8'))
+c = yaml.safe_load(open(r'~\AppData\Local\hermes\config.yaml', encoding='utf-8'))
 fb = c.get('fallback_model', [])
 print(f'{len(fb)} fallback 条目:')
 for f in fb:
@@ -197,7 +197,7 @@ for f in fb:
 # 检查 model_aliases
 python -c "
 import yaml
-c = yaml.safe_load(open(r'C:\Users\31954\AppData\Local\hermes\config.yaml', encoding='utf-8'))
+c = yaml.safe_load(open(r'~\AppData\Local\hermes\config.yaml', encoding='utf-8'))
 print(c.get('model_aliases'))
 "
 

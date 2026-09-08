@@ -16,7 +16,7 @@ source: null
 ## 1. 前置条件与触发上下文
 
 - **触发**: dsh（DeepSeek Harness）需要升级（npm 有新版 rc 时）
-- **前置**: npm 全局安装于 `C:\Users\31954\AppData\Local\hermes\node`；FlClash 代理可用
+- **前置**: npm 全局安装于 `~\AppData\Local\hermes\node`；FlClash 代理可用
 - **当前版本**: 0.1.0-rc.7（2026-08-19 升级）
 
 ## 2. 确定性执行步骤

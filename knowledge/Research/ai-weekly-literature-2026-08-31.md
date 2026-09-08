@@ -76,7 +76,7 @@ date: 2026-08-31
 - **覆盖度**：✅ arXiv / ✅ OpenAlex / ✅ Crossref；**arXiv 索引冻结于 08-28T17:59Z**——08-29/08-30 无新提交（08-31 速览已核该窗口为空）；未覆盖 CNKI/万方/维普（无免费 API），不假装查全
 - **同池去重**：与 08-31 daily 速览（08-20→08-28 补全速览）同池；本报告精选其强相关 8 篇 + 补录 7 篇独立多源查询检出的漏网强相关（标注"新"）
 - **验证**：4 篇精读候选 + 关键新论文经 web_search 交叉验证（arxiv abs/html / alphaXiv / DAIR.AI 等）✅；其余 arXiv API 收录即存在性证据；未臆造 DOI/被引/年份
-- **原始数据**：`C:\Users\31954\.openclaw\workspace\.temp\week_last.json`（可复现证据，用完清理）
+- **原始数据**：`~\.openclaw\workspace\.temp\week_last.json`（可复现证据，用完清理）
 
 ---
 
