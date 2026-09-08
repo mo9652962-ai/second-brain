@@ -9,7 +9,7 @@ source: null
 # Vault Health Baseline (2026-07-26)
 
 Current structural state of sora's Obsidian vault
-at `C:\Users\31954\.openclaw\workspace`.
+at `~\.openclaw\workspace`.
 
 ## Baseline Metrics (after maintenance 2026-07-26 v2)
 

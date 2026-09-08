@@ -21,7 +21,7 @@ status: applied
 
 ### 🔴 安全 P0/P1（来自 security-risk-assessment-2026-08-02）
 
-1. **.env 权限收紧** — `icacls .env /inheritance:r /grant:r "31954:(R)"` → 验证仅当前用户可读
+1. **.env 权限收紧** — `icacls .env /inheritance:r /grant:r "<USER>:(R)"` → 验证仅当前用户可读
 2. **记忆文件密钥检查** — 全库扫描 2 处命中均为脱敏/示例（api.json=占位、LLM-Providers.md=sk-xxx），无真实密钥
 3. **Skill 来源审计** — 121 目录 = 28 市场导入(@前缀) + 93 官方/自写；抽查 5 个关键文件均正常
 4. **ComfyUI 节点来源确认** — INT8-Fast(BobJohnson24)/Krea2Fix(自写)/VAE-Utils(spacepxl) 来源明确，无可疑模式

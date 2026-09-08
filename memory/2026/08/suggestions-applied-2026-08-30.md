@@ -42,7 +42,7 @@ status: completed
 | MCP server | 来源 | 状态 | 结论 |
 |:-----|:-----|:-----|:-----|
 | code-review-graph | 本地 hermes venv exe | ✅ | 本地可信，serve Sims4 repo + auto-watch |
-| filesystem | npx 官方 @modelcontextprotocol | ✅ | 官方包；⚠️ 根目录=C:\Users\31954 权限面大（设计需求，知悉接受） |
+| filesystem | npx 官方 @modelcontextprotocol | ✅ | 官方包；⚠️ 根目录=~ 权限面大（设计需求，知悉接受） |
 | github | npx 官方 @modelcontextprotocol | ✅ | 官方包 + GITHUB_TOKEN env |
 | jlcmcp | 本地 node 脚本 | ✅ | loopback ws://127.0.0.1:18800 |
 | memvid | 本地 python 脚本 | ✅ | 本地 workspace 脚本 |

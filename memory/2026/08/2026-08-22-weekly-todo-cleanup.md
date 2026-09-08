@@ -92,7 +92,7 @@ type: weekly-todo-cleanup
 
 ## 关联
 - 中央追踪器：[[projects/current]]
-- 长期记忆同步：[[MEMORY.md]]
+- 长期记忆同步：[[MEMORY]]
 - 返回首页：[[HOME]]
 
 ---

@@ -19,6 +19,7 @@ updated: 2026-08-31
 
 ## 📅 周报系列（W31 起，每周一篇）
 
+- [[GitHub-Weekly-2026-09-08]] — W38 宝藏挖掘：codebase-memory-mcp / nanobot 等 Top5
 - [[../../memory/2026/09/github-trending-w37|W37 周报]] — W37：archify 可验证图表 / ECC 250k harness / scientific-agent-skills 科研技能库 / OpenMAIC 多 Agent 课堂 / VoiceStudio 本地语音
 - [[GitHub-Weekly-2026-08-23]] — W35：ai-memory 跨 Agent 记忆 / llmfit 硬件×模型匹配（周报 [[../../memory/2026/08/github-trending-w35|W35 周报]]）
 - [[GitHub-Weekly-2026-08-16]] — W34：diagram-design 图表（+14.7k 增长王）/ needle 14MB 端侧模型 / google-skills / code-graph-rag

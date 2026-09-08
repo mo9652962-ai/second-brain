@@ -133,7 +133,7 @@ Firecrawl 插件首次安装被 SIGKILL 后，重试时报告 "plugin already ex
 
 ### Error
 ```
-plugin already exists: C:\Users\31954\.openclaw\npm\projects\openclaw-firecrawl-plugin-69f7abcaaa
+plugin already exists: ~\.openclaw\npm\projects\openclaw-firecrawl-plugin-69f7abcaaa
 (delete it first)
 ```
 
@@ -283,7 +283,7 @@ Session-end sweep detected 1 possible error in the previous OpenClaw session.
 ### Context
 - Detected by the self-improvement hook on `/new`
 - Session key: agent:main:main
-- Session transcript: C:\Users\31954\.openclaw\agents\main\sessions\8a91a3df-f378-41b2-86b8-2a24ecc95ec5.jsonl
+- Session transcript: ~\.openclaw\agents\main\sessions\8a91a3df-f378-41b2-86b8-2a24ecc95ec5.jsonl
 
 ### Resolution
 - **Resolved**: 2026-07-22T14:15:00+08:00

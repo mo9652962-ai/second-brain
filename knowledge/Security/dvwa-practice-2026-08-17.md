@@ -23,7 +23,7 @@ date: 2026-08-17
 | Blind | AND 1=1/1=2 → LENGTH/SUBSTRING | 库名 dvwa |
 | Reflected XSS | `<script>` 反射 | 原样输出 |
 | Stored XSS | guestbook POST 入库 | 恶意脚本持久化 |
-| Command Inj | exec 页 POST `&& whoami` | 输出 31954 |
+| Command Inj | exec 页 POST `&& whoami` | 输出 <USER> |
 | CSRF | 无 token 改密 | 密码被改→恢复 |
 | File Upload | shell.php 上传 | whoami 执行 |
 

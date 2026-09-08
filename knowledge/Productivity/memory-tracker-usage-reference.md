@@ -39,7 +39,7 @@ record_hit("experiment-xyz", "experiment", False)
 
 **方式 2：命令行生成**
 ```bash
-cd C:\Users\31954\.openclaw\workspace
+cd ~\.openclaw\workspace
 uv run python scripts/memory_dashboard.py
 ```
 

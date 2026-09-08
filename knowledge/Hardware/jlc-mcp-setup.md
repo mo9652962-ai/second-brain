@@ -18,9 +18,9 @@ Hermes ──MCP──→ jlcmcp (38 tools) ──WebSocket──→ relay.js �
 
 | 组件 | 位置 | 用途 |
 |:-----|:------|:------|
-| **jlcmcp MCP Server** | `C:\Users\31954\jlcmcp\dist\index.js` | 38 个 PCB/原理图工具 |
-| **relay.js** | `C:\Users\31954\jlcmcp\relay.js` | WebSocket 中继（替代 OpenClaw gateway） |
-| **jlc-bridge.eext** | `C:\Users\31954\jlcmcp\jlc-bridge\build\` | EDA 扩展插件（已安装） |
+| **jlcmcp MCP Server** | `~\jlcmcp\dist\index.js` | 38 个 PCB/原理图工具 |
+| **relay.js** | `~\jlcmcp\relay.js` | WebSocket 中继（替代 OpenClaw gateway） |
+| **jlc-bridge.eext** | `~\jlcmcp\jlc-bridge\build\` | EDA 扩展插件（已安装） |
 
 ## 使用流程
 

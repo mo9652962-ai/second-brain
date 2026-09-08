@@ -3,7 +3,7 @@
 ## 核心事件
 
 - **新会话启动**：OpenClaw main agent 以 cron 模式运行（daily-summary 任务）
-- **环境确认**：Windows 11, PowerShell, Workspace: C:\Users\31954\.openclaw\workspace
+- **环境确认**：Windows 11, PowerShell, Workspace: ~\.openclaw\workspace
 - **记忆继承**：从 Hermes 快照（2026-08-15）恢复关键上下文
   - sora 画像：闲鱼接单（论文/PPT/PCB），PCB自动化+骑砍2 mod，实用主义工具观
   - 模型策略：本地 Qwen3-8B（小任务/隐私/离线）↔ 云端（复杂/高质量），切换前必询问

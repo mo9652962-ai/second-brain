@@ -5,7 +5,7 @@ type: moc
 domain: Research
 status: active
 created: 2026-08-09
-updated: 2026-09-07
+updated: 2026-09-08
 ---
 
 # 🔬 研究笔记 MOC — Research Map
@@ -13,7 +13,7 @@ updated: 2026-09-07
 > 所有研究笔记的索引与入口。自动按主题分组。
 > 回到 [[knowledge-map|🗺️ 知识地图]] · [[Home|🏠 Home]]
 
-**共 191 篇研究笔记** · 最后更新: 2026-09-07（每日增量索引）
+**共 195 篇研究笔记** · 最后更新: 2026-09-08（每日增量索引）
 
 
 ## 🆕 W34 新增补链（2026-08-16 周度整理）
@@ -129,6 +129,7 @@ updated: 2026-09-07
 - [[knowledge/AI/工具精度方法论-假阳性税与知识库Lint-2026-09-05|工具精度方法论 09-05]] · [[knowledge/cards/2026-09-05-false-positive-tax|知识卡片 09-05]]
 - [[knowledge/Research/arxiv-2026-09-06-core-contributions|arXiv 核心贡献 09-06]] · [[knowledge/cards/2026-09-06-harness-engineering|知识卡片 09-06]]
 - [[knowledge/Research/arxiv-2026-09-07-agent-llm|arXiv Agent/LLM 09-07]] · [[knowledge/Daily/hackernews-2026-09-07|HN 09-07]] · [[knowledge/cards/2026-09-07-memory-portability|知识卡片 09-07]]
+- [[knowledge/Research/arxiv-2026-09-08-agent-llm|arXiv Agent/LLM 09-08（09-07 池补全 14+8）]] · [[knowledge/Research/黑盒热榜5项目实证研究-2026-09-08|黑盒热榜 5 项目实证 09-08]] · [[knowledge/cards/2026-09-08-heihe-top5-empirical|知识卡片 09-08]]
 ## 文章研读
 
 - [[ai-literature-search-pitfalls-study]]
@@ -177,8 +178,8 @@ updated: 2026-09-07
 
 - [[Qwen-Image-3.0-Pro实测研究-2026-08-08]]
 - [[闲鱼方案第三方验证报告-WorkBuddy-2026-09-04]]
-- [[Research/eval-v2-2026-08-31/EVAL_PLAN]]
-- [[Research/eval-v2-2026-08-31/README]]
+- [[knowledge/Research/eval-v2-2026-08-31/EVAL_PLAN]]
+- [[knowledge/Research/eval-v2-2026-08-31/README]]
 
 
 ## 模型 API
@@ -320,6 +321,7 @@ updated: 2026-09-07
 - [[GPT强化方案-Codex实现-检验记录-2026-08-31]]
 - [[arxiv-2026-09-01-agent-llm]]
 - [[skill-audit-2026-09-01]]
+- [[skill-audit-2026-09-08]]
 - [[arxiv-2026-09-02-agent-llm]]
 - [[多Agent协作增强v2.7-千轮研究-2026-09-02]]
 - [[arxiv-2026-09-03-agent-llm]]
@@ -331,6 +333,7 @@ updated: 2026-09-07
 - [[arxiv-2026-09-07-agent-llm]]
 - [[GitHub-Weekly-2026-09-06]]
 - [[graphify-weekly-2026-09-06]]
+- [[GitHub-Weekly-2026-09-08]]
 
 ## 🧭 入口治理
 

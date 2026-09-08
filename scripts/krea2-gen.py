@@ -226,7 +226,7 @@ def main():
         http_json(f"{args.url}/system_stats", timeout=5)
     except Exception:
         print("❌ ComfyUI 未运行！请先启动:")
-        print("   cd C:\\Users\\31954\\ComfyUI && env -u PYTHONPATH ./venv/Scripts/python.exe main.py --listen 127.0.0.1 --port 8188 --enable-triton-backend --lowvram")
+        print("   cd %USERPROFILE%\\ComfyUI && env -u PYTHONPATH ./venv/Scripts/python.exe main.py --listen 127.0.0.1 --port 8188 --enable-triton-backend --lowvram")
         print("   ⚠️ 8GB 显存建议带 --lowvram；必须 --enable-triton-backend")
         sys.exit(1)
 
@@ -234,7 +234,7 @@ def main():
     if args.output:
         output_dir = Path(args.output).resolve()
     else:
-        output_dir = Path(r"C:\Users\31954\ComfyUI\output").resolve()
+        output_dir = Path(r"%USERPROFILE%\ComfyUI\output").resolve()
     output_dir.mkdir(parents=True, exist_ok=True)
 
     out_size = f"{w*2}x{h*2}" if args.hires else f"{w}x{h}"
@@ -270,7 +270,7 @@ def main():
                 filename = img["filename"]
                 subfolder = img.get("subfolder", "")
                 # ComfyUI 输出在 output/ 目录（用绝对路径避免拼接错误）
-                src = Path(r"C:\Users\31954\ComfyUI\output") / subfolder / filename
+                src = Path(r"%USERPROFILE%\ComfyUI\output") / subfolder / filename
                 if src.exists():
                     dst = output_dir / filename
                     import shutil

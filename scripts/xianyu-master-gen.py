@@ -16,7 +16,7 @@
 import os
 from PIL import Image, ImageDraw, ImageFont
 
-OUT_DIR = r"C:\Users\31954\.openclaw\workspace\outputs\xianyu-master"
+OUT_DIR = r"%USERPROFILE%\.openclaw\workspace\outputs\xianyu-master"
 W, H = 750, 1000  # 3:4
 
 FONT_BOLD = r"C:\Windows\Fonts\SourceHanSansSC-Bold.otf"

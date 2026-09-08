@@ -16,7 +16,7 @@ source: null
 ## 1. 前置条件与触发上下文
 
 - **触发**: 开始挖新 SRC 项目（拿到授权域名列表后）
-- **前置**: OneForAll（C:\Users\31954\OneForAll）/ FlClash 代理 / 目标 P0 域名
+- **前置**: OneForAll（~\OneForAll）/ FlClash 代理 / 目标 P0 域名
 - **合规前提**: 只测授权域名（SRC 声明范围），验证点到为止
 
 ## 2. 确定性执行步骤

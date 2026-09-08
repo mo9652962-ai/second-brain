@@ -8,12 +8,14 @@
 """
 import argparse
 import datetime
+import os
 import pathlib
 import re
 import subprocess
 import sys
 
-VAULT = pathlib.Path(r"C:\Users\31954\.openclaw\workspace")
+# %USERPROFILE% 是字面量，Path 不会自动展开环境变量（否则 VAULT 指向不存在路径 → 扫出 0 笔记）
+VAULT = pathlib.Path(os.path.expandvars(r"%USERPROFILE%\.openclaw\workspace"))
 
 DIR_MOC = {
     "knowledge/Research": "MOC-Research",

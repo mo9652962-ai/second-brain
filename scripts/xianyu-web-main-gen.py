@@ -11,7 +11,7 @@
 import os
 from PIL import Image, ImageDraw, ImageFont
 
-OUT_DIR = r"C:\Users\31954\.openclaw\workspace\outputs\xianyu-master\上架素材包"
+OUT_DIR = r"%USERPROFILE%\.openclaw\workspace\outputs\xianyu-master\上架素材包"
 W, H = 750, 750  # 1:1 方形 —— 与 PPT 主图实测规格一致（9/2 勘误：实际为 750×750，非 3:4）
 
 FONT_BOLD = r"C:\Windows\Fonts\SourceHanSansSC-Bold.otf"

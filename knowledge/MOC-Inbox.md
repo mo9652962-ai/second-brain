@@ -35,7 +35,7 @@ source: scripts/vault-orphan-duplicate-scan.py
 - [[knowledge/AI/墨题口语评测-技术参考-2026]]
 - [[knowledge/AI/数模5-Skill工作流-2026-08-23]]
 
-- [[Content/抖音AI博主千轮研究-2026-09-03]]
+- [[knowledge/Content/抖音AI博主千轮研究-2026-09-03]]
 ## 🗄️ Archive
 
 - 
@@ -63,14 +63,14 @@ source: scripts/vault-orphan-duplicate-scan.py
 
 - [[knowledge/Daily/hackernews-2026-08-24]]
 
-- [[Daily/hackernews-2026-08-07]]
-- [[Daily/hackernews-2026-08-13]]
-- [[Daily/hackernews-2026-09-01]]
-- [[Daily/hackernews-2026-09-02]]
-- [[Daily/hackernews-2026-09-03]]
-- [[Daily/hackernews-2026-09-04]]
-- [[Daily/hackernews-2026-09-05]]
-- [[Daily/hackernews-2026-09-06]]
+- [[knowledge/Daily/hackernews-2026-08-07]]
+- [[knowledge/Daily/hackernews-2026-08-13]]
+- [[knowledge/Daily/hackernews-2026-09-01]]
+- [[knowledge/Daily/hackernews-2026-09-02]]
+- [[knowledge/Daily/hackernews-2026-09-03]]
+- [[knowledge/Daily/hackernews-2026-09-04]]
+- [[knowledge/Daily/hackernews-2026-09-05]]
+- [[knowledge/Daily/hackernews-2026-09-06]]
 ## 💻 Dev
 
 - [[knowledge/Dev/agentradio-five-phase-orchestration]]

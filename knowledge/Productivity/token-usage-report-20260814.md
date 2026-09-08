@@ -111,7 +111,7 @@ status: adopted
 | C: | 448G | 230G | 218G | 52% |
 | D: | 932G | 552G | 381G | 60% |
 
-### Obsidian 知识库（C:\Users\31954\.openclaw\workspace）— 704M（W31: 625M，+79M）
+### Obsidian 知识库（~\.openclaw\workspace）— 704M（W31: 625M，+79M）
 
 | 位置 | 大小 | 说明 |
 |:-----|-----:|:-----|
@@ -134,7 +134,7 @@ status: adopted
 | logs/ | 33M | 日志，可清理 |
 | cache/ | 16M | 缓存 |
 
-其他：本地模型 `C:\Users\31954\models` 4.7G；刷题机项目 `D:\english-multiple-choice-practice-machine` 8.9G。
+其他：本地模型 `~\models` 4.7G；刷题机项目 `D:\english-multiple-choice-practice-machine` 8.9G。
 
 ---
 

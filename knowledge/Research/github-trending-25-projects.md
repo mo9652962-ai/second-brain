@@ -17,7 +17,7 @@ status: absorbed
 | 功能 | 代码库知识图谱 MCP，158 语言，token 省 99%（40万→3千） |
 | 安装 | `AppData/Local/Programs/codebase-memory-mcp/` v0.9.0 |
 | 验证 | ✅ 工作区索引成功：14,219 节点 / 47,866 边 |
-| 查询 | `codebase-memory-mcp cli search_graph --project C-Users-31954-.openclaw-workspace --query "MathWorkbookConfig"` |
+| 查询 | `codebase-memory-mcp cli search_graph --project C-Users-<USER>-.openclaw-workspace --query "MathWorkbookConfig"` |
 
 ### 2. OfficeCLI ✅ 已安装
 | 项 | 内容 |

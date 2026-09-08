@@ -24,7 +24,7 @@ status: adopted
 | 4 | vision_crop 槽位冲突 | dsh-vision-router vs Vision Toolkit | 移除 router 保留 Toolkit ✅ |
 | 5 | duplicate loader entry | 皮肤 bundle + patch 双注册 | 删手动 insert 走 bundle ✅ |
 | 6 | EADDRINUSE :3080 | 杀进程未释放端口 | taskkill + netstat 清理 ✅ |
-| 7 | 皮肤 link 路径少 31954 | dsh plugin 相对路径 bug | 手动改 package.json 绝对路径 ✅ |
+| 7 | 皮肤 link 路径少 <USER> | dsh plugin 相对路径 bug | 手动改 package.json 绝对路径 ✅ |
 | 8 | Git-only 包 codeload 被墙 | 网络未覆盖子域名 | 跳过/ghproxy（dsh-web-ui 暂缓）✅ |
 
 ## 二、社区验证的新坑（搜索引擎补充）

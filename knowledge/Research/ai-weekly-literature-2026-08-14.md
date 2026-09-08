@@ -76,7 +76,7 @@ date: 2026-08-14
 ---
 
 *生成：Hermes cron · light-literature-search 方法论 · 2026-08-14*
-*原始数据：C:\Users\31954\week_arxiv_openalex.json / week_abstracts.json（临时文件，可删）*
+*原始数据：~\week_arxiv_openalex.json / week_abstracts.json（临时文件，可删）*
 
 ---
 
