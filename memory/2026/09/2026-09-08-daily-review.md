@@ -27,6 +27,9 @@ type: daily-review
 - 📋 vault-suggestion-executor 已登记**上架后运营预案**待命：回复提速（4 时段）/ 标题重写（前 15 字）/ 擦亮节奏 / 差异化迁移 / 鱼小铺暂缓
 - 🧹 knowledge-lint 维护：断链 16 处修复 + 3 空壳清理 + 4 孤立页挂载 + GitHub trending 标签统一（commit `033b480`）
 - 🔍 reflection 09-07：3 改进点（反思行动项当场落地 / 状态单一权威源 / verify 基线化），曝光 9/6 行动项 3 项 0 闭环
+- 🔌 **外部媒体 API 周探活 cron 落地**（reflection 09-07 行动项当天闭环，commit `d6baa2c`）：`scripts/api_image_probe.sh` 5 路探活 + cron `api-media-weekly-probe`（每周一 10:15，全健康静默/异常提醒）
+- ✅ **SiliconFlow key 已恢复**（13:35 探活实测 HTTP 200）：纠正本报告 12:48 技能审计「401 需重生成」旧记录——已从明日行动项移除，23 个引用技能自动恢复
+- 🩺 **health 15:47**：主链 fangzhou-2 健康 / 磁盘 208G·414G 充足 / 内存 71% 偏高；deterministic-verify 每日误报=obsidian-maintenance 产物命名 vs `*maintenance*` 哨兵不匹配（建议放宽 glob）；skill-link-gate 41 处断引用欠账；Obsidian 未运行 MCP parked（依赖它的 cron 缺产物属预期）
 - 🐙 GitHub-Weekly 09-08：codebase-memory-mcp / nanobot 等 Top5 宝藏
 
 ## 🎯 明日行动项（09-09）
@@ -34,10 +37,11 @@ type: daily-review
 | 优先级 | 项 | 内容 | 耗时 | 状态 |
 |:--|:--|:--|:--|:--|
 | 🔴 P0 | **AI 营销技能库升级落地** | 按 sora 已确认方向：给 ai-cmo/营销技能补 evals.json 质量断言 + product-marketing 上下文前置两个原语 | 60min | ⏳ k 可做（方向已确认，动手即可） |
-| 🔴 P0 | **闲鱼试水决策** | 一句话二选一（试水→按 5 步清单 30min 上架 / 放弃→归档素材包）；悬置第 40 天 | 30s | 🔒 需 sora |
+| 🔴 P0 | **闲鱼试水决策** | 一句话二选一（试水→按 5 步清单 30min 上架 / 放弃→归档素材包）；悬置第 39 天 | 30s | 🔒 需 sora |
 | 🟡 P1 | **skill-audit P0 收尾** | patch 4 个过时配置技能（hermes-configuration-patterns / hermes-model-configuration / ai-api-provider-evaluation / hermes-model-fallback）清 openrouter/tavily/deepseek-chat 残留 | 40min | ⏳ k 可做（agent-created 可自动改） |
 | 🟡 P1 | **CAD 自动化 MCP draft 设计稿** | 深读 pascal 31 个 MCP 语义工具 → 对照 implicit-cad/FreeCAD 出设计稿（浏览器原生 + MCP 语义化） | 60min | ⏳ k 可做 |
-| 🟡 P1 | **SiliconFlow key 重生成** | 主 key 401，23 个技能引用；控制台重生成即全恢复，无需改技能 | 2min | 🔒 需 sora |
+| 🟡 P1 | **XAI key 重生成** | 探活实测 grok-imagine `Incorrect API key`(HTTP 400)——生图主后端失效 | 2min | 🔒 需 sora |
+| 🟡 P1 | **FAL 充值解锁** | 探活实测 TOP_UP(HTTP 403)——flux 备用生图锁定；充值自动恢复 | 5min | 🔒 需 sora（可选：SiliconFlow 主链正常） |
 | 🟢 P2 | **skill 归档/合并** | sims4 三件套 + comfyui 两件归档；水墨 UI 4 合 1、搜索配置 2 合 1 等 5 组近义合并 | 30min | 🔒 需 sora 确认后执行 |
 | 🟢 P2 | **上架后运营预案** | 回复提速/标题/擦亮/差异化/鱼小铺——等试水拍板后按 `knowledge/cards/2026-09-04-xianyu-operation-algorithm.md` 逐项触发 | — | ⏳ 依赖 P0 决策 |
 
@@ -49,7 +53,7 @@ type: daily-review
 |:--|:--|:--|
 | knowledge/ 新增 | 8 篇实质：黑盒实证研究 + 知识卡片 + arXiv 速览 + HN + skill-audit + CAD MCP 参考 + GitHub-Weekly + Dev MOC | ✅ |
 | memory/ 新增 | 5：self-improvement 日志 + vault-suggestion-executor + vault-maintenance + health + reflection 09-07 | ✅ |
-| skills/ 更新 | 0 实质（今日主会话在评估技能库升级，未落地 patch） | ⚠️ 明日 P0 落地 |
+| skills/ 更新 | 0 实质 SKILL.md patch（AI 营销技能库升级仍为明日 P0）；但 reflection 09-07「外部 API 周探活 cron」当天已闭环（脚本+job 落地） | ⚠️→ 探活行动闭环，营销库升级待明日 |
 | web_search 产出 | 主研究走 **GitHub API 直调（api.github.com 验 5 repo star）+ clone 读码**，等效深度豁免（非「收藏即止」）；HN 走 Algolia API 直连、arXiv 走 API/HTML 路由 | ✅ 豁免有端点证据 |
 | .learnings LRN | 今日 0 条（self-improvement 判定无新知识缺口，有意为之，非断档） | ✅ 注明 |
 
