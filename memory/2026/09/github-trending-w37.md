@@ -6,17 +6,17 @@ type: weekly-trending-report
 
 # GitHub 周报 — 2026-09-06（W37）
 
-> 本周周榜：**5 个全新面孔全部入库**（archify / ECC / scientific-agent-skills / OpenMAIC / VoiceStudio）+ 连榜跟踪。同日脚本产物见 [[../knowledge/Research/GitHub-Weekly-2026-09-06|GitHub-Weekly-2026-09-06]]（topic 口径 Top5，互引互补）。
+> 本周周榜：**5 个全新面孔全部入库**（archify / ECC / scientific-agent-skills / OpenMAIC / VoiceStudio）+ 连榜跟踪。同日脚本产物见 [[../../../knowledge/Research/GitHub-Weekly-2026-09-06|GitHub-Weekly-2026-09-06]]（topic 口径 Top5，互引互补）。
 
 ## 项目详情表
 
 | # | 项目 | ★ | 本周Δ | 核心价值 | 入库笔记 |
 |:--|:--|--:|--:|:--|:--|
-| 1 | **tt-a1i/archify** | 49.9k | **+19,480** | 可验证系统图 Agent Skill：typed JSON IR → 确定性编译 + 校验收据（Proof Lab）+ Before/Delta/After 快照评审。**本周增长王** | [[../knowledge/Dev/archify-verifiable-diagrams-2026-09-06|archify-verifiable-diagrams-2026-09-06]] |
-| 2 | **affaan-m/ECC** | 250.2k | +5,445 | 多 Agent harness 优化系统：68 agents + 286 skills + hooks/memory + AgentShield 安全扫描，覆盖 Claude Code/Codex/Cursor/Antigravity/Qwen。**周榜总星第一**，已甄别非刷星（2,631 commits/354 contributors/16 releases） | [[../knowledge/Dev/ecc-agent-harness-2026-09-06|ecc-agent-harness-2026-09-06]] |
-| 3 | **K-Dense-AI/scientific-agent-skills** | 43.0k | +5,491 | 科研 Agent 技能库 #1：165 validated skills + 100+ 数据库 + 技能库 CI 治理样板（scan/tests/security/license per skill） | [[../knowledge/AI/scientific-agent-skills-library-2026-09-06|scientific-agent-skills-library-2026-09-06]] |
-| 4 | **THU-MAIC/OpenMAIC** | 32.1k | +10,109 | 清华多 Agent 交互课堂：DSL 场景引擎 + choreography 编排规范（单一事实源）+ 确定性时间轴 + 课堂视频导出器 | [[../knowledge/AI/openmaic-multiagent-classroom-2026-09-06|openmaic-multiagent-classroom-2026-09-06]] |
-| 5 | **debpalash/VoiceStudio** | 19.1k | +6,761 | 全本地 ElevenLabs 替代：语音克隆/视频配音/转写/有声书，646 语言；AGPL-3.0 | [[../knowledge/AI/voicestudio-local-voice-2026-09-06|voicestudio-local-voice-2026-09-06]] |
+| 1 | **tt-a1i/archify** | 49.9k | **+19,480** | 可验证系统图 Agent Skill：typed JSON IR → 确定性编译 + 校验收据（Proof Lab）+ Before/Delta/After 快照评审。**本周增长王** | [[../../../knowledge/Dev/archify-verifiable-diagrams-2026-09-06|archify-verifiable-diagrams-2026-09-06]] |
+| 2 | **affaan-m/ECC** | 250.2k | +5,445 | 多 Agent harness 优化系统：68 agents + 286 skills + hooks/memory + AgentShield 安全扫描，覆盖 Claude Code/Codex/Cursor/Antigravity/Qwen。**周榜总星第一**，已甄别非刷星（2,631 commits/354 contributors/16 releases） | [[../../../knowledge/Dev/ecc-agent-harness-2026-09-06|ecc-agent-harness-2026-09-06]] |
+| 3 | **K-Dense-AI/scientific-agent-skills** | 43.0k | +5,491 | 科研 Agent 技能库 #1：165 validated skills + 100+ 数据库 + 技能库 CI 治理样板（scan/tests/security/license per skill） | [[../../../knowledge/AI/scientific-agent-skills-library-2026-09-06|scientific-agent-skills-library-2026-09-06]] |
+| 4 | **THU-MAIC/OpenMAIC** | 32.1k | +10,109 | 清华多 Agent 交互课堂：DSL 场景引擎 + choreography 编排规范（单一事实源）+ 确定性时间轴 + 课堂视频导出器 | [[../../../knowledge/AI/openmaic-multiagent-classroom-2026-09-06|openmaic-multiagent-classroom-2026-09-06]] |
+| 5 | **debpalash/VoiceStudio** | 19.1k | +6,761 | 全本地 ElevenLabs 替代：语音克隆/视频配音/转写/有声书，646 语言；AGPL-3.0 | [[../../../knowledge/AI/voicestudio-local-voice-2026-09-06|voicestudio-local-voice-2026-09-06]] |
 
 ## 脚本 Top5 delta（topic 口径，全部连榜）
 

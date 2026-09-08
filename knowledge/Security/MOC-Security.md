@@ -28,7 +28,7 @@ updated: 2026-08-31
 - [[src-bug-hunting-2026-08-17]] — SRC 漏洞挖掘实战方法论：平台选型 + 5 类新手漏洞 + 六步流程 + 报告模板
 - [[src-hunting-earnings-2026-08-17]] — SRC 挖洞收益路径：0-1 月入门 → 3 月+ 冲击高危；只挖授权范围
 
-- [[Security/SRC批量初筛最小闭环验证-真洞转化率趋零-2026-09-02]]
+- [[knowledge/Security/SRC批量初筛最小闭环验证-真洞转化率趋零-2026-09-02]]
 ## 🤖 Agent / AI 安全线（跨域收拢）
 
 - [[agent-memory-injection-2026-08-05]] — Agent 记忆注入攻击：查询只读注入，记忆是攻击面
@@ -36,7 +36,7 @@ updated: 2026-08-31
 - [[2026-08-05-zero-mem|卡片：Zero-Mem]] — 零 token 记忆架构；反向警示 ICLR 2026 Memory Injection Attacks（记忆操作即攻击面）
 - [[10-Top-AI-Agent-Projects-Deep-Research]] — Top10 Agent 项目深研：含 ClawHavoc 供应链攻击、审计发现 12% 技能为恶意的生态风险段
 
-- [[Security/hermes-codex-security-policy-2026-09-04]]
+- [[knowledge/Security/hermes-codex-security-policy-2026-09-04]]
 ## 🏠 本机与运维安全
 
 - [[security-risk-assessment-2026-08-02]] — 落实项目风险评估：网关 18789 / ComfyUI 8188 均仅监听 127.0.0.1（对照 OpenClaw 85% 实例暴露公网的教训），3 个待加固风险点

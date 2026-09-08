@@ -129,6 +129,7 @@ updated: 2026-09-07
 - [[knowledge/AI/工具精度方法论-假阳性税与知识库Lint-2026-09-05|工具精度方法论 09-05]] · [[knowledge/cards/2026-09-05-false-positive-tax|知识卡片 09-05]]
 - [[knowledge/Research/arxiv-2026-09-06-core-contributions|arXiv 核心贡献 09-06]] · [[knowledge/cards/2026-09-06-harness-engineering|知识卡片 09-06]]
 - [[knowledge/Research/arxiv-2026-09-07-agent-llm|arXiv Agent/LLM 09-07]] · [[knowledge/Daily/hackernews-2026-09-07|HN 09-07]] · [[knowledge/cards/2026-09-07-memory-portability|知识卡片 09-07]]
+- [[knowledge/Research/arxiv-2026-09-08-agent-llm|arXiv Agent/LLM 09-08（09-07 池补全 14+8）]] · [[knowledge/Research/黑盒热榜5项目实证研究-2026-09-08|黑盒热榜 5 项目实证 09-08]]
 ## 文章研读
 
 - [[ai-literature-search-pitfalls-study]]
@@ -177,8 +178,8 @@ updated: 2026-09-07
 
 - [[Qwen-Image-3.0-Pro实测研究-2026-08-08]]
 - [[闲鱼方案第三方验证报告-WorkBuddy-2026-09-04]]
-- [[Research/eval-v2-2026-08-31/EVAL_PLAN]]
-- [[Research/eval-v2-2026-08-31/README]]
+- [[knowledge/Research/eval-v2-2026-08-31/EVAL_PLAN]]
+- [[knowledge/Research/eval-v2-2026-08-31/README]]
 
 
 ## 模型 API

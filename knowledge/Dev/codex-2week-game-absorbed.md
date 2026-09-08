@@ -1,5 +1,5 @@
 ---
-tags: [absorbed, codex, workflow, ai-coding]
+tags: [absorbed, Codex, workflow, ai-coding]
 source: Reddit/知乎 — "使用Codex两周能做出什么游戏" · RIVERSOFT
 status: absorbed
 date: 2026-07-27
