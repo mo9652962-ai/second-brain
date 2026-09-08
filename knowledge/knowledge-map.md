@@ -915,6 +915,7 @@ graph TD
 
 
 | 📅 Daily | HN 速览 08-24 / 08-31 | [[knowledge/Daily/hackernews-2026-08-31]] |
+| 📅 Daily | HN 速览 09-08 | [[knowledge/Daily/hackernews-2026-09-08]] |
 
 
 

@@ -76,7 +76,7 @@ SFC 新扫描 / 零感 AI 付费实测 / DeepSeek 直连充值（¥7.25）/ `/ne
 
 ## 关联
 - 中央追踪器：[[projects/current]]
-- 长期记忆同步：[[MEMORY.md]]
+- 长期记忆同步：[[MEMORY]]
 - 周度清理报告：[[2026-08-22-weekly-todo-cleanup]]
 - 返回首页：[[HOME]]
 

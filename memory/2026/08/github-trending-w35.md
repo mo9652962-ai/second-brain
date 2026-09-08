@@ -1,5 +1,5 @@
 ---
-tags: [周报, github trending, W35]
+tags: [周报, github-trending, W35]
 date: 2026-08-23
 type: weekly-trending-report
 ---
