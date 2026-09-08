@@ -120,10 +120,10 @@ tags: [meta, 知识库治理]
 
 ## [2026-09-08] lint | 例行体检（断链16处修复 + 空壳清理 + 标签统一 + 孤立挂载）
 
-- **断链修复 16 处**：dreaming 快照剥括号 6（light-08-06/07 的 health-2026-07-24 等）+ 维护笔记文档示例剥括号 8（log.md 3、08-13-maintenance 3、09-04-maintenance 2）+ `[[MEMORY.md]]`→`[[MEMORY]]` 5（含 1 带别名）
+- **断链修复 16 处**：dreaming 快照剥括号 6（light-08-06/07 的 health-2026-07-24 等）+ 维护笔记文档示例剥括号 8（log.md 3、08-13-maintenance 3、09-04-maintenance 2）+ `MEMORY.md`→`MEMORY` 5（含 1 带别名）
 - **空壳清理 3 个**：dreaming light/deep/rem 09-08（无 footer + 计数 0）；09-05~07 带 footer 保留
 - **标签统一 6 处**：`github trending`→`github-trending`（W31~35）×5、`GitHub Trending`→`github-trending`（W37）×1
 - **孤立挂载 4 个**：GitHub-Weekly-09-08→MOC-GitHub、skill-audit-09-08→MOC-Research、CAD自动化MCP参考→MOC-Dev、hackernews-09-08→knowledge-map；均挂 HOME.md
 - **补 frontmatter 2 个**：CAD自动化MCP参考-pascal-09-08、GitHub-Weekly-09-08
-- **遗留**：eval-v2 README 报孤立 = lint README 重名盲区（MOC-Research 全路径入链有效）；09-04-maintenance「剥离 `[[` `]]`」为规则 prose 保留
+- **遗留**：eval-v2 README 报孤立 = lint README 重名盲区（MOC-Research 全路径入链有效）；09-04-maintenance「剥离方括号」为规则 prose 保留
 - 详见 [[memory/2026/09/2026-09-08-vault-maintenance|2026-09-08 维护笔记]]

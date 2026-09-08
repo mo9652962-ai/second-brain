@@ -23,9 +23,9 @@ updated: 2026-09-08
 ## 🔧 本次动作
 
 ### 1. 断链修复（16 处，全仓库）
-- **dreaming 快照剥括号 ×6**：`memory/dreaming/light-2026-08-06/07.md` 的 `[[health-2026-07-24]]`/`[[weekly-2026-07-26]]`/`[[hermes-session-20260723]]`（目标已归档不存在）→ 纯文本
+- **dreaming 快照剥括号 ×6**：`memory/dreaming/light-2026-08-06/07.md` 的 `health-2026-07-24`/`weekly-2026-07-26`/`hermes-session-20260723`（目标已归档不存在）→ 纯文本
 - **维护笔记文档示例剥括号 ×8**：`log.md`（`[[../knowledge/...]]` 等 3 处）、`2026-08-13-vault-maintenance.md`（`[[knowledge/AI-Workflow]]`、`[[knowledge/arxiv-2026-07-31-core-contributions]]`、`[[projects]]` 3 处）、`2026-09-04-maintenance.md`（`[[MOC-Development]]`、截断 `[[memory/2026/08/sug...` 2 处）——均为文档化示例，按技能规范剥离 `[[` `]]`
-- **`[[MEMORY.md]]` → `[[MEMORY]]` ×5**（含 1 处带别名 `[[MEMORY.md|长期记忆]]`）：5 篇维护/回顾笔记规范化，消除扫描噪声
+- **`MEMORY.md` → `MEMORY` ×5**（含 1 处带别名 `MEMORY.md|长期记忆`）：5 篇维护/回顾笔记规范化，消除扫描噪声
 
 ### 2. 空文件清理（3 个）
 - 删除今日 dreaming 空壳：`memory/dreaming/{light,deep,rem}/2026-09-08.md`（无 footer 链接 + 计数 0，按 09-03 细化规则判定最干净可删）
@@ -49,7 +49,7 @@ updated: 2026-09-08
 
 ## ⏭️ 遗留与说明
 - `Research/eval-v2-2026-08-31/README.md` 报孤立 = lint README 重名检测盲区（MOC-Research 已有 `[[knowledge/Research/eval-v2-2026-08-31/README]]` 全路径入链），Obsidian 实际有效，不处理
-- `2026-09-04-maintenance.md` 中「剥离 `[[` `]]` 方括号」为规则说明 prose → 按 09-04 规范保留不剥（knowledge-lint 判定 0 断链）
+- `2026-09-04-maintenance.md` 中「剥离方括号」为规则说明 prose → 按 09-04 规范保留不剥（knowledge-lint 判定 0 断链）
 - 全仓库严格扫描剩 1 处 `[[`。`]]` 残匹配 = 上述 prose，属设计内保留项
 - `skills/hermes/github-repo-optimization.md` 的 13 处 markdown 链接在模板代码块内、`claude-code-opus-5.md` 的 `[file.md]` 为 verbatim 系统提示词 → 均文档化误报，跳过
 
