@@ -278,7 +278,7 @@ if __name__ == "__main__":
     print("=" * 50)
 
     # 你的API密钥
-    TEST_API_KEY = "sk-kcWs7KsFkwnx5xY862fyIacqN2Wlf9I39YFB56WPLnGb22mD"
+    TEST_API_KEY = os.environ.get('KIMI_API_KEY', '')
 
     try:
         # 方式1：使用便捷函数
