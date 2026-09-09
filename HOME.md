@@ -22,6 +22,7 @@ created: 2026-08-09
 |:---|:---|:---|
 | 🤖 AI / Agent | [[MOC-Dev]] | AI Agent 研究、Hermes 自举、提示词 |
 | 💻 开发 | [[MOC-Dev]] | Web 开发、工具链、DevOps |
+- [[memory/2026/09/2026-09-08-reflection|🔍 反思 09-08]] — 反思→执行 1/3 + daily_vault_optimize 静默失效防线 + health 误判归因
 | 🔬 研究 | [[MOC-Research]] | 136 篇研究笔记（含学术域）|
 | 🎓 学术 | [[MOC-Research]] | 论文写作、降 AI 味、期刊 |
 | ⚡ 硬件 | [[MOC-Hardware]] | PCB、单片机、嵌入式 |
