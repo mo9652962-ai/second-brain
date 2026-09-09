@@ -43,6 +43,7 @@ created: 2026-08-09
 
 - [[memory/2026/09/2026-09-07-daily-review|📋 09-07 每日回顾]] — arXiv 索引解冻 480 篇新窗口 + 记忆可移植性卡片 + 闲鱼试水决策悬置第 38 天
 - [[memory/2026/09/2026-09-08-daily-review|📋 09-08 每日回顾]] — 黑箱 5 项目实证研究（CAD MCP + AI 营销技能库双落点） + 月度技能审计 + 闲鱼试水悬置第 39 天
+- [[memory/2026/09/2026-09-09-daily-review|📋 09-09 每日回顾]] — 评测反应性 12,800 判断实证 + MoE 双线本地候选 + 闲鱼决策悬置第 40 天 + 素材第 17 次核验 PASS
 - [[memory/2026/09/2026-09-07-daily-todo-executor|📋 09-07 每日待办落实]] — 闲鱼第 37→38 天漂移修复 4 处 + cad 技能三副本合并落地（删 text-to-cad/text2cad-cad）+ token-usage/纪律打勾
 - [[memory/2026/09/2026-09-06-daily-review|📋 09-06 每日回顾]] — arxiv harness 三连深挖 + GitHub W37 五项目 + 闲鱼试水 fallback 硬触发日（素材第 15 次核验 PASS）+ 知识吸收全面达标
 
