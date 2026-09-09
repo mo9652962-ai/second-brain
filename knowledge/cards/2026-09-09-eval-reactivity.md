@@ -37,8 +37,8 @@ status: fresh
 
 ## 行动项
 
-- [ ] 审计 k 的评测/质检类提示词是否泄露测试意图（evals.json、质检 prompt），统一补「意图隐藏」设计规范
-- [ ] 自建基准评测时把「是否暴露评估框架」记入元数据，回测时按条件分层看差异
+- [x] 审计 k 的评测/质检类提示词是否泄露测试意图（evals.json、质检 prompt），统一补「意图隐藏」设计规范 → ✅ 2026-09-09 daily-todo-executor 落地：全库评测资产审计（shuorenhua 盲评良好但被测 prompt 首句残留「benchmark 实跑」框架泄露，已登记专项修复；ai-cmo/service-quality 无泄露）+ 规范落库 `knowledge/META/评测设计规范-意图隐藏-2026-09-09.md`
+- [x] 自建基准评测时把「是否暴露评估框架」记入元数据，回测时按条件分层看差异 → ✅ 已写入设计规范 §1.3 元数据规范（exposed/hidden/partial 三态 + 分层回测阈值）
 
 ## 为什么重要
 

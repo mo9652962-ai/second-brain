@@ -39,9 +39,9 @@ status: fresh
 
 ## 行动项
 
-- [ ] 给 k 的 AI 营销技能库补「质量断言」原语：关键技能配 evals.json（prompt + 断言），沉淀进 skill 结构
-- [ ] 深读 pascal/editor 的 31 个 MCP 语义工具，对照 implicit-cad/FreeCAD 取「浏览器原生 + MCP 语义化」设计 CAD MCP（draft 设计稿）
-- [ ] 选型规则固化：新项目评估 = GitHub API 验 star + 看 LICENSE 文件 + clone 读代码，数字 claim 标官方源
+- [x] 给 k 的 AI 营销技能库补「质量断言」原语：关键技能配 evals.json（prompt + 断言），沉淀进 skill 结构 → ✅ 2026-09-08 已落地：ai-cmo SKILL.md「核心原语 2：evals 质量断言」（evals.json 结构 + 通用营销方案质量断言 ≥80%）+「核心原语 1：product-marketing 上下文前置」，09-09 复核确认
+- [ ] 深读 pascal/editor 的 31 个 MCP 语义工具，对照 implicit-cad/FreeCAD 取「浏览器原生 + MCP 语义化」设计 CAD MCP（draft 设计稿）→ ⏳ 需专项研究会话（09-09 复核仍 open）
+- [x] 选型规则固化：新项目评估 = GitHub API 验 star + 看 LICENSE 文件 + clone 读代码，数字 claim 标官方源 → ✅ 规则已固化为 k 常驻基线（memory「评项目须实证(真实star/README/定价)」+ 09-08 研究文档方法论章节），09-09 复核确认无需再落地
 
 ## 为什么重要
 
