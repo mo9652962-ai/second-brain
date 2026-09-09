@@ -17,6 +17,14 @@ import sys
 # %USERPROFILE% 是字面量，Path 不会自动展开环境变量（否则 VAULT 指向不存在路径 → 扫出 0 笔记）
 VAULT = pathlib.Path(os.path.expandvars(r"%USERPROFILE%\.openclaw\workspace"))
 
+# 输入有效性断言（2026-09-08 静默失效 bug 防线）：VAULT 不存在/不是目录 → 立即 FATAL，不许"假装成功"
+if not VAULT.exists() or not VAULT.is_dir():
+    raise SystemExit(
+        f"[FATAL] VAULT 路径不存在或不是目录: {VAULT}（%USERPROFILE% 展开失败？）"
+    )
+MIN_NOTE_COUNT = 100  # 正常 vault 笔记数下限，低于此视为扫描异常（静默失效防线）
+
+
 DIR_MOC = {
     "knowledge/Research": "MOC-Research",
     "knowledge/Dev": "MOC-Dev",
@@ -167,6 +175,13 @@ def main():
     total = scan_md_files()
     isolated = find_isolated()
     print(f"笔记总数: {len(total)} | 孤立: {len(isolated)} ({len(isolated)*100//max(len(total),1)}%)")
+    # 最小产出门禁（2026-09-08 静默失效 bug 防线）：正常 vault 应有 1000+ 笔记，
+    # 扫描数异常偏低 = VAULT 路径/扫描逻辑出问题，立即 FATAL 不许假装成功
+    if len(total) < MIN_NOTE_COUNT:
+        raise SystemExit(
+            f"[FATAL] 扫描到笔记数 {len(total)} < 下限 {MIN_NOTE_COUNT}，"
+            f"疑似 VAULT 路径/扫描逻辑异常（上次静默失效扫出 0 篇）"
+        )
 
     linked = link_isolated(isolated)
     print(f"补链孤立笔记: {linked}")
