@@ -132,12 +132,14 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 
 ---
 
-## 📦 最新技能入库 (2026-08-16 ~ 2026-09-08)
+## 📦 最新技能入库 (2026-08-16 ~ 2026-09-09)
 
 ### 研究笔记
 
 | 技能 | 版本 | 简介 |
 |------|------|------|
+| **[HN 今日深挖 09-09](knowledge/Daily/hackernews-2026-09-09.md)** | v1.0 | Top10 筛 7 条：OpenAI 声明攻克 Navier-Stokes 千禧年问题引数学界激辩 / AlphaGenome Atlas 人 DNA 高分辨率图谱 / Kimi K3 2.8T 四 SSD 流式本地跑 |
+| **[arXiv AI Agent / LLM 速览 09-09](knowledge/Research/arxiv-2026-09-09-agent-llm.md)** | v1.0 | 09-07 池剩余 426 篇粗筛补全：11 主条目 + 8 简评（索引冻结持续，不重写已收录） |
 | **[HN 今日深挖 09-08](knowledge/Daily/hackernews-2026-09-08.md)** | v1.0 | Top10 筛 5 条：bzip3 精神继承者 / WeatherNext 3 实时观测 / Ladybird 8 月报 / NixOS「信任信任」攻击 |
 | **[黑盒热榜 5 项目实证 09-08](knowledge/Research/黑盒热榜5项目实证研究-2026-09-08.md)** | v1.0 | GitHub API 验 star + clone 读码：5 项目 3 个值得抄（marketing-skills/DeerFlow/pascal-editor），LunaTV 借技术不碰本体 |
 | **[GitHub 宝藏挖掘周更 09-08](knowledge/Research/GitHub-Weekly-2026-09-08.md)** | v1.0 | Top 5 高星仓库（codebase-memory-mcp 42.6k★ 等） |
@@ -229,7 +231,7 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 
 ```
 📁 仓库体积：约 205MB（含附件与图片）
-📝 Markdown 文件：1046 个（正文约 5.4 MB）
+📝 Markdown 文件：1048 个（正文约 5.4 MB）
 🧠 自建 Skill 文档：30 个（11 个领域目录）
 🗂️ 知识域：11 个
 ⏰ 首次提交：2026 年 7 月
