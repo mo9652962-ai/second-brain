@@ -22,6 +22,7 @@ created: 2026-08-09
 |:---|:---|:---|
 | 🤖 AI / Agent | [[MOC-Dev]] | AI Agent 研究、Hermes 自举、提示词 |
 | 💻 开发 | [[MOC-Dev]] | Web 开发、工具链、DevOps |
+- [[memory/2026/09/2026-09-08-reflection|🔍 反思 09-08]] — 反思→执行 1/3 + daily_vault_optimize 静默失效防线 + health 误判归因
 | 🔬 研究 | [[MOC-Research]] | 136 篇研究笔记（含学术域）|
 | 🎓 学术 | [[MOC-Research]] | 论文写作、降 AI 味、期刊 |
 | ⚡ 硬件 | [[MOC-Hardware]] | PCB、单片机、嵌入式 |
@@ -35,10 +36,14 @@ created: 2026-08-09
 - [[knowledge/Daily/hackernews-2026-09-08|📰 HN 09-08 速览]]
 - [[memory/2026/09/2026-09-08-vault-maintenance|🧹 09-08 知识库维护]] — 断链 16 处修复 + 空壳清理 + 标签统一 + 孤立挂载
 - [[memory/2026/09/2026-09-07-vault-suggestion-executor|🧹 09-07 闲鱼专项建议执行报告]] — 闲鱼决策悬置第 38 天（9/6 fallback 已过）+ 触达升级触发核实 + 今日 3 项优先级计划
-- [[memory/2026/09/2026-09-08-vault-suggestion-executor|🧹 09-08 闲鱼专项建议执行报告]] — 闲鱼决策悬置第 39 天（连续顺延 30+ 天）+ 触达 cron 复核健康 + 今日 3 项优先级计划- [[knowledge/Research/arxiv-2026-09-08-agent-llm|arXiv 09-08 补全速览]] — 14 主条目 + 8 简评（09-07 窗口补全：系统级风险 04373 / BeaconKV / 窄边界安全 04482 / First Things First 05224）
+- [[memory/2026/09/2026-09-08-vault-suggestion-executor|🧹 09-08 闲鱼专项建议执行报告]] — 闲鱼决策悬置第 39 天（连续顺延 30+ 天）+ 触达 cron 复核健康 + 今日 3 项优先级计划
+- [[memory/2026/09/2026-09-09-vault-suggestion-executor|🧹 09-09 闲鱼专项建议执行报告]] — 闲鱼决策悬置第 40 天（连续顺延 30+ 天）+ current.md 推进 + HOME.md 补链修复 + 今日 3 项优先级计划
+- [[knowledge/Research/arxiv-2026-09-08-agent-llm|arXiv 09-08 补全速览]] — 14 主条目 + 8 简评（09-07 窗口补全：系统级风险 04373 / BeaconKV / 窄边界安全 04482 / First Things First 05224）
+- [[knowledge/Research/arxiv-2026-09-09-agent-llm|arXiv 09-09 补全速览]] — 11 主条目 + 8 简评（09-07 窗口第三轮补录：评测反应性 05009 / MoE 双线 04895+05228 / 4-bit 合并坑 04526 / PLUME 个性化 04715）
 
 - [[memory/2026/09/2026-09-07-daily-review|📋 09-07 每日回顾]] — arXiv 索引解冻 480 篇新窗口 + 记忆可移植性卡片 + 闲鱼试水决策悬置第 38 天
 - [[memory/2026/09/2026-09-08-daily-review|📋 09-08 每日回顾]] — 黑箱 5 项目实证研究（CAD MCP + AI 营销技能库双落点） + 月度技能审计 + 闲鱼试水悬置第 39 天
+- [[memory/2026/09/2026-09-09-daily-review|📋 09-09 每日回顾]] — 评测反应性 12,800 判断实证 + MoE 双线本地候选 + 闲鱼决策悬置第 40 天 + 素材第 17 次核验 PASS
 - [[memory/2026/09/2026-09-07-daily-todo-executor|📋 09-07 每日待办落实]] — 闲鱼第 37→38 天漂移修复 4 处 + cad 技能三副本合并落地（删 text-to-cad/text2cad-cad）+ token-usage/纪律打勾
 - [[memory/2026/09/2026-09-06-daily-review|📋 09-06 每日回顾]] — arxiv harness 三连深挖 + GitHub W37 五项目 + 闲鱼试水 fallback 硬触发日（素材第 15 次核验 PASS）+ 知识吸收全面达标
 

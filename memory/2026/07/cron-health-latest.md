@@ -1,11 +1,11 @@
 ---
 tags: [cron-health, dashboard]
-updated: 2026-09-08 20:00
+updated: 2026-09-09 20:00
 ---
 
-# Cron 健康看板 — 2026-09-08 20:00
+# Cron 健康看板 — 2026-09-09 20:00
 
-总任务数: 43
+总任务数: 44
 
 | ⚪ | AI测评周报                         | 0 8 * * 1       |  |
 | ⚪ | GitHub 宝藏挖掘                    | 30 12 * * 0     |  |
@@ -23,6 +23,7 @@ updated: 2026-09-08 20:00
 | ⚪ | daily-todo-executor            | 0 20 * * *      |  |
 | ⚪ | daily-wechat-knowledge-card    | 0 8 * * *       |  |
 | ⚪ | deterministic-verify           | 30 21 * * *     |  |
+| ⚪ | github-privacy-gate            | 0 9 * * 1       |  |
 | ⚪ | github-trending-rss            | 30 18 * * *     |  |
 | ⚪ | hackernews-daily               | 15 7 * * *      |  |
 | ⚪ | knowledge-lint-weekly          | 0 9 * * 0       |  |
@@ -51,17 +52,17 @@ updated: 2026-09-08 20:00
 | ⚪ | 闲鱼提醒                           | 30 7 * * 1-5    |  |
 | ⚪ | 项目追踪                           | 0 21 * * *      |  |
 
-✅ 0 正常  ❌ 0 错误  ⚪ 43 从未执行
+✅ 0 正常  ❌ 0 错误  ⚪ 44 从未执行
 
 ## 🌐 网络健康指数 (🟡)
 
-亚健康 — 3/3 不可达
+亚健康 — 1/3 不可达
 
-连通率: 0% | 平均延迟: 0ms
+连通率: 67% | 平均延迟: 190ms
 
-  ❌ opencode-go: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING]
-  ❌ siliconflow: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING]
-  ❌ deepseek: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING]
+  ❌ opencode-go: <urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE
+  🟡 siliconflow: HTTP 401 (237ms, reachable)
+  🟡 deepseek: HTTP 401 (142ms, reachable)
 
 ---
 > 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]
