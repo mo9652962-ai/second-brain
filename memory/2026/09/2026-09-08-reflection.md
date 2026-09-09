@@ -97,3 +97,6 @@ subject: 2026-09-08
 ---
 
 _生成: k (Hermes) · self-improvement cron · 2026-09-09_
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]
