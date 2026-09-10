@@ -8,8 +8,8 @@
 [![Obsidian](https://img.shields.io/badge/Obsidian-知识库-7C3AED?style=flat-square&logo=obsidian)](https://obsidian.md)
 
 [![AI 维护](https://img.shields.io/badge/🤖_AI_维护-Hermes_Agent-blue?style=flat-square)](https://hermes-agent.dev)
-[![自举进化](https://img.shields.io/badge/🔄_自举进化-Active-green?style=flat-square)]()
-[![七大自举系统](https://img.shields.io/badge/🏆_七大自举系统-32_项-gold?style=flat-square)]()
+[![自举进化](https://img.shields.io/badge/🔄_自举进化-Active-green?style=flat-square)](skills/hermes/)
+[![七大自举系统](https://img.shields.io/badge/🏆_七大自举系统-32_项-gold?style=flat-square)](skills/hermes/)
 
 **Obsidian + GitHub + Hermes Agent = 持续自我进化的知识体系**
 
@@ -132,12 +132,13 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 
 ---
 
-## 📦 最新技能入库 (2026-08-16 ~ 2026-09-09)
+## 📦 最新技能入库 (2026-08-16 ~ 2026-09-10)
 
 ### 研究笔记
 
 | 技能 | 版本 | 简介 |
 |------|------|------|
+| **[每日日志 09-10](memory/2026/2026-09-10.md)** | v1.0 | 知识库维护日：daily_vault_optimize 补链 5 篇孤立笔记、MOC-Research +1、知识地图日期更新 |
 | **[HN 今日深挖 09-09](knowledge/Daily/hackernews-2026-09-09.md)** | v1.0 | Top10 筛 7 条：OpenAI 声明攻克 Navier-Stokes 千禧年问题引数学界激辩 / AlphaGenome Atlas 人 DNA 高分辨率图谱 / Kimi K3 2.8T 四 SSD 流式本地跑 |
 | **[arXiv AI Agent / LLM 速览 09-09](knowledge/Research/arxiv-2026-09-09-agent-llm.md)** | v1.0 | 09-07 池剩余 426 篇粗筛补全：11 主条目 + 8 简评（索引冻结持续，不重写已收录） |
 | **[HN 今日深挖 09-08](knowledge/Daily/hackernews-2026-09-08.md)** | v1.0 | Top10 筛 5 条：bzip3 精神继承者 / WeatherNext 3 实时观测 / Ladybird 8 月报 / NixOS「信任信任」攻击 |
@@ -230,8 +231,8 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 ## 📊 仓库统计
 
 ```
-📁 仓库体积：约 205MB（含附件与图片）
-📝 Markdown 文件：1048 个（正文约 5.4 MB）
+📁 仓库体积：约 31MB 跟踪文件（Git 包约 48MB）
+📝 Markdown 文件：1058 个（正文约 5.4 MB）
 🧠 自建 Skill 文档：30 个（11 个领域目录）
 🗂️ 知识域：11 个
 ⏰ 首次提交：2026 年 7 月
