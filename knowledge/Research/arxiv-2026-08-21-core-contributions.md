@@ -5,6 +5,7 @@ source: arxiv-2026-08-21-agent-llm.md (17 篇补全精选)
 selected: MemFuse / StartupBench / MobileWorldSafety
 status: 已深挖 3 篇（全文交叉验证）
 data-cutoff: 2026-08-21
+tags: [arxiv, research, knowledge/research]
 ---
 
 # arXiv 核心贡献总结 · 2026-08-21

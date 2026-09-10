@@ -1,9 +1,8 @@
 ---
-tags: [安全, git, 密钥泄露, .env, 轮换, 爬虫]
+tags: [security, git, 密钥泄露, .env, 轮换, 爬虫]
 domain: Security
 status: fresh
-date: 2026-08-21
----
+date: 2026-08-21---
 
 # Git 历史泄密：密钥不是配置（程序员Orion · 抖音 2026-08-21）
 

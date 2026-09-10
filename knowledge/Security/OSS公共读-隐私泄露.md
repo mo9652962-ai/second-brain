@@ -1,9 +1,8 @@
 ---
-tags: [安全, OSS, 对象存储, 公共读, 签名URL, 隐私泄露]
+tags: [security, OSS, 对象存储, 公共读, 签名URL, 隐私泄露]
 domain: Security
 status: fresh
-date: 2026-08-21
----
+date: 2026-08-21---
 
 # OSS 公共读 = 隐私泄露现场（程序员Orion · 抖音 2026-08-21）
 
