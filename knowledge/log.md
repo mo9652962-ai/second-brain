@@ -138,3 +138,16 @@ tags: [meta, 知识库治理]
 - **孤立页**：活跃 170（多为 memory/ 历史每日日志 + knowledge 新页待挂载，属 daily/周度 cron 职责，本次未动）
 - **遗留**：`memory/dreaming/light-2026-08-06/07` 的 `[[2026-07-21-2347]]` 为冻结历史引用，保留
 - **结果**：真断链 0 / 空文件 0 / 标签冲突 0
+
+## [2026-09-10] lint | 例行体检（断链9→0 + 孤立5→0 + 标签统一 + 检测器双修复）
+
+- **断链 9 条报告 → 全部为反引号代码示例假阳性**（log.md 维护笔记中 `[[wikilink]]`/`[[note-1]]`/`[[所属MOC]]` 等占位符示例被全文正则误抓）
+- **检测器修复①（先修检测器）**：`extract_links` 先剥离行内反引号 + ``` 代码块 → 假阳性归零
+- **检测器修复②**：MOC 中 `[[knowledge/Research/eval-v2-.../README]]` 全路径写法未剥离 `knowledge/` 前缀 → 重名 README fallback 匹配错目标、误报孤立；已剥离前缀 → eval-v2 README 孤立消除
+- **孤立挂载 3 个**：hackernews-2026-09-09 → MOC-Research AI 日报；每日股票分析 09-08/09-09 → MOC-Finance
+- **标签统一**：`thousand-round`→`千轮研究`（9 处）、`安全`→`security`（独立标签 15 处，复合词 网络安全/接口安全/金额安全 不拆）
+- **补 tags 10 个**：arxiv core-contributions ×3、graphify-weekly ×3、hackernews-deep-dive ×1、Security 笔记 ×3
+- **格式修正 1 个**：桂航考研路线图 `tags:knowledge/education[ ]` 异常 → `tags: [knowledge/education]`
+- **误伤恢复 6 个**：v1 正则误拆复合词（`网络security` 等），从备份恢复后改精确 token 匹配（lint-fix-tags-v2.py）
+- **遗留**：duplicate 'readme'（Dev/system-prompts-reference vs Research/eval-v2-2026-08-31）全路径引用无歧义，低风险忽略
+- **结果**：断链 0 / 缺 frontmatter 0 / 孤立 0 / 短页 0 / 标签同义冲突 0

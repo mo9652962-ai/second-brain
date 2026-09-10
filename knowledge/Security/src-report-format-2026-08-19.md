@@ -3,6 +3,7 @@ title: 补天漏洞报告格式规范（2026-07 公告）
 date: 2026-08-19
 source: 补天漏洞响应平台公告
 data-cutoff: 2026-08-19
+tags: [security, src, knowledge/security]
 ---
 
 # 漏洞报告格式规范（补天 2026-07 公告）

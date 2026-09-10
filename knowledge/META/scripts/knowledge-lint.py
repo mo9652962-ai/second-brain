@@ -41,7 +41,13 @@ def collect_md_files(root: Path):
     return files
 
 
+CODE_SPAN_RE = re.compile(r"`[^`]*`")            # 行内反引号代码
+FENCE_RE = re.compile(r"```.*?```", flags=re.S)   # 多行代码块
+
 def extract_links(text: str):
+    # 先剥离反引号代码 span 和 ``` 代码块，避免把示例/占位符当 wikilink（假阳性）
+    text = CODE_SPAN_RE.sub("", text)
+    text = FENCE_RE.sub("", text)
     return [m.strip() for m in WIKILINK_RE.findall(text)]
 
 
@@ -91,6 +97,9 @@ def main():
                 continue
             # 跨目录/跨层链接（../ 开头或含 /）在 Obsidian 中合法，按相对路径解析
             if target.startswith("../") or "/" in target:
+                # 剥离 knowledge/ 前缀（MOC 中常见的 workspace 根级全路径写法，vault root 已是 knowledge/）
+                if target.startswith("knowledge/") or target == "knowledge":
+                    target = target[len("knowledge/"):]
                 # 尝试相对解析：从当前文件目录出发
                 cand = (f.parent / target).resolve()
                 if cand.exists():

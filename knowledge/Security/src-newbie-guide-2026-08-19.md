@@ -5,6 +5,7 @@ source: 抖音 @网络安全黑卡《SRC平台是什么？新手怎么从0挖到
 video_url: https://v.douyin.com/XSH4HjGcBQc/
 bilibili: BV1E3jc6kE2e（同作者同内容）
 data-cutoff: 2026-08-19
+tags: [security, src, knowledge/security]
 ---
 
 # SRC 新手从 0 到第一个洞

@@ -5,6 +5,7 @@ source: arxiv-2026-09-06-agent-llm.md (15+9 篇补全精选)
 selected: Harness Engineering / Delegation Without Trust / Runtime-Independent Persistent Agents
 status: 已深挖 3 篇（web_search 双源交叉验证）
 data-cutoff: 2026-09-06
+tags: [arxiv, research, knowledge/research]
 ---
 
 # arXiv 核心贡献总结 · 2026-09-06
