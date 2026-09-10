@@ -3,6 +3,7 @@ created: 2026-09-06
 updated: 2026-09-06
 type: weekly-review
 domain: knowledge-graph
+tags: [graphify, research, weekly]
 ---
 
 # Graphify 知识图谱周更 2026-09-06

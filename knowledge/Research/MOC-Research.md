@@ -130,7 +130,7 @@ updated: 2026-09-09
 - [[knowledge/Research/arxiv-2026-09-06-core-contributions|arXiv 核心贡献 09-06]] · [[knowledge/cards/2026-09-06-harness-engineering|知识卡片 09-06]]
 - [[knowledge/Research/arxiv-2026-09-07-agent-llm|arXiv Agent/LLM 09-07]] · [[knowledge/Daily/hackernews-2026-09-07|HN 09-07]] · [[knowledge/cards/2026-09-07-memory-portability|知识卡片 09-07]]
 - [[knowledge/Research/arxiv-2026-09-08-agent-llm|arXiv Agent/LLM 09-08（09-07 池补全 14+8）]] · [[knowledge/Research/黑盒热榜5项目实证研究-2026-09-08|黑盒热榜 5 项目实证 09-08]] · [[knowledge/cards/2026-09-08-heihe-top5-empirical|知识卡片 09-08]]
-- [[knowledge/Research/arxiv-2026-09-09-agent-llm|arXiv Agent/LLM 09-09（09-07 池补全 11+8）]] · [[knowledge/cards/2026-09-09-eval-reactivity|知识卡片 09-09]]
+- [[knowledge/Research/arxiv-2026-09-09-agent-llm|arXiv Agent/LLM 09-09（09-07 池补全 11+8）]] · [[knowledge/Daily/hackernews-2026-09-09|HN 09-09]] · [[knowledge/cards/2026-09-09-eval-reactivity|知识卡片 09-09]]
 - [[knowledge/Daily/hackernews-2026-09-10|HN 09-10]] · [[knowledge/cards/2026-09-10-desert-ant-on-device|知识卡片 09-10]]
 ## 文章研读
 

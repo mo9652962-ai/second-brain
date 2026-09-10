@@ -5,6 +5,7 @@ source: 抖音 @白帽小七 (767赞/71评论/146分享)
 duration: 2分53秒
 video_id: 7672723012189310250
 data-cutoff: 2026-08-18
+tags: [security, 学习笔记, knowledge/security]
 ---
 
 # 双非本科入局网络安全 · 视频学习笔记

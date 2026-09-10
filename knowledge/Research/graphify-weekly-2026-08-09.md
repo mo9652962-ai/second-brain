@@ -2,6 +2,7 @@
 type: graph-update
 date: 2026-08-09
 domain: graphify
+tags: [graphify, research, weekly]
 ---
 
 # Graphify 图谱周更新 (2026-08-09, W32)

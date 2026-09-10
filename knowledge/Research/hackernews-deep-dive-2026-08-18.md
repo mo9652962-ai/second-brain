@@ -4,6 +4,7 @@ date: 2026-08-18
 source: knowledge/Daily/hackernews-2026-08-18.md（8 条筛选）
 deep-dived: GPT-5.6 Sol / DuckDB v2.0 / Copilot Autofix 攻陷（安全）
 data-cutoff: 2026-08-18
+tags: [hackernews, research, daily]
 ---
 
 # HN 深挖研究报告 · 2026-08-18
