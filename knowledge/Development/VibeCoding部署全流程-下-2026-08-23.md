@@ -1,10 +1,9 @@
 ---
-tags: [vibecoding, 部署, 运维, 安全, 研究笔记, 2026-08]
+tags: [vibecoding, 部署, 运维, security, 研究笔记, 2026-08]
 domain: Development
 status: fresh
 date: 2026-08-23
-source: 抖音 @敲代码的小虾米《Vibe Coding项目部署全流程：下》(第43集, 13:28, 页面章节要点版)
----
+source: 抖音 @敲代码的小虾米《Vibe Coding项目部署全流程：下》(第43集, 13:28, 页面章节要点版)---
 
 # Vibe Coding 项目部署全流程（下）——拆解
 

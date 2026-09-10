@@ -5,6 +5,7 @@ source: arxiv-2026-08-18-agent-llm.md (17 篇精选)
 selected: When Agents Coordinate / Working Set of a Coding Agent
 status: 已深挖 2 篇（全文验证）
 data-cutoff: 2026-08-18
+tags: [arxiv, research, knowledge/research]
 ---
 
 # arXiv 核心贡献总结 · 2026-08-18
