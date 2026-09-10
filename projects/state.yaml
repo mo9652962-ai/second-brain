@@ -1,0 +1,38 @@
+# 跨 cron 计数单一权威源（2026-09-10 反思日记建立；9/8 反思行动项「计数收敛」硬截止 9/11 的落地骨架）
+#
+# 问题背景：闲鱼「第 N 天」等跨 cron 计数被 daily-todo-executor / vault-suggestion-executor /
+# daily-review / 项目追踪多个 sibling cron 各自推进，不对称更新导致反复漂移（9/5、9/7、9/8、9/9
+# 已 4 次手动修复）。收敛方案 = 本文件为唯一权威源 + 唯一写方 + 写后断言门禁。
+#
+# 规则（执行者必读）：
+#   1. 唯一写方 = daily-todo-executor / vault-suggestion-executor 的闲鱼专项（每个工作日推进一天时，
+#      先读本文件拿现值，+1 后写回本文件，再同步 current.md 文本）。
+#   2. 其余 cron（daily-review / daily-reflection / 项目追踪 / health）只读引用本文件，禁止自行推进。
+#   3. 每次写回后跑 `python scripts/assert_state_consistency.py` 做一致性断言，FAIL 即回查。
+#   4. current.md 中的「第 N 天」文本 = 展示层，以本文件为准；本文件与 current.md 不一致时，
+#      以本文件为准并修复 current.md（不要在 current.md 上推进后忘了回写本文件）。
+
+version: 1
+updated_by: daily-reflection-cron
+updated_at: 2026-09-10
+
+counters:
+  # 闲鱼试水决策悬置天数（唯一权威值；9/9 vault-suggestion-executor 报告口径 = 第 40 天）
+  xianyu_decision_day: 40
+  xianyu_decision_status: PENDING   # PENDING / APPROVED(试水) / ABANDONED(放弃)
+
+# 漂移修复历史（证明此问题真实存在，供审计）
+drift_fix_history:
+  - date: 2026-09-05
+    fix: "第 N 天漂移修 4 处"
+  - date: 2026-09-07
+    fix: "第 N 天漂移修 4 处（current.md 3 + MEMORY.md 1）"
+  - date: 2026-09-08
+    fix: "第 N 天漂移 40→39 修复"
+  - date: 2026-09-09
+    fix: "第 39 天→第 40 天 7 处替换"
+
+# 建库时的漂移证据（供断言脚本参考基线）
+known_drift_at_creation:
+  state_yaml: 40
+  current_md_leftover: 41   # current.md 9/7、9/8 反思行动项区残留「第 41 天」，待收敛
