@@ -1,4 +1,4 @@
-﻿---
+---
 tags: [Home, MOC, 入口]
 aliases: [首页, Home, 第二大脑]
 created: 2026-08-09
@@ -7,7 +7,7 @@ created: 2026-08-09
 # 🏠 Home — 第二大脑入口
 
 > **知识网络从这里开始。** 每个知识域一个 MOC 锚点，全部双向链接。
-> 最后更新: 2026-09-10 (daily-reflection)
+> 最后更新: 2026-09-11 (daily-review)
 
 ---
 
@@ -39,6 +39,8 @@ created: 2026-08-09
 - [[memory/2026/09/2026-09-08-vault-suggestion-executor|🧹 09-08 闲鱼专项建议执行报告]] — 闲鱼决策悬置第 39 天（连续顺延 30+ 天）+ 触达 cron 复核健康 + 今日 3 项优先级计划
 - [[memory/2026/09/2026-09-09-vault-suggestion-executor|🧹 09-09 闲鱼专项建议执行报告]]
 - [[memory/2026/09/2026-09-10-vault-suggestion-executor|🧹 09-10 闲鱼专项建议执行报告]] — 闲鱼决策悬置第 41 天（连续顺延 30+ 天）+ 触达 cron 复核健康 + 今日 3 项优先级计划 — 闲鱼决策悬置第 40 天（连续顺延 30+ 天）+ current.md 推进 + HOME.md 补链修复 + 今日 3 项优先级计划
+- [[memory/2026/09/2026-09-11|📅 09-11 每日工作记录]] — 三 bot 协作启动 + 健康巡检 4 待处理
+- [[memory/2026/09/2026-09-11-daily-review|📋 09-11 每日知识回顾]] — 三 bot 协作流水线启动 / 闲鱼素材第 18 次核验 / state.yaml 落地
 - [[knowledge/Research/arxiv-2026-09-08-agent-llm|arXiv 09-08 补全速览]] — 14 主条目 + 8 简评（09-07 窗口补全：系统级风险 04373 / BeaconKV / 窄边界安全 04482 / First Things First 05224）
 - [[knowledge/Research/arxiv-2026-09-09-agent-llm|arXiv 09-09 补全速览]] — 11 主条目 + 8 简评（09-07 窗口第三轮补录：评测反应性 05009 / MoE 双线 04895+05228 / 4-bit 合并坑 04526 / PLUME 个性化 04715）
 
