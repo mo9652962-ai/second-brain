@@ -1,6 +1,6 @@
 ---
 tags: [projects, active]
-updated: 2026-09-10
+updated: 2026-09-11
 ---
 
 # 当前项目状态
@@ -225,7 +225,7 @@ updated: 2026-09-10
 - 🔒 首次交互置顶三连（需 sora 30 秒×3）：MCP 解除（打开 Obsidian + Local REST API + reconnect，1min）/ FlClash 重启核验影响面（30s）/ 闲鱼试水决策（一句话二选一）——9/4 有 58 条真实交互仍 4 天未解除，触达失效，9/5 起随每次交互置顶；连续 2 天交互未解除 → 换 desktop 通知/微信通道
 
 ### 🧭 9/6 反思行动项（daily-reflection 复盘 9-05，执行者必读）
-- 🔒 首次交互置顶三连（机制第 2 天失效，随 9/6 反思推送置顶 P0）：① MCP 解除（打开 Obsidian + Local REST API + /mcp reconnect，1min）② FlClash 重启核验影响面（30s）③ 闲鱼试水决策（一句话二选一，9/6 fallback 硬触发）——9/5 有 35 条真实交互仍未解除，9/7 仍不解除 → 换 desktop 通知/微信推送通道（k 可做：推送脚本登记 cron）
+- 🔒 首次交互置顶三连（机制第 2 日失效，随 9/6 反思推送置顶 P0）：① MCP 解除（打开 Obsidian + Local REST API + /mcp reconnect，1min）② FlClash 重启核验影响面（30s）③ 闲鱼试水决策（一句话二选一，9/6 fallback 硬触发）——9/5 有 35 条真实交互仍未解除，9/7 仍不解除 → 换 desktop 通知/微信推送通道（k 可做：推送脚本登记 cron）
 - ✅ FlClash 代理层核验（2026-09-06 daily-todo-executor 实测）：FlClashCore 9/6 13:20:38 已重启，7890 转发探针 `curl -x http://127.0.0.1:7890 https://www.google.com` → HTTP 200（1.08s）→ **代理链路恢复确认，「重启」动作已被 sora 完成**；仅剩消息网关影响面降级定性（P0→P2）待 sora 一句话确认
 
 - 🔒 外部生图修复排期（3 路径全断实测：XAI key invalid / FAL TOP_UP 锁定 / SILICONFLOW 30001 余额不足 + 30003 FLUX disabled）：XAI 换有效 key / FAL 充值 / SILICONFLOW 充值；k 侧已 patch siliconflow-media 刷新「余额 3000+」假就绪（2026-09-06 已做）
