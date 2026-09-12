@@ -1,3 +1,12 @@
+---
+title: "竞品对标-AI商业广告接单教程"
+type: note
+domain: Content
+status: active
+tags: [knowledge/content, 竞品对标, 抖音, 变现]
+date: 2026-09-13
+---
+
 # 竞品对标：AI 商业广告接单教程（反面教材）
 
 - 日期：2026-09-13

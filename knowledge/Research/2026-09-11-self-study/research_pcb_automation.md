@@ -1,3 +1,12 @@
+---
+title: "PCB自动化深化-千轮研究-2026-09"
+type: note
+domain: Research
+status: active
+tags: [knowledge/research, 千轮研究, pcb, 自动化]
+date: 2026-09-12
+---
+
 # 『PCB 自动化深化』千轮研究报告（2026-09）
 
 > 研究范围：2026 年 AI 辅助 PCB 设计 / 自动布线 / DRC 自动化的最新工艺与工具（AI 布局布线、KiCad 自动化脚本、DeepPCB/Quilter 类云端引擎、免费/开源方案）。

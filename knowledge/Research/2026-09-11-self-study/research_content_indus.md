@@ -1,3 +1,12 @@
+---
+title: "AI内容工业化-千轮研究-2026-09"
+type: note
+domain: Research
+status: active
+tags: [knowledge/research, 千轮研究, 内容工业, 抖音]
+date: 2026-09-12
+---
+
 # AI 内容工业化研究报告（抖音 · 2026-09 千轮研究）
 
 > 针对人设：**实战派 AI 自动化 + 蓝海工程（CAD/PCB/单片机）**，账号「sora做实事」起号阶段

@@ -86,6 +86,7 @@ updated: 2026-08-31
 
 ## 🆕 W37 新增（08-31 ~ 09-06：部署 + 动效 + 闲鱼运营）
 - [[knowledge/Productivity/system-cleanup-report-20260906|系统清理报告 09-06]] — 释放约 7GB
+- [[knowledge/Productivity/system-cleanup-report-20260912|系统清理报告 09-12]] — 释放约 2GB
 - [[knowledge/Productivity/token-usage-report-20260906|Token 用量报告 09-06]]
 
 - [[knowledge/Productivity/运动曲线-easing-动效丝滑关键-2026-09-05|运动曲线 easing（动效丝滑关键）]] — cubic-bezier 曲线表 + M3/iOS 官方体系，配套技能 `apple-design-web` 已补 4b 章节

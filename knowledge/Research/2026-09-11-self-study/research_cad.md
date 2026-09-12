@@ -1,3 +1,12 @@
+---
+title: "CAD智能制造自动化-千轮研究-2026-09"
+type: note
+domain: Research
+status: active
+tags: [knowledge/research, 千轮研究, cad, 智能制造]
+date: 2026-09-12
+---
+
 # CAD/智能制造自动化 · 2026 千轮研究报告
 
 > 调研时间：2026-09-12（UTC+8）｜方法：多轮 web_search + web_extract + 本机实测（FreeCAD 1.1.1 无头脚本验证）

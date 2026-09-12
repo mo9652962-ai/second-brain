@@ -1,3 +1,12 @@
+---
+title: "系统清理报告 2026-09-12"
+type: note
+domain: Productivity
+status: active
+tags: [knowledge/productivity, windows, 系统清理, 运维监控]
+date: 2026-09-12
+---
+
 # 系统清理报告 2026-09-12
 
 **结论：共释放约 2GB，C 盘可用 182G → 184G（使用率 60% → 59%）**

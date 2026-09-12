@@ -4,7 +4,8 @@ aliases: [ECC, agent-harness, 多Agent工具箱]
 date: 2026-09-06
 source: https://github.com/affaan-m/ECC
 domain: Dev
-status: active---
+status: active
+---
 
 # ECC — 多 Agent Harness 性能优化系统
 

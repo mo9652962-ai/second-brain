@@ -130,7 +130,7 @@ tags: [meta, 知识库治理]
 
 ## [2026-09-09] lint | 例行体检（断链0/空文件0/标签0冲突 + 检测器同步）
 
-- **断链 15 条报告 → 全部核实假阳性（真断链 0）**：占位符（`[[wikilink]]`/`[[note-1]]`/`[[series-2026-08-14]]`/`[[skill-name]]`/`` [[` `]] ``）×8、维护笔记文档示例（`[[../knowledge/...]]`/`[[MOC-Development]]` 等）×3、dreaming 冻结快照指向 `.archive`（`[[2026-07-21-2347]]`，lint 排除 .archive 故报 not found）×2、模板 `[[所属MOC]]`×1
+- **断链 15 条报告 → 全部核实假阳性（真断链 0）**：占位符（`[[wikilink]]`/`[[note-1]]`/`[[series-2026-08-14]]`/`[[skill-name]]`/`` [[` `]] ``）×8、维护笔记文档示例（`../knowledge/...`/`MOC-Development` 等）×3、dreaming 冻结快照指向 `.archive`（`[[2026-07-21-2347]]`，lint 排除 .archive 故报 not found）×2、模板 `[[所属MOC]]`×1
 - **检测器同步（先修检测器）**：skills 目录 `knowledge-lint.py` 为旧版（`Path(target).stem` 截断版本号 `MiMo-V2.5`→`MiMo-V2` → 误报 28 条断链）；已同步 vault 修复版（`strip_md()` 保留版本号点 + EXTERNAL_ROOTS 精确大小写）→ 正确 15 条全为占位符假阳性
 - **空文件**：全仓库 0 字节 + <3 字符 md = 0，无需清理
 - **标签一致性**：877 distinct tags，大小写 + 分隔符归一（`re.sub(r'[-_\s]+','-')`）冲突 = 0
@@ -143,7 +143,7 @@ tags: [meta, 知识库治理]
 
 - **断链 9 条报告 → 全部为反引号代码示例假阳性**（log.md 维护笔记中 `[[wikilink]]`/`[[note-1]]`/`[[所属MOC]]` 等占位符示例被全文正则误抓）
 - **检测器修复①（先修检测器）**：`extract_links` 先剥离行内反引号 + ``` 代码块 → 假阳性归零
-- **检测器修复②**：MOC 中 `[[knowledge/Research/eval-v2-.../README]]` 全路径写法未剥离 `knowledge/` 前缀 → 重名 README fallback 匹配错目标、误报孤立；已剥离前缀 → eval-v2 README 孤立消除
+- **检测器修复②**：MOC 中 `knowledge/Research/eval-v2-.../README` 全路径写法未剥离 `knowledge/` 前缀 → 重名 README fallback 匹配错目标、误报孤立；已剥离前缀 → eval-v2 README 孤立消除
 - **孤立挂载 3 个**：hackernews-2026-09-09 → MOC-Research AI 日报；每日股票分析 09-08/09-09 → MOC-Finance
 - **标签统一**：`thousand-round`→`千轮研究`（9 处）、`安全`→`security`（独立标签 15 处，复合词 网络安全/接口安全/金额安全 不拆）
 - **补 tags 10 个**：arxiv core-contributions ×3、graphify-weekly ×3、hackernews-deep-dive ×1、Security 笔记 ×3
@@ -151,3 +151,13 @@ tags: [meta, 知识库治理]
 - **误伤恢复 6 个**：v1 正则误拆复合词（`网络security` 等），从备份恢复后改精确 token 匹配（lint-fix-tags-v2.py）
 - **遗留**：duplicate 'readme'（Dev/system-prompts-reference vs Research/eval-v2-2026-08-31）全路径引用无歧义，低风险忽略
 - **结果**：断链 0 / 缺 frontmatter 0 / 孤立 0 / 短页 0 / 标签同义冲突 0
+
+## [2026-09-13] lint | 例行体检（断链0 + 补frontmatter 13 + 孤立挂载 3 + 标签归一）
+
+- **断链 12 条报告（全仓库严格扫描）→ 真断链 0**：反引号内文档示例 ×9 已按规范剥 `[[` `]]`（log.md 3 + 09-08 维护笔记 6：`../knowledge/...`/`MOC-Development`/`knowledge/AI-Workflow`/`knowledge/arxiv-2026-07-31-...`/`projects`/`memory/2026/08/sug...`）；保留设计内项 3 处（09-04/09-08 剥离规则 prose 各 1、09-12 回顾指向 09-13 的前向导航链接 1）
+- **补 frontmatter 13 个**：损坏闭合符 2（Dev/ecc-agent-harness `status: active---`、Education/桂航 `date: 2026-08---` 均缺换行闭合，lint 只查 startswith 漏报）+ 无 frontmatter 11（Content 竞品对标、Productivity system-cleanup-0912、Research self-study 9 份千轮报告）
+- **孤立挂载 3 个**：竞品对标-AI商业广告接单教程 → MOC-Inbox；每日股票分析-09-11 → MOC-Finance；system-cleanup-report-0912 → MOC-Productivity（W37 区块）
+- **标签归一**：桂航 tags 行归一化（lint-fix-tags-v2.py 幂等）；同义词（thousand-round/安全）已无目标
+- **空文件**：全仓库 0 字节 = 0，无需清理
+- **检测器盲区记录**：knowledge-lint.py 的 frontmatter 检测 `startswith("---")` 无法识别闭合符缺失（ecc/桂航类）；scan-vault-broken-links.py 旧版不剥离反引号（vault 版已修，lint 报 0）
+- **结果**：lint 断链 0 / 缺 frontmatter 0 / 孤立 0 / 短页 0；全仓库严格扫描剩 3 处设计内保留
