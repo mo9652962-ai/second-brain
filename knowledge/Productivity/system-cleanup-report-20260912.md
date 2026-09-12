@@ -28,3 +28,6 @@
 - **回收站 540M 残留**：`.xxx` 前缀孤儿暂存文件（188M + 177M + 30M 等，多为 Edge/下载工具写入），被进程持有句柄，`Clear-RecycleBin` 反复执行删不掉、`Remove-Item` 也失败——属正常（坑 6/8 记录类型）。重启浏览器类进程后可再清，非紧急。
 - hermes-agent 安装本体（~8G）——运行必需，不删
 - pagefile.sys / hiberfil.sys —— 只报告不动（系统虚拟内存/休眠文件）
+
+---
+> 🗺️ 属于 [[MOC-Productivity]] · [[Home|🏠 Home]]

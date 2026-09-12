@@ -183,3 +183,6 @@ Vue3 前端 (fetch + ReadableStream reader；POST SSE 不能用 EventSource)
 - 语音 Agent 架构与延迟预算：`https://yudonglee.me/voiceagent-explained/`、`https://qubittool.com/zh/blog/voice-conversation-ai-agent-latency-architecture`
 - 作文自动评分方法学：`https://www.sciopen.com/local/article_pdf/10.3969/j.issn.1009-8097.2026.03.007.pdf`（大语言模型作文评价反馈质量实证）、`https://github.com/AustinWang668/ielts-writing-scorer`（证据精确匹配 + 校准集）、`https://www.ielts.international/zh/how-scoring-works`（分档锚点 + 分层模型）
 - 墨题既有资产：`epm-ai-feature-rollout` 技能（MVP 落地实录、实测成本、Model Pool 降级）、`C:\Users\31954\.openclaw\workspace\knowledge\AI\墨题三项深度研究-离线口语-adapter-向量记忆-2026.md`（浏览器 Whisper 离线 ASR 实证）
+
+---
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]

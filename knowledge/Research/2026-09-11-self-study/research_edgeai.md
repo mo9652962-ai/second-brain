@@ -152,3 +152,6 @@
 - 学习方法论：0rg.cn 2026 嵌入式学习路线图、51CTO 边缘 AI 能力树（PTQ/QAT、RK3588 算子坑）、韦东山 100ask
 
 *注：淘系/分销价格（¥）为 2026-09 抓取参考价，可能波动；官方价（$）来自官方商店/公告。K230「等效 6 TOPS」为官方标注口径，KPU 实际典型网络吞吐见官方 FPS 表（ResNet50≥85FPS / MobileNetV2≥670FPS / YOLOv5s>38FPS @INT8）。*
+
+---
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]
