@@ -1,6 +1,6 @@
 ---
 tags: [projects, active]
-updated: 2026-09-10
+updated: 2026-09-12
 ---
 
 # 当前项目状态
@@ -8,6 +8,7 @@ updated: 2026-09-10
 > 本周（8/16–8/22）周度清理：完成项已归档，未完成项重新排期。完整报告见 `memory/2026/08/2026-08-22-weekly-todo-cleanup.md`
 > 8/23 suggestion-implementation：落地 3 项 k 自主项
 > 本周（9/1–9/5）周度清理：完成项已归档至 Section 9，未完成项重新排期（闲鱼决策 9/6 fallback 触发）。完整报告见 `memory/2026/09/2026-09-05-weekly-todo-cleanup.md`（墨题巡检 cron pin 修复 / 报价 4 问话术模板 / 搭网站写脚本商品素材包 + Agent OS B 站初稿），详见 `memory/2026/08/2026-08-23-vault-suggestion-executor.md`
+> 本周（9/6–9/12）周度清理：完成项已归档至 Section 10（40 项），未完成项重新排期（闲鱼决策 state.yaml 权威第 41 天；9/10 缺档补位等 k 待办）。完整报告见 `memory/2026/09/2026-09-12-weekly-todo-cleanup.md`
 
 ## ✅ 已完成（归档）
 
@@ -85,7 +86,7 @@ updated: 2026-09-10
 **📚 墨题刷题机设计（8/15）**
 - [x] P0 错题 AI 诊断设计稿：单题归因已有 80%，补「归因聚合→诊断报告层」；diagnostic_report 聚合 + 水平评估 1-5 + 推荐练习闭环 + 变化视图
 - [x] P1 AI 服务层架构设计：ai_router 任务路由 + ai_usage 用量 + 降级链
-- [ ] 安全待决策项（BOLA/IDOR 等暂缓）→ [[knowledge/Projects/墨题安全待决策-2026-08-19]]
+- [ ] 安全待决策项（BOLA/IDOR 等暂缓）→ [[knowledge/Projects/墨题安全待决策-2026-08-19]]（①用户隔离已闭环 9/3：20 表 user_id + wrong_analysis 迁移 + 题库 admin 校验；②DPAPI 跨平台仍待上云决策）
 
 **🔧 系统/知识基础设施（8/14–15）**
 - [x] fallback 链改造：glm-5.2（¥8/M）→ keylink/deepseek-v4-flash 跨 relay 兜底（jiyuanlvdong 挂时切 keylink 而非高价 glm）✅ 8/14
@@ -161,10 +162,62 @@ updated: 2026-09-10
 **📚 墨题商业线（9/5）**
 - [x] Codex P1-1 后端数据层（orders/plans/payments）+ 前端 v13 奖级图标线性化并行推进；ZCode 3 亿额度计划已排（题库 AI 精讲批量生成 2132 题为第一梯队）✅
 
+### 10. 本周（9/6–9/12）完成项
+
+**🗓️ 系统可靠性 / cron 容灾（9/6–9/11）**
+- [x] FlClash 代理层核验恢复确认（9/6）：FlClashCore 13:20 已重启 + 7890 转发 curl 实测 HTTP 200（1.08s）——「需 sora 重启」项确认已由 sora 完成 ✅
+- [x] 3 个 cron pin 修复 → fangzhou-2（9/6）：晨间批量失败根因 = pin 在低余额 jiyuanlvdong → 全部改 pin fangzhou-2 ✅
+- [x] health_provider_check.py 崩溃 bug 修复（9/6）：cpa-gui models 为 dict 解析崩溃 ✅
+- [x] 外部生图/关键 API 周探活 cron 落地（9/8）：`scripts/api_image_probe.sh` 5 路最小调用 + cron `api-media-weekly-probe`（周一 10:15，全健康静默/异常提醒），commit `d6baa2c` + jobs.json 回读验证 ✅
+- [x] SiliconFlow key 恢复确认（9/8）：api-probe 实测 200，纠正 9/8 晨审计「401 需重生成」旧记录，23 个引用技能自动恢复 ✅
+- [x] daily_vault_optimize 断言门禁（9/8 当场）：VAULT.exists() FATAL + 笔记数<100 最小产出门禁，9/9 产线 1035 篇正常跑 ✅
+- [x] state.yaml 计数收敛机制落地（9/10 建库 + 9/11 首个执行循环）：`projects/state.yaml` 唯一权威源 + 唯一写方（daily-todo-executor）+ `scripts/assert_state_consistency.py` 断言门禁三连 PASS（权威推进 40→41 + MEMORY.md byte 级同步）——9/5/7/8/9 四连漂移根治 ✅
+- [x] fastmcp[server] 修复（9/11）：fastmcp-slim/fastmcp 镜像互斥根因 → uninstall 后装 `fastmcp[server]==3.4.5`，`import fastmcp.server` OK（code-review-graph MCP 180 次 WARNING 根除）✅
+- [x] mnemon hooks bash 包装修复（9/11）：prime/remind/nudge.sh 改 `bash.exe` 显式调用，WinError 193×3 根因消除 ✅
+- [x] 安全脱敏批量落地（9/8 晚）：本机路径 31954→~/ 全量脱敏（8 commits）+ Kimi key 改环境变量 + gitignore .dreams/.tmp + CAD 生成物 .step 移除跟踪 ✅
+- [x] 墨题巡检 5 日 PASS（9/6/7/8/10/11）：git 干净 + 后端/前端/移动端四段全过，最近提交含 v2.1.3 版本对齐（`69e1d66`/`ddbad61`）✅
+
+**🧠 知识 / 研究（9/6–9/10）**
+- [x] arXiv 09-06 深挖（harness 三连 2609.00006/.00267/.00546 + core contributions）+ 知识卡 harness-engineering → `knowledge/Research/arxiv-2026-09-06-*` + `cards/2026-09-06-harness-engineering.md` ✅ 9/6
+- [x] GitHub W37 Trending 五项目分篇（Archify 49.9k / ECC 250.2k / OpenMAIC / Scientific-Agent-Skills 43k / VoiceStudio 19.1k）✅ 9/6
+- [x] HN 09-06 精选（OpenAI agent 串通留言板 / Chromium 沙箱 RCE / LLMs as Cognitive Virus）✅ 9/6
+- [x] Graphify 图谱周更（9/6）：1,925 节点 / 3,487 边 / 140 社区，14/14 验证 ✅
+- [x] arXiv 09-07 索引解冻 480 篇新窗口（covered_ids 0 重叠）：精选 22 主条目 + 10 简评，5 大主题信号（harness 受控实验 / agent 安全 / 技能演化四连 / 记忆可移植性 / reward hacking）→ `knowledge/Research/arxiv-2026-09-07-agent-llm.md` ✅
+- [x] 知识卡 09-07 memory-portability（2609.05339，已推微信）✅
+- [x] 文献周报 08-31~09-06（9/7）：262 篇去重精选 20 篇（Agent 最热）✅
+- [x] shai-hulud 供应链周扫描（9/7）：墨题/hermes-agent/Sims4/.openclaw 4 根目录全净 ✅
+- [x] 黑盒 5 项目实证研究（9/8）：marketingskills 48.2k★（55 skill + 51 CLI + evals.json 断言原语）+ pascal/editor 22.4k★（31 MCP 语义工具）→ `knowledge/Research/黑盒热榜5项目实证研究-2026-09-08.md` + 知识卡 heihe-top5 ✅
+- [x] 月度技能审计 09-08：392 技能登记 / 实际在用 97 / P0 过时 4 个 + SiliconFlow key 状态纠正 ✅
+- [x] arXiv 09-08 补全速览（14 主条目 + 8 简评）+ 09-09 补全速览（19 篇，covered_ids 518→537）✅
+- [x] 知识卡 09-09 eval-reactivity（2609.05009，N=12,800 官方 abs 核对）+ 评测设计规范-意图隐藏-2026-09-09.md（daily-todo-executor 三资产审计闭环）✅
+- [x] 评测反应性抖音脚本草稿（9/9）→ `projects/ai-blogger/drafts/2026-09-09-AI会为了讨好你撒谎吗-抖音脚本.md` ✅
+- [x] arXiv 09-10 速览 22+16 篇（索引解冻新窗口 1749 篇池）+ 知识卡 09-10 Desert Ant 端侧小模型 → `knowledge/Research/arxiv-2026-09-10-agent-llm.md` + `cards/2026-09-10-desert-ant-on-device.md` ✅
+- [x] 选题池 #67 新增 + 卡片落地标记（9/11）✅
+- [x] 三 bot 协作流水线启动（9/11）：researcher/coder/reviewer 三 profile 已建，k 认领调度角色，目标 PCB 自动化接单流水线 ✅
+- [x] 9/9 千轮研究固化日：92 次 skill_manage / 21 技能实质更新（4 新建 + 23 patch）✅
+- [x] AI 营销技能库「质量断言」原语复核闭环（9/9）：ai-cmo SKILL.md 已含核心原语 1/2（evals 质量断言 + product-marketing 上下文前置），09-08 heihe 卡 [x] ✅
+- [x] 股票日报每日产出（sibling cron，9/11 示例：旭创 +4.03% / 东财破位离场）→ `knowledge/Finance/每日股票分析-2026-09-11.md` ✅
+
+**🎨 闲鱼素材 / 决策（9/6–9/11）**
+- [x] 素材核验第 15→18 次 PASS（9/6/8/9/11）：7 图 PNG 头实测 750×750 全过 + 操作清单两段式在位 ✅
+- [x] 触达升级核实（9/7）：「闲鱼提醒」cron（工作日 7:30）健康在触达；微信推送通道缺口定性 = 需 sora 提供 serverchan/pushplus token ✅
+- [x] 上架后运营预案待命登记（9/8）：回复提速（4 时段）/ 标题重写（前 15 字）/ 擦亮节奏 / 差异化迁移 / 鱼小铺暂缓 5 动作 ✅
+- [x] 闲鱼计数 state.yaml 权威推进（9/11）：40→41 + assert PASS + MEMORY.md byte 级同步 ✅
+
+**🛠️ 工具 / 维护（9/6–9/9）**
+- [x] cad 技能三副本合并（9/7）：text-to-cad/cad + text2cad-cad 纯冗余删除，顶层 cad + freecad-automation 保留，零内容损失 ✅
+- [x] knowledge-lint 多轮维护（9/6/7/8/9）：断链 0 / 孤立 0 / frontmatter 0；9/8 修复 16 断链 + 3 空壳清理 + github-trending 标签归一；9/9 lint 脚本版本号截断误报修复（28→15）✅
+- [x] obsidian 结构维护（9/8）：vault-maintenance 报告全项通过 ✅
+- [x] web_extract 豁免验证门 patch（9/6 daily-knowledge-review）✅
+- [x] siliconflow-media 假就绪标注 patch（9/6）✅
+- [x] git push 代理劫持新解法实测（9/7）：`git -c http.proxy= push origin main` 强制直连成功，已固化进 daily-knowledge-review 踩坑 ✅
+- [x] 知识库 W37 周度整理（9/6）：MOC 补挂 5 处 + 索引更新（Research 186 / 总 532）✅
+- [x] 9/6 反思 4 项 agent 可执行项核实全落地（suggestion-implementation 文件证据：PIL 兜底 / siliconflow patch / web_extract 门 / 试水前置）✅
+
 ## 🔄 进行中 / 已重新排期
 
 ### 🎯 闲鱼上架（P0，**决策悬置第 41 天，9/6 fallback 硬触发已过**，连续顺延第 30+ 天）
-- [ ] 上架「AI 代做 PPT」商品 → 🔴 **决策悬置第 41 天（8/31 到期已过；9/4 已拆小为「先上 1 个商品试水」30min 最小可逆动作；9/6 fallback 硬触发日已过——k 侧试水前置 100% 就绪，实际上架是外部经营动作，等 sora 一句话拍板（试水/放弃/再缓）；9/7 触达升级触发：若仍无决策 → 换 desktop 通知/微信推送通道）**：素材 100% 就绪（6 图 PNG 头实测 750×750 全 PASS，第 15 次核验）；操作清单两段式（试水版 + 5 商品全量版）见 outputs/xianyu-master/上架素材包/上架操作清单.md；合规子集 v1.2.0（敏感词/同款频次/数模标题改写）；决策包见 memory/2026/08/2026-08-31-xianyu-vault-suggestion-executor.md + 9/4 复核 memory/2026/09/2026-09-04-vault-suggestion-executor.md + 9/7 报告 memory/2026/09/2026-09-07-vault-suggestion-executor.md
+- [ ] 上架「AI 代做 PPT」商品 → 🔴 **决策悬置第 41 天（8/31 到期已过；9/4 已拆小为「先上 1 个商品试水」30min 最小可逆动作；9/6 fallback 硬触发日已过——k 侧试水前置 100% 就绪，实际上架是外部经营动作，等 sora 一句话拍板（试水/放弃/再缓）；9/7 触达升级触发：若仍无决策 → 换 desktop 通知/微信推送通道）**：素材 100% 就绪（7 图 PNG 头实测 750×750 全 PASS，第 18 次核验，9/11）；操作清单两段式（试水版 + 5 商品全量版）见 outputs/xianyu-master/上架素材包/上架操作清单.md；合规子集 v1.2.0（敏感词/同款频次/数模标题改写）；决策包见 memory/2026/08/2026-08-31-xianyu-vault-suggestion-executor.md + 9/4 复核 memory/2026/09/2026-09-04-vault-suggestion-executor.md + 9/7 报告 memory/2026/09/2026-09-07-vault-suggestion-executor.md
 - [x] 主图制作：3 张模板图（前后对比/价格表/服务承诺）→ ✅ 08-03 已生成：`outputs/xianyu-master/上架素材包/`（主图1-3，**实测 750×750 方形 51-57KB**，思源黑体+蓝橙撞色+无极限词）→ 上架时直接上传，无需再做
 - [ ] 同步上架「论文排版/润色」商品（素材包已有现成文案）→ 顺延 8/17 同批上
 - [ ] 补 PPT 样例素材：从现有作品提 2-3 个样例页 + 「仅供参考」水印 → portfolio/ → 需 sora 手动导出截图（无 LibreOffice/python-pptx 渲染，无法自动化）→ 上架操作清单已注明详情图可复用主图2/3 兜底
@@ -225,7 +278,7 @@ updated: 2026-09-10
 - 🔒 首次交互置顶三连（需 sora 30 秒×3）：MCP 解除（打开 Obsidian + Local REST API + reconnect，1min）/ FlClash 重启核验影响面（30s）/ 闲鱼试水决策（一句话二选一）——9/4 有 58 条真实交互仍 4 天未解除，触达失效，9/5 起随每次交互置顶；连续 2 天交互未解除 → 换 desktop 通知/微信通道
 
 ### 🧭 9/6 反思行动项（daily-reflection 复盘 9-05，执行者必读）
-- 🔒 首次交互置顶三连（机制第 2 天失效，随 9/6 反思推送置顶 P0）：① MCP 解除（打开 Obsidian + Local REST API + /mcp reconnect，1min）② FlClash 重启核验影响面（30s）③ 闲鱼试水决策（一句话二选一，9/6 fallback 硬触发）——9/5 有 35 条真实交互仍未解除，9/7 仍不解除 → 换 desktop 通知/微信推送通道（k 可做：推送脚本登记 cron）
+- 🔒 首次交互置顶三连（机制第 2 日失效，随 9/6 反思推送置顶 P0）：① MCP 解除（打开 Obsidian + Local REST API + /mcp reconnect，1min）② FlClash 重启核验影响面（30s）③ 闲鱼试水决策（一句话二选一，9/6 fallback 硬触发）——9/5 有 35 条真实交互仍未解除，9/7 仍不解除 → 换 desktop 通知/微信推送通道（k 可做：推送脚本登记 cron）
 - ✅ FlClash 代理层核验（2026-09-06 daily-todo-executor 实测）：FlClashCore 9/6 13:20:38 已重启，7890 转发探针 `curl -x http://127.0.0.1:7890 https://www.google.com` → HTTP 200（1.08s）→ **代理链路恢复确认，「重启」动作已被 sora 完成**；仅剩消息网关影响面降级定性（P0→P2）待 sora 一句话确认
 
 - 🔒 外部生图修复排期（3 路径全断实测：XAI key invalid / FAL TOP_UP 锁定 / SILICONFLOW 30001 余额不足 + 30003 FLUX disabled）：XAI 换有效 key / FAL 充值 / SILICONFLOW 充值；k 侧已 patch siliconflow-media 刷新「余额 3000+」假就绪（2026-09-06 已做）
@@ -242,6 +295,14 @@ updated: 2026-09-10
 - 🔴 闲鱼试水决策（悬置第 41 天，9/6 fallback 硬触发日已过、9/7 触达升级已触发）：k 侧试水前置 100% 就绪（主图1 安全版 750×750 + 违禁词全过 + 第 15 次核验 PASS），实际上架是外部经营动作，等 sora 一句话二选一（试水/放弃/再缓）——连续顺延第 30+ 天，再顺延仅消耗注意力成本，30min 可逆
 - ✅ 触达通道核验（2026-09-08 vault-suggestion-executor 复核）：「闲鱼提醒」cron（`30 7 * * 1-5`，deliver local）active 且今日待运行 = 决策提醒仍在每日触达；微信推送通道无基础设施，需 sora 提供 serverchan/pushplus token 才可落地，sora 若不需微信则维持现状
 - 📌 上架后运营预案待命（2026-09-04 运营算法卡片 5 项行动）：回复提速（4 时段集中回复：9:30-10:30/15:00-16:00/20:00-22:00）、标题重写（核心词前 15 字）、擦亮节奏（咨询/收藏≥3 优先）、差异化迁移（PPT 垂直细分/项目报价）、鱼小铺暂缓（月成交未过万不开）——全部依赖试水拍板后触发
+### 🧭 9/9 反思行动项（daily-reflection 复盘 9-08，执行者必读）
+- ✅ 计数收敛 state.yaml 唯一写方改造（硬截止 9/11）→ ✅ **2026-09-11 daily-todo-executor 闭环**：projects/state.yaml 权威推进 40→41 + assert 三连 PASS（见 Section 10）——9/5/7/8/9 四连漂移根治
+- 🟡 deterministic_verify 双核验（执行状态+产物；9/8、9/9 反思项，未闭环）→ 重新排期：由 daily-todo-executor 执行（health 误判归因：completed 但无产物，不放宽 glob）
+- 🟡 隐私门禁扩展 .dreams（9/8、9/9 反思项，未闭环）→ 重新排期：9/8 晚已做批量脱敏（60+ 会话语料移出仓库），扫描模式待补
+- 🟡 千轮研究 Top 发现原文验证提醒（流程项）：9/9 web_extract 1/178（0.6%）触底教训，下次千轮研究固化时对关键数字 claim ≥1 次原文核对
+- 🔴 闲鱼试水决策（第 41 天，state.yaml 权威）→ 沿用 P0，见 🎯 闲鱼上架
+- 🟡 XAI key 重生成 + FAL 充值解锁（探活线）→ 沿用，见待用户操作
+
 ### 🧭 8/20 反思行动项（daily-reflection 复盘 8-19，执行者必读）
 - [x] P0 语义缓存最小版落地——✅ 8/21 完成（硬截止 8/22 前）：原实现只挂 tavily provider、实际流量走 exa/searxng/firecrawl 兜底时从未命中（cache 文件从未生成）；已在 `web_tools.py::web_search_tool` chokepoint 上移统一缓存覆盖全部后端，实测 exact 命中生效，submit `84d813bf2`
 - [x] P1 health_provider_check.py 加余额阈值告警 → ✅ 8/21：新增 `_balance_flag` 解析 HTTP 402/403/429 错误体中的「额度/余额」信息（keylink/jiyuanlvdong 中转站内嵌无独立端点），余额不足自动标 ⚠️。实测 kimi suspended / fangzhou-2 quota(8/28 重置) 被正确标红；keylink 已恢复 OK（¥0.05 裸奔解除）
@@ -270,10 +331,14 @@ updated: 2026-09-10
 | SFC 系统扫描 | 🔒 需管理员权限 | 7/24 曾标记完成，7/27 后重复录入，待 sora 确认是否重跑 |
 | 零感 AI 付费实测（1元/千字） | 🔒 需付费+测试稿 | 卡片 2026-08-03：降 AI 率主推工具定标，验 1 篇知网 98% 稿后写入 SOP |
 | DeepSeek 直连充值 | 🔒 余额 ¥7.25 | 8/14 cron 记录；需充值恢复容灾深度 |
-| jiyuanlvdong-2 余额充值 | 🔒 余额枯竭（9/4 起 402） | fallback 链备用节点，主链 fangzhou-2 不受影响；9/5 健康巡检已标红 |
-| 多 provider 402 余额枯竭 | 🔒 需充值 | deepseek官方 / siliconflow / moonshot / dengzhen 均 402（9/5 巡检），主链 + 一级 fallback 不受影响，容灾深度减薄 |
+| jiyuanlvdong-2 余额充值 | 🔒 余额枯竭（9/4 起 402） | fallback 链备用节点，主链 fangzhou-2 不受影响；9/11 面扩大：deepseek/siliconflow/dengzhen 402、moonshot/zhipu 429、opencode-go/tabitoken 403 |
+| 多 provider 余额枯竭 | 🔒 需充值 | 9/11 巡检：fallback 池变小（多路 402/429/403），默认链 fangzhou-2 不受影响，容灾深度减薄 |
 | `/new` 开新会话 | 🔒 长会话烧钱 | 「对话历史回顾」1M tokens 接近上限，压缩反复失败 |
 | 打开 Obsidian（恢复 MCP） | 🔒 27123 端口无监听 | 依赖 Obsidian 的 cron 会失败 |
+| FlClash github 路由 | 🔒 新增（9/11） | google 7890=302 正常但 github 7890=000 → 检查规则/fake-ip/节点；影响 hackernews/arxiv/github 类 cron |
+| skill 合并授权 | 🔒 待 sora 确认 | 09-01 审计 3 组合并（fangzhou-ark / android-automation / search-config）+ 09-08 审计 5 组近义合并（水墨 UI 4 合 1 等）——破坏性合并，确认后执行 |
+| 墨题云服务器选型 | 🔒 需决策（花钱） | 腾讯 38/99 vs 阿里 99 + 域名；决策后 k 可全自动按方案部署（P1 商业线阻塞） |
+| 三 bot 协作第一单目标 | ⏳ 等 sora | PCB 自动化流水线试跑：sora 给具体目标后 k 拆任务调度（researcher/coder/reviewer 已就位） |
 | fangzhou-2 配额恢复 | ✅ 已恢复（9/5 实测） | 主链 custom:fangzhou-2 实测 1264ms OK，月配额重置生效，无需操作 |
 | 安全审计 cron 排期 | ✅ 已完成 8/5 | security-audit cron 已挂载（`30 8 * * 0` no_agent + security_audit.py），无需再操作 |
 
@@ -286,7 +351,7 @@ updated: 2026-09-10
 
 ---
 
-_由 k (Hermes) 在每次会话结束时更新 | 最后更新: 2026-09-06 (daily-reflection 09-05 反思行动项登记)
+_由 k (Hermes) 在每次会话结束时更新 | 最后更新: 2026-09-12 (weekly-todo-cleanup 09-12 周度清理)
 
 ---
 
