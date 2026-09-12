@@ -37,7 +37,7 @@ status: fresh
 
 ## 行动项
 
-- [ ] 跑 Desert Ant CLI（`github.com/Desert-Ant-Labs/desert-ant-cli`）实测 Tongue/Voz，验证端侧质量与速度 → ⏳ 需专项研究会话（2026-09-11 复核仍 open）
+- [ ] 跑 Desert Ant CLI（`github.com/Desert-Ant-Labs/desert-ant-cli`）实测 Tongue/Voz，验证端侧质量与速度 → ⏳ 需专项研究会话（2026-09-12 复核仍 open）
 - [ ] 评估墨题离线版嵌入 Tongue 语言识别 / Voz 转写的可行性（与 offline-pwa-conversion 技能对接）
 - [x] 把「端侧小模型替代 API」记入 AI 博主选题池 ✅ 已落地 2026-09-11（选题池 #67）
 

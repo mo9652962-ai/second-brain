@@ -72,7 +72,7 @@ type: audit
 - [ ] 合并 android-automation / uiautomator2-android-automation
 - [ ] 合并 hermes-search-config / hermes-web-search-config
 - [x] 清理空目录 @evolinkai @nitishgargiitd + openclaw-imports 残留 ✅ 2026-09-05：openclaw-imports 已归档（.archive/openclaw-imports-residue-2026-09-05）+ @evolinkai/@nitishgargiitd 空目录已清理
-- [ ] 观察：agent 技能 8 月净增 ~125 个，建议下月审查技能库膨胀（加载变慢）
+- [x] 观察：agent 技能 8 月净增 ~125 个 → ✅ 2026-09-08 月度技能审计已执行（392 登记 / 97 在用 / P0 过时 4），膨胀观察落地（09-12 复核确认）
 
 ## 说明
 - 社区 hub 技能（27 个）未修改——由原作者维护

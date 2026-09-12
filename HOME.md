@@ -42,6 +42,11 @@ created: 2026-08-09
 - [[memory/2026/09/2026-09-11|📅 09-11 每日工作记录]] — 三 bot 协作启动 + 健康巡检 4 待处理
 - [[memory/2026/09/2026-09-11-daily-review|📋 09-11 每日知识回顾]] — 三 bot 协作流水线启动 / 闲鱼素材第 18 次核验 / state.yaml 落地
 - [[memory/2026/09/2026-09-12-daily-review|📋 09-12 每日知识回顾]] — 十领域千轮研究批次落盘（变现/PCB/墨题/内容工业化）/ config.yaml 自愈 / 闲鱼第 41 天 PENDING
+- [[memory/2026/09/2026-09-10|📅 09-10 每日工作记录（补位）]] — arXiv 解冻速览 22+16 篇 + Desert Ant 卡 + 4 个周日任务 pin 修复 + 闲鱼第 41 天（09-12 补位重建）
+- [[memory/2026/09/2026-09-10-reflection|🔍 反思 09-10（补位）]] — 解冻速览日 + 预防性 pin 修复；3 改进点：产出型缺档兜底 / 坏 pin 周前检查 / 大窗口速览节奏（09-12 补位重建）
+- [[memory/2026/09/2026-09-10-daily-todo-executor|🧹 09-10 每日待办落实（补位）]] — 闲鱼第 41 天推进 + 4 周日任务 pin 修复 + arXiv 速览（09-12 补位重建）
+- [[memory/2026/09/2026-09-11-reflection|🔍 反思 09-11（补位）]] — 三 bot 协作启动 + state.yaml 首个执行循环闭环 + fastmcp/mnemon 双修复（09-12 补位，config.yaml 损坏根因）
+- [[memory/2026/09/2026-09-12-daily-todo-executor|🧹 09-12 每日待办落实]] — 缺档补位 4 连闭环（09-10 三连 + 09-11-reflection）+ config.yaml 损坏排查（10 cron 批量失败已自愈）+ 证据映射表勾选
 - [[knowledge/Research/arxiv-2026-09-08-agent-llm|arXiv 09-08 补全速览]] — 14 主条目 + 8 简评（09-07 窗口补全：系统级风险 04373 / BeaconKV / 窄边界安全 04482 / First Things First 05224）
 - [[knowledge/Research/arxiv-2026-09-09-agent-llm|arXiv 09-09 补全速览]] — 11 主条目 + 8 简评（09-07 窗口第三轮补录：评测反应性 05009 / MoE 双线 04895+05228 / 4-bit 合并坑 04526 / PLUME 个性化 04715）
 
