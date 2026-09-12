@@ -247,35 +247,11 @@ _最后更新: 2026-08-30｜运行环境: OpenClaw Agent on Windows 11_
 ## 🔒 Waiting for User（阻塞待办，状态变化时提醒）
 - （空——被阻塞任务单独维护，不混入每日清单）
 
-## Promoted From Short-Term Memory (2026-08-31)
+## Promoted From Short-Term Memory (2026-09-13)
 
-<!-- openclaw-memory-promotion:memory:memory/2026-08-25.md:39:41 -->
-- ✅ LEARNINGS.md 可推广模式（最新 5 条）: | LRN-20260820-001 | insight | Gartner 2026-08：Agentic workflow 推理成本至 2028 增 5x | ✅ 验证：低成本架构为正确护城河 | | LRN-20260816-001 | knowledge_gap | MCP token 开销 32K-82K vs CLI ~200 token，日常工具调用优先 CLI | ✅ 落地：禁用重复 MCP server (jlceda)，节省 38 工具 schema | | LRN-20260806-001 | best_practice | Graph Engineering > Loop Engineering：并行 pipeline 优先，sessions_spawn 可作 graph 原语 | ✅ 采纳：股票分析 cron 两阶段链式，未来并行化 | [score=0.826 recalls=0 avg=0.620 source=memory/2026-08-25.md:39-41]# #   `m�^�h  d a i l y   n o t e s   ��.agP(��R�u�t[�4U9pxv}2 0 2 6 - 0 8 - 0 7   t�0�S�?  
- # # #   ɓ�0�V  2 0 2 6 - 0 7 - 2 5   w�E��W9p}\}gÓ�0T~ 
-  
- * * O��bmeY� bG^�? *  
- 1 .   T a v i l y   1 0 0 6 1   ��zO;u  2   �oK%}7 / 2 4 - 7 / 2 5 �? %�? ���n�PT��qXQǕ� 5p�~�XǓ8Y,Uĉ� 
- 2 .   -��0v�~�u�[6��c#Z^S�[Wi^S�b  %�? . l e a r n i n g s /   �V0  1 2 4 8   t�\��)�? 3 5 +   ɓ? l e a r n i n g s / e r r o r s  
- 3 .   O p e n C l a w   "��q� xO�QR��U�[  %�? `m�^]�m� �Y�Ufp��A%MwR�? 5   �mD�B_t�\�X�Wo r e / N a n o / Z e r o / N e m o / T a s k a d e �? 4 .   C o n t e x t E n g i n e e r i n g   �YE�!}Op��NS  %�? v 2 0 2 6 . 3 . 7   (�? C o n t e x t E n g i n e   �[�gYs�tzOSe\mCr_"�?  
- # # #   ɓ�0�V  2 0 2 6 - 0 8 - 0 6   ē�qane�?  
- * * |��Q!}�~D�g2Z�pBv�? *  
- 1 .   * * G r a p h   E n g i n e e r i n g   >   L o o p   E n g i n e e r i n g * *   %�? `mBZ�Rȓ� ���]��(�? A g e n t   ˓5�/p|��Q!}^g�) 
-       -   ÓX�h�~!S0}C o n t e x t   E n g i n e e r i n g   ( m i d - 2 0 2 5 )   +�? L o o p   E n g i n e e r i n g   ( J u n e   2 0 2 6 )   +�? G r a p h   E n g i n e e r i n g   ( J u l y   2 0 2 6 )  
-       -   ͓?z>~�,l?�Õ5��រ�`嵓F�  +   �~gR Y��]��t�qe  +   e�gR�|˓�Rpn엣��W�m?���t3 ��t?  
- 2 .   * * O p e n C l a w   |mwO{�~D�W��q�[^g �`* *   %�? �m�0ܑO��bme�m3 _ 
-       -   E x t e n d e d - S t a b l e   R e l e a s e s   ( Y Y Y Y . M . 3 3 ,   ȓX�[)   +�? igX�`  L T S  
-       -   M a t u r i t y   S c o r e c a r d   O� �}�t�R�W  +�? e��p2||mwO{Y��lo��G0ϔ?  
- 3 .   * * A g e n t i c   P r i m i t i v e s   Y�&h,U  G l u e   C o d e * *   %�? t|\{`m�^� ~\�Zs�5�	ct�-lpn���]FmZ�b� ~\#rQ��U�[  A g e n t   X��q��  +   �V0V�? A P I ��?       -   �m? O p e n C l a w   S k i l l   W o r k s h o p   +   C l a w H u b   "��q� yO�gZ�b�zw�?       -   �[�0�S(��R�]���_�bY��B_�Hr� ? >   A g e n t   w�G��(��R9^��UXQT�?  
- * * p?��{�tg�}ǓX[�g�? *  
- -   g��  L E A R N I N G S . m d   [ L R N - 2 0 2 6 0 8 0 6 - 0 0 1 ] :   G r a p h   E n g i n e e r i n g   |��Q!}^g�) 
- -   M E M O R Y . m d   �[�S?m.^0}g�冒�\�m3l{�-��0� �]�sz�? G r a p h   E n g i n e e r i n g   ɓ�0m 
- -   t�0�S��k[p e n C l a w   �XpnT�&1� uO� �]�sz��P0}E x t e n d e d - S t a b l e / M a t u r i t y   S c o r e c a r d  
- -   #Z��Y  A g e n t i c   P r i m i t i v e s   �t*[Z 
- -   #Z��Y  O p e n C l a w   �~�Q~u��Cm��� �h�R� 
-  
- * * �[mT�Y�5�� �O0}* *  
- -   P 0 �%X�hxi:{� I[I   `mE��N  P P T ���]}�3l[~b�0�[AR��  7   �oK%}�~�rWoO�%1(lD�g_Z�r{˓��}8 / 7   ȓ� Z��^anĕ6a} 
- -   �~d��|�5�� �O0}�Y3 7p�YE�6r��yO�`�~? 5   �t�QUcmk(lB� <Nk i l l s   2 7 +   9pY�崓*a�}�~? -   ��zO;uO�k�^e�? / 5   d a i l y   n o t e   Y��XQȓY!}�t.^}Ǖ� Yt�PBvē��`��*a��Y3 !} 
-  
- - - -  
- 
+<!-- openclaw-memory-promotion:memory:memory/2026-09-08.md:36:39 -->
+- .learnings/ERRORS.md 回顾: **持续问题**: FlClash 代理端口损坏（ERR-20260818-001） - 需要手动重启 FlClash 以恢复 7890 端口数据转发; **已解决问题**:; 提供商宕机导致的 opencode-go 提供商故障（已配置回退链）; 网关配置受保护路径问题（通过直接编辑 openclaw.json 解决） [score=0.829 recalls=0 avg=0.620 source=memory/2026-09-08.md:36-39]
+<!-- openclaw-memory-promotion:memory:memory/2026-09-08.md:40:42 -->
+- .learnings/ERRORS.md 回顾: 搜索超时链问题（将 timeoutSeconds 从 60 增至 120 解决）; NPM 安装超时问题（使用国内镜像解决）; 记忆搜索提供商超时问题（增加嵌入批处理超时并强制重建索引） [score=0.829 recalls=0 avg=0.620 source=memory/2026-09-08.md:40-42]
+<!-- openclaw-memory-promotion:memory:memory/2026-09-08.md:45:48 -->
+- .learnings/LEARNINGS.md 回顾: **计划-执行模式与异构架构**: 前沿模型处理复杂推理，中等模型处理任务陈述，小模型/SLM 处理简单执行（可节省 20-40% LLM 调用）; **从提示工程到系统工程**: 2026 年的重点转移到护栏（Guardrails）、反馈循环（Feedback Loops）和可观测性（Observability）; **OpenClaw 2.0 发布**: 简化安装和协作 Agent 能力，本地优先与模型不可知趋势; **持久智能体趋势**: 持久智能体作为 2026 年趋势崛起，使能更长工作流程和本地执行 [score=0.829 recalls=0 avg=0.620 source=memory/2026-09-08.md:45-48]
