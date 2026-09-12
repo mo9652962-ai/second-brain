@@ -1,3 +1,12 @@
+---
+title: "Web全栈2026-千轮研究-2026-09"
+type: note
+domain: Research
+status: active
+tags: [knowledge/research, 千轮研究, web开发, 部署]
+date: 2026-09-12
+---
+
 # Web 全栈 2026 千轮研究报告：框架格局 · 部署定价 · 无 Docker 后端 · 接单技术栈
 
 > 调研日期：2026-09-12 ｜ 方法：多轮 web_search + web_extract，优先官方文档（nextjs.org / react.dev / vercel.com / developers.cloudflare.com / nuxt.com / astro.build / cloud.tencent.com / aliyun.com）

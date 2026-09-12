@@ -1,3 +1,12 @@
+---
+title: "墨题AI化-千轮研究-2026-09"
+type: note
+domain: Research
+status: active
+tags: [knowledge/research, 千轮研究, 墨题, ai-agent]
+date: 2026-09-12
+---
+
 # 墨题 AI 化千轮研究报告：AI 精讲 / AI 批改 / AI 口语 技术路线
 
 > 研究时间：2026-09-12 · 研究员：Hermes 千轮研究子代理（教育产品 AI 化）

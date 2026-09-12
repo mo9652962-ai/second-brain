@@ -1,3 +1,12 @@
+---
+title: "嵌入式边缘AI进阶路线-千轮研究-2026-09"
+type: note
+domain: Research
+status: active
+tags: [knowledge/research, 千轮研究, 边缘AI, 嵌入式]
+date: 2026-09-12
+---
+
 # 嵌入式/边缘 AI 进阶路线研究报告（2026）
 
 > 调研日期：2026-09-12 ｜ 调研人：Hermes 千轮研究小组（研究员 subagent）

@@ -24,7 +24,7 @@ updated: 2026-09-08
 
 ### 1. 断链修复（16 处，全仓库）
 - **dreaming 快照剥括号 ×6**：`memory/dreaming/light-2026-08-06/07.md` 的 `health-2026-07-24`/`weekly-2026-07-26`/`hermes-session-20260723`（目标已归档不存在）→ 纯文本
-- **维护笔记文档示例剥括号 ×8**：`log.md`（`[[../knowledge/...]]` 等 3 处）、`2026-08-13-vault-maintenance.md`（`[[knowledge/AI-Workflow]]`、`[[knowledge/arxiv-2026-07-31-core-contributions]]`、`[[projects]]` 3 处）、`2026-09-04-maintenance.md`（`[[MOC-Development]]`、截断 `[[memory/2026/08/sug...` 2 处）——均为文档化示例，按技能规范剥离 `[[` `]]`
+- **维护笔记文档示例剥括号 ×8**：`log.md`（`../knowledge/...` 等 3 处）、`2026-08-13-vault-maintenance.md`（`knowledge/AI-Workflow`、`knowledge/arxiv-2026-07-31-core-contributions`、`projects` 3 处）、`2026-09-04-maintenance.md`（`MOC-Development`、截断 `memory/2026/08/sug...` 2 处）——均为文档化示例，按技能规范剥离 `[[` `]]`
 - **`MEMORY.md` → `MEMORY` ×5**（含 1 处带别名 `MEMORY.md|长期记忆`）：5 篇维护/回顾笔记规范化，消除扫描噪声
 
 ### 2. 空文件清理（3 个）
