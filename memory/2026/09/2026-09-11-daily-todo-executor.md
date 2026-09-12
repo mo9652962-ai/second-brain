@@ -92,7 +92,7 @@ type: daily-todo-executor
 - [x] state.yaml 计数收敛 + 断言 PASS（今天）
 - [x] fastmcp[server] 重装 + 导入验证（今天）
 - [x] mnemon hooks bash 包装（配置已改，待会话验证）
-- [ ] 09-10 缺档补位三连（明日 P1，产出后 HOME 补链）
+- [x] 09-10 缺档补位三连（09-12 闭环：三份补位文件 + 09-11-reflection 补位，HOME 补链）
 - [ ] skill-audit 3 组合并（建议会话内执行，防误删）
 - [ ] harness 卡片抖音素材草稿（下个内容会话）
 
