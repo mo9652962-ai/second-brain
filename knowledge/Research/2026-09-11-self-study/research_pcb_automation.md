@@ -182,3 +182,6 @@ Freerouting 2026 年新增 CLI/API/MCP + 修复多板层 bug 后已真正脚本�
 
 ---
 *报告生成：2026-09-12，多 agent 千轮研究（web_search + web_extract 交叉验证）。所有价格为研究时点官网公布值，落地前请复核最新页面。*
+
+---
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]

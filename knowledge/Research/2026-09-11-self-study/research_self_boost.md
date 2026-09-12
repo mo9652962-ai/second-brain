@@ -154,3 +154,6 @@ sora 的千轮研究 v2（覆盖率清单先行 + 每轮 ~200 字演化报告 + 
 **技能沉淀**：Anthropic Agent Skills 官方文档/博客/Claude Code 内部实践（2025-10~2026-01）；SkillHone（arXiv:2606.08671 + Tencent GitHub）；Search2Skill（arXiv:2608.05245）；SESA（arXiv:2607.29468）；SKILL-KD（arXiv:2607.28048）；Skill1（arXiv:2605.06130）；WikiSkill（arXiv:2608.27454）；Self-Evolving Agents 综述（arXiv:2507.21046 / TMLR 2026）
 
 **内部体系参照**：knowledge-absorption（千轮研究 v2 + Crystal 审计 + 蒸馏链 v1.7）；skill-evolution（ERL/SkillHone 洞察/验证门控/效用修剪/WikiSkill 落地）；self-improving-agent（VeriSkill 双闸门/Pattern-Key/周度挑战者自检）
+
+---
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]

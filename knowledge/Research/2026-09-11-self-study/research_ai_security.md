@@ -315,3 +315,6 @@ P2：新建 `owasp-agentic-top10-audit` + `prompt-injection-redteam`（自有 ag
 - NCC Group《An Introduction to AI Coding Agent Security》（2026-05）：nccgroup.com/media/jtepwx1t/nccgroup_codingagentswhitepaper.pdf
 - 供应链工具生态：github.com/homeofe/supply-chain-guard；appsecsanta.com/sca-tools/supply-chain-security-tools；minimus.io/post/software-supply-chain-security-tools
 - AI SRE agent 勒索软件（Straikerai/STAR Labs）：nhimg.org/articles/prompt-injection-turned-an-ai-sre-agent-into-ransomware/
+
+---
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]

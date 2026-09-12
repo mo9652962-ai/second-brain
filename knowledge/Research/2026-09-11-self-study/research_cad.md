@@ -206,3 +206,6 @@ AI 提示词 ──▶ Zoo Zookeeper / AdamCAD 初稿 → 人工定稿
 - 切片：printago.io/orca-slicer-cli-reference（35k+ 次实战）；OrcaSlicer PR #14161（SliceCore/orca-server）；escalopa/orcaslicer-api；PrusaSlicer DeepWiki CLI
 - ECAD-MCAD：easyw/kicadStepUpMod；pcbsync.com/kicad-3d-integration；luisllamas.es（KiCad 10 STEP 库）
 - 本机实测：FreeCAD 1.1.1 freecadcmd 建体+STEP/STL 导出+Assembly 模块导入 ✅（2026-09-12）
+
+---
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]

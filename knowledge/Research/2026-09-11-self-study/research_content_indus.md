@@ -189,3 +189,6 @@
 - 腾讯云/火山开发者社区：edge-tts+PIL+ffmpeg 零积分流水线、Codex+HyperFrames 端到端实测、剪映草稿 JSON 生成（单条 8 分钟/0.05 元）
 - 蝉妈妈：《星图商单报价怎么定？粉丝画像溢价法》（2026）
 - CutFast / Genra / 海螺社：3 秒钩子框架（2026）
+
+---
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]
