@@ -1,15 +1,14 @@
 ---
 tags: [cron-health, dashboard]
-updated: 2026-09-12 12:00
+updated: 2026-09-12 16:00
 ---
 
-# Cron 健康看板 — 2026-09-12 12:00
+# Cron 健康看板 — 2026-09-12 16:00
 
-总任务数: 44
+总任务数: 43
 
 | ⚪ | AI测评周报                         | 0 8 * * 1       |  |
 | ⚪ | GitHub 宝藏挖掘                    | 30 12 * * 0     |  |
-| ⚪ | TencentDB Agent Memory 两周复核    | once at 2026-09-05 09:00 |  |
 | ⚪ | api-media-weekly-probe         | 15 10 * * 1     |  |
 | ⚪ | arxiv-fetch                    | 30 6 * * *      |  |
 | ⚪ | arxiv-summarize                | 0 13 * * 0      |  |
@@ -52,14 +51,14 @@ updated: 2026-09-12 12:00
 | ⚪ | 闲鱼提醒                           | 30 7 * * 1-5    |  |
 | ⚪ | 项目追踪                           | 0 21 * * *      |  |
 
-✅ 0 正常  ❌ 0 错误  ⚪ 44 从未执行
+✅ 0 正常  ❌ 0 错误  ⚪ 43 从未执行
 
 ## 🌐 网络健康指数 (🟡)
 
 亚健康 — 1/3 不可达
 
-连通率: 67% | 平均延迟: 204ms
+连通率: 67% | 平均延迟: 276ms
 
   ❌ opencode-go: <urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE
-  🟡 siliconflow: HTTP 401 (251ms, reachable)
-  🟡 deepseek: HTTP 401 (157ms, reachable)
+  🟡 siliconflow: HTTP 401 (336ms, reachable)
+  🟡 deepseek: HTTP 401 (216ms, reachable)
