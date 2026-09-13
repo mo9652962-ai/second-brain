@@ -180,6 +180,15 @@ PPT 设计(PPT-Design)
     = learn → research → apply 落地闭环
 ```
 
+### 场景十三：多 agent 十领域自我强化（W38 新增）
+
+```
+三 bot 协作(研究员/编码员/审核员)
+    + 十领域并行千轮研究(knowledge/Research/2026-09-11-self-study/)
+    + 落地看板(@coder / @sora 分工)
+    = PCB/变现/墨题AI/内容工业化/边缘AI/CAD/Web/AI安全/自举 全域覆盖
+```
+
 ---
 
 ## 📊 关联矩阵
