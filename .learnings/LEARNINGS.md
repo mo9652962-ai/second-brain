@@ -106,3 +106,68 @@ Pattern-Key: insight.persistent-agent-2026
 Recurrence-Count: 1
 First-Seen: 2026-09-07
 Last-Seen: 2026-09-07
+
+---
+
+## [LRN-20260913-001] insight
+
+**Logged**: 2026-09-13T08:00:00+08:00
+**Priority**: high
+**Status**: completed
+**Area**: architecture
+
+### Summary
+Graph Engineering 确立为 2026 主流范式：多阶段并行执行 + 精确反馈路由取代串行循环，Codex Remote Sessions 为 OpenClaw 实践实证。
+
+### Details
+1. **演进时间线**: Context Engineering (mid-2025) → Loop Engineering (June 2026, Addy Osmani) → Graph Engineering (July 2026, Peter Steinberger/@steipete)
+2. **核心差异**: Loop 串行循环 vs Graph 多阶段并行 + 精确反馈路由（非全循环回退）
+3. **社区验证**: steipete 7/18 推文获 2.9M 浏览，48h 内产生 3 个竞争定义 + 虚假 Stanford 研究
+4. **实践共识** (Eugeniu Ghelbur): small typed core + cheap indexing + hybrid retrieval + temporal supersession — 全部可在 markdown 文件上实现
+5. **OpenClaw 实证**: Codex Remote Sessions (2026.7.2 beta) = 分布式 Agent 执行（桌面⇄节点⇄云 worker），即 Graph Engineering 的 OpenClaw 实践
+
+### Suggested Action
+- 设计多 Agent 工作流时优先采用图结构编排（Supervisor/Mesh/Marketplace 模式）
+- 利用 OpenClaw subagent + sessions_spawn 实现并行阶段 + 精确反馈路由
+- 关注 LangGraph node caching / deferred nodes / pre-post model hooks 生产原语
+
+### Metadata
+Source: tavily_search + self-improvement cron
+Tags: graph-engineering, loop-engineering, multi-agent, codex-remote-sessions, openclaw
+Pattern-Key: architecture.graph-engineering-2026
+Recurrence-Count: 1
+First-Seen: 2026-09-13
+Last-Seen: 2026-09-13
+
+---
+
+## [LRN-20260913-002] insight
+
+**Logged**: 2026-09-13T08:00:00+08:00
+**Priority**: high
+**Status**: completed
+**Area**: memory
+
+### Summary
+记忆系统的「生命周期管理」（提取/更新/删除）比单纯存储更关键：陈旧记忆会主动降低智能体输出质量，向量检索 + 图遍历混合架构成标配。
+
+### Details
+1. **记忆四类型**: 短期(工作记忆/会话级) + 情景记忆(事件历史) + 语义记忆(事实/偏好/规则) + 程序记忆(技能/工作流)
+2. **超越向量相似度**: 图记忆通过实体和关系检索事实，Mem0/Letta/Cognee/Zep 等 10+ 框架成熟
+3. **新兴架构**: 分层系统、多智能体共享记忆、情感/上下文感知记忆
+4. **生命周期三步曲**: Extract（提取）→ Update（更新/合并/去重）→ Delete（删除陈旧/矛盾），缺一不可
+5. **陈旧记忆毒性**: 过时偏好、错误事实、冲突规则会主动污染推理，比无记忆更坏
+6. **我们的架构对标**: Hermes 内置 memory tool + Obsidian vault + GitHub 同步 + 三层记忆（当前工作→daily notes→MEMORY.md），已具备雏形，需强化 Update/Delete 机制
+
+### Suggested Action
+- 在 cron/heartbeat 中引入定期「记忆清理」步骤：检测矛盾/过时条目并标记或归档
+- 评估引入图记忆组件（Mem0/Letta/Cognee）作为 Hermes memory tool 补充
+- 将「记忆生命周期管理」纳入 System Engineering Observability 支柱的监控指标
+
+### Metadata
+Source: tavily_search + self-improvement cron
+Tags: memory-lifecycle, graph-memory, memory-architecture, agent-memory, mem0-letta
+Pattern-Key: memory.lifecycle-management
+Recurrence-Count: 1
+First-Seen: 2026-09-13
+Last-Seen: 2026-09-13
