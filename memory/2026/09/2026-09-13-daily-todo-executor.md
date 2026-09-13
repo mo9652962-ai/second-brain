@@ -36,8 +36,8 @@ updated: 2026-09-13
 - 顺手治理：`.obsidian/plugins/` 第三方产物 18 文件 `git rm -r --cached` + gitignore（本地保留不推送）
 
 ### 4. 🔐 隐私脱敏 2 处（gate 扫描发现）
-- `knowledge/Research/2026-09-11-self-study/research_moti_ai.md:194` 真实路径 `C:\Users\31954\...` → 相对路径
-- `scripts/assert_state_consistency.py:11` 硬编码 `C:\Users\31954\...` → `__file__` 相对定位
+- `knowledge/Research/2026-09-11-self-study/research_moti_ai.md:194` 真实本机路径（`C:\Users\<user>\...`）→ 相对路径
+- `scripts/assert_state_consistency.py:11` 硬编码本机路径（`C:\Users\<user>\...`）→ `__file__` 相对定位
 - 复扫：真实路径/身份命中 **0**；剩余 13 处全部为教程示例/数字误报（π=手机号、pip hash=手机号、192.168 教学例）
 
 ### 5. 📝 知识卡行动项处理（16 项）
