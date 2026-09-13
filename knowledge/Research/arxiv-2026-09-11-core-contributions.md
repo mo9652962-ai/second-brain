@@ -184,3 +184,6 @@ BenchShield Trajectories（456 人工裁决：31,000+ 公开运行 × Terminal-B
 - 新观察：**fetch 推荐清单质量是 summarize 成本的决定变量**——fetch 输出含「🟢 待深读」标记时（本次 T1/BenchShield/MCP 三篇直接点名），summarize 无需重扫全池，直接消费清单即可；09-06 已记录该信号，本次再次验证。后续可考虑把「fetch 推荐清单」升级为 fetch→summarize 的正式接口字段
 
 *本总结由 arxiv-summarize cron 自动生成（2026-09-13），选文/数字基于速览 + web_search 双源交叉验证。*
+
+---
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]
