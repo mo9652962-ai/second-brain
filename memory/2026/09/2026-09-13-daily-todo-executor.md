@@ -101,3 +101,6 @@ updated: 2026-09-13
 - 报告：`memory/2026/09/2026-09-13-daily-review.md` / `2026-09-13-suggestions-applied.md` / `2026-09-12-reflection.md`
 - 权威计数：`projects/state.yaml`（41，PENDING）
 - 追踪器：`projects/current.md`
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

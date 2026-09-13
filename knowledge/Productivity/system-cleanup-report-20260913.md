@@ -35,3 +35,6 @@
 - 回收站残留 538.7M：重启持有进程（Edge/下载工具）后再次 Clear-RecycleBin + 手动 Remove-Item
 - 休眠文件：`powercfg /h off` 可腾 ~12G，代价是关休眠/快速启动——需 sora 确认后执行
 - 本轮释放量较小（1.6G vs 上次 7G），说明 Temp/缓存类堆积已处于低位；后续若 C 盘继续紧张，走技能第 9 节「不反弹底层优化」（DISM 清 WinSxS / 个人文件夹转 D 盘 / 组策略锁服务）
+
+---
+> 🗺️ 属于 [[MOC-Productivity]] · [[Home|🏠 Home]]
