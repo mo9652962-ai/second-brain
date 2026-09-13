@@ -30,11 +30,11 @@ subject: 2026-09-12
 | 1 | ✅ 计数收敛唯一写方改造 | ✅ **闭环** | state.yaml 41（9/12 周六无推进 = 唯一写方规则生效，不再漂移）；assert 门禁 9/11 已三连 PASS |
 | 2 | 🔴 闲鱼试水决策（sora） | ❌ 未决策 | 悬置**第 41 天**（state.yaml 权威值）；素材第 18 次核验 PASS |
 | 3 | 🔴 XAI key 重生成 + FAL 充值（sora） | ❌ 未做 | health 09-12 确认 XAI `Incorrect API key` / FAL `TOP_UP` / SiliconFlow 402 三路生图全断；**周一 10:15 探活前硬线** |
-| 4 | 🟡 deterministic_verify 双核验 | ❌ 未闭环 | 9/12 executor 待办 `- [ ]`（9/8、9/9 反思项延续） |
-| 5 | 🟡 隐私门禁扩展 .dreams | ❌ 未闭环 | 9/12 executor 待办 `- [ ]` |
+| 4 | 🟡 deterministic_verify 双核验 | ✅ **闭环（9/13 executor）** | 脚本加 verify_exec_status 执行状态核验；实测抓出 arxiv-fetch ok-无产物异常 |
+| 5 | 🟡 隐私门禁扩展 .dreams | ✅ **闭环（9/13 executor）** | gate 脚本加 FORBIDDEN_TRACKED 检查 + .dreams skip；顺手脱敏真实路径 2 处 |
 | 6 | 🟢 三 bot 协作第一单 | ⏳ 等 sora 定目标 | researcher/coder/reviewer 已就位，PCB 自动化方向待具体目标 |
 | 7 | 🟡 09-10 缺档补位三连 | ✅ **闭环** | 9/12 20:13 commit `42d6a4b`：4 连（09-10 三连 + 09-11-reflection）+ HOME 补链 5 条 |
-| 8 | 🟡 09-12 config 坏窗口产物缺口 | ❌ 未闭环 | arxiv-09-12 / hackernews-09-12 / cards-09-12 实测仍缺失（11:42 config 失败导致） |
+| 8 | 🟡 09-12 config 坏窗口产物缺口 | ⚠️ 确认仍缺、按补位规则登记 | arxiv-09-12/hackernews-09-12/cards-09-12 9/13 复核确实缺失；config 11:42 失败窗口产物不可再生，已按补位规则登记（arxiv 窗口跨日滚动覆盖，cards/hackernews 次日即过期） |
 
 **核查小结：8 项闭环 2 项（25%）**——计数收敛机制延续 + 缺档补位 4 连是实质闭环；sora 2 项未动（第 41 天 / 生图硬线逼近）；k 侧 3 项延续（deterministic_verify / 隐私门禁 / 产物缺口）。
 

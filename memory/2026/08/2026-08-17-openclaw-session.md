@@ -14,7 +14,7 @@
 - [x] ~~**P0 闲鱼上架决策闭环**~~ ✅ 已迁移至 projects/current.md + MEMORY.md 统一追踪（决策悬置第 21 天）
 - [x] ~~PCB 工具链实测（练手板试 ProtoFlow + DeepPCB，对比 KiCad 自动化）~~ ✅ 已完成 ✅ ProtoFlow→KiCad→DeepPCB→JLCPCB 工作流定案（8-17 实训）
 - [x] ~~语义缓存落地（治本 Tavily 配额第 3 次复发）~~ ✅ 8/21 真落地 ✅ commit `84d813bf2` 统一 chokepoint 覆盖全 8 后端
-- [ ] 《小君AI测评》测评文发布（初稿 ~1700 字已写，需选标题 + 配截图）→ ⏳ 需 sora：选标题 + 截图
+- [x] 《小君AI测评》测评文发布（初稿 ~1700 字已写，需选标题 + 配截图）→ ✅ 已在 projects/current.md L227 追踪（发布前需 sora 选标题+配截图，2026-09-13 复核）
 - [x] ~~Skill 合并 6 组（待 sora 确认）~~ ✅ 已迁移 projects/current.md L141 统一追踪（待 sora 确认）
 
 ## 关键配置/发现记录
