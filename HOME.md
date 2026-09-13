@@ -31,6 +31,7 @@ created: 2026-08-09
 
 ## 📋 项目与日志
 - [[memory/2026/09/weekly-2026-09-13|📚 W38 周度整理]] — 十领域自我强化批次 + 黑盒实证 + 评测意图隐藏规范 + memory 归位 6 文件
+- [[memory/2026/09/weekly-learning-2026-09-13|📚 W38 周学习回顾]] — 三 bot 十领域研究批次 + arXiv 解冻双窗口 + 评测意图隐藏规范 + 开源实证
 - [[knowledge/Research/GitHub-Weekly-2026-09-08|🐙 GitHub-Weekly 09-08]] — codebase-memory-mcp / nanobot 等 Top5 宝藏挖掘
 - [[knowledge/Research/skill-audit-2026-09-08|📊 09-08 技能审计]] — 392 技能登记，本月实际使用 97
 - [[knowledge/Development/CAD自动化MCP参考-pascal-2026-09-08|🛠 CAD 自动化 MCP 参考]] — pascal/editor 31 个 MCP 语义工具实证
