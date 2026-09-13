@@ -161,3 +161,8 @@ tags: [meta, 知识库治理]
 - **空文件**：全仓库 0 字节 = 0，无需清理
 - **检测器盲区记录**：knowledge-lint.py 的 frontmatter 检测 `startswith("---")` 无法识别闭合符缺失（ecc/桂航类）；scan-vault-broken-links.py 旧版不剥离反引号（vault 版已修，lint 报 0）
 - **结果**：lint 断链 0 / 缺 frontmatter 0 / 孤立 0 / 短页 0；全仓库严格扫描剩 3 处设计内保留
+## [2026-09-13] lint | 每周例行体检
+
+- 断链 0 / 孤立 1 / 缺 frontmatter 0
+- 处理原则：只报告不自动修；新问题由 k 在下次会话处理
+

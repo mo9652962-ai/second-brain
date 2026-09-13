@@ -339,4 +339,10 @@ health_provider_check.py 统一走 127.0.0.1:7890 → 全 FAIL 为假警报
 - 根因仍未清除：需 sora 在物理机重启 FlClash（7890 端口监听但数据转发失效）→ 重启后观察 gateway 消息通道（QQ/微信）重连
 - 此待办为唯一需人工介入的阻塞点，k 无法自理，继续悬空高亮
 
+### Status Update (2026-09-13)
+- **self-improvement recurrence**: 连续第 6+ 次高亮（8/18→8/25→8/29→8/30→9/8→9/13）
+- 物理层单点故障未清除：软件层冗余已拉满（5路搜索、11级模型fallback、多供应商），仅网络出口代理需人工运维
+- 影响面：health_provider_check 持续假警报、QQ/微信消息通道疑似离线、cron/agent核心不受影响
+- 建议：sora 下次物理机操作时优先重启 FlClash 服务
+
 ---
