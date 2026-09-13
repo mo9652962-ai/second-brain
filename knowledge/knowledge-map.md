@@ -1109,10 +1109,24 @@ graph TD
 | META | [[knowledge/META/评测设计规范-意图隐藏-2026-09-09\|评测意图隐藏规范 09-09]] | 被测模型知道被测即改变行为（开战意愿 -13.43 实证），自建基准必遵守 |
 | Research | [[knowledge/Research/skill-audit-2026-09-08\|技能审计 09-08]] | 392 技能 / 本月使用 97 / TOP10 cron 自举闭环 + P0 过时技能清单 |
 | Research | [[knowledge/Research/GitHub-Weekly-2026-09-08\|GitHub 宝藏 09-08]] | codebase-memory-mcp / nanobot / code-review-graph 等 Top5 |
+| Research | [[knowledge/Research/GitHub-Weekly-2026-09-13-weekly-5projects\|GitHub 周榜 W38 weekly 09-13]] | context-mode / WeKnora / hyperframes / no-ai-slop 4 新面孔；archify 59.8k / OpenMAIC 36.2k 连榜更新（周报 [[../memory/2026/09/github-trending-w38|W38 周报]]） |
 | arXiv | arxiv-09-07/08/09/10/11 五期速览 | 09-10 索引解冻 1,749 篇 + 09-11 新窗口 441 篇零重叠；Agent 记忆/技能为焦点 |
 | Finance | 每日股票分析 09-08/09/11 | A 股盘后分析 ×3 期 |
 | cards | 5 张知识卡 | 记忆可移植性 / 黑盒实证 / eval 反应性 / Desert Ant 端侧 / AI 商业广告反面教材 |
 | Daily | HN 速览 ×5 | 09-07/08/09/10/13 |
+
+### 🆕 W38 GitHub Trending（weekly 口径，2026-09-13）
+
+> 脚本口径 Top5（codebase-memory-mcp/nanobot/chrome-devtools-mcp/TrendRadar/ruflo）全连榜无新面孔；weekly 增速榜 4 个真新增。周报见 [[../memory/2026/09/github-trending-w38|W38 GitHub 周报]] + [[knowledge/Research/GitHub-Weekly-2026-09-13-weekly-5projects|weekly 详情]]。
+
+| 项目 | ★ / 周Δ | 一句话定位 | 入库笔记 |
+|:--|:--|:--|:--|
+| **mksglu/context-mode** | 22.4k / +1,936 | 上下文窗口优化 MCP：沙箱工具输出 98% 减少 + FTS5 索引化不截断 + SQLite 会话记忆 + 17 平台路由 | [[knowledge/Dev/context-mode-context-window-2026-09-13]] |
+| **Tencent/WeKnora** | 22.7k / +1,168 | 腾讯开源 LLM 知识平台：RAG + ReAct Agent + 自维护 Wiki + 跨会话记忆（记忆按查询相关度排序，非重要性） | [[knowledge/AI/weknora-knowledge-platform-2026-09-13]] |
+| **heygen-com/hyperframes** | 49.3k / +5,124 | Write HTML. Render Video：确定性 MP4 渲染 + 20 agent skills 按需加载 + 组件注册表语义搜索 | [[knowledge/Content/hyperframes-html-to-video-2026-09-13]] |
+| **petergyang/no-ai-slop** | 8.7k / +1,307 | 20+ 模式规则化去 AI 味：检测举证不猜 + 保留个人声音，与 39 类检测互补 | [[knowledge/Creative/no-ai-slop-2026-09-13]] |
+
+**连榜更新**：archify 49.9k→59.8k（+10,442）· OpenMAIC 32.1k→36.2k（+4,417）· text-to-cad 12.3K→15.5K（CAD-Design）。
 
 ### 本周关键研究主题
 

@@ -9,7 +9,7 @@ status: active
 
 # Archify — 可验证的系统图 Agent Skill
 
-**49.9k★（W37 周榜增长王 +19,480）** · 把代码库或系统描述变成「可在聊天里直接打开」的交互式系统图。Agent Skill 形态，Node.js 渲染 + 校验系统，兼容 Cursor / Claude Code / Codex CLI / OpenCode / DeepSeek Harness。
+**59.8k★（W37 周榜增长王 +19,480 → W38 连榜 +10,442，已更新 09-13）** · 把代码库或系统描述变成「可在聊天里直接打开」的交互式系统图。Agent Skill 形态，Node.js 渲染 + 校验系统，兼容 Cursor / Claude Code / Codex CLI / OpenCode / DeepSeek Harness。
 
 核心口号：**"Turn a codebase or system description into a polished, interactive system map — directly in chat."**
 

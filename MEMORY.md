@@ -149,6 +149,8 @@ v2026.3.7 引入的可插拔上下文管理界面已验证稳定。模型路由�
 - **OpenClaw 2.0 发布 (v2026.8.1)**: 简化安装流程，增强协作 Agent 能力，支持多 Agent 编排，符合 Graph Engineering 范式（见 Tavily 搜索结果 2026-09-05）。
 - **Local-First 与 Model-Agnostic 趋势**: 用户推动数据本地化和框架供应商独立性，OpenClaw 的多供应商 fallback 和自托管架构天然契合。
 - **编码 Agent 采用领跑**: Claude Code、Devin、Cursor 等成为开发者首选，推荐在技术任务中优先使用 coding agent skills.
+- **记忆生命周期管理 > 单纯存储 (2026-09)**: Extract→Update→Delete 三步曲缺一不可；陈旧记忆（过时偏好/错误事实/冲突规则）主动降低输出质量，比无记忆更坏；向量检索 + 图遍历混合架构成标配（Mem0/Letta/Cognee/Zep 10+ 框架）——对应我们的 Hermes memory + Obsidian + GitHub 三层需强化 Update/Delete（见 LRN-20260913-002）
+- **AI Agent 安全标准化进程 (2026-09)**: Mastercard/NIST/新加坡 IMDA 推动 Agentic AI 治理框架与全球协调标准；安全从「事后加固」升为「准入门槛」——SSRF deny + Secret egress binding + Webhook 认证限流 + RBAC 审批门 + 审计日志五控制点（见 LRN-20260913-001）
 
 ### Agentic Primitives > Glue Code (2026)
 InformationWeek 报告：企业从脆弱的手工胶水脚本转向标准化 Agent 原语。
@@ -256,12 +258,12 @@ _最后更新: 2026-08-30｜运行环境: OpenClaw Agent on Windows 11_
 <!-- openclaw-memory-promotion:memory:memory/2026-09-08.md:45:48 -->
 - .learnings/LEARNINGS.md 回顾: **计划-执行模式与异构架构**: 前沿模型处理复杂推理，中等模型处理任务陈述，小模型/SLM 处理简单执行（可节省 20-40% LLM 调用）; **从提示工程到系统工程**: 2026 年的重点转移到护栏（Guardrails）、反馈循环（Feedback Loops）和可观测性（Observability）; **OpenClaw 2.0 发布**: 简化安装和协作 Agent 能力，本地优先与模型不可知趋势; **持久智能体趋势**: 持久智能体作为 2026 年趋势崛起，使能更长工作流程和本地执行 [score=0.829 recalls=0 avg=0.620 source=memory/2026-09-08.md:45-48]
 <!-- openclaw-memory-promotion:memory:memory/2026-09-13.md:95:120 -->
-- **Graph Engineering 确立�?2026 主流范式**: 多阶段并行执�?+ 精确反馈路由取代串行循环；演进：Context Engineering (mid-2025) �?Loop Engineering (June 2026) �?Graph Engineering (July 2026)；OpenClaw 实证：Codex Remote Sessions = 分布�?Agent 执行（桌面⇄节点⇄云 worker）；实践共识：small typed core + cheap indexing + hybrid retrieval + temporal supersession [score=0.85 source=memory/2026-09-13.md]
+- **Graph Engineering 确立�?2026 主流范式**: 多阶段并行执�?+ 精确反馈路由取代串行循环；演进：Context Engineering (mid-2025) �?Loop Engineering (June 2026) �?Graph Engineering (July 2026)；OpenClaw 实证：Codex Remote Sessions = 分布�?Agent 执行（桌面⇄节点⇄云 worker）；实践共识：small typed core + cheap indexing + hybrid retrieval + temporal supersession [score=0.85 source=memory/2026-09-13.md]
 <!-- openclaw-memory-promotion:memory:memory/2026-09-13.md:121:145 -->
-- **记忆生命周期管理（提�?更新/删除）比单纯存储更关�?*: 陈旧记忆主动降低输出质量；四类记忆（短期/情景/语义/程序�? 向量检�?图遍历混合架构（Mem0/Letta/Cognee/Zep �?10+ 框架成熟）；我们的架构：Hermes memory tool + Obsidian vault + GitHub 同步 + 三层记忆，需强化 Update/Delete 机制 [score=0.85 source=memory/2026-09-13.md]
+- **记忆生命周期管理（提�?更新/删除）比单纯存储更关�?*: 陈旧记忆主动降低输出质量；四类记忆（短期/情景/语义/程序�? 向量检�?图遍历混合架构（Mem0/Letta/Cognee/Zep �?10+ 框架成熟）；我们的架构：Hermes memory tool + Obsidian vault + GitHub 同步 + 三层记忆，需强化 Update/Delete 机制 [score=0.85 source=memory/2026-09-13.md]
 <!-- openclaw-memory-promotion:memory:memory/2026-09-13.md:146:170 -->
-- **AI Agent 安全标准化进程加�?*: NIST (�? + IMDA 新加�?Model Governance Framework + Mastercard 倡议全球协调标准；OpenClaw Security 2026 五大控制点（Least-privilege tokens、RBAC 审批门控、沙箱工具运行时、提示注入防御、完整审计日志）+ SSRF deny + Secret egress host binding + Webhook throttling 具体�?[score=0.83 source=memory/2026-09-13.md]
+- **AI Agent 安全标准化进程加�?*: NIST (�? + IMDA 新加�?Model Governance Framework + Mastercard 倡议全球协调标准；OpenClaw Security 2026 五大控制点（Least-privilege tokens、RBAC 审批门控、沙箱工具运行时、提示注入防御、完整审计日志）+ SSRF deny + Secret egress host binding + Webhook throttling 具体�?[score=0.83 source=memory/2026-09-13.md]
 <!-- openclaw-memory-promotion:memory:memory/2026-09-13.md:171:195 -->
-- **Gartner 2026-08 预测**: AI 推理成本�?2028 �?agentic workflow 增超 5 �?—�?成本控制升为「生存项」；直接背书 Plan-and-Execute 90% 降本 + cheap-model tiering + 语义缓存 20-40% 节省构成的低成本护城�?[score=0.88 source=memory/2026-09-13.md]
+- **Gartner 2026-08 预测**: AI 推理成本�?2028 �?agentic workflow 增超 5 �?—�?成本控制升为「生存项」；直接背书 Plan-and-Execute 90% 降本 + cheap-model tiering + 语义缓存 20-40% 节省构成的低成本护城�?[score=0.88 source=memory/2026-09-13.md]
 <!-- openclaw-memory-promotion:memory:memory/2026-09-13.md:196:210 -->
-- **EU AI Act 8月生�?*: �?Agent 编排归类 high-risk，需 HITL+审计+身份管理；CrewAI 44.3K stars/5.2M 月下载最活跃；AutoGen 合并�?Microsoft Agent Framework 进入维护模式 [score=0.82 source=memory/2026-09-13.md]
+- **EU AI Act 8月生�?*: �?Agent 编排归类 high-risk，需 HITL+审计+身份管理；CrewAI 44.3K stars/5.2M 月下载最活跃；AutoGen 合并�?Microsoft Agent Framework 进入维护模式 [score=0.82 source=memory/2026-09-13.md]

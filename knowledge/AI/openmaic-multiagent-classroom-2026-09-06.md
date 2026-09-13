@@ -9,7 +9,7 @@ status: active
 
 # OpenMAIC — 清华多 Agent 交互课堂
 
-**32.1k★（本周 +10,109）** · Open Multi-Agent Interactive Classroom——一键获得沉浸式多 agent 学习体验（清华 MAIC）。TypeScript 94.9%，MIT（部分子包 LGPL/pptxgenjs MIT），517 commits · 102 contributors · v1.0.0（08-27），极活跃（提交以分钟计）。
+**36.2k★（W37 +10,109 → W38 连榜 +4,417，已更新 09-13）** · Open Multi-Agent Interactive Classroom——一键获得沉浸式多 agent 学习体验（清华 MAIC）。TypeScript 94.9%，MIT（部分子包 LGPL/pptxgenjs MIT），517 commits · 102 contributors · v1.0.0（08-27），极活跃（提交以分钟计）。
 
 ## 核心特征
 
