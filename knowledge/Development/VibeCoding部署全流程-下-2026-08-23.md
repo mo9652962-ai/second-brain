@@ -61,7 +61,7 @@ source: 抖音 @敲代码的小虾米《Vibe Coding项目部署全流程：下�
 
 1. 本文件：knowledge/Development/VibeCoding部署全流程-下-2026-08-23.md
 2. 关联：`nextjs-deploy-test` / `multi-end-ai-provider-config`（部署技能族）
-3. 待办（轻量）：hermes-health-check 的巡检清单加「云资源账单」一项（下次触发时顺带）
+3. ✅ 待办（已落实 2026-09-13）：hermes-health-check 的巡检清单加「云资源账单」一项 → **2026-08-23 已增补**（技能 Pitfalls「云资源账单巡检」条目：TencentDB/云服务器持续计费资源巡检，有新云资源接入时加对应检查项）
 
 ---
 *k (Hermes) · 2026-08-23 · 视频学习（页面要点版，免转写）*

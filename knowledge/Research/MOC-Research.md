@@ -340,6 +340,8 @@ updated: 2026-09-12
 - [[graphify-weekly-2026-09-06]]
 - [[GitHub-Weekly-2026-09-08]]
 - [[arxiv-2026-09-10-agent-llm]]
+- [[arxiv-2026-09-11-core-contributions]] — 精选 3 篇（T1 Terminal Agent RL / BenchShield / MCP Registry 普查）
+- [[arxiv-2026-09-11-agent-llm]] — 速览 20 主 + 12 简评（09-11 新窗口）
 
 ## 🧭 入口治理
 

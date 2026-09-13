@@ -257,3 +257,7 @@ source: arxiv.org list pages + abs pages（09-11 新窗口正常速览）
 
 ---
 > 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]
+
+---
+状态：reading → **processed**（2026-09-13 arxiv-summarize）
+**已处理：** 3 篇精选 → [[arxiv-2026-09-11-core-contributions]]（T1 Terminal Agent RL / BenchShield / MCP Registry 普查）

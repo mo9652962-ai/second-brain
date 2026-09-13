@@ -13,12 +13,14 @@ updated: 2026-08-31
 > GitHub 主题切片总入口：周报 / 趋势日榜 / 单项目研读 / 热榜深读 / 资源清单。
 > [[knowledge-map|🗺️ 知识地图]] · [[MOC-Research|🔬 Research MOC（父域）]] · [[MOC-Security|🛡️ Security MOC]]
 
-**共 47 篇相关笔记** · 最后更新：2026-09-06（W37 周精选 5 项入库）
+**共 52 篇相关笔记** · 最后更新：2026-09-13（W38 weekly 精选 4 项入库）
 
 ---
 
 ## 📅 周报系列（W31 起，每周一篇）
 
+- [[GitHub-Weekly-2026-09-13-weekly-5projects]] — W38 weekly：context-mode / WeKnora / hyperframes / no-ai-slop 4 新面孔（周报 [[../../memory/2026/09/github-trending-w38|W38 周报]]）
+- [[GitHub-Weekly-2026-09-13]] — W38 宝藏挖掘（脚本口径 Top5：codebase-memory-mcp / nanobot 等，全连榜）
 - [[GitHub-Weekly-2026-09-08]] — W38 宝藏挖掘：codebase-memory-mcp / nanobot 等 Top5
 - [[../../memory/2026/09/github-trending-w37|W37 周报]] — W37：archify 可验证图表 / ECC 250k harness / scientific-agent-skills 科研技能库 / OpenMAIC 多 Agent 课堂 / VoiceStudio 本地语音
 - [[GitHub-Weekly-2026-08-23]] — W35：ai-memory 跨 Agent 记忆 / llmfit 硬件×模型匹配（周报 [[../../memory/2026/08/github-trending-w35|W35 周报]]）
@@ -27,6 +29,13 @@ updated: 2026-08-31
 - [[GitHub-Weekly-2026-08-14]] — W33：自改进 RLM Agent 领跑（prime-agent +12k⭐）+ semantica / agent-skills / cloudflare-computer / switchyard
 - [[GitHub-Weekly-2026-08-09]] — W32 宝藏挖掘
 - [[GitHub-Weekly-2026-08-02]] — W31 宝藏挖掘
+
+## 🗓️ W38 周精选（2026-09-13，weekly 口径 4 项新面孔）
+
+- [[context-mode-context-window-2026-09-13]] — context-mode 22.4k：上下文窗口优化 MCP（沙箱工具输出 98% 减少 + FTS5 索引化不截断 + 会话记忆 + 17 平台路由）
+- [[weknora-knowledge-platform-2026-09-13]] — WeKnora 22.7k：腾讯开源知识平台（RAG + ReAct Agent + 自维护 Wiki + 跨会话记忆，记忆按查询相关度排序）
+- [[hyperframes-html-to-video-2026-09-13]] — HyperFrames 49.3k：HTML→确定性 MP4（20 agent skills 按需加载，HeyGen 开源）
+- [[no-ai-slop-2026-09-13]] — no-ai-slop 8.7k：20+ 模式规则化去 AI 味（检测举证不猜 + 保留个人声音）
 
 ## 🗓️ W37 周精选（2026-09-06，周榜 5 项）
 
