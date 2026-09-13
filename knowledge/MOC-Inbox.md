@@ -36,6 +36,7 @@ source: scripts/vault-orphan-duplicate-scan.py
 - [[knowledge/AI/数模5-Skill工作流-2026-08-23]]
 
 - [[knowledge/Content/抖音AI博主千轮研究-2026-09-03]]
+- [[knowledge/Content/竞品对标-AI商业广告接单教程]] — AI 商业广告接单反面教材（09-13，冷启动 4 赞）
 ## 🗄️ Archive
 
 - 

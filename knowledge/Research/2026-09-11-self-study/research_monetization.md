@@ -1,3 +1,12 @@
+---
+title: "AI服务变现运营-千轮研究-2026-09"
+type: note
+domain: Research
+status: active
+tags: [knowledge/research, 千轮研究, 变现, 闲鱼]
+date: 2026-09-12
+---
+
 # AI 服务变现运营 · 千轮研究报告（2026-09）
 
 > 调研对象：闲鱼 AI 服务市场（论文/降重降AI率/PPT/PCB），面向 sora 的闲鱼变现业务（论文 30/150/300/月卡400、作业 35-40、PPT 30-80、PCB 50-800；主平台抖音「sora做实事」）

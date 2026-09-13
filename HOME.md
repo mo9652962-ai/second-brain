@@ -7,7 +7,7 @@ created: 2026-08-09
 # 🏠 Home — 第二大脑入口
 
 > **知识网络从这里开始。** 每个知识域一个 MOC 锚点，全部双向链接。
-> 最后更新: 2026-09-12 (daily-review)
+> 最后更新: 2026-09-13 (daily-reflection)
 
 ---
 
@@ -30,6 +30,8 @@ created: 2026-08-09
 | 📈 生产力 | [[MOC-Productivity]] | 工作流、变现、闲鱼 |
 
 ## 📋 项目与日志
+- [[memory/2026/09/weekly-2026-09-13|📚 W38 周度整理]] — 十领域自我强化批次 + 黑盒实证 + 评测意图隐藏规范 + memory 归位 6 文件
+- [[memory/2026/09/weekly-learning-2026-09-13|📚 W38 周学习回顾]] — 三 bot 十领域研究批次 + arXiv 解冻双窗口 + 评测意图隐藏规范 + 开源实证
 - [[knowledge/Research/GitHub-Weekly-2026-09-08|🐙 GitHub-Weekly 09-08]] — codebase-memory-mcp / nanobot 等 Top5 宝藏挖掘
 - [[knowledge/Research/skill-audit-2026-09-08|📊 09-08 技能审计]] — 392 技能登记，本月实际使用 97
 - [[knowledge/Development/CAD自动化MCP参考-pascal-2026-09-08|🛠 CAD 自动化 MCP 参考]] — pascal/editor 31 个 MCP 语义工具实证
@@ -39,9 +41,12 @@ created: 2026-08-09
 - [[memory/2026/09/2026-09-08-vault-suggestion-executor|🧹 09-08 闲鱼专项建议执行报告]] — 闲鱼决策悬置第 39 天（连续顺延 30+ 天）+ 触达 cron 复核健康 + 今日 3 项优先级计划
 - [[memory/2026/09/2026-09-09-vault-suggestion-executor|🧹 09-09 闲鱼专项建议执行报告]]
 - [[memory/2026/09/2026-09-10-vault-suggestion-executor|🧹 09-10 闲鱼专项建议执行报告]] — 闲鱼决策悬置第 41 天（连续顺延 30+ 天）+ 触达 cron 复核健康 + 今日 3 项优先级计划 — 闲鱼决策悬置第 40 天（连续顺延 30+ 天）+ current.md 推进 + HOME.md 补链修复 + 今日 3 项优先级计划
+- [[memory/2026/09/2026-09-13-suggestions-applied|🧹 09-13 建议落实]] — 落实 5 项：systematic-debugging 加数模案例 + skill-vetter 加 SkillSpector 初筛 + VibeCoding 待办标记 + MEMORY.md 记忆推广 2 条 + 闲鱼推进第 44 天；断链复查 100 条（references/research 误报确认）
+- [[memory/2026/09/2026-09-13-daily-review|📋 09-13 每日回顾]] — Top5：抖音竞品反面教材 / hyperframes / no-ai-slop / context-mode / WeKnora；明日：闲鱼决策第 44 天 + 生图硬线 10:15
 - [[memory/2026/09/2026-09-11|📅 09-11 每日工作记录]] — 三 bot 协作启动 + 健康巡检 4 待处理
 - [[memory/2026/09/2026-09-11-daily-review|📋 09-11 每日知识回顾]] — 三 bot 协作流水线启动 / 闲鱼素材第 18 次核验 / state.yaml 落地
 - [[memory/2026/09/2026-09-12-daily-review|📋 09-12 每日知识回顾]] — 十领域千轮研究批次落盘（变现/PCB/墨题/内容工业化）/ config.yaml 自愈 / 闲鱼第 41 天 PENDING
+- [[memory/2026/09/2026-09-12-reflection|🔍 反思 09-12]] — 十领域批次落盘 + config.yaml C4 固化 + 缺档补位 4 连闭环 + 3 改进点当场落地
 - [[memory/2026/09/2026-09-10|📅 09-10 每日工作记录（补位）]] — arXiv 解冻速览 22+16 篇 + Desert Ant 卡 + 4 个周日任务 pin 修复 + 闲鱼第 41 天（09-12 补位重建）
 - [[memory/2026/09/2026-09-10-reflection|🔍 反思 09-10（补位）]] — 解冻速览日 + 预防性 pin 修复；3 改进点：产出型缺档兜底 / 坏 pin 周前检查 / 大窗口速览节奏（09-12 补位重建）
 - [[memory/2026/09/2026-09-10-daily-todo-executor|🧹 09-10 每日待办落实（补位）]] — 闲鱼第 41 天推进 + 4 周日任务 pin 修复 + arXiv 速览（09-12 补位重建）
@@ -127,6 +132,7 @@ created: 2026-08-09
 - [[knowledge/Research/arxiv-2026-09-06-agent-llm|arXiv 补全速览]] — 15+9 篇 AI Agent/LLM 论文（09-06 索引续冻结补录同池漏网：Harness Engineering 解剖 11 系统含 Hermes/OpenClaw / Delegation Without Trust 委派授权 / Persistent Agents 跨运行时记忆 / AgentProv 行为指纹审计）
 - [[knowledge/Research/arxiv-2026-09-07-agent-llm|arXiv 今日速览]] — 22+10 篇 AI Agent/LLM 论文（09-07 新窗口索引解冻：Multi-Harness RL credit assignment / HackProbe reward hacking 监视器 / 记忆可移植性 / CoSkill+Trace2Tower 技能演化四连 / CONTINUITY 安全契约）
 - [[knowledge/Research/arxiv-2026-09-10-agent-llm|arXiv 今日速览]] — 22+16 篇 AI Agent/LLM 论文（09-10 索引解冻新窗口 09-09+09-10 共 1,749 篇：Agent 记忆工程化四连 / 技能供应链安全 / 评测去脚手架 / 320B MoE 对齐脆弱性）
+- [[knowledge/Research/arxiv-2026-09-11-agent-llm|arXiv 今日速览]] — 20+12 篇 AI Agent/LLM 论文（09-11 新窗口 441 篇：记忆策展主动验证 / 验证器可靠性形式化 / MCP 生态 48.8% 存活实证 / T1 终端 Agent RL 64.0%）
 
 ## 🧭 核心区域
 - [[memory/2026/08/2026-08-19-reflection|🔍 08-19 反思]] — 行动项 3/3 未落地（反思≠执行第 3 次复发）；Tavily 第 6 次复发；SRC 三方向收敛为补天聚焦 · scripts 登记表当场补建
