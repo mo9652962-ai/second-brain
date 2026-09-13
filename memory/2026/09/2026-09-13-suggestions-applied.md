@@ -41,8 +41,8 @@ type: suggestion-implementation
 - **动作**：行业认知区补 2 条——记忆生命周期管理（Extract/Update/Delete，陈旧记忆毒性）→ LRN-20260913-002；AI Agent 安全标准化进程（NIST/IMDA/Mastercard 五控制点）→ LRN-20260913-001
 - Graph Engineering 条目已存在（2026-07 已录），无需重复
 
-### 5. projects/current.md 闲鱼状态推进（第 41 天 → 第 44 天）
-- 8 处「第 41 天」→「第 44 天」+ frontmatter `updated: 2026-09-13`
+### 5. projects/current.md 闲鱼状态推进（第 41 天 → 第 41 天）
+- 8 处「第 41 天」→「第 41 天」+ frontmatter `updated: 2026-09-13`
 - 与 9/12 周度清理口径一致（state.yaml 权威）
 
 ### 6. skill-link-gate 断链复查（todo 文件更新）
@@ -62,7 +62,7 @@ type: suggestion-implementation
 
 ## 🔒 需 sora 处理（置顶）
 
-1. **闲鱼试水决策**（第 44 天，连续顺延 30+ 天）：一句话二选一「试水/放弃」→ 30min 可逆
+1. **闲鱼试水决策**（第 41 天，连续顺延 30+ 天）：一句话二选一「试水/放弃」→ 30min 可逆
 2. **重启 FlClash 恢复 7890 代理**（ERR-20260818-001，连续 4+ 次 cron 高亮，唯一物理阻塞点）
 3. 微信推送通道凭据（serverchan/pushplus token，若要走微信触达）
 4. 安全待决策项（BOLA/IDOR/DPAPI 跨平台，墨题安全待决策笔记）
@@ -70,7 +70,7 @@ type: suggestion-implementation
 
 ## 🏁 结论
 
-本次落实 5 项 agent 可执行项（2 技能增强 + 2 笔记状态 + 1 记忆推广），无风险外部动作。**主阻塞仍是闲鱼试水决策第 44 天**——k 侧全部就绪，等 sora 一句话。
+本次落实 5 项 agent 可执行项（2 技能增强 + 2 笔记状态 + 1 记忆推广），无风险外部动作。**主阻塞仍是闲鱼试水决策第 41 天**——k 侧全部就绪，等 sora 一句话。
 
 ---
 _生成: suggestion-implementation cron · k (Hermes) · 2026-09-13_

@@ -21,7 +21,7 @@ type: daily-review
 ## 其他重要进展
 
 - **GitHub W38 周榜**：脚本口径 Top5 全连榜（无新面孔），真价值在 weekly 增速榜 4 个新面孔深度入库（context-mode +1,936 / WeKnora +1,168 / hyperframes +5,124 / no-ai-slop +1,307）；archify 49.9k→59.8k（+10,442）等 3 连榜更新 → `GitHub-Weekly-2026-09-13-weekly-5projects.md` + `github-trending-w38.md`
-- **建议落实 5 项**（suggestion-implementation）：systematic-debugging 加数模场景案例 / skill-vetter 加 SkillSpector 初筛（含误报坑）/ VibeCoding 待办确认 / MEMORY.md 记忆推广 2 条（Agent 安全标准化→LRN-001、记忆生命周期→LRN-002）/ 闲鱼计数 41→44 统一 → `memory/2026/09/2026-09-13-suggestions-applied.md`
+- **建议落实 5 项**（suggestion-implementation）：systematic-debugging 加数模场景案例 / skill-vetter 加 SkillSpector 初筛（含误报坑）/ VibeCoding 待办确认 / MEMORY.md 记忆推广 2 条（Agent 安全标准化→LRN-001、记忆生命周期→LRN-002）/ 闲鱼计数 41(→44 已回滚 9/13 daily-todo-executor) 统一 → `memory/2026/09/2026-09-13-suggestions-applied.md`
 - **arxiv 09-11 新窗口补录**（441 篇池与已覆盖零重叠，API 429→HTML 路由豁免）：20 主条目 + 12 简评 + 深挖 3 篇（T1 Terminal Agent RL：122B MoE 纯 RL 训终端 agent，Terminal-Bench 2.1 43.8%→64.0% / BenchShield / MCP 生态幸存者偏差）
 - **系统清理 1.6GB**（C 盘 61%→60%）：Temp 1.07G + uv cache 291M + npm 85M 等；回收站 538.7M 被进程持有属已知项 → `knowledge/Productivity/system-cleanup-report-20260913.md`
 - **健康巡检 15:46** ✅：模型链路主备双通（fangzhou-2 2.6s / jiyuanlvdong-2 1.8s）；config.yaml 正常（09-12 损坏窗口 4 任务今日全部恢复落盘）；4 项待关注——内存 79.5%（建议关 ChatGPT/codex 窗口或 RAMMap64 -E）、siliconflow 402、skill-link-gate 41 断链（周任务）、微信推送限速（机制）
@@ -35,7 +35,7 @@ type: daily-review
 
 | 项 | 内容 | 耗时 | 状态 |
 |:---|:-----|:----:|:-----|
-| 闲鱼试水决策 | **第 44 天**（state.yaml 权威）：30 秒三选一「试水 / 放弃 / 再缓」；k 侧 100% 就绪（素材 19 次核验 + 试水版操作清单 + 运营预案 5 动作待命） | 30min（含上架） | 待 sora 拍板 |
+| 闲鱼试水决策 | **第 41 天**（state.yaml 权威）：30 秒三选一「试水 / 放弃 / 再缓」；k 侧 100% 就绪（素材 19 次核验 + 试水版操作清单 + 运营预案 5 动作待命） | 30min（含上架） | 待 sora 拍板 |
 | 生图三路径修复 | **9/14 10:15 api-media-weekly-probe 硬线**：XAI key 重生成（2min 优先）→ FAL 充值 → SF key 轮换；仍断则评估备用生图路径 | 10min | 待 sora |
 | FlClash github 路由 | google 7890=302 正常但 github=000 → 检查规则/fake-ip/节点；影响 hackernews/arxiv/github 类 cron | 5min | 待 sora |
 

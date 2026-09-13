@@ -36,8 +36,8 @@ status: fresh
 
 ## 行动项
 
-- [ ] **knowledge-lint 加固**：加 issue caps（每检测器上限防爆炸）+ severity 分级（critical/high/medium/low）——下次维护会话，触发器：knowledge-lint 使用 >2 次或周检报 NEEDS ATTENTION
-- [ ] **新检测项进 backlog**：stale_claim（引用的文件路径已不存在）+ uncited-claim（有 claim 无 sources）——优先级低，当前库健康，避免过度工程
+- [ ] **knowledge-lint 加固**：加 issue caps（每检测器上限防爆炸）+ severity 分级（critical/high/medium/low）→ ⏳ 触发器未达（knowledge-lint 使用 ≤2 次，09-13 复核仍 open，下次维护会话）
+- [ ] **新检测项进 backlog**：stale_claim（引用的文件路径已不存在）+ uncited-claim（有 claim 无 sources）→ ⏳ 低优先 backlog（2026-09-13 复核仍 open，当前库健康避免过度工程）
 - [x] **通用纪律**：以后报「发现问题 N 个」先自检检测器本身，附 TP/FP 拆解，再动手修 ✅ 已内化（9/5 knowledge-lint 2 检测器 bug 修复实践）
 
 ## 为什么重要
