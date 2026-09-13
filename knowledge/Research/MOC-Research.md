@@ -133,6 +133,7 @@ updated: 2026-09-12
 - [[knowledge/Research/arxiv-2026-09-09-agent-llm|arXiv Agent/LLM 09-09（09-07 池补全 11+8）]] · [[knowledge/Daily/hackernews-2026-09-09|HN 09-09]] · [[knowledge/cards/2026-09-09-eval-reactivity|知识卡片 09-09]]
 - [[knowledge/Daily/hackernews-2026-09-10|HN 09-10]] · [[knowledge/cards/2026-09-10-desert-ant-on-device|知识卡片 09-10]]
 - [[knowledge/Content/竞品对标-AI商业广告接单教程|竞品对标 09-13]] · [[knowledge/Daily/hackernews-2026-09-13|HN 09-13]] · [[knowledge/cards/2026-09-13-ai-commercial-ad-tutorial|知识卡片 09-13]]
+- [[knowledge/Research/arxiv-2026-09-11-agent-llm|arXiv Agent/LLM 09-11]] — 441 篇新窗口速览（20 主 + 12 简评）
 ## 文章研读
 
 - [[ai-literature-search-pitfalls-study]]
@@ -192,6 +193,7 @@ updated: 2026-09-12
 ## 千轮研究
 
 - [[知识库待办落实研究-2026-08-08]]
+- [[knowledge/Research/2026-09-11-self-study/INDEX|十领域自我强化研究 2026-09-11]] — PCB 自动化/变现运营/墨题 AI/内容工业化/边缘 AI/CAD/Web/AI 安全/自举系统（10 报告 + 落地看板）
 
 ## 周报
 
