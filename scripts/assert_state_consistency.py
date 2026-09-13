@@ -8,7 +8,7 @@
 import re, sys, pathlib
 from collections import Counter
 
-VAULT = pathlib.Path(r"C:\Users\31954\.openclaw\workspace")
+VAULT = pathlib.Path(__file__).resolve().parent.parent
 STATE = VAULT / "projects" / "state.yaml"
 CURRENT = VAULT / "projects" / "current.md"
 

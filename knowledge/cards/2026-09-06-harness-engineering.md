@@ -40,9 +40,9 @@ status: fresh
 
 ## 行动项
 
-- [ ] 通读论文 HTML 版（arxiv.org/html/2609.00006v1）29 个设计模式 → 对照自身 harness 配置做「用了/缺了」自查，缺口记入 projects/current.md
-- [ ] 把「SKILL.md 领先 MCP + 零框架零向量检索」写成 1 条抖音脚本/图文素材（sora 做实事「实战派 AI 自动化」定位高度契合）
-- [ ] 跟进 ACP + harness hosting 角色 → 与 EasyCLIProxyAPI 多 agent 接入路线对照，评估 OpenHands 式「CLI 当可互换后端」能否简化现有委派链
+- [ ] 通读论文 HTML 版（arxiv.org/html/2609.00006v1）29 个设计模式 → 对照自身 harness 配置做「用了/缺了」自查，缺口记入 projects/current.md → ⏳ 需专项研究会话（2026-09-13 复核仍 open）
+- [ ] 把「SKILL.md 领先 MCP + 零框架零向量检索」写成 1 条抖音脚本/图文素材（sora 做实事「实战派 AI 自动化」定位高度契合）→ ⏳ 内容选题待 sora 排期（2026-09-13 复核仍 open；已有 09-09 抖音脚本草稿待审校，先消化存量）
+- [ ] 跟进 ACP + harness hosting 角色 → 与 EasyCLIProxyAPI 多 agent 接入路线对照，评估 OpenHands 式「CLI 当可互换后端」能否简化现有委派链 → ⏳ 需专项研究会话（2026-09-13 复核仍 open）
 
 ## 为什么重要
 

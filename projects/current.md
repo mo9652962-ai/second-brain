@@ -1,6 +1,6 @@
 ---
 tags: [projects, active]
-updated: 2026-09-12
+updated: 2026-09-13
 ---
 
 # 当前项目状态
@@ -297,8 +297,8 @@ updated: 2026-09-12
 - 📌 上架后运营预案待命（2026-09-04 运营算法卡片 5 项行动）：回复提速（4 时段集中回复：9:30-10:30/15:00-16:00/20:00-22:00）、标题重写（核心词前 15 字）、擦亮节奏（咨询/收藏≥3 优先）、差异化迁移（PPT 垂直细分/项目报价）、鱼小铺暂缓（月成交未过万不开）——全部依赖试水拍板后触发
 ### 🧭 9/9 反思行动项（daily-reflection 复盘 9-08，执行者必读）
 - ✅ 计数收敛 state.yaml 唯一写方改造（硬截止 9/11）→ ✅ **2026-09-11 daily-todo-executor 闭环**：projects/state.yaml 权威推进 40→41 + assert 三连 PASS（见 Section 10）——9/5/7/8/9 四连漂移根治
-- 🟡 deterministic_verify 双核验（执行状态+产物；9/8、9/9 反思项，未闭环）→ 重新排期：由 daily-todo-executor 执行（health 误判归因：completed 但无产物，不放宽 glob）
-- 🟡 隐私门禁扩展 .dreams（9/8、9/9 反思项，未闭环）→ 重新排期：9/8 晚已做批量脱敏（60+ 会话语料移出仓库），扫描模式待补
+- ✅ deterministic_verify 双核验（执行状态+产物）→ ✅ **2026-09-13 daily-todo-executor 闭环**：脚本加 verify_exec_status（读 jobs.json last_run_at/last_status/last_error，与产物核验并列）；当日实测抓出 arxiv-fetch「状态 ok 但无 09-13 产物」真异常 + daily-todo-executor 未跑提示，不放宽 glob
+- ✅ 隐私门禁扩展 .dreams → ✅ **2026-09-13 daily-todo-executor 闭环**：github_privacy_gate.py 加 .dreams 到 SKIP_DIR_PARTS + FORBIDDEN_TRACKED_PREFIXES 前缀硬检查（.dreams/memory/.dreams/HEARTBEAT/.tmp 被跟踪即报）；实测 FORBIDDEN 0 命中（已在 gitignore）；顺手脱敏 research_moti_ai.md 真实路径 + assert_state_consistency.py 硬编码路径改 __file__ 相对
 - 🟡 千轮研究 Top 发现原文验证提醒（流程项）：9/9 web_extract 1/178（0.6%）触底教训，下次千轮研究固化时对关键数字 claim ≥1 次原文核对
 - 🔴 闲鱼试水决策（第 41 天，state.yaml 权威）→ 沿用 P0，见 🎯 闲鱼上架
 - 🟡 XAI key 重生成 + FAL 充值解锁（探活线）→ 沿用，见待用户操作

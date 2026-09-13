@@ -70,7 +70,7 @@ updated: 2026-09-04
 
 
 
-> 所有知识领域的索引与关联。最后更新: 2026-09-12（W37 周度整理：Vibe Coding/Agent 工作流 + 数模实证 + 量化交易入库 + memory 归位 + GitHub Trending 5 项入库）
+> 所有知识领域的索引与关联。最后更新: 2026-09-13（W38 周度整理：十领域自我强化批次 + 黑盒实证 + 评测意图隐藏规范 + memory 归位 6 文件 + GitHub/arXiv 入库）
 
 
 
@@ -1094,6 +1094,49 @@ graph TD
 ---
 
 
+
+## 🆕 W38 新增速览（2026-09-07 ~ 09-13）
+
+> 本周主线：三 bot 协作十领域自我强化千轮研究批次（PCB/变现/墨题/边缘AI/CAD/Web/AI安全/自举）+ 黑盒热榜 5 项目实证 + 评测意图隐藏规范 + 技能审计 + arXiv 双窗口速览。整理报告见 [[../memory/2026/09/weekly-2026-09-13|W38 周度整理]]。学习回顾见 [[../memory/2026/09/weekly-learning-2026-09-13|W38 学习回顾]]。
+
+### 各域本周新增
+
+| 域 | 新增 | 要点 |
+|:--|:--|:--|
+| Research | [[knowledge/Research/2026-09-11-self-study/INDEX\|十领域自我强化研究 09-11]] | 10 报告并行千轮研究：PCB DRC 门禁 / 变现三级火箭 / 墨题 AI 精讲 / 内容工业化图文快变现 / 边缘 AI 流水线 / CAD 双引擎 / Web16 安全基线 / AI 安全 P0 / 自举证据映射 |
+| Research | [[knowledge/Research/黑盒热榜5项目实证研究-2026-09-08\|黑盒热榜 5 项目实证 09-08]] | marketingskills 48.2k★ / DeerFlow 81.9k★ / pascal editor 22.4k★ MCP 语义工具层直接参考 / LunaTV 只借技术 / camofox 不引入 |
+| Development | [[knowledge/Development/CAD自动化MCP参考-pascal-2026-09-08\|CAD 自动化 MCP 参考 09-08]] | pascal/editor 31 MCP 语义工具 + headless Core 设计，CAD/PCB 自动化直接范本 |
+| META | [[knowledge/META/评测设计规范-意图隐藏-2026-09-09\|评测意图隐藏规范 09-09]] | 被测模型知道被测即改变行为（开战意愿 -13.43 实证），自建基准必遵守 |
+| Research | [[knowledge/Research/skill-audit-2026-09-08\|技能审计 09-08]] | 392 技能 / 本月使用 97 / TOP10 cron 自举闭环 + P0 过时技能清单 |
+| Research | [[knowledge/Research/GitHub-Weekly-2026-09-08\|GitHub 宝藏 09-08]] | codebase-memory-mcp / nanobot / code-review-graph 等 Top5 |
+| Research | [[knowledge/Research/GitHub-Weekly-2026-09-13-weekly-5projects\|GitHub 周榜 W38 weekly 09-13]] | context-mode / WeKnora / hyperframes / no-ai-slop 4 新面孔；archify 59.8k / OpenMAIC 36.2k 连榜更新（周报 [[../memory/2026/09/github-trending-w38|W38 周报]]） |
+| arXiv | arxiv-09-07/08/09/10/11 五期速览 | 09-10 索引解冻 1,749 篇 + 09-11 新窗口 441 篇零重叠；Agent 记忆/技能为焦点 |
+| Finance | 每日股票分析 09-08/09/11 | A 股盘后分析 ×3 期 |
+| cards | 5 张知识卡 | 记忆可移植性 / 黑盒实证 / eval 反应性 / Desert Ant 端侧 / AI 商业广告反面教材 |
+| Daily | HN 速览 ×5 | 09-07/08/09/10/13 |
+
+### 🆕 W38 GitHub Trending（weekly 口径，2026-09-13）
+
+> 脚本口径 Top5（codebase-memory-mcp/nanobot/chrome-devtools-mcp/TrendRadar/ruflo）全连榜无新面孔；weekly 增速榜 4 个真新增。周报见 [[../memory/2026/09/github-trending-w38|W38 GitHub 周报]] + [[knowledge/Research/GitHub-Weekly-2026-09-13-weekly-5projects|weekly 详情]]。
+
+| 项目 | ★ / 周Δ | 一句话定位 | 入库笔记 |
+|:--|:--|:--|:--|
+| **mksglu/context-mode** | 22.4k / +1,936 | 上下文窗口优化 MCP：沙箱工具输出 98% 减少 + FTS5 索引化不截断 + SQLite 会话记忆 + 17 平台路由 | [[knowledge/Dev/context-mode-context-window-2026-09-13]] |
+| **Tencent/WeKnora** | 22.7k / +1,168 | 腾讯开源 LLM 知识平台：RAG + ReAct Agent + 自维护 Wiki + 跨会话记忆（记忆按查询相关度排序，非重要性） | [[knowledge/AI/weknora-knowledge-platform-2026-09-13]] |
+| **heygen-com/hyperframes** | 49.3k / +5,124 | Write HTML. Render Video：确定性 MP4 渲染 + 20 agent skills 按需加载 + 组件注册表语义搜索 | [[knowledge/Content/hyperframes-html-to-video-2026-09-13]] |
+| **petergyang/no-ai-slop** | 8.7k / +1,307 | 20+ 模式规则化去 AI 味：检测举证不猜 + 保留个人声音，与 39 类检测互补 | [[knowledge/Creative/no-ai-slop-2026-09-13]] |
+
+**连榜更新**：archify 49.9k→59.8k（+10,442）· OpenMAIC 32.1k→36.2k（+4,417）· text-to-cad 12.3K→15.5K（CAD-Design）。
+
+### 本周关键研究主题
+
+1. **多 agent 协作 + 十领域并行研究成为常态** — 09-11 三 bot（研究员/编码员/审核员）协作启动，一次产出 10 份领域报告 + 落地看板；每份含「结论置顶 + 实证数据 + 可执行下一步」
+2. **「AI 技能库可测试化」信号强化** — marketingskills 的 evals.json 断言 + product-marketing 上下文原语（48.2k★ 核心原因），与 ai-cmo evals 思路同源
+3. **评测反应性成为质量门禁新维度** — 告诉模型在被评估即改变行为 + 意图隐藏规范落地，与 service-quality 评估器审计互补
+4. **CAD/PCB 自动化 MCP 化有现成范本** — pascal/editor「语义工具为主 + patch 兜底 + 校验闭环 + 人工交接点」设计可直接迁移 jlc-mcp/KiCad 自动化
+5. **arXiv 索引窗口解冻恢复常态速览** — 09-10 解冻 1,749 篇（22+16）→ 09-11 新窗口 441 篇零重叠，HTML list 页路由已验证可用
+
+---
 
 ## ① 💻 工程与开发
 

@@ -1,3 +1,12 @@
+---
+title: "AI安全与软件供应链安全-千轮研究-2026-09"
+type: note
+domain: Research
+status: active
+tags: [knowledge/research, 千轮研究, security, ai-agent]
+date: 2026-09-12
+---
+
 # AI 安全与软件供应链安全 千轮研究报告（2026）
 
 > 生成日期：2026-09-12 ｜ 研究方式：多轮 web_search + web_extract，优先官方文档与权威安全机构（OWASP / CISA / NSA / NIST / Microsoft / JFrog / Sonatype / Socket / MITRE）

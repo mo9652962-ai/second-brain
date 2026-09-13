@@ -5,7 +5,7 @@ type: moc
 domain: Research
 status: active
 created: 2026-08-09
-updated: 2026-09-12
+updated: 2026-09-13
 ---
 
 # 🔬 研究笔记 MOC — Research Map
@@ -13,7 +13,7 @@ updated: 2026-09-12
 > 所有研究笔记的索引与入口。自动按主题分组。
 > 回到 [[knowledge-map|🗺️ 知识地图]] · [[Home|🏠 Home]]
 
-**共 197 篇研究笔记** · 最后更新: 2026-09-12（每日增量索引）
+**共 201 篇研究笔记** · 最后更新: 2026-09-13（每日增量索引）
 
 
 ## 🆕 W34 新增补链（2026-08-16 周度整理）
@@ -132,6 +132,8 @@ updated: 2026-09-12
 - [[knowledge/Research/arxiv-2026-09-08-agent-llm|arXiv Agent/LLM 09-08（09-07 池补全 14+8）]] · [[knowledge/Research/黑盒热榜5项目实证研究-2026-09-08|黑盒热榜 5 项目实证 09-08]] · [[knowledge/cards/2026-09-08-heihe-top5-empirical|知识卡片 09-08]]
 - [[knowledge/Research/arxiv-2026-09-09-agent-llm|arXiv Agent/LLM 09-09（09-07 池补全 11+8）]] · [[knowledge/Daily/hackernews-2026-09-09|HN 09-09]] · [[knowledge/cards/2026-09-09-eval-reactivity|知识卡片 09-09]]
 - [[knowledge/Daily/hackernews-2026-09-10|HN 09-10]] · [[knowledge/cards/2026-09-10-desert-ant-on-device|知识卡片 09-10]]
+- [[knowledge/Content/竞品对标-AI商业广告接单教程|竞品对标 09-13]] · [[knowledge/Daily/hackernews-2026-09-13|HN 09-13]] · [[knowledge/cards/2026-09-13-ai-commercial-ad-tutorial|知识卡片 09-13]]
+- [[knowledge/Research/arxiv-2026-09-11-agent-llm|arXiv Agent/LLM 09-11]] — 441 篇新窗口速览（20 主 + 12 简评）
 ## 文章研读
 
 - [[ai-literature-search-pitfalls-study]]
@@ -191,6 +193,7 @@ updated: 2026-09-12
 ## 千轮研究
 
 - [[知识库待办落实研究-2026-08-08]]
+- [[knowledge/Research/2026-09-11-self-study/INDEX|十领域自我强化研究 2026-09-11]] — PCB 自动化/变现运营/墨题 AI/内容工业化/边缘 AI/CAD/Web/AI 安全/自举系统（10 报告 + 落地看板）
 
 ## 周报
 
@@ -337,6 +340,10 @@ updated: 2026-09-12
 - [[graphify-weekly-2026-09-06]]
 - [[GitHub-Weekly-2026-09-08]]
 - [[arxiv-2026-09-10-agent-llm]]
+- [[arxiv-2026-09-11-core-contributions]] — 精选 3 篇（T1 Terminal Agent RL / BenchShield / MCP Registry 普查）
+- [[arxiv-2026-09-11-agent-llm]] — 速览 20 主 + 12 简评（09-11 新窗口）
+- [[GitHub-Weekly-2026-09-13]]
+- [[GitHub-Weekly-2026-09-13-weekly-5projects]]
 
 ## 🧭 入口治理
 
