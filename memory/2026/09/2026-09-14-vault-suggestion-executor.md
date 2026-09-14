@@ -48,3 +48,6 @@ type: vault-suggestion-executor
 
 ---
 _生成: k (Hermes) · vault-suggestion-executor_
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]
