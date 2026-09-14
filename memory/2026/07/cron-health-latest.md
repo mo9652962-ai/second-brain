@@ -1,9 +1,9 @@
 ---
 tags: [cron-health, dashboard]
-updated: 2026-09-14 00:00
+updated: 2026-09-14 10:11
 ---
 
-# Cron 健康看板 — 2026-09-14 00:00
+# Cron 健康看板 — 2026-09-14 10:11
 
 总任务数: 43
 
@@ -55,10 +55,10 @@ updated: 2026-09-14 00:00
 
 ## 🌐 网络健康指数 (🟡)
 
-亚健康 — 1/3 不可达
+亚健康 — 3/3 不可达
 
-连通率: 67% | 平均延迟: 361ms
+连通率: 0% | 平均延迟: 0ms
 
-  ❌ opencode-go: <urlopen error _ssl.c:999: The handshake operation
-  🟡 siliconflow: HTTP 401 (402ms, reachable)
-  🟡 deepseek: HTTP 401 (320ms, reachable)
+  ❌ opencode-go: <urlopen error [WinError 10054] 远程主机强迫关闭了一个现有的连接。>
+  ❌ siliconflow: <urlopen error [WinError 10054] 远程主机强迫关闭了一个现有的连接。>
+  ❌ deepseek: <urlopen error [WinError 10054] 远程主机强迫关闭了一个现有的连接。>

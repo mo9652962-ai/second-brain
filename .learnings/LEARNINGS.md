@@ -171,3 +171,83 @@ Pattern-Key: memory.lifecycle-management
 Recurrence-Count: 1
 First-Seen: 2026-09-13
 Last-Seen: 2026-09-13
+
+---
+
+## [LRN-20260914-001] insight
+
+**Logged**: 2026-09-14T10:15:00+08:00
+**Priority**: high
+**Status**: completed
+**Area**: config
+
+### Summary
+OpenClaw 2.0 (v2026.8.1) 发布后进入极速补丁节奏：v2026.8.2(9/1)→v2026.9.1(9/3)→v2026.9.2(9/5 GPT-6 Astra+Swarm 默认开启)→v2026.9.3(9/8 Node 24.16+持久化技能)→v2026.9.4(9/11 回滚失败更新+统一插件工作区)，半个月内 6 个版本，体现大版本后的激进迭代策略。
+
+### Details
+1. **发布节奏变化**: 从「每两天一版」转为「七周大版本整合 → 每日补丁」模式，933 贡献者 16K+ PR 积压一次性合入后需快速修复回归
+2. **关键特性时间线**:
+   - v2026.8.1: 共享云会话、凭证隔离、简化安装、重构浏览器应用
+   - v2026.8.2: Day-one patch，更安全的升级路径
+   - v2026.9.1: 升级韧性、图表、快速启动、Android 对齐
+   - v2026.9.2: **GPT-6 Astra**、**Swarm 默认开启**、重启无损回复
+   - v2026.9.3: Node 24.16+ 强制、**持久化技能**、**可分享会话**
+   - v2026.9.4: 失败更新回滚、统一 Plugins 工作区、预备云会话
+3. **架构信号**: Swarm 默认开启 = 多 Agent 编排从实验性转为生产默认；持久化技能 = Skill 生命周期管理原生化
+
+### Suggested Action
+- **暂缓升级**: 遵循 LRN-20260724-002「大版本等 2-4 周社区验证」，当前 v2026.9.x 仍处于激进补丁期
+- 关注 v2026.9.3 的「持久化技能」与我们的 Skill Workshop 流程对标
+- 评估「可分享会话」对协作场景的实际价值
+- Swarm 默认开启意味着多 Agent 编排已成生产基线，需在工作流设计中默认考虑
+
+### Metadata
+Source: tavily_search (cellcog.ai blog release timeline) + self-improvement cron
+Tags: openclaw-2.0, rapid-patching, swarm-default, persistent-skills, shareable-sessions
+Pattern-Key: config.openclaw-2.0-rapid-patches
+Recurrence-Count: 1
+First-Seen: 2026-09-14
+Last-Seen: 2026-09-14
+
+---
+
+## [LRN-20260914-002] insight
+
+**Logged**: 2026-09-14T10:15:00+08:00
+**Priority**: high
+**Status**: completed
+**Area**: security
+
+### Summary
+AI Agent 安全标准化进入实质推进期：Mastercard 倡议全球协调标准、NIST 发布、新加坡 IMDA Model Governance Framework —— 安全从「事后加固」升为「准入门槛」。OpenClaw Security 2026 体系五大控制点（最小权限 Token、RBAC 审批门、沙箱运行时、提示注入防御、完整审计日志）+ 三大具体化（SSRF deny、Secret egress host binding、Webhook throttling）形成可落地清单。
+
+### Details
+1. **三大标准化推手**:
+   - **Mastercard**: 「Agentic Commerce」安全规则，强调早期采纳最佳实践 + 持续监控 + 全球协调标准
+   - **NIST**: AI RMF 1.0 扩展至 Agentic AI，提供可测量的风险管理框架
+   - **IMDA 新加坡**: Model Governance Framework 2.0，涵盖 Agent 生命周期治理
+2. **OpenClaw 五控制点 + 三具体化** (2026 版):
+   - Least-privilege tokens (最小权限凭证)
+   - RBAC approval gates (RBAC 审批门控)
+   - Sandbox tool runtime (沙箱工具运行时)
+   - Prompt injection defense (提示注入防御)
+   - Complete audit logging (完整审计日志)
+   - SSRF explicit deny (新 URL 需显式加入 urlAllowlist)
+   - Secret egress host binding (密钥绑定精确 HTTPS 出口宿主)
+   - Webhook auth throttling (HTTP 429 后等待 60s)
+3. **EU AI Act 生效 (8月)**: 多 Agent 编排归类 high-risk，强制要求 HITL + 审计 + 身份管理
+4. **生产部署 8 大最佳实践** (InfoQ 2026): 全链路监控、高可用灾备、最小权限+审计、置信度阈值+人工升级、内容过滤+Guardrails、自动测试+Cannary、模型版本控制+快速回滚、成本优化(模型路由 60-70% + Prompt Caching 60-80% + Batch API 50%)
+
+### Suggested Action
+- 将上述 8 点纳入我们的架构审查清单（尤其是成本优化三件套已在落地：模型路由 + 语义缓存 + cheap-model tiering）
+- Secret egress host binding 机制评估：是否需在 openclaw.json 中显式配置密钥出口域名白名单
+- 审计日志完整性：确保 cron/heartbeat/subagent 执行轨迹可追溯
+- 关注 NIST/IMDA 正式标准发布后的合规对标
+
+### Metadata
+Source: tavily_search (Mastercard blog + InfoQ + self-improvement cron 9/13 回顾)
+Tags: ai-agent-security, mastercard, nist, imda, eu-ai-act, security-standards
+Pattern-Key: security.ai-agent-standardization-2026
+Recurrence-Count: 1
+First-Seen: 2026-09-14
+Last-Seen: 2026-09-14
