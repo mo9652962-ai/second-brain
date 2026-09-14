@@ -1,7 +1,7 @@
 ---
 title: Hermes + MCP 分层架构
 date: 2026-07-29
-tags: [architecture, hermes, mcp, agent-design]
+tags: [architecture, hermes, MCP, agent-design]
 domain: research
 status: adopted
 source: VetClaw paper + OpenClaw vs Hermes comparison + 2026 行业最佳实践

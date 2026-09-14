@@ -95,4 +95,8 @@ updated: 2026-08-31
 - [[knowledge/Development/墨题上云部署方案-无Docker-2026-09-02|墨题上云部署方案（无 Docker）]] — 本机无虚拟化约束下的部署选型
 - [[knowledge/Projects/墨题安全待决策-2026-08-19|墨题安全待决策]] — 登录/鉴权/用户隔离决策记录
 
+## 🆕 W38 新增（09-07 ~ 09-13：清理 + 成本）
+- [[knowledge/Productivity/system-cleanup-report-20260913|系统清理报告 09-13]] — 释放约 1.6 GB
+- [[knowledge/Productivity/token-usage-report-20260913|Token 用量报告 09-13]]
+
 ## 🧭 入口治理
