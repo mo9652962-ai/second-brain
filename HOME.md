@@ -6,7 +6,7 @@ created: 2026-08-09
 
 # 🏠 Home — 第二大脑入口
 
-> **知识网络从这里开始。** 每个知识域一个 MOC 锚点，全部双向链接。
+> **知识最后更新: 2026-09-14 (vault-suggestion-executor · daily-review)�个 MOC 锚点，全部双向链接。
 > 最后更新: 2026-09-14 (vault-suggestion-executor)
 
 ---
@@ -30,6 +30,7 @@ created: 2026-08-09
 | 📈 生产力 | [[MOC-Productivity]] | 工作流、变现、闲鱼 |
 
 ## 📋 项目与日志
+- [[memory/2026/09/2026-09-14-daily-review|📋 09-14 每日回顾]] — Top5：arxiv 432 篇新窗口速览 / 文献周报过程级评测 / Fable 破解 370 年密码 / GitHub W38 / Agent 安全标准化；明日：闲鱼决策第 43 天 + cpa-gui 启动 + 探活脚本修复
 - [[memory/2026/09/2026-09-14-vault-suggestion-executor|🧹 09-14 闲鱼专项建议执行报告]] — 计数 41→42 权威推进(assert PASS) + 双技能计数红线 patch + 今日 3 项优先级
 - [[memory/2026/09/weekly-2026-09-13|📚 W38 周度整理]] — 十领域自我强化批次 + 黑盒实证 + 评测意图隐藏规范 + memory 归位 6 文件
 - [[memory/2026/09/weekly-learning-2026-09-13|📚 W38 周学习回顾]] — 三 bot 十领域研究批次 + arXiv 解冻双窗口 + 评测意图隐藏规范 + 开源实证
