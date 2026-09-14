@@ -138,25 +138,25 @@ class ModelPool:
 
 ## 四、分阶段计划（推荐 3 阶段）
 
-### Phase 1：Agent Runtime + Model Pool（核心，约 1 周）
-- [ ] 新增 5 张 agent 表（runs/steps/decisions/tool_calls/memories）
-- [ ] 移植 model_pool.py（403 降级 + 429 冷却）
-- [ ] 实现 observe（收墨题数据）/analyze/plan/execute 四步
-- [ ] Agent 页面（前端 agent-workspace 类似 Summer）
-- [ ] 验证：mock 数据跑通 3 次完整循环
+### Phase 1：Agent Runtime + Model Pool（核心，约 1 周）✅ 已完成（2026-09-01，commit `c676d44a`，见文件头）
+- [x] 新增 5 张 agent 表（runs/steps/decisions/tool_calls/memories）
+- [x] 移植 model_pool.py（403 降级 + 429 冷却）
+- [x] 实现 observe（收墨题数据）/analyze/plan/execute 四步
+- [x] Agent 页面（前端 agent-workspace 类似 Summer）
+- [x] 验证：mock 数据跑通 3 次完整循环
 
-### Phase 2：RAG 知识库（约 4 天）
-- [ ] 上传接口（md/pdf/docx/txt 解析，Python: pypdf/python-docx）
-- [ ] chunk 分片（500+50 / ## 语义分片）
-- [ ] embedding 接入（复用 ModelPool 的 embedding 档）
-- [ ] 检索接口（余弦 topK）+ 文档问答
-- [ ] 前端知识库页面
+### Phase 2：RAG 知识库（约 4 天）✅ 已完成（2026-09-01，commit `7e88e9f9`，embedding 走 DashScope text-embedding-v4 实测 dim=1024，见文件头）
+- [x] 上传接口（md/pdf/docx/txt 解析，Python: pypdf/python-docx）
+- [x] chunk 分片（500+50 / ## 语义分片）
+- [x] embedding 接入（复用 ModelPool 的 embedding 档）
+- [x] 检索接口（余弦 topK）+ 文档问答
+- [x] 前端知识库页面
 
-### Phase 3：WebSocket 聊天室（约 4 天）
-- [ ] FastAPI WebSocket 端点（或独立 sidecar :8766）
-- [ ] 聊天室广播 + 在线人数 + 心跳
-- [ ] @AI 流式回复（LOW 档模型池）
-- [ ] 「温柔宝/嘴欠宝」双人格（可选，有意思但非必需）
+### Phase 3：WebSocket 聊天室（约 4 天）✅ 已完成（2026-09-01，commit `cfb107a0`，WS 7/7 实测通过，见文件头）
+- [x] FastAPI WebSocket 端点（或独立 sidecar :8766）
+- [x] 聊天室广播 + 在线人数 + 心跳
+- [x] @AI 流式回复（LOW 档模型池）
+- [x] 「温柔宝/嘴欠宝」双人格（可选，有意思但非必需）✅ 已做（阿墨人设）
 
 **总计约 2-3 周兼职。** 相比从零复刻（2-3 个月）省 80%。
 
