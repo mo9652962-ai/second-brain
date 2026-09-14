@@ -69,4 +69,4 @@ npx hyperframes render --input intro.html --output intro.mp4
 | 安装意愿 | ✅ 装（下次碰视频流水线时） | 本机 node/ffmpeg/playwright 可用；接入 douyin-ai-practical-video 技能 |
 | 趋势判断 | 📈 涨 | agent 原生视频生成是内容工业化确定方向 |
 
-关联：[[抖音AI博主千轮研究-2026-09-03]] · [[google-flow-ad-creator]] · [[douyin-ai-practical-video]] · [[knowledge/knowledge-map|知识地图]]
+关联：[[抖音AI博主千轮研究-2026-09-03]] · `google-flow-ad-creator` · `douyin-ai-practical-video` · [[knowledge/knowledge-map|知识地图]]

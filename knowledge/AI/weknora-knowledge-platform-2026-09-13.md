@@ -69,4 +69,4 @@ pip install tencent-weknora-mcp
 | 安装意愿 | ❌ 不装 | 无 Docker 硬伤，重量级系统 vs 现有 Obsidian+memory 已够用 |
 | 趋势判断 | 📈 涨 | 知识平台是企业 RAG 刚需，腾讯背书持续吸星 |
 
-关联：[[context-management-bootstrapping]] · [[knowledge-lint]] · [[obsidian-vault-graph-optimization]] · [[knowledge/knowledge-map|知识地图]]
+关联：`context-management-bootstrapping` · `knowledge-lint` · `obsidian-vault-graph-optimization` · [[knowledge/knowledge-map|知识地图]]

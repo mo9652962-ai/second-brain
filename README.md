@@ -132,12 +132,16 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 
 ---
 
-## 📦 最新技能入库 (2026-08-16 ~ 2026-09-13)
+## 📦 最新技能入库 (2026-08-16 ~ 2026-09-14)
 
 ### 研究笔记
 
 | 技能 | 版本 | 简介 |
 |------|------|------|
+| **[每日日志 09-14](memory/2026/09/2026-09-14.md)** | v1.0 | 晨间批量入库（arxiv 432 篇新窗口 + 文献周报 + HN）+ 闲鱼计数推进 42 天 + health 巡检 2 个新 P1（cpa-gui/EasyCLIProxyAPI）+ 素材第 20 次核验 PASS | 
+| **[arXiv AI Agent / LLM 速览 09-14](knowledge/Research/arxiv-2026-09-14-agent-llm.md)** | v1.0 | 09-14 全新窗口 432 篇 → 17 主条目 + 12 简评（Skill 质量度量化 / K-Bench 六通道泄露 / GuardrailLoop / Harness vs Model / 动作前验证） |
+| **[AI 文献周报 W37 09-14](knowledge/Research/ai-weekly-literature-2026-09-14.md)** | v1.0 | 09-07~09-13 周报：287 篇 → 16 篇精选（过程级评测 + 科研 agent 物理闭环） |
+| **[HN 今日深挖 09-14](knowledge/Daily/hackernews-2026-09-14.md)** | v1.0 | Fable 5.1 破解 370 年 Cyphral Distich 密码 / 滑板车逆向 Rust 重写固件 |
 | **[GitHub 宝藏挖掘周更 09-13](knowledge/Research/GitHub-Weekly-2026-09-13.md)** | v1.0 | Top 5 高星仓库（codebase-memory-mcp 43k★ / nanobot 48k★ / chrome-devtools-mcp 51k★ 等）+ MCP 生态发现 |
 | **[GitHub 周榜 W38 weekly 口径 09-13](knowledge/Research/GitHub-Weekly-2026-09-13-weekly-5projects.md)** | v1.0 | 本周 star 增速榜：i-have-adhd +15.9k 增速王 / archify / ECC / mattpocock-skills 精选 |
 | **[每日日志 09-12](memory/2026/09/2026-09-12.md)** | v1.0 | 三 bot 协作流水线验证有效（PCB 自动化试运行）+ OpenClaw 2.0 发布 Local-First/Model-Agnostic 趋势 + Plan-and-Execute 降本 90% 实践 |
