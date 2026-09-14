@@ -135,6 +135,8 @@ updated: 2026-09-13
 - [[knowledge/Content/竞品对标-AI商业广告接单教程|竞品对标 09-13]] · [[knowledge/Daily/hackernews-2026-09-13|HN 09-13]] · [[knowledge/cards/2026-09-13-ai-commercial-ad-tutorial|知识卡片 09-13]]
 - [[knowledge/Research/arxiv-2026-09-11-agent-llm|arXiv Agent/LLM 09-11]] — 441 篇新窗口速览（20 主 + 12 简评）
 - [[knowledge/Daily/hackernews-2026-09-14|HN 09-14]] — 今日精选（Fable 破解 370 年密码 / 滑板车逆向 Rust 重写）
+- [[knowledge/Research/arxiv-2026-09-14-agent-llm|arXiv Agent/LLM 09-14]] — 今日 arXiv 速览
+- [[knowledge/Research/ai-weekly-literature-2026-09-14|AI 文献周报 W37（09-07~09-13）]] — 周报补链
 ## 文章研读
 
 - [[ai-literature-search-pitfalls-study]]
