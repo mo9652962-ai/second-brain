@@ -1,3 +1,10 @@
+---
+tags: [github, github-trending, weekly, 周报, W38]
+title: GitHub 宝藏挖掘 - 2026-09-13
+type: report
+created: 2026-09-13
+status: active
+---
 # GitHub 宝藏挖掘 - 2026-09-13
 
 ## Top 5
