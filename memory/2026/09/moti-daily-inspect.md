@@ -1,31 +1,33 @@
-# 墨题每日巡检 2026-09-13（周日）
+# 墨题每日巡检 2026-09-14（周一）
 
 > 巡检脚本：`dsh_inspect_moti.sh` · 结果：✅ 通过（无阻塞问题）
 
 ## 结论置顶
 
-**基础健康全绿**：后端语法 ✅ / 前端关键文件 ✅ / 移动端 ✅。
-**唯一关注点**：工作区有 **87 处未提交改动**（56 个修改文件 + 未跟踪新文件），为一整套「发布门禁 + 指标 + 移动端 CI」功能包，非故障信号，但已跨多个 commit 周期未提交，建议尽快 commit + push。
+**基础健康全绿**：后端语法 ✅ / 前端关键文件 ✅ / 移动端 ✅。无 FAIL、无语法错误、无阻塞问题。
+
+**两个关注点（均非阻塞）**：
+1. 工作区有 **10 处未提交改动**（6 修改 + 4 未跟踪）= 内容版本 bump（CONTENT_VERSION / OFFLINE_CONTENT_VERSION）+ 发布内容包工具（create_release_content_bundle），非故障信号。
+2. ⚠️ **根目录 `build/` + `dist/`（约 135M 构建产物，含 backend_app）未进 .gitignore**——`.gitignore` 只覆盖了 `frontend/dist/`、`electron/dist/`，根级没覆盖，存在被误提交入库的风险，建议补一条。
 
 ## 巡检明细
 
 ### Git 状态
-- 未提交改动：**87 处**（修改 56 文件：+1616 / -256；未跟踪 ~20 新文件）
+- 未提交改动：**10 处** = 修改 6 + 未跟踪 4
+  - 修改：`CONTENT_VERSION` / `OFFLINE_CONTENT_VERSION` / `content-manifest.json` / `frontend/public/release-metadata.json` / `tests/test_rebuild_public_content.py` / `tools/rebuild_public_content.py`（+123 / -22）
+  - 未跟踪：`build/` / `dist/` / `tests/test_create_release_content_bundle.py` / `tools/create_release_content_bundle.py`
 - 最近提交（HEAD~2）：
-  - `49295d0` docs: README 版本号 v2.1.2 → v2.1.3（对齐 backend/electron）
-  - `69e1d66` chore(version): backend APP_VERSION 对齐 2.1.3
-  - `ddbad61` chore(version): bump 2.1.3
+  - `3fa34b5` ci: require verified release content inputs
+  - `0f95296` test: verify portable seed fingerprint
+  - `3fb53b7` ci: reject self-signed Windows release certificates
 
 ### 工作区改动内容画像（非异常，待提交）
-- **发布门禁**：`VERSION` / `CONTENT_VERSION` / `OFFLINE_CONTENT_VERSION` / `RELEASE_DATE` / `content-manifest.json` / `docs/content-release-evidence.md`
-- **发布脚本**：`scripts/release_check.ps1` / `windows_portable_smoke.ps1` / `windows_package_smoke.ps1` / `web_static_smoke.ps1` / `android_preflight.ps1` / `sync_*`（版本/插件/元数据）
-- **指标体系**：`backend/app/routers/metrics.py` / `services/metrics.py` / `frontend/src/services/metrics.ts`（对应 AGENTS.md 指标隐私坑 #13）
-- **移动端 CI**：`.github/workflows/android.yml` + `frontend/native/` 原生插件模板
-- 全库 CRLF 换行提示（Windows 正常现象，非问题）
+- **发布内容门禁**：三个 CONTENT/OFFLINE 版本号 + manifest 同步变更，配合新建的 `create_release_content_bundle.py`（发布内容包生成 + 测试）——延续 AGENTS.md 坑 #9/#19（版本双轨、发布证据）的发布准备批次。
+- `build/`、`dist/` 为根目录构建产物（backend_app，54M+81M），疑为发布打包残留，应入 .gitignore。
 
 ### 后端健康
 - ✅ `backend/app/main.py` 存在
-- ✅ Python 语法全部通过（含新增 metrics 服务）
+- ✅ Python 语法全部通过
 
 ### 前端健康
 - ✅ `App.vue` / `router.ts` 存在
@@ -37,10 +39,11 @@
 
 ## 异常登记
 - 无 FAIL、无语法错误、无阻塞问题。
-- ⚠️（非阻塞）87 处未提交改动——建议下一轮开发前 commit。
+- ⚠️（非阻塞）10 处未提交改动——内容发布批次，建议确认后 commit。
+- ⚠️（建议）根目录 `build/` + `dist/` 未 gitignore，135M 构建产物有被误提交风险，建议在 `.gitignore` 补根级 `build/`、`dist/`。
 
 ## 与 AGENTS.md 对照
-当前工作区内容对应坑 #13（指标隐私）、#18（离线迁移清单）、#19（发布证据）、#21（Windows 发布包启动门禁）的落地实现，跨 4+ 个功能域，属于一次大的发布准备批次。
+当前改动对应坑 #9（发布版本双轨：VERSION / CONTENT_VERSION / OFFLINE_CONTENT_VERSION）与 #19（发布证据）的落地延续，属于发布准备批次；根目录 build/dist 未忽略为新的卫生项。
 
 ---
 > 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]
