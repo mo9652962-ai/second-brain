@@ -1,3 +1,10 @@
+---
+tags: [cron, maintenance, system-cleanup, windows, report]
+title: 系统清理报告 2026-09-13
+type: report
+created: 2026-09-13
+status: adopted
+---
 # 系统清理报告 2026-09-13
 
 **结论：共释放约 1.6 GB，C 盘已用 269G → 268G（61% → 60%，可用 179G → 180G）。**

@@ -1,5 +1,5 @@
 ---
-tags: [JLCPCB, EDA, mcp, automation, electronics]
+tags: [JLCPCB, EDA, MCP, automation, electronics]
 domain: Hardware
 status: adopted
 ---

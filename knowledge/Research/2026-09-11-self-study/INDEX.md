@@ -3,7 +3,7 @@ title: "2026-09-11 十领域自我强化研究索引"
 type: moc
 domain: Research
 status: active
-tags: [knowledge/research, moc]
+tags: [knowledge/research, MOC]
 date: 2026-09-12
 ---
 

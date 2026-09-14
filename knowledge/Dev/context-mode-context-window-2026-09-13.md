@@ -68,4 +68,4 @@ claude mcp add context-mode -- npx -y context-mode
 | 安装意愿 | ⚪ 观望 | 本机 Hermes 核心不可改，思路借鉴 > 工具安装（ELv2 也不适合商用托管） |
 | 趋势判断 | 📈 涨 | 上下文治理是 agent 规模化的必争之地（+1,936/周 持续） |
 
-关联：[[context-management-bootstrapping]] · [[ecc-context-budget]] · [[ecc-strategic-compact]] · [[knowledge/knowledge-map|知识地图]]
+关联：`context-management-bootstrapping` · `ecc-context-budget` · `ecc-strategic-compact` · [[knowledge/knowledge-map|知识地图]]
