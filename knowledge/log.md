@@ -168,7 +168,7 @@ tags: [meta, 知识库治理]
 
 ## [2026-09-14] lint | 例行体检 + 修复
 
-- 断链 10→0：4 个 09-13 研究笔记「关联」区技能名伪链接（`[[context-management-bootstrapping]]` 等 9 个 Hermes 技能名）改反引号纯文本
+- 断链 10→0：4 个 09-13 研究笔记「关联」区技能名伪链接（`context-management-bootstrapping` 等 9 个 Hermes 技能名）改反引号纯文本
 - 缺 frontmatter 2→0：system-cleanup-report-20260913 / GitHub-Weekly-2026-09-13 补标准 frontmatter
 - 孤立 2→0：system-cleanup-report + token-usage-report 挂载 MOC-Productivity（W38 区块）；hackernews-2026-09-14 挂载 MOC-Research
 - 标签一致性：MCP/mcp、MOC/moc 大小写统一（8 文件）；周标签已统一大写（W31-W38）
