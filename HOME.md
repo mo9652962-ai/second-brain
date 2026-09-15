@@ -6,8 +6,8 @@ created: 2026-08-09
 
 # 🏠 Home — 第二大脑入口
 
-> **知识最后更新: 2026-09-14 (vault-suggestion-executor · daily-review)�个 MOC 锚点，全部双向链接。
-> 最后更新: 2026-09-14 (vault-suggestion-executor)
+> **知识最后更新: 2026-09-15 (daily-review)
+> 最后更新: 2026-09-15 (daily-knowledge-review)
 
 ---
 
@@ -30,6 +30,7 @@ created: 2026-08-09
 | 📈 生产力 | [[MOC-Productivity]] | 工作流、变现、闲鱼 |
 
 ## 📋 项目与日志
+- [[memory/2026/09/2026-09-15-daily-review|📋 09-15 每日回顾]] — Top5：OpenAI bots 攻击 RubyGems（AI agent 主动利用已知漏洞） / arXiv 09-15 补全速览 15+14 / 技能治理单扫描器不足 / 双周技能审计 479 / 闲鱼禁词修复加固；明日：闲鱼决策第 42 天 + 探活路径核实 + 供应链扫描补丁
 - [[memory/2026/09/2026-09-14-daily-review|📋 09-14 每日回顾]] — Top5：arxiv 432 篇新窗口速览 / 文献周报过程级评测 / Fable 破解 370 年密码 / GitHub W38 / Agent 安全标准化；明日：闲鱼决策第 43 天 + cpa-gui 启动 + 探活脚本修复
 - [[memory/2026/09/2026-09-14-vault-suggestion-executor|🧹 09-14 闲鱼专项建议执行报告]] — 计数 41→42 权威推进(assert PASS) + 双技能计数红线 patch + 今日 3 项优先级
 - [[memory/2026/09/2026-09-15-vault-suggestion-executor|🧹 09-15 闲鱼专项建议执行报告]] — 素材包 4 处「自动化」禁词修复 + 全量复扫 PASS + 今日 3 项优先级
