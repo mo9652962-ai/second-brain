@@ -50,3 +50,6 @@ tags: [skill-audit]
 4. **扫描脚本增强**（下次可做）：skill-audit-scan.py 增加 depth-3 覆盖，避免 apple/devops 类盲区
 
 > 注：所有合并/删除需 sora 确认后执行，本审计未做任何删除。
+
+---
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]
