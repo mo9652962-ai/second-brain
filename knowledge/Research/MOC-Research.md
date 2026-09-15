@@ -5,7 +5,7 @@ type: moc
 domain: Research
 status: active
 created: 2026-08-09
-updated: 2026-09-14
+updated: 2026-09-15
 ---
 
 # 🔬 研究笔记 MOC — Research Map
@@ -13,7 +13,7 @@ updated: 2026-09-14
 > 所有研究笔记的索引与入口。自动按主题分组。
 > 回到 [[knowledge-map|🗺️ 知识地图]] · [[Home|🏠 Home]]
 
-**共 203 篇研究笔记** · 最后更新: 2026-09-14（每日增量索引）
+**共 205 篇研究笔记** · 最后更新: 2026-09-15（每日增量索引）
 
 
 ## 🆕 W34 新增补链（2026-08-16 周度整理）
@@ -348,6 +348,8 @@ updated: 2026-09-14
 - [[arxiv-2026-09-11-agent-llm]] — 速览 20 主 + 12 简评（09-11 新窗口）
 - [[GitHub-Weekly-2026-09-13]]
 - [[GitHub-Weekly-2026-09-13-weekly-5projects]]
+- [[arxiv-2026-09-15-agent-llm]]
+- [[skill-audit-2026-09-15]]
 
 ## 🧭 入口治理
 
