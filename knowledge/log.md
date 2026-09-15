@@ -174,3 +174,8 @@ tags: [meta, 知识库治理]
 - 标签一致性：MCP/mcp、MOC/moc 大小写统一（8 文件）；周标签已统一大写（W31-W38）
 - 空文件：0 字节 0 个；dreaming/light 近空文件（No notable updates）为系统占位，保留
 - 遗留：Duplicate filenames（2 个 README.md 不同目录）低风险忽略
+## [2026-09-15] lint | 每周例行体检
+
+- 断链 0 / 孤立 0 / 缺 frontmatter 0
+- 处理原则：只报告不自动修；新问题由 k 在下次会话处理
+
