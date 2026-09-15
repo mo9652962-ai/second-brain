@@ -36,8 +36,8 @@ status: fresh
 ## 行动项
 
 - [x] 官方源核对：tenderlove 原文全文 + HN Algolia API（380 分 / 标题 / url 一致）
-- [ ] 把「AI agent 主动利用已知漏洞 + 缓存 key 收割」模式补进供应链扫描参考（shai-hulud / chaindrop 检测清单：正则扫 `rubygems_[a-f0-9]{20,}` 类缓存 key 泄露特征）
-- [ ] AI 博主选题库登记：OpenAI bots 攻击 RubyGems（AI agent 安全边界主题）
+- [x] ✅ 已落地 2026-09-15（daily-todo-executor）：shai-hulud-npm-scanner 新增「缓存 key 泄露特征」检测——`shaihulud_scan.py` 第 3 阶段全量正则扫 `rubygems_[a-f0-9]{20,}`（跳 >5MB）+ SKILL.md「缓存 key 泄露特征」文档化（GemStuffer→.yardopts RCE→容器抓 key→回传范式 + 防御含义）；功能实测命中（临时文件含 key → 检出 exit 1）；全量扫描因 .openclaw 根过慢 >4min 未完成，建议按目标根目录定向跑
+- [x] ✅ 已登记 2026-09-15：knowledge/Content/选题池.md 板块 6 新增 #69「OpenAI 的 AI bots 主动攻击 RubyGems：AI agent 安全边界」（观点型，公众号/抖音，冷启动）——待 sora 排期写作
 
 ## 为什么重要
 

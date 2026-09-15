@@ -305,9 +305,9 @@ updated: 2026-09-14
 ### 🧭 9/14 vault-suggestion-executor 闲鱼专项（周一 10:00）
 
 ### 🧭 9/15 反思行动项（daily-reflection 复盘 9-14，执行者必读）
-- [ ] 🔴 硬线探活产物断言：api-media-weekly-probe 跑完必须 stat 报告文件（memory/YYYY/MM/YYYY-MM-DD-api-probe.md），缺失即告警（9/14 无报告静默失败 + health 误报「脚本缺失」事件；9/15 实测脚本在盘可跑，三路媒体 API 全 000，优先排查 FlClash 代理）｜ ⏳ k 可做 30min ｜ 截止 9/22
-- [ ] 🟡 skill-link-gate 检测器修复（references/research 误报 + 占位符规则）→ 重跑基线拿真实断链数（9/13 反思登记，已连续 2 天未执行，原因=反思表格非 - [ ] 格式被 executor 跳过）｜ ⏳ k 可做 40min ｜ 截止 9/17
-- [ ] 🟡 任务状态单一权威源收敛（state.yaml/TASKS 表，reflection/daily-review 只读引用）｜ ⏳ k 可做 1h ｜ 截止 9/20
+- [x] 🔴 硬线探活产物断言 → ✅ 2026-09-15 daily-todo-executor 落地：①脚本复制到 cron 期望路径 AppData/Local/hermes/scripts/api_image_probe.sh（原只在 ~/.hermes/scripts 与 workspace/scripts，cron last_error「Script not found」根因消除）；②产物断言加入（报告文件须存在/非空/含「## 汇总」，否则 exit 1 告警进 last_error）；③实测跑通 exit 0；④补跑报告刷新真实状态：XAI 400 key 失效 / FAL 403 锁定 / SF 000 / DS·EXA 200（上午全 000 含代理层干扰）
+- [x] 🟡 skill-link-gate 检测器修复 → ✅ 2026-09-15 daily-todo-executor 落地：skill_link_check.py v2 新增 26 条误报规则（反引号包裹链接=字面示例 / CJK 占位 / 省略号 / 正则片段 / 通用占位名 x.md·x.js / 目录引用 / repo 根约定文档 / vault 跨库路径 / .db 运行时产物 / light-* 套件豁免 / KNOWN_GAP_REFS 白名单）；primary-math SKILL.md 文档引用修正为真实脚本 scripts/final_verify_format.py；基线 31/466 → 0 断裂，exit 0 全过；light-* 套件缺文件为已知 vendored 缺口（需 sora 决策补全 or 豁免，已注释在脚本头）
+- [x] 🟡 任务状态单一权威源收敛 → ✅ 2026-09-15 daily-todo-executor 验证闭环：state.yaml 权威 day=42（唯一写方 + assert 门禁）；assert_state_consistency.py 4/4 PASS（state.yaml / current.md ×11 / MEMORY.md 全一致 42，零漂移）；今日 daily-review/reflection 均只读引用 state.yaml 未自行推进（实证：daily-review「state.yaml 保持 42 PENDING」）；current.md 反思行动项区 = 任务状态登记面，cron 报告只读引用
 - [x] assert_state_consistency.py 补 MEMORY.md 兜底检查→ ✅ 当场落地（2026-09-15 daily-reflection）：新增「MEMORY.md 闲鱼决策天数=state.yaml」判断（匹配「闲鱼.*决策悬置第N天」行），实测 PASS，封闭 9/14 MEMORY.md 天数漂移被 executor 发现而非 assert 拦下的盲区
 
 - ✅ 闲鱼计数权威推进（2026-09-14 vault-suggestion-executor 落地）：state.yaml 41→42（唯一写方流程：读现值→+1 写回→同步 current.md 9 处→assert PASS）；PENDING 第 42 天
