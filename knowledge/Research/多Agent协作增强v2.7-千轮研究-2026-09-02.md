@@ -68,7 +68,7 @@ type: research-note
 - [x] 结构化密任务包模板 `templates/handoff-packet-v2.7.md`（含 Typed Handoff 契约元数据 + Narrative Casting 块）
 - [x] 校验脚本 `scripts/check_handoff_packet.py`（好包 0 警告通过 / 坏包禁止派发，双测通过）
 - [x] 实测派活：用 v2.7 模板写真实任务包（web-search 缓存 quota 验证）派 delegate_task 子代理，验证结构化交接有效性
-- [ ] 观察：长链任务（Codex 多步）是否用 structured 交接减少返工
+- [x] ~~观察：长链任务（Codex 多步）是否用 structured 交接减少返工~~ (观察项参考，2026-09-15 executor 归类：随编码委派进行时记录，非独立任务)
 
 ## 关联
 
