@@ -303,6 +303,13 @@ updated: 2026-09-14
 - 🔴 闲鱼试水决策（第 42 天，state.yaml 权威）→ 沿用 P0，见 🎯 闲鱼上架
 - 🟡 XAI key 重生成 + FAL 充值解锁（探活线）→ 沿用，见待用户操作
 ### 🧭 9/14 vault-suggestion-executor 闲鱼专项（周一 10:00）
+
+### 🧭 9/15 反思行动项（daily-reflection 复盘 9-14，执行者必读）
+- [ ] 🔴 硬线探活产物断言：api-media-weekly-probe 跑完必须 stat 报告文件（memory/YYYY/MM/YYYY-MM-DD-api-probe.md），缺失即告警（9/14 无报告静默失败 + health 误报「脚本缺失」事件；9/15 实测脚本在盘可跑，三路媒体 API 全 000，优先排查 FlClash 代理）｜ ⏳ k 可做 30min ｜ 截止 9/22
+- [ ] 🟡 skill-link-gate 检测器修复（references/research 误报 + 占位符规则）→ 重跑基线拿真实断链数（9/13 反思登记，已连续 2 天未执行，原因=反思表格非 - [ ] 格式被 executor 跳过）｜ ⏳ k 可做 40min ｜ 截止 9/17
+- [ ] 🟡 任务状态单一权威源收敛（state.yaml/TASKS 表，reflection/daily-review 只读引用）｜ ⏳ k 可做 1h ｜ 截止 9/20
+- [x] assert_state_consistency.py 补 MEMORY.md 兜底检查→ ✅ 当场落地（2026-09-15 daily-reflection）：新增「MEMORY.md 闲鱼决策天数=state.yaml」判断（匹配「闲鱼.*决策悬置第N天」行），实测 PASS，封闭 9/14 MEMORY.md 天数漂移被 executor 发现而非 assert 拦下的盲区
+
 - ✅ 闲鱼计数权威推进（2026-09-14 vault-suggestion-executor 落地）：state.yaml 41→42（唯一写方流程：读现值→+1 写回→同步 current.md 9 处→assert PASS）；PENDING 第 42 天
 - ✅ 双技能计数红线 patch（9/13 daily-todo-executor 建议落地）：vault-suggestion-executor 加「闲鱼计数唯一写方约束」小节（唯一写方/推进流程/展示层 vs 权威层）；suggestion-implementation 加「闲鱼计数红线」小节（禁止直接改 state.yaml/current.md 天数，只报告不落笔）——备份 .temp/skill-bak/*-20260914
 - 🔴 闲鱼试水决策（第 42 天，state.yaml 权威）→ 沿用 P0，见 🎯 闲鱼上架；合规改造子集已内置 xianyu-monetization v1.2.0，无额外 k 侧执行项
@@ -356,7 +363,7 @@ updated: 2026-09-14
 
 ---
 
-_由 k (Hermes) 在每次会话结束时更新 | 最后更新: 2026-09-14 (vault-suggestion-executor 闲鱼专项)
+_由 k (Hermes) 在每次会话结束时更新 | 最后更新: 2026-09-15 (daily-reflection 复盘 9-14)
 
 ---
 
