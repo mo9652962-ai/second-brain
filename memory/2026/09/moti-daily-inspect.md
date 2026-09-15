@@ -1,4 +1,4 @@
-# 墨题每日巡检 2026-09-14（周一）
+# 墨题每日巡检 2026-09-15（周二）
 
 > 巡检脚本：`dsh_inspect_moti.sh` · 结果：✅ 通过（无阻塞问题）
 
@@ -6,24 +6,19 @@
 
 **基础健康全绿**：后端语法 ✅ / 前端关键文件 ✅ / 移动端 ✅。无 FAIL、无语法错误、无阻塞问题。
 
-**两个关注点（均非阻塞）**：
-1. 工作区有 **10 处未提交改动**（6 修改 + 4 未跟踪）= 内容版本 bump（CONTENT_VERSION / OFFLINE_CONTENT_VERSION）+ 发布内容包工具（create_release_content_bundle），非故障信号。
-2. ⚠️ **根目录 `build/` + `dist/`（约 135M 构建产物，含 backend_app）未进 .gitignore**——`.gitignore` 只覆盖了 `frontend/dist/`、`electron/dist/`，根级没覆盖，存在被误提交入库的风险，建议补一条。
+**与昨日对比（9-14 → 9-15）**：
+1. ✅ **工作区已清净**：昨日 10 处未提交改动（内容发布批次）已全部提交，当前 working tree clean。
+2. ⚠️（建议项延续）**根目录 `build/` / `dist/` 已不存在**（昨日 135M 构建产物已清理），但 `.gitignore` 仍未补根级 `build/`、`dist/` 条目——防再犯建议依然有效，顺手补一条即可。
 
 ## 巡检明细
 
 ### Git 状态
-- 未提交改动：**10 处** = 修改 6 + 未跟踪 4
-  - 修改：`CONTENT_VERSION` / `OFFLINE_CONTENT_VERSION` / `content-manifest.json` / `frontend/public/release-metadata.json` / `tests/test_rebuild_public_content.py` / `tools/rebuild_public_content.py`（+123 / -22）
-  - 未跟踪：`build/` / `dist/` / `tests/test_create_release_content_bundle.py` / `tools/create_release_content_bundle.py`
-- 最近提交（HEAD~2）：
-  - `3fa34b5` ci: require verified release content inputs
-  - `0f95296` test: verify portable seed fingerprint
-  - `3fb53b7` ci: reject self-signed Windows release certificates
-
-### 工作区改动内容画像（非异常，待提交）
-- **发布内容门禁**：三个 CONTENT/OFFLINE 版本号 + manifest 同步变更，配合新建的 `create_release_content_bundle.py`（发布内容包生成 + 测试）——延续 AGENTS.md 坑 #9/#19（版本双轨、发布证据）的发布准备批次。
-- `build/`、`dist/` 为根目录构建产物（backend_app，54M+81M），疑为发布打包残留，应入 .gitignore。
+- 未提交改动：**0 处**（working tree clean）
+- 最近提交（HEAD~3，均为 docs(android) 文档批次）：
+  - `6bf89c3` docs(android): document apk asset verification（2026-09-14 23:59）
+  - `e0ab980` docs(android): record release build wiring check
+  - `5d60e3a` docs(android): link apk asset report
+- 更早：`bb0a6c0` docs(android): record apk freshness gate / `ef25030` ci(android): enforce apk asset freshness / `7fdbf02` docs(android): record rebuilt debug apk evidence
 
 ### 后端健康
 - ✅ `backend/app/main.py` 存在
@@ -39,11 +34,11 @@
 
 ## 异常登记
 - 无 FAIL、无语法错误、无阻塞问题。
-- ⚠️（非阻塞）10 处未提交改动——内容发布批次，建议确认后 commit。
-- ⚠️（建议）根目录 `build/` + `dist/` 未 gitignore，135M 构建产物有被误提交风险，建议在 `.gitignore` 补根级 `build/`、`dist/`。
+- ⚠️（建议，延续昨日）根级 `.gitignore` 仍缺 `build/`、`dist/` 条目；今日虽无产物残留，但为避免下次发布打包后再现 135M 误提交风险，建议补上。
 
 ## 与 AGENTS.md 对照
-当前改动对应坑 #9（发布版本双轨：VERSION / CONTENT_VERSION / OFFLINE_CONTENT_VERSION）与 #19（发布证据）的落地延续，属于发布准备批次；根目录 build/dist 未忽略为新的卫生项。
+- 当前提交批次为 Android 发布链路文档沉淀（APK 资源校验 / freshness 门禁 / SDK 路径探测），对应坑 #10（Android 生成目录与 CI 流程）的持续收敛。
+- 根级 build/dist 忽略为延续中的卫生建议项（非门禁）。
 
 ---
 > 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]
