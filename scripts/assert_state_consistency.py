@@ -11,6 +11,7 @@ from collections import Counter
 VAULT = pathlib.Path(__file__).resolve().parent.parent
 STATE = VAULT / "projects" / "state.yaml"
 CURRENT = VAULT / "projects" / "current.md"
+MEMORY = VAULT / "MEMORY.md"
 
 
 def parse_state(p):
@@ -53,6 +54,14 @@ def main():
         divergent = {k: v for k, v in dist.items() if k != day}
         check("无残留漂移值", len(divergent) == 0,
               f"漂移残留 {divergent}" if divergent else "current.md 天数全一致")
+
+    # MEMORY.md 兜底盲区修复（2026-09-15 反思实测：assert PASS 与 MEMORY.md 漂移并存）
+    if day is not None and MEMORY.exists():
+        m = MEMORY.read_text(encoding="utf-8", errors="ignore")
+        m_line = re.search(r"闲鱼[^\n]*决策悬置第\s*(\d+)\s*天", m)
+        check("MEMORY.md 闲鱼决策天数=state.yaml",
+              m_line is not None and int(m_line.group(1)) == day,
+              f"MEMORY.md 决策 第{m_line.group(1)}天" if m_line else "MEMORY.md 无闲鱼决策天数行")
 
     ok = all(o for _, o in results)
     print(f"\nRESULT: {'PASS' if ok else 'FAIL'}")

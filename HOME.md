@@ -6,8 +6,8 @@ created: 2026-08-09
 
 # 🏠 Home — 第二大脑入口
 
-> **知识最后更新: 2026-09-14 (vault-suggestion-executor · daily-review)�个 MOC 锚点，全部双向链接。
-> 最后更新: 2026-09-14 (vault-suggestion-executor)
+> **知识最后更新: 2026-09-15 (daily-review)
+> 最后更新: 2026-09-15 (daily-knowledge-review)
 
 ---
 
@@ -30,8 +30,10 @@ created: 2026-08-09
 | 📈 生产力 | [[MOC-Productivity]] | 工作流、变现、闲鱼 |
 
 ## 📋 项目与日志
+- [[memory/2026/09/2026-09-15-daily-review|📋 09-15 每日回顾]] — Top5：OpenAI bots 攻击 RubyGems（AI agent 主动利用已知漏洞） / arXiv 09-15 补全速览 15+14 / 技能治理单扫描器不足 / 双周技能审计 479 / 闲鱼禁词修复加固；明日：闲鱼决策第 42 天 + 探活路径核实 + 供应链扫描补丁
 - [[memory/2026/09/2026-09-14-daily-review|📋 09-14 每日回顾]] — Top5：arxiv 432 篇新窗口速览 / 文献周报过程级评测 / Fable 破解 370 年密码 / GitHub W38 / Agent 安全标准化；明日：闲鱼决策第 43 天 + cpa-gui 启动 + 探活脚本修复
 - [[memory/2026/09/2026-09-14-vault-suggestion-executor|🧹 09-14 闲鱼专项建议执行报告]] — 计数 41→42 权威推进(assert PASS) + 双技能计数红线 patch + 今日 3 项优先级
+- [[memory/2026/09/2026-09-15-vault-suggestion-executor|🧹 09-15 闲鱼专项建议执行报告]] — 素材包 4 处「自动化」禁词修复 + 全量复扫 PASS + 今日 3 项优先级
 - [[memory/2026/09/weekly-2026-09-13|📚 W38 周度整理]] — 十领域自我强化批次 + 黑盒实证 + 评测意图隐藏规范 + memory 归位 6 文件
 - [[memory/2026/09/weekly-learning-2026-09-13|📚 W38 周学习回顾]] — 三 bot 十领域研究批次 + arXiv 解冻双窗口 + 评测意图隐藏规范 + 开源实证
 - [[knowledge/Research/GitHub-Weekly-2026-09-08|🐙 GitHub-Weekly 09-08]] — codebase-memory-mcp / nanobot 等 Top5 宝藏挖掘
@@ -136,6 +138,7 @@ created: 2026-08-09
 - [[knowledge/Research/arxiv-2026-09-10-agent-llm|arXiv 今日速览]] — 22+16 篇 AI Agent/LLM 论文（09-10 索引解冻新窗口 09-09+09-10 共 1,749 篇：Agent 记忆工程化四连 / 技能供应链安全 / 评测去脚手架 / 320B MoE 对齐脆弱性）
 - [[knowledge/Research/arxiv-2026-09-11-agent-llm|arXiv 今日速览]] — 20+12 篇 AI Agent/LLM 论文（09-11 新窗口 441 篇：记忆策展主动验证 / 验证器可靠性形式化 / MCP 生态 48.8% 存活实证 / T1 终端 Agent RL 64.0%）
 - [[knowledge/Research/arxiv-2026-09-14-agent-llm|arXiv 今日速览]] — 17+12 篇 AI Agent/LLM 论文（09-14 新窗口 432 篇：仓库 SKILL 优化方法论 / unlearning 六通道泄露 / 自进化护栏契约 GuardrailLoop / Harness vs Model 隔离 / 动作前验证）
+- [[knowledge/Research/arxiv-2026-09-15-agent-llm|arXiv 补全速览]] — 15+14 篇 AI Agent/LLM 论文（09-15 索引冻结补录 09-14 同池漏网：Scan the Skill 技能注册表治理 / Is Bash All You Need 工具接口实证 / LifeFuse-Mem 记忆生命周期 / LLM Judge 能力依赖偏置）
 
 ## 🧭 核心区域
 - [[memory/2026/08/2026-08-19-reflection|🔍 08-19 反思]] — 行动项 3/3 未落地（反思≠执行第 3 次复发）；Tavily 第 6 次复发；SRC 三方向收敛为补天聚焦 · scripts 登记表当场补建

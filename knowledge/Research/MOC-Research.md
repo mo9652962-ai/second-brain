@@ -5,7 +5,7 @@ type: moc
 domain: Research
 status: active
 created: 2026-08-09
-updated: 2026-09-14
+updated: 2026-09-15
 ---
 
 # 🔬 研究笔记 MOC — Research Map
@@ -13,7 +13,7 @@ updated: 2026-09-14
 > 所有研究笔记的索引与入口。自动按主题分组。
 > 回到 [[knowledge-map|🗺️ 知识地图]] · [[Home|🏠 Home]]
 
-**共 203 篇研究笔记** · 最后更新: 2026-09-14（每日增量索引）
+**共 205 篇研究笔记** · 最后更新: 2026-09-15（每日增量索引）
 
 
 ## 🆕 W34 新增补链（2026-08-16 周度整理）
@@ -137,6 +137,7 @@ updated: 2026-09-14
 - [[knowledge/Daily/hackernews-2026-09-14|HN 09-14]] — 今日精选（Fable 破解 370 年密码 / 滑板车逆向 Rust 重写）
 - [[knowledge/Research/arxiv-2026-09-14-agent-llm|arXiv Agent/LLM 09-14]] — 今日 arXiv 速览
 - [[knowledge/Research/ai-weekly-literature-2026-09-14|AI 文献周报 W37（09-07~09-13）]] — 周报补链
+- [[knowledge/Daily/hackernews-2026-09-15|HN 09-15]] · [[knowledge/cards/2026-09-15-rubygems-ai-attack|知识卡片 09-15]]
 ## 文章研读
 
 - [[ai-literature-search-pitfalls-study]]
@@ -347,6 +348,8 @@ updated: 2026-09-14
 - [[arxiv-2026-09-11-agent-llm]] — 速览 20 主 + 12 简评（09-11 新窗口）
 - [[GitHub-Weekly-2026-09-13]]
 - [[GitHub-Weekly-2026-09-13-weekly-5projects]]
+- [[arxiv-2026-09-15-agent-llm]]
+- [[skill-audit-2026-09-15]]
 
 ## 🧭 入口治理
 

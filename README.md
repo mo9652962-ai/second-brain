@@ -132,12 +132,15 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 
 ---
 
-## 📦 最新技能入库 (2026-08-16 ~ 2026-09-14)
+## 📦 最新技能入库 (2026-08-16 ~ 2026-09-15)
 
 ### 研究笔记
 
 | 技能 | 版本 | 简介 |
 |------|------|------|
+| **[每日日志 09-15](memory/2026/09/2026-09-15.md)** | v1.0 | 晨间批量入库（arXiv 09-15 补全速览 15+14 篇 + HN + 知识卡 RubyGems 攻击）+ 双周技能审计（479 技能 / 4 patch）+ 反思 3 改进点落地（assert 补 MEMORY.md 检查 4/4 PASS）+ health 降级 | 
+| **[arXiv AI Agent / LLM 速览 09-15](knowledge/Research/arxiv-2026-09-15-agent-llm.md)** | v1.0 | 09-14 池 402 篇未覆盖补录 → 15 主条目 + 14 简评（5 大信号：技能治理运行时后果控制 / bash>typed tools / 记忆生命周期分层 / 评测可信度专家复评 / 代码质量差距） | 
+| **[双周技能审计 09-15](knowledge/Research/skill-audit-2026-09-15.md)** | v1.0 | 双周审计：479 技能登记（agent 400）+ 4 处 patch + 6 组重复待确认 + apple 孤儿 | 
 | **[每日日志 09-14](memory/2026/09/2026-09-14.md)** | v1.0 | 晨间批量入库（arxiv 432 篇新窗口 + 文献周报 + HN）+ 闲鱼计数推进 42 天 + health 巡检 2 个新 P1（cpa-gui/EasyCLIProxyAPI）+ 素材第 20 次核验 PASS | 
 | **[arXiv AI Agent / LLM 速览 09-14](knowledge/Research/arxiv-2026-09-14-agent-llm.md)** | v1.0 | 09-14 全新窗口 432 篇 → 17 主条目 + 12 简评（Skill 质量度量化 / K-Bench 六通道泄露 / GuardrailLoop / Harness vs Model / 动作前验证） |
 | **[AI 文献周报 W37 09-14](knowledge/Research/ai-weekly-literature-2026-09-14.md)** | v1.0 | 09-07~09-13 周报：287 篇 → 16 篇精选（过程级评测 + 科研 agent 物理闭环） |
@@ -232,7 +235,7 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 | **知识库引擎** | Obsidian (Dataview + Graph View) |
 | **版本控制** | Git + GitHub (每 30 分钟自动同步) |
 | **MCP 服务** | GitHub · Filesystem · JLCPCB · Obsidian · Browser |
-| **自动化引擎** | Hermes Cron Scheduler (44 个定时任务) |
+| **自动化引擎** | Hermes Cron Scheduler (43 个定时任务) |
 
 ---
 
@@ -240,7 +243,7 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 
 ```
 📁 仓库体积：约 31MB 跟踪文件（Git 包约 48MB）
-📝 Markdown 文件：1130 个（正文约 6.5 MB）
+📝 Markdown 文件：约 1080 个知识笔记 + 系统文档（正文约 7 MB）
 🧠 自建 Skill 文档：30 个（11 个领域目录）
 🗂️ 知识域：11 个
 ⏰ 首次提交：2026 年 7 月
