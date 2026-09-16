@@ -14,7 +14,7 @@
 | check_wikilinks.py | wikilink 断链检查 | 08-06 | 在用 |
 | configure-smart-router.py | smart_model_routing 模型路由配置 | 08-06 | 在用 |
 | cron-retry-wrapper.sh | cron 失败重试包装 | 08-06 | 在用 |
-| daily_vault_optimize.py | 每日 vault 优化（DIR_MOC 映射清理等） | 08-18 | 在用（8/18 清 8 个过期映射） |
+| daily_vault_optimize.py | 每日 vault 优化（孤立补链→所属 MOC、MOC-Research 增量索引、知识地图日期更新、git commit+push） | 09-09 | 在用（8/18 清 8 个过期映射；9/9 扩展补链/MOC 增量索引） |
 | export_traces.py | OpenForgeRL 轨迹导出（7/31 实测 206 会话） | 08-06 | 在用 |
 | gaming-optimize.bat | 游戏性能优化批处理 | 07-21 | 在用 |
 | generate_graph.py | Obsidian 图谱生成 | 08-16 | 在用 |
