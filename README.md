@@ -126,19 +126,22 @@ git clone https://github.com/mo9652962-ai/second-brain.git
    - 针对中文开发者和研究者优化，没有语言障碍
    - 所有资料都是中文，直接能用
 
-5. **🔄 每 30 分钟自动同步更新**
+5. **🔄 每 2 小时自动同步更新**
    - 不是一次性项目，是持续进化的活的知识库
-   - 44 个 Cron 自动化任务 7×24 小时运行
+   - 43 个 Cron 自动化任务 7×24 小时运行
 
 ---
 
-## 📦 最新技能入库 (2026-08-16 ~ 2026-09-15)
+## 📦 最新技能入库 (2026-08-16 ~ 2026-09-16)
 
 ### 研究笔记
 
 | 技能 | 版本 | 简介 |
 |------|------|------|
-| **[每日日志 09-15](memory/2026/09/2026-09-15.md)** | v1.0 | 晨间批量入库（arXiv 09-15 补全速览 15+14 篇 + HN + 知识卡 RubyGems 攻击）+ 双周技能审计（479 技能 / 4 patch）+ 反思 3 改进点落地（assert 补 MEMORY.md 检查 4/4 PASS）+ health 降级 | 
+| **[每日日志 09-16](memory/2026/09/2026-09-16.md)** | v1.0 | 创新大赛研究沉淀 + cron 四算子知识自举（6 条可执行知识）+ 万悟 Docker 提速实战（新 skill）+ 12:53 六 cron 批量失败补跑 + health 巡检三红线 | 
+| **[cron 产出学习研究 09-15](knowledge/Research/cron-output-learning-20260915.md)** | v1.0 | 11 文件 → 6 条可执行知识：AI agent 主动攻击方(⭐6) / bash>typed tools(+21.8pp) / 记忆分层 / 技能库 479 个 6 组重复 / 代理层晨启隐患 | 
+| **[创新大赛产业赛道 09-15](knowledge/Research/innovation-competition-industry-track-20260915.md)** | v1.0 | 联通命题本质=推广万悟：三模块映射 + 3 坑对策 + 墨题企业版迁移路径 | 
+| **[每日日志 09-15](memory/2026/09/2026-09-15.md)** | v1.0 | 晨间批量入库（arXiv 09-15 补全速览 15+14 篇 + HN + 知识卡 RubyGems 攻击）+ 双周技能审计（479 技能 / 4 patch）+ 反思 3 改进点落地（assert 补 MEMORY.md 检查 4/4 PASS）+ health 降级 |
 | **[arXiv AI Agent / LLM 速览 09-15](knowledge/Research/arxiv-2026-09-15-agent-llm.md)** | v1.0 | 09-14 池 402 篇未覆盖补录 → 15 主条目 + 14 简评（5 大信号：技能治理运行时后果控制 / bash>typed tools / 记忆生命周期分层 / 评测可信度专家复评 / 代码质量差距） | 
 | **[双周技能审计 09-15](knowledge/Research/skill-audit-2026-09-15.md)** | v1.0 | 双周审计：479 技能登记（agent 400）+ 4 处 patch + 6 组重复待确认 + apple 孤儿 | 
 | **[每日日志 09-14](memory/2026/09/2026-09-14.md)** | v1.0 | 晨间批量入库（arxiv 432 篇新窗口 + 文献周报 + HN）+ 闲鱼计数推进 42 天 + health 巡检 2 个新 P1（cpa-gui/EasyCLIProxyAPI）+ 素材第 20 次核验 PASS | 
@@ -209,19 +212,19 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 
 ---
 
-## 🤖 自动化体系 (每日优化 Cron)
+## 🤖 自动化体系 (每日优化 Cron · 共 43 个任务)
 
 | 频率 | 时间 | 任务 | 核心功能 |
 |:----|:----|:-----|:---------|
-| 🔵 每日 | 07:00 | arXiv 论文抓取 | AI Agent / LLM 领域最新论文入库 |
-| 🔵 每日 | 08:00 | arXiv 论文精读 | 精选 2-3 篇深度解读，提取可应用点 |
-| 🔵 每日 | 08:15 | 健康检查 | API 连通性、Cron 状态、磁盘、内存 |
-| 🔵 每日 | 08:30 | 自我反思 + 知识吸收检查 | 每日三改进点 + 防零产出守门人 |
+| 🔵 每日 | 06:30 | arXiv 论文抓取 | AI Agent / LLM 领域最新论文入库 |
+| 🔵 每日 | 06:45 | 自我反思 + 知识吸收检查 | 每日三改进点 + 防零产出守门人 |
+| 🔵 每日 | 07:15 | HN 今日深挖 | Hacker News Top 精选深挖 |
+| 🔵 每日 | 15:45 | 健康检查 | API 连通性、Cron 状态、磁盘、内存 |
 | 🔵 每日 | 18:00 | 变现回顾 | 闲鱼接单复盘、定价策略优化 |
 | 🔵 每日 | 20:00 | 待办执行器 | 全库扫描 TODO 并自动执行 |
-| 🟢 每 30 分钟 | | GitHub 同步 | 自动推送知识变更 |
-| 🟡 每周日 | 10:00 | 知识整合周更 | 知识图谱更新、清理、成本报告 |
-| 🟡 每周 | 周一 07:00 | 文献周报 | 一周学术前沿汇总 |
+| 🟢 每 2 小时 | | GitHub 同步 | 自动推送知识变更 |
+| 🟡 每周日 | 12:15 | 知识整合周更 | 知识图谱更新、清理、成本报告 |
+| 🟡 每周 | 周一 07:45 | 文献周报 | 一周学术前沿汇总 |
 
 ---
 
@@ -229,11 +232,11 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 
 | 层 | 技术 |
 |----|------|
-| **Agent 平台** | OpenClaw / Hermes Agent Framework |
-| **主模型** | opencode-go / DeepSeek-v4-flash → Doubao-seed 2.0 pro |
+| **Agent 平台** | Hermes Agent Framework（OpenClaw 遗产已迁移） |
+| **主模型** | DeepSeek-v4-Pro（方舟一）+ DeepSeek-v4-Flash 兜底 |
 | **视觉模型** | Doubao Vision 1.5 |
 | **知识库引擎** | Obsidian (Dataview + Graph View) |
-| **版本控制** | Git + GitHub (每 30 分钟自动同步) |
+| **版本控制** | Git + GitHub (每 2 小时自动同步) |
 | **MCP 服务** | GitHub · Filesystem · JLCPCB · Obsidian · Browser |
 | **自动化引擎** | Hermes Cron Scheduler (43 个定时任务) |
 
@@ -243,11 +246,11 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 
 ```
 📁 仓库体积：约 31MB 跟踪文件（Git 包约 48MB）
-📝 Markdown 文件：约 1080 个知识笔记 + 系统文档（正文约 7 MB）
+📝 Markdown 文件：约 1160 个知识笔记 + 系统文档（共 1200+ 个 .md）
 🧠 自建 Skill 文档：30 个（11 个领域目录）
 🗂️ 知识域：11 个
 ⏰ 首次提交：2026 年 7 月
-🔄 平均更新频率：每 30 分钟自动同步
+🔄 平均更新频率：每 2 小时自动同步
 ```
 
 ---
