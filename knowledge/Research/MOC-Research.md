@@ -13,7 +13,7 @@ updated: 2026-09-16
 > 所有研究笔记的索引与入口。自动按主题分组。
 > 回到 [[knowledge-map|🗺️ 知识地图]] · [[Home|🏠 Home]]
 
-**共 207 篇研究笔记** · 最后更新: 2026-09-16（每日增量索引）
+**共 208 篇研究笔记** · 最后更新: 2026-09-17（每日增量索引）
 
 
 ## 🆕 W34 新增补链（2026-08-16 周度整理）
@@ -350,6 +350,7 @@ updated: 2026-09-16
 - [[GitHub-Weekly-2026-09-13]]
 - [[GitHub-Weekly-2026-09-13-weekly-5projects]]
 - [[arxiv-2026-09-15-agent-llm]]
+- [[arxiv-2026-09-17-agent-llm]]
 - [[skill-audit-2026-09-15]]
 - [[cron-output-learning-20260915]]
 - [[innovation-competition-industry-track-20260915]]
