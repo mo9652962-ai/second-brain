@@ -354,6 +354,13 @@ updated: 2026-09-14
 | fangzhou-2 配额恢复 | ✅ 已恢复（9/5 实测） | 主链 custom:fangzhou-2 实测 1264ms OK，月配额重置生效，无需操作 |
 | 安全审计 cron 排期 | ✅ 已完成 8/5 | security-audit cron 已挂载（`30 8 * * 0` no_agent + security_audit.py），无需再操作 |
 
+### 🧭 9/16 反思行动项（daily-reflection 复盘 9-16，执行者必读）
+- [ ] 🔴 arxiv-fetch 静默排查 + 产物断言（截止 9/21，k 可做 40min）：读 jobs.json last_status + errors.log fallback attempt 行 + 手动试跑定位；套 hermes-health-check 产物断言框架（存在/非空/含当日日期）
+- [ ] 🟡 创新大赛研究原文验证（9/17，k 可做 15min）：≥1 次 web_extract 万悟官方源 + frontmatter 补 URL（豁免验证门补强）
+- [ ] 🟡 闲鱼决策降频机制（9/17 起，k 可做 + sora）：每日 P0 → 每周一复盘提醒；默认「再缓 7 天」自动续期，sora 拍板即停
+- [ ] 🔒 闲鱼试水决策（第 42 天，sora 30 秒三选一：试水/放弃/再缓）——k 侧 100% 就绪，上架 30min 可逆
+- [ ] 🔒 万悟参赛确认（9/25 12:00 截止，剩 8 天，sora）——确认后 k 当天出《商业计划书/对策方案》初稿
+
 ## 🔗 相关领域
 - [[AI-Agent]] — 基础设施与能力架构
 - [[PPT-Design]] — PPT 制作方法论
@@ -363,7 +370,7 @@ updated: 2026-09-14
 
 ---
 
-_由 k (Hermes) 在每次会话结束时更新 | 最后更新: 2026-09-15 (daily-reflection 复盘 9-14)
+_由 k (Hermes) 在每次会话结束时更新 | 最后更新: 2026-09-17 (daily-reflection 复盘 9-16)
 
 ---
 
