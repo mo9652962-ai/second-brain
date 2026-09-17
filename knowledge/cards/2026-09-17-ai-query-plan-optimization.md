@@ -31,7 +31,7 @@ status: fresh---
 ## 行动项
 
 - [x] 官方源核对：web_extract rohanbansal.com/qorl（44.7% / 81% / 4B / GRPO 变体 / GPT-6 Astra 蒸馏数字确认）
-- [ ] 选题池登记：#70「AI 优化数据库查询计划：4B 模型 + RL 让 Postgres 快 44.7%」（实战拆解型，公众号/抖音，冷启动）
+- [x] 选题池登记：#70「AI 优化数据库查询计划：4B 模型 + RL 让 Postgres 快 44.7%」（实战拆解型，公众号/抖音，冷启动）→ ✅ 2026-09-17 daily-todo-executor 已登记（knowledge/Content/选题池.md 板块 6）
 - [ ] 墨题 SQLite 慢查询体检：题库/词库大表 EXPLAIN QUERY PLAN 扫一遍，缺索引则补（P2 低优先）
 
 ## 为什么重要
