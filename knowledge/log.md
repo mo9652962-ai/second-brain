@@ -191,3 +191,9 @@ tags: [meta, vault-maintenance]
 - **结果**：lint 断链 0 / 缺 frontmatter 0 / 粘连闭合 0 / 孤立 0 / 短页 0；全仓库断链 0
 - **验证补盲**：ad-hoc 验证脚本（fixture mini-vault + 真实库双跑）抓到 lint-fix-tags-v2.py SPECIAL_FIX 重拼 frontmatter 缺换行 bug（`new_fm+"---"` → `new_fm+"\n---"`），修复后某高校不再被脚本写回粘连态；验证 11/11 PASS
 
+
+
+## [2026-09-17] lint | Obsidian 优化强化
+- **诊断**：lint 606 页（断链 0 / 缺 frontmatter 0 / 粘连闭合 0 / 孤立 1 / 短页 0 / 陈旧 0）；19 知识域 vs 9 MOC + Inbox
+- **修复**：挂载 arxiv-2026-09-17-agent-llm → MOC-Research（计数 207→208）；index.md 头部更新（09-13/592 → 09-17/606）+ Research 计数 212 + 补 4 个小域行（Archive/Creative/Product/gaming）；knowledge-map 开 W39 速览区挂今日 arxiv
+- **结果**：lint 全绿（孤立 0，仅剩 2 个 README.md 低风险重名忽略）
