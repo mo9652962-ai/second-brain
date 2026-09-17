@@ -1,5 +1,5 @@
 ---
-tags: [nmap, security, 端口扫描, 渗透测试, 教程]
+tags: [nmap, security, 端口扫描, 渗透测试, tutorial]
 domain: Security
 status: fresh
 date: 2026-08-20

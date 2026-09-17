@@ -1,15 +1,10 @@
 ---
 aliases:
   - 2026-09-05-card-false-positive-tax
-tags:
-  - knowledge-card
-  - methodology
-  - tooling
-  - knowledge-lint
+tags: [knowledge-card, methodology, tooling, knowledge-lint]
 created: 2026-09-05
 source: "[[knowledge/AI/工具精度方法论-假阳性税与知识库Lint-2026-09-05]]"
-status: fresh
----
+status: fresh---
 
 # 🃏 知识卡片 · 假阳性税：工具误报比不修更危险，评估工具先看原始计数
 

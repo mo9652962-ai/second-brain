@@ -2,21 +2,11 @@
 aliases:
   - arxiv-2026-08-02-core
   - frontis-m1-agentradio-sigma-mem
-tags:
-  - arxiv
-  - research
-  - ai-agent
-  - llm
-  - ai4ai
-  - recursive-self-improvement
-  - multi-agent
-  - memory
-  - reliability
+tags: [arxiv, research, ai-agent, llm, ai4ai, recursive-self-improvement, multi-agent, memory, reliability]
 created: 2026-08-02
 updated: 2026-08-02
 status: adopted
-source: arxiv-weekly-2026-08-02
----
+source: arxiv-weekly-2026-08-02---
 
 # arXiv 核心贡献精选 — 2026-08-02
 

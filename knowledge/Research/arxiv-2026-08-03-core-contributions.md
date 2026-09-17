@@ -2,21 +2,11 @@
 aliases:
   - arxiv-2026-08-03-core
   - manta-veriskill-mind
-tags:
-  - arxiv
-  - research
-  - ai-agent
-  - llm
-  - multi-agent
-  - self-evolution
-  - skill
-  - security
-  - memory
+tags: [arxiv, research, ai-agent, llm, multi-agent, self-evolution, skill, security, memory]
 created: 2026-08-03
 updated: 2026-08-03
 status: adopted
-source: arxiv-weekly-2026-08-03
----
+source: arxiv-weekly-2026-08-03---
 
 # arXiv 核心贡献精选 — 2026-08-03
 

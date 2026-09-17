@@ -1,12 +1,11 @@
 ---
-tags: [MOC, github, research, 索引]
+tags: [MOC, github, research, index]
 aliases: [GitHub 研究地图, GitHub MOC, GitHub宝藏挖掘]
 domain: Research
 type: moc
 status: active
 created: 2026-08-16
-updated: 2026-08-31
----
+updated: 2026-08-31---
 
 # 🐙 GitHub 研究 MOC — GitHub Treasure Map
 

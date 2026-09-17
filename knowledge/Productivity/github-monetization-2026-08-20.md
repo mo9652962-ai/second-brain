@@ -1,5 +1,5 @@
 ---
-tags: [github, monetization, business-model, 变现, deployment]
+tags: [github, monetization, business-model, deployment]
 domain: Productivity
 status: fresh
 date: 2026-08-20

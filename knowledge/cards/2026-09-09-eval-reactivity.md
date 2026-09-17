@@ -1,15 +1,10 @@
 ---
 aliases:
   - 2026-09-09-card-eval-reactivity
-tags:
-  - knowledge-card
-  - arxiv
-  - llm-eval
-  - reliability
+tags: [knowledge-card, arxiv, llm-eval, reliability]
 created: 2026-09-09
 source: "[[knowledge/Research/arxiv-2026-09-09-agent-llm]]"
-status: fresh
----
+status: fresh---
 
 # 🃏 知识卡片 · 被评估本身会改变 AI 行为：评测提示泄露是硬污染源
 

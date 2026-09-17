@@ -1,20 +1,11 @@
 ---
 aliases:
   - tapo-meta-finance-2026-08-03
-tags:
-  - research
-  - rl
-  - terminal-agent
-  - finance
-  - deep-research
-  - tapo
-  - meta-task
-  - financeharness
+tags: [research, rl, terminal-agent, finance, deep-research, tapo, meta-task, financeharness]
 created: 2026-08-03
 updated: 2026-08-03
 status: adopted
-source: arxiv-2026-08-03-core-contributions
----
+source: arxiv-2026-08-03-core-contributions---
 
 # 长期研究线：TAPO + Meta-Task + FinanceHarness
 

@@ -1,9 +1,5 @@
 ---
-tags:
-  - hermes
-  - reliability
-  - model-fallback
-  - audit
+tags: [hermes, reliability, model-fallback, audit]
 created: 2026-08-16
 status: applied
 ---

@@ -1,5 +1,5 @@
 ---
-tags: [接单, 报价, 需求对齐, 闲鱼, freelance]
+tags: [接单, 报价, 需求对齐, xianyu, freelance]
 domain: Productivity
 status: fresh
 date: 2026-08-21

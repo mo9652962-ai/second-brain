@@ -6,10 +6,7 @@ domain: META
 status: active
 created: 2026-08-31
 updated: 2026-08-31
-tags:
-  - meta/moc
-  - knowledge/governance
-  - knowledge/deduplication
+tags: [meta/moc, knowledge/governance, knowledge/deduplication]
 source: scripts/vault-orphan-duplicate-scan.py
 ---
 

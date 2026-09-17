@@ -1,12 +1,7 @@
 ---
 aliases:
   - deepseek-v4-flash-0731
-tags:
-  - models
-  - deepseek
-  - agent
-  - pricing
-  - daily
+tags: [models, deepseek, agent, pricing, daily]
 created: 2026-08-06
 source: user + 36kr/DeepSeek官方
 status: active

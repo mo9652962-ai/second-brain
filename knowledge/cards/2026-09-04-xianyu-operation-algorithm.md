@@ -1,15 +1,10 @@
 ---
 aliases:
   - 2026-09-04-card-xianyu-operation-algorithm
-tags:
-  - knowledge-card
-  - xianyu
-  - monetization
-  - ecommerce
+tags: [knowledge-card, xianyu, monetization, ecommerce]
 created: 2026-09-04
 source: "[[knowledge/Productivity/闲鱼运营千轮研究-2026-09-04]]"
-status: fresh
----
+status: fresh---
 
 # 🃏 知识卡片 · 闲鱼推流算法改版：「上架即曝光」失效，5 分钟回复率是流量生死线
 

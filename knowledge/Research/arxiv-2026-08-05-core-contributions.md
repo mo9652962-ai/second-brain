@@ -2,19 +2,11 @@
 aliases:
   - arxiv-2026-08-05-core
   - realtime-detect-romerl-swe-touch
-tags:
-  - arxiv
-  - research
-  - ai-agent
-  - llm
-  - reliability
-  - memory
-  - coding-agent
+tags: [arxiv, research, ai-agent, llm, reliability, memory, coding-agent]
 created: 2026-08-05
 updated: 2026-08-05
 status: adopted
-source: arxiv-weekly-2026-08-05
----
+source: arxiv-weekly-2026-08-05---
 
 # arXiv 核心贡献精选 — 2026-08-05
 

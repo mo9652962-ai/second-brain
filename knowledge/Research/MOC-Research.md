@@ -1,11 +1,11 @@
 ---
-tags: [MOC, research, 索引]
+tags: [MOC, research, index]
 aliases: [研究地图, Research MOC]
 type: moc
 domain: Research
 status: active
 created: 2026-08-09
-updated: 2026-09-16
+updated: 2026-09-17
 ---
 
 # 🔬 研究笔记 MOC — Research Map
@@ -13,7 +13,7 @@ updated: 2026-09-16
 > 所有研究笔记的索引与入口。自动按主题分组。
 > 回到 [[knowledge-map|🗺️ 知识地图]] · [[Home|🏠 Home]]
 
-**共 207 篇研究笔记** · 最后更新: 2026-09-16（每日增量索引）
+**共 210 篇研究笔记** · 最后更新: 2026-09-17（每日增量索引）
 
 
 ## 🆕 W34 新增补链（2026-08-16 周度整理）
@@ -138,6 +138,7 @@ updated: 2026-09-16
 - [[knowledge/Research/arxiv-2026-09-14-agent-llm|arXiv Agent/LLM 09-14]] — 今日 arXiv 速览
 - [[knowledge/Research/ai-weekly-literature-2026-09-14|AI 文献周报 W37（09-07~09-13）]] — 周报补链
 - [[knowledge/Daily/hackernews-2026-09-15|HN 09-15]] · [[knowledge/cards/2026-09-15-rubygems-ai-attack|知识卡片 09-15]]
+- [[knowledge/Daily/hackernews-2026-09-17|HN 09-17]] · [[knowledge/cards/2026-09-17-ai-query-plan-optimization|知识卡片 09-17]]
 ## 文章研读
 
 - [[ai-literature-search-pitfalls-study]]
@@ -349,6 +350,9 @@ updated: 2026-09-16
 - [[GitHub-Weekly-2026-09-13]]
 - [[GitHub-Weekly-2026-09-13-weekly-5projects]]
 - [[arxiv-2026-09-15-agent-llm]]
+- [[arxiv-2026-09-17-agent-llm]]
+- [[arxiv-learning-report-2026-09-17]]
+- [[core-pmpa-agent-tool-boundary-2026-09-17]] — P0 深读：PMPA 记忆投毒 + Agent-Tool 8 异常（落地 skill 已更新） — 四算子学习研究（PMPA 记忆投毒 / 工具边界 / 编码 agent 实证）
 - [[skill-audit-2026-09-15]]
 - [[cron-output-learning-20260915]]
 - [[innovation-competition-industry-track-20260915]]

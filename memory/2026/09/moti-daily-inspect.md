@@ -1,54 +1,55 @@
-# 墨题每日代码巡检 — 2026-09-16
+---
+tags: [moti, daily-inspect, cron, code-review]
+created: 2026-09-17
+updated: 2026-09-17
+type: daily-inspect
+---
 
-> 来源：dsh 自动派活（`dsh_inspect_moti.sh`）| 结论：✅ 全部通过，无阻塞问题
+# 🔍 墨题每日巡检日志
 
-## 巡检结果总览
+> 巡检脚本：`dsh_inspect_moti.sh`（[1/4] Git → [2/4] 后端 → [3/4] 前端 → [4/4] 移动端）
 
-| 检查项 | 结果 | 详情 |
-|:---|:---|:---|
-| Git 状态 | ✅ 通过 | 未提交改动 0 处，工作区干净 |
-| 后端健康 | ✅ 通过 | `backend/app/main.py` 存在，Python 语法全部通过 |
-| 前端健康 | ✅ 通过 | App.vue / router.ts 存在，scripts（dev/prebuild/build/preview）齐全 |
-| 移动端检查 | ✅ 通过 | capacitor.config.ts 存在，android 目录存在 |
-| **总判定** | ✅ **无阻塞问题** | 4/4 项全绿 |
+## 2026-09-17（周四）✅ 通过
 
-## Git 状态
+### ✅ 结论置顶
 
-- 未提交改动：**0 处**（工作区干净）
-- 最近提交（均为 docs/ci android 相关）：
+**巡检通过：无阻塞问题（无 FAIL、无语法错误）。** Git 完全干净（0 处未提交改动），最近提交集中在 Android APK 资产校验 / 发布构建接线 / 文档证据记录——上一轮 Android 发布门禁工作已收尾归档，无悬而未决的改动。
 
-| 提交 | 时间 | 说明 |
-|:---|:---|:---|
-| `6bf89c3` | 2026-09-14 23:59 | docs(android): document apk asset verification |
-| `e0ab980` | 2026-09-14 23:40 | docs(android): record release build wiring check |
-| `5d60e3a` | 2026-09-14 23:35 | docs(android): link apk asset report |
-| `bb0a6c0` | 2026-09-14 23:35 | docs(android): record apk freshness gate |
-| `ef25030` | 2026-09-14 23:34 | ci(android): enforce apk asset freshness |
+### [1/4] Git 状态
 
-## 后端健康
+- **未提交改动：0 处**（Git 干净 ✅）
+- **最近提交**（main，全部为 Android 相关收尾）：
+  - `6bf89c3` docs(android): document apk asset verification
+  - `e0ab980` docs(android): record release build wiring check
+  - `5d60e3a` docs(android): link apk asset report
+  - `bb0a6c0` docs(android): record apk freshness gate
+  - `ef25030` ci(android): enforce apk asset freshness
+  - `7fdbf02` docs(android): record rebuilt debug apk evidence
+  - `c22426a` docs: refresh test count after android preflight coverage
+  - `811921a` fix(android): detect common local sdk paths
 
-- `backend/app/main.py`：✅ 存在
-- Python 语法编译检查：✅ 全部通过（无语法错误）
+### [2/4] 后端健康
 
-## 前端健康
+- ✅ `backend/app/main.py` 存在
+- ✅ Python 语法全部通过
 
-- `frontend/src/App.vue`：✅ 存在
-- `frontend/src/router.ts`：✅ 存在
-- package.json scripts：✅ dev / prebuild / build / preview 齐全
+### [3/4] 前端健康
 
-## 移动端检查
+- ✅ `App.vue` 存在
+- ✅ `router.ts` 存在
+- ✅ scripts：dev / prebuild / build / preview
 
-- `frontend/capacitor.config.ts`：✅ 存在
-- `frontend/android/`：✅ 目录存在
+### [4/4] 移动端检查
 
-## 异常标记
+- ✅ `capacitor.config.ts` 存在
+- ✅ `android/` 目录存在
 
-- 🚨 无。本次巡检 FAIL=0，无语法错误，无阻塞问题。
+### 📌 巡检记录
 
-## 备注
-
-- 最近一次代码变更集中在 Android APK 资源验证与发布构建文档（9-14），近两天无新代码提交。
-- 三库同步规则（后端 app.db / Web 离线库 / 手机内置库）未受影响——本次无数据改动。
+- 脚本退出码：0 ✅
+- 运行方式：cron 自动派活（2026-09-17，本月首次巡检档案）
+- 无 FAIL 标记、无语法错误、无阻塞问题
+- 关注：昨日/近期均为 Android 发布证据与 APK 资产新鲜度门禁文档化，无行为代码改动——如需对移动端发布链做回归，参考 AGENTS.md 坑 10/14（生成目录 + bundle/离线门禁）
 
 ---
 > 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]
