@@ -1114,6 +1114,7 @@ graph TD
 | Finance | 每日股票分析 09-08/09/11 | A 股盘后分析 ×3 期 |
 | cards | 5 张知识卡 | 记忆可移植性 / 黑盒实证 / eval 反应性 / Desert Ant 端侧 / AI 商业广告反面教材 |
 | Daily | HN 速览 ×5 | 09-07/08/09/10/13 |
+| Daily | HN 速览 09-16（补跑） | [[knowledge/Daily/hackernews-2026-09-16]] |
 
 ### 🆕 W38 GitHub Trending（weekly 口径，2026-09-13）
 

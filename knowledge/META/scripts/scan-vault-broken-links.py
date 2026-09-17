@@ -17,7 +17,9 @@ PLACEHOLDERS = {':space:', '` `', 'wiki link', 'note-1', 'series-2026-08-14',
                 'their-name', 'name', 'skill-name', 'wikilink', '所属MOC',
                 '2026-07-21-2347', 'health-2026-07-24', 'weekly-2026-07-26',
                 'hermes-session-20260723', 'suggestions-applied',
-                'outputs/xianyu-master/上架素材包/上架操作清单'}
+                'outputs/xianyu-master/上架素材包/上架操作清单',
+                # 反引号示例文字（09-04/09-08 维护笔记内文档化示例，非真链接，设计内保留）
+                '`。', '`。`'}
 
 def resolve(target, cur_dir):
     t = target.strip()

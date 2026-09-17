@@ -244,7 +244,7 @@ InformationWeek 报告：企业从脆弱的手工胶水脚本转向标准化 Age
 
 --- 
 
-_最后更新: 2026-08-30｜运行环境: OpenClaw Agent on Windows 11_
+_最后更新: 2026-09-17｜运行环境: OpenClaw Agent on Windows 11_
 
 ## 🔒 Waiting for User（阻塞待办，状态变化时提醒）
 - （空——被阻塞任务单独维护，不混入每日清单）
@@ -267,3 +267,17 @@ _最后更新: 2026-08-30｜运行环境: OpenClaw Agent on Windows 11_
 - **Gartner 2026-08 预测**: AI 推理成本�?2028 �?agentic workflow 增超 5 �?—�?成本控制升为「生存项」；直接背书 Plan-and-Execute 90% 降本 + cheap-model tiering + 语义缓存 20-40% 节省构成的低成本护城�?[score=0.88 source=memory/2026-09-13.md]
 <!-- openclaw-memory-promotion:memory:memory/2026-09-13.md:196:210 -->
 - **EU AI Act 8月生�?*: �?Agent 编排归类 high-risk，需 HITL+审计+身份管理；CrewAI 44.3K stars/5.2M 月下载最活跃；AutoGen 合并�?Microsoft Agent Framework 进入维护模式 [score=0.82 source=memory/2026-09-13.md]
+<!-- openclaw-memory-promotion:memory:memory/2026/09/2026-09-14-self-improvement.md -->
+- **OpenClaw 2.0 极速补丁节奏**: v2026.8.1 发布后半个月 6 个补丁版本（v2026.8.1→v2026.9.4），Swarm 默认开启标志多 Agent 编排从实验性转为生产默认；Node 24.16+ 强制、**持久化技能**原生化、**可分享会话**特性落地 [source=memory/2026/09/2026-09-14-self-improvement.md]
+<!-- openclaw-memory-promotion:memory:memory/2026/09/2026-09-14-self-improvement.md -->
+- **AI Agent 安全标准化五控制点+三具体化**: Least-privilege tokens、RBAC 审批门控、沙箱工具运行时、提示注入防御、完整审计日志 + SSRF explicit deny、Secret egress host binding、Webhook throttling —— 形成可落地架构审查清单 [source=memory/2026/09/2026-09-14-self-improvement.md]
+<!-- openclaw-memory-promotion:memory:memory/2026/09/2026-09-15-reflection.md -->
+- **反思行动项落执行面机制生效**: 将反思行动项写入 projects/current.md `- [ ]` 格式带硬截止，daily-todo-executor 自动拾起执行；skill-link-gate 检测器连续 3 轮滑档 → 落执行面即日闭环（31→0 断裂），根治「机制类改进项滑档」 [source=memory/2026/09/2026-09-15-reflection.md]
+<!-- openclaw-memory-promotion:memory:memory/2026/09/2026-09-16-reflection.md -->
+- **FlClash 代理端口修复实证 (9/16)**: sora 物理机重启 FlClashCore 恢复 7890 转发（google 302 / github 200），QQBot 15:31 resume 重连成功 —— **唯一物理层阻塞点 (ERR-20260818-001) 已解除**，连续 7+ 天 cron 高亮告一段落 [source=memory/2026/09/2026-09-16.md]
+<!-- openclaw-memory-promotion:memory:memory/2026/09/2026-09-16.md -->
+- **docker-image-acceleration skill 实战验证**: 万悟 Docker 部署中三步法实测有效 —— FlClash 直连规则头插 + xuanyuan 镜像加速源 + minio 换 quay.io 官方源，下载速度 ~8MB/min → ~13MB/s（mysql 600MB 46s，21/25 镜像就绪），已固化为 skill 可复用 [source=memory/2026/09/2026-09-16.md]
+<!-- openclaw-memory-promotion:memory:memory/2026/09/2026-09-17-self-improvement.md -->
+- **Graph Engineering 实践共识再验证**: small typed core + cheap indexing + hybrid retrieval + temporal supersession —— 全部可在 markdown 文件上实现，无需额外基建；Codex Remote Sessions = Graph Engineering 的 OpenClaw 实践 [source=memory/2026/09/2026-09-17-self-improvement.md]
+<!-- openclaw-memory-promotion:memory:memory/2026/09/2026-09-17-self-improvement.md -->
+- **记忆生命周期管理三步曲毒性确认**: Extract→Update→Delete 缺一不可；陈旧记忆（过时偏好/错误事实/冲突规则）主动降低输出质量，比无记忆更坏；向量检索 + 图遍历混合架构（Mem0/Letta/Cognee/Zep 10+ 框架）成标配 [source=memory/2026/09/2026-09-17-self-improvement.md]
