@@ -2,7 +2,8 @@
 tags: [接单, 报价, 需求对齐, xianyu, freelance]
 domain: Productivity
 status: fresh
-date: 2026-08-21---
+date: 2026-08-21
+---
 
 # 接单报价防坑：先问需求再谈价格（程序员Orion · 抖音 2026-08-21）
 

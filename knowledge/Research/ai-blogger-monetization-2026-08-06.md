@@ -5,7 +5,8 @@ tags: [research, monetization, xianyu, bilibili, blogger]
 created: 2026-08-06
 source: 36氪/新华社经济参考/新浪财经/博客园
 status: active
-domain: career---
+domain: career
+---
 
 # AI 博主 2026 变现研究 — 平台打法 + 闲鱼数据
 

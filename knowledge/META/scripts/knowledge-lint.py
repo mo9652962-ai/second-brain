@@ -74,6 +74,7 @@ def main():
     inlinks = defaultdict(set)
     outlinks = {}
     missing_frontmatter = []
+    glued_fm = []
     short_pages = []
     stale_pages = []
     broken = []
@@ -149,6 +150,12 @@ def main():
         # frontmatter
         if not text.startswith("---"):
             missing_frontmatter.append(f)
+        else:
+            # 粘连闭合符盲区：以 --- 开头但 frontmatter 区域无独立闭合行（如 tags: [a]---）
+            fm_lines = text.split("\n")
+            closed = any(l.strip() == "---" for l in fm_lines[1:20])
+            if not closed:
+                glued_fm.append(f)
         # 短页面
         plain = re.sub(r"[#*`\[\]()>_~\-]", "", text)
         plain = re.sub(r"\n+", "\n", plain).strip()
@@ -186,6 +193,10 @@ def main():
     for f in missing_frontmatter[:10]:
         print(f"  {f.relative_to(root.resolve())}")
 
+    print(f"\n[ERROR] Glued frontmatter close (no standalone ---): {len(glued_fm)}")
+    for f in glued_fm[:10]:
+        print(f"  {f.relative_to(root.resolve())}")
+
     print(f"\n[WARNING] Orphan pages (no inlinks): {len(orphans)}")
     for f in orphans[:20]:
         print(f"  {f.relative_to(root.resolve())}")
@@ -204,7 +215,7 @@ def main():
     for f, d in stale_pages[:10]:
         print(f"  {f.relative_to(root.resolve())} ({d})")
 
-    total = len(broken) + len(missing_frontmatter) + len(orphans) + len(dup) + len(short_pages)
+    total = len(broken) + len(missing_frontmatter) + len(glued_fm) + len(orphans) + len(dup) + len(short_pages)
     print("\n" + "=" * 60)
     print(f"TOTAL ISSUES: {total}")
     print("HEALTH:", "GOOD" if total == 0 else "NEEDS ATTENTION")

@@ -4,7 +4,8 @@ type: note
 domain: Productivity
 status: active
 tags: [knowledge/productivity, windows, system-cleanup, 运维监控]
-date: 2026-09-12---
+date: 2026-09-12
+---
 
 # 系统清理报告 2026-09-12
 

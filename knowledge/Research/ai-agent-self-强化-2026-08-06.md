@@ -4,7 +4,8 @@ aliases:
 tags: [research, ai-agent, memory, self-improvement]
 created: 2026-08-06
 source: web_search × 6 queries
-status: applied---
+status: applied
+---
 
 # AI Agent 自强化研究 — 记忆分层 + 能力固化
 

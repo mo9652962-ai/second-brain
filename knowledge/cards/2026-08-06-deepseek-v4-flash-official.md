@@ -4,7 +4,8 @@ aliases:
 tags: [models, deepseek, agent, pricing, daily]
 created: 2026-08-06
 source: user + 36kr/DeepSeek官方
-status: active---
+status: active
+---
 
 # DeepSeek V4-Flash 正式版 — Agent 能力暴增 6 倍
 

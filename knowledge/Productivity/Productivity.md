@@ -2,7 +2,8 @@
 tags: [index, MOC, productivity]
 aliases: [生产力, 效率工具]
 created: 2026-07-26
-status: adopted---
+status: adopted
+---
 
 # Productivity — 生产力工具与效率指南
 
