@@ -2,7 +2,8 @@
 tags: [security, SQL注入, 参数化查询, 拼接, database]
 domain: Security
 status: fresh
-date: 2026-08-21---
+date: 2026-08-21
+---
 
 # SQL 注入：参数化查询铁律（程序员Orion · 抖音 2026-08-21）
 

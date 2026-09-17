@@ -3,7 +3,8 @@ tags: [agent-skills, engineering, skill-format, Claude-Codex-Gemini, methodology
 aliases: [addyosmani-agent-skills, agent-skills]
 date: 2026-08-14
 source: https://github.com/addyosmani/agent-skills
-status: watch---
+status: watch
+---
 
 # agent-skills (Addy Osmani) — 生产级工程技能
 

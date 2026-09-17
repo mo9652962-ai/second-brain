@@ -4,7 +4,8 @@ aliases:
 tags: [research, mcp, code-intelligence, decision]
 created: 2026-08-05
 status: adopted
-domain: dev---
+domain: dev
+---
 
 # code-review-graph vs codebase-memory-mcp 决策（2026-08-05）
 

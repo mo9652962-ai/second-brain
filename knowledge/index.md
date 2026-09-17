@@ -3,7 +3,8 @@ title: 知识库索引
 type: 索引
 created: 2026-09-05
 updated: 2026-09-05
-tags: [meta, vault-maintenance]---
+tags: [meta, vault-maintenance]
+---
 
 # 📇 知识库索引 — Knowledge Index
 
