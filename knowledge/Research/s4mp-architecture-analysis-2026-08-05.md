@@ -1,16 +1,11 @@
 ---
 aliases:
   - s4mp-analysis
-tags:
-  - simsync
-  - research
-  - s4mp
-  - benchmark
+tags: [simsync, research, s4mp, benchmark]
 created: 2026-08-05
 updated: 2026-08-05
 status: studied
-domain: simsync
----
+domain: simsync---
 
 # S4MP 架构分析（v0.74.1）— 可借鉴点
 

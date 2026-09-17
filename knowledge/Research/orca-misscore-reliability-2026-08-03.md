@@ -1,19 +1,11 @@
 ---
 aliases:
   - orca-misscore-reliability-2026-08-03
-tags:
-  - research
-  - reliability
-  - evaluation
-  - orca-bench
-  - benchmarks
-  - sre
-  - cua
+tags: [research, reliability, evaluation, orca-bench, benchmarks, sre, cua]
 created: 2026-08-03
 updated: 2026-08-03
 status: adopted
-source: arxiv-2026-08-03-core-contributions
----
+source: arxiv-2026-08-03-core-contributions---
 
 # 可靠性工程研究线：ORCA-bench + Benchmarks Mis-Score
 
