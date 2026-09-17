@@ -1,15 +1,9 @@
 ---
 aliases:
   - 2026-08-04-card-sesa
-tags:
-  - knowledge-card
-  - ai-agent
-  - self-improving
-  - memory
-  - research
+tags: [knowledge-card, ai-agent, self-improving, memory, research]
 created: 2026-08-04
-source: "[[arxiv-weekly-2026-08-04]]"
----
+source: "[[arxiv-weekly-2026-08-04]]"---
 
 # 🃏 知识卡片 · SESA：让 Agent 自己出题、解题、把失败写成技能再进化
 

@@ -1,12 +1,7 @@
 ---
-tags:
-  - hermes
-  - reliability
-  - model-fallback
-  - audit
+tags: [hermes, reliability, model-fallback, audit]
 created: 2026-08-16
-status: applied
----
+status: applied---
 
 # Hermes 模型容灾链审计 · 2026-08-16
 

@@ -1,16 +1,10 @@
 ---
 aliases:
   - skill-entropy-card-2026-08-07
-tags:
-  - knowledge-card
-  - arxiv
-  - ai-agent
-  - skill
-  - research
+tags: [knowledge-card, arxiv, ai-agent, skill, research]
 created: 2026-08-07
 source: "[[knowledge/Research/arxiv-2026-08-07-agent-llm]]"
-status: adopted
----
+status: adopted---
 
 # 🃏 知识卡片 · 技能熵：技能编排 > 技能获取
 

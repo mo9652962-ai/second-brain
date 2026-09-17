@@ -1,11 +1,10 @@
 ---
-tags: [ai, rag, 知识管理, 记忆系统, 腾讯, wiki, github-trending, W38]
+tags: [ai, rag, knowledge-management, 记忆系统, 腾讯, wiki, github-trending, W38]
 aliases: [WeKnora, 微可诺拉, 腾讯知识平台]
 date: 2026-09-13
 source: https://github.com/Tencent/WeKnora
 domain: AI
-status: active
----
+status: active---
 
 # WeKnora — 腾讯开源 LLM 知识平台（RAG + Agent + 自维护 Wiki）
 

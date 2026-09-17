@@ -2,17 +2,11 @@
 aliases:
   - arxiv-2026-08-19-agent-llm
   - arxiv-agent-llm-2026-08-19
-tags:
-  - arxiv
-  - research
-  - ai-agent
-  - llm
-  - daily
+tags: [arxiv, research, ai-agent, llm, daily]
 created: 2026-08-19
 updated: 2026-08-19
 status: adopted
-source: export.arxiv.org API
----
+source: export.arxiv.org API---
 
 # arXiv AI Agent / LLM 速览 — 2026-08-19 ⚠️ 补全性质（08-17 提交池）
 

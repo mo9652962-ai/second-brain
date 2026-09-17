@@ -121,7 +121,7 @@ def make_price():
         center_text(d, x+card_w/2, top_y+120, price, font_bold(38), ORANGE_DARK if highlight else GRAY_TEXT)
         center_text(d, x+card_w/2, top_y+200, desc, font_reg(20), GRAY_MID)
         if highlight:
-            center_text(d, x+card_w/2, top_y+300, "★ 最受欢迎", font_bold(22), ORANGE_DARK)
+            center_text(d, x+card_w/2, top_y+300, "★ 人气之选", font_bold(22), ORANGE_DARK)
         else:
             center_text(d, x+card_w/2, top_y+300, "─ · ─", font_bold(22), (200, 200, 200))
 

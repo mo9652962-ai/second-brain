@@ -1,16 +1,10 @@
 ---
 aliases:
   - 2026-08-09-card-deepseek-v4-flash-arc-prize
-tags:
-  - knowledge-card
-  - deepseek
-  - benchmark
-  - ai-model
-  - monetization
+tags: [knowledge-card, deepseek, benchmark, ai-model, monetization]
 created: 2026-08-09
 source: "[[knowledge/Daily/hackernews-2026-08-09]]"
-status: fresh
----
+status: fresh---
 
 # 🃏 知识卡片 · 你正在用的 DeepSeek V4 Flash 登顶 ARC Prize：89% 推理分 + 2 分钱一道题
 

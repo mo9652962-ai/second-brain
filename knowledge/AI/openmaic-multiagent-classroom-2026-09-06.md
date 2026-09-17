@@ -1,11 +1,10 @@
 ---
-tags: [ai, 多Agent, 教育, 编排, 时间轴, github-trending, W37]
+tags: [ai, multi-agent, 教育, 编排, 时间轴, github-trending, W37]
 aliases: [OpenMAIC, 多智能体课堂, MAIC]
 date: 2026-09-06
 source: https://github.com/THU-MAIC/OpenMAIC
 domain: AI
-status: active
----
+status: active---
 
 # OpenMAIC — 清华多 Agent 交互课堂
 

@@ -1,17 +1,10 @@
 ---
 aliases:
   - s4mp-protocol-network-100round-2026-08-05
-tags:
-  - research
-  - s4mp
-  - sims4
-  - multiplayer
-  - protocol
-  - network
+tags: [research, s4mp, sims4, multiplayer, protocol, network]
 created: 2026-08-05
 updated: 2026-08-05
-status: adopted
----
+status: adopted---
 
 # 🔌 S4MP 消息协议（网络层）百轮研究 + 自制 mod 改进
 

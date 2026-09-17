@@ -37,6 +37,7 @@ created: 2026-08-09
 - [[memory/2026/09/2026-09-14-reflection|🔍 反思 09-14]] — 硬线探活产物断言 + skill-link-gate 滑档 + 单一权威源收敛
 - [[memory/2026/09/2026-09-13-reflection|🔍 反思 09-13]] — 十领域批次落盘 + 缺档补位
 - [[memory/2026/09/2026-09-14-daily-review|📋 09-14 每日回顾]] — Top5：arxiv 432 篇新窗口速览 / 文献周报过程级评测 / Fable 破解 370 年密码 / GitHub W38 / Agent 安全标准化；明日：闲鱼决策第 43 天 + cpa-gui 启动 + 探活脚本修复
+- [[memory/2026/09/2026-09-17-vault-suggestion-executor|🧹 09-17 闲鱼专项建议执行报告]] — 6 张主图 vision 禁词复核：2 张含「最」已修复「人气之选」+ 防复发 + 第 21 次素材核验
 - [[memory/2026/09/2026-09-14-vault-suggestion-executor|🧹 09-14 闲鱼专项建议执行报告]] — 计数 41→42 权威推进(assert PASS) + 双技能计数红线 patch + 今日 3 项优先级
 - [[memory/2026/09/2026-09-15-vault-suggestion-executor|🧹 09-15 闲鱼专项建议执行报告]] — 素材包 4 处「自动化」禁词修复 + 全量复扫 PASS + 今日 3 项优先级
 - [[memory/2026/09/weekly-2026-09-13|📚 W38 周度整理]] — 十领域自我强化批次 + 黑盒实证 + 评测意图隐藏规范 + memory 归位 6 文件

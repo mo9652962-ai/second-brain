@@ -2,20 +2,11 @@
 aliases:
   - arxiv-2026-07-30-core
   - relay-opd-memLens-ddb
-tags:
-  - arxiv
-  - research
-  - ai-agent
-  - llm
-  - memory-management
-  - inference-distillation
-  - computer-use
-  - evaluation-bench
+tags: [arxiv, research, ai-agent, llm, memory-management, inference-distillation, computer-use, evaluation-bench]
 created: 2026-07-30
 updated: 2026-07-30
 status: adopted
-source: arxiv-weekly-2026-07-29
----
+source: arxiv-weekly-2026-07-29---
 
 # arXiv 核心贡献精选 — 2026-07-30
 

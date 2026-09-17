@@ -3,9 +3,8 @@ title: "PCB自动化深化-千轮研究-2026-09"
 type: note
 domain: Research
 status: active
-tags: [knowledge/research, 千轮研究, pcb, 自动化]
-date: 2026-09-12
----
+tags: [knowledge/research, 千轮研究, pcb, automation]
+date: 2026-09-12---
 
 # 『PCB 自动化深化』千轮研究报告（2026-09）
 

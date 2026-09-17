@@ -1,9 +1,8 @@
 ---
-tags: [nmap, security, 端口扫描, 渗透测试, 教程]
+tags: [nmap, security, 端口扫描, 渗透测试, tutorial]
 domain: Security
 status: fresh
-date: 2026-08-20
----
+date: 2026-08-20---
 
 # Nmap 保姆级教程笔记（安全小子 · 抖音 2026-08-20）
 

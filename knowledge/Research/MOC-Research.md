@@ -1,12 +1,11 @@
 ---
-tags: [MOC, research, 索引]
+tags: [MOC, research, index]
 aliases: [研究地图, Research MOC]
 type: moc
 domain: Research
 status: active
 created: 2026-08-09
-updated: 2026-09-16
----
+updated: 2026-09-16---
 
 # 🔬 研究笔记 MOC — Research Map
 

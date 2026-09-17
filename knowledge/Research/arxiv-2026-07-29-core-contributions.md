@@ -1,20 +1,13 @@
 ---
 aliases:
   - arXiv Core Contributions 2026-07-29
-tags:
-  - arxiv
-  - research
-  - ai-agent
-  - llm
-  - paper-review
-  - core-contribution
+tags: [arxiv, research, ai-agent, llm, paper-review, core-contribution]
 created: 2026-07-29
 updated: 2026-07-29
 status: adopted
 source: https://arxiv.org/
 domain: research
-priority: high
----
+priority: high---
 
 # arXiv 核心贡献总结 — 2026-07-29
 

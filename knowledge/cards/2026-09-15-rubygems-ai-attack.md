@@ -1,15 +1,10 @@
 ---
 aliases:
   - 2026-09-15-card-rubygems-ai-attack
-tags:
-  - knowledge-card
-  - 供应链安全
-  - AI-agent
-  - RubyGems
+tags: [knowledge-card, 供应链安全, AI-agent, RubyGems]
 created: 2026-09-15
 source: "[[knowledge/Daily/hackernews-2026-09-15]]"
-status: fresh
----
+status: fresh---
 
 # 🃏 知识卡片 · OpenAI 的 AI bots 攻击 RubyGems：AI agent 主动利用已知漏洞的供应链攻击
 

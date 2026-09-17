@@ -2,20 +2,14 @@
 aliases:
   - agent-reliability-science
   - toolmaze
-tags:
-  - research
-  - agent
-  - reliability
-  - tool-failure
-  - knowledge-card
+tags: [research, agent, reliability, tool-failure, knowledge-card]
 created: 2026-08-05
 updated: 2026-08-05
 source: 
   - "https://arxiv.org/abs/2602.16666 (ICML 2026)"
   - "https://arxiv.org/abs/2606.05806 (ToolMaze)"
 status: adopted
-domain: AI
----
+domain: AI---
 
 # Agent 可靠性科学 + 工具失败恢复（2026-08-05 双论文）
 

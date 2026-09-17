@@ -1,9 +1,8 @@
 ---
-tags: [github, monetization, business-model, 变现, deployment]
+tags: [github, monetization, business-model, deployment]
 domain: Productivity
 status: fresh
-date: 2026-08-20
----
+date: 2026-08-20---
 
 # GitHub 开源项目变现方法论（灵梭 · 抖音 2026-08-20）
 

@@ -1,14 +1,8 @@
 ---
-tags:
-  - research
-  - security
-  - reverse-engineering
-  - ai-agent
-  - mcp
+tags: [research, security, reverse-engineering, ai-agent, mcp]
 type: research
 created: 2026-09-03
-status: adopted
----
+status: adopted---
 
 # AI 逆向 × Skill/MCP：阿里 v2 滑块实战研究
 

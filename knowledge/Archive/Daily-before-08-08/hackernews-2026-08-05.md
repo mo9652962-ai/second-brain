@@ -1,18 +1,12 @@
 ---
 aliases:
   - Hacker News 今日精选 2026-08-05
-tags:
-  - hackernews
-  - daily
-  - ai
-  - llm
-  - open-source
+tags: [hackernews, daily, ai, llm, open-source]
 created: 2026-08-05
 updated: 2026-08-05
 status: reading
 source: https://news.ycombinator.com/
-domain: daily
----
+domain: daily---
 
 # Hacker News 今日精选 — 2026-08-05
 

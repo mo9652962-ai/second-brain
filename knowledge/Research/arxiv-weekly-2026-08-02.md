@@ -1,21 +1,12 @@
 ---
 aliases:
   - arXiv Weekly Roundup 2026-08-02
-tags:
-  - arxiv
-  - research
-  - ai-agent
-  - llm
-  - computer-use-agent
-  - multi-agent
-  - ai4ai
-  - paper-review
+tags: [arxiv, research, ai-agent, llm, computer-use-agent, multi-agent, ai4ai, paper-review]
 created: 2026-08-02
 updated: 2026-08-02
 status: reading
 source: https://arxiv.org/
-domain: research
----
+domain: research---
 
 # arXiv Weekly Roundup — AI Agent & LLM Papers
 

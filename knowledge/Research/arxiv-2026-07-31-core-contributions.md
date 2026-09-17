@@ -2,20 +2,11 @@
 aliases:
   - arxiv-2026-07-31-core
   - openforgerl-stateact-osreward
-tags:
-  - arxiv
-  - research
-  - ai-agent
-  - llm
-  - harness-training
-  - computer-use
-  - state-grounding
-  - reward-model
+tags: [arxiv, research, ai-agent, llm, harness-training, computer-use, state-grounding, reward-model]
 created: 2026-07-31
 updated: 2026-07-31
 status: adopted
-source: arxiv-weekly-2026-07-31
----
+source: arxiv-weekly-2026-07-31---
 
 # arXiv 核心贡献精选 — 2026-07-31
 
