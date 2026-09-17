@@ -3,7 +3,7 @@ title: "竞品对标-AI商业广告接单教程"
 type: note
 domain: Content
 status: active
-tags: [knowledge/content, 竞品对标, 抖音, 变现]
+tags: [knowledge/content, 竞品对标, 抖音, monetization]
 date: 2026-09-13
 ---
 

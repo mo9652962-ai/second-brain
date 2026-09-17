@@ -1,11 +1,7 @@
 ---
 aliases:
   - english-machine-improvements
-tags:
-  - research
-  - edtech
-  - spaced-repetition
-  - ai
+tags: [research, edtech, spaced-repetition, ai]
 created: 2026-08-06
 updated: 2026-08-06
 source: web_search × 9 queries

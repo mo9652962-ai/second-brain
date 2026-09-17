@@ -1,11 +1,10 @@
 ---
-tags: [MOC, dev, 编程, python, web, 系统设计]
+tags: [MOC, dev, programming, python, web, 系统设计]
 domain: Dev
 type: moc
 status: active
 created: 2026-07-28
-updated: 2026-08-31
----
+updated: 2026-08-31---
 
 # 💻 开发域 — 编程与系统
 

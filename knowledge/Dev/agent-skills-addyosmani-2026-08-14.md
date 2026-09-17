@@ -1,5 +1,5 @@
 ---
-tags: [agent-skills, engineering, skill-format, Claude-Codex-Gemini, 方法论]
+tags: [agent-skills, engineering, skill-format, Claude-Codex-Gemini, methodology]
 aliases: [addyosmani-agent-skills, agent-skills]
 date: 2026-08-14
 source: https://github.com/addyosmani/agent-skills

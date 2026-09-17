@@ -1,5 +1,5 @@
 ---
-tags: [编程, 学习, web-development, freeCodeCamp, open-source, education]
+tags: [programming, 学习, web-development, freeCodeCamp, open-source, education]
 domain: 编程
 cross-domain: ["ai-agent", "vibe-coding", "programming"]
 created: 2026-07-21

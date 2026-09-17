@@ -3,7 +3,7 @@ title: 知识库操作日志
 type: 日志
 created: 2026-09-05
 updated: 2026-09-05
-tags: [meta, 知识库治理]
+tags: [meta, vault-maintenance]
 ---
 
 # 🕐 知识库操作日志 — Knowledge Log
@@ -179,3 +179,21 @@ tags: [meta, 知识库治理]
 - 断链 0 / 孤立 0 / 缺 frontmatter 0
 - 处理原则：只报告不自动修；新问题由 k 在下次会话处理
 
+## [2026-09-17] lint | 全库体检 + 标签格式统一 + 检测器补盲
+
+- **断链 2→0（全仓库 3548 链接）**：剩余 2 处为 09-04/09-08 维护笔记内反引号示例（`[[`。`]]` prose），按「先修检测器」原则加入 scan-vault-broken-links.py 白名单，不动正文
+- **孤立 2→0**：hackernews-2026-09-16 → knowledge-map（Daily 区）；system-cleanup-report-20260915 → MOC-Productivity（W38 区块）
+- **标签格式统一（重大）**：90 处 YAML 块式列表（`tags:\n  - xxx`）→ 流式 `tags: [a, b]`；lint-fix-tags-v2.py 升级 v3（BADFMT 幂等转换 + 同义映射扩展 27 项：闲鱼→xianyu、变现→monetization、方法论→methodology、自动化→automation、知识吸收→knowledge-absorption、多Agent→multi-agent、GitHub Trending→github-trending、降AI/反AI味→去AI味 等），42 文件同义归一，幂等复跑 0
+- **检测器补盲（关键）**：knowledge-lint.py 新增「粘连闭合符」检测（`tags: [a]---` 缺独立 `---` 行）——旧检测只查 startswith 漏报 50 个文件（含 index.md/log.md/MOC 全部），本次修复 50/50；TOTAL ISSUES 计入 glued_fm
+- **空文件**：全仓库 0 字节 = 0，空壳页 = 0，无需清理
+- **frontmatter 修复 1**：Education/桂航 `date: 2026-08---` 粘连闭合（09-08 已修过但复现，已根治检测）
+- **遗留**：Duplicate filenames（2 个 README.md 不同目录）低风险忽略
+- **结果**：lint 断链 0 / 缺 frontmatter 0 / 粘连闭合 0 / 孤立 0 / 短页 0；全仓库断链 0
+- **验证补盲**：ad-hoc 验证脚本（fixture mini-vault + 真实库双跑）抓到 lint-fix-tags-v2.py SPECIAL_FIX 重拼 frontmatter 缺换行 bug（`new_fm+"---"` → `new_fm+"\n---"`），修复后桂航不再被脚本写回粘连态；验证 11/11 PASS
+
+
+
+## [2026-09-17] lint | Obsidian 优化强化
+- **诊断**：lint 606 页（断链 0 / 缺 frontmatter 0 / 粘连闭合 0 / 孤立 1 / 短页 0 / 陈旧 0）；19 知识域 vs 9 MOC + Inbox
+- **修复**：挂载 arxiv-2026-09-17-agent-llm → MOC-Research（计数 207→208）；index.md 头部更新（09-13/592 → 09-17/606）+ Research 计数 212 + 补 4 个小域行（Archive/Creative/Product/gaming）；knowledge-map 开 W39 速览区挂今日 arxiv
+- **结果**：lint 全绿（孤立 0，仅剩 2 个 README.md 低风险重名忽略）

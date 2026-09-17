@@ -1,11 +1,7 @@
 ---
 aliases:
   - code-review-graph-vs-codebase-memory
-tags:
-  - research
-  - mcp
-  - code-intelligence
-  - decision
+tags: [research, mcp, code-intelligence, decision]
 created: 2026-08-05
 status: adopted
 domain: dev

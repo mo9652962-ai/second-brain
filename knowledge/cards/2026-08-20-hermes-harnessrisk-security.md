@@ -1,16 +1,10 @@
 ---
 aliases:
   - 2026-08-20-card-hermes-harnessrisk-security
-tags:
-  - knowledge-card
-  - ai-agent
-  - security
-  - hermes
-  - harness
+tags: [knowledge-card, ai-agent, security, hermes, harness]
 created: 2026-08-20
 source: "[[knowledge/Research/arxiv-2026-08-20-agent-llm]]"
-status: fresh
----
+status: fresh---
 
 # 🃏 知识卡片 · Hermes+DeepSeek-V4-Pro 安全风险：ASR 65.4%，检测率仅 34.6%
 

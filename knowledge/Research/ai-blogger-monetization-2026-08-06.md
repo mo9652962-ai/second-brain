@@ -1,12 +1,7 @@
 ---
 aliases:
   - ai-blogger-monetization
-tags:
-  - research
-  - monetization
-  - xianyu
-  - bilibili
-  - blogger
+tags: [research, monetization, xianyu, bilibili, blogger]
 created: 2026-08-06
 source: 36氪/新华社经济参考/新浪财经/博客园
 status: active

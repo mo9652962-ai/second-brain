@@ -1,15 +1,10 @@
 ---
 aliases:
   - 2026-09-07-card-memory-portability
-tags:
-  - knowledge-card
-  - ai-agent
-  - memory
-  - research
+tags: [knowledge-card, ai-agent, memory, research]
 created: 2026-09-07
 source: "[[knowledge/Research/arxiv-2026-09-07-agent-llm]]"
-status: fresh
----
+status: fresh---
 
 # 🃏 知识卡片 · 模型升级后，agent 的记忆还认不认？
 

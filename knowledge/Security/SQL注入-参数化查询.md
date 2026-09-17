@@ -1,8 +1,9 @@
 ---
-tags: [security, SQL注入, 参数化查询, 拼接, 数据库]
+tags: [security, SQL注入, 参数化查询, 拼接, database]
 domain: Security
 status: fresh
-date: 2026-08-21---
+date: 2026-08-21
+---
 
 # SQL 注入：参数化查询铁律（程序员Orion · 抖音 2026-08-21）
 
@@ -44,6 +45,5 @@ WHERE name = ' + 前端名字  (手动拼接)
 - `Development/写码前扫坑清单.md`（第 22 项）
 - `Security/接口三件套-攻防一体.md`（参数校验）
 - SRC 五类新手漏洞之一（src-bug-hunting 技能）
-
 ---
 > 🗺️ 属于 [[MOC-Security]] · [[Home|🏠 Home]]

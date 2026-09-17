@@ -6,10 +6,7 @@ domain: META
 status: active
 created: 2026-08-31
 updated: 2026-09-06
-tags:
-  - meta/moc
-  - knowledge/inbox
-  - knowledge/governance
+tags: [meta/moc, knowledge/inbox, knowledge/governance]
 source: scripts/vault-orphan-duplicate-scan.py
 ---
 

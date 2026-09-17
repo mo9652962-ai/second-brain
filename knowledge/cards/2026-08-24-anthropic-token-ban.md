@@ -1,16 +1,10 @@
 ---
 aliases:
   - 2026-08-24-card-anthropic-token-ban
-tags:
-  - knowledge-card
-  - ai-agent
-  - provider-risk
-  - multi-vendor
-  - openclaw
+tags: [knowledge-card, ai-agent, provider-risk, multi-vendor, openclaw]
 created: 2026-08-24
 source: "[[memory/2026/08/2026-08-24]]"
-status: fresh
----
+status: fresh---
 
 # 🃏 知识卡片 · Anthropic 封订阅 token：单一供应商订阅依赖是 10-50x 成本陷阱
 

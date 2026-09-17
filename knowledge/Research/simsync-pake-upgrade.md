@@ -1,17 +1,11 @@
 ---
 aliases:
   - simsync-pake-upgrade
-tags:
-  - simsync
-  - research
-  - crypto
-  - pake
-  - network-security
+tags: [simsync, research, crypto, pake, network-security]
 created: 2026-08-05
 updated: 2026-08-05
 status: proposed
-domain: research
----
+domain: research---
 
 # SimSync 存档同步 PAKE 加密升级研究
 

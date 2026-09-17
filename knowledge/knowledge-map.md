@@ -1114,6 +1114,7 @@ graph TD
 | Finance | 每日股票分析 09-08/09/11 | A 股盘后分析 ×3 期 |
 | cards | 5 张知识卡 | 记忆可移植性 / 黑盒实证 / eval 反应性 / Desert Ant 端侧 / AI 商业广告反面教材 |
 | Daily | HN 速览 ×5 | 09-07/08/09/10/13 |
+| Daily | HN 速览 09-16（补跑） | [[knowledge/Daily/hackernews-2026-09-16]] |
 
 ### 🆕 W38 GitHub Trending（weekly 口径，2026-09-13）
 
@@ -2066,3 +2067,14 @@ MCP 生态: GitHub + Filesystem + JLCPCB(38工具) + Obsidian(笔记操作)
 
 
 
+
+
+---
+
+## 🆕 W39 新增速览（2026-09-14 ~ 09-20）
+
+### 各域本周新增
+
+| 域 | 新增 | 要点 |
+|:--|:--|:--|
+| arXiv | [[knowledge/Research/arxiv-2026-09-17-agent-llm\|arxiv 速览 09-17]] | 索引解冻：09-15（1035 篇）/ 09-16（522 篇）/ 09-17（595 篇）三窗口大量新提交，Agent 工具接口 / 记忆生命周期 / 技能治理为焦点 |

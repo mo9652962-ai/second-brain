@@ -132,12 +132,13 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 
 ---
 
-## 📦 最新技能入库 (2026-08-16 ~ 2026-09-16)
+## 📦 最新技能入库 (2026-08-16 ~ 2026-09-17)
 
 ### 研究笔记
 
 | 技能 | 版本 | 简介 |
 |------|------|------|
+| **[每日日志 09-17](memory/2026-09-17.md)** | v1.0 | daily-summary cron 自动生成（隔离会话视角，主会话历史未捕获、待主会话补全）；知识库维护日：补链 10 篇孤立笔记、孤立率 15%→14%、README 统计刷新 | 
 | **[每日日志 09-16](memory/2026/09/2026-09-16.md)** | v1.0 | 创新大赛研究沉淀 + cron 四算子知识自举（6 条可执行知识）+ 万悟 Docker 提速实战（新 skill）+ 12:53 六 cron 批量失败补跑 + health 巡检三红线 | 
 | **[cron 产出学习研究 09-15](knowledge/Research/cron-output-learning-20260915.md)** | v1.0 | 11 文件 → 6 条可执行知识：AI agent 主动攻击方(⭐6) / bash>typed tools(+21.8pp) / 记忆分层 / 技能库 479 个 6 组重复 / 代理层晨启隐患 | 
 | **[创新大赛产业赛道 09-15](knowledge/Research/innovation-competition-industry-track-20260915.md)** | v1.0 | 联通命题本质=推广万悟：三模块映射 + 3 坑对策 + 墨题企业版迁移路径 | 
@@ -246,7 +247,7 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 
 ```
 📁 仓库体积：约 31MB 跟踪文件（Git 包约 48MB）
-📝 Markdown 文件：约 1160 个知识笔记 + 系统文档（共 1200+ 个 .md）
+📝 Markdown 文件：约 1180 个知识笔记 + 系统文档（共 1200+ 个 .md）
 🧠 自建 Skill 文档：30 个（11 个领域目录）
 🗂️ 知识域：11 个
 ⏰ 首次提交：2026 年 7 月

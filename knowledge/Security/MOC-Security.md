@@ -1,12 +1,11 @@
 ---
-tags: [MOC, security, 网络安全, 索引]
+tags: [MOC, security, 网络安全, index]
 aliases: [安全地图, Security MOC, 网络安全 MOC]
 domain: Security
 type: moc
 status: active
 created: 2026-08-16
-updated: 2026-08-31
----
+updated: 2026-08-31---
 
 # 🛡️ 网络安全 MOC — Security Map
 

@@ -6,8 +6,8 @@ created: 2026-08-09
 
 # 🏠 Home — 第二大脑入口
 
-> **知识最后更新: 2026-09-16 (daily-review)
-> 最后更新: 2026-09-16 (daily-knowledge-review)
+> **知识最后更新: 2026-09-17 (daily-reflection)
+> 最后更新: 2026-09-17 (daily-reflection)
 
 ---
 
@@ -30,9 +30,15 @@ created: 2026-08-09
 | 📈 生产力 | [[MOC-Productivity]] | 工作流、变现、闲鱼 |
 
 ## 📋 项目与日志
+- [[memory/2026/09/2026-09-17-daily-review|📋 09-17 每日回顾]] — Top5：PMPA记忆投毒防写入落地 / Agent-Tool 8异常 / 闲鱼主图禁词修复第21次核验 / qorl 4B查询计划 / arxiv解冻2151篇；明日：内存99.4%危急 + arxiv-fetch排查 + 闲鱼降频机制
 - [[memory/2026/09/2026-09-15-daily-review|📋 09-15 每日回顾]]
 - [[memory/2026/09/2026-09-16-daily-review|📋 09-16 每日回顾]] — Top5：联通创新大赛万悟命题研究（9/25 截止剩 9 天）/ cron 产出四算子提炼 6 条可执行知识 / Docker 镜像提速 13MB/s / health 抓出 12:53 六 cron 批量失败需补跑 / 隐私门禁 13 处命中 — Top5：OpenAI bots 攻击 RubyGems（AI agent 主动利用已知漏洞） / arXiv 09-15 补全速览 15+14 / 技能治理单扫描器不足 / 双周技能审计 479 / 闲鱼禁词修复加固；明日：闲鱼决策第 42 天 + 探活路径核实 + 供应链扫描补丁
+- [[memory/2026/09/2026-09-16-reflection|🔍 反思 09-16]] — arxiv-fetch 长期静默暴露 + 豁免验证门证据链补强 + 闲鱼决策第 42 天机制失效（降频）
+- [[memory/2026/09/2026-09-15-reflection|🔍 反思 09-15（补位）]] — 研究批量入库 + 双周技能审计 479 + 素材禁词修复 + 7 项核查 4 闭环
+- [[memory/2026/09/2026-09-14-reflection|🔍 反思 09-14]] — 硬线探活产物断言 + skill-link-gate 滑档 + 单一权威源收敛
+- [[memory/2026/09/2026-09-13-reflection|🔍 反思 09-13]] — 十领域批次落盘 + 缺档补位
 - [[memory/2026/09/2026-09-14-daily-review|📋 09-14 每日回顾]] — Top5：arxiv 432 篇新窗口速览 / 文献周报过程级评测 / Fable 破解 370 年密码 / GitHub W38 / Agent 安全标准化；明日：闲鱼决策第 43 天 + cpa-gui 启动 + 探活脚本修复
+- [[memory/2026/09/2026-09-17-vault-suggestion-executor|🧹 09-17 闲鱼专项建议执行报告]] — 6 张主图 vision 禁词复核：2 张含「最」已修复「人气之选」+ 防复发 + 第 21 次素材核验
 - [[memory/2026/09/2026-09-14-vault-suggestion-executor|🧹 09-14 闲鱼专项建议执行报告]] — 计数 41→42 权威推进(assert PASS) + 双技能计数红线 patch + 今日 3 项优先级
 - [[memory/2026/09/2026-09-15-vault-suggestion-executor|🧹 09-15 闲鱼专项建议执行报告]] — 素材包 4 处「自动化」禁词修复 + 全量复扫 PASS + 今日 3 项优先级
 - [[memory/2026/09/weekly-2026-09-13|📚 W38 周度整理]] — 十领域自我强化批次 + 黑盒实证 + 评测意图隐藏规范 + memory 归位 6 文件
@@ -140,6 +146,7 @@ created: 2026-08-09
 - [[knowledge/Research/arxiv-2026-09-11-agent-llm|arXiv 今日速览]] — 20+12 篇 AI Agent/LLM 论文（09-11 新窗口 441 篇：记忆策展主动验证 / 验证器可靠性形式化 / MCP 生态 48.8% 存活实证 / T1 终端 Agent RL 64.0%）
 - [[knowledge/Research/arxiv-2026-09-14-agent-llm|arXiv 今日速览]] — 17+12 篇 AI Agent/LLM 论文（09-14 新窗口 432 篇：仓库 SKILL 优化方法论 / unlearning 六通道泄露 / 自进化护栏契约 GuardrailLoop / Harness vs Model 隔离 / 动作前验证）
 - [[knowledge/Research/arxiv-2026-09-15-agent-llm|arXiv 补全速览]] — 15+14 篇 AI Agent/LLM 论文（09-15 索引冻结补录 09-14 同池漏网：Scan the Skill 技能注册表治理 / Is Bash All You Need 工具接口实证 / LifeFuse-Mem 记忆生命周期 / LLM Judge 能力依赖偏置）
+- [[knowledge/Research/arxiv-2026-09-17-agent-llm|arXiv 今日速览]] — 32+10 篇 AI Agent/LLM 论文（09-17 新窗口 09-15~09-17 共 2,151 篇：PMPA 持久记忆投毒 OpenClaw 73.7% / BudgetBench 预算化记忆评测 / 工具-工作流组合级失败 / 投毒基准污染自修改 agent / 编码 agent 实证四连）
 
 ## 🧭 核心区域
 - [[memory/2026/08/2026-08-19-reflection|🔍 08-19 反思]] — 行动项 3/3 未落地（反思≠执行第 3 次复发）；Tavily 第 6 次复发；SRC 三方向收敛为补天聚焦 · scripts 登记表当场补建

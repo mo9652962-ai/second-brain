@@ -1,16 +1,10 @@
 ---
 aliases:
   - 2026-08-14-card-prime-agent-rlm
-tags:
-  - knowledge-card
-  - ai-agent
-  - RLM
-  - self-improving
-  - hermes
+tags: [knowledge-card, ai-agent, RLM, self-improving, hermes]
 created: 2026-08-14
 source: "[[knowledge/Dev/prime-agent-rlm-2026-08-14]]"
-status: fresh
----
+status: fresh---
 
 # 🃏 知识卡片 · Prime Agent：自改进 RLM Agent 登顶本周 GitHub 热榜
 

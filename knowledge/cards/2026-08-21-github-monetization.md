@@ -1,21 +1,14 @@
 ---
 aliases:
   - 2026-08-21-card-github-monetization
-tags:
-  - knowledge-card
-  - github
-  - monetization
-  - 变现
-  - business-model
+tags: [knowledge-card, github, monetization, business-model]
 created: 2026-08-21
-source: "[[knowledge/Productivity/github-monetization-2026-08-20]]"
----
+source: "[[knowledge/Productivity/github-monetization-2026-08-20]]"---
 
 # 🃏 知识卡片 · 用开源项目变现：别做红海，做「私有化部署 + 订阅」
 
 > **来源**：抖音 @灵梭《怎么用 GitHub 变现》+ sora 团队实证核查 · 2026-08-20/21 · ✅ 已用 GitHub API + LICENSE 文件实证
 > **一句话**：Star 大 + MIT 可商用的开源项目，帮高频咨询机构做**私有化部署 → 模板化 → 订阅收费**，是比单接单天花板更高的产品化变现路。
-
 ---
 
 ## 核心洞察 / 影响

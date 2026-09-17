@@ -1,11 +1,7 @@
 ---
 aliases:
   - agent-self-strengthen
-tags:
-  - research
-  - ai-agent
-  - memory
-  - self-improvement
+tags: [research, ai-agent, memory, self-improvement]
 created: 2026-08-06
 source: web_search × 6 queries
 status: applied

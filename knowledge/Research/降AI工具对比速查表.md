@@ -1,5 +1,5 @@
 ---
-tags: [reference, tools, 论文, 降AI]
+tags: [reference, tools, 论文, 去AI味]
 created: 2026-07-30
 source: 搜索引擎研究 + 官方数据
 ---

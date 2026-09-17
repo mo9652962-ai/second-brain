@@ -1,15 +1,10 @@
 ---
 aliases:
   - 2026-09-13-card-ai-commercial-ad-tutorial
-tags:
-  - knowledge-card
-  - 抖音
-  - 竞品对标
-  - 变现红线
+tags: [knowledge-card, 抖音, 竞品对标, 变现红线]
 created: 2026-09-13
 source: "[[knowledge/Content/竞品对标-AI商业广告接单教程]]"
-status: fresh
----
+status: fresh---
 
 # 🃏 知识卡片 · 抖音反面教材：空口承诺「学到就能接单」= 4 赞 0 互动
 
