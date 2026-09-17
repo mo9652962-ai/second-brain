@@ -189,4 +189,5 @@ tags: [meta, vault-maintenance]
 - **frontmatter 修复 1**：Education/某高校 `date: 2026-08---` 粘连闭合（09-08 已修过但复现，已根治检测）
 - **遗留**：Duplicate filenames（2 个 README.md 不同目录）低风险忽略
 - **结果**：lint 断链 0 / 缺 frontmatter 0 / 粘连闭合 0 / 孤立 0 / 短页 0；全仓库断链 0
+- **验证补盲**：ad-hoc 验证脚本（fixture mini-vault + 真实库双跑）抓到 lint-fix-tags-v2.py SPECIAL_FIX 重拼 frontmatter 缺换行 bug（`new_fm+"---"` → `new_fm+"\n---"`），修复后某高校不再被脚本写回粘连态；验证 11/11 PASS
 
