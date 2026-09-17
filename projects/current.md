@@ -216,8 +216,8 @@ updated: 2026-09-14
 
 ## 🔄 进行中 / 已重新排期
 
-### 🎯 闲鱼上架（P0，**决策悬置第 42 天，9/6 fallback 硬触发已过**，连续顺延第 30+ 天）
-- [ ] 上架「AI 代做 PPT」商品 → 🔴 **决策悬置第 42 天（8/31 到期已过；9/4 已拆小为「先上 1 个商品试水」30min 最小可逆动作；9/6 fallback 硬触发日已过——k 侧试水前置 100% 就绪，实际上架是外部经营动作，等 sora 一句话拍板（试水/放弃/再缓）；9/7 触达升级触发：若仍无决策 → 换 desktop 通知/微信推送通道）**：素材 100% 就绪（7 图 PNG 头实测 750×750 全 PASS，第 21 次核验 9/17 含图片层禁词全清：2 张含「最」已修复为「人气之选」）；操作清单两段式（试水版 + 5 商品全量版）见 outputs/xianyu-master/上架素材包/上架操作清单.md；合规子集 v1.2.0（敏感词/同款频次/数模标题改写）；决策包见 memory/2026/08/2026-08-31-xianyu-vault-suggestion-executor.md + 9/4 复核 memory/2026/09/2026-09-04-vault-suggestion-executor.md + 9/7 报告 memory/2026/09/2026-09-07-vault-suggestion-executor.md
+### 🎯 闲鱼上架（🟡 **每周一复盘提醒**，决策悬置第 42 天，9/6 fallback 硬触发已过；连续顺延第 30+ 天——9/17 降频机制生效：每日 P0 → 每周一复盘，其余日子不占 P0 位；默认「再缓 7 天」自动续期，sora 拍板即停）
+- [ ] 上架「AI 代做 PPT」商品 → 🟡 **决策悬置第 42 天（8/31 到期已过；9/4 已拆小为「先上 1 个商品试水」30min 最小可逆动作；9/6 fallback 硬触发日已过——k 侧试水前置 100% 就绪，实际上架是外部经营动作，等 sora 一句话拍板（试水/放弃/再缓）；9/7 触达升级触发：若仍无决策 → 换 desktop 通知/微信推送通道）**：素材 100% 就绪（7 图 PNG 头实测 750×750 全 PASS，第 21 次核验 9/17 含图片层禁词全清：2 张含「最」已修复为「人气之选」）；操作清单两段式（试水版 + 5 商品全量版）见 outputs/xianyu-master/上架素材包/上架操作清单.md；合规子集 v1.2.0（敏感词/同款频次/数模标题改写）；决策包见 memory/2026/08/2026-08-31-xianyu-vault-suggestion-executor.md + 9/4 复核 memory/2026/09/2026-09-04-vault-suggestion-executor.md + 9/7 报告 memory/2026/09/2026-09-07-vault-suggestion-executor.md
 - [x] 主图制作：3 张模板图（前后对比/价格表/服务承诺）→ ✅ 08-03 已生成：`outputs/xianyu-master/上架素材包/`（主图1-3，**实测 750×750 方形 51-57KB**，思源黑体+蓝橙撞色+无极限词）→ 上架时直接上传，无需再做
 - [ ] 同步上架「论文排版/润色」商品（素材包已有现成文案）→ 顺延 8/17 同批上
 - [ ] 补 PPT 样例素材：从现有作品提 2-3 个样例页 + 「仅供参考」水印 → portfolio/ → 需 sora 手动导出截图（无 LibreOffice/python-pptx 渲染，无法自动化）→ 上架操作清单已注明详情图可复用主图2/3 兜底
@@ -355,9 +355,9 @@ updated: 2026-09-14
 | 安全审计 cron 排期 | ✅ 已完成 8/5 | security-audit cron 已挂载（`30 8 * * 0` no_agent + security_audit.py），无需再操作 |
 
 ### 🧭 9/16 反思行动项（daily-reflection 复盘 9-16，执行者必读）
-- [ ] 🔴 arxiv-fetch 静默排查 + 产物断言（截止 9/21，k 可做 40min）：读 jobs.json last_status + errors.log fallback attempt 行 + 手动试跑定位；套 hermes-health-check 产物断言框架（存在/非空/含当日日期）
-- [ ] 🟡 创新大赛研究原文验证（9/17，k 可做 15min）：≥1 次 web_extract 万悟官方源 + frontmatter 补 URL（豁免验证门补强）
-- [ ] 🟡 闲鱼决策降频机制（9/17 起，k 可做 + sora）：每日 P0 → 每周一复盘提醒；默认「再缓 7 天」自动续期，sora 拍板即停
+- [x] 🔴 arxiv-fetch 静默排查 + 产物断言 → ✅ 2026-09-17 daily-todo-executor 落地：jobs.json last_status=ok / failure_streak=0 / last_error=None；9 月实际有 14 天产物（09-01~09-11,14,15,17，仅缺 12/13/16 三天，16 号为六 cron 批量失败日）——「9 月 0 产物」为 9/16 扫描口径误判；今天 14:16 产物 arxiv-2026-09-17-agent-llm.md 含当日日期非空；cron prompt 已加产物断言指令（写后自检存在/非空/含日期）
+- [x] 🟡 创新大赛研究原文验证 → ✅ 2026-09-17 daily-todo-executor 落地：web_extract github.com/UnicomAI/wanwu（Go 63.7% / Apache-2.0 / Docker 部署 / GraphRAG·多租户·工作流实锤）+ README_CN；frontmatter 来源行已补 URL（innovation-competition-industry-track-20260915.md）
+- [x] 🟡 闲鱼决策降频机制 → ✅ 2026-09-17 daily-todo-executor 落地：闲鱼上架区标题改「每周一复盘提醒」+ 默认再缓 7 天自动续期（见 🎯 闲鱼上架）；剩余每日触达由「闲鱼提醒」cron（工作日 7:30）承担，决策权仍在 sora
 - [ ] 🔒 闲鱼试水决策（第 42 天，sora 30 秒三选一：试水/放弃/再缓）——k 侧 100% 就绪，上架 30min 可逆
 - [ ] 🔒 万悟参赛确认（9/25 12:00 截止，剩 8 天，sora）——确认后 k 当天出《商业计划书/对策方案》初稿
 
