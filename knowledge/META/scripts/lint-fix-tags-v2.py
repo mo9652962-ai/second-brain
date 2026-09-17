@@ -90,7 +90,8 @@ for rel, (pat, repl) in SPECIAL_FIX.items():
         print(f"[SKIP no-match] {rel}")
         continue
     new_fm = fm[:tm.start()] + repl + fm[tm.end():]
-    new_text = text[:m.start()] + "---\n" + new_fm + "---" + text[m.end():]
+    # 重拼 frontmatter：闭合 --- 前必须有换行（缺 \n 会导致 date: 2026-08--- 粘连）
+    new_text = text[:m.start()] + "---\n" + new_fm + "\n---" + text[m.end():]
     if new_text == text:
         print(f"[SKIP already-fixed] {rel}")
         continue
