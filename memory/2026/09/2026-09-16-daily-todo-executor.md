@@ -44,7 +44,7 @@ type: daily-todo-executor
 | **FlClash 7890 代理恢复** | ✅ 已恢复 | 实测探针：google **302** / github **200**（此前 github 000）；FlClashCore **9/16 17:09:25 重启**；QQBot 9/16 15:31 resume 重连成功 → 9/14 self-improvement 的 P0「重启 FlClash」标 ✅，9/15 报告 P0 项解除 |
 | **skill-link-gate 断链** | ✅ 全绿 | 实测 `skill_link_check.py`：**468 个 skill 全部无断裂引用** → 9/16 daily-review 引用的「31/465 断链」是 9/15 修复前旧口径，light-\* 豁免已生效，无需处理 |
 | **闲鱼计数一致性** | ✅ 零漂移 | state.yaml `xianyu_decision_day: 42 / PENDING` = current.md ×N（第 42 天）= MEMORY.md（第 42 天），全一致；今日无推进（唯一写方约束遵守） |
-| **s4mp 隐私 IP** | ✅ 误报确认 | `s4mp-architecture-analysis-2026-08-05.md:161` 的 192.168.0.112 位于 `room_code` **格式示例**（`local/host/192.168.0.112;fe80::...`），非真实环境 IP——9/15 已入 github-privacy-gate 白名单，**无需脱敏**，文档保留 |
+| **s4mp 隐私 IP** | ✅ 误报确认 | `s4mp-architecture-analysis-2026-08-05.md:161` 的 192.168.x.x 位于 `room_code` **格式示例**（`local/host/192.168.x.x;fe80::...`），非真实环境 IP——9/15 已入 github-privacy-gate 白名单，**无需脱敏**，文档保留 |
 
 ### 📝 状态文件更新
 

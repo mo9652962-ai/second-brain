@@ -47,7 +47,7 @@ type: daily-todo-executor
 |:---|:---------|:-----|
 | **api-media-weekly-probe 路径核实+修复**（日报 P0） | 即反思项 ①，脚本已在 cron 期望路径；补跑刷新真实状态 | 见上 |
 | **EasyCLIProxyAPI 启动**（日报 P0，15min） | 启动 `D:\tools\EasyCLIProxyAPI\app\EasyCLIProxyAPI-v0.2.96-Windows-amd64\EasyCLIProxyAPI.exe`（config.toml 已配 8317 + start-core-on-launch） | `127.0.0.1:8317 LISTENING` + `/v1/models` 返回 antigravity/openai 模型 → **代理可用** |
-| **github-privacy-gate 误报白名单**（日报 P1，20min） | `github_privacy_gate.py` 新增 FILE_LINE_ALLOWLIST（8 条人工核实误报：`${MY_SERVICE_TOKEN}` 占位符 / s4mp 示例 IP 192.168.0.112 / nmap 教程 192.168.1.38·1.0 / 日报·health 引用的同一示例 IP / health 记录的探活脚本路径 / bolt.step π 14159265359）+ `uv.lock` 进 SKIP_BASENAME + SECRET_ASSIGN `${VAR}`/`<...>` 占位符规则 | workspace + 墨题 + tongpin **三仓库全 `{}` 零命中**，推送不再被拦 |
+| **github-privacy-gate 误报白名单**（日报 P1，20min） | `github_privacy_gate.py` 新增 FILE_LINE_ALLOWLIST（8 条人工核实误报：`${MY_SERVICE_TOKEN}` 占位符 / s4mp 示例 IP 192.168.x.x / nmap 教程 192.168.x.x·1.0 / 日报·health 引用的同一示例 IP / health 记录的探活脚本路径 / bolt.step π 14159…（π 数字串））+ `uv.lock` 进 SKIP_BASENAME + SECRET_ASSIGN `${VAR}`/`<...>` 占位符规则 | workspace + 墨题 + tongpin **三仓库全 `{}` 零命中**，推送不再被拦 |
 
 ### 📖 参考/条件触发归类（标记 [x] 防计数膨胀）
 

@@ -153,7 +153,7 @@ class InspectorProtocol(NetworkProtocolBase):
 
 ```json
 {"is_server":true, "player_name":"Emeraldglazer Gazelle", "player_count":2,
- "server_id":0, "player_id":0, "room_code":"local/host/192.168.0.112;fe80::..."}
+ "server_id":0, "player_id":0, "room_code":"local/host/192.168.x.x;fe80::..."}
 ```
 
 mod 启动时读取，比命令行参数或硬编码方便。
