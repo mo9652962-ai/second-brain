@@ -37,7 +37,7 @@ subject: 2026-09-16
 | 2 | 硬线探活产物断言（截止 9/22） | ✅ 闭环 | 脚本已复制到 cron 期望路径，9/21 周一首次实跑验证 |
 | 3 | 任务状态单一权威源收敛（截止 9/20） | ✅ 闭环 | 9/16 executor 核验 state.yaml = current.md ×N = MEMORY.md 全一致 42 零漂移 |
 | 4 | 供应链扫描补丁（shai-hulud） | ✅ 闭环 | 9/15 落地，9/16 无复发 |
-| 5 | github-privacy-gate 误报白名单 | ✅ 闭环 | 9/16 executor 确认 s4mp 192.168.0.112 为格式示例误报，白名单生效 |
+| 5 | github-privacy-gate 误报白名单 | ✅ 闭环 | 9/16 executor 确认 s4mp 192.168.x.x 为格式示例误报，白名单生效 |
 | 6 | AI 博主选题池 #69 | ✅ 闭环 | 9/15 已登记（RubyGems AI 攻击） |
 | 7 | 🔴 闲鱼试水决策（第 42 天） | ❌ 挂起 | state.yaml 仍 PENDING，等 sora 30 秒三选一 |
 | 8 | 🔴 生图三路径修复 | ❌ 挂起 | XAI key 重生成 / FAL 充值 / SF 充值，均需 sora |
