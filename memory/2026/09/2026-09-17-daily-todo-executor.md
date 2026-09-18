@@ -24,7 +24,7 @@ type: report
 | 今日产物 | ✅ `knowledge/Research/arxiv-2026-09-17-agent-llm.md`（14:16 生成，含当日日期、非空、2152 篇池→32 主条目） |
 | 长期加固 | ✅ cron prompt 已追加产物断言指令（写后自检存在/非空/含当日日期，缺失必须报告 `[产物断言 FAIL]`） |
 
-**落点**：`C:\Users\31954\AppData\Local\hermes\cron\jobs.json`（job f19dfa354b8d prompt 已更新，146 字符，验证含断言指令）
+**落点**：`%USERPROFILE%\AppData\Local\hermes\cron\jobs.json`（job f19dfa354b8d prompt 已更新，146 字符，验证含断言指令）
 
 ### 2. 🟡 创新大赛研究原文验证（9/17 到期）→ 闭环
 - `web_extract https://github.com/UnicomAI/wanwu` 原文验证：Go 63.7% / Apache-2.0 / Docker 部署（Dockerfile.backend 等）/ GraphRAG·多租户·工作流模块实锤

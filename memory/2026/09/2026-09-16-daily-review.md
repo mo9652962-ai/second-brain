@@ -16,7 +16,7 @@ type: daily-review
 | 2 | **cron 产出四算子知识自举研究**：对 11 个 cron 产出文件提炼 6 条可执行知识——AI agent 从被动工具变**主动攻击方**（⭐6，与昨日 RubyGems 卡呼应）/ 单扫描器只抓 81.9% 恶意技能→需组合判决 / bash alone > typed tools（+21.8-24.5pp，直接验证 k 的 terminal 优先哲学）/ 记忆生命周期分层防覆盖（LifeFuse-Mem 与四级记忆体系同题）/ 技能库 479 个 6 组重复待合并 / **cron 早晨批量失败根因 = 代理层未启动** | cron 自动产出→可执行知识的转化流水线验证；「早晨任务依赖代理」是系统级隐患，行动项 = FlClash 开机自启或改直连 provider | `knowledge/Research/cron-output-learning-20260915.md` |
 | 3 | **Docker 镜像提速实战 + skill 固化**：FlClash 规则问题（docker.io 被送代理绕行）→ 规则开头插直连；基础镜像换加速源 `docker.xuanyuan.me`（mysql 600MB **46 秒**，原 120s+ 卡死）；minio 换 quay.io 官方源；下载 ~8MB/min → **~13MB/s** | 万悟 25 镜像拉取推进到 21/25；沉淀 `docker-image-acceleration` skill（三步法） | skill_manage create `docker-image-acceleration`（17:30）+ 会话 20260910_134904 |
 | 4 | **health 巡检抓出 12:53 六 cron 批量失败**：arxiv-fetch / daily-self-improvement / obsidian-maintenance / daily-wechat-knowledge-card / hackernews-daily / 闲鱼提醒全挂——真实失败点 = 主链 fangzhou-2 挂 + 兜底 jiyuanlvdong-2 也 Connection error（双侧瞬时故障，已恢复）；**今日产物缺失需补跑**（反思类勿缺档） | 巡检技能补一条关键排查经验：**jobs.json 的 provider 字段 ≠ 实际调用链**，真凶要看 errors.log 里 fallback 链的 attempt 行 | `memory/2026/09/health-2026-09-16.md` + hermes-health-check patch（15:50） |
-| 5 | **隐私门禁 13 处命中 + 内存 85.9% 红线**：s4mp 文档 192.168.0.112 私有 IP 待确认脱敏；其余多为误报（教程示例 IP / `${VAR}` 占位 / π 数字 / uv.lock 哈希）；内存 13.4/15.6GB 超 85% 红线（vmmemWSL 3.3G 头号大户） | 推送前隐私防线持续生效；内存缓解动作 = wsl --shutdown 释放 3.3G | health 巡检报告 |
+| 5 | **隐私门禁 13 处命中 + 内存 85.9% 红线**：s4mp 文档 192.168.x.x 私有 IP 待确认脱敏；其余多为误报（教程示例 IP / `${VAR}` 占位 / π 数字 / uv.lock 哈希）；内存 13.4/15.6GB 超 85% 红线（vmmemWSL 3.3G 头号大户） | 推送前隐私防线持续生效；内存缓解动作 = wsl --shutdown 释放 3.3G | health 巡检报告 |
 
 ## 其他重要进展
 
@@ -46,7 +46,7 @@ type: daily-review
 |:--|:-----|:----:|:----:|
 | 万悟 Docker 部署收尾 | ES 1.2GB 拉完（21/25 完成）→ 启动全部容器验证 | 30min | ⏳ k 可做 |
 | 内存缓解 | vmmemWSL 3.3G 头号大户：WSL 空闲则 `wsl --shutdown`（释放 3.3G）；紧张时 RAMMap64 -E 清 Standby | 5min | ⏳ k 可做 |
-| 隐私门禁 s4mp 确认 | `knowledge/Research/s4mp-architecture-analysis-2026-08-05.md:161` 的 192.168.0.112 是否脱敏（13 处命中多为误报，1-2 处人工确认） | 10min | ⏳ k 可做 |
+| 隐私门禁 s4mp 确认 | `knowledge/Research/s4mp-architecture-analysis-2026-08-05.md:161` 的 192.168.x.x 是否脱敏（13 处命中多为误报，1-2 处人工确认） | 10min | ⏳ k 可做 |
 | api_image_probe.sh 验证 | 下周一（9/21）运行时验证产物断言生效（09-14 "Script not found" 闭环确认） | — | ⏳ 到点验证 |
 | skill 合并授权 | 09-15/16 双份报告点名 6 组重复（题库导入六件套保留最长版 / apple/ 孤儿直接删等）——确认后执行 | — | 🔒 需 sora 确认 |
 
