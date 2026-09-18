@@ -249,35 +249,11 @@ _最后更新: 2026-09-17｜运行环境: OpenClaw Agent on Windows 11_
 ## 🔒 Waiting for User（阻塞待办，状态变化时提醒）
 - （空——被阻塞任务单独维护，不混入每日清单）
 
-## Promoted From Short-Term Memory (2026-09-13)
+## Promoted From Short-Term Memory (2026-09-18)
 
-<!-- openclaw-memory-promotion:memory:memory/2026-09-08.md:36:39 -->
-- .learnings/ERRORS.md 回顾: **持续问题**: FlClash 代理端口损坏（ERR-20260818-001） - 需要手动重启 FlClash 以恢复 7890 端口数据转发; **已解决问题**:; 提供商宕机导致的 opencode-go 提供商故障（已配置回退链）; 网关配置受保护路径问题（通过直接编辑 openclaw.json 解决） [score=0.829 recalls=0 avg=0.620 source=memory/2026-09-08.md:36-39]
-<!-- openclaw-memory-promotion:memory:memory/2026-09-08.md:40:42 -->
-- .learnings/ERRORS.md 回顾: 搜索超时链问题（将 timeoutSeconds 从 60 增至 120 解决）; NPM 安装超时问题（使用国内镜像解决）; 记忆搜索提供商超时问题（增加嵌入批处理超时并强制重建索引） [score=0.829 recalls=0 avg=0.620 source=memory/2026-09-08.md:40-42]
-<!-- openclaw-memory-promotion:memory:memory/2026-09-08.md:45:48 -->
-- .learnings/LEARNINGS.md 回顾: **计划-执行模式与异构架构**: 前沿模型处理复杂推理，中等模型处理任务陈述，小模型/SLM 处理简单执行（可节省 20-40% LLM 调用）; **从提示工程到系统工程**: 2026 年的重点转移到护栏（Guardrails）、反馈循环（Feedback Loops）和可观测性（Observability）; **OpenClaw 2.0 发布**: 简化安装和协作 Agent 能力，本地优先与模型不可知趋势; **持久智能体趋势**: 持久智能体作为 2026 年趋势崛起，使能更长工作流程和本地执行 [score=0.829 recalls=0 avg=0.620 source=memory/2026-09-08.md:45-48]
-<!-- openclaw-memory-promotion:memory:memory/2026-09-13.md:95:120 -->
-- **Graph Engineering 确立�?2026 主流范式**: 多阶段并行执�?+ 精确反馈路由取代串行循环；演进：Context Engineering (mid-2025) �?Loop Engineering (June 2026) �?Graph Engineering (July 2026)；OpenClaw 实证：Codex Remote Sessions = 分布�?Agent 执行（桌面⇄节点⇄云 worker）；实践共识：small typed core + cheap indexing + hybrid retrieval + temporal supersession [score=0.85 source=memory/2026-09-13.md]
-<!-- openclaw-memory-promotion:memory:memory/2026-09-13.md:121:145 -->
-- **记忆生命周期管理（提�?更新/删除）比单纯存储更关�?*: 陈旧记忆主动降低输出质量；四类记忆（短期/情景/语义/程序�? 向量检�?图遍历混合架构（Mem0/Letta/Cognee/Zep �?10+ 框架成熟）；我们的架构：Hermes memory tool + Obsidian vault + GitHub 同步 + 三层记忆，需强化 Update/Delete 机制 [score=0.85 source=memory/2026-09-13.md]
-<!-- openclaw-memory-promotion:memory:memory/2026-09-13.md:146:170 -->
-- **AI Agent 安全标准化进程加�?*: NIST (�? + IMDA 新加�?Model Governance Framework + Mastercard 倡议全球协调标准；OpenClaw Security 2026 五大控制点（Least-privilege tokens、RBAC 审批门控、沙箱工具运行时、提示注入防御、完整审计日志）+ SSRF deny + Secret egress host binding + Webhook throttling 具体�?[score=0.83 source=memory/2026-09-13.md]
-<!-- openclaw-memory-promotion:memory:memory/2026-09-13.md:171:195 -->
-- **Gartner 2026-08 预测**: AI 推理成本�?2028 �?agentic workflow 增超 5 �?—�?成本控制升为「生存项」；直接背书 Plan-and-Execute 90% 降本 + cheap-model tiering + 语义缓存 20-40% 节省构成的低成本护城�?[score=0.88 source=memory/2026-09-13.md]
-<!-- openclaw-memory-promotion:memory:memory/2026-09-13.md:196:210 -->
-- **EU AI Act 8月生�?*: �?Agent 编排归类 high-risk，需 HITL+审计+身份管理；CrewAI 44.3K stars/5.2M 月下载最活跃；AutoGen 合并�?Microsoft Agent Framework 进入维护模式 [score=0.82 source=memory/2026-09-13.md]
-<!-- openclaw-memory-promotion:memory:memory/2026/09/2026-09-14-self-improvement.md -->
-- **OpenClaw 2.0 极速补丁节奏**: v2026.8.1 发布后半个月 6 个补丁版本（v2026.8.1→v2026.9.4），Swarm 默认开启标志多 Agent 编排从实验性转为生产默认；Node 24.16+ 强制、**持久化技能**原生化、**可分享会话**特性落地 [source=memory/2026/09/2026-09-14-self-improvement.md]
-<!-- openclaw-memory-promotion:memory:memory/2026/09/2026-09-14-self-improvement.md -->
-- **AI Agent 安全标准化五控制点+三具体化**: Least-privilege tokens、RBAC 审批门控、沙箱工具运行时、提示注入防御、完整审计日志 + SSRF explicit deny、Secret egress host binding、Webhook throttling —— 形成可落地架构审查清单 [source=memory/2026/09/2026-09-14-self-improvement.md]
-<!-- openclaw-memory-promotion:memory:memory/2026/09/2026-09-15-reflection.md -->
-- **反思行动项落执行面机制生效**: 将反思行动项写入 projects/current.md `- [ ]` 格式带硬截止，daily-todo-executor 自动拾起执行；skill-link-gate 检测器连续 3 轮滑档 → 落执行面即日闭环（31→0 断裂），根治「机制类改进项滑档」 [source=memory/2026/09/2026-09-15-reflection.md]
-<!-- openclaw-memory-promotion:memory:memory/2026/09/2026-09-16-reflection.md -->
-- **FlClash 代理端口修复实证 (9/16)**: sora 物理机重启 FlClashCore 恢复 7890 转发（google 302 / github 200），QQBot 15:31 resume 重连成功 —— **唯一物理层阻塞点 (ERR-20260818-001) 已解除**，连续 7+ 天 cron 高亮告一段落 [source=memory/2026/09/2026-09-16.md]
-<!-- openclaw-memory-promotion:memory:memory/2026/09/2026-09-16.md -->
-- **docker-image-acceleration skill 实战验证**: 万悟 Docker 部署中三步法实测有效 —— FlClash 直连规则头插 + xuanyuan 镜像加速源 + minio 换 quay.io 官方源，下载速度 ~8MB/min → ~13MB/s（mysql 600MB 46s，21/25 镜像就绪），已固化为 skill 可复用 [source=memory/2026/09/2026-09-16.md]
-<!-- openclaw-memory-promotion:memory:memory/2026/09/2026-09-17-self-improvement.md -->
-- **Graph Engineering 实践共识再验证**: small typed core + cheap indexing + hybrid retrieval + temporal supersession —— 全部可在 markdown 文件上实现，无需额外基建；Codex Remote Sessions = Graph Engineering 的 OpenClaw 实践 [source=memory/2026/09/2026-09-17-self-improvement.md]
-<!-- openclaw-memory-promotion:memory:memory/2026/09/2026-09-17-self-improvement.md -->
-- **记忆生命周期管理三步曲毒性确认**: Extract→Update→Delete 缺一不可；陈旧记忆（过时偏好/错误事实/冲突规则）主动降低输出质量，比无记忆更坏；向量检索 + 图遍历混合架构（Mem0/Letta/Cognee/Zep 10+ 框架）成标配 [source=memory/2026/09/2026-09-17-self-improvement.md]
+<!-- openclaw-memory-promotion:memory:memory/2026-09-14-self-improvement.md:106:109 -->
+- 行动项: 备注: 特别是成本优化三件套（模型路由 + 语义缓存 + cheap-model tiering）已在落地中; [x] **P2: 研究 Swarm 默认开启影响**（参考项，条件触发：多 Agent 编排生产基线设计时） → 评估多 Agent 编排作为生产基线的工作流设计变化; 责任方: k (工作流设计时); 备注: Swarm 默认开启意味着需默认考虑并行阶段 + 精确反馈路由 [score=0.803 recalls=0 avg=0.620 source=memory/2026-09-14-self-improvement.md:106-109]
+<!-- openclaw-memory-promotion:memory:memory/2026-09-14-self-improvement.md:110:112 -->
+- 行动项: [x] **P2: 关注 NIST/IMDA 正式标准**（参考项，条件触发：官方发布后对标合规） → 待官方发布后对标合规要求; 责任方: k (合规检查时); 备注: EU AI Act 已生效，国际标准将影响全球部署 [score=0.803 recalls=0 avg=0.620 source=memory/2026-09-14-self-improvement.md:110-112]
+<!-- openclaw-memory-promotion:memory:memory/2026-09-14-self-improvement.md:98:101 -->
+- 行动项: [x] **P0: 重启 FlClash 恢复 7890 代理** → ✅ 2026-09-16 daily-todo-executor 实测恢复：7890 转发 google 302 / github 200，FlClashCore 9/16 17:09:25 重启；QQBot 15:31 resume 重连成功——重启动作已由 sora 完成（9/15 起不再阻塞）; 责任方: sora (物理机); 备注: 连续 6+ 次 cron 高亮，唯一 P0 阻塞点，需 sora 在物理机操作时执行; [x] **P1: 评估「持久化技能」对标**（参考项，条件触发：下次技术选型/技能体系评估时执行；OpenClaw v2026.9.3 持久化技能 vs Skill Workshop 流程） → 比较 v2026.9.3 特性与我们的 Skill Workshop 流程 [score=0.803 recalls=0 avg=0.620 source=memory/2026-09-14-self-improvement.md:98-101]
