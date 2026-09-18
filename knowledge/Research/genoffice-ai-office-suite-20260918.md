@@ -48,7 +48,14 @@ genoffice open sales.xlsx                  # 交给编辑器打开
 - **复杂格式会漂移**："Complex formatting can vary; check important files before sharing" —— 交付客户前必须人工核一遍。
 - Electron 应用，吃内存（sora 16G 要注意）。
 
-## 决策建议
+## 决策建议（已修正 2026-09-18）
 
-- **值得装 Windows 版实测 CLI**（免费/开源/直接强化接单），先跑通 `genoffice --version` + 建测试 .pptx，实证后再决定是否纳入接单流 + 建技能沉淀。
-- BYOK 填 DeepSeek/方舟 key 即可用，无需额外付费。
+**结论推翻：GenOffice 对 sora 的 PPT/文档需求是「冗余」的，不推荐采用。** sora 质疑「Codex/Antigravity 不是能做 PPT 吗」后复核本地知识库确认：
+
+- sora 已有成熟 PPT 体系：`pipelines/ppt-pipeline.md` = cn-ppt-outline-writer → pptx-generator → **ppt-optimizer（Gate score≥60，<60 回退重制）** → openclaw-slides/academic-presentation。
+- **Antigravity 确实能做 PPT**（生态成熟）：felo-slides / pptx-deck-creation（坐标显式 spec + 审计）/ ai-ppt-architect / agy-pptx-studio（多 agent + **Visual TDD 截图审计溢出**闭环）。底层仍是 python-pptx / pptxgenjs，但高级 skill 已用「截图 + 视觉模型审计」解决排版不可见痛点。
+- **Codex** 能写 python-pptx 生成 PPT，短板是看不到渲染效果（这是相对 Antigravity 的差异）。
+- **GenOffice 的 render 自检 + slides check ≈ Antigravity 高级 skill 的截图审计，属同类方案，无增量价值。**
+- 唯一差异：GenOffice 改「已有复杂 .docx 模板」的字节级保留，但 sora 接单以「从零写计划书/论文/PPT」为主，不碰改客户模板场景。
+
+**最终：跳过，不装**（避免 16G 机器多一个 Electron 负担），BYOK 无额外价值。
