@@ -47,7 +47,7 @@ subject: 2026-09-17
 ## 💡 3 个可改进点（数据支撑）
 
 ### 改进点 1：health 检测器「api_image_probe.sh 缺失」误报第 3 次同源复发——只修数据侧、不修检测器侧
-**事实**：9/17 health 报「脚本缺失：`C:\Users\31954\AppData\Local\hermes\scripts\api_image_probe.sh` 不存在（9/14 起连续失败）」；实测该路径文件**存在**（mtime 9/15 20:17，与 `~/.hermes/scripts` + `workspace/scripts` 三处一致）。同源事件链：8/8「健康全绿掩盖产物缺失」→ 9/14「探活脚本路径口径分裂」→ 9/15 executor 闭环「脚本复制到 cron 期望路径 + 实测 exit 0」→ **9/17 health 仍报缺失**。health 的建议「P1 脚本缺失：恢复或重写」本身就是错的——会让执行者第三次做复制脚本的无用功。
+**事实**：9/17 health 报「脚本缺失：`%USERPROFILE%\AppData\Local\hermes\scripts\api_image_probe.sh` 不存在（9/14 起连续失败）」；实测该路径文件**存在**（mtime 9/15 20:17，与 `~/.hermes/scripts` + `workspace/scripts` 三处一致）。同源事件链：8/8「健康全绿掩盖产物缺失」→ 9/14「探活脚本路径口径分裂」→ 9/15 executor 闭环「脚本复制到 cron 期望路径 + 实测 exit 0」→ **9/17 health 仍报缺失**。health 的建议「P1 脚本缺失：恢复或重写」本身就是错的——会让执行者第三次做复制脚本的无用功。
 **根因**：9/15 修复只做了「数据侧」（复制脚本到期望路径），未修「检测器侧」——daily-health-check 的脚本存在性断言是 cron prompt 模型自由发挥（hermes-health-check SKILL.md 无该脚本检测清单），探测口径不稳定。9/5「先修检测器再动数据」知识库治理原则在 health 域漏网（9/7「verify 断言对照 git 基线」同源）。
 **改进**：①当场把 api_image_probe.sh「三处实存 + 检测注意」固化进 hermes-health-check SKILL.md（存在/非空/含「## 汇总」；报缺失先核三处路径再报，勿重复复制）；②下周一 api-media-weekly-probe 实跑后确认无 last_error 即彻底闭环。
 

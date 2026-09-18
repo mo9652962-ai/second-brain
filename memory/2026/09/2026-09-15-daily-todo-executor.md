@@ -47,7 +47,7 @@ type: daily-todo-executor
 |:---|:---------|:-----|
 | **api-media-weekly-probe 路径核实+修复**（日报 P0） | 即反思项 ①，脚本已在 cron 期望路径；补跑刷新真实状态 | 见上 |
 | **EasyCLIProxyAPI 启动**（日报 P0，15min） | 启动 `D:\tools\EasyCLIProxyAPI\app\EasyCLIProxyAPI-v0.2.96-Windows-amd64\EasyCLIProxyAPI.exe`（config.toml 已配 8317 + start-core-on-launch） | `127.0.0.1:8317 LISTENING` + `/v1/models` 返回 antigravity/openai 模型 → **代理可用** |
-| **github-privacy-gate 误报白名单**（日报 P1，20min） | `github_privacy_gate.py` 新增 FILE_LINE_ALLOWLIST（8 条人工核实误报：`${MY_SERVICE_TOKEN}` 占位符 / s4mp 示例 IP 192.168.0.112 / nmap 教程 192.168.1.38·1.0 / 日报·health 引用的同一示例 IP / health 记录的探活脚本路径 / bolt.step π 14159265359）+ `uv.lock` 进 SKIP_BASENAME + SECRET_ASSIGN `${VAR}`/`<...>` 占位符规则 | workspace + 墨题 + tongpin **三仓库全 `{}` 零命中**，推送不再被拦 |
+| **github-privacy-gate 误报白名单**（日报 P1，20min） | `github_privacy_gate.py` 新增 FILE_LINE_ALLOWLIST（8 条人工核实误报：`${MY_SERVICE_TOKEN}` 占位符 / s4mp 示例 IP 192.168.x.x / nmap 教程 192.168.x.x·1.0 / 日报·health 引用的同一示例 IP / health 记录的探活脚本路径 / bolt.step π 14159…（π 数字串））+ `uv.lock` 进 SKIP_BASENAME + SECRET_ASSIGN `${VAR}`/`<...>` 占位符规则 | workspace + 墨题 + tongpin **三仓库全 `{}` 零命中**，推送不再被拦 |
 
 ### 📖 参考/条件触发归类（标记 [x] 防计数膨胀）
 
@@ -73,7 +73,7 @@ type: daily-todo-executor
 | **skill 合并授权（9/15 双周审计）** | 6 组重复（题库导入六件套 / fangzhou-ark 双份 / 本地 LLM 三件套等）+ apple/ 四技能 Windows 无用孤儿——确认后执行合并/删除 |
 | **light-\* 套件决策（本次新增）** | skill-link-gate 已将 light-* 10 技能豁免（vendored 参考性安装，SKILL.md 引用源 repo 的 docs/competitors、../light- 兄弟、未随附的 templates/examples）；**补全安装 or 维持豁免**二选一（豁免理由已注释在脚本头） |
 | **PPT 样例素材** | 需 sora 手动导出 2-3 个作品截图（无渲染自动化） |
-| **C:\Users 路径提示（本次新增）** | health-2026-09-15.md 记录探活脚本路径含 `C:\Users\31954\...`（已入隐私门禁白名单）；若 second-brain 仓库公开，历史报告中的本地路径可后续批量脱敏 |
+| **C:\Users 路径提示（本次新增）** | health-2026-09-15.md 记录探活脚本路径含 `%USERPROFILE%\...`（已入隐私门禁白名单）；若 second-brain 仓库公开，历史报告中的本地路径可后续批量脱敏 |
 | 随身WiFi下单确认 / 桌面美化部署 / 小红书发 PPT 教程 | MEMORY.md 长期项 |
 | 安全待决策（BOLA/IDOR 暂缓；DPAPI 跨平台待上云决策） | current.md L89 |
 | 三 bot 协作第一单 | 等 sora 定 PCB 自动化目标 |
