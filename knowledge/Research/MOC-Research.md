@@ -16,6 +16,7 @@ updated: 2026-09-17
 **共 210 篇研究笔记** · 最后更新: 2026-09-17（每日增量索引）
 
 
+- [[douyin-kiko-5-skills-ai-design-20260918]] - 抖音Kiko 5大前端设计Skill深度拆解：Taste Skill/Impeccable/shadcn/UI UX Pro Max/DESIGN.md
 ## 🆕 W34 新增补链（2026-08-16 周度整理）
 
 - [[GitHub-Weekly-2026-08-16]] — W34 GitHub 热榜
