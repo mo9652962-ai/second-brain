@@ -32,7 +32,7 @@ status: fresh---
 
 - [x] 官方源核对：web_extract rohanbansal.com/qorl（44.7% / 81% / 4B / GRPO 变体 / GPT-6 Astra 蒸馏数字确认）
 - [x] 选题池登记：#70「AI 优化数据库查询计划：4B 模型 + RL 让 Postgres 快 44.7%」（实战拆解型，公众号/抖音，冷启动）→ ✅ 2026-09-17 daily-todo-executor 已登记（knowledge/Content/选题池.md 板块 6）
-- [ ] 墨题 SQLite 慢查询体检：题库/词库大表 EXPLAIN QUERY PLAN 扫一遍，缺索引则补（P2 低优先）
+- [x] 墨题 SQLite 慢查询体检 → ✅ 2026-09-19 daily-todo-executor 落地：question_bank.db（10MB，vocabulary_entries 7958 行为最大表）12 条常见访问路径 EXPLAIN QUERY PLAN 全走索引（idx_vocab_user_term / idx_vocab_translation_queue / idx_questions_unit / idx_answers_session / idx_answer_events_question 等），无缺失索引；仅 3 条排序查询 USE TEMP B-TREE（8k 行量级可忽略）；app.db/vocabulary.db 为空库未体检
 
 ## 为什么重要
 
