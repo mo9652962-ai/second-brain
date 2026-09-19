@@ -65,3 +65,6 @@ genoffice open sales.xlsx                  # 交给编辑器打开
 - 唯一差异：GenOffice 改「已有复杂 .docx 模板」的字节级保留，但 sora 接单以「从零写计划书/论文/PPT」为主，不碰改客户模板场景。
 
 **最终：跳过，不装**（避免 16G 机器多一个 Electron 负担），BYOK 无额外价值。
+
+---
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]
