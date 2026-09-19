@@ -365,6 +365,13 @@ updated: 2026-09-14
 - [x] 🔴 github-privacy-gate 13 处隐私命中清理 ✅ 2026-09-18 daily-todo-executor 落地：门禁清零（4 处真实本地路径脱敏为 %USERPROFILE% + 7 处示例 IP/π 数字掩码 + 移除失效 s4mp 白名单条目），重跑 exit 0（截止 9/21 巡检前）——health 09-16/09-17 连续两天报 13 处命中（API_KEY 占位符/内网 IP，门禁拦截属预期但未清理）；跑 github_privacy_gate 出命中清单 → 占位符改示例 / 内网 IP 脱敏 / 真误报进白名单（9/16 s4mp 192.168.0.112 惯例）；只写 daily-note 不会被 executor 扫到，故本项登记在此
 - [x] 🟡 资源类 P0 按副作用分级拆分 ✅ 2026-09-18 daily-todo-executor 落地：规则固化 hermes-health-check（k 可做无副作用当场执行 / 需 sora 确认列报告，不捆绑冻结）；RAMMap64 -E 9/18 反思时已执行清 Standby；wsl --shutdown 独立归 9/21 万悟决策夜间窗口（9/17 内存 99.4% 教训）——巡检发现资源问题先拆「k 可做无副作用（RAMMap64 -E 等，当场执行）」/「需 sora（wsl --shutdown 等）」两列，不捆绑冻结；9/18 反思已当场 RAMMap64 -E 清 Standby；wsl --shutdown 若 9/21 前 sora 未确认万悟部署 → 夜间窗口自动执行（镜像 21/25 已拉完，重启可再起）
 
+### 🧭 9/18 反思行动项（daily-reflection 复盘 9-18，执行者必读）
+
+- [ ] 🟡 fallback 链收窄评估：jiyuanlvdong 系充值 or 永久移出（连续 402 已导致 obsidian-maintenance 9/18 当日失败；fallback 链成员枯竭面扩大：jiyuanlvdong/deepseek 官方/siliconflow/dengzhen 402、moonshot/zhipu 429、keylink 503、opencode-go/tabitoken 403）——9/21 前评估 provider 充值优先级（fangzhou 系为主）；规则已固化 hermes-provider-matrix「fallback 链健康度管理」（连续 2 次 402/429 主动移出链，充值后回填）
+- [ ] 🟢 卡片 cron 排程评估：9/18 卡片 cron 12:33 跑时当日研究零产出（arXiv 12:42 才提交、kiko 19:53、wemux/genoffice 23:10），卡片由 executor 20:14 补写——后移到研究类 cron 之后（22:00+）或 prompt 加「候选池为空显式标记待补」；时序规则已 patch daily-knowledge-review，改 jobs.json 需授权
+- [ ] 🔒 万悟参赛确认（9/25 12:00 截止，剩 7 天）→ sora 拍板后 k 当天出《商业计划书/对策方案》初稿；9/21 前未确认 → wsl --shutdown 夜间窗口自动执行（镜像 21/25 已拉完）
+- [ ] 🔒 闲鱼试水决策（第 43 天，周一 9/21 复盘）→ 30 秒三选一（试水/放弃/再缓）；k 侧 100% 就绪，上架 30min 可逆
+
 ## 🔗 相关领域
 - [[AI-Agent]] — 基础设施与能力架构
 - [[PPT-Design]] — PPT 制作方法论
@@ -374,7 +381,7 @@ updated: 2026-09-14
 
 ---
 
-_由 k (Hermes) 在每次会话结束时更新 | 最后更新: 2026-09-18 (daily-reflection 复盘 9-17)
+_由 k (Hermes) 在每次会话结束时更新 | 最后更新: 2026-09-18 (daily-reflection 复盘 9-18)
 
 ---
 

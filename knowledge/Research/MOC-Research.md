@@ -140,6 +140,8 @@ updated: 2026-09-18
 - [[knowledge/Research/ai-weekly-literature-2026-09-14|AI 文献周报 W37（09-07~09-13）]] — 周报补链
 - [[knowledge/Daily/hackernews-2026-09-15|HN 09-15]] · [[knowledge/cards/2026-09-15-rubygems-ai-attack|知识卡片 09-15]]
 - [[knowledge/Daily/hackernews-2026-09-17|HN 09-17]] · [[knowledge/cards/2026-09-17-ai-query-plan-optimization|知识卡片 09-17]]
+- [[knowledge/Daily/hackernews-2026-09-18|HN 09-18]] · [[knowledge/cards/2026-09-18-overclaimbench|知识卡片 09-18]]
+- [[knowledge/Daily/hackernews-2026-09-19|HN 09-19]] · [[knowledge/cards/2026-09-19-zcode-silent-upload|知识卡片 09-19]]
 ## 文章研读
 
 - [[ai-literature-search-pitfalls-study]]
