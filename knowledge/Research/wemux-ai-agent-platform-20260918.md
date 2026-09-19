@@ -49,3 +49,6 @@ sora 已有 Hermes + Codex 委派 + multi-agent（WorkBuddy/dsh/Codex/Antigravit
 - **不急于采用**（太早期 + 场景不符），保持关注即可。
 - 若要做 AI 博主选题，「solo 44 万行 AI 原生 OS」有故事性，可对比测评。
 - 架构参考留档：worker-first / worktree 隔离 / 人机审查门。
+
+---
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]

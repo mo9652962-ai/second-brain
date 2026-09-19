@@ -59,3 +59,6 @@
 
 ---
 _由 k (Hermes daily-todo-executor) 生成 ｜ vault 路径：memory/2026/09/2026-09-19-daily-todo-executor.md_
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]
