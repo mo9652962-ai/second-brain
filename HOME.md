@@ -7,7 +7,7 @@ created: 2026-08-09
 # 🏠 Home — 第二大脑入口
 
 > **知识最后更新: 2026-09-18 (daily-review)
-> 最后更新: 2026-09-17 (daily-reflection)
+> 最后更新: 2026-09-18 (daily-reflection)
 
 ---
 
@@ -32,6 +32,8 @@ created: 2026-08-09
 ## 📋 项目与日志
 - [[memory/2026/09/2026-09-17-daily-review|📋 09-17 每日回顾]] — Top5：PMPA记忆投毒防写入落地 / Agent-Tool 8异常 / 闲鱼主图禁词修复第21次核验 / qorl 4B查询计划 / arxiv解冻2151篇；明日：内存99.4%危急 + arxiv-fetch排查 + 闲鱼降频机制
 - [[memory/2026/09/2026-09-18-daily-review|📋 09-18 每日回顾]] — Top5：OverclaimBench完成声明不可信 / 工具幻觉防御前置 / 多智能体越少越好 / health检测器误报第3次根治 / 内存处置分级；明日：13处隐私命中清理(截止9/21) + obsidian-maintenance补跑 + 万悟确认剩7天
+- [[memory/2026/09/2026-09-18-reflection|🔍 反思 09-18]] — 工具评估预筛(genoffice冗余) + fallback链健康度 + 卡片cron时序；9/17反思3/3闭环
+- [[memory/2026/09/2026-09-17-reflection|🔍 反思 09-17（补链）]] — health检测器第3次复发根治 + privacy 13命中登记 + 内存分级处置
 - [[memory/2026/09/2026-09-15-daily-review|📋 09-15 每日回顾]]
 - [[memory/2026/09/2026-09-16-daily-review|📋 09-16 每日回顾]] — Top5：联通创新大赛万悟命题研究（9/25 截止剩 9 天）/ cron 产出四算子提炼 6 条可执行知识 / Docker 镜像提速 13MB/s / health 抓出 12:53 六 cron 批量失败需补跑 / 隐私门禁 13 处命中 — Top5：OpenAI bots 攻击 RubyGems（AI agent 主动利用已知漏洞） / arXiv 09-15 补全速览 15+14 / 技能治理单扫描器不足 / 双周技能审计 479 / 闲鱼禁词修复加固；明日：闲鱼决策第 42 天 + 探活路径核实 + 供应链扫描补丁
 - [[memory/2026/09/2026-09-16-reflection|🔍 反思 09-16]] — arxiv-fetch 长期静默暴露 + 豁免验证门证据链补强 + 闲鱼决策第 42 天机制失效（降频）
