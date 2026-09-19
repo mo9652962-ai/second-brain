@@ -1,3 +1,9 @@
+---
+tags: [research, wemux, multi-agent, tool]
+type: research
+created: 2026-09-18
+title: Wemux — 自托管 AI Agent 协作平台
+---
 # Wemux — 自托管 AI Agent 协作平台（千轮研究 2026-09-18）
 
 > 来源：抖音【子杰Kyro】→ wemux-ai/wemux。一句话定位：**AI 原生组织 OS，Worker-first 执行 —— agent 在你的机器上用你的凭据做真实编码，代码不出机器。**

@@ -98,6 +98,7 @@ updated: 2026-08-31
 ## 🆕 W38 新增（09-07 ~ 09-13：清理 + 成本）
 - [[knowledge/Productivity/system-cleanup-report-20260913|系统清理报告 09-13]] — 释放约 1.6 GB
 - [[knowledge/Productivity/system-cleanup-report-20260915|系统清理报告 09-15]] — 三轮累计释放约 25 GB（C 盘 76% → 70%）
+- [[knowledge/Productivity/system-cleanup-report-20260918|系统清理报告 09-18]] — 释放约 1.9 GB（uv/npm/pip 缓存 + 回收站孤儿残留）
 - [[knowledge/Productivity/token-usage-report-20260913|Token 用量报告 09-13]]
 
 ## 🧭 入口治理
