@@ -300,7 +300,7 @@ Session-end sweep detected 1 possible error in the previous OpenClaw session.
 
 **Logged**: 2026-08-18T12:04:00+08:00
 **Priority**: high
-**Status**: open
+**Status**: resolved
 **Area**: infra
 
 ### Summary
@@ -344,5 +344,16 @@ health_provider_check.py 统一走 127.0.0.1:7890 → 全 FAIL 为假警报
 - 物理层单点故障未清除：软件层冗余已拉满（5路搜索、11级模型fallback、多供应商），仅网络出口代理需人工运维
 - 影响面：health_provider_check 持续假警报、QQ/微信消息通道疑似离线、cron/agent核心不受影响
 - 建议：sora 下次物理机操作时优先重启 FlClash 服务
+
+### Status Update (2026-09-16) ✅ **RESOLVED**
+- **解决动作**: sora 在物理机重启 FlClash (2026-09-16 17:09:25)，FlClashCore.exe 重启成功
+- **验证结果**: 7890 端口转发恢复 (curl google 302 / github 200)，QQBot 15:31 resume 重连成功
+- **影响消除**: health_provider_check 假警报消除，消息通道 (QQ/微信) 恢复在线
+- **连续高亮终结**: 连续 7+ 次 cron 高亮 (8/18→8/25→8/29→8/30→9/8→9/13→9/14→9/18) 正式结束
+- **系统状态**: 软件层冗余已拉满，唯一人工介入阻塞点清除，系统可靠性恢复全自动化
+
+### Resolution
+- **Resolved**: 2026-09-16T17:09:25+08:00
+- **Notes**: sora 物理机重启 FlClash 服务，7890 代理端口数据转发功能恢复，QQBot/微信消息通道自动重连，health_provider_check 恢复正常监控。这是唯一需人工介入的 P0 阻塞点，历时 29 天 (8/18→9/16) 解决。
 
 ---

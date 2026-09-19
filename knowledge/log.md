@@ -197,3 +197,13 @@ tags: [meta, vault-maintenance]
 - **诊断**：lint 606 页（断链 0 / 缺 frontmatter 0 / 粘连闭合 0 / 孤立 1 / 短页 0 / 陈旧 0）；19 知识域 vs 9 MOC + Inbox
 - **修复**：挂载 arxiv-2026-09-17-agent-llm → MOC-Research（计数 207→208）；index.md 头部更新（09-13/592 → 09-17/606）+ Research 计数 212 + 补 4 个小域行（Archive/Creative/Product/gaming）；knowledge-map 开 W39 速览区挂今日 arxiv
 - **结果**：lint 全绿（孤立 0，仅剩 2 个 README.md 低风险重名忽略）
+
+
+## [2026-09-19] lint | 例行体检 + 修复
+- **诊断**：lint 617 页（断链 0 / 缺 frontmatter 4 / 粘连闭合 0 / 孤立 6 / 短页 0 / 陈旧 0）；全仓库断链扫描 3617 链接 0 断链；全仓库 0 字节空文件 = 0
+- **修复**：
+  - 补 frontmatter 4：system-cleanup-report-20260918、douyin-kiko-5-skills-ai-design-20260918、genoffice-ai-office-suite-20260918、wemux-ai-agent-platform-20260918（均 09-18 新增，tags/type/created/title 标准补齐）
+  - 挂载孤儿 6：overclaimbench 知识卡 + hackernews-09-18 → MOC-Research；每日股票分析-09-18 → MOC-Finance；system-cleanup-09-18 → MOC-Productivity；genoffice / wemux 研究 → MOC-Research 头部
+  - 标签格式 1：arxiv-2026-09-18-agent-llm 块式列表 → 流式（lint-fix-tags-v2.py 幂等）
+  - 顺手挂载今日 hackernews-2026-09-19（cron 新生成孤儿）→ MOC-Research
+- **结果**：lint 全绿（断链 0 / 缺 frontmatter 0 / 孤立 0，仅剩 2 个 README.md 低风险重名忽略）；全仓库 3628 链接 0 断链；skills/ 下 2 个 <100B 文件为技能模板占位（ERRORS.md / FEATURE_REQUESTS.md），设计内保留不动

@@ -70,7 +70,7 @@ updated: 2026-09-04
 
 
 
-> 所有知识领域的索引与关联。最后更新: 2026-09-18（W38 周度整理：十领域自我强化批次 + 黑盒实证 + 评测意图隐藏规范 + memory 归位 6 文件 + GitHub/arXiv 入库）
+> 所有知识领域的索引与关联。最后更新: 2026-09-19（W38 周度整理：十领域自我强化批次 + 黑盒实证 + 评测意图隐藏规范 + memory 归位 6 文件 + GitHub/arXiv 入库）
 
 
 
@@ -862,7 +862,7 @@ graph TD
 
 
 
-| 🎨 Creative/Content | AI 小说流水线 + 网文世界观 + 内容创作 B 站变现 + 去 AI 味 39 类检测 | [[knowledge/Creative/AI小说工厂流水线-2026-08-20]] · [[knowledge/Content/内容创作-2026-B站变现增强]] |
+| 🎨 Creative/Content | AI 小说流水线 + 网文世界观 + 内容创作 B 站变现 + 去 AI 味 39 类检测 + **GEO 生成式引擎优化** | [[knowledge/Creative/AI小说工厂流水线-2026-08-20]] · [[knowledge/Content/内容创作-2026-B站变现增强]] · [[knowledge/Content/GEO-生成式引擎优化-研究-2026]] |
 
 
 
