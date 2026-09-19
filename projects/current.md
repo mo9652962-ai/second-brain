@@ -214,6 +214,64 @@ updated: 2026-09-14
 - [x] 知识库 W37 周度整理（9/6）：MOC 补挂 5 处 + 索引更新（Research 186 / 总 532）✅
 - [x] 9/6 反思 4 项 agent 可执行项核实全落地（suggestion-implementation 文件证据：PIL 兜底 / siliconflow patch / web_extract 门 / 试水前置）✅
 
+### 11. 本周（9/13–9/19）完成项
+
+#### 🗓️ 系统可靠性 / cron 容灾（17 项）
+- [x] deterministic_verify 双核验落地：verify_exec_status 读 jobs.json last_run/last_status/last_error + 产物核验并列 ✅ 9/13（AppData/Local/hermes/scripts/deterministic_verify.py）
+- [x] 隐私门禁扩展 .dreams：github_privacy_gate.py 加 FORBIDDEN_TRACKED_PREFIXES（.dreams/.hermes/HEARTBEAT/.tmp），被 git 跟踪立即报错 ✅ 9/13
+- [x] 闲鱼计数漂移修复：suggestion-implementation 越权 41→44 回滚 41，断言恢复 PASS + drift_fix_history 登记 ✅ 9/13
+- [x] config.yaml 损坏 15h 静默教训固化 C4 故障模式 + health 3b「config 可解析性」检查 patch ✅ 9/13
+- [x] 09-12 config 坏窗口产物缺口复核：arxiv/hackernews/cards-09-12 确认不可再生，按补位规则登记（跨日滚动覆盖）✅ 9/13
+- [x] 双技能计数红线 patch：vault-suggestion-executor + suggestion-implementation 防越权复发 ✅ 9/14
+- [x] state.yaml 权威推进 41→42（唯一写方流程 + current.md 9 处同步 + assert PASS）+ MEMORY.md 展示层同步 ✅ 9/14
+- [x] assert_state_consistency.py 补 MEMORY.md 天数检查（封闭断言盲区，4/4 PASS）✅ 9/15
+- [x] skill-link-gate 检测器修复 v2（26 条误报规则 + 468/468 全绿，31→0 断裂）✅ 9/15
+- [x] 硬线探活产物断言 + api_image_probe.sh 复制到 cron 期望路径（三处实存，9/14「Script not found」闭环）✅ 9/15
+- [x] 12:53 六 cron 批量失败产物补跑（hackernews + 9/15 reflection 缺档补写）✅ 9/16
+- [x] FlClash P0 阻塞点确认解除：sora 9/16 17:09 重启后 7890 恢复 + QQBot 15:31 resume 重连成功，health 09-18 无批量失败特征 ✅ 9/16
+- [x] arxiv-fetch 静默排查 + 产物断言：口径误判（9 月实有 14 天产物，仅缺 12/13/16），cron prompt 已加写后自检 ✅ 9/17
+- [x] 隐私门禁清零：4 处真实本地路径脱敏 %USERPROFILE% + 7 处示例 IP/π 掩码 + 移除失效 s4mp 白名单，重跑 exit 0 ✅ 9/18
+- [x] obsidian-maintenance 补跑：0 真实断链（753 条全为解析口径误报，四重解析确认）✅ 9/18
+- [x] fallback 链修复：jiyuanlvdong-2 402 枯竭 → config.yaml fallback_model 改 fangzhou-2/deepseek-v4-flash-ga-260731（字节级替换 + 核验无 job pin 残留）✅ 9/18
+- [x] 哨兵 glob 修正：deterministic_verify 移除 obsidian-maintenance 产物 glob（维护型任务不写 vault 报告），每日误报根除 ✅ 9/18
+
+#### 🧠 知识 / 研究（17 项）
+- [x] GitHub W38 周榜 + 增速榜 4 新面孔深研（context-mode +1,936 / WeKnora +1,168 / hyperframes +5,124 / no-ai-slop +1,307）✅ 9/13
+- [x] arXiv 09-11 新窗口补录（441 篇池零重叠）：20 主条目 + 12 简评 + 深挖 3 篇（T1 Terminal Agent RL / B…）✅ 9/13
+- [x] 建议落实 5 项：systematic-debugging 数模案例 / skill-vetter SkillSpector 初筛（含误报坑）/ VibeCoding 待办确认 / MEMORY.md 记忆推广 2 条 ✅ 9/13
+- [x] 系统清理 1.6GB（C 盘 61%→60%）→ knowledge/Productivity/system-cleanup-report-20260913.md ✅ 9/13
+- [x] LRN 2 条新增：LRN-20260913-001 Agent 安全标准化（NIST/IMDA/Mastercard 五控制点）+ 002 记忆生命周期管理 ✅ 9/13
+- [x] arXiv 09-14 速览 17+12 篇（5 大信号：Skill 质量度量化 / K-Bench 六通道泄露 / GuardrailLoop / Harness vs Model / 动作前验证）✅ 9/14
+- [x] AI测评周报：DeepSeek V4.1 Flash 价格调研 + BenchLM 月度统计（ai测评-内容素材库更新）✅ 9/14
+- [x] arXiv 09-15 补全速览 15+14 篇（09-14 池 402 未覆盖补录）✅ 9/15
+- [x] 供应链扫描补丁：shai-hulud 加 RubyGems 缓存 key 收割特征 ✅ 9/15
+- [x] 双周技能审计 479 技能（6 组重复，ai 组合并）✅ 9/15
+- [x] innovation-competition-industry-track skill 新建：联通万悟命题三模块映射 + 3 坑对策 + 墨题企业版迁移路径 ✅ 9/16
+- [x] cron-output-learning 四算子提炼（6 条可执行知识：AI agent 主动攻击方 / bash alone>typed tools / 记忆分层等）✅ 9/16
+- [x] docker-image-acceleration skill 新建（三步法：直连规则头插 + xuanyuan 加速源 + quay 官方源，~8MB/min→13MB/s）✅ 9/16
+- [x] arXiv 09-17 速览 32+10 篇（2,151 篇池）+ arxiv-learning-report 四算子 + HN 09-17 + PMPA 防投毒规则同步 daily-knowledge-absorption-gate §4.6.1 ✅ 9/17
+- [x] 创新大赛 wanwu 官方源原文验证：web_extract github.com/UnicomAI/wanwu（Go 63.7% / Apache-2.0 / Docker / GraphRAG·多租户实锤）✅ 9/17
+- [x] arXiv 09-18 速览 20+7 篇（602 篇池，6 大信号：Harness 组件级归因 / 完成声明不可信 / 多智能体越少越好等）+ HN 09-18（Hister 512 / Bonsai 2）✅ 9/18
+- [x] ai-code-review 完成声明证据核验规则（OverclaimBench：67.9% 未读全 / 80.4% 误导 / 漏缺陷 1.8x）+ overclaimbench 知识卡补写 ✅ 9/18
+
+#### 🎨 闲鱼素材 / 决策（6 项）
+- [x] 素材核验第 19→22 次 PASS（7 图 PNG 头 750×750 + 上架操作清单在位）✅ 9/13/14/17/18
+- [x] 素材包「搭网站/写脚本」4 处「自动化」禁词修复（→ 效率工具/批量处理）+ 全量复扫 PASS ✅ 9/15
+- [x] 6 张主图 vision 禁词复核：2 张「★ 最受欢迎」→「★ 人气之选」（PIL 局部重绘 fix_xianyu_price_banned_word.py + 源脚本防复发 patch + scripts/README 登记）✅ 9/17
+- [x] 上架前图片层合规缺口闭环（第 21 次核验，6 张主图禁词全清）✅ 9/17
+- [x] 闲鱼决策降频机制落地：每日 P0 → 每周一复盘提醒 + 默认「再缓 7 天」自动续期（sora 拍板即停）✅ 9/17
+- [x] 闲鱼计数权威 41→42（唯一写方流程 + 双技能红线 + 全分布 {42:12} 断言 PASS）✅ 9/14
+
+#### 🛠️ 工具 / 维护（8 项）
+- [x] 知识卡行动项处理 16 项 + 镜像待办迁移 8 项（9/12 日志 + openclaw-session + github-monetization）✅ 9/13
+- [x] .obsidian/plugins 第三方产物 18 文件 git rm --cached + gitignore（本地保留不推送）✅ 9/13
+- [x] 隐私脱敏 2 处：research_moti_ai.md 真实路径 → 相对路径 + assert_state_consistency.py 硬编码路径 → __file__ 相对定位 ✅ 9/13
+- [x] SummerCheckin 复现方案书三阶段 14 项按证据补标 [x]（commit c676d44a/7e88e9f9/cfb107a0 实证）✅ 9/14
+- [x] obsidian-maintenance 14/14 验证 + log.md 反引号内断链修复 + 补挂 2 新孤立页 ✅ 9/14
+- [x] knowledge-lint 周检全 0（9/15：断链/孤立/frontmatter/空文件/标签冲突全零）✅ 9/15
+- [x] github-privacy-gate 误报白名单（8 条 + uv.lock + ${VAR} 规则，三仓库零命中）✅ 9/15
+- [x] 生成器 OUT_DIR expandvars 修复（git-bash %USERPROFILE% 不展开误建字面目录）+ lint-fix-tags-v2 frontmatter 粘连重拼 ✅ 9/17
+
 ## 🔄 进行中 / 已重新排期
 
 ### 🎯 闲鱼上架（🟡 **每周一复盘提醒**，决策悬置第 42 天，9/6 fallback 硬触发已过；连续顺延第 30+ 天——9/17 降频机制生效：每日 P0 → 每周一复盘，其余日子不占 P0 位；默认「再缓 7 天」自动续期，sora 拍板即停）
@@ -343,14 +401,15 @@ updated: 2026-09-14
 | SFC 系统扫描 | 🔒 需管理员权限 | 7/24 曾标记完成，7/27 后重复录入，待 sora 确认是否重跑 |
 | 零感 AI 付费实测（1元/千字） | 🔒 需付费+测试稿 | 卡片 2026-08-03：降 AI 率主推工具定标，验 1 篇知网 98% 稿后写入 SOP |
 | DeepSeek 直连充值 | 🔒 余额 ¥7.25 | 8/14 cron 记录；需充值恢复容灾深度 |
-| jiyuanlvdong-2 余额充值 | 🔒 余额枯竭（9/4 起 402） | fallback 链备用节点，主链 fangzhou-2 不受影响；9/11 面扩大：deepseek/siliconflow/dengzhen 402、moonshot/zhipu 429、opencode-go/tabitoken 403 |
+| jiyuanlvdong-2 余额充值 | ✅ 已移出 fallback（9/18） | 连续 402 已移出（config fallback_model → fangzhou-2）；如恢复容灾深度可选充值 |
 | 多 provider 余额枯竭 | 🔒 需充值 | 9/11 巡检：fallback 池变小（多路 402/429/403），默认链 fangzhou-2 不受影响，容灾深度减薄 |
 | `/new` 开新会话 | 🔒 长会话烧钱 | 「对话历史回顾」1M tokens 接近上限，压缩反复失败 |
 | 打开 Obsidian（恢复 MCP） | 🔒 27123 端口无监听 | 依赖 Obsidian 的 cron 会失败 |
-| FlClash github 路由 | 🔒 新增（9/11） | google 7890=302 正常但 github 7890=000 → 检查规则/fake-ip/节点；影响 hackernews/arxiv/github 类 cron |
+| FlClash github 路由 | ✅ 已恢复（9/16） | sora 9/16 重启后 github 200；health 09-18 无批量失败特征，P0 阻塞点解除 |
 | skill 合并授权 | 🔒 待 sora 确认 | 09-01 审计 3 组合并（fangzhou-ark / android-automation / search-config）+ 09-08 审计 5 组近义合并（水墨 UI 4 合 1 等）——破坏性合并，确认后执行 |
 | 墨题云服务器选型 | 🔒 需决策（花钱） | 腾讯 38/99 vs 阿里 99 + 域名；决策后 k 可全自动按方案部署（P1 商业线阻塞） |
 | 三 bot 协作第一单目标 | ⏳ 等 sora | PCB 自动化流水线试跑：sora 给具体目标后 k 拆任务调度（researcher/coder/reviewer 已就位） |
+| 万悟参赛确认（9/25 12:00 截止，剩 6 天） | 🔒 硬截止（9/19 更新） | 确认后 k 当天出《商业计划书/对策方案》初稿；9/21 前未确认 → wsl --shutdown 夜间窗口自动执行 |
 | fangzhou-2 配额恢复 | ✅ 已恢复（9/5 实测） | 主链 custom:fangzhou-2 实测 1264ms OK，月配额重置生效，无需操作 |
 | 安全审计 cron 排期 | ✅ 已完成 8/5 | security-audit cron 已挂载（`30 8 * * 0` no_agent + security_audit.py），无需再操作 |
 
@@ -367,10 +426,10 @@ updated: 2026-09-14
 
 ### 🧭 9/18 反思行动项（daily-reflection 复盘 9-18，执行者必读）
 
-- [ ] 🟡 fallback 链收窄评估：jiyuanlvdong 系充值 or 永久移出（连续 402 已导致 obsidian-maintenance 9/18 当日失败；fallback 链成员枯竭面扩大：jiyuanlvdong/deepseek 官方/siliconflow/dengzhen 402、moonshot/zhipu 429、keylink 503、opencode-go/tabitoken 403）——9/21 前评估 provider 充值优先级（fangzhou 系为主）；规则已固化 hermes-provider-matrix「fallback 链健康度管理」（连续 2 次 402/429 主动移出链，充值后回填）
+- [x] 🟡 fallback 链收窄评估：jiyuanlvdong 系充值 or 永久移出 → ✅ 2026-09-19 weekly-cleanup 结论：永久移出（连续 402；9/18 config.yaml fallback_model 已切 fangzhou-2，字节级替换+核验，无需充值）；如后续要恢复容灾深度再评估充值（连续 402 已导致 obsidian-maintenance 9/18 当日失败；fallback 链成员枯竭面扩大：jiyuanlvdong/deepseek 官方/siliconflow/dengzhen 402、moonshot/zhipu 429、keylink 503、opencode-go/tabitoken 403）——9/21 前评估 provider 充值优先级（fangzhou 系为主）；规则已固化 hermes-provider-matrix「fallback 链健康度管理」（连续 2 次 402/429 主动移出链，充值后回填）
 - [ ] 🟢 卡片 cron 排程评估：9/18 卡片 cron 12:33 跑时当日研究零产出（arXiv 12:42 才提交、kiko 19:53、wemux/genoffice 23:10），卡片由 executor 20:14 补写——后移到研究类 cron 之后（22:00+）或 prompt 加「候选池为空显式标记待补」；时序规则已 patch daily-knowledge-review，改 jobs.json 需授权
-- [ ] 🔒 万悟参赛确认（9/25 12:00 截止，剩 7 天）→ sora 拍板后 k 当天出《商业计划书/对策方案》初稿；9/21 前未确认 → wsl --shutdown 夜间窗口自动执行（镜像 21/25 已拉完）
-- [ ] 🔒 闲鱼试水决策（第 43 天，周一 9/21 复盘）→ 30 秒三选一（试水/放弃/再缓）；k 侧 100% 就绪，上架 30min 可逆
+- [ ] 🔒 万悟参赛确认（9/25 12:00 截止，剩 6 天）→ sora 拍板后 k 当天出《商业计划书/对策方案》初稿；9/21 前未确认 → wsl --shutdown 夜间窗口自动执行（镜像 21/25 已拉完）
+- [ ] 🔒 闲鱼试水决策（第 42 天，周一 9/21 复盘，state.yaml 权威）→ 30 秒三选一（试水/放弃/再缓）；k 侧 100% 就绪，上架 30min 可逆
 
 ## 🔗 相关领域
 - [[AI-Agent]] — 基础设施与能力架构
