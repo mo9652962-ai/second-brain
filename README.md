@@ -104,7 +104,7 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 | 🎨 | **设计/多媒体** | PPT 设计、AI 美学、图像生成工具 | PPT 优化、AI 图像生成 |
 | 📊 | **效率方法论** | Obsidian 技巧、自动化工作流 | Obsidian 知识图谱、自动化工作流 |
 
-**📈 总计：30 个自建技能文档 · 11 大知识域 · 26 个外部技能集参考**
+**📈 总计：25 个自建技能文档（11 大知识域）· 26 个外部技能集参考**（2026-09-19 核验）
 
 ---
 
@@ -128,16 +128,21 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 
 5. **🔄 每 2 小时自动同步更新**
    - 不是一次性项目，是持续进化的活的知识库
-   - 43 个 Cron 自动化任务 7×24 小时运行
+   - 44 个 Cron 自动化任务 7×24 小时运行
 
 ---
 
-## 📦 最新技能入库 (2026-08-16 ~ 2026-09-18)
+## 📦 最新技能入库 (2026-08-16 ~ 2026-09-19)
 
 ### 研究笔记
 
 | 技能 | 版本 | 简介 |
 |------|------|------|
+| **[每日日志 09-19](memory/2026-09-19.md)** | v1.0 | OpenClaw 部署/Agent 安全最佳实践 2026（OWASP Agentic AI Top 10 / Vidar 窃密实锤）+ OpenClaw vs Hermes 记忆纪律对比 |
+| **[GEO 生成式引擎优化研究 09-19](knowledge/Content/GEO-生成式引擎优化-研究-2026.md)** | v1.0 | 抖音「小梅讲AI」GEO 视频逐条核对：结构化信息+SEO 排名+权威信源才有效，「改写正文」被 2025 NeurIPS 反证会降可见度 |
+| **[Agent4Science AI 科学家社交网络 09-18](knowledge/Research/agent4science-ai-scientist-social-network-20260918.md)** | v1.0 | UChicago CHAI Lab：AI agents 的 Reddit（Nature 报道过）；对 sora=AI 博主选题素材 |
+| **[GenOffice AI Office 套件 09-18](knowledge/Research/genoffice-ai-office-suite-20260918.md)** | v1.0 | 全球首个全功能开源 AI Office：`genoffice` CLI 让 Codex 直出真实 .docx/.xlsx/.pptx + render PNG 自检 |
+| **[Wemux AI Agent 协作平台 09-18](knowledge/Research/wemux-ai-agent-platform-20260918.md)** | v1.0 | Worker-first 自托管协作 OS；3 周新 repo 太早期，价值=博主选题 + worker-first/worktree 架构参考 |
 | **[抖音 Kiko 5 Skill 拆解 09-18](knowledge/Research/douyin-kiko-5-skills-ai-design-20260918.md)** | v1.0 | 5 大前端设计 Skill 全量源码拆解（Taste/Impeccable/shadcn/UI UX Pro Max/DESIGN.md）+ 墨题/万悟落地迁移方案 |
 | **[arXiv AI Agent / LLM 速览 09-18](knowledge/Research/arxiv-2026-09-18-agent-llm.md)** | v1.0 | 09-18 新窗口正常速览（AI Agent / LLM 强相关） |
 | **[每日日志 09-18](memory/2026-09-18.md)** | v1.0 | daily-self-improvement cron 自动生成；P0 阻塞点 FlClash 代理已解除（9/16 重启恢复）、OpenClaw 2.0 补丁节奏、AI Agent 安全标准化五控制点+三具体化、Persistent Agents 趋势 |
@@ -242,7 +247,7 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 | **知识库引擎** | Obsidian (Dataview + Graph View) |
 | **版本控制** | Git + GitHub (每 2 小时自动同步) |
 | **MCP 服务** | GitHub · Filesystem · JLCPCB · Obsidian · Browser |
-| **自动化引擎** | Hermes Cron Scheduler (43 个定时任务) |
+| **自动化引擎** | Hermes Cron Scheduler (44 个定时任务) |
 
 ---
 
@@ -250,8 +255,8 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 
 ```
 📁 仓库体积：约 31MB 跟踪文件（Git 包约 48MB）
-📝 Markdown 文件：约 1190 个知识笔记 + 系统文档（共 1200+ 个 .md）
-🧠 自建 Skill 文档：30 个（11 个领域目录）
+📝 Markdown 文件：1260 个（知识笔记 + 系统文档）
+🧠 自建 Skill 文档：25 个（11 个领域目录，2026-09-19 核验）
 🗂️ 知识域：11 个
 ⏰ 首次提交：2026 年 7 月
 🔄 平均更新频率：每 2 小时自动同步

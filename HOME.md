@@ -6,8 +6,8 @@ created: 2026-08-09
 
 # 🏠 Home — 第二大脑入口
 
-> **知识最后更新: 2026-09-18 (daily-review)
-> 最后更新: 2026-09-17 (daily-reflection)
+> **知识最后更新: 2026-09-19 (daily-review 09-19)
+> 最后更新: 2026-09-18 (daily-reflection)
 
 ---
 
@@ -23,7 +23,7 @@ created: 2026-08-09
 | 🤖 AI / Agent | [[MOC-Dev]] | AI Agent 研究、Hermes 自举、提示词 |
 | 💻 开发 | [[MOC-Dev]] | Web 开发、工具链、DevOps |
 - [[memory/2026/09/2026-09-08-reflection|🔍 反思 09-08]] — 反思→执行 1/3 + daily_vault_optimize 静默失效防线 + health 误判归因
-| 🔬 研究 | [[MOC-Research]] | 136 篇研究笔记（含学术域）|
+| 🔬 研究 | [[MOC-Research]] | 216 篇研究笔记（含学术域）|
 | 🎓 学术 | [[MOC-Research]] | 论文写作、降 AI 味、期刊 |
 | ⚡ 硬件 | [[MOC-Hardware]] | PCB、单片机、嵌入式 |
 | 🎨 设计 | [[MOC-Hardware]] | UI 设计、水墨美学、主题 |
@@ -32,6 +32,9 @@ created: 2026-08-09
 ## 📋 项目与日志
 - [[memory/2026/09/2026-09-17-daily-review|📋 09-17 每日回顾]] — Top5：PMPA记忆投毒防写入落地 / Agent-Tool 8异常 / 闲鱼主图禁词修复第21次核验 / qorl 4B查询计划 / arxiv解冻2151篇；明日：内存99.4%危急 + arxiv-fetch排查 + 闲鱼降频机制
 - [[memory/2026/09/2026-09-18-daily-review|📋 09-18 每日回顾]] — Top5：OverclaimBench完成声明不可信 / 工具幻觉防御前置 / 多智能体越少越好 / health检测器误报第3次根治 / 内存处置分级；明日：13处隐私命中清理(截止9/21) + obsidian-maintenance补跑 + 万悟确认剩7天
+- [[memory/2026/09/2026-09-19-daily-review|📋 09-19 每日回顾]] — Top5：ZCode静默上传实锤(墨题126MB快照待传P0) / 评测元视角 / EconSkills技能库 / Agent4Science / 激活探针；明日：ZCode处置 + 闲鱼第43天周一复盘 + 万悟确认 + fallback收窄
+- [[memory/2026/09/2026-09-18-reflection|🔍 反思 09-18]] — 工具评估预筛(genoffice冗余) + fallback链健康度 + 卡片cron时序；9/17反思3/3闭环
+- [[memory/2026/09/2026-09-17-reflection|🔍 反思 09-17（补链）]] — health检测器第3次复发根治 + privacy 13命中登记 + 内存分级处置
 - [[memory/2026/09/2026-09-15-daily-review|📋 09-15 每日回顾]]
 - [[memory/2026/09/2026-09-16-daily-review|📋 09-16 每日回顾]] — Top5：联通创新大赛万悟命题研究（9/25 截止剩 9 天）/ cron 产出四算子提炼 6 条可执行知识 / Docker 镜像提速 13MB/s / health 抓出 12:53 六 cron 批量失败需补跑 / 隐私门禁 13 处命中 — Top5：OpenAI bots 攻击 RubyGems（AI agent 主动利用已知漏洞） / arXiv 09-15 补全速览 15+14 / 技能治理单扫描器不足 / 双周技能审计 479 / 闲鱼禁词修复加固；明日：闲鱼决策第 42 天 + 探活路径核实 + 供应链扫描补丁
 - [[memory/2026/09/2026-09-16-reflection|🔍 反思 09-16]] — arxiv-fetch 长期静默暴露 + 豁免验证门证据链补强 + 闲鱼决策第 42 天机制失效（降频）
@@ -149,6 +152,7 @@ created: 2026-08-09
 - [[knowledge/Research/arxiv-2026-09-15-agent-llm|arXiv 补全速览]] — 15+14 篇 AI Agent/LLM 论文（09-15 索引冻结补录 09-14 同池漏网：Scan the Skill 技能注册表治理 / Is Bash All You Need 工具接口实证 / LifeFuse-Mem 记忆生命周期 / LLM Judge 能力依赖偏置）
 - [[knowledge/Research/arxiv-2026-09-17-agent-llm|arXiv 今日速览]] — 32+10 篇 AI Agent/LLM 论文（09-17 新窗口 09-15~09-17 共 2,151 篇：PMPA 持久记忆投毒 OpenClaw 73.7% / BudgetBench 预算化记忆评测 / 工具-工作流组合级失败 / 投毒基准污染自修改 agent / 编码 agent 实证四连）
 - [[knowledge/Research/arxiv-2026-09-18-agent-llm|arXiv 今日速览]] — 20+7 篇 AI Agent/LLM 论文（09-18 新窗口 602 篇：Harness 组件级归因 176 设置 / OverclaimBench 完成声明 80.4% 误导 / 工具幻觉非 gate 决策 / 多智能体「越少越好」/ MAGS Dafny 形式化安全 100%）
+- [[knowledge/Research/arxiv-2026-09-19-agent-llm|arXiv 补全速览]] — 13+5 篇 AI Agent/LLM 论文（09-19 周六无新窗口，补录 09-18 同池漏网：LLM 评测 14,767 篇元研究 / PetriBench 动态状态推理 / 进化搜索单点评测揭穿 / 12.6M 激活探针平 1000 倍 guard / EconSkills 技能库抽象化 / 元认知反馈防去技能化）
 
 ## 🧭 核心区域
 - [[memory/2026/08/2026-08-19-reflection|🔍 08-19 反思]] — 行动项 3/3 未落地（反思≠执行第 3 次复发）；Tavily 第 6 次复发；SRC 三方向收敛为补天聚焦 · scripts 登记表当场补建

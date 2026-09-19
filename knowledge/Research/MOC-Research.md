@@ -5,7 +5,7 @@ type: moc
 domain: Research
 status: active
 created: 2026-08-09
-updated: 2026-09-18
+updated: 2026-09-19
 ---
 
 # 🔬 研究笔记 MOC — Research Map
@@ -13,10 +13,16 @@ updated: 2026-09-18
 > 所有研究笔记的索引与入口。自动按主题分组。
 > 回到 [[knowledge-map|🗺️ 知识地图]] · [[Home|🏠 Home]]
 
-**共 212 篇研究笔记** · 最后更新: 2026-09-18（每日增量索引）
+**共 216 篇研究笔记** · 最后更新: 2026-09-19（每日增量索引）
 
+## 🆕 最新增量（2026-09-18 ~ 09-19）
 
-- [[douyin-kiko-5-skills-ai-design-20260918]] - 抖音Kiko 5大前端设计Skill深度拆解：Taste Skill/Impeccable/shadcn/UI UX Pro Max/DESIGN.md
+- [[douyin-kiko-5-skills-ai-design-20260918]] — 抖音Kiko 5大前端设计Skill深度拆解：Taste Skill/Impeccable/shadcn/UI UX Pro Max/DESIGN.md
+- [[agent4science-ai-scientist-social-network-20260918]] — AI 科学家社交网络（UChicago CHAI Lab，AI agents 的 Reddit）
+- [[genoffice-ai-office-suite-20260918]] — 全球首个全功能开源 AI Office 套件（Codex 直出真实 .docx/.xlsx/.pptx）
+- [[wemux-ai-agent-platform-20260918]] — 自托管 AI Agent 协作平台（Worker-first 执行）
+- [[arxiv-2026-09-19-agent-llm]] — 09-19 arXiv AI Agent/LLM 速览
+
 ## 🆕 W34 新增补链（2026-08-16 周度整理）
 
 - [[GitHub-Weekly-2026-08-16]] — W34 GitHub 热榜
@@ -140,6 +146,8 @@ updated: 2026-09-18
 - [[knowledge/Research/ai-weekly-literature-2026-09-14|AI 文献周报 W37（09-07~09-13）]] — 周报补链
 - [[knowledge/Daily/hackernews-2026-09-15|HN 09-15]] · [[knowledge/cards/2026-09-15-rubygems-ai-attack|知识卡片 09-15]]
 - [[knowledge/Daily/hackernews-2026-09-17|HN 09-17]] · [[knowledge/cards/2026-09-17-ai-query-plan-optimization|知识卡片 09-17]]
+- [[knowledge/Daily/hackernews-2026-09-18|HN 09-18]] · [[knowledge/cards/2026-09-18-overclaimbench|知识卡片 09-18]]
+- [[knowledge/Daily/hackernews-2026-09-19|HN 09-19]] · [[knowledge/cards/2026-09-19-zcode-silent-upload|知识卡片 09-19]]
 ## 文章研读
 
 - [[ai-literature-search-pitfalls-study]]
@@ -358,6 +366,10 @@ updated: 2026-09-18
 - [[cron-output-learning-20260915]]
 - [[innovation-competition-industry-track-20260915]]
 - [[arxiv-2026-09-18-agent-llm]]
+- [[agent4science-ai-scientist-social-network-20260918]]
+- [[arxiv-2026-09-19-agent-llm]]
+- [[genoffice-ai-office-suite-20260918]]
+- [[wemux-ai-agent-platform-20260918]]
 
 ## 🧭 入口治理
 

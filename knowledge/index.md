@@ -32,7 +32,7 @@ tags: [meta, vault-maintenance]
 | 目录 | 数量 | 典型内容 |
 |:---|:---|:---|
 | AI/ | ~15 | Agent 评估、墨题 AI 研究、知识库方法论 |
-| Content/ | ~8 | 抖音 AI 博主、内容生产 |
+| Content/ | ~9 | 抖音 AI 博主、内容生产、GEO 生成式引擎优化 |
 | Daily/ | ~25 | hackernews 日报、每日回顾 |
 | Development/ | ~30 | 墨题开发、部署方案、项目落地 |
 | Education/ | ~5 | 考研考证规划、家教 |
