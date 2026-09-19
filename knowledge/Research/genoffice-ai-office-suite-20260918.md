@@ -1,3 +1,9 @@
+---
+tags: [research, genoffice, ai-office, tool]
+type: research
+created: 2026-09-18
+title: GenOffice — 全球首个全功能开源 AI Office 套件
+---
 # GenOffice — 全球首个全功能开源 AI Office 套件（千轮研究 2026-09-18）
 
 > 来源：抖音【AI观察笔记】→ genspark-ai/genoffice。一句话定位：**AI 原生开源 Office，自配 CLI + agent skill 让 Codex 直接产出真实 .docx/.xlsx/.pptx。**

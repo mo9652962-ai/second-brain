@@ -249,11 +249,25 @@ _最后更新: 2026-09-17｜运行环境: OpenClaw Agent on Windows 11_
 ## 🔒 Waiting for User（阻塞待办，状态变化时提醒）
 - （空——被阻塞任务单独维护，不混入每日清单）
 
-## Promoted From Short-Term Memory (2026-09-18)
+## Promoted From Short-Term Memory (2026-09-19)
 
-<!-- openclaw-memory-promotion:memory:memory/2026-09-14-self-improvement.md:106:109 -->
-- 行动项: 备注: 特别是成本优化三件套（模型路由 + 语义缓存 + cheap-model tiering）已在落地中; [x] **P2: 研究 Swarm 默认开启影响**（参考项，条件触发：多 Agent 编排生产基线设计时） → 评估多 Agent 编排作为生产基线的工作流设计变化; 责任方: k (工作流设计时); 备注: Swarm 默认开启意味着需默认考虑并行阶段 + 精确反馈路由 [score=0.803 recalls=0 avg=0.620 source=memory/2026-09-14-self-improvement.md:106-109]
-<!-- openclaw-memory-promotion:memory:memory/2026-09-14-self-improvement.md:110:112 -->
-- 行动项: [x] **P2: 关注 NIST/IMDA 正式标准**（参考项，条件触发：官方发布后对标合规） → 待官方发布后对标合规要求; 责任方: k (合规检查时); 备注: EU AI Act 已生效，国际标准将影响全球部署 [score=0.803 recalls=0 avg=0.620 source=memory/2026-09-14-self-improvement.md:110-112]
-<!-- openclaw-memory-promotion:memory:memory/2026-09-14-self-improvement.md:98:101 -->
-- 行动项: [x] **P0: 重启 FlClash 恢复 7890 代理** → ✅ 2026-09-16 daily-todo-executor 实测恢复：7890 转发 google 302 / github 200，FlClashCore 9/16 17:09:25 重启；QQBot 15:31 resume 重连成功——重启动作已由 sora 完成（9/15 起不再阻塞）; 责任方: sora (物理机); 备注: 连续 6+ 次 cron 高亮，唯一 P0 阻塞点，需 sora 在物理机操作时执行; [x] **P1: 评估「持久化技能」对标**（参考项，条件触发：下次技术选型/技能体系评估时执行；OpenClaw v2026.9.3 持久化技能 vs Skill Workshop 流程） → 比较 v2026.9.3 特性与我们的 Skill Workshop 流程 [score=0.803 recalls=0 avg=0.620 source=memory/2026-09-14-self-improvement.md:98-101]
+<!-- openclaw-memory-promotion:memory:memory/2026-09-14-self-improvement.md:12:14 -->
+- AI Agent / OpenClaw 最新发展 (Tavily 搜索摘要): v2026.9.3 (9/8): Node 24.16+ 强制、**持久化技能**、**可分享会话**; v2026.9.4 (9/11): 失败更新回滚、统一 Plugins 工作区、预备云会话; **趋势**: 大版本后激进补丁，体现「七周大版本整合 → 每日补丁」新模式 [score=0.811 recalls=0 avg=0.620 source=memory/2026-09-14-self-improvement.md:12-14]
+<!-- openclaw-memory-promotion:memory:memory/2026-09-14-self-improvement.md:16:16 -->
+- AI Agent / OpenClaw 最新发展 (Tavily 搜索摘要): **AI Agent 安全标准化实质推进** [score=0.811 recalls=0 avg=0.620 source=memory/2026-09-14-self-improvement.md:16-16]
+<!-- openclaw-memory-promotion:memory:memory/2026-09-14-self-improvement.md:17:20 -->
+- AI Agent / OpenClaw 最新发展 (Tavily 搜索摘要): **Mastercard 倡议**: Agentic Commerce 安全规则 + 全球协调标准; **NIST 发布**: AI RMF 1.0 扩展至 Agentic AI; **新加坡 IMDA**: Model Governance Framework 2.0; **EU AI Act 8月生效**: 多 Agent 编排 = high-risk，强制 HITL+审计+身份管理 [score=0.811 recalls=0 avg=0.620 source=memory/2026-09-14-self-improvement.md:17-20]
+<!-- openclaw-memory-promotion:memory:memory/2026-09-14-self-improvement.md:21:21 -->
+- AI Agent / OpenClaw 最新发展 (Tavily 搜索摘要): **OpenClaw Security 2026 体系**: 五大控制点 + 三大具体化形成可落地清单 [score=0.811 recalls=0 avg=0.620 source=memory/2026-09-14-self-improvement.md:21-21]
+<!-- openclaw-memory-promotion:memory:memory/2026-09-14-self-improvement.md:23:23 -->
+- AI Agent / OpenClaw 最新发展 (Tavily 搜索摘要): **行业趋势巩固** [score=0.811 recalls=0 avg=0.620 source=memory/2026-09-14-self-improvement.md:23-23]
+<!-- openclaw-memory-promotion:memory:memory/2026-09-14-self-improvement.md:24:27 -->
+- AI Agent / OpenClaw 最新发展 (Tavily 搜索摘要): Graph Engineering > Loop Engineering 已成主流范式（Codex Remote Sessions 实证）; 持续学习成为关键：memory 层改进 > 模型微调; 本地优先趋势：数据本地化 + 多供应商 fallback 成标配; 成本控制升为「生存项」：Gartner 预测 AI 推理成本至 2028 每 agentic workflow 增超 5 倍 [score=0.811 recalls=0 avg=0.620 source=memory/2026-09-14-self-improvement.md:24-27]
+<!-- openclaw-memory-promotion:memory:memory/2026-09-14-self-improvement.md:32:35 -->
+- 错误模式识息 (.learnings/ERRORS.md): **持续问题 (OPEN)**:; **ERR-20260818-001**: FlClash 7890 代理端口损坏（监听但数据转发失效）→ **唯一需人工介入的阻塞点**，已连续 6+ 次 cron 高亮（8/18→8/25→8/29→8/30→9/8→9/13→9/14 今日）; **已解决模式**:; Tavily 搜索超时 (ERR-20260720-001): timeoutSeconds 60→120 解决 [score=0.811 recalls=0 avg=0.620 source=memory/2026-09-14-self-improvement.md:32-35]
+<!-- openclaw-memory-promotion:memory:memory/2026-09-14-self-improvement.md:36:39 -->
+- 错误模式识息 (.learnings/ERRORS.md): npm 安装超时 (ERR-20260720-002): 切换 npmmirror 镜像; PowerShell 语法陷阱 (多条): 使用 `;` 或 `if ($?)` 替代 `&&`/`||`; 记忆搜索提供商超时 (ERR-20260720-005): embeddingBatchTimeoutSeconds 90 + 重建索引; Tavily 批量并发超时 (ERR-20260721-001): 控制 ≤3 并发 [score=0.811 recalls=0 avg=0.620 source=memory/2026-09-14-self-improvement.md:36-39]
+<!-- openclaw-memory-promotion:memory:memory/2026-09-14-self-improvement.md:40:40 -->
+- 错误模式识息 (.learnings/ERRORS.md): Provider outage (ERR-20260719-001): 配置跨供应商 fallback 链 [score=0.811 recalls=0 avg=0.620 source=memory/2026-09-14-self-improvement.md:40-40]
+<!-- openclaw-memory-promotion:memory:memory/2026-09-14-self-improvement.md:43:43 -->
+- 经验教训 (.learnings/LEARNINGS.md) 近期高价值: **本日新增**: [score=0.811 recalls=0 avg=0.620 source=memory/2026-09-14-self-improvement.md:43-43]
