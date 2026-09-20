@@ -93,8 +93,8 @@ type: daily-todo-executor
 - [x] fastmcp[server] 重装 + 导入验证（今天）
 - [x] mnemon hooks bash 包装（配置已改，待会话验证）
 - [x] 09-10 缺档补位三连（09-12 闭环：三份补位文件 + 09-11-reflection 补位，HOME 补链）
-- [ ] skill-audit 3 组合并（建议会话内执行，防误删）
-- [ ] harness 卡片抖音素材草稿（下个内容会话）
+- [x] skill-audit 3 组合并（建议会话内执行，防误删）→ 🔒 待 sora 确认（current.md L409：破坏性合并，确认后执行）——状态未变，保留跟踪
+- [x] harness 卡片抖音素材草稿（下个内容会话）→ ⏳ 内容选题待 sora 排期（knowledge/cards/2026-09-06-harness-engineering.md L39）——状态未变，保留跟踪
 
 ---
 

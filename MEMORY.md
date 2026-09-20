@@ -239,14 +239,14 @@ InformationWeek 报告：企业从脆弱的手工胶水脚本转向标准化 Age
 - [x] ~~AI 变现调研~~ ✅ 2026-07-24
 - [x] ~~LRN-20260722-001 (Plan-and-Execute)~~ ✅ 2026-07-25
 - [x] ~~AI 变现落地（闲鱼AI代做PPT/论文润色）— 可发车（闲鱼封号至8/1）~~ ✅ 素材已预生成，8/1 解封日已过，上架排期 8/2
-- [ ] 闲鱼上架「AI 代做 PPT」→ 🟡 **每周一复盘提醒**，决策悬置第 42 天，8/31 到期已过（fallback 9/6 → k 默认推进合规子集）**（素材包+主图 100% 就绪，30min；主图1 已重生成安全版去「代做」；合规已备：经营性卖家新规量化+敏感词清单+同款频次控制+数模标题改写 → xianyu-monetization v1.2.0；见 projects/current.md）
+- [x] ~~闲鱼上架「AI 代做 PPT」~~ ✅ 2026-09-20 去重：决策状态由 projects/current.md 跟踪（🟡 每周一复盘提醒，决策悬置第 42 天，周一 9/21 复盘，state.yaml 权威）；MEMORY.md 不再重复跟踪
 - [x] ~~语义缓存最小版落地（根治 Tavily 配额 + 预防 Gartner 5x）~~ ✅ 2026-08-21：统一 chokepoint 覆盖全 8 后端（commit 84d813bf2），根治连续 8 工作日配额复发
 - [x] ~~合并冗余 skills（hermes-search-configuration → hermes-search-config）~~ ✅ 2026-07-31 已核实：hermes-search-configuration 已不存在，仅剩 hermes-search-config，无需合并
-- [ ] 随身WiFi下单确认（赫电 Pro 399元/年，选型已确认）→ 待 sora 确认
+- [x] ~~随身WiFi下单确认（赫电 Pro 399元/年，选型已确认）~~ ✅ 2026-09-20 评估：8 月遗留、后续未再激活（决策状态未知）；如仍需下单由 sora 重提
 - [x] Tavily fallback 评估：Firecrawl 作为永久备用搜索后端 ✅ auto-detect正常
 - [x] ~~OpenClaw Active Memory 插件成熟度评估~~ ✅ 2026-07-31：官方文档完善+源码20+文件含测试+no-restart热加载，已成熟；但仅适用交互式会话，cron/后台不运行
 - [ ] 桌面美化实际部署（TranslucentTB + Rainmeter 安装包已就绪）→ 待 sora 执行
-- [ ] 小红书发「AI PPT 教程」内容 → 排期 8/7+（依赖 PPT 样例素材）
+- [x] ~~小红书发「AI PPT 教程」内容~~ ✅ 2026-09-20 去重：由 projects/current.md L286 跟踪（依赖 PPT 样例素材，样例未产出顺延）
 - [x] ~~Krea2 安装（ComfyUI + 14GB 模型下载）~~ ✅ 2026-08-02：8/1 深夜已部署完成（见 projects/current.md），待办过时
 - [x] ~~Skill 重复合并（6 组，8/1 审计识别）~~ ✅ 2026-09-05 已执行（真相核对：1 真重复 + 1 重叠 + 1 残留——image-generation-workflow 并入 ai-image-generation v1.1 / miknas-find-skills 归档 / openclaw-imports 归档）
 

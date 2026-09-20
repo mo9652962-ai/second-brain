@@ -73,7 +73,7 @@ backfill_note: 原 09-10 20:00 运行 Connection error 未生成；09-12 daily-t
 - [x] 闲鱼计数推进第 41 天（vault-suggestion 09-10）
 - [x] 4 个周日任务 pin 修复（health 09-10）
 - [x] arXiv 解冻速览 22+16 篇 + Desert Ant 卡（09-10）
-- [ ] 计数收敛唯一写方改造（09-11 硬截止）→ 次日 executor 闭环
+- [x] 计数收敛唯一写方改造（09-11 硬截止）→ ✅ 2026-09-11 executor 闭环（current.md：state.yaml 权威 40→41 + assert_state_consistency 三连 PASS，四连漂移根治）
 
 ---
 _生成: daily-todo-executor cron · k (Hermes) · 2026-09-12 补位重建_
