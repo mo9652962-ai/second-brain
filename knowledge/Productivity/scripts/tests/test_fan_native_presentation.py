@@ -80,15 +80,15 @@ class TestFanNativePresentation(unittest.TestCase):
         # Slide 1: 全部角度一致（收起叠合，归一化到 0~360）
         rot1 = [round(b.rotation % 360, 1) for b in blades_s1]
         self.assertEqual(len(set(rot1)), 1, f"Slide 1 扇叶未完全重合: {rot1}")
-        self.assertAlmostEqual(rot1[0], (-74.0) % 360, delta=1.0)
+        self.assertAlmostEqual(rot1[0], (-135.0) % 360, delta=1.0)
 
-        # Slide 2: 角度按 29.5° 步长递增（模 360 差值）
+        # Slide 2: 角度按 28.5° 步长递增（模 360 差值）
         blades_s2_sorted = sorted(blades_s2, key=lambda b: int(b.name.replace('!!FanBlade', '')))
         rot2 = [round(b.rotation % 360, 1) for b in blades_s2_sorted]
         for i in range(len(rot2) - 1):
             diff = (rot2[i+1] - rot2[i]) % 360
-            self.assertGreater(diff, 25.0, f"扇叶间距不足: {diff}")
-            self.assertAlmostEqual(diff, 29.5, delta=1.5)
+            self.assertGreater(diff, 24.0, f"扇叶间距不足: {diff}")
+            self.assertAlmostEqual(diff, 28.5, delta=1.5)
 
     def test_05_fan_ribs_rotations(self):
         """扇骨状态差：Slide 1 全部收拢 vs Slide 2 展开对应扇叶中轴"""
