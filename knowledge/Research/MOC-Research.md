@@ -369,6 +369,7 @@ updated: 2026-09-19
 - [[arxiv-2026-09-18-agent-llm]]
 - [[agent4science-ai-scientist-social-network-20260918]]
 - [[arxiv-2026-09-19-agent-llm]]
+- [[arxiv-2026-09-19-core-contributions]] — 精选 3 篇（EconSkills 技能库 / LLM Benchmarks 评测元研究 / 激活探针安全）
 - [[genoffice-ai-office-suite-20260918]]
 - [[wemux-ai-agent-platform-20260918]]
 
