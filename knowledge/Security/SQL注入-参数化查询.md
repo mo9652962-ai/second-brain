@@ -42,7 +42,7 @@ WHERE name = ' + 前端名字  (手动拼接)
 
 ## 关联
 
-- `Development/写码前扫坑清单.md`（第 22 项）
+- `Dev/写码前扫坑清单.md`（第 22 项）
 - `Security/接口三件套-攻防一体.md`（参数校验）
 - SRC 五类新手漏洞之一（src-bug-hunting 技能）
 ---

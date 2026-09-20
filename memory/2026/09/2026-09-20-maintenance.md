@@ -40,3 +40,6 @@ tags: [knowledge/productivity, vault-maintenance, lint]
 
 - knowledge-lint：Broken wikilinks 0 / Missing frontmatter 0 / Orphan 0 / Short pages 0
 - vault-structure：Broken wikilinks 0 / Tag case 0 / Empty（仅 .venv 基础设施 1）
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

@@ -67,3 +67,6 @@ updated: 2026-09-20 20:05
 ## ⚙️ config.yaml 检查
 
   ✅ config.yaml 可解析
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

@@ -34,7 +34,7 @@ tags: [meta, vault-maintenance]
 | AI/ | ~18 | Agent 评估、墨题 AI 研究、知识库方法论 |
 | Content/ | ~9 | 抖音 AI 博主、内容生产、GEO 生成式引擎优化 |
 | Daily/ | ~32 | hackernews 日报、每日回顾 |
-| Development/ | ~30 | 墨题开发、部署方案、项目落地 |
+| Dev/ | ~30 | 墨题开发、部署方案、项目落地 |
 | Education/ | ~1 | 考研考证规划、家教 |
 | Hardware/ | ~21 | PCB/KiCad/嵌入式 |
 | META/ | ~5 | 知识库治理、MOC 体系 |
@@ -57,7 +57,7 @@ tags: [meta, vault-maintenance]
 | 知识库方法论 | [[knowledge/AI/知识库-AI不翻知识库根因-2026-09-04]] | 「差的不是资料是最上面那层规则」+ AGENTS.md 实践 |
 | 工具精度方法论 | [[knowledge/AI/工具精度方法论-假阳性税与知识库Lint-2026-09-05]] | 假阳性税 + Precision/Recall 4 问 |
 | 运动曲线/动效 | [[knowledge/Productivity/运动曲线-easing-动效丝滑关键-2026-09-05]] | cubic-bezier 曲线表 + M3/iOS 官方体系 |
-| 公网部署 | [[knowledge/Development/网站公网部署全流程-Vercel-CDN-域名-2026-09-05]] | Vercel+域名+Cloudflare 全流程 |
+| 公网部署 | [[knowledge/Dev/网站公网部署全流程-Vercel-CDN-域名-2026-09-05]] | Vercel+域名+Cloudflare 全流程 |
 | 操作时间线 | [[log]] | 所有 ingest/lint/query 的 append-only 记录 |
 
 ## 📐 使用规则（AI 必读）

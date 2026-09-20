@@ -39,7 +39,7 @@ date: 2026-08-21
 
 ## 关联
 
-- `Development/写码前扫坑清单.md`（第 21 项）
+- `Dev/写码前扫坑清单.md`（第 21 项）
 - Hermes redact_secrets 已开（8-20）— 输出侧防泄
 - `ai-agent-security-audit` 技能（供应链/凭据审计）
 

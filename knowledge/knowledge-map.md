@@ -830,7 +830,7 @@ graph TD
 
 
 
-| 💻 Dev | 后端开发坑系列 32 项（写码前扫坑清单）+ 墨题巡检 08-17/20/21 + Gemini Spark 指南 | [[knowledge/Development/写码前扫坑清单]] · [[knowledge/Dev/墨题每日巡检-2026-08-21]] |
+| 💻 Dev | 后端开发坑系列 32 项（写码前扫坑清单）+ 墨题巡检 08-17/20/21 + Gemini Spark 指南 | [[knowledge/Dev/写码前扫坑清单]] · [[knowledge/Dev/墨题每日巡检-2026-08-21]] |
 
 
 
@@ -930,7 +930,7 @@ graph TD
 | 域 | 新增重点 | 入口 |
 |:---|:---------|:-----|
 | 🏠 Productivity | 闲鱼运营千轮研究 09-04 + 运动曲线 easing（动效）+ Vault 健康基线 | [[knowledge/Productivity/MOC-Productivity]] |
-| 🛠 Development | 墨题上云部署方案（无 Docker）+ 网站公网部署全流程（Vercel+CDN+域名）| [[knowledge/Development/墨题上云部署方案-无Docker-2026-09-02]] |
+| 🛠 Development | 墨题上云部署方案（无 Docker）+ 网站公网部署全流程（Vercel+CDN+域名）| [[knowledge/Dev/墨题上云部署方案-无Docker-2026-09-02]] |
 | 🔬 Research | 多 Agent Eval 基线 v2 + arXiv 09-03/04/05 速览 + 工具精度方法论（假阳性税）| [[knowledge/Research/MOC-Research]] |
 | 🔐 Security | hermes-codex-security-policy 09-04 + SRC 批量初筛收敛 | [[knowledge/Security/MOC-Security]] |
 | 🤖 AI | 知识库-AI 不翻知识库根因 + 工具精度方法论 | [[knowledge/AI/工具精度方法论-假阳性税与知识库Lint-2026-09-05]] |
@@ -1125,7 +1125,7 @@ graph TD
 |:--|:--|:--|
 | Research | [[knowledge/Research/2026-09-11-self-study/INDEX\|十领域自我强化研究 09-11]] | 10 报告并行千轮研究：PCB DRC 门禁 / 变现三级火箭 / 墨题 AI 精讲 / 内容工业化图文快变现 / 边缘 AI 流水线 / CAD 双引擎 / Web16 安全基线 / AI 安全 P0 / 自举证据映射 |
 | Research | [[knowledge/Research/黑盒热榜5项目实证研究-2026-09-08\|黑盒热榜 5 项目实证 09-08]] | marketingskills 48.2k★ / DeerFlow 81.9k★ / pascal editor 22.4k★ MCP 语义工具层直接参考 / LunaTV 只借技术 / camofox 不引入 |
-| Development | [[knowledge/Development/CAD自动化MCP参考-pascal-2026-09-08\|CAD 自动化 MCP 参考 09-08]] | pascal/editor 31 MCP 语义工具 + headless Core 设计，CAD/PCB 自动化直接范本 |
+| Development | [[knowledge/Dev/CAD自动化MCP参考-pascal-2026-09-08\|CAD 自动化 MCP 参考 09-08]] | pascal/editor 31 MCP 语义工具 + headless Core 设计，CAD/PCB 自动化直接范本 |
 | META | [[knowledge/META/评测设计规范-意图隐藏-2026-09-09\|评测意图隐藏规范 09-09]] | 被测模型知道被测即改变行为（开战意愿 -13.43 实证），自建基准必遵守 |
 | Research | [[knowledge/Research/skill-audit-2026-09-08\|技能审计 09-08]] | 392 技能 / 本月使用 97 / TOP10 cron 自举闭环 + P0 过时技能清单 |
 | Research | [[knowledge/Research/GitHub-Weekly-2026-09-08\|GitHub 宝藏 09-08]] | codebase-memory-mcp / nanobot / code-review-graph 等 Top5 |
@@ -2121,7 +2121,6 @@ MCP 生态: GitHub + Filesystem + JLCPCB(38工具) + Obsidian(笔记操作)
 | SOP | [[knowledge/SOP/SOP-008-xianyu-vibe-coding-website\|SOP-008 闲鱼接单]] | 高交互个人主页 Vibe Coding 接单 SOP |
 | Productivity | [[knowledge/Productivity/PPT国奖级扇叶开场平滑动画-制作SOP-2026-09-20\|PPT 扇叶开场 SOP]] | 国奖级扇叶开场平滑动画（双态 Morph） |
 | Productivity | [[knowledge/Productivity/PPT高级唯美镂空动态结尾页-制作SOP-2026-09-20\|PPT 镂空结尾 SOP]] | 高级唯美镂空动态结尾页 + 答辩商业化 |
-| Productivity | [[knowledge/Productivity/templates/README-Template-01\|PPT 模板库 Template 01]] | 首个固定模板：超框折扇开场 + 红金系统 9 页 + 镂空致谢（实测 8.5-9.8 分） |
 | GitHub | [[knowledge/Research/GitHub-Weekly-2026-09-20-weekly-5projects\|GitHub 周榜 W39]] | weekly 口径：sub2api / SemIf / AI-Infra-Guard / karpathy-skills / open-code-review |
 | GitHub | [[knowledge/Research/GitHub-Weekly-2026-09-20\|GitHub 宝藏挖掘 09-20]] | Top5：codebase-memory-mcp 43.8k / nanobot 48.4k / code-review-graph 31.6k |
 | cards | [[knowledge/cards/2026-09-15-rubygems-ai-attack\|知识卡片 09-15]] | OpenAI bots 攻击 RubyGems（供应链安全） |

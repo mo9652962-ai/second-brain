@@ -15,7 +15,7 @@ type: daily-review
 | # | 发现 | 价值 | 落点 |
 |:--|:-----|:-----|:-----|
 | 1 | **marketingskills（48.2k★ MIT）实证**：不是技能集合，是「AI 营销自动化操作系统」——55 skill + 51 CLI 工具，每 skill 配 **evals.json**（prompt+20+断言）+ **product-marketing 上下文前置** 原语 | 这是它 48k★ 的核心差异化原因，sora 的博主/闲鱼技能库直接对口；不必照搬 55 个，补 2 个原语即可 | `knowledge/Research/黑盒热榜5项目实证研究-2026-09-08.md` + 卡片；**升级方向已获 sora 确认** |
-| 2 | **pascal/editor（22.4k★ MIT）**：R3F+WebGPU 浏览器参数化 3D 编辑，原生 **31 个 MCP 语义工具**（create_room/add_door/check-collisions/validate_scene/export-glb）+ Core 不 import Three.js（headless 零 GPU） | sora 的 CAD/PCB 自动化 MCP 方向「直接参考实现」——implicit-cad 与 FreeCAD 两极之间的中间路线 | `knowledge/Development/CAD自动化MCP参考-pascal-2026-09-08.md` |
+| 2 | **pascal/editor（22.4k★ MIT）**：R3F+WebGPU 浏览器参数化 3D 编辑，原生 **31 个 MCP 语义工具**（create_room/add_door/check-collisions/validate_scene/export-glb）+ Core 不 import Three.js（headless 零 GPU） | sora 的 CAD/PCB 自动化 MCP 方向「直接参考实现」——implicit-cad 与 FreeCAD 两极之间的中间路线 | `knowledge/Dev/CAD自动化MCP参考-pascal-2026-09-08.md` |
 | 3 | **月度技能审计**：392 技能登记，本月实际在用 **97**；TOP10 全是知识吸收→回顾→Obsidian 闭环 + 墨题 + arxiv；P0 过时 4 个（残留 openrouter/tavily/deepseek-chat/ark-code-latest）；**SiliconFlow key 已失效 401**（23 技能引用） | 技能库健康度全景 + 过时配置清单（下次动配置不被带偏）+ 归档候选（sims4 三件套/comfyui 两件） | `knowledge/Research/skill-audit-2026-09-08.md` |
 | 4 | **arXiv 09-08 补全速览**：2609.04681「写码增益在**交付阶段**衰减」→ 编码委派交付预估基线；2609.04373「越强越趋同」→ 模型容灾链多样性审计 | 直接指导 Codex/多 agent 委派的交付预期管理 | `knowledge/Research/arxiv-2026-09-08-agent-llm.md` |
 | 5 | **HN 09-08**：bzip3（开源压缩）/ WeatherNext 3（DeepMind 天气）/ Trusting-Trust Attack（Linux 发行版 ELF/工具链后门）| 开源新鲜度 + 供应链安全面提醒（呼应 9/7 反思） | `knowledge/Daily/hackernews-2026-09-08.md` |

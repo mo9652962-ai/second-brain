@@ -63,7 +63,7 @@ tags: [meta, vault-maintenance]
 
 - 触发：抖音「写代码的码农：网站做完怎么让别人访问」（完整章节要点）
 - 研究：Vercel 官方 DNS 细节 + 5 坑 + Cloudflare 中国加速方案 + 域名注册商对比
-- 产出：knowledge/Development/网站公网部署全流程-Vercel-CDN-域名-2026-09-05.md
+- 产出：knowledge/Dev/网站公网部署全流程-Vercel-CDN-域名-2026-09-05.md
 - 反哺：fastapi-cloud-deploy skill 补前端托管面
 - 关键发现：Vercel Hobby 免费仅限非商业用途——墨题商业化前需定前端平台
 ## [2026-09-06] lint | 每周例行体检

@@ -92,3 +92,6 @@ _生成: daily-todo-executor cron · k (Hermes) · 2026-09-20 20:00_
 
 - **网络健康指数 67%（🟡 亚健康）**：手动运行 cron_health.py 时 opencode-go `SSL: SSLV3_ALERT_HANDSHAKE_FAILURE`（可能代理/证书瞬时问题）；siliconflow / deepseek 401 为无 key 请求 `/v1/models` 属正常。建议关注 opencode-go 可达性——若持续不可达会影响 provider 容灾链。
 - 本次遵循「先核 projects/current.md 再标状态」原则（9/2 教训），避免误报；所有历史报告补标均附 current.md 闭环记录引用。
+
+---
+> 🗺️ 属于 [[knowledge-map]] · [[Home|🏠 Home]]

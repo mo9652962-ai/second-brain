@@ -55,6 +55,87 @@ DIR_MOC = {
 
 LINK_RE = re.compile(r"\[\[([^\]|#]+)")
 
+# 误改保险：正常 vault 孤儿数应是个位数；超此阈值视为检测器故障，拒绝执行
+ORPHAN_SANITY_CAP = 25
+
+
+def resolve_moc(name: str):
+    """定位 MOC 文件：knowledge/**/MOC-<name>.md 或 knowledge/<name>.md"""
+    for p in VAULT.rglob(f"{name}.md"):
+        s = str(p)
+        if ".git" in s or ".venv" in s or "node_modules" in s:
+            continue
+        if p.name.startswith("MOC-") or p.parent.name in ("knowledge", "META"):
+            return p
+    return None
+
+
+def lint_orphans():
+    """调用 knowledge-lint.py 拿权威孤儿列表（单一真相源）。
+
+    为什么不自己算：lint 的入链解析要处理相对路径、跨目录、EXTERNAL_ROOTS 白名单等
+    多种情形，自实现极易漂移——实测自写版误报 693 个 vs lint 真实 2 个（差 346 倍）。
+    宁可调脚本 + 解析，也不要两套口径。
+    解析失败一律返回 None（拒绝猜测 → 拒绝误改）。
+    """
+    lint = VAULT / "knowledge" / "META" / "scripts" / "knowledge-lint.py"
+    if not lint.exists():
+        return None
+    try:
+        r = subprocess.run([sys.executable, str(lint), "knowledge"],
+                           capture_output=True, text=True, timeout=300, cwd=str(VAULT))
+    except Exception as e:
+        print(f"  [WARN] lint 调用失败: {e}")
+        return None
+    out = r.stdout
+    m = re.search(r"Orphan pages \(no inlinks\): (\d+)", out)
+    if not m:
+        print("  [WARN] 无法从 lint 输出解析孤儿数 → 拒绝执行（不猜）")
+        return None
+    declared = int(m.group(1))
+    body = out.split("Orphan pages (no inlinks):", 1)[1].splitlines()[1:]
+    rels = []
+    for ln in body:
+        if not ln.startswith("  "):
+            break                      # 缩进结束 = 该节结束
+        if ln.strip().startswith("..."):
+            break                      # "... and N more" 截断提示
+        rels.append(ln.strip())
+    if len(rels) != declared:
+        print(f"  [WARN] 解析到 {len(rels)} 条 != 声明 {declared} 条 → 拒绝执行")
+        return None
+    return [VAULT / "knowledge" / r.replace("\\", "/") for r in rels]
+
+
+def mount_orphans(files) -> int:
+    """把 lint 认定的孤儿登记进所属 MOC（双向挂载）。
+    只加出链不够——文件指向 MOC 不解决「没人指向文件」。"""
+    n = 0
+    for f in files:
+        rel = str(f.relative_to(VAULT)).replace("\\", "/")
+        moc = next((m for d, m in DIR_MOC.items() if rel.startswith(d)), None)
+        if not moc:
+            print(f"  [SKIP] 无 MOC 映射: {rel}")
+            continue
+        moc_path = resolve_moc(moc)
+        if not moc_path or not moc_path.exists():
+            print(f"  [SKIP] MOC 不存在: {moc}")
+            continue
+        text = moc_path.read_text(encoding="utf-8", errors="ignore")
+        # 幂等：已登记则跳过（兼容 [[note]] 与 [[path/note|disp]]）
+        if f"[[{f.stem}]]" in text or re.search(rf"\[\[[^\]]*/{re.escape(f.stem)}(\||\])", text):
+            continue
+        marker = "## 自动挂载"
+        tail = text.rstrip()
+        if marker in tail:
+            new = tail + f"\n- [[{f.stem}]]\n"
+        else:
+            new = tail + f"\n\n{marker}\n\n> cron 产出自动登记（防入链孤立）\n\n- [[{f.stem}]]\n"
+        moc_path.write_text(new, encoding="utf-8")
+        print(f"  [MOUNT] {f.stem} → {moc}")
+        n += 1
+    return n
+
 
 def scan_md_files():
     return [
@@ -184,7 +265,20 @@ def main():
         )
 
     linked = link_isolated(isolated)
-    print(f"补链孤立笔记: {linked}")
+    print(f"补链孤立笔记(出链): {linked}")
+
+    # 入链孤儿：口径以 knowledge-lint.py 为准（单一真相源，避免两套实现漂移）
+    orphans = lint_orphans()
+    if orphans is None:
+        print("入链孤儿: [SKIP] lint 不可用/解析失败 → 本次不挂载（宁缺勿错）")
+        mounted = 0
+    elif len(orphans) > ORPHAN_SANITY_CAP:
+        print(f"入链孤儿: [SKIP] 检出 {len(orphans)} > 上限 {ORPHAN_SANITY_CAP}"
+              f" → 疑似检测器故障，拒绝批量改文件")
+        mounted = 0
+    else:
+        mounted = mount_orphans(orphans)
+        print(f"入链孤立: {len(orphans)} | 自动挂载 MOC: {mounted}")
 
     moc_new = update_moc_research()
     print(f"MOC-Research 新增索引: {moc_new}")
@@ -192,14 +286,14 @@ def main():
     km = update_knowledge_map_date()
     print(f"知识地图日期更新: {km}")
 
-    if args.commit and (linked + moc_new + km) > 0:
+    if args.commit and (linked + mounted + moc_new + km) > 0:
         r = subprocess.run(
             ["git", "-C", str(VAULT), "add", "-A"],
             capture_output=True, text=True, timeout=60,
         )
         r = subprocess.run(
             ["git", "-C", str(VAULT), "commit", "-m",
-             f"chore: 每日知识库优化 {datetime.date.today()}（补链{linked}·MOC+{moc_new}）"],
+             f"chore: 每日知识库优化 {datetime.date.today()}（补链{linked}·挂载{mounted}·MOC+{moc_new}）"],
             capture_output=True, text=True, timeout=60,
         )
         print("commit:", r.stdout.strip()[-80:] if r.returncode == 0 else r.stderr.strip()[-80:])

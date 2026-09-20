@@ -71,3 +71,6 @@ tags: [graphify, research, weekly]
 - `graphify-out/graph.html`（2.6MB，交互可视化）
 - `graphify-out/graph.json`（2598 节点 / 5193 边）
 - `graphify-out/GRAPH_REPORT.md`（74KB 审计报告）
+
+---
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]

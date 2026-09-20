@@ -91,8 +91,8 @@ source: scripts/vault-orphan-duplicate-scan.py
 
 ## 🧩 Development
 
-- [[knowledge/Development/VibeCoding部署全流程-下-2026-08-23]]
-- [[knowledge/Development/墨题账单管理-功能安全千轮深研-2026-08-23]]
+- [[knowledge/Dev/VibeCoding部署全流程-下-2026-08-23]]
+- [[knowledge/Dev/墨题账单管理-功能安全千轮深研-2026-08-23]]
 
 ## 🎓 Education
 
