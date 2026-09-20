@@ -64,7 +64,7 @@ class TestFanNativePresentation(unittest.TestCase):
             '!!FanRib4', '!!FanRib5', '!!FanRib6',
             '!!FanGuardLeft', '!!FanGuardRight',
             '!!JadeRing', '!!GoldRing', '!!CoreJade',
-            '!!MainTitle', '!!Seal',
+            '!!MainTitle', '!!SubTitle', '!!Seal',
             '!!PoemCol0', '!!PoemCol1', '!!PoemCol2', '!!PoemCol3'
         }
         for r in required:
