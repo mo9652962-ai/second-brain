@@ -36,7 +36,7 @@ type: note
 
 ### 2️⃣ Tencent/WeKnora — 文档→RAG→Agent→自维护 Wiki
 腾讯级企业知识平台（v0.8.0）：三大能力 + 跨会话长期记忆 + 技能沙箱 + 修订历史。**最深刻单条教训：记忆按查询相关性排序，不按重要性**（importance DESC 会让 400 名之外的记忆永久不可达，已修复）。
-→ 可借鉴：检索排序用相关度 + 词法融合；本机无 Docker，只借鉴不部署。详见 [[weknora-knowledge-platform-2026-09-13]]
+→ 可借鉴：检索排序用相关度 + 词法融合；部署待 Docker Daemon 就绪后评估（本机虚拟化+CLI 已就绪，见 [[knowledge/META/current-environment]]）。详见 [[weknora-knowledge-platform-2026-09-13]]
 
 ### 3️⃣ heygen-com/hyperframes — Write HTML. Render Video
 确定性 MP4 渲染（HTML+GSAP→Puppeteer→FFmpeg），20 个按需加载 agent skills（路由 + 10 工作流），组件注册表 208 项 + 三档语义搜索（明示答案来源），质量门禁（lint/check）。HeyGen 官方开源，386 releases 极活跃。

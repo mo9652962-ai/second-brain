@@ -42,7 +42,7 @@ date: 2026-07-27
 ```
 
 **核心思想**：不同的模型能力不同——**强模型不需要弱模型的辅助技能**
-**对我们**：opencode-go/deepseek-v4-flash 足够强，可以去掉一些不必要的约束性 skill
+**对我们**：opencode-go/deepseek-v4-flash（现 canonical `deepseek-flash`）足够强，可以去掉一些不必要的约束性 skill
 
 ## 评估：是否安装 Superpowers？
 

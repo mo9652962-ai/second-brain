@@ -227,3 +227,10 @@ tags: [meta, vault-maintenance]
 - 并发进程已处理：award-defense-presentation 断链×2、MOC-Content→MOC-Inbox、孤立挂载×3、system-cleanup frontmatter
 - 遗留：14 markdown 误报（verbatim+代码块）、历史 cron 孤儿（归档/非活跃）、README 重复文件名 1 组
 - 验证：Broken wikilinks 0 / Missing frontmatter 0 / Orphan 0 / Tag case 0
+
+## [2026-09-20] ingest | Devin / Cognition 评估
+
+- 新增：`knowledge/Dev/Devin-Cognition-评估-2026-09-20.md`
+- 挂载：`MOC-Dev` 与 `knowledge-map` 的 W39 新增区
+- 内容：官方能力/集成/定价、公开 PR 质量研究、与 Codex/Hermes 的边界及低风险试用方案
+- 证据边界：官方产品声明、2026-09-12 arXiv 观察性研究、厂商自报 Fusion 数据分开标注

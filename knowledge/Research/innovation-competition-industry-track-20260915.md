@@ -24,7 +24,7 @@ outcome: ✅
 | **认知轨迹可视化** | ❌ 平台无此功能 | **独立的前端大屏/画布**，通过调用万悟 RESTful API 获取交互日志，将思维路径渲染到图谱界面上 |
 
 ## 3. 落地坑点与规避策略（Debug: 找失败点）
-1. **Docker 部署环境限制**：万悟是基于 Docker Compose 部署的（包含 BFF、数据库、ES、Redis 等多微服务）。若本机无虚拟化环境（如 sora 当前设备），则无法本地跑通。
+1. **Docker 部署环境限制**：万悟是基于 Docker Compose 部署的（包含 BFF、数据库、ES、Redis 等多微服务）。**2026-09-20 修正**：原写「若本机无虚拟化环境（如 sora 当前设备）则无法本地跑通」——该前提已过期，本机 HypervisorPresent=True 且 WSL2 实证可用、Docker CLI v29.8.0 已装（仅 Daemon 未运行，见 [[knowledge/META/current-environment]]）。**修正为**：多微服务（ES+Redis+DB）对 8GB 显存/16GB 内存本机负载偏重，本地跑通需先启动 Docker Desktop 并评估资源占用；走云端 MaaS API 仍是更稳的路线。
    - **对策**：立刻验证能否申请联通元景 MaaS 云的 API key，直接调用云端大模型接口，本地仅实现前端可视化与调度控制流；或租用云服务器部署万悟后端。
 2. **"真"多智能体协同**：万悟目前的 `TODO` 列表明确写了 `A2A协议`（智能体间通信）尚未实现。
    - **对策**：这是拿高分的关键点。通过万悟的工作流模块（Workflow Studio）手动编排节点，模拟一个协调者（Hierarchical）来中转不同学科智能体的对话，实现「辩论/互相质疑」机制。

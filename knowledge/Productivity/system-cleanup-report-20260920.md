@@ -31,7 +31,7 @@ title: 系统清理报告 2026-09-20
 | 项目 | 大小 | 原因 |
 |---|---|---|
 | ⛔ Codex 桌面版 Docker vhdx（`Packages\OpenAI.Codex_*\LocalCache\Local\Docker\wsl\disk\docker_data.vhdx`） | **42.5 GB** | 61G 增长主因（9/17 创建）。Codex 是核心编码工具，其内置 Docker 沙箱数据盘不可擅删；若确认不用 Codex 沙箱/容器，可在 Codex 设置中清理或卸载该应用组件，可释放 ~42.5G |
-| ⛔ Docker Desktop docker_data.vhdx（`%LOCALAPPDATA%\Docker\wsl\disk`） | 10.8 GB | 本机无虚拟化 Docker 实际不可用，理论纯白占；但 9/17 有活动痕迹，删前需用户确认（卸载 Docker Desktop 或 WSL 卸载发行版） |
+| ⛔ Docker Desktop docker_data.vhdx（`%LOCALAPPDATA%\Docker\wsl\disk`） | 10.8 GB | **⚠️ 2026-09-20 更正**：本机虚拟化**可用**（HypervisorPresent=True、WSL2 实证通过），Docker CLI 也已装（v29.8.0），仅 Daemon 未运行（见 [[knowledge/META/current-environment]]）。故「Docker 实际不可用」不成立——该 vhdx 是**潜在可用资产**，删前须确认是否还要用 Docker |
 | ⛔ WSL ext4.vhdx（`%LOCALAPPDATA%\wsl\{GUID}`） | 2.4 GB | 9/20 有活动，疑似在用的 WSL 发行版 |
 | hermes state-snapshots（20260910-pre-update） | 791 MB | 更新前安全网快照，仅 1 份，保留 |
 | hiberfil.sys / pagefile.sys / swapfile.sys | 6.7G / 26.3G / 16M | 系统文件只报告不动；`powercfg /h off` 可省 ~6.7G（关休眠/快速启动，需确认） |
@@ -42,7 +42,7 @@ title: 系统清理报告 2026-09-20
 ## 可释放建议（下次手动确认后执行）
 
 1. **Codex 桌面版 Docker vhdx 42.5G**——确认 Codex 沙箱功能不用后，在 Codex 应用内清理容器/镜像或卸载重装，立省 ~42.5G（C 盘可回到 65% 以下）
-2. **Docker Desktop 10.8G**——本机无虚拟化，Docker 实际无法使用，卸载 Docker Desktop 立省
+2. **Docker Desktop 10.8G**——⚠️ **决策前提已更正**：本机虚拟化可用、Docker CLI 已装（v29.8.0），只是 Daemon 未运行 → **不是"无法使用"**。是否卸载取决于「以后还要不要用 Docker」；若确定不用，卸载可省 10.8G（见 [[knowledge/META/current-environment]]）
 3. **`powercfg /h off`**——省 6.7G（代价：关休眠/快速启动）
 4. 回收站残留重启后重试清一次
 

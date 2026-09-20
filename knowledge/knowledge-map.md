@@ -6,7 +6,7 @@ domain: META
 aliases: [知识地图, Knowledge Map, 知识网络]
 date: 2026-07-22
 status: adopted
-updated: 2026-09-04
+updated: 2026-09-20
 ---
 
 # 🗺️ 知识地图 — Knowledge Map
@@ -916,6 +916,7 @@ MCP 生态: GitHub + Filesystem + JLCPCB(38工具) + Obsidian(笔记操作)
 | Content | [[knowledge/Content/GEO-生成式引擎优化-研究-2026\|GEO 生成式引擎优化]] | 让内容被 AI 引用（GEO 方法论） |
 | Content | [[knowledge/Content/即梦Seedance-相机四维编码速查-2026\|即梦 Seedance 四维编码]] | 即梦相机四维编码速查 |
 | Dev | [[knowledge/Dev/React-Bits-Web动效组件库速查-2026\|React Bits 动效速查]] | 前端高阶动效组件库速查 |
+| Dev | [[knowledge/Dev/Devin-Cognition-评估-2026-09-20\|Devin / Cognition 评估]] | 云端 coding agent 能力、可靠性、定价与 Codex/Hermes 接入建议 |
 | SOP | [[knowledge/SOP/SOP-008-xianyu-vibe-coding-website\|SOP-008 闲鱼接单]] | 高交互个人主页 Vibe Coding 接单 SOP |
 | Productivity | [[knowledge/Productivity/PPT国奖级扇叶开场平滑动画-制作SOP-2026-09-20\|PPT 扇叶开场 SOP]] | 国奖级扇叶开场平滑动画（双态 Morph） |
 | Productivity | [[knowledge/Productivity/PPT高级唯美镂空动态结尾页-制作SOP-2026-09-20\|PPT 镂空结尾 SOP]] | 高级唯美镂空动态结尾页 + 答辩商业化 |

@@ -131,7 +131,7 @@ date: 2026-08-23
 cron 周报说：MCP 标准化 / 本地优先 / 记忆系统突破。千轮验证后的修正版：
 
 1. **MCP 标准化已进入「工具粒度竞争」阶段**——不再是「有没有 MCP」，而是「谁的 tool schema 设计更好」（14 个类型化工具 vs 全功能但粗粒度）。设计工具集时按「一个问题一个工具」切。
-2. **本地优先的分水岭是「零依赖分发」**——C 静态二进制（codebase-memory）> Python venv > Docker。Windows 无 Docker 环境下尤其明显。自研工具优先考虑单二进制或纯脚本。
+2. **本地优先的分水岭是「零依赖分发」**——C 静态二进制（codebase-memory）> Python venv > Docker。Windows 环境下尤其明显（本机 Docker CLI 已装 v29.8.0、Daemon 未运行，见 [[knowledge/META/current-environment]]）。自研工具优先考虑单二进制或纯脚本。
 3. **记忆系统的竞争焦点从「存储」转向「整合调度」**——nanobot 的 Dream、Hermes 的 curator、ai-memory 的 auto-improve 都在做同一件事：定期把流水账蒸馏成结构化记忆。这印证 TencentDB 分层记忆的判断。
 
 ## 吸收行动汇总
