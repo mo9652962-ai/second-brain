@@ -40,7 +40,7 @@ status: fresh
 - [x] 本机核验：`~/.zcode` 存在、checkpoints 有 2 个 workspace、墨题 126MB 加密快照 + 默认工作区已上传 ✅ 2026-09-19 13:00
 - [x] 知识落库：本卡片 + HN 09-19 源 ✅ 2026-09-19
 - [ ] **sora 操作（🔴 P0）**：退出 ZCode 登录 → 卸载 ZCode（已不用，Codex 替代）→ 删除 `~/.zcode` 剩余快照 → 墨题 git 历史轮换敏感信息
-- [ ] 防御可选（若暂不卸载）：Windows 锁目录 `icacls "%USERPROFILE%\.zcode\v2\checkpoints" /deny <USER>:(W)` 阻断写入（等价 ferstar 的 chattr/chflags 方案）
+- [ ] 防御可选（若暂不卸载）：Windows 锁目录 `icacls "%USERPROFILE%\.zcode\v2\checkpoints" /deny %USERNAME%:(W)` 阻断写入（等价 ferstar 的 chattr/chflags 方案）
 
 ## 为什么重要
 

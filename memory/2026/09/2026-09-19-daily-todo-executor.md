@@ -29,7 +29,7 @@
 ### 🟡 决策悬置
 - **闲鱼试水决策**（第 42 天，周一 9/21 复盘，state.yaml 权威）：30 秒三选一（试水/放弃/再缓）；k 侧 100% 就绪，上架 30min 可逆。
 - **卡片 cron 排程评估**（9/18 反思 🟢）：卡片 cron 12:33 跑时当日研究零产出 → 后移 22:00+ 或 prompt 加「候选池为空显式标记待补」；时序规则已 patch daily-knowledge-review，**改 jobs.json 需授权**。
-- **ZCode 防御可选**（若暂不卸载才执行）：`icacls "%USERPROFILE%\.zcode\v2\checkpoints" /deny <USER>:(W)` 锁目录——若走 P0 卸载则此防御不需要。
+- **ZCode 防御可选**（若暂不卸载才执行）：`icacls "%USERPROFILE%\.zcode\v2\checkpoints" /deny %USERNAME%:(W)` 锁目录——若走 P0 卸载则此防御不需要。
 
 ### 🧩 内容/素材待拍板
 - 抖音脚本《AI 会为了讨好你撒谎吗》（09-09 draft）：选标题三选一 + 口播语气改顺 + 数据配图生成（SiliconFlow Qwen-image 可用）。

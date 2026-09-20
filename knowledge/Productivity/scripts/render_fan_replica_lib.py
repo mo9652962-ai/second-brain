@@ -527,7 +527,7 @@ def render_fan_replica(base_img, is_opened=True):
 
 if __name__ == '__main__':
     import os
-    out_dir = r'%USERPROFILE%\AppData\Local\Temp\fan_study'
+    out_dir = r'%TEMP%\fan_study'
     os.makedirs(out_dir, exist_ok=True)
     bg = create_courtyard_background(1920, 1080)
     bg.save(os.path.join(out_dir, 'bg_courtyard_v2.jpg'), quality=93)

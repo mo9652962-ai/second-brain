@@ -4,7 +4,7 @@ name: vault-ci
   pull_request:
     branches: [main]
   push:
-    branches: [dev]
+    branches: [dev, main]   # main 也要跑，否则只能在周一定时发现失败
   schedule:
     - cron: "0 0 * * 1"   # 每周一 00:00 全库健康检查
 
@@ -16,6 +16,9 @@ jobs:
 
       - name: Check wikilinks
         run: python3 scripts/check_wikilinks.py
+
+      - name: Check backup privacy (no private docs in .backup tarballs)
+        run: python3 scripts/check-backup-privacy.py --quiet
 
   health:
     if: github.event_name == 'schedule'

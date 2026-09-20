@@ -25,7 +25,7 @@ NS_A = "{http://schemas.openxmlformats.org/drawingml/2006/main}"
 NS_P = "{http://schemas.openxmlformats.org/presentationml/2006/main}"
 NS_P159 = "{http://schemas.microsoft.com/office/powerpoint/2015/09/main}"
 
-OUT = r"%USERPROFILE%\AppData\Local\Temp\_test_yunjian_pie.pptx"
+OUT = r"%TEMP%\_test_yunjian_pie.pptx"
 
 
 def build():

@@ -41,7 +41,7 @@ MOC-<域>.md          ← 该域全部页面索引
 | Creative | [[knowledge/Creative/MOC-Creative\|MOC-Creative]] | 5 | AI 小说、去 AI 味、网文 |
 | gaming | [[knowledge/gaming/MOC-gaming\|MOC-gaming]] | 3 | 游戏 mod / 工具 / 联机 |
 | Archive | [[knowledge/Archive/MOC-Archive\|MOC-Archive]] | 2 | 冻结历史笔记 |
-| Education | [[knowledge/Education/MOC-Education\|MOC-Education]] | 1 | 考研考证路线、家教 |
+| Education | [[knowledge/Education/MOC-Education\|MOC-Education]] | 1 | 学业规划、家教 |
 | Product | [[knowledge/Product/MOC-Product\|MOC-Product]] | 1 | 墨题及服务类产品 |
 
 > 2026-09-20 起：**每个知识域都有 MOC 锚点**（此前 9 个域无锚点，只能粗粒度挂 knowledge-map）。

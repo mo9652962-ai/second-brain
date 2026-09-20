@@ -17,7 +17,7 @@ SCAN_DIRS = {'knowledge', 'memory', '.'}  # 根目录的单个文件也扫
 def _gitignored(paths):
     """返回被 .gitignore 忽略的路径集合（git 不可用时返回空集）
 
-    必要性：私有文档（如学业规划）保留在本地但被 gitignore，
+    必要性：私有文档（本地保留但被 gitignore）若被扫描，
     若不跳过会把文件名写进公开报告 → 隐私泄露。
     """
     if not paths:
