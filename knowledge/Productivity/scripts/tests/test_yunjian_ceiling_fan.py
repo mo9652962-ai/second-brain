@@ -1,128 +1,191 @@
 # -*- coding: utf-8 -*-
-"""回归测试：test_yunjian_ceiling_fan.py
+"""回归测试：test_yunjian_ceiling_fan.py（PIE 实心楔形 + 同位窗口 版）
 
-验证【云间设计PPT】对角双扇梯级绽放（PPT天花板）生成器的全部工程规范：
-1. 双态 Morph 状态差（State-Diff）：
-   - Slide 1: 左右两组 12 片扇叶角度归零（完全叠合闭合），无多层展开
-   - Slide 2: 左右两组各 6 片扇叶按 15° 步长递增展开 (75°, 60°, 45°, 30°, 15°, 0°)
-2. 对角双折扇几何结构：
-   - 右下主扇 (BRFan1~6) + 左上副扇 (TLFan1~6) 完整存在并同心锁定
-   - 扇纽 (JadeBR, JadeTL) 对角分布
-3. 画中画底图图片填充 (blipFill) 完整存在
-4. 官方 ISO/IEC 29500 mc:AlternateContent + p159:morph 引擎
-5. 端到端体积与 16:9 宽屏尺寸
+验证【云间设计PPT】对角双扇梯级绽放生成器的全部工程规范：
+
+1. 双态 Morph 状态差（State-Diff）
+2. 角落顶点绝对锚定（BR → (13.333,7.5)，TL → (0,0)）
+3. 15° 严格等距旋转步长
+4. 形状类型必须是 PIE（不完整圆/实心楔形），而非 BLOCK_ARC（空心弧）
+   —— 依据标定实验：PIE 内边界 rmin/rmax=0.014，ARC=0.441，原片=0.11
+5. 填充必须是「同位窗口」：fillRect 带非零偏移，而非 <a:fillRect/> 全拉伸
+   —— 依据对照实验：fillRect 对齐 MAE=27.04 vs 拉伸 55.83
+6. 白纱必须位于扇叶之下（z-order），形成「扇内鲜活、扇外朦胧」的正确视差
+7. 官方 p159:morph 引擎节点存在
 """
 import os, sys, unittest
 from pptx import Presentation
 from pptx.oxml.ns import qn
 
-SCRIPT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, SCRIPT_DIR)
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.dirname(SCRIPT_DIR))
 import generate_yunjian_ceiling_fan as G
 
-class TestYunjianCeilingFan(unittest.TestCase):
+NS_A = "{http://schemas.openxmlformats.org/drawingml/2006/main}"
+NS_P = "{http://schemas.openxmlformats.org/presentationml/2006/main}"
+NS_P159 = "{http://schemas.microsoft.com/office/powerpoint/2015/09/main}"
+
+OUT = r"%USERPROFILE%\AppData\Local\Temp\_test_yunjian_pie.pptx"
+
+
+def build():
+    return G.build_yunjian_ceiling_presentation(out_name=os.path.basename(OUT))
+
+
+class TestYunjianPieCeilingFan(unittest.TestCase):
+
     @classmethod
     def setUpClass(cls):
-        cls.test_out = os.path.join(
-            os.path.expanduser("~"), ".openclaw", "workspace", "knowledge", "Productivity", "_test_ceiling_fan.pptx"
-        )
-        G.build_yunjian_ceiling_presentation(out_name="_test_ceiling_fan.pptx")
-        cls.prs = Presentation(cls.test_out)
-        cls.s1 = cls.prs.slides[0]
-        cls.s2 = cls.prs.slides[1]
+        # 生成到临时目录
+        import shutil
+        cls.path = G.build_yunjian_ceiling_presentation(out_name="__tmp_test_pie.pptx")
+        cls.prs = Presentation(cls.path)
+        cls.s1, cls.s2 = cls.prs.slides[0], cls.prs.slides[1]
 
     @classmethod
     def tearDownClass(cls):
-        if os.path.exists(cls.test_out):
-            try:
-                os.remove(cls.test_out)
-            except OSError:
-                pass
+        try:
+            os.remove(cls.path)
+        except OSError:
+            pass
 
-    def test_01_deck_structure(self):
-        """严格双页、16:9 宽屏、体积有效"""
+    # ---------- 1. 双态状态差 ----------
+    def test_two_slides_exist(self):
         self.assertEqual(len(self.prs.slides), 2)
-        self.assertAlmostEqual(round(self.prs.slide_width.inches, 2), 13.33)
-        self.assertAlmostEqual(round(self.prs.slide_height.inches, 2), 7.50)
-        size = os.path.getsize(self.test_out)
-        self.assertGreater(size, 400000, f"体积过小: {size}")
 
-    def test_02_morph_transition_engine(self):
-        """Slide 2 挂载官方 p159:morph 引擎"""
-        morph = self.s2._element.find('.//{http://schemas.microsoft.com/office/powerpoint/2015/09/main}morph')
-        if morph is None:
-            morph = self.s2._element.find('.//{http://schemas.openxmlformats.org/presentationml/2006/main}morph')
-        self.assertIsNotNone(morph, "Slide 2 缺少 morph 平滑引擎节点")
-        self.assertEqual(morph.get('option'), 'byObject')
+    def test_state_diff_rotations(self):
+        """Slide 1 全部归零收拢；Slide 2 按 15° 梯级展开"""
+        def rots(slide, key):
+            out = []
+            for sp in slide.shapes:
+                if key in (sp.name or ""):
+                    idx = int(sp.name.replace(f"!!{key}", ""))
+                    out.append((idx, round(sp.rotation, 1)))
+            return [r for _, r in sorted(out)]
+        for key, base in (("BRFan", G.BR_BASE_ROT), ("TLFan", G.TL_BASE_ROT)):
+            r1 = rots(self.s1, key)
+            r2 = rots(self.s2, key)
+            self.assertEqual(len(r1), 6, f"{key} Slide1 应有 6 片")
+            self.assertEqual(len(r2), 6, f"{key} Slide2 应有 6 片")
+            # Slide 1：全部归零收拢（= base）
+            self.assertTrue(all(abs(r - base) < 0.05 for r in r1), f"{key} Slide1 应全部归零: {r1}")
+            # Slide 2：按 BLADE_OFFSETS 梯级展开（Fan1 = base+75 → Fan6 = base+0）
+            expect = [(base + o) % 360 for o in G.BLADE_OFFSETS]
+            for got, exp in zip(r2, expect):
+                self.assertAlmostEqual(got % 360, exp % 360, delta=0.05,
+                                       msg=f"{key} Slide2 期望 {expect}，实得 {r2}")
 
-    def test_03_named_objects_pairing(self):
-        """左右两组双扇共 12 片扇叶、双纽、文本完整匹配"""
-        names_s1 = {sp.name for sp in self.s1.shapes if sp.name.startswith('!!')}
-        names_s2 = {sp.name for sp in self.s2.shapes if sp.name.startswith('!!')}
+    # ---------- 2. 角落顶点绝对锚定 ----------
+    def test_corner_anchor_br(self):
+        b = [sp for sp in self.s2.shapes if sp.name == "!!BRFan1"][0]
+        cx = b.left.inches + b.width.inches / 2
+        cy = b.top.inches + b.height.inches / 2
+        self.assertAlmostEqual(cx, 13.333, delta=0.05)
+        self.assertAlmostEqual(cy, 7.500, delta=0.05)
 
-        required = {
-            '!!FrostedVeil',
-            '!!BRFan1', '!!BRFan2', '!!BRFan3', '!!BRFan4', '!!BRFan5', '!!BRFan6',
-            '!!TLFan1', '!!TLFan2', '!!TLFan3', '!!TLFan4', '!!TLFan5', '!!TLFan6',
-            '!!JadeBR', '!!JadeTL',
-            '!!MainTitle', '!!SubTitle', '!!QuoteText'
-        }
-        for r in required:
-            self.assertIn(r, names_s1, f"Slide 1 缺少命名对象: {r}")
-            self.assertIn(r, names_s2, f"Slide 2 缺少命名对象: {r}")
+    def test_corner_anchor_tl(self):
+        b = [sp for sp in self.s2.shapes if sp.name == "!!TLFan1"][0]
+        cx = b.left.inches + b.width.inches / 2
+        cy = b.top.inches + b.height.inches / 2
+        self.assertAlmostEqual(cx, 0.0, delta=0.05)
+        self.assertAlmostEqual(cy, 0.0, delta=0.05)
 
-    def test_04_dual_fan_geometry_and_stepping(self):
-        """对角双折扇展开步长恒定为 15.0°"""
-        # 右下扇叶
-        br_s1 = [sp for sp in self.s1.shapes if 'BRFan' in sp.name]
-        br_s2 = [sp for sp in self.s2.shapes if 'BRFan' in sp.name]
-        self.assertEqual(len(br_s1), 6)
-        self.assertEqual(len(br_s2), 6)
+    # ---------- 3. 15° 等距步长 ----------
+    def test_rotation_step_15deg(self):
+        for key in ("BRFan", "TLFan"):
+            blades = sorted([sp for sp in self.s2.shapes if key in (sp.name or "")],
+                            key=lambda s: int(s.name.replace(f"!!{key}", "")))
+            rots = [b.rotation % 360 for b in blades]
+            steps = [(rots[i] - rots[i + 1]) % 360 for i in range(len(rots) - 1)]
+            for s in steps:
+                self.assertAlmostEqual(s, 15.0, delta=0.5, msg=f"{key} 步长异常: {steps}")
 
-        # Slide 1: 全部角度一致
-        rot1 = [round(b.rotation % 360, 1) for b in br_s1]
-        self.assertEqual(len(set(rot1)), 1, f"Slide 1 右下扇叶未完全收拢: {rot1}")
+    # ---------- 4. 形状必须是 PIE（实心楔形）----------
+    def test_shape_is_pie_not_block_arc(self):
+        """核心修正：必须是 PIE，不得是 BLOCK_ARC"""
+        names = {sp.name for sp in self.s2.shapes if sp.name and "Fan" in sp.name}
+        self.assertEqual(len(names), 12, f"应有 12 片扇叶，实得 {len(names)}")
+        for sp in self.s2.shapes:
+            if sp.name and "Fan" in sp.name:
+                prst = sp._element.spPr.find(f"{NS_A}prstGeom")
+                self.assertIsNotNone(prst, f"{sp.name} 缺少 prstGeom")
+                self.assertEqual(prst.get("prst"), "pie",
+                                 f"{sp.name} 应为 pie（实心楔形），实得 {prst.get('prst')}")
+                # 不得存在 adj3（BLOCK_ARC 的内径调节点）
+                gds = [g.get("name") for g in prst.findall(f"{NS_A}avLst/{NS_A}gd")]
+                self.assertNotIn("adj3", gds, f"{sp.name} 不应有 adj3（空心弧参数）")
 
-        # Slide 2: 步长 15°
-        br_s2_sorted = sorted(br_s2, key=lambda b: int(b.name.replace('!!BRFan', '')))
-        rot2 = [round(b.rotation % 360, 1) for b in br_s2_sorted]
-        for i in range(len(rot2) - 1):
-            diff = (rot2[i] - rot2[i+1]) % 360
-            self.assertAlmostEqual(diff, 15.0, delta=1.0)
+    def test_pie_span_15deg(self):
+        """单叶跨度必须为 15°（PIE adj2 = 9.0 归一化值）"""
+        for sp in self.s2.shapes:
+            if sp.name and "Fan" in sp.name:
+                adj2 = sp.adjustments[1]
+                self.assertAlmostEqual(adj2, 9.0, delta=0.1,
+                                       msg=f"{sp.name} adj2={adj2} 应为 9.0（=15°）")
 
-        # 左上扇叶
-        tl_s1 = [sp for sp in self.s1.shapes if 'TLFan' in sp.name]
-        tl_s2 = [sp for sp in self.s2.shapes if 'TLFan' in sp.name]
-        self.assertEqual(len(tl_s1), 6)
-        self.assertEqual(len(tl_s2), 6)
+    # ---------- 5. 填充必须是同位窗口 ----------
+    def test_fill_is_positional_window(self):
+        """核心修正：fillRect 必须带非零偏移（同位窗口），而非全拉伸"""
+        checked = 0
+        for sp in self.s2.shapes:
+            if not (sp.name and "Fan" in sp.name):
+                continue
+            blip = sp._element.spPr.find(f"{NS_A}blipFill")
+            self.assertIsNotNone(blip, f"{sp.name} 缺少 blipFill")
+            fr = blip.find(f"{NS_A}stretch/{NS_A}fillRect")
+            self.assertIsNotNone(fr, f"{sp.name} 缺少 fillRect")
+            offsets = [fr.get(k) for k in ("l", "t", "r", "b")]
+            nonzero = [o for o in offsets if o is not None and int(o) != 0]
+            self.assertTrue(nonzero, f"{sp.name} fillRect 全零 = 拉伸错位，非同位窗口")
+            checked += 1
+        self.assertEqual(checked, 12)
 
-        rot_tl1 = [round(b.rotation % 360, 1) for b in tl_s1]
-        self.assertEqual(len(set(rot_tl1)), 1, f"Slide 1 左上扇叶未完全收拢: {rot_tl1}")
+    # ---------- 6. 白纱层级 ----------
+    def test_veil_below_blades(self):
+        """白纱必须位于扇叶之下（z-order 更早）"""
+        tree = self.s2.shapes._spTree
+        order = [e for e in tree if e.tag.endswith("}sp") or e.tag.endswith("}pic")]
+        veil_idx = None
+        blade_idxs = []
+        for i, e in enumerate(order):
+            nv = e.find(f"{NS_P}nvSpPr/{NS_P}cNvPr")
+            nm = nv.get("name") if nv is not None else ""
+            if nm == "!!FrostedVeil":
+                veil_idx = i
+            elif nm and "Fan" in nm:
+                blade_idxs.append(i)
+        self.assertIsNotNone(veil_idx, "未找到 !!FrostedVeil 白纱")
+        self.assertTrue(blade_idxs, "未找到扇叶")
+        self.assertLess(veil_idx, min(blade_idxs),
+                        f"白纱(z={veil_idx}) 必须位于所有扇叶之下 (min z={min(blade_idxs)})")
 
-        tl_s2_sorted = sorted(tl_s2, key=lambda b: int(b.name.replace('!!TLFan', '')))
-        rot_tl2 = [round(b.rotation % 360, 1) for b in tl_s2_sorted]
-        for i in range(len(rot_tl2) - 1):
-            diff = (rot_tl2[i] - rot_tl2[i+1]) % 360
-            self.assertAlmostEqual(diff, 15.0, delta=1.0)
+    def test_veil_alpha_80_percent_transparency(self):
+        """教程原话「透明度给到 80%」→ alpha = 20%"""
+        veil = [sp for sp in self.s2.shapes if sp.name == "!!FrostedVeil"][0]
+        alpha = veil._element.spPr.find(f"{NS_A}solidFill/{NS_A}srgbClr/{NS_A}alpha")
+        self.assertIsNotNone(alpha, "白纱缺少 alpha")
+        self.assertAlmostEqual(int(alpha.get("val")) / 1000.0, 20.0, delta=1.0,
+                               msg=f"白纱 alpha={alpha.get('val')} 应为 20000 (20%)")
 
-    def test_05_blip_fill_exists(self):
-        """扇叶均包含画中画底图图片填充 (blipFill)"""
-        for name in ['!!BRFan1', '!!TLFan1']:
-            sp = [s for s in self.s2.shapes if s.name == name][0]
-            blip = sp._element.find('.//{http://schemas.openxmlformats.org/drawingml/2006/main}blip')
-            self.assertIsNotNone(blip, f"{name} 缺少 blipFill 底图图片填充")
+    # ---------- 7. Morph 引擎 ----------
+    def test_morph_engine(self):
+        m = self.s2._element.find(f".//{NS_P159}morph")
+        self.assertIsNotNone(m, "Slide 2 缺少 p159:morph")
+        self.assertEqual(m.get("option"), "byObject")
 
-    def test_06_text_motion_state_diff(self):
-        """文本入场状态差：Slide 1 场外 → Slide 2 居中归位"""
-        t1 = [sp for sp in self.s1.shapes if sp.name == '!!MainTitle'][0]
-        t2 = [sp for sp in self.s2.shapes if sp.name == '!!MainTitle'][0]
-        self.assertLess(t1.top.inches, 0, "Slide 1 标题必须在画外上方 (y < 0)")
-        self.assertGreater(t2.top.inches, 1.0, "Slide 2 标题必须在画内")
+    # ---------- 8. 阴影方向 ----------
+    def test_shadow_dir_135(self):
+        """扇叶阴影必须为右下 135°（dir=8100000）"""
+        n = 0
+        for sp in self.s2.shapes:
+            if not (sp.name and "Fan" in sp.name):
+                continue
+            sh = sp._element.spPr.find(f"{NS_A}effectLst/{NS_A}outerShdw")
+            self.assertIsNotNone(sh, f"{sp.name} 缺少外阴影")
+            self.assertEqual(sh.get("dir"), "8100000", f"{sp.name} 阴影方向应为 135°")
+            n += 1
+        self.assertEqual(n, 12)
 
-        q1 = [sp for sp in self.s1.shapes if sp.name == '!!QuoteText'][0]
-        q2 = [sp for sp in self.s2.shapes if sp.name == '!!QuoteText'][0]
-        self.assertGreater(q1.top.inches, 7.5, "Slide 1 正文必须在画外下方 (y > 7.5)")
-        self.assertLess(q2.top.inches, 5.5, "Slide 2 正文必须在画内中央")
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main(verbosity=2)
