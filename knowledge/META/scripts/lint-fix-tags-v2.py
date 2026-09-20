@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """lint-fix-tags-v2.py: 幂等修复标签一致性问题 v3（精确 token 匹配，不伤复合词）
-1. 修正 Education 某高校文件异常格式 tags:knowledge/education[ ] -> tags: [knowledge/education]
+1. 修正 Education 私有文件异常格式 tags:knowledge/education[ ] -> tags: [knowledge/education]
 2. 修复错误 YAML 列表格式 tags: '- xxx' -> tags: [xxx]（Obsidian 无法解析）
 3. 统一同义标签（仅列表内精确项）: thousand-round -> 千轮研究, 安全 -> security 等
 4. 去掉列表项内的多余引号（["archive", "web"] -> [archive, web]）
@@ -48,7 +48,7 @@ BAD_FORMAT_PAT = re.compile(r"^tags:\s*'-(.*)'\s*$")
 
 # 特殊修正：异常格式文件
 SPECIAL_FIX = {
-    "Education/某高校目标专业-学业规划路线图-2026-08.md":
+    "Education/【私有】.md":
         (r"^tags:\s*.*$", "tags: [knowledge/education]"),
 }
 

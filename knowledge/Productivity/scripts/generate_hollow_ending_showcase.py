@@ -191,7 +191,7 @@ def build_showcase():
     pm1.font.name = "Microsoft YaHei"
 
     pm2 = tf_m.add_paragraph()
-    pm2.text = "◆ 专　业：目标专业"
+    pm2.text = "◆ 专　业：×××"
     pm2.font.size = Pt(13); pm2.font.color.rgb = RGBColor(0x5A, 0x4E, 0x42)
     pm2.font.name = "Microsoft YaHei"; pm2.space_before = Pt(6)
 

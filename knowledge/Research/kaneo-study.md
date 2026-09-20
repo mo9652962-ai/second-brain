@@ -38,7 +38,7 @@ source: https://github.com/usekaneo/kaneo
 
 | 选项 | 决策 | 理由 |
 |------|:---:|------|
-| 安装 Kaneo | ❌ | **无 Docker 环境**（需要 Docker + PostgreSQL + 2GB RAM/10GB 磁盘） |
+| 安装 Kaneo | ❌ | 需要 Docker + PostgreSQL + 2GB RAM/10GB 磁盘（Docker 可用性见 [[knowledge/META/current-environment]]：虚拟化+CLI 已就绪、Daemon 未运行）——**不装的真实理由是已有轻量体系，非环境阻塞** |
 | 作为任务管理工具 | ❌ | 我们已有轻量体系：todo + Obsidian 待办 + User-blocked（规则 #6） |
 | **极简理念吸收** | ✅ | "less dashboard theater" 与我们的低调务实风格一致 |
 
@@ -61,7 +61,7 @@ source: https://github.com/usekaneo/kaneo
 
 ## 结论
 - 项目真实（3.9K★，MIT，活跃维护）
-- 对我们：**不安装**（无 Docker + 已有轻量任务体系）
+- 对我们：**不安装**（已有轻量任务体系；Docker 环境已就绪，不再是阻塞项，见 [[knowledge/META/current-environment]]）
 - 理念（极简/工具隐形/数据自有）已吸收
 - 未来团队协作/接单项目管理场景可再评估
 

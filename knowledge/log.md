@@ -147,7 +147,7 @@ tags: [meta, vault-maintenance]
 - **孤立挂载 3 个**：hackernews-2026-09-09 → MOC-Research AI 日报；每日股票分析 09-08/09-09 → MOC-Finance
 - **标签统一**：`thousand-round`→`千轮研究`（9 处）、`安全`→`security`（独立标签 15 处，复合词 网络安全/接口安全/金额安全 不拆）
 - **补 tags 10 个**：arxiv core-contributions ×3、graphify-weekly ×3、hackernews-deep-dive ×1、Security 笔记 ×3
-- **格式修正 1 个**：某高校考研路线图 `tags:knowledge/education[ ]` 异常 → `tags: [knowledge/education]`
+- **格式修正 1 个**：私有文档 `tags:knowledge/education[ ]` 异常 → `tags: [knowledge/education]`
 - **误伤恢复 6 个**：v1 正则误拆复合词（`网络security` 等），从备份恢复后改精确 token 匹配（lint-fix-tags-v2.py）
 - **遗留**：duplicate 'readme'（Dev/system-prompts-reference vs Research/eval-v2-2026-08-31）全路径引用无歧义，低风险忽略
 - **结果**：断链 0 / 缺 frontmatter 0 / 孤立 0 / 短页 0 / 标签同义冲突 0
@@ -155,11 +155,11 @@ tags: [meta, vault-maintenance]
 ## [2026-09-13] lint | 例行体检（断链0 + 补frontmatter 13 + 孤立挂载 3 + 标签归一）
 
 - **断链 12 条报告（全仓库严格扫描）→ 真断链 0**：反引号内文档示例 ×9 已按规范剥 `[[` `]]`（log.md 3 + 09-08 维护笔记 6：`../knowledge/...`/`MOC-Development`/`knowledge/AI-Workflow`/`knowledge/arxiv-2026-07-31-...`/`projects`/`memory/2026/08/sug...`）；保留设计内项 3 处（09-04/09-08 剥离规则 prose 各 1、09-12 回顾指向 09-13 的前向导航链接 1）
-- **补 frontmatter 13 个**：损坏闭合符 2（Dev/ecc-agent-harness `status: active---`、Education/某高校 `date: 2026-08---` 均缺换行闭合，lint 只查 startswith 漏报）+ 无 frontmatter 11（Content 竞品对标、Productivity system-cleanup-0912、Research self-study 9 份千轮报告）
+- **补 frontmatter 13 个**：损坏闭合符 2（Dev/ecc-agent-harness `status: active---`、Education/私有文档 `date: 2026-08---` 均缺换行闭合，lint 只查 startswith 漏报）+ 无 frontmatter 11（Content 竞品对标、Productivity system-cleanup-0912、Research self-study 9 份千轮报告）
 - **孤立挂载 3 个**：竞品对标-AI商业广告接单教程 → MOC-Inbox；每日股票分析-09-11 → MOC-Finance；system-cleanup-report-0912 → MOC-Productivity（W37 区块）
-- **标签归一**：某高校 tags 行归一化（lint-fix-tags-v2.py 幂等）；同义词（thousand-round/安全）已无目标
+- **标签归一**：私有文档 tags 行归一化（lint-fix-tags-v2.py 幂等）；同义词（thousand-round/安全）已无目标
 - **空文件**：全仓库 0 字节 = 0，无需清理
-- **检测器盲区记录**：knowledge-lint.py 的 frontmatter 检测 `startswith("---")` 无法识别闭合符缺失（ecc/某高校类）；scan-vault-broken-links.py 旧版不剥离反引号（vault 版已修，lint 报 0）
+- **检测器盲区记录**：knowledge-lint.py 的 frontmatter 检测 `startswith("---")` 无法识别闭合符缺失（ecc/私有文档类）；scan-vault-broken-links.py 旧版不剥离反引号（vault 版已修，lint 报 0）
 - **结果**：lint 断链 0 / 缺 frontmatter 0 / 孤立 0 / 短页 0；全仓库严格扫描剩 3 处设计内保留
 ## [2026-09-13] lint | 每周例行体检
 
@@ -186,10 +186,10 @@ tags: [meta, vault-maintenance]
 - **标签格式统一（重大）**：90 处 YAML 块式列表（`tags:\n  - xxx`）→ 流式 `tags: [a, b]`；lint-fix-tags-v2.py 升级 v3（BADFMT 幂等转换 + 同义映射扩展 27 项：闲鱼→xianyu、变现→monetization、方法论→methodology、自动化→automation、知识吸收→knowledge-absorption、多Agent→multi-agent、GitHub Trending→github-trending、降AI/反AI味→去AI味 等），42 文件同义归一，幂等复跑 0
 - **检测器补盲（关键）**：knowledge-lint.py 新增「粘连闭合符」检测（`tags: [a]---` 缺独立 `---` 行）——旧检测只查 startswith 漏报 50 个文件（含 index.md/log.md/MOC 全部），本次修复 50/50；TOTAL ISSUES 计入 glued_fm
 - **空文件**：全仓库 0 字节 = 0，空壳页 = 0，无需清理
-- **frontmatter 修复 1**：Education/某高校 `date: 2026-08---` 粘连闭合（09-08 已修过但复现，已根治检测）
+- **frontmatter 修复 1**：Education/私有文档 `date: 2026-08---` 粘连闭合（09-08 已修过但复现，已根治检测）
 - **遗留**：Duplicate filenames（2 个 README.md 不同目录）低风险忽略
 - **结果**：lint 断链 0 / 缺 frontmatter 0 / 粘连闭合 0 / 孤立 0 / 短页 0；全仓库断链 0
-- **验证补盲**：ad-hoc 验证脚本（fixture mini-vault + 真实库双跑）抓到 lint-fix-tags-v2.py SPECIAL_FIX 重拼 frontmatter 缺换行 bug（`new_fm+"---"` → `new_fm+"\n---"`），修复后某高校不再被脚本写回粘连态；验证 11/11 PASS
+- **验证补盲**：ad-hoc 验证脚本（fixture mini-vault + 真实库双跑）抓到 lint-fix-tags-v2.py SPECIAL_FIX 重拼 frontmatter 缺换行 bug（`new_fm+"---"` → `new_fm+"\n---"`），修复后私有文档不再被脚本写回粘连态；验证 11/11 PASS
 
 
 
@@ -227,3 +227,15 @@ tags: [meta, vault-maintenance]
 - 并发进程已处理：award-defense-presentation 断链×2、MOC-Content→MOC-Inbox、孤立挂载×3、system-cleanup frontmatter
 - 遗留：14 markdown 误报（verbatim+代码块）、历史 cron 孤儿（归档/非活跃）、README 重复文件名 1 组
 - 验证：Broken wikilinks 0 / Missing frontmatter 0 / Orphan 0 / Tag case 0
+
+## [2026-09-20] ingest | Devin / Cognition 评估
+
+- 新增：`knowledge/Dev/Devin-Cognition-评估-2026-09-20.md`
+- 挂载：`MOC-Dev` 与 `knowledge-map` 的 W39 新增区
+- 内容：官方能力/集成/定价、公开 PR 质量研究、与 Codex/Hermes 的边界及低风险试用方案
+- 证据边界：官方产品声明、2026-09-12 arXiv 观察性研究、厂商自报 Fusion 数据分开标注
+
+## [2026-09-20] freshness | 时效审计
+
+- 过期硬约束 0 / 待运行时验证 37 / 历史记录 352
+- 处理原则：只报告不自动修；事实源见 knowledge/META/current-environment.md

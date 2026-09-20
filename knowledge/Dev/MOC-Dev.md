@@ -4,7 +4,8 @@ domain: Dev
 type: moc
 status: active
 created: 2026-07-28
-updated: 2026-08-31---
+updated: 2026-09-20
+---
 
 # 💻 开发域 — 编程与系统
 
@@ -82,6 +83,7 @@ updated: 2026-08-31---
 
 ## 📌 最近新增
 
+- [[knowledge/Dev/Devin-Cognition-评估-2026-09-20|Devin / Cognition 评估]] — 云端 coding agent 能力、证据、定价与 Codex/Hermes 接入建议
 - [[knowledge/Dev/ai-hot-brief-20260725-absorbed|AI 热点简报 07-25]]
 - [[knowledge/Dev/deepseek-v4-flash-0731-upgrade|DeepSeek V4 Flash 升级]] — Agent 能力跃升 + fallback 链更新
 - [[knowledge/Research/ai-monetization-costs|AI 自由职业定价]] — 变现实战手册、价目表

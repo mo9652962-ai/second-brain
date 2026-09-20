@@ -38,12 +38,14 @@ updated: 2026-07-30
 ## 部署与运行
 
 ```yaml
-Hermes -> 本地桌面版 (Windows 10)
+Hermes -> 本地桌面版 (Windows 11)
   ├── 配置文件: AppData/Local/hermes/config.yaml
-  ├── 技能目录: AppData/Local/hermes/skills/
+  ├── 技能目录: AppData/Local/hermes/skills/   ← Hermes 实际加载入口（503 个 SKILL.md）
   ├── 脚本目录: AppData/Local/hermes/scripts/
-  └── Cron 任务: 28 个定时任务
+  └── Cron 任务: 44 个定时任务（2026-09-20 实测）
 ```
+
+> 路径与数量的权威定义见 [[knowledge/META/knowledge-sources]]。
 
 ## Python 工具
 

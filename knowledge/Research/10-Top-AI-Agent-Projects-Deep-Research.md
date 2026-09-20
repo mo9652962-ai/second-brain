@@ -206,7 +206,7 @@ source: null
 
 ### 🔵 待用户决策
 
-- [x] ~~Docker 部署 n8n，配置 MCP 接入~~ 📖 参考清单（本机无 Docker/虚拟化，不适用）
+- [x] ~~Docker 部署 n8n，配置 MCP 接入~~ 📖 参考清单（本机虚拟化已就绪、Docker CLI 已装 v29.8.0，仅 Daemon 未运行，见 [[knowledge/META/current-environment]]；n8n 部署待 Daemon 就绪后评估）
 - [x] ~~安装 Ollama 本地 fallback 模型~~ 📖 参考清单（已具备 llama.cpp 本地推理链路）
 - [x] ~~评估 kaeru 第一个稳定版本~~ 📖 参考清单（等稳定版发布）
 - [x] ~~如知识库规模超过 1000 篇，评估 Dify 引入~~ 📖 条件触发参考（规模达标时评估）

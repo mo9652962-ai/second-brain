@@ -96,7 +96,7 @@ source: scripts/vault-orphan-duplicate-scan.py
 
 ## 🎓 Education
 
-- 某高校目标专业学业规划路线图（待补充）
+- （私有内容，本地保留，未公开）
 
 ## 🧠 META
 

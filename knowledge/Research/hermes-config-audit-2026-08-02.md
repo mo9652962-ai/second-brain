@@ -6,6 +6,11 @@ status: report
 
 # Hermes 配置知识准确性审计 (2026-08-02)
 
+> ⚠️ **历史记录：本快照截至 2026-08-02。**
+> 不代表当前配置。当前运行时配置以 [[knowledge/META/current-model-status]] 为准。
+> 已知变更：默认模型现为 `gemini-3.8-flash-high`；`deepseek-v4-flash` 已退役为 legacy alias（canonical `deepseek-flash`）；
+> `custom:fangzhou-2` 当前未定义（仅 fangzhou-1）；搜索链现为 Exa + Firecrawl。
+
 > 审计方法：读取实际 `AppData/Local/hermes/config.yaml`（8月1日 21:27 版）+ cron/jobs.json + .env，与知识库文档/技能文档逐项对比。
 > 结论：**知识库核心配置文档（LLM-Providers.md）严重过时，技能文档存在 4 处明确错误，需人工更新 6 个文件。**
 

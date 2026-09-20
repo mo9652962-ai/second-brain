@@ -251,7 +251,7 @@ def create_courtyard_bg_v3(W=1920, H=1080):
 
 if __name__ == '__main__':
     import os
-    out = r'%USERPROFILE%\AppData\Local\Temp\fan_deep'
+    out = os.path.join(os.environ.get('TEMP', '/tmp'), 'fan_deep')
     os.makedirs(out, exist_ok=True)
     bg = create_courtyard_bg_v3(1920, 1080)
     bg.save(os.path.join(out, 'bg_v31.jpg'), quality=93)

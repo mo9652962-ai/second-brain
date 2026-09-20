@@ -22,7 +22,7 @@ date: 2026-09-12
 - **代码 CAD 仍是 AI 自动化最可靠通路**：OpenSCAD 生成可靠性 ≈0.4 错误/代（GrandpaCAD 23 模型实测），Build123d/CadQuery 的错误率是其 3-4 倍，但 B-Rep/STEP 能力更强；**双引擎策略**（build123d 出 STEP + OpenSCAD 兜底）是当前最优解。
 - **线上 AI 建模二分**：B-Rep 生成（Zoo Design Studio 最工程化，Zookeeper 对话代理）vs 网格生成（Meshy 6 等，只适合外观件）；📌 面向制造必须走 B-Rep/STEP。
 - **切片自动化已成熟**：OrcaSlicer CLI 支持完全无头切片（Printago 已跑 3.5 万+ 次），`slice_info.config` 可直接做成本核算。
-- **ECAD-MCAD 共用基建明确**：KiCad STEP 导出（KiCad 10+ 官方库纯 STEP）+ KicadStepUp 双向同步 + jlc-mcp 与 freecad-ai 同属 **MCP + Python/uv 无 Docker 模式**，完美贴合本机（无虚拟化）环境。
+- **ECAD-MCAD 共用基建明确**：KiCad STEP 导出（KiCad 10+ 官方库纯 STEP）+ KicadStepUp 双向同步 + jlc-mcp 与 freecad-ai 同属 **MCP + Python/uv 零依赖模式**，轻量贴合本机（虚拟化已就绪但零依赖更省资源，见 [[knowledge/META/current-environment]]）。
 
 ---
 
@@ -160,7 +160,7 @@ AI 提示词 ──▶ Zoo Zookeeper / AdamCAD 初稿 → 人工定稿
 
 - **OrcaSlicer CLI**（官方文档缺失，Printago 实战 35,000+ 次无头切片整理出完整参考）：核心标志 `--slice 1`（0=全部底板）、`--load-settings "machine;process"`（顺序敏感）、`--load-assemble-list`（多物体排板无需项目文件）、`--export-3mf`、`--pipe`（JSON 进度到命名管道）、`--min-save`；**输出是 `.gcode.3mf`（ZIP 内含 G-code 于 Metadata/plate_1.gcode）而非裸 .gcode**——Bambu 打印机原生接受；**`slice_info.config` 含每槽耗材 mm/g、预估时长、层数**，直接喂成本核算。
 - **坑**：`printer_model` 必须与机器设置 JSON 匹配否则切片失败/错误（换机型要补 3MF 元数据）；CLI 各版本间悄悄变，上线前锁版本并 `--help` 检查。
-- **服务化三选一**：① 原生 CLI（本机首选，无 Docker）；② OrcaSlicer 官方 PR #14161：SliceCore 库 + `orca-server` REST（POST /v1/jobs、PNG 预览、逐物体摆放、结构化指标）；③ escalopa/orcaslicer-api（FastAPI 封装，自动解析时长/耗材/层数元数据）——⚠️ Docker-first，本机无虚拟化请绕开，用原生 CLI。
+- **服务化三选一**：① 原生 CLI（本机首选，零依赖最轻）；② OrcaSlicer 官方 PR #14161：SliceCore 库 + `orca-server` REST（POST /v1/jobs、PNG 预览、逐物体摆放、结构化指标）；③ escalopa/orcaslicer-api（FastAPI 封装，自动解析时长/耗材/层数元数据）——⚠️ Docker-first，本机 Docker CLI 已装、Daemon 未运行（见 [[knowledge/META/current-environment]]），如需用请先启动 Docker Desktop 或直接用原生 CLI。
 - **PrusaSlicer CLI** 同样支持 `--export-gcode`（成熟），但**读不了 OrcaSlicer 配置**，两者不要混用。
 - 3MF > STL 已是行业方向（颜色/材质/元数据/多物体原生）。
 
@@ -182,7 +182,7 @@ AI 提示词 ──▶ Zoo Zookeeper / AdamCAD 初稿 → 人工定稿
 
 | 基建 | CAD 侧用途 | PCB 侧用途 |
 |---|---|---|
-| **Python 3.11/3.12 + uv**（无 Docker） | build123d/cad-khana/FreeCAD 脚本 | kicad-cli、EasyEDA bridge、jlc-mcp |
+| **Python 3.11/3.12 + uv**（零依赖，无需 Docker） | build123d/cad-khana/FreeCAD 脚本 | kicad-cli、EasyEDA bridge、jlc-mcp |
 | **MCP 服务器模式** | freecad-ai MCP、build123d-mcp、agentcad | jlc-mcp |
 | **无头 CLI 验证闭环** | freecadcmd（建模）、khana diagnostics（几何断言） | kicad-cli `pcb render`/D 导出、jlc DRC |
 | **STEP 中性交换** | 外壳/结构件 | 板级 STEP → 干涉检查 |

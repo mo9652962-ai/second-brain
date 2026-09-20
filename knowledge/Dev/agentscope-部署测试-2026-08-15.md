@@ -52,7 +52,7 @@ npm install --registry=https://registry.npmmirror.com
 npm install-scripts approve better-sqlite3   # Windows 原生模块
 # .env.local: USE_MOCK_DATA=false + GITHUB_TOKEN=gho_xxx + DATABASE_ENCRYPTION_KEY=xxx
 npm run dev   # → http://localhost:3000
-# UI: /settings/ai 配 DeepSeek (baseUrl https://api.deepseek.com/v1, model deepseek-v4-flash)
+# UI: /settings/ai 配 DeepSeek (baseUrl https://api.deepseek.com/v1, model deepseek-flash)  ← canonical 名；旧名 deepseek-v4-flash 已退役
 ```
 
 ## 验证过的 API

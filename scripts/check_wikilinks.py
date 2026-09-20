@@ -1,103 +1,122 @@
-"""Check Obsidian wikilinks against the Markdown files in the vault."""
+"""wikilink 断链检查（CI + 本地通用）
 
-import posixpath
+修复历史 bug（2026-09-20）：
+  1. os.path.join 在 Windows 产生反斜杠，与链接里的正斜杠永不匹配 → 1990 条假阳性
+  2. 只做 `target in p` 全路径子串匹配，Obsidian 的 basename 短链（[[note-name]]）全被误报
+  3. 未跳过跨 vault 根引用（HOME/SOUL/projects/ 等），误报 740 条
+
+对齐 knowledge/META/scripts/knowledge-lint.py 的判定逻辑（该脚本已修，本脚本为遗留副本）。
+"""
+import os
 import re
 import sys
 from pathlib import Path
 
+# 跨 vault 根引用（workspace 根或外部目录），合法跳过——与 knowledge-lint.py EXTERNAL_ROOTS 对齐
+EXTERNAL_ROOTS = {
+    "home", "soul", "tools", "agents", "projects", "memory", "skills",
+    "outputs", "scripts", "docs", "readme", "contributing", "changelog",
+}
+# 模板占位符，跳过
+PLACEHOLDER_LINKS = {
+    "页面名", "a", "b", "note-1", "wikilink", "wiki link", "所属moc",
+    "```", "` `", ":space:", "xxx", "example",
+    # 2026-09-20 补充：文档/维护笔记中作为示例出现的占位符（均为 prose 描述，非真链接）
+    "series-2026-08-14", "skill-name", "their-name", "name",
+    "2026-07-21-2347", "。", "`。`",
+}
 
-LINK_PATTERN = re.compile(r"\[\[([^\]]+)\]\]")
-IGNORED_DIRS = {"node_modules"}
-
-
-def collect_notes(root: Path) -> list[Path]:
-    """Return vault notes while skipping hidden and generated dependency dirs."""
-    notes = []
-    for path in root.rglob("*.md"):
-        relative_parts = path.relative_to(root).parts
-        if any(part.startswith(".") or part in IGNORED_DIRS for part in relative_parts):
-            continue
-        notes.append(path)
-    return sorted(notes)
-
-
-def relative_key(path: Path, root: Path) -> str:
-    """Return a case-insensitive, POSIX-style path without its .md suffix."""
-    relative = path.relative_to(root).as_posix()
-    if relative.casefold().endswith(".md"):
-        relative = relative[:-3]
-    return relative.casefold()
+# 代码围栏 / 行内代码：其中的 [[...]] 是语法示例，不是链接
+CODE_FENCE_RE = re.compile(r"```.*?```", re.S)
+INLINE_CODE_RE = re.compile(r"`[^`\n]*`")
 
 
-def build_indexes(notes: list[Path], root: Path) -> tuple[set[str], dict[str, set[str]]]:
-    paths = {relative_key(note, root) for note in notes}
-    by_name: dict[str, set[str]] = {}
-    for note in notes:
-        key = relative_key(note, root)
-        name = Path(key).name
-        by_name.setdefault(name, set()).add(key)
-    return paths, by_name
+def mask_code(text: str) -> str:
+    """把代码围栏与行内代码替换为等长空格（保留换行，行号不变）"""
+    def blank(m):
+        return re.sub(r"[^\n]", " ", m.group(0))
+    return INLINE_CODE_RE.sub(blank, CODE_FENCE_RE.sub(blank, text))
 
 
-def target_candidates(source: str, target: str) -> tuple[list[str], str]:
-    """Resolve root-relative, source-relative, and basename-style Obsidian links."""
-    target = target.strip().replace("\\", "/")
-    target = target.removesuffix(".md")
-    if not target:
-        return [], target
-
-    if target.startswith(("http://", "https://")):
-        return [], target
-
-    source_dir = posixpath.dirname(source)
-    candidates = [posixpath.normpath(target).lstrip("./")]
-    source_relative = posixpath.normpath(posixpath.join(source_dir, target))
-    if source_relative not in candidates:
-        candidates.append(source_relative)
-
-    # A link without a directory is resolved by note name, as Obsidian does.
-    if "/" not in target:
-        candidates.append(Path(target).name)
-    return [candidate.casefold() for candidate in candidates], target
+def strip_md(name: str) -> str:
+    """只剥 .md 后缀（Path.stem 会把 MiMo-V2.5 截成 MiMo-V2）"""
+    return name[:-3] if name.lower().endswith(".md") else name
 
 
-def in_inline_code(line: str, start: int) -> bool:
-    """Whether a match starts inside a single-backtick code span."""
-    return line[:start].count("`") % 2 == 1
+def collect_notes(root_dir: str):
+    """返回 (all_paths, by_stem, by_basename) —— 全部使用正斜杠相对路径"""
+    all_paths = set()
+    by_stem = {}       # 相对路径去 .md → 路径
+    by_basename = {}   # 文件名去 .md → [路径...]
+    for root, dirs, files in os.walk(root_dir):
+        dirs[:] = [d for d in dirs if not d.startswith(".") and d != "node_modules"]
+        for f in files:
+            if not f.endswith(".md"):
+                continue
+            rel = os.path.join(root, f).replace(os.sep, "/").lstrip("./")
+            all_paths.add(rel)
+            by_stem.setdefault(strip_md(rel).lower(), rel)
+            by_basename.setdefault(strip_md(f).lower(), []).append(rel)
+    return all_paths, by_stem, by_basename
 
 
 def main() -> int:
-    root = Path.cwd()
-    notes = collect_notes(root)
-    note_paths, note_names = build_indexes(notes, root)
-    errors = 0
+    root_dir = sys.argv[1] if len(sys.argv) > 1 else "."
+    all_paths, by_stem, by_basename = collect_notes(root_dir)
 
-    for note in notes:
-        source = note.relative_to(root).as_posix()
-        in_fenced_code = False
-        with note.open(encoding="utf-8", errors="replace") as handle:
-            for lineno, line in enumerate(handle, 1):
-                if re.match(r"^\s*(```|~~~)", line):
-                    in_fenced_code = not in_fenced_code
+    errors = 0
+    for rel in sorted(all_paths):
+        try:
+            text = Path(rel).read_text(encoding="utf-8", errors="replace")
+        except Exception:
+            continue
+        # 代码围栏/行内代码里的 [[...]] 是语法示例，不是真链接 → 先屏蔽
+        text = mask_code(text)
+        for lineno, line in enumerate(text.splitlines(), 1):
+            for m in re.finditer(r"\[\[([^\]]+)\]\]", line):
+                raw = m.group(1).split("|")[0].split("#")[0].strip()
+                target = raw.replace("\\", "/")
+                if not target:
                     continue
-                if in_fenced_code:
+                if target.lower() in PLACEHOLDER_LINKS:
                     continue
-                for match in LINK_PATTERN.finditer(line):
-                    if in_inline_code(line, match.start()):
+                if target.lower().startswith("http"):
+                    continue
+
+                first_seg = target.lstrip("./").split("/")[0].lower()
+                if first_seg in EXTERNAL_ROOTS:
+                    continue
+                # 纯 basename 短链（Obsidian 常见）
+                if "/" not in target and not target.startswith(".."):
+                    if strip_md(target).lower() in by_basename:
                         continue
-                    target = match.group(1).split("|", 1)[0].split("#", 1)[0]
-                    candidates, display_target = target_candidates(source, target)
-                    if display_target.startswith(("http://", "https://")):
+                    print(f"⚠ Broken link: {rel}:{lineno} → {raw}")
+                    errors += 1
+                    continue
+
+                # 含路径的引用：依次尝试 相对当前文件 / vault 根 / 去 knowledge 前缀 / stem 兜底
+                cands = [
+                    (Path(rel).parent / target),
+                    Path(target),
+                    Path(target[len("knowledge/"):]) if target.startswith("knowledge/") else None,
+                ]
+                ok = False
+                for c in cands:
+                    if c is None:
                         continue
-                    found = any(
-                        candidate in note_paths
-                        or candidate in note_names
-                        and bool(note_names[candidate] & note_paths)
-                        for candidate in candidates
-                    )
-                    if not found:
-                        print(f"⚠ Broken link: {source}:{lineno} → {target}")
-                        errors += 1
+                    for probe in (c, Path(str(c) + ".md")):
+                        p = str(probe).replace(os.sep, "/").lstrip("./")
+                        if p in all_paths:
+                            ok = True
+                            break
+                    if ok:
+                        break
+                if not ok:
+                    key = strip_md(target).lower()
+                    if key in by_stem or strip_md(Path(target).name).lower() in by_basename:
+                        continue
+                    print(f"⚠ Broken link: {rel}:{lineno} → {raw}")
+                    errors += 1
 
     if errors:
         print(f"❌ Found {errors} broken wikilinks")

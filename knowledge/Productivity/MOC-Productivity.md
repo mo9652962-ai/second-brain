@@ -92,7 +92,7 @@ updated: 2026-08-31
 - [[knowledge/Productivity/运动曲线-easing-动效丝滑关键-2026-09-05|运动曲线 easing（动效丝滑关键）]] — cubic-bezier 曲线表 + M3/iOS 官方体系，配套技能 `apple-design-web` 已补 4b 章节
 - [[knowledge/Productivity/闲鱼运营千轮研究-2026-09-04|闲鱼运营千轮研究 09-04]] — 推流算法点击率分层 / 5 分钟回复率阈值 / 经营红线，9 条落地建议（当日知识卡片源）
 - [[knowledge/Dev/网站公网部署全流程-Vercel-CDN-域名-2026-09-05|网站公网部署全流程]] — Vercel + 域名 + Cloudflare 中国加速，5 坑（Vercel Hobby 免费仅限非商业用途）
-- [[knowledge/Dev/墨题上云部署方案-无Docker-2026-09-02|墨题上云部署方案（无 Docker）]] — 本机无虚拟化约束下的部署选型
+- [[knowledge/Dev/墨题上云部署方案-无Docker-2026-09-02|墨题上云部署方案（无 Docker）]] — 低依赖/生产/云服务器通用方案（原「本机无虚拟化」约束已于 2026-09-20 修正）
 - [[knowledge/Projects/墨题安全待决策-2026-08-19|墨题安全待决策]] — 登录/鉴权/用户隔离决策记录
 
 ## 🆕 W38 新增（09-07 ~ 09-13：清理 + 成本）
