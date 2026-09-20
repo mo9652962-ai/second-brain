@@ -214,7 +214,7 @@ tags: [meta, vault-maintenance]
 
 ## [2026-09-20] W39 周度整理 | 断链/孤立/frontmatter 清零 + 本周新增挂载
 
-- 修复：断链 3（GEO [[MOC-Content]]→[[MOC-Inbox]]、PPT SOP ×2 技能名 [[award-defense-presentation]]→纯文本）
+- 修复：断链 3（GEO `MOC-Content`→`MOC-Inbox`、PPT SOP ×2 技能名 `award-defense-presentation`→纯文本）
 - 补 frontmatter 4：README-Template-01 / agent4science / GitHub-Weekly-2026-09-20 / system-cleanup-20260920
 - 孤立页挂载 4：即梦Seedance / React-Bits / HN 09-20 / GitHub-Weekly-09-20（MOC-Inbox Content+AI 区、MOC-Dev、MOC-Research、MOC-GitHub W39）
 - 本周新增挂载：AI 3 篇 + Content 3 篇 → MOC-Inbox；React-Bits → MOC-Dev；PPT SOP×2 + 模板库 + 清理报告 → MOC-Productivity W39 区；GitHub-Weekly 系列 → MOC-GitHub
