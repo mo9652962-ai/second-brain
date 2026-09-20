@@ -9,6 +9,11 @@ status: active
 
 # DeepSeek V4-Flash 正式版 — Agent 能力暴增 6 倍
 
+> ⚠️ **历史记录：该模型/别名的评测结果截至 2026-08-06。**
+> 不代表当前 API 的 canonical model 或当前价格。
+> `deepseek-v4-flash` 现已退役为 legacy alias，当前 canonical model 为 **`deepseek-flash`**（= DeepSeek-V4.1-Flash）。
+> 见 [[knowledge/META/current-model-status]]。
+
 > 2026-07-31 公测，284B/13B MoE，MIT 开源
 
 ## 核心数据

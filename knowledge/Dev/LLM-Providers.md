@@ -10,6 +10,22 @@ status: adopted
 
 # Hermes LLM & Search Provider 配置
 
+> ⚠️ **本文档内容为 2026-08-06 实况快照，当前配置已变更。**
+>
+> **当前运行时配置的权威来源：[[knowledge/META/current-model-status]]**（含默认模型、provider 列表、fallback 链、配置缺陷）。
+> 本文保留作为**历史路线记录**——理解「为什么变成今天这样」有价值，但**不要照抄本文的配置示例**。
+>
+> **已知过期项**：
+> - 默认模型现为 `gemini-3.8-flash-high`（provider `cpa-gui`），非本文写的 `deepseek-v4-pro`
+> - `deepseek-v4-flash` 已退役为 legacy alias → canonical 名是 **`deepseek-flash`**（= V4.1 Flash）
+> - 价格数字随官方页面变化，本文价格表**不可作为当前事实**
+> - `custom:fangzhou-2` 在本文多处出现，但当前 `custom_providers` 中**只有 fangzhou-1**，fangzhou-2 未定义
+> - 本文写「Tavily 主力」，实际现行搜索链是 Exa + Firecrawl（Tavily 降为末位备选）
+>
+> 引用配置时以 `AppData\Local\hermes\config.yaml` 实况为准。
+
+---
+
 > 当前 Hermes Agent 运行配置：模型容灾链 + 5 搜索引擎多后端
 > ⚠️ 2026-08-06 重写：对齐 config.yaml 实况（8/1 双火山容灾落地后默认模型/提供商已变更）
 

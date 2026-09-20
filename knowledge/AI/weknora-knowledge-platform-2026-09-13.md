@@ -45,13 +45,13 @@ status: active
 1. **「记忆按查询相关性排序，而非重要性」是记忆系统第一课**。WeKnora 用生产事故证明：importance DESC 的静态排序会漏掉「低重要但高相关」的记忆。sora 的 context-management-bootstrapping 五级记忆（瞬时/会话/任务/核心）是**分层写入**逻辑，WeKnora 给的是**检索排序**逻辑——两者互补：写入按层级、检索按查询相关度 + 词法融合，别让静态优先级卡死召回。
 2. **Wiki Mode = 文档自动蒸馏知识库**是 Obsidian 知识库治理的企业级参照：修订历史 + 一键回滚 + 知识图谱，sora 的 knowledge-lint / graphify 可以对照补「版本化」能力（vault 有 git 自动同步，天然可回滚，缺的是「修订历史」UI 层）。
 3. **Skill Sandbox = 沙箱化执行 + 技能目录**与 Hermes 的审批/沙箱同思路，tenant skill catalog 的「安装源（ClawHub/SkillHub/git/zip）+ 快照 + 环境变量」可借鉴到 sora 的 external-skill-installation。
-4. **⚠️ 部署限制**：主要部署方式 docker compose / Helm——本机无虚拟化（Docker 不可用），WeKnora **只借鉴思路不部署**；真要自托管 RAG 走无 Docker 方案（墨题上云部署方案已有先例）。
+4. **⚠️ 部署条件（2026-09-20 修订）**：主要部署方式 docker compose / Helm。此前记录为「本机无虚拟化（Docker 不可用）→ 不部署」，该结论**已过期**：本机虚拟化可用、Docker CLI 已装（v29.8.0），仅 Daemon 未运行（见 [[knowledge/META/current-environment]]）。**修订为**：WeKnora **暂不部署，但原因不再是"不能"**，而是「重量级系统 vs 现有 Obsidian+memory 已够用」的收益判断；若后续启动 Docker Daemon，可低成本试装验证。自托管 RAG 仍可走无 Docker 方案（墨题上云部署方案已有先例）。
 5. **安全细节值得抄**：SSRF 与沙箱 URL 守卫共用同一 IP 分类器（防判定不一致）、恶意文档解析开销上界（防 CPU 耗尽）、AES-256-GCM 凭据加密——sora 做 web 服务/安全审计时的 checklist 素材。
 
 ## 安装/验证
 
 ```bash
-# docker compose（生产推荐，本机无 Docker 跳过）
+# docker compose（生产推荐；本机需先启动 Docker Desktop 使 Daemon 就绪）
 git clone https://github.com/Tencent/WeKnora && cd WeKnora
 cp .env.example .env && docker compose up -d
 
@@ -66,7 +66,7 @@ pip install tencent-weknora-mcp
 | 技术含金量 | ★★★★★ | RAG+Agent+Wiki+记忆四合一，腾讯级工程与安全细节 |
 | 关联度 | ★★★★☆ | 直击 sora 知识库治理 / 记忆体系 / RAG（墨题 DashScope） |
 | 可迁移性 | ★★★★☆ | 记忆排序原则、修订历史、沙箱目录、安全 checklist 全部可落地 |
-| 安装意愿 | ❌ 不装 | 无 Docker 硬伤，重量级系统 vs 现有 Obsidian+memory 已够用 |
+| 安装意愿 | ⏸️ 暂缓 | 非"不能装"：本机虚拟化+CLI 已就绪（仅 Daemon 未运行）。收益判断上，重量级系统 vs 现有 Obsidian+memory 已够用，故暂缓 |
 | 趋势判断 | 📈 涨 | 知识平台是企业 RAG 刚需，腾讯背书持续吸星 |
 
 关联：`context-management-bootstrapping` · `knowledge-lint` · `obsidian-vault-graph-optimization` · [[knowledge/knowledge-map|知识地图]]

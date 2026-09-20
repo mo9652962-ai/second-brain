@@ -132,12 +132,16 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 
 ---
 
-## 📦 最新技能入库 (2026-08-16 ~ 2026-09-19)
+## 📦 最新技能入库 (2026-08-16 ~ 2026-09-20)
 
 ### 研究笔记
 
 | 技能 | 版本 | 简介 |
 |------|------|------|
+| **[知识库事实源三件套 09-20](knowledge/META/MOC-META.md)** | v1.0 | 新增 META 事实源体系（current-environment / current-model-status / knowledge-sources），修正 3 处过期结论「本机无虚拟化 / Docker 不可用」→ 实测为「虚拟化✅ CLI✅ 仅 Daemon 未运行」 |
+| **[arXiv AI Agent / LLM 速览 09-20](knowledge/Research/arxiv-2026-09-20-agent-llm.md)** | v1.0 | 09-18 池第三轮补全：12 主条目 + 7 简评（ScientistTwo 自主科学发现 / SoL-Pi harness RSI / SkillAA 归因技能图 / claim-safe 评测协议 / CovR 覆盖率硬件验证） |
+| **[GitHub 宝藏挖掘 09-20](knowledge/Research/GitHub-Weekly-2026-09-20.md)** | v1.0 | Top 5 高星仓库（codebase-memory-mcp 43.8k★ / nanobot 48.4k★ / code-review-graph 31.6k★ 等） |
+| **[知识图谱周更 09-20](knowledge/Research/graphify-weekly-2026-09-20.md)** | v1.0 | 3 周积累图谱周更 |
 | **[每日日志 09-19](memory/2026-09-19.md)** | v1.0 | OpenClaw 部署/Agent 安全最佳实践 2026（OWASP Agentic AI Top 10 / Vidar 窃密实锤）+ OpenClaw vs Hermes 记忆纪律对比 |
 | **[GEO 生成式引擎优化研究 09-19](knowledge/Content/GEO-生成式引擎优化-研究-2026.md)** | v1.0 | 抖音「小梅讲AI」GEO 视频逐条核对：结构化信息+SEO 排名+权威信源才有效，「改写正文」被 2025 NeurIPS 反证会降可见度 |
 | **[Agent4Science AI 科学家社交网络 09-18](knowledge/Research/agent4science-ai-scientist-social-network-20260918.md)** | v1.0 | UChicago CHAI Lab：AI agents 的 Reddit（Nature 报道过）；对 sora=AI 博主选题素材 |
@@ -221,7 +225,7 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 
 ---
 
-## 🤖 自动化体系 (每日优化 Cron · 共 43 个任务)
+## 🤖 自动化体系 (每日优化 Cron · 共 44 个任务)
 
 | 频率 | 时间 | 任务 | 核心功能 |
 |:----|:----|:-----|:---------|
@@ -255,7 +259,7 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 
 ```
 📁 仓库体积：约 31MB 跟踪文件（Git 包约 48MB）
-📝 Markdown 文件：1260 个（知识笔记 + 系统文档）
+📝 Markdown 文件：1269 个（知识笔记 + 系统文档）
 🧠 自建 Skill 文档：25 个（11 个领域目录，2026-09-19 核验）
 🗂️ 知识域：11 个
 ⏰ 首次提交：2026 年 7 月

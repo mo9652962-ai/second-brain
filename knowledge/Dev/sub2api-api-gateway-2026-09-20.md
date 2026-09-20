@@ -40,7 +40,7 @@ source: https://github.com/Wei-Shaw/sub2api
 
 ## 💎 可借鉴点（对 sora 工作流）
 
-1. **EasyCLIProxyAPI(8317) / WorkBuddy 反代(codebuddy2api) 的商用升级路径**：当前本机网关是「自用免 key」级别；sub2api 展示了自用→商用的完整功能清单（计费/限流/支付/后台/渠道路由）。若闲鱼/私域要卖「AI API 中转」服务，这就是现成范本（Go 全栈，无 Docker 环境下需评估部署方式——本机无虚拟化，但 Go 单二进制可裸跑 + SQLite 替代 PG 是可行降级）。
+1. **EasyCLIProxyAPI(8317) / WorkBuddy 反代(codebuddy2api) 的商用升级路径**：当前本机网关是「自用免 key」级别；sub2api 展示了自用→商用的完整功能清单（计费/限流/支付/后台/渠道路由）。若闲鱼/私域要卖「AI API 中转」服务，这就是现成范本（Go 全栈；本机虚拟化已就绪、Docker CLI 已装但 Daemon 未运行，见 [[knowledge/META/current-environment]]，故 Go 单二进制裸跑 + SQLite 替代 PG 仍是可行降级，且不依赖容器）。
 2. **国产供应商自适应协议**：墨题/刷题机未来接多 provider 时，「一个账号三协议自适应」比维护三套配置省事得多——记入 multi-end-ai-provider-config 的思路补充。
 3. **计费模型直接迁移到闲鱼变现**：fast/flex 倍率 + 上下文区间阶梯 + 分时定价，这套定价心理学同样适用于论文/PPT/PCB 接单的弹性报价（ai-freelance-pricing 可吸收「服务层级倍率」概念）。
 4. **拼车经济验证**：AI 订阅拼车（Claude Code 镜像、OpenAI 共享）是 2026 年真实需求——sora 已有 codebuddy2api 反代，可评估是否接 sub2api 做多账号配额池。
@@ -48,7 +48,7 @@ source: https://github.com/Wei-Shaw/sub2api
 ## 安装 / 验证命令
 
 ```bash
-# 官方快速起（需 Docker；本机无 Docker 则参考其单二进制 + PG 方案）
+# 官方快速起（需 Docker；本机 Docker CLI 已装、Daemon 未运行——或参考其单二进制 + PG 方案）
 git clone https://github.com/Wei-Shaw/sub2api && cd sub2api
 docker compose up -d   # 含 postgres/redis/后端/前端
 # 验证：访问管理后台 → 添加上游账号（OAuth）→ 生成 API Key → curl 调用

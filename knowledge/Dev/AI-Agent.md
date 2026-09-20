@@ -31,30 +31,56 @@ LIMIT 8
 
 ## 模型架构
 
-### 当前主力链路（八级容灾）
+### 当前运行时配置
 
-| 优先级 | 提供商 | 模型 | 用途 |
-|--------|--------|------|------|
-| 🥇 主力 | opencode-go | deepseek-v4-flash | 日常对话、代码、推理主模型 |
-| 🥈 容灾 1 | opencode-go | deepseek-v4-pro | 强推理回退 |
-| 🥉 容灾 2 | opencode-go | kimi-k3 | 长上下文 |
-| 4️⃣ 容灾 3 | opencode-go | kimi-k2.7-code | 代码场景 |
-| 5️⃣ 容灾 4 | opencode-go | qwen3.7-plus | 超大上下文 |
-| 6️⃣ 容灾 5 | opencode-go | glm-5.2 | 国产 1M 上下文 |
-| 7️⃣ 容灾 6 | siliconflow | Qwen/Qwen3.5-4B | 轻量回退 |
-| 8️⃣ 容灾 7 | siliconflow | deepseek-ai/DeepSeek-V4-Pro | 硅基流动回退 |
-| 9️⃣ 兜底 | deepseek | deepseek-chat（直连） | 最后保底 |
+> ⚠️ **本表必须从实际配置文件或命令输出生成，不手工猜测。**
+> 生成方式：读取 `AppData\Local\hermes\config.yaml` 的 `model:` / `custom_providers:` / fallback 段。
+> 事实源：[[knowledge/META/current-model-status]]
 
-### 更新记录
-- 2026-07-26: 移除 OpenRouter（402 额度耗尽），改为 opencode-go 统一前 5 级 + siliconflow 2 级 + DeepSeek 直连兜底
-- 2026-07-26: opencode-go 补上 key_env，修复 cron 401 认证问题
+| 项 | 实测值（2026-09-20 复核） |
+|:---|:---|
+| 默认模型 | `gemini-3.8-flash-high` |
+| 默认 provider | `cpa-gui` |
+| 已配置 provider | opencode-go / siliconflow / moonshot / fangzhou-1 / jiyuanlvdong / dengzhen / keylink / local-qwen / sensenova / jiyuanlvdong-2 / cpa-gui / workbuddy / workbuddy-ai |
+| 推理力度 | `reasoning_effort: high` |
+| fallback 链 | 见 config.yaml（含 ox-alpha-free / minimax / kimi / glm / deepseek / qwen / mimo 多级） |
+| 配置路径 | `%USERPROFILE%\AppData\Local\hermes\config.yaml` |
+
+**搜索后端**（需运行时复核，见 `search.backends`）：
+
+| 引擎 | 配置状态 |
+|:---|:---|
+| Exa | 主搜索后端 |
+| Firecrawl | 主提取后端 |
+| Tavily | 末位备选（降级用，2026-09-02 起不再作为主力评估） |
+| DDGS / SearXNG | 备用通道 |
+
+> 早期版本的本表写「Tavily 主力 + 8 级容灾」——**那是 2026-08 的状态，已过期**。
+> 现行搜索链以 `config.yaml` 实况为准。
+
+### 历史模型路线
+
+> 仅记录某个日期曾经使用过的模型、provider 和 fallback。**不代表当前配置。**
+
+| 日期 | 主力模型 | Provider | 说明 |
+|:---|:---|:---|:---|
+| 2026-07-23 | `deepseek-v4-flash` | opencode-go | 建库初期 |
+| 2026-07-26 | — | — | 移除 OpenRouter（402 额度耗尽），改 opencode-go 前 5 级 + siliconflow 2 级 + DeepSeek 直连兜底 |
+| 2026-08-01 | `deepseek-v4-pro` | custom:fangzhou-2 | 双火山账户容灾落地，默认模型变更 |
+| 2026-08-06 | `deepseek-v4-flash` | custom:fangzhou-2 / opencode-go | LLM-Providers.md 重写对齐 config |
+| 2026-09-18 | — | — | 默认链路切至 cpa-gui（gemini-3.8-flash-high） |
+
+> ⚠️ **`deepseek-v4-flash` 现为 legacy alias**：对应模型已退役，实际请求由 **V4.1 Flash** 提供。
+> 新配置一律使用 canonical model `deepseek-flash`。详见 [[knowledge/META/current-model-status]]。
 
 ### 配置要点
-- **Provider 配置**: custom_providers 模式，含 opencode-go / siliconflow / deepseek
-- **Fallback 链**: 8 级逐级降级，自动跳过不可用模型
-- **认证**: opencode-go 使用 OPENCODE_GO_API_KEY（Bearer 格式）
-- **推理力度**: model.reasoning_effort: high，支持 max/ultra
+
+- **Provider 配置**: `custom_providers` 模式（必须为 YAML list）
+- **Fallback 链**: 多级逐级降级，自动跳过不可用模型
+- **认证**: 各 provider 使用 `key_env` 引用环境变量
+- **推理力度**: `model.reasoning_effort: high`
 - **成本优化**: 简单/心跳任务用 flash 或更小模型降本；主力处理推理密集型任务
+- ⚠️ **已知配置缺陷**（2026-09-20）：`auxiliary.*.provider` 引用 `custom:fangzhou-2`，但该 provider **未定义**（只有 fangzhou-1），共 6 处 —— 见 [[knowledge/META/current-model-status]]
 
 ## 工具链
 

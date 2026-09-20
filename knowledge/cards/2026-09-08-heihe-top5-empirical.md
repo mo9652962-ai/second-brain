@@ -20,14 +20,14 @@ status: fresh---
 | 实证方法 | 每个项目用 GitHub API 验真实 star（黑盒 47.8k → 实测 48.2k，不是同一数字）+ clone 读代码，License 看 LICENSE 文件不信 README 徽章 |
 | 最值得抄 | **marketing-skills（48.2k★ MIT）**：55 个营销 skill + 51 个零依赖 CLI 工具，每个 skill 配 **evals.json**（prompt+20+断言验证输出）→ 可测试技能库；另有 **product-marketing 上下文前置** 原语（所有 skill 先读产品定位）|
 | CAD 方向 | **pascal/editor（22.4k★ MIT）**：R3F+WebGPU 纯浏览器参数化 3D 建筑编辑，原生内置 **31 个 MCP 语义工具** + CLI（create_room/add_door/check-collisions/validate_scene/export-glb），Core 不 import Three.js（headless 零 GPU）|
-| 多步 Agent | **DeerFlow 2.0（81.9k★ MIT）**：字节 LangGraph 重写的 long-horizon SuperAgent 运行时，「真实沙盒执行 + checkpoint 可恢复」vs 日常助手；本机无 Docker 只能用 Local Execution（须 Git Bash、牺牲沙盒）|
+| 多步 Agent | **DeerFlow 2.0（81.9k★ MIT）**：字节 LangGraph 重写的 long-horizon SuperAgent 运行时，「真实沙盒执行 + checkpoint 可恢复」vs 日常助手；本机 Docker 待验证（虚拟化+CLI 已就绪、Daemon 未运行），暂用 Local Execution（须 Git Bash、牺牲沙盒）|
 | 避坑 | **LunaTV**：README 徽章标 MIT、LICENSE 实为 **CC BY-NC-SA 4.0**（影视聚合+禁商用，别碰本体）；**camofox**：不支持 CDP → 不能做 Hermes CDP 无缝替换 |
 
 ## 对 sora 的影响
 
 1. 💡 **AI 营销技能库升级**：不必照搬 55 个 skill，但补两个差异化原语——①evals.json 质量断言 ②product-marketing 上下文前置。这是它 48k★ 的核心原因，sora 的博主/闲鱼技能库直接对口
 2. 💡 **CAD 自动化 MCP**：pascal/editor 的 31 个 MCP 语义工具 + headless Core 设计，是 sora 的 CAD/PCB 自动化 MCP 方向「直接参考实现」——implicit-cad（隐式有机）与 FreeCAD（B-rep 制造级）两极之间，它是「空间规划 + AI 建造」的中间路线
-3. ⚠️ **多步 Agent 任务**：DeerFlow 的 checkpoint 恢复 + sandbox 分级值得借鉴设计；本机无 Docker → 只轻量评估，部署等有 Linux 环境再说
+3. ⚠️ **多步 Agent 任务**：DeerFlow 的 checkpoint 恢复 + sandbox 分级值得借鉴设计；本机 Docker 待验证（虚拟化+CLI 已就绪，仅 Daemon 未运行，见 [[knowledge/META/current-environment]]）→ 先轻量评估，部署待 Daemon 就绪
 4. ⚠️ **License 陷阱**：选型先看 LICENSE 文件、不信 README 徽章；黑盒 star 数要回官方源复核（评项目实证原则再次验证）
 5. ⚠️ **camofox 不引入**：反检测在 Gecko C++ 编译期、无 CDP → 不能替换 Hermes 的 CDP 链路，仅借鉴其 accessibility snapshot 省 ~90% token 的架构思路
 
