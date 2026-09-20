@@ -42,7 +42,7 @@ updated: 2026-09-12
 | **state.yaml 计数收敛机制**（唯一权威源 + 唯一写方 + 断言门禁，40→41） | 9/10–11 | projects/state.yaml |
 | fastmcp[server] 修复（镜像互斥根因，import OK） | 9/11 | todo-executor 09-11 |
 | mnemon hooks bash 包装修复（WinError 193 根因） | 9/11 | todo-executor 09-11 |
-| 安全脱敏批量落地（路径 <USER>→~/ + Kimi key 环境变量 + .dreams gitignore） | 9/8 | 8 commits |
+| 安全脱敏批量落地（本机路径→~/ + Kimi key 环境变量 + .dreams gitignore） | 9/8 | 8 commits |
 | 墨题巡检 5 日 PASS（9/6/7/8/10/11，v2.1.3 对齐） | 本周 | moti-daily-inspect |
 
 ### 🧠 知识 / 研究（19 项）

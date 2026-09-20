@@ -174,7 +174,7 @@ updated: 2026-09-14
 - [x] state.yaml 计数收敛机制落地（9/10 建库 + 9/11 首个执行循环）：`projects/state.yaml` 唯一权威源 + 唯一写方（daily-todo-executor）+ `scripts/assert_state_consistency.py` 断言门禁三连 PASS（权威推进 40→41 + MEMORY.md byte 级同步）——9/5/7/8/9 四连漂移根治 ✅
 - [x] fastmcp[server] 修复（9/11）：fastmcp-slim/fastmcp 镜像互斥根因 → uninstall 后装 `fastmcp[server]==3.4.5`，`import fastmcp.server` OK（code-review-graph MCP 180 次 WARNING 根除）✅
 - [x] mnemon hooks bash 包装修复（9/11）：prime/remind/nudge.sh 改 `bash.exe` 显式调用，WinError 193×3 根因消除 ✅
-- [x] 安全脱敏批量落地（9/8 晚）：本机路径 <USER>→~/ 全量脱敏（8 commits）+ Kimi key 改环境变量 + gitignore .dreams/.tmp + CAD 生成物 .step 移除跟踪 ✅
+- [x] 安全脱敏批量落地（9/8 晚）：本机路径全量脱敏为 ~/（8 commits）+ Kimi key 改环境变量 + gitignore .dreams/.tmp + CAD 生成物 .step 移除跟踪 ✅
 - [x] 墨题巡检 5 日 PASS（9/6/7/8/10/11）：git 干净 + 后端/前端/移动端四段全过，最近提交含 v2.1.3 版本对齐（`69e1d66`/`ddbad61`）✅
 
 **🧠 知识 / 研究（9/6–9/10）**
