@@ -35,14 +35,14 @@ OpenForgeRL 的核心是在 harness 与模型之间插 proxy 记录轨迹。**He
 
 ```bash
 uv run python scripts/export_traces.py --days 7
-uv run python scripts/export_traces.py --model deepseek-v4-flash --days 30 --out traces/
+uv run python scripts/export_traces.py --model deepseek-flash --days 30 --out traces/
 ```
 
 输出 JSONL，每条含：
 ```json
 {
   "session_id": "...",
-  "model": "deepseek-v4-flash",
+  "model": "deepseek-flash",
   "conversation": [{"role": "user", "content": "..."},
                    {"role": "assistant", "content": "...", "tool_calls": [...]},
                    {"role": "tool", "content": "...", "tool": "read_file"}],
