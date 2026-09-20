@@ -1,0 +1,1722 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="AI Agent 第二大脑 | Hermes 七大自举系统 | 硬件/PCB/单片机全链路知识库 | 学术写作工作流 | 全中文 Obsidian 知识库">
+      
+      
+        <meta name="author" content="mo9652962">
+      
+      
+        <link rel="canonical" href="https://mo9652962-ai.github.io/second-brain/%E7%9F%A5%E8%AF%86%E5%BA%93%E9%87%8D%E6%9E%84%E6%96%B9%E6%A1%88-2026-08-16/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>知识库重构方案（2026-08-16） - Second Brain 知识库</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2026-08-16" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="Second Brain 知识库" class="md-header__button md-logo" aria-label="Second Brain 知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Second Brain 知识库
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              知识库重构方案（2026-08-16）
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换到深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换到浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../README.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../skills/hermes/tool-call-bootstrapping.md" class="md-tabs__link">
+          
+  
+  
+  🤖 Hermes 自举系统
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../skills/hardware/PCB-Design-Automation-2026.md" class="md-tabs__link">
+          
+  
+  
+  🔧 硬件工程
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../skills/ai/mlops-llm-training-pipeline.md" class="md-tabs__link">
+          
+  
+  
+  🧠 AI / MLOps
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../skills/dev/cross-platform-mobile-development-2026.md" class="md-tabs__link">
+          
+  
+  
+  📱 移动端 & 安全
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../skills/general/knowledge-domain-roadmap.md" class="md-tabs__link">
+          
+  
+  
+  📚 通用知识
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Second Brain 知识库" class="md-nav__button md-logo" aria-label="Second Brain 知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Second Brain 知识库
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../README.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 Hermes 自举系统
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🤖 Hermes 自举系统
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skills/hermes/tool-call-bootstrapping.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    工具调用自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skills/hermes/code-quality-bootstrapping.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    代码质量自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skills/hermes/output-style-bootstrapping.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    输出风格自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skills/hermes/context-management-bootstrapping.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    上下文管理自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skills/hermes/github-seo-optimization-2026.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub SEO 优化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔧 硬件工程
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🔧 硬件工程
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skills/hardware/PCB-Design-Automation-2026.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PCB 设计自动化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skills/hardware/CAD-Design-Complete-Guide-v2.0.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CAD 设计完整指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skills/hardware/Microcontroller-Edge-AI-2026.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    单片机与边缘 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skills/hardware/Hardware-Startup-Open-Source-Ecosystem.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    硬件创业与开源生态
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧠 AI / MLOps
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🧠 AI / MLOps
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skills/ai/mlops-llm-training-pipeline.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MLOps & LLM 训练流水线
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📱 移动端 & 安全
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📱 移动端 & 安全
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skills/dev/cross-platform-mobile-development-2026.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跨平台移动端开发
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skills/dev/ctf-cybersecurity-roadmap.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CTF 网络安全入门
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📚 通用知识
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📚 通用知识
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skills/general/knowledge-domain-roadmap.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识域扩展路线图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skills/general/community-best-practices-index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    社区最佳实践索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skills/general/bilingual-terminology-index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中英双语术语对照表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="2026-08-16">知识库重构方案（2026-08-16）<a class="headerlink" href="#2026-08-16" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>基于全仓实测扫描（679 篇 md）+ 人工抽查 20+ 篇笔记内容得出，非凭空设计。
+扫描命令：<code>python scripts/vault-orphan-duplicate-scan.py --scope knowledge --json report.json</code>
+执行原则：<strong>不推翻 2026-08-15 的 10→7 域收敛</strong>，只做微调；每一步可独立 git commit，随时可回滚。</p>
+</blockquote>
+<hr />
+<h2 id="_1">一、现状盘点（实测数据）<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="11-knowledge-319">1.1 目录分布（knowledge/ 共 319 篇）<a class="headerlink" href="#11-knowledge-319" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">目录</th>
+<th style="text-align: right;">篇数</th>
+<th style="text-align: right;">占比</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Research</td>
+<td style="text-align: right;">143</td>
+<td style="text-align: right;">44.8%</td>
+<td style="text-align: left;">研究笔记 + 学术域（原 Academic 已并入）</td>
+</tr>
+<tr>
+<td style="text-align: left;">Dev</td>
+<td style="text-align: right;">93</td>
+<td style="text-align: right;">29.2%</td>
+<td style="text-align: left;">开发 + AI（原 AI 已并入），含 system-prompts-reference/ 子目录</td>
+</tr>
+<tr>
+<td style="text-align: left;">Productivity</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">6.9%</td>
+<td style="text-align: left;">效率工具 + 运维报告</td>
+</tr>
+<tr>
+<td style="text-align: left;">Daily</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">5.3%</td>
+<td style="text-align: left;">hackernews 每日速览</td>
+</tr>
+<tr>
+<td style="text-align: left;">cards</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">5.0%</td>
+<td style="text-align: left;">知识卡片</td>
+</tr>
+<tr>
+<td style="text-align: left;">Hardware</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">5.0%</td>
+<td style="text-align: left;">硬件 + 设计（原 Design 已并入）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>（根目录）</strong></td>
+<td style="text-align: right;"><strong>4</strong></td>
+<td style="text-align: right;">1.3%</td>
+<td style="text-align: left;">AI漫剧制作全流程 / Cross-Domain / MiMo模型客观评估 / knowledge-map</td>
+</tr>
+<tr>
+<td style="text-align: left;">Security</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.6%</td>
+<td style="text-align: left;">08-17 新建域</td>
+</tr>
+<tr>
+<td style="text-align: left;">Finance</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.6%</td>
+<td style="text-align: left;">08-15 新建域</td>
+</tr>
+<tr>
+<td style="text-align: left;">Archive</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.6%</td>
+<td style="text-align: left;">归档</td>
+</tr>
+</tbody>
+</table>
+<h3 id="12">1.2 链接健康（扫描结果）<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">指标</th>
+<th style="text-align: right;">数值</th>
+<th style="text-align: left;">明细</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">孤立笔记（无入链）</td>
+<td style="text-align: right;"><strong>36 篇</strong></td>
+<td style="text-align: left;">cards 9 篇、Daily 9 篇、Dev 12 篇、Productivity 2 篇、根目录 2 篇、Archive 2 篇</td>
+</tr>
+<tr>
+<td style="text-align: left;">结构性入口（预期无入链）</td>
+<td style="text-align: right;">1 篇</td>
+<td style="text-align: left;"><code>Finance/MOC-Finance.md</code> 本身没人链接 → 见问题 ①</td>
+</tr>
+<tr>
+<td style="text-align: left;">同名冲突（跨目录同名）</td>
+<td style="text-align: right;">12 组</td>
+<td style="text-align: left;">11 组在 skills/portfolio 等生成目录（无害）；<strong>knowledge/ 内 1 组</strong>：<code>Dev/system-prompts-reference/README.md</code> 与根 <code>README.md</code> 同名，<code>[[README]]</code> 链接有歧义风险</td>
+</tr>
+<tr>
+<td style="text-align: left;">规范化后同名（去日期/后缀重复）</td>
+<td style="text-align: right;">35 组</td>
+<td style="text-align: left;">其中 date-series（daily-review、todo-cleanup 等自动流水）27 组属正常；<strong>knowledge/ 内 8 组需处理</strong>（见第五节）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_2">二、问题诊断（六条，附证据）<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="1-moc">① MOC 索引失效，退化为「追加式日志」<a class="headerlink" href="#1-moc" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>knowledge/Research/MOC-Research.md</code> 中 <strong>「## 其他」标题出现了 3 次</strong>（第 24、186、196 行）——新增笔记没有归组，机械追加进「其他」，索引失去导航价值。</li>
+<li><code>knowledge/knowledge-map.md</code> 已达 412 行，其中 W31~W34 周报速览段落占 180+ 行——<strong>地图变成了 changelog</strong>。周报增量本应去 <code>memory/weekly-*</code>。</li>
+<li><code>knowledge/Dev/MOC-Dev.md</code> 尾部挂着未消化的「## 🤖 AI 域（原 AI）」二级标题——域合并（08-15 AI→Dev）后 MOC 没有真正融合，还是两篇笔记拼接。</li>
+<li><code>Finance/MOC-Finance.md</code> 创建后没有任何笔记链接它（扫描判定为无入链）——新 MOC 落地时没有挂回 knowledge-map。</li>
+</ul>
+<h3 id="2">② 同一系列并行多套命名<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>GitHub 研究系列（同一件事）存在 <strong>5 种命名</strong>：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">命名样式</th>
+<th style="text-align: left;">例</th>
+<th style="text-align: right;">篇数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>github-trending-YYYY-MM-DD…</code></td>
+<td style="text-align: left;">github-trending-2026-08-05.md</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GitHub-Weekly-YYYY-MM-DD</code></td>
+<td style="text-align: left;">GitHub-Weekly-2026-08-14.md</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>github-weekly-YYYY-MM-DD…</code></td>
+<td style="text-align: left;">github-weekly-2026-07-31-5projects.md</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GitHub热榜-YYYY-MM-DD</code></td>
+<td style="text-align: left;">GitHub热榜-2026-08-08.md</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GitHub周榜-YYYY-MM-DD</code></td>
+<td style="text-align: left;">GitHub周榜-2026-08-08.md</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
+<p>arXiv 系列存在 <strong>3 种</strong>：<code>arxiv-weekly-*</code>（6 篇）、<code>arxiv-2026-MM-DD-agent-llm</code>（4 篇）、<code>arxiv-agent-llm-2026-08-08</code>（日期位置不同，1 篇）；另有 <code>arXiv-agent-llm精选速览-2026-08-08</code>（中文混合）。日期格式也有两套：<code>20260816</code>（compact，Productivity 报告 5 篇）与 <code>2026-08-16</code>（ISO）。</p>
+<h3 id="3-36">③ 孤立笔记 36 篇（明细见第七节）<a class="headerlink" href="#3-36" title="Permanent link">&para;</a></h3>
+<p>重灾区：cards 16 篇中 9 篇无入链、Daily 17 篇中 9 篇无入链、<code>Dev/system-prompts-reference/</code> 子目录 5 个文件中 4 个无入链（只有 README 被 MOC-Dev 链接）。<strong>note 落盘后没有挂 MOC 是根因</strong>——vault 维护规则第 2 条（INDEX.md:81「每批次研究后更新 knowledge-map 挂载 MOC 防孤立节点」）实际未被 cron/人工流程执行到位。</p>
+<h3 id="4-7">④ 内容重复 7 组（详见第五节合并清单）<a class="headerlink" href="#4-7" title="Permanent link">&para;</a></h3>
+<p>最典型：<code>knowledge/MiMo模型客观评估.md</code>（根目录，88 行千轮研究）与 <code>Research/MiMo-V2.5研究-2026-08-08.md</code>（62 行）<strong>同主题双份且都无人链接</strong>——既重复又孤立。</p>
+<h3 id="5">⑤ 主题散落跨目录<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>网络安全</strong>主题 10+ 篇散在 4 个目录：Security（2）/ Research（agent-memory-injection、kutie-context-injection、security-risk-assessment、claude-max-sepa-incident、eu-ai-act）/ cards（eu-ai-act、zero-mem）/ Dev（10-Top-AI-Agent-Projects 的 ClawHavoc 供应链段）。</li>
+<li><strong>GitHub 研究</strong>主题 35+ 篇散在 Research（25）/ Dev（10+）。</li>
+<li><code>INDEX.md:44</code> 宣称「knowledge/ 7 个子域」，但实际存在 <strong>9 个内容目录</strong>（Finance、Security 未列入清单）——索引与现实脱节。</li>
+</ul>
+<h3 id="6">⑥ 流水型笔记无生命周期策略<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
+<p><code>token-usage-report-*</code>（3 篇）、<code>system-cleanup-report-*</code>（2 篇）、<code>skill-audit-*</code>（3 篇）按日期无限累积，无「保留最新 N 篇、旧的进 Archive」规则。同模式的 memory/ 目录（daily-review ×14、todo-cleanup ×7 等）虽属正常流水，也建议在月度整理时压缩。</p>
+<hr />
+<h2 id="_3">三、目录结构建议<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p><strong>结论：保持 7 域骨架不动，做 4 处微调。</strong>（08-15 刚完成 10→7 收敛，49 篇迁移的成果应保留；现在的问题是域内组织，不是域划分。）</p>
+<div class="codehilite"><pre><span></span><code>knowledge/
+├── knowledge-map.md        # L1 总地图（瘦身至 ≤80 行，只列域 + MOC 入口）
+├── Cross-Domain.md         # 跨域场景索引（保留）
+├── Research/               # 143 篇，保持平铺 + 系列前缀，由 MOC-GitHub 等主题 MOC 切片
+├── Dev/                    # 93 篇，MOC-Dev 融合掉「AI 域（原 AI）」残段
+├── Hardware/               # 不动
+├── Productivity/           # 运维报告类加生命周期规则（见第六节）
+├── Security/               # 收编 5 篇散落安全笔记（安全主题唯一正目录）
+├── Finance/                # 不动（MOC-Finance 挂回 knowledge-map）
+├── Daily/                  # 时间流，不建 MOC；在 knowledge-map 加「Daily 索引」一行区
+├── cards/                  # 时间流，同上
+└── Archive/                # system-cleanup-report 旧篇等迁入
+</code></pre></div>
+
+<h3 id="p0p1-8">迁移清单（P0/P1，共 8 项）<a class="headerlink" href="#p0p1-8" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th style="text-align: left;">动作</th>
+<th style="text-align: center;">类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td style="text-align: left;"><code>knowledge/AI漫剧制作全流程.md</code> → <code>knowledge/Dev/</code></td>
+<td style="text-align: center;">mv</td>
+</tr>
+<tr>
+<td>2</td>
+<td style="text-align: left;"><code>knowledge/MiMo模型客观评估.md</code> 合并入 <code>Research/MiMo-V2.5研究-2026-08-08.md</code>（root 版 88 行更全，以其为主体改写 Research 版，删除 root 版）</td>
+<td style="text-align: center;">merge</td>
+</tr>
+<tr>
+<td>3</td>
+<td style="text-align: left;"><code>Research/agent-memory-injection-2026-08-05.md</code> → <code>Security/</code></td>
+<td style="text-align: center;">mv</td>
+</tr>
+<tr>
+<td>4</td>
+<td style="text-align: left;"><code>Research/kutie-context-injection.md</code> → <code>Security/</code></td>
+<td style="text-align: center;">mv</td>
+</tr>
+<tr>
+<td>5</td>
+<td style="text-align: left;"><code>Research/security-risk-assessment-2026-08-02.md</code> → <code>Security/</code></td>
+<td style="text-align: center;">mv</td>
+</tr>
+<tr>
+<td>6</td>
+<td style="text-align: left;"><code>Research/claude-max-sepa-incident-2026-07-26.md</code> → <code>Security/</code></td>
+<td style="text-align: center;">mv</td>
+</tr>
+<tr>
+<td>7</td>
+<td style="text-align: left;"><code>Research/eu-ai-act-2026-08-assessment.md</code> → <code>Security/</code>（合规归安全；cards/2026-08-02-eu-ai-act.md 卡片留在 cards）</td>
+<td style="text-align: center;">mv</td>
+</tr>
+<tr>
+<td>8</td>
+<td style="text-align: left;"><code>INDEX.md</code> 知识域清单补 Finance、Security 两行</td>
+<td style="text-align: center;">edit</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>迁移后跑 <code>python scripts/check_wikilinks.py</code> 修全仓引用（vault 已开 <code>alwaysUpdateLinks</code>，Obsidian 内手动移动可自动改链；命令行 git mv 需补跑修复）。</p>
+</blockquote>
+<hr />
+<h2 id="moc">四、MOC 体系设计<a class="headerlink" href="#moc" title="Permanent link">&para;</a></h2>
+<h3 id="_4">三层结构<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>L1  knowledge-map.md    域级目录：只列 7 域 + 各 MOC 入口 + Daily/cards 索引区（≤80 行）
+L2  域 MOC              MOC-Dev / MOC-Research / MOC-Hardware / MOC-Productivity / MOC-Finance
+L3  主题切片 MOC        跨域横向主题：MOC-Security（本次新建）、MOC-GitHub（本次新建）
+                        后续可按需增加（如 MOC-PCB、MOC-刷题机、MOC-变现）
+</code></pre></div>
+
+<h3 id="moc_1">MOC 五条规则<a class="headerlink" href="#moc_1" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>MOC 只导航不存内容</strong>——不放研究结论，只放链接 + 一句话摘要。</li>
+<li><strong>周报增量一律去 <code>memory/weekly-*</code></strong>——knowledge-map 不再追加「Wxx 新增速览」段落（现有 W31~W34 段迁出到 <code>memory/2026/08/knowledge-map-archive-2026-W31-W34.md</code> 后删除）。</li>
+<li><strong>域 MOC 固定分区</strong>（模板见下），按主题分组；<strong>「## 其他」第二次出现即触发重分组</strong>。</li>
+<li><strong>新笔记落盘必须挂一个 MOC</strong>（写入 AGENTS.md 维护规则 + 研究笔记模板的 checklist 项）。</li>
+<li><strong>新建 MOC 当场挂回 knowledge-map</strong>（MOC-Finance 无入链就是违反了这条）。</li>
+</ol>
+<h3 id="moc_2">域 MOC 模板<a class="headerlink" href="#moc_2" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>---
+tags: [MOC, &lt;domain&gt;, 索引]
+created: YYYY-MM-DD
+<span class="gu">updated: YYYY-MM-DD</span>
+<span class="gu">---</span>
+<span class="gh"># &lt;域名&gt; MOC</span>
+<span class="k">&gt; </span><span class="ge">[[knowledge-map|🗺️ 知识地图]] · 共 N 篇 · 最后更新 YYYY-MM-DD</span>
+
+<span class="gu">## 主题分组 A（每个主题一个二级标题，链接 + 一句话）</span>
+<span class="k">-</span><span class="w"> </span>[[note-1]] — 一句话摘要
+<span class="gu">## 主题分组 B</span>
+…
+<span class="gu">## 系列笔记（时间流：周报/日报/报告）</span>
+<span class="k">-</span><span class="w"> </span>[[series-2026-08-14]] …
+<span class="gu">## 相关 MOC</span>
+<span class="k">-</span><span class="w"> </span>[[MOC-Security]] · [[MOC-GitHub]]
+</code></pre></div>
+
+<hr />
+<h2 id="7">五、重复笔记合并清单（7 组）<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th style="text-align: left;">文件 A</th>
+<th style="text-align: left;">文件 B</th>
+<th style="text-align: left;">关系（已读内容核实）</th>
+<th style="text-align: left;">建议动作</th>
+<th style="text-align: center;">优先级</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td style="text-align: left;"><code>knowledge/MiMo模型客观评估.md</code>（88 行）</td>
+<td style="text-align: left;"><code>Research/MiMo-V2.5研究-2026-08-08.md</code>（62 行）</td>
+<td style="text-align: left;">同主题（MiMo-V2.5 评测/定价）双份，各自独立写成</td>
+<td style="text-align: left;">以 88 行版为主体合并入 Research 版，删根目录版</td>
+<td style="text-align: center;"><strong>P0</strong></td>
+</tr>
+<tr>
+<td>2</td>
+<td style="text-align: left;"><code>Dev/AI-Workflow.md</code>（393 行，Hermes 编排哲学）</td>
+<td style="text-align: left;"><code>Dev/ai-workflow-guide.md</code>（97 行，工具选型表）</td>
+<td style="text-align: left;">名字几乎相同、内容不同向，检索必混淆</td>
+<td style="text-align: left;">B 重命名 <code>ai-tools-landscape.md</code> 并在 A 加一行互链</td>
+<td style="text-align: center;">P1</td>
+</tr>
+<tr>
+<td>3</td>
+<td style="text-align: left;"><code>Dev/vibe-research.md</code>（69 行）</td>
+<td style="text-align: left;"><code>Dev/vibe-research-deepdive.md</code>（69 行）</td>
+<td style="text-align: left;">上下篇（deepdive 自述「基于 vibe-research.md 深度调研」）</td>
+<td style="text-align: left;">合并为单篇两个章节</td>
+<td style="text-align: center;">P1</td>
+</tr>
+<tr>
+<td>4</td>
+<td style="text-align: left;"><code>Research/openfic-study.md</code></td>
+<td style="text-align: left;"><code>Dev/openfic-absorbed.md</code></td>
+<td style="text-align: left;">原文研读 + 吸收笔记，<strong>被拆在两个目录</strong></td>
+<td style="text-align: left;">absorbed 并入 study（同 ponytail 模式），删 absorbed</td>
+<td style="text-align: center;">P1</td>
+</tr>
+<tr>
+<td>5</td>
+<td style="text-align: left;"><code>Dev/ponytail.md</code></td>
+<td style="text-align: left;"><code>Dev/ponytail-absorbed.md</code></td>
+<td style="text-align: left;">原文原则 + 补强建议</td>
+<td style="text-align: left;">absorbed 并入正文「补强」章节</td>
+<td style="text-align: center;">P2</td>
+</tr>
+<tr>
+<td>6</td>
+<td style="text-align: left;"><code>Research/论文Pipeline-数据契约.md</code>（完整版）</td>
+<td style="text-align: left;"><code>Research/paper-pipeline-data-contract.md</code>（精简 JSON 版）</td>
+<td style="text-align: left;">互链的完整/精简双份</td>
+<td style="text-align: left;">JSON 契约作为完整版「附录：机器可读契约」，删精简版</td>
+<td style="text-align: center;">P2</td>
+</tr>
+<tr>
+<td>7</td>
+<td style="text-align: left;"><code>Dev/system-design-primer.md</code></td>
+<td style="text-align: left;"><code>Research/system-design-primer-study.md</code></td>
+<td style="text-align: left;">同一项目：速览 reference + 研读 study</td>
+<td style="text-align: left;">合并为 <code>Dev/system-design-primer.md</code> 单篇（study 内容作主体）</td>
+<td style="text-align: center;">P2</td>
+</tr>
+<tr>
+<td>8</td>
+<td style="text-align: left;"><code>Research/github-trending-2026-08-05.md</code></td>
+<td style="text-align: left;"><code>Research/github-trending-2026-08-05-2.md</code></td>
+<td style="text-align: left;">同日第二批，<code>-2</code> 裸后缀</td>
+<td style="text-align: left;">合并单篇（两批分章节）或改名 <code>-batch2</code></td>
+<td style="text-align: center;">P2</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：<code>cards/2026-08-14-prime-agent-rlm.md</code> + <code>Dev/prime-agent-rlm-2026-08-14.md</code> 这类「卡片 + 正文」成对是<strong>设计模式，不算重复</strong>，保留。同理 <code>hackernews-2026-07-29-absorbed.md</code>。</p>
+</blockquote>
+<hr />
+<h2 id="_5">六、重命名建议（统一规范）<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p><strong>规范</strong>：系列笔记 = <code>系列名-YYYY-MM-DD[-批次]</code>（小写 kebab-case，ISO 日期）；单篇内容笔记中英文不限，但同主题风格一致；禁止 <code>-2</code> 裸后缀与 <code>20260816</code> 紧凑日期。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">现名</th>
+<th style="text-align: left;">改为</th>
+<th style="text-align: left;">理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>Research/GitHub热榜-2026-08-08.md</code></td>
+<td style="text-align: left;"><code>github-trending-2026-08-08-daily.md</code></td>
+<td style="text-align: left;">并入日榜系列</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Research/GitHub周榜-2026-08-08.md</code></td>
+<td style="text-align: left;"><code>github-trending-2026-08-08-weekly.md</code></td>
+<td style="text-align: left;">同上</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Research/github-weekly-2026-07-31-5projects.md</code></td>
+<td style="text-align: left;"><code>GitHub-Weekly-2026-07-31.md</code></td>
+<td style="text-align: left;">并入周报系列（该系列已 4 篇大写驼峰）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Research/arxiv-agent-llm-2026-08-08.md</code></td>
+<td style="text-align: left;"><code>arxiv-2026-08-08-agent-llm.md</code></td>
+<td style="text-align: left;">日期居中，与系列 4 篇一致</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Research/arXiv-agent-llm精选速览-2026-08-08.md</code></td>
+<td style="text-align: left;"><code>arxiv-2026-08-08-agent-llm-精选.md</code></td>
+<td style="text-align: left;">同上</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Research/ai-daily-2026-07-29-digest.md</code>、<code>ai-daily-2026-08-01-digest.md</code></td>
+<td style="text-align: left;">去 <code>-digest</code> 后缀</td>
+<td style="text-align: left;">系列内一致</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Dev/ai-workflow-guide.md</code></td>
+<td style="text-align: left;"><code>ai-tools-landscape.md</code></td>
+<td style="text-align: left;">消除与 AI-Workflow 的命名冲突（见合并清单 #2）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Dev/内容-小君AI测评测评文初稿-2026-08-16.md</code></td>
+<td style="text-align: left;"><code>内容-小君AI测评-初稿-2026-08-16.md</code></td>
+<td style="text-align: left;"><strong>「测评测评」叠字笔误</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Dev/github-projects-note.md</code></td>
+<td style="text-align: left;"><code>deeptutor-架构吸收.md</code></td>
+<td style="text-align: left;"><strong>文件名与内容完全不符</strong>（实际是 DeepTutor 架构吸收笔记，实测确认）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Productivity/system-cleanup-report-20260816.md</code>、<code>-20260817.md</code></td>
+<td style="text-align: left;"><code>system-cleanup-report-2026-08-16.md</code> 格式</td>
+<td style="text-align: left;">ISO 日期统一；旧篇迁 Archive</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Productivity/token-usage-report-20260727/0802/0814.md</code>（3 篇）</td>
+<td style="text-align: left;">同上格式</td>
+<td style="text-align: left;">ISO 日期统一</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="36">七、孤立笔记处理清单（36 篇 → 四类处置）<a class="headerlink" href="#36" title="Permanent link">&para;</a></h2>
+<h3 id="a-moc24-p0">A. 挂链 MOC（24 篇，P0，零风险）<a class="headerlink" href="#a-moc24-p0" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">组</th>
+<th style="text-align: left;">笔记</th>
+<th style="text-align: left;">挂到</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">cards ×9</td>
+<td style="text-align: left;">2026-08-03-linggan-deai、08-04-sesa、08-05-agent-reliability-toolmaze、08-05-protocol-version-negotiation、08-06-ai-daily、08-06-deepseek-v4-flash-official、08-06-minimax-h3、08-07-skill-entropy、08-08-qwen-image-pro</td>
+<td style="text-align: left;">knowledge-map 新增「🃏 Cards 索引」区（MOC-Research 已链接部分卡片，统一收口）</td>
+</tr>
+<tr>
+<td style="text-align: left;">Daily ×9</td>
+<td style="text-align: left;">hackernews-2026-07-30/31、08-04/05/06/08/16</td>
+<td style="text-align: left;">knowledge-map 新增「📅 Daily 索引」区</td>
+</tr>
+<tr>
+<td style="text-align: left;">Dev ×10</td>
+<td style="text-align: left;">agentradio-five-phase-orchestration、browser-automation-best-practices、hermes-model-fallback-audit-2026-08-16、spacetime-diagram-edge-2026-08-17、system-prompts-reference/（claude-code-opus-5、deepseek-chat、gpt-5.6-sol-codex、hermes-own-prompt）、内容-小君AI测评测评文初稿-2026-08-16、墨题每日巡检-2026-08-16</td>
+<td style="text-align: left;">MOC-Dev 对应分区</td>
+</tr>
+<tr>
+<td style="text-align: left;">Dev ×2</td>
+<td style="text-align: left;">Awesome-Lists-Study、github-projects-note</td>
+<td style="text-align: left;"><strong>MOC-GitHub（本次新建，已解决）</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Security ×1</td>
+<td style="text-align: left;">virus-threats-2026-08-17</td>
+<td style="text-align: left;"><strong>MOC-Security（本次新建，已解决）</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="b-2">B. 合并后消失（2 篇）<a class="headerlink" href="#b-2" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>knowledge/MiMo模型客观评估.md</code>（并入 Research 版）</li>
+<li><code>Productivity/system-cleanup-report-20260816.md</code>（旧篇，迁 Archive）</li>
+</ul>
+<h3 id="c-2">C. 归档（2 篇）<a class="headerlink" href="#c-2" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>Archive/20260728-182639-Example Domain.md</code>、<code>Archive/system-comparison-content.md</code>——本就是归档件，预期行为，保留。</li>
+</ul>
+<h3 id="d-8">D. 流水正常（8 篇，不处理）<a class="headerlink" href="#d-8" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>Daily/2026-07-29-每日回顾.md</code>、<code>Productivity/system-cleanup-report-20260817.md</code>、<code>Productivity/token-usage-report-*</code> 3 篇（最新一篇挂 MOC-Productivity 即可）、其余最新流水。</li>
+</ul>
+<hr />
+<h2 id="commit">八、落地顺序（四步，每步独立 commit）<a class="headerlink" href="#commit" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">步骤</th>
+<th style="text-align: left;">内容</th>
+<th style="text-align: center;">风险</th>
+<th style="text-align: left;">验收</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>P0 立即</strong></td>
+<td style="text-align: left;">创建 MOC-Security + MOC-GitHub（已随本方案产出）；两 MOC 挂回 knowledge-map；INDEX 补 Finance/Security；A 组 24 篇挂链</td>
+<td style="text-align: center;">零</td>
+<td style="text-align: left;">重跑扫描脚本，knowledge/ 孤立 ≤10（剩流水件）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>P1 本周</strong></td>
+<td style="text-align: left;">合并清单 #1~#4；Security 收编 5 篇 mv；迁移清单 #1</td>
+<td style="text-align: center;">低</td>
+<td style="text-align: left;">check_wikilinks 全绿</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>P2 下周</strong></td>
+<td style="text-align: left;">合并 #5~#8；第六节重命名批量执行（git mv + 链接修复）</td>
+<td style="text-align: center;">中</td>
+<td style="text-align: left;">扫描脚本「规范化重复」knowledge/ 内归零</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>P3 长期</strong></td>
+<td style="text-align: left;">knowledge-map 瘦身（W31~W34 段迁出）；MOC-Dev 融合「AI 域」残段；MOC 五条规则写入 AGENTS.md 与 <code>templates/研究笔记模板.md</code></td>
+<td style="text-align: center;">低</td>
+<td style="text-align: left;">knowledge-map ≤80 行</td>
+</tr>
+</tbody>
+</table>
+<p><strong>最终验收</strong>：<code>python scripts/vault-orphan-duplicate-scan.py --scope knowledge</code> 输出孤立笔记仅剩流水件；<code>python scripts/check_wikilinks.py</code> 无断裂链接。</p>
+<hr />
+<h2 id="_6">附：扫描脚本<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p><code>scripts/vault-orphan-duplicate-scan.py</code>（本次产出，stdlib-only）：</p>
+<div class="codehilite"><pre><span></span><code>python<span class="w"> </span>scripts/vault-orphan-duplicate-scan.py<span class="w">                       </span><span class="c1"># 全仓扫描</span>
+python<span class="w"> </span>scripts/vault-orphan-duplicate-scan.py<span class="w"> </span>--scope<span class="w"> </span>knowledge<span class="w">     </span><span class="c1"># 只看 knowledge/ 孤立</span>
+python<span class="w"> </span>scripts/vault-orphan-duplicate-scan.py<span class="w"> </span>--json<span class="w"> </span>report.json<span class="w">    </span><span class="c1"># 机读输出</span>
+python<span class="w"> </span>scripts/vault-orphan-duplicate-scan.py<span class="w"> </span>--threshold<span class="w"> </span><span class="m">0</span>.85<span class="w">      </span><span class="c1"># 调相似度阈值</span>
+</code></pre></div>
+
+<p>检测项：① 入链图 → 孤立笔记（结构性入口自动豁免）；② 跨目录同名冲突；③ 规范化同名（去日期/后缀）；④ difflib 标题相似对。建议加入每日/每周 cron（与 daily_vault_optimize.py 并列）。</p>
+<hr />
+<p><em>方案产出：ZCode · 2026-08-16 · 数据来源：vault-orphan-duplicate-scan.py 实测 + 人工内容抽查</em></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "toc.integrate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
