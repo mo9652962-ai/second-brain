@@ -234,3 +234,8 @@ tags: [meta, vault-maintenance]
 - 挂载：`MOC-Dev` 与 `knowledge-map` 的 W39 新增区
 - 内容：官方能力/集成/定价、公开 PR 质量研究、与 Codex/Hermes 的边界及低风险试用方案
 - 证据边界：官方产品声明、2026-09-12 arXiv 观察性研究、厂商自报 Fusion 数据分开标注
+
+## [2026-09-20] freshness | 时效审计
+
+- 过期硬约束 0 / 待运行时验证 37 / 历史记录 352
+- 处理原则：只报告不自动修；事实源见 knowledge/META/current-environment.md
