@@ -43,11 +43,12 @@ class TestFanNativePresentation(unittest.TestCase):
         self.assertGreater(size, 150000, f"PPTX 体积过小: {size} bytes")
 
     def test_02_morph_transition_engine(self):
-        """Slide 2 必须挂载 p:morph 平滑切换引擎"""
-        trans = self.s2._element.find(qn('p:transition'))
-        self.assertIsNotNone(trans, "Slide 2 缺少 p:transition 节点")
-        morph = trans.find(qn('p:morph'))
-        self.assertIsNotNone(morph, "Slide 2 缺少 p:morph 平滑引擎")
+        """Slide 2 必须挂载官方标准 p159:morph 平滑切换引擎 (mc:AlternateContent)"""
+        # 兼容直连 p:transition 与 ISO/IEC 29500 mc:AlternateContent
+        morph = self.s2._element.find('.//{http://schemas.microsoft.com/office/powerpoint/2015/09/main}morph')
+        if morph is None:
+            morph = self.s2._element.find('.//{http://schemas.openxmlformats.org/presentationml/2006/main}morph')
+        self.assertIsNotNone(morph, "Slide 2 缺少 morph 平滑引擎节点")
         self.assertEqual(morph.get('option'), 'byObject')
 
     def test_03_morph_named_objects_pairing(self):
