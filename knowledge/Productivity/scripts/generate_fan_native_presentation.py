@@ -1,20 +1,22 @@
 # -*- coding: utf-8 -*-
 """生产级原生可编辑矢量折扇开场演示文稿生成器（Fan Native Master · 9.8 顶级美学版）
 
-【三大核心重塑：告别生硬手绘，实现真实唯美底图 + 文人书画版式 + 对角线黄金构图】
-1. 背景质感革命（提升 85%+）：
-   - 彻底摒弃代码几何手绘简陋竹子，采用原版真实唯美插画底图（高清青翠垂柳、玻璃风铃、彩纸流苏、暖光散景光斑）；
-   - 叠加全屏 26% 半透明白纱柔光遮罩，实现外朦胧、内清晰的绝美画中画视差。
+【核心突破：画中画裁剪式透光折扇 + 官方 Morph 原生 60fps 平滑展开】
+1. 解决突兀色块（彻底融入背景世界）：
+   - 扇面不使用脱节生硬的纯绿渐变色块，而是使用【底图图片填充 (blipFill)】直接形成透光取景窗口；
+   - 底层为高清唯美原图（青翠垂柳、晶莹玻璃风铃、彩纸流苏、晨曦暖阳散景）；
+   - 中层为全屏 35% 半透明白纱柔光遮罩；
+   - 顶层扇面透出 100% 鲜明未遮罩的高清原图景深，形成“扇外烟雨朦胧，扇内明丽鲜活”的绝美画中画视差。
 2. 空间构图与黄金分割（对角线张力）：
    - 扇轴置于右下方黄金分割区（x ≈ Inches(9.2), y ≈ Inches(5.8)）；
-   - 6 片扇叶与 8 根扇骨朝左上方与正上方自然舒展绽放，打破呆板居中，具备强烈的动态视觉冲击力。
+   - 6 片扇叶与 8 根扇骨朝左上方与正上方舒展绽放，打破呆板居中，具备强烈的动态视觉冲击力。
 3. 文人书画留白与文字版式：
    - 标题移至左上方黄金留白区，行楷风格大字「雨   霖   铃」（54pt，深墨玉色 #142214）；
    - 配套朱砂篆刻方印「柳永」+ 词牌名篇小注副标题；
-   - 正统四列从右向左古典竖排《雨霖铃》原篇名句（寒蝉凄切骤雨歇、多情自古伤离别、今宵酒醒杨柳岸、便纵风情更与谁说）；
+   - 正统四列从右向左古典竖排《雨霖铃》名句；
 4. 扇骨扇叶同心一体：
    - 扇骨采用以扇轴为圆心的 PIE 0.8° 辐条，100% 锁死在玉纽轴心辐射而出；
-   - 左右两侧增设深色大骨（1.2°），力学骨架稳固真实；
+   - 左右两侧增设深色沉香木大骨（1.2°），力学骨架稳固真实；
 5. 官方 ISO/IEC 29500 mc:AlternateContent + p159:morph 原生平滑动画：
    - Slide 1: 扇子完全收拢成修长闭合折扇（斜指左上），标题/副标题/诗词均在画外；
    - Slide 2: 扇面如机械快门般平滑旋转绽放，标题降落，诗词自右向左有序滑入；
@@ -41,7 +43,6 @@ def build_fan_native_presentation(
     out_name="Fan_Native_Master.pptx"
 ):
     if poem_lines is None:
-        # 正统从右向左四列《雨霖铃》名句，文化意境完全契合
         poem_lines = [
             ("寒蝉凄切骤雨歇", Inches(3.2)),
             ("多情自古伤离别", Inches(2.6)),
@@ -62,11 +63,20 @@ def build_fan_native_presentation(
     s1 = prs.slides.add_slide(blank)
     s2 = prs.slides.add_slide(blank)
 
-    # 1. 双页高清底图
+    # 1. 获取图片 rId 引用
+    temp1 = s1.shapes.add_picture(bg_path, 0, 0, width=Inches(1), height=Inches(1))
+    rid1 = temp1._element.find('.//{http://schemas.openxmlformats.org/drawingml/2006/main}blip').get('{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed')
+    s1.shapes._spTree.remove(temp1._element)
+
+    temp2 = s2.shapes.add_picture(bg_path, 0, 0, width=Inches(1), height=Inches(1))
+    rid2 = temp2._element.find('.//{http://schemas.openxmlformats.org/drawingml/2006/main}blip').get('{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed')
+    s2.shapes._spTree.remove(temp2._element)
+
+    # 2. 双页底图
     s1.shapes.add_picture(bg_path, 0, 0, width=Inches(13.333), height=Inches(7.5))
     s2.shapes.add_picture(bg_path, 0, 0, width=Inches(13.333), height=Inches(7.5))
 
-    # 2. 全屏半透明白纱柔光遮罩
+    # 3. 全屏半透明白纱柔光遮罩（透明度 35%）
     for s in (s1, s2):
         rect = s.shapes.add_shape(MSO_SHAPE.RECTANGLE, 0, 0, Inches(13.333), Inches(7.5))
         rect.name = "!!FrostedVeil"
@@ -77,11 +87,11 @@ def build_fan_native_presentation(
                 spPr.remove(child)
         spPr.append(parse_xml(
             '<a:solidFill xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">'
-            '<a:srgbClr val="FFFFFF"><a:alpha val="26000"/></a:srgbClr>'
+            '<a:srgbClr val="FFFFFF"><a:alpha val="35000"/></a:srgbClr>'
             '</a:solidFill>'
         ))
 
-    # 3. 对角线折扇参数（右下方黄金分割锚点向左上方舒展）
+    # 4. 对角线折扇参数
     R = Inches(5.6)
     cx = Inches(9.2)
     cy = Inches(5.8)
@@ -90,13 +100,11 @@ def build_fan_native_presentation(
     base_rot = -135.0
     blade_rotations = [base_rot + i * step_rot for i in range(6)]
 
-    # 4. 扇骨系统（同心锁定在扇轴 cx, cy，100% 无偏心漂浮）
-    # 6 根内部竹质小骨 (PIE 0.8°)
+    # 5. 扇骨系统（同心锁定在扇轴 cx, cy，100% 无偏心漂浮）
     for i in range(6):
         rib_s1_rot = base_rot + blade_span * 0.5 - 0.4
         rib_s2_rot = blade_rotations[i] + blade_span * 0.5 - 0.4
 
-        # Slide 1 (合拢态)
         rib1 = s1.shapes.add_shape(MSO_SHAPE.PIE, cx - R, cy - R, 2*R, 2*R)
         rib1.name = f"!!FanRib{i+1}"
         rib1.adjustments[0] = 0.0
@@ -104,9 +112,8 @@ def build_fan_native_presentation(
         rib1.rotation = rib_s1_rot
         rib1.line.fill.background()
         rib1.fill.solid()
-        rib1.fill.fore_color.rgb = RGBColor(160, 125, 75)
+        rib1.fill.fore_color.rgb = RGBColor(165, 130, 85)
 
-        # Slide 2 (展开态)
         rib2 = s2.shapes.add_shape(MSO_SHAPE.PIE, cx - R, cy - R, 2*R, 2*R)
         rib2.name = f"!!FanRib{i+1}"
         rib2.adjustments[0] = 0.0
@@ -114,46 +121,32 @@ def build_fan_native_presentation(
         rib2.rotation = rib_s2_rot
         rib2.line.fill.background()
         rib2.fill.solid()
-        rib2.fill.fore_color.rgb = RGBColor(160, 125, 75)
+        rib2.fill.fore_color.rgb = RGBColor(165, 130, 85)
 
-    # 2 根折扇外侧大骨 (PIE 1.2°)
-    guard1_s1 = s1.shapes.add_shape(MSO_SHAPE.PIE, cx - R, cy - R, 2*R, 2*R)
-    guard1_s1.name = "!!FanGuardLeft"
-    guard1_s1.adjustments[0] = 0.0
-    guard1_s1.adjustments[1] = 1.2
-    guard1_s1.rotation = base_rot - 0.6
-    guard1_s1.line.fill.background()
-    guard1_s1.fill.solid()
-    guard1_s1.fill.fore_color.rgb = RGBColor(120, 90, 55)
+    # 2 根折扇外侧大骨
+    for s, s_rot_l, s_rot_r in [
+        (s1, base_rot - 0.6, base_rot + blade_span - 0.6),
+        (s2, blade_rotations[0] - 0.6, blade_rotations[5] + blade_span - 0.6)
+    ]:
+        gl = s.shapes.add_shape(MSO_SHAPE.PIE, cx - R, cy - R, 2*R, 2*R)
+        gl.name = "!!FanGuardLeft"
+        gl.adjustments[0] = 0.0
+        gl.adjustments[1] = 1.2
+        gl.rotation = s_rot_l
+        gl.line.fill.background()
+        gl.fill.solid()
+        gl.fill.fore_color.rgb = RGBColor(125, 95, 60)
 
-    guard1_s2 = s2.shapes.add_shape(MSO_SHAPE.PIE, cx - R, cy - R, 2*R, 2*R)
-    guard1_s2.name = "!!FanGuardLeft"
-    guard1_s2.adjustments[0] = 0.0
-    guard1_s2.adjustments[1] = 1.2
-    guard1_s2.rotation = blade_rotations[0] - 0.6
-    guard1_s2.line.fill.background()
-    guard1_s2.fill.solid()
-    guard1_s2.fill.fore_color.rgb = RGBColor(120, 90, 55)
+        gr = s.shapes.add_shape(MSO_SHAPE.PIE, cx - R, cy - R, 2*R, 2*R)
+        gr.name = "!!FanGuardRight"
+        gr.adjustments[0] = 0.0
+        gr.adjustments[1] = 1.2
+        gr.rotation = s_rot_r
+        gr.line.fill.background()
+        gr.fill.solid()
+        gr.fill.fore_color.rgb = RGBColor(125, 95, 60)
 
-    guard2_s1 = s1.shapes.add_shape(MSO_SHAPE.PIE, cx - R, cy - R, 2*R, 2*R)
-    guard2_s1.name = "!!FanGuardRight"
-    guard2_s1.adjustments[0] = 0.0
-    guard2_s1.adjustments[1] = 1.2
-    guard2_s1.rotation = base_rot + blade_span - 0.6
-    guard2_s1.line.fill.background()
-    guard2_s1.fill.solid()
-    guard2_s1.fill.fore_color.rgb = RGBColor(120, 90, 55)
-
-    guard2_s2 = s2.shapes.add_shape(MSO_SHAPE.PIE, cx - R, cy - R, 2*R, 2*R)
-    guard2_s2.name = "!!FanGuardRight"
-    guard2_s2.adjustments[0] = 0.0
-    guard2_s2.adjustments[1] = 1.2
-    guard2_s2.rotation = blade_rotations[5] + blade_span - 0.6
-    guard2_s2.line.fill.background()
-    guard2_s2.fill.solid()
-    guard2_s2.fill.fore_color.rgb = RGBColor(120, 90, 55)
-
-    # 5. 6 片扇面弧片 (BLOCK_ARC，空心折扇，3.0° 空气感呼吸缝隙)
+    # 6. 6 片扇面弧片（核心画中画底图透光填充，消除色块突兀感）
     for i in range(6):
         # Slide 1 (合拢态)
         b1 = s1.shapes.add_shape(MSO_SHAPE.BLOCK_ARC, cx - R, cy - R, 2*R, 2*R)
@@ -168,21 +161,17 @@ def build_fan_native_presentation(
         for c in list(spPr1):
             if c.tag.endswith("Fill"):
                 spPr1.remove(c)
-        spPr1.append(parse_xml('''
-        <a:gradFill xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" flip="none" rotWithShape="1">
-          <a:gsLst>
-            <a:gs pos="0"><a:srgbClr val="B8D4A4"><a:alpha val="88000"/></a:srgbClr></a:gs>
-            <a:gs pos="45000"><a:srgbClr val="78A365"><a:alpha val="82000"/></a:srgbClr></a:gs>
-            <a:gs pos="100000"><a:srgbClr val="36522E"><a:alpha val="92000"/></a:srgbClr></a:gs>
-          </a:gsLst>
-          <a:lin ang="5400000"/>
-        </a:gradFill>
+        spPr1.append(parse_xml(f'''
+        <a:blipFill xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" rotWithShape="0">
+          <a:blip xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:embed="{rid1}"/>
+          <a:stretch><a:fillRect/></a:stretch>
+        </a:blipFill>
         '''))
         spPr1.append(parse_xml('''
         <a:effectLst xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
-          <a:softEdge rad="25400"/>
+          <a:softEdge rad="15000"/>
           <a:outerShdw blurRad="63500" dist="0" dir="0" algn="ctr" rotWithShape="0">
-            <a:srgbClr val="000000"><a:alpha val="15000"/></a:srgbClr>
+            <a:srgbClr val="000000"><a:alpha val="20000"/></a:srgbClr>
           </a:outerShdw>
         </a:effectLst>
         '''))
@@ -200,26 +189,22 @@ def build_fan_native_presentation(
         for c in list(spPr2):
             if c.tag.endswith("Fill"):
                 spPr2.remove(c)
-        spPr2.append(parse_xml('''
-        <a:gradFill xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" flip="none" rotWithShape="1">
-          <a:gsLst>
-            <a:gs pos="0"><a:srgbClr val="B8D4A4"><a:alpha val="88000"/></a:srgbClr></a:gs>
-            <a:gs pos="45000"><a:srgbClr val="78A365"><a:alpha val="82000"/></a:srgbClr></a:gs>
-            <a:gs pos="100000"><a:srgbClr val="36522E"><a:alpha val="92000"/></a:srgbClr></a:gs>
-          </a:gsLst>
-          <a:lin ang="5400000"/>
-        </a:gradFill>
+        spPr2.append(parse_xml(f'''
+        <a:blipFill xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" rotWithShape="0">
+          <a:blip xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:embed="{rid2}"/>
+          <a:stretch><a:fillRect/></a:stretch>
+        </a:blipFill>
         '''))
         spPr2.append(parse_xml('''
         <a:effectLst xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
-          <a:softEdge rad="25400"/>
+          <a:softEdge rad="15000"/>
           <a:outerShdw blurRad="63500" dist="0" dir="0" algn="ctr" rotWithShape="0">
-            <a:srgbClr val="000000"><a:alpha val="15000"/></a:srgbClr>
+            <a:srgbClr val="000000"><a:alpha val="20000"/></a:srgbClr>
           </a:outerShdw>
         </a:effectLst>
         '''))
 
-    # 6. 扇轴三重同心金镶玉纽 (覆盖扇骨根部)
+    # 7. 扇轴三重同心金镶玉纽
     for s in (s1, s2):
         yu = s.shapes.add_shape(MSO_SHAPE.OVAL, cx - Inches(0.42), cy - Inches(0.42), Inches(0.84), Inches(0.84))
         yu.name = "!!JadeRing"
@@ -240,8 +225,7 @@ def build_fan_native_presentation(
         core.fill.solid()
         core.fill.fore_color.rgb = RGBColor(34, 50, 28)
 
-    # 7. 左上方留白区：文人书画版式
-    # 主标题「雨 霖 铃」
+    # 8. 左上方留白区：文人书画版式
     t1 = s1.shapes.add_textbox(Inches(1.2), Inches(-2.6), Inches(5.0), Inches(1.5))
     t1.name = "!!MainTitle"
     p1 = t1.text_frame.paragraphs[0]
@@ -258,7 +242,6 @@ def build_fan_native_presentation(
     p2.font.bold = True
     p2.font.color.rgb = RGBColor(20, 32, 18)
 
-    # 朱砂篆刻印章
     seal1 = s1.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(5.5), Inches(-2.4), Inches(0.68), Inches(0.68))
     seal1.name = "!!Seal"
     seal1.fill.solid()
@@ -281,25 +264,21 @@ def build_fan_native_presentation(
     seal2.text_frame.paragraphs[0].font.bold = True
     seal2.text_frame.paragraphs[0].font.color.rgb = RGBColor(255, 255, 255)
 
-    # 词牌副标题
     sub1 = s1.shapes.add_textbox(Inches(1.2), Inches(-1.5), Inches(5.5), Inches(0.8))
     sub1.name = "!!SubTitle"
-    sp_sub1 = sub1.text_frame.paragraphs[0]
-    sp_sub1.text = subtitle
-    sp_sub1.font.size = Pt(14)
-    sp_sub1.font.color.rgb = RGBColor(70, 95, 65)
+    sub1.text_frame.paragraphs[0].text = subtitle
+    sub1.text_frame.paragraphs[0].font.size = Pt(14)
+    sub1.text_frame.paragraphs[0].font.color.rgb = RGBColor(70, 95, 65)
 
     sub2 = s2.shapes.add_textbox(Inches(1.2), Inches(2.2), Inches(5.5), Inches(0.8))
     sub2.name = "!!SubTitle"
-    sp_sub2 = sub2.text_frame.paragraphs[0]
-    sp_sub2.text = subtitle
-    sp_sub2.font.size = Pt(14)
-    sp_sub2.font.color.rgb = RGBColor(70, 95, 65)
+    sub2.text_frame.paragraphs[0].text = subtitle
+    sub2.text_frame.paragraphs[0].font.size = Pt(14)
+    sub2.text_frame.paragraphs[0].font.color.rgb = RGBColor(70, 95, 65)
 
-    # 8. 左侧四列正统从右至左宋词名句（竖排）
+    # 9. 左侧四列正统从右向左宋词名句（竖排）
     for idx, (text, x_pos) in enumerate(poem_lines):
         y_pos = Inches(3.0)
-        # Slide 1 位于右侧外场 (x > 13.333)
         tb1 = s1.shapes.add_textbox(Inches(14.0 + idx * 0.5), y_pos, Inches(0.38), Inches(3.6))
         tb1.name = f"!!PoemCol{idx}"
         tb1.text_frame.word_wrap = True
@@ -309,7 +288,6 @@ def build_fan_native_presentation(
         p.font.color.rgb = RGBColor(48, 68, 44)
         p.alignment = PP_ALIGN.CENTER
 
-        # Slide 2 归位
         tb2 = s2.shapes.add_textbox(x_pos, y_pos, Inches(0.38), Inches(3.6))
         tb2.name = f"!!PoemCol{idx}"
         tb2.text_frame.word_wrap = True
@@ -319,7 +297,7 @@ def build_fan_native_presentation(
         p.font.color.rgb = RGBColor(48, 68, 44)
         p.alignment = PP_ALIGN.CENTER
 
-    # 9. 微软官方 ISO/IEC 29500 mc:AlternateContent + p159:morph 引擎
+    # 10. 微软官方 ISO/IEC 29500 mc:AlternateContent + p159:morph 引擎
     morph_xml = '''
     <mc:AlternateContent xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
       <mc:Choice xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main"
