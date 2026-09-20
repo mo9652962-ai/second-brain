@@ -161,7 +161,7 @@ git clone https://github.com/mo9652962-ai/second-brain.git
 | **[GitHub 周榜 W38 weekly 口径 09-13](knowledge/Research/GitHub-Weekly-2026-09-13-weekly-5projects.md)** | v1.0 | 本周 star 增速榜：i-have-adhd +15.9k 增速王 / archify / ECC / mattpocock-skills 精选 |
 | **[每日日志 09-12](memory/2026/09/2026-09-12.md)** | v1.0 | 三 bot 协作流水线验证有效（PCB 自动化试运行）+ OpenClaw 2.0 发布 Local-First/Model-Agnostic 趋势 + Plan-and-Execute 降本 90% 实践 |
 | **[每日日志 09-11](memory/2026/09/2026-09-11.md)** | v1.0 | 三 bot 协作流水线启动（研究员/编码员/审核员）+ 健康巡检 4 项待处理（FlClash 境外链路不通等）+ state.yaml 计数收敛骨架落地 + 闲鱼素材第 18 次核验 PASS |
-| **[每日日志 09-10](memory/2026/2026-09-10.md)** | v1.0 | 知识库维护日：daily_vault_optimize 补链 5 篇孤立笔记、MOC-Research +1、知识地图日期更新 |
+| **[每日日志 09-10](memory/2026/09/2026-09-10.md)** | v1.0 | 知识库维护日：daily_vault_optimize 补链 5 篇孤立笔记、MOC-Research +1、知识地图日期更新 |
 | **[HN 今日深挖 09-09](knowledge/Daily/hackernews-2026-09-09.md)** | v1.0 | Top10 筛 7 条：OpenAI 声明攻克 Navier-Stokes 千禧年问题引数学界激辩 / AlphaGenome Atlas 人 DNA 高分辨率图谱 / Kimi K3 2.8T 四 SSD 流式本地跑 |
 | **[arXiv AI Agent / LLM 速览 09-09](knowledge/Research/arxiv-2026-09-09-agent-llm.md)** | v1.0 | 09-07 池剩余 426 篇粗筛补全：11 主条目 + 8 简评（索引冻结持续，不重写已收录） |
 | **[HN 今日深挖 09-08](knowledge/Daily/hackernews-2026-09-08.md)** | v1.0 | Top10 筛 5 条：bzip3 精神继承者 / WeatherNext 3 实时观测 / Ladybird 8 月报 / NixOS「信任信任」攻击 |

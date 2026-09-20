@@ -2100,6 +2100,7 @@ MCP 生态: GitHub + Filesystem + JLCPCB(38工具) + Obsidian(笔记操作)
 | arXiv | [[knowledge/Research/arxiv-2026-09-17-agent-llm\|arxiv 速览 09-17]] | 索引解冻：09-15（1035 篇）/ 09-16（522 篇）/ 09-17（595 篇）三窗口大量新提交，Agent 工具接口 / 记忆生命周期 / 技能治理为焦点 |
 | arXiv | [[knowledge/Research/arxiv-2026-09-18-agent-llm\|arxiv 速览 09-18]] | 20+7 篇：Harness 组件归因 / OverclaimBench / 工具幻觉 / 多智能体边界 |
 | arXiv | [[knowledge/Research/arxiv-2026-09-19-agent-llm\|arxiv 速览 09-19]] | 09-18 同池漏网 13+5 篇：LLM 评测元研究 / EconSkills 技能库 / 激活探针安全 |
+| arXiv | [[knowledge/Research/arxiv-2026-09-20-agent-llm\|arxiv 速览 09-20]] | 自主研究智能体 ScientistTwo / 技能系统与评测方法论 / LLM 安全对齐 |
 | 研究 | [[knowledge/Research/core-pmpa-agent-tool-boundary-2026-09-17\|PMPA Agent-Tool 边界 P0 深读]] | 记忆防投毒 / 工具边界核心精读 + 5 条迁移落地 |
 | 研究 | [[knowledge/Research/agent4science-ai-scientist-social-network-20260918\|Agent4Science]] | AI 科学家社交网络（Reddit 式，UChicago CHAI Lab） |
 | 研究 | [[knowledge/Research/genoffice-ai-office-suite-20260918\|GenOffice]] | 已覆盖结论：与现有 PPT pipeline 冗余，跳过 |

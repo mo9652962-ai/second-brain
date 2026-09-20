@@ -220,3 +220,10 @@ tags: [meta, vault-maintenance]
 - 本周新增挂载：AI 3 篇 + Content 3 篇 → MOC-Inbox；React-Bits → MOC-Dev；PPT SOP×2 + 模板库 + 清理报告 → MOC-Productivity W39 区；GitHub-Weekly 系列 → MOC-GitHub
 - 索引更新：knowledge-map W39 速览区补全 30 行 + MOC 规模表同步；index.md 页面总数 606→642 + MOC/域表数字刷新
 - 结果：lint 全绿（断链 0 / frontmatter 0 / 孤立 0，仅剩 2 个 README.md 低风险重名忽略）
+
+## [2026-09-20] lint | 例行体检：8 问题 → 0
+
+- 修复：README.md 真断链（memory/2026/2026-09-10.md → memory/2026/09/2026-09-10.md）；标签统一 2 处（semif 裸 tag AI→ai、竞品对标 #AI→#ai）；删除 temp_extracted_content.md 垃圾文件；清理 dreaming 空壳 2 只（deep/rem 09-20，无 footer 无入链）
+- 并发进程已处理：award-defense-presentation 断链×2、MOC-Content→MOC-Inbox、孤立挂载×3、system-cleanup frontmatter
+- 遗留：14 markdown 误报（verbatim+代码块）、历史 cron 孤儿（归档/非活跃）、README 重复文件名 1 组
+- 验证：Broken wikilinks 0 / Missing frontmatter 0 / Orphan 0 / Tag case 0
