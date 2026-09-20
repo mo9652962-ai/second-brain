@@ -171,7 +171,7 @@ def build_fan_blade_presentation():
     card_meta.line.color.rgb = GOLD; card_meta.line.width = Pt(1.2)
     tf_cm = card_meta.text_frame
     pcm = tf_cm.paragraphs[0]
-    pcm.text = "汇报人：sora  |  专业：目标专业  |  2026.09"
+    pcm.text = "汇报人：sora  |  专业：×××  |  2026.09"
     pcm.font.size = Pt(13); pcm.font.bold = True; pcm.font.color.rgb = DARK_TEXT; pcm.alignment = PP_ALIGN.CENTER
 
     # =========================================================================

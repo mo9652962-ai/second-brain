@@ -13,6 +13,34 @@ os.chdir(VAULT)
 IGNORE_DIRS = {'.git', '.obsidian', 'node_modules', '.hermes', 'scripts', 'templates'}
 SCAN_DIRS = {'knowledge', 'memory', '.'}  # 根目录的单个文件也扫
 
+
+def _gitignored(paths):
+    """返回被 .gitignore 忽略的路径集合（git 不可用时返回空集）
+
+    必要性：私有文档（如学业规划）保留在本地但被 gitignore，
+    若不跳过会把文件名写进公开报告 → 隐私泄露。
+    """
+    if not paths:
+        return set()
+    try:
+        import subprocess
+        # 用 bytes 传输：text=True 在 Windows 会把换行翻成 CRLF，
+        # 使 git 回显的路径带尾随 CR，导致比对全部失配。
+        proc = subprocess.run(
+            # -c core.quotePath=false：否则中文路径被转义成 \346\241... 八进制，无法比对
+            ['git', '-c', 'core.quotePath=false', 'check-ignore', '--stdin'],
+            input='\n'.join(paths).encode('utf-8'),
+            capture_output=True,
+        )
+        # check-ignore: 命中=0（有忽略项）; 1=无忽略项; 其他=出错
+        if proc.returncode in (0, 1):
+            out = proc.stdout.decode('utf-8', 'replace')
+            return {line.strip().strip('"').strip() for line in out.splitlines() if line.strip()}
+    except Exception:
+        pass
+    return set()
+
+
 results = {
     'broken_links': [],
     'orphan_files': [],
@@ -25,12 +53,24 @@ results = {
 
 # Step 1: 收集所有 .md 文件
 all_notes = {}  # path -> content lines
+_scan_candidates = []
 for root, dirs, files in os.walk('.'):
     dirs[:] = [d for d in dirs if d.split('/')[-1].split('\\')[-1] not in IGNORE_DIRS and not d.startswith('.') and d != '_community']
     for f in files:
-        if not f.endswith('.md'):
-            continue
-        path = os.path.join(root, f)
+        if f.endswith('.md'):
+            _scan_candidates.append(os.path.join(root, f))
+
+# 私有文档（gitignore）不纳入扫描 → 避免文件名进入公开报告
+# 注意：os.walk('.') 产生 "./knowledge/..." 前缀，git check-ignore 返回无前缀的 "knowledge/..."
+def _norm(p):
+    return p.replace(os.sep, '/').removeprefix('./')
+
+_ignored = {_norm(x) for x in _gitignored([_norm(p) for p in _scan_candidates])}
+
+for path in _scan_candidates:
+    if _norm(path) in _ignored:
+        continue
+    if True:
         results['file_stats']['total'] += 1
         results['file_stats']['md'] += 1
         try:
@@ -39,7 +79,7 @@ for root, dirs, files in os.walk('.'):
             with open(path, 'r', encoding='utf-8', errors='replace') as fh:
                 lines = fh.readlines()
             all_notes[path] = lines
-            
+
             # 空文件检查
             content = ''.join(lines).strip()
             if not content:

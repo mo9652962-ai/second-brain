@@ -53,7 +53,7 @@ created: 2026-08-09
 - [[memory/2026/09/weekly-learning-2026-09-13|📚 W38 周学习回顾]] — 三 bot 十领域研究批次 + arXiv 解冻双窗口 + 评测意图隐藏规范 + 开源实证
 - [[knowledge/Research/GitHub-Weekly-2026-09-08|🐙 GitHub-Weekly 09-08]] — codebase-memory-mcp / nanobot 等 Top5 宝藏挖掘
 - [[knowledge/Research/skill-audit-2026-09-08|📊 09-08 技能审计]] — 392 技能登记，本月实际使用 97
-- [[knowledge/Development/CAD自动化MCP参考-pascal-2026-09-08|🛠 CAD 自动化 MCP 参考]] — pascal/editor 31 个 MCP 语义工具实证
+- [[knowledge/Dev/CAD自动化MCP参考-pascal-2026-09-08|🛠 CAD 自动化 MCP 参考]] — pascal/editor 31 个 MCP 语义工具实证
 - [[knowledge/Daily/hackernews-2026-09-08|📰 HN 09-08 速览]]
 - [[memory/2026/09/2026-09-08-vault-maintenance|🧹 09-08 知识库维护]] — 断链 16 处修复 + 空壳清理 + 标签统一 + 孤立挂载
 - [[memory/2026/09/2026-09-07-vault-suggestion-executor|🧹 09-07 闲鱼专项建议执行报告]] — 闲鱼决策悬置第 38 天（9/6 fallback 已过）+ 触达升级触发核实 + 今日 3 项优先级计划

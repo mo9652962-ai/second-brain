@@ -22,7 +22,19 @@ SESSION-STATE.md
 __pycache__/
 graphify-out/
 .openclaw/workspace/graphify-out/
-skills/
+# skills/：只公开自建技能；@ 开头为第三方技能集（版权/体积原因不上传）
+skills/*
+!skills/8051-embedded-dev/
+!skills/ai/
+!skills/cad-design-master/
+!skills/dev/
+!skills/engineering-workflow/
+!skills/general/
+!skills/hardware/
+!skills/hermes/
+!skills/platform/
+!skills/web/
+!skills/web-dev-2026/
 
 # 临时文件
 *.stl
@@ -56,8 +68,8 @@ api.json
 # 临时文件（AI 测试残留，不跟踪）
 jlc-bridge/
 
-# 学业规划私人文档（不上传公开仓库）
-knowledge/Education/某高校目标专业-学业规划路线图-2026-08.md
+# 学业规划私人文档（不上传公开仓库）—— 通配匹配，避免文件名本身泄露信息
+knowledge/Education/*考研*
 .tmp_hn/
 
 # 本地 MCP 配置（含本机路径，不进仓库）
