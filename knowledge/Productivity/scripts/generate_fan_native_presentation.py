@@ -1,24 +1,19 @@
 # -*- coding: utf-8 -*-
 """生产级原生可编辑矢量折扇开场演示文稿生成器（Fan Native Master）
 
-【原版高阶视觉密码全量落实 · 9.8/10 艺术水准】
-1. 对角线黄金分割构图（原版精髓）：
-   - 扇轴置于画面右下方黄金分割区（x ≈ 66%W, y ≈ 73%H）
-   - 扇面朝左上方与正上方舒展绽放，打破呆板居中，具备强烈的画中画景深与动势
-2. 绢本通透质感与金边微光：
-   - 6 片 BLOCK_ARC 扇面，单片 25.5°，步长 28.5°，预留 3.0° 空气感呼吸缝隙
-   - 三重自然竹青渐变（#B8D4A4 -> #78A365 -> #36522E），0.75pt 雅金勾边
-   - 6 根竹质纤细扇骨辐射穿插（深竹褐 #A08250）
-3. 轴心三重同心金镶玉纽：
-   - 外层羊脂白玉璧（#F0F8F0 + 金边）+ 中层鎏金环 + 内层深翡翠墨玉心
-4. 东方书画正统留白与版式：
-   - 左侧大面积留白，四列正统从右至左竖排《雨霖铃》名句
-   - 顶部行楷大标题「雨   霖   铃」（56pt，深墨玉色 #142012）
-   - 右上角朱砂篆刻印章「柳永」
-5. 官方 ISO/IEC 29500 标准 mc:AlternateContent + p159:morph 平滑切换引擎：
-   - Slide 1: 扇叶与扇骨完全合拢收起（斜指左上），标题/印章藏于上方画外，诗词藏于右侧画外
-   - Slide 2: 扇面如机械快门般平滑旋转展开，标题徐徐降落，四列诗词有序滑入
-   - 100% 支持用户双击修改文字与替换底图，F5 放映享受原生 60fps 丝滑动画
+【修复折扇扇骨扇叶匹配与力学结构 · 真正符合物理传统折扇】
+1. 彻底解决扇骨偏心漂移 Bug：
+   - 传统矩形以自身几何中心为旋转轴，旋转后扇骨端点会脱离扇轴数英寸，导致扇骨漂浮乱飞；
+   - 本版本改用以 (cx, cy) 为几何圆心的 MSO_SHAPE.PIE 纤细辐条（弧度 0.8°），
+     几何圆心与扇轴完全同心，旋转时 100% 紧锁于扇纽 (cx, cy) 辐射而出，永不漂浮脱节！
+2. 扇骨与扇叶严丝合缝匹配（中轴贯穿）：
+   - 每根扇骨角度精确锁定在对应扇叶的中轴线（rot = blade_rot + blade_span * 0.5 - 0.4°）；
+   - 在内圈 30% 半径空白处清晰露出竹节骨架，自然延伸并牢固贯穿扇面，完美呈现传统折扇真实构造！
+3. 增加折扇左右两侧大骨（外护骨）：
+   - 起始侧与收尾侧各有一根稍微加宽的竹制大骨（1.2°），给整把折扇提供坚实骨架支撑感；
+4. 官方 ISO/IEC 29500 mc:AlternateContent + p159:morph 原生平滑动画：
+   - Slide 1: 6 片扇叶 + 6 根小骨 + 2 根大骨完全闭合叠拢于收起角，呈现修长优雅的闭合折扇！
+   - Slide 2: 扇叶与扇骨以毫厘不差的角速度同步旋转绽放，标题优雅降落，四列诗词从右向左滑入！
 """
 import os, sys
 from pptx import Presentation
@@ -92,25 +87,72 @@ def build_fan_native_presentation(
 
     blade_rotations = [base_rot + i * step_rot for i in range(6)]
 
-    # 6 根竹质扇骨
+    # 4. 扇骨：使用以 (cx, cy) 为圆心的 PIE 极细辐射条，彻底锁死在扇纽中心！
+    # 6 根内部竹质小骨（穿插于扇叶中轴）
     for i in range(6):
-        # Slide 1 (合拢态): 全部收起在收拢角
-        rib1 = s1.shapes.add_shape(MSO_SHAPE.RECTANGLE, cx, cy - Inches(0.02), R, Inches(0.04))
+        rib_s1_rot = base_rot + blade_span * 0.5 - 0.4
+        rib_s2_rot = blade_rotations[i] + blade_span * 0.5 - 0.4
+
+        # Slide 1 (合拢态): 全部叠合在同一收起中轴
+        rib1 = s1.shapes.add_shape(MSO_SHAPE.PIE, cx - R, cy - R, 2*R, 2*R)
         rib1.name = f"!!FanRib{i+1}"
-        rib1.rotation = base_rot + blade_span * 0.5
+        rib1.adjustments[0] = 0.0
+        rib1.adjustments[1] = 0.8  # 0.8° 纤细竹骨
+        rib1.rotation = rib_s1_rot
         rib1.line.fill.background()
         rib1.fill.solid()
-        rib1.fill.fore_color.rgb = RGBColor(160, 130, 85)
+        rib1.fill.fore_color.rgb = RGBColor(160, 125, 75)
 
-        # Slide 2 (展开态): 对应每片扇叶中轴放射展开
-        rib2 = s2.shapes.add_shape(MSO_SHAPE.RECTANGLE, cx, cy - Inches(0.02), R, Inches(0.04))
+        # Slide 2 (展开态): 精准贯穿每片扇叶中轴
+        rib2 = s2.shapes.add_shape(MSO_SHAPE.PIE, cx - R, cy - R, 2*R, 2*R)
         rib2.name = f"!!FanRib{i+1}"
-        rib2.rotation = blade_rotations[i] + blade_span * 0.5
+        rib2.adjustments[0] = 0.0
+        rib2.adjustments[1] = 0.8
+        rib2.rotation = rib_s2_rot
         rib2.line.fill.background()
         rib2.fill.solid()
-        rib2.fill.fore_color.rgb = RGBColor(160, 130, 85)
+        rib2.fill.fore_color.rgb = RGBColor(160, 125, 75)
 
-    # 6 片扇面弧片 (BLOCK_ARC)
+    # 2 根折扇外侧大骨（起止两侧保护大骨，沉香木深色）
+    # 大骨 1：左外侧大骨
+    guard1_s1 = s1.shapes.add_shape(MSO_SHAPE.PIE, cx - R, cy - R, 2*R, 2*R)
+    guard1_s1.name = "!!FanGuardLeft"
+    guard1_s1.adjustments[0] = 0.0
+    guard1_s1.adjustments[1] = 1.2
+    guard1_s1.rotation = base_rot - 0.6
+    guard1_s1.line.fill.background()
+    guard1_s1.fill.solid()
+    guard1_s1.fill.fore_color.rgb = RGBColor(120, 90, 55)
+
+    guard1_s2 = s2.shapes.add_shape(MSO_SHAPE.PIE, cx - R, cy - R, 2*R, 2*R)
+    guard1_s2.name = "!!FanGuardLeft"
+    guard1_s2.adjustments[0] = 0.0
+    guard1_s2.adjustments[1] = 1.2
+    guard1_s2.rotation = blade_rotations[0] - 0.6
+    guard1_s2.line.fill.background()
+    guard1_s2.fill.solid()
+    guard1_s2.fill.fore_color.rgb = RGBColor(120, 90, 55)
+
+    # 大骨 2：右外侧大骨
+    guard2_s1 = s1.shapes.add_shape(MSO_SHAPE.PIE, cx - R, cy - R, 2*R, 2*R)
+    guard2_s1.name = "!!FanGuardRight"
+    guard2_s1.adjustments[0] = 0.0
+    guard2_s1.adjustments[1] = 1.2
+    guard2_s1.rotation = base_rot + blade_span - 0.6
+    guard2_s1.line.fill.background()
+    guard2_s1.fill.solid()
+    guard2_s1.fill.fore_color.rgb = RGBColor(120, 90, 55)
+
+    guard2_s2 = s2.shapes.add_shape(MSO_SHAPE.PIE, cx - R, cy - R, 2*R, 2*R)
+    guard2_s2.name = "!!FanGuardRight"
+    guard2_s2.adjustments[0] = 0.0
+    guard2_s2.adjustments[1] = 1.2
+    guard2_s2.rotation = blade_rotations[5] + blade_span - 0.6
+    guard2_s2.line.fill.background()
+    guard2_s2.fill.solid()
+    guard2_s2.fill.fore_color.rgb = RGBColor(120, 90, 55)
+
+    # 5. 6 片扇面弧片 (BLOCK_ARC，内径30%留出内圈扇骨与玉纽)
     for i in range(6):
         # Slide 1 (合拢态): 6 片完全叠合，如同一把闭合的修长雅致折扇
         b1 = s1.shapes.add_shape(MSO_SHAPE.BLOCK_ARC, cx - R, cy - R, 2*R, 2*R)
@@ -178,7 +220,7 @@ def build_fan_native_presentation(
         </a:effectLst>
         '''))
 
-    # 4. 扇轴三重同心金镶玉纽 (外白玉璧 + 中鎏金环 + 内翡翠墨玉)
+    # 6. 扇轴三重同心金镶玉纽 (覆盖扇骨根部交汇点，天衣无缝)
     for s in (s1, s2):
         yu = s.shapes.add_shape(MSO_SHAPE.OVAL, cx - Inches(0.42), cy - Inches(0.42), Inches(0.84), Inches(0.84))
         yu.name = "!!JadeRing"
@@ -199,7 +241,7 @@ def build_fan_native_presentation(
         core.fill.solid()
         core.fill.fore_color.rgb = RGBColor(34, 50, 28)
 
-    # 5. 主标题「雨 霖 铃」+ 朱砂印章「柳永」
+    # 7. 主标题「雨 霖 铃」+ 朱砂印章「柳永」
     t1 = s1.shapes.add_textbox(Inches(3.8), Inches(-2.6), Inches(5.8), Inches(1.5))
     t1.name = "!!MainTitle"
     p1 = t1.text_frame.paragraphs[0]
@@ -238,7 +280,7 @@ def build_fan_native_presentation(
     seal2.text_frame.paragraphs[0].font.bold = True
     seal2.text_frame.paragraphs[0].font.color.rgb = RGBColor(255, 255, 255)
 
-    # 6. 古典竖排诗词（左侧雅致排布，4列从右向左）
+    # 8. 古典竖排诗词（左侧雅致排布，4列从右向左）
     for idx, (text, x_pos) in enumerate(poem_lines):
         y_pos = Inches(2.2)
         # Slide 1 位于右侧外场 (x > 13.333)
@@ -261,7 +303,7 @@ def build_fan_native_presentation(
         p.font.color.rgb = RGBColor(56, 78, 50)
         p.alignment = PP_ALIGN.CENTER
 
-    # 7. 微软官方 ISO/IEC 29500 mc:AlternateContent + p159:morph 引擎
+    # 9. 微软官方 ISO/IEC 29500 mc:AlternateContent + p159:morph 引擎
     morph_xml = '''
     <mc:AlternateContent xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
       <mc:Choice xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main"

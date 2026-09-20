@@ -62,6 +62,7 @@ class TestFanNativePresentation(unittest.TestCase):
             '!!FanBlade4', '!!FanBlade5', '!!FanBlade6',
             '!!FanRib1', '!!FanRib2', '!!FanRib3',
             '!!FanRib4', '!!FanRib5', '!!FanRib6',
+            '!!FanGuardLeft', '!!FanGuardRight',
             '!!JadeRing', '!!GoldRing', '!!CoreJade',
             '!!MainTitle', '!!Seal',
             '!!PoemCol0', '!!PoemCol1', '!!PoemCol2', '!!PoemCol3'
@@ -106,7 +107,7 @@ class TestFanNativePresentation(unittest.TestCase):
         rot2 = [round(r.rotation % 360, 1) for r in ribs_s2_sorted]
         for i in range(len(rot2) - 1):
             diff = (rot2[i+1] - rot2[i]) % 360
-            self.assertAlmostEqual(diff, 29.5, delta=1.5)
+            self.assertAlmostEqual(diff, 28.5, delta=1.5)
 
     def test_06_title_and_poem_state_diff(self):
         """文本入场状态差：Slide 1 场外上方/场外右侧 → Slide 2 场内优雅居中/归位"""
