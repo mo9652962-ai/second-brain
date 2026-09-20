@@ -6,7 +6,7 @@ created: 2026-08-09
 
 # 🏠 Home — 第二大脑入口
 
-> **知识最后更新: 2026-09-19 (daily-review 09-19)
+> **知识最后更新: 2026-09-20 (weekly-learning 09-20)
 > 最后更新: 2026-09-18 (daily-reflection)
 
 ---
@@ -48,6 +48,7 @@ created: 2026-08-09
 - [[memory/2026/09/2026-09-17-vault-suggestion-executor|🧹 09-17 闲鱼专项建议执行报告]] — 6 张主图 vision 禁词复核：2 张含「最」已修复「人气之选」+ 防复发 + 第 21 次素材核验
 - [[memory/2026/09/2026-09-14-vault-suggestion-executor|🧹 09-14 闲鱼专项建议执行报告]] — 计数 41→42 权威推进(assert PASS) + 双技能计数红线 patch + 今日 3 项优先级
 - [[memory/2026/09/2026-09-15-vault-suggestion-executor|🧹 09-15 闲鱼专项建议执行报告]] — 素材包 4 处「自动化」禁词修复 + 全量复扫 PASS + 今日 3 项优先级
+- [[memory/2026/09/weekly-learning-2026-09-20|📚 W39 周学习回顾]] — 安全危机与变现突破并行：ZCode 实锤 + SOP-008 高客单 Web 定制 + PMPA 记忆投毒 + 万悟命题 + PPT 扇叶 9.8 分
 - [[memory/2026/09/weekly-2026-09-13|📚 W38 周度整理]] — 十领域自我强化批次 + 黑盒实证 + 评测意图隐藏规范 + memory 归位 6 文件
 - [[memory/2026/09/weekly-learning-2026-09-13|📚 W38 周学习回顾]] — 三 bot 十领域研究批次 + arXiv 解冻双窗口 + 评测意图隐藏规范 + 开源实证
 - [[knowledge/Research/GitHub-Weekly-2026-09-08|🐙 GitHub-Weekly 09-08]] — codebase-memory-mcp / nanobot 等 Top5 宝藏挖掘

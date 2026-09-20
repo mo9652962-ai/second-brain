@@ -2093,6 +2093,8 @@ MCP 生态: GitHub + Filesystem + JLCPCB(38工具) + Obsidian(笔记操作)
 
 ## 🆕 W39 新增速览（2026-09-14 ~ 09-20）
 
+> 本周主线：安全危机与变现突破并行——ZCode 静默上传 P0 + RubyGems AI bots 主动攻击 + SOP-008 高客单 Web 定制（398-898 元）+ PMPA 记忆投毒 / Agent-Tool 边界 + 联通创新大赛万悟命题 + arXiv 三池速览 + PPT 扇叶 9.8 分 + graphify 六周冻结修复。学习回顾见 [[../memory/2026/09/weekly-learning-2026-09-20|W39 学习回顾]]。
+
 ### 各域本周新增
 
 | 域 | 新增 | 要点 |
