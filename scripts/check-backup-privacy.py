@@ -5,14 +5,16 @@
   把 .gitignore 里的私有文档（学业规划路线图：学校名/学院/专业/目标院校）
   打进了 10 个 .backup/*.tar.gz。其中 4 个被 git 跟踪 → 已推到公开仓库。
 
-本脚本在备份后立即自检，并可用于 CI / pre-commit：
-  1. 扫描 .backup/ 下所有 tar.gz，检查是否含私有文件名或私有内容特征串
-  2. 检查 .backup/ 是否有文件被 git 跟踪（备份永远不该进版本库）
-  3. 退出码非 0 表示存在泄露风险
+设计要点：
+  敏感词表 **不硬编码在本文件**（否则脚本自身就成了泄露源，且会被
+  git filter-repo 的 --replace-text 一并改写导致检测失效）。
+  改为从 `scripts/private-patterns.txt`（gitignored）加载。
 
 用法：
   python scripts/check-backup-privacy.py          # 全量检查
   python scripts/check-backup-privacy.py --quiet  # 仅返回退出码
+
+退出码：0 = 通过；1 = 存在泄露风险
 """
 import glob
 import os
@@ -20,49 +22,53 @@ import subprocess
 import sys
 import tarfile
 
-# 私有内容特征串（命中即视为泄露）
-PRIVATE_PATTERNS = [
-    "某高校", "某高校", "目标专业", "目标院校", "某学院", "目标专业代码",
-]
-# 本机路径/身份特征
-MACHINE_PATTERNS = [
-    "%USERPROFILE%", "~", "<USER>",
-]
-# 备份包里不该出现的目录（临时/私有）
-FORBIDDEN_PREFIXES = (
-    "knowledge/Education/",
-    ".backup/",
-)
+# 敏感词表文件（gitignored；缺失时降级为通用检查）
+PATTERN_FILE = os.path.join("scripts", "private-patterns.txt")
 
 
-def check_tarball(path: str) -> list:
+def load_patterns() -> list:
+    """从外部文件加载敏感词（每行一个，# 开头为注释）"""
+    if not os.path.exists(PATTERN_FILE):
+        return []
+    patterns = []
+    with open(PATTERN_FILE, encoding="utf-8") as fh:
+        for line in fh:
+            line = line.strip()
+            if line and not line.startswith("#"):
+                patterns.append(line)
+    return patterns
+
+
+def check_tarball(path: str, patterns: list) -> list:
     """返回该 tar.gz 的问题列表（空=干净）"""
     issues = []
+    if not patterns:
+        return issues
     try:
         with tarfile.open(path, "r:gz") as tf:
             for member in tf.getmembers():
                 name = member.name
-                for pat in PRIVATE_PATTERNS:
+                for pat in patterns:
                     if pat in name:
-                        issues.append(f"私有文件名命中「{pat}」: {name}")
+                        issues.append(f"私有文件名命中: {name}")
+                        break
                 if member.isfile() and member.size < 2_000_000:
-                    # 只抽查小文件内容，避免解压大二进制
                     if name.endswith((".md", ".txt", ".json", ".py", ".yml", ".yaml")):
                         try:
                             data = tf.extractfile(member).read().decode("utf-8", "replace")
                         except Exception:
                             continue
-                        for pat in PRIVATE_PATTERNS:
+                        for pat in patterns:
                             if pat in data:
-                                issues.append(f"私有内容命中「{pat}」: {name}")
+                                issues.append(f"私有内容命中: {name}")
                                 break
-    except Exception as exc:  # 损坏的包也算问题
+    except Exception as exc:
         issues.append(f"无法读取: {exc}")
     return issues
 
 
 def check_git_tracked() -> list:
-    """检查 .backup/ 是否有文件被 git 跟踪"""
+    """检查 .backup/ 是否有文件被 git 跟踪（备份永远不该进版本库）"""
     issues = []
     try:
         proc = subprocess.run(
@@ -70,8 +76,7 @@ def check_git_tracked() -> list:
             capture_output=True,
         )
         out = proc.stdout.decode("utf-8", "replace")
-        tracked = [line for line in out.splitlines() if line.strip()]
-        for t in tracked:
+        for t in [line for line in out.splitlines() if line.strip()]:
             issues.append(f".backup 被 git 跟踪（备份不应入库）: {t}")
     except Exception:
         pass
@@ -83,13 +88,17 @@ def main() -> int:
     root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     os.chdir(root)
 
+    patterns = load_patterns()
+    if not patterns and not quiet:
+        print(f"⚠️ 未找到敏感词表 {PATTERN_FILE}，仅做 .backup 跟踪检查")
+
     all_issues = []
 
     tarballs = sorted(glob.glob(".backup/**/*.tar.gz", recursive=True))
     if not quiet:
-        print(f"🔍 扫描 {len(tarballs)} 个备份包…")
+        print(f"🔍 扫描 {len(tarballs)} 个备份包（{len(patterns)} 条敏感词）…")
     for tb in tarballs:
-        issues = check_tarball(tb)
+        issues = check_tarball(tb, patterns)
         if issues:
             all_issues.append((tb, issues))
 
