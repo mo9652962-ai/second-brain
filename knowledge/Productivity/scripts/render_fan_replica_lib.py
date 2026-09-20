@@ -410,31 +410,30 @@ def render_fan_replica(base_img, is_opened=True):
     canvas.paste(rim_glow, (0, 0), rim_glow)
     canvas.paste(rim, (0, 0), rim)
 
-    # 仿古金线 + 连续回纹装饰带（宽金带 + 大菱形连续纹，仿卷轴包边，肉眼可见）
+    # 仿古金线 + 大号回纹装饰（金色包边带 + 大菱形独立纹样，卷轴工艺感）
     goldline = Image.new('RGBA', (W, H), (0, 0, 0, 0))
     gdraw = ImageDraw.Draw(goldline)
     for a in angles:
-        # 宽金带（10px 半透明金边，形成明显包边）
+        # 金带（6px 半透明金边）
         gdraw.pieslice([cx - radius - 12, cy - radius - 12, cx + radius + 12, cy + radius + 12],
-                       start=a, end=a + blade_span, outline=(178, 140, 80, 190), width=10)
-        # 金带外缘细线
+                       start=a, end=a + blade_span, outline=(180, 142, 82, 175), width=6)
         gdraw.pieslice([cx - radius - 12, cy - radius - 12, cx + radius + 12, cy + radius + 12],
-                       start=a, end=a + blade_span, outline=(228, 200, 150, 200), width=2)
-        # 大菱形连续纹（沿弧每 16° 一个，s=12，三层嵌套，清晰可见）
-        step = 16.0
-        aa = a + 5
-        while aa < a + blade_span - 5:
-            rr = radius + 12
+                       start=a, end=a + blade_span, outline=(232, 204, 156, 195), width=2)
+        # 大菱形独立纹样（每 26° 一个，s=16，双层嵌套，间隔清晰可辨）
+        step = 26.0
+        aa = a + 9
+        while aa < a + blade_span - 9:
+            rr = radius + 14
             bx = cx + rr * math.cos(math.radians(aa))
             by = cy - rr * math.sin(math.radians(aa))
-            s = 12
-            # 菱形回纹：外菱金 + 中菱米 + 内芯亮
-            gdraw.polygon([(bx, by - s), (bx + s * 0.8, by), (bx, by + s), (bx - s * 0.8, by)],
-                          fill=(200, 166, 108, 225))
-            gdraw.polygon([(bx, by - s * 0.6), (bx + s * 0.48, by), (bx, by + s * 0.6), (bx - s * 0.48, by)],
-                          fill=(230, 206, 160, 240))
-            gdraw.polygon([(bx, by - s * 0.28), (bx + s * 0.22, by), (bx, by + s * 0.28), (bx - s * 0.22, by)],
-                          fill=(252, 242, 216, 250))
+            s = 16
+            # 外菱金 + 内菱米白
+            gdraw.polygon([(bx, by - s), (bx + s * 0.82, by), (bx, by + s), (bx - s * 0.82, by)],
+                          fill=(196, 160, 102, 230))
+            gdraw.polygon([(bx, by - s * 0.55), (bx + s * 0.45, by), (bx, by + s * 0.55), (bx - s * 0.45, by)],
+                          fill=(240, 220, 180, 245))
+            gdraw.polygon([(bx, by - s * 0.2), (bx + s * 0.16, by), (bx, by + s * 0.2), (bx - s * 0.16, by)],
+                          fill=(254, 246, 226, 255))
             aa += step
     canvas.paste(goldline, (0, 0), goldline)
 
