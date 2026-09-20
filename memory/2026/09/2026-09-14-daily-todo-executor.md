@@ -23,7 +23,7 @@ updated: 2026-09-14
 ### 1. 🔄 复现方案书 SummerCheckin 三阶段 14 项标记完成
 - 文件头已实证「Phase 1-3 已完成（commit `c676d44a` / `7e88e9f9` / `cfb107a0`，2026-09-01）+ Summer Checkin 复现全部落地 ✅」，但分阶段计划的 14 个勾选框从未翻转 → 按证据补标 [x]
 - 覆盖：Agent Runtime + Model Pool（5 项）/ RAG 知识库（5 项）/ WebSocket 聊天室（4 项，含双人格已做阿墨人设）
-- 落点：`knowledge/Development/复现方案书-SummerCheckin-2026-08-31.md`
+- 落点：`knowledge/Dev/复现方案书-SummerCheckin-2026-08-31.md`
 
 ### 2. 🔐 MEMORY.md 闲鱼天数展示层同步 41→42
 - state.yaml 权威值 = 42（今日 vault-suggestion 已推进），current.md 11 处全为 42（断言 PASS），但 MEMORY.md 长期记忆仍留「第 41 天」→ 同步为 42

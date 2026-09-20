@@ -23,7 +23,7 @@ date: 2026-09-01
 **vault_link_audit.py 报告 10 条 → 分析后 5 条真实 + 5 条脚本误报：**
 
 **真实断链（5 处，已修复）：**
-- `knowledge/Development/` 域 2 文件 footer 引用不存在的 ``MOC-Development`` → 改为 `[[MOC-Dev]]`（Dev 域真实 MOC，MOC-Dev 已覆盖 Development 内容 24 处引用；符合知识域收敛方向，不新建重复 MOC）
+- `knowledge/Dev/` 域 2 文件 footer 引用不存在的 ``MOC-Development`` → 改为 `[[MOC-Dev]]`（Dev 域真实 MOC，MOC-Dev 已覆盖 Development 内容 24 处引用；符合知识域收敛方向，不新建重复 MOC）
   - `AI全栈项目-SummerCheckin自习室平台-2026-08-31.md`
   - `复现方案书-SummerCheckin-2026-08-31.md`
 - `knowledge/Research/` 3 文件把 Hermes 技能名当 wikilink ``multi-agent-research`` → 纯文本反引号 `` `multi-agent-research` ``（技能引用惯例）

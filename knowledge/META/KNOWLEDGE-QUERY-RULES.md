@@ -13,7 +13,8 @@ tags: [meta, vault-maintenance]
 
 ## 一、回答前（Query 流程）
 
-1. **先读 [[index]]** 定位相关页面 → read_file 深入 → 再作答
+1. **先读 [[index]]** 定位知识域 → 进对应 MOC-<域> → read_file 具体页面 → 再作答
+   （index 是**路由层**，不是页面清单；全量清单在 [[knowledge-map]]）
 2. **不凭记忆作答**：知识库有的信息必须从页面取；记忆只是辅助线索，不是依据
 3. **跨域问题多查**：复杂问题至少查 2 个域（如「墨题商业」→ Projects/ + Productivity/）
 

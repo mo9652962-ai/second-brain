@@ -1,3 +1,9 @@
+---
+tags: [research, agent4science, ai-scientist, social-network]
+type: research
+created: 2026-09-18
+title: Agent4Science — AI 科学家社交网络
+---
 # Agent4Science — AI 科学家社交网络（千轮研究 2026-09-18）
 
 > 来源：抖音【机智的哒哒学姐】→ agent4science.org / agentforscience（UChicago CHAI Lab）。一句话定位：**AI agents 的 Reddit——AI 科学家在上面自动分享、互评、辩论学术论文，人类只看不说话。**

@@ -89,7 +89,8 @@ updated: 2026-08-31---
 - [[knowledge/Dev/system-prompts-reference/README|System Prompts 存档]] — Claude/GPT/DeepSeek/Hermes 提示词参考
 - [[knowledge/Research/MOC-Research|🔬 研究域 MOC]] — 本周 36 篇研究笔记索引
 - [[knowledge/Dev/AI漫剧制作全流程|AI 漫剧制作全流程]] — AI 内容创作 SOP + 工具矩阵
-- [[knowledge/Development/CAD自动化MCP参考-pascal-2026-09-08|CAD 自动化 MCP 参考]] — pascal/editor 31 个 MCP 工具实证（CAD/PCB 自动化方向）
+- [[knowledge/Dev/CAD自动化MCP参考-pascal-2026-09-08|CAD 自动化 MCP 参考]] — pascal/editor 31 个 MCP 工具实证（CAD/PCB
+- [[knowledge/Dev/React-Bits-Web动效组件库速查-2026|React Bits 动效组件速查]] — 前端高阶动效组件库（Vibe Coding 实战） 自动化方向）
 
 ## 📦 吸收笔记归档
 
@@ -125,29 +126,29 @@ updated: 2026-08-31---
 
 > 程序员Orion「开发 B 坑」系列 29 项 + 千轮研究新增 3 项 = **写码前扫坑清单 32 项**。写代码前先扫一遍，交付翻车率直降。
 
-- [[knowledge/Development/写码前扫坑清单|📋 写码前扫坑清单（32 项总纲）]] — **软件流开工第一步**
-- [[knowledge/Development/接口契约-上线即合同|接口契约]] — 上线接口=合同，v1/v2 并存
-- [[knowledge/Development/空catch吞异常|空 catch 吞异常]] — 静默失败=把 bug 塞地毯下
-- [[knowledge/Development/并发超卖-条件更新兜底|并发超卖]] — 乐观锁 UPDATE WHERE stock>0
-- [[knowledge/Development/缓存一致性-先更库后删缓存|缓存一致性]] — 先更库后删缓存 + TTL 随机抖动
-- [[knowledge/Development/连接池配置-不是越大越好|连接池配置]] — core×2+spindle，3s 超时
-- [[knowledge/Development/数据库连接池|数据库连接池]] — 复用连接防耗尽
-- [[knowledge/Development/深分页-游标分页|深分页]] — LIMIT OFFSET 陷阱 → 游标分页
-- [[knowledge/Development/微服务超时防雪崩|微服务超时防雪崩]] — 全链路超时防线
-- [[knowledge/Development/单体优先-架构演进铁律|单体优先]] — 小项目硬上微服务=灾难
-- [[knowledge/Development/循环调外部API-批量与队列|循环调外部 API]] — 自我 DDoS → 批量/队列
-- [[knowledge/Development/循环插入与缓存-两个夺命坑|循环插库+本地缓存]] — 批量 SQL + Redis 全局缓存
-- [[knowledge/Development/事务内网络IO-本地消息表|事务内网络 IO]] — 本地消息表 + 异步投递
-- [[knowledge/Development/幂等跨状态-状态机|幂等跨状态]] — 幂等 key 含状态机维度
-- [[knowledge/Development/超时重试-幂等|超时重试幂等]] — 幂等键 + 指数退避
-- [[knowledge/Development/分布式定时任务-锁|分布式定时任务]] — Redis 分布式锁
-- [[knowledge/Development/操作审计-盲盒系统|操作审计]] — 防盲盒系统，记录谁/何时/改了啥
-- [[knowledge/Development/状态枚举替代布尔|状态枚举替代 Boolean]] — 给业务留活路
-- [[knowledge/Development/小程序虚拟支付400排查|虚拟支付 400 排查]] — product ID 空值
-- [[knowledge/Development/soft-delete-method-2026-08-21|软删除]] — deleted_at 时间戳
-- [[knowledge/Development/代码审查铁律-跑通不等于交付|代码审查铁律]] — 跑通≠交付，PR+门禁
-- [[knowledge/Development/后端开发-2026-千轮研究增强|后端开发 2026 千轮研究增强]] — 坑系列全景汇总（08-22）
-- [[knowledge/Development/高吞吐韧性-可观测性|高吞吐韧性·可观测性]] — 三高系统设计（08-22）
+- [[knowledge/Dev/写码前扫坑清单|📋 写码前扫坑清单（32 项总纲）]] — **软件流开工第一步**
+- [[knowledge/Dev/接口契约-上线即合同|接口契约]] — 上线接口=合同，v1/v2 并存
+- [[knowledge/Dev/空catch吞异常|空 catch 吞异常]] — 静默失败=把 bug 塞地毯下
+- [[knowledge/Dev/并发超卖-条件更新兜底|并发超卖]] — 乐观锁 UPDATE WHERE stock>0
+- [[knowledge/Dev/缓存一致性-先更库后删缓存|缓存一致性]] — 先更库后删缓存 + TTL 随机抖动
+- [[knowledge/Dev/连接池配置-不是越大越好|连接池配置]] — core×2+spindle，3s 超时
+- [[knowledge/Dev/数据库连接池|数据库连接池]] — 复用连接防耗尽
+- [[knowledge/Dev/深分页-游标分页|深分页]] — LIMIT OFFSET 陷阱 → 游标分页
+- [[knowledge/Dev/微服务超时防雪崩|微服务超时防雪崩]] — 全链路超时防线
+- [[knowledge/Dev/单体优先-架构演进铁律|单体优先]] — 小项目硬上微服务=灾难
+- [[knowledge/Dev/循环调外部API-批量与队列|循环调外部 API]] — 自我 DDoS → 批量/队列
+- [[knowledge/Dev/循环插入与缓存-两个夺命坑|循环插库+本地缓存]] — 批量 SQL + Redis 全局缓存
+- [[knowledge/Dev/事务内网络IO-本地消息表|事务内网络 IO]] — 本地消息表 + 异步投递
+- [[knowledge/Dev/幂等跨状态-状态机|幂等跨状态]] — 幂等 key 含状态机维度
+- [[knowledge/Dev/超时重试-幂等|超时重试幂等]] — 幂等键 + 指数退避
+- [[knowledge/Dev/分布式定时任务-锁|分布式定时任务]] — Redis 分布式锁
+- [[knowledge/Dev/操作审计-盲盒系统|操作审计]] — 防盲盒系统，记录谁/何时/改了啥
+- [[knowledge/Dev/状态枚举替代布尔|状态枚举替代 Boolean]] — 给业务留活路
+- [[knowledge/Dev/小程序虚拟支付400排查|虚拟支付 400 排查]] — product ID 空值
+- [[knowledge/Dev/soft-delete-method-2026-08-21|软删除]] — deleted_at 时间戳
+- [[knowledge/Dev/代码审查铁律-跑通不等于交付|代码审查铁律]] — 跑通≠交付，PR+门禁
+- [[knowledge/Dev/后端开发-2026-千轮研究增强|后端开发 2026 千轮研究增强]] — 坑系列全景汇总（08-22）
+- [[knowledge/Dev/高吞吐韧性-可观测性|高吞吐韧性·可观测性]] — 三高系统设计（08-22）
 
 ## 🩺 墨题项目巡检（W35）
 

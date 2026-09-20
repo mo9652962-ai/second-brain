@@ -341,7 +341,7 @@ updated: 2026-09-14
 
 - 🔒 外部生图修复排期（3 路径全断实测：XAI key invalid / FAL TOP_UP 锁定 / SILICONFLOW 30001 余额不足 + 30003 FLUX disabled）：XAI 换有效 key / FAL 充值 / SILICONFLOW 充值；k 侧已 patch siliconflow-media 刷新「余额 3000+」假就绪（2026-09-06 已做）
 - ✅ web_extract 豁免验证门（2026-09-06 已 patch daily-knowledge-review）：豁免需端点+条数证据；纯 web 研究 Top 发现写库前强制 ≥1 次原文验证——后续研究类 cron 按新门自检
-- ⏳ 9/6 daily-self-improvement 提出 3 项自动化建议 → 2026-09-06 suggestion-implementation 评估：均需前置评估/确认，登记待评估（不仓促执行）——① stock-analysis cron 并行化（Graph pipeline，重构生产 cron 需先验证基线+确认工作流）② OpenClaw Active Memory 插件评估（工具采纳类，7/31 已做成熟度评估，需试用）③ 全链路监控指标体系（方案产出类，需确认范围，daily-review 已部分覆盖）；完整标注见 memory/2026/09/2026-09-06.md §6
+- ⏳ 9/6 daily-self-improvement 提出 3 项自动化建议 → 2026-09-06 suggestion-implementation 评估：均需前置评估/确认，登记待评估（不仓促执行）——① stock-analysis cron 并行化（Graph pipeline，重构生产 cron 需先验证基线+确认工作流）② OpenClaw Active Memory 插件评估（工具采纳类，7/31 已做成熟度评估，需试用）③ 全链路监控指标体系（方案产出类，需确认范围，daily-review 已部分覆盖）；完整标注见 memory/2026/09/2026-09-06.md §6；**9/20 suggestion-implementation 复核：① 查证 stock-daily-analysis skill + 9/11–9/18 每日产出连续正常（单 cron 单脚本稳定），并行化收益未证实、重构风险>收益 → 维持 ⏳ 不仓促执行（若日后出现超时/失败再评估）；②③ 无新触发 → 维持 ⏳**
 
 ### 🧭 9/7 反思行动项（vault-suggestion-executor 闲鱼专项，执行者必读）
 - 🔴 闲鱼试水决策（悬置第 42 天，9/6 fallback 硬触发日已过）：k 侧试水前置 100% 就绪（主图1 安全版 750×750 + 违禁词全过 + 第 15 次核验 PASS），实际上架是外部经营动作，等 sora 一句话二选一（试水/放弃/再缓）——再顺延仅消耗注意力成本，30min 可逆
@@ -417,8 +417,8 @@ updated: 2026-09-14
 - [x] 🔴 arxiv-fetch 静默排查 + 产物断言 → ✅ 2026-09-17 daily-todo-executor 落地：jobs.json last_status=ok / failure_streak=0 / last_error=None；9 月实际有 14 天产物（09-01~09-11,14,15,17，仅缺 12/13/16 三天，16 号为六 cron 批量失败日）——「9 月 0 产物」为 9/16 扫描口径误判；今天 14:16 产物 arxiv-2026-09-17-agent-llm.md 含当日日期非空；cron prompt 已加产物断言指令（写后自检存在/非空/含日期）
 - [x] 🟡 创新大赛研究原文验证 → ✅ 2026-09-17 daily-todo-executor 落地：web_extract github.com/UnicomAI/wanwu（Go 63.7% / Apache-2.0 / Docker 部署 / GraphRAG·多租户·工作流实锤）+ README_CN；frontmatter 来源行已补 URL（innovation-competition-industry-track-20260915.md）
 - [x] 🟡 闲鱼决策降频机制 → ✅ 2026-09-17 daily-todo-executor 落地：闲鱼上架区标题改「每周一复盘提醒」+ 默认再缓 7 天自动续期（见 🎯 闲鱼上架）；剩余每日触达由「闲鱼提醒」cron（工作日 7:30）承担，决策权仍在 sora
-- [ ] 🔒 闲鱼试水决策（第 42 天，sora 30 秒三选一：试水/放弃/再缓）——k 侧 100% 就绪，上架 30min 可逆
-- [ ] 🔒 万悟参赛确认（9/25 12:00 截止，剩 8 天，sora）——确认后 k 当天出《商业计划书/对策方案》初稿
+- [x] ~~🔒 闲鱼试水决策（第 42 天，sora 30 秒三选一：试水/放弃/再缓）~~ ✅ 2026-09-20 去重：与 L432 重复，以 L432（周一 9/21 复盘，state.yaml 权威）为准，决策仍开放
+- [x] ~~🔒 万悟参赛确认（9/25 12:00 截止，剩 8 天，sora）~~ ✅ 2026-09-20 去重：与 L431 重复，以 L431（9/19 更新，剩 5 天）为准，决策仍开放
 
 ### 🧭 9/17 反思行动项（daily-reflection 复盘 9-17，执行者必读）
 - [x] 🔴 github-privacy-gate 13 处隐私命中清理 ✅ 2026-09-18 daily-todo-executor 落地：门禁清零（4 处真实本地路径脱敏为 %USERPROFILE% + 7 处示例 IP/π 数字掩码 + 移除失效 s4mp 白名单条目），重跑 exit 0（截止 9/21 巡检前）——health 09-16/09-17 连续两天报 13 处命中（API_KEY 占位符/内网 IP，门禁拦截属预期但未清理）；跑 github_privacy_gate 出命中清单 → 占位符改示例 / 内网 IP 脱敏 / 真误报进白名单（9/16 s4mp 192.168.0.112 惯例）；只写 daily-note 不会被 executor 扫到，故本项登记在此
@@ -440,7 +440,7 @@ updated: 2026-09-14
 
 ---
 
-_由 k (Hermes) 在每次会话结束时更新 | 最后更新: 2026-09-18 (daily-reflection 复盘 9-18)
+_由 k (Hermes) 在每次会话结束时更新 | 最后更新: 2026-09-20 (daily-todo-executor 9/20：L420/L421 去重 → L432/L431 承接；新增 config.yaml 检查落地记录)_
 
 ---
 

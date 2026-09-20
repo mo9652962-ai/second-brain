@@ -34,7 +34,7 @@ type: suggestion-implementation
 - **备份**：`.temp/skill-bak/skill-vetter-SKILL.md.bak-20260913`
 
 ### 3. VibeCoding 待办确认已落实并标记
-- **来源**：`knowledge/Development/VibeCoding部署全流程-下-2026-08-23.md:64` 待办「hermes-health-check 加云资源账单巡检项」
+- **来源**：`knowledge/Dev/VibeCoding部署全流程-下-2026-08-23.md:64` 待办「hermes-health-check 加云资源账单巡检项」
 - **动作**：核实该功能 **2026-08-23 已增补**（技能 Pitfalls「云资源账单巡检」条目），本次补标记 ✅
 
 ### 4. MEMORY.md 记忆推广（09-13 self-improvement P1）

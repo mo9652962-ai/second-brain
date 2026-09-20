@@ -1,6 +1,6 @@
 ---
 tags: [absorbed, superpowers, grounded-copy, quality]
-source: obra/superpowers (260k⭐) + 用户自定义技能
+source: obra/superpowers (276k⭐, 2026-09-20 更新) + 用户自定义技能
 date: 2026-07-27
 ---
 

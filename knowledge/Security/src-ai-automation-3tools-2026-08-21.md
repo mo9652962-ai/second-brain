@@ -9,6 +9,11 @@ date: 2026-08-21
 
 > 背景：sora 要「AI 自动跑 + 写报告」的 SRC 流水线（补齐 AI+网安自动化）
 > 研究结论：**无 Docker 环境**（VirtualizationFirmwareEnabled=False）→ 排除 Docker 依赖项目
+> **⚠️ 2026-09-20 更正**：上述判据 `VirtualizationFirmwareEnabled=False` 是**假阴性**。
+> 本机实际 `HypervisorPresent=True`，WSL2 运行正常（`wsl -e uname -a` 返回内核版本），
+> 虚拟化**可用**；Docker CLI 也已安装（v29.8.0），仅 Daemon 未运行。
+> 该属性在 hypervisor 已激活时会报 False，不能用于判断「无虚拟化」——详见 [[knowledge/META/current-environment]]。
+> 因此「排除 Docker 依赖项目」的**结论需要重新评估**：改为「待 Docker Daemon 就绪后验证」。
 > 决策：**三个全落地**（VulnClaw / SRC-Hunter / AutoSRC）
 
 ## 候选矩阵（实证 2026-08-21）
@@ -18,7 +23,7 @@ date: 2026-08-21
 | **VulnClaw** | 2067★ MIT | `pip install vulnclaw` | 自然语言→信息收集→挖洞→利用→报告+PoC；13 provider（DeepSeek/基元律动 OpenAI 兼容）；21 Skill+180 文档 | ✅ 落地中 |
 | **SRC-Hunter** | 7★ beta | 单进程 FastAPI+SQLite，Windows setup.bat | SRC 专用：FOFA 搜集+LLM Worker+质量闸+去重+情报库+EduSRC 报告 | ✅ 落地中 |
 | **AutoSRC** | GitCode 11000 行 | Windows 批处理 | 资产采集/多引擎扫描/AI 误报筛选/核验/SRC 标准报告+表单填充/风控限流 | ✅ 落地中 |
-| AutoHunter | 84★ | Docker 必需 | Collector→Worker→Reviewer 三 agent | ❌ 无虚拟化暂缓（有云服务器再上）|
+| AutoHunter | 84★ | Docker 必需 | Collector→Worker→Reviewer 三 agent | ⏸️ 待 Docker Daemon 就绪后验证 |
 | src-hunter-skill | Claude skill | 需 Claude Code | 19 playbook+2887 H1 案例+报告模板 | ⚪ 知识库借鉴 |
 
 ## 配置要点（通用）

@@ -27,8 +27,8 @@ updated: 2026-08-31
 - [[knowledge/Productivity/ai-blogger-10round-research]]
 - [[knowledge/Productivity/agent-skills-methodology-absorbed]]
 - [[knowledge/Productivity/gongyu-absorbed]]
-- [[knowledge/Development/墨题上云部署方案-无Docker-2026-09-02]]
-- [[knowledge/Development/复现方案书-SummerCheckin-2026-08-31]]
+- [[knowledge/Dev/墨题上云部署方案-无Docker-2026-09-02]]
+- [[knowledge/Dev/复现方案书-SummerCheckin-2026-08-31]]
 - [[knowledge/Projects/墨题安全待决策-2026-08-19]]
 - [[knowledge/Productivity/english-grammar-organization-absorbed]]
 
@@ -91,8 +91,8 @@ updated: 2026-08-31
 
 - [[knowledge/Productivity/运动曲线-easing-动效丝滑关键-2026-09-05|运动曲线 easing（动效丝滑关键）]] — cubic-bezier 曲线表 + M3/iOS 官方体系，配套技能 `apple-design-web` 已补 4b 章节
 - [[knowledge/Productivity/闲鱼运营千轮研究-2026-09-04|闲鱼运营千轮研究 09-04]] — 推流算法点击率分层 / 5 分钟回复率阈值 / 经营红线，9 条落地建议（当日知识卡片源）
-- [[knowledge/Development/网站公网部署全流程-Vercel-CDN-域名-2026-09-05|网站公网部署全流程]] — Vercel + 域名 + Cloudflare 中国加速，5 坑（Vercel Hobby 免费仅限非商业用途）
-- [[knowledge/Development/墨题上云部署方案-无Docker-2026-09-02|墨题上云部署方案（无 Docker）]] — 本机无虚拟化约束下的部署选型
+- [[knowledge/Dev/网站公网部署全流程-Vercel-CDN-域名-2026-09-05|网站公网部署全流程]] — Vercel + 域名 + Cloudflare 中国加速，5 坑（Vercel Hobby 免费仅限非商业用途）
+- [[knowledge/Dev/墨题上云部署方案-无Docker-2026-09-02|墨题上云部署方案（无 Docker）]] — 本机无虚拟化约束下的部署选型
 - [[knowledge/Projects/墨题安全待决策-2026-08-19|墨题安全待决策]] — 登录/鉴权/用户隔离决策记录
 
 ## 🆕 W38 新增（09-07 ~ 09-13：清理 + 成本）
@@ -101,4 +101,15 @@ updated: 2026-08-31
 - [[knowledge/Productivity/system-cleanup-report-20260918|系统清理报告 09-18]] — 释放约 1.9 GB（uv/npm/pip 缓存 + 回收站孤儿残留）
 - [[knowledge/Productivity/token-usage-report-20260913|Token 用量报告 09-13]]
 
+## 🆕 W39 新增（09-14 ~ 09-20：PPT 模板体系 + 清理）
+- [[knowledge/Productivity/PPT国奖级扇叶开场平滑动画-制作SOP-2026-09-20|PPT 扇叶开场 SOP]] — 双态 Morph 驱动指南（国奖级）
+- [[knowledge/Productivity/PPT高级唯美镂空动态结尾页-制作SOP-2026-09-20|PPT 镂空结尾页 SOP]] — 高级唯美动态结尾 + 答辩商业化
+- [[knowledge/Productivity/system-cleanup-report-20260920|系统清理报告 09-20]] — 释放约 2.2 GB（C 盘 5 天 +61G 主因：Codex Docker vhdx 42.5G 保留未动）
+
 ## 🧭 入口治理
+
+## 自动挂载
+
+> cron 产出自动登记（防入链孤立）
+
+- [[token-usage-report-20260920]]

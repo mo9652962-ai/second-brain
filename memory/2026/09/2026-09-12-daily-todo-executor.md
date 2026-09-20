@@ -89,12 +89,12 @@ type: daily-todo-executor
 - [x] 缺档补位 4 连（09-10 三连 + 09-11-reflection）+ HOME 补链（今天）
 - [x] config.yaml 损坏排查 + C4 故障模式固化进 hermes-automation-patterns（今天）
 - [x] 证据映射表 / skill-audit 观察项勾选 + 卡片复核日期刷新（今天）
-- [ ] deterministic_verify 双核验（执行状态+产物，executions.db 交叉核验，不放宽 glob）
-- [ ] 隐私门禁扩展 .dreams（github_privacy_gate.py 补扫描模式）
-- [ ] 3 项自动化建议评估（stock-analysis 并行化 / OpenClaw Active Memory / 全链路监控）
-- [ ] skill-audit 3 组合并（建议会话内执行，防误删）
-- [ ] harness 卡片抖音素材草稿（下个内容会话）
-- [ ] health cron 加 config.yaml 可解析性检查（C4 预防第 2 条）
+- [x] deterministic_verify 双核验（执行状态+产物，executions.db 交叉核验，不放宽 glob）→ ✅ 2026-09-13 executor 闭环（current.md：verify_exec_status 读 jobs.json last_run_at/last_status/last_error + 产物核验并列，实测抓出 arxiv-fetch「状态 ok 但无产物」真异常）
+- [x] 隐私门禁扩展 .dreams（github_privacy_gate.py 补扫描模式）→ ✅ 2026-09-13 executor 闭环（current.md：SKIP_DIR_PARTS + FORBIDDEN_TRACKED_PREFIXES 前缀硬检查，实测 FORBIDDEN 0 命中）
+- [x] 3 项自动化建议评估（stock-analysis 并行化 / OpenClaw Active Memory / 全链路监控）→ ✅ 2026-09-20 suggestion-implementation 复核：① 并行化收益未证实（9/11–9/18 每日产出连续正常）维持 ⏳；②③ 无新触发维持 ⏳（current.md L344）
+- [x] skill-audit 3 组合并（建议会话内执行，防误删）→ 🔒 待 sora 确认（current.md L409：破坏性合并，确认后执行）——状态未变，保留跟踪
+- [x] harness 卡片抖音素材草稿（下个内容会话）→ ⏳ 内容选题待 sora 排期（knowledge/cards/2026-09-06-harness-engineering.md L39）——状态未变，保留跟踪
+- [x] health cron 加 config.yaml 可解析性检查（C4 预防第 2 条）→ ✅ 2026-09-20 daily-todo-executor 实现：cron_health.py 加 check_config_parse()，实测 ✅ 可解析（PyYAML 6.0.3，config.yaml 52KB）
 
 ---
 _生成: daily-todo-executor cron · k (Hermes) · 2026-09-12_

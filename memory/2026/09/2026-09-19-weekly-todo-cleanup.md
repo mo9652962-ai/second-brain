@@ -86,7 +86,7 @@ week: 2026-09-13 ~ 2026-09-19
 | 知识卡行动项 16 项 + 镜像待办迁移 8 项 | 9/13 | 各卡片 + 日志 |
 | .obsidian/plugins 第三方产物 git rm --cached | 9/13 | git |
 | 隐私脱敏 2 处（真实路径 → 相对/__file__） | 9/13 | research_moti_ai + assert 脚本 |
-| SummerCheckin 复现方案书 14 项按证据补标 | 9/14 | knowledge/Development/ |
+| SummerCheckin 复现方案书 14 项按证据补标 | 9/14 | knowledge/Dev/ |
 | obsidian-maintenance 14/14 + log.md 断链修复 | 9/14 | vault 结构 |
 | knowledge-lint 周检全 0 | 9/15 | lint 报告 |
 | github-privacy-gate 误报白名单（三仓库零命中） | 9/15 | gate 脚本 |

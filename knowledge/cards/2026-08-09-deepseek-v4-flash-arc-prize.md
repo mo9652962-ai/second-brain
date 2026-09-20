@@ -8,6 +8,11 @@ status: fresh---
 
 # 🃏 知识卡片 · 你正在用的 DeepSeek V4 Flash 登顶 ARC Prize：89% 推理分 + 2 分钱一道题
 
+> ⚠️ **历史记录：该模型/别名的评测结果截至 2026-08-09。**
+> 不代表当前 API 的 canonical model 或当前价格。
+> `deepseek-v4-flash` 现已退役为 legacy alias，当前 canonical model 为 **`deepseek-flash`**（= DeepSeek-V4.1-Flash）。
+> 见 [[knowledge/META/current-model-status]]。
+
 > **来源**：Arc Prize 官方评测页（arcprize.org）· 2026-08-09 当日 HN 首页热度第一（754⭐/451 评论）· ✅ 官方页原文验证
 > **一句话**：系统默认的 flash-0731 模型拿下 ARC-AGI-1 89.0%（$0.02/任务）——便宜 10 倍的模型拿硬基准高分，默认配置不用动，还多了个产品卖点。
 

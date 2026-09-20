@@ -64,7 +64,7 @@ type: daily-todo-executor
 - `knowledge/Dev/墨题-P0/P1-*.md` — 验收指标
 - `knowledge/Dev/cloudbase-learning-s1~s8` / `刷题机*千轮研究` ×5 — 学习/研究文档
 - `projects/ai-blogger/*`（content-template/tools-setup）— 项目模板
-- `knowledge/Development/复现方案书-SummerCheckin` — 开发任务清单
+- `knowledge/Dev/复现方案书-SummerCheckin` — 开发任务清单
 
 ## ⏳ 条件触发 backlog（保持未勾选）
 

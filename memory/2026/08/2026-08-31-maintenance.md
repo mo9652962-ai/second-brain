@@ -21,7 +21,7 @@ date: 2026-08-31
 
 **技能名引用 → 纯文本反引号**（Hermes 技能不是 vault 笔记，按惯例转 `code`）：
 - `knowledge/AI/数模5-Skill工作流-2026-08-23.md` → `shumo-paper-writing`
-- `knowledge/Development/VibeCoding部署全流程-下-2026-08-23.md` → `nextjs-deploy-test` / `multi-end-ai-provider-config`
+- `knowledge/Dev/VibeCoding部署全流程-下-2026-08-23.md` → `nextjs-deploy-test` / `multi-end-ai-provider-config`
 - `knowledge/Productivity/freelance-quote-4questions-2026-08-21.md` → `ai-freelance-pricing` / `grill-with-docs` / `xianyu-monetization`
 - `knowledge/Research/网安资料库-入口.md` + `综合研究-2026-08-22.md` → `src-bug-hunting` / `src-recon-workflow` / `web-security-lab-setup` / `pentest-lab-setup` / `nmap-scanning`
 - `knowledge/Security/nmap-tutorial-2026-08-20.md` / `osint-username-maigret-2026-08-21.md` → `src-recon-scanning` 等

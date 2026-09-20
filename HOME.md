@@ -6,7 +6,7 @@ created: 2026-08-09
 
 # 🏠 Home — 第二大脑入口
 
-> **知识最后更新: 2026-09-19 (daily-review 09-19)
+> **知识最后更新: 2026-09-20 (weekly-learning 09-20)
 > 最后更新: 2026-09-18 (daily-reflection)
 
 ---
@@ -30,10 +30,13 @@ created: 2026-08-09
 | 📈 生产力 | [[MOC-Productivity]] | 工作流、变现、闲鱼 |
 
 ## 📋 项目与日志
+- [[memory/2026/09/2026-09-20-daily-review|📋 每日回顾 09-20]] — 闲鱼高客单 Web 定制 SOP-008 + PPT 扇叶开场 9.8 分 + arXiv 补全速览
 - [[memory/2026/09/2026-09-17-daily-review|📋 09-17 每日回顾]] — Top5：PMPA记忆投毒防写入落地 / Agent-Tool 8异常 / 闲鱼主图禁词修复第21次核验 / qorl 4B查询计划 / arxiv解冻2151篇；明日：内存99.4%危急 + arxiv-fetch排查 + 闲鱼降频机制
 - [[memory/2026/09/2026-09-18-daily-review|📋 09-18 每日回顾]] — Top5：OverclaimBench完成声明不可信 / 工具幻觉防御前置 / 多智能体越少越好 / health检测器误报第3次根治 / 内存处置分级；明日：13处隐私命中清理(截止9/21) + obsidian-maintenance补跑 + 万悟确认剩7天
 - [[memory/2026/09/2026-09-19-daily-review|📋 09-19 每日回顾]] — Top5：ZCode静默上传实锤(墨题126MB快照待传P0) / 评测元视角 / EconSkills技能库 / Agent4Science / 激活探针；明日：ZCode处置 + 闲鱼第43天周一复盘 + 万悟确认 + fallback收窄
+- [[memory/2026/09/2026-09-20-suggestions-applied|🧹 09-20 建议落实]] — 9/18反思3项skill patch全落地核验 / 9/6三建议复核 / 无新增agent可执行项
 - [[memory/2026/09/2026-09-18-reflection|🔍 反思 09-18]] — 工具评估预筛(genoffice冗余) + fallback链健康度 + 卡片cron时序；9/17反思3/3闭环
+- [[memory/2026/09/2026-09-19-reflection|🔍 反思 09-19]] — ZCode安全基线前置(安装前检查清单) + 闲鱼计数漂移第3次根治 + health 429降级; 09-18反思 k侧2/2闭环
 - [[memory/2026/09/2026-09-17-reflection|🔍 反思 09-17（补链）]] — health检测器第3次复发根治 + privacy 13命中登记 + 内存分级处置
 - [[memory/2026/09/2026-09-15-daily-review|📋 09-15 每日回顾]]
 - [[memory/2026/09/2026-09-16-daily-review|📋 09-16 每日回顾]] — Top5：联通创新大赛万悟命题研究（9/25 截止剩 9 天）/ cron 产出四算子提炼 6 条可执行知识 / Docker 镜像提速 13MB/s / health 抓出 12:53 六 cron 批量失败需补跑 / 隐私门禁 13 处命中 — Top5：OpenAI bots 攻击 RubyGems（AI agent 主动利用已知漏洞） / arXiv 09-15 补全速览 15+14 / 技能治理单扫描器不足 / 双周技能审计 479 / 闲鱼禁词修复加固；明日：闲鱼决策第 42 天 + 探活路径核实 + 供应链扫描补丁
@@ -45,6 +48,7 @@ created: 2026-08-09
 - [[memory/2026/09/2026-09-17-vault-suggestion-executor|🧹 09-17 闲鱼专项建议执行报告]] — 6 张主图 vision 禁词复核：2 张含「最」已修复「人气之选」+ 防复发 + 第 21 次素材核验
 - [[memory/2026/09/2026-09-14-vault-suggestion-executor|🧹 09-14 闲鱼专项建议执行报告]] — 计数 41→42 权威推进(assert PASS) + 双技能计数红线 patch + 今日 3 项优先级
 - [[memory/2026/09/2026-09-15-vault-suggestion-executor|🧹 09-15 闲鱼专项建议执行报告]] — 素材包 4 处「自动化」禁词修复 + 全量复扫 PASS + 今日 3 项优先级
+- [[memory/2026/09/weekly-learning-2026-09-20|📚 W39 周学习回顾]] — 安全危机与变现突破并行：ZCode 实锤 + SOP-008 高客单 Web 定制 + PMPA 记忆投毒 + 万悟命题 + PPT 扇叶 9.8 分
 - [[memory/2026/09/weekly-2026-09-13|📚 W38 周度整理]] — 十领域自我强化批次 + 黑盒实证 + 评测意图隐藏规范 + memory 归位 6 文件
 - [[memory/2026/09/weekly-learning-2026-09-13|📚 W38 周学习回顾]] — 三 bot 十领域研究批次 + arXiv 解冻双窗口 + 评测意图隐藏规范 + 开源实证
 - [[knowledge/Research/GitHub-Weekly-2026-09-08|🐙 GitHub-Weekly 09-08]] — codebase-memory-mcp / nanobot 等 Top5 宝藏挖掘
@@ -113,6 +117,7 @@ created: 2026-08-09
 - [[memory/2026/09/2026-09-01-maintenance|🔧 09-01 维护]] — 断链 10→0（5 真修 + 5 误报，修审计脚本 .md bug）· 空文件 0 · 标签 0 冲突
 - [[memory/2026/09/2026-09-02-maintenance|🔧 09-02 维护]] — 断链 0 真 · 空壳 21 删 · 标签 0 冲突 · 根级日志归位 · 孤立 18%
 - [[memory/2026/09/2026-09-04-maintenance|🔧 09-04 维护]] — 断链 0 真 · 空壳 3 删 · 标签 0 冲突 · 根级日志归位 · 孤立 17%
+- [[memory/2026/09/2026-09-20-maintenance|🧹 09-20 维护]] — 断链 8→0 · README 路径 1 修 · 标签 2 统一 · 垃圾 1 删 · 空壳 2 删
 - [[memory/2026/08/2026-08-18-daily-review|📋 08-18 每日回顾]] — 安全/SRC 变现研究日：信息泄露首单 SOP + 网安 offer 路径 + AI 红队工具选型 + 多 agent 协作背书 · 🔴 闲鱼 8/18 最后窗口待拍板
 
 - [[memory/2026/08/2026-08-19-maintenance|🔧 08-19 维护]] — 断链 2 修 · 空壳 13 删 · 标签 0 冲突 · MOC 补链 15
@@ -153,6 +158,7 @@ created: 2026-08-09
 - [[knowledge/Research/arxiv-2026-09-17-agent-llm|arXiv 今日速览]] — 32+10 篇 AI Agent/LLM 论文（09-17 新窗口 09-15~09-17 共 2,151 篇：PMPA 持久记忆投毒 OpenClaw 73.7% / BudgetBench 预算化记忆评测 / 工具-工作流组合级失败 / 投毒基准污染自修改 agent / 编码 agent 实证四连）
 - [[knowledge/Research/arxiv-2026-09-18-agent-llm|arXiv 今日速览]] — 20+7 篇 AI Agent/LLM 论文（09-18 新窗口 602 篇：Harness 组件级归因 176 设置 / OverclaimBench 完成声明 80.4% 误导 / 工具幻觉非 gate 决策 / 多智能体「越少越好」/ MAGS Dafny 形式化安全 100%）
 - [[knowledge/Research/arxiv-2026-09-19-agent-llm|arXiv 补全速览]] — 13+5 篇 AI Agent/LLM 论文（09-19 周六无新窗口，补录 09-18 同池漏网：LLM 评测 14,767 篇元研究 / PetriBench 动态状态推理 / 进化搜索单点评测揭穿 / 12.6M 激活探针平 1000 倍 guard / EconSkills 技能库抽象化 / 元认知反馈防去技能化）
+- [[knowledge/Research/arxiv-2026-09-20-agent-llm|arXiv 补全速览]] — 12+7 篇 AI Agent/LLM 论文（09-20 周日无新窗口，第三轮补录 09-18 同池漏网：ScientistTwo 全自主科学发现 / SoL-Pi harness 省 44.7-49% token / SkillAA 归因技能图 / claim-safe 评测协议 / CovR 覆盖率硬件验证 93.81% / harm laundering 安全评测揭穿）
 
 ## 🧭 核心区域
 - [[memory/2026/08/2026-08-19-reflection|🔍 08-19 反思]] — 行动项 3/3 未落地（反思≠执行第 3 次复发）；Tavily 第 6 次复发；SRC 三方向收敛为补天聚焦 · scripts 登记表当场补建

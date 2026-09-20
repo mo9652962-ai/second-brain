@@ -33,6 +33,7 @@ source: null
 | SOP-005 | OPS | [[SOP-005-miniapp-audit\|小程序反编译密钥审计]] | Active | 2026-08-19 |
 | SOP-006 | DEV | [[SOP-006-ai-code-review\|AI 代码审查协作流程（Gemini 第二意见）]] | Active | 2026-08-19 |
 | SOP-007 | RES | [[SOP-007-knowledge-empowerment\|知识赋能：知识库手册/复盘蒸馏为实战技能]] | Active | 2026-08-22 |
+| SOP-008 | DEV/BIZ | [[SOP-008-xianyu-vibe-coding-website\|闲鱼高交互个人主页/作品集定制交付全流程]] | Active | 2026-09-20 |
 
 ## 文件结构
 

@@ -13,10 +13,14 @@ domain: AI
 |:----|:-----|:---------|:----------|
 | **Hermes Agent** | AI Agent 编排（已有） | 已部署 | ✅ **主引擎** |
 | **WorkBuddy** | 腾讯 AI 办公助手 | 桌面端 | ⚠️ 可试试 |
-| **n8n** | 开源工作流自动化引擎 | Docker/自部署 | ❌ Docker 不可用 |
-| **Dify** | 开源 LLM 应用平台 | Docker/自部署 | ❌ Docker 不可用 |
+| **n8n** | 开源工作流自动化引擎 | Docker/自部署 | ⏸️ 待 Docker 运行时验证 |
+| **Dify** | 开源 LLM 应用平台 | Docker/自部署 | ⏸️ 待 Docker 运行时验证 |
 | **Coze (扣子)** | 字节零代码 AI 平台 | SaaS 免费 | ✅ **补充** |
-| **RAGFlow** | 开源 RAG 知识库 | Docker | ❌ Docker 不可用 |
+| **RAGFlow** | 开源 RAG 知识库 | Docker | ⏸️ 待 Docker 运行时验证 |
+
+> **Docker 状态（2026-09-20 复核）**：虚拟化 ✅ / CLI ✅ v29.8.0 / Daemon ❌ 未运行。
+> 上表三项此前标记「❌ Docker 不可用」——该结论基于过期信息，已修订为「待运行时验证」。
+> 详见 [[knowledge/META/current-environment]]。
 
 ## 二、选型结论
 

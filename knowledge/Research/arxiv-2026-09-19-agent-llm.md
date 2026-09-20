@@ -198,4 +198,5 @@ source: arxiv.org list pages + abs pages（09-18 窗口补全速览）
 > 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]
 
 ---
-状态：reading
+状态：reading → processed（2026-09-20 arxiv-summarize 已处理）
+**已处理：** 精选 3 篇（EconSkills 19523 / LLM Benchmarks 元研究 19182 / 激活探针安全 19472）→ [[arxiv-2026-09-19-core-contributions]]

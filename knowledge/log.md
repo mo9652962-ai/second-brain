@@ -63,7 +63,7 @@ tags: [meta, vault-maintenance]
 
 - 触发：抖音「写代码的码农：网站做完怎么让别人访问」（完整章节要点）
 - 研究：Vercel 官方 DNS 细节 + 5 坑 + Cloudflare 中国加速方案 + 域名注册商对比
-- 产出：knowledge/Development/网站公网部署全流程-Vercel-CDN-域名-2026-09-05.md
+- 产出：knowledge/Dev/网站公网部署全流程-Vercel-CDN-域名-2026-09-05.md
 - 反哺：fastapi-cloud-deploy skill 补前端托管面
 - 关键发现：Vercel Hobby 免费仅限非商业用途——墨题商业化前需定前端平台
 ## [2026-09-06] lint | 每周例行体检
@@ -207,3 +207,23 @@ tags: [meta, vault-maintenance]
   - 标签格式 1：arxiv-2026-09-18-agent-llm 块式列表 → 流式（lint-fix-tags-v2.py 幂等）
   - 顺手挂载今日 hackernews-2026-09-19（cron 新生成孤儿）→ MOC-Research
 - **结果**：lint 全绿（断链 0 / 缺 frontmatter 0 / 孤立 0，仅剩 2 个 README.md 低风险重名忽略）；全仓库 3628 链接 0 断链；skills/ 下 2 个 <100B 文件为技能模板占位（ERRORS.md / FEATURE_REQUESTS.md），设计内保留不动
+## [2026-09-20] lint | 每周例行体检
+
+- 断链 3 / 孤立 2 / 缺 frontmatter 2
+- 处理原则：只报告不自动修；新问题由 k 在下次会话处理
+
+## [2026-09-20] W39 周度整理 | 断链/孤立/frontmatter 清零 + 本周新增挂载
+
+- 修复：断链 3（GEO `MOC-Content`→`MOC-Inbox`、PPT SOP ×2 技能名 `award-defense-presentation`→纯文本）
+- 补 frontmatter 4：README-Template-01 / agent4science / GitHub-Weekly-2026-09-20 / system-cleanup-20260920
+- 孤立页挂载 4：即梦Seedance / React-Bits / HN 09-20 / GitHub-Weekly-09-20（MOC-Inbox Content+AI 区、MOC-Dev、MOC-Research、MOC-GitHub W39）
+- 本周新增挂载：AI 3 篇 + Content 3 篇 → MOC-Inbox；React-Bits → MOC-Dev；PPT SOP×2 + 模板库 + 清理报告 → MOC-Productivity W39 区；GitHub-Weekly 系列 → MOC-GitHub
+- 索引更新：knowledge-map W39 速览区补全 30 行 + MOC 规模表同步；index.md 页面总数 606→642 + MOC/域表数字刷新
+- 结果：lint 全绿（断链 0 / frontmatter 0 / 孤立 0，仅剩 2 个 README.md 低风险重名忽略）
+
+## [2026-09-20] lint | 例行体检：8 问题 → 0
+
+- 修复：README.md 真断链（memory/2026/2026-09-10.md → memory/2026/09/2026-09-10.md）；标签统一 2 处（semif 裸 tag AI→ai、竞品对标 #AI→#ai）；删除 temp_extracted_content.md 垃圾文件；清理 dreaming 空壳 2 只（deep/rem 09-20，无 footer 无入链）
+- 并发进程已处理：award-defense-presentation 断链×2、MOC-Content→MOC-Inbox、孤立挂载×3、system-cleanup frontmatter
+- 遗留：14 markdown 误报（verbatim+代码块）、历史 cron 孤儿（归档/非活跃）、README 重复文件名 1 组
+- 验证：Broken wikilinks 0 / Missing frontmatter 0 / Orphan 0 / Tag case 0

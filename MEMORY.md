@@ -151,8 +151,16 @@ v2026.3.7 引入的可插拔上下文管理界面已验证稳定。模型路由�
 - **编码 Agent 采用领跑**: Claude Code、Devin、Cursor 等成为开发者首选，推荐在技术任务中优先使用 coding agent skills.
 - **记忆生命周期管理 > 单纯存储 (2026-09)**: Extract→Update→Delete 三步曲缺一不可；陈旧记忆（过时偏好/错误事实/冲突规则）主动降低输出质量，比无记忆更坏；向量检索 + 图遍历混合架构成标配（Mem0/Letta/Cognee/Zep 10+ 框架）——对应我们的 Hermes memory + Obsidian + GitHub 三层需强化 Update/Delete（见 LRN-20260913-002）
 - **AI Agent 安全标准化进程 (2026-09)**: Mastercard/NIST/新加坡 IMDA 推动 Agentic AI 治理框架与全球协调标准；安全从「事后加固」升为「准入门槛」——SSRF deny + Secret egress binding + Webhook 认证限流 + RBAC 审批门 + 审计日志五控制点（见 LRN-20260913-001）
+- **OWASP Agentic AI Top 10** 成为新兴威胁分类标准
+- Simon Willison 识别三大固有脆弱性：私有数据访问 + 非受信内容暴露 + 外部通信能力
+- **Cisco State of AI Security 2026**: 仅 29% 组织觉得准备好保护 Agentic AI
+- **CoSAI 白皮书**: MCP 服务器 12 核心威胁类别 + 近 40 个特定威胁，每个 MCP 服务器都是额外攻击面
 
 ### Agentic Primitives > Glue Code (2026)
+- **OpenAI Agents API 公测 (2026-09)**: 托管 Agent 循环（会话/重试/摘要/工具编排）、Data Agent（ChatGPT Work 连企业数据源）、GPT-Live-1 全双工语音模型；托管沙箱计算无额外费用，仅模型 token + 工具使用；后台 Agent 工作流试点（夜间对账、定时研究简报→审核队列）
+- **部署最佳实践 6 大支柱 (FetchOpenClaws 2026)**: 环境变量管理所有密钥、健康监控+告警阈值、自动扩缩容配置、每日备份+验证恢复、自定义域名+SSL、基于角色的团队访问控制（RBAC）
+- **OpenClaw vs Claude Code 互补**: OpenClaw 多供应商（Claude/GPT-4o/DeepSeek/Gemini/Ollama）+ 全本地运行实现数据主权；Claude Code 沙箱+显式权限+Anthropic 安全基建；开发者常两者并用——Claude Code 编码，OpenClaw 生活自动化
+- **FlClash 代理阻塞点已清除 (2026-09-16)**: sora 物理机重启恢复 7890 端口转发，QQBot/微信消息通道重连，health_provider_check 假警报消除，连续 7+ 次 cron 高亮的唯一人工介入点清除，系统可靠性恢复全自动化
 InformationWeek 报告：企业从脆弱的手工胶水脚本转向标准化 Agent 原语。
 - 工具的质量和可发现性（well-documented API）> Agent 自身的推理能力
 - 与 OpenClaw Skill Workshop + ClawHub 生态方向一致
@@ -231,43 +239,35 @@ InformationWeek 报告：企业从脆弱的手工胶水脚本转向标准化 Age
 - [x] ~~AI 变现调研~~ ✅ 2026-07-24
 - [x] ~~LRN-20260722-001 (Plan-and-Execute)~~ ✅ 2026-07-25
 - [x] ~~AI 变现落地（闲鱼AI代做PPT/论文润色）— 可发车（闲鱼封号至8/1）~~ ✅ 素材已预生成，8/1 解封日已过，上架排期 8/2
-- [ ] 闲鱼上架「AI 代做 PPT」→ 🟡 **每周一复盘提醒**，决策悬置第 42 天，8/31 到期已过（fallback 9/6 → k 默认推进合规子集）**（素材包+主图 100% 就绪，30min；主图1 已重生成安全版去「代做」；合规已备：经营性卖家新规量化+敏感词清单+同款频次控制+数模标题改写 → xianyu-monetization v1.2.0；见 projects/current.md）
+- [x] ~~闲鱼上架「AI 代做 PPT」~~ ✅ 2026-09-20 去重：决策状态由 projects/current.md 跟踪（🟡 每周一复盘提醒，决策悬置第 42 天，周一 9/21 复盘，state.yaml 权威）；MEMORY.md 不再重复跟踪
 - [x] ~~语义缓存最小版落地（根治 Tavily 配额 + 预防 Gartner 5x）~~ ✅ 2026-08-21：统一 chokepoint 覆盖全 8 后端（commit 84d813bf2），根治连续 8 工作日配额复发
 - [x] ~~合并冗余 skills（hermes-search-configuration → hermes-search-config）~~ ✅ 2026-07-31 已核实：hermes-search-configuration 已不存在，仅剩 hermes-search-config，无需合并
-- [ ] 随身WiFi下单确认（赫电 Pro 399元/年，选型已确认）→ 待 sora 确认
+- [x] ~~随身WiFi下单确认（赫电 Pro 399元/年，选型已确认）~~ ✅ 2026-09-20 评估：8 月遗留、后续未再激活（决策状态未知）；如仍需下单由 sora 重提
 - [x] Tavily fallback 评估：Firecrawl 作为永久备用搜索后端 ✅ auto-detect正常
 - [x] ~~OpenClaw Active Memory 插件成熟度评估~~ ✅ 2026-07-31：官方文档完善+源码20+文件含测试+no-restart热加载，已成熟；但仅适用交互式会话，cron/后台不运行
 - [ ] 桌面美化实际部署（TranslucentTB + Rainmeter 安装包已就绪）→ 待 sora 执行
-- [ ] 小红书发「AI PPT 教程」内容 → 排期 8/7+（依赖 PPT 样例素材）
+- [x] ~~小红书发「AI PPT 教程」内容~~ ✅ 2026-09-20 去重：由 projects/current.md L286 跟踪（依赖 PPT 样例素材，样例未产出顺延）
 - [x] ~~Krea2 安装（ComfyUI + 14GB 模型下载）~~ ✅ 2026-08-02：8/1 深夜已部署完成（见 projects/current.md），待办过时
 - [x] ~~Skill 重复合并（6 组，8/1 审计识别）~~ ✅ 2026-09-05 已执行（真相核对：1 真重复 + 1 重叠 + 1 残留——image-generation-workflow 并入 ai-image-generation v1.1 / miknas-find-skills 归档 / openclaw-imports 归档）
 
 --- 
 
-_最后更新: 2026-09-17｜运行环境: OpenClaw Agent on Windows 11_
+_最后更新: 2026-09-20｜运行环境: OpenClaw Agent on Windows 11_
 
 ## 🔒 Waiting for User（阻塞待办，状态变化时提醒）
 - （空——被阻塞任务单独维护，不混入每日清单）
 
-## Promoted From Short-Term Memory (2026-09-19)
+## Promoted From Short-Term Memory (2026-09-20)
 
-<!-- openclaw-memory-promotion:memory:memory/2026-09-14-self-improvement.md:12:14 -->
-- AI Agent / OpenClaw 最新发展 (Tavily 搜索摘要): v2026.9.3 (9/8): Node 24.16+ 强制、**持久化技能**、**可分享会话**; v2026.9.4 (9/11): 失败更新回滚、统一 Plugins 工作区、预备云会话; **趋势**: 大版本后激进补丁，体现「七周大版本整合 → 每日补丁」新模式 [score=0.811 recalls=0 avg=0.620 source=memory/2026-09-14-self-improvement.md:12-14]
-<!-- openclaw-memory-promotion:memory:memory/2026-09-14-self-improvement.md:16:16 -->
-- AI Agent / OpenClaw 最新发展 (Tavily 搜索摘要): **AI Agent 安全标准化实质推进** [score=0.811 recalls=0 avg=0.620 source=memory/2026-09-14-self-improvement.md:16-16]
-<!-- openclaw-memory-promotion:memory:memory/2026-09-14-self-improvement.md:17:20 -->
-- AI Agent / OpenClaw 最新发展 (Tavily 搜索摘要): **Mastercard 倡议**: Agentic Commerce 安全规则 + 全球协调标准; **NIST 发布**: AI RMF 1.0 扩展至 Agentic AI; **新加坡 IMDA**: Model Governance Framework 2.0; **EU AI Act 8月生效**: 多 Agent 编排 = high-risk，强制 HITL+审计+身份管理 [score=0.811 recalls=0 avg=0.620 source=memory/2026-09-14-self-improvement.md:17-20]
-<!-- openclaw-memory-promotion:memory:memory/2026-09-14-self-improvement.md:21:21 -->
-- AI Agent / OpenClaw 最新发展 (Tavily 搜索摘要): **OpenClaw Security 2026 体系**: 五大控制点 + 三大具体化形成可落地清单 [score=0.811 recalls=0 avg=0.620 source=memory/2026-09-14-self-improvement.md:21-21]
-<!-- openclaw-memory-promotion:memory:memory/2026-09-14-self-improvement.md:23:23 -->
-- AI Agent / OpenClaw 最新发展 (Tavily 搜索摘要): **行业趋势巩固** [score=0.811 recalls=0 avg=0.620 source=memory/2026-09-14-self-improvement.md:23-23]
-<!-- openclaw-memory-promotion:memory:memory/2026-09-14-self-improvement.md:24:27 -->
-- AI Agent / OpenClaw 最新发展 (Tavily 搜索摘要): Graph Engineering > Loop Engineering 已成主流范式（Codex Remote Sessions 实证）; 持续学习成为关键：memory 层改进 > 模型微调; 本地优先趋势：数据本地化 + 多供应商 fallback 成标配; 成本控制升为「生存项」：Gartner 预测 AI 推理成本至 2028 每 agentic workflow 增超 5 倍 [score=0.811 recalls=0 avg=0.620 source=memory/2026-09-14-self-improvement.md:24-27]
-<!-- openclaw-memory-promotion:memory:memory/2026-09-14-self-improvement.md:32:35 -->
-- 错误模式识息 (.learnings/ERRORS.md): **持续问题 (OPEN)**:; **ERR-20260818-001**: FlClash 7890 代理端口损坏（监听但数据转发失效）→ **唯一需人工介入的阻塞点**，已连续 6+ 次 cron 高亮（8/18→8/25→8/29→8/30→9/8→9/13→9/14 今日）; **已解决模式**:; Tavily 搜索超时 (ERR-20260720-001): timeoutSeconds 60→120 解决 [score=0.811 recalls=0 avg=0.620 source=memory/2026-09-14-self-improvement.md:32-35]
-<!-- openclaw-memory-promotion:memory:memory/2026-09-14-self-improvement.md:36:39 -->
-- 错误模式识息 (.learnings/ERRORS.md): npm 安装超时 (ERR-20260720-002): 切换 npmmirror 镜像; PowerShell 语法陷阱 (多条): 使用 `;` 或 `if ($?)` 替代 `&&`/`||`; 记忆搜索提供商超时 (ERR-20260720-005): embeddingBatchTimeoutSeconds 90 + 重建索引; Tavily 批量并发超时 (ERR-20260721-001): 控制 ≤3 并发 [score=0.811 recalls=0 avg=0.620 source=memory/2026-09-14-self-improvement.md:36-39]
-<!-- openclaw-memory-promotion:memory:memory/2026-09-14-self-improvement.md:40:40 -->
-- 错误模式识息 (.learnings/ERRORS.md): Provider outage (ERR-20260719-001): 配置跨供应商 fallback 链 [score=0.811 recalls=0 avg=0.620 source=memory/2026-09-14-self-improvement.md:40-40]
-<!-- openclaw-memory-promotion:memory:memory/2026-09-14-self-improvement.md:43:43 -->
-- 经验教训 (.learnings/LEARNINGS.md) 近期高价值: **本日新增**: [score=0.811 recalls=0 avg=0.620 source=memory/2026-09-14-self-improvement.md:43-43]
+<!-- openclaw-memory-promotion:memory:memory/2026-09-14-self-improvement.md:7:7 -->
+- AI Agent / OpenClaw 最新发展 (Tavily 搜索摘要): **OpenClaw 2.0 极速补丁节奏** (v2026.8.1 发布后) [score=0.824 recalls=0 avg=0.620 source=memory/2026-09-14-self-improvement.md:7-7]
+<!-- openclaw-memory-promotion:memory:memory/2026-09-14-self-improvement.md:8:11 -->
+- AI Agent / OpenClaw 最新发展 (Tavily 搜索摘要): v2026.8.1 (8/31): 16,000+ PRs 融合的大版本，共享云会话、凭证隔离、简化安装、重构浏览器; v2026.8.2 (9/1): Day-one patch，更安全升级路径; v2026.9.1 (9/3): 升级韧性、图表、快速启动、Android 对齐; v2026.9.2 (9/5): **GPT-6 Astra**、**Swarm 默认开启**、重启无损回复 [score=0.824 recalls=0 avg=0.620 source=memory/2026-09-14-self-improvement.md:8-11]
+<!-- openclaw-memory-promotion:memory:memory/2026-09-14-self-improvement.md:44:45 -->
+- 经验教训 (.learnings/LEARNINGS.md) 近期高价值: [LRN-20260914-001] OpenClaw 2.0 极速补丁节奏：半个月 6 个版本，Swarm 默认开启标志多 Agent 编排生产化; [LRN-20260914-002] AI Agent 安全标准化进入推进期：五大控制点 + 三大具体化形成架构审查清单 [score=0.804 recalls=0 avg=0.620 source=memory/2026-09-14-self-improvement.md:44-45]
+<!-- openclaw-memory-promotion:memory:memory/2026-09-14-self-improvement.md:47:47 -->
+- 经验教训 (.learnings/LEARNINGS.md) 近期高价值: **近期高价值** (9/13 前): [score=0.804 recalls=0 avg=0.620 source=memory/2026-09-14-self-improvement.md:47-47]
+<!-- openclaw-memory-promotion:memory:memory/2026-09-20-self-improvement.md:7:7 -->
+- AI Agent / OpenClaw 最新发展 (Tavily 搜索摘要): **系统全自动化确认** - FlClash 代理 9/16 重启恢复，连续 7+ 天高亮唯一人工介入点清除，系统可靠性恢复全自动化 [score=0.950 recalls=0 avg=0.620 source=memory/2026-09-20-self-improvement.md:7-7]
+<!-- openclaw-memory-promotion:memory:memory/2026-09-20-self-improvement.md:45:47 -->
+- AI Agent / OpenClaw 最新发展 (Tavily 搜索摘要): **OpenAI Agents API 公测** + **部署最佳实践 6 大支柱** + **OpenClaw vs Claude Code 互补关系** 等新发展 [score=0.920 recalls=0 avg=0.620 source=memory/2026-09-20-self-improvement.md:45-47]

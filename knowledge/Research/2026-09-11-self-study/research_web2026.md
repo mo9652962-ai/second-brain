@@ -10,7 +10,9 @@ date: 2026-09-12
 # Web 全栈 2026 千轮研究报告：框架格局 · 部署定价 · 无 Docker 后端 · 接单技术栈
 
 > 调研日期：2026-09-12 ｜ 方法：多轮 web_search + web_extract，优先官方文档（nextjs.org / react.dev / vercel.com / developers.cloudflare.com / nuxt.com / astro.build / cloud.tencent.com / aliyun.com）
-> 背景：sora 网站接单业务（L1 100-150 元 / L2+ 域名 150-250 元 / L3 500-2000 元，域名客户出），技术栈倾向现代 Web，目标 = 前端 Vercel/CF + 后端轻量云（本机无虚拟化，禁 Docker/VM）。
+> 背景：sora 网站接单业务（L1 100-150 元 / L2+ 域名 150-250 元 / L3 500-2000 元，域名客户出），技术栈倾向现代 Web，目标 = 前端 Vercel/CF + 后端轻量云。
+> **⚠️ 2026-09-20 修订**：本文原写「本机无虚拟化，禁 Docker/VM」——该前提已过期（本机 HypervisorPresent=True，WSL2 实证可跑，Docker CLI 已装 v29.8.0，仅 Daemon 未运行，见 [[knowledge/META/current-environment]]）。
+> **结论不变但理由更新**：仍推荐裸进程 + systemd/PM2，**不是因为"本机不能 Docker"，而是因为云服务器上少一层容器 = 少一个故障面 + 更低内存占用**（¥99/年 2核2G 跑得动）。是否容器化，待 Daemon 就绪后验证。
 > 一句话结论：**新单全面切 Next.js 16 + React 19.2 + Tailwind v4 + shadcn/ui；部署海外走 Vercel/CF Pages 免费层、国内走腾讯 EdgeOne Makers 免费层；后端一台 ¥99/年 轻量云跑 Gunicorn/systemd（Python）或 PM2（Node），全程零 Docker。**
 
 ---
@@ -113,9 +115,9 @@ date: 2026-09-12
 
 ---
 
-## 三、后端上云无 Docker 方案（sora 本机无虚拟化 → 裸进程 + systemd/PM2）
+## 三、后端上云低依赖方案（裸进程 + systemd/PM2）
 
-> 约束：本机无虚拟化 → **不碰 Docker/VM**；后端 = 轻量云服务器（Ubuntu 24.04）+ 裸进程管理。以下两套均已形成可复制 SOP（Python 栈已有 Hermes 技能实证，Node 栈经 2026 官方文档核对）。
+> 约束更新（2026-09-20）：原「本机无虚拟化 → 不碰 Docker/VM」已不成立。现行选型理由 = **生产简洁性**（少一层容器 = 少一个故障面 + 更低内存占用），后端 = 轻量云服务器（Ubuntu 24.04）+ 裸进程管理。以下两套均已形成可复制 SOP（Python 栈已有 Hermes 技能实证，Node 栈经 2026 官方文档核对）。
 
 ### 3.1 Python（FastAPI）→ 已有实证 SOP（fastapi-cloud-deploy 技能）
 ```
