@@ -362,7 +362,7 @@ graph TD
 | 域 | 新增重点 | 入口 |
 |:---|:---------|:-----|
 | 🏠 Productivity | 闲鱼运营千轮研究 09-04 + 运动曲线 easing（动效）+ Vault 健康基线 | [[knowledge/Productivity/MOC-Productivity]] |
-| 🛠 Development | 墨题上云部署方案（无 Docker）+ 网站公网部署全流程（Vercel+CDN+域名）| [[knowledge/Dev/墨题上云部署方案-无Docker-2026-09-02]] |
+| 🛠 Dev | 墨题上云部署方案（无 Docker）+ 网站公网部署全流程（Vercel+CDN+域名）| [[knowledge/Dev/墨题上云部署方案-无Docker-2026-09-02]] |
 | 🔬 Research | 多 Agent Eval 基线 v2 + arXiv 09-03/04/05 速览 + 工具精度方法论（假阳性税）| [[knowledge/Research/MOC-Research]] |
 | 🔐 Security | hermes-codex-security-policy 09-04 + SRC 批量初筛收敛 | [[knowledge/Security/MOC-Security]] |
 | 🤖 AI | 知识库-AI 不翻知识库根因 + 工具精度方法论 | [[knowledge/AI/工具精度方法论-假阳性税与知识库Lint-2026-09-05]] |
@@ -661,9 +661,11 @@ MCP 生态: GitHub + Filesystem + JLCPCB(38工具) + Obsidian(笔记操作)
 
 ### 模型分层体系
 
+> ⚠️ **2026-09-20 修订**：以下为**历史路线**。当前运行时配置以 [[knowledge/META/current-model-status]] 为准。
+
 ```text
 
-日常主力 ─── opencode-go/deepseek-v4-flash
+日常主力 ─── opencode-go/deepseek-v4-flash  ← 已退役别名，现为 deepseek-flash
 
 复杂推理 ─── deepseek-v4-pro → kimi-k3 → kimi-k2.7-code
 
