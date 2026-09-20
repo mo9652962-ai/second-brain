@@ -234,7 +234,8 @@ for fi in results['frontmatter_issues'][:5]:
 # ===== 导出 JSON =====
 report = {
     'date': datetime.now().isoformat(),
-    'vault': VAULT,
+    # 只写相对标识，不落绝对路径（报告会进 CI artifact / 曾被跟踪，绝对路径含用户名）
+    'vault': os.path.basename(os.path.abspath(VAULT)) or 'vault',
     'stats': results['file_stats'],
     'broken_links_count': len(results['broken_links']),
     'orphan_files_count': len(results['orphan_files']),
