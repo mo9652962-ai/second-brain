@@ -10,20 +10,20 @@ tags: [meta, vault-maintenance]
 
 > 内容导向目录（Karpathy LLM-Wiki 规范）：每个知识域一行摘要。
 > 用途：**回答前先读这里定位页面，再深入**——这是 AI 翻库的第一入口。
-> 最后更新: 2026-09-17 | 页面总数: 606 | 由 knowledge-lint 维护
+> 最后更新: 2026-09-20 | 页面总数: 642 | 由 knowledge-lint 维护
 
 ## 🧭 MOC 入口（主导航）
 
 | 域 | 入口 | 规模 | 摘要 |
 |:---|:---|:---|:---|
 | 总地图 | [[knowledge-map]] | 592 | 全知识领域索引，W36 起新增 MOC 必须挂载 |
-| Research | [[MOC-Research]] | 212 | 研究域：千轮研究、多Agent、GitHub 调研、AI 论文 |
-| GitHub | [[MOC-GitHub]] | 42 | GitHub 项目实证研究（clone→测→评→可PR） |
-| Security | [[MOC-Security]] | 50 | 网络安全：SRC/逆向/防御/合规 |
-| Dev | [[MOC-Dev]] | 101+23 | 开发域：软件工程/前端/后端/系统 |
+| Research | [[MOC-Research]] | 220 | 研究域：千轮研究、多Agent、GitHub 调研、AI 论文 |
+| GitHub | [[MOC-GitHub]] | 58 | GitHub 项目实证研究（clone→测→评→可PR） |
+| Security | [[MOC-Security]] | 53 | 网络安全：SRC/逆向/防御/合规 |
+| Dev | [[MOC-Dev]] | 107+5 | 开发域：软件工程/前端/后端/系统 |
 | Hardware | [[MOC-Hardware]] | 21 | 硬件：PCB/KiCad/FreeCAD/单片机 |
-| Productivity | [[MOC-Productivity]] | 41 | 生产力：写作/PPT/文档/效率 |
-| Finance | [[MOC-Finance]] | 11 | 金融：A股/量化/自选股分析 |
+| Productivity | [[MOC-Productivity]] | 52 | 生产力：写作/PPT/文档/效率 |
+| Finance | [[MOC-Finance]] | 16 | 金融：A股/量化/自选股分析 |
 | Inbox | [[MOC-Inbox]] | 53 | 待接入笔记（未挂载的入口） |
 | Duplicate-Review | [[MOC-Duplicate-Review]] | 0 组 | 重复审阅（当前无逐字重复） |
 
@@ -31,21 +31,21 @@ tags: [meta, vault-maintenance]
 
 | 目录 | 数量 | 典型内容 |
 |:---|:---|:---|
-| AI/ | ~15 | Agent 评估、墨题 AI 研究、知识库方法论 |
+| AI/ | ~18 | Agent 评估、墨题 AI 研究、知识库方法论 |
 | Content/ | ~9 | 抖音 AI 博主、内容生产、GEO 生成式引擎优化 |
-| Daily/ | ~25 | hackernews 日报、每日回顾 |
+| Daily/ | ~32 | hackernews 日报、每日回顾 |
 | Development/ | ~30 | 墨题开发、部署方案、项目落地 |
-| Education/ | ~5 | 考研考证规划、家教 |
-| Hardware/ | ~20 | PCB/KiCad/嵌入式 |
+| Education/ | ~1 | 考研考证规划、家教 |
+| Hardware/ | ~21 | PCB/KiCad/嵌入式 |
 | META/ | ~5 | 知识库治理、MOC 体系 |
-| Projects/ | ~15 | 墨题、数模、闲鱼项目 |
-| Research/ | ~211 | 千轮研究、Agent 评测、论文深研 |
-| Security/ | ~30 | 安全策略、SRC 方法论 |
-| SOP/ | ~10 | 操作流程、质量门禁 |
-| cards/ | ~30 | 知识卡片（每日精选） |
+| Projects/ | ~1 | 墨题、数模、闲鱼项目 |
+| Research/ | ~220 | 千轮研究、Agent 评测、论文深研 |
+| Security/ | ~53 | 安全策略、SRC 方法论 |
+| SOP/ | ~9 | 操作流程、质量门禁 |
+| cards/ | ~35 | 知识卡片（每日精选） |
 | Archive/ | ~12 | 冻结归档（历史维护日志、已整理旧笔记） |
 | Creative/ | ~5 | 创作：水墨 UI、AI 漫剧、网文 |
-| Product/ | ~5 | 产品：墨题、数模、闲鱼服务 |
+| Product/ | ~1 | 产品：墨题、数模、闲鱼服务 |
 | gaming/ | ~3 | 游戏研究：骑砍2 mod、Lossless Scaling |
 
 ## 🛠 知识库治理（META）

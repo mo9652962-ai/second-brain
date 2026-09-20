@@ -70,7 +70,7 @@ updated: 2026-09-04
 
 
 
-> 所有知识领域的索引与关联。最后更新: 2026-09-19（W38 周度整理：十领域自我强化批次 + 黑盒实证 + 评测意图隐藏规范 + memory 归位 6 文件 + GitHub/arXiv 入库）
+> 所有知识领域的索引与关联。最后更新: 2026-09-20（W39 GitHub 周榜 5 项入库 + 周报更新）
 
 
 
@@ -94,19 +94,19 @@ updated: 2026-09-04
 
 
 
-| 🔬 Research（域） | [[MOC-Research]] | 167 篇 |
+| 🔬 Research（域） | [[MOC-Research]] | 220 篇 |
 
 
 
-| 🐙 GitHub 研究（主题切片） | [[MOC-GitHub]] | 42 篇 |
+| 🐙 GitHub 研究（主题切片） | [[MOC-GitHub]] | 58 篇 |
 
 
 
-| 🛡️ 网络安全（主题切片） | [[MOC-Security]] | 50 篇 |
+| 🛡️ 网络安全（主题切片） | [[MOC-Security]] | 53 篇 |
 
 
 
-| 💻 Dev（域） | [[MOC-Dev]] | 101+23 篇 |
+| 💻 Dev（域） | [[MOC-Dev]] | 107+5 篇 |
 
 
 
@@ -114,7 +114,7 @@ updated: 2026-09-04
 
 
 
-| 🏠 Productivity（域） | [[MOC-Productivity]] | 41 篇 |
+| 🏠 Productivity（域） | [[MOC-Productivity]] | 52 篇 |
 
 | 🧭 入口治理 | [[MOC-Inbox]] | 53 篇待接入笔记 |
 
@@ -122,7 +122,7 @@ updated: 2026-09-04
 
 
 
-| 📈 Finance（域） | [[MOC-Finance]] | 7 篇 |
+| 📈 Finance（域） | [[MOC-Finance]] | 16 篇 |
 
 
 
@@ -1094,6 +1094,26 @@ graph TD
 ---
 
 
+
+## 🆕 W39 GitHub Trending（weekly 口径，2026-09-20）
+
+> 本周 GitHub API 断连，数据经 trending 快照 + web_search 多源交叉验证。5 项全部新入库；脚本口径 Top5 仍连榜。周报见 [[../memory/2026/09/github-trending-w39|W39 GitHub 周报]] + [[knowledge/Research/GitHub-Weekly-2026-09-20-weekly-5projects|weekly 详情]]。
+
+| 项目 | ★ / 周Δ | 一句话定位 | 入库笔记 |
+|:--|:--|:--|:--|
+| **Wei-Shaw/sub2api** | 39.4k / 热榜 | 订阅配额→API Key 分发网关：token 计费 + 内置支付 + 多协议自适应 | [[knowledge/Dev/sub2api-api-gateway-2026-09-20]] |
+| **TheoLeeCJ/SemIf** | 1.9k / 4 天 | logits 直读决策概率（Jev 开源复刻）：5x 提速零输出 token | [[knowledge/AI/semif-logit-decisions-2026-09-20]] |
+| **Tencent/AI-Infra-Guard** | 6.1k / +525 | 腾讯朱雀 AI 红队：MCP/Skills/Agent/Infra 四层扫描 + 越狱评估 | [[knowledge/Security/ai-infra-guard-2026-09-20]] |
+| **multica-ai/andrej-karpathy-skills** | 205k / +21k | 单文件 CLAUDE.md 四原则治 LLM 编码通病 | [[knowledge/Dev/karpathy-coding-guidelines-2026-09-20]] |
+| **alibaba/open-code-review** | 21.3k / 增长 | 已在用：确定性+LLM 混合，~1/9 token，Delegation Mode | [[knowledge/Dev/open-code-review-2026-09-20]] |
+
+### 本周关键主题
+
+1. **订阅配额经济升温** — sub2api 全年霸榜（02-28 首登 #1→39.4k★）：把订阅拆成 API 卖成 2026 真实商业模式，与 sora 中转/反代基建同赛道（EasyCLIProxyAPI/WorkBuddy 反代对照）
+2. **「决策不走文本生成」新范式** — Jev（闭源）→ SemIf（开源）→ jev-ultrafast（browser-use 应用）：小决策用 logits 概率代替大模型写 JSON，本地 RTX 3090/4060 可跑
+3. **AI 安全体检工具化** — Tencent A.I.G + ECC AgentShield + cloudflare/security-audit-skill：MCP/Skills 供应链安全成厂商押注点，第三方 skills 装前可扫
+4. **编码 agent 行为约束刚需** — karpathy-skills 205k★：「给成功标准而非指令」+ verify 检查点，与 sora 验证文化同源
+5. **专用 agent 跑赢通用 agent** — open-code-review ~1/9 token + 更高 Precision：垂直工具化是 agent 应用效率方向
 
 ## 🆕 W38 新增速览（2026-09-07 ~ 09-13）
 
@@ -2078,3 +2098,32 @@ MCP 生态: GitHub + Filesystem + JLCPCB(38工具) + Obsidian(笔记操作)
 | 域 | 新增 | 要点 |
 |:--|:--|:--|
 | arXiv | [[knowledge/Research/arxiv-2026-09-17-agent-llm\|arxiv 速览 09-17]] | 索引解冻：09-15（1035 篇）/ 09-16（522 篇）/ 09-17（595 篇）三窗口大量新提交，Agent 工具接口 / 记忆生命周期 / 技能治理为焦点 |
+| arXiv | [[knowledge/Research/arxiv-2026-09-18-agent-llm\|arxiv 速览 09-18]] | 20+7 篇：Harness 组件归因 / OverclaimBench / 工具幻觉 / 多智能体边界 |
+| arXiv | [[knowledge/Research/arxiv-2026-09-19-agent-llm\|arxiv 速览 09-19]] | 09-18 同池漏网 13+5 篇：LLM 评测元研究 / EconSkills 技能库 / 激活探针安全 |
+| 研究 | [[knowledge/Research/core-pmpa-agent-tool-boundary-2026-09-17\|PMPA Agent-Tool 边界 P0 深读]] | 记忆防投毒 / 工具边界核心精读 + 5 条迁移落地 |
+| 研究 | [[knowledge/Research/agent4science-ai-scientist-social-network-20260918\|Agent4Science]] | AI 科学家社交网络（Reddit 式，UChicago CHAI Lab） |
+| 研究 | [[knowledge/Research/genoffice-ai-office-suite-20260918\|GenOffice]] | 已覆盖结论：与现有 PPT pipeline 冗余，跳过 |
+| 研究 | [[knowledge/Research/wemux-ai-agent-platform-20260918\|Wemux]] | 自托管 AI Agent 协作平台（早期，参考价值） |
+| 研究 | [[knowledge/Research/douyin-kiko-5-skills-ai-design-20260918\|抖音 Kiko 5 技能拆解]] | AI 设计 5 技能深度拆解 |
+| 研究 | [[knowledge/Research/innovation-competition-industry-track-20260915\|创新大赛多智能体命题]] | 联通元景万悟多智能体教育系统 |
+| 研究 | [[knowledge/Research/skill-audit-2026-09-15\|技能审计]] | 技能体系健康度审计 |
+| 研究 | [[knowledge/Research/cron-output-learning-20260915\|cron 产出四算子自举]] | 知识吸收四算子循环研究报告 |
+| AI | [[knowledge/AI/AI视频Agent全流程-四Skill协同架构-2026-09-20\|AI 视频 Agent 四 Skill 协同]] | 视频生成全流程 Agent 架构研报 |
+| AI | [[knowledge/AI/Vibe-Coding自制设计师交互网站-全流程实战-2026-09-20\|Vibe Coding 交互网站实战]] | 高交互设计师网站全流程实战 |
+| AI | [[knowledge/AI/梯度下降-直觉推导与高维优化-2026-09-20\|梯度下降直觉推导]] | 数学本质与高维优化直觉 |
+| Content | [[knowledge/Content/短视频脚本模板-硬核AI与算法直觉化-2026-09-20\|短视频脚本模板]] | 硬核 AI 与算法直觉化模板（选题池 74 题） |
+| Content | [[knowledge/Content/GEO-生成式引擎优化-研究-2026\|GEO 生成式引擎优化]] | 让内容被 AI 引用（GEO 方法论） |
+| Content | [[knowledge/Content/即梦Seedance-相机四维编码速查-2026\|即梦 Seedance 四维编码]] | 即梦相机四维编码速查 |
+| Dev | [[knowledge/Dev/React-Bits-Web动效组件库速查-2026\|React Bits 动效速查]] | 前端高阶动效组件库速查 |
+| SOP | [[knowledge/SOP/SOP-008-xianyu-vibe-coding-website\|SOP-008 闲鱼接单]] | 高交互个人主页 Vibe Coding 接单 SOP |
+| Productivity | [[knowledge/Productivity/PPT国奖级扇叶开场平滑动画-制作SOP-2026-09-20\|PPT 扇叶开场 SOP]] | 国奖级扇叶开场平滑动画（双态 Morph） |
+| Productivity | [[knowledge/Productivity/PPT高级唯美镂空动态结尾页-制作SOP-2026-09-20\|PPT 镂空结尾 SOP]] | 高级唯美镂空动态结尾页 + 答辩商业化 |
+| Productivity | [[knowledge/Productivity/templates/README-Template-01\|PPT 模板库 Template 01]] | 首个固定模板：超框折扇开场 + 红金系统 9 页 + 镂空致谢（实测 8.5-9.8 分） |
+| GitHub | [[knowledge/Research/GitHub-Weekly-2026-09-20-weekly-5projects\|GitHub 周榜 W39]] | weekly 口径：sub2api / SemIf / AI-Infra-Guard / karpathy-skills / open-code-review |
+| GitHub | [[knowledge/Research/GitHub-Weekly-2026-09-20\|GitHub 宝藏挖掘 09-20]] | Top5：codebase-memory-mcp 43.8k / nanobot 48.4k / code-review-graph 31.6k |
+| cards | [[knowledge/cards/2026-09-15-rubygems-ai-attack\|知识卡片 09-15]] | OpenAI bots 攻击 RubyGems（供应链安全） |
+| cards | [[knowledge/cards/2026-09-17-ai-query-plan-optimization\|知识卡片 09-17]] | AI 4B 模型生成查询计划比 Postgres 快 44.7%（qorl） |
+| cards | [[knowledge/cards/2026-09-18-overclaimbench\|知识卡片 09-18]] | OverclaimBench：完成声明不可信评测 |
+| cards | [[knowledge/cards/2026-09-19-zcode-silent-upload\|知识卡片 09-19]] | ZCode 静默上传 Git 历史实锤（墨题 126MB 快照 P0） |
+| Finance | [[knowledge/Finance/每日股票分析-2026-09-18\|股票分析 09-18]] | 每日 18:00 cron 自动分析（本周 5 篇） |
+| Daily | [[knowledge/Daily/hackernews-2026-09-19\|HN 09-19]] | hackernews 日报（本周 6 篇） |

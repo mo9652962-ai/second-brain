@@ -13,7 +13,7 @@ updated: 2026-09-19
 > 所有研究笔记的索引与入口。自动按主题分组。
 > 回到 [[knowledge-map|🗺️ 知识地图]] · [[Home|🏠 Home]]
 
-**共 216 篇研究笔记** · 最后更新: 2026-09-19（每日增量索引）
+**共 220 篇研究笔记** · 最后更新: 2026-09-19（每日增量索引）
 
 ## 🆕 最新增量（2026-09-18 ~ 09-19）
 
@@ -147,7 +147,8 @@ updated: 2026-09-19
 - [[knowledge/Daily/hackernews-2026-09-15|HN 09-15]] · [[knowledge/cards/2026-09-15-rubygems-ai-attack|知识卡片 09-15]]
 - [[knowledge/Daily/hackernews-2026-09-17|HN 09-17]] · [[knowledge/cards/2026-09-17-ai-query-plan-optimization|知识卡片 09-17]]
 - [[knowledge/Daily/hackernews-2026-09-18|HN 09-18]] · [[knowledge/cards/2026-09-18-overclaimbench|知识卡片 09-18]]
-- [[knowledge/Daily/hackernews-2026-09-19|HN 09-19]] · [[knowledge/cards/2026-09-19-zcode-silent-upload|知识卡片 09-19]]
+- [[knowledge/Daily/hackernews-2026-09-19|HN 09-19]]
+- [[knowledge/Daily/hackernews-2026-09-20|HN 09-20]] — 今日精选 · [[knowledge/cards/2026-09-19-zcode-silent-upload|知识卡片 09-19]]
 - [[knowledge/SOP/SOP-008-xianyu-vibe-coding-website|SOP-008 闲鱼 Web 定制 09-20]] · [[knowledge/cards/2026-09-20-xianyu-web-portfolio-sop|知识卡片 09-20]]
 ## 文章研读
 

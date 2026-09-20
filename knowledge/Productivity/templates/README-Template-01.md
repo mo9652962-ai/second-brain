@@ -1,3 +1,11 @@
+---
+title: "PPT 固定模板库 · Template 01 国风红金大师模板"
+type: reference
+domain: Productivity
+status: active
+tags: [knowledge/productivity, ppt, ppt-design, 国奖答辩, 红金, 模板库]
+source: "k 沉淀 2026-09-20"
+---
 # PPT 固定模板库 · Template 01 国风红金大师模板
 
 > 定位：**首个固定标准模板（Fixed Template）**——国家奖学金 / 优秀毕业生 / 硕士论文等高规格答辩的一键初版即优秀方案。

@@ -1,3 +1,9 @@
+---
+tags: [system-cleanup, productivity, report]
+type: report
+created: 2026-09-20
+title: 系统清理报告 2026-09-20
+---
 # 系统清理报告 2026-09-20
 
 **结论：共释放约 2.2 GB，C 盘 373G/448G（84%）——5 天内从 313G 涨到 374G 的 61G 增长主因已定位（Codex 桌面版内置 Docker vhdx 42.5G），清理后未回到低水位是因为该大头保留未动。**

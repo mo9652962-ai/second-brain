@@ -101,4 +101,10 @@ updated: 2026-08-31
 - [[knowledge/Productivity/system-cleanup-report-20260918|系统清理报告 09-18]] — 释放约 1.9 GB（uv/npm/pip 缓存 + 回收站孤儿残留）
 - [[knowledge/Productivity/token-usage-report-20260913|Token 用量报告 09-13]]
 
+## 🆕 W39 新增（09-14 ~ 09-20：PPT 模板体系 + 清理）
+- [[knowledge/Productivity/PPT国奖级扇叶开场平滑动画-制作SOP-2026-09-20|PPT 扇叶开场 SOP]] — 双态 Morph 驱动指南（国奖级）
+- [[knowledge/Productivity/PPT高级唯美镂空动态结尾页-制作SOP-2026-09-20|PPT 镂空结尾页 SOP]] — 高级唯美动态结尾 + 答辩商业化
+- [[knowledge/Productivity/templates/README-Template-01|PPT 固定模板库 Template 01]] — 国风红金大师模板（超框折扇开场 + 红金系统 9 页 + 镂空致谢）
+- [[knowledge/Productivity/system-cleanup-report-20260920|系统清理报告 09-20]] — 释放约 2.2 GB（C 盘 5 天 +61G 主因：Codex Docker vhdx 42.5G 保留未动）
+
 ## 🧭 入口治理

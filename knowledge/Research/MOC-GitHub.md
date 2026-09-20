@@ -12,12 +12,14 @@ updated: 2026-08-31---
 > GitHub 主题切片总入口：周报 / 趋势日榜 / 单项目研读 / 热榜深读 / 资源清单。
 > [[knowledge-map|🗺️ 知识地图]] · [[MOC-Research|🔬 Research MOC（父域）]] · [[MOC-Security|🛡️ Security MOC]]
 
-**共 52 篇相关笔记** · 最后更新：2026-09-13（W38 weekly 精选 4 项入库）
+**共 58 篇相关笔记** · 最后更新：2026-09-20（W39 weekly 精选 5 项入库）
 
 ---
 
 ## 📅 周报系列（W31 起，每周一篇）
 
+- [[GitHub-Weekly-2026-09-20-weekly-5projects]] — W39 weekly：sub2api / SemIf / AI-Infra-Guard / karpathy-skills / open-code-review
+- [[GitHub-Weekly-2026-09-20]] — W39 宝藏挖掘（脚本口径 Top5：codebase-memory-mcp / nanobot / code-review-graph） 5 新面孔（周报 [[../../memory/2026/09/github-trending-w39|W39 周报]]）
 - [[GitHub-Weekly-2026-09-13-weekly-5projects]] — W38 weekly：context-mode / WeKnora / hyperframes / no-ai-slop 4 新面孔（周报 [[../../memory/2026/09/github-trending-w38|W38 周报]]）
 - [[GitHub-Weekly-2026-09-13]] — W38 宝藏挖掘（脚本口径 Top5：codebase-memory-mcp / nanobot 等，全连榜）
 - [[GitHub-Weekly-2026-09-08]] — W38 宝藏挖掘：codebase-memory-mcp / nanobot 等 Top5
@@ -28,6 +30,14 @@ updated: 2026-08-31---
 - [[GitHub-Weekly-2026-08-14]] — W33：自改进 RLM Agent 领跑（prime-agent +12k⭐）+ semantica / agent-skills / cloudflare-computer / switchyard
 - [[GitHub-Weekly-2026-08-09]] — W32 宝藏挖掘
 - [[GitHub-Weekly-2026-08-02]] — W31 宝藏挖掘
+
+## 🗓️ W39 周精选（2026-09-20，weekly 口径 5 项新面孔）
+
+- [[knowledge/Dev/sub2api-api-gateway-2026-09-20|sub2api 39.4k]] — 订阅配额分发 API 网关：token 计费+内置支付+多协议自适应，中转商用范本
+- [[knowledge/AI/semif-logit-decisions-2026-09-20|SemIf 1.9k]] — 从 logits 直读决策概率（Jev 开源复刻）：5x 提速零输出 token，决策不走文本生成
+- [[knowledge/Security/ai-infra-guard-2026-09-20|AI-Infra-Guard 6.1k]] — 腾讯朱雀 AI 红队：MCP/Skills/Agent/Infra 四层扫描 + 越狱评估
+- [[knowledge/Dev/karpathy-coding-guidelines-2026-09-20|karpathy-skills 205k]] — 单文件 CLAUDE.md 四原则治 LLM 编码通病
+- [[knowledge/Dev/open-code-review-2026-09-20|open-code-review 21.3k]] — 已在用工具深度补全：确定性+LLM 混合，~1/9 token，Delegation Mode
 
 ## 🗓️ W38 周精选（2026-09-13，weekly 口径 4 项新面孔）
 
