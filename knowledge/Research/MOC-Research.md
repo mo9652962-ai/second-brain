@@ -148,6 +148,7 @@ updated: 2026-09-19
 - [[knowledge/Daily/hackernews-2026-09-17|HN 09-17]] · [[knowledge/cards/2026-09-17-ai-query-plan-optimization|知识卡片 09-17]]
 - [[knowledge/Daily/hackernews-2026-09-18|HN 09-18]] · [[knowledge/cards/2026-09-18-overclaimbench|知识卡片 09-18]]
 - [[knowledge/Daily/hackernews-2026-09-19|HN 09-19]] · [[knowledge/cards/2026-09-19-zcode-silent-upload|知识卡片 09-19]]
+- [[knowledge/SOP/SOP-008-xianyu-vibe-coding-website|SOP-008 闲鱼 Web 定制 09-20]] · [[knowledge/cards/2026-09-20-xianyu-web-portfolio-sop|知识卡片 09-20]]
 ## 文章研读
 
 - [[ai-literature-search-pitfalls-study]]
