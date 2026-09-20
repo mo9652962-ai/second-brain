@@ -27,7 +27,7 @@ updated: 2026-09-04
 
 | 🛡️ 网络安全（主题切片） | [[MOC-Security]] | 53 篇 |
 
-| 💻 Dev（域） | [[MOC-Dev]] | 107+5 篇 |
+| 💻 Dev（域） | [[MOC-Dev]] | 137 篇 |
 
 | 🔧 Hardware（域） | [[MOC-Hardware]] | 21 篇 |
 
@@ -38,6 +38,15 @@ updated: 2026-09-04
 | 🔁 重复审阅 | [[MOC-Duplicate-Review]] | 0 组逐字重复；相似标题按时间/用途保留 |
 
 | 📈 Finance（域） | [[MOC-Finance]] | 16 篇 |
+| 🃏 知识卡片 | [[knowledge/cards/MOC-cards|MOC-cards]] | 35 篇 |
+| 📅 每日产出 | [[knowledge/Daily/MOC-Daily|MOC-Daily]] | 32 篇 |
+| 🤖 AI 研究与生态 | [[knowledge/AI/MOC-AI|MOC-AI]] | 18 篇 |
+| 📋 标准操作流程 | [[knowledge/SOP/MOC-SOP|MOC-SOP]] | 9 篇 |
+| 🎓 教育规划 | [[knowledge/Education/MOC-Education|MOC-Education]] | 1 篇 |
+| 🎨 创意创作 | [[knowledge/Creative/MOC-Creative|MOC-Creative]] | 5 篇 |
+| 📦 产品 | [[knowledge/Product/MOC-Product|MOC-Product]] | 1 篇 |
+| 🎮 游戏研究 | [[knowledge/gaming/MOC-gaming|MOC-gaming]] | 3 篇 |
+| 🗄️ 归档 | [[knowledge/Archive/MOC-Archive|MOC-Archive]] | 2 篇 |
 
 > 主题切片 MOC（如 GitHub/安全）横跨多个目录收拢同主题笔记，域 MOC 管目录、主题 MOC 管切片，双层导航。
 

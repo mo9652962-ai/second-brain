@@ -34,8 +34,17 @@ MOC-<域>.md          ← 该域全部页面索引
 | Finance | [[MOC-Finance]] | 16 | A股、量化、自选股分析 |
 | GitHub | [[MOC-GitHub]] | 58 | GitHub 项目实证研究 |
 | Inbox | [[MOC-Inbox]] | 53 | 待接入笔记（未挂载入口） |
+| cards | [[knowledge/cards/MOC-cards\|MOC-cards]] | 35 | 每日精选知识卡片 |
+| Daily | [[knowledge/Daily/MOC-Daily\|MOC-Daily]] | 32 | Hacker News 精选、每日回顾 |
+| AI | [[knowledge/AI/MOC-AI\|MOC-AI]] | 18 | Agent 评估、数字生命、知识库方法论 |
+| SOP | [[knowledge/SOP/MOC-SOP\|MOC-SOP]] | 9 | 可复用标准流程 |
+| Creative | [[knowledge/Creative/MOC-Creative\|MOC-Creative]] | 5 | AI 小说、去 AI 味、网文 |
+| gaming | [[knowledge/gaming/MOC-gaming\|MOC-gaming]] | 3 | 游戏 mod / 工具 / 联机 |
+| Archive | [[knowledge/Archive/MOC-Archive\|MOC-Archive]] | 2 | 冻结历史笔记 |
+| Education | [[knowledge/Education/MOC-Education\|MOC-Education]] | 1 | 考研考证路线、家教 |
+| Product | [[knowledge/Product/MOC-Product\|MOC-Product]] | 1 | 墨题及服务类产品 |
 
-> 无独立 MOC 的域（AI/Content/Daily/cards/SOP/Education/Creative/Product/gaming）→ 统一登记在 [[knowledge-map]] 与 [[MOC-Inbox]]。
+> 2026-09-20 起：**每个知识域都有 MOC 锚点**（此前 9 个域无锚点，只能粗粒度挂 knowledge-map）。
 
 ## 🛠 治理资产（META）
 
