@@ -2,71 +2,59 @@
 title: 知识库索引
 type: 索引
 created: 2026-09-05
-updated: 2026-09-05
+updated: 2026-09-20
 tags: [meta, vault-maintenance]
 ---
 
 # 📇 知识库索引 — Knowledge Index
 
-> 内容导向目录（Karpathy LLM-Wiki 规范）：每个知识域一行摘要。
-> 用途：**回答前先读这里定位页面，再深入**——这是 AI 翻库的第一入口。
-> 最后更新: 2026-09-20 | 页面总数: 642 | 由 knowledge-lint 维护
+> **AI 翻库第一入口。** 这里是路由层，不是内容层——先在此定位域，再进 MOC，最后 read_file 具体页面。
+> 全量页面清单在 [[knowledge-map]]（唯一真相源）。本页只做**域级路由**，不重复登记页面。
 
-## 🧭 MOC 入口（主导航）
+## 🧭 三层定位法
 
-| 域 | 入口 | 规模 | 摘要 |
+```
+index.md（本页）     ← 你在哪一层：域路由，10 行
+   ↓
+MOC-<域>.md          ← 该域全部页面索引
+   ↓
+具体页面 .md          ← read_file 深入
+```
+
+## 🗂 域路由表
+
+| 域 | MOC 入口 | 规模 | 典型内容 |
 |:---|:---|:---|:---|
-| 总地图 | [[knowledge-map]] | 592 | 全知识领域索引，W36 起新增 MOC 必须挂载 |
-| Research | [[MOC-Research]] | 220 | 研究域：千轮研究、多Agent、GitHub 调研、AI 论文 |
-| GitHub | [[MOC-GitHub]] | 58 | GitHub 项目实证研究（clone→测→评→可PR） |
-| Security | [[MOC-Security]] | 53 | 网络安全：SRC/逆向/防御/合规 |
-| Dev | [[MOC-Dev]] | 107+5 | 开发域：软件工程/前端/后端/系统 |
-| Hardware | [[MOC-Hardware]] | 21 | 硬件：PCB/KiCad/FreeCAD/单片机 |
-| Productivity | [[MOC-Productivity]] | 52 | 生产力：写作/PPT/文档/效率 |
-| Finance | [[MOC-Finance]] | 16 | 金融：A股/量化/自选股分析 |
-| Inbox | [[MOC-Inbox]] | 53 | 待接入笔记（未挂载的入口） |
-| Duplicate-Review | [[MOC-Duplicate-Review]] | 0 组 | 重复审阅（当前无逐字重复） |
+| 全量总图 | [[knowledge-map]] | 600+ | **所有页面的完整索引（唯一真相源）** |
+| Research | [[MOC-Research]] | 221 | 千轮研究、多 Agent、AI 论文深研 |
+| Dev | [[MOC-Dev]] | 137 | 软件工程、前端/后端、部署、系统设计 |
+| Security | [[MOC-Security]] | 53 | SRC、逆向、防御加固、合规 |
+| Productivity | [[MOC-Productivity]] | 52 | PPT、写作、文档、效率工具 |
+| Hardware | [[MOC-Hardware]] | 21 | PCB/KiCad/FreeCAD/单片机 |
+| Finance | [[MOC-Finance]] | 16 | A股、量化、自选股分析 |
+| GitHub | [[MOC-GitHub]] | 58 | GitHub 项目实证研究 |
+| Inbox | [[MOC-Inbox]] | 53 | 待接入笔记（未挂载入口） |
 
-## 🗂 主要知识域（AI 可检索子目录）
+> 无独立 MOC 的域（AI/Content/Daily/cards/SOP/Education/Creative/Product/gaming）→ 统一登记在 [[knowledge-map]] 与 [[MOC-Inbox]]。
 
-| 目录 | 数量 | 典型内容 |
-|:---|:---|:---|
-| AI/ | ~18 | Agent 评估、墨题 AI 研究、知识库方法论 |
-| Content/ | ~9 | 抖音 AI 博主、内容生产、GEO 生成式引擎优化 |
-| Daily/ | ~32 | hackernews 日报、每日回顾 |
-| Dev/ | ~30 | 墨题开发、部署方案、项目落地 |
-| Education/ | ~1 | 考研考证规划、家教 |
-| Hardware/ | ~21 | PCB/KiCad/嵌入式 |
-| META/ | ~5 | 知识库治理、MOC 体系 |
-| Projects/ | ~1 | 墨题、数模、闲鱼项目 |
-| Research/ | ~220 | 千轮研究、Agent 评测、论文深研 |
-| Security/ | ~53 | 安全策略、SRC 方法论 |
-| SOP/ | ~9 | 操作流程、质量门禁 |
-| cards/ | ~35 | 知识卡片（每日精选） |
-| Archive/ | ~12 | 冻结归档（历史维护日志、已整理旧笔记） |
-| Creative/ | ~5 | 创作：水墨 UI、AI 漫剧、网文 |
-| Product/ | ~1 | 产品：墨题、数模、闲鱼服务 |
-| gaming/ | ~3 | 游戏研究：骑砍2 mod、Lossless Scaling |
-
-## 🛠 知识库治理（META）
+## 🛠 治理资产（META）
 
 | 资产 | 位置 | 用途 |
 |:---|:---|:---|
-| 查询依据规则 | [[knowledge/META/KNOWLEDGE-QUERY-RULES]] | 回答必须标来源页面（query 纪律） |
-| 体检脚本 | `META/scripts/knowledge-lint.py` | 只读扫描断链/孤立/缺 frontmatter/重复 |
-| 知识库方法论 | [[knowledge/AI/知识库-AI不翻知识库根因-2026-09-04]] | 「差的不是资料是最上面那层规则」+ AGENTS.md 实践 |
+| 查询纪律 | [[knowledge/META/KNOWLEDGE-QUERY-RULES]] | 回答必须标来源页面 |
+| 体检脚本 | `META/scripts/knowledge-lint.py` | 只读扫描断链/孤立/frontmatter/重复 |
+| 知识库方法论 | [[knowledge/AI/知识库-AI不翻知识库根因-2026-09-04]] | 「差的不是资料，是最上面那层规则」 |
 | 工具精度方法论 | [[knowledge/AI/工具精度方法论-假阳性税与知识库Lint-2026-09-05]] | 假阳性税 + Precision/Recall 4 问 |
-| 运动曲线/动效 | [[knowledge/Productivity/运动曲线-easing-动效丝滑关键-2026-09-05]] | cubic-bezier 曲线表 + M3/iOS 官方体系 |
-| 公网部署 | [[knowledge/Dev/网站公网部署全流程-Vercel-CDN-域名-2026-09-05]] | Vercel+域名+Cloudflare 全流程 |
-| 操作时间线 | [[log]] | 所有 ingest/lint/query 的 append-only 记录 |
+| 操作时间线 | [[log]] | append-only 的 ingest/lint/query 记录 |
 
 ## 📐 使用规则（AI 必读）
 
-1. **回答前先读本索引**定位相关页面，再 read_file 深入；不要凭记忆作答
-2. **回答必须标注依据**：说明结论来自哪些具体页面（例如「基于 知识库-AI不翻知识库根因 和 index 中的规则」），不写泛泛的「根据知识库」
-3. **新页面必须挂载**：创建后 24h 内加入对应 MOC 或本索引，否则会成为孤岛
-4. **有价值的回答写回**：实质性的综合分析存回 knowledge/，不收藏即止
-5. **维护动作进 log**：每次 ingest/lint/query 归档追加到 log.md
+1. **回答前先读本页**定位域 → 进对应 MOC → read_file 具体页面；不要凭记忆作答
+2. **回答必须标注依据**：说明结论来自哪些具体页面，不写泛泛的「根据知识库」
+3. **新页面必须挂载**：创建后 24h 内进对应 MOC（`scripts/daily_vault_optimize.py` 已自动兜底）
+4. **有价值的回答写回**：实质分析存回 `knowledge/`，不收藏即止
+5. **维护动作进 log**：每次 ingest/lint/query 追加到 [[log]]
 
 ---
-*本文件由 k 于 2026-09-05 创建（Karpathy LLM-Wiki 规范落地）*
+
+*本页为路由层，页面清单以 [[knowledge-map]] 为准。更新于 2026-09-20（双轨合并：删除重复的页面级登记）。*
