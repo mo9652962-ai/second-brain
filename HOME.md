@@ -155,6 +155,7 @@ created: 2026-08-09
 - [[knowledge/Research/arxiv-2026-09-17-agent-llm|arXiv 今日速览]] — 32+10 篇 AI Agent/LLM 论文（09-17 新窗口 09-15~09-17 共 2,151 篇：PMPA 持久记忆投毒 OpenClaw 73.7% / BudgetBench 预算化记忆评测 / 工具-工作流组合级失败 / 投毒基准污染自修改 agent / 编码 agent 实证四连）
 - [[knowledge/Research/arxiv-2026-09-18-agent-llm|arXiv 今日速览]] — 20+7 篇 AI Agent/LLM 论文（09-18 新窗口 602 篇：Harness 组件级归因 176 设置 / OverclaimBench 完成声明 80.4% 误导 / 工具幻觉非 gate 决策 / 多智能体「越少越好」/ MAGS Dafny 形式化安全 100%）
 - [[knowledge/Research/arxiv-2026-09-19-agent-llm|arXiv 补全速览]] — 13+5 篇 AI Agent/LLM 论文（09-19 周六无新窗口，补录 09-18 同池漏网：LLM 评测 14,767 篇元研究 / PetriBench 动态状态推理 / 进化搜索单点评测揭穿 / 12.6M 激活探针平 1000 倍 guard / EconSkills 技能库抽象化 / 元认知反馈防去技能化）
+- [[knowledge/Research/arxiv-2026-09-20-agent-llm|arXiv 补全速览]] — 12+7 篇 AI Agent/LLM 论文（09-20 周日无新窗口，第三轮补录 09-18 同池漏网：ScientistTwo 全自主科学发现 / SoL-Pi harness 省 44.7-49% token / SkillAA 归因技能图 / claim-safe 评测协议 / CovR 覆盖率硬件验证 93.81% / harm laundering 安全评测揭穿）
 
 ## 🧭 核心区域
 - [[memory/2026/08/2026-08-19-reflection|🔍 08-19 反思]] — 行动项 3/3 未落地（反思≠执行第 3 次复发）；Tavily 第 6 次复发；SRC 三方向收敛为补天聚焦 · scripts 登记表当场补建
