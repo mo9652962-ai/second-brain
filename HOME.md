@@ -33,6 +33,7 @@ created: 2026-08-09
 - [[memory/2026/09/2026-09-17-daily-review|📋 09-17 每日回顾]] — Top5：PMPA记忆投毒防写入落地 / Agent-Tool 8异常 / 闲鱼主图禁词修复第21次核验 / qorl 4B查询计划 / arxiv解冻2151篇；明日：内存99.4%危急 + arxiv-fetch排查 + 闲鱼降频机制
 - [[memory/2026/09/2026-09-18-daily-review|📋 09-18 每日回顾]] — Top5：OverclaimBench完成声明不可信 / 工具幻觉防御前置 / 多智能体越少越好 / health检测器误报第3次根治 / 内存处置分级；明日：13处隐私命中清理(截止9/21) + obsidian-maintenance补跑 + 万悟确认剩7天
 - [[memory/2026/09/2026-09-19-daily-review|📋 09-19 每日回顾]] — Top5：ZCode静默上传实锤(墨题126MB快照待传P0) / 评测元视角 / EconSkills技能库 / Agent4Science / 激活探针；明日：ZCode处置 + 闲鱼第43天周一复盘 + 万悟确认 + fallback收窄
+- [[memory/2026/09/2026-09-20-suggestions-applied|🧹 09-20 建议落实]] — 9/18反思3项skill patch全落地核验 / 9/6三建议复核 / 无新增agent可执行项
 - [[memory/2026/09/2026-09-18-reflection|🔍 反思 09-18]] — 工具评估预筛(genoffice冗余) + fallback链健康度 + 卡片cron时序；9/17反思3/3闭环
 - [[memory/2026/09/2026-09-17-reflection|🔍 反思 09-17（补链）]] — health检测器第3次复发根治 + privacy 13命中登记 + 内存分级处置
 - [[memory/2026/09/2026-09-15-daily-review|📋 09-15 每日回顾]]

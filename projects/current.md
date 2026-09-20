@@ -341,7 +341,7 @@ updated: 2026-09-14
 
 - 🔒 外部生图修复排期（3 路径全断实测：XAI key invalid / FAL TOP_UP 锁定 / SILICONFLOW 30001 余额不足 + 30003 FLUX disabled）：XAI 换有效 key / FAL 充值 / SILICONFLOW 充值；k 侧已 patch siliconflow-media 刷新「余额 3000+」假就绪（2026-09-06 已做）
 - ✅ web_extract 豁免验证门（2026-09-06 已 patch daily-knowledge-review）：豁免需端点+条数证据；纯 web 研究 Top 发现写库前强制 ≥1 次原文验证——后续研究类 cron 按新门自检
-- ⏳ 9/6 daily-self-improvement 提出 3 项自动化建议 → 2026-09-06 suggestion-implementation 评估：均需前置评估/确认，登记待评估（不仓促执行）——① stock-analysis cron 并行化（Graph pipeline，重构生产 cron 需先验证基线+确认工作流）② OpenClaw Active Memory 插件评估（工具采纳类，7/31 已做成熟度评估，需试用）③ 全链路监控指标体系（方案产出类，需确认范围，daily-review 已部分覆盖）；完整标注见 memory/2026/09/2026-09-06.md §6
+- ⏳ 9/6 daily-self-improvement 提出 3 项自动化建议 → 2026-09-06 suggestion-implementation 评估：均需前置评估/确认，登记待评估（不仓促执行）——① stock-analysis cron 并行化（Graph pipeline，重构生产 cron 需先验证基线+确认工作流）② OpenClaw Active Memory 插件评估（工具采纳类，7/31 已做成熟度评估，需试用）③ 全链路监控指标体系（方案产出类，需确认范围，daily-review 已部分覆盖）；完整标注见 memory/2026/09/2026-09-06.md §6；**9/20 suggestion-implementation 复核：① 查证 stock-daily-analysis skill + 9/11–9/18 每日产出连续正常（单 cron 单脚本稳定），并行化收益未证实、重构风险>收益 → 维持 ⏳ 不仓促执行（若日后出现超时/失败再评估）；②③ 无新触发 → 维持 ⏳**
 
 ### 🧭 9/7 反思行动项（vault-suggestion-executor 闲鱼专项，执行者必读）
 - 🔴 闲鱼试水决策（悬置第 42 天，9/6 fallback 硬触发日已过）：k 侧试水前置 100% 就绪（主图1 安全版 750×750 + 违禁词全过 + 第 15 次核验 PASS），实际上架是外部经营动作，等 sora 一句话二选一（试水/放弃/再缓）——再顺延仅消耗注意力成本，30min 可逆
