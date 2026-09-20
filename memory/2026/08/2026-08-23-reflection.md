@@ -35,7 +35,7 @@ subject: 2026-08-23
 |:-:|:-------|:----:|:-----|
 | 1 | **P0 语义缓存最小版（硬截止 8/22）** | ✅ 8/21 落地 | projects/current.md：统一 chokepoint 上移覆盖全 8 后端，实测 exact 命中生效，commit `84d813bf2`——根治 Tavily 连续 8 工作日配额复发 |
 | 2 | **P1 health_provider_check.py 余额阈值告警** | ✅ 8/21 落地 | `_balance_flag` 解析 402/403/429 错误体，实测 kimi suspended / fangzhou-2 quota(8/28 重置) 正确标红；keylink ¥0.05 裸奔解除 |
-| 3 | **P1 SRC 侦察收敛** | 🟡 持续 | 8/20 guat POC 提交后无新增（未列入当日主线） |
+| 3 | **P1 SRC 侦察收敛** | 🟡 持续 | 8/20 目标站点 POC 提交后无新增（未列入当日主线） |
 | 4 | **scripts/ 登记表** | ✅ 已落地 | scripts/README.md 保持，单一事实源 |
 | 5 | **agent 可执行项分类（8/21 反思项）** | ⏳ 仍 open | projects/current.md L161 仍 `- [ ]`——executor 已能批量勾选（8/23 处理 38 条），但「agent 可执行→直接跑」的调度分类仍未落地 |
 

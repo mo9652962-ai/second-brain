@@ -76,7 +76,7 @@ date: 2026-08-18
 ```
 ✅ 已注册: 漏洞盒子（实名审核中）
 ✅ 已具备: ai_secret_scan + OneForAll + Burp + 报告模板
-✅ 已验证: 小程序 signkey POC（target.example.edu 待授权确认）
+✅ 已验证: 小程序 signkey POC（目标站点待授权确认）
 ⏳ 待做: 实名通过 → 找授权目标 → F12 过滤 User → 提交首单
 ```
 
