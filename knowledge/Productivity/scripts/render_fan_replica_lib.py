@@ -243,12 +243,12 @@ def create_courtyard_background(W=1920, H=1080):
         mw = W * (1.3 - i * 0.12)
         mdraw.ellipse([W * 0.35 - mw / 2, my, W * 0.35 + mw / 2, my + 90],
                       fill=(245, 250, 246, 22))
-    # 顶部轻烟（横向飘带，模拟炊烟/云雾）
+    # 顶部轻烟（横向飘带，模拟炊烟/云雾；置于右侧无屋檐区，可见）
     for i in range(3):
-        sy = H * (0.06 + i * 0.05)
-        sw = W * (0.9 + i * 0.15)
-        mdraw.ellipse([W * 0.2 - sw / 2, sy, W * 0.2 + sw / 2, sy + 26],
-                      fill=(250, 252, 248, 16 + i * 4))
+        sy = H * (0.16 + i * 0.05)
+        sw = W * (0.55 + i * 0.12)
+        mdraw.ellipse([W * 0.60 - sw / 2, sy, W * 0.60 + sw / 2, sy + 30],
+                      fill=(250, 252, 248, 26 + i * 6))
     mist = mist.filter(ImageFilter.GaussianBlur(radius=30))
     img.paste(mist, (0, 0), mist)
 
@@ -268,6 +268,11 @@ def _paper_texture(W, H, seed=5, alpha=36):
         tdraw.line([(x, y), (x + ln, y + rng.uniform(-2, 2))],
                    fill=(255, 250, 240, int(rng.uniform(10, alpha))), width=1)
     return tex
+
+
+def _polar(cx, cy, rr, aa):
+    """PIL 坐标系极坐标→直角坐标（PIL pieslice 角为顺时针，y 向下为正，与扇叶绘制一致）"""
+    return cx + rr * math.cos(math.radians(aa)), cy + rr * math.sin(math.radians(aa))
 
 
 def render_fan_replica(base_img, is_opened=True):
@@ -359,8 +364,7 @@ def render_fan_replica(base_img, is_opened=True):
         mid = a + blade_span / 2
         for t in np.linspace(0.25, 0.97, 40):
             r_t = radius * t
-            bx = cx + r_t * math.cos(math.radians(mid))
-            by = cy - r_t * math.sin(math.radians(mid))
+            bx, by = _polar(cx, cy, r_t, mid)
             # 右侧暗线
             bdraw2.ellipse([bx - 1.5, by - 1.5, bx + 1.5, by + 1.5], fill=(70, 54, 38, 170))
             # 左侧高光线（受左上光源）
@@ -374,8 +378,7 @@ def render_fan_replica(base_img, is_opened=True):
     for _ in range(18):
         rr = wrng.uniform(0.3, 0.9) * radius
         aa = wrng.uniform(start_angle + 4, end_angle - 4)
-        dx = cx + rr * math.cos(math.radians(aa))
-        dy = cy - rr * math.sin(math.radians(aa))
+        dx, dy = _polar(cx, cy, rr, aa)
         rad = wrng.uniform(8, 20)
         wdraw.ellipse([dx - rad, dy - rad * 0.7, dx + rad, dy + rad * 0.7],
                       outline=(235, 242, 240, 110), width=3)
@@ -385,8 +388,7 @@ def render_fan_replica(base_img, is_opened=True):
     for _ in range(7):
         rr = wrng.uniform(0.45, 0.92) * radius
         aa = wrng.uniform(start_angle + 6, end_angle - 6)
-        dx = cx + rr * math.cos(math.radians(aa))
-        dy = cy - rr * math.sin(math.radians(aa))
+        dx, dy = _polar(cx, cy, rr, aa)
         rad = wrng.uniform(14, 34)
         wdraw.ellipse([dx - rad, dy - rad * 0.6, dx + rad, dy + rad * 0.6],
                       fill=(52, 76, 62, 26))
@@ -424,8 +426,7 @@ def render_fan_replica(base_img, is_opened=True):
         aa = a + 9
         while aa < a + blade_span - 9:
             rr = radius + 14
-            bx = cx + rr * math.cos(math.radians(aa))
-            by = cy - rr * math.sin(math.radians(aa))
+            bx, by = _polar(cx, cy, rr, aa)
             s = 16
             # 外菱金 + 内菱米白
             gdraw.polygon([(bx, by - s), (bx + s * 0.82, by), (bx, by + s), (bx - s * 0.82, by)],
@@ -471,8 +472,7 @@ def render_fan_replica(base_img, is_opened=True):
     for _ in range(65):
         rr = rng.uniform(0.15, 0.95) * radius
         aa = rng.uniform(start_angle + 3, end_angle - 3)
-        dx = cx + rr * math.cos(math.radians(aa))
-        dy = cy - rr * math.sin(math.radians(aa))
+        dx, dy = _polar(cx, cy, rr, aa)
         a = rng.uniform(70, 160)
         rdraw2.ellipse([dx - 1.6, dy - 1.6, dx + 1.6, dy + 1.6], fill=(222, 236, 238, int(a)))
     canvas.paste(rain_dots, (0, 0), Image.composite(rain_dots.split()[3], Image.new('L', (W, H), 0), blades_mask))
