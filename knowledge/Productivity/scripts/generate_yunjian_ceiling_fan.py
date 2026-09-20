@@ -119,8 +119,10 @@ def _add_blade(slide, name, cx, cy, R, rot, rid, fr, shadow=True):
     sp.adjustments[0] = 0.0
     sp.adjustments[1] = PIE_ADJ2
     sp.rotation = rot
+    # 扇骨描边：0.15pt 金色（v18/v19 标定：目标振幅 21~28、宽 1.4px；
+    # 原 0.75pt 振幅 70.54 超标 2.5x，视觉上扇骨"过重"、与视频原片不符）
     sp.line.color.rgb = RGBColor(215, 185, 125)
-    sp.line.width = Pt(0.75)
+    sp.line.width = Pt(0.15)
     p = sp._element.spPr
     for c in list(p):
         if c.tag.endswith("Fill"):

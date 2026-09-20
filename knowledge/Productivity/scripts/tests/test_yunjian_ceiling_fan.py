@@ -186,6 +186,24 @@ class TestYunjianPieCeilingFan(unittest.TestCase):
             n += 1
         self.assertEqual(n, 12)
 
+    # ---------- 9. 扇骨描边标定（v18/v19） ----------
+    def test_blade_stroke_width_calibrated(self):
+        """扇骨描边必须为 0.15pt（1905 EMU）
+
+        定标依据：v18/v19 变体扫描，视频原片接缝振幅 27.8、宽 1.4px；
+        0.15pt 实测振幅 28.86（偏差 3.8%），而原 0.75pt 为 70.54（超标 2.5x）。
+        此测试防止参数回退。
+        """
+        widths = set()
+        for sp in self.s2.shapes:
+            if not (sp.name and "Fan" in sp.name):
+                continue
+            ln = sp._element.spPr.find(f"{NS_A}ln")
+            self.assertIsNotNone(ln, f"{sp.name} 缺少描边元素")
+            widths.add(int(ln.get("w")))
+        self.assertEqual(widths, {1905},
+                         f"扇骨描边应为 0.15pt (1905 EMU)，实测 {widths}")
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
