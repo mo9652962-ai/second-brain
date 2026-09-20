@@ -14,7 +14,7 @@ updated: 2026-07-30
 | 工具 | 角色 | 状态 |
 |------|------|------|
 | **Hermes Agent** | 主力 AI 助手 | 🟢 日常使用 |
-| **opencode-go** | 主 provider（deepseek-v4-flash/pro） | 🟢 通过火山方舟 |
+| **opencode-go** | 主 provider（deepseek-v4-flash/pro → **canonical `deepseek-flash`**，旧名仍可路由但已退役） | 🟢 通过火山方舟 |
 | **SiliconFlow** | 辅助 provider（Qwen3-VL 视觉） | 🟢 视觉分析用 |
 | **Kimi API** | 辅助 provider（k2.7-code/k2.6） | 🟢 已验证可用 |
 
