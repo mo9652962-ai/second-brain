@@ -30,8 +30,11 @@ for f in files:
     m2 = fm_yaml_re.search(text)
     if m2:
         fm_yaml_files.append(f.relative_to(root))
-        for t in re.findall(r"-\s*(\S+)", m2.group(1)):
-            if t:
+        # 逐行解析，要求 `- ` 后跟真实标签；避免吃掉紧随的 frontmatter 闭合 `---`（纯破折号会被 \S+ 吞成假标签 "--"）
+        for line in m2.group(1).splitlines():
+            mm = re.match(r"^\s*-\s+(\S+)", line)
+            if mm:
+                t = mm.group(1)
                 fm_tags[t] += 1
                 tag_case[t.lower()].add(t)
     text_nocode = re.sub(r"`[^`]*`", "", text)

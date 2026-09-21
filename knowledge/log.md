@@ -249,3 +249,4 @@ tags: [meta, vault-maintenance]
 - 新页挂载 2：hackernews-2026-09-21 → MOC-Daily + MOC-Research；arxiv-2026-09-21-agent-llm → MOC-Research
 - 验证：Broken 0 / Missing frontmatter 0 / Short pages 0 / Stale 0；Orphan 剩 1（考研路线图=gitignore 隐私文件，预期孤立）；README 重名 1 组低风险保留
 - 工具坑沉淀：Path.read_text 文本模式把 CRLF→LF 导致误判换行——脚本须 open(newline="") 读、write_bytes 写，幂等验证 0 changes
+- 追加修复：tag-lint.py YAML-list 标签块紧随的闭合 `---` 会被解析成假标签 `--`（真库未触发）→ 改为逐行 `- ` 解析；临时夹具 8 项断言全过（检出/归一/CRLF/幂等/误报保护）
