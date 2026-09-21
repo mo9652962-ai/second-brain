@@ -25,7 +25,7 @@ type: daily-review
 - **health 巡检（15:45）**：基本健康降级——默认链 fangzhou-2 2596ms OK / 备用 jiyuanlvdong-2 1501ms OK；新发现 2 个 P1：① cpa-gui（EasyCLIProxyAPI:8317）未监听 ② api-media-weekly-probe 脚本缺失（`scripts/api_image_probe.sh` 不存在 → **生图三路径探活 9/14 10:15 实际未跑成**，9/13 反思的硬线未兑现）
 - **obsidian-maintenance 14/14 验证**：断链 0 / frontmatter 0 / 孤立 0；抓到并修复 log.md 反引号内 wikilink 断链 + 补挂 2 个新孤立页（arxiv-09-14 / ai-weekly-literature-09-14）
 - **AI测评周报**：DeepSeek V4.1 Flash 价格调研 + BenchLM 月度统计（`knowledge/Dev/ai测评-内容素材库-2026-08.md` 更新）
-- **github-privacy-gate 门禁正常拦截**：13 处命中（4 真命中：s4mp 192.168.0.112 / nmap 192.168.1.38·1.0 / Browser-Use token 占位符；9 处 uv.lock/bolt.step 数字误判假阳性）
+- **github-privacy-gate 门禁正常拦截**：13 处命中（4 真命中：s4mp <LAN-IP> / nmap <LAN-IP>·1.0 / Browser-Use token 占位符；9 处 uv.lock/bolt.step 数字误判假阳性）
 
 ## 🎯 明日行动项（9/15 周二）
 
@@ -41,7 +41,7 @@ type: daily-review
 
 | 项 | 内容 | 耗时 | 状态 |
 |:--|:-----|:----:|:----:|
-| github-privacy-gate 真命中清理 | 4 处：s4mp 192.168.0.112、nmap 192.168.1.38/1.0、Browser-Use `${MY_SERVICE_TOKEN}` 占位符 | 20min | ⏳ k 可做 |
+| github-privacy-gate 真命中清理 | 4 处：s4mp <LAN-IP>、nmap <LAN-IP>/1.0、Browser-Use `${MY_SERVICE_TOKEN}` 占位符 | 20min | ⏳ k 可做 |
 | skill-link-gate 检测器修复 | 先修 references/research 误报 + 占位符引用规则 → 重跑基线拿真实断链数 → 再批量补链（9/13 反思登记，遵循「先修检测器再动数据」） | 40min | ⏳ k 可做 |
 | 微信投递通道重连 | 3 个任务 delivery_failed（iLink 限流/断连）；QQBot 4009 已自动恢复 | 10min | ⏳ k 可做 |
 | FlClash github 路由 | google 7890=302 正常但 github=000 → 检查规则/fake-ip/节点；ERR-20260818-001 连续 6+ 次高亮 | 30s | 🔒 需 sora（物理机） |

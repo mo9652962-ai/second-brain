@@ -421,7 +421,7 @@ updated: 2026-09-14
 - [x] ~~🔒 万悟参赛确认（9/25 12:00 截止，剩 8 天，sora）~~ ✅ 2026-09-20 去重：与 L431 重复，以 L431（9/19 更新，剩 5 天）为准，决策仍开放
 
 ### 🧭 9/17 反思行动项（daily-reflection 复盘 9-17，执行者必读）
-- [x] 🔴 github-privacy-gate 13 处隐私命中清理 ✅ 2026-09-18 daily-todo-executor 落地：门禁清零（4 处真实本地路径脱敏为 %USERPROFILE% + 7 处示例 IP/π 数字掩码 + 移除失效 s4mp 白名单条目），重跑 exit 0（截止 9/21 巡检前）——health 09-16/09-17 连续两天报 13 处命中（API_KEY 占位符/内网 IP，门禁拦截属预期但未清理）；跑 github_privacy_gate 出命中清单 → 占位符改示例 / 内网 IP 脱敏 / 真误报进白名单（9/16 s4mp 192.168.0.112 惯例）；只写 daily-note 不会被 executor 扫到，故本项登记在此
+- [x] 🔴 github-privacy-gate 13 处隐私命中清理 ✅ 2026-09-18 daily-todo-executor 落地：门禁清零（4 处真实本地路径脱敏为 %USERPROFILE% + 7 处示例 IP/π 数字掩码 + 移除失效 s4mp 白名单条目），重跑 exit 0（截止 9/21 巡检前）——health 09-16/09-17 连续两天报 13 处命中（API_KEY 占位符/内网 IP，门禁拦截属预期但未清理）；跑 github_privacy_gate 出命中清单 → 占位符改示例 / 内网 IP 脱敏 / 真误报进白名单（9/16 s4mp <LAN-IP> 惯例）；只写 daily-note 不会被 executor 扫到，故本项登记在此
 - [x] 🟡 资源类 P0 按副作用分级拆分 ✅ 2026-09-18 daily-todo-executor 落地：规则固化 hermes-health-check（k 可做无副作用当场执行 / 需 sora 确认列报告，不捆绑冻结）；RAMMap64 -E 9/18 反思时已执行清 Standby；wsl --shutdown 独立归 9/21 万悟决策夜间窗口（9/17 内存 99.4% 教训）——巡检发现资源问题先拆「k 可做无副作用（RAMMap64 -E 等，当场执行）」/「需 sora（wsl --shutdown 等）」两列，不捆绑冻结；9/18 反思已当场 RAMMap64 -E 清 Standby；wsl --shutdown 若 9/21 前 sora 未确认万悟部署 → 夜间窗口自动执行（镜像 21/25 已拉完，重启可再起）
 
 ### 🧭 9/18 反思行动项（daily-reflection 复盘 9-18，执行者必读）
