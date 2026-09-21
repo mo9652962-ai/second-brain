@@ -150,6 +150,7 @@ updated: 2026-09-20
 - [[knowledge/Daily/hackernews-2026-09-19|HN 09-19]]
 - [[knowledge/Daily/hackernews-2026-09-20|HN 09-20]] — 今日精选 · [[knowledge/cards/2026-09-19-zcode-silent-upload|知识卡片 09-19]]
 - [[knowledge/SOP/SOP-008-xianyu-vibe-coding-website|SOP-008 闲鱼 Web 定制 09-20]] · [[knowledge/cards/2026-09-20-xianyu-web-portfolio-sop|知识卡片 09-20]]
+- [[knowledge/Dev/Devin-Cognition-评估-2026-09-20|Devin/Cognition 评估 09-20]] · [[knowledge/cards/2026-09-21-devin-cognition-eval|知识卡片 09-21]]
 ## 文章研读
 
 - [[ai-literature-search-pitfalls-study]]
