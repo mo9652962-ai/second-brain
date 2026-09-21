@@ -11,7 +11,7 @@ tags: [meta/dashboard, knowledge/governance, health]
 
 # 📊 DASHBOARD — 知识库健康看板
 
-> 自动生成：`scripts/gen-vault-index.py`（2026-09-21 13:48）。详细报告：`scripts/vault-audit-report.json`（CI 周一产物）。
+> 自动生成：`scripts/gen-vault-index.py`（2026-09-21）。详细报告：`scripts/vault-audit-report.json`（CI 周一产物）。
 
 ## 关键指标
 

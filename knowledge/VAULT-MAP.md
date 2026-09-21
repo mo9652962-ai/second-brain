@@ -11,7 +11,7 @@ tags: [meta/index, knowledge/governance, ai/navigation]
 
 # 🗺️ VAULT-MAP — 机器可读索引
 
-> 自动生成：`scripts/gen-vault-index.py`（2026-09-21 13:48）。
+> 自动生成：`scripts/gen-vault-index.py`（2026-09-21）。
 > 给 AI Agent 用的静态导航索引：不用全盘扫描即可定位内容。人类入口见 [[knowledge-map]] 与 [[HOME]]。
 
 ## 顶层分布
