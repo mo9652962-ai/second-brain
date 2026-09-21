@@ -49,7 +49,8 @@ jobs:
           set -euo pipefail
           rm -rf .build-docs
           mkdir -p .build-docs/docs .build-docs/site
-          git ls-files '*.md' | while IFS= read -r f; do
+          # -z + quotePath=false：避免中文/特殊字符路径被加引号转义（CI 上会 cp 失败）
+          git -c core.quotePath=false ls-files -z '*.md' | while IFS= read -r -d '' f; do
             mkdir -p ".build-docs/docs/$(dirname "$f")"
             cp "$f" ".build-docs/docs/$f"
           done
@@ -78,11 +79,6 @@ jobs:
           test -f _site/kb/index.html
           touch _site/.nojekyll
           echo "final: $(find _site -name '*.html' | wc -l) html files"
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: _site
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
