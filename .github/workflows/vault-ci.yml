@@ -21,7 +21,7 @@ jobs:
         run: python3 scripts/check-backup-privacy.py --quiet
 
   health:
-    if: github.event_name == 'schedule'
+    if: github.event_name != 'pull_request'   # push(dev/main) + 每周一 schedule 都跑全量健康检查
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -29,7 +29,8 @@ jobs:
       - name: Full vault health check
         run: python3 scripts/vault-structure.py
 
-      - name: Upload report
+      - name: Upload report (only on weekly schedule)
+        if: github.event_name == 'schedule'
         uses: actions/upload-artifact@v4
         with:
           name: vault-audit-report
