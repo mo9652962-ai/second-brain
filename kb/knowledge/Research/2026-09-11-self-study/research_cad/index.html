@@ -1,0 +1,3214 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="AI Agent 第二大脑 | Hermes 七大自举系统 | 硬件/PCB/单片机全链路知识库 | 学术写作工作流 | 全中文 Obsidian 知识库">
+      
+      
+        <meta name="author" content="mo9652962">
+      
+      
+        <link rel="canonical" href="https://mo9652962-ai.github.io/second-brain/kb/knowledge/Research/2026-09-11-self-study/research_cad/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>CAD智能制造自动化-千轮研究-2026-09 - Second Brain 知识库</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cad-2026" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../../.." title="Second Brain 知识库" class="md-header__button md-logo" aria-label="Second Brain 知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Second Brain 知识库
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              CAD智能制造自动化-千轮研究-2026-09
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="切换到深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="切换到浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../.." class="md-tabs__link">
+          
+  
+  
+    
+  
+  🏠 总入口
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../skills/hermes/hermes-workflow-preferences/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🤖 Hermes 自举系统
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../skills/hardware/PCB-Design-Automation-2026/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🔧 硬件工程
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../skills/ai/mlops-llm-training-pipeline/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🧠 AI / MLOps
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../skills/web/Modern-Web-Development-2026/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  💻 Web / 平台
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../skills/dev/cross-platform-mobile-development-2026/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  📱 移动端 & 安全
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../skills/general/knowledge-domain-roadmap/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  📚 通用参考
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../MOC-Research/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🗺️ 知识域 MOC
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../projects/current/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  📦 项目与治理
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Second Brain 知识库" class="md-nav__button md-logo" aria-label="Second Brain 知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Second Brain 知识库
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../.." class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 总入口
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🏠 总入口
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../HOME/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HOME 知识中枢
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../INDEX/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    全库索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../knowledge-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识地图
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--adopted"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DASHBOARD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    健康看板
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../VAULT-MAP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器可读索引
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cross-Domain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跨域关联
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--adopted"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 Hermes 自举系统
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🤖 Hermes 自举系统
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../skills/hermes/hermes-workflow-preferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    交互自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../skills/hermes/hermes-automation-patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    可靠性自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../skills/hermes/daily-knowledge-absorption-gate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../skills/hermes/tool-call-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    工具调用自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../skills/hermes/code-quality-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    代码质量自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../skills/hermes/output-style-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    输出风格自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../skills/hermes/context-management-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    上下文管理自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../skills/hermes/github-repo-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub 仓库优化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../skills/hermes/github-seo-optimization-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub SEO 优化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔧 硬件工程
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🔧 硬件工程
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../skills/hardware/PCB-Design-Automation-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PCB 设计自动化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../skills/hardware/CAD-Design-Complete-Guide-v2.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CAD 设计完整指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../skills/hardware/Microcontroller-Edge-AI-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    单片机与边缘 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../skills/hardware/Hardware-Startup-Open-Source-Ecosystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    硬件创业与开源生态
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../skills/cad-design-master/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CAD 设计大师（技能集）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../skills/8051-embedded-dev/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8051 嵌入式开发
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧠 AI / MLOps
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🧠 AI / MLOps
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../skills/ai/mlops-llm-training-pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MLOps & LLM 训练流水线
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💻 Web / 平台
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    💻 Web / 平台
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../skills/web/Modern-Web-Development-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    现代 Web 开发 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../skills/platform/Platform-Development-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    平台开发 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📱 移动端 & 安全
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📱 移动端 & 安全
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../skills/dev/cross-platform-mobile-development-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跨平台移动端开发
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../skills/dev/ctf-cybersecurity-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CTF 网络安全路线
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📚 通用参考
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📚 通用参考
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../skills/general/knowledge-domain-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识域扩展路线图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../skills/general/community-best-practices-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    社区最佳实践索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../skills/general/bilingual-terminology-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中英双语术语表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../skills/engineering-workflow/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    工程工作流
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🗺️ 知识域 MOC
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🗺️ 知识域 MOC
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MOC-Research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    研究 Research
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Dev/MOC-Dev/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开发 Dev
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Productivity/MOC-Productivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    生产力 Productivity
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Security/MOC-Security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    安全 Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cards/MOC-cards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识卡 cards
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Daily/MOC-Daily/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    日常 Daily
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Hardware/MOC-Hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    硬件 Hardware
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/MOC-AI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Finance/MOC-Finance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    金融 Finance
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Archive/MOC-Archive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    归档 Archive
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Content/MOC-Content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    内容 Content
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../SOP/MOC-SOP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SOP
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../META/MOC-META/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    元信息 META
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Creative/MOC-Creative/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    创意 Creative
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gaming/MOC-gaming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    游戏 gaming
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Product/MOC-Product/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    产品 Product
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Projects/MOC-Projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    项目 Projects
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Education/MOC-Education/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    教育 Education
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📦 项目与治理
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📦 项目与治理
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../projects/current/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    当前项目
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../concepts/MOC-Concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    概念索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../memory/MOC-Memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    记忆索引
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../health/MOC-Health/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    健康索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MOC-Inbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    待整理箱
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MOC-Duplicate-Review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    重复审查
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="cad-2026">CAD/智能制造自动化 · 2026 千轮研究报告<a class="headerlink" href="#cad-2026" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>调研时间：2026-09-12（UTC+8）｜方法：多轮 web_search + web_extract + 本机实测（FreeCAD 1.1.1 无头脚本验证）
+目标读者：sora 的 CAD 路线（FreeCAD 自动化 + AI 工作台 + 2D工程图→3D打印→智能制造技能树），闲鱼 CAD 接单可行性
+实证原则：关键结论附官方文档/GitHub/实测来源，不编造数据。</p>
+</blockquote>
+<hr />
+<h2 id="tldr">结论速览（TL;DR）<a class="headerlink" href="#tldr" title="Permanent link">&para;</a></h2>
+<p>2026 年 CAD 自动化已进入"<strong>B-Rep 优先 + AI 生成初稿 + 无头验证闭环</strong>"阶段：
+- <strong>FreeCAD 1.1（2026-03-25 发布）</strong> 内置 Assembly 工作台（Ondsel 求解器），TNP 已修，freecadcmd 无头 Part API 稳定可用（本机实测通过）；但 <strong>Assembly 脚本化仍不成熟</strong>（官方 issue #27914 未关闭，需 GUI 手工初始化）。
+- <strong>代码 CAD 仍是 AI 自动化最可靠通路</strong>：OpenSCAD 生成可靠性 ≈0.4 错误/代（GrandpaCAD 23 模型实测），Build123d/CadQuery 的错误率是其 3-4 倍，但 B-Rep/STEP 能力更强；<strong>双引擎策略</strong>（build123d 出 STEP + OpenSCAD 兜底）是当前最优解。
+- <strong>线上 AI 建模二分</strong>：B-Rep 生成（Zoo Design Studio 最工程化，Zookeeper 对话代理）vs 网格生成（Meshy 6 等，只适合外观件）；📌 面向制造必须走 B-Rep/STEP。
+- <strong>切片自动化已成熟</strong>：OrcaSlicer CLI 支持完全无头切片（Printago 已跑 3.5 万+ 次），<code>slice_info.config</code> 可直接做成本核算。
+- <strong>ECAD-MCAD 共用基建明确</strong>：KiCad STEP 导出（KiCad 10+ 官方库纯 STEP）+ KicadStepUp 双向同步 + jlc-mcp 与 freecad-ai 同属 <strong>MCP + Python/uv 零依赖模式</strong>，轻量贴合本机（虚拟化已就绪但零依赖更省资源，见 [[knowledge/META/current-environment]]）。</p>
+<hr />
+<h2 id="1-freecad-2026">1. FreeCAD 自动化现状 2026<a class="headerlink" href="#1-freecad-2026" title="Permanent link">&para;</a></h2>
+<h3 id="11">1.1 版本与内置能力（实证基线）<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>项</th>
+<th>值</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>最新稳定版</td>
+<td>1.1.0（2026-03-25 发布）；1.1.1 patch 本机安装</td>
+<td>github.com/FreeCAD/FreeCAD/releases/tag/1.1.0</td>
+</tr>
+<tr>
+<td>本机实测</td>
+<td>FreeCAD 1.1.1 Revision 20260414，OCC 7.8.1，Python 3.11.14</td>
+<td>freecadcmd --version</td>
+</tr>
+<tr>
+<td>1.1 里程碑</td>
+<td>TNP 修复（1.0 起）、内置 <strong>Assembly 工作台</strong>（Ondsel 求解器）、Create Simulation 动画、Insert New Part、BOM、Exploded View、全新 CAM 工具库系统、FEM 改进</td>
+<td>github.com/FreeCAD/FreeCAD-documentation wiki/Release_notes_1.1.md</td>
+</tr>
+<tr>
+<td>1.2 进行中（milestone 1.2）</td>
+<td>Assembly 过约束报告（PR#24623）、关节 90° 旋转（PR#29717）、装配内编辑草图不崩溃（PR#29271）、仿真导出视频（PR#25307）、临时爆炸视图（PR#25456）、<strong>TNP 改进进 Python API</strong>（PR#24632，插件稳定性）</td>
+<td>reqrefusion.github.io Release_notes_1.2 / blog.freecad.org 2026-01-28 WIP</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>💡 1.1 的 Assembly 已可用但未"默认成熟"——官方开发者路线图（DevelopersHandbook/roadmap）仍将 Assembly 列为长期目标（数据格式、求解器、80% 用户需求集三件套）。</p>
+</blockquote>
+<h3 id="12-python-api-freecadcmd">1.2 Python API / freecadcmd 无头（本机实测 ✅）<a class="headerlink" href="#12-python-api-freecadcmd" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="n">freecadcmd</span><span class="p">.</span><span class="n">exe</span><span class="w"> </span><span class="n">script</span><span class="p">.</span><span class="n">py</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="n">Part</span><span class="p">.</span><span class="n">makeBox</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="n">doc</span><span class="p">.</span><span class="n">addObject</span><span class="p">(</span><span class="ss">"Part::Feature"</span><span class="p">)</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="n">recompute</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="n">Shape</span><span class="p">.</span><span class="n">isValid</span><span class="p">()</span><span class="o">==</span><span class="k">True</span>
+<span class="w">                          </span><span class="err">→</span><span class="w"> </span><span class="n">Part</span><span class="p">.</span><span class="n">export</span><span class="p">(</span><span class="o">[</span><span class="n">shape</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="ss">"*.step"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Mesh</span><span class="p">.</span><span class="n">tessellate</span><span class="p">(</span><span class="mf">0.3</span><span class="p">).</span><span class="k">write</span><span class="p">(</span><span class="ss">"*.stl"</span><span class="p">)</span><span class="w"> </span><span class="n">均成功</span>
+</code></pre></div>
+
+<ul>
+<li><strong>Part API 全链路无头可用</strong>：基础体/挤出/布尔（fuse/cut/common）/tessellate/STEP+STL 导出，全部 CLI 可跑、无 GUI 依赖。</li>
+<li>实测陷阱确认：<code>App.Gui</code> 在 freecadcmd 中不存在（需判空）；内联 <code>-c</code> 命令崩溃（skill 已记录）；脚本路径必须用 Windows 格式 <code>C:\...</code>。</li>
+<li>OCC 7.8.1 的 B-Rep 精度与 2026 商业内核（Parasolid 同期版本）差距在缩小，复杂曲面仍弱（NURBS 编辑靠 Surface 工作台）。</li>
+</ul>
+<h3 id="13-assembly-gui">1.3 Assembly 工作台：GUI 已能用，脚本化是短板 ⚠️<a class="headerlink" href="#13-assembly-gui" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>现状</strong>：内置工作台 + Ondsel 求解器，支持固定/旋转/滑动等关节、Simulation 动画、BOM、爆炸视图、ASMT 调试导出。</li>
+<li><strong>官方未解决的脚本化问题</strong>（github.com/FreeCAD/FreeCAD/issues/27914，2026-02-27 开，至今 open）：</li>
+<li>用脚本从 FCStd 创建装配体"初始化不 100% 正确"，改 Assembly Placement 会引发奇怪行为；</li>
+<li>Python 控制台不暴露关节最终化/旋转关节角度设置方式（旋转角度应是一等公民但缺失）。</li>
+<li><strong>社区绕行方案</strong>（forum.freecad.org t=103531 / t=104928 / t=105451，作者 onekk）：</li>
+<li>需"人肉先初始化一次"（双击装配→双击关节→OK）脚本才能动；</li>
+<li>移动关节用 <code>joint.Offset2 = Placement(..., Rotation(angle,0,0))</code> + recompute 的 hack；</li>
+<li><code>recompute()</code> 对关节不可靠，常留 pending 状态；</li>
+<li>关节参考建议用 <strong>LCS（局部坐标系）</strong> 而非面/边，规避 TNP——这是目前最稳的脚本化方向。</li>
+<li><strong>建议</strong>：装配体交付仍走 GUI + 现成脚本模板（onekk 的 assembly_move.py 可参考，codeberg.org/onekk/freecad-macro）；把"关节脚本化"标记为<strong>等 1.2</strong>，届时 PR 已合并过约束/角度偏移等能力。</li>
+</ul>
+<h3 id="14-ai-freecad-ai-v0212-alpha">1.4 AI 辅助建模：freecad-ai 工作台（已装 v0.21.2-alpha）<a class="headerlink" href="#14-ai-freecad-ai-v0212-alpha" title="Permanent link">&para;</a></h3>
+<ul>
+<li>仓库实证：<strong>ghbalf/freecad-ai，440★ / 70 fork，2026-02-20 创建，v0.15.0-alpha 发布于 2026-05-23</strong>；本机为 v0.21.2-alpha（2026-08-15，Git b6c950f）。</li>
+<li>能力（README 实证）：Plan/Act 双模式（Plan 默认=代码审查后执行）、50 个结构化 FreeCAD 工具、20 家 LLM 供应商（Moonshot/DeepSeek/Qwen 等 + Custom）、<strong>MCP 服务器（mcp_server_entry.py / mcp_server_http.py）</strong>、错误自纠正最多 3 次、视觉路由（非视觉模型走 llm-vision-mcp 降级）、8 个内置技能（enclosure/gear/fastener-hole/thread-insert/sketch-from-image/lattice 等，本机 ls 确认）、/optimize-skill 自优化、hooks、session 恢复。</li>
+<li><strong>明示风险（README 原话）</strong>：Alpha software——LLM 生成的代码可能弄崩 FreeCAD，必须<strong>频繁保存 + Plan 模式</strong>。</li>
+<li>配置坑（本机 skill 实测 2026-08-22）：</li>
+<li><strong>版本化目录</strong>：FreeCAD 1.1+ 用户目录带版本号 <code>%APPDATA%\FreeCAD\v1-1\Mod\</code>（连字符 v1-1），不再是 <code>Mod\</code>；</li>
+<li><strong>param store 覆盖层</strong>：只写 <code>FreeCADAI/config.json</code> 不够，首次加载会写入默认 anthropic 到 ParamGet("User parameter:BaseApp/Preferences/Mod/FreeCADAI")，必须双写：<code>SetInt("ProviderIndex",5)</code>（moonshot）+ SetString(Model/BaseUrl/ApiKey) + SetInt ModeIndex/MaxTokens + SetBool EnableTools；</li>
+<li><strong>首次加载迁移 rename</strong>：freecad-ai 会把已存在的 config.json 目录改名 <code>FreeCADAI.pre-v0.13-snapshot</code>——先让 FreeCAD 跑一次建 marker，再写 config；freecadcmd 内联 -c 崩溃、MSYS 路径报 Unknown file，用 Windows 路径脚本文件。</li>
+</ul>
+<h3 id="15-freecad-2026">1.5 FreeCAD 坑清单（2026 汇总）<a class="headerlink" href="#15-freecad-2026" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Assembly 脚本初始化不完整 → 等 1.2 或 GUI 手初始化；2. 关节用 LCS 参考；3. freecadcmd 无 App.Gui；4. 版本化用户目录（v1-1）；5. freecad-ai param store 双写；6. 打印 emoji 进脚本在 gbk 控制台崩溃（用 ASCII）；7. AI 生成代码会崩 FreeCAD → Plan 模式 + 频繁保存 + 事务（undo）；8. 复杂布尔用 Part API 而非 build123d（OCCT 原生更稳）。</li>
+</ol>
+<hr />
+<h2 id="2-cad-ai">2. 其他 CAD 自动化 / AI 建模工具对比（带实证）<a class="headerlink" href="#2-cad-ai" title="Permanent link">&para;</a></h2>
+<h3 id="21-cadcad-as-code-ai">2.1 代码 CAD（CAD-as-Code）横评 —— AI 生成可靠性实测<a class="headerlink" href="#21-cadcad-as-code-ai" title="Permanent link">&para;</a></h3>
+<p>GrandpaCAD（grandpacad.com，提示词→可打印模型的商业产品）用同一模型（gemini-3.5-flash）跑 23 模型评测套件：</p>
+<table>
+<thead>
+<tr>
+<th>引擎</th>
+<th>内核/范式</th>
+<th>代码错误/代</th>
+<th>实证备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>OpenSCAD</strong></td>
+<td>CGAL/声明式 CSG</td>
+<td><strong>~0.4</strong>（23 模型共 10 错）</td>
+<td>语言小、稳定；网格输出、无 STEP，$fa/$fs 控制精度</td>
+</tr>
+<tr>
+<td><strong>Build123d</strong></td>
+<td>OCCT/B-Rep Python</td>
+<td><strong>1.4-1.7</strong>（40 错；给了自动生成 API 参考后 33 错）</td>
+<td>API 面大，模型幻觉方法名；3-4 倍 OpenSCAD 修复循环</td>
+</tr>
+<tr>
+<td><strong>CadQuery</strong></td>
+<td>OCCT/B-Rep Python</td>
+<td>高（早期一半场景败在导出）</td>
+<td>自带 3MF 导出丢颜色需自写；工作平面链式 API 易错</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>结论</strong>：瓶颈不在内核，在<strong>模型能写出什么</strong>。OpenSCAD 当前 AI 最稳；Build123d/CadQuery 能力更强但需修复循环。两者都保留、按模型能力切换（GrandpaCAD 策略）。</p>
+</blockquote>
+<ul>
+<li><strong>Build123d</strong>：~2,000★ 快速增长、535★ 单日峰值；context manager + Mode 显式布尔更 Pythonic；性能快于 CadQuery（100mm 方盒 0.8ms vs 1.2ms）；<strong>pre-1.0 API 变动频繁需锁版本</strong>；无内置 2D 工程图（可导 DXF）。</li>
+<li><strong>CadQuery</strong>：~3,500★ 稳定；workplane 链式；STEP 导出稳。</li>
+<li><strong>生态</strong>：<code>pzfreo/build123d-mcp</code>（MCP 服务器：逐步建模+测量+导出+PNG 预览，CADGenBench 分数 0.360→0.457、合法率提升）；<code>jdilla1277/agentcad</code>（79★，CadQuery/build123d 双运行时的 agent CAD CLI+MCP）；<code>cyberchitta/cad-khana</code>（12★，<strong>诊断优先</strong>：生成 diagnostics.json 报干涉/间隙/壁厚/悬垂，断言即构建失败，<code>khana draw</code> 出工程图 PNG 给多模态 agent 看——正好补 AI 建模"看不见"的反馈环）。60 Alternativies 全景图：cyberchitta.cc/articles/cad-llm-tools.html（2026-05）。</li>
+<li><strong>OpenSCAD 生成式落地</strong>：<strong>AdamCAD</strong>（开源，YC W25）OpenSCAD 编译到 WebAssembly 纯浏览器跑，每个尺寸变 slider，确定性代码编辑即时迭代、零成本，BOSL/BOSL2/MCAD 库，OpenRouter 模型无关，导出 STL/OBJ/GLB/FBX/DXF——"AI TinkerCAD"。</li>
+</ul>
+<h3 id="22-b-rep-text-to-cad">2.2 生成式 B-Rep / Text-to-CAD（面向制造的正路）<a class="headerlink" href="#22-b-rep-text-to-cad" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Zoo Design Studio</strong>（zoo.dev）：Text-to-CAD 输出 <strong>KCL（KittyCAD 语言）→ B-Rep → STEP</strong>，可编辑特征树+尺寸 slider；<strong>Zookeeper 会话式代理</strong>（2026-01）可对话迭代（"再加两个孔""壁厚改 3mm"）+ 质量属性计算（表面积/体积/质量/质心）；桌面 App 开源（MIT），云端几何引擎专有；免费档 40 credits/月 + Zookeeper 20 分钟/月；Pro $99/月；弱点：复杂装配体仍不行——当"初稿工具"。</li>
+<li><strong>Prompt2CAD / WebCAD / TextoCAD</strong>：浏览器提示词→STEP/DXF，TextoCAD 有特征树+slider；Momaking 负责制造交接（报价）。</li>
+<li><strong>判据</strong>（swiftwand litmus test）：<em>以后要不要改一个尺寸？→ 要就 B-Rep 起步；文件会不会交给别人？→ 要就 STEP</em>。B-Rep→网格是单向易转（切片器直接吃 STEP），网格→B-Rep 逆向工程基本不可行（三角形不携带设计意图）。</li>
+</ul>
+<h3 id="23">2.3 网格生成（只适合外观件）<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
+<p>Meshy 6（2026-01-18 GA，5k-100k 面，Remesh 一步重构拓扑+UV）、Tripo（~19.9$/月，秒级+绑定）、Rodin/Hyper3D（30$/月，高精度角色）、Sloyd（11$/月，参数化模板）——全部 STL/OBJ/GLB 类，<strong>无 STEP、无尺寸意图</strong>，打印功能件前必须重做或网格清理。</p>
+<h3 id="24-solidworks-2026-ai">2.4 SolidWorks 2026 AI（商业标杆，仅供参考）<a class="headerlink" href="#24-solidworks-2026-ai" title="Permanent link">&para;</a></h3>
+<p>2026x FD03（2026-07-11 起 Beta）：<strong>LEO/MARIE/AURA 虚拟伴侣</strong>——自然语言直接生成 <strong>VBA 宏</strong>（"按公司标准导出交付物"等，生成后进编辑器审查）、生成装配体结构树、紧固件模式助手、图像→网格、STEP 加参数特征、装配说明书（带截图）；token 消耗计量。API 自动化仍是 VBA/.NET。可迁移经验：<strong>"自然语言→生成宏→人工审查"</strong> 正是 freecad-ai Plan 模式的同构。</p>
+<h3 id="25-ai-2d-cad">2.5 AI 逆向工程（2D/扫描 → CAD）<a class="headerlink" href="#25-ai-2d-cad" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Backflip AI copilot</strong>（2026-08-05 上线）：3D 扫描/STL → 可编辑参数化 CAD（特征树），宣传"$1500/件→$10/件"，Fast/Thinking 双模式，擅长中复杂度 3 轴铣削件。</li>
+<li><strong>CADENA</strong>（arXiv 2608.00799，开源）：<strong>逐步</strong> CAD 逆向（每步执行后与目标对比残差再决定下一步），CadQuery DSL + OCCT 执行，超 DeepCAD/Fusion360/MCB 基准；代码 github.com/zhemdi/cadena。</li>
+<li><strong>Detessellate</strong>（FreeCAD 工作台，Addon Manager 可装，v1.1.0 2026-05-12）：网格/点云 → 参数化草图（CoplanarSketch/PointPlaneSketch/EdgeLoopToSketch/SketcherWireDoctor），免费替代商业 scan-to-CAD 的草图环节。</li>
+<li>商业：ZEISS REVERSE ENGINEERING（点云→STEP/IGES，草图分区+约束自动优化）。</li>
+</ul>
+<h3 id="26">2.6 总对比表<a class="headerlink" href="#26" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th>类型</th>
+<th>输出</th>
+<th>AI 可编辑性</th>
+<th>成本</th>
+<th>实证</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FreeCAD 1.1 + freecadcmd</td>
+<td>开源 CAD+无头 API</td>
+<td>STEP/STL/DXF</td>
+<td>脚本全参</td>
+<td>免费</td>
+<td>本机实测 ✅</td>
+</tr>
+<tr>
+<td>freecad-ai</td>
+<td>AI 工作台</td>
+<td>FCStd→STEP</td>
+<td>Plan/Act</td>
+<td>API key</td>
+<td>440★ v0.21.2-alpha</td>
+</tr>
+<tr>
+<td>OpenSCAD</td>
+<td>声明式代码 CAD</td>
+<td>STL（无 STEP）</td>
+<td>★★★ AI 最稳</td>
+<td>免费</td>
+<td>0.4 错/代</td>
+</tr>
+<tr>
+<td>Build123d</td>
+<td>Python B-Rep</td>
+<td>STEP/STL/DXF</td>
+<td>★★</td>
+<td>免费</td>
+<td>~2k★，pre-1.0</td>
+</tr>
+<tr>
+<td>CadQuery</td>
+<td>Python B-Rep</td>
+<td>STEP/STL</td>
+<td>★★</td>
+<td>免费</td>
+<td>~3.5k★</td>
+</tr>
+<tr>
+<td>Zoo Design Studio</td>
+<td>云 Text-to-CAD</td>
+<td>STEP (KCL)</td>
+<td>★★★ 会话式</td>
+<td>$0-99/月</td>
+<td>Zookeeper 代理</td>
+</tr>
+<tr>
+<td>AdamCAD</td>
+<td>浏览器 OpenSCAD</td>
+<td>STL/DXF/OBJ</td>
+<td>★★★ slider</td>
+<td>免费开源</td>
+<td>YC W25</td>
+</tr>
+<tr>
+<td>Meshy/Tripo/Rodin</td>
+<td>网格生成</td>
+<td>STL/OBJ/GLB</td>
+<td>✗ 重生成</td>
+<td>$10-30/月</td>
+<td>外观件专用</td>
+</tr>
+<tr>
+<td>SolidWorks 2026</td>
+<td>商业 CAD+AI</td>
+<td>原生</td>
+<td>LEO 宏生成</td>
+<td>订阅+token</td>
+<td>FD03 Beta</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-2d-3d-3d">3. 2D 工程图 → 3D 模型 → 3D 打印：自动化工序优化<a class="headerlink" href="#3-2d-3d-3d" title="Permanent link">&para;</a></h2>
+<h3 id="31-2026">3.1 完整流水线（2026 最优实践）<a class="headerlink" href="#31-2026" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>输入                       自动化锚点                      交付
+─────────────────────────────────────────────────────────────
+DXF/DWG 图 ──▶ freecadcmd 脚本(读DXF→Sketcher/Part挤出)
+图片/照片 ──▶ freecad-ai sketch-from-image 技能 / vision LLM
+STL/扫描 ──▶ Detessellate(网格→草图) 或 CADENA(→CadQuery)   ──▶ STEP(B-Rep, 参数化)
+AI 提示词 ──▶ Zoo Zookeeper / AdamCAD 初稿 → 人工定稿
+                                     │
+                                     ▼
+                          FreeCAD 无头验证脚本(壁厚/悬垂/干涉断言)
+                                     │
+                                     ▼
+                 OrcaSlicer CLI --slice → .gcode.3mf（Bambu 直接吃）
+                                     │  slice_info.config：耗材mm/g、时间、层数
+                                     ▼
+                         打印机(API 推送) → 打印 → 实物验证 → 回填参数
+</code></pre></div>
+
+<h3 id="32">3.2 切片自动化实证（成熟度最高的环节）<a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>OrcaSlicer CLI</strong>（官方文档缺失，Printago 实战 35,000+ 次无头切片整理出完整参考）：核心标志 <code>--slice 1</code>（0=全部底板）、<code>--load-settings "machine;process"</code>（顺序敏感）、<code>--load-assemble-list</code>（多物体排板无需项目文件）、<code>--export-3mf</code>、<code>--pipe</code>（JSON 进度到命名管道）、<code>--min-save</code>；<strong>输出是 <code>.gcode.3mf</code>（ZIP 内含 G-code 于 Metadata/plate_1.gcode）而非裸 .gcode</strong>——Bambu 打印机原生接受；<strong><code>slice_info.config</code> 含每槽耗材 mm/g、预估时长、层数</strong>，直接喂成本核算。</li>
+<li><strong>坑</strong>：<code>printer_model</code> 必须与机器设置 JSON 匹配否则切片失败/错误（换机型要补 3MF 元数据）；CLI 各版本间悄悄变，上线前锁版本并 <code>--help</code> 检查。</li>
+<li><strong>服务化三选一</strong>：① 原生 CLI（本机首选，零依赖最轻）；② OrcaSlicer 官方 PR #14161：SliceCore 库 + <code>orca-server</code> REST（POST /v1/jobs、PNG 预览、逐物体摆放、结构化指标）；③ escalopa/orcaslicer-api（FastAPI 封装，自动解析时长/耗材/层数元数据）——⚠️ Docker-first，本机 Docker CLI 已装、Daemon 未运行（见 [[knowledge/META/current-environment]]），如需用请先启动 Docker Desktop 或直接用原生 CLI。</li>
+<li><strong>PrusaSlicer CLI</strong> 同样支持 <code>--export-gcode</code>（成熟），但<strong>读不了 OrcaSlicer 配置</strong>，两者不要混用。</li>
+<li>3MF &gt; STL 已是行业方向（颜色/材质/元数据/多物体原生）。</li>
+</ul>
+<h3 id="33-dfam">3.3 DFAM 自动校验清单（建模脚本内置断言）<a class="headerlink" href="#33-dfam" title="Permanent link">&para;</a></h3>
+<p>壁厚=喷嘴整数倍（0.4mm→1.2/1.6mm）；悬垂 ≤45°；桥接 ≤10mm；最小孔 ≥2mm（水平孔泪滴形）；配合间隙 0.2-0.3mm 单侧；受力方向避 Z 轴（层间强度仅 XY 的 50-70%）；文字 ≥4mm 字体、0.5mm 深。<strong>cad-khana 的 diagnostics.json 断言机制就是为此设计</strong>——把上述规则写成断言 = 打印失败在建模期前拦截。</p>
+<hr />
+<h2 id="4-pcb">4. 与 PCB 流水线共用的自动化基建<a class="headerlink" href="#4-pcb" title="Permanent link">&para;</a></h2>
+<h3 id="41">4.1 现状与组件<a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>KiCad 10+ 官方 3D 库纯 STEP</strong>（File→Export→STEP 导出实心几何；注意 STEP <strong>不含</strong>铜皮/丝印/阻焊，那是 2D 图形层——机械装配够用，渲染走 VRML/pcb2blender）。</li>
+<li><strong>KicadStepUp</strong>（easyw/kicadStepUpMod，FreeCAD 工作台）：双向 ECAD-MCAD——载入 .kicad_pcb 全板+元件→FreeCAD、导出 STEP/IGES 给机械、<strong>PCB 边框 PUSH/PULL</strong>（FreeCAD Sketcher ↔ KiCad Edge.Cuts 双向同步）、STEP→VRML 供 KiCad、<strong>干涉/碰撞检查</strong>（外壳 vs 板子）；支持 KiCad 5.1-9.x / FreeCAD 0.19-1.0+。注意：约束/构造几何在 KiCad 往返中会丢——板框以 FreeCAD 侧为准单向同步是更稳的工作流。</li>
+<li><strong>jlc-mcp（jlcmcp）</strong>：EasyEDA Pro 的 MCP 桥——pcb_get_state/pcb_route_track/pcb_run_drc/pcb_screenshot 等 38 个工具，走 bridge→MCP 模式。与 freecad-ai 的 MCP server、build123d-mcp 属<strong>同一套基建范式</strong>。</li>
+</ul>
+<h3 id="42">4.2 可复用的共用基建（重点）<a class="headerlink" href="#42" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>基建</th>
+<th>CAD 侧用途</th>
+<th>PCB 侧用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Python 3.11/3.12 + uv</strong>（零依赖，无需 Docker）</td>
+<td>build123d/cad-khana/FreeCAD 脚本</td>
+<td>kicad-cli、EasyEDA bridge、jlc-mcp</td>
+</tr>
+<tr>
+<td><strong>MCP 服务器模式</strong></td>
+<td>freecad-ai MCP、build123d-mcp、agentcad</td>
+<td>jlc-mcp</td>
+</tr>
+<tr>
+<td><strong>无头 CLI 验证闭环</strong></td>
+<td>freecadcmd（建模）、khana diagnostics（几何断言）</td>
+<td>kicad-cli <code>pcb render</code>/D 导出、jlc DRC</td>
+</tr>
+<tr>
+<td><strong>STEP 中性交换</strong></td>
+<td>外壳/结构件</td>
+<td>板级 STEP → 干涉检查</td>
+</tr>
+<tr>
+<td><strong>参数化外壳生成</strong></td>
+<td>build123d/FreeCAD 从 Edge.Cuts 生成外壳</td>
+<td>KiCad 板框 → 外壳布尔</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>💡 串联想象：KiCad 导出 Edge.Cuts → FreeCAD/KicadStepUp PULL → build123d 参数化生成外壳（插槽/柱位/开口按元件高度表）→ 无头 STEP → OrcaSlicer CLI → 打印验证 → <strong>同一个 uv 虚拟环境 + MCP 客户端管 PCB 和外壳两条流水线</strong>。本机无 Docker 不是障碍——全部组件原生 Windows 可跑（freecadcmd、kicad-cli、orca-slicer CLI、uv tool 安装的 MCP 服务器）。</p>
+</blockquote>
+<hr />
+<h2 id="5-5">5. 立即行动建议（5 条）<a class="headerlink" href="#5-5" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>固化 FreeCAD 无头建模流水线</strong>：以本机已验证的 freecadcmd + Part API 模板（建体→布尔→STEP/STL 导出→isValid 断言）为底座写 <code>cad_pipeline.py</code> 脚本库；确认 freecad-ai 双写配置（config.json + param store ProviderIndex=5 moonshot）后保持 Plan 模式默认，所有 AI 生成代码走"生成→freecadcmd 无头试跑→人工审查"。</li>
+<li><strong>部署 CAD-as-Code 双引擎</strong>：<code>uv tool install cybergit cad-khana</code> 跑通 <code>khana build/check/diff</code> 诊断闭环，主引擎 build123d（锁版本，pre-1.0 API 会变），复杂布尔回退 FreeCAD Part API；OpenSCAD 作为纯 CSG/快速初稿备胎。所有脚本内置 DFAM 断言（壁厚/悬垂/间隙）。</li>
+<li><strong>打通 2D→3D→打印全自动链</strong>：DXF→freecadcmd 挤出→STEP→OrcaSlicer CLI <code>--slice --export-3mf</code>→<code>.gcode.3mf</code> 直推 Bambu；用 <code>slice_info.config</code> 自动生成成本报价（材料 g × 单价 + 时长 × 电费 + 后处理）；锁 OrcaSlicer 版本并记录 <code>--help</code> 差异。</li>
+<li><strong>ECAD-MCAD 共用基建落地</strong>：本机装 KicadStepUp + 配置 jlc-mcp；首个联调项目 = 现有 PCB 板框 → 参数化外壳（含柱位/开口）→ 干涉检查 → 3D 打印外壳，跑通"PCB 与外壳同一条 MCP+uv 流水线"样板。</li>
+<li><strong>闲鱼接单 SOP 化</strong>（结合 1-4）：建参数化模板库（外壳/法兰/支架/齿轮，AI 初稿+人工定稿）；交付物固定 STEP+STL 双格式；装配类订单明确告知 GUI 环节（Assembly 脚本化未熟，报价含人工装配时间）；打印件带 slice_info 成本表报价，用"设计+打印+验证"闭环升级客单价。</li>
+</ol>
+<hr />
+<h2 id="_1">参考来源（关键实证链接）<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>FreeCAD 1.1 发布：github.com/FreeCAD/FreeCAD/releases/tag/1.1.0；Release notes 1.1/1.2（wiki.freecad.org，Anubis 反爬；镜像 reqrefusion.github.io）</li>
+<li>Assembly 脚本化 issue #27914；论坛 t=103531/104928/105451（onekk 脚本化关节：Offset2 hack、LCS 参考）</li>
+<li>freecad-ai：github.com/ghbalf/freecad-ai（440★，v0.15.0-alpha 2026-05-23，README 功能清单与 Alpha 警告）；本机 v0.21.2-alpha + docs/specs</li>
+<li>GrandpaCAD 引擎评测：grandpacad.com/en/blog/openscad-vs-cadquery-vs-build123d（0.4 vs 1.4-1.7 vs 高）</li>
+<li>build123d：ainews.cool 分析（2k★ 535★/日、性能表）；thepixelspulse.com（Fluent API 陷阱）；build123d-mcp（CADGenBench 0.360→0.457）；agentcad 79★；cad-khana 12★</li>
+<li>Zoo/Zookeeper：swiftwand.com/text-to-cad-guide-2026；dupple.com（定价与档位）；AdamCAD（开源 OpenSCAD→WASM）</li>
+<li>SolidWorks 2026x FD03：blogs.solidworks.com；3dswym wiki（2026-07-11 Beta、宏生成）</li>
+<li>逆向：Backflip AI（automationmag 2026-08-05）；CADENA arXiv:2608.00799；Detessellate v1.1.0；ZEISS</li>
+<li>切片：printago.io/orca-slicer-cli-reference（35k+ 次实战）；OrcaSlicer PR #14161（SliceCore/orca-server）；escalopa/orcaslicer-api；PrusaSlicer DeepWiki CLI</li>
+<li>ECAD-MCAD：easyw/kicadStepUpMod；pcbsync.com/kicad-3d-integration；luisllamas.es（KiCad 10 STEP 库）</li>
+<li>本机实测：FreeCAD 1.1.1 freecadcmd 建体+STEP/STL 导出+Assembly 模块导入 ✅（2026-09-12）</li>
+</ul>
+<hr />
+<blockquote>
+<p>🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]</p>
+</blockquote>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "toc.integrate"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

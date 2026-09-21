@@ -1,0 +1,3370 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="AI Agent 第二大脑 | Hermes 七大自举系统 | 硬件/PCB/单片机全链路知识库 | 学术写作工作流 | 全中文 Obsidian 知识库">
+      
+      
+        <meta name="author" content="mo9652962">
+      
+      
+        <link rel="canonical" href="https://mo9652962-ai.github.io/second-brain/kb/knowledge/Research/arxiv-weekly-2026-08-05/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Arxiv weekly 2026 08 05 - Second Brain 知识库</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#arxiv-weekly-roundup-ai-agent-llm-papers" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="Second Brain 知识库" class="md-header__button md-logo" aria-label="Second Brain 知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Second Brain 知识库
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Arxiv weekly 2026 08 05
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="切换到深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="切换到浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  
+    
+  
+  🏠 总入口
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/hermes/hermes-workflow-preferences/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🤖 Hermes 自举系统
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/hardware/PCB-Design-Automation-2026/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🔧 硬件工程
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/ai/mlops-llm-training-pipeline/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🧠 AI / MLOps
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/web/Modern-Web-Development-2026/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  💻 Web / 平台
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/dev/cross-platform-mobile-development-2026/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  📱 移动端 & 安全
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/general/knowledge-domain-roadmap/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  📚 通用参考
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../MOC-Research/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🗺️ 知识域 MOC
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../projects/current/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  📦 项目与治理
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Second Brain 知识库" class="md-nav__button md-logo" aria-label="Second Brain 知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Second Brain 知识库
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../.." class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 总入口
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🏠 总入口
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../HOME/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HOME 知识中枢
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../INDEX/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    全库索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../knowledge-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识地图
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--adopted"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DASHBOARD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    健康看板
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../VAULT-MAP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器可读索引
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cross-Domain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跨域关联
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--adopted"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 Hermes 自举系统
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🤖 Hermes 自举系统
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/hermes-workflow-preferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    交互自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/hermes-automation-patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    可靠性自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/daily-knowledge-absorption-gate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/tool-call-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    工具调用自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/code-quality-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    代码质量自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/output-style-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    输出风格自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/context-management-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    上下文管理自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/github-repo-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub 仓库优化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/github-seo-optimization-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub SEO 优化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔧 硬件工程
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🔧 硬件工程
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hardware/PCB-Design-Automation-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PCB 设计自动化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hardware/CAD-Design-Complete-Guide-v2.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CAD 设计完整指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hardware/Microcontroller-Edge-AI-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    单片机与边缘 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hardware/Hardware-Startup-Open-Source-Ecosystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    硬件创业与开源生态
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/cad-design-master/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CAD 设计大师（技能集）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/8051-embedded-dev/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8051 嵌入式开发
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧠 AI / MLOps
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🧠 AI / MLOps
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/ai/mlops-llm-training-pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MLOps & LLM 训练流水线
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💻 Web / 平台
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    💻 Web / 平台
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/web/Modern-Web-Development-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    现代 Web 开发 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/platform/Platform-Development-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    平台开发 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📱 移动端 & 安全
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📱 移动端 & 安全
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/dev/cross-platform-mobile-development-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跨平台移动端开发
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/dev/ctf-cybersecurity-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CTF 网络安全路线
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📚 通用参考
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📚 通用参考
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/general/knowledge-domain-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识域扩展路线图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/general/community-best-practices-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    社区最佳实践索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/general/bilingual-terminology-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中英双语术语表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/engineering-workflow/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    工程工作流
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🗺️ 知识域 MOC
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🗺️ 知识域 MOC
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MOC-Research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    研究 Research
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Dev/MOC-Dev/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开发 Dev
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Productivity/MOC-Productivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    生产力 Productivity
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Security/MOC-Security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    安全 Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cards/MOC-cards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识卡 cards
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Daily/MOC-Daily/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    日常 Daily
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Hardware/MOC-Hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    硬件 Hardware
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AI/MOC-AI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Finance/MOC-Finance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    金融 Finance
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Archive/MOC-Archive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    归档 Archive
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Content/MOC-Content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    内容 Content
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SOP/MOC-SOP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SOP
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../META/MOC-META/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    元信息 META
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Creative/MOC-Creative/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    创意 Creative
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gaming/MOC-gaming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    游戏 gaming
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Product/MOC-Product/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    产品 Product
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projects/MOC-Projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    项目 Projects
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Education/MOC-Education/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    教育 Education
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📦 项目与治理
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📦 项目与治理
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/current/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    当前项目
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/MOC-Concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    概念索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../memory/MOC-Memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    记忆索引
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../health/MOC-Health/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    健康索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MOC-Inbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    待整理箱
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MOC-Duplicate-Review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    重复审查
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<hr />
+<p>aliases:
+  - arXiv Weekly Roundup 2026-08-05
+tags: [arxiv, research, ai-agent, llm, paper-review, agent-security, agent-memory]
+created: 2026-08-05
+updated: 2026-08-05
+status: processed
+source: https://arxiv.org/
+domain: research---</p>
+<h1 id="arxiv-weekly-roundup-ai-agent-llm-papers">arXiv Weekly Roundup — AI Agent &amp; LLM Papers<a class="headerlink" href="#arxiv-weekly-roundup-ai-agent-llm-papers" title="Permanent link">&para;</a></h1>
+<p><strong>Date:</strong> 2026-08-05 | <strong>Week 32</strong><br />
+<strong>Papers:</strong> 27 new relevant papers (cs.AI/cs.SE/cs.CR/cs.CL/cs.LG 等)</p>
+<hr />
+<h2 id="paper-highlights">📄 Paper Highlights<a class="headerlink" href="#paper-highlights" title="Permanent link">&para;</a></h2>
+<h3 id="260802499v1-swe-touch-benchmarking-coding-agents-when-users-touch-the-code">[2608.02499v1] SWE-Touch: Benchmarking Coding Agents When Users Touch the Code<a class="headerlink" href="#260802499v1-swe-touch-benchmarking-coding-agents-when-users-touch-the-code" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Authors:</strong> Yuqiao Tan, Jinxiang Meng, Fangyu Lei, Minzheng Wang, Shizhu He, Jun Zhao, Kang Liu</li>
+<li><strong>Published:</strong> 2026-08-03</li>
+<li><strong>Categories:</strong> cs.SE, cs.AI, cs.CL</li>
+<li><strong>Links:</strong> <a href="https://arxiv.org/abs/2608.02499v1">Abstract</a> | <a href="https://arxiv.org/pdf/2608.02499v1">PDF</a></li>
+<li><strong>💡 短评:</strong> 编码 agent 共享工作区评测——真实开发中用户会边看边改代码,SWE-chat 数据 59% 会话含用户改动;Counter-Edit 让 9 模型在 SWE-bench Verified 平均掉 7.7 分,直击 agent 状态感知短板</li>
+</ul>
+<p><strong>Abstract:</strong><br />
+Real-world software development requires coding agents to operate in shared workspaces where users may inspect and modify code during an ongoing task, yet existing repository-level benchmarks typically evaluate agents working alone or restrict user participation to messages. This leads us to ask: how do coding agents understand and respond to code changes in a shared workspace? We introduce SWE-Touch, a framework that stress-tests this setting through validated Counter-Edits: plausible edits to task-relevant code that conflict with task completion. SWE-Touch mines task-critical regions from multiple repair trajectories, uses a separate User Patch Generator to construct the edits, and injects them with contextual user messages when agents reach the relevant code. We evaluate nine coding models on SWE-bench Verified, with additional experiments on longer-horizon tasks from SWE-Bench Pro and DeepSWE. Counter-Edit lowers average resolve rate by 7.7 percentage points on SWE-bench Verified, with degradation also persisting on both longer-horizon benchmarks. Trajectory analysis links these failures to limited awareness of the evolving workspace: agents may retain conflicting code or replace it without sufficiently re-inspecting the repository and validating the revised code with targeted tests. These findings show that strong autonomous performance does not yet ensure the state awareness and adaptive behavior needed for shared-workspace collaboration, and point to detecting workspace changes, reconciling conflicting edits with the task, and verifying the affected behavior as key capabilities for future optimization.</p>
+<hr />
+<h3 id="260802464v1-real-time-detection-and-repair-of-llm-agent-failures">[2608.02464v1] Real-Time Detection and Repair of LLM Agent Failures<a class="headerlink" href="#260802464v1-real-time-detection-and-repair-of-llm-agent-failures" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Authors:</strong> Sunny Dubey</li>
+<li><strong>Published:</strong> 2026-08-03</li>
+<li><strong>Categories:</strong> cs.AI, cs.LG, cs.SE</li>
+<li><strong>Links:</strong> <a href="https://arxiv.org/abs/2608.02464v1">Abstract</a> | <a href="https://arxiv.org/pdf/2608.02464v1">PDF</a></li>
+<li><strong>💡 短评:</strong> agent 失败实时检测+自动修复:不靠第二 LLM 裁判,纯步级遥测+单类 ESN 检测器(~200μs/步),回滚重跑恢复 45% 失败、任务成功率 52%→73%——Hermes 可靠性体系可直接借鉴(对应 cron 心跳/静默失败检测)</li>
+</ul>
+<p><strong>Abstract:</strong><br />
+LLM agents fail mid-episode -- they loop, cascade tool errors, drift off goal, fabricate results, or silently absorb corrupted content -- and the standard remedy, judging every step with a second LLM, costs more than the agent itself. We ask how much detection is achievable from observable step telemetry alone, using monitors costing microseconds per step and trained only on healthy runs. On 2,823 committed agent episodes across three frameworks, three local models (qwen2.5 7b/3b, llama3.1 8b) and a commercial API (gemini-2.5-flash), a one-class echo-state-network ensemble with CUSUM alarms detects 0.71 of failures at a 5% false-alarm budget (AUROC 0.872). Its advantage over a memoryless baseline is a monotone function of post-onset horizon (+0.09 at &lt;=3 steps, +0.40 at &gt;=9), predicting its own failure region out of sample on AFTraj-2K. Ranking transfers with no retraining to two corpora from other groups (AFTraj-2K 0.745, ATBench 0.779). Monitors carry two burdens: a per-deployment healthy null (they do not transfer -- AUROC 0.527 cold against 0.885 recalibrated) and a residual false-alarm rate. We add a layer carrying neither: deterministic verification, which recomputes a run's stated total from the tool results it actually received and confirms every required call was made. Head-to-head it catches 60% of failures (96% with the coverage check) at 0 of 63 false positives against the monitor's 54% at 17%, transfers unchanged to llama3.1:8b (110 of 110 at 0 of 10), and trips on 0 of 1825 healthy episodes. Detection is then closed into repair: each flagged run is rolled back and re-run live, recovering 45% of failures against a 16% resampling control (p=0.0005) and lifting task success from 52% to 73% for about one extra model call per run. The system runs at ~200 microseconds per step, three orders of magnitude below a judge call. Code, traces and results are released.</p>
+<hr />
+<h3 id="260802508v1-romerl-balancing-feedback-coverage-and-the-memory-reward-trap-in-self-evolving-agent-memory-via-reduced-order-utility-states">[2608.02508v1] RoMeRL: Balancing Feedback Coverage and the Memory-Reward Trap in Self-Evolving Agent Memory via Reduced-Order Utility States<a class="headerlink" href="#260802508v1-romerl-balancing-feedback-coverage-and-the-memory-reward-trap-in-self-evolving-agent-memory-via-reduced-order-utility-states" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Authors:</strong> Yi Yang, Zhennan Chen, Yihong Zhuang, Tiehan Fan, Yinan Chen, Jian Li, Jian Yang, Ying Tai</li>
+<li><strong>Published:</strong> 2026-08-03</li>
+<li><strong>Categories:</strong> cs.LG, cs.CL</li>
+<li><strong>Links:</strong> <a href="https://arxiv.org/abs/2608.02508v1">Abstract</a> | <a href="https://arxiv.org/pdf/2608.02508v1">PDF</a> | <a href="https://github.com/YOUNG-fnxm/RoMeRL">Code</a></li>
+<li><strong>💡 短评:</strong> 自进化 agent 记忆的降阶效用状态,破解记忆-奖励陷阱(无关记忆被共同检索误得高效用):Cold-Q 降 80%、反馈密度约 6 倍、记忆体积减 84%、LLM 调用省 21%——第二大脑记忆体系的核心算法候选</li>
+</ul>
+<p><strong>Abstract:</strong><br />
+Learning-based memory systems for self-evolving LLM agents face two tightly coupled challenges. First, trajectory-indexed utilities grow with the interaction history, thereby dispersing limited feedback over an ever-expanding state space. Second, because trajectory-level rewards are jointly assigned to co-retrieved memories, irrelevant experiences may receive misleading utility updates and consequently enter the memory-reward trap. To address these challenges, we introduce Reduced-Order Memory Reinforcement Learning (RoMeRL), which represents the growing trajectory-indexed utility space using a fixed-dimensional per-task memory state factorized by outcome polarity and memory dynamics. RoMeRL incorporates new experiences through a fixed set of semantic coordinates whose contents are updated or replaced over time, thereby concentrating feedback over a bounded utility support. Theoretically, we show that this reduced-order parameterization increases the average feedback received by each utility coordinate and characterize the steady-state occupancy of erroneous coordinates under a generic coordinate-transition model. Empirically, across ALFWorld and LifelongAgentBench, RoMeRL improves task performance, reduces the Cold-Q ratio by 80.0%, increases feedback density by approximately 6.0 times, reduces the maintained memory size by 84.4%, and cuts LLM calls by 21.1%. These results show that reduced-order utility states support efficient self-evolving agent memory while limiting persistent reward contamination. Code is available at: https://github.com/YOUNG-fnxm/RoMeRL</p>
+<hr />
+<h3 id="260802515v1-livemem-maintaining-memory-state-continuity-in-long-running-llm-inference">[2608.02515v1] LiveMem: Maintaining Memory State Continuity in Long-Running LLM Inference<a class="headerlink" href="#260802515v1-livemem-maintaining-memory-state-continuity-in-long-running-llm-inference" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Authors:</strong> Zhichen Liu, Ruihan Sun, Hengjie Yang, Zipeng Wu, Zhaohan Chen, Xiaofan Zhang, Yang Xu</li>
+<li><strong>Published:</strong> 2026-08-03</li>
+<li><strong>Categories:</strong> cs.CL, cs.LG</li>
+<li><strong>Links:</strong> <a href="https://arxiv.org/abs/2608.02515v1">Abstract</a> | <a href="https://arxiv.org/pdf/2608.02515v1">PDF</a></li>
+<li><strong>💡 短评:</strong> 内禀记忆状态延续性:固定容量记忆态生命周期独立于活动上下文,支持证据移出窗口仍能作答(LongMemEval 验证)——长运行 agent 的"状态连续性"抽象,比 RAG/摘要更进一步</li>
+</ul>
+<p><strong>Abstract:</strong><br />
+Long-running assistants and agents consume interaction streams that eventually outgrow the context. Existing context retention, summarization, and retrieval preserve access to selected history, but do not provide a persistent state over the full lifecycle when working context changes. We formulate this missing inference capability as <em>state continuity under context turnover</em>: carrying computation forward through a fixed-capacity memory state whose lifetime is independent of the active context. We introduce an intrinsic memory method, <strong>LiveMem</strong>, which augments a pretrained full-attention LLM with a memory state that preserves the historical information over the whole lifecycle while the main attention path retains a bounded KV window. Context turnover and memory state maintaining, memory-oriented post-training, and state-aware serving jointly make this memory state load bearing after its originating tokens are released. Our experiments show that LiveMem achieves leading overall performance among evaluated systems and other intrinsic memory methods. Experiments on LongMemEval show that LiveMem is able to answer the question based on the memory state, even when the supporting evidence has been removed from the current context, and evidence-distance analysis shows that useful information persists beyond the active window. LiveMem thus establishes state continuity as a distinct and complementary abstraction for continual LLM inference.</p>
+<hr />
+<h3 id="260802518v1-magnet-detecting-cross-session-ai-misuse-through-capability-accumulation">[2608.02518v1] Magnet: Detecting Cross-Session AI Misuse Through Capability Accumulation<a class="headerlink" href="#260802518v1-magnet-detecting-cross-session-ai-misuse-through-capability-accumulation" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Authors:</strong> Natalie Isak, Matthew Dressman</li>
+<li><strong>Published:</strong> 2026-08-03</li>
+<li><strong>Categories:</strong> cs.AI, cs.CY</li>
+<li><strong>Links:</strong> <a href="https://arxiv.org/abs/2608.02518v1">Abstract</a> | <a href="https://arxiv.org/pdf/2608.02518v1">PDF</a></li>
+<li><strong>💡 短评:</strong> 跨会话能力累积检测:攻击者把有害目标拆成无害子任务跨会话执行(agent 无状态但攻击者有状态),按用户维度聚合"能力位向量"而非逐会话检查——agent 安全新威胁模型,承接 Cross-Session Threats(2604.21131)</li>
+</ul>
+<p><strong>Abstract:</strong><br />
+The most capable AI deployments are not single models but ensembles of specialized agents that delegate and act in coordination. This architecture unlocks powerful new capabilities, and it also introduces risks that existing frameworks for monitoring, detection, and mitigation were not designed to address. Most state-of-the-art AI abuse detection literature focuses on single-turn or multi-turn (single-session) threat models. This leaves a critical gap: an attacker can decompose a harmful goal into innocuous-looking units and execute each in isolated agentic sessions. The agent is stateless between conversations, but the attacker is not. This asymmetry allows for cross-session trajectories that are effective at evading detection. Our contributions are twofold. First, we demonstrate cross-session goal decomposition as an evasion technique, showing it may elicit more harmful capability than equivalent single-session or multi-turn attacks. By capability we mean an artifact produced at one step of an objective, evidenced by what an interaction produced (model responses and tool-call results), and composable with capabilities accrued elsewhere into a harmful whole. Second, we propose Magnet: an efficient and robust detection approach that models relevant capabilities accrued over time and across agentic conversations, aggregated at a higher-level correlator (in this case, a user ID) rather than per-conversation state. The main challenge is assembling the evidence bundle Magnet reasons over. The incriminating artifacts may be needles scattered through a haystack of benign sessions that are individually harmless, dangerous only once collected. Rather than searching the haystack straw-by-straw (i.e. per-session inspection), Magnet does what its name implies: it attracts the relevant needles out of the hay, across sessions and across time, into a compact evidence bundle a detector can act on.</p>
+<hr />
+<h3 id="260802582v1-acem-a-cost-estimation-model-for-agentic-software-engineering">[2608.02582v1] ACEM: A Cost Estimation Model for Agentic Software Engineering<a class="headerlink" href="#260802582v1-acem-a-cost-estimation-model-for-agentic-software-engineering" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Authors:</strong> Mohammad El-Ramly</li>
+<li><strong>Published:</strong> 2026-08-03</li>
+<li><strong>Categories:</strong> cs.SE</li>
+<li><strong>Links:</strong> <a href="https://arxiv.org/abs/2608.02582v1">Abstract</a> | <a href="https://arxiv.org/pdf/2608.02582v1">PDF</a></li>
+<li><strong>💡 短评:</strong> agentic 软件工程成本模型:LLM token + HITL 监督 + 基建三维成本;Revision Factor(拒绝重试开销)/Context Factor(上下文累积)/HITL Intensity Score 四级监督分级——闲鱼 AI 接单定价的量化工具雏形</li>
+</ul>
+<p><strong>Abstract:</strong><br />
+Traditional software cost estimation models, such as COCOMO II, Function Points, and Story Points, assume that development effort is primarily driven by human labor in design, coding, and testing. Agentic software engineering, where autonomous AI agents perform substantial implementation work and humans focus on planning, specification, and validation, challenges this assumption. New cost dimensions arise: large language model (LLM) token consumption across agent actions, Human-in-the-Loop (HITL) oversight effort, and infrastructure costs for agent orchestration and tooling. These costs are nondeterministic: identical tasks may consume different tokens, follow divergent reasoning paths, and require varying human correction, phenomena absent in traditional development. A new framework is needed to bridge standard sizing metrics with this cost structure. This paper proposes ACEM (Agentic Cost Estimation Model), which decomposes total agentic development cost into three additive dimensions: LLM, HITL, and infrastructure cost. ACEM introduces three constructs for agentic dynamics: the Revision Factor (RF), modeling token overhead from output rejection and retries; the Context Factor (CF), capturing rising token consumption as context accumulates; and the HITL Intensity Score (HIS), a four-level oversight classification scheme. It further maps Use Case Points, Story Points, and Function Points to estimated token consumption, enabling organizations to reuse existing project-scoping data for agentic cost forecasting. ACEM is presented as a fully specified model structure and calibration methodology, with constants left symbolic pending empirical grounding. As an early-stage proposal, it invites the research community to calibrate, test, and extend the model through real project data.</p>
+<hr />
+<h3 id="260802407v1-antares-foundation-models-for-agentic-vulnerability-localization">[2608.02407v1] Antares: Foundation Models for Agentic Vulnerability Localization<a class="headerlink" href="#260802407v1-antares-foundation-models-for-agentic-vulnerability-localization" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Authors:</strong> Supriti Vijay, Aman Priyanshu, Didier Chapoteau, Arthur Goldblatt, Jianliang He, Kimia Majd, Fraser Burch, Baturay Saglam, Takahiro Matsumoto, Zhuoran (et al.)</li>
+<li><strong>Published:</strong> 2026-08-03</li>
+<li><strong>Categories:</strong> cs.CR, cs.AI</li>
+<li><strong>Links:</strong> <a href="https://arxiv.org/abs/2608.02407v1">Abstract</a> | <a href="https://arxiv.org/pdf/2608.02407v1">PDF</a> | <a href="https://cisco-foundation-ai.github.io/antares/technical-report.pdf">Technical Report</a></li>
+<li><strong>💡 短评:</strong> Cisco 出品:350M-3B 紧凑模型做 agentic 漏洞定位,基于 IBM Granite,SFT+可验证奖励 RL,3B 接近 GPT-5.5 且优于 200 倍大的开源模型;单 H100 500 任务 15 分钟(&lt;$0.002/任务)——低成本安全 agent 范例</li>
+</ul>
+<p><strong>Abstract:</strong><br />
+Vulnerability localization is a fundamental step in software security, requiring models to reason over large codebases and iteratively identify vulnerable implementations. We present Antares, a family of compact language models (350M, 1B, and 3B parameters) for agentic vulnerability localization. Based on IBM Granite base models, Antares is trained through a two-stage pipeline that combines supervised fine-tuning on cybersecurity reasoning and repository exploration data with reinforcement learning from verifiable rewards over vulnerable repositories. Across extensive evaluations, Antares-3B approaches GPT-5.5 while outperforming open-weight models over 200x larger in size. The Antares family further enables fast, low-cost local inference, completing a full 500-task evaluation sweep in approximately 15 minutes on a single H100 GPU, corresponding to an amortized evaluation time of under 2 seconds and less than $0.002 per task.</p>
+<hr />
+<h3 id="260802569v1-atumai-a-principled-framework-for-agentic-generation-of-datacenter-control-plane-policies">[2608.02569v1] AtumAI: A Principled Framework for Agentic Generation of Datacenter Control-Plane Policies<a class="headerlink" href="#260802569v1-atumai-a-principled-framework-for-agentic-generation-of-datacenter-control-plane-policies" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Authors:</strong> Qiushi Lin, Chaojie Zhang, Íñigo Goiri, Aditya Akella, Ricardo Bianchini, Jovan Stojkovic</li>
+<li><strong>Published:</strong> 2026-08-03</li>
+<li><strong>Categories:</strong> cs.AI, cs.DC, cs.OS</li>
+<li><strong>Links:</strong> <a href="https://arxiv.org/abs/2608.02569v1">Abstract</a> | <a href="https://arxiv.org/pdf/2608.02569v1">PDF</a></li>
+<li><strong>💡 短评:</strong> 数据中心控制策略的 agentic 生成框架:任务编译器把自然语言目标编译成可机器检查的规格,进化搜索+扩散模型+代理模型扩展 LLM 视野——"agentic 系统工程化(formal/transferable/systematic)"范式</li>
+</ul>
+<p><strong>Abstract:</strong><br />
+The efficiency of a datacenter rests on its control plane policies. Designing these policies is increasingly hard: the hardware-software stack grows fast, the design space is vast and interdependent, and prototyping a single policy takes months. Agentic AI promises to automate this search. Off the shelf, however, it falls short on three fronts. It is not formal: with no structured, searchable statement of the problem, the search has little structure to exploit and hard constraints are not guaranteed. It is not transferable: each task is solved from scratch, so nothing learned on one task carries to the next. Finally, it is not systematic: relying on the LLM as the sole source of candidates, it explores a narrow slice of the design space and settles into local optima. We introduce AtumAI, a framework that generates datacenter control-plane policies with agentic AI, making the process formal, transferable, and systematic. From a goal stated in plain language, AtumAI autonomously proposes, tests, and refines candidate policies until one satisfies the request. It does so through two components. The Datacenter Task Compiler automates problem formulation: it compiles the request into a formal, machine-checkable, and searchable specification of the task's objectives, constraints, decision variables, and evaluation methodology. The Evolutionary Design Discovery Loop then searches this specification, expanding the search beyond the LLM itself via a diffusion model, an evolutionary algorithm, and a surrogate model. Together, they reduce onboarding a new task from months of engineering to writing its description. We evaluate AtumAI on three control-plane tasks with distinct problem scopes, design spaces, and trade-offs: workload placement, resource scaling, and power management. Across all tasks, the policies generated by AtumAI consistently outperform expert-engineered baselines.</p>
+<hr />
+<h3 id="260802291v1-treecredit-shared-prefixes-better-credit-adaptive-routing-for-multi-agent-reasoning">[2608.02291v1] TreeCredit: Shared Prefixes, Better Credit: Adaptive Routing for Multi-Agent Reasoning<a class="headerlink" href="#260802291v1-treecredit-shared-prefixes-better-credit-adaptive-routing-for-multi-agent-reasoning" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Authors:</strong> Yiqing Liu, Zihao Wang, Hantao Yao, Wu Liu, Yongdong Zhang</li>
+<li><strong>Published:</strong> 2026-08-03</li>
+<li><strong>Categories:</strong> cs.AI</li>
+<li><strong>Links:</strong> <a href="https://arxiv.org/abs/2608.02291v1">Abstract</a> | <a href="https://arxiv.org/pdf/2608.02291v1">PDF</a></li>
+<li><strong>💡 短评:</strong> 共享前缀信用分配:用状态匹配的后缀信用替代轨迹级归因,训练轻量成对状态路由器——多智能体推理在精度小幅提升下大幅降本(六个推理基准更好的 accuracy-cost 权衡)</li>
+</ul>
+<p><strong>Abstract:</strong><br />
+Multi-agent reasoning (MAR) improves reasoning reliability through iterative solution exchange and refinement. Existing adaptive MAR methods typically learn routing decisions from query-level labels or trajectory-level returns, but such coarse supervision cannot accurately estimate the state-conditioned utility of individual operators in multi-step collaboration. We propose TreeCredit, a shared-prefix credit assignment framework for efficient adaptive MAR. Its core insight is to estimate operator utility through state-matched downstream comparisons, rather than directly attributing trajectory-level outcomes to preceding decisions. TreeCredit constructs shared-prefix collaboration trees by expanding candidate operators from the same intermediate state and assigns each state--operator pair a correctness-prioritized suffix credit based on the terminal correctness and cumulative additional cost of its complete continuation. These structured credits are converted into state-local operator preferences to train a lightweight pairwise state router, which dynamically selects the next admissible operator during inference. Experiments on six reasoning benchmarks show that TreeCredit modestly improves accuracy while substantially reducing inference cost, achieving a better accuracy--cost trade-off than representative MAR methods.</p>
+<hr />
+<h3 id="260801805v1-cockpithat-dependency-graph-driven-hierarchical-attribution-for-embodied-multi-agent-cockpits">[2608.01805v1] CockpitHAT: Dependency-Graph-Driven Hierarchical Attribution for Embodied Multi-Agent Cockpits<a class="headerlink" href="#260801805v1-cockpithat-dependency-graph-driven-hierarchical-attribution-for-embodied-multi-agent-cockpits" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Authors:</strong> Wei Wang, Shuanghe Liu, Zhu Zhuo, Jiaqi Zhong, Xiaozhao Zhao, Xiaojie Zuo, Jie Su</li>
+<li><strong>Published:</strong> 2026-08-03</li>
+<li><strong>Categories:</strong> cs.AI</li>
+<li><strong>Links:</strong> <a href="https://arxiv.org/abs/2608.01805v1">Abstract</a> | <a href="https://arxiv.org/pdf/2608.01805v1">PDF</a></li>
+<li><strong>💡 短评:</strong> 依赖图分层归因:交互 DAG 依赖距离替代位置窗口+多通道证据+安全加权共识,诊断"正确性坍塌"(任务级准确掩盖过程级失败)——安全关键多智能体故障归因新范式,附 CockpitBench(ISO 26262 ASIL 标注)</li>
+</ul>
+<p><strong>Abstract:</strong><br />
+LLM multi-agent systems suffer from Correctness Collapse, where high task-level accuracy conceals severe process-level failures. This is especially hazardous in safety-critical embodied settings such as automotive cockpits, where lexically correct utterances may trigger dangerous physical operations. Existing attribution methods rely on text traces alone, missing dependency structure, multi-channel evidence, and safety-aware evaluation. We introduce CockpitHAT, a hierarchical attribution framework that replaces positional windows with dependency-distance thresholds from interaction DAGs, integrates multi-channel evidence via an embodied adapter, and applies a safety-uplift to high-risk failures during confidence-weighted analyst consensus. We further release CockpitBench, a benchmark of 212 annotated failure traces spanning dialogue, vehicle-state, environmental, and memory channels, each labeled with ISO 26262 ASIL severity via three-expert consensus. On the public Who&amp;When benchmark, CockpitHAT achieves agent-level / step-exact accuracies of 77.9% / 37.8% on the Hand-Crafted split and 86.5% / 46.0% on the Algorithm-Generated split, surpassing the text-only SOTA ECHO by up to 17.6 / 16.7 points. On CockpitBench, it attains 78.3% agent-level and 38.2% step-exact accuracy. These results establish dependency-aware, multi-channel, risk-calibrated attribution as an effective paradigm for reliable failure diagnosis in real-world embodied LLM multi-agent systems.</p>
+<hr />
+<h3 id="260801719v1-mnc-scope-bound-semantic-declassification-for-private-llm-agent-communication">[2608.01719v1] MNC: Scope-Bound Semantic Declassification for Private LLM-Agent Communication<a class="headerlink" href="#260801719v1-mnc-scope-bound-semantic-declassification-for-private-llm-agent-communication" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Authors:</strong> Jinghan Xu, Longze Fan, Zeyuan Wang, Xinjin Li, Hankai Liu</li>
+<li><strong>Published:</strong> 2026-08-03</li>
+<li><strong>Categories:</strong> cs.CR, cs.AI</li>
+<li><strong>Links:</strong> <a href="https://arxiv.org/abs/2608.01719v1">Abstract</a> | <a href="https://arxiv.org/pdf/2608.01719v1">PDF</a></li>
+<li><strong>💡 短评:</strong> 最小必要通信协议:类型化语义去分类,披露绑定接收方/用途/转发/生命周期/日志/记忆作用域,参考监视器执行——多智能体隐私通信的实用边界(两骨干 MAGPIE 实测)</li>
+</ul>
+<p><strong>Abstract:</strong><br />
+Multi-agent large language model (LLM) systems can expose protected state through internal messages, tool arguments, logs, and persistent memory even when their public outputs appear innocuous. Existing privacy prompts, redaction methods, and source-level access controls restrict surface content or data access, but do not specify what a legitimately informed agent should disclose or how that disclosure may be reused downstream. We introduce Minimum-Necessary Communication (MNC), a typed semantic-declassification protocol that selects a task-sufficient disclosure from an application-authored candidate family and binds it to explicit recipient, purpose, forwarding, lifetime, logging, and memory scopes. A reference monitor enforces these scopes across subsequent operations, while a history-aware extension accounts for inference risk accumulated over repeated disclosures. Controlled semantic-join, memory, probing, and longitudinal experiments show that conventional defenses can preserve protocol-level utility while exposing substantial additional inference signal. Under identical receipt text, MNC preserves authorized delivery while blocking unauthorized forwarding, logging, durable storage, and retrieval after expiration that a text-only semantic declassifier permits. Two-backbone MAGPIE executions further show that mediated disclosures propagate through subsequent planning, tool use, coordination, and memory retrieval. These results support scope-bound semantic declassification as a practical communication boundary for private LLM-agent systems.</p>
+<hr />
+<h3 id="260801791v1-picopilot-an-llm-based-agentic-framework-for-assisting-photonic-integrated-circuit-design-via-script-generation">[2608.01791v1] PICopilot: An LLM-based Agentic Framework for Assisting Photonic Integrated Circuit Design via Script Generation<a class="headerlink" href="#260801791v1-picopilot-an-llm-based-agentic-framework-for-assisting-photonic-integrated-circuit-design-via-script-generation" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Authors:</strong> Xiaohan Jiang, Zeyu Li, Wei Zhang, Jiang Xu</li>
+<li><strong>Published:</strong> 2026-08-03</li>
+<li><strong>Categories:</strong> cs.ET, cs.AI</li>
+<li><strong>Links:</strong> <a href="https://arxiv.org/abs/2608.01791v1">Abstract</a> | <a href="https://arxiv.org/pdf/2608.01791v1">PDF</a></li>
+<li><strong>💡 短评:</strong> 光子 IC 设计 agent:自然语言→设计脚本,多智能体+反馈机制+定制 RAG,48 任务全完成、比 GPT-5 通用 RAG 多解 21 题——硬件设计自动化,与 sora 的 PCB/工程自动化方向直接呼应(JLC MCP 可叠加同类编排)</li>
+</ul>
+<p><strong>Abstract:</strong><br />
+The rapid development of photonic integrated circuits (PICs) is shifting the design flow from traditional graphical user interface (GUI)-based methods to script-based methods for higher flexibility, portability, and maintainability. However, script-based design introduces new challenges, requiring designers to possess additional proficiency in tool application programming interfaces (APIs) and programming. It also demands greater effort and time because it is inherently less intuitive and more complex than GUI-based methods. As PICs grow in scale and complexity, the productivity gap between design needs and manual scripting capabilities continues to widen. To address this gap, we introduce PICopilot, the first large language model (LLM)-based agentic framework that assists in PIC design via automated design script generation from natural language instructions. PICopilot leverages a multi-agent architecture with a feedback mechanism and a specifically designed retrieval-augmented generation (RAG) pipeline, achieving a high success rate and reliability. Experimental results on a benchmark of diverse PIC scripting tasks demonstrate that PICopilot successfully completes all 48 tasks and outperforms other LLM-based approaches without incurring substantial extra latency or cost, even solving 21 more tasks than the advanced GPT-5 model with a general RAG pipeline.</p>
+<hr />
+<h3 id="260802553v1-a-taxonomy-of-cognitive-capability-gaps-in-generative-and-agentic-ai">[2608.02553v1] A Taxonomy of Cognitive Capability Gaps in Generative and Agentic AI<a class="headerlink" href="#260802553v1-a-taxonomy-of-cognitive-capability-gaps-in-generative-and-agentic-ai" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Authors:</strong> Taye Akinrele, Sindhuja Penchala, Noorbakhsh Amiri Golilarz, Sudip Mittal, Shahram Rahimi</li>
+<li><strong>Published:</strong> 2026-08-03</li>
+<li><strong>Categories:</strong> cs.AI</li>
+<li><strong>Links:</strong> <a href="https://arxiv.org/abs/2608.02553v1">Abstract</a> | <a href="https://arxiv.org/pdf/2608.02553v1">PDF</a></li>
+<li><strong>💡 短评:</strong> 认知能力差距分类综述:五维(持久状态建模/目标自主/自我监控/环境交互/学习适应)+ACIA 架构草图+认知评测方向——评估认知 AI 进展的统一框架,可对照第二大脑系统查缺</li>
+</ul>
+<p><strong>Abstract:</strong><br />
+Cognitive AI seeks to move beyond language generation and autonomous task execution toward systems capable of sustained reasoning, adaptive behavior, persistent memory, and self-regulation. While generative and agentic AI have demonstrated impressive capabilities across a wide range of tasks, many fundamental cognitive functions remain fragmented or weakly developed, limiting reliable operation over extended time horizons. This paper presents a taxonomy-driven survey of the major cognitive capability gaps that continue to constrain the development of Cognitive AI. The literature is organized around five dimensions: persistent state modeling, goal-directed autonomy, self-monitoring and control, environment interaction, and learning and adaptation. For each dimension, we review recent advances, identify recurring limitations, and discuss open research challenges. Building on these insights, we outline a conceptual Adaptive Cognitive Intelligence Architecture (ACIA) and examine emerging directions in cognition-centric evaluation. The proposed taxonomy provides a unified framework for organizing existing research, identifying unresolved challenges, and guiding the design of future cognitively capable systems. Together, the taxonomy, architectural perspective, and evaluation framework offer a roadmap for advancing AI systems that exhibit more reliable long-term reasoning, adaptive decision-making, and continual learning. The survey highlights key research opportunities toward more adaptive, reliable, and cognitively capable AI systems, providing a foundation for future progress toward Cognitive AI and, ultimately, Artificial General Intelligence (AGI).</p>
+<hr />
+<h3 id="260802441v1-agentic-commerce-world-an-auditable-and-verifiable-environment-for-vibe-commerce">[2608.02441v1] Agentic Commerce World: An Auditable and Verifiable Environment for Vibe Commerce<a class="headerlink" href="#260802441v1-agentic-commerce-world-an-auditable-and-verifiable-environment-for-vibe-commerce" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Authors:</strong> Shicheng Fan, Mingdai Yang, Duohao Wang, Canyu Chen, Yongfeng Zhang, Hua Wei, Manling Li, Julian McAuley, Kun Zhang, Philip S. Yu, Kejing Yu, Zhiwei L (et al.)</li>
+<li><strong>Published:</strong> 2026-08-03</li>
+<li><strong>Categories:</strong> cs.AI</li>
+<li><strong>Links:</strong> <a href="https://arxiv.org/abs/2608.02441v1">Abstract</a> | <a href="https://arxiv.org/pdf/2608.02441v1">PDF</a></li>
+<li><strong>💡 短评:</strong> vibe commerce 评测环境:买方/卖方 agent 在共享市场独立博弈,VCP 协议校验动作+记录交互(可审计),200+60 任务、785K 商品目录——电商 agent 审计基准,过程级证据优于终态</li>
+</ul>
+<p><strong>Abstract:</strong><br />
+In vibe coding, people describe software in natural language and delegate implementation to AI agents. By analogy, vibe commerce allows people to express buying or selling goals in natural language and delegate the corresponding tasks to agents. Commerce, however, requires independently controlled Buyer and Merchant agents to interact in a shared market while preserving their private objectives and distinct authority. We introduce Agentic Commerce World (ACWorld), an environment for evaluating such agents across ongoing transactions. Through its Vibe Commerce Protocol (VCP), ACWorld validates agent actions before updating shared transaction state and records the resulting interactions, making agent behavior auditable and evaluation reproducible. The ACWorld Benchmark contains a 200-task capability-coverage track and a 60-task large-catalog track that searches 785,022 transactable listings. Across ten models, mean scores range from 65.9% to 85.6% and from 56.1% to 91.4%, respectively. Our analysis shows that process-level evidence is necessary: final state alone can miss evaluated errors, incomplete trajectories still retain useful process signals, and large-catalog tasks expose bottlenecks across stages.</p>
+<hr />
+<h3 id="260802444v1-parevallayer-when-partial-llm-agent-evaluations-support-a-decision">[2608.02444v1] ParEvalLayer: When Partial LLM-Agent Evaluations Support a Decision<a class="headerlink" href="#260802444v1-parevallayer-when-partial-llm-agent-evaluations-support-a-decision" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Authors:</strong> Wei-Jung Huang, Bonan Shen</li>
+<li><strong>Published:</strong> 2026-08-03</li>
+<li><strong>Categories:</strong> cs.AI</li>
+<li><strong>Links:</strong> <a href="https://arxiv.org/abs/2608.02444v1">Abstract</a> | <a href="https://arxiv.org/pdf/2608.02444v1">PDF</a></li>
+<li><strong>💡 短评:</strong> 部分评估决策层:读配对结果+预选比较策略,输出"更好/不足/需更多证据/弃权";公开基准仅 15-25% 任务即达与完整评估相同结论——agent 评测性价比方法论,回应"跑一半就想下结论"的常见误用</li>
+</ul>
+<p><strong>Abstract:</strong><br />
+LLM-agent evaluations often produce task outcomes long before the full benchmark run is complete. A partial score is tempting to report, but it does not show whether the observed tasks support the same conclusion as the completed evaluation. Early tasks can omit important parts of a benchmark, running cheaper tasks first can distort the observed sample, and a rule that decides only easy pairs can appear accurate while leaving many comparisons unresolved. We introduce ParEvalLayer, a decision layer that reads paired outcomes for two agent systems and a comparison policy chosen in advance. For each partial run, it records whether the tested agent system is better by the required amount, is not better by that amount, needs more evidence, or should abstain. We evaluate ParEvalLayer by replaying completed public benchmark data as if each evaluation had stopped earlier. At each point, ParEvalLayer applies the policy using only the outcomes observed so far; if it reaches one of the two comparison judgments, we check whether that judgment matches the completed data for the same system pair. With the main comparison rule, three of the public benchmarks reach the same decision as the completed evaluation after observing only 15% to 25% of task outcomes. Other benchmarks require more task outcomes. This variation shows why a partial score alone is not enough: reports should also state the decision rule and how many comparisons remain without a decision.</p>
+<hr />
+<h2 id="_1">📋 更多值得关注（简评）<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Paper</th>
+<th>一句话</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>[2608.02583v1] UEmbed: Unified Sparse and Dense Multimodal Embeddings</td>
+<td>decoder-only 单前向同时产出稀疏+密集表示(2B/4B/9B 开源),MMEB-v2 领先,agentic 检索基建</td>
+</tr>
+<tr>
+<td>2</td>
+<td>[2608.02602v1] AURORA-LM: Autoencoding Unified Representation for Continuous-Latent Diffusion Language Modeling</td>
+<td>连续潜空间扩散语言模型:保留高容量可解码文本潜表示而非压缩,OpenWebText/XSum 领先(华为 Ascend NPU 训练)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>[2608.02560v1] PRECOG: Structured Memory for Edge Language Models</td>
+<td>边缘 LLM 的 O(1) SSM 状态注入:RAG prefill 27s→6ms(~4500×),SSM 特有机制,Transformer 无法做到</td>
+</tr>
+<tr>
+<td>4</td>
+<td>[2608.02218v1] PosterMELD: Multi-Agent Paper-to-Poster Generation</td>
+<td>模板条件化多智能体论文→海报,81.3% PRR、$0.38/请求(3.5% of Codex+Skill),输出可编辑 PPTX/PNG——PPT 自动化接单相关</td>
+</tr>
+<tr>
+<td>5</td>
+<td>[2608.02005v1] OASE: Evolving in the Agent Jungle via History-Informed Opponent Awareness</td>
+<td>对手快照锚定成对比较,只采纳有收益证据的技能修订——多智能体动态环境中的稳定进化</td>
+</tr>
+<tr>
+<td>6</td>
+<td>[2608.02178v1] Microscopic dynamics of consensus formation in multi-agent LLM Naming Games</td>
+<td>统计物理视角:解码温度成为 LLM 群体共识的架构相关控制参数(三种监听者状态)</td>
+</tr>
+<tr>
+<td>7</td>
+<td>[2608.01938v1] D-MUTRA: DLT-based MUTual Remote Attestation for Multi-Agent Systems</td>
+<td>区块链化多智能体互证:软件级连续运行时完整性测量,Hyperledger Besu PoC+ROS 蜂群验证</td>
+</tr>
+<tr>
+<td>8</td>
+<td>[2608.01861v1] FedJigsaw: Multi-Agent Collaborative Model Reassembly</td>
+<td>联邦学习模型重组:模块化交换+注意力稳定训练,相对精度 +13.8%,降内存/延迟</td>
+</tr>
+<tr>
+<td>9</td>
+<td>[2608.02422v1] Agentic Incident Response through Digital Twin-Enhanced Multiscale Planning</td>
+<td>数字孪生+战术/操作双层规划的安全应急响应:恢复时间 -15.1%、恢复率 +33.6%</td>
+</tr>
+<tr>
+<td>10</td>
+<td>[2608.02470v1] Grounding Agentic VLMs ... Fine-Grained Vehicle Damage Assessment</td>
+<td>专用分割模型接地 VLM 推理(7 节点 LangGraph),报告幻觉率 92%→31%;focal loss 会致小目标塌缩,对比损失更好</td>
+</tr>
+<tr>
+<td>11</td>
+<td>[2608.02505v1] Abduction Without a Body? Representational Grounding and the Abduction Loop</td>
+<td>科学假设生成的溯因循环架构(表征接地而非具身),含 DAB-30 评测程序——哲学味浓</td>
+</tr>
+<tr>
+<td>12</td>
+<td>[2608.02446v1] Advancing Relevance Measurement with VLMs for Web-Scale Search</td>
+<td>Pinterest 生产环境 VLM 相关性评估,在线 A/B 验证,显著降低 MDE</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：另 2 篇离题理论文 [2608.02588v1] Condition-Number Barrier / [2608.02564v1] Dithering 值得留意——两篇都由 Google 内部<strong>全自动 Gemini agentic 系统首次证明</strong>再由作者人工验证，"AI 自动证明"信号本身值得跟踪。</p>
+</blockquote>
+<hr />
+<h2 id="summary-statistics">📊 Summary Statistics<a class="headerlink" href="#summary-statistics" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Total Papers</td>
+<td>27</td>
+</tr>
+<tr>
+<td>cs.AI</td>
+<td>11</td>
+</tr>
+<tr>
+<td>cs.CR</td>
+<td>4</td>
+</tr>
+<tr>
+<td>cs.SE</td>
+<td>2</td>
+</tr>
+<tr>
+<td>cs.CL</td>
+<td>2</td>
+</tr>
+<tr>
+<td>cs.LG</td>
+<td>2</td>
+</tr>
+<tr>
+<td>cs.CV</td>
+<td>2</td>
+</tr>
+<tr>
+<td>cs.ET</td>
+<td>1</td>
+</tr>
+<tr>
+<td>cs.DC</td>
+<td>1</td>
+</tr>
+<tr>
+<td>cs.IR</td>
+<td>1</td>
+</tr>
+<tr>
+<td>physics.soc-ph</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="key-themes">🎯 Key Themes<a class="headerlink" href="#key-themes" title="Permanent link">&para;</a></h2>
+<p>本周论文按主题分组:</p>
+<h3 id="agent">🛡️ Agent 安全与治理（本周最强信号）<a class="headerlink" href="#agent" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[2608.02518v1] Magnet: Detecting Cross-Session AI Misuse Through Capability Accumulation</li>
+<li>[2608.01719v1] MNC: Scope-Bound Semantic Declassification for Private LLM-Agent Communication</li>
+<li>[2608.02407v1] Antares: Foundation Models for Agentic Vulnerability Localization</li>
+<li>[2608.01938v1] D-MUTRA: DLT-based Mutual Remote Attestation for Multi-Agent Systems</li>
+<li>[2608.02422v1] Agentic Incident Response through Digital Twin-Enhanced Multiscale Planning</li>
+</ul>
+<h3 id="agent_1">🧠 Agent 记忆与状态连续性<a class="headerlink" href="#agent_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[2608.02515v1] LiveMem: Maintaining Memory State Continuity in Long-Running LLM Inference</li>
+<li>[2608.02508v1] RoMeRL: ... Self-Evolving Agent Memory via Reduced-Order Utility States</li>
+<li>[2608.02560v1] PRECOG: Structured Memory for Edge Language Models</li>
+</ul>
+<h3 id="agent_2">🛠️ 编码 Agent 与软件工程<a class="headerlink" href="#agent_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[2608.02499v1] SWE-Touch: Benchmarking Coding Agents When Users Touch the Code</li>
+<li>[2608.02464v1] Real-Time Detection and Repair of LLM Agent Failures</li>
+<li>[2608.02582v1] ACEM: A Cost Estimation Model for Agentic Software Engineering</li>
+</ul>
+<h3 id="_2">🤖 多智能体协作与推理<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[2608.02291v1] TreeCredit: Shared Prefixes, Better Credit: Adaptive Routing for Multi-Agent Reasoning</li>
+<li>[2608.01805v1] CockpitHAT: Dependency-Graph-Driven Hierarchical Attribution</li>
+<li>[2608.02218v1] PosterMELD: Multi-Agent Paper-to-Poster Generation</li>
+<li>[2608.02005v1] OASE: Evolving in the Agent Jungle</li>
+<li>[2608.02178v1] Multi-Agent LLM Naming Games</li>
+<li>[2608.01861v1] FedJigsaw: Multi-Agent Collaborative Model Reassembly</li>
+</ul>
+<h3 id="agentic">⚙️ Agentic 行业自动化<a class="headerlink" href="#agentic" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[2608.02569v1] AtumAI: Agentic Generation of Datacenter Control-Plane Policies</li>
+<li>[2608.01791v1] PICopilot: LLM-based Agentic Framework for Photonic IC Design</li>
+<li>[2608.02441v1] Agentic Commerce World</li>
+<li>[2608.02470v1] TinyDamage: Grounding Agentic VLMs for Vehicle Damage Assessment</li>
+</ul>
+<h3 id="agent_3">🧪 Agent 评测方法论<a class="headerlink" href="#agent_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[2608.02444v1] ParEvalLayer: When Partial LLM-Agent Evaluations Support a Decision</li>
+<li>[2608.02441v1] Agentic Commerce World（协议校验+可审计）</li>
+<li>[2608.02553v1] A Taxonomy of Cognitive Capability Gaps</li>
+</ul>
+<hr />
+<h2 id="_3">✅ 论文验证状态（搜索引擎交叉验证）<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>论文</th>
+<th>验证状态</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SWE-Touch</strong></td>
+<td>✅ 已验证</td>
+<td>HF papers 页确认：59% 会话含用户代码改动，9 模型 SWE-bench Verified</td>
+</tr>
+<tr>
+<td><strong>Real-Time Detection &amp; Repair</strong></td>
+<td>✅ 已验证</td>
+<td>arXiv 页+chatpaper 确认，代码/数据已发布</td>
+</tr>
+<tr>
+<td><strong>RoMeRL</strong></td>
+<td>✅ 已验证</td>
+<td>arXiv 页确认 + GitHub 代码（YOUNG-fnxm/RoMeRL）</td>
+</tr>
+<tr>
+<td><strong>LiveMem</strong></td>
+<td>✅ 已验证</td>
+<td>arXiv 页确认（cs.CL）</td>
+</tr>
+<tr>
+<td><strong>Magnet</strong></td>
+<td>✅ 已验证</td>
+<td>arXiv 页+chatpaper；承接 Cross-Session Threats（2604.21131）</td>
+</tr>
+<tr>
+<td><strong>Antares</strong></td>
+<td>✅ 已验证</td>
+<td>Cisco Foundation AI 官方 technical report 确认</td>
+</tr>
+<tr>
+<td><strong>ACEM</strong></td>
+<td>✅ 已验证</td>
+<td>arXiv 页确认（27 页，cs.SE）；agentic 成本话题行业热度高</td>
+</tr>
+<tr>
+<td><strong>TreeCredit</strong></td>
+<td>🔍 方向验证</td>
+<td>论文太新无独立页面，多智能体路由方向真实</td>
+</tr>
+<tr>
+<td><strong>AtumAI</strong></td>
+<td>🔍 方向验证</td>
+<td>agentic control plane 为行业热点，论文本身太新</td>
+</tr>
+<tr>
+<td><strong>PICopilot</strong></td>
+<td>🔍 方向验证</td>
+<td>LLM 硬件设计 agent 方向真实（同域有 P2P 等），48/48 待深读</td>
+</tr>
+<tr>
+<td><strong>CockpitHAT</strong></td>
+<td>🔄 待深读</td>
+<td>元数据可信（Who&amp;When 基准 agent 级 77.9%）</td>
+</tr>
+<tr>
+<td><strong>MNC</strong></td>
+<td>🔄 待深读</td>
+<td>元数据可信</td>
+</tr>
+<tr>
+<td><strong>Taxonomy</strong></td>
+<td>🔄 待深读</td>
+<td>综述型，框架价值待评估</td>
+</tr>
+<tr>
+<td><strong>ACWorld</strong></td>
+<td>🔄 待深读</td>
+<td>元数据可信（200+60 任务，十模型 65.9%-91.4%）</td>
+</tr>
+<tr>
+<td><strong>ParEvalLayer</strong></td>
+<td>🔄 待深读</td>
+<td>元数据可信</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="brain">🎯 阅读优先级（基于验证 + 第二 Brain 相关性）<a class="headerlink" href="#brain" title="Permanent link">&para;</a></h2>
+<p><strong>立即行动</strong>（本周内）：
+1. <strong>Real-Time Detection and Repair</strong>（agent 失败监控 → Hermes 可靠性体系）
+2. <strong>RoMeRL</strong>（记忆-奖励陷阱 → 第二大脑记忆体系）</p>
+<p><strong>中期跟踪</strong>（1-2 周）：
+3. <strong>SWE-Touch</strong>（共享工作区状态感知 → 桌面插件/agent 运行时）
+4. <strong>ACEM</strong>（agentic 成本建模 → 闲鱼接单定价）</p>
+<p><strong>长期研究</strong>（1 个月+）：
+5. <strong>LiveMem / Magnet / PICopilot / AtumAI</strong></p>
+<hr />
+<h2 id="_4">✅ 可落地行动项<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="_5">🔴 高优先级（本周内）<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h4 id="1-agent-real-time-detection-and-repair">1. Agent 失败轻量监控层（参考 Real-Time Detection and Repair）<a class="headerlink" href="#1-agent-real-time-detection-and-repair" title="Permanent link">&para;</a></h4>
+<p><strong>实现目标</strong>：
+- 为 Hermes cron/agent 任务加"零成本哨兵"：<strong>确定性验证优先于 LLM 裁判</strong>——重算工具结果（校验总和/必需调用），0 误报代价下捕获 60% 失败
+- 对高频 cron 任务记录步级遥测（工具错误数、循环检测、目标漂移），训练单类检测器成本太高时可先落地确定性验证层</p>
+<p><strong>具体行动</strong>：
+- 在 <code>hermes-automation-patterns</code> 技能增加「确定性验证哨兵」模式：失败→回滚→重跑，恢复率参考 45%、任务成功率 52%→73%（约 +1 次模型调用/次）</p>
+<h4 id="2-romerl">2. 记忆降阶 + 反奖励污染（参考 RoMeRL）<a class="headerlink" href="#2-romerl" title="Permanent link">&para;</a></h4>
+<p><strong>实现目标</strong>：
+- memory 系统按<strong>固定语义坐标</strong>组织（outcome polarity × 记忆动态），替代无限增长的轨迹索引；剔除 co-retrieved 误得效用的条目</p>
+<p><strong>具体行动</strong>：
+- 在 <code>daily-knowledge-absorption-gate</code> 增加记忆条目 outcome 标注（✅ 有效/❌ 误导），低价值条目降权而非删除；反馈密度目标 ×6</p>
+<hr />
+<h3 id="2-3">🟡 中优先级（2-3 周）<a class="headerlink" href="#2-3" title="Permanent link">&para;</a></h3>
+<h4 id="3-swe-touch">3. 共享工作区状态感知（参考 SWE-Touch）<a class="headerlink" href="#3-swe-touch" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Hermes 桌面插件/agent 运行时检测用户对文件/代码的<strong>并发修改</strong>；冲突编辑时重新检视仓库 + 跑目标测试后再提交（对应 Counter-Edit 暴露的三大能力缺口：变更检测、冲突调和、行为验证）</li>
+</ul>
+<h4 id="4-agentic-acem">4. Agentic 成本估算（参考 ACEM）<a class="headerlink" href="#4-agentic-acem" title="Permanent link">&para;</a></h4>
+<ul>
+<li>闲鱼 AI 接单报价引入 token 成本因子：<strong>Revision Factor</strong>（返工/重试开销）与 <strong>Context Factor</strong>（上下文累积膨胀）；按任务复杂度给 LLM / HITL / 基建三维预算，替代纯拍脑袋报价</li>
+</ul>
+<hr />
+<h3 id="1">🟢 长期跟踪（1 个月+）<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<h4 id="5-agent-picopilot">5. 硬件设计脚本 Agent（参考 PICopilot）<a class="headerlink" href="#5-agent-picopilot" title="Permanent link">&para;</a></h4>
+<ul>
+<li>评估「自然语言 → PCB/EDA 脚本」服务化：JLC MCP 已有 38 工具，可叠加 PICopilot 式多智能体编排（反馈机制+定制 RAG）——与 PCB 接单业务直接相关</li>
+</ul>
+<h4 id="6-taxonomy">6. 认知能力差距框架（参考 Taxonomy）<a class="headerlink" href="#6-taxonomy" title="Permanent link">&para;</a></h4>
+<ul>
+<li>对照五维分类（持久状态建模/目标自主/自我监控/环境交互/学习适应）盘点 Second Brain 七大自举系统的认知缺口</li>
+</ul>
+<hr />
+<p><em>生成时间：2026-08-05 | 数据源：arXiv API (export.arxiv.org) | 验证：搜索引擎交叉验证 | 状态：reading</em></p>
+<p><em>Generated automatically via arXiv API cron job (arxiv skill). Last updated: 2026-08-05</em></p>
+<hr />
+<h2 id="3-knowledgeresearcharxiv-2026-08-05-core-contributionsmd">已处理：核心贡献精选 3 篇 → 📄 knowledge/Research/arxiv-2026-08-05-core-contributions.md<a class="headerlink" href="#3-knowledgeresearcharxiv-2026-08-05-core-contributionsmd" title="Permanent link">&para;</a></h2>
+<ul>
+<li>🥇 Real-Time Detection and Repair of LLM Agent Failures（→ hermes-automation-patterns 确定性验证哨兵已落地）</li>
+<li>🥈 RoMeRL（→ Second Brain 记忆体系语义坐标）</li>
+<li>🥉 SWE-Touch（→ 桌面插件共享工作区感知）</li>
+</ul>
+<hr />
+<blockquote>
+<p>🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

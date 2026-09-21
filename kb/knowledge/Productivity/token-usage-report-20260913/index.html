@@ -1,0 +1,3406 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="AI Agent 第二大脑 | Hermes 七大自举系统 | 硬件/PCB/单片机全链路知识库 | 学术写作工作流 | 全中文 Obsidian 知识库">
+      
+      
+        <meta name="author" content="mo9652962">
+      
+      
+        <link rel="canonical" href="https://mo9652962-ai.github.io/second-brain/kb/knowledge/Productivity/token-usage-report-20260913/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>本周 API 成本报告（W37） - Second Brain 知识库</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#api-w37" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="Second Brain 知识库" class="md-header__button md-logo" aria-label="Second Brain 知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Second Brain 知识库
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              本周 API 成本报告（W37）
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="切换到深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="切换到浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  
+    
+  
+  🏠 总入口
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/hermes/hermes-workflow-preferences/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🤖 Hermes 自举系统
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/hardware/PCB-Design-Automation-2026/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🔧 硬件工程
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/ai/mlops-llm-training-pipeline/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🧠 AI / MLOps
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/web/Modern-Web-Development-2026/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  💻 Web / 平台
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/dev/cross-platform-mobile-development-2026/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  📱 移动端 & 安全
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/general/knowledge-domain-roadmap/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  📚 通用参考
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Research/MOC-Research/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🗺️ 知识域 MOC
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../projects/current/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  📦 项目与治理
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Second Brain 知识库" class="md-nav__button md-logo" aria-label="Second Brain 知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Second Brain 知识库
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../.." class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 总入口
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🏠 总入口
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../HOME/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HOME 知识中枢
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../INDEX/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    全库索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../knowledge-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识地图
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--adopted"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DASHBOARD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    健康看板
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../VAULT-MAP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器可读索引
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cross-Domain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跨域关联
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--adopted"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 Hermes 自举系统
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🤖 Hermes 自举系统
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/hermes-workflow-preferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    交互自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/hermes-automation-patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    可靠性自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/daily-knowledge-absorption-gate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/tool-call-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    工具调用自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/code-quality-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    代码质量自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/output-style-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    输出风格自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/context-management-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    上下文管理自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/github-repo-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub 仓库优化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/github-seo-optimization-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub SEO 优化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔧 硬件工程
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🔧 硬件工程
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hardware/PCB-Design-Automation-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PCB 设计自动化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hardware/CAD-Design-Complete-Guide-v2.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CAD 设计完整指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hardware/Microcontroller-Edge-AI-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    单片机与边缘 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hardware/Hardware-Startup-Open-Source-Ecosystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    硬件创业与开源生态
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/cad-design-master/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CAD 设计大师（技能集）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/8051-embedded-dev/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8051 嵌入式开发
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧠 AI / MLOps
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🧠 AI / MLOps
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/ai/mlops-llm-training-pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MLOps & LLM 训练流水线
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💻 Web / 平台
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    💻 Web / 平台
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/web/Modern-Web-Development-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    现代 Web 开发 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/platform/Platform-Development-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    平台开发 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📱 移动端 & 安全
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📱 移动端 & 安全
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/dev/cross-platform-mobile-development-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跨平台移动端开发
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/dev/ctf-cybersecurity-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CTF 网络安全路线
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📚 通用参考
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📚 通用参考
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/general/knowledge-domain-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识域扩展路线图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/general/community-best-practices-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    社区最佳实践索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/general/bilingual-terminology-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中英双语术语表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/engineering-workflow/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    工程工作流
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🗺️ 知识域 MOC
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🗺️ 知识域 MOC
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Research/MOC-Research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    研究 Research
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Dev/MOC-Dev/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开发 Dev
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MOC-Productivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    生产力 Productivity
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Security/MOC-Security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    安全 Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cards/MOC-cards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识卡 cards
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Daily/MOC-Daily/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    日常 Daily
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Hardware/MOC-Hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    硬件 Hardware
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AI/MOC-AI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Finance/MOC-Finance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    金融 Finance
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Archive/MOC-Archive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    归档 Archive
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Content/MOC-Content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    内容 Content
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SOP/MOC-SOP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SOP
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../META/MOC-META/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    元信息 META
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Creative/MOC-Creative/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    创意 Creative
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gaming/MOC-gaming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    游戏 gaming
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Product/MOC-Product/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    产品 Product
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projects/MOC-Projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    项目 Projects
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Education/MOC-Education/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    教育 Education
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📦 项目与治理
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📦 项目与治理
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/current/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    当前项目
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/MOC-Concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    概念索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../memory/MOC-Memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    记忆索引
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../health/MOC-Health/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    健康索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MOC-Inbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    待整理箱
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MOC-Duplicate-Review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    重复审查
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="api-w37">本周 API 成本报告（W37）<a class="headerlink" href="#api-w37" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>统计周期：2026-09-07（周一）～ 2026-09-13（周日）
+生成时间：2026-09-13 21:09
+⚠️ 账面 estimated_cost_usd 本周严重失真（$14.0M），本报告成本一律采用<strong>官方 CNY 价重算的真实口径</strong>，记账问题详见「成本口径问题」节。</p>
+</blockquote>
+<h2 id="_1">📊 核心指标<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">指标</th>
+<th style="text-align: right;">本周 W37</th>
+<th style="text-align: right;">上周 W36</th>
+<th style="text-align: left;">变化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">会话数</td>
+<td style="text-align: right;">120</td>
+<td style="text-align: right;">167</td>
+<td style="text-align: left;">-28.1%</td>
+</tr>
+<tr>
+<td style="text-align: left;">API 调用</td>
+<td style="text-align: right;">2,345</td>
+<td style="text-align: right;">6,287</td>
+<td style="text-align: left;">-62.7% ⬇️</td>
+</tr>
+<tr>
+<td style="text-align: left;">输入 Tokens</td>
+<td style="text-align: right;">28.55M</td>
+<td style="text-align: right;">62.92M</td>
+<td style="text-align: left;">-54.6%</td>
+</tr>
+<tr>
+<td style="text-align: left;">输出 Tokens</td>
+<td style="text-align: right;">2.32M</td>
+<td style="text-align: right;">4.90M</td>
+<td style="text-align: left;">-52.6%</td>
+</tr>
+<tr>
+<td style="text-align: left;">缓存读取</td>
+<td style="text-align: right;">247.26M</td>
+<td style="text-align: right;">1,003.64M</td>
+<td style="text-align: left;">-75.4%</td>
+</tr>
+<tr>
+<td style="text-align: left;">推理 Tokens</td>
+<td style="text-align: right;">1.33M</td>
+<td style="text-align: right;">2.29M</td>
+<td style="text-align: left;">-41.9%</td>
+</tr>
+<tr>
+<td style="text-align: left;">缓存命中率</td>
+<td style="text-align: right;">89.6%</td>
+<td style="text-align: right;">94.1%</td>
+<td style="text-align: left;">-4.5pp</td>
+</tr>
+<tr>
+<td style="text-align: left;">消息数（本周）</td>
+<td style="text-align: right;">12,742</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>真实边际成本</strong></td>
+<td style="text-align: right;"><strong>¥6.51（≈$0.90）</strong></td>
+<td style="text-align: right;"><strong>¥116.55（≈$16.19）</strong></td>
+<td style="text-align: left;"><strong>-94.4% ⬇️</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">账面 estUSD（失真）</td>
+<td style="text-align: right;">$14,021,151</td>
+<td style="text-align: right;">$4,286,609</td>
+<td style="text-align: left;">不可比 ❌</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_2">🔑 三~四要点<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>真实成本极低且大幅下降（-94%）</strong>：本周边际成本 ¥6.51，几乎全部来自 jiyuanlvdong-2 relay（deepseek-v4-flash-0731）。主力流量走火山 coding plan（订阅制，不按量计费），边际≈0。</li>
+<li><strong>用量整体回落</strong>：调用量 -62.7%、输入 -54.6%、缓存 -75.4%——上周「查找之前连接的 MCP」桌面大会话（3,096 次调用 / 749M 缓存）本周停烧，是主因。</li>
+<li><strong>火山 coding plan 晚高峰 5 小时额度打满</strong>：09-11~09-13 每晚 20:00-21:00 档多个 cron 报 429（reset 窗口 09-11 20:46 / 09-13 22:02），fallback 到 jiyuanlvdong-2 兜底，个别环节仍 Connection error。</li>
+<li><strong>成本记账 bug 恶化</strong>：tokenrhythm relay 价格格式（input/output 为空）导致 jiyuanlvdong-2 账面成本被放大 ~10⁶ 倍（单会话账面 $2.97M，真实 ¥1.87）；fangzhou-1 的 pro 会话 cost_source='none' 仍记 $3.2M。账面数字不可信。</li>
+</ol>
+<h2 id="_3">📅 每日明细（真实口径）<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">日期</th>
+<th style="text-align: right;">会话</th>
+<th style="text-align: right;">调用</th>
+<th style="text-align: right;">输入(M)</th>
+<th style="text-align: right;">输出(M)</th>
+<th style="text-align: right;">缓存(M)</th>
+<th style="text-align: right;">账面estUSD(失真)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">09-07 (一)</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">343</td>
+<td style="text-align: right;">2.99</td>
+<td style="text-align: right;">0.27</td>
+<td style="text-align: right;">23.32</td>
+<td style="text-align: right;">$1</td>
+</tr>
+<tr>
+<td style="text-align: left;">09-08 (二)</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">403</td>
+<td style="text-align: right;">4.52</td>
+<td style="text-align: right;">0.34</td>
+<td style="text-align: right;">27.24</td>
+<td style="text-align: right;">$2</td>
+</tr>
+<tr>
+<td style="text-align: left;">09-09 (三)</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">227</td>
+<td style="text-align: right;">3.16</td>
+<td style="text-align: right;">0.20</td>
+<td style="text-align: right;">13.40</td>
+<td style="text-align: right;">$0</td>
+</tr>
+<tr>
+<td style="text-align: left;">09-10 (四)</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">691</td>
+<td style="text-align: right;">8.99</td>
+<td style="text-align: right;">0.61</td>
+<td style="text-align: right;">125.95</td>
+<td style="text-align: right;">$3,224,999</td>
+</tr>
+<tr>
+<td style="text-align: left;">09-11 (五)</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">88</td>
+<td style="text-align: right;">1.07</td>
+<td style="text-align: right;">0.11</td>
+<td style="text-align: right;">6.27</td>
+<td style="text-align: right;">$2,091,028</td>
+</tr>
+<tr>
+<td style="text-align: left;">09-12 (六)</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">180</td>
+<td style="text-align: right;">3.05</td>
+<td style="text-align: right;">0.30</td>
+<td style="text-align: right;">13.32</td>
+<td style="text-align: right;">$3,196,389</td>
+</tr>
+<tr>
+<td style="text-align: left;">09-13 (日)</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">413</td>
+<td style="text-align: right;">4.77</td>
+<td style="text-align: right;">0.48</td>
+<td style="text-align: right;">37.76</td>
+<td style="text-align: right;">$5,508,731</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>总计</strong></td>
+<td style="text-align: right;"><strong>120</strong></td>
+<td style="text-align: right;"><strong>2,345</strong></td>
+<td style="text-align: right;"><strong>28.55</strong></td>
+<td style="text-align: right;"><strong>2.32</strong></td>
+<td style="text-align: right;"><strong>247.26</strong></td>
+<td style="text-align: right;">$14.0M ❌</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>09-10 账面尖峰 = 「当前整体现状梳理」deepseek-v4-pro-260425 单会话（fangzhou-1）；09-12/09-13 尖峰 = jiyuanlvdong-2 价格格式 bug 放大（非真实费用）。</p>
+</blockquote>
+<h2 id="cny">💰 成本分析（真实口径，CNY 官方价重算）<a class="headerlink" href="#cny" title="Permanent link">&para;</a></h2>
+<h3 id="provider">按 Provider<a class="headerlink" href="#provider" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Provider</th>
+<th style="text-align: right;">会话</th>
+<th style="text-align: right;">调用</th>
+<th style="text-align: right;">输入(M)</th>
+<th style="text-align: right;">输出(M)</th>
+<th style="text-align: right;">缓存(M)</th>
+<th style="text-align: right;">真实边际成本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">custom（fangzhou-2 火山 coding plan）</td>
+<td style="text-align: right;">86</td>
+<td style="text-align: right;">1,572</td>
+<td style="text-align: right;">19.85</td>
+<td style="text-align: right;">1.50</td>
+<td style="text-align: right;">106.08</td>
+<td style="text-align: right;">≈¥0（订阅）</td>
+</tr>
+<tr>
+<td style="text-align: left;">custom:fangzhou-1（火山 coding plan）</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">461</td>
+<td style="text-align: right;">5.81</td>
+<td style="text-align: right;">0.40</td>
+<td style="text-align: right;">111.48</td>
+<td style="text-align: right;">≈¥0（订阅）</td>
+</tr>
+<tr>
+<td style="text-align: left;">custom:jiyuanlvdong-2（tokenrhythm relay）</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">312</td>
+<td style="text-align: right;">2.70</td>
+<td style="text-align: right;">0.42</td>
+<td style="text-align: right;">29.70</td>
+<td style="text-align: right;"><strong>¥6.51</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">NULL（no-agent/ping）</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">¥0</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>总计</strong></td>
+<td style="text-align: right;"><strong>120</strong></td>
+<td style="text-align: right;"><strong>2,345</strong></td>
+<td style="text-align: right;"><strong>28.55</strong></td>
+<td style="text-align: right;"><strong>2.32</strong></td>
+<td style="text-align: right;"><strong>247.26</strong></td>
+<td style="text-align: right;"><strong>¥6.51 ≈ $0.90</strong></td>
+</tr>
+</tbody>
+</table>
+<p>jiyuanlvdong-2 来源拆分：cron ¥3.65（9 会话，fallback 兜底）/ desktop ¥2.91（15 会话）。</p>
+<h3 id="_4">按模型<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">模型</th>
+<th style="text-align: right;">会话</th>
+<th style="text-align: right;">调用</th>
+<th style="text-align: right;">输入(M)</th>
+<th style="text-align: right;">输出(M)</th>
+<th style="text-align: right;">缓存(M)</th>
+<th style="text-align: right;">真实成本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">deepseek-v4-flash</td>
+<td style="text-align: right;">93</td>
+<td style="text-align: right;">1,558</td>
+<td style="text-align: right;">19.85</td>
+<td style="text-align: right;">1.50</td>
+<td style="text-align: right;">104.84</td>
+<td style="text-align: right;">≈¥0（方舟订阅）</td>
+</tr>
+<tr>
+<td style="text-align: left;">deepseek-v4-flash-0731</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">~316</td>
+<td style="text-align: right;">2.89</td>
+<td style="text-align: right;">0.42</td>
+<td style="text-align: right;">30.94</td>
+<td style="text-align: right;">¥6.51</td>
+</tr>
+<tr>
+<td style="text-align: left;">deepseek-v4-pro-260425</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">461</td>
+<td style="text-align: right;">5.81</td>
+<td style="text-align: right;">0.40</td>
+<td style="text-align: right;">111.48</td>
+<td style="text-align: right;">≈¥0（方舟订阅）</td>
+</tr>
+<tr>
+<td style="text-align: left;">gemini-3.8-flash-high</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">全部失败（8317 代理不可达）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="top">Top 真实成本会话（本周，¥）<a class="headerlink" href="#top" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">成本</th>
+<th style="text-align: right;">调用</th>
+<th style="text-align: left;">会话</th>
+<th style="text-align: left;">时间</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">¥1.87</td>
+<td style="text-align: right;">93</td>
+<td style="text-align: left;">daily-todo-executor · Sep 13 20:23（方舟 429 → fallback）</td>
+<td style="text-align: left;">09-13 20:00</td>
+</tr>
+<tr>
+<td style="text-align: right;">¥0.61</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: left;">daily-todo-executor · Sep 11 20:17</td>
+<td style="text-align: left;">09-11 20:01</td>
+</tr>
+<tr>
+<td style="text-align: right;">¥0.33</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: left;">daily-monetization-review · Sep 13 18:04</td>
+<td style="text-align: left;">09-13 18:00</td>
+</tr>
+<tr>
+<td style="text-align: right;">¥0.32</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: left;">weekly-learning-progress · Sep 13 20:04</td>
+<td style="text-align: left;">09-13 20:00</td>
+</tr>
+<tr>
+<td style="text-align: right;">¥0.28</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: left;">Group: rmtvu0vl5-38vu5</td>
+<td style="text-align: left;">09-11 02:00</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_5">🔁 跨周长会话<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<ul>
+<li>「查找之前连接的 MCP」（deepseek-v4-flash-0731 @ jiyuanlvdong-2）：08-31 起跑、09-10 13:46 最后活跃；生命周期 13,560 条消息中本周产生 6,918 条（51%）。<strong>按 started_at 口径其成本记入上周（¥115.95 大头）</strong>，本周真实成本估算未含其本周后段用量，实际边际可能略高于 ¥6.51。</li>
+</ul>
+<h2 id="_6">🚨 异常与根因<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="cron">cron 执行（本周）<a class="headerlink" href="#cron" title="Permanent link">&para;</a></h3>
+<ul>
+<li>成功 794 / 失败 193 / running 1 / unknown 9 → 成功率 ~80%</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">失败根因</th>
+<th style="text-align: right;">次数</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">provider 连接错误</td>
+<td style="text-align: right;">66</td>
+<td style="text-align: left;">jiyuanlvdong-2 (tokenrhythm) 间歇不可达（09-12 00:xx、09-13 20:20 等）；EasyCLIProxyAPI 127.0.0.1:8317 连不上（gemini-3.8-flash-high ×14，09-11~09-12）</td>
+</tr>
+<tr>
+<td style="text-align: left;">HTTP 429 限流/配额</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: left;">火山 coding plan 5 小时额度打满（reset 09-11 20:46 / 09-13 22:02），晚间 20:00/21:00 档多个 cron 受影响 → fallback jiyuanlvdong-2</td>
+</tr>
+<tr>
+<td style="text-align: left;">deterministic-verify 哨兵</td>
+<td style="text-align: right;">35</td>
+<td style="text-align: left;">每晚 21:30 报「无产物」（arxiv-fetch / obsidian-maintenance / daily-health-check），多为按需任务无产出 + Obsidian MCP 未开的已知模式</td>
+</tr>
+<tr>
+<td style="text-align: left;">config.yaml 损坏</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">09-11 21:00 ~ 09-12 12:21 窗口拒绝启动（C4 事件），<strong>当前已恢复，yaml 校验 OK</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">HTTP 402 余额不足</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">任务 pin 到余额枯竭的 jiyuanlvdong（非 -2）</td>
+</tr>
+<tr>
+<td style="text-align: left;">drift 跳过（unpinned）</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">全局模型漂移导致 unpinned 任务 fail-closed</td>
+</tr>
+<tr>
+<td style="text-align: left;">Script not found</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">脚本路径/改名问题</td>
+</tr>
+<tr>
+<td style="text-align: left;">HTTP 503</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">方舟鉴权/模型配置读取暂不可用（09-10 18:00）</td>
+</tr>
+<tr>
+<td style="text-align: left;">600s 超时</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">每日仓库+知识库优化 / graphify / health-check / arxiv</td>
+</tr>
+<tr>
+<td style="text-align: left;">504 / 400 模型已关闭</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">零星</td>
+</tr>
+</tbody>
+</table>
+<h3 id="agentlog-api-31-warning">agent.log API 失败（本周 31 条 WARNING）<a class="headerlink" href="#agentlog-api-31-warning" title="Permanent link">&para;</a></h3>
+<ul>
+<li>火山 5h 配额 429 ×13（傍晚档）、cpa-gui/gemini Connection error ×14、jiyuanlvdong-2 Connection/429 ×6。</li>
+</ul>
+<h2 id="_7">⚠️ 成本口径问题（本周重点，账面不可信）<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<ul>
+<li>state.db 本周账面 estimated_cost_usd = <strong>$14.0M</strong>（上周 $4.3M），全部失真，<strong>严禁直接引用</strong>。</li>
+<li>根因：tokenrhythm relay 的 <code>/v1/models</code> 返回 <code>pricing</code> 中 <strong>input/output 为空、只有 cache 价格（CNY）</strong>；Hermes 的 <code>provider_models_api</code> 估算把单位/币种理解错 → jiyuanlvdong-2 会话成本放大 ~10⁶ 倍（例：daily-todo-executor 09-13 账面 $2.97M，真实 ¥1.87）。</li>
+<li>fangzhou-1 的 deepseek-v4-pro-260425 会话 cost_source='none'/status='unknown' 仍产出 $3.2M 账面值（火山 coding plan 订阅制无按量价，不应计费）。</li>
+<li>另外 relay 对 deepseek-v4-flash-0731 的缓存价已从 ¥0.02/M（8 月）涨到 <strong>¥0.1/M</strong>（现价），成本估算已按 0.1 采用。</li>
+<li>处理建议：将 jiyuanlvdong-2 / fangzhou 系加入「成本不可审计」白名单；修 cost estimator 解析标准 pricing 格式（P1）。</li>
+</ul>
+<h2 id="_8">📦 存储使用<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">位置</th>
+<th style="text-align: right;">大小</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">C 盘</td>
+<td style="text-align: right;">294G / 448G（66%，可用 154G）</td>
+<td style="text-align: left;">安全</td>
+</tr>
+<tr>
+<td style="text-align: left;">D 盘</td>
+<td style="text-align: right;">593G / 932G（64%，可用 339G）</td>
+<td style="text-align: left;">安全</td>
+</tr>
+<tr>
+<td style="text-align: left;">Obsidian Vault</td>
+<td style="text-align: right;">678M</td>
+<td style="text-align: left;">knowledge 5.3M / memory 2.5M / site 17M / .git 54M</td>
+</tr>
+<tr>
+<td style="text-align: left;">Hermes 总目录</td>
+<td style="text-align: right;">14.69G</td>
+<td style="text-align: left;">见下</td>
+</tr>
+<tr>
+<td style="text-align: left;">├ hermes-agent</td>
+<td style="text-align: right;">9.08G</td>
+<td style="text-align: left;">git 安装 + 依赖（大头）</td>
+</tr>
+<tr>
+<td style="text-align: left;">├ node</td>
+<td style="text-align: right;">2.1G</td>
+<td style="text-align: left;">内置 Node 运行时</td>
+</tr>
+<tr>
+<td style="text-align: left;">├ state.db (+WAL)</td>
+<td style="text-align: right;">0.8G + 0.02G</td>
+<td style="text-align: left;">上周 710MB，+~15%；周内峰值曾 1.6G（VACUUM 回落）</td>
+</tr>
+<tr>
+<td style="text-align: left;">├ state-snapshots</td>
+<td style="text-align: right;">0.77G</td>
+<td style="text-align: left;">状态快照（可清旧）</td>
+</tr>
+<tr>
+<td style="text-align: left;">├ profiles / scripts / sessions</td>
+<td style="text-align: right;">0.42G / 0.36G / 0.29G</td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr>
+<td style="text-align: left;">├ bin / lsp / chrome-profile / skills</td>
+<td style="text-align: right;">0.21G / 0.2G / 0.15G / 0.14G</td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr>
+<td style="text-align: left;">├ backups / logs / cache</td>
+<td style="text-align: right;">0.09G / 0.03G / 0.02G</td>
+<td style="text-align: left;">backups 可清</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：上周报告「Hermes ~900MB」为不完整口径（未含 hermes-agent 等），本周已补全实测；08-14 参考口径 11G → 现 14.7G（node 2.1G、state-snapshots 0.77G 为主要增量）。</p>
+</blockquote>
+<h2 id="_9">💳 余额 / 配额<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">项</th>
+<th style="text-align: left;">状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">火山方舟 coding plan（fangzhou-2 默认 / fangzhou-1）</td>
+<td style="text-align: left;">订阅制；晚高峰 5h 用量额度打满（09-11 20:46 / 09-13 22:02 reset），非余额问题</td>
+</tr>
+<tr>
+<td style="text-align: left;">jiyuanlvdong-2（tokenrhythm）</td>
+<td style="text-align: left;">可用，无公开余额端点；偶发 Connection error；cache 价 ¥0.1/M</td>
+</tr>
+<tr>
+<td style="text-align: left;">jiyuanlvdong（非 -2）</td>
+<td style="text-align: left;">余额不足（本周 7 次 402）</td>
+</tr>
+<tr>
+<td style="text-align: left;">sensenova</td>
+<td style="text-align: left;">未使用（上周 ¥0.60）</td>
+</tr>
+<tr>
+<td style="text-align: left;">config.yaml</td>
+<td style="text-align: left;">✅ 当前解析正常（C4 已恢复）</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_10">📌 洞察与建议<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>P0 错峰调度</strong>：火山 coding plan 的 5h 用量额度在傍晚档打满，导致 20:00/21:00 档 cron（todo-executor / learning-progress / 组会报告 / 项目追踪等）成片 429 并 fallback 到高价 relay。建议把 20:00-21:30 的任务错峰到 22:30 后或早晨（参考 hermes-automation-patterns 错峰调度）。</li>
+<li><strong>P1 修成本记账</strong>：tokenrhythm 价格格式导致 jiyuanlvdong-2 账面成本放大 ~10⁶ 倍 + fangzhou-1 无定价却记账——把这两家加入「成本不可审计」白名单，或修 cost estimator。</li>
+<li><strong>P1 排查 8317 本地代理</strong>：gemini-3.8-flash-high 任务 09-11~09-12 连续 14 次 Connection error（EasyCLIProxyAPI 未起/不稳），若该任务仍需运行需拉起代理并验证。</li>
+<li><strong>P2 缓存命中率 89.6%</strong>：健康（≥85%）但低于上周 94.1%——本周大量新会话/并行集群（09-12 夜间）带来冷缓存；无需处理。</li>
+<li><strong>P2 存储</strong>：C 盘 154G 可用暂安全；Hermes 目录 14.7G 里 hermes-agent 9.1G + node 2.1G 为核心，backups(0.09G) 和 state-snapshots 旧快照可择机清理。</li>
+<li><strong>P2 哨兵误报</strong>：deterministic-verify 本周 35 次失败多为「无产物」误报（按需任务 + Obsidian MCP 未开），保持 Known 模式处理，不升级。</li>
+</ul>
+<hr />
+<p><em>数据来源：Hermes state.db sessions/messages 表 + cron/executions.db + logs/agent.log；真实成本按官方/relay CNY 价重算（汇率 7.2），火山 coding plan 视为订阅制。</em></p>
+<hr />
+<blockquote>
+<p>🗺️ 属于 [[MOC-Productivity]] · [[Home|🏠 Home]]</p>
+</blockquote>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

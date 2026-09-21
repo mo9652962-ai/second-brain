@@ -1,0 +1,3276 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="AI Agent 第二大脑 | Hermes 七大自举系统 | 硬件/PCB/单片机全链路知识库 | 学术写作工作流 | 全中文 Obsidian 知识库">
+      
+      
+        <meta name="author" content="mo9652962">
+      
+      
+        <link rel="canonical" href="https://mo9652962-ai.github.io/second-brain/kb/knowledge/Research/arxiv-weekly-2026-08-02/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Arxiv weekly 2026 08 02 - Second Brain 知识库</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#arxiv-weekly-roundup-ai-agent-llm-papers" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="Second Brain 知识库" class="md-header__button md-logo" aria-label="Second Brain 知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Second Brain 知识库
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Arxiv weekly 2026 08 02
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="切换到深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="切换到浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  
+    
+  
+  🏠 总入口
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/hermes/hermes-workflow-preferences/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🤖 Hermes 自举系统
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/hardware/PCB-Design-Automation-2026/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🔧 硬件工程
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/ai/mlops-llm-training-pipeline/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🧠 AI / MLOps
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/web/Modern-Web-Development-2026/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  💻 Web / 平台
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/dev/cross-platform-mobile-development-2026/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  📱 移动端 & 安全
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/general/knowledge-domain-roadmap/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  📚 通用参考
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../MOC-Research/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🗺️ 知识域 MOC
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../projects/current/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  📦 项目与治理
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Second Brain 知识库" class="md-nav__button md-logo" aria-label="Second Brain 知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Second Brain 知识库
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../.." class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 总入口
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🏠 总入口
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../HOME/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HOME 知识中枢
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../INDEX/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    全库索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../knowledge-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识地图
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--adopted"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DASHBOARD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    健康看板
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../VAULT-MAP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器可读索引
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cross-Domain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跨域关联
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--adopted"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 Hermes 自举系统
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🤖 Hermes 自举系统
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/hermes-workflow-preferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    交互自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/hermes-automation-patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    可靠性自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/daily-knowledge-absorption-gate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/tool-call-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    工具调用自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/code-quality-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    代码质量自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/output-style-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    输出风格自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/context-management-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    上下文管理自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/github-repo-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub 仓库优化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/github-seo-optimization-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub SEO 优化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔧 硬件工程
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🔧 硬件工程
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hardware/PCB-Design-Automation-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PCB 设计自动化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hardware/CAD-Design-Complete-Guide-v2.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CAD 设计完整指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hardware/Microcontroller-Edge-AI-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    单片机与边缘 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hardware/Hardware-Startup-Open-Source-Ecosystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    硬件创业与开源生态
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/cad-design-master/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CAD 设计大师（技能集）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/8051-embedded-dev/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8051 嵌入式开发
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧠 AI / MLOps
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🧠 AI / MLOps
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/ai/mlops-llm-training-pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MLOps & LLM 训练流水线
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💻 Web / 平台
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    💻 Web / 平台
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/web/Modern-Web-Development-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    现代 Web 开发 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/platform/Platform-Development-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    平台开发 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📱 移动端 & 安全
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📱 移动端 & 安全
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/dev/cross-platform-mobile-development-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跨平台移动端开发
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/dev/ctf-cybersecurity-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CTF 网络安全路线
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📚 通用参考
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📚 通用参考
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/general/knowledge-domain-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识域扩展路线图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/general/community-best-practices-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    社区最佳实践索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/general/bilingual-terminology-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中英双语术语表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/engineering-workflow/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    工程工作流
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🗺️ 知识域 MOC
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🗺️ 知识域 MOC
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MOC-Research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    研究 Research
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Dev/MOC-Dev/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开发 Dev
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Productivity/MOC-Productivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    生产力 Productivity
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Security/MOC-Security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    安全 Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cards/MOC-cards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识卡 cards
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Daily/MOC-Daily/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    日常 Daily
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Hardware/MOC-Hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    硬件 Hardware
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AI/MOC-AI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Finance/MOC-Finance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    金融 Finance
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Archive/MOC-Archive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    归档 Archive
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Content/MOC-Content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    内容 Content
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SOP/MOC-SOP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SOP
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../META/MOC-META/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    元信息 META
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Creative/MOC-Creative/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    创意 Creative
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gaming/MOC-gaming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    游戏 gaming
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Product/MOC-Product/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    产品 Product
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projects/MOC-Projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    项目 Projects
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Education/MOC-Education/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    教育 Education
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📦 项目与治理
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📦 项目与治理
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/current/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    当前项目
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/MOC-Concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    概念索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../memory/MOC-Memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    记忆索引
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../health/MOC-Health/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    健康索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MOC-Inbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    待整理箱
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MOC-Duplicate-Review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    重复审查
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<hr />
+<p>aliases:
+  - arXiv Weekly Roundup 2026-08-02
+tags: [arxiv, research, ai-agent, llm, computer-use-agent, multi-agent, ai4ai, paper-review]
+created: 2026-08-02
+updated: 2026-08-02
+status: reading
+source: https://arxiv.org/
+domain: research---</p>
+<h1 id="arxiv-weekly-roundup-ai-agent-llm-papers">arXiv Weekly Roundup — AI Agent &amp; LLM Papers<a class="headerlink" href="#arxiv-weekly-roundup-ai-agent-llm-papers" title="Permanent link">&para;</a></h1>
+<p><strong>Date:</strong> 2026-08-02 | <strong>Week 32</strong>
+<strong>Papers:</strong> 26 relevant (15 精选完整摘要 + 11 简评),收集范围 07-19 ~ 07-30</p>
+<hr />
+<h2 id="paper-highlights">📄 Paper Highlights<a class="headerlink" href="#paper-highlights" title="Permanent link">&para;</a></h2>
+<h3 id="1-260728609v1-osreward-instituting-standardized-evaluation-for-cross-platform-computer-use-reward-models">1. [2607.28609v1] OSReward: Instituting Standardized Evaluation for Cross-Platform Computer-Use Reward Models<a class="headerlink" href="#1-260728609v1-osreward-instituting-standardized-evaluation-for-cross-platform-computer-use-reward-models" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Authors:</strong> Qiushi Sun, Kanzhi Cheng, Yian Wang, Bowen Yang et al. (OS-Copilot)</li>
+<li><strong>Published:</strong> 2026-07-30</li>
+<li><strong>Categories:</strong> cs.AI, cs.CL, cs.CV</li>
+<li><strong>Links:</strong> <a href="https://arxiv.org/abs/2607.28609v1">Abstract</a> | <a href="https://arxiv.org/pdf/2607.28609v1">PDF</a> | <a href="https://os-copilot.github.io/OSReward-Home/">Project</a></li>
+</ul>
+<p><strong>Abstract:</strong>
+Computer-using agents (CUAs) are advancing rapidly across the digital world. A CUA trajectory records the agent's actions, states, and reasoning. Verifying whether it fulfilled the task instruction is central to CUA evaluation, data curation, and reinforcement learning. Neither human-written verifiers nor human annotators can provide such verification at scale, so the field increasingly turns to vision-language models (VLMs) as judges of CUA trajectories. But a fundamental question has long gone unexamined: are these VLM judges reliable enough? To study it systematically, we introduce OSReward, a realistic, high-quality benchmark that evaluates VLM judges on CUA trajectories. The trajectories come from diverse agent backbones executing human-verified instructions across platforms, then rigorously labeled with ground-truth verdicts through multi-stage human annotation. Building on it, we derive OSReward-Hard, a challenge set concentrating genuinely hard cases, and OSReward-Multi for fine-grained efficiency and alignment scoring. The most comprehensive evaluation of VLM judges to date finds even state-of-the-art models fall short of an ideal judge, sharing a systematic leniency bias that mislabels failed runs as successes. The few reliable enough to trust are too expensive to run at scale, while affordable open models trail far behind. To close this gap, we construct and release OS-Shepherd-100K, an open corpus of reasoning-annotated trajectory judgments for the CUA community. On it, we train OS-Shepherd (9B and 35B), open reward models that supply low-cost, stable, and reliable reward signals, matching commercial judges at 30-60% lower cost than the frontier.</p>
+<hr />
+<h3 id="2-260728568v1-frontis-ma1-training-an-ai4ai-model-towards-recursive-self-improvement-in-machine-learning-engineering">2. [2607.28568v1] Frontis-MA1: Training an AI4AI Model towards Recursive Self-Improvement in Machine Learning Engineering<a class="headerlink" href="#2-260728568v1-frontis-ma1-training-an-ai4ai-model-towards-recursive-self-improvement-in-machine-learning-engineering" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Authors:</strong> Junlin Yang, Che Jiang, Yu Fu et al. (Horizon Research, Frontis.AI + 清华大学)</li>
+<li><strong>Published:</strong> 2026-07-30</li>
+<li><strong>Categories:</strong> cs.CL</li>
+<li><strong>Links:</strong> <a href="https://arxiv.org/abs/2607.28568v1">Abstract</a> | <a href="https://arxiv.org/pdf/2607.28568v1">PDF</a> | <a href="https://frontisai.github.io/OpenRSI">Project/Code</a></li>
+</ul>
+<p><strong>Abstract:</strong>
+Recursive self-improvement (RSI) requires AI systems that improve the process of building AI (i.e., AI4AI); machine learning engineering (MLE) offers a concrete, executable testbed for studying this capability. We introduce OpenMLE, an open full-stack system for RSI research in MLE, spanning verifiable task environments with execution feedback (OpenMLE-Gym), operator learning (OpenMLE-RL), and long-horizon search (OpenMLE-Evo). On this stack we post-train Frontis-MA1 (35B) as a meta-evolution agent for MLE, aligning post-training and inference around four atomic program-evolution operators (Draft, Improve, Debug, Crossover): the same operators are trained via execution-grounded SFT and RL on data deduplicated against all evaluation benchmarks, then composed into long-horizon search, coupling learning and evolution in a single loop. On MLE-Bench Lite under a 12-hour per-task budget on one RTX 4090 capped at 12 GB VRAM, Frontis-MA1 (35B) improves Medal Average from 39.39% to 60.61% over its base model with OpenMLE-Evo, and reaches 71.21% with OpenMLE-Evo-Max (benchmark-independent experience priors and asynchronous search), exceeding GPT-5.5 + Codex and approaching GPT-5.6 Sol and the 2.8T Kimi K3. On held-out NatureBench Lite, both components transfer: with the framework fixed, swapping in the trained model raises Match-SOTA from 50% to 70%; with the model fixed, swapping in OpenMLE-Evo raises it from 20% to 50%. We release the model weights and the full OpenMLE stack.</p>
+<hr />
+<h3 id="3-260728430v1-agentradio-passive-awareness-for-long-horizon-multi-agent-collaboration">3. [2607.28430v1] AgentRadio: Passive Awareness for Long-Horizon Multi-Agent Collaboration<a class="headerlink" href="#3-260728430v1-agentradio-passive-awareness-for-long-horizon-multi-agent-collaboration" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Authors:</strong> Xinxing Ren, Qianbo Zang, Ziyan Wang et al. (Coral Protocol)</li>
+<li><strong>Published:</strong> 2026-07-30</li>
+<li><strong>Categories:</strong> cs.MA</li>
+<li><strong>Links:</strong> <a href="https://arxiv.org/abs/2607.28430v1">Abstract</a> | <a href="https://arxiv.org/pdf/2607.28430v1">PDF</a> | <a href="https://github.com/Coral-Protocol/AgentRadio">Code</a></li>
+</ul>
+<p><strong>Abstract:</strong>
+Understanding large codebases is a long-horizon task for Large Language Model (LLM) agents: answering a single question can require building and running the software, tracing execution across files, and synthesizing evidence over tens of minutes. On SWE-Atlas QnA, a benchmark of long-horizon questions over production repositories, a single Claude Code agent (Opus 4.6) resolves only 32.3% of tasks. Dividing the work among agents with clean contexts mitigates this limitation. However, the subtasks of code comprehension are interdependent. One agent's findings can rewrite another's task, so agents must coordinate during execution, not only at phase boundaries. Existing multi-agent systems support such exchange only between phases, through staged handoffs or synchronized rounds. Communication and work remain mutually exclusive. A discovery made mid-execution cannot be shared until the next boundary. We present AgentRadio, an asynchronous message-passing layer that equips coding-agent harnesses with three primitives: threads, messages, and waiting for mentions. The last runs as a background task, surfacing teammates' messages without interrupting foreground work, so each agent remains passively aware of its peers and folds new findings into its ongoing task. Under a five-phase protocol of division of labor and negotiation, four agents organized by AgentRadio resolve 62.1% of tasks, 29.8 points above a single agent and above Claude Code with the newer Opus 4.8 (57.2%). Rubric-level analysis shows the gain growing with task difficulty, consistent with mid-course correction as the underlying mechanism.</p>
+<hr />
+<h3 id="4-260728074v1-echoverse-deep-evolving-environments-for-training-computer-use-agents-at-scale">4. [2607.28074v1] Echoverse: Deep, Evolving Environments for Training Computer-Use Agents at Scale<a class="headerlink" href="#4-260728074v1-echoverse-deep-evolving-environments-for-training-computer-use-agents-at-scale" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Authors:</strong> Yash Pandya, Sahil Gupta, Sarthak Harne et al. (Microsoft Research)</li>
+<li><strong>Published:</strong> 2026-07-30</li>
+<li><strong>Categories:</strong> cs.AI, cs.LG</li>
+<li><strong>Links:</strong> <a href="https://arxiv.org/abs/2607.28074v1">Abstract</a> | <a href="https://arxiv.org/pdf/2607.28074v1">PDF</a> | <a href="https://github.com/microsoft/Echoverse">Code</a> | <a href="https://www.microsoft.com/en-us/research/blog/echoverse-deep-evolving-environments-for-computer-use-agents">MSR Blog</a></li>
+</ul>
+<p><strong>Abstract:</strong>
+Computer-use agents learn from what their actions change, so training one needs applications it can act on, break and reset. The applications that matter most are login-gated and stateful, so synthetic environments stand in for them. Recent pipelines generate such environments in bulk, which moves the bottleneck from how many exist to what is inside each one. The returns, we find, come from three properties: how much behavioural depth an environment carries, whether it targets the interaction an agent actually fails, and whether it improves alongside the model. We present Echoverse, which compiles specifications into stateful applications whose tasks are graded against the application's own database, and a co-evolution loop that reads every graded rollout twice: as repairs to the environment, its tasks and its verifier, and as training signal for the model. Trained on twelve such environments, a 9B model improves from 36.5% to 67.1% across fourteen evaluation splits, within fourteen points of the much larger frontier model that taught it. On the same domains, shallow environments push live-site accuracy below the base model (80.0 → 75.0) while deep ones raise it (80.0 → 85.0 and 48.0 → 65.0); drilling one interface control across many renderings transfers to held-out widget families and to the open web; and repairing a single environment lifts the model trained on it from 16.2% to 38.5%. The same worlds serve as reinforcement-learning environments, where a reward combining the grounded verifier with a dense per-step judge raises held-out score from 58.8% to 68.0%. We release four environments as a benchmark, with their applications, seed data and grounded graders.</p>
+<hr />
+<h3 id="5-260721557v2-openforgerl-train-harness-native-agents-in-any-environment">5. [2607.21557v2] OpenForgeRL: Train Harness-native Agents in Any Environment<a class="headerlink" href="#5-260721557v2-openforgerl-train-harness-native-agents-in-any-environment" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Authors:</strong> Xiao Yu, Baolin Peng, Ruize Xu et al. (MSR / Columbia)</li>
+<li><strong>Published:</strong> 2026-07-23 (v2 07-30)</li>
+<li><strong>Categories:</strong> cs.AI, cs.CL</li>
+<li><strong>Links:</strong> <a href="https://arxiv.org/abs/2607.21557v2">Abstract</a> | <a href="https://arxiv.org/pdf/2607.21557v2">PDF</a> | <a href="https://huggingface.co/papers/2607.21557">HF Papers</a></li>
+</ul>
+<p><strong>Abstract:</strong>
+Modern AI agents rely on elaborate inference harnesses such as Claude Code, Codex, and OpenClaw to drive multi-turn reasoning, tool use, and access to external systems. While powerful, these complex harnesses also make agents hard to train end-to-end with open infrastructure, whose SFT/RL stacks cannot natively express stateful, multi-process harness inference. To address this, we present OpenForgeRL, an open-source framework for training harness-based agents end-to-end in diverse environments. OpenForgeRL achieves this with a lightweight proxy that serves the harness's model calls while recording them as training data for a standard RL codebase (e.g., veRL), and a Kubernetes orchestrator that runs each rollout in its own remote container, together enabling training on any harness in any environment at scale. By decoupling training and inference, OpenForgeRL allows researchers to easily train, study, and improve agents directly in the real harnesses and environments they are deployed with. Using only hundreds to a few thousand tasks, OpenForgeClaw reaches 31.7 pass^3 and 55.9 pass@3 on ClawEval and 33.7 on QwenClawBench. OpenForgeGUI reaches 37.7 on OSWorld-Verified, 63.0 on Online-Mind2Web, and 72.3 on WebVoyager. Both outperform open baselines of similar size on nearly all benchmarks, and in the GUI setting match or surpass models several times larger. Beyond benchmarks, we analyze how harness choice (e.g., ZeroClaw, OpenClaw, Codex) and RL shape agent behavior: some harnesses are substantially harder to learn than others, and RL improves agentic reliability (self-verification, tool coverage, multi-step plans), though critical abilities such as error recovery remain weak.</p>
+<hr />
+<h3 id="6-260722798v1-stateact-program-state-before-pixels-for-long-horizon-computer-use-agents">6. [2607.22798v1] StateAct: Program State, before Pixels, for Long-Horizon Computer-Use Agents<a class="headerlink" href="#6-260722798v1-stateact-program-state-before-pixels-for-long-horizon-computer-use-agents" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Authors:</strong> Yan Yang, Xiangru Jian, Ziyang Luo et al. (Salesforce / Salesforce AI Research)</li>
+<li><strong>Published:</strong> 2026-07-24</li>
+<li><strong>Categories:</strong> cs.SE, cs.CV</li>
+<li><strong>Links:</strong> <a href="https://arxiv.org/abs/2607.22798v1">Abstract</a> | <a href="https://arxiv.org/pdf/2607.22798v1">PDF</a> | <a href="https://huggingface.co/papers/2607.22798">HF Papers</a></li>
+</ul>
+<p><strong>Abstract:</strong>
+Computer-use agents are usually improved by strengthening perception: better models for reading a screenshot and choosing where to click. Yet a screenshot is only a lossy rendering of the underlying program state, e.g., the files, application backends, and DOM that hold the task data. Different states can produce the same pixels, while code can inspect and modify that state directly. StateAct is a code-first, multi-agent harness built around this distinction. Its main agent works directly with program state by using code, while a dedicated GUI subagent handles screenshot-and-click interaction on the few subgoals that need it, just 28 of 108 tasks and 1.1% of main-agent steps. The same direct access to program state also supports verification: an independent finish gate double-checks the saved result for structural failures, e.g., output that is missing, unsaved, or written to the wrong path. To stay on track over hundreds of steps, the main agent hands subgoals to fresh subagents, keeping its own context focused. On OSWorld 2.0, StateAct lifts Claude Opus 4.8 from 20.6% to 26.9% on binary success, and from 54.8% to 61.6% on partial success, at ~9x lower cost per task than the same model driven by screenshots alone; a code-only variant with no GUI subagent reaches only 45.9% partial, below that screenshot-based baseline's 54.8%. Grounding action, verification, and memory in state (state-grounding) shifts the main bottleneck from perception toward reasoning.</p>
+<hr />
+<h3 id="7-260728147v1-agent-harness-distillation-inference-time-harness-extraction-and-exploitation-in-autonomous-multi-agent-systems">7. [2607.28147v1] Agent Harness Distillation: Inference-Time Harness Extraction and Exploitation in Autonomous Multi-Agent Systems<a class="headerlink" href="#7-260728147v1-agent-harness-distillation-inference-time-harness-extraction-and-exploitation-in-autonomous-multi-agent-systems" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Authors:</strong> Yu Cui, Wuli Yang, Yirui Shi et al.</li>
+<li><strong>Published:</strong> 2026-07-30</li>
+<li><strong>Categories:</strong> cs.CR</li>
+<li><strong>Links:</strong> <a href="https://arxiv.org/abs/2607.28147v1">Abstract</a> | <a href="https://arxiv.org/pdf/2607.28147v1">PDF</a></li>
+</ul>
+<p><strong>Abstract:</strong>
+Autonomous multi-agent systems (AMAS) built on large language models (LLMs), such as Hermes, increasingly rely on inference-time harnesses to coordinate reasoning and action. Constructing these harnesses requires substantial engineering effort and computational resources, as they are iteratively optimized over a combinatorial search space while co-evolving with the underlying LLM. Inference-time harnesses therefore constitute valuable intellectual property (IP). Although prior work has investigated IP leakage in static multi-agent systems with pre-configured architectures, it remains unclear whether similar risks arise in AMAS, where harness behavior emerges dynamically during inference. To address this gap, we introduce Agent Harness Distillation (AHD), a framework for studying the security risks arising from inference-time harness extraction in AMAS. We formalize harness extraction as a new security problem and develop an evaluation framework for quantifying such risks. AHD extracts inference-time harness capabilities from a target agent through black-box interactions and consists of two stages. In the pre-distillation stage, AHD infers inference-time harness behaviors from the responses of the target agent and constructs an initial harness. In the post-distillation stage, AHD iteratively refines the initial harness to align with the behavioral patterns of the target agent. Experiments on real-world AMAS across multiple backbone LLMs demonstrate the effectiveness of AHD and reveal substantial IP leakage risks. We further propose a deception-based defense that reduces harness extraction effectiveness while preserving the utility of the protected agent.</p>
+<hr />
+<h3 id="8-260727958v1-mem-an-online-reliability-memory-for-llm-based-multi-agent-systems">8. [2607.27958v1] Σ-Mem: An Online Reliability Memory for LLM-based Multi-Agent Systems<a class="headerlink" href="#8-260727958v1-mem-an-online-reliability-memory-for-llm-based-multi-agent-systems" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Authors:</strong> Peilin Feng, Suorong Yang, Soujanya Poria (SUTD)</li>
+<li><strong>Published:</strong> 2026-07-30</li>
+<li><strong>Categories:</strong> cs.MA, cs.AI</li>
+<li><strong>Links:</strong> <a href="https://arxiv.org/abs/2607.27958v1">Abstract</a> | <a href="https://arxiv.org/pdf/2607.27958v1">PDF</a></li>
+</ul>
+<p><strong>Abstract:</strong>
+Memory is central to long-horizon LLM agents, yet existing memory systems primarily preserve interaction content rather than modeling which agents can be trusted and under what conditions. This limitation is particularly important in multi-agent systems, where a central model may be unable to directly verify plausible or correlated peer responses. We introduce Σ-Mem, an online reliability memory that records historical competence evidence for individual peers and peer relationship evidence across the peer set. Both forms of evidence are maintained as real symmetric states and updated from post-decision correctness feedback. By Weyl's inequality, the spectral change caused by each event-level update is bounded, enabling stable online adaptation without retraining the underlying models. Σ-Mem provides a general write-and-read interface: the same memory can be used for residual steering of a central model, response-free peer routing, or reliability-weighted voting. Across five Qwen-family models, Σ-Mem adapts to counterfactual reliability shifts and generalizes to unseen peers and task domains. Direct memory readouts also outperform majority voting and the best fixed peer over the full OOD evaluation set. Moreover, performance improves consistently as more correctness feedback becomes available, indicating that Σ-Mem progressively accumulates actionable reliability information.</p>
+<hr />
+<h3 id="9-260728591v1-change2task-from-repository-changes-to-executable-coding-agent-tasks-and-environments">9. [2607.28591v1] Change2Task: From Repository Changes to Executable Coding Agent Tasks and Environments<a class="headerlink" href="#9-260728591v1-change2task-from-repository-changes-to-executable-coding-agent-tasks-and-environments" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Authors:</strong> Haomin Qi, Xingliang Wang, Xuanqi Gao et al. (MSRA)</li>
+<li><strong>Published:</strong> 2026-07-30</li>
+<li><strong>Categories:</strong> cs.SE, cs.CL, cs.LG</li>
+<li><strong>Links:</strong> <a href="https://arxiv.org/abs/2607.28591v1">Abstract</a> | <a href="https://arxiv.org/pdf/2607.28591v1">PDF</a></li>
+</ul>
+<p><strong>Abstract:</strong>
+Scaling coding agents requires a continuing supply of executable data for training, benchmarking, and continuous evaluation. Each task must couple a realistic software state with a specification, development tools, and reliable verification. To expand this supply, we present Change2Task, a system grounded in repository history that converts merged pull requests into verified tasks on healthy modern revisions of the same repository. It aligns historical evidence with evolved code, reconstructs task states through Patch Reversal, Code Mapping, or Agent Reconstruction, and validates the lifecycle from a healthy base to a task state and a restored state. By deriving multiple tasks grounded in developer evidence from maintained environments, Change2Task provides executable data for coding agent training and evaluation while reducing repeated environment setup, storage, and task construction effort. Evaluated on five common coding agent task families (Bug Fix, Feature Addition, Test Generation, API Migration, Security Repair), starting from 1,130 source changes, Change2Task achieves 79.6% verified task construction success. On a matched candidate set, it recovers 29.2% more verified tasks than a PR-based construction baseline. Historical and reconstructed cases achieve up to 98.0% matched outcome agreement under agent evaluation, while reuse of modern bases reduces measured expenditure across the complete pipeline by 10.8%.</p>
+<hr />
+<h3 id="10-260728527v1-manta-multi-agent-network-topology-adaptation-for-self-evolving-multi-agent-systems">10. [2607.28527v1] MANTA: Multi-Agent Network Topology Adaptation for Self-Evolving Multi-Agent Systems<a class="headerlink" href="#10-260728527v1-manta-multi-agent-network-topology-adaptation-for-self-evolving-multi-agent-systems" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Authors:</strong> Mao-xun Huang, Jerry Wang, Yi-Cheng Lai, Zhengxin Zhang, Claire Cardie, Hen-Hsen Huang</li>
+<li><strong>Published:</strong> 2026-07-30</li>
+<li><strong>Categories:</strong> cs.AI</li>
+<li><strong>Links:</strong> <a href="https://arxiv.org/abs/2607.28527v1">Abstract</a> | <a href="https://arxiv.org/pdf/2607.28527v1">PDF</a></li>
+</ul>
+<p><strong>Abstract:</strong>
+Large language model-based multi-agent systems improve complex problem solving through task decomposition, agent specialization, information exchange, and intermediate validation. However, existing systems typically treat communication topology as a fixed design choice or an offline optimization target. We introduce MANTA, a framework for Multi-Agent Network Topology Adaptation that enables communication structures to self-evolve at inference time. Before execution, MANTA initializes a task-conditioned topology from prior structural experience. During deployment, it monitors collaboration traces and applies bounded structural updates when the current organization becomes insufficient. These updates can modify agent roles, communication links, execution order, information visibility, and validation pathways while preserving the task interface and agent budget. MANTA is evaluated against representative single-agent and multi-agent baselines on five benchmarks spanning information seeking, tool use, planning, workflow execution, and mathematical reasoning, achieving the highest average score of 74.0, outperforming the strongest baseline by 5.8 percentage points and obtaining the best result on PlanCraft. These results show that inference-time self-improvement can extend to the architecture of collaboration itself.</p>
+<hr />
+<h3 id="11-260728545v1-orca-bench-how-ready-are-language-model-agents-for-oncall">11. [2607.28545v1] ORCA-bench: How Ready Are Language Model Agents for Oncall?<a class="headerlink" href="#11-260728545v1-orca-bench-how-ready-are-language-model-agents-for-oncall" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Authors:</strong> Albert Gong, Kyuseong Choi, Abhineet Agarwal et al. (Harvard / MIT)</li>
+<li><strong>Published:</strong> 2026-07-30</li>
+<li><strong>Categories:</strong> cs.CL, cs.AI, cs.SE</li>
+<li><strong>Links:</strong> <a href="https://arxiv.org/abs/2607.28545v1">Abstract</a> | <a href="https://arxiv.org/pdf/2607.28545v1">PDF</a></li>
+</ul>
+<p><strong>Abstract:</strong>
+Large language models can write, patch, and search code, but oncall root cause analysis (RCA) demands something different: reasoning over noisy metrics, logs, traces, and source code, starting from ambiguous user-facing reports, often hours after the incident began. We introduce ORCA-bench, a benchmark that puts general-purpose coding agents in a production-fidelity oncall setting. ORCA-bench pairs a live OpenTelemetry-instrumented microservice system — exposing six days of metrics, logs, and traces through real telemetry interfaces (Prometheus, Jaeger, OpenSearch via Grafana) and full source-code access — with 1,079 RCA tasks that systematically vary report specificity, time-to-detection, and co-occurring fault scenarios. Ground-truth symptoms are curated and signed off by expert SREs, and our LLM-as-judge is independently re-scored by humans (Cohen's κ_w=0.90). Across five frontier agents, the best RCA Accuracy is 25.3% on Medium-difficulty tasks (the realistic-input setting) and 10.0% on Hard — a gap that remains even with Claude Fable 5. The weakest model hallucinates an implausible root cause in 40% of incident reports, and removing source-code access degrades every metric. Since real production systems are order of magnitudes larger, more dynamic, and more idiosyncratic, the gap we report is a lower bound on the engineering investment required before frontier coding agents can be safely entrusted with production reliability.</p>
+<hr />
+<h3 id="12-260728573v1-rethinking-inference-time-scaling-in-local-computer-use-agents-failure-modes-and-compute-tradeoffs">12. [2607.28573v1] Rethinking Inference-Time Scaling in Local Computer-Use Agents: Failure Modes and Compute Tradeoffs<a class="headerlink" href="#12-260728573v1-rethinking-inference-time-scaling-in-local-computer-use-agents-failure-modes-and-compute-tradeoffs" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Authors:</strong> Woongkyu Lee, Jungwook Choi (Hanyang University)</li>
+<li><strong>Published:</strong> 2026-07-30</li>
+<li><strong>Categories:</strong> cs.AI</li>
+<li><strong>Links:</strong> <a href="https://arxiv.org/abs/2607.28573v1">Abstract</a> | <a href="https://arxiv.org/pdf/2607.28573v1">PDF</a></li>
+</ul>
+<p><strong>Abstract:</strong>
+Deploying autonomous computer-use agents (CUAs) locally is increasingly important for privacy, cost efficiency, and practical usability, yet improving their performance under strict hardware constraints remains challenging. While recent studies show that inference-time scaling can improve frontier computer-use agents through additional computation during execution, its effectiveness for resource-constrained local models remains poorly understood. We present a systematic empirical study of inference-time scaling in local CUAs across contextual, temporal, structural, and parallel dimensions, evaluating Qwen3-VL-8B/30B-A3B, UI-TARS-1.5-7B, and OpenCUA-7B on OSWorld. Results show that additional computation often yields diminishing returns while changing failure modes. Contextual scaling provides historical grounding that improves trajectory stability and task accuracy, but its gains saturate as token cost increases and failures shift from repetitive or stalled trajectories toward premature false successes. Temporal scaling similarly reduces max-step stalls, yet does not substantially improve task success, indicating that longer horizons often extend erroneous trajectories rather than correct them. Structural decomposition can introduce planning and formatting overhead in local two-stage agents, while parallel scaling partially mitigates these failures at substantial computational cost. Overall, efficient local CUAs require selective compute allocation, failure-aware control mechanisms, and agentic frameworks designed around the capabilities and limitations of local models.</p>
+<hr />
+<h3 id="13-260728399v1-why-are-gui-agents-correct-but-late-decode-on-the-decision-time-critical-path-tested-with-pre-compiled-policy-trees">13. [2607.28399v1] Why Are GUI Agents Correct but Late? Decode on the Decision-Time Critical Path, Tested with Pre-Compiled Policy Trees<a class="headerlink" href="#13-260728399v1-why-are-gui-agents-correct-but-late-decode-on-the-decision-time-critical-path-tested-with-pre-compiled-policy-trees" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Authors:</strong> Zihan Dong, Rui Qian, Qishi Zhan et al.</li>
+<li><strong>Published:</strong> 2026-07-30</li>
+<li><strong>Categories:</strong> cs.LG</li>
+<li><strong>Links:</strong> <a href="https://arxiv.org/abs/2607.28399v1">Abstract</a> | <a href="https://arxiv.org/pdf/2607.28399v1">PDF</a></li>
+</ul>
+<p><strong>Abstract:</strong>
+Computer-use agents often fail on transient GUI events because they produce the correct action only after the relevant window has already closed. We identify the main cause as expensive autoregressive decoding on the decision-time critical path. We propose Adaptive Anticipatory Policy Trees (AAPT), which eliminates this delay without modifying the underlying model. During idle screen periods, the same frozen multimodal model constructs a bounded conditional policy tree with observable guards, pre-authorized actions, and branch-specific deadlines. The tree is sized to cover the model's own decoding latency. When an event occurs, a lightweight observer matches change-gated frames to a prepared branch and immediately executes the corresponding action without generating new text. In paired trials with pre-registered endpoints and exact McNemar tests, AAPT improves the success rate from 0.50 to 0.79 within a contested decision window (p=1.8×10⁻³), while producing no incorrect actions. Both open-loop and predict-and-replan baselines achieve zero success because they still decode during execution. A pre-registered oracle probe rejects our initial hypothesis and instead points to branch routing as the causal bottleneck. On an external benchmark, AAPT matches the overall performance of a reactive baseline, with complementary strengths: AAPT performs best when candidate actions can be enumerated in advance, whereas reactive execution remains stronger when they cannot.</p>
+<hr />
+<h3 id="14-260728367v1-how-benchmarks-mis-score-computer-use-agents">14. [2607.28367v1] How Benchmarks Mis-Score Computer-Use Agents<a class="headerlink" href="#14-260728367v1-how-benchmarks-mis-score-computer-use-agents" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Authors:</strong> Zihan Dong, Zhiyuan Ma, Zekun Wang et al.</li>
+<li><strong>Published:</strong> 2026-07-30</li>
+<li><strong>Categories:</strong> cs.AI</li>
+<li><strong>Links:</strong> <a href="https://arxiv.org/abs/2607.28367v1">Abstract</a> | <a href="https://arxiv.org/pdf/2607.28367v1">PDF</a></li>
+</ul>
+<p><strong>Abstract:</strong>
+Computer-use agents (CUA) are being deployed to browse the web and operate desktop software, yet their benchmark scores are still commonly produced by brittle scripted oracles. A score is the output of a pipeline in which tasks can be stale, trajectories can omit decisive visual evidence, evaluators can reject valid alternatives, and aggregate reports can hide the cause of failure. We organize these problems into a reliability framework spanning task construction, trajectory observation, scoring, and reporting. We then audit 150 public failure-scored trajectories from five web, enterprise-workflow, and desktop-control benchmarks, find that 15.3% of FAIL verdicts are wrong: 10.7% are evaluator false negatives and 4.7% are broken tasks. For genuine failures, a three-tier diagnostic taxonomy shows that verification/feedback and planning failures dominate execution/grounding errors, while a single scalar success rate cannot explain. We connect these findings to newer long-horizon CUA benchmarks and derive stage-specific design rules for CUA evaluation.</p>
+<hr />
+<h3 id="15-260728595v1-beacon-knowing-when-and-how-to-perform-agentic-visual-reasoning">15. [2607.28595v1] Beacon: Knowing When and How to Perform Agentic Visual Reasoning<a class="headerlink" href="#15-260728595v1-beacon-knowing-when-and-how-to-perform-agentic-visual-reasoning" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Authors:</strong> Qixun Wang, Yang Shi, Letian Cheng et al. (ByteDance)</li>
+<li><strong>Published:</strong> 2026-07-30</li>
+<li><strong>Categories:</strong> cs.CV</li>
+<li><strong>Links:</strong> <a href="https://arxiv.org/abs/2607.28595v1">Abstract</a> | <a href="https://arxiv.org/pdf/2607.28595v1">PDF</a></li>
+</ul>
+<p><strong>Abstract:</strong>
+The fundamental goal of agentic visual reasoning is to improve the success rate of multimodal large language models (MLLMs) on complex tasks, rather than merely equipping them with a sophisticated yet inefficient reasoning paradigm. In this work, we rethink agentic visual reasoning through two key dimensions of tool use: Mode Adaptiveness (MA) and Tool Effect (TE). Mode Adaptiveness characterizes whether an MLLM can recognize when tools are truly necessary and invoke them accordingly, thereby avoiding unnecessary computational overhead while improving performance on challenging problems that require tool assistance. Tool Effect characterizes the actual impact of tool use: tools should extend the model's capabilities on problems unsolvable through text-only reasoning, while avoiding additional errors on problems that the model can already solve without tools. We conduct a comprehensive analysis to quantify these two properties and empirically reveal that existing agentic visual reasoning models exhibit limited Mode Adaptiveness, while the gains produced by tool use on hard examples are largely offset by the harm introduced on easy examples that the models can already solve. Motivated by these observations, we propose Beacon, a novel agentic visual reasoning model that achieves stronger overall performance, improved Mode Adaptiveness, and genuine tool-induced performance gains. At the core of Beacon are the Necessity-Aware Adaptive Reward and the Hint-Guided Capability Expansion mechanism in the reinforcement learning stage, which respectively encourage adaptive tool invocation based on task necessity and strengthen the model's tool-use capability on the most challenging problems.</p>
+<hr />
+<h2 id="_1">📋 更多值得关注(简评)<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Paper</th>
+<th>一句话</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><a href="https://arxiv.org/abs/2607.23263v1">SeekJudge 2607.23263v1</a></td>
+<td>四角色专用 Agent 的 CUA 奖励模型,首个在在线 RL 中匹配/超越规则基监督的模型奖励</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="https://arxiv.org/abs/2607.28618v1">AskChem 2607.28618v1</a></td>
+<td>化学文献 claim 级检索基建(2.4M claims),提供 REST/SDK/MCP 供 AI agent 调用</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="https://arxiv.org/abs/2607.28587v1">PAIChecker 2607.28587v1</a></td>
+<td>多智能体检查 SWE-bench 类基准 PR-Issue 错配,发现 13.6% 实例存在错配</td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="https://arxiv.org/abs/2607.28225v1">FaithEyes 2607.28225v1</a></td>
+<td>多智能体自审判框架,验证工具调用过程图是否真的帮助回答问题,抑制 reward hacking</td>
+</tr>
+<tr>
+<td>5</td>
+<td><a href="https://arxiv.org/abs/2607.27994v1">SKIMIX 2607.27994v1</a></td>
+<td>技能混合多智能体:开放数学推理增益大,选择题增益有限,agent 数量 scaling 非单调</td>
+</tr>
+<tr>
+<td>6</td>
+<td><a href="https://arxiv.org/abs/2607.28617v1">AISPA 2607.28617v1</a></td>
+<td>审计 88 个商业 AI 产品的 3,249 条系统提示词:40% 产品含损害用户利益的指令</td>
+</tr>
+<tr>
+<td>7</td>
+<td><a href="https://arxiv.org/abs/2607.28330v1">CARP/SPARC 2607.28330v1</a></td>
+<td>LLM 市场 agent 信誉惩罚机制,无地面真值即可抑制低信誉卖家销量</td>
+</tr>
+<tr>
+<td>8</td>
+<td><a href="https://arxiv.org/abs/2607.17527v1">Sidekick 2607.17527v1</a></td>
+<td>CUA 多任务场景的多模态沟通设计,30 人实验显著提升并行多任务表现</td>
+</tr>
+<tr>
+<td>9</td>
+<td><a href="https://arxiv.org/abs/2607.17136v1">Teach it to stop 2607.17136v1</a></td>
+<td>35B CUA 策略修复:单次运行的 RL 结果有约 30% 概率是失败模式,呼吁 k-seed 报告</td>
+</tr>
+<tr>
+<td>10</td>
+<td><a href="https://arxiv.org/abs/2607.17951v1">RT-SHCUA 2607.17951v1</a></td>
+<td>实时自托管 CUA 无人机控制:合同约束技能调用 + 板载安全执行</td>
+</tr>
+<tr>
+<td>11</td>
+<td><a href="https://arxiv.org/abs/2607.26041v2">Desktop-Delta Bench v2 2607.26041v2</a></td>
+<td>上周 v1 已收录;v2 更新(1,550 before-after 对,8 模型族评估)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="summary-statistics">📊 Summary Statistics<a class="headerlink" href="#summary-statistics" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Total Relevant Papers</td>
+<td>26 (15 精选 + 11 简评)</td>
+</tr>
+<tr>
+<td>cs.AI</td>
+<td>17</td>
+</tr>
+<tr>
+<td>cs.CL</td>
+<td>7</td>
+</tr>
+<tr>
+<td>cs.CV</td>
+<td>5</td>
+</tr>
+<tr>
+<td>cs.SE</td>
+<td>5</td>
+</tr>
+<tr>
+<td>cs.LG</td>
+<td>5</td>
+</tr>
+<tr>
+<td>cs.MA</td>
+<td>2</td>
+</tr>
+<tr>
+<td>cs.CR</td>
+<td>2</td>
+</tr>
+<tr>
+<td>cs.HC</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<h2 id="key-themes">🎯 Key Themes<a class="headerlink" href="#key-themes" title="Permanent link">&para;</a></h2>
+<p>This week's papers focus on:
+1. <strong>CUA 评估与奖励模型爆发</strong> — OSReward(标准化的 VLM judge 评估)、Mis-Score(基准误评分审计)、SeekJudge、AAPT(延迟)、Teach it to stop(单次运行统计陷阱):CUA 从"能做"进入"怎么可靠度量"阶段
+2. <strong>CUA 训练范式转向</strong> — Echoverse(深度环境替代批量浅环境)、StateAct(程序状态优先于像素)、Change2Task(仓库历史→可执行编码任务)
+3. <strong>多智能体协调与记忆</strong> — AgentRadio(异步被动感知)、MANTA(拓扑自演化)、Σ-Mem(可靠性记忆而非内容记忆)
+4. <strong>AI4AI 与递归自改进开源化</strong> — Frontis-MA1/OpenMLE(全开源 RSI 栈)、OpenForgeRL(harness-native 训练,直接支持 OpenClaw/Codex/Claude Code)
+5. <strong>Agent 安全与可信</strong> — Agent Harness Distillation(推理时 harness IP 蒸馏攻击)、AISPA(系统提示词审计)、CARP(市场信誉机制)</p>
+<hr />
+<h2 id="_2">✅ 论文验证状态(搜索引擎交叉验证)<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>论文</th>
+<th>验证状态</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>OSReward</strong></td>
+<td>✅ 已验证</td>
+<td>os-copilot.github.io 项目页 + arXiv HTML + AIGC 报道;1,019 条人标轨迹,27 个 judge 排行</td>
+</tr>
+<tr>
+<td><strong>Frontis-MA1</strong></td>
+<td>✅ 已验证</td>
+<td>frontisai.github.io/OpenRSI 官方页(Horizon Research + 清华),开源权重,HF 热议 07-30</td>
+</tr>
+<tr>
+<td><strong>AgentRadio</strong></td>
+<td>✅ 已验证</td>
+<td>GitHub Coral-Protocol/AgentRadio 开源;SWE-Atlas(Scale AI)基准背景确认</td>
+</tr>
+<tr>
+<td><strong>Echoverse</strong></td>
+<td>✅ 已验证</td>
+<td>microsoft/Echoverse GitHub(MIT) + MSR Blog 07-30,作者含 Awadallah/Kamar</td>
+</tr>
+<tr>
+<td><strong>OpenForgeRL</strong></td>
+<td>✅ 已验证</td>
+<td>arXiv HTML + HF papers 页;veRL 后端 + Azure K8s 细节确认,直接点名 OpenClaw</td>
+</tr>
+<tr>
+<td><strong>StateAct</strong></td>
+<td>✅ 已验证</td>
+<td>HF papers + arXiv HTML;OSWorld 2.0 数据确认(Opus 4.8: 20.6→26.9, 9x 成本下降)</td>
+</tr>
+<tr>
+<td><strong>Σ-Mem</strong></td>
+<td>🔍 方向验证</td>
+<td>与上周 UniMem/MemLens 同属 agent 记忆前沿,可靠性维度是新切入</td>
+</tr>
+<tr>
+<td><strong>Agent Harness Distillation</strong></td>
+<td>🔍 方向验证</td>
+<td>AMAS IP 泄漏新威胁面,论文太新无独立页面;点名 Hermes 具身</td>
+</tr>
+<tr>
+<td><strong>Change2Task</strong></td>
+<td>🔄 待深读</td>
+<td>MSRA 团队,编码 agent 数据供给方向真实,数字需全文核对</td>
+</tr>
+<tr>
+<td><strong>MANTA</strong></td>
+<td>🔄 待深读</td>
+<td>拓扑自演化多智能体,与 AgentRadio 互补,待深读</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="second-brain">🎯 阅读优先级(基于验证 + Second Brain 相关性)<a class="headerlink" href="#second-brain" title="Permanent link">&para;</a></h2>
+<p><strong>立即行动</strong>(本周内):
+1. <strong>Frontis-MA1 / OpenMLE</strong> — AI4AI 递归自改进,与 Second Brain 七大自举系统直接同构,开源可复现
+2. <strong>OpenForgeRL</strong> — 我们的运行环境就是 OpenClaw/Hermes harness;harness-native 训练思路可直接借鉴</p>
+<p><strong>中期跟踪</strong>(1-2 周):
+3. <strong>OSReward</strong> — VLM judge 评估方法论 + leniency bias 认知,可用于自我输出质量评估
+4. <strong>Σ-Mem</strong> — 可靠性记忆:给多技能/多子代理场景引入 peer 可靠性评分
+5. <strong>StateAct</strong> — 状态优先范式:验证、记忆、行动全部 grounding 在程序状态而非像素</p>
+<p><strong>长期研究</strong>(1 个月+):
+6. <strong>Echoverse / AgentRadio / MANTA / Agent Harness Distillation</strong></p>
+<hr />
+<h2 id="_3">✅ 可落地行动项(更新)<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="_4">🔴 高优先级(本周内)<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h4 id="1-ai4ai-frontis-ma1-openmle">1. <strong>AI4AI 递归自改进实践基线</strong>(参考 Frontis-MA1 / OpenMLE)<a class="headerlink" href="#1-ai4ai-frontis-ma1-openmle" title="Permanent link">&para;</a></h4>
+<p><strong>实现目标</strong>:
+- 借鉴 OpenMLE 四原子算子(Draft/Improve/Debug/Crossover)框架,映射到 Second Brain 自举系统
+- <strong>短期(1 周)</strong>:盘点七大自举模块中哪些可以"执行可验证"化(如脚本输出→自动校验)
+- <strong>中期(2 周)</strong>:对每周 arXiv digest / 知识吸收流程引入 execution-grounded 反馈(摘要是否被实际应用)</p>
+<p><strong>当前 Progress</strong>:
+- ✅ Frontis-MA1 架构已分析(OpenMLE-Gym/RL/Evo 三件套)
+- ✅ 确认单卡 12GB VRAM 即可跑通 MLE-Bench Lite(本机 4060 8GB 可评估更小模型)
+- 🔄 待落地:可验证任务环境的第一个试点</p>
+<hr />
+<h4 id="2-harness-native-openforgerl">2. <strong>Harness-native 训练认知</strong>(参考 OpenForgeRL)<a class="headerlink" href="#2-harness-native-openforgerl" title="Permanent link">&para;</a></h4>
+<p><strong>实现目标</strong>:
+- 理解"harness 本身是训练对象"——OpenClaw/Codex/Claude Code 的 harness 差异会显著影响 RL 收益
+- <strong>短期(1 周)</strong>:记录 Hermes 各工具链使用中的 harness 特性(工具调用格式、上下文管理),沉淀为 skill
+- <strong>中期</strong>:跟踪 OpenForgeRL 开源进展,评估是否有可以在本地复用的 rollout 流程</p>
+<p><strong>预期收益</strong>:
+- 不换模型也能通过 harness 优化获得 agentic 可靠性提升(self-verification、tool coverage)</p>
+<hr />
+<h3 id="2-3">🟡 中优先级(2-3 周)<a class="headerlink" href="#2-3" title="Permanent link">&para;</a></h3>
+<h4 id="3-mem">3. <strong>可靠性记忆</strong>(参考 Σ-Mem)<a class="headerlink" href="#3-mem" title="Permanent link">&para;</a></h4>
+<p><strong>实现目标</strong>:
+- 在记忆体系中增加"可信度"维度:哪些信息来源(web/工具/用户)历史上准确率高
+- 对多来源结论冲突时,按可靠性加权而不是平均</p>
+<hr />
+<h4 id="4-agentradio">4. <strong>异步被动感知协作</strong>(参考 AgentRadio)<a class="headerlink" href="#4-agentradio" title="Permanent link">&para;</a></h4>
+<p><strong>实现目标</strong>:
+- 借鉴 wait-for-mention 模式:后台任务不打断前台工作,但新发现能及时汇入
+- 应用场景:长任务中的子代理/后台 cron 结果被动感知,避免阶段边界才同步</p>
+<hr />
+<h3 id="1">🟢 长期跟踪(1 个月+)<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<h4 id="5-cua-osreward-mis-score">5. <strong>CUA 评估审计方法论</strong>(OSReward + Mis-Score)<a class="headerlink" href="#5-cua-osreward-mis-score" title="Permanent link">&para;</a></h4>
+<h4 id="6-echoverse">6. <strong>深度训练环境</strong>(Echoverse)<a class="headerlink" href="#6-echoverse" title="Permanent link">&para;</a></h4>
+<h4 id="7-manta">7. <strong>多智能体拓扑自演化</strong>(MANTA)<a class="headerlink" href="#7-manta" title="Permanent link">&para;</a></h4>
+<p>...</p>
+<hr />
+<p><em>生成时间:2026-08-02 | 数据源:arXiv API (export.arxiv.org) | 验证:搜索引擎交叉验证 | 状态:reading → processed</em></p>
+<p><em>Generated automatically via arXiv API cron job (arxiv-weekly-digest skill). Last updated: 2026-08-02</em></p>
+<hr />
+<p><strong>已处理：</strong> 核心贡献精选 3 篇（Frontis-MA1 / AgentRadio / Σ-Mem）→ 📄 <code>knowledge/Research/arxiv-2026-08-02-core-contributions.md</code>（2026-08-02 arxiv-summarize）</p>
+<hr />
+<blockquote>
+<p>🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

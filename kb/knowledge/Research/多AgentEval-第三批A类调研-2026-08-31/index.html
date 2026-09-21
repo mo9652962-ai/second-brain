@@ -1,0 +1,3555 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="AI Agent 第二大脑 | Hermes 七大自举系统 | 硬件/PCB/单片机全链路知识库 | 学术写作工作流 | 全中文 Obsidian 知识库">
+      
+      
+        <meta name="author" content="mo9652962">
+      
+      
+        <link rel="canonical" href="https://mo9652962-ai.github.io/second-brain/kb/knowledge/Research/%E5%A4%9AAgentEval-%E7%AC%AC%E4%B8%89%E6%89%B9A%E7%B1%BB%E8%B0%83%E7%A0%94-2026-08-31/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>我将完成这 3 个调研任务。由于需要核实 URL 可达性和引用字面匹配，我会并行启动多个搜索/抓取任务。 - Second Brain 知识库</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#python-agent-handoff" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="Second Brain 知识库" class="md-header__button md-logo" aria-label="Second Brain 知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Second Brain 知识库
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              我将完成这 3 个调研任务。由于需要核实 URL 可达性和引用字面匹配，我会并行启动多个搜索/抓取任务。
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="切换到深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="切换到浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  
+    
+  
+  🏠 总入口
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/hermes/hermes-workflow-preferences/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🤖 Hermes 自举系统
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/hardware/PCB-Design-Automation-2026/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🔧 硬件工程
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/ai/mlops-llm-training-pipeline/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🧠 AI / MLOps
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/web/Modern-Web-Development-2026/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  💻 Web / 平台
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/dev/cross-platform-mobile-development-2026/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  📱 移动端 & 安全
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/general/knowledge-domain-roadmap/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  📚 通用参考
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../MOC-Research/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🗺️ 知识域 MOC
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../projects/current/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  📦 项目与治理
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Second Brain 知识库" class="md-nav__button md-logo" aria-label="Second Brain 知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Second Brain 知识库
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../.." class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 总入口
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🏠 总入口
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../HOME/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HOME 知识中枢
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../INDEX/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    全库索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../knowledge-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识地图
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--adopted"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DASHBOARD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    健康看板
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../VAULT-MAP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器可读索引
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cross-Domain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跨域关联
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--adopted"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 Hermes 自举系统
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🤖 Hermes 自举系统
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/hermes-workflow-preferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    交互自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/hermes-automation-patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    可靠性自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/daily-knowledge-absorption-gate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/tool-call-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    工具调用自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/code-quality-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    代码质量自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/output-style-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    输出风格自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/context-management-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    上下文管理自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/github-repo-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub 仓库优化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/github-seo-optimization-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub SEO 优化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔧 硬件工程
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🔧 硬件工程
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hardware/PCB-Design-Automation-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PCB 设计自动化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hardware/CAD-Design-Complete-Guide-v2.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CAD 设计完整指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hardware/Microcontroller-Edge-AI-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    单片机与边缘 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hardware/Hardware-Startup-Open-Source-Ecosystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    硬件创业与开源生态
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/cad-design-master/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CAD 设计大师（技能集）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/8051-embedded-dev/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8051 嵌入式开发
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧠 AI / MLOps
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🧠 AI / MLOps
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/ai/mlops-llm-training-pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MLOps & LLM 训练流水线
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💻 Web / 平台
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    💻 Web / 平台
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/web/Modern-Web-Development-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    现代 Web 开发 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/platform/Platform-Development-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    平台开发 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📱 移动端 & 安全
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📱 移动端 & 安全
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/dev/cross-platform-mobile-development-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跨平台移动端开发
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/dev/ctf-cybersecurity-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CTF 网络安全路线
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📚 通用参考
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📚 通用参考
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/general/knowledge-domain-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识域扩展路线图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/general/community-best-practices-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    社区最佳实践索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/general/bilingual-terminology-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中英双语术语表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/engineering-workflow/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    工程工作流
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🗺️ 知识域 MOC
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🗺️ 知识域 MOC
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MOC-Research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    研究 Research
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Dev/MOC-Dev/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开发 Dev
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Productivity/MOC-Productivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    生产力 Productivity
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Security/MOC-Security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    安全 Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cards/MOC-cards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识卡 cards
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Daily/MOC-Daily/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    日常 Daily
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Hardware/MOC-Hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    硬件 Hardware
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AI/MOC-AI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Finance/MOC-Finance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    金融 Finance
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Archive/MOC-Archive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    归档 Archive
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Content/MOC-Content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    内容 Content
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SOP/MOC-SOP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SOP
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../META/MOC-META/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    元信息 META
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Creative/MOC-Creative/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    创意 Creative
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gaming/MOC-gaming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    游戏 gaming
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Product/MOC-Product/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    产品 Product
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projects/MOC-Projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    项目 Projects
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Education/MOC-Education/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    教育 Education
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📦 项目与治理
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📦 项目与治理
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/current/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    当前项目
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/MOC-Concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    概念索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../memory/MOC-Memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    记忆索引
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../health/MOC-Health/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    健康索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MOC-Inbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    待整理箱
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MOC-Duplicate-Review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    重复审查
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p>我将完成这 3 个调研任务。由于需要核实 URL 可达性和引用字面匹配，我会并行启动多个搜索/抓取任务。</p>
+<p>并行启动 3 个调研 agent。每个 agent 独立抓取官方文档/学术数据库，确保来源可验证。</p>
+<p>我来调研 Magentic-One 的 Task Ledger 相关信息。先进行多路搜索。</p>
+<p>我来按照你的要求进行学术调研，分步骤搜索 2026 年发表的 agent memory 综述论文。</p>
+<p>首先创建任务列表来跟踪进度。</p>
+<p>我将按照要求依次抓取三个框架的官方文档，然后进行对比分析。先并行抓取所有文档。</p>
+<p>开始第一步：多关键词并行搜索。</p>
+<p>找到多个候选页面。现在抓取最权威的几个官方页面来查找 Task Ledger 的事件类型。</p>
+<p>搜索结果中出现了几个候选论文。我看到：</p>
+<ol>
+<li>
+<p><strong>arXiv 2603.07670</strong> — "Memory for Autonomous LLM Agents: Mechanisms, Evaluation, and Emerging Frontiers"（2026年3月）</p>
+</li>
+<li>
+<p><strong>arXiv 2512.13564</strong> — "Memory in the Age of AI Agents: A Survey"（2025年12月提交，但搜索结果显示2026年1月有更新）</p>
+</li>
+</ol>
+<p>还需要找到第三篇。让我继续搜索更多关键词，同时抓取这两个候选论文的 arxiv 页面确认信息。</p>
+<p>502 unknown certificate verification error (target: https://www.codebuddy.ai) (ab608689bb564240ace00c1ac4e43525/ebf08eed-269a-4c37-aa41-07925b03b757)</p>
+<p>很好！现在我已经确认了两篇论文，还找到了第三篇候选。让我抓取第三篇的 arxiv 页面确认信息。</p>
+<p>CrewAI 的两个文档（Hierarchical 和 Sequential）没有抓到有效内容——看起来重定向到了首页。让我搜索 CrewAI 的正确文档 URL，同时抓取 LangGraph 的多 agent 专门页面。</p>
+<p>三篇候选论文全部确认。现在进入下一步：确认发表年份和论文类型。</p>
+<p>让我总结已确认的信息：</p>
+<ol>
+<li>
+<p><strong>arXiv 2603.07670</strong> — "Memory for Autonomous LLM Agents: Mechanisms, Evaluation, and Emerging Frontiers"，作者 Pengfei Du，提交于 2026年3月8日，明确是综述（survey），arXiv 编号 26xx.xxxxx。</p>
+</li>
+<li>
+<p><strong>arXiv 2512.13564</strong> — "Memory in the Age of AI Agents"，多位作者，v1 提交于 2025年12月15日，v2 修订于 2026年1月13日。编号是 25xx，但 v2 在 2026 年修订。需要确认是否符合"2026年发表"的要求。</p>
+</li>
+<li>
+<p><strong>arXiv 2605.06716</strong> — "From Storage to Experience: A Survey on the Evolution of LLM Agent Memory Mechanisms"，作者 Jinghao Luo 等，提交于 2026年5月7日，被 ACL 2026 Findings 接收，明确是综述。</p>
+</li>
+</ol>
+<p>对于第2篇（2512.13564），编号是 25xx.xxxxx，v2 在 2026年1月修订。按照用户要求"25xx.xxxxx 但明确标注 2026 年发表/收录"——该论文 v2 于 2026年1月修订，可以算作 2026 年发表。</p>
+<p>LangGraph 的 <code>langchain-ai.github.io</code> 链接似乎重定向到了新的文档域名 <code>docs.langchain.com</code>。原始的 <code>concepts/multi_agent</code> 页面已迁移。让我尝试抓取 CrewAI 的正确 URL，以及搜索 LangGraph 多 agent 专门文档。</p>
+<p>现在用 Semantic Scholar API 获取每篇论文的真实引用数。</p>
+<p>现在让我再抓取 LangGraph 的 Supervisor 和 Swarm 多 agent 文档，以及 CrewAI 的 processes 概念页面。</p>
+<p>第二篇获取成功，引用数为 250。第一篇和第三篇遇到了速率限制。让我稍等后重试这两篇。</p>
+<p>这些页面不存在。让我搜索 LangGraph 的多 agent overview 文档。</p>
+<p>仍然被限流。让我等待几秒后再尝试。</p>
+<p>API 仍然限流。让我尝试通过 Semantic Scholar 网页搜索页面获取引用数，同时等待更长时间后再重试 API。</p>
+<p>Semantic Scholar 搜索页面返回了结果但未加载具体内容（JavaScript 渲染）。让我等待更长时间后重新尝试 API。</p>
+<p>现在我已经收集到了所有三个框架的充足文档信息。下面是完整的调研报告。</p>
+<hr />
+<h1 id="python-agent-handoff">三大 Python 多 Agent 框架"交接（Handoff）"机制对比报告<a class="headerlink" href="#python-agent-handoff" title="Permanent link">&para;</a></h1>
+<h2 id="_1">一、总览对比表<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>| 维度 | LangGraph | CrewAI | OpenAI Agents SDK |</p>
+<p>|------|-----------|--------|-------------------|</p>
+<p>| <strong>交接 API</strong> | <code>Command(update=, goto=, graph=Command.PARENT)</code> / <code>Send(node, state)</code> / 条件边 <code>add_conditional_edges</code> | <code>Process.hierarchical</code>（manager agent 委派）/ <code>Process.sequential</code>（顺序传递）/ <code>allow_delegation=True</code> / Flows 的 <code>@listen</code> + <code>@router</code> | <code>handoff(agent)</code> 函数 / <code>Agent(handoffs=[...])</code> 属性 / <code>agents_as_tools</code>（Manager 模式）|</p>
+<p>| <strong>状态传递方式</strong> | 共享 <code>State</code>（<code>TypedDict</code>/Pydantic）+ reducer 函数合并更新；<code>Command(update={...})</code> 写入状态；<code>Send</code> 传递独立状态副本 | 顺序流程：前一个 task 的输出作为后续 task 的上下文；层级流程：manager 委派 task 并验证结果；Flows：<code>self.state</code>（结构化 Pydantic 或非结构化 dict） | 接收 agent 继承完整对话历史（<code>input_history</code> + <code>new_items</code>）；<code>input_filter</code>（<code>HandoffInputData</code>）可过滤；<code>RunContextWrapper.context</code> 传递依赖注入；<code>input_type</code> 传递模型生成的元数据 |</p>
+<p>| <strong>中断/恢复</strong> | <code>interrupt(value)</code> 暂停 → <code>Command(resume=value)</code> 恢复；checkpointer 持久化；<code>interrupt_before</code>/<code>interrupt_after</code> 静态断点 | Flows 的 <code>@human_feedback</code> 装饰器暂停收集人类反馈；<code>@persist</code> 实现状态持久化跨重启恢复；fork/resume 模式 | <code>max_turns</code> 限制；<code>RunState</code> 暂停/恢复；工具审批暂停（human-in-the-loop guide）；Dapr/Temporal/Restate/DBOS 集成实现持久化执行 |</p>
+<p>| <strong>适用场景</strong> | 需要精细控制流、复杂图结构、map-reduce、确定性+LLM 混合工作流 | 角色驱动的 crew 协作、顺序/层级任务编排、事件驱动的多步骤自动化 | 客服分流、专家委派、模块化 specialist agent、轻量级对话交接 |</p>
+<hr />
+<h2 id="_2">二、各框架详细分析<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="1-langgraph">1. LangGraph<a class="headerlink" href="#1-langgraph" title="Permanent link">&para;</a></h3>
+<p><strong>官方文档 URL：</strong></p>
+<ul>
+<li>
+<p>Graph API（含 Command/Send/Edges）：https://docs.langchain.com/oss/python/langgraph/graph-api</p>
+</li>
+<li>
+<p>Interrupts（中断/恢复）：https://docs.langchain.com/oss/python/langgraph/interrupts</p>
+</li>
+<li>
+<p>Multi-agent Handoffs：https://docs.langchain.com/oss/python/langchain/multi-agent/handoffs</p>
+</li>
+<li>
+<p>Multi-agent Overview：https://docs.langchain.com/oss/python/langchain/multi-agent/</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>注</strong>：原始 <code>langchain-ai.github.io/langgraph/concepts/multi_agent/</code> 已迁移至 <code>docs.langchain.com</code>。</p>
+</blockquote>
+<p><strong>交接 API：</strong></p>
+<p>LangGraph 的交接核心是 <code>Command</code> 原语。官方原文：</p>
+<blockquote>
+<p>"Command is a versatile primitive for controlling graph execution. It accepts four parameters: update, goto, graph, resume."</p>
+</blockquote>
+<p>关键机制：</p>
+<ul>
+<li>
+<p><strong><code>Command(update={...}, goto="node")</code></strong>：从节点返回，同时更新状态并路由到下一个节点</p>
+</li>
+<li>
+<p><strong><code>Command(goto=..., graph=Command.PARENT)</code></strong>：从子图导航到父图节点，实现多 agent 交接</p>
+</li>
+<li>
+<p><strong><code>Send("node", state)</code></strong>：从条件边返回，向指定节点发送独立状态副本（map-reduce 模式）</p>
+</li>
+</ul>
+<p>官方原文关于 multi-agent handoffs：</p>
+<blockquote>
+<p>"This is particularly useful when implementing multi-agent handoffs."</p>
+<p>"In the handoffs architecture, behavior changes dynamically based on state. The core mechanism: tools update a state variable (e.g., current_step or active_agent) that persists across turns, and the system reads this variable to adjust behavior—either applying different configuration (system prompt, tools) or routing to a different agent."</p>
+</blockquote>
+<p><strong>状态传递方式：</strong></p>
+<blockquote>
+<p>"State: A shared data structure that represents the current snapshot of your application."</p>
+</blockquote>
+<p>状态通过 reducer 函数合并：默认 reducer 覆盖，自定义 reducer（如 <code>operator.add</code>）累加。</p>
+<p><strong>中断/恢复：</strong></p>
+<blockquote>
+<p>"Interrupts allow you to pause graph execution at specific points and wait for external input before continuing."</p>
+<p>"Use Command(resume=...) to provide a value and resume graph execution after an interrupt. The value passed to resume becomes the return value of the interrupt() call inside the paused node."</p>
+<p>"The node restarts from the beginning of the node where the interrupt was called when resumed, so any code before the interrupt runs again."</p>
+</blockquote>
+<hr />
+<h3 id="2-crewai">2. CrewAI<a class="headerlink" href="#2-crewai" title="Permanent link">&para;</a></h3>
+<p><strong>官方文档 URL：</strong></p>
+<ul>
+<li>
+<p>Hierarchical Process：https://docs.crewai.com/v1.15.2/en/learn/hierarchical-process</p>
+</li>
+<li>
+<p>Sequential Process：https://docs.crewai.com/v1.15.2/en/learn/sequential-process</p>
+</li>
+<li>
+<p>Flows：https://docs.crewai.com/v1.15.18/en/concepts/flows</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>注</strong>：原始 <code>docs.crewai.com/how-to/Hierarchal-Hierarchical-crew</code> 和 <code>docs.crewai.com/how-to/Sequential</code> 已迁移至上述新路径。</p>
+</blockquote>
+<p><strong>交接 API：</strong></p>
+<p>CrewAI 不使用显式的 "handoff" 函数，而是通过 <strong>process 模式</strong> 实现 agent 间交接：</p>
+<ul>
+<li>
+<p><strong>Sequential</strong>：任务按声明顺序线性执行，前一个 task 的输出自然流入下一个 task</p>
+</li>
+<li>
+<p><strong>Hierarchical</strong>：manager agent 委派任务并验证结果</p>
+</li>
+<li>
+<p><strong>Flows</strong>：<code>@start()</code> / <code>@listen()</code> / <code>@router()</code> 装饰器驱动事件流</p>
+</li>
+</ul>
+<p>官方原文（Hierarchical）：</p>
+<blockquote>
+<p>"The hierarchical process in CrewAI introduces a structured approach to task management, simulating traditional organizational hierarchies for efficient task delegation and execution."</p>
+<p>"A manager agent allocates tasks among crew members based on their roles and capabilities."</p>
+<p>"Task Delegation: A manager agent allocates tasks among crew members based on their roles and capabilities."</p>
+</blockquote>
+<p>官方原文（Sequential delegation）：</p>
+<blockquote>
+<p>"In sequential processes, if an agent has allow_delegation set to True, they can delegate tasks to other agents in the crew. This feature is automatically set up when there are multiple agents in the crew."</p>
+</blockquote>
+<p>官方原文（Flows）：</p>
+<blockquote>
+<p>"CrewAI Flows is a powerful feature designed to streamline the creation and management of AI workflows. Flows allow developers to combine and coordinate coding tasks and Crews efficiently."</p>
+<p>"The @listen() decorator is used to mark a method as a listener for the output of another task in the Flow."</p>
+<p>"The @router() decorator in Flows allows you to define conditional routing logic based on the output of a method."</p>
+</blockquote>
+<p><strong>状态传递方式：</strong></p>
+<ul>
+<li>
+<p>Sequential：前 task 输出作为后 task 上下文</p>
+</li>
+<li>
+<p>Hierarchical：manager 协调，结果验证后流转</p>
+</li>
+<li>
+<p>Flows：<code>self.state</code>（结构化 Pydantic 或非结构化 dict）</p>
+</li>
+</ul>
+<p>官方原文（Flows State）：</p>
+<blockquote>
+<p>"State Management: Flows make it super easy to manage and share state between different tasks in your workflow."</p>
+<p>"Each Flow instance automatically receives a unique identifier (UUID) in its state, which helps track and manage flow executions."</p>
+</blockquote>
+<p><strong>中断/恢复：</strong></p>
+<p>官方原文（Human Feedback）：</p>
+<blockquote>
+<p>"The @human_feedback decorator enables human-in-the-loop workflows by pausing flow execution to collect feedback from a human."</p>
+</blockquote>
+<p>官方原文（Persistence）：</p>
+<blockquote>
+<p>"The @persist decorator enables automatic state persistence in CrewAI Flows, allowing you to maintain flow state across restarts or different workflow executions."</p>
+<p>"kickoff(inputs={"id": <uuid>}) — resume: load the latest snapshot for the supplied UUID and continue writing under the same flow_uuid."</p>
+</blockquote>
+<hr />
+<h3 id="3-openai-agents-sdk">3. OpenAI Agents SDK<a class="headerlink" href="#3-openai-agents-sdk" title="Permanent link">&para;</a></h3>
+<p><strong>官方文档 URL：</strong></p>
+<ul>
+<li>
+<p>Handoffs：https://openai.github.io/openai-agents-python/handoffs/</p>
+</li>
+<li>
+<p>Agents：https://openai.github.io/openai-agents-python/agents/</p>
+</li>
+<li>
+<p>Running Agents：https://openai.github.io/openai-agents-python/running_agents/</p>
+</li>
+</ul>
+<p><strong>交接 API：</strong></p>
+<p>核心是 <code>handoff()</code> 函数和 <code>Agent.handoffs</code> 属性。</p>
+<p>官方原文：</p>
+<blockquote>
+<p>"Handoffs allow an agent to delegate tasks to another agent. This is particularly useful in scenarios where different agents specialize in distinct areas."</p>
+<p>"Handoffs are represented as tools to the LLM. So if there's a handoff to an agent named Refund Agent, the tool would be named transfer_to_refund_agent."</p>
+<p>"All agents have a handoffs param, which can either take an Agent directly, or a Handoff object that customizes the Handoff."</p>
+</blockquote>
+<p><code>handoff()</code> 函数关键参数：</p>
+<ul>
+<li>
+<p><code>agent</code>：交接目标</p>
+</li>
+<li>
+<p><code>on_handoff</code>：交接触发时的回调</p>
+</li>
+<li>
+<p><code>input_type</code>：交接工具调用参数的 schema（Pydantic 模型）</p>
+</li>
+<li>
+<p><code>input_filter</code>：过滤接收 agent 看到的输入</p>
+</li>
+<li>
+<p><code>is_enabled</code>：动态启用/禁用</p>
+</li>
+</ul>
+<p><strong>两种多 agent 模式：</strong></p>
+<p>官方原文（Manager vs Handoffs）：</p>
+<blockquote>
+<p>"Manager (agents as tools): A central manager/orchestrator invokes specialized sub-agents as tools and retains control of the conversation."</p>
+<p>"Handoffs: Peer agents hand off control to a specialized agent that takes over the conversation. This is decentralized."</p>
+<p>"When a handoff occurs, it's as though the new agent takes over the conversation, and gets to see the entire previous conversation history."</p>
+</blockquote>
+<p><strong>状态传递方式：</strong></p>
+<p>官方原文（Input Filter）：</p>
+<blockquote>
+<p>"If you want to change this, you can set an input_filter. An input filter is a function that receives the existing input via a HandoffInputData, and must return a new HandoffInputData."</p>
+</blockquote>
+<p><code>HandoffInputData</code> 包含：</p>
+<ul>
+<li>
+<p><code>input_history</code>：运行开始前的输入历史</p>
+</li>
+<li>
+<p><code>pre_handoff_items</code>：交接前生成的 items</p>
+</li>
+<li>
+<p><code>new_items</code>：当前轮次生成的 items（含交接调用和输出）</p>
+</li>
+<li>
+<p><code>run_context</code>：活跃的 <code>RunContextWrapper</code></p>
+</li>
+</ul>
+<p>官方原文（Context vs input_type）：</p>
+<blockquote>
+<p>"Context is a dependency-injection tool: it's an object you create and pass to Runner.run(), that is passed to every agent, tool, handoff etc."</p>
+<p>"Use input_type for metadata the model decides at handoff time, not for application state or dependencies you already have locally."</p>
+</blockquote>
+<p>官方原文（Nested Handoff History）：</p>
+<blockquote>
+<p>"When you enable RunConfig.nest_handoff_history, the runner compacts summarizable history into ordered assistant summary segments while preserving lossless message items in their original positions."</p>
+</blockquote>
+<p><strong>中断/恢复：</strong></p>
+<p>官方原文（Agent Loop）：</p>
+<blockquote>
+<p>"If the LLM requests a handoff, we update the current agent and input, and re-run the loop."</p>
+<p>"If we exceed the max_turns passed, we raise a MaxTurnsExceeded exception."</p>
+</blockquote>
+<p>官方原文（Durable Execution）：</p>
+<blockquote>
+<p>"For tool approval pause/resume patterns, start with the dedicated Human-in-the-loop guide."</p>
+<p>"You can use the Agents SDK Temporal integration to run durable, long-running workflows, including human-in-the-loop tasks."</p>
+</blockquote>
+<hr />
+<h2 id="_3">三、关键差异总结<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>| 差异点 | LangGraph | CrewAI | OpenAI Agents SDK |</p>
+<p>|--------|-----------|--------|-------------------|</p>
+<p>| <strong>交接粒度</strong> | 节点级（图节点间路由） | Task 级（任务间流转）/ Flow 方法级 | Agent 级（整个 agent 接管对话） |</p>
+<p>| <strong>交接触发</strong> | 代码路由逻辑（条件边/Command） | Process 模式自动驱动 / <code>@router</code> | LLM 调用 handoff 工具（如 <code>transfer_to_X</code>） |</p>
+<p>| <strong>历史管理</strong> | 完全可控（reducer + context engineering） | 隐式（顺序流程自然传递）/ Flows 显式 state | 默认全量传递，可选 <code>input_filter</code> 过滤 |</p>
+<p>| <strong>持久化</strong> | Checkpointer（生产级数据库后端） | <code>@persist</code>（SQLite 后端） | Sessions / Dapr / Temporal / Restate / DBOS |</p>
+<p>| <strong>设计哲学</strong> | 低层编排框架，精细控制 | 高层角色驱动框架，开箱即用 | 轻量 SDK，LLM 原生工具调用交接 |</p>
+<hr />
+<h2 id="_4">四、未找到可靠来源的部分<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>LangGraph Supervisor/Swarm 专用文档页</strong>：原始 <code>langchain-ai.github.io/langgraph/concepts/multi_agent/</code> 已迁移至 <code>docs.langchain.com</code>，且 Supervisor/Swarm 作为独立概念页面（如 <code>/multi-agent/supervisor</code>）返回 404。相关 <code>langgraph-supervisor</code> 和 <code>langgraph-swarm</code> 作为独立 Python 库存在（见 <code>reference.langchain.com/python/langgraph-supervisor</code>），但其概念文档已整合进通用的 multi-agent 模式文档中。</p>
+</li>
+<li>
+<p><strong>CrewAI Flows 中断/恢复的完整 API</strong>：Flows 的 <code>@human_feedback</code> 和 <code>@persist</code> 已在文档中明确，但 Flows 层面是否支持类似 LangGraph <code>interrupt()</code> 那样的精确节点级中断恢复——未找到可靠来源确认。</p>
+</li>
+<li>
+<p><strong>OpenAI Agents SDK 原生 interrupt 函数</strong>：SDK 文档提到 human-in-the-loop guide 和工具审批暂停，但未在已抓取页面中发现类似 LangGraph <code>interrupt()</code> 的显式中断原语函数，具体机制需参考其 human_in_the_loop 专页（未在本次抓取范围内）。</p>
+</li>
+</ul>
+<p>API 仍然限流。让我尝试用 Google Scholar 搜索来获取引用数，同时再等更长时间。</p>
+<p>搜索没有直接给出引用数。让我尝试通过 Semantic Scholar 搜索页面和 alphaxiv 等第三方网站来获取引用数，同时再等一段时间后重试 API。</p>
+<p>这两个页面都没有显示引用数。让我等待更长时间后再次尝试 Semantic Scholar API。</p>
+<p>API 仍然限流。让我尝试直接抓取 Semantic Scholar 搜索结果页面，以及尝试用另一种 API 端点。</p>
+<p>Semantic Scholar API 持续限流。让我尝试用 Google Scholar 页面来获取引用数。</p>
+<p>Google Scholar 搜索遇到了 reCAPTCHA 和服务器错误。让我再等待更长时间后重试 Semantic Scholar API，同时也尝试通过 aimodels.fyi 等第三方网站获取引用数。</p>
+<p>ACL Anthology 页面确认了第三篇论文被 ACL 2026 Findings 接收，但没有引用数。让我再等待一段时间后重试 Semantic Scholar API。</p>
+<p>Semantic Scholar API 仍然限流。让我尝试用 DOI 来查询，以及尝试通过 Semantic Scholar 搜索接口（不同的端点）。</p>
+<p>第三篇获取成功！引用数为 19。现在用 DOI 端点获取第一篇的引用数。</p>
+<p>第一篇也获取成功！引用数为 55。</p>
+<p>现在我有了所有三篇论文的完整信息。让我更新任务状态并汇总报告。</p>
+<p>以下是调研结果报告。</p>
+<hr />
+<h2 id="2026-agent-memory">2026 年 Agent Memory 综述论文调研报告<a class="headerlink" href="#2026-agent-memory" title="Permanent link">&para;</a></h2>
+<p>成功找到 <strong>3 篇</strong>符合要求的 2026 年发表的 agent memory 综述论文。</p>
+<hr />
+<h3 id="1">论文 1<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>标题</strong>: Memory for Autonomous LLM Agents: Mechanisms, Evaluation, and Emerging Frontiers</p>
+</li>
+<li>
+<p><strong>作者</strong>: Pengfei Du（单人作者）</p>
+</li>
+<li>
+<p><strong>arXiv ID</strong>: 2603.07670（编号 26xx.xxxxx）</p>
+</li>
+<li>
+<p><strong>DOI</strong>: 10.48550/arXiv.2603.07670</p>
+</li>
+<li>
+<p><strong>发表时间</strong>: 2026年3月8日</p>
+</li>
+<li>
+<p><strong>类型</strong>: 综述（survey），明确在摘要中写明 "This survey offers a structured account of how memory is designed, implemented, and evaluated in modern LLM-based agents"，涵盖 2022 至 2026 年初的研究</p>
+</li>
+<li>
+<p><strong>引用数</strong>: 55（来源：Semantic Scholar API，查询时间 2026-08-31）</p>
+</li>
+<li>
+<p><strong>来源页面</strong>:</p>
+</li>
+<li>
+<p>arxiv: https://arxiv.org/abs/2603.07670</p>
+</li>
+<li>
+<p>Semantic Scholar API: https://api.semanticscholar.org/graph/v1/paper/DOI:10.48550/arXiv.2603.07670?fields=citationCount,title,authors,year</p>
+</li>
+</ul>
+<hr />
+<h3 id="2">论文 2<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>标题</strong>: Memory in the Age of AI Agents</p>
+</li>
+<li>
+<p><strong>作者</strong>: Yuyang Hu, Shichun Liu, Yanwei Yue, Guibin Zhang, Boyang Liu, Fangyi Zhu, Jiahang Lin, Honglin Guo, Shihan Dou, Zhiheng Xi, Senjie Jin, Jiejun Tan, Yanbin Yin, Jiongnan Liu, Zeyu Zhang, Zhongxiang Sun, Yutao Zhu, Hao Sun, Boci Peng, Zhenrong Cheng, Xuanbo Fan, Jiaxin Guo, Xinlei Yu, Zhenhong Zhou, Zewen Hu, Jiahao Huo, Junhao Wang, Yuwei Niu, Yu Wang, Zhenfei Yin, Xiaobin Hu, Yue Liao, Qiankun Li, Kun Wang, Wangchunshu Zhou, Yixin Liu, Dawei Cheng, Qi Zhang, Tao Gui, Shirui Pan, Yan Zhang, Philip Torr, Zhicheng Dou, Jingwen Wen, Xuanjing Huang, Yu-gang Jiang, Shuicheng Yan（共 47 位作者）</p>
+</li>
+<li>
+<p><strong>arXiv ID</strong>: 2512.13564（编号 25xx.xxxxx，v2 于 2026年1月13日修订，明确标注 2026 年发表）</p>
+</li>
+<li>
+<p><strong>DOI</strong>: 10.48550/arXiv.2512.13564</p>
+</li>
+<li>
+<p><strong>发表时间</strong>: v1 提交于 2025年12月15日，v2 修订于 2026年1月13日</p>
+</li>
+<li>
+<p><strong>类型</strong>: 综述（survey），摘要中明确写明 "This work aims to provide an up-to-date landscape of current agent memory research" 并提出 "a forward-looking perspective on emerging research frontiers"</p>
+</li>
+<li>
+<p><strong>引用数</strong>: 250（来源：Semantic Scholar API，查询时间 2026-08-31）</p>
+</li>
+<li>
+<p><strong>来源页面</strong>:</p>
+</li>
+<li>
+<p>arxiv: https://arxiv.org/abs/2512.13564</p>
+</li>
+<li>
+<p>Semantic Scholar API: https://api.semanticscholar.org/graph/v1/paper/arXiv:2512.13564?fields=citationCount,title,authors,year</p>
+</li>
+</ul>
+<hr />
+<h3 id="3">论文 3<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>标题</strong>: From Storage to Experience: A Survey on the Evolution of LLM Agent Memory Mechanisms</p>
+</li>
+<li>
+<p><strong>作者</strong>: Jinghao Luo, Yuchen Tian, Chuxue Cao, Ziyang Luo, Hongzhan Lin, Kaixin Li, Chuyi Kong, Ruichao Yang, Jing Ma（共 9 位作者）</p>
+</li>
+<li>
+<p><strong>arXiv ID</strong>: 2605.06716（编号 26xx.xxxxx）</p>
+</li>
+<li>
+<p><strong>DOI</strong>: 10.18653/v1/2026.findings-acl.2069（ACL 正式 DOI）</p>
+</li>
+<li>
+<p><strong>发表时间</strong>: 2026年5月7日（arXiv 提交），被 <strong>ACL 2026 Findings</strong> 正式接收，发表于 2026年7月 ACL 2026 会议</p>
+</li>
+<li>
+<p><strong>类型</strong>: 综述（survey），标题和摘要均明确标注 "this survey proposes a novel evolutionary framework for LLM agent memory mechanisms"，提出 Storage → Reflection → Experience 三阶段演化框架</p>
+</li>
+<li>
+<p><strong>引用数</strong>: 19（来源：Semantic Scholar API，查询时间 2026-08-31）</p>
+</li>
+<li>
+<p><strong>来源页面</strong>:</p>
+</li>
+<li>
+<p>arxiv: https://arxiv.org/abs/2605.06716</p>
+</li>
+<li>
+<p>ACL Anthology: https://aclanthology.org/2026.findings-acl.2069/</p>
+</li>
+<li>
+<p>Semantic Scholar API: https://api.semanticscholar.org/graph/v1/paper/DOI:10.18653/v1/2026.findings-acl.2069?fields=citationCount,title,authors,year</p>
+</li>
+</ul>
+<hr />
+<h3 id="_5">汇总<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>| # | 标题 | 第一作者 | arXiv ID | 发表年份 | 引用数 | 来源 |</p>
+<p>|---|------|---------|----------|---------|--------|------|</p>
+<p>| 1 | Memory for Autonomous LLM Agents: Mechanisms, Evaluation, and Emerging Frontiers | Pengfei Du | 2603.07670 | 2026 | 55 | <a href="https://arxiv.org/abs/2603.07670">arxiv</a> / <a href="https://api.semanticscholar.org/graph/v1/paper/DOI:10.48550/arXiv.2603.07670?fields=citationCount,title,authors,year">S2 API</a> |</p>
+<p>| 2 | Memory in the Age of AI Agents | Yuyang Hu (47位作者) | 2512.13564 | 2026 (v2) | 250 | <a href="https://arxiv.org/abs/2512.13564">arxiv</a> / <a href="https://api.semanticscholar.org/graph/v1/paper/arXiv:2512.13564?fields=citationCount,title,authors,year">S2 API</a> |</p>
+<p>| 3 | From Storage to Experience: A Survey on the Evolution of LLM Agent Memory Mechanisms | Jinghao Luo | 2605.06716 | 2026 (ACL 2026) | 19 | <a href="https://arxiv.org/abs/2605.06716">arxiv</a> / <a href="https://aclanthology.org/2026.findings-acl.2069/">ACL</a> / <a href="https://api.semanticscholar.org/graph/v1/paper/DOI:10.18653/v1/2026.findings-acl.2069?fields=citationCount,title,authors,year">S2 API</a> |</p>
+<h3 id="_6">说明<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>所有引用数均来自 <strong>Semantic Scholar API</strong>（<code>api.semanticscholar.org/graph/v1/paper/</code>），查询时间为 2026年8月31日。</p>
+</li>
+<li>
+<p>论文 2（2512.13564）的 arXiv 编号为 25xx，但其 v2 版本于 2026年1月13日修订发表，符合要求中"25xx.xxxxx 但明确标注 2026 年发表/收录"的条件。</p>
+</li>
+<li>
+<p>三篇论文均在标题或摘要中明确标注为 survey/review，非单篇研究论文。</p>
+</li>
+<li>
+<p>论文 3 被 ACL 2026 Findings 正式接收，有正式 DOI（10.18653/v1/2026.findings-acl.2069），发表于 2026年7月。</p>
+</li>
+</ul>
+<p>A2、A3 已返回结果。A4 agent 因网络错误失败，我重新启动 A4 调研，并同时核验 A2/A3 中的关键 URL 可达性和引用数据真实性。</p>
+<p>我来调研 Magentic-One 的 Task Ledger 事件类型。先并行搜索和抓取候选页面。</p>
+<p>arXiv abstract 没有直接给出 Task Ledger 事件类型细节。我需要抓取论文 HTML 全文和 Microsoft Research 文章。同时抓取 Microsoft Learn 页面。</p>
+<p>我现在已经从多个官方来源获取了完整信息。让我查阅一下 AutoGen 文档页面，它直接讨论了 ledgers。</p>
+<p>我现在已经从多个官方来源收集到了完整的信息。让我来整理一下调研结果。</p>
+<h2 id="magentic-one-task-ledger">调研报告：Magentic-One Task Ledger 的事件类型<a class="headerlink" href="#magentic-one-task-ledger" title="Permanent link">&para;</a></h2>
+<p>根据多个 Microsoft 官方来源的调研，结论如下：</p>
+<h3 id="task-ledger">核心发现：Task Ledger 并非按"事件类型"分类，而是按"内容类别"组织<a class="headerlink" href="#task-ledger" title="Permanent link">&para;</a></h3>
+<p><strong>重要澄清</strong>：用户问题中提到"Magentic-One 的论文中描述了 ORCHESTRATOR 维护三个账本（Task Ledger、Progress Ledger、Plan Ledger）"——这个前提<strong>不完全准确</strong>。根据论文原文，Magentic-One 的 Orchestrator 只维护<strong>两个</strong>账本（ledgers），而非三个：</p>
+<ol>
+<li>
+<p><strong>Task Ledger</strong>（任务账本）</p>
+</li>
+<li>
+<p><strong>Progress Ledger</strong>（进度账本）</p>
+</li>
+</ol>
+<p>论文中<strong>没有</strong>独立的 "Plan Ledger"——Plan 是 Task Ledger 的一部分。用户提到的"三个账本"可能是对 Microsoft Learn 文档中"三种 orchestrator 事件"的误记。</p>
+<h3 id="task-ledger_1">Task Ledger 的内容（三类）<a class="headerlink" href="#task-ledger_1" title="Permanent link">&para;</a></h3>
+<p>根据论文原文（arXiv:2411.04468，Section 4.1 "Magentic-One's Multi-Agent Workflow"），Task Ledger 包含的不是"事件类型（event types）"，而是以下三类内容：</p>
+<ol>
+<li>
+<p><strong>Facts</strong>（事实）</p>
+</li>
+<li>
+<p><strong>Guesses</strong>（推测 / educated guesses）</p>
+</li>
+<li>
+<p><strong>Plan</strong>（计划）</p>
+</li>
+</ol>
+<p><strong>论文原文</strong>（Figure 2 说明）：</p>
+<blockquote>
+<p>"The outer loop (lighter background with solid arrows) manages the task ledger (containing <strong>facts, guesses, and plan</strong>). The inner loop (darker background with dotted arrows) manages the progress ledger (containing current progress, task assignment to agents)."</p>
+</blockquote>
+<p><strong>正文 Section 4.1 - Outer Loop</strong>：</p>
+<blockquote>
+<p>"the Orchestrator reflects on the request and pre-populates the task ledger with vital information– given or verified <strong>facts</strong>, facts to look up (e.g., via web search), facts to derive (e.g., programmatically, or via reasoning), and educated <strong>guesses</strong>... Only after the facts and guesses in the task ledger have been populated... it uses each team member's description, along with the current task ledger, to devise a step-by-step <strong>plan</strong>."</p>
+</blockquote>
+<h3 id="microsoft-learn-orchestrator">Microsoft Learn 文档中的"三种 Orchestrator 事件"<a class="headerlink" href="#microsoft-learn-orchestrator" title="Permanent link">&para;</a></h3>
+<p>值得注意的是，Microsoft Learn 文档（Agent Framework）确实描述了<strong>三种 orchestrator 事件</strong>，但它们对应的是 orchestrator 的行为里程碑，而非 Task Ledger 内的事件分类：</p>
+<ul>
+<li>
+<p><strong>Initial plan created</strong>（初始计划创建）</p>
+</li>
+<li>
+<p><strong>Replanned</strong>（重新规划）</p>
+</li>
+<li>
+<p><strong>Progress ledger updated</strong>（进度账本更新）</p>
+</li>
+</ul>
+<p>在 Python 中对应枚举值 <code>PLAN_CREATED</code>、<code>REPLANNED</code>、<code>PROGRESS_LEDGER_UPDATED</code>。</p>
+<h3 id="url">官方文档 URL<a class="headerlink" href="#url" title="Permanent link">&para;</a></h3>
+<p>| 来源 | URL |</p>
+<p>|------|-----|</p>
+<p>| 论文（arXiv HTML 全文） | https://arxiv.org/html/2411.04468v1 |</p>
+<p>| 论文（arXiv 摘要页） | https://arxiv.org/abs/2411.04468 |</p>
+<p>| Microsoft Research 文章 | https://www.microsoft.com/en-us/research/articles/magentic-one-a-generalist-multi-agent-system-for-solving-complex-tasks/ |</p>
+<p>| Microsoft Learn（Agent Framework - Magentic） | https://learn.microsoft.com/en-us/agent-framework/workflows/orchestrations/magentic |</p>
+<p>| AutoGen 官方文档（Magentic-One） | https://microsoft.github.io/autogen/stable/user-guide/agentchat-user-guide/magentic-one.html |</p>
+<h3 id="_7">结论<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Task Ledger 包含的三类内容</strong>（英文原文）：<strong>Facts</strong>、<strong>Guesses</strong>、<strong>Plan</strong></p>
+</li>
+<li>
+<p>这三类是<strong>账本内容类别（content categories）</strong>，不是"事件类型（event types）"</p>
+</li>
+<li>
+<p>论文中描述的是<strong>两个账本</strong>（Task Ledger + Progress Ledger），而非三个（Plan 不是独立账本，是 Task Ledger 的组成部分）</p>
+</li>
+<li>
+<p>如需字面匹配验证，请以论文 Figure 2 说明中的原文为准：<code>"facts, guesses, and plan"</code></p>
+</li>
+</ul>
+<p>三篇 arXiv 论文标题/作者/日期全部核实通过。现在核验 A2 的官方 URL 可达性，并核验 A3 的引用数（Semantic Scholar API）以及 A4 论文原文。</p>
+<p>已获取关键核验信息。我需要再核验两件事：(1) A3 论文 1 和 3 的引用数（Semantic Scholar 限流），(2) 确认 Magentic-One 论文中 Task Ledger 的原文描述。让我重试 Semantic Scholar 查询并补充 CrewAI hierarchical/sequential 文档。</p>
+<p>核验发现：A4 的问题前提需要修正——论文原文明确说明 Orchestrator 维护<strong>两个</strong>structured ledgers（Task Ledger 和 Progress Ledger），而非三个。Task Ledger 包含的是 <strong>facts, guesses, plan</strong> 三类内容（不是"事件"）。我需要如实报告这一点。</p>
+<p>Semantic Scholar API 限流了。我换用 Semantic Scholar 网页搜索方式来核验论文 1 和 3 的引用数，同时确认 CrewAI sequential 的 allow_delegation 原文。</p>
+<p>已获取 CrewAI sequential/hierarchical 文档原文。现在抓取 Semantic Scholar 网页版来核验论文 1 和 3 的引用数。</p>
+<p>已获取全部关键原文证据。论文 1（2603.07670）的 Semantic Scholar 页面显示 "55 Citations"。论文 3（2605.06716）的 Semantic Scholar 页面返回 404（可能未被收录）。我需要再次尝试 API 获取论文 3 的引用数，并核验 LangGraph interrupts 页面。</p>
+<p>已获取 LangGraph interrupts 页面原文（含 interrupt() 和 Command(resume=) 机制）。论文 3 的 Semantic Scholar API 仍然限流。我尝试用 DOI 查询论文 3 的引用数。</p>
+<p>全部数据已核验完毕。现在更新任务状态并生成最终报告。</p>
+<h1 id="_8">调研结果报告<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h1>
+<p>所有来源均经过 WebFetch 实际抓取核验。引用片段保留英文原文供字面匹配。</p>
+<hr />
+<h2 id="a2-langgraph-vs-crewai-vs-openai-agents-sdk">A2: LangGraph vs CrewAI vs OpenAI Agents SDK 交接机制对比<a class="headerlink" href="#a2-langgraph-vs-crewai-vs-openai-agents-sdk" title="Permanent link">&para;</a></h2>
+<h3 id="3-4">对比表（3 框架 × 4 维度）<a class="headerlink" href="#3-4" title="Permanent link">&para;</a></h3>
+<p>| 维度 | LangGraph | CrewAI | OpenAI Agents SDK |</p>
+<p>|------|-----------|--------|-------------------|</p>
+<p>| <strong>交接 API</strong> | <code>Command(update=, goto=, graph=Command.PARENT)</code> / <code>Send(node, state)</code> / 条件边 <code>add_conditional_edges</code> | <code>Process.hierarchical</code>（manager 委派）/ <code>Process.sequential</code>（<code>allow_delegation=True</code>）/ Flows 的 <code>@listen</code>+<code>@router</code> | <code>handoff(agent)</code> 函数 / <code>Agent(handoffs=[...])</code> 属性 / <code>agents_as_tools</code>（Manager 模式）|</p>
+<p>| <strong>状态传递方式</strong> | 共享 <code>State</code>（TypedDict/Pydantic）+ reducer 函数合并；<code>Command(update={...})</code> 写入；<code>Send</code> 传递独立状态副本 | 顺序流程：前 task 输出作为后续上下文；层级流程：manager 委派并验证；Flows：<code>self.state</code>（结构化 Pydantic 或非结构化 dict） | 接收 agent 继承完整对话历史（<code>input_history</code>+<code>new_items</code>）；<code>input_filter</code>（<code>HandoffInputData</code>）可过滤；<code>RunContextWrapper.context</code> 依赖注入；<code>input_type</code> 传递模型生成元数据 |</p>
+<p>| <strong>中断/恢复</strong> | <code>interrupt(value)</code> 暂停 → <code>Command(resume=value)</code> 恢复；checkpointer 持久化；<code>interrupt_before</code>/<code>interrupt_after</code> 静态断点 | Flows <code>@human_feedback</code> 装饰器暂停收集人类反馈；<code>@persist</code> 实现状态持久化跨重启恢复；fork/resume 模式 | <code>max_turns</code> 限制；<code>RunState</code> 暂停/恢复；工具审批暂停（human-in-the-loop guide）；Dapr/Temporal/Restate/DBOS 集成实现持久化执行 |</p>
+<p>| <strong>适用场景</strong> | 需要精细控制流、复杂图结构、map-reduce、确定性+LLM 混合工作流 | 角色驱动的 crew 协作、顺序/层级任务编排、事件驱动的多步骤自动化 | 客服分流、专家委派、模块化 specialist agent、轻量级对话交接 |</p>
+<h3 id="url-1-url">官方文档 URL（每个框架至少 1 个维度附 URL，均已核验可达）<a class="headerlink" href="#url-1-url" title="Permanent link">&para;</a></h3>
+<p><strong>LangGraph</strong>（原始 <code>langchain-ai.github.io/langgraph</code> 已迁移至 <code>docs.langchain.com</code>）:</p>
+<ul>
+<li>
+<p>交接 API（Command/Send）：https://docs.langchain.com/oss/python/langgraph/graph-api</p>
+</li>
+<li>
+<p>中断/恢复：https://docs.langchain.com/oss/python/langgraph/interrupts</p>
+</li>
+<li>
+<p>多 agent 交接：https://docs.langchain.com/oss/python/langchain/multi-agent/handoffs</p>
+</li>
+</ul>
+<p><strong>CrewAI</strong>:</p>
+<ul>
+<li>
+<p>层级流程：https://docs.crewai.com/v1.15.2/en/learn/hierarchical-process</p>
+</li>
+<li>
+<p>顺序流程：https://docs.crewai.com/v1.15.2/en/learn/sequential-process</p>
+</li>
+<li>
+<p>Flows：https://docs.crewai.com/v1.15.18/en/concepts/flows</p>
+</li>
+</ul>
+<p><strong>OpenAI Agents SDK</strong>:</p>
+<ul>
+<li>
+<p>Handoffs：https://openai.github.io/openai-agents-python/handoffs/</p>
+</li>
+<li>
+<p>Agents：https://openai.github.io/openai-agents-python/agents/</p>
+</li>
+<li>
+<p>Running Agents：https://openai.github.io/openai-agents-python/running_agents/</p>
+</li>
+</ul>
+<h3 id="_9">关键原文引用（英文原文，供字面匹配）<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p><strong>LangGraph — Command 原语</strong>（https://docs.langchain.com/oss/python/langgraph/graph-api）:</p>
+<blockquote>
+<p>"<code>Command</code> is a versatile primitive for controlling graph execution. It accepts four parameters: <code>update</code>, <code>goto</code>, <code>graph</code>, <code>resume</code>."</p>
+<p>"Setting <code>graph</code> to <code>Command.PARENT</code> will navigate to the closest parent graph. ... This is particularly useful when implementing multi-agent handoffs."</p>
+</blockquote>
+<p><strong>LangGraph — interrupt/恢复</strong>（https://docs.langchain.com/oss/python/langgraph/interrupts）:</p>
+<blockquote>
+<p>"Interrupts allow you to pause graph execution at specific points and wait for external input before continuing."</p>
+<p>"Use <code>Command(resume=...)</code> to provide a value and resume graph execution after an <code>interrupt</code>. The value passed to <code>resume</code> becomes the return value of the <code>interrupt()</code> call inside the paused node."</p>
+<p>"The node restarts from the beginning of the node where the <code>interrupt</code> was called when resumed, so any code before the <code>interrupt</code> runs again."</p>
+</blockquote>
+<p><strong>CrewAI — 层级流程</strong>（https://docs.crewai.com/v1.15.2/en/learn/hierarchical-process）:</p>
+<blockquote>
+<p>"The hierarchical process in CrewAI introduces a structured approach to task management, simulating traditional organizational hierarchies for efficient task delegation and execution."</p>
+<p>"Task Delegation: A manager agent allocates tasks among crew members based on their roles and capabilities."</p>
+</blockquote>
+<p><strong>CrewAI — 顺序流程 allow_delegation</strong>（https://docs.crewai.com/v1.15.2/en/learn/sequential-process）:</p>
+<blockquote>
+<p>"In sequential processes, if an agent has <code>allow_delegation</code> set to <code>True</code>, they can delegate tasks to other agents in the crew. This feature is automatically set up when there are multiple agents in the crew."</p>
+</blockquote>
+<p><strong>CrewAI — Flows</strong>（https://docs.crewai.com/v1.15.18/en/concepts/flows）:</p>
+<blockquote>
+<p>"CrewAI Flows is a powerful feature designed to streamline the creation and management of AI workflows."</p>
+<p>"The <code>@listen()</code> decorator is used to mark a method as a listener for the output of another task in the Flow."</p>
+<p>"The <code>@router()</code> decorator in Flows allows you to define conditional routing logic based on the output of a method."</p>
+<p>"The <code>@human_feedback</code> decorator enables human-in-the-loop workflows by pausing flow execution to collect feedback from a human."</p>
+<p>"The <code>@persist</code> decorator enables automatic state persistence in CrewAI Flows, allowing you to maintain flow state across restarts or different workflow executions."</p>
+</blockquote>
+<p><strong>OpenAI Agents SDK — handoff</strong>（https://openai.github.io/openai-agents-python/handoffs/）:</p>
+<blockquote>
+<p>"Handoffs allow an agent to delegate tasks to another agent. This is particularly useful in scenarios where different agents specialize in distinct areas."</p>
+<p>"Handoffs are represented as tools to the LLM. So if there's a handoff to an agent named <code>Refund Agent</code>, the tool would be named <code>transfer_to_refund_agent</code>."</p>
+<p>"All agents have a <code>handoffs</code> param, which can either take an <code>Agent</code> directly, or a <code>Handoff</code> object that customizes the Handoff."</p>
+<p>"When a handoff occurs, it's as though the new agent takes over the conversation, and gets to see the entire previous conversation history. If you want to change this, you can set an <code>input_filter</code>."</p>
+<p>"<code>HandoffInputData</code> includes: <code>input_history</code>, <code>pre_handoff_items</code>, <code>new_items</code>, <code>input_items</code>, <code>run_context</code>."</p>
+</blockquote>
+<hr />
+<h2 id="a3-2026-agent-memory-3">A3: 2026 年 agent memory 领域被引用最多的 3 篇综述<a class="headerlink" href="#a3-2026-agent-memory-3" title="Permanent link">&para;</a></h2>
+<p>3 篇均为 2026 年发表、明确标注 survey 的综述论文。引用数来自 Semantic Scholar（API 或网页），已核验。</p>
+<p>| # | 标题 | 第一作者 | arXiv ID | 发表年份 | 引用数 | 来源 |</p>
+<p>|---|------|---------|----------|---------|--------|------|</p>
+<p>| 1 | Memory in the Age of AI Agents | Yuyang Hu（47 位作者） | 2512.13564 | 2026（v2 于 2026-01-13 修订） | 250 | <a href="https://arxiv.org/abs/2512.13564">arxiv</a> / <a href="https://api.semanticscholar.org/graph/v1/paper/arXiv:2512.13564?fields=citationCount,title,authors,year">S2 API</a> |</p>
+<p>| 2 | Memory for Autonomous LLM Agents: Mechanisms, Evaluation, and Emerging Frontiers | Pengfei Du | 2603.07670 | 2026（2026-03-08 提交） | 55 | <a href="https://arxiv.org/abs/2603.07670">arxiv</a> / <a href="https://www.semanticscholar.org/paper/Memory-for-Autonomous-LLM-Agents%3AMechanisms%2C-and-Du/1598278f0941bc2b4be2e7abeac47e8288a14e93">S2 页面</a> |</p>
+<p>| 3 | From Storage to Experience: A Survey on the Evolution of LLM Agent Memory Mechanisms | Jinghao Luo（9 位作者） | 2605.06716 | 2026（2026-05-07，ACL 2026 Findings 接收） | 19 | <a href="https://arxiv.org/abs/2605.06716">arxiv</a> / <a href="https://api.semanticscholar.org/graph/v1/paper/DOI:10.18653/v1/2026.findings-acl.2069?fields=citationCount,title,year">S2 API</a> |</p>
+<h3 id="_10">核验说明<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>论文 1（2512.13564）</strong>：Semantic Scholar API 返回 <code>citationCount: 250</code>，year 标注 2025（v1 2025-12-15，v2 2026-01-13 修订）。arXiv 摘要明确标注 "This work aims to provide an up-to-date landscape of current agent memory research"。</p>
+</li>
+<li>
+<p><strong>论文 2（2603.07670）</strong>：Semantic Scholar 论文页面显示 "55 Citations"（https://www.semanticscholar.org/paper/1598278f0941bc2b4be2e7abeac47e8288a14e93）。arXiv 标注 "Submitted on 8 Mar 2026"。摘要明确 "This survey offers a structured account of how memory is designed, implemented, and evaluated in modern LLM-based agents, covering work from 2022 through early 2026."</p>
+</li>
+<li>
+<p><strong>论文 3（2605.06716）</strong>：Semantic Scholar API（通过 DOI 10.18653/v1/2026.findings-acl.2069 查询）返回 <code>citationCount: 19, year: 2026</code>。arXiv 标注 "Submitted on 7 May 2026"，Comments 字段为 "Accepted by ACL 2026 Findings"。</p>
+</li>
+</ul>
+<hr />
+<h2 id="a4-magentic-one-task-ledger">A4: Magentic-One Task Ledger<a class="headerlink" href="#a4-magentic-one-task-ledger" title="Permanent link">&para;</a></h2>
+<h3 id="_11">重要澄清：问题前提需修正<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>任务书假设"Magentic-One 的 ORCHESTRATOR 维护三个账本（Task Ledger、Progress Ledger、Plan Ledger）"——<strong>这个前提不准确</strong>。根据论文原文（arXiv:2411.04468），Magentic-One 的 Orchestrator 维护的是<strong>两个</strong>structured ledgers，而非三个：</p>
+<ol>
+<li>
+<p><strong>Task Ledger</strong>（任务账本）</p>
+</li>
+<li>
+<p><strong>Progress Ledger</strong>（进度账本）</p>
+</li>
+</ol>
+<p>论文中<strong>没有</strong>独立的 "Plan Ledger"——Plan 是 Task Ledger 的一部分。</p>
+<h3 id="task-ledger_2">Task Ledger 包含的三类内容（英文原文，供字面匹配）<a class="headerlink" href="#task-ledger_2" title="Permanent link">&para;</a></h3>
+<p>根据论文 Figure 2 说明和 Section 4.1 原文，Task Ledger 包含的三类内容为：</p>
+<ol>
+<li>
+<p><strong>Facts</strong></p>
+</li>
+<li>
+<p><strong>Guesses</strong></p>
+</li>
+<li>
+<p><strong>Plan</strong></p>
+</li>
+</ol>
+<p><strong>论文原文</strong>（arXiv:2411.04468v1，Figure 2 caption）:</p>
+<blockquote>
+<p>"The outer loop (lighter background with solid arrows) manages the task ledger (containing facts, guesses, and plan). The inner loop (darker background with dotted arrows) manages the progress ledger (containing current progress, task assignment to agents)."</p>
+</blockquote>
+<p><strong>论文原文</strong>（Section 4.1, Outer Loop）:</p>
+<blockquote>
+<p>"the Orchestrator reflects on the request and pre-populates the task ledger with vital information– given or verified facts, facts to look up (e.g., via web search), facts to derive (e.g., programmatically, or via reasoning), and educated guesses."</p>
+<p>"Only after the facts and guesses in the task ledger have been populated, the Orchestrator considers the makeup of the team it is directing. Specifically, it uses each team member's description, along with the current task ledger, to devise a step-by-step plan."</p>
+</blockquote>
+<p><strong>论文原文</strong>（Section 1, Introduction，确认是两个 ledger）:</p>
+<blockquote>
+<p>"The Orchestrator uses two structured ledgers to achieve this and also to decide which agent should take the next action."</p>
+</blockquote>
+<h3 id="url_1">官方文档 URL（均已核验可达）<a class="headerlink" href="#url_1" title="Permanent link">&para;</a></h3>
+<p>| 来源 | URL |</p>
+<p>|------|-----|</p>
+<p>| 论文 arXiv 摘要页 | https://arxiv.org/abs/2411.04468 |</p>
+<p>| 论文 HTML 全文 | https://arxiv.org/html/2411.04468v1 |</p>
+<p>| Microsoft Research 文章 | https://www.microsoft.com/en-us/research/articles/magentic-one-a-generalist-multi-agent-system-for-solving-complex-tasks/ |</p>
+<p>| AutoGen 官方文档（Magentic-One） | https://microsoft.github.io/autogen/stable/user-guide/agentchat-user-guide/magentic-one.html |</p>
+<h3 id="_12">说明<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>任务书要求"三类事件名"，但论文原文描述的是 Task Ledger 包含的<strong>三类内容类别（content categories）</strong>：Facts、Guesses、Plan，而非"事件类型（event types）"。</p>
+</li>
+<li>
+<p>论文中未出现 "Task Ledger 的事件类型" 这一分类概念。最接近"事件"的描述是 Progress Ledger 的五个问题（task complete? looping? forward progress? which agent next? what instruction?），以及 Section 4.1 的 outer/inner loop 机制。</p>
+</li>
+<li>
+<p>如需字面匹配验证，请以论文 Figure 2 caption 原文为准：<code>"facts, guesses, and plan"</code>。</p>
+</li>
+</ul>
+<hr />
+<blockquote>
+<p>🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]</p>
+</blockquote>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

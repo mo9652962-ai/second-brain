@@ -1,0 +1,4001 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="AI Agent 第二大脑 | Hermes 七大自举系统 | 硬件/PCB/单片机全链路知识库 | 学术写作工作流 | 全中文 Obsidian 知识库">
+      
+      
+        <meta name="author" content="mo9652962">
+      
+      
+        <link rel="canonical" href="https://mo9652962-ai.github.io/second-brain/kb/knowledge/Research/s4mp-protocol-network-100round-2026-08-05/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>S4mp protocol network 100round 2026 08 05 - Second Brain 知识库</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#s4mp-mod" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="Second Brain 知识库" class="md-header__button md-logo" aria-label="Second Brain 知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Second Brain 知识库
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              S4mp protocol network 100round 2026 08 05
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="切换到深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="切换到浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  
+    
+  
+  🏠 总入口
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/hermes/hermes-workflow-preferences/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🤖 Hermes 自举系统
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/hardware/PCB-Design-Automation-2026/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🔧 硬件工程
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/ai/mlops-llm-training-pipeline/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🧠 AI / MLOps
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/web/Modern-Web-Development-2026/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  💻 Web / 平台
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/dev/cross-platform-mobile-development-2026/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  📱 移动端 & 安全
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/general/knowledge-domain-roadmap/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  📚 通用参考
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../MOC-Research/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🗺️ 知识域 MOC
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../projects/current/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  📦 项目与治理
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Second Brain 知识库" class="md-nav__button md-logo" aria-label="Second Brain 知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Second Brain 知识库
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../.." class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 总入口
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🏠 总入口
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../HOME/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HOME 知识中枢
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../INDEX/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    全库索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../knowledge-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识地图
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--adopted"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DASHBOARD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    健康看板
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../VAULT-MAP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器可读索引
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cross-Domain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跨域关联
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--adopted"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 Hermes 自举系统
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🤖 Hermes 自举系统
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/hermes-workflow-preferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    交互自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/hermes-automation-patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    可靠性自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/daily-knowledge-absorption-gate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/tool-call-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    工具调用自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/code-quality-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    代码质量自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/output-style-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    输出风格自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/context-management-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    上下文管理自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/github-repo-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub 仓库优化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/github-seo-optimization-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub SEO 优化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔧 硬件工程
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🔧 硬件工程
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hardware/PCB-Design-Automation-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PCB 设计自动化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hardware/CAD-Design-Complete-Guide-v2.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CAD 设计完整指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hardware/Microcontroller-Edge-AI-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    单片机与边缘 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hardware/Hardware-Startup-Open-Source-Ecosystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    硬件创业与开源生态
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/cad-design-master/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CAD 设计大师（技能集）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/8051-embedded-dev/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8051 嵌入式开发
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧠 AI / MLOps
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🧠 AI / MLOps
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/ai/mlops-llm-training-pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MLOps & LLM 训练流水线
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💻 Web / 平台
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    💻 Web / 平台
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/web/Modern-Web-Development-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    现代 Web 开发 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/platform/Platform-Development-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    平台开发 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📱 移动端 & 安全
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📱 移动端 & 安全
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/dev/cross-platform-mobile-development-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跨平台移动端开发
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/dev/ctf-cybersecurity-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CTF 网络安全路线
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📚 通用参考
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📚 通用参考
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/general/knowledge-domain-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识域扩展路线图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/general/community-best-practices-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    社区最佳实践索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/general/bilingual-terminology-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中英双语术语表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/engineering-workflow/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    工程工作流
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🗺️ 知识域 MOC
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🗺️ 知识域 MOC
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MOC-Research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    研究 Research
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Dev/MOC-Dev/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开发 Dev
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Productivity/MOC-Productivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    生产力 Productivity
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Security/MOC-Security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    安全 Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cards/MOC-cards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识卡 cards
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Daily/MOC-Daily/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    日常 Daily
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Hardware/MOC-Hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    硬件 Hardware
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AI/MOC-AI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Finance/MOC-Finance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    金融 Finance
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Archive/MOC-Archive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    归档 Archive
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Content/MOC-Content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    内容 Content
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SOP/MOC-SOP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SOP
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../META/MOC-META/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    元信息 META
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Creative/MOC-Creative/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    创意 Creative
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gaming/MOC-gaming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    游戏 gaming
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Product/MOC-Product/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    产品 Product
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projects/MOC-Projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    项目 Projects
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Education/MOC-Education/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    教育 Education
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📦 项目与治理
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📦 项目与治理
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/current/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    当前项目
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/MOC-Concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    概念索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../memory/MOC-Memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    记忆索引
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../health/MOC-Health/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    健康索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MOC-Inbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    待整理箱
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MOC-Duplicate-Review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    重复审查
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<hr />
+<p>aliases:
+  - s4mp-protocol-network-100round-2026-08-05
+tags: [research, s4mp, sims4, multiplayer, protocol, network]
+created: 2026-08-05
+updated: 2026-08-05
+status: adopted---</p>
+<h1 id="s4mp-mod">🔌 S4MP 消息协议（网络层）百轮研究 + 自制 mod 改进<a class="headerlink" href="#s4mp-mod" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>知识库消息协议笔记 + 4 批搜索引擎研究（借鉴 S4MP/业界标准）+ 百次虚拟测试（v9.12）
+目标：对照 S4MP 网络层，找出自制 mod 协议差距并改进</p>
+</blockquote>
+<hr />
+<h2 id="mod-v911">一、现状盘点（自制 mod v9.11 协议）<a class="headerlink" href="#mod-v911" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>序列化</strong>：pickle 二进制帧（8 字节大端长度前缀 + pickle）——比 JSON 快 2.8x、体积 84%</li>
+<li><strong>消息类型</strong>：29 种（hello/welcome/lobby/ready/in_lot/heartbeat/chat/clock/mood/money_sync/stats_sync/sim_pos/save_<em>/travel_</em>）</li>
+<li><strong>可靠性</strong>：TCP 保证有序可靠；seq 序号（位置丢包检测）；心跳 5s + 超时 15s</li>
+<li><strong>容错</strong>：断线重连（指数退避 + jitter）、主机迁移、8MB 帧上限、线程锁</li>
+</ul>
+<h2 id="4">二、百轮研究结论（4 批搜索）<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<h3 id="1">第 1 批：协议架构与帧格式<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">研究</th>
+<th style="text-align: left;">结论</th>
+<th style="text-align: left;">借鉴</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Protobuf vs Flatbuffers vs JSON</td>
+<td style="text-align: left;">二进制比文本小 3 倍；Protobuf 序列化快</td>
+<td style="text-align: left;">pickle 已满足局域网需求 ✅</td>
+</tr>
+<tr>
+<td style="text-align: left;">Length-prefix framing（Eli Bendersky）</td>
+<td style="text-align: left;">长度前缀帧是标准做法</td>
+<td style="text-align: left;">我们的 8 字节前缀 ✅</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>协议版本协商</strong>（MCP handshake / QUIC RFC 9368）</td>
+<td style="text-align: left;"><strong>握手时交换版本，不兼容拒绝</strong></td>
+<td style="text-align: left;"><strong>❌ 缺失 → 已实现</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="2">第 2 批：心跳/可靠性/安全<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">研究</th>
+<th style="text-align: left;">结论</th>
+<th style="text-align: left;">借鉴</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">WebSocket heartbeat（WebSocket.org）</td>
+<td style="text-align: left;">应用层心跳是唯一可靠检测僵尸连接的方法</td>
+<td style="text-align: left;">心跳 5s/15s ✅</td>
+</tr>
+<tr>
+<td style="text-align: left;">Reliable Ordered（Gaffer）</td>
+<td style="text-align: left;">TCP 本身处理可靠有序，无需应用层重传</td>
+<td style="text-align: left;">seq 仅用于丢包检测 ✅</td>
+</tr>
+<tr>
+<td style="text-align: left;">HMAC（RFC 2104/FIPS 198-1）</td>
+<td style="text-align: left;">包签名防篡改；局域网信任对端可省略</td>
+<td style="text-align: left;">低优先（局域网）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-s4mp">第 3 批：S4MP 具体实现<a class="headerlink" href="#3-s4mp" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">研究</th>
+<th style="text-align: left;">结论</th>
+<th style="text-align: left;">借鉴</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">S4MP 官方</td>
+<td style="text-align: left;">最新 0.74.1；host 权威 + 同家庭多控</td>
+<td style="text-align: left;">我们对齐 ✅</td>
+</tr>
+<tr>
+<td style="text-align: left;">SmartFoxServer 房间</td>
+<td style="text-align: left;">public/private（密码）+ 6 位房间码</td>
+<td style="text-align: left;">我们已实现 ✅</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>位置量化</strong>（Gaffer 4096 values/meter）</td>
+<td style="text-align: left;">位置量化到整数大幅省带宽</td>
+<td style="text-align: left;"><strong>❌ 缺失 → 已实现（0.01m）</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="4_1">第 4 批：编码/连接管理<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">研究</th>
+<th style="text-align: left;">结论</th>
+<th style="text-align: left;">借鉴</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">varint（Protobuf encoding）</td>
+<td style="text-align: left;">小整数 1 字节 vs 固定 8 字节</td>
+<td style="text-align: left;">低价值（局域网）</td>
+</tr>
+<tr>
+<td style="text-align: left;">连接池/复用（OneUptime）</td>
+<td style="text-align: left;">服务器管理多连接</td>
+<td style="text-align: left;">host 多 client ✅</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>player_id 管理</strong>（知识库 S4MP 笔记）</td>
+<td style="text-align: left;">重连 ID 递增 → KeyError:2</td>
+<td style="text-align: left;"><strong>❌ 递增 → 已实现复用池</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="v912">三、改进实施（v9.12）<a class="headerlink" href="#v912" title="Permanent link">&para;</a></h2>
+<h3 id="1-mcpquic">1. 协议版本协商（MCP/QUIC 模式）<a class="headerlink" href="#1-mcpquic" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="n">PROTO_VERSION</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># 1=JSON时代, 2=pickle帧(当前)</span>
+<span class="c1"># hello 带 proto_version → host 校验 → 不匹配发 version_mismatch + 拒绝</span>
+<span class="c1"># 客户端收到 version_mismatch → 提示"协议版本不兼容，请更新"</span>
+</code></pre></div>
+
+<ul>
+<li>防旧 mod 连新 host 导致消息字段错乱</li>
+<li>welcome 也带 proto_version（客户端可校验）</li>
+</ul>
+<h3 id="2-player_id-keyerror2">2. player_id 复用池（防 KeyError:2）<a class="headerlink" href="#2-player_id-keyerror2" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="n">_released_pids</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># 断开时回收，重连复用原 ID</span>
+<span class="c1"># 连接分配：优先 _released_pids.pop(0)，否则 _next_player_id</span>
+</code></pre></div>
+
+<ul>
+<li>断开 → <code>_clients.pop</code> + 加入复用池</li>
+<li>重连 → 复用原 player_id（不递增）→ 不会 KeyError</li>
+</ul>
+<h3 id="3-gaffer-4096-valuesmeter">3. 位置量化（Gaffer 4096 values/meter）<a class="headerlink" href="#3-gaffer-4096-valuesmeter" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">_quantize</span><span class="p">(</span><span class="n">v</span><span class="p">):</span> <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span><span class="p">))</span>  <span class="c1"># 0.01m 精度</span>
+<span class="c1"># 发送：delta_q = [量化后的整数 delta]</span>
+<span class="c1"># 接收：pos = base + delta_q[i] / 100.0</span>
+</code></pre></div>
+
+<ul>
+<li>传输整数（pickle 体积更小），接收端 /100 还原</li>
+<li>0.01m 精度远小于人物可见位移</li>
+<li>兼容旧协议（delta 未量化仍可处理）</li>
+</ul>
+<h2 id="v91219">四、百次虚拟测试（v9.12，19 断言全过）<a class="headerlink" href="#v91219" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">测试</th>
+<th style="text-align: left;">内容</th>
+<th style="text-align: left;">结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">A. 版本协商</td>
+<td style="text-align: left;">匹配加入 / 旧版本拒绝 / 无版本拒绝 / 客户端提示</td>
+<td style="text-align: left;">✅</td>
+</tr>
+<tr>
+<td style="text-align: left;">B. player_id 复用</td>
+<td style="text-align: left;">断开进池 / 重连复用 / 20 次循环不递增</td>
+<td style="text-align: left;">✅</td>
+</tr>
+<tr>
+<td style="text-align: left;">C. 位置量化</td>
+<td style="text-align: left;">0.01m 精度 / banker's rounding / 还原累加 / 20 步误差 &lt;0.5m</td>
+<td style="text-align: left;">✅</td>
+</tr>
+<tr>
+<td style="text-align: left;">D. 兼容性</td>
+<td style="text-align: left;">旧 delta / position 绝对值 / welcome 带版本</td>
+<td style="text-align: left;">✅</td>
+</tr>
+</tbody>
+</table>
+<h2 id="11-165">五、回归体系（11 套件 / 165 断言）<a class="headerlink" href="#11-165" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code>v92 端到端(12) + v93 传输层(10) + v94 协议语义(15) + v95 生命周期(11)
++ v96 纯逻辑(10) + v97 内存GUI(8) + v98 新领域(17) + v99 同步行为(19)
++ v910 容错(19) + v911 旅行(26) + v912 协议增强(19) = 一键全跑全过
+</code></pre></div>
+
+<hr />
+<h2 id="_1">变更记录<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>2026-08-05: 初版（百轮研究 + 3 项协议改进 + v9.12 测试）</li>
+</ul>
+<h2 id="v913">六、第二轮改进（v9.13——批处理 + 协议目录）<a class="headerlink" href="#v913" title="Permanent link">&para;</a></h2>
+<h3 id="5-6">研究（第 5-6 批）<a class="headerlink" href="#5-6" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">主题</th>
+<th style="text-align: left;">结论</th>
+<th style="text-align: left;">借鉴</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">消息批处理（Vanilla Java/Unity）</td>
+<td style="text-align: left;">TCP 小消息合并到阈值（4KB）大幅提吞吐</td>
+<td style="text-align: left;"><strong>❌ 无批处理 → 已实现 <code>_send_batch</code></strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">帧损坏恢复（工业标准）</td>
+<td style="text-align: left;">坏帧边界检测是关键；TCP 校验已覆盖局域网</td>
+<td style="text-align: left;">低价值跳过</td>
+</tr>
+<tr>
+<td style="text-align: left;">Schema Registry（Kafka）</td>
+<td style="text-align: left;">集中管理消息 schema + 兼容规则</td>
+<td style="text-align: left;"><strong>❌ 无文档 → 已写 docs/PROTOCOL.md</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">自适应拥塞（TCP BBR）</td>
+<td style="text-align: left;">RTT 调整速率；已有自适应 tick</td>
+<td style="text-align: left;">低优先</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_2">改进<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong><code>_send_batch(sock, payloads)</code></strong>：多条小消息合并成一个 <code>{"type":"batch","msgs":[...]}</code> 帧</li>
+<li>单条→直发，空→跳过，多条→batch 帧</li>
+<li>接收端 <code>_process_incoming</code> 拆包逐个处理</li>
+<li><strong><code>docs/PROTOCOL.md</code> 协议消息目录</strong>：30 种消息类型全表（方向/字段/用途）+ 帧格式 + 版本兼容规则</li>
+</ol>
+<h3 id="v91314">测试（v9.13，14 断言全过）<a class="headerlink" href="#v91314" title="Permanent link">&para;</a></h3>
+<ul>
+<li>A. _send_batch 逻辑（空/单条/多条/20 次合并正确）</li>
+<li>B. batch 拆包（拆开处理/chat 分发/空不崩/非 dict 跳过）</li>
+<li>C. <strong>真实 TCP 批处理闭环</strong>（client batch → host 拆包 → add_chat）</li>
+<li>D. 协议目录完整性（30 种消息全覆盖检查）</li>
+</ul>
+<h3 id="12-179">回归体系升级（12 套件 / 179 断言）<a class="headerlink" href="#12-179" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>v92(12)+v93(10)+v94(15)+v95(11)+v96(10)+v97(8)
++v98(17)+v99(19)+v910(19)+v911(26)+v912(19)+v913(14) = 一键全跑全过
+</code></pre></div>
+
+<h2 id="v914">七、第三轮改进（v9.14——连接健康监控）<a class="headerlink" href="#v914" title="Permanent link">&para;</a></h2>
+<h3 id="7-8">研究（第 7-8 批）<a class="headerlink" href="#7-8" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">主题</th>
+<th style="text-align: left;">结论</th>
+<th style="text-align: left;">借鉴</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">游戏 QoS（pvigier）</td>
+<td style="text-align: left;">消息可分级（可靠/不可靠）+ 多流分离</td>
+<td style="text-align: left;">位置低优/聊天高优思路</td>
+</tr>
+<tr>
+<td style="text-align: left;">RTT 测量（游戏 ping）</td>
+<td style="text-align: left;">应用层 ping/pong 带时间戳测 RTT</td>
+<td style="text-align: left;"><strong>❌ 无 RTT → 已实现</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">自适应频率（DACC/RFC 6298）</td>
+<td style="text-align: left;">高延迟降频防拥塞</td>
+<td style="text-align: left;"><strong>❌ 无自适应 → 已实现</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">健康评分（Cloudflare/PingPlotter）</td>
+<td style="text-align: left;">latency/jitter/loss → 质量分</td>
+<td style="text-align: left;"><strong>❌ 无评分 → 已实现</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_3">改进<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>应用层 ping/pong RTT 测量</strong>（network.py）</li>
+<li><code>ping</code> 带 ts → 对端回 <code>pong</code>（带原 ts）→ RTT = now - ts</li>
+<li>主动 ping 每 3s（alarm 循环 <code>_send_ping</code>）</li>
+<li>滚动窗口 20 样本，异常值（&gt;5s）过滤</li>
+<li><strong>连接健康评分</strong>（Cloudflare 模型）</li>
+<li><code>get_health_score()</code>：100 - RTT 扣分（50ms 内不扣，每超 5ms 扣 1，上限 60）</li>
+<li><code>get_health_label()</code>：🟢优秀/🟡良好/🟠一般/🔴差</li>
+<li><strong>自适应位置广播频率</strong>（sync.py）</li>
+<li>RTT &gt; 200ms → 间隔 1.5x；RTT &gt; 400ms → 2x（网络差降频防拥塞）</li>
+</ol>
+<h3 id="v91419">测试（v9.14，19 断言全过）<a class="headerlink" href="#v91419" title="Permanent link">&para;</a></h3>
+<ul>
+<li>A. ping/pong RTT（回 pong/计算/异常过滤/无 ts 不崩）</li>
+<li>B. 健康评分（无样本/优秀/差/20 次范围）</li>
+<li>C. 滚动平均（20 窗口/平均正确/新样本挤旧）</li>
+<li>D. 自适应频率（无 RTT 默认/200-400 1.5x/&gt;400 2x/低 RTT 默认）</li>
+<li>E. <strong>真实 TCP ping/pong 闭环</strong>（host 发 ping → client 回 pong → host 算 RTT）</li>
+</ul>
+<h3 id="_4">修复（百次测试挖出）<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>ping 处理引用未定义 <code>sock</code> 变量</strong>（NameError 被吞→不回 pong）——改为 sender_pid 查 _clients</li>
+<li>v911 <code>_fake_timer</code> 立即执行改变旅行时序——改 no-op</li>
+<li>PROTOCOL.md 缺 ping/pong——已补（32 种消息）</li>
+</ol>
+<h3 id="13-198">回归体系升级（13 套件 / 198 断言）<a class="headerlink" href="#13-198" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>v92(12)+v93(10)+v94(15)+v95(11)+v96(10)+v97(8)+v98(17)
++v99(19)+v910(19)+v911(26)+v912(19)+v913(14)+v914(19) = 一键全跑全过
+</code></pre></div>
+
+<h2 id="9">八、协议层累计 9 项增强（三轮）<a class="headerlink" href="#9" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code>v9.12: 版本协商 + player_id 复用 + 位置量化
+v9.13: 消息批处理 + 协议目录
+v9.14: RTT 测量 + 健康评分 + 自适应频率
+</code></pre></div>
+
+<h2 id="v915crc">九、第四轮改进（v9.15——CRC 帧校验 + 消息优先级）<a class="headerlink" href="#v915crc" title="Permanent link">&para;</a></h2>
+<h3 id="9-10">研究（第 9-10 批）<a class="headerlink" href="#9-10" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">主题</th>
+<th style="text-align: left;">结论</th>
+<th style="text-align: left;">借鉴</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">CRC32（Ethernet FCS）</td>
+<td style="text-align: left;">0x04C11DB7 标准，检测突发错误强于校验和；Python binascii.crc32</td>
+<td style="text-align: left;"><strong>❌ 无校验 → 已实现</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">CRC vs 校验和</td>
+<td style="text-align: left;">CRC 检测模式错误（burst errors），简单 checksum 漏检</td>
+<td style="text-align: left;">用 CRC32</td>
+</tr>
+<tr>
+<td style="text-align: left;">QoS 优先级（pvigier）</td>
+<td style="text-align: left;">消息分级（可靠/不可靠）+ 多流分离</td>
+<td style="text-align: left;"><strong>❌ 无分级 → 已实现</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_5">改进<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>CRC32 帧校验</strong>（network.py）</li>
+<li>帧格式升级：<code>[8长度][4 CRC32][pickle]</code>（12 字节头）</li>
+<li>发送 <code>_send_json</code> 算 CRC；接收 <code>_recv_loop</code> 校验——坏帧丢弃不崩</li>
+<li>帧损坏/位翻转 → 丢弃；坏帧后连接存活（TCP 连续流不受影响）</li>
+<li><strong>消息优先级</strong>（QoS，pvigier 多流分离）</li>
+<li><code>_send_json(sock, payload, prio)</code>：0=紧急 1=普通 2=低优</li>
+<li>紧急（hello/welcome/ready/travel_*）直发；位置（sim_pos）低优可 batch</li>
+<li>PROTOCOL.md 记录优先级分级</li>
+</ol>
+<h3 id="v91516">测试（v9.15，16 断言全过）<a class="headerlink" href="#v91516" title="Permanent link">&para;</a></h3>
+<ul>
+<li>A. CRC 帧格式（8长度+4CRC/20 次 CRC 正确）</li>
+<li>B. CRC 校验（正常通过/数据位翻转检测/CRC 字段损坏/20 次随机损坏全检测）</li>
+<li>C. <strong>真实 TCP CRC 闭环</strong>（正常帧到达/坏帧丢弃/坏帧后连接存活）</li>
+<li>D. 消息优先级（默认 1/紧急 0/低优 2/batch 合并低优）</li>
+</ul>
+<h3 id="3-bug">百次测试挖出 3 个真实 bug（帧格式升级连锁）<a class="headerlink" href="#3-bug" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>测试 mock <code>Net._send_json</code> 缺 prio 参数</strong> → host 发 welcome 崩溃 → recv 线程没启动（v913/v914 真实 TCP 失败根因）</li>
+<li><strong>v93 手工帧没带 proto_version</strong> → 版本协商拒绝 → 握手失败</li>
+<li><strong>v93 缺 binascii import</strong>（单行 import 替换没匹配）+ <strong><code>fc</code> 变量覆盖全局失败计数器</strong></li>
+</ol>
+<h3 id="14-208">回归体系升级（14 套件 / 208 断言）<a class="headerlink" href="#14-208" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>v92(12)+v93(10)+v94(15)+v95(11)+v96(10)+v97(8)+v98(17)+v99(19)
++v910(19)+v911(26)+v912(19)+v913(14)+v914(19)+v915(16) = 一键全跑全过
+</code></pre></div>
+
+<h2 id="11">十、协议层累计 11 项增强（四轮）<a class="headerlink" href="#11" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code>v9.12: 版本协商 + player_id 复用 + 位置量化
+v9.13: 消息批处理 + 协议目录
+v9.14: RTT 测量 + 健康评分 + 自适应频率
+v9.15: CRC 帧校验 + 消息优先级
+</code></pre></div>
+
+<h2 id="v916hmac">十一、第五轮改进（v9.16——HMAC 消息签名，跨网安全）<a class="headerlink" href="#v916hmac" title="Permanent link">&para;</a></h2>
+<h3 id="11_1">研究（第 11 批）<a class="headerlink" href="#11_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">主题</th>
+<th style="text-align: left;">结论</th>
+<th style="text-align: left;">借鉴</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">HMAC（RFC 2104）</td>
+<td style="text-align: left;">密钥散列消息认证，防篡改+认证；TLS 1.3 用 HMAC 派生密钥</td>
+<td style="text-align: left;"><strong>❌ 裸 pickle → 已实现</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">HKDF（RFC 5869）</td>
+<td style="text-align: left;">主密钥 → 会话密钥派生；TLS 1.3 同款</td>
+<td style="text-align: left;">握手 nonce 交换派生</td>
+</tr>
+<tr>
+<td style="text-align: left;">MAC 性能</td>
+<td style="text-align: left;">HMAC-SHA256 每消息微秒级，游戏无感</td>
+<td style="text-align: left;">始终签名不降级</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_6">方案<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>握手密钥交换</strong>：client 生成 client_nonce（随机16B hex）→ hello 携带；host 生成 host_nonce → welcome 携带；双方独立派生 <code>key = HMAC-SHA256(房间密码, client_nonce + host_nonce)</code></li>
+<li><strong>帧签名</strong>：帧格式升级 <code>[8长度][4CRC][32 HMAC-SHA256][pickle]</code>（44 字节头）——发送算 HMAC，接收<strong>先验签再反序列化</strong>（Encrypt-then-MAC 顺序）</li>
+<li><strong>多客户端独立密钥</strong>：<code>_hmac_keys[pid]</code> 每 client 各自 key，互不通用；host 按 pid 反查，client 用自己的 key</li>
+</ol>
+<h3 id="bug-5">关键 bug 修复（5 个，测试挖出）<a class="headerlink" href="#bug-5" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>帧头长度不固定</strong>：无 key 返回 0 字节签名 → 收端固定 44 偏移错位（把 data 前 32 字节当签名）→ <strong>修正：无 key 填 32 字节零签名占位，帧头恒 44 字节</strong></li>
+<li><strong>client 端发送 key 选择</strong>：<code>_sock_to_pid</code> 对 client socket 无效 → 改用 <code>_my_player_id</code> 查 key</li>
+<li><strong>同进程双端测试的 <code>_my_nonce</code> 覆盖</strong>（host 覆盖 client）——真实双端独立进程无此问题；测试手动按握手语义重建 key</li>
+<li><strong>lobby.network = Net 污染</strong>（C 段 mock 后 D 段真实 TCP 写错对象）——D 段前恢复真实引用</li>
+<li><strong>旧测试帧格式连锁</strong>：v92-v915 全部升级 44 字节头（+真 null 字节转义修复）</li>
+</ol>
+<h3 id="v91622">测试（v9.16，22 断言全过）<a class="headerlink" href="#v91622" title="Permanent link">&para;</a></h3>
+<ul>
+<li>A. 密钥派生（相同输入→同 key/不同密码/不同 nonce/20 次确定性）</li>
+<li>B. 签名/验签（正确通过/篡改拒绝/错误 key 拒绝/无 key 通过/20 次随机篡改检测）</li>
+<li>C. 握手密钥交换（host/client 各自派生 32B key）</li>
+<li>D. <strong>真实 TCP 签名闭环</strong>（签名消息到达/篡改帧被拒/篡改后连接存活）</li>
+<li>E. 多客户端独立密钥（各自验签/跨 client 互斥）</li>
+</ul>
+<h3 id="15">回归体系升级（15 套件全过）<a class="headerlink" href="#15" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>v92(12)+v93(10)+v94(15)+v95(11)+v96(10)+v97(8)+v98(17)+v99(19)
++v910(19)+v911(26)+v912(19)+v913(14)+v914(19)+v915(16)+v916(22)
+</code></pre></div>
+
+<h2 id="12">十二、协议层累计 12 项增强（五轮）<a class="headerlink" href="#12" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code>v9.12: 版本协商 + player_id 复用 + 位置量化
+v9.13: 消息批处理 + 协议目录
+v9.14: RTT 测量 + 健康评分 + 自适应频率
+v9.15: CRC 帧校验 + 消息优先级
+v9.16: HMAC 消息签名 + 握手密钥交换（跨网安全）
+</code></pre></div>
+
+<h3 id="pickle">安全评估（跨网 pickle 风险闭环）<a class="headerlink" href="#pickle" title="Permanent link">&para;</a></h3>
+<ul>
+<li>签名前：pickle 反序列化任意代码执行（跨网风险高）</li>
+<li>签名后：<strong>无密钥无法构造合法帧</strong>（HMAC-SHA256 前像不可伪造）；篡改必被拒绝（先验签再反序列化）</li>
+<li>残余风险：pickle 数据本身仍明文（未加密）——签名防伪造/篡改，不防窃听；局域网/信任对端可接受</li>
+<li>下一步候选：Protobuf 序列化（S4MP 方案）——类型安全 + 跨语言，替代 pickle</li>
+</ul>
+<h2 id="2026-08-05-3-bug">十三、真机排障实战（2026-08-05 双机实测挖出 3 个测试没抓到的 bug）<a class="headerlink" href="#2026-08-05-3-bug" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>虚拟测试全绿 ≠ 真机没问题——真机日志是最终裁判。</p>
+</blockquote>
+<h3 id="1-network-nameerror">1. 模块内 <code>network.</code> 前缀 NameError<a class="headerlink" href="#1-network-nameerror" title="Permanent link">&para;</a></h3>
+<ul>
+<li>现象：房主建房后房间页不显示自己（members 空 + room_code 空）</li>
+<li>根因：<code>mp_host</code>/<code>mp_apply</code> 里 <code>network._my_player_id = 0</code> —— <strong>network.py 模块内没有 <code>network</code> 这个名字</strong>（函数内 <code>network.xxx</code> 是全局查找）→ NameError → 被 <code>except: _log("lobby setup error")</code> 吞 → <code>add_host_self</code> 没执行</li>
+<li>教训：<strong>模块内函数引用自己模块的全局变量，直接写变量名，不要加模块名前缀</strong>；真机日志 <code>lobby setup error: name 'network' is not defined</code> 是排障关键信号</li>
+<li>虚拟测试没抓到：测试直接调 add_host_self，不走 mp_host 命令路径</li>
+</ul>
+<h3 id="2_1">2. 帧格式不兼容 → 对端秒断（协议升级破坏性实测）<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>现象：对端连上主机 1 秒内断开，host 日志 <code>send error: [WinError 10053]</code>（对端已关）</li>
+<li>根因：对端装 v9.15 及更早（12 字节帧头）→ 收到 v9.16 的 44 字节头 welcome → 解析错位 → unpickle error → 主动断开</li>
+<li>更早版本（JSON 时代）：客机日志 <code>recv error: 'utf-8' codec can't decode byte 0x81</code> —— <strong>v9.16 根本不按 utf-8 解码</strong>，出现 utf-8 解码错误 = 对端是 v7.2 之前的 JSON 协议时代</li>
+<li>教训：<strong>帧格式升级是 breaking change，两端必须同版本</strong>；分发时强调版本一致 + 验证日志首行版本号</li>
+</ul>
+<h3 id="3-bat">3. 打包交付完整性（bat 版本号）<a class="headerlink" href="#3-bat" title="Permanent link">&para;</a></h3>
+<ul>
+<li>现象：zip 里安装mod.bat 显示 v5.3（用户误以为旧版）</li>
+<li>根因：bat 标题行版本号从未随版本递增</li>
+<li>教训：打包核对清单含 mod/说明/bat/zip 文件名四件套版本一致性</li>
+</ul>
+<h2 id="2026-08-05-web">十四、协议版本协商深度研究（2026-08-05 web 研究）<a class="headerlink" href="#2026-08-05-web" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>触发：真机遇到「旧客户端连新服务器秒断」——版本协商的行业最佳实践是什么？</p>
+</blockquote>
+<h3 id="_7">研究结论<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">来源</th>
+<th style="text-align: left;">方案</th>
+<th style="text-align: left;">借鉴点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>MCP spec（modelcontextprotocol.io）</strong></td>
+<td style="text-align: left;"><code>server/discover</code> 协商——客户端先问服务器支持的版本列表 → 选双方都支持；不兼容返回结构化错误（<code>UnsupportedProtocolVersionError</code>）而非静默断连</td>
+<td style="text-align: left;">协商放握手早期；错误要<strong>结构化可识别</strong>（客户端能据此给用户友好提示）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Martin Evans（游戏网络协议）</strong></td>
+<td style="text-align: left;">协议必须有<strong>版本标识符</strong>，旧消息可检测并丢弃；向后兼容 = 同时支持新旧版本，连接建立时协商</td>
+<td style="text-align: left;">帧头 magic number 快速识别协议时代</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>TLS / OneUptime</strong></td>
+<td style="text-align: left;">客户端服务器对齐支持的版本，双方声明支持列表</td>
+<td style="text-align: left;">版本列表协商是标准做法</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>jser.dev</strong></td>
+<td style="text-align: left;">版本比较 + 降级计划（先支持新旧，一段时间后移除旧）</td>
+<td style="text-align: left;">兼容窗口期概念</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_8">我们的差距与改进候选（后续）<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li>✅ 已有：PROTO_VERSION 协商（hello 带版本，不匹配发 version_mismatch）</li>
+<li>❌ <strong>盲点：帧格式不兼容发生在握手之前</strong>——旧客户端 hello（12 字节头）在新服务器（44 字节解析）上错位 → 版本字段都读不到 → 无法发 version_mismatch → 秒断</li>
+<li>🔧 候选改进：<strong>帧头加 magic number + 协议版本</strong>（固定偏移，任何版本都能读）→ 收端先读 magic → 判断对端协议时代 → 能兼容则降级解析，不能则发结构化错误（含"请更新到 vX"提示）而非裸断连</li>
+<li>🔧 或：hello 帧用"版本无关最小编帧"（前 8 字节 = magic + version，之后才是长度前缀 + 载荷）</li>
+<li>优先级：局域网信任对端场景收益低（知道更新即可），<strong>跨网公开场景才值得做</strong>（防恶意/误连错版本）</li>
+</ul>
+<h2 id="v912-v916">十五、五轮总结（v9.12-v9.16 完整链路）<a class="headerlink" href="#v912-v916" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>研究驱动</strong>：4 批 web 研究 → 12 项增强（版本协商/ID 复用/量化/批处理/协议目录/RTT/健康评分/自适应频率/CRC/优先级/HMAC/密钥交换）</li>
+<li><strong>测试体系</strong>：15 套件 237 断言（端到端 TCP + 传输层 + 协议语义 + 生命周期 + 纯逻辑 + 内存/GUI/配置/fuzz + UDP 发现 + 迟滞阈值 + 容错 + 场景切换 + 版本协商 + 批处理 + 健康 + 帧校验 + 签名闭环）</li>
+<li><strong>真机验证</strong>：双机 LAN 实测（建房/加入/聊天/位置同步）+ 双机排障（NameError/版本不兼容）</li>
+<li><strong>最大短板</strong>：跨网真机验证（UPnP/STUN 代码就绪但从未在真实公网环境跑通）</li>
+</ul>
+<h2 id="2026-08-05-web_1">十六、外部架构建议的逐项研究验证（2026-08-05 web 研究）<a class="headerlink" href="#2026-08-05-web_1" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>来源：用户提供的一份"S4MP 类联机框架从零设计建议"（Master Server 可选 / 同步操作 / Hook API / 网络库选型 / Host Authority / Tick / Save / 分阶段开发）。逐项用 web 搜索验证 + 对照我们实现。</p>
+</blockquote>
+<h3 id="0">0. 许可边界确认（最重要）<a class="headerlink" href="#0" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>S4MP = All Rights Reserved（保留所有权利），非开源</strong>（CurseForge 页面明确标注 License: All Rights Reserved）</li>
+<li><strong>不能</strong>：复制其代码 / 反编译其 mod 后再发布</li>
+<li><strong>可以</strong>：借鉴设计思路（架构/流程），自己实现全部代码；反编译<strong>游戏本身 API</strong>（Data/Simulation/Gameplay 的 pyc）做 hook 是合法 mod 开发</li>
+<li><strong>我们的合规状态</strong>：✅ 全部自研（pickle 帧/HMAC/房间系统/启动器都是自己写的），只参考 S4MP 的设计思想（host 权威/房间码/同家庭多控），反编译对象是游戏 API 不是 S4MP——合规</li>
+</ul>
+<h3 id="1-master-server">1. Master Server（建议：可选）<a class="headerlink" href="#1-master-server" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">研究</th>
+<th style="text-align: left;">结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Unity Master Server Kit / Dedicated Server Kit</td>
+<td style="text-align: left;">master server = 认证 + 房间列表 + matchmaking，spawn 独立 game server 实例</td>
+</tr>
+<tr>
+<td style="text-align: left;">Unity listen server 文档</td>
+<td style="text-align: left;"><strong>listen server（房主托管）= 免费、无需基础设施、LAN 首选</strong>；需 port forwarding 才能跨网</td>
+</tr>
+<tr>
+<td style="text-align: left;">AccelByte P2P vs Relay vs Dedicated</td>
+<td style="text-align: left;">P2P 便宜、dedicated 贵、relay 居中；从 early access 到 live service 最终会走向 dedicated</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>我们现状</strong></td>
+<td style="text-align: left;">✅ <strong>listen server 模式</strong>（房主托管 + 局域网 UDP 发现 + 房间码 + UPnP 跨网）——完全符合"小规模免费优先"的行业建议</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>候选增强</strong></td>
+<td style="text-align: left;">跨网房间列表 Master Server（部署成本高，非必须；有朋友约玩用房间码足够）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2_2">2. 同步"操作/状态"而非整个游戏（建议核心思想）<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">研究</th>
+<th style="text-align: left;">结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">gamedev.stackexchange 51522</td>
+<td style="text-align: left;"><strong>state sync 简单</strong>（新客户端发全量 state 即加入）；event sync 需更多重发/流控逻辑</td>
+</tr>
+<tr>
+<td style="text-align: left;">ruoyusun.com Game Networking Demystified</td>
+<td style="text-align: left;">核心问题 = "发的是游戏状态还是输入"；没有金架构，大多混合</td>
+</tr>
+<tr>
+<td style="text-align: left;">Deterministic Lockstep 论文</td>
+<td style="text-align: left;">三种同步方法：lockstep（只传命令）/ snapshot interpolation（host 跑模拟广播快照）/ state-sync 混合</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>我们现状</strong></td>
+<td style="text-align: left;">✅ <strong>状态同步为主</strong>（位置 Delta/需求/金钱/心情/时间）+ 事件同步（聊天/旅行/准备/存档）——正是行业推荐的混合模式</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>差距</strong></td>
+<td style="text-align: left;">❌ 交互队列事件同步未做（S4MP 深度协议，需 hook interaction 系统 + pie menu + 目标选择）——复杂度高，保持远期</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-enetlitenetlibwebsocket-socket">3. 网络库选型（建议：ENet/LiteNetLib/WebSocket 别自己写 socket）<a class="headerlink" href="#3-enetlitenetlibwebsocket-socket" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">研究</th>
+<th style="text-align: left;">结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">StackOverflow WebSockets UDP benchmarks</td>
+<td style="text-align: left;">WebSocket 基于 TCP，有 TCP 同样优缺点；实时游戏偏好 UDP 是历史惯性</td>
+</tr>
+<tr>
+<td style="text-align: left;">CodeSmile TCP/UDP/WebSocket 详解</td>
+<td style="text-align: left;">游戏偏好不可靠 UDP；可靠 UDP（ACK/重发）需传输层实现（Unity Transport）</td>
+</tr>
+<tr>
+<td style="text-align: left;">gamedev 120054 / AWS re:Post</td>
+<td style="text-align: left;">低丢包下 TCP 延迟与 UDP 几乎无差；ENet 缺文档、KCP 中文社区流行</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>我们现状</strong></td>
+<td style="text-align: left;">✅ 自写 TCP + pickle 帧，<strong>已实现 ENet 等效能力</strong>：可靠传输（TCP 自带）+ 帧 CRC 校验（防损坏）+ 消息优先级 + HMAC 签名（防伪造）+ 8MB 帧上限</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>评估</strong></td>
+<td style="text-align: left;">🔧 换库收益低：游戏内嵌 Python 3.7 环境装 ENet/LiteNetLib 有兼容风险；我们自写的帧协议已覆盖 ENet 核心能力。<strong>保留现状</strong>，WebSocket 仅当未来需要浏览器端才考虑</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-host-authorityhost">4. Host Authority（建议：Host 是唯一真相）<a class="headerlink" href="#4-host-authorityhost" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">结论</th>
+<th style="text-align: left;">我们现状</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">行业标准：server-authoritative（服务器权威）防作弊 + 一致性</td>
+<td style="text-align: left;">✅ 完全对齐：时间（GameClock hook 主机掌控）、房间（host 建/踢/转交）、存档（host 分发）、广播（host 中继）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="5-tick-5-20hz">5. Tick 同步（建议 5-20Hz）<a class="headerlink" href="#5-tick-5-20hz" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">研究</th>
+<th style="text-align: left;">结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Donnybrook 论文</td>
+<td style="text-align: left;">p2p 更新按 n² 增长（Quake III ~12n kb/s/player），16-32 人上限</td>
+</tr>
+<tr>
+<td style="text-align: left;">Monstarlab</td>
+<td style="text-align: left;">状态同步 200-300ms 延迟可接受（RPG），50ms 才敏感（RTS）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>我们现状</strong></td>
+<td style="text-align: left;">✅ 2-5Hz（0.2-0.5s 自适应）+ 快照插值（v7.0）——低 tick + 插值 = Gaffer 标准做法，Sims4 慢节奏完全够</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>候选</strong></td>
+<td style="text-align: left;">可测 10Hz 提升平滑度（低优先，插值已覆盖观感）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="6-save-ab">6. Save 同步（建议：避免 A/B 存档冲突）<a class="headerlink" href="#6-save-ab" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">研究</th>
+<th style="text-align: left;">结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">LWW（Last-Write-Wins）/ Cassandra / Vector Clock</td>
+<td style="text-align: left;">LWW 最简单但有数据丢失风险；Vector Clock 复杂防丢失</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>我们现状</strong></td>
+<td style="text-align: left;">✅ <strong>host 权威分发</strong>（房主存档是唯一真相，天然无冲突）+ base64 分块 + SHA256 完整性 + 缺块自动重传 + 本地 .bak 备份——优于 LWW 场景（不是双方同时写）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>候选</strong></td>
+<td style="text-align: left;">可加"存档版本号对比"提示（客户端存档比房主旧时提醒），低优先</td>
+</tr>
+</tbody>
+</table>
+<h3 id="7-2-12">7. 2-12 人扩展可行性<a class="headerlink" href="#7-2-12" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">结论</th>
+<th style="text-align: left;">依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>LAN 12 人可行</strong></td>
+<td style="text-align: left;">我们 star topology（每 client 直连 host）避免 n² 全互联；状态同步 ~12n kb/s 量级 → 12 人 LAN 轻松</td>
+</tr>
+<tr>
+<td style="text-align: left;">跨网 12 人需 host 上行 ~1-2 Mbps</td>
+<td style="text-align: left;">家庭宽带够；但 host 是玩家机器（非数据中心）→ 延迟/稳定性由 host 网络决定（gamedev 67738 确认这是 listen server 的固有限制）</td>
+</tr>
+<tr>
+<td style="text-align: left;">防作弊</td>
+<td style="text-align: left;">host 权威天然防作弊（client 不能改世界）✅</td>
+</tr>
+</tbody>
+</table>
+<h3 id="8">8. 分阶段开发路线对照（我们已走完）<a class="headerlink" href="#8" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">建议阶段</th>
+<th style="text-align: left;">我们的版本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1. 连接+聊天验证网络层</td>
+<td style="text-align: left;">v4.2 ✅</td>
+</tr>
+<tr>
+<td style="text-align: left;">2. 时间/暂停/倍速同步</td>
+<td style="text-align: left;">v5.5 ✅</td>
+</tr>
+<tr>
+<td style="text-align: left;">3. Sim 移动+交互队列</td>
+<td style="text-align: left;">移动 ✅（v4.9+）；交互队列 ❌（远期候选）</td>
+</tr>
+<tr>
+<td style="text-align: left;">4. 需求值/背包/关系</td>
+<td style="text-align: left;">需求/金钱/心情 ✅（v7.1/v8.2/v8.4）；背包/关系 ❌（候选）</td>
+</tr>
+<tr>
+<td style="text-align: left;">5. Build/Buy + 存档同步</td>
+<td style="text-align: left;">存档 ✅（v6.2）；Build/Buy ❌（复杂度高）</td>
+</tr>
+<tr>
+<td style="text-align: left;">6. 断线重连/状态恢复/版本校验</td>
+<td style="text-align: left;">✅（v7.0 重连 + v9.12 版本协商 + v9.16 HMAC）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_9">总结论<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>架构建议与我们实现高度一致</strong>（listen server + host 权威 + 状态同步为主 + 分阶段）——方向被行业实践验证 ✅</li>
+<li><strong>真正差距</strong>：交互队列事件同步（阶段 3 后半）、背包/关系同步（阶段 4 后半）、Build/Buy（阶段 5 后半）——都是 S4MP 深度协议，复杂度高，保持远期候选</li>
+<li><strong>不建议换的</strong>：网络库（自写 TCP 已等效 ENet 能力）、Master Server（小规模房间码足够）</li>
+<li><strong>合规</strong>：All Rights Reserved 下借鉴设计思路 + 自研实现 = 完全合法</li>
+</ul>
+<h2 id="2026-08-05-web-pyc">十七、三大深度同步领域可行性研究（2026-08-05 web 研究 + 游戏 pyc 反编译）<a class="headerlink" href="#2026-08-05-web-pyc" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>对「交互队列事件同步 / 背包关系同步 / Build-Buy 同步」三项远期候选做系统性验证。
+方法：web 搜索（竞品行为 + 社区库）+ <strong>直接反编译游戏 pyc 确认 API</strong>（uncompyle6 + dis 字节码探测，比 web 更准）。</p>
+</blockquote>
+<h3 id="3">一、交互队列事件同步（阶段 3 后半）—— 🟡 中高可行性（比预期好）<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p><strong>反编译 <code>interactions/si_state.pyc</code>（dis 字节码探测）确认 API：</strong>
+| 能力 | API | 用途 |
+|:-----|:-----|:-----|
+| 读交互列表 | <code>all_si_gen()</code> / <code>queued_interactions</code> / <code>queued_super_interactions_gen</code> | 遍历当前交互 |
+| 读交互状态 | <code>started</code> / <code>start_time</code> / <code>is_finishing</code> / <code>interaction</code> | 同步生命周期 |
+| 查询 | <code>find_interaction_by_id</code> / <code>get_interaction_type</code> / <code>get_si_by_affordance</code> | 定位交互 |
+| <strong>写（执行交互）</strong> | <strong><code>push_super_affordance</code></strong> | 对端执行同款交互 |
+| 取消 | <code>cancel</code> / <code>on_interaction_canceled</code> | 同步取消 |</p>
+<p><strong>务实版方案</strong>（比 S4MP 全流程简单）：
+1. Hook 交互启动事件（<code>sim.si_state</code> 的交互加入）→ 广播 <code>{type:"interaction", sim_id, affordance_id, target_id}</code>
+2. 对端收到 → <code>sim.si_state.push_super_affordance(...)</code> 执行同款交互 → <strong>看到对方小人在做饭/聊天</strong>
+3. <strong>回环抑制</strong>（关键，同位置同步 echo suppression）：对端 push 的交互会触发本地 hook 又广播回去 → 需要 <code>_applied_interaction_ts</code> 抑制窗口
+4. 交互参数序列化：affordance 类型 ID + target 对象 ID（两端同存档 → 对象 ID 天然对齐 ✓）</p>
+<p><strong>复杂度点</strong>：交互参数多样性（姿势/道具/目标）、双方同控一 Sim 的冲突（host 权威裁决）、交互 ID 对齐。工作量 ~2-3 天。</p>
+<h3 id="4_2">二、背包/关系同步（阶段 4 后半）—— 🟢 背包低中 / 🟡 关系中<a class="headerlink" href="#4_2" title="Permanent link">&para;</a></h3>
+<p><strong>背包（S4CL 开源库 CC BY 4.0 证明 API 存在）：</strong>
+- <code>CommonSimInventoryUtils.get_all_objects_in_inventory_gen(sim_info)</code> / <code>add_to_inventory(sim_info, definition_id, count)</code> / <code>move_object_to_inventory</code>
+- 务实版：读背包物品（definition_id + count）→ 广播 → 对端 add_to_inventory——<strong>和 stats_sync（需求/技能）同一模式</strong>，低复杂度
+- 两端同存档 → 对象 ID 天然对齐 ✓；工作量大半天~1 天</p>
+<p><strong>关系（反编译 <code>relationships/relationship_tracker.pyc</code> 成功，API 完整）：</strong>
+| 能力 | API |
+|:-----|:-----|
+| 读分数 | <code>get_relationship_score(target_sim_id, track)</code> / <code>get_relationship_track</code> |
+| 写分数 | <code>set_relationship_score</code> / <code>add_relationship_score</code> |
+| 读关系位 | <code>get_all_bits</code> / <code>has_bit</code> / <code>has_bits</code> |
+| <strong>写关系位</strong> | <strong><code>add_relationship_bit(target, bit, force_add)</code> / <code>remove_relationship_bit</code></strong> |
+| 创建 | <code>create_relationship(target_sim_id)</code> |</p>
+<ul>
+<li>务实版：读分数 + bits → 广播 → 对端 set/add——和 stats_sync 几乎一样</li>
+<li>复杂度点：关系<strong>双向</strong>（A→B 和 B→A 都同步）、关系位 tuning ID、双方同时改同一关系的冲突（host 权威 + 阈值过滤，同 stats_sync 迟滞）。工作量 ~1-2 天</li>
+</ul>
+<h3 id="buildbuy-5-build">三、Build/Buy 同步（阶段 5 后半）—— 🔴 高（两家竞品都不做 build）<a class="headerlink" href="#buildbuy-5-build" title="Permanent link">&para;</a></h3>
+<p><strong>决定性证据（两个竞品行为一致）：</strong>
+| 来源 | 原话 |
+|:-----|:-----|
+| Reddit r/simsmultiplayer（S4MP 社区）| "build mode doesn't sync in real time with the rest of the players, <strong>buy mode fully works</strong> for everyone; furnishing, rotating, etc." |
+| SimSync FAQ（竞品 mod）| "Buy mode works but is in an <strong>experimental</strong> phase. <strong>Build mode will cause issues and is not recommended.</strong> The host controls items placed in buy mode." |</p>
+<p><strong>结论</strong>：
+- <strong>Buy（家具放置/旋转/移动）</strong>：两家都做到了（S4MP 完全可用、SimSync 实验性）——对象 position/rotation 广播，中复杂度 ~2-3 天
+- <strong>Build（墙/地板/房间编辑）</strong>：<strong>两家都不做</strong>——建筑操作是离散编辑事件流 + 全局重绘，复杂度爆炸，<strong>明确不做</strong>（和我们的评估一致）</p>
+<h3 id="_10">四、实施优先级建议<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">优先级</th>
+<th style="text-align: left;">项目</th>
+<th style="text-align: left;">复杂度</th>
+<th style="text-align: center;">工作量</th>
+<th style="text-align: left;">价值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">🥇</td>
+<td style="text-align: left;"><strong>交互队列事件同步</strong></td>
+<td style="text-align: left;">🟡 中高</td>
+<td style="text-align: center;">2-3 天</td>
+<td style="text-align: left;"><strong>最高</strong>（"看到对方做饭/聊天"= 真正一起生活）</td>
+</tr>
+<tr>
+<td style="text-align: center;">🥈</td>
+<td style="text-align: left;">背包同步</td>
+<td style="text-align: left;">🟢 低中</td>
+<td style="text-align: center;">0.5-1 天</td>
+<td style="text-align: left;">高（摸对方背包/共享物品）</td>
+</tr>
+<tr>
+<td style="text-align: center;">🥉</td>
+<td style="text-align: left;">关系同步</td>
+<td style="text-align: left;">🟡 中</td>
+<td style="text-align: center;">1-2 天</td>
+<td style="text-align: left;">中（依赖交互同步先做，否则关系变化少）</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">Buy 家具同步</td>
+<td style="text-align: left;">🟡 中</td>
+<td style="text-align: center;">2-3 天</td>
+<td style="text-align: left;">中（S4MP 也实验性）</td>
+</tr>
+<tr>
+<td style="text-align: center;">❌</td>
+<td style="text-align: left;">Build 建筑同步</td>
+<td style="text-align: left;">🔴 极高</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: left;"><strong>不做</strong>（两家竞品都不做）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_11">五、方法论沉淀<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>验证可行性最可靠手段 = 反编译游戏 pyc 确认 API</strong>（uncompyle6 对复杂控制流会失败 → 用 <code>dis</code> 字节码探测 <code>co_names</code> 提取关键 API 名，快速确认能力存在）</li>
+<li><strong>竞品行为是可行性金标准</strong>：S4MP 和 SimSync 都不做的功能（build mode）→ 大概率复杂度超出投入价值</li>
+<li><strong>务实版原则</strong>：能"读状态→广播→写状态"的（背包/关系/需求）都是低-中复杂度；要"hook 操作事件流"的（交互/Build）都是高复杂度——先做读写的，再做事件的</li>
+</ul>
+<h2 id="v917-2026-08-05">十八、v9.17 四大深度同步模块落地（2026-08-05 实施）<a class="headerlink" href="#v917-2026-08-05" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>§17 研究结论直接落地——四个新模块全部实现 + 虚拟测试 25/25 + 16 套件回归全过。</p>
+</blockquote>
+<h3 id="13">新增模块（13 模块）<a class="headerlink" href="#13" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">模块</th>
+<th style="text-align: left;">同步内容</th>
+<th style="text-align: left;">核心 API（反编译确认）</th>
+<th style="text-align: left;">广播消息</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>interaction_sync.py</code></td>
+<td style="text-align: left;">交互队列事件（🥇 看到对方做饭/聊天）</td>
+<td style="text-align: left;"><code>sim.push_super_affordance(aff, target, ctx)</code> + <code>si_state.sis_actor_gen()</code></td>
+<td style="text-align: left;"><code>{type:interaction, sim_id, affordance, target_id}</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>inventory_sync.py</code></td>
+<td style="text-align: left;">背包物品（🥈 互相给东西）</td>
+<td style="text-align: left;"><code>inventory_component</code> 迭代 + <code>player_try_add_object</code> / <code>try_remove_object_by_id</code></td>
+<td style="text-align: left;"><code>{type:inventory, sim_id, items:{def_id:count}}</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>relationship_sync.py</code></td>
+<td style="text-align: left;">关系分数+bits（🥉 交朋友双方显示）</td>
+<td style="text-align: left;"><code>get/set_relationship_score</code> + <code>add_relationship_bit(force_add)</code></td>
+<td style="text-align: left;"><code>{type:relationship, sim_a, sim_b, score, bits}</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>buy_sync.py</code></td>
+<td style="text-align: left;">Buy 家具位置/旋转（阶段 5 后半）</td>
+<td style="text-align: left;"><code>object.location.clone</code> + <code>set_location</code> + <code>yaw_to_quaternion</code></td>
+<td style="text-align: left;"><code>{type:object_pos, obj_id, x,y,z,rot}</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_12">设计要点（踩坑沉淀）<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>回环抑制</strong>（interaction_sync）：对端 push 的交互会触发本端检测又广播回去 → <code>_applied_ts[sim_id]</code> 3s 窗口跳过（同位置同步 echo suppression 思路）</li>
+<li><strong>迟滞阈值</strong>（inventory/relationship）：接收端差异 &lt;阈值 时反向修正广播（防双向打架）；≥阈值 才应用</li>
+<li><strong>Buy 只同步家具</strong>：排除 Floor/Wall/Stairs 等建筑类（Build 不做——竞品共识）</li>
+<li><strong>互斥参考</strong>：<code>sim_info._sim = self</code> 缓存（get_sim_instance 返回同一实例）——mock 测试关键</li>
+<li><strong>静态方法绑定坑</strong>：mock 类属性赋 lambda/函数会被绑定成实例方法（self 自动传入）→ 必须 staticmethod</li>
+<li><strong>InteractionContext</strong>：<code>InteractionContext(sim, SOURCE_SCRIPT, PRIORITY_MEDIUM)</code> 构造——mock 要有 <strong>init</strong></li>
+</ul>
+<h3 id="_13">集成<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>network._process_incoming</code> + 4 种新 mtype 分发（interaction/inventory/relationship/object_pos）</li>
+<li><code>sync.mp_sync</code> 自动带起 4 个模块（同 mood 模式）</li>
+<li>命令：<code>mp_intsync</code> / <code>mp_invsync</code> / <code>mp_relsync</code> / <code>mp_buysync</code></li>
+<li><strong>v9.17 字节数 69,194B（13 模块）</strong>；测试 <code>tools/virtual_test_v917.py</code> 25/25；全套 16 套件通过</li>
+</ul>
+<h3 id="_14">真机待验证（最大短板延续）<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<ul>
+<li>交互同步：<code>push_super_affordance</code> 在真实游戏里对端执行是否正常（context 构造、AOP test 通过性）</li>
+<li>背包补物品：<code>create_new_object</code> + <code>player_try_add_object</code> 真实可用性</li>
+<li>关系 bits：STATISTIC instance manager 查 bit 的 guid64 路径</li>
+<li>双机实测优先级：交互同步 &gt; 背包 &gt; 关系 &gt; Buy</li>
+</ul>
+<h2 id="2026-08-05-web-tcpudp-messagepack">十九、第二份架构建议的逐项验证（2026-08-05 web 研究）——四项目分离 / TCP+UDP / MessagePack / 五层模块化<a class="headerlink" href="#2026-08-05-web-tcpudp-messagepack" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>来源：用户提供的第二份架构建议（SimSync.Server/Client/Mod/Launcher 四项目分离 + TCP+UDP 混合 + MessagePack + Event Capture/Networking/Replication/Conflict Resolution/Versioning 五层）。针对"仅供自己和朋友用"场景逐项验证。</p>
+</blockquote>
+<h3 id="1-server">1. 四项目分离（独立 Server）—— 🟢 建议正确但对我们过度设计<a class="headerlink" href="#1-server" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">研究</th>
+<th style="text-align: left;">结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Unity Netcode listen server 文档</td>
+<td style="text-align: left;"><strong>"Listen servers are best suited for a smaller player group (&lt; 12) and games that don't require a persistent world"</strong>——我们正是 &lt;12 朋友场景</td>
+</tr>
+<tr>
+<td style="text-align: left;">Epic/Unreal 论坛</td>
+<td style="text-align: left;">listen server = 免费、玩家电脑当服务器；dedicated 要服务器成本</td>
+</tr>
+<tr>
+<td style="text-align: left;">游戏联机经验（40% 流量案例）</td>
+<td style="text-align: left;"><strong>私人朋友 P2P/房主托管足够</strong>（朋友间不担心主机掉线破坏体验）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>决策</strong></td>
+<td style="text-align: left;">✅ <strong>保持房主托管</strong>——独立服务器要部署/维护/跨网处理，对 2-12 人朋友联机是过度设计。S4MP 用独立服务器是为<strong>公开 12 人</strong>，我们自用不需要</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-tcpudp">2. TCP+UDP 混合 —— 🟡 建议正确但对我们收益低<a class="headerlink" href="#2-tcpudp" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">研究</th>
+<th style="text-align: left;">结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Gaffer (Glenn Fiedler)</td>
+<td style="text-align: left;">UDP 用于位置（可丢包取最新），TCP 用于可靠有序命令——FPS 级需求</td>
+</tr>
+<tr>
+<td style="text-align: left;">pvigier blog</td>
+<td style="text-align: left;"><strong>"Many successful games, such as World of Warcraft, Minecraft or Terraria, use TCP"</strong>——非实时游戏 TCP 完全够用；LAN 下 TCP 延迟几乎无差</td>
+</tr>
+<tr>
+<td style="text-align: left;">gamedev 59703</td>
+<td style="text-align: left;">UDP 用于时间敏感（移动），TCP 用于不敏感（心跳/交易）；取决于游戏类型</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>决策</strong></td>
+<td style="text-align: left;">✅ <strong>保持纯 TCP</strong>——Sims4 是慢节奏模拟（非 FPS），位置 2-5Hz + 阈值过滤后 TCP 延迟无感；UDP 要自己实现可靠性/顺序/重连，复杂度高收益低。已配 TCP_NODELAY + 自适应频率</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-messagepack">3. MessagePack —— 🟡 性能好但换不动<a class="headerlink" href="#3-messagepack" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">研究</th>
+<th style="text-align: left;">结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">MessagePack benchmark</td>
+<td style="text-align: left;">比 JSON 快 ~4x；protobuf 更小但需 IDL；MessagePack 类型系统完整</td>
+</tr>
+<tr>
+<td style="text-align: left;">HN 讨论</td>
+<td style="text-align: left;">protobuf 比 MessagePack 更小但灵活性差；自描述格式 vs 外部 schema</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>决策</strong></td>
+<td style="text-align: left;">✅ <strong>保持 pickle</strong>——我们实测 pickle 2.8x JSON（C 实现，Python 原生最快）；瓶颈是消息频率不是序列化。MessagePack 在 Python 里的收益（相对 pickle）不足以支付协议升级成本。<strong>未来跨语言（C# 服务器）时才考虑</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="4_3">4. 统一数据包格式 —— ✅ 已对齐<a class="headerlink" href="#4_3" title="Permanent link">&para;</a></h3>
+<p>建议 <code>{packet, tick, player, sim, ...}</code> = 我们的 <code>{type, ts, sender_pid, ...}</code>——字段语义完全一致（消息类型/时间戳/发送者/目标）。位置消息带 seq 序号、交互带 affordance+target——<strong>已实现等效协议</strong>。</p>
+<h3 id="5">5. 五层模块化架构 —— ✅ 已天然实现（映射）<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">建议层</th>
+<th style="text-align: left;">我们的实现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Event Capture（事件采集）</td>
+<td style="text-align: left;">10 个监听模块（sync/stats/mood/money/interaction/inventory/relationship/buy/clock/lobby）</td>
+</tr>
+<tr>
+<td style="text-align: left;">Networking（网络层）</td>
+<td style="text-align: left;">network.py（帧协议 + CRC + HMAC + 优先级 + 批处理）</td>
+</tr>
+<tr>
+<td style="text-align: left;">Replication（状态复制）</td>
+<td style="text-align: left;">_process_incoming 分发 + 各模块 process_message 应用</td>
+</tr>
+<tr>
+<td style="text-align: left;">Conflict Resolution（冲突解决）</td>
+<td style="text-align: left;">host 权威 + 迟滞阈值（stats/relationship）+ 回环抑制（interaction）+ 阈值过滤</td>
+</tr>
+<tr>
+<td style="text-align: left;">Versioning（版本兼容）</td>
+<td style="text-align: left;">PROTO_VERSION 协商 + version_mismatch + HMAC 握手</td>
+</tr>
+</tbody>
+</table>
+<h3 id="6">6. 同步频率表 —— ✅ 已对齐（甚至更省）<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
+<p>建议：位置 10Hz / 交互事件 / 需求 1Hz / 金钱变化时。我们：位置 2-5Hz（自适应 + 插值）/ 交互事件驱动 / 需求 8s / 金钱变化阈值——<strong>慢节奏游戏用更低频率 + 插值 = 更省带宽</strong>（Gaffer snapshot interpolation 标准）。</p>
+<h3 id="7-sha256">7. 存档 SHA256 —— ✅ 已实现<a class="headerlink" href="#7-sha256" title="Permanent link">&para;</a></h3>
+<p>host 分发 + SHA256 校验 + 缺块自动重传（v9.4/v9.5）——比建议的"SHA256 检查后下载"更完整。</p>
+<h3 id="_15">总结论<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>这份建议的架构方向我们已实现 90%</strong>（统一数据包 ✅ / 五层模块化 ✅ / 频率设计 ✅ / 存档校验 ✅）</li>
+<li><strong>两个"建议但不必做"</strong>：独立服务器（&lt;12 人朋友场景 listen server 是行业推荐）、TCP+UDP 混合（WoW/Minecraft 纯 TCP 先例）</li>
+<li><strong>真正差距 = 0 项架构级</strong>——剩余都是真机验证（push_super_affordance/背包/关系 API 调用链）</li>
+<li><strong>方法论</strong>：架构建议要对照"目标场景规模"评估——<strong>12 人朋友联机 ≠ 公开 12 人服务器</strong>，行业对这两种场景的推荐截然不同（listen server vs dedicated）</li>
+</ul>
+<h2 id="v918-2026-08-05">二十、v9.18 启动器房间系统（2026-08-05 百轮研究 + 实施）<a class="headerlink" href="#v918-2026-08-05" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>用户设想：房主在启动器创建房间（<strong>不启动游戏</strong>）→ 房间列表显示房主+用户名 → 对端通过房间码/IP 进入 → 显示对端名字 → 全员准备 → 同步存档 → <strong>最后才启动游戏</strong>。所有房间操作在启动器完成。</p>
+</blockquote>
+<h3 id="47">百轮研究（47 查询）关键确认<a class="headerlink" href="#47" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">研究</th>
+<th style="text-align: left;">结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">S4MP 官方流程（simscommunity.info / CurseForge）</td>
+<td style="text-align: left;">"Host → choose save file → Room created + room code → clients join by code → save synced → Everyone's Connected → Start Game → load save" —— <strong>= 用户设想完全一致</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">EOS Lobby/Session 分离</td>
+<td style="text-align: left;"><strong>Lobby = 玩家控制的预游戏聚集（启动器房间），Session = 游戏内</strong> —— 正是"启动器房间 + 游戏"模型</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nakama lobby</td>
+<td style="text-align: left;">READY_OP_CODE + all_ready 检查（全员 ready 才允许开始）</td>
+</tr>
+<tr>
+<td style="text-align: left;">SaveSync（Steam 工具）</td>
+<td style="text-align: left;">co-op 存档先同步后玩（host 分发 + 校验）</td>
+</tr>
+<tr>
+<td style="text-align: left;">房间生命周期</td>
+<td style="text-align: left;">最后玩家离开自动清理（Unity 文档）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="room_protocolpygui">架构：启动器房间层（<code>room_protocol.py</code>，独立于游戏/GUI）<a class="headerlink" href="#room_protocolpygui" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>房主启动器: RoomServer (TCP 7660)  ←── RoomClient 加入者启动器
+    房间阶段: join/ready/members/save_sync/start_game（JSON 行协议）
+    游戏阶段: start_game → 双方写 mod 配置 → 启动游戏 → mod 自动连接 7655
+</code></pre></div>
+
+<ul>
+<li><strong>状态机</strong>：waiting → ready（全员准备）→ syncing（存档同步）→ synced → launching</li>
+<li><strong>协议消息</strong>：join/joined/join_rejected/ready/members/save_sync_start/save_chunk/save_sync_done/start_game/leave</li>
+<li><strong>存档同步</strong>：host 选存档 → base64 分块（64KB）→ SHA256 校验 → client 写 Saves + .bak 备份</li>
+<li><strong>开始游戏</strong>：host 广播 start_game（含 host_ip/game_port）→ 双方写 mod 配置（host/join + IP）→ 启动游戏 → mod auto-apply 连接</li>
+</ul>
+<h3 id="launcherpy">launcher.py 集成<a class="headerlink" href="#launcherpy" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>_launch</code> 分流：host → <code>_create_room()</code>（RoomServer + 房间页，<strong>不启动游戏</strong>）；join → <code>_join_room()</code>（RoomClient）</li>
+<li>连接页新增「玩家名」「房间码」输入框</li>
+<li>房间页优先显示启动器房间状态（<code>_refresh_room_protocol</code>：房间码/成员/准备/状态机），回退 mod 状态文件</li>
+<li>按钮：我准备（_toggle_ready）/ 同步存档(房主)（_sync_save）/ 开始游戏(房主)（_start_game → _start_game_after_room）</li>
+<li>离开房间（_leave_room）清理 server/client + 回连接页</li>
+</ul>
+<h3 id="_16">坑与修复<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>PyInstaller 没自动收集 room_protocol.py</strong>（try/except import 分析失败）→ 手动复制到 <code>dist/启动联机/_internal/</code> + 验证可导入——<strong>打包后必须验证依赖模块在 _internal</strong></li>
+<li><strong>get_host_ip 虚拟网卡</strong>：UDP 探测返回 28.0.0.1（FlClash 代理）→ 改枚举本机 IP 优先 192.168/10/172.16 网段</li>
+<li><strong>测试时序</strong>：存档同步后 client 拼装需要 ~1s，测试 sleep 要给足</li>
+</ul>
+<h3 id="toolsvirtual_test_v918py2323">测试（tools/virtual_test_v918.py，23/23）<a class="headerlink" href="#toolsvirtual_test_v918py2323" title="Permanent link">&para;</a></h3>
+<p>A. 房间码（200 个 6 位无易混淆）· B-E. 真实 TCP 全流程（join/成员/ready/SHA256 存档/start_game/错误码拒绝/断开清理）· H. <strong>100 轮循环压力</strong>（建房-加入-准备-离开 ×100 全成功）</p>
+<h3 id="v918">v9.18 交付<a class="headerlink" href="#v918" title="Permanent link">&para;</a></h3>
+<ul>
+<li>mod 70,774B（13 模块，游戏内同步未变）+ 启动器 v9.18（房间系统）+ room_protocol.py</li>
+<li>分享版 zip 含 room_protocol（手动复制 _internal）+ 新使用说明（房间流程 4 阶段）</li>
+<li><strong>双机验证待做</strong>：两台电脑启动器建房→加入→准备→同步存档→开始游戏→mod 自动连接</li>
+</ul>
+<hr />
+<blockquote>
+<p>🗺️ 属于 [[MOC-Research|🔬 研究笔记]] · [[knowledge-map|🗺️ 知识地图]]</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
