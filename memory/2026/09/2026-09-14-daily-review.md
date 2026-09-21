@@ -33,7 +33,7 @@ type: daily-review
 
 | 项 | 内容 | 耗时 | 状态 |
 |:--|:-----|:----:|:----:|
-| 闲鱼试水决策（**第 43 天**） | 30 秒三选一「试水/放弃/再缓」；k 侧 100% 就绪（素材 20 次核验 + 试水版操作清单 + 运营预案 5 动作待命） | 30s | 🔒 需 sora |
+| 闲鱼试水决策（**第 42 天**） | 30 秒三选一「试水/放弃/再缓」；k 侧 100% 就绪（素材 20 次核验 + 试水版操作清单 + 运营预案 5 动作待命） | 30s | 🔒 需 sora |
 | EasyCLIProxyAPI 启动 | cpa-gui 127.0.0.1:8317 未监听 → 全局主链不可用靠 fallback；启动 `D:\tools\EasyCLIProxyAPI` 或改全局 provider 回 fangzhou-2（health 建议） | 15min | ⏳ k 可做 |
 | api-media-weekly-probe 修复 | 重建 `scripts/api_image_probe.sh` 或改 cron 命令，修后补跑一次探活确认 XAI/FAL/SF 状态（9/13 登记的 9/14 探活硬线因脚本缺失未兑现） | 30min | ⏳ k 可做 |
 

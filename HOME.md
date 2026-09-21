@@ -31,6 +31,7 @@ created: 2026-08-09
 
 ## 📋 项目与日志
 - [[memory/2026/09/2026-09-20-daily-review|📋 每日回顾 09-20]] — 闲鱼高客单 Web 定制 SOP-008 + PPT 扇叶开场 9.8 分 + arXiv 补全速览
+- [[memory/2026/09/2026-09-20-reflection|🔍 反思日记 09-20]] — 闲鱼高客单SOP-008 + PPT扇叶9.8分 + arXiv补全(HTML路由) + assert扩展当场闭环 + 万悟/闲鱼今日双决策
 - [[memory/2026/09/2026-09-17-daily-review|📋 09-17 每日回顾]] — Top5：PMPA记忆投毒防写入落地 / Agent-Tool 8异常 / 闲鱼主图禁词修复第21次核验 / qorl 4B查询计划 / arxiv解冻2151篇；明日：内存99.4%危急 + arxiv-fetch排查 + 闲鱼降频机制
 - [[memory/2026/09/2026-09-18-daily-review|📋 09-18 每日回顾]] — Top5：OverclaimBench完成声明不可信 / 工具幻觉防御前置 / 多智能体越少越好 / health检测器误报第3次根治 / 内存处置分级；明日：13处隐私命中清理(截止9/21) + obsidian-maintenance补跑 + 万悟确认剩7天
 - [[memory/2026/09/2026-09-19-daily-review|📋 09-19 每日回顾]] — Top5：ZCode静默上传实锤(墨题126MB快照待传P0) / 评测元视角 / EconSkills技能库 / Agent4Science / 激活探针；明日：ZCode处置 + 闲鱼第43天周一复盘 + 万悟确认 + fallback收窄
@@ -45,6 +46,7 @@ created: 2026-08-09
 - [[memory/2026/09/2026-09-14-reflection|🔍 反思 09-14]] — 硬线探活产物断言 + skill-link-gate 滑档 + 单一权威源收敛
 - [[memory/2026/09/2026-09-13-reflection|🔍 反思 09-13]] — 十领域批次落盘 + 缺档补位
 - [[memory/2026/09/2026-09-14-daily-review|📋 09-14 每日回顾]] — Top5：arxiv 432 篇新窗口速览 / 文献周报过程级评测 / Fable 破解 370 年密码 / GitHub W38 / Agent 安全标准化；明日：闲鱼决策第 43 天 + cpa-gui 启动 + 探活脚本修复
+- [[memory/2026/09/2026-09-21-vault-suggestion-executor|🧹 09-21 闲鱼专项建议执行报告（周一复盘）]] — 计数权威 42 无漂移(assert 4/4) + 新服务线「网页定制」398-898 待拍板 + 创新大赛 9/25 剩 4 天
 - [[memory/2026/09/2026-09-17-vault-suggestion-executor|🧹 09-17 闲鱼专项建议执行报告]] — 6 张主图 vision 禁词复核：2 张含「最」已修复「人气之选」+ 防复发 + 第 21 次素材核验
 - [[memory/2026/09/2026-09-14-vault-suggestion-executor|🧹 09-14 闲鱼专项建议执行报告]] — 计数 41→42 权威推进(assert PASS) + 双技能计数红线 patch + 今日 3 项优先级
 - [[memory/2026/09/2026-09-15-vault-suggestion-executor|🧹 09-15 闲鱼专项建议执行报告]] — 素材包 4 处「自动化」禁词修复 + 全量复扫 PASS + 今日 3 项优先级

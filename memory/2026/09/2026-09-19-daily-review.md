@@ -33,7 +33,7 @@ type: daily-review
 | 优先级 | 行动项 | 内容 | 耗时 | 状态 |
 |:--:|:-------|:-----|:--:|:----:|
 | 🔴 | **ZCode 安全处置**（需 sora） | 退出 ZCode 登录 → 卸载 ZCode → 删除 `~/.zcode` 剩余快照 → 墨题 git 历史轮换敏感信息（默认工作区已成功上传过，假设已泄露处置） | 15min | ⏳ 待 sora |
-| 🔴 | 闲鱼试水决策（第 43 天，周一 9/21 复盘） | 30 秒三选一（试水/放弃/再缓）；k 侧 100% 就绪（7 图 750×750 第 21 次 PASS），上架 30min 可逆 | 30s | ⏳ 待 sora |
+| 🔴 | 闲鱼试水决策（第 42 天，周一 9/21 复盘） | 30 秒三选一（试水/放弃/再缓）；k 侧 100% 就绪（7 图 750×750 第 21 次 PASS），上架 30min 可逆 | 30s | ⏳ 待 sora |
 | 🔴 | 万悟参赛确认（9/25 12:00 截止） | sora 拍板后 k 当天出《商业计划书/对策方案》初稿；9/21 前未确认 → wsl --shutdown 夜间窗口自动执行 | - | ⏳ 待 sora |
 | 🟡 | fallback 链收窄评估（k 自动） | jiyuanlvdong 系充值 or 永久移出；9/21 前评估 provider 充值优先级（fangzhou 系为主），参考 hermes-provider-matrix 新规则 | 20min | ⏳ k |
 | 🟡 | ZCode 防御可选（若暂不卸载） | `icacls` 锁 `~/.zcode\v2\checkpoints` 阻断写入（等价 ferstar chattr 方案） | 5min | ⏳ 待 sora 决策 |

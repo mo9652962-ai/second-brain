@@ -36,7 +36,7 @@ subject: 2026-09-18
 | 1 | 🔴 13 处隐私命中清理（截止 9/21 巡检前） | ✅ 闭环 | executor 20:00 跑 github_privacy_gate：15 命中清零（4 真实本地路径 → `%USERPROFILE%` + 11 误报白名单/掩码）；重跑 exit 0 零命中；current.md L365 → [x] |
 | 2 | 🟡 health-check skill 补检测规则 | ✅ 闭环 | 9/17 反思当场已 patch（api_image_probe 三处实存勿重复复制 + privacy-gate 命中>0 = P1 待办非 error） |
 | 3 | 🟡 资源类 P0 按副作用分级拆分 | ✅ 闭环 | RAMMap64 -E 已执行；hermes-health-check SKILL.md 新增 Pitfall（9/18 executor 固化）；current.md L366 → [x]；wsl --shutdown 独立归 9/21 万悟决策夜间窗口 |
-| 4 | 🔒 闲鱼试水决策（第 43 天，周一 9/21 复盘） | ❌ 挂起 | 降频机制生效中（每周一复盘，9/21）；state.yaml 权威第 42 天 |
+| 4 | 🔒 闲鱼试水决策（第 42 天，周一 9/21 复盘） | ❌ 挂起 | 降频机制生效中（每周一复盘，9/21）；state.yaml 权威第 42 天 |
 | 5 | 🔒 万悟参赛确认（9/25 12:00 截止，剩 7 天） | ❌ 挂起 | 研究已带官方源验证，确认当天可出《商业计划书》初稿 |
 | 6 | 🔒 生图三路径修复 | ❌ 挂起 | XAI key 重生成 / FAL 充值 / SF 充值，均需 sora |
 | 7 | 🔒 skill 合并授权 | ❌ 挂起 | 6 组重复 + apple/ 孤儿，需 sora 确认 |
@@ -80,7 +80,7 @@ subject: 2026-09-18
 | 优先级 | 行动项 | 负责人 | 说明 |
 |:--:|:-------|:--:|:-----|
 | 🔴 | 万悟参赛确认（9/25 12:00 截止，剩 7 天；9/21 前未确认 → wsl --shutdown 夜间窗口自动执行） | sora / k | 确认后 k 当天出《商业计划书/对策方案》初稿；镜像 21/25 已拉完 |
-| 🔴 | 闲鱼试水决策（周一 9/21 复盘，第 43 天） | sora | 30 秒三选一；k 侧 100% 就绪，上架 30min 可逆 |
+| 🔴 | 闲鱼试水决策（周一 9/21 复盘，第 42 天） | sora | 30 秒三选一；k 侧 100% 就绪，上架 30min 可逆 |
 | 🟡 | 生图三路径修复 | sora | XAI key 重生成 / FAL 充值 / SF 充值 |
 | 🟡 | skill 合并授权 | sora | 6 组重复 + apple/ 孤儿 |
 | 🟡 | fallback 链收窄评估：jiyuanlvdong 系充值 or 永久移出（连续 402 已导致 obsidian-maintenance 失败） | k（自动） | 9/21 前评估一次 provider 充值优先级，参考 hermes-provider-matrix「fallback 链健康度管理」新规则 |

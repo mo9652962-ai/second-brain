@@ -33,7 +33,7 @@ subject: 2026-09-14
 
 | # | 行动项 | 状态 | 证据 |
 |:-:|:-------|:----:|:-----|
-| 1 | 🔴 闲鱼试水决策（第 42 天，硬线到达；k 默认执行合规改造子集 + 素材降频 7 天一核） | ⚠️ 部分闭环 | 计数机制 ✅：state.yaml 41→42 权威推进（唯一写方+assert PASS，current.md 9 处同步）+ 素材第 20 次核验 PASS + 降频 7 天一核生效；决策本体 ❌ 仍悬置（sora 未拍板，第 43 天进行中）；合规改造子集已内置 xianyu-monetization v1.2.0（current.md 9/14 区确认无额外 k 侧执行项） |
+| 1 | 🔴 闲鱼试水决策（第 42 天，硬线到达；k 默认执行合规改造子集 + 素材降频 7 天一核） | ⚠️ 部分闭环 | 计数机制 ✅：state.yaml 41→42 权威推进（唯一写方+assert PASS，current.md 9 处同步）+ 素材第 20 次核验 PASS + 降频 7 天一核生效；决策本体 ❌ 仍悬置（sora 未拍板，第 42 天进行中）；合规改造子集已内置 xianyu-monetization v1.2.0（current.md 9/14 区确认无额外 k 侧执行项） |
 | 2 | 🔴 生图三路径修复（**9/14 10:15 探活硬线**） | ❌ **硬线落空** | 9/14 无 api-probe 报告（memory 仅 09-08 / 09-15 两期）→ 探活静默失败；health 15:45 报「scripts/api_image_probe.sh 不存在」，但 9/15 实测脚本在盘（4820B，9/8 创建，git d6baa2c 跟踪）且可运行 → 诊断失真；跑通后才暴露真问题：XAI/FAL/SiliconFlow 三路媒体 API 全 000 |
 | 3 | 🔴 FlClash 代理重启（ERR-20260818-001） | ❌ 仍 OPEN | 连续 6+ 次 cron 高亮（8/18→9/14），唯一物理层阻塞点，需 sora 物理机 |
 | 4 | 🟡 skill-link-gate 检测器修复（references/research 误报 + 占位符规则） | ❌ 未执行 | 9/15 daily-review 仍列 P1；daily-todo-executor 9/14 扫 114 文件 402 命中、执行 16 项，该项未动（根因见改进点 2） |
@@ -89,7 +89,7 @@ subject: 2026-09-14
 | 🟡 | skill-link-gate 检测器修复（references/research 误报 + 占位符规则）| k | 截止 9/17；连续 3 轮滑档，已落 current.md - [ ] 执行面 |
 | 🟡 | 任务状态单一权威源收敛（state.yaml/TASKS 表）| k | 截止 9/20；跨 cron 状态口径冲突根治 |
 | ✅ | assert_state_consistency.py 补 MEMORY.md 检查 | k（已闭环）| 当场落地，实测 4/4 PASS |
-| 🔒 | 闲鱼试水决策（第 43 天）+ FlClash 重启 | sora | 30 秒三选一 + 物理机重启 |
+| 🔒 | 闲鱼试水决策（第 42 天）+ FlClash 重启 | sora | 30 秒三选一 + 物理机重启 |
 
 ---
 _生成: daily-reflection cron · k (Hermes) · 2026-09-15_

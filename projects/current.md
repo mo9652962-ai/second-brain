@@ -431,6 +431,18 @@ updated: 2026-09-14
 - [ ] 🔒 万悟参赛确认（9/25 12:00 截止，剩 6 天）→ sora 拍板后 k 当天出《商业计划书/对策方案》初稿；9/21 前未确认 → wsl --shutdown 夜间窗口自动执行（镜像 21/25 已拉完）
 - [ ] 🔒 闲鱼试水决策（第 42 天，周一 9/21 复盘，state.yaml 权威）→ 30 秒三选一（试水/放弃/再缓）；k 侧 100% 就绪，上架 30min 可逆
 
+### 🧭 9/20 反思行动项（daily-reflection 复盘 9-20，执行者必读）
+
+- [x] 🟡 assert_state_consistency.py 扩展扫描 reflection/daily-review 天数残留 → ✅ **2026-09-21 反思当场闭环**：新增「表格行动项行+闲鱼上下文」扫描（行首 `|` + 含「闲鱼」+「第N天」；叙述/机制引用不判防假阳性；文件名日期 < state.yaml updated_at 不判）；实测修复 09-14/17/18/19 五份文件 7 行历史残留天数 → 第 42 天 + 断言全 PASS
+- [x] 🟢 AI 工具（Codex/dsh/WorkBuddy 反代）安装前安全基线首轮快扫 → ✅ **2026-09-21 反思当场闭环**：无 ZCode 式静默上传特征（无 pending/ 加密快照、无 aliyun/OSS 外传端点）；dsh/codex 命中均为注释与插件元数据
+- [ ] 🟡 daily-health-check 429 失败降级实现落地（pitfall 规则已固化 hermes-health-check，实现未落）→ **硬截止 9/24**；与 8/8 登记的「health 产物 stat 检查」P1 合并推进；executor 09-20 已加 config.yaml 可解析检查为前置
+- [ ] 🔒 万悟参赛确认（今日 9/21 最后确认日，9/25 12:00 截止）→ 9/21 前未确认 → wsl --shutdown 夜间窗口自动执行；确认后 k 当天出《商业计划书》初稿
+- [ ] 🔒 闲鱼试水决策（今日 9/21 复盘日，state.yaml 权威第 42 天）→ 30 秒三选一；新增 SOP-008 高客单 Web 定制选项，上架文案现成约 30min
+- [ ] 🔒 ZCode 卸载链：sora 前三步（退出登录→卸载→删 ~/.zcode）；git 历史轮换 k 代做
+- [ ] 🔒 生图三路径修复（9/21 10:15 api-media-weekly-probe 探活首验后定性）
+- [ ] 🔒 skill 合并授权（6 组重复 + apple 孤儿，破坏性）
+- [ ] 🔒 卡片 cron 排程授权（后移 22:00+，改 jobs.json）
+
 ## 🔗 相关领域
 - [[AI-Agent]] — 基础设施与能力架构
 - [[PPT-Design]] — PPT 制作方法论
@@ -440,7 +452,7 @@ updated: 2026-09-14
 
 ---
 
-_由 k (Hermes) 在每次会话结束时更新 | 最后更新: 2026-09-20 (daily-todo-executor 9/20：L420/L421 去重 → L432/L431 承接；新增 config.yaml 检查落地记录)_
+_由 k (Hermes) 在每次会话结束时更新 | 最后更新: 2026-09-21 (daily-reflection 9/21：登记 9/20 反思行动项 9 条 + assert 扩展/安全基线当场闭环；闲鱼权威第 42 天未变)_
 
 ---
 
