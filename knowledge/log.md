@@ -239,3 +239,13 @@ tags: [meta, vault-maintenance]
 
 - 过期硬约束 0 / 待运行时验证 37 / 历史记录 352
 - 处理原则：只报告不自动修；事实源见 knowledge/META/current-environment.md
+
+## [2026-09-21] lint | 标签一致性统一 + 例行体检（cron）
+
+- 标签大小写规范化 20 文件 / 24 token：AI-agent→ai-agent、CLI→cli、Codex→codex、GitHub→github、Go→go、MCP→mcp、RL→rl、UI→ui、行内 #vibecoding→#vibe-coding
+- 规范形式 = 全小写（对齐库内 dominant 约定：github 33+6、mcp 3+8、codex 2+4、rl 3+2 合并后）；前例：9/20 AI→ai
+- 新增脚本：`META/scripts/tag-lint.py`（只读标签扫描）+ `tag-fix.py`（幂等规范化，dry-run/--apply，保留 CRLF）；删除误报脚本 tag-lint-locate.py
+- 误报记录（fixer 精确跳过，非标签）：抖音引文 `#UI设计`、微信话题 `#vibecoding大赏`
+- 新页挂载 2：hackernews-2026-09-21 → MOC-Daily + MOC-Research；arxiv-2026-09-21-agent-llm → MOC-Research
+- 验证：Broken 0 / Missing frontmatter 0 / Short pages 0 / Stale 0；Orphan 剩 1（考研路线图=gitignore 隐私文件，预期孤立）；README 重名 1 组低风险保留
+- 工具坑沉淀：Path.read_text 文本模式把 CRLF→LF 导致误判换行——脚本须 open(newline="") 读、write_bytes 写，幂等验证 0 changes

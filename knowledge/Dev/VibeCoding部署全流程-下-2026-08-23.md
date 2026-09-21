@@ -1,5 +1,5 @@
 ---
-tags: [vibecoding, 部署, 运维, security, 研究笔记, 2026-08]
+tags: [vibe-coding, 部署, 运维, security, 研究笔记, 2026-08]
 domain: Development
 status: fresh
 date: 2026-08-23

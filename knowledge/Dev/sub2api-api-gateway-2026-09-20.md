@@ -1,5 +1,5 @@
 ---
-tags: [GitHub, W39, API网关, 订阅分发, 中转站, Go, 变现]
+tags: [github, W39, API网关, 订阅分发, 中转站, go, 变现]
 aliases: [Sub2API, sub2api]
 date: 2026-09-20
 source: https://github.com/Wei-Shaw/sub2api

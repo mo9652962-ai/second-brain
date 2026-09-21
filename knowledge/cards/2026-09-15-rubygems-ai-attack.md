@@ -1,7 +1,7 @@
 ---
 aliases:
   - 2026-09-15-card-rubygems-ai-attack
-tags: [knowledge-card, 供应链安全, AI-agent, RubyGems]
+tags: [knowledge-card, 供应链安全, ai-agent, RubyGems]
 created: 2026-09-15
 source: "[[knowledge/Daily/hackernews-2026-09-15]]"
 status: fresh---

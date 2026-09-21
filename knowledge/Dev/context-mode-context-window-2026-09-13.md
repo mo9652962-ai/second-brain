@@ -1,5 +1,5 @@
 ---
-tags: [dev, context-window, MCP, agent, 上下文优化, github-trending, W38]
+tags: [dev, context-window, mcp, agent, 上下文优化, github-trending, W38]
 aliases: [context-mode, Context Mode, 上下文沙箱]
 date: 2026-09-13
 source: https://github.com/mksglu/context-mode

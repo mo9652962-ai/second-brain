@@ -1,5 +1,5 @@
 ---
-tags: [GitHub, W39, 代码审查, 阿里, Codex, CLI, 质量门禁]
+tags: [github, W39, 代码审查, 阿里, codex, cli, 质量门禁]
 aliases: [open-code-review, OCR, Alibaba OCR]
 date: 2026-09-20
 source: https://github.com/alibaba/open-code-review

@@ -1,5 +1,5 @@
 ---
-tags: [GitHub, W39, ClaudeCode, 编码规范, Karpathy, 提示词工程, Codex]
+tags: [github, W39, ClaudeCode, 编码规范, Karpathy, 提示词工程, codex]
 aliases: [andrej-karpathy-skills, karpathy-guidelines, Karpathy 编码四原则]
 date: 2026-09-20
 source: https://github.com/multica-ai/andrej-karpathy-skills

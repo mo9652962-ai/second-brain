@@ -1,5 +1,5 @@
 ---
-tags: [GitHub, W39, 安全, AI红队, MCP安全, Skills扫描, Agent安全, 腾讯]
+tags: [github, W39, 安全, AI红队, MCP安全, Skills扫描, Agent安全, 腾讯]
 aliases: [AI-Infra-Guard, AIG, AI基础设施守卫]
 date: 2026-09-20
 source: https://github.com/Tencent/AI-Infra-Guard

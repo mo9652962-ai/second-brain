@@ -45,6 +45,7 @@ updated: 2026-09-20
 - [[knowledge/Daily/hackernews-2026-09-18|Hacker News 今日精选 — 2026-09-18]]
 - [[knowledge/Daily/hackernews-2026-09-19|Hacker News 今日精选 — 2026-09-19]]
 - [[knowledge/Daily/hackernews-2026-09-20|Hacker News 今日精选 — 2026-09-20]]
+- [[knowledge/Daily/hackernews-2026-09-21|Hacker News 今日精选 — 2026-09-21]]
 
 ## 每日产出研究
 

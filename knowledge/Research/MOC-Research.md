@@ -22,6 +22,7 @@ updated: 2026-09-20
 - [[genoffice-ai-office-suite-20260918]] — 全球首个全功能开源 AI Office 套件（Codex 直出真实 .docx/.xlsx/.pptx）
 - [[wemux-ai-agent-platform-20260918]] — 自托管 AI Agent 协作平台（Worker-first 执行）
 - [[arxiv-2026-09-19-agent-llm]] — 09-19 arXiv AI Agent/LLM 速览
+- [[arxiv-2026-09-21-agent-llm]] — 09-21 arXiv AI Agent/LLM 速览
 
 ## 🆕 W34 新增补链（2026-08-16 周度整理）
 
@@ -149,6 +150,7 @@ updated: 2026-09-20
 - [[knowledge/Daily/hackernews-2026-09-18|HN 09-18]] · [[knowledge/cards/2026-09-18-overclaimbench|知识卡片 09-18]]
 - [[knowledge/Daily/hackernews-2026-09-19|HN 09-19]]
 - [[knowledge/Daily/hackernews-2026-09-20|HN 09-20]] — 今日精选 · [[knowledge/cards/2026-09-19-zcode-silent-upload|知识卡片 09-19]]
+- [[knowledge/Daily/hackernews-2026-09-21|HN 09-21]] — 今日精选
 - [[knowledge/SOP/SOP-008-xianyu-vibe-coding-website|SOP-008 闲鱼 Web 定制 09-20]] · [[knowledge/cards/2026-09-20-xianyu-web-portfolio-sop|知识卡片 09-20]]
 - [[knowledge/Dev/Devin-Cognition-评估-2026-09-20|Devin/Cognition 评估 09-20]] · [[knowledge/cards/2026-09-21-devin-cognition-eval|知识卡片 09-21]]
 ## 文章研读

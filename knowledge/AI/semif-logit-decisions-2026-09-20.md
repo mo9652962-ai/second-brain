@@ -1,5 +1,5 @@
 ---
-tags: [GitHub, W39, ai, logits, 决策, 语义if, 本地推理, 方法论]
+tags: [github, W39, ai, logits, 决策, 语义if, 本地推理, 方法论]
 aliases: [SemIf, OpenJev, semantic if]
 date: 2026-09-20
 source: https://github.com/TheoLeeCJ/SemIf

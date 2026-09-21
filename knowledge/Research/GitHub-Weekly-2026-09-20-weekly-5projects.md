@@ -1,5 +1,5 @@
 ---
-tags: [GitHub, 周报, W39, weekly]
+tags: [github, 周报, W39, weekly]
 date: 2026-09-20
 source: trending+web_search 综合
 ---
