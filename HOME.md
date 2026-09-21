@@ -14,6 +14,7 @@ created: 2026-08-09
 ## 🗺️ 总索引
 
 - [[knowledge-map|🗺️ 知识地图]] — 所有知识领域的总索引
+- [[memory/MOC-Memory|🧠 Memory 索引]] — 日记/周报/reflection/dreaming 入口
 - [[README|📖 README]] — 仓库说明与快速上手
 
 ## 📚 知识域 MOC（每域一个锚点）
