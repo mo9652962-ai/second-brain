@@ -1,0 +1,26 @@
+# Git attributes — 行尾统一 + 二进制声明
+* text=auto
+
+# 源码/文档统一 LF
+*.py text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.json text eol=lf
+*.sh text eol=lf
+*.ps1 text eol=lf
+*.toml text eol=lf
+
+# 二进制不转换
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.gif binary
+*.stl binary
+*.step binary
+*.pptx binary
+*.pdf binary
+
+# git 合并差异语言
+*.py linguist-language=Python

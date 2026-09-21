@@ -1,0 +1,19 @@
+# EditorConfig — 统一跨编辑器缩进与行尾（本仓库 md 用 LF，Windows 编辑器自动适配）
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.{py,sh,ps1,yml,yaml,json}]
+indent_style = space
+indent_size = 4
+
+[*.{md,markdown}]
+trim_trailing_whitespace = false
+
+[*.md]
+indent_style = space
+indent_size = 2
