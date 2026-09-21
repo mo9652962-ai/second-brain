@@ -37,7 +37,11 @@ except Exception:
 # 只扫文本类（跳过二进制大文件）
 TEXT_EXT = {'.md', '.py', '.sh', '.ps1', '.yml', '.yaml', '.json', '.txt', '.toml', '.html', '.css', '.js', '.ts'}
 hits = []
+SELF = str(WS / 'scripts' / 'check-repo-privacy.py')
 for f in tracked:
+    # 排除脚本自身（BUILTIN 基线含敏感词样本，不能被自己扫出）
+    if os.path.abspath(f) == SELF or f.replace('\\', '/').endswith('scripts/check-repo-privacy.py'):
+        continue
     ext = os.path.splitext(f)[1].lower()
     if ext not in TEXT_EXT:
         continue
