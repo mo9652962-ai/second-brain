@@ -1,11 +1,22 @@
-name: Deploy MkDocs to GitHub Pages
+name: Deploy site (landing + knowledge base)
+
+# 部署结构（GitHub Pages）：
+#   /       → 官网落地页（docs-site/，手写静态站）
+#   /kb/    → MkDocs 知识库文档站（全库 tracked *.md 组装后构建）
+#
+# 修复记录（2026-09-21）：
+#   旧配置未设 docs_dir，MkDocs 默认读取 docs/（仅 3 个文件），
+#   nav 中 20 个条目全部「not found」→ 线上实际只有 2 个页面且无根 index.html。
+#   现改为：用 git ls-files 组装全库 md → MKDOCS_DOCS_DIR 传入 → 构建 1044 页。
 
 on:
   push:
-    branches:
-      - main
-      - dev
-
+    branches: [main, dev]
+    paths:
+      - "docs-site/**"
+      - "**/*.md"
+      - "mkdocs.yml"
+      - ".github/workflows/deploy-docs.yml"
   workflow_dispatch:
 
 permissions:
@@ -27,29 +38,56 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: 3.x
+          python-version: "3.12"
 
       - name: Install MkDocs Material
         run: pip install mkdocs-material
 
-      - name: Build documentation
+      # ── 1. 组装知识库源目录（全库 tracked *.md）──────────────
+      - name: Assemble docs sources
         run: |
-          # 创建临时 docs 目录
-          mkdir -p temp_docs
-          
-          # 复制所有 markdown 文件
-          find . -name "*.md" -not -path "./temp_docs/*" -not -path "./.git/*" | while read f; do
-            mkdir -p "temp_docs/$(dirname "$f")"
-            cp "$f" "temp_docs/$f"
+          set -euo pipefail
+          rm -rf .build-docs
+          mkdir -p .build-docs/docs .build-docs/site
+          git ls-files '*.md' | while IFS= read -r f; do
+            mkdir -p ".build-docs/docs/$(dirname "$f")"
+            cp "$f" ".build-docs/docs/$f"
           done
-          
-          # 使用临时 docs 目录构建
-          mkdocs build --config-file mkdocs.yml --site-dir ./site
+          echo "assembled md files: $(find .build-docs/docs -name '*.md' | wc -l)"
+
+      # ── 2. 构建知识库文档站 → /kb/ ───────────────────────────
+      - name: Build knowledge base
         env:
-          CI: true
+          MKDOCS_DOCS_DIR: .build-docs/docs
+        run: |
+          set -euo pipefail
+          mkdocs build --config-file mkdocs.yml --site-dir .build-docs/site
+          test -f .build-docs/site/index.html
+          echo "kb pages: $(find .build-docs/site -name '*.html' | wc -l)"
+
+      # ── 3. 组装最终站点：官网在根 + 知识库在 /kb/ ────────────
+      - name: Assemble final site
+        run: |
+          set -euo pipefail
+          rm -rf _site
+          mkdir -p _site
+          cp -R docs-site/. _site/
+          mkdir -p _site/kb
+          cp -R .build-docs/site/. _site/kb/
+          test -f _site/index.html
+          test -f _site/kb/index.html
+          touch _site/.nojekyll
+          echo "final: $(find _site -name '*.html' | wc -l) html files"
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./site
+          publish_dir: ./_site
+          publish_branch: gh-pages
+          keep_files: false

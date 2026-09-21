@@ -1,8 +1,18 @@
-# MkDocs 配置文件
+# MkDocs 配置文件 — Second Brain 知识库文档站
+#
+# 部署结构（GitHub Pages）：
+#   /            → 官网落地页（docs-site/）
+#   /kb/         → 本配置构建的知识库文档站
+#
+# docs_dir 默认指向 docs/（只有 3 个文件），会导致 nav 里绝大多数条目
+# 「找不到文件」→ 站点实际只有 2 个页面。CI 通过 MKDOCS_DOCS_DIR 传入
+# 组装好的目录（全库 tracked *.md），本地开发可自行指定。
 site_name: Second Brain 知识库
 site_description: AI Agent 第二大脑 | Hermes 七大自举系统 | 硬件/PCB/单片机全链路知识库 | 学术写作工作流 | 全中文 Obsidian 知识库
 site_author: mo9652962
-site_url: https://mo9652962-ai.github.io/second-brain/
+site_url: https://mo9652962-ai.github.io/second-brain/kb/
+
+docs_dir: !ENV [MKDOCS_DOCS_DIR, docs]
 
 # 主题配置
 theme:
@@ -11,15 +21,15 @@ theme:
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo
-      accent: indigo
+      primary: deep purple
+      accent: cyan
       toggle:
         icon: material/brightness-7
         name: 切换到深色模式
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: indigo
-      accent: indigo
+      primary: deep purple
+      accent: cyan
       toggle:
         icon: material/brightness-4
         name: 切换到浅色模式
@@ -27,41 +37,97 @@ theme:
     - navigation.tabs
     - navigation.sections
     - navigation.top
+    - navigation.indexes
     - search.suggest
     - search.highlight
     - toc.integrate
 
 # 插件
 plugins:
-  - search
+  - search:
+      lang: [zh, en]
 
 # Markdown 扩展
 markdown_extensions:
   - admonition
+  - attr_list
+  - md_in_html
   - codehilite
+  - tables
   - toc:
       permalink: true
 
-# 页面导航
+# 页面导航（每一项都对应仓库中真实存在的文件）
 nav:
-  - 首页: README.md
+  - 🏠 总入口:
+    - README 仓库说明: README.md
+    - HOME 知识中枢: HOME.md
+    - 全库索引: INDEX.md
+    - 知识地图: knowledge/knowledge-map.md
+    - 健康看板: knowledge/DASHBOARD.md
+    - 机器可读索引: knowledge/VAULT-MAP.md
+    - 跨域关联: knowledge/Cross-Domain.md
+
   - 🤖 Hermes 自举系统:
+    - 交互自举: skills/hermes/hermes-workflow-preferences.md
+    - 可靠性自举: skills/hermes/hermes-automation-patterns.md
+    - 知识自举: skills/hermes/daily-knowledge-absorption-gate.md
     - 工具调用自举: skills/hermes/tool-call-bootstrapping.md
     - 代码质量自举: skills/hermes/code-quality-bootstrapping.md
     - 输出风格自举: skills/hermes/output-style-bootstrapping.md
     - 上下文管理自举: skills/hermes/context-management-bootstrapping.md
+    - GitHub 仓库优化: skills/hermes/github-repo-optimization.md
     - GitHub SEO 优化: skills/hermes/github-seo-optimization-2026.md
+
   - 🔧 硬件工程:
     - PCB 设计自动化: skills/hardware/PCB-Design-Automation-2026.md
     - CAD 设计完整指南: skills/hardware/CAD-Design-Complete-Guide-v2.0.md
     - 单片机与边缘 AI: skills/hardware/Microcontroller-Edge-AI-2026.md
     - 硬件创业与开源生态: skills/hardware/Hardware-Startup-Open-Source-Ecosystem.md
+    - CAD 设计大师（技能集）: skills/cad-design-master/SKILL.md
+    - 8051 嵌入式开发: skills/8051-embedded-dev/SKILL.md
+
   - 🧠 AI / MLOps:
     - MLOps & LLM 训练流水线: skills/ai/mlops-llm-training-pipeline.md
+
+  - 💻 Web / 平台:
+    - 现代 Web 开发 2026: skills/web/Modern-Web-Development-2026.md
+    - 平台开发 2026: skills/platform/Platform-Development-2026.md
+
   - 📱 移动端 & 安全:
     - 跨平台移动端开发: skills/dev/cross-platform-mobile-development-2026.md
-    - CTF 网络安全入门: skills/dev/ctf-cybersecurity-roadmap.md
-  - 📚 通用知识:
+    - CTF 网络安全路线: skills/dev/ctf-cybersecurity-roadmap.md
+
+  - 📚 通用参考:
     - 知识域扩展路线图: skills/general/knowledge-domain-roadmap.md
     - 社区最佳实践索引: skills/general/community-best-practices-index.md
-    - 中英双语术语对照表: skills/general/bilingual-terminology-index.md
+    - 中英双语术语表: skills/general/bilingual-terminology-index.md
+    - 工程工作流: skills/engineering-workflow/SKILL.md
+
+  - 🗺️ 知识域 MOC:
+    - 研究 Research: knowledge/Research/MOC-Research.md
+    - 开发 Dev: knowledge/Dev/MOC-Dev.md
+    - 生产力 Productivity: knowledge/Productivity/MOC-Productivity.md
+    - 安全 Security: knowledge/Security/MOC-Security.md
+    - 知识卡 cards: knowledge/cards/MOC-cards.md
+    - 日常 Daily: knowledge/Daily/MOC-Daily.md
+    - 硬件 Hardware: knowledge/Hardware/MOC-Hardware.md
+    - AI: knowledge/AI/MOC-AI.md
+    - 金融 Finance: knowledge/Finance/MOC-Finance.md
+    - 归档 Archive: knowledge/Archive/MOC-Archive.md
+    - 内容 Content: knowledge/Content/MOC-Content.md
+    - SOP: knowledge/SOP/MOC-SOP.md
+    - 元信息 META: knowledge/META/MOC-META.md
+    - 创意 Creative: knowledge/Creative/MOC-Creative.md
+    - 游戏 gaming: knowledge/gaming/MOC-gaming.md
+    - 产品 Product: knowledge/Product/MOC-Product.md
+    - 项目 Projects: knowledge/Projects/MOC-Projects.md
+    - 教育 Education: knowledge/Education/MOC-Education.md
+
+  - 📦 项目与治理:
+    - 当前项目: projects/current.md
+    - 概念索引: concepts/MOC-Concepts.md
+    - 记忆索引: memory/MOC-Memory.md
+    - 健康索引: health/MOC-Health.md
+    - 待整理箱: knowledge/MOC-Inbox.md
+    - 重复审查: knowledge/MOC-Duplicate-Review.md
