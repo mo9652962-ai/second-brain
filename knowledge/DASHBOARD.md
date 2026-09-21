@@ -20,7 +20,7 @@ tags: [meta/dashboard, knowledge/governance, health]
 - **断裂链接**：57
 - **孤立页面**：61
 - **MOC 锚点**：21
-- **7 天更新**：412 篇 · **30 天更新**：1020 篇
+- **7 天更新**：400 篇 · **30 天更新**：881 篇
 
 ## ⚠️ 断链 TOP10
 
@@ -54,13 +54,13 @@ tags: [meta/dashboard, knowledge/governance, health]
 
 | 顶层 | 30 天更新 |
 |:---|---:|
-| `knowledge/` | 677 |
-| `memory/` | 280 |
-| `skills/` | 16 |
-| `projects/` | 10 |
+| `knowledge/` | 590 |
+| `memory/` | 249 |
+| `skills/` | 12 |
 | `claude/` | 4 |
 | `codebuddy/` | 4 |
 | `templates/` | 4 |
 | `outputs/` | 3 |
+| `learnings/` | 2 |
 
 > 🗺️ 属于 [[HOME|🏠 Home]] · 维护：每周一 CI 全量健康检查 + 每日 auto-sync

@@ -58,9 +58,29 @@ for p in all_md:
 know = [p for p in all_md if top_dir(p) == 'knowledge']
 by_domain = Counter(str(p.parent).replace('\\', '/').replace('knowledge/', '', 1).split('/')[0] for p in know)
 
-# 最近更新（7 天 / 30 天）
-recent7 = [p for p in all_md if (now - datetime.fromtimestamp(p.stat().st_mtime)) <= timedelta(days=7)]
-recent30 = [p for p in all_md if (now - datetime.fromtimestamp(p.stat().st_mtime)) <= timedelta(days=30)]
+# 最近更新（基于 git 提交时间，而非文件 mtime——CI checkout 会把 mtime 全部刷新导致失真）
+try:
+    _log = subprocess.run(['git', 'log', '--name-only', '--pretty=format:%ct'],
+                          capture_output=True, text=True, check=True).stdout
+    _last_commit = {}
+    _cur = None
+    for _line in _log.splitlines():
+        if _line.strip().isdigit():
+            _cur = int(_line.strip())
+        elif _cur and _line.strip():
+            _last_commit.setdefault(_line.strip(), _cur)
+except Exception:
+    _last_commit = {}
+def last_change(p):
+    ts = _last_commit.get(str(p).replace('\\', '/'))
+    if ts:
+        return datetime.fromtimestamp(ts)
+    try:
+        return datetime.fromtimestamp(p.stat().st_mtime)
+    except Exception:
+        return now
+recent7 = [p for p in all_md if (now - last_change(p)) <= timedelta(days=7)]
+recent30 = [p for p in all_md if (now - last_change(p)) <= timedelta(days=30)]
 
 # MOC 清单（只列 knowledge/ 域内真实存在的，全路径链接避免子目录歧义）
 mocs = sorted(p for p in all_md if top_dir(p) == 'knowledge' and p.stem.startswith('MOC-'))
