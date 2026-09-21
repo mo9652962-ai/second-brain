@@ -12,13 +12,14 @@ os.chdir(WS)
 IGNORE_DIRS = {'.git', '.obsidian', 'node_modules', '.hermes', '.venv', '.pytest_cache'}
 SCAN_DIRS = ['knowledge', 'memory', 'skills', 'concepts', 'docs', 'projects']
 
-# ---------- 收集 ----------
-all_md = []
-for root, dirs, files in os.walk('.'):
-    dirs[:] = [d for d in dirs if d not in IGNORE_DIRS and (d == '.archive' or not d.startswith('.'))]
-    for f in files:
-        if f.endswith('.md'):
-            all_md.append(pathlib.Path(root) / f)
+# ---------- 收集（只统计 tracked 文件：公开索引口径 = CI 口径，不含本地私有/第三方 untracked） ----------
+import subprocess
+try:
+    tracked = subprocess.run(['git', '-c', 'core.quotePath=false', 'ls-files', '*.md'],
+                             capture_output=True, text=True, check=True).stdout.splitlines()
+except Exception:
+    tracked = []
+all_md = [pathlib.Path(f) for f in tracked if pathlib.Path(f).suffix == '.md']
 
 def top_dir(p):
     parts = str(p).replace('\\', '/').lstrip('./').split('/')

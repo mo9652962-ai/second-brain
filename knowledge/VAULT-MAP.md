@@ -18,40 +18,39 @@ tags: [meta/index, knowledge/governance, ai/navigation]
 
 | 顶层 | md 数 |
 |:---|---:|
-| `knowledge/` | 678 |
+| `knowledge/` | 677 |
 | `memory/` | 318 |
-| `skills/` | 131 |
+| `skills/` | 30 |
 | `projects/` | 10 |
 | `templates/` | 7 |
 | `portfolio/` | 5 |
+| `claude/` | 4 |
+| `codebuddy/` | 4 |
 | `pipelines/` | 4 |
+| `learnings/` | 3 |
 | `outputs/` | 3 |
 | `playbooks/` | 3 |
+| `github/` | 2 |
 | `concepts/` | 2 |
 | `docs/` | 2 |
 | `health/` | 2 |
-| `AGENTS.md/` | 1 |
 | `CHANGELOG.md/` | 1 |
 | `CODE_OF_CONDUCT.md/` | 1 |
 | `CONTRIBUTING.md/` | 1 |
-| `DREAMS.md/` | 1 |
-| `HEARTBEAT.md/` | 1 |
 | `HOME.md/` | 1 |
 | `IDENTITY.md/` | 1 |
 | `INDEX.md/` | 1 |
 | `MEMORY.md/` | 1 |
+| `META/` | 1 |
 | `README.md/` | 1 |
 | `SECURITY.md/` | 1 |
 | `SOUL.md/` | 1 |
 | `SUPPORT.md/` | 1 |
 | `TOOLS.md/` | 1 |
 | `USER.md/` | 1 |
-| `graphify-out/` | 1 |
-| `META/` | 1 |
 | `scripts/` | 1 |
 | `system/` | 1 |
 | `todo/` | 1 |
-| `traces/` | 1 |
 
 ## 知识域分布（knowledge/）
 
@@ -73,9 +72,9 @@ tags: [meta/index, knowledge/governance, ai/navigation]
 | knowledge | 8 |
 | Creative | 6 |
 | gaming | 4 |
-| Education | 2 |
 | Product | 2 |
 | Projects | 2 |
+| Education | 1 |
 
 ## MOC 锚点
 
