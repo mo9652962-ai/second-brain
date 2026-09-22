@@ -65,6 +65,13 @@ body {
 .aurora {
   position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
 }
+
+/* ── 全景 3D 纵深星空与神经元背景画布 ───────────────── */
+.webgl-bg {
+  position: fixed; inset: 0; width: 100vw; height: 100vh;
+  z-index: 0; pointer-events: none; opacity: .88;
+}
+html[data-theme="light"] .webgl-bg { opacity: .42; }
 .aurora span {
   position: absolute; border-radius: 50%; filter: blur(90px); opacity: .5;
 }
@@ -279,13 +286,30 @@ canvas[data-graph]:focus-visible { outline: 2px solid var(--cyan); outline-offse
   display: flex; align-items: center; justify-content: space-between; gap: 1rem;
   padding: .85rem .5rem .25rem; font-size: .74rem; color: var(--muted);
 }
+.stage-actions {
+  display: flex; align-items: center; gap: .45rem;
+}
 .chip-btn {
   font-family: var(--mono); font-size: .6rem; letter-spacing: .12em; text-transform: uppercase;
   padding: .35rem .7rem; border: 1px solid var(--line-2); border-radius: 999px;
   background: transparent; color: var(--ink-2); cursor: pointer;
-  transition: color .4s var(--ease), border-color .4s var(--ease);
+  transition: color .4s var(--ease), border-color .4s var(--ease), background .4s var(--ease);
 }
 .chip-btn:hover { color: var(--cyan); border-color: var(--cyan); }
+.chip-btn.is-active { color: var(--cyan); border-color: var(--cyan); background: color-mix(in srgb, var(--cyan) 14%, transparent); }
+
+/* 3D 全屏沉浸模式 */
+.stage.is-expanded {
+  position: fixed; inset: 1.5rem; z-index: 60;
+  max-width: 1400px; margin: auto; height: calc(100vh - 3rem);
+  background: color-mix(in srgb, var(--bg) 94%, transparent);
+  backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px);
+  box-shadow: 0 30px 100px rgba(0, 0, 0, .9);
+  display: flex; flex-direction: column;
+}
+.stage.is-expanded canvas[data-graph] {
+  flex: 1; height: 100%; min-height: 0;
+}
 
 .stage-badge {
   position: absolute; left: -1.75rem; bottom: -1.75rem;
@@ -383,6 +407,58 @@ canvas[data-graph]:focus-visible { outline: 2px solid var(--cyan); outline-offse
 .tree-row em { margin-left: auto; font-style: normal; font-size: .7rem; color: var(--muted); }
 .tree-row.dim { opacity: .55; }
 
+/* ── 3D 立体分层解构 ────────────────────────────── */
+.stack-toggles { display: flex; gap: .35rem; margin-left: auto; }
+.stack-3d-wrap {
+  perspective: 1200px; padding: .65rem .2rem;
+}
+.stack-3d {
+  display: grid; gap: .85rem;
+  transform: rotateX(22deg) rotateY(-14deg) rotateZ(2deg);
+  transform-style: preserve-3d;
+  transition: transform .6s var(--ease);
+}
+.stack-3d:hover {
+  transform: rotateX(12deg) rotateY(-6deg) rotateZ(1deg);
+}
+.layer-card {
+  padding: 1.15rem 1.3rem; border-radius: var(--r-md);
+  border: 1px solid var(--line-2);
+  background: color-mix(in srgb, var(--bg-2) 90%, transparent);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, .75);
+  transition: transform .45s var(--ease), border-color .35s var(--ease), box-shadow .45s var(--ease);
+  cursor: pointer;
+}
+.layer-card:hover {
+  border-color: var(--cyan);
+  box-shadow: 0 24px 50px -10px color-mix(in srgb, var(--cyan) 25%, transparent);
+}
+.layer-card.layer-3 {
+  transform: translateZ(36px);
+  border-color: color-mix(in srgb, var(--violet) 45%, var(--line));
+}
+.layer-card.layer-2 {
+  transform: translateZ(18px);
+  border-color: color-mix(in srgb, var(--cyan) 45%, var(--line));
+}
+.layer-card.layer-1 {
+  transform: translateZ(0px);
+  border-color: color-mix(in srgb, var(--amber) 45%, var(--line));
+}
+.layer-card.layer-3:hover { transform: translateZ(56px); }
+.layer-card.layer-2:hover { transform: translateZ(38px); }
+.layer-card.layer-1:hover { transform: translateZ(20px); }
+
+.layer-tag {
+  font-family: var(--mono); font-size: .62rem; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--cyan); margin-bottom: .35rem; display: inline-block;
+}
+.layer-card.layer-3 .layer-tag { color: var(--violet); }
+.layer-card.layer-1 .layer-tag { color: var(--amber); }
+.layer-card h4 { margin: 0 0 .3rem; font-size: .95rem; font-weight: 600; letter-spacing: -.02em; }
+.layer-card p { margin: 0; font-size: .8rem; color: var(--ink-2); line-height: 1.5; }
+
 .jobs { display: grid; gap: .2rem; padding: .75rem; border-radius: var(--r-md); background: var(--bg-2); border: 1px solid var(--line); }
 .job {
   display: flex; align-items: center; gap: .7rem; padding: .48rem .6rem;
@@ -400,19 +476,23 @@ canvas[data-graph]:focus-visible { outline: 2px solid var(--cyan); outline-offse
 .job.dim { opacity: .55; }
 
 /* ── 卡片网格 ───────────────────────────────────── */
-.cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.1rem; }
+.cards {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.1rem;
+  perspective: 1200px;
+}
 .card {
   display: grid; gap: .55rem; padding: 1.6rem 1.5rem 1.4rem;
   border: 1px solid var(--line); border-radius: var(--r-lg);
   background: var(--card); position: relative; overflow: hidden;
-  transition: transform .7s var(--ease), border-color .6s var(--ease), background .6s var(--ease);
+  transform-style: preserve-3d;
+  transition: transform .6s var(--ease), border-color .5s var(--ease), background .5s var(--ease), box-shadow .5s var(--ease);
 }
 .card::before {
   content: ""; position: absolute; inset: 0;
-  background: radial-gradient(circle at 20% 0%, color-mix(in srgb, var(--violet) 18%, transparent), transparent 60%);
-  opacity: 0; transition: opacity .7s var(--ease);
+  background: radial-gradient(circle at var(--mx, 20%) var(--my, 0%), color-mix(in srgb, var(--violet) 22%, transparent), transparent 60%);
+  opacity: 0; transition: opacity .6s var(--ease);
 }
-.card:hover { transform: translateY(-6px); border-color: var(--line-2); }
+.card:hover { transform: translateY(-6px); border-color: var(--line-2); box-shadow: 0 20px 48px -20px rgba(124, 92, 255, .3); }
 .card:hover::before { opacity: 1; }
 .card > * { position: relative; }
 .card-k { font-size: .58rem; color: var(--violet); }
@@ -455,14 +535,18 @@ canvas[data-graph]:focus-visible { outline: 2px solid var(--cyan); outline-offse
 }
 
 /* ── 快速开始 ───────────────────────────────────── */
-.start-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.1rem; }
+.start-grid {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.1rem;
+  perspective: 1200px;
+}
 .step {
   display: grid; gap: .7rem; padding: 1.75rem 1.6rem;
   border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--card);
   min-width: 0;
-  transition: transform .7s var(--ease), border-color .6s var(--ease);
+  transform-style: preserve-3d;
+  transition: transform .6s var(--ease), border-color .5s var(--ease), box-shadow .5s var(--ease);
 }
-.step:hover { transform: translateY(-5px); border-color: var(--line-2); }
+.step:hover { transform: translateY(-5px); border-color: var(--line-2); box-shadow: 0 20px 48px -20px rgba(34, 211, 238, .25); }
 .step-n {
   width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%;
   font-size: .72rem; color: var(--cyan);
@@ -560,6 +644,8 @@ canvas[data-graph]:focus-visible { outline: 2px solid var(--cyan); outline-offse
   .split, .split.rev { grid-template-columns: 1fr; gap: 2.75rem; }
   .split.rev .split-visual { order: 2; }
   .split.rev .split-intro { order: 1; }
+  .stack-3d { transform: none !important; }
+  .layer-card { transform: none !important; }
   .stats { grid-template-columns: repeat(2, 1fr); }
   .stat:last-child { grid-column: span 2; }
   .cards { grid-template-columns: 1fr; }
