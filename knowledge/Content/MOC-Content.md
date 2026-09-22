@@ -15,6 +15,7 @@ updated: 2026-09-20
 ## 内容流水线
 
 - [[knowledge/Content/AI自媒体6大视频Skill选型指南-2026-09-22|AI 自媒体 6 个视频 Skill 选型指南：剪辑、包装与补镜头全解]]
+- `video-skills-router` (Agent Skill) — 6 大视频 Skill 智能决策树与流水线调度器（`~/.agents/skills/video-skills-router`）
 - [[knowledge/Content/hyperframes-html-to-video-2026-09-13|HyperFrames — Write HTML. Render Video. Built for Agents]]
 - [[knowledge/Content/抖音AI博主千轮研究-2026-09-03|抖音AI博主千轮研究-2026-09-03]]
 - [[knowledge/Content/短视频脚本模板-硬核AI与算法直觉化-2026-09-20|短视频脚本模板：硬核AI与算法直觉化（五步拆解法）]]
