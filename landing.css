@@ -515,6 +515,111 @@ canvas[data-graph]:focus-visible { outline: 2px solid var(--cyan); outline-offse
   padding: .16rem .5rem; border-radius: 999px; width: max-content;
 }
 
+/* ── 自举演化剖析面板 ────────────────────────────── */
+.card.is-active {
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 1px var(--cyan), 0 24px 60px -20px color-mix(in srgb, var(--cyan) 35%, transparent);
+}
+.card.is-active .card-k { color: var(--cyan); }
+
+.bootstrap-inspector {
+  margin-top: 1.5rem; padding: 1.25rem 1.5rem;
+  border: 1px solid var(--line-2); border-radius: var(--r-lg);
+  background: color-mix(in srgb, var(--bg-2) 92%, transparent);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08), 0 30px 80px -40px rgba(0, 0, 0, .9);
+}
+.inspector-topbar {
+  display: flex; align-items: center; gap: .7rem; padding-bottom: 1rem;
+  border-bottom: 1px solid var(--line); font-family: var(--mono);
+}
+.inspector-title { font-size: .86rem; font-weight: 600; color: var(--ink); }
+.inspector-badge {
+  margin-left: auto; font-size: .6rem; letter-spacing: .16em;
+  padding: .2rem .55rem; border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--cyan) 35%, transparent);
+  background: color-mix(in srgb, var(--cyan) 10%, transparent); color: var(--cyan);
+}
+.inspector-content {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center; gap: 1rem; margin-top: 1rem;
+}
+.diff-block {
+  display: grid; gap: .35rem; padding: 1rem 1.15rem; border-radius: var(--r-md);
+  border: 1px solid var(--line); background: var(--card); min-width: 0;
+}
+.diff-label { font-family: var(--mono); font-size: .64rem; letter-spacing: .12em; text-transform: uppercase; }
+.diff-pain .diff-label { color: #f43f5e; }
+.diff-rule .diff-label { color: var(--amber); }
+.diff-solid .diff-label { color: var(--green); }
+.diff-block p { margin: 0; font-size: .84rem; color: var(--ink-2); line-height: 1.55; word-break: break-word; }
+.diff-block code { font-family: var(--mono); font-size: .74rem; color: var(--cyan); background: var(--card-2); padding: .1rem .35rem; border-radius: 4px; }
+.diff-arrow { font-size: 1.1rem; color: var(--muted); opacity: .6; text-align: center; }
+
+/* ── 知识域搜索 & 筛选 ───────────────────────────── */
+.domain-filter-bar {
+  display: grid; gap: 1rem; margin-bottom: 2rem;
+}
+.search-input-wrap {
+  position: relative; display: flex; align-items: center; width: 100%;
+}
+.search-icon {
+  position: absolute; left: 1rem; width: 18px; height: 18px; fill: none;
+  stroke: var(--muted); stroke-width: 1.7; stroke-linecap: round; pointer-events: none;
+}
+.search-input {
+  width: 100%; padding: .85rem 2.8rem; border-radius: 999px;
+  border: 1px solid var(--line); background: var(--card);
+  color: var(--ink); font-family: var(--font); font-size: .9rem;
+  transition: border-color .4s var(--ease), box-shadow .4s var(--ease);
+}
+.search-input:focus {
+  outline: none; border-color: var(--cyan);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--cyan) 18%, transparent);
+}
+.search-clear {
+  position: absolute; right: 1rem; width: 22px; height: 22px; border-radius: 50%;
+  border: 1px solid var(--line-2); background: transparent; color: var(--muted);
+  font-size: 1rem; line-height: 1; cursor: pointer; display: grid; place-items: center;
+}
+.search-clear:hover { color: var(--ink); border-color: var(--cyan); }
+.filter-tags { display: flex; flex-wrap: wrap; gap: .45rem; }
+.tag-btn {
+  font-family: var(--mono); font-size: .68rem; letter-spacing: .06em;
+  padding: .35rem .85rem; border-radius: 999px; border: 1px solid var(--line);
+  background: var(--card); color: var(--ink-2); cursor: pointer;
+  transition: all .35s var(--ease);
+}
+.tag-btn:hover { border-color: var(--line-2); color: var(--ink); }
+.tag-btn.is-active {
+  border-color: var(--cyan); background: color-mix(in srgb, var(--cyan) 14%, transparent); color: var(--cyan);
+}
+
+/* ── 自动化时间轴雷达 ────────────────────────────── */
+.cron-radar-wrap {
+  margin-top: .85rem; padding: .95rem 1rem; border-radius: var(--r-md);
+  border: 1px solid var(--line); background: var(--bg-2);
+}
+.radar-header { display: flex; align-items: center; justify-content: space-between; font-family: var(--mono); margin-bottom: .75rem; }
+.radar-live { display: inline-flex; align-items: center; gap: .45rem; font-size: .6rem; letter-spacing: .16em; color: var(--cyan); }
+.radar-clock { font-size: .6rem; color: var(--muted); letter-spacing: .12em; }
+.radar-timeline {
+  display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: .4rem;
+}
+.timeline-slot {
+  display: grid; gap: .15rem; padding: .5rem .4rem; border-radius: var(--r-sm);
+  border: 1px solid var(--line); background: var(--card); text-align: center;
+  transition: transform .35s var(--ease), border-color .35s var(--ease);
+}
+.timeline-slot:hover { border-color: var(--line-2); transform: translateY(-2px); }
+.timeline-slot.active {
+  border-color: var(--cyan); background: color-mix(in srgb, var(--cyan) 12%, transparent);
+}
+.timeline-slot span { font-family: var(--mono); font-size: .62rem; color: var(--muted); }
+.timeline-slot.active span { color: var(--cyan); }
+.timeline-slot b { font-size: .72rem; font-weight: 600; color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.timeline-slot.active b { color: var(--ink); }
+
 /* ── 知识域网格 ─────────────────────────────────── */
 .dom-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--r-lg); overflow: hidden; }
 .dom {
@@ -525,6 +630,10 @@ canvas[data-graph]:focus-visible { outline: 2px solid var(--cyan); outline-offse
 .dom:hover { background: var(--bg-2); }
 .dom strong { font-size: .92rem; font-weight: 600; letter-spacing: -.02em; }
 .dom span { font-family: var(--mono); font-size: .68rem; color: var(--muted); }
+.dom-desc {
+  font-size: .72rem; color: var(--muted); line-height: 1.35;
+  margin-top: .15rem; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden;
+}
 .dom i {
   height: 2px; border-radius: 999px; background: var(--line);
   overflow: hidden; margin-top: .35rem;
@@ -646,6 +755,12 @@ canvas[data-graph]:focus-visible { outline: 2px solid var(--cyan); outline-offse
   .split.rev .split-intro { order: 1; }
   .stack-3d { transform: none !important; }
   .layer-card { transform: none !important; }
+  .inspector-content {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: .65rem !important;
+  }
+  .diff-arrow { transform: rotate(90deg); margin: -0.2rem 0; }
+  .radar-timeline { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
   .stats { grid-template-columns: repeat(2, 1fr); }
   .stat:last-child { grid-column: span 2; }
   .cards { grid-template-columns: 1fr; }
@@ -661,6 +776,7 @@ canvas[data-graph]:focus-visible { outline: 2px solid var(--cyan); outline-offse
   .stats { grid-template-columns: 1fr; }
   .stat:last-child { grid-column: span 1; }
   .dom-grid { grid-template-columns: 1fr; }
+  .radar-timeline { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
   canvas[data-graph] { height: 240px; }
   .nav-mobile a { font-size: 1.25rem; }
   /* 网格项默认 min-width:auto 会被 .code 的 nowrap 内容撑破 → 显式归零 */

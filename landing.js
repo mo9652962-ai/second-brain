@@ -1,6 +1,7 @@
 /* ============================================================
    Second Brain — Landing 3D Interactions
    Three.js WebGL 3D 知识图谱宇宙 + 3D 纵深星云背景 + 卡片 3D 悬浮视差
+   新增：自举演化剖析器 + 知识域实时筛选 + 24H 自动化雷达 + Web Audio 空间合成音效
    ============================================================ */
 (function () {
   'use strict';
@@ -37,7 +38,101 @@
     ['Content', 'Creative'], ['cards', 'META'], ['gaming', 'Creative']
   ];
 
-  /* ══ 1. 主题 ══════════════════════════════════════════ */
+  /* ── 自举演化真实案例文档 ───────────────────────── */
+  var BOOTSTRAP_DATA = {
+    workflow: {
+      title: '自举演化剖析 · 01 交互自举',
+      pain: '凌晨 1 小时投入产出大改动，因未对齐用户偏好次日全被撤销。',
+      rule: '假设先验证 + 小步提交立即 push + 产出归属前置确认，不自作主张推向上游。',
+      solid: 'hermes-workflow-preferences.md + AGENTS.md P0 红线区强制执行。'
+    },
+    reliability: {
+      title: '自举演化剖析 · 02 可靠性自举',
+      pain: '45 个定时任务集中触发引发 API 429 限流与并发资源雪崩。',
+      rule: '错峰调度阶梯 (06:00/06:30/07:15) + 自动重试机制与静默失效心跳监控。',
+      solid: 'hermes-automation-patterns.md 生产级调度守护。'
+    },
+    knowledge: {
+      title: '自举演化剖析 · 03 知识自举',
+      pain: '全天被动响应任务，零主动新知识与前沿动态输入。',
+      rule: '每日知识吸收底线守门员：arXiv / GitHub Trending / HN 自动化采集沉淀。',
+      solid: 'daily-knowledge-absorption-gate.md + 18 域 MOC 知识体系。'
+    },
+    tool: {
+      title: '自举演化剖析 · 04 工具调用自举',
+      pain: 'Windows 下 git ls-files 中文路径带引号致 Linux CI cp 失败 (219个非ASCII路径)。',
+      rule: 'git 路径遍历必须使用 -c core.quotePath=false 与 -z 原样输出。',
+      solid: 'tool-call-bootstrapping.md + scripts/check-site.py 强制门禁。'
+    },
+    code: {
+      title: '自举演化剖析 · 05 代码质量自举',
+      pain: '前端修改样式后存在无效声明或 CSS 括号不平衡被静默忽略。',
+      rule: '严格坚持双轴 Code Review + esbuild/AST 语法自检 + 真实浏览器像素验证。',
+      solid: 'code-quality-bootstrapping.md + 自动化验证流水线。'
+    },
+    style: {
+      title: '自举演化剖析 · 06 输出风格自举',
+      pain: '长对话后模型输出漂移、废话套话增多、结论淹没在冗长解释中。',
+      rule: '结论置顶 + 表格结构化 + 严格去 AI 味与禁止套路开场白。',
+      solid: 'output-style-bootstrapping.md + SOUL.md 核心人设锚定。'
+    },
+    context: {
+      title: '自举演化剖析 · 07 上下文管理自举',
+      pain: '重要项目约束与环境事实在长会话压缩后被稀释遗忘。',
+      rule: '四级记忆体系 (瞬时 → 会话 → 任务 → 核心记忆) + 结构化紧凑持久化。',
+      solid: 'context-management-bootstrapping.md + MEMORY.md 精简注入。'
+    }
+  };
+
+  /* ══ 1. Web Audio 原生合成音效引擎 (零外部文件) ══════ */
+  var soundEnabled = false;
+  var audioCtx = null;
+
+  function playTone(freq, type, dur, gainVal) {
+    if (!soundEnabled || reduce) return;
+    try {
+      if (!audioCtx) {
+        var AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        if (AudioContextClass) audioCtx = new AudioContextClass();
+      }
+      if (!audioCtx) return;
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+
+      var osc = audioCtx.createOscillator();
+      var gain = audioCtx.createGain();
+      osc.type = type || 'sine';
+      osc.frequency.setValueAtTime(freq || 800, audioCtx.currentTime);
+      gain.gain.setValueAtTime(gainVal || 0.05, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + (dur || 0.08));
+
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start();
+      osc.stop(audioCtx.currentTime + (dur || 0.08));
+    } catch (e) {}
+  }
+
+  function initSoundToggle() {
+    var btn = document.querySelector('[data-action="sound"]');
+    if (!btn) return;
+    var iconOff = btn.querySelector('.i-sound-off');
+    var iconOn = btn.querySelector('.i-sound-on');
+
+    btn.addEventListener('click', function () {
+      soundEnabled = !soundEnabled;
+      btn.setAttribute('aria-pressed', soundEnabled ? 'true' : 'false');
+      btn.classList.toggle('is-active', soundEnabled);
+      if (iconOff) iconOff.style.display = soundEnabled ? 'none' : 'block';
+      if (iconOn) iconOn.style.display = soundEnabled ? 'block' : 'none';
+
+      if (soundEnabled) {
+        playTone(520, 'sine', 0.06, 0.06);
+        setTimeout(function () { playTone(1040, 'sine', 0.09, 0.05); }, 50);
+      }
+    });
+  }
+
+  /* ══ 2. 主题 ══════════════════════════════════════════ */
   function initTheme() {
     var saved = null;
     try { saved = localStorage.getItem('sb-theme'); } catch (e) {}
@@ -45,7 +140,7 @@
   }
   initTheme();
 
-  /* ══ 2. 知识域网格（DOM API 构建，防 XSS）═════════════ */
+  /* ══ 3. 知识域网格（DOM API 构建，防 XSS）═════════════ */
   function renderDomains() {
     var host = document.querySelector('[data-domains]');
     if (!host) return;
@@ -58,6 +153,7 @@
       a.className = 'dom reveal';
       a.href = './kb/';
       a.setAttribute('data-dom', d.key);
+      a.setAttribute('data-copy', d.copy);
 
       var strong = document.createElement('strong');
       strong.textContent = d.label;
@@ -65,11 +161,16 @@
       var span = document.createElement('span');
       span.textContent = d.key + ' · ' + d.n;
 
+      var desc = document.createElement('small');
+      desc.className = 'dom-desc';
+      desc.textContent = d.copy;
+
       var bar = document.createElement('i');
       bar.style.setProperty('--w', w + '%');
 
       a.appendChild(strong);
       a.appendChild(span);
+      a.appendChild(desc);
       a.appendChild(bar);
       frag.appendChild(a);
     }
@@ -77,7 +178,7 @@
   }
   renderDomains();
 
-  /* ══ 3. 滚动进场（带 rAF 兜底）═════════════════════════ */
+  /* ══ 4. 滚动进场（带 rAF 兜底）═════════════════════════ */
   function initReveal() {
     var els = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
     if (reduce || !('IntersectionObserver' in window)) {
@@ -125,7 +226,7 @@
     setTimeout(sweep, 120);
   }
 
-  /* ══ 4. 数字计数 + 进度条 ═════════════════════════════ */
+  /* ══ 5. 数字计数 + 进度条 ═════════════════════════════ */
   function animateCount(el, target) {
     if (reduce) { el.textContent = target.toLocaleString(); return; }
     var start = null, dur = 1500;
@@ -171,7 +272,7 @@
     }
   }
 
-  /* ══ 5. 卡片 3D 悬浮视差与全息光泽 ═════════════════════ */
+  /* ══ 6. 卡片 3D 悬浮视差与全息光泽 ═════════════════════ */
   function initCard3DTilt() {
     if (reduce || window.innerWidth < 860) return;
     var cards = document.querySelectorAll('.card, .step');
@@ -194,7 +295,7 @@
     });
   }
 
-  /* ══ 6. 3D 立体架构解构切换 ════════════════════════════ */
+  /* ══ 7. 3D 立体架构解构切换 ════════════════════════════ */
   function initStack3D() {
     var stackWrap = document.querySelector('[data-stack-container]');
     var treeWrap = document.querySelector('[data-tree-container]');
@@ -213,11 +314,126 @@
           stackWrap.style.display = 'none';
           treeWrap.style.display = 'grid';
         }
+        playTone(480, 'sine', 0.06, 0.04);
       });
     });
   }
 
-  /* ══ 7. Three.js 核心动态载入 ══════════════════════════ */
+  /* ══ 8. 自举演化剖析交互面板 ══════════════════════════ */
+  function initBootstrapInspector() {
+    var cards = document.querySelectorAll('.card[data-bootstrap-id]');
+    var titleEl = document.querySelector('[data-inspector-title]');
+    var painEl = document.querySelector('[data-diff-pain]');
+    var ruleEl = document.querySelector('[data-diff-rule]');
+    var solidEl = document.querySelector('[data-diff-solid]');
+    if (!cards.length || !titleEl) return;
+
+    cards.forEach(function (card) {
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', function () {
+        cards.forEach(function (c) { c.classList.remove('is-active'); });
+        card.classList.add('is-active');
+        var id = card.dataset.bootstrapId;
+        var data = BOOTSTRAP_DATA[id];
+        if (data) {
+          titleEl.textContent = data.title;
+          painEl.textContent = data.pain;
+          ruleEl.textContent = data.rule;
+          solidEl.textContent = data.solid;
+          playTone(640, 'triangle', 0.08, 0.05);
+        }
+      });
+    });
+  }
+
+  /* ══ 9. 知识域实时筛选 & 3D 联动 ══════════════════════ */
+  function initDomainFilter() {
+    var input = document.querySelector('[data-domain-search]');
+    var clearBtn = document.querySelector('[data-search-clear]');
+    var tags = document.querySelectorAll('[data-filter-tags] .tag-btn');
+    var doms = document.querySelectorAll('.dom-grid .dom');
+    if (!input || !doms.length) return;
+
+    var currentTag = 'all';
+    var currentQuery = '';
+
+    var TAG_MAP = {
+      tech: ['Dev', 'AI', 'Security', 'Projects', 'META'],
+      hardware: ['Hardware', 'Dev', 'gaming'],
+      research: ['Research', 'Education', 'cards'],
+      ops: ['Productivity', 'Content', 'SOP', 'Finance', 'Product', 'Daily', 'Archive']
+    };
+
+    function applyFilter() {
+      var q = currentQuery.trim().toLowerCase();
+      if (clearBtn) clearBtn.style.display = q ? 'grid' : 'none';
+
+      doms.forEach(function (dom) {
+        var key = dom.dataset.dom || '';
+        var copy = dom.getAttribute('data-copy') || '';
+        var text = dom.textContent.toLowerCase();
+
+        var matchTag = (currentTag === 'all') || (TAG_MAP[currentTag] && TAG_MAP[currentTag].indexOf(key) >= 0);
+        var matchQuery = !q || text.indexOf(q) >= 0 || key.toLowerCase().indexOf(q) >= 0 || copy.toLowerCase().indexOf(q) >= 0;
+
+        if (matchTag && matchQuery) {
+          dom.style.display = 'grid';
+        } else {
+          dom.style.display = 'none';
+        }
+      });
+    }
+
+    input.addEventListener('input', function (e) {
+      currentQuery = e.target.value;
+      applyFilter();
+    });
+
+    if (clearBtn) {
+      clearBtn.addEventListener('click', function () {
+        input.value = '';
+        currentQuery = '';
+        applyFilter();
+        input.focus();
+        playTone(400, 'sine', 0.05, 0.03);
+      });
+    }
+
+    tags.forEach(function (tagBtn) {
+      tagBtn.addEventListener('click', function () {
+        tags.forEach(function (t) { t.classList.remove('is-active'); });
+        tagBtn.classList.add('is-active');
+        currentTag = tagBtn.dataset.tag || 'all';
+        applyFilter();
+        playTone(720, 'sine', 0.05, 0.04);
+      });
+    });
+
+    doms.forEach(function (dom) {
+      dom.addEventListener('click', function () {
+        var key = dom.dataset.dom;
+        if (window.focus3DDomain) {
+          window.focus3DDomain(key);
+        }
+      });
+    });
+  }
+
+  /* ══ 10. 24H 自动化时钟雷达 ═══════════════════════════ */
+  function initRadarClock() {
+    var clockEl = document.querySelector('[data-radar-clock]');
+    if (!clockEl) return;
+    function update() {
+      var now = new Date();
+      var h = String(now.getHours()).padStart(2, '0');
+      var m = String(now.getMinutes()).padStart(2, '0');
+      clockEl.textContent = 'GMT+8 ' + h + ':' + m + ' · 45 JOBS RUNNING';
+    }
+    update();
+    setInterval(update, 30000);
+  }
+
+  /* ══ 11. Three.js 核心动态载入 ═════════════════════════ */
   function ensureThree(callback) {
     if (window.THREE) {
       callback(window.THREE);
@@ -236,7 +452,7 @@
     document.head.appendChild(script);
   }
 
-  /* ══ 8. 全景 3D 纵深星空与知识神经元 (Three.js WebGL) ═══ */
+  /* ══ 12. 全景 3D 纵深星空与知识神经元 (Three.js WebGL) ══ */
   function initBackground3D(THREE) {
     var canvas = document.getElementById('webgl-bg');
     if (!canvas) return;
@@ -362,7 +578,7 @@
     animate();
   }
 
-  /* ══ 9. Hero 区域 3D 知识图谱宇宙 (Three.js WebGL) ═════ */
+  /* ══ 13. Hero 区域 3D 知识图谱宇宙 (Three.js WebGL) ═════ */
   function initHero3D(THREE) {
     var canvas = document.querySelector('canvas[data-graph]');
     if (!canvas) return;
@@ -597,8 +813,19 @@
         rot.y = targetRotY;
         rot.x = 0;
         vel.y = 0; vel.x = 0;
+        playTone(960, 'sine', 0.08, 0.06);
       }
     }
+
+    /* 暴露供 2D 交互联动调用 */
+    window.focus3DDomain = function (key) {
+      var targetNode = domainNodes.filter(function (n) { return n.data.key === key; })[0];
+      if (targetNode) {
+        selectNode(targetNode.data);
+        var heroEl = document.querySelector('.hero');
+        if (heroEl) heroEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    };
 
     if (resetBtn) {
       resetBtn.addEventListener('click', function () {
@@ -606,6 +833,7 @@
         if (status) status.textContent = '视角已重置';
         if (dTitle) dTitle.textContent = 'Research';
         if (dCopy) dCopy.textContent = '235 篇 · 论文、文献、研究方法';
+        playTone(480, 'sine', 0.07, 0.04);
       });
     }
 
@@ -616,6 +844,7 @@
         expandBtn.classList.toggle('is-active', isExp);
         document.body.classList.toggle('webgl-expanded', isExp);
         setTimeout(resizeHero, 100);
+        playTone(isExp ? 720 : 420, 'sine', 0.08, 0.05);
       });
     }
 
@@ -673,6 +902,7 @@
           if (status) status.textContent = '悬停 3D 节点 · ' + d.label + ' (' + d.n + ' 篇)';
           if (dTitle) dTitle.textContent = d.label + ' · ' + d.key;
           if (dCopy) dCopy.textContent = d.n + ' 篇 · ' + d.copy;
+          playTone(1100, 'sine', 0.03, 0.02);
         }
       } else {
         if (hoveredNode) {
@@ -687,7 +917,7 @@
     animate();
   }
 
-  /* ══ 10. Canvas 2D 降级方案（离线或无 Three.js 时使用）═══ */
+  /* ══ 14. Canvas 2D 降级方案（离线或无 Three.js 时使用）═══ */
   function initGraphFallback() {
     var canvas = document.querySelector('canvas[data-graph]');
     if (!canvas) return;
@@ -759,7 +989,7 @@
     loop();
   }
 
-  /* ══ 11. 基础 UI 交互（主题 / 菜单 / 复制 / 滚动）═════ */
+  /* ══ 15. 基础 UI 交互（主题 / 菜单 / 复制 / 滚动）═════ */
   function initChrome() {
     var themeBtn = document.querySelector('[data-action="theme"]');
     if (themeBtn) {
@@ -767,6 +997,7 @@
         var next = root.dataset.theme === 'dark' ? 'light' : 'dark';
         root.dataset.theme = next;
         try { localStorage.setItem('sb-theme', next); } catch (e) {}
+        playTone(next === 'dark' ? 380 : 760, 'sine', 0.08, 0.04);
       });
     }
 
@@ -777,6 +1008,7 @@
         var open = mobile.classList.toggle('is-open');
         menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
         document.body.classList.toggle('menu-open', open);
+        playTone(open ? 640 : 420, 'sine', 0.06, 0.04);
       });
       mobile.addEventListener('click', function (ev) {
         if (ev.target.tagName === 'A') {
@@ -794,6 +1026,8 @@
           var old = btn.textContent;
           btn.textContent = '已复制';
           setTimeout(function () { btn.textContent = old; }, 1600);
+          playTone(880, 'sine', 0.05, 0.05);
+          setTimeout(function () { playTone(1320, 'sine', 0.08, 0.05); }, 50);
         };
         if (navigator.clipboard && navigator.clipboard.writeText) {
           navigator.clipboard.writeText(text).then(done, done);
@@ -816,12 +1050,16 @@
     }
   }
 
-  /* ══ 12. 启动 ════════════════════════════════════════ */
+  /* ══ 16. 启动 ════════════════════════════════════════ */
   function boot() {
+    initSoundToggle();
     initReveal();
     initCounters();
     initCard3DTilt();
     initStack3D();
+    initBootstrapInspector();
+    initDomainFilter();
+    initRadarClock();
     initChrome();
 
     ensureThree(function (THREE) {
