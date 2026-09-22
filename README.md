@@ -2,21 +2,44 @@
 
 <div align="center">
 
-![GitHub last commit](https://img.shields.io/github/last-commit/mo9652962-ai/second-brain?style=flat-square&color=blue)
-![GitHub stars](https://img.shields.io/github/stars/mo9652962-ai/second-brain?style=flat-square&color=yellow)
-![License](https://img.shields.io/github/license/mo9652962-ai/second-brain?style=flat-square&color=red)
-[![vault-ci](https://github.com/mo9652962-ai/second-brain/actions/workflows/vault-ci.yml/badge.svg)](https://github.com/mo9652962-ai/second-brain/actions/workflows/vault-ci.yml)
-[![Deploy MkDocs](https://github.com/mo9652962-ai/second-brain/actions/workflows/deploy-docs.yml/badge.svg)](https://github.com/mo9652962-ai/second-brain/actions/workflows/deploy-docs.yml)
-[![Obsidian](https://img.shields.io/badge/Obsidian-知识库-7C3AED?style=flat-square&logo=obsidian)](https://obsidian.md)
+  **让 AI 拥有一个会自己进化的第二大脑**
+  <br>
+  **Obsidian + GitHub + Hermes Agent · 1094 篇知识体系 · 18 域全景拓扑 · 7 大自举系统**
 
-[![AI 维护](https://img.shields.io/badge/🤖_AI_维护-Hermes_Agent-blue?style=flat-square)](https://hermes-agent.nousresearch.com/docs)
-[![自举进化](https://img.shields.io/badge/🔄_自举进化-Active-green?style=flat-square)](skills/hermes/)
-[![七大自举系统](https://img.shields.io/badge/🏆_七大自举系统-32_项-gold?style=flat-square)](skills/hermes/)
+  <p>
+    <a href="https://mo9652962-ai.github.io/second-brain/">✨ 3D 全景沉浸式官网</a>
+    ·
+    <a href="https://mo9652962-ai.github.io/second-brain/kb/">📚 在线知识库 (MkDocs)</a>
+    ·
+    <a href="HOME.md">知识中枢 (HOME)</a>
+    ·
+    <a href="skills/hermes/">🔄 七大自举系统</a>
+    ·
+    <a href="https://github.com/mo9652962-ai/second-brain/actions/workflows/deploy-docs.yml">GitHub Pages 部署</a>
+  </p>
 
-**Obsidian + GitHub + Hermes Agent = 持续自我进化的知识体系**
+  <p>
+    <img src="https://img.shields.io/github/last-commit/mo9652962-ai/second-brain?style=flat-square&color=blue" alt="GitHub last commit">
+    <img src="https://img.shields.io/github/stars/mo9652962-ai/second-brain?style=flat-square&color=yellow" alt="GitHub stars">
+    <img src="https://img.shields.io/badge/Obsidian-知识库-7C3AED?style=flat-square&logo=obsidian" alt="Obsidian">
+    <img src="https://img.shields.io/badge/🤖_AI_维护-Hermes_Agent-blue" alt="AI 维护">
+    <img src="https://img.shields.io/badge/🔄_自举进化-Active-green" alt="自举进化">
+    <img src="https://img.shields.io/badge/🏆_七大自举系统-32_项-gold" alt="七大自举系统">
+  </p>
 
-**🎯 适合谁？** 想用 AI 构建第二大脑的个人开发者 · 研究生/科研人员 · AI Agent 爱好者 · 闲鱼接单自由职业者
+  <p>
+    <b>🎯 适合谁？</b> 想用 AI 构建第二大脑的个人开发者 · 研究生/科研人员 · AI Agent 爱好者 · 闲鱼接单自由职业者
+  </p>
 
+</div>
+
+> 🌟 **全新 3D WebGL 宇宙与全景星空官网已上线**：👉 [在线体验 3D 知识图谱宇宙与自举演化剖析](https://mo9652962-ai.github.io/second-brain/)  
+> **核心交互体验**：3D 全景知识拓扑宇宙 · 7 大自举系统演化剖析器 · 18 域 677 篇知识实时检索 · 24H 自动化流水线雷达 · Web Audio 空间合成音效
+
+<div align="center">
+  <a href="https://mo9652962-ai.github.io/second-brain/">
+    <img src="docs/images/banner-3d-landing.png" alt="Second Brain · 3D 全景知识大脑官网" width="100%">
+  </a>
 </div>
 
 ---

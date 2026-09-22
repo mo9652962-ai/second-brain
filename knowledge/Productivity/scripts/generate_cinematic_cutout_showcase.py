@@ -284,5 +284,5 @@ def build_cinematic_cutout_showcase(out_dir):
     return out_pptx
 
 if __name__ == "__main__":
-    out_directory = r"C:/Users/31954/.openclaw/workspace/knowledge/Productivity"
+    out_directory = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
     build_cinematic_cutout_showcase(out_directory)
