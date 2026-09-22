@@ -11,8 +11,10 @@
 <title>Second Brain · 会自己进化的 AI 第二大脑</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='13' fill='none' stroke='%237c5cff' stroke-width='2'/><circle cx='16' cy='16' r='4' fill='%2322d3ee'/></svg>">
 <link rel="stylesheet" href="./landing.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha384-CI3ELBVUz9XQO+97x6nwMDPosPR5XvsxW2ua7N1Xeygeh1IxtgqtCkGfQY9WWdHu" crossorigin="anonymous"></script>
 </head>
 <body>
+<canvas id="webgl-bg" class="webgl-bg" aria-hidden="true"></canvas>
 <div class="grain" aria-hidden="true"></div>
 <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
 
@@ -54,7 +56,7 @@
   <!-- ═══ HERO ═══ -->
   <section class="hero">
     <div class="hero-copy">
-      <p class="eyebrow"><span class="pulse"></span>SECOND BRAIN / SELF-EVOLVING</p>
+      <p class="eyebrow"><span class="pulse"></span>SECOND BRAIN / 3D SPATIAL</p>
       <h1>让 AI 拥有一个<br><span class="grad">会自己进化的</span><br>第二大脑</h1>
       <p class="lede">
         Obsidian + GitHub + Hermes Agent。每一次工具调用失败、每一次任务没做好，都被提取成可复用的规则，
@@ -71,19 +73,22 @@
       <div class="stage">
         <div class="stage-head">
           <div>
-            <p class="mini">KNOWLEDGE GRAPH</p>
-            <h2>18 个知识域，一个网络</h2>
+            <p class="mini">3D KNOWLEDGE UNIVERSE</p>
+            <h2>18 个知识域，全景 3D 拓扑</h2>
           </div>
-          <span class="live"><span class="pulse"></span>LIVE</span>
+          <span class="live"><span class="pulse"></span>3D WEBGL</span>
         </div>
-        <canvas data-graph aria-label="知识域连接动画" role="img"></canvas>
+        <canvas data-graph aria-label="3D 知识图谱交互宇宙" role="img"></canvas>
         <div class="stage-foot">
-          <span data-graph-status>拖动 / 点击节点查看领域</span>
-          <button class="chip-btn" type="button" data-graph-reset>重置视角</button>
+          <span data-graph-status>拖动旋转 / 滚轮缩放 / 点击 3D 节点</span>
+          <div class="stage-actions">
+            <button class="chip-btn" type="button" data-graph-reset>重置视角</button>
+            <button class="chip-btn" type="button" data-graph-expand>全屏沉浸</button>
+          </div>
         </div>
       </div>
       <div class="stage-badge" data-graph-detail aria-live="polite">
-        <span class="badge-k">DOMAIN</span>
+        <span class="badge-k">DOMAIN 3D</span>
         <strong data-detail-title>Research</strong>
         <small data-detail-copy>235 篇 · 论文、文献、研究方法</small>
       </div>
@@ -102,7 +107,7 @@
   <!-- ═══ GRAPH / WHY ═══ -->
   <section class="section split" id="graph">
     <div class="split-intro reveal">
-      <p class="sec-num">01 — 知识图谱</p>
+      <p class="sec-num">01 — 3D 知识拓扑</p>
       <h2>不是文件夹，<br>是一张会生长的网。</h2>
       <p>
         每篇笔记都是节点，双向链接构成边。MOC（Map of Content）作为每域锚点，
@@ -118,8 +123,34 @@
 
     <div class="split-visual reveal">
       <div class="panel">
-        <div class="panel-bar"><span></span><span></span><span></span><small>knowledge/</small></div>
-        <div class="tree">
+        <div class="panel-bar">
+          <span></span><span></span><span></span>
+          <small>3D 知识拓扑架构</small>
+          <div class="stack-toggles" aria-label="分层视角">
+            <button class="chip-btn is-active" type="button" data-stack-view="3d">3D 爆炸图</button>
+            <button class="chip-btn" type="button" data-stack-view="tree">树状索引</button>
+          </div>
+        </div>
+        <div class="stack-3d-wrap" data-stack-container>
+          <div class="stack-3d">
+            <div class="layer-card layer-3" data-layer="3">
+              <span class="layer-tag">L3 · 进化层</span>
+              <h4>自举技能沉淀 (Skills &amp; Rules)</h4>
+              <p>从错误中提取规则，沉淀为 451+ 个可执行 Skill，反哺下一次工作。</p>
+            </div>
+            <div class="layer-card layer-2" data-layer="2">
+              <span class="layer-tag">L2 · 结构层</span>
+              <h4>MOC 知识网络 (26 MOCs)</h4>
+              <p>677 篇笔记按 18 个领域建立双向索引，横向打通跨域关联。</p>
+            </div>
+            <div class="layer-card layer-1" data-layer="1">
+              <span class="layer-tag">L1 · 感知层</span>
+              <h4>真实世界事件流 (Raw Ingestion)</h4>
+              <p>arXiv 前沿论文、GitHub Trending、每日反思、工具崩溃与执行日志。</p>
+            </div>
+          </div>
+        </div>
+        <div class="tree" data-tree-container style="display:none">
           <div class="tree-row l0"><i></i><b>HOME.md</b><em>总入口</em></div>
           <div class="tree-row l1"><i></i><b>knowledge-map</b><em>知识地图</em></div>
           <div class="tree-row l2"><i></i><b>MOC-Research</b><em>235</em></div>

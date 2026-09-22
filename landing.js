@@ -1,6 +1,6 @@
 /* ============================================================
-   Second Brain — Landing interactions
-   零外部依赖：Canvas 2D 伪 3D 知识图谱 + 滚动进场 + 计数
+   Second Brain — Landing 3D Interactions
+   Three.js WebGL 3D 知识图谱宇宙 + 3D 纵深星云背景 + 卡片 3D 悬浮视差
    ============================================================ */
 (function () {
   'use strict';
@@ -10,28 +10,34 @@
 
   /* ── 真实数据：18 个知识域（git ls-files 统计）─────────── */
   var DOMAINS = [
-    { key: 'Research',     n: 235, label: '研究',   copy: '论文、文献、研究方法' },
-    { key: 'Dev',          n: 143, label: '开发',   copy: 'Web 开发、工具链、DevOps' },
-    { key: 'Productivity', n: 54,  label: '生产力', copy: '工作流、变现、自动化' },
-    { key: 'Security',     n: 53,  label: '安全',   copy: '网安、CTF、防御加固' },
-    { key: 'cards',        n: 37,  label: '知识卡', copy: '原子化知识卡片' },
-    { key: 'Daily',        n: 34,  label: '日常',   copy: '每日回顾与沉淀' },
-    { key: 'Hardware',     n: 21,  label: '硬件',   copy: 'PCB、单片机、CAD' },
-    { key: 'AI',           n: 19,  label: 'AI',     copy: 'Agent、模型、提示词' },
-    { key: 'Finance',      n: 16,  label: '金融',   copy: '投资与市场研究' },
-    { key: 'Archive',      n: 13,  label: '归档',   copy: '历史资料归档' },
-    { key: 'Content',      n: 10,  label: '内容',   copy: '自媒体与选题池' },
-    { key: 'SOP',          n: 10,  label: 'SOP',    copy: '标准作业流程' },
-    { key: 'META',         n: 9,   label: '元信息', copy: '知识库治理' },
-    { key: 'Creative',     n: 6,   label: '创意',   copy: '设计与视觉' },
-    { key: 'gaming',       n: 4,   label: '游戏',   copy: '游戏研究与 mod' },
-    { key: 'Product',      n: 2,   label: '产品',   copy: '产品化与商业化' },
-    { key: 'Projects',     n: 2,   label: '项目',   copy: '项目记录' },
-    { key: 'Education',    n: 1,   label: '教育',   copy: '教学与练习设计' }
+    { key: 'Research',     n: 235, label: '研究',   copy: '论文、文献、研究方法', color: 0x22d3ee },
+    { key: 'Dev',          n: 143, label: '开发',   copy: 'Web 开发、工具链、DevOps', color: 0x7c5cff },
+    { key: 'Productivity', n: 54,  label: '生产力', copy: '工作流、变现、自动化', color: 0x34d399 },
+    { key: 'Security',     n: 53,  label: '安全',   copy: '网安、CTF、防御加固', color: 0x7c5cff },
+    { key: 'cards',        n: 37,  label: '知识卡', copy: '原子化知识卡片', color: 0xffb454 },
+    { key: 'Daily',        n: 34,  label: '日常',   copy: '每日回顾与沉淀', color: 0xffb454 },
+    { key: 'Hardware',     n: 21,  label: '硬件',   copy: 'PCB、单片机、CAD', color: 0x22d3ee },
+    { key: 'AI',           n: 19,  label: 'AI',     copy: 'Agent、模型、提示词', color: 0x7c5cff },
+    { key: 'Finance',      n: 16,  label: '金融',   copy: '投资与市场研究', color: 0xffb454 },
+    { key: 'Archive',      n: 13,  label: '归档',   copy: '历史资料归档', color: 0x7d7a8c },
+    { key: 'Content',      n: 10,  label: '内容',   copy: '自媒体与选题池', color: 0x34d399 },
+    { key: 'SOP',          n: 10,  label: 'SOP',    copy: '标准作业流程', color: 0x34d399 },
+    { key: 'META',         n: 9,   label: '元信息', copy: '知识库治理', color: 0x7d7a8c },
+    { key: 'Creative',     n: 6,   label: '创意',   copy: '设计与视觉', color: 0xffb454 },
+    { key: 'gaming',       n: 4,   label: '游戏',   copy: '游戏研究与 mod', color: 0x22d3ee },
+    { key: 'Product',      n: 2,   label: '产品',   copy: '产品化与商业化', color: 0x34d399 },
+    { key: 'Projects',     n: 2,   label: '项目',   copy: '项目记录', color: 0x7c5cff },
+    { key: 'Education',    n: 1,   label: '教育',   copy: '教学与练习设计', color: 0x22d3ee }
   ];
   var MAXN = DOMAINS[0].n;
 
-  /* ══ 主题 ══════════════════════════════════════════ */
+  var CROSS = [
+    ['AI', 'Dev'], ['AI', 'Research'], ['Dev', 'Security'], ['Research', 'Education'],
+    ['Hardware', 'Dev'], ['Productivity', 'SOP'], ['Product', 'Finance'],
+    ['Content', 'Creative'], ['cards', 'META'], ['gaming', 'Creative']
+  ];
+
+  /* ══ 1. 主题 ══════════════════════════════════════════ */
   function initTheme() {
     var saved = null;
     try { saved = localStorage.getItem('sb-theme'); } catch (e) {}
@@ -39,12 +45,10 @@
   }
   initTheme();
 
-  /* ══ 知识域网格 ═════════════════════════════════════ */
+  /* ══ 2. 知识域网格（DOM API 构建，防 XSS）═════════════ */
   function renderDomains() {
     var host = document.querySelector('[data-domains]');
     if (!host) return;
-    /* 用 DOM API 构建（不用 innerHTML）：数据虽为文件内硬编码常量，
-       但保持「永不拼接 HTML」的习惯，避免日后接入外部数据时引入 XSS。 */
     var frag = document.createDocumentFragment();
     for (var i = 0; i < DOMAINS.length; i++) {
       var d = DOMAINS[i];
@@ -73,7 +77,7 @@
   }
   renderDomains();
 
-  /* ══ 滚动进场 ══════════════════════════════════════ */
+  /* ══ 3. 滚动进场（带 rAF 兜底）═════════════════════════ */
   function initReveal() {
     var els = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
     if (reduce || !('IntersectionObserver' in window)) {
@@ -101,9 +105,6 @@
     }, { rootMargin: '0px 0px -12% 0px', threshold: 0.12 });
     els.forEach(function (el) { io.observe(el); });
 
-    /* 安全网：锚点跳转 / 快速滚动 / 直接落地中段时，IO 可能不触发，
-       元素会永久停在 opacity:0。用 rAF 节流的滚动检查兜底，
-       把「已进入或在视口上方」的元素直接显示出来。 */
     var ticking = false;
     function sweep() {
       ticking = false;
@@ -121,11 +122,10 @@
     }
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll, { passive: true });
-    /* 首屏兜底：DOM 就绪后立刻扫一次（含 hash 直接定位的情形） */
     setTimeout(sweep, 120);
   }
 
-  /* ══ 数字计数 + 进度条 ═════════════════════════════ */
+  /* ══ 4. 数字计数 + 进度条 ═════════════════════════════ */
   function animateCount(el, target) {
     if (reduce) { el.textContent = target.toLocaleString(); return; }
     var start = null, dur = 1500;
@@ -171,9 +171,525 @@
     }
   }
 
-  /* ══ Canvas 伪 3D 知识图谱 ═════════════════════════ */
-  function initGraph() {
-    var canvas = document.querySelector('[data-graph]');
+  /* ══ 5. 卡片 3D 悬浮视差与全息光泽 ═════════════════════ */
+  function initCard3DTilt() {
+    if (reduce || window.innerWidth < 860) return;
+    var cards = document.querySelectorAll('.card, .step');
+    cards.forEach(function (card) {
+      card.addEventListener('pointermove', function (e) {
+        var rect = card.getBoundingClientRect();
+        var x = e.clientX - rect.left;
+        var y = e.clientY - rect.top;
+        var cx = rect.width / 2;
+        var cy = rect.height / 2;
+        var dx = (x - cx) / cx;
+        var dy = (y - cy) / cy;
+        card.style.transform = 'perspective(1000px) rotateX(' + (-dy * 7).toFixed(2) + 'deg) rotateY(' + (dx * 7).toFixed(2) + 'deg) translateZ(8px)';
+        card.style.setProperty('--mx', Math.round((x / rect.width) * 100) + '%');
+        card.style.setProperty('--my', Math.round((y / rect.height) * 100) + '%');
+      });
+      card.addEventListener('pointerleave', function () {
+        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px)';
+      });
+    });
+  }
+
+  /* ══ 6. 3D 立体架构解构切换 ════════════════════════════ */
+  function initStack3D() {
+    var stackWrap = document.querySelector('[data-stack-container]');
+    var treeWrap = document.querySelector('[data-tree-container]');
+    var buttons = document.querySelectorAll('[data-stack-view]');
+    if (!stackWrap || !treeWrap || !buttons.length) return;
+
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        buttons.forEach(function (b) { b.classList.remove('is-active'); });
+        btn.classList.add('is-active');
+        var view = btn.dataset.stackView;
+        if (view === '3d') {
+          stackWrap.style.display = 'block';
+          treeWrap.style.display = 'none';
+        } else {
+          stackWrap.style.display = 'none';
+          treeWrap.style.display = 'grid';
+        }
+      });
+    });
+  }
+
+  /* ══ 7. Three.js 核心动态载入 ══════════════════════════ */
+  function ensureThree(callback) {
+    if (window.THREE) {
+      callback(window.THREE);
+      return;
+    }
+    var existing = document.querySelector('script[src*="three"]');
+    if (existing) {
+      existing.addEventListener('load', function () { callback(window.THREE); });
+      return;
+    }
+    var script = document.createElement('script');
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+    script.crossOrigin = 'anonymous';
+    script.onload = function () { callback(window.THREE); };
+    script.onerror = function () { initGraphFallback(); };
+    document.head.appendChild(script);
+  }
+
+  /* ══ 8. 全景 3D 纵深星空与知识神经元 (Three.js WebGL) ═══ */
+  function initBackground3D(THREE) {
+    var canvas = document.getElementById('webgl-bg');
+    if (!canvas) return;
+
+    var renderer;
+    try {
+      renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: false, powerPreference: 'low-power' });
+    } catch (e) {
+      return;
+    }
+
+    var W = window.innerWidth;
+    var H = window.innerHeight;
+    renderer.setSize(W, H);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
+
+    var scene = new THREE.Scene();
+    var camera = new THREE.PerspectiveCamera(60, W / H, 0.1, 1000);
+    camera.position.z = 50;
+
+    var count = 380;
+    var geometry = new THREE.BufferGeometry();
+    var positions = new Float32Array(count * 3);
+    var colors = new Float32Array(count * 3);
+
+    var c1 = new THREE.Color(0x7c5cff);
+    var c2 = new THREE.Color(0x22d3ee);
+
+    for (var i = 0; i < count; i++) {
+      positions[i * 3]     = (Math.random() - 0.5) * 180;
+      positions[i * 3 + 1] = (Math.random() - 0.5) * 140;
+      positions[i * 3 + 2] = (Math.random() - 0.5) * 160;
+
+      var mixed = c1.clone().lerp(c2, Math.random());
+      colors[i * 3]     = mixed.r;
+      colors[i * 3 + 1] = mixed.g;
+      colors[i * 3 + 2] = mixed.b;
+    }
+
+    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+    var material = new THREE.PointsMaterial({
+      size: 2.2,
+      vertexColors: true,
+      transparent: true,
+      opacity: 0.65,
+      blending: THREE.AdditiveBlending
+    });
+
+    var points = new THREE.Points(geometry, material);
+    scene.add(points);
+
+    /* 浮动 3D 概念标签 */
+    var TOKENS = ['Obsidian', 'Hermes', 'MOC', 'CAD', 'PCB', 'AI Agent', 'CTF', 'FSRS', 'Self-Evolving', 'Z-Axis', 'Prompt', 'Memory'];
+    var tokenGroup = new THREE.Group();
+    scene.add(tokenGroup);
+
+    TOKENS.forEach(function (token, idx) {
+      var tc = document.createElement('canvas');
+      tc.width = 160; tc.height = 48;
+      var ctx = tc.getContext('2d');
+      ctx.fillStyle = 'rgba(124, 92, 255, 0.18)';
+      ctx.strokeStyle = 'rgba(34, 211, 238, 0.55)';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.roundRect ? ctx.roundRect(2, 2, 156, 44, 12) : ctx.rect(2, 2, 156, 44);
+      ctx.fill(); ctx.stroke();
+      ctx.fillStyle = '#b9b6c4';
+      ctx.font = '600 18px sans-serif';
+      ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+      ctx.fillText(token, 80, 24);
+
+      var tex = new THREE.CanvasTexture(tc);
+      tex.minFilter = THREE.LinearFilter;
+      var smat = new THREE.SpriteMaterial({ map: tex, transparent: true, opacity: 0.65, depthWrite: false });
+      var sp = new THREE.Sprite(smat);
+      sp.scale.set(7.5, 2.25, 1);
+      var angle = (idx / TOKENS.length) * Math.PI * 2;
+      var rad = 35 + Math.random() * 25;
+      sp.position.set(Math.cos(angle) * rad, (Math.random() - 0.5) * 50, (Math.random() - 0.5) * 60);
+      tokenGroup.add(sp);
+    });
+
+    var mouse = { x: 0, y: 0, targetX: 0, targetY: 0 };
+    window.addEventListener('pointermove', function (e) {
+      mouse.targetX = (e.clientX / window.innerWidth) * 2 - 1;
+      mouse.targetY = -(e.clientY / window.innerHeight) * 2 + 1;
+    });
+
+    var scrollProgress = 0;
+    function onScroll() {
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      scrollProgress = Math.min(1, Math.max(0, window.scrollY / (max || 1)));
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    function onResize() {
+      W = window.innerWidth; H = window.innerHeight;
+      camera.aspect = W / H;
+      camera.updateProjectionMatrix();
+      renderer.setSize(W, H);
+    }
+    window.addEventListener('resize', onResize);
+
+    var clock = new THREE.Clock();
+    function animate() {
+      if (!reduce) requestAnimationFrame(animate);
+      var t = clock.getElapsedTime();
+
+      mouse.x += (mouse.targetX - mouse.x) * 0.05;
+      mouse.y += (mouse.targetY - mouse.y) * 0.05;
+
+      points.rotation.y = t * 0.015 + mouse.x * 0.15;
+      points.rotation.x = Math.sin(t * 0.02) * 0.08 + mouse.y * 0.1;
+
+      tokenGroup.rotation.y = t * 0.012;
+      camera.position.z = 50 - scrollProgress * 55;
+      camera.position.y = -scrollProgress * 25;
+
+      renderer.render(scene, camera);
+    }
+    animate();
+  }
+
+  /* ══ 9. Hero 区域 3D 知识图谱宇宙 (Three.js WebGL) ═════ */
+  function initHero3D(THREE) {
+    var canvas = document.querySelector('canvas[data-graph]');
+    if (!canvas) return;
+
+    var renderer;
+    try {
+      renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true, powerPreference: 'high-performance' });
+    } catch (e) {
+      initGraphFallback();
+      return;
+    }
+
+    var stage = canvas.closest('.stage');
+    var status = document.querySelector('[data-graph-status]');
+    var dTitle = document.querySelector('[data-detail-title]');
+    var dCopy = document.querySelector('[data-detail-copy]');
+    var resetBtn = document.querySelector('[data-graph-reset]');
+    var expandBtn = document.querySelector('[data-graph-expand]');
+
+    var rect = canvas.getBoundingClientRect();
+    var W = Math.max(10, rect.width);
+    var H = Math.max(10, rect.height);
+    renderer.setSize(W, H);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+
+    var scene = new THREE.Scene();
+    var camera = new THREE.PerspectiveCamera(46, W / H, 0.1, 200);
+    camera.position.set(0, 0, 31);
+
+    var worldGroup = new THREE.Group();
+    scene.add(worldGroup);
+
+    /* 3D HOME 中心核心 */
+    var coreGeo = new THREE.SphereGeometry(2.3, 32, 32);
+    var coreMat = new THREE.MeshBasicMaterial({ color: 0x7c5cff });
+    var coreMesh = new THREE.Mesh(coreGeo, coreMat);
+    worldGroup.add(coreMesh);
+
+    var shellGeo = new THREE.IcosahedronGeometry(3.1, 1);
+    var shellMat = new THREE.MeshBasicMaterial({ color: 0x22d3ee, wireframe: true, transparent: true, opacity: 0.55 });
+    var shellMesh = new THREE.Mesh(shellGeo, shellMat);
+    worldGroup.add(shellMesh);
+
+    var ring1Geo = new THREE.TorusGeometry(5.2, 0.08, 16, 90);
+    var ring1Mat = new THREE.MeshBasicMaterial({ color: 0x7c5cff, transparent: true, opacity: 0.7 });
+    var ring1 = new THREE.Mesh(ring1Geo, ring1Mat);
+    ring1.rotation.x = Math.PI / 3;
+    worldGroup.add(ring1);
+
+    var ring2Geo = new THREE.TorusGeometry(5.9, 0.07, 16, 90);
+    var ring2Mat = new THREE.MeshBasicMaterial({ color: 0x22d3ee, transparent: true, opacity: 0.6 });
+    var ring2 = new THREE.Mesh(ring2Geo, ring2Mat);
+    ring2.rotation.y = Math.PI / 4;
+    ring2.rotation.x = -Math.PI / 6;
+    worldGroup.add(ring2);
+
+    /* 文字 Sprite 生成器（CanvasTexture 动态药丸标签）*/
+    function createTextSprite(label, count, colorHex) {
+      var cvs = document.createElement('canvas');
+      cvs.width = 240; cvs.height = 64;
+      var ctx = cvs.getContext('2d');
+
+      ctx.fillStyle = 'rgba(10, 10, 14, 0.88)';
+      ctx.strokeStyle = colorHex || '#7c5cff';
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.roundRect ? ctx.roundRect(4, 4, 232, 56, 16) : ctx.rect(4, 4, 232, 56);
+      ctx.fill(); ctx.stroke();
+
+      ctx.fillStyle = '#f2f0f5';
+      ctx.font = '600 24px -apple-system, sans-serif';
+      ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+      ctx.fillText(label + ' · ' + count, 120, 32);
+
+      var tex = new THREE.CanvasTexture(cvs);
+      tex.minFilter = THREE.LinearFilter;
+      var mat = new THREE.SpriteMaterial({ map: tex, transparent: true, depthWrite: false });
+      var sp = new THREE.Sprite(mat);
+      sp.scale.set(3.8, 1.01, 1);
+      return sp;
+    }
+
+    /* HOME 标签 */
+    var homeLabel = createTextSprite('HOME', 1093, '#22d3ee');
+    homeLabel.position.set(0, 4.4, 0);
+    worldGroup.add(homeLabel);
+
+    /* 18 个 3D 领域节点（球形 Fibonacci 空间分布）*/
+    var domainNodes = [];
+    var GA = Math.PI * (3 - Math.sqrt(5));
+    var sphereR = 14.5;
+
+    for (var i = 0; i < DOMAINS.length; i++) {
+      var d = DOMAINS[i];
+      var y = 1 - (i / (DOMAINS.length - 1)) * 2;
+      var rAtY = Math.sqrt(Math.max(0, 1 - y * y));
+      var theta = GA * i;
+      var px = Math.cos(theta) * rAtY * sphereR;
+      var py = y * sphereR;
+      var pz = Math.sin(theta) * rAtY * sphereR;
+
+      var nodeR = 0.85 + (d.n / MAXN) * 0.95;
+      var nodeGeo = new THREE.SphereGeometry(nodeR, 24, 24);
+      var nodeMat = new THREE.MeshBasicMaterial({ color: d.color });
+      var nodeMesh = new THREE.Mesh(nodeGeo, nodeMat);
+      nodeMesh.position.set(px, py, pz);
+      nodeMesh.userData = { key: d.key, label: d.label, n: d.n, copy: d.copy, baseScale: 1 };
+      worldGroup.add(nodeMesh);
+
+      var labelSprite = createTextSprite(d.label, d.n, d.color === 0x22d3ee ? '#22d3ee' : (d.color === 0xffb454 ? '#ffb454' : '#7c5cff'));
+      labelSprite.position.set(px, py + nodeR + 1.2, pz);
+      worldGroup.add(labelSprite);
+
+      domainNodes.push({ mesh: nodeMesh, label: labelSprite, data: d, pos: new THREE.Vector3(px, py, pz) });
+    }
+
+    /* 3D 动态能量连线与流光光子 */
+    var lineGroup = new THREE.Group();
+    worldGroup.add(lineGroup);
+
+    var curves = [];
+    var photonGroup = new THREE.Group();
+    worldGroup.add(photonGroup);
+
+    var photonCvs = document.createElement('canvas');
+    photonCvs.width = 32; photonCvs.height = 32;
+    var pctx = photonCvs.getContext('2d');
+    var grd = pctx.createRadialGradient(16, 16, 0, 16, 16, 16);
+    grd.addColorStop(0, 'rgba(34, 211, 238, 1)');
+    grd.addColorStop(1, 'rgba(124, 92, 255, 0)');
+    pctx.fillStyle = grd; pctx.fillRect(0, 0, 32, 32);
+    var photonTex = new THREE.CanvasTexture(photonCvs);
+    var photonMat = new THREE.SpriteMaterial({ map: photonTex, transparent: true, opacity: 0.9, blending: THREE.AdditiveBlending });
+
+    domainNodes.forEach(function (node, idx) {
+      var p0 = new THREE.Vector3(0, 0, 0);
+      var p2 = node.pos;
+      var p1 = p2.clone().multiplyScalar(0.5).add(new THREE.Vector3(0, 2.2, 0));
+      var curve = new THREE.QuadraticBezierCurve3(p0, p1, p2);
+      curves.push(curve);
+
+      var pts = curve.getPoints(24);
+      var lgeo = new THREE.BufferGeometry().setFromPoints(pts);
+      var lmat = new THREE.LineBasicMaterial({ color: 0x7c5cff, transparent: true, opacity: 0.28 });
+      var line = new THREE.Line(lgeo, lmat);
+      lineGroup.add(line);
+
+      var photon = new THREE.Sprite(photonMat);
+      photon.scale.set(1.2, 1.2, 1);
+      photon.userData = { curveIdx: curves.length - 1, offset: (idx / DOMAINS.length) };
+      photonGroup.add(photon);
+    });
+
+    /* 跨域 3D 连线 */
+    CROSS.forEach(function (pair) {
+      var n1 = domainNodes.filter(function (n) { return n.data.key === pair[0]; })[0];
+      var n2 = domainNodes.filter(function (n) { return n.data.key === pair[1]; })[0];
+      if (n1 && n2) {
+        var mid = n1.pos.clone().add(n2.pos).multiplyScalar(0.5).add(new THREE.Vector3(0, 1.5, 0));
+        var c = new THREE.QuadraticBezierCurve3(n1.pos, mid, n2.pos);
+        var pts = c.getPoints(20);
+        var lgeo = new THREE.BufferGeometry().setFromPoints(pts);
+        var lmat = new THREE.LineBasicMaterial({ color: 0x22d3ee, transparent: true, opacity: 0.35 });
+        lineGroup.add(new THREE.Line(lgeo, lmat));
+      }
+    });
+
+    /* 3D 鼠标拖拽与惯性系统 */
+    var rot = { x: -0.18, y: 0.45 };
+    var vel = { x: 0, y: 0.0018 };
+    var drag = { on: false, lx: 0, ly: 0, moved: false };
+
+    function getCanvasCoords(ev) {
+      var r = canvas.getBoundingClientRect();
+      return {
+        x: ((ev.clientX - r.left) / r.width) * 2 - 1,
+        y: -((ev.clientY - r.top) / r.height) * 2 + 1,
+        px: ev.clientX - r.left,
+        py: ev.clientY - r.top
+      };
+    }
+
+    canvas.addEventListener('pointerdown', function (e) {
+      drag.on = true; drag.moved = false;
+      drag.lx = e.clientX; drag.ly = e.clientY;
+      canvas.setPointerCapture(e.pointerId);
+    });
+
+    var raycaster = new THREE.Raycaster();
+    var mouseNorm = new THREE.Vector2(-999, -999);
+    var hoveredNode = null;
+
+    canvas.addEventListener('pointermove', function (e) {
+      if (drag.on) {
+        var dx = e.clientX - drag.lx;
+        var dy = e.clientY - drag.ly;
+        if (Math.abs(dx) + Math.abs(dy) > 2) drag.moved = true;
+        rot.y += dx * 0.0055;
+        rot.x = Math.max(-1.1, Math.min(1.1, rot.x + dy * 0.005));
+        vel.y = dx * 0.0015;
+        vel.x = dy * 0.0008;
+        drag.lx = e.clientX; drag.ly = e.clientY;
+      }
+      var c = getCanvasCoords(e);
+      mouseNorm.x = c.x; mouseNorm.y = c.y;
+    });
+
+    function endDrag(e) {
+      if (!drag.on) return;
+      drag.on = false;
+      try { canvas.releasePointerCapture(e.pointerId); } catch (err) {}
+      if (!drag.moved) {
+        raycaster.setFromCamera(mouseNorm, camera);
+        var hits = raycaster.intersectObjects(domainNodes.map(function (n) { return n.mesh; }));
+        if (hits.length > 0) {
+          selectNode(hits[0].object.userData);
+        }
+      }
+    }
+    canvas.addEventListener('pointerup', endDrag);
+    canvas.addEventListener('pointercancel', endDrag);
+
+    function selectNode(data) {
+      if (!data) return;
+      if (status) status.textContent = '已选中 3D 节点 · ' + data.key;
+      if (dTitle) dTitle.textContent = data.label + ' · ' + data.key;
+      if (dCopy) dCopy.textContent = data.n + ' 篇 · ' + data.copy;
+
+      var targetNode = domainNodes.filter(function (n) { return n.data.key === data.key; })[0];
+      if (targetNode) {
+        var targetRotY = -Math.atan2(targetNode.pos.x, targetNode.pos.z);
+        rot.y = targetRotY;
+        rot.x = 0;
+        vel.y = 0; vel.x = 0;
+      }
+    }
+
+    if (resetBtn) {
+      resetBtn.addEventListener('click', function () {
+        rot.x = -0.18; rot.y = 0.45; vel.x = 0; vel.y = 0.0018;
+        if (status) status.textContent = '视角已重置';
+        if (dTitle) dTitle.textContent = 'Research';
+        if (dCopy) dCopy.textContent = '235 篇 · 论文、文献、研究方法';
+      });
+    }
+
+    if (expandBtn) {
+      expandBtn.addEventListener('click', function () {
+        var isExp = stage.classList.toggle('is-expanded');
+        expandBtn.textContent = isExp ? '退出沉浸' : '全屏沉浸';
+        expandBtn.classList.toggle('is-active', isExp);
+        document.body.classList.toggle('webgl-expanded', isExp);
+        setTimeout(resizeHero, 100);
+      });
+    }
+
+    function resizeHero() {
+      var r = canvas.getBoundingClientRect();
+      W = Math.max(10, r.width);
+      H = Math.max(10, r.height);
+      camera.aspect = W / H;
+      camera.updateProjectionMatrix();
+      renderer.setSize(W, H);
+    }
+    window.addEventListener('resize', resizeHero);
+
+    var clock = new THREE.Clock();
+    function animate() {
+      if (!reduce) requestAnimationFrame(animate);
+      var t = clock.getElapsedTime();
+
+      if (!drag.on) {
+        rot.y += vel.y;
+        rot.x += vel.x;
+        vel.y += (0.0016 - vel.y) * 0.02;
+        vel.x *= 0.95;
+      }
+
+      worldGroup.rotation.y = rot.y;
+      worldGroup.rotation.x = rot.x;
+
+      shellMesh.rotation.y = -t * 0.25;
+      shellMesh.rotation.x = t * 0.15;
+      ring1.rotation.z = t * 0.35;
+      ring2.rotation.z = -t * 0.28;
+
+      /* 光子脉冲沿着 3D 曲线穿梭流动 */
+      photonGroup.children.forEach(function (photon) {
+        var cIdx = photon.userData.curveIdx;
+        var offset = photon.userData.offset;
+        if (curves[cIdx]) {
+          var prog = (t * 0.28 + offset) % 1.0;
+          photon.position.copy(curves[cIdx].getPoint(prog));
+        }
+      });
+
+      /* 3D 射线拾取与悬停反馈 */
+      raycaster.setFromCamera(mouseNorm, camera);
+      var intersects = raycaster.intersectObjects(domainNodes.map(function (n) { return n.mesh; }));
+      if (intersects.length > 0) {
+        var hit = intersects[0].object;
+        if (hoveredNode !== hit) {
+          if (hoveredNode) hoveredNode.scale.set(1, 1, 1);
+          hoveredNode = hit;
+          hoveredNode.scale.set(1.55, 1.55, 1.55);
+          canvas.style.cursor = 'pointer';
+          var d = hoveredNode.userData;
+          if (status) status.textContent = '悬停 3D 节点 · ' + d.label + ' (' + d.n + ' 篇)';
+          if (dTitle) dTitle.textContent = d.label + ' · ' + d.key;
+          if (dCopy) dCopy.textContent = d.n + ' 篇 · ' + d.copy;
+        }
+      } else {
+        if (hoveredNode) {
+          hoveredNode.scale.set(1, 1, 1);
+          hoveredNode = null;
+          canvas.style.cursor = 'grab';
+        }
+      }
+
+      renderer.render(scene, camera);
+    }
+    animate();
+  }
+
+  /* ══ 10. Canvas 2D 降级方案（离线或无 Three.js 时使用）═══ */
+  function initGraphFallback() {
+    var canvas = document.querySelector('canvas[data-graph]');
     if (!canvas) return;
     var ctx = canvas.getContext('2d');
     if (!ctx) return;
@@ -192,48 +708,23 @@
       canvas.width = Math.round(W * dpr);
       canvas.height = Math.round(H * dpr);
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      cx = W / 2; cy = H / 2;
-      R = Math.min(W, H) * 0.33;
+      cx = W / 2; cy = H / 2; R = Math.min(W, H) * 0.33;
     }
 
-    /* 节点：hub 在中心，18 个域分布在球面（Fibonacci 球）*/
     var nodes = [{ key: 'HOME', label: 'HOME', n: 1093, hub: true, x: 0, y: 0, z: 0 }];
     var GA = Math.PI * (3 - Math.sqrt(5));
     for (var i = 0; i < DOMAINS.length; i++) {
       var y = 1 - (i / (DOMAINS.length - 1)) * 2;
       var rad = Math.sqrt(Math.max(0, 1 - y * y));
       var th = GA * i;
-      nodes.push({
-        key: DOMAINS[i].key, label: DOMAINS[i].label, n: DOMAINS[i].n,
-        x: Math.cos(th) * rad, y: y, z: Math.sin(th) * rad
-      });
+      nodes.push({ key: DOMAINS[i].key, label: DOMAINS[i].label, n: DOMAINS[i].n, x: Math.cos(th) * rad, y: y, z: Math.sin(th) * rad });
     }
-
-    /* 边：hub→每个域 + 若干跨域关联（真实语义）*/
-    var CROSS = [
-      ['AI', 'Dev'], ['AI', 'Research'], ['Dev', 'Security'], ['Research', 'Education'],
-      ['Hardware', 'Dev'], ['Productivity', 'SOP'], ['Product', 'Finance'],
-      ['Content', 'Creative'], ['cards', 'META'], ['gaming', 'Creative']
-    ];
-    var edges = [];
-    for (var e = 1; e < nodes.length; e++) edges.push([0, e]);
-    CROSS.forEach(function (pair) {
-      var a = -1, b = -1;
-      for (var k = 0; k < nodes.length; k++) {
-        if (nodes[k].key === pair[0]) a = k;
-        if (nodes[k].key === pair[1]) b = k;
-      }
-      if (a > 0 && b > 0) edges.push([a, b]);
-    });
 
     var rot = { x: -0.18, y: 0.5 };
     var vel = { x: 0, y: 0.0016 };
-    var drag = { on: false, lx: 0, ly: 0 };
-    var focused = -1;
     var t = 0;
 
     function project(p) {
-      /* 绕 Y 再绕 X 旋转 */
       var cy1 = Math.cos(rot.y), sy1 = Math.sin(rot.y);
       var x1 = p.x * cy1 - p.z * sy1;
       var z1 = p.x * sy1 + p.z * cy1;
@@ -244,188 +735,31 @@
       return { x: cx + x1 * R * persp * 1.7, y: cy + y1 * R * persp * 1.7, z: z2, s: persp };
     }
 
-    function css(name) {
-      return getComputedStyle(root).getPropertyValue(name).trim() || '#888';
-    }
-
     function draw() {
       ctx.clearRect(0, 0, W, H);
-      var cViolet = css('--violet'), cCyan = css('--cyan'), cInk = css('--ink'), cMuted = css('--muted');
-
       var pts = nodes.map(project);
-
-      /* 呼吸脉动 */
-      var breathe = 1 + Math.sin(t * 0.0011) * 0.045;
-      for (var i = 0; i < pts.length; i++) {
-        pts[i].x = cx + (pts[i].x - cx) * breathe;
-        pts[i].y = cy + (pts[i].y - cy) * breathe;
+      for (var e = 1; e < pts.length; e++) {
+        var a = pts[0], b = pts[e];
+        ctx.strokeStyle = 'rgba(124,92,255,0.22)';
+        ctx.lineWidth = 0.8;
+        ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
       }
-
-      /* 边 */
-      for (var j = 0; j < edges.length; j++) {
-        var a = pts[edges[j][0]], b = pts[edges[j][1]];
-        var depth = (a.z + b.z) / 2;
-        var alpha = 0.1 + (depth + 1) * 0.13;
-        var isCross = edges[j][0] !== 0 && edges[j][1] !== 0;
-        ctx.strokeStyle = isCross
-          ? 'rgba(34,211,238,' + (alpha * 0.72) + ')'
-          : 'rgba(124,92,255,' + alpha + ')';
-        ctx.lineWidth = isCross ? 0.7 : 0.9;
-        ctx.beginPath();
-        ctx.moveTo(a.x, a.y);
-        ctx.lineTo(b.x, b.y);
-        ctx.stroke();
-
-        /* hub 连线上的流动光点 */
-        if (edges[j][0] === 0 && !reduce) {
-          var f = ((t * 0.00042) + j * 0.11) % 1;
-          var px = a.x + (b.x - a.x) * f;
-          var py = a.y + (b.y - a.y) * f;
-          ctx.fillStyle = 'rgba(34,211,238,' + (0.75 * Math.max(0, depth + 1) / 2 + 0.15) + ')';
-          ctx.beginPath();
-          ctx.arc(px, py, 1.5, 0, Math.PI * 2);
-          ctx.fill();
-        }
-      }
-
-      /* 节点：按深度排序（远→近）*/
-      var order = pts.map(function (p, idx) { return idx; })
-                     .sort(function (m, n) { return pts[m].z - pts[n].z; });
-
-      for (var k = 0; k < order.length; k++) {
-        var idx = order[k];
-        var p = pts[idx];
-        var node = nodes[idx];
-        var isFocus = idx === focused;
-        var base = node.hub ? 8.5 : 3.4 + (node.n / MAXN) * 3.4;
-        var rr = base * p.s * (isFocus ? 1.5 : 1);
-
-        /* 光晕 */
-        var glow = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, rr * 4.5);
-        var gc = node.hub ? '124,92,255' : (isFocus ? '255,180,84' : '124,92,255');
-        glow.addColorStop(0, 'rgba(' + gc + ',' + (0.34 + (p.z + 1) * 0.12) + ')');
-        glow.addColorStop(1, 'rgba(' + gc + ',0)');
-        ctx.fillStyle = glow;
-        ctx.beginPath(); ctx.arc(p.x, p.y, rr * 4.5, 0, Math.PI * 2); ctx.fill();
-
-        /* 实心 */
-        ctx.fillStyle = node.hub ? cViolet : (isFocus ? '#ffb454' : cCyan);
-        ctx.beginPath(); ctx.arc(p.x, p.y, rr, 0, Math.PI * 2); ctx.fill();
-
-        /* 标签：hub / 聚焦 / 前排 */
-        if (node.hub || isFocus || p.z > 0.42) {
-          ctx.font = (node.hub ? '600 11px' : '500 10px') + ' ui-monospace, monospace';
-          ctx.fillStyle = isFocus ? '#ffb454' : cInk;
-          ctx.globalAlpha = 0.55 + (p.z + 1) * 0.22;
-          ctx.textAlign = 'left';
-          ctx.fillText(node.label, p.x + rr + 5, p.y + 3);
-          ctx.globalAlpha = 1;
-        }
-      }
-    }
-
-    function loop() {
-      if (!drag.on) {
-        rot.y += vel.y;
-        rot.x += vel.x;
-        vel.y += (0.0016 - vel.y) * 0.02;
-        rot.x += Math.sin(t * 0.0003) * 0.00025;
-      }
-      t += 16;
-      draw();
-      requestAnimationFrame(loop);
-    }
-
-    /* 拾取最近节点 */
-    function pick(mx, my) {
-      var best = -1, bd = 1e9;
-      for (var i = 0; i < nodes.length; i++) {
-        var p = project(nodes[i]);
-        var d = Math.hypot(p.x - mx, p.y - my);
-        if (d < 26 && d < bd) { bd = d; best = i; }
-      }
-      return best;
-    }
-
-    function focusNode(idx) {
-      focused = idx;
-      var node = nodes[idx];
-      if (!node) return;
-      if (node.hub) {
-        if (status) status.textContent = '已聚焦 HOME · 1093 篇笔记总入口';
-        if (dTitle) dTitle.textContent = 'HOME';
-        if (dCopy) dCopy.textContent = '1093 篇 · 总索引与目标级联';
-      } else {
-        var d = DOMAINS.filter(function (x) { return x.key === node.key; })[0];
-        if (status) status.textContent = '已选中 ' + node.key;
-        if (dTitle) dTitle.textContent = d.label + ' · ' + node.key;
-        if (dCopy) dCopy.textContent = d.n + ' 篇 · ' + d.copy;
-      }
-    }
-
-    var moved = false;
-    function pos(ev) {
-      var r = canvas.getBoundingClientRect();
-      return { x: ev.clientX - r.left, y: ev.clientY - r.top };
-    }
-
-    canvas.addEventListener('pointerdown', function (ev) {
-      drag.on = true; moved = false;
-      var p = pos(ev); drag.lx = p.x; drag.ly = p.y;
-      canvas.setPointerCapture(ev.pointerId);
-    });
-    canvas.addEventListener('pointermove', function (ev) {
-      if (!drag.on) return;
-      var p = pos(ev);
-      var dx = p.x - drag.lx, dy = p.y - drag.ly;
-      if (Math.abs(dx) + Math.abs(dy) > 2) moved = true;
-      rot.y += dx * 0.006;
-      rot.x = Math.max(-1.2, Math.min(1.2, rot.x + dy * 0.005));
-      vel.y = dx * 0.0016;
-      vel.x = 0;
-      drag.lx = p.x; drag.ly = p.y;
-    });
-    function endDrag(ev) {
-      if (!drag.on) return;
-      drag.on = false;
-      try { canvas.releasePointerCapture(ev.pointerId); } catch (e) {}
-      if (!moved) {
-        var p = pos(ev);
-        var idx = pick(p.x, p.y);
-        if (idx >= 0) focusNode(idx);
-      }
-    }
-    canvas.addEventListener('pointerup', endDrag);
-    canvas.addEventListener('pointercancel', endDrag);
-
-    /* 键盘可达性 */
-    canvas.tabIndex = 0;
-    canvas.addEventListener('keydown', function (ev) {
-      if (ev.key === 'ArrowRight' || ev.key === 'ArrowDown') {
-        focusNode((focused + 1 + nodes.length) % nodes.length); ev.preventDefault();
-      } else if (ev.key === 'ArrowLeft' || ev.key === 'ArrowUp') {
-        focusNode((focused - 1 + nodes.length) % nodes.length); ev.preventDefault();
-      } else if (ev.key === 'Escape') {
-        focused = -1; if (status) status.textContent = '拖动 / 点击节点查看领域';
-      }
-    });
-
-    if (resetBtn) {
-      resetBtn.addEventListener('click', function () {
-        rot.x = -0.18; rot.y = 0.5; vel.x = 0; vel.y = 0.0016;
-        focused = -1;
-        if (status) status.textContent = '视角已重置';
-        if (dTitle) dTitle.textContent = 'Research';
-        if (dCopy) dCopy.textContent = '235 篇 · 论文、文献、研究方法';
+      pts.forEach(function (p, idx) {
+        ctx.fillStyle = idx === 0 ? '#7c5cff' : '#22d3ee';
+        ctx.beginPath(); ctx.arc(p.x, p.y, idx === 0 ? 8 : 4, 0, Math.PI * 2); ctx.fill();
       });
     }
 
+    function loop() {
+      rot.y += vel.y; t += 16; draw();
+      if (!reduce) requestAnimationFrame(loop);
+    }
     resize();
     window.addEventListener('resize', resize);
-    if (reduce) { draw(); } else { requestAnimationFrame(loop); }
+    loop();
   }
 
-  /* ══ 主题 / 菜单 / 复制 / 滚动 ═════════════════════ */
+  /* ══ 11. 基础 UI 交互（主题 / 菜单 / 复制 / 滚动）═════ */
   function initChrome() {
     var themeBtn = document.querySelector('[data-action="theme"]');
     if (themeBtn) {
@@ -482,12 +816,22 @@
     }
   }
 
-  /* ══ 启动 ═════════════════════════════════════════ */
+  /* ══ 12. 启动 ════════════════════════════════════════ */
   function boot() {
     initReveal();
     initCounters();
-    initGraph();
+    initCard3DTilt();
+    initStack3D();
     initChrome();
+
+    ensureThree(function (THREE) {
+      if (THREE) {
+        initBackground3D(THREE);
+        initHero3D(THREE);
+      } else {
+        initGraphFallback();
+      }
+    });
   }
 
   if (document.readyState === 'loading') {
