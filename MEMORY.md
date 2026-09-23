@@ -120,6 +120,62 @@ OpenClaw 从单一框架扩展为 5 个发行版，覆盖不同场景：
 ### ContextEngine 生产就绪
 v2026.3.7 引入的可插拔上下文管理界面已验证稳定。模型路由器自动 fallback/retry 机制完善，支持链式降级。Cross-Component Trust 安全模型生效：远程节点事件默认 untrusted + realpath() 技能路径验证。
 
+### AI Agent 持续学习三层架构 (2026 核心共识，LangChain Apr 2026)
+- **Model layer**: 权重更新 / 微调（成本高、验证难、非主流）
+- **Harness layer**: 代码/流程/技能配置改进（主流落地层，Skill Workshop、Prompt 版本控制、Graph Engineering）
+- **Context layer**: 记忆/指令/上下文管理（Context-layer continual learning 成主流，Memory 层改进 > 模型微调）
+- **Verifiable Continual Learning 产业标准**: 失败→可重放环境→regression 测试→路由修复到正确层
+
+### 三层记忆架构标准化 (Letta/MemGPT 成熟实现)
+- **Core Memory (in-context)**: Agent 直接可编辑的工作记忆，少量高价值事实/偏好/规则
+- **Archival Memory (vector store)**: 外部向量存储，语义检索，大规模长期知识
+- **Recall Memory (conversation history)**: 对话历史索引检索，时间/主题/实体多维召回
+- **Write-Path > Read-Only RAG**: 图记忆生态成熟，实体关系检索超越向量相似度
+
+### A-MEM: Agentic Memory (Feb 2026, 记忆系统自适应化)
+- 记忆操作作为可调用工具（创建/更新/删除/关联/遗忘）
+- 经 3-stage RL with GRPO 学习非显性记忆策略：
+  - 预防性摘要（主动压缩前文）
+  - 选择性遗忘（丢弃低价值/矛盾记忆）
+  - 主动关联概念（跨域建立隐式链接）
+- 记忆系统本身变自适应，无需硬编码策略
+
+### Agent Dreaming & Skill Learning (2026 核心特性)
+- 在 Letta Code、Claude Code、DeepAgents、OpenClaw 等 harness 中成核心特性
+- REM 阶段自动合成/泛化/提炼技能，离线优化 Agent 能力
+
+### 图记忆生态成熟 (10+ 框架)
+- **Mem0/Letta/Cognee/Zep/GraphRAG/Neo4j-based 等**
+- Write-Path: 实体抽取 → 关系建立 → 图写入 → 图遍历检索
+- 实体关系检索超越向量相似度，解决 RAG「检到但推不出」问题
+
+### 记忆生命周期管理三步曲 (缺一不可)
+1. **Extract（提取）**: 从交互/文档/工具输出中识别事实/偏好/规则/技能
+2. **Update（更新/合并/去重）**: 新旧记忆冲突解决、同义实体合并、版本化
+3. **Delete（删除陈旧/矛盾）**: 过期偏好、错误事实、冲突规则主动清理
+- **陈旧记忆毒性 > 无记忆**: 过时偏好/错误事实/冲突规则会主动污染推理，需强化 Update/Delete 机制
+
+### OpenAI Agents API 公测 (2026-09)
+- **托管 Agent 循环**: 会话管理、自动重试、摘要生成、工具编排内置
+- **Data Agent**: ChatGPT Work 连企业数据源（Drive/Notion/Slack/Confluence 等）
+- **GPT-Live-1**: 全双工语音交互模型
+- **托管沙箱免费**: 仅计费模型 token + 工具使用，大幅降低构建门槛
+
+### 部署最佳实践 6 大支柱 + 生产 8 大最佳实践 (InfoQ 2026)
+**6 大支柱**: 环境变量密钥、健康监控+告警、自动扩缩容、每日备份+验证、自定义域名+SSL、RBAC
+**8 大最佳实践**:
+1. 全链路监控（技术/业务/AI 专属指标）
+2. 高可用 + 灾备 + 依赖管理
+3. 最小特权 + 完整审计日志
+4. 置信度阈值 + 人工升级路径（Bounded Autonomy）
+5. 内容过滤 + Guardrails + Bias 监控
+6. 自动测试 Pipeline + Canary + A/B
+7. 模型版本控制 + 快速回滚
+8. **成本优化三件套**: 模型路由(60-70%) + Prompt Caching(60-80%) + Batch API(50%)
+
+### Gartner 2026-08-17: AI 推理成本至 2028 每 agentic workflow 增超 5 倍
+- 成本控制升为「生存项」，直接背书 cheap-model tiering + semantic caching + 模型路由
+
 ## 行业认知（2026）
 
 ### 核心范式转型
@@ -278,6 +334,12 @@ _最后更新: 2026-09-21｜运行环境: Hermes Agent on Windows 11_
 - AI Agent / OpenClaw 最新发展 (Tavily 搜索摘要): **系统全自动化确认** - FlClash 代理 9/16 重启恢复，连续 7+ 天高亮唯一人工介入点清除，系统可靠性恢复全自动化 [score=0.950 recalls=0 avg=0.620 source=memory/2026-09-20-self-improvement.md:7-7]
 <!-- openclaw-memory-promotion:memory:memory/2026-09-20-self-improvement.md:45:47 -->
 - AI Agent / OpenClaw 最新发展 (Tavily 搜索摘要): **OpenAI Agents API 公测** + **部署最佳实践 6 大支柱** + **OpenClaw vs Claude Code 互补关系** 等新发展 [score=0.920 recalls=0 avg=0.620 source=memory/2026-09-20-self-improvement.md:45-47]
+<!-- openclaw-memory-promotion:memory:memory/2026-09-23-self-improvement.md:7:7 -->
+- AI Agent / OpenClaw 最新发展 (Tavily 搜索摘要): **AI Agent 持续学习三层架构确立** (Model/Harness/Context 三层，Context-layer continual learning 成主流) [score=0.940 recalls=0 avg=0.620 source=memory/2026-09-23-self-improvement.md:7-7]
+<!-- openclaw-memory-promotion:memory:memory/2026-09-23-self-improvement.md:8:15 -->
+- AI Agent / OpenClaw 最新发展 (Tavily 搜索摘要): **三层记忆架构标准化** (Core/Archival/Recall) + **A-MEM 自适应记忆** + **Agent Dreaming & Skill Learning** + **图记忆生态成熟** + **记忆生命周期三步曲** [score=0.930 recalls=0 avg=0.620 source=memory/2026-09-23-self-improvement.md:8-15]
+<!-- openclaw-memory-promotion:memory:memory/2026-09-23-self-improvement.md:45:52 -->
+- 经验教训 (.learnings/LEARNINGS.md) 近期高价值: 系统全自动化稳健运行、持续学习三层架构、三层记忆标准化、A-MEM自适应、OpenClaw 2.0节奏、安全标准化、OpenAI托管、成本生存项 [score=0.910 recalls=0 avg=0.620 source=memory/2026-09-23-self-improvement.md:45-52]
 
 ## 🔧 2026-08 存档期关键产出（memory/2026/08/ 归档前提炼）
 
@@ -311,4 +373,4 @@ _最后更新: 2026-09-21｜运行环境: Hermes Agent on Windows 11_
 
 ---
 
-_最后更新: 2026-09-21 | 归档截止: 2026-08-21 (含) | 运行环境: Hermes Agent on Windows 11_
+_最后更新: 2026-09-23 | 归档截止: 2026-08-21 (含) | 运行环境: Hermes Agent on Windows 11_
