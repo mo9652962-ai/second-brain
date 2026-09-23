@@ -3034,6 +3034,15 @@
 </tbody>
 </table>
 <hr />
+<h2 id="agent_2">第五部分 工业级垂直 Agent 核心套件实现（实测通过验证）<a class="headerlink" href="#agent_2" title="Permanent link">&para;</a></h2>
+<p>已在 <code>D:/wave-fixture-ai/vertical_agent_toolkit.py</code> 完整实现并测试通过四大工业级核心引擎：</p>
+<ol>
+<li><strong><code>VerticalAgentFSM</code></strong>：支持 <code>INIT</code>、<code>INGESTING</code>、<code>PARSED</code>、<code>DRC_CHECKING</code>、<code>REVIEW_SUSPENDED</code>、<code>PRODUCTION_READY</code> 六级状态机与历史检查点回滚（<code>rollback_to</code>）。</li>
+<li><strong><code>GeometricHealer</code></strong>：提供 <code>heal_polygon</code> 拓扑四级自愈（<code>is_valid</code> ➔ <code>make_valid</code> ➔ <code>buffer(0)</code> ➔ <code>dilate-erode</code>），实测自动修复自相交领结多边形；计算不可伪造的 <code>geometrySha256</code>。</li>
+<li><strong><code>DomainContextDistiller</code></strong>：将包含数万图元的原始工程数据，按边界、缺失层、DRC 违规与待审核列表压缩为 <strong>~68 tokens</strong> 的极简 JSON 快照，实现 LLM 零幻觉低成本决策。</li>
+<li><strong><code>AgentEvalHarness</code></strong>：提供自动化回归比对（<code>IoU &gt;= 0.90</code> 且 <code>Hausdorff &lt;= 0.5mm</code>），生成结构化基线报告。</li>
+</ol>
+<hr />
 <blockquote>
 <p>🔗 关联: [[MOC-Dev]] · [[knowledge/knowledge-map|知识地图]] · [[pcb-fixture-automation]] · [[engineering-workflow]]</p>
 </blockquote>
