@@ -2962,8 +2962,71 @@
 </ul>
 <h3 id="contextengine">ContextEngine 生产就绪<a class="headerlink" href="#contextengine" title="Permanent link">&para;</a></h3>
 <p>v2026.3.7 引入的可插拔上下文管理界面已验证稳定。模型路由器自动 fallback/retry 机制完善，支持链式降级。Cross-Component Trust 安全模型生效：远程节点事件默认 untrusted + realpath() 技能路径验证。</p>
+<h3 id="ai-agent-2026-langchain-apr-2026">AI Agent 持续学习三层架构 (2026 核心共识，LangChain Apr 2026)<a class="headerlink" href="#ai-agent-2026-langchain-apr-2026" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Model layer</strong>: 权重更新 / 微调（成本高、验证难、非主流）</li>
+<li><strong>Harness layer</strong>: 代码/流程/技能配置改进（主流落地层，Skill Workshop、Prompt 版本控制、Graph Engineering）</li>
+<li><strong>Context layer</strong>: 记忆/指令/上下文管理（Context-layer continual learning 成主流，Memory 层改进 &gt; 模型微调）</li>
+<li><strong>Verifiable Continual Learning 产业标准</strong>: 失败→可重放环境→regression 测试→路由修复到正确层</li>
+</ul>
+<h3 id="lettamemgpt">三层记忆架构标准化 (Letta/MemGPT 成熟实现)<a class="headerlink" href="#lettamemgpt" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Core Memory (in-context)</strong>: Agent 直接可编辑的工作记忆，少量高价值事实/偏好/规则</li>
+<li><strong>Archival Memory (vector store)</strong>: 外部向量存储，语义检索，大规模长期知识</li>
+<li><strong>Recall Memory (conversation history)</strong>: 对话历史索引检索，时间/主题/实体多维召回</li>
+<li><strong>Write-Path &gt; Read-Only RAG</strong>: 图记忆生态成熟，实体关系检索超越向量相似度</li>
+</ul>
+<h3 id="a-mem-agentic-memory-feb-2026">A-MEM: Agentic Memory (Feb 2026, 记忆系统自适应化)<a class="headerlink" href="#a-mem-agentic-memory-feb-2026" title="Permanent link">&para;</a></h3>
+<ul>
+<li>记忆操作作为可调用工具（创建/更新/删除/关联/遗忘）</li>
+<li>经 3-stage RL with GRPO 学习非显性记忆策略：</li>
+<li>预防性摘要（主动压缩前文）</li>
+<li>选择性遗忘（丢弃低价值/矛盾记忆）</li>
+<li>主动关联概念（跨域建立隐式链接）</li>
+<li>记忆系统本身变自适应，无需硬编码策略</li>
+</ul>
+<h3 id="agent-dreaming-skill-learning-2026">Agent Dreaming &amp; Skill Learning (2026 核心特性)<a class="headerlink" href="#agent-dreaming-skill-learning-2026" title="Permanent link">&para;</a></h3>
+<ul>
+<li>在 Letta Code、Claude Code、DeepAgents、OpenClaw 等 harness 中成核心特性</li>
+<li>REM 阶段自动合成/泛化/提炼技能，离线优化 Agent 能力</li>
+</ul>
+<h3 id="10">图记忆生态成熟 (10+ 框架)<a class="headerlink" href="#10" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Mem0/Letta/Cognee/Zep/GraphRAG/Neo4j-based 等</strong></li>
+<li>Write-Path: 实体抽取 → 关系建立 → 图写入 → 图遍历检索</li>
+<li>实体关系检索超越向量相似度，解决 RAG「检到但推不出」问题</li>
+</ul>
+<h3 id="_10">记忆生命周期管理三步曲 (缺一不可)<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Extract（提取）</strong>: 从交互/文档/工具输出中识别事实/偏好/规则/技能</li>
+<li><strong>Update（更新/合并/去重）</strong>: 新旧记忆冲突解决、同义实体合并、版本化</li>
+<li><strong>Delete（删除陈旧/矛盾）</strong>: 过期偏好、错误事实、冲突规则主动清理</li>
+<li><strong>陈旧记忆毒性 &gt; 无记忆</strong>: 过时偏好/错误事实/冲突规则会主动污染推理，需强化 Update/Delete 机制</li>
+</ol>
+<h3 id="openai-agents-api-2026-09">OpenAI Agents API 公测 (2026-09)<a class="headerlink" href="#openai-agents-api-2026-09" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>托管 Agent 循环</strong>: 会话管理、自动重试、摘要生成、工具编排内置</li>
+<li><strong>Data Agent</strong>: ChatGPT Work 连企业数据源（Drive/Notion/Slack/Confluence 等）</li>
+<li><strong>GPT-Live-1</strong>: 全双工语音交互模型</li>
+<li><strong>托管沙箱免费</strong>: 仅计费模型 token + 工具使用，大幅降低构建门槛</li>
+</ul>
+<h3 id="6-8-infoq-2026">部署最佳实践 6 大支柱 + 生产 8 大最佳实践 (InfoQ 2026)<a class="headerlink" href="#6-8-infoq-2026" title="Permanent link">&para;</a></h3>
+<p><strong>6 大支柱</strong>: 环境变量密钥、健康监控+告警、自动扩缩容、每日备份+验证、自定义域名+SSL、RBAC
+<strong>8 大最佳实践</strong>:
+1. 全链路监控（技术/业务/AI 专属指标）
+2. 高可用 + 灾备 + 依赖管理
+3. 最小特权 + 完整审计日志
+4. 置信度阈值 + 人工升级路径（Bounded Autonomy）
+5. 内容过滤 + Guardrails + Bias 监控
+6. 自动测试 Pipeline + Canary + A/B
+7. 模型版本控制 + 快速回滚
+8. <strong>成本优化三件套</strong>: 模型路由(60-70%) + Prompt Caching(60-80%) + Batch API(50%)</p>
+<h3 id="gartner-2026-08-17-ai-2028-agentic-workflow-5">Gartner 2026-08-17: AI 推理成本至 2028 每 agentic workflow 增超 5 倍<a class="headerlink" href="#gartner-2026-08-17-ai-2028-agentic-workflow-5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>成本控制升为「生存项」，直接背书 cheap-model tiering + semantic caching + 模型路由</li>
+</ul>
 <h2 id="2026">行业认知（2026）<a class="headerlink" href="#2026" title="Permanent link">&para;</a></h2>
-<h3 id="_10">核心范式转型<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<h3 id="_11">核心范式转型<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Context Engineering &gt; Prompt Engineering</strong>: 2026 核心技能转型。Static(CLAUDE.md) / Dynamic(claude-mem) / Learned(HippoRAG 2) 三层</li>
 <li><strong>MCP + A2A</strong>: Agent 互操作事实标准（10 大框架全支持 MCP，A2A 超 150 组织）</li>
@@ -3028,7 +3091,7 @@
 - <strong>max_steps = 10</strong>：需要 30 步说明用例过宽
 - <strong>抓幻觉工具调用</strong>：捕获不存在的工具并反馈可用列表
 - <strong>3-8 次工具调用/次运行</strong>：well-scoped 用例标准</p>
-<h3 id="_11">关键学术/实证发现<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<h3 id="_12">关键学术/实证发现<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>《When Agents Coordinate》 (arXiv)</strong>: 共享文件替代一对一通信，8 agent 省 42% token；coordinator 无稳定收益 → 验证 dsh/ZCode 共享任务文件 + Hermes review 协作模式</li>
 <li><strong>HarnessRisk 直评 Hermes (2026-08-20)</strong>: DeepSeek-V4-Pro ASR 65.4% / 检测 34.6%，Config 阶段最脆弱 → 直接给生产组合打分的全栈级资产</li>
@@ -3049,7 +3112,7 @@
 <li><strong>统计口径自我验证</strong>：web_search 实锤口径 1 天失效 → 定义主/辅口径 + 降级兜底 + 自检规则</li>
 </ul>
 <h2 id="w30-07200726">本周亮点 (W30, 07/20~07/26)<a class="headerlink" href="#w30-07200726" title="Permanent link">&para;</a></h2>
-<h3 id="_12">🏗️ 架构全面升级<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<h3 id="_13">🏗️ 架构全面升级<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>搜索 5 路冗余</strong>: Tavily + Exa + Firecrawl + DDGS + SearXNG — 7/23 完成</li>
 <li><strong>模型容灾链</strong>: opencode-go → DeepSeek 直连 → OpenRouter，11 级 fallback</li>
@@ -3061,7 +3124,7 @@
 <li>从 7/19 的 26 个安装 skill → 7/23 建成 8 大自建 skill：<code>academic-paper-writing</code>（57门禁）<code>ppt-design-2026</code>（19章）<code>ai-image-generation</code>（9章）<code>engineering-workflow</code> <code>8051-embedded-dev</code> <code>cad-design-master</code> <code>low-cost-model-guide</code> <code>hermes-model-strengths</code></li>
 <li>GitHub 周报吸收：hallmark→去AI味、impeccable→设计语言、Graphify→知识图谱、OmniRoute→模型指南</li>
 </ul>
-<h3 id="_13">📚 知识体系正式建成<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<h3 id="_14">📚 知识体系正式建成<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Obsidian Second Brain：HOME.md + 12 个知识域（AI-Agent/PPT/Academic/CAD/Programming/Vibe-Coding/8051/LLM/freeCodeCamp 等）</li>
 <li>全域互联：YAML frontmatter + graph.json + Dataview + Canvas</li>
@@ -3074,19 +3137,19 @@
 <li>5/5 测试通过 + 手机支架 Pro v2.0（120行复杂模型）</li>
 <li>cad-design-master v2.2（DFAM + 高级模板）</li>
 </ul>
-<h3 id="_14">🔍 搜索架构<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<h3 id="_15">🔍 搜索架构<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
 <ul>
 <li>三层冗余（Tavily/Exa/Firecrawl）→ 五层（+DDGS/SearXNG）</li>
 <li>超时时间 60→120s</li>
 <li><strong>Tavily 10061 间断（7/24-7/25）</strong>: 2 天不可达后于 7/25 恢复。对应策略：Firecrawl 可作为永久 fallback 后端</li>
 </ul>
-<h3 id="_15">🎯 系统状态<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<h3 id="_16">🎯 系统状态<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
 <ul>
 <li>7 项历史待办全部清零（7/22）</li>
 <li>.learnings/ 深度饱和（35+ learnings），进入「知识执行」阶段</li>
 <li>PPT 实战方法论成熟（6 轮迭代）</li>
 </ul>
-<h2 id="_16">待提升<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
+<h2 id="_17">待提升<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
 <ul>
 <li>[x] ~~OpenClaw → Hermes 迁移~~ ✅ 2026-07-23</li>
 <li>[x] ~~搜索 5 路冗余~~ ✅ 2026-07-23</li>
@@ -3141,14 +3204,26 @@
 <ul>
 <li>AI Agent / OpenClaw 最新发展 (Tavily 搜索摘要): <strong>OpenAI Agents API 公测</strong> + <strong>部署最佳实践 6 大支柱</strong> + <strong>OpenClaw vs Claude Code 互补关系</strong> 等新发展 [score=0.920 recalls=0 avg=0.620 source=memory/2026-09-20-self-improvement.md:45-47]</li>
 </ul>
+<!-- openclaw-memory-promotion:memory:memory/2026-09-23-self-improvement.md:7:7 -->
+<ul>
+<li>AI Agent / OpenClaw 最新发展 (Tavily 搜索摘要): <strong>AI Agent 持续学习三层架构确立</strong> (Model/Harness/Context 三层，Context-layer continual learning 成主流) [score=0.940 recalls=0 avg=0.620 source=memory/2026-09-23-self-improvement.md:7-7]</li>
+</ul>
+<!-- openclaw-memory-promotion:memory:memory/2026-09-23-self-improvement.md:8:15 -->
+<ul>
+<li>AI Agent / OpenClaw 最新发展 (Tavily 搜索摘要): <strong>三层记忆架构标准化</strong> (Core/Archival/Recall) + <strong>A-MEM 自适应记忆</strong> + <strong>Agent Dreaming &amp; Skill Learning</strong> + <strong>图记忆生态成熟</strong> + <strong>记忆生命周期三步曲</strong> [score=0.930 recalls=0 avg=0.620 source=memory/2026-09-23-self-improvement.md:8-15]</li>
+</ul>
+<!-- openclaw-memory-promotion:memory:memory/2026-09-23-self-improvement.md:45:52 -->
+<ul>
+<li>经验教训 (.learnings/LEARNINGS.md) 近期高价值: 系统全自动化稳健运行、持续学习三层架构、三层记忆标准化、A-MEM自适应、OpenClaw 2.0节奏、安全标准化、OpenAI托管、成本生存项 [score=0.910 recalls=0 avg=0.620 source=memory/2026-09-23-self-improvement.md:45-52]</li>
+</ul>
 <h2 id="2026-08-memory202608">🔧 2026-08 存档期关键产出（memory/2026/08/ 归档前提炼）<a class="headerlink" href="#2026-08-memory202608" title="Permanent link">&para;</a></h2>
-<h3 id="_17">🏆 高价值实测验证<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<h3 id="_18">🏆 高价值实测验证<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Qwen-Image-3.0-Pro 实测通过 (2026-08-08)</strong>: 百炼 API同步端点 <code>multimodal-generation/generation</code> 出图 1024×1024，中文文字渲染全部准确（标题/副标题/商品名+¥价格），成本约 0.25 元/张，「带字海报/菜单」新商品线验证可行</li>
 <li><strong>PCB 自动化双轨闭环 (2026-08-08)</strong>: SKiDL 网表 → KiCad 10 → 嘉立创 SMT，兼容性验证 13/13 通过，6 篇专题笔记 + 3 skills 入库</li>
 <li><strong>语义缓存统一 chokepoint 落地 (2026-08-21)</strong>: 覆盖全 8 搜索后端（commit 84d813bf2），根治连续 8 工作日 Tavily 配额复发</li>
 </ul>
-<h3 id="_18">📚 学术/实证背书<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<h3 id="_19">📚 学术/实证背书<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>arXiv《When Agents Coordinate》</strong>: 共享文件替代一对一通信，8 agent 省 42% token → 背书 dsh/ZCode 共享任务文件 + Hermes review 协作模式</li>
 <li><strong>HarnessRisk 直评 Hermes (2026-08-20)</strong>: DeepSeek-V4-Pro ASR 65.4% / 检测 34.6%，Config 阶段最脆弱 → 生产组合全栈级评分</li>
@@ -3160,14 +3235,14 @@
 <li><strong>双非网安 Offer 路径</strong>: 6 个月路线 + NISP二级/CISP-PTE 证书 + 简历 STAR 量化模板（EDU 13 高危=10未授权+3 SQLi）</li>
 <li><strong>AI 红队工具对比</strong>: Hermes+蛙池 AI 已覆盖 80%，唯一值得补 FofaMap v2</li>
 </ul>
-<h3 id="_19">⚙️ 基础设施韧性验证<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
+<h3 id="_20">⚙️ 基础设施韧性验证<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>5 路搜索冗余</strong>: Tavily 配额连续 7 工作日耗尽 (432)，Firecrawl 无缝接管（单次偶发失败可重试），Exa/DDGS/SearXNG 待机</li>
 <li><strong>FlClash 7890 代理损坏 (2026-08-18~2026-09-16)</strong>: 端口监听但流量不通 → health_provider_check 假警报，sora 物理机重启恢复，QQ/微信通道重连</li>
 <li><strong>消息网关冻结 (2026-08-16 后)</strong>: gateway.log 无输出，不影响 cron 自动化</li>
 <li><strong>主 provider 月配额耗尽 (2026-08-20)</strong>: fangzhou-2 HTTP 429，8/28 重置；default 已切 deepseek 官方/jiyuanlvdong</li>
 </ul>
-<h3 id="_20">🔄 自我改进闭环经验固化<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
+<h3 id="_21">🔄 自我改进闭环经验固化<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>执行分类制</strong>: projects 待办分「agent 可执行（带预估时长，executor 直接跑） / 需 sora」，根治「反思≠执行」第 4 复发</li>
 <li><strong>Recurrence 阈值</strong>: 同一问题第 2 次复发即 P1 根治（Tavily 第 4-7 次、FlClash 代理、语义缓存 20 天为反面教材）</li>
@@ -3176,7 +3251,7 @@
 <li><strong>统计口径自检</strong>: 主/辅口径 + 降级兜底 + 自检规则（content 实锤=0 但 tool_name&gt;0 → 标注 tool_name 口径）</li>
 </ol>
 <hr />
-<p><em>最后更新: 2026-09-21 | 归档截止: 2026-08-21 (含) | 运行环境: Hermes Agent on Windows 11</em></p>
+<p><em>最后更新: 2026-09-23 | 归档截止: 2026-08-21 (含) | 运行环境: Hermes Agent on Windows 11</em></p>
 
 
 
