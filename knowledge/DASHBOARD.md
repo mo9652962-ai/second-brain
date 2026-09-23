@@ -17,10 +17,10 @@ tags: [meta/dashboard, knowledge/governance, health]
 
 - **总 md 文件**：755
 - **知识域笔记**：665（18 域中的 19 域有内容）
-- **断裂链接**：22
+- **断裂链接**：23
 - **孤立页面**：54
 - **MOC 锚点**：21
-- **7 天更新**：297 篇 · **30 天更新**：616 篇
+- **7 天更新**：300 篇 · **30 天更新**：616 篇
 
 ## ⚠️ 断链 TOP10
 
@@ -31,11 +31,11 @@ tags: [meta/dashboard, knowledge/governance, health]
 | `docs/知识库重构方案-2026-08-16.md` | `note-1` |
 | `docs/知识库重构方案-2026-08-16.md` | `series-2026-08-14` |
 | `knowledge/Cross-Domain.md` | `wiki link` |
+| `knowledge/Dev/MOC-Dev.md` | `knowledge/Dev/multi-platform-app-web-miniprogram-standard-2026` |
 | `knowledge/Dev/secret-knowledge-reference.md` | `:space:` |
 | `knowledge/Dev/system-prompts-reference/claude-code-opus-5.md` | `their-name` |
 | `knowledge/Dev/system-prompts-reference/claude-code-opus-5.md` | `name` |
 | `knowledge/Dev/system-prompts-reference/claude-code-opus-5.md` | `name` |
-| `knowledge/METABOLISM.md` | `新笔记` |
 
 ## 📄 孤立页 TOP10（挂载到 MOC 可消除）
 

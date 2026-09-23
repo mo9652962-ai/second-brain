@@ -35,7 +35,7 @@ tags: [meta/metabolism, okm, knowledge/governance]
 |:---|:---|:---:|:---:|:---:|
 | [[MOC-Research]] | `knowledge/Research/MOC-Research.md` | 225 | 265 | 13891 |
 | [[knowledge-map]] | `knowledge/knowledge-map.md` | 191 | 219 | 35923 |
-| [[MOC-Dev]] | `knowledge/Dev/MOC-Dev.md` | 103 | 96 | 7715 |
+| [[MOC-Dev]] | `knowledge/Dev/MOC-Dev.md` | 103 | 97 | 7826 |
 | [[MOC-Productivity]] | `knowledge/Productivity/MOC-Productivity.md` | 53 | 64 | 5958 |
 | [[MOC-Security]] | `knowledge/Security/MOC-Security.md` | 53 | 63 | 6161 |
 | [[MOC-Inbox]] | `knowledge/MOC-Inbox.md` | 36 | 63 | 4163 |
