@@ -13,7 +13,7 @@ updated: 2026-09-20
 
 > 入口: [[Home|🏠 Home]] · 返回总索引
 
-> 机器版索引: [[VAULT-MAP|🗺️ VAULT-MAP]]（AI 导航）· 健康看板: [[DASHBOARD|📊 DASHBOARD]]
+> 机器版索引: [[VAULT-MAP|🗺️ VAULT-MAP]]（AI 导航）· 健康看板: [[DASHBOARD|📊 DASHBOARD]] · 新陈代谢: [[METABOLISM|🌿 METABOLISM]]
 
 > 所有知识领域的索引与关联。最后更新: 2026-09-20（W39 GitHub 周榜 5 项入库 + 周报更新）
 

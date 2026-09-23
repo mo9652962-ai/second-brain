@@ -11,6 +11,10 @@
     ·
     <a href="https://mo9652962-ai.github.io/second-brain/kb/">📚 在线知识库 (MkDocs)</a>
     ·
+    <a href="llms.txt">🤖 llms.txt (AI 直读)</a>
+    ·
+    <a href="knowledge/METABOLISM.md">🌿 知识新陈代谢 (OKM)</a>
+    ·
     <a href="HOME.md">知识中枢 (HOME)</a>
     ·
     <a href="skills/hermes/">🔄 七大自举系统</a>
@@ -22,7 +26,8 @@
     <img src="https://img.shields.io/github/last-commit/mo9652962-ai/second-brain?style=flat-square&color=blue" alt="GitHub last commit">
     <img src="https://img.shields.io/github/stars/mo9652962-ai/second-brain?style=flat-square&color=yellow" alt="GitHub stars">
     <img src="https://img.shields.io/badge/Obsidian-知识库-7C3AED?style=flat-square&logo=obsidian" alt="Obsidian">
-    <img src="https://img.shields.io/badge/🤖_AI_维护-Hermes_Agent-blue" alt="AI 维护">
+    <img src="https://img.shields.io/badge/🤖_AI_直读-llms.txt-brightgreen?style=flat-square" alt="llms.txt">
+    <img src="https://img.shields.io/badge/🌿_常青笔记-332_篇-success?style=flat-square" alt="OKM Evergreen">
     <img src="https://img.shields.io/badge/🔄_自举进化-Active-green" alt="自举进化">
     <img src="https://img.shields.io/badge/🏆_七大自举系统-32_项-gold" alt="七大自举系统">
   </p>
@@ -107,6 +112,27 @@ graph LR
 | 🧭 [上下文管理自举](skills/hermes/context-management-bootstrapping.md) | 重要信息上下文被稀释，自动遗忘 | ⭐⭐⭐⭐ 4/5 |
 
 **系统整体成熟度：32 / 35 = 91%，持续进化中**
+
+---
+
+## 🌿 知识新陈代谢 (OKM — Open Knowledge Metabolism)
+
+借鉴 Karpathy 的 **LLM Wiki** 范式与 GitHub 高星第二大脑架构，知识库不是只增不减（Append-only）的死仓库，而是一套具有自我生长、演进与淘汰能力的活体知识系统：
+
+- **🌲 常青笔记 (Evergreen, 332 篇 / 47.2%)**：结构完备、双向链接闭环、实战沉淀的高信号资产。
+- **🌿 成长笔记 (Budding, 365 篇 / 51.8%)**：包含基本推演与领域上下文，处于持续求证与拓展中的进阶笔记。
+- **🌱 萌芽速记 (Seed)**：捕获的原始事实、想法或灵感种子，定期被消化蒸馏。
+- **📦 降级标记 (Superseded)**：支持 `superseded_by: [[新笔记]]` 标记过时结论，抗击认知熵增。
+- 👉 查看完整治理看板：[knowledge/METABOLISM.md](knowledge/METABOLISM.md)
+
+---
+
+## 🤖 AI-First 架构支持 (`/llms.txt` 标准)
+
+本仓库遵循 [llmstxt.org](https://llmstxt.org/) 协议，为各类外部 AI 编码助手（Claude Code、Cursor、OpenCode、Hermes 等）提供机器直接可读的轻量化上下文包：
+
+- **纲要索引**：[`/llms.txt`](llms.txt) — 18 域全景结构与高频核心 MOC 节点汇总
+- **平铺知识上下文**：[`/llms-full.txt`](llms-full.txt) — 200KB+ 高密度精选纯净知识平铺包，无需克隆即可整库灌入 LLM Prompt
 
 ---
 

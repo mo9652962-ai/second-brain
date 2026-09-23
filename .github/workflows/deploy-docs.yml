@@ -47,6 +47,8 @@ jobs:
       - name: Assemble docs sources
         run: |
           set -euo pipefail
+          python scripts/gen-llms-txt.py
+          python scripts/okm_metabolism.py
           rm -rf .build-docs
           mkdir -p .build-docs/docs .build-docs/site
           # -z + quotePath=false：避免中文/特殊字符路径被加引号转义（CI 上会 cp 失败）
@@ -54,6 +56,10 @@ jobs:
             mkdir -p ".build-docs/docs/$(dirname "$f")"
             cp "$f" ".build-docs/docs/$f"
           done
+          # 同步新陈代谢最新看板
+          if [ -f "knowledge/METABOLISM.md" ]; then
+            cp "knowledge/METABOLISM.md" ".build-docs/docs/knowledge/METABOLISM.md"
+          fi
           echo "assembled md files: $(find .build-docs/docs -name '*.md' | wc -l)"
 
       # ── 2. 构建知识库文档站 → /kb/ ───────────────────────────

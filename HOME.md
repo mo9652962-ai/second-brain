@@ -40,7 +40,7 @@ created: 2026-08-09
 | 📅 年度 | 墨题商业化启动 · 闲鱼高客单线（Web 定制 398-898）· 技能体系 9 流派 | P0 推进中 | [[projects/current|📦 当前项目]] |
 | 🗓️ 季度 | 创新大赛命题（9/25 截止）· 闲鱼 SOP 固化 · 论文/数模交付线稳定 | 比赛冲刺；SOP-008 已落地 | [[MOC-Productivity]] |
 | 📆 月度 | 每周复盘闭环 · 知识吸收达标 · 交付成本库反哺定价 | W39 复盘已完成 | [[memory/MOC-Memory|🧠 Memory 索引]] |
-| ✅ 每日 | 每日回顾 Top5 · 明日行动项 · 闲鱼计数巡检 | 持续运行（09-21 已更新） | [[knowledge/DASHBOARD|📊 健康看板]] |
+| ✅ 每日 | 每日回顾 Top5 · 明日行动项 · 闲鱼计数巡检 | 持续运行（09-21 已更新） | [[knowledge/DASHBOARD|📊 健康看板]] · [[knowledge/METABOLISM|🌿 新陈代谢看板]] |
 
 ## 📋 项目与日志
 - [[memory/2026/09/2026-09-20-daily-review|📋 每日回顾 09-20]] — 闲鱼高客单 Web 定制 SOP-008 + PPT 扇叶开场 9.8 分 + arXiv 补全速览
