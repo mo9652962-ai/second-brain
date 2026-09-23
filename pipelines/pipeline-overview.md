@@ -65,6 +65,6 @@
 
 | Pipeline | 说明 | 触发 |
 |:---------|:-----|:-----|
-| [[paper-pipeline]] | 论文搜索→精读→写作→润色 全流程 | 「搜论文」「写论文」「查文献」「SCI润色」 |
-| [[ppt-pipeline]] | PPT 大纲→生成→优化 全流程 | 「做PPT」「生成幻灯片」「优化PPT」 |
+| paper-pipeline | 论文搜索→精读→写作→润色 全流程 | 「搜论文」「写论文」「查文献」「SCI润色」 |
+| ppt-pipeline | PPT 大纲→生成→优化 全流程 | 「做PPT」「生成幻灯片」「优化PPT」 |
 | [[skill-triggers]] | Skill 触发词映射总表 | 全部用户输入 |

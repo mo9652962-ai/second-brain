@@ -82,13 +82,13 @@ updated: 2026-09-20
 
 ## 💰 变现分析
 
-> [[monetization-analysis]] — 基于现有能力的变现路径、可担任职位、立即行动方案
+> monetization-analysis — 基于现有能力的变现路径、可担任职位、立即行动方案
 
-> [[ai-monetization-costs]] — 闲鱼实战价目表、工具成本、利润测算（最新五轮整合）
+> ai-monetization-costs — 闲鱼实战价目表、工具成本、利润测算（最新五轮整合）
 
 ## 🎓 学术服务
 
-> [[academic-service-research]] — 2026知网5.0应对、AI PPT行业报告、服务套餐设计、竞争分析
+> academic-service-research — 2026知网5.0应对、AI PPT行业报告、服务套餐设计、竞争分析
 
 > [[ai-research-collaboration]] — 110亿Token的AI科研协作经验（Jadense）
 
@@ -290,7 +290,7 @@ graph TD
 
 | 🛡️ Security | SRC 挖洞/提权渗透/防御加固/DVWA 靶场/逻辑漏洞 ×8 | [[knowledge/Security/MOC-Security]] |
 
-| 🎨 Creative | 去 AI 味开源技能研究（小黑盒帖子 + 千轮研究） | [[knowledge/Creative/de-ai-skills-2026-08-18]] |
+| 🎨 Creative | 去 AI 味开源技能研究（小黑盒帖子 + 千轮研究） | de-ai-skills-2026-08-18 |
 
 | 📅 Daily | HN 速览补链（08-08/08-16）· 今日产出学习 | [[knowledge/Daily/hackernews-2026-08-16]] · [[knowledge/Daily/hackernews-2026-08-08]] · [[knowledge/Daily/daily-output-study-2026-08-18]] |
 
@@ -368,7 +368,7 @@ graph TD
 | 🔬 Research | 多 Agent Eval 基线 v2 + arXiv 09-03/04/05 速览 + 工具精度方法论（假阳性税）| [[knowledge/Research/MOC-Research]] |
 | 🔐 Security | hermes-codex-security-policy 09-04 + SRC 批量初筛收敛 | [[knowledge/Security/MOC-Security]] |
 | 🤖 AI | 知识库-AI 不翻知识库根因 + 工具精度方法论 | [[knowledge/AI/工具精度方法论-假阳性税与知识库Lint-2026-09-05]] |
-| 🃏 cards | 闲鱼运营算法 / 假阳性税知识卡片 | [[knowledge/cards/2026-09-04-xianyu-operation-algorithm]] |
+| 🃏 cards | 闲鱼运营算法 / 假阳性税知识卡片 | 2026-09-04-xianyu-operation-algorithm |
 
 ---
 
@@ -741,7 +741,7 @@ MCP 生态: GitHub + Filesystem + JLCPCB(38工具) + Obsidian(笔记操作)
 
 | [[k-self-improvement]] | 搜索引擎研究 | Agent 行为优化 | [[self-improvement-guide]] |
 
-| [[ai-monetization-costs]] | 闲鱼市场调研 | 变现落地执行 | [[monetization-analysis]] · [[academic-service-research]] |
+| ai-monetization-costs | 闲鱼市场调研 | 变现落地执行 | monetization-analysis · academic-service-research |
 
 | [[vibe-research]] | GitHub 社区研究 | AI 科研工具选型 | [[researchpilot-skills]] · [[ai-research-collaboration]] |
 
@@ -893,7 +893,7 @@ MCP 生态: GitHub + Filesystem + JLCPCB(38工具) + Obsidian(笔记操作)
 
 ## 🆕 W39 新增速览（2026-09-14 ~ 09-20）
 
-> 本周主线：安全危机与变现突破并行——ZCode 静默上传 P0 + RubyGems AI bots 主动攻击 + SOP-008 高客单 Web 定制（398-898 元）+ PMPA 记忆投毒 / Agent-Tool 边界 + 联通创新大赛万悟命题 + arXiv 三池速览 + PPT 扇叶 9.8 分 + graphify 六周冻结修复。学习回顾见 [[../memory/2026/09/weekly-learning-2026-09-20|W39 学习回顾]]。
+> 本周主线：安全危机与变现突破并行——ZCode 静默上传 P0 + RubyGems AI bots 主动攻击 + SOP-008 高客单 Web 定制（398-898 元）+ PMPA 记忆投毒 / Agent-Tool 边界 + 联通创新大赛万悟命题 + arXiv 三池速览 + PPT 扇叶 9.8 分 + graphify 六周冻结修复。学习回顾见 W39 学习回顾。
 
 ### 各域本周新增
 
@@ -919,7 +919,6 @@ MCP 生态: GitHub + Filesystem + JLCPCB(38工具) + Obsidian(笔记操作)
 | Content | [[knowledge/Content/即梦Seedance-相机四维编码速查-2026\|即梦 Seedance 四维编码]] | 即梦相机四维编码速查 |
 | Dev | [[knowledge/Dev/React-Bits-Web动效组件库速查-2026\|React Bits 动效速查]] | 前端高阶动效组件库速查 |
 | Dev | [[knowledge/Dev/Devin-Cognition-评估-2026-09-20\|Devin / Cognition 评估]] | 云端 coding agent 能力、可靠性、定价与 Codex/Hermes 接入建议 |
-| SOP | [[knowledge/SOP/SOP-008-xianyu-vibe-coding-website\|SOP-008 闲鱼接单]] | 高交互个人主页 Vibe Coding 接单 SOP |
 | Productivity | [[knowledge/Productivity/PPT国奖级扇叶开场平滑动画-制作SOP-2026-09-20\|PPT 扇叶开场 SOP]] | 国奖级扇叶开场平滑动画（双态 Morph） |
 | Productivity | [[knowledge/Productivity/PPT高级唯美镂空动态结尾页-制作SOP-2026-09-20\|PPT 镂空结尾 SOP]] | 高级唯美镂空动态结尾页 + 答辩商业化 |
 | GitHub | [[knowledge/Research/GitHub-Weekly-2026-09-20-weekly-5projects\|GitHub 周榜 W39]] | weekly 口径：sub2api / SemIf / AI-Infra-Guard / karpathy-skills / open-code-review |

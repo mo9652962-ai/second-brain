@@ -16,9 +16,9 @@ tags: [meta/metabolism, okm, knowledge/governance]
 
 ## 📊 认知成熟度分布 (Maturity Funnel)
 
-- **全库受管笔记**：705 篇
-- 🌲 **Evergreen (常青/方法论)**：**332** 篇 (47.1%) — 结构完备、双向链接闭环、实战沉淀的成熟知识
-- 🌿 **Budding (成长/求证中)**：**366** 篇 (51.9%) — 包含基本推演与领域上下文的进阶笔记
+- **全库受管笔记**：689 篇
+- 🌲 **Evergreen (常青/方法论)**：**323** 篇 (46.9%) — 结构完备、双向链接闭环、实战沉淀的成熟知识
+- 🌿 **Budding (成长/求证中)**：**359** 篇 (52.1%) — 包含基本推演与领域上下文的进阶笔记
 - 🌱 **Seed (萌芽/原子速记)**：**0** 篇 (0.0%) — 初步捕获的原始事实、想法或灵感种子
 - 📦 **Superseded (降级/过时归档)**：**7** 篇 — 已被新技术、新决策替代，或标记为历史归档
 
@@ -33,15 +33,15 @@ tags: [meta/metabolism, okm, knowledge/governance]
 
 | 笔记名 | 领域路径 | 入链数 | 出链数 | 字符体量 |
 |:---|:---|:---:|:---:|:---:|
-| [[MOC-Research]] | `knowledge/Research/MOC-Research.md` | 229 | 280 | 14810 |
-| [[knowledge-map]] | `knowledge/knowledge-map.md` | 194 | 235 | 36619 |
-| [[MOC-Dev]] | `knowledge/Dev/MOC-Dev.md` | 103 | 97 | 7785 |
+| [[MOC-Research]] | `knowledge/Research/MOC-Research.md` | 225 | 267 | 13951 |
+| [[knowledge-map]] | `knowledge/knowledge-map.md` | 191 | 230 | 36552 |
+| [[MOC-Dev]] | `knowledge/Dev/MOC-Dev.md` | 103 | 96 | 7715 |
 | [[MOC-Security]] | `knowledge/Security/MOC-Security.md` | 53 | 63 | 6161 |
-| [[MOC-Productivity]] | `knowledge/Productivity/MOC-Productivity.md` | 52 | 65 | 6122 |
-| [[MOC-Inbox]] | `knowledge/MOC-Inbox.md` | 36 | 64 | 4206 |
+| [[MOC-Productivity]] | `knowledge/Productivity/MOC-Productivity.md` | 51 | 64 | 5958 |
+| [[MOC-Inbox]] | `knowledge/MOC-Inbox.md` | 36 | 63 | 4163 |
 | [[current-environment]] | `knowledge/META/current-environment.md` | 20 | 3 | 3311 |
 | [[MOC-Finance]] | `knowledge/Finance/MOC-Finance.md` | 19 | 18 | 1528 |
-| [[Cross-Domain]] | `knowledge/Cross-Domain.md` | 18 | 28 | 6402 |
+| [[Cross-Domain]] | `knowledge/Cross-Domain.md` | 18 | 26 | 6256 |
 | [[index]] | `knowledge/index.md` | 18 | 22 | 2445 |
 | [[MOC-GitHub]] | `knowledge/Research/MOC-GitHub.md` | 18 | 79 | 6764 |
 | [[AI-Agent]] | `knowledge/Dev/AI-Agent.md` | 16 | 12 | 7141 |

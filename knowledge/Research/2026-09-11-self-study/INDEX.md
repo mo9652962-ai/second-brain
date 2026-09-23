@@ -14,12 +14,12 @@ date: 2026-09-12
 > 每份报告均含：结论置顶 + 实证数据（来源/star/定价）+ 可执行下一步。
 
 ## 1. PCB 自动化深化
-- 报告：[[research_pcb_automation]]
+- 报告：research_pcb_automation
 - 核心结论：锁 KiCad 10.0.5 正确（11 headless IPC 2027-02 才发布）；差距在 DRC/DFM 门禁固化、JLCPCB 下单手动、云端加急通道
 - Top 行动：gate.py DRC fail-fast 门禁（零成本半天）→ Freerouting 2.2.3 第二布线路 → DeepPCB 免费额度实测 → DeepPCB API 加急 → JLCPCB OpenAPI（审批 2-4 周）
 
 ## 2. AI 服务变现运营
-- 报告：[[research_monetization]]
+- 报告：research_monetization
 - 核心结论：AI 服务 981.6 万单/半年(+157%)但月均成交 897 元→垂直细分才溢价；论文「降重已死、降AI率爆发」；PPT 答辩垂直 199-399 可提价；PCB 现 50 元过低应 120-200
 - Top 行动：「查重+AI率双达标包」59-99 元、三级火箭产品线、分段改写流水线（30→10 min）、PCB 套餐化
 

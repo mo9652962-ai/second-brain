@@ -47,7 +47,6 @@ updated: 2026-08-31
 ## 🆕 08-21 接单变现闭环（千轮研究验证版）
 
 - [[knowledge/Productivity/交付成本库|交付成本库]] — 每单记录→时薪/利润率→反哺定价（没记录=定价赌博）
-- [[knowledge/Productivity/freelance-quote-4questions-2026-08-21|报价 4 问]] — 闲鱼接单报价第一课
 - [[knowledge/Productivity/AI生成页面不等于项目完成-交付认知|AI 生成≠交付]] — 客户买的是确定性不是代码
 - [[knowledge/Productivity/github-monetization-2026-08-20|GitHub 变现研究]] — 开源私有化+部署订阅
 - [[knowledge/Content/选题池|选题池 66 题]] — 内容库存，先查库存再临时找题
@@ -64,7 +63,6 @@ updated: 2026-08-31
 ## 🆕 08-23 建议落实新增
 
 - [[knowledge/Productivity/内容-Agent操作系统之争-B站初稿-2026-08-23|「Agent 操作系统之争」B 站初稿]] — 第 1 期候选（DeepSeek vs OpenAI Harness）
-- 搭网站/写脚本商品素材包：`outputs/xianyu-master/搭网站写脚本-商品素材包.md` — 高客单价技术服务线（闲鱼 +1732%）
 - 询价话术模板：ai-freelance-pricing 技能 `templates/xianyu-quote-script.md` — 报价 4 问落地版
 
 ## 🆕 08-29 新增

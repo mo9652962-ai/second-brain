@@ -86,7 +86,6 @@ updated: 2026-09-20
 - [[knowledge/Dev/Devin-Cognition-评估-2026-09-20|Devin / Cognition 评估]] — 云端 coding agent 能力、证据、定价与 Codex/Hermes 接入建议
 - [[knowledge/Dev/ai-hot-brief-20260725-absorbed|AI 热点简报 07-25]]
 - [[knowledge/Dev/deepseek-v4-flash-0731-upgrade|DeepSeek V4 Flash 升级]] — Agent 能力跃升 + fallback 链更新
-- [[knowledge/Research/ai-monetization-costs|AI 自由职业定价]] — 变现实战手册、价目表
 - [[knowledge/Research/ai-research-collab-five-part-decoupling|AI 科研五元解耦]] — 110 亿 Token 协作模式
 - [[knowledge/Dev/system-prompts-reference/README|System Prompts 存档]] — Claude/GPT/DeepSeek/Hermes 提示词参考
 - [[knowledge/Research/MOC-Research|🔬 研究域 MOC]] — 本周 36 篇研究笔记索引

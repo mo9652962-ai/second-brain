@@ -21,5 +21,4 @@ updated: 2026-09-20
 - [[knowledge/SOP/SOP-005-miniapp-audit|SOP-005: 小程序反编译密钥审计流程]]
 - [[knowledge/SOP/SOP-006-ai-code-review|SOP-006: AI 代码审查协作流程（Gemini 第二意见）]]
 - [[knowledge/SOP/SOP-007-knowledge-empowerment|知识赋能方法论（Skill Engineering 2026）]]
-- [[knowledge/SOP/SOP-008-xianyu-vibe-coding-website|SOP-008: 闲鱼高交互个人主页/作品集定制交付全流程]]
 - [[knowledge/SOP/SOP-INDEX|SOP 知识库索引（Hermes Learning Loop）]]

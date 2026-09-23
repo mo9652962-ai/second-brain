@@ -161,7 +161,6 @@ status: adopted
 ---
 
 *关联链接：*
-- [[token-usage-report-20260802|W31 成本周报]] · [[LLM-Providers]] · [[deepseek-v4-flash-0731-upgrade]] · [[ai-monetization-costs]]
 - 生成脚本：`~/AppData/Local/hermes/disk-cleanup/weekly_cost_stats.py`；本报告补充了 tokenrhythm CNY 修正口径与 agent.log 故障链分析
 
 _生成: weekly-cost-report cron · k (Hermes) · 2026-08-14 21:40_
