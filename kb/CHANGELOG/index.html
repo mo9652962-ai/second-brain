@@ -463,6 +463,8 @@
       
         
       
+        
+      
     
     
     
@@ -623,6 +625,41 @@
     
   
     健康看板
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../knowledge/METABOLISM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识新陈代谢
   
 
     
@@ -2812,7 +2849,15 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
 <h2 id="unreleased">[Unreleased]<a class="headerlink" href="#unreleased" title="Permanent link">&para;</a></h2>
 <h3 id="added">Added<a class="headerlink" href="#added" title="Permanent link">&para;</a></h3>
 <ul>
-<li>README: QuickStart 移到顶部，添加"适合谁"定位说明 (#2)</li>
+<li><strong>AI-First 协议支持</strong>: 全新支持 <code>llmstxt.org</code> 标准，自动化生成 <code>/llms.txt</code>（纲要索引）与 <code>/llms-full.txt</code>（221KB 纯净知识平铺包），优化 Agent 摄取上下文。</li>
+<li><strong>OKM 知识新陈代谢治理 (Open Knowledge Metabolism)</strong>: 新增 <code>scripts/okm_metabolism.py</code> 与 <code>knowledge/METABOLISM.md</code> 看板，自动化归类 332 篇 Evergreen 常青树、365 篇 Budding 成长笔记。</li>
+<li><strong>官网与爬虫指引增强</strong>: <code>docs-site/robots.txt</code> 声明 <code>llms.txt</code> 入口；3D 官网首页 Hero 与页脚新增 <code>llms.txt</code> 及 OKM 看板直达。</li>
+<li>
+<p><strong>CI/CD 自动化构建集成</strong>: <code>.github/workflows/deploy-docs.yml</code> 增加生成阶段，确保每次 Push 自动刷新 llms 索引与新陈代谢指标。</p>
+</li>
+<li>
+<p>README: QuickStart 移到顶部，添加"适合谁"定位说明 (#2)</p>
+</li>
 <li>CHANGELOG.md: 首次创建，遵循 Keep a Changelog 格式</li>
 <li>Python 知识域: <code>knowledge/Dev/python-ecosystem.md</code></li>
 <li>工具知识域: <code>knowledge/Dev/hermes-agent-ecosystem.md</code></li>
