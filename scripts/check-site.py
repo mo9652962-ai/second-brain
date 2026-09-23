@@ -161,8 +161,8 @@ def check_static_site():
         if not r.startswith("./"):
             continue
         target = r[2:].rstrip("/")
-        if target.endswith("kb") or target == "":
-            continue  # /kb/ 由 deploy workflow 构建，不在 docs-site 内
+        if target.startswith("kb") or target.endswith("kb") or target == "":
+            continue  # /kb/ 及其子页面由 deploy workflow 构建，不在 docs-site 内
         if not os.path.exists(os.path.join(SITE_DIR, target)):
             broken.append(r)
     if broken:
