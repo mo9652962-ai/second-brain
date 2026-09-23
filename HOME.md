@@ -2,191 +2,87 @@
 tags: [Home, MOC, 入口]
 aliases: [首页, Home, 第二大脑]
 created: 2026-08-09
+updated: 2026-09-23
 ---
 
-# 🏠 Home — 第二大脑入口
+# 🏠 Home — 第二大脑知识中枢
 
-> **知识最后更新: 2026-09-20 (weekly-learning 09-20)
-> 最后更新: 2026-09-18 (daily-reflection)
+> **知识库状态**: 758 篇公开知识资产 · 18 域全景拓扑 · 7 大自举系统 · 纯净开源模式
+> **资产安全保障**: 已全面贯彻执行**【资产三级隔离原则】**（商业机密、私有算法、接单成本与个人复盘 100% 物理隔离于本地私有保险箱）
+> **最后维护**: 2026-09-23（完成全库资产三级物理切离与拓扑重组）
 
 ---
 
-## 🗺️ 总索引
+## 🧭 核心索引与导航中枢
 
-- [[knowledge-map|🗺️ 知识地图]] — 所有知识领域的总索引
-- [[memory/MOC-Memory|🧠 Memory 索引]] — 日记/周报/reflection/dreaming 入口
-- [[README|📖 README]] — 仓库说明与快速上手
+- [[knowledge/knowledge-map|🗺️ 知识地图 (Knowledge Map)]] — 所有知识领域的全景总索引与网状拓扑
+- [[knowledge/DASHBOARD|📊 知识库健康看板 (Dashboard)]] — 链路健康、断链检测与更新频率指挥中心
+- [[knowledge/METABOLISM|🌿 知识新陈代谢 (OKM Metabolism)]] — 基于 Karpathy 范式的常青/成长/萌芽卡片代谢分析
+- [[knowledge/VAULT-MAP|🤖 机器可读索引 (Vault Map)]] — 专供 AI Agent 与大模型快速检索的紧凑结构地图
+- [[memory/MOC-Memory|🧠 Memory 记忆系统说明]] — 个人复盘日记的本地物理隔离架构与索引锚点
+- [[README|📖 README 仓库架构说明]] — 面向外部开发者的快速上手与技术栈介绍
 
-## 📚 知识域 MOC（每域一个锚点）
+---
 
-| 领域 | MOC | 说明 |
+## 📚 全域 MOC 知识拓扑（18 大领域锚点）
+
+| 领域分类 | 核心 MOC 锚点 | 领域核心内容与实战方向 |
 |:---|:---|:---|
-| 🤖 AI / Agent | [[MOC-Dev]] | AI Agent 研究、Hermes 自举、提示词 |
-| 💻 开发 | [[MOC-Dev]] | Web 开发、工具链、DevOps |
-- [[memory/2026/09/2026-09-08-reflection|🔍 反思 09-08]] — 反思→执行 1/3 + daily_vault_optimize 静默失效防线 + health 误判归因
-| 🔬 研究 | [[MOC-Research]] | 216 篇研究笔记（含学术域）|
-| 🎓 学术 | [[MOC-Research]] | 论文写作、降 AI 味、期刊 |
-| ⚡ 硬件 | [[MOC-Hardware]] | PCB、单片机、嵌入式 |
-| 🎨 设计 | [[MOC-Hardware]] | UI 设计、水墨美学、主题 |
-| 📈 生产力 | [[MOC-Productivity]] | 工作流、变现、闲鱼 |
-
-## 🎯 目标级联（长期 → 每日）
-
-> 借鉴高星仓库 ballred/obsidian-claude-pkm 的 goal cascade：每一层都连接到下一层，防止目标与日常脱节。
-
-| 层级 | 目标 | 当前状态 | 入口 |
-|:---|:---|:---|:---|
-| 🏔️ 3 年 | 考研上岸（2027.12 初试）· 墨题规模化 · AI 服务变现体系 | 备考进行中；墨题 C 端 open core | 私人规划（本地，不上传） |
-| 📅 年度 | 墨题商业化启动 · 闲鱼高客单线（Web 定制 398-898）· 技能体系 9 流派 | P0 推进中 | [[projects/current|📦 当前项目]] |
-| 🗓️ 季度 | 创新大赛命题（9/25 截止）· 闲鱼 SOP 固化 · 论文/数模交付线稳定 | 比赛冲刺；SOP-008 已落地 | [[MOC-Productivity]] |
-| 📆 月度 | 每周复盘闭环 · 知识吸收达标 · 交付成本库反哺定价 | W39 复盘已完成 | [[memory/MOC-Memory|🧠 Memory 索引]] |
-| ✅ 每日 | 每日回顾 Top5 · 明日行动项 · 闲鱼计数巡检 | 持续运行（09-21 已更新） | [[knowledge/DASHBOARD|📊 健康看板]] · [[knowledge/METABOLISM|🌿 新陈代谢看板]] |
-
-## 📋 项目与日志
-- [[memory/2026/09/2026-09-20-daily-review|📋 每日回顾 09-20]] — 闲鱼高客单 Web 定制 SOP-008 + PPT 扇叶开场 9.8 分 + arXiv 补全速览
-- [[memory/2026/09/2026-09-20-reflection|🔍 反思日记 09-20]] — 闲鱼高客单SOP-008 + PPT扇叶9.8分 + arXiv补全(HTML路由) + assert扩展当场闭环 + 万悟/闲鱼今日双决策
-- [[memory/2026/09/2026-09-17-daily-review|📋 09-17 每日回顾]] — Top5：PMPA记忆投毒防写入落地 / Agent-Tool 8异常 / 闲鱼主图禁词修复第21次核验 / qorl 4B查询计划 / arxiv解冻2151篇；明日：内存99.4%危急 + arxiv-fetch排查 + 闲鱼降频机制
-- [[memory/2026/09/2026-09-18-daily-review|📋 09-18 每日回顾]] — Top5：OverclaimBench完成声明不可信 / 工具幻觉防御前置 / 多智能体越少越好 / health检测器误报第3次根治 / 内存处置分级；明日：13处隐私命中清理(截止9/21) + obsidian-maintenance补跑 + 万悟确认剩7天
-- [[memory/2026/09/2026-09-19-daily-review|📋 09-19 每日回顾]] — Top5：ZCode静默上传实锤(墨题126MB快照待传P0) / 评测元视角 / EconSkills技能库 / Agent4Science / 激活探针；明日：ZCode处置 + 闲鱼第43天周一复盘 + 万悟确认 + fallback收窄
-- [[memory/2026/09/2026-09-20-suggestions-applied|🧹 09-20 建议落实]] — 9/18反思3项skill patch全落地核验 / 9/6三建议复核 / 无新增agent可执行项
-- [[memory/2026/09/2026-09-18-reflection|🔍 反思 09-18]] — 工具评估预筛(genoffice冗余) + fallback链健康度 + 卡片cron时序；9/17反思3/3闭环
-- [[memory/2026/09/2026-09-19-reflection|🔍 反思 09-19]] — ZCode安全基线前置(安装前检查清单) + 闲鱼计数漂移第3次根治 + health 429降级; 09-18反思 k侧2/2闭环
-- [[memory/2026/09/2026-09-17-reflection|🔍 反思 09-17（补链）]] — health检测器第3次复发根治 + privacy 13命中登记 + 内存分级处置
-- [[memory/2026/09/2026-09-15-daily-review|📋 09-15 每日回顾]]
-- [[memory/2026/09/2026-09-16-daily-review|📋 09-16 每日回顾]] — Top5：联通创新大赛万悟命题研究（9/25 截止剩 9 天）/ cron 产出四算子提炼 6 条可执行知识 / Docker 镜像提速 13MB/s / health 抓出 12:53 六 cron 批量失败需补跑 / 隐私门禁 13 处命中 — Top5：OpenAI bots 攻击 RubyGems（AI agent 主动利用已知漏洞） / arXiv 09-15 补全速览 15+14 / 技能治理单扫描器不足 / 双周技能审计 479 / 闲鱼禁词修复加固；明日：闲鱼决策第 42 天 + 探活路径核实 + 供应链扫描补丁
-- [[memory/2026/09/2026-09-16-reflection|🔍 反思 09-16]] — arxiv-fetch 长期静默暴露 + 豁免验证门证据链补强 + 闲鱼决策第 42 天机制失效（降频）
-- [[memory/2026/09/2026-09-15-reflection|🔍 反思 09-15（补位）]] — 研究批量入库 + 双周技能审计 479 + 素材禁词修复 + 7 项核查 4 闭环
-- [[memory/2026/09/2026-09-14-reflection|🔍 反思 09-14]] — 硬线探活产物断言 + skill-link-gate 滑档 + 单一权威源收敛
-- [[memory/2026/09/2026-09-13-reflection|🔍 反思 09-13]] — 十领域批次落盘 + 缺档补位
-- [[memory/2026/09/2026-09-14-daily-review|📋 09-14 每日回顾]] — Top5：arxiv 432 篇新窗口速览 / 文献周报过程级评测 / Fable 破解 370 年密码 / GitHub W38 / Agent 安全标准化；明日：闲鱼决策第 43 天 + cpa-gui 启动 + 探活脚本修复
-- [[memory/2026/09/2026-09-21-vault-suggestion-executor|🧹 09-21 闲鱼专项建议执行报告（周一复盘）]] — 计数权威 42 无漂移(assert 4/4) + 新服务线「网页定制」398-898 待拍板 + 创新大赛 9/25 剩 4 天
-- [[memory/2026/09/2026-09-17-vault-suggestion-executor|🧹 09-17 闲鱼专项建议执行报告]] — 6 张主图 vision 禁词复核：2 张含「最」已修复「人气之选」+ 防复发 + 第 21 次素材核验
-- [[memory/2026/09/2026-09-14-vault-suggestion-executor|🧹 09-14 闲鱼专项建议执行报告]] — 计数 41→42 权威推进(assert PASS) + 双技能计数红线 patch + 今日 3 项优先级
-- [[memory/2026/09/2026-09-15-vault-suggestion-executor|🧹 09-15 闲鱼专项建议执行报告]] — 素材包 4 处「自动化」禁词修复 + 全量复扫 PASS + 今日 3 项优先级
-- [[memory/2026/09/weekly-learning-2026-09-20|📚 W39 周学习回顾]] — 安全危机与变现突破并行：ZCode 实锤 + SOP-008 高客单 Web 定制 + PMPA 记忆投毒 + 万悟命题 + PPT 扇叶 9.8 分
-- [[memory/2026/09/weekly-2026-09-13|📚 W38 周度整理]] — 十领域自我强化批次 + 黑盒实证 + 评测意图隐藏规范 + memory 归位 6 文件
-- [[memory/2026/09/weekly-learning-2026-09-13|📚 W38 周学习回顾]] — 三 bot 十领域研究批次 + arXiv 解冻双窗口 + 评测意图隐藏规范 + 开源实证
-- [[knowledge/Research/GitHub-Weekly-2026-09-08|🐙 GitHub-Weekly 09-08]] — codebase-memory-mcp / nanobot 等 Top5 宝藏挖掘
-- [[knowledge/Research/skill-audit-2026-09-08|📊 09-08 技能审计]] — 392 技能登记，本月实际使用 97
-- [[knowledge/Dev/CAD自动化MCP参考-pascal-2026-09-08|🛠 CAD 自动化 MCP 参考]] — pascal/editor 31 个 MCP 语义工具实证
-- [[knowledge/Daily/hackernews-2026-09-08|📰 HN 09-08 速览]]
-- [[memory/2026/09/2026-09-08-vault-maintenance|🧹 09-08 知识库维护]] — 断链 16 处修复 + 空壳清理 + 标签统一 + 孤立挂载
-- [[memory/2026/09/2026-09-07-vault-suggestion-executor|🧹 09-07 闲鱼专项建议执行报告]] — 闲鱼决策悬置第 38 天（9/6 fallback 已过）+ 触达升级触发核实 + 今日 3 项优先级计划
-- [[memory/2026/09/2026-09-08-vault-suggestion-executor|🧹 09-08 闲鱼专项建议执行报告]] — 闲鱼决策悬置第 39 天（连续顺延 30+ 天）+ 触达 cron 复核健康 + 今日 3 项优先级计划
-- [[memory/2026/09/2026-09-09-vault-suggestion-executor|🧹 09-09 闲鱼专项建议执行报告]]
-- [[memory/2026/09/2026-09-10-vault-suggestion-executor|🧹 09-10 闲鱼专项建议执行报告]] — 闲鱼决策悬置第 41 天（连续顺延 30+ 天）+ 触达 cron 复核健康 + 今日 3 项优先级计划 — 闲鱼决策悬置第 40 天（连续顺延 30+ 天）+ current.md 推进 + HOME.md 补链修复 + 今日 3 项优先级计划
-- [[memory/2026/09/2026-09-13-suggestions-applied|🧹 09-13 建议落实]] — 落实 5 项：systematic-debugging 加数模案例 + skill-vetter 加 SkillSpector 初筛 + VibeCoding 待办标记 + MEMORY.md 记忆推广 2 条 + 闲鱼推进第 44 天；断链复查 100 条（references/research 误报确认）
-- [[memory/2026/09/2026-09-13-daily-review|📋 09-13 每日回顾]] — Top5：抖音竞品反面教材 / hyperframes / no-ai-slop / context-mode / WeKnora；明日：闲鱼决策第 44 天 + 生图硬线 10:15
-- [[memory/2026/09/2026-09-11|📅 09-11 每日工作记录]] — 三 bot 协作启动 + 健康巡检 4 待处理
-- [[memory/2026/09/2026-09-11-daily-review|📋 09-11 每日知识回顾]] — 三 bot 协作流水线启动 / 闲鱼素材第 18 次核验 / state.yaml 落地
-- [[memory/2026/09/2026-09-12-daily-review|📋 09-12 每日知识回顾]] — 十领域千轮研究批次落盘（变现/PCB/墨题/内容工业化）/ config.yaml 自愈 / 闲鱼第 41 天 PENDING
-- [[memory/2026/09/2026-09-12-reflection|🔍 反思 09-12]] — 十领域批次落盘 + config.yaml C4 固化 + 缺档补位 4 连闭环 + 3 改进点当场落地
-- [[memory/2026/09/2026-09-10|📅 09-10 每日工作记录（补位）]] — arXiv 解冻速览 22+16 篇 + Desert Ant 卡 + 4 个周日任务 pin 修复 + 闲鱼第 41 天（09-12 补位重建）
-- [[memory/2026/09/2026-09-10-reflection|🔍 反思 09-10（补位）]] — 解冻速览日 + 预防性 pin 修复；3 改进点：产出型缺档兜底 / 坏 pin 周前检查 / 大窗口速览节奏（09-12 补位重建）
-- [[memory/2026/09/2026-09-10-daily-todo-executor|🧹 09-10 每日待办落实（补位）]] — 闲鱼第 41 天推进 + 4 周日任务 pin 修复 + arXiv 速览（09-12 补位重建）
-- [[memory/2026/09/2026-09-11-reflection|🔍 反思 09-11（补位）]] — 三 bot 协作启动 + state.yaml 首个执行循环闭环 + fastmcp/mnemon 双修复（09-12 补位，config.yaml 损坏根因）
-- [[memory/2026/09/2026-09-12-daily-todo-executor|🧹 09-12 每日待办落实]] — 缺档补位 4 连闭环（09-10 三连 + 09-11-reflection）+ config.yaml 损坏排查（10 cron 批量失败已自愈）+ 证据映射表勾选
-- [[knowledge/Research/arxiv-2026-09-08-agent-llm|arXiv 09-08 补全速览]] — 14 主条目 + 8 简评（09-07 窗口补全：系统级风险 04373 / BeaconKV / 窄边界安全 04482 / First Things First 05224）
-- [[knowledge/Research/arxiv-2026-09-09-agent-llm|arXiv 09-09 补全速览]] — 11 主条目 + 8 简评（09-07 窗口第三轮补录：评测反应性 05009 / MoE 双线 04895+05228 / 4-bit 合并坑 04526 / PLUME 个性化 04715）
-
-- [[memory/2026/09/2026-09-09-reflection|🔍 反思 09-09]] — 千轮研究技能固化日(92 skill_manage/21技能)；3改进点：daily-review skills漏报 / 统计口径三层坑(286vs178) / 计数收敛当场建state.yaml+断言门禁(40vs41漂移实测)
-- [[memory/2026/09/2026-09-07-daily-review|📋 09-07 每日回顾]] — arXiv 索引解冻 480 篇新窗口 + 记忆可移植性卡片 + 闲鱼试水决策悬置第 38 天
-- [[memory/2026/09/2026-09-08-daily-review|📋 09-08 每日回顾]] — 黑箱 5 项目实证研究（CAD MCP + AI 营销技能库双落点） + 月度技能审计 + 闲鱼试水悬置第 39 天
-- [[memory/2026/09/2026-09-09-daily-review|📋 09-09 每日回顾]] — 评测反应性 12,800 判断实证 + MoE 双线本地候选 + 闲鱼决策悬置第 40 天 + 素材第 17 次核验 PASS
-- [[memory/2026/09/2026-09-07-daily-todo-executor|📋 09-07 每日待办落实]] — 闲鱼第 37→38 天漂移修复 4 处 + cad 技能三副本合并落地（删 text-to-cad/text2cad-cad）+ token-usage/纪律打勾
-- [[memory/2026/09/2026-09-08-daily-todo-executor|📋 09-08 每日待办落实]]
-- [[memory/2026/09/2026-09-09-daily-todo-executor|📋 09-09 每日待办落实]] — 报告路径正常（09-10 报告缺档，补位中）
-- [[memory/2026/09/2026-09-11-daily-todo-executor|📋 09-11 每日待办落实]] — state.yaml 计数收敛(40→41,assert PASS) + fastmcp server 修复 + mnemon hooks 修复
-- [[memory/2026/09/2026-09-06-daily-review|📋 09-06 每日回顾]] — arxiv harness 三连深挖 + GitHub W37 五项目 + 闲鱼试水 fallback 硬触发日（素材第 15 次核验 PASS）+ 知识吸收全面达标
-
-- [[projects/current|📦 当前项目]] — 进行中项目与 P0 待办（闲鱼上架/变现）
-- `🧹 08-10 建议执行器报告` — 闲鱼降级方案第 1 周复盘
-
-- `🧹 08-11 建议执行器报告` — 距 8/17 强制决策剩 6 天
-- `🧹 08-12 待办清理报告` — 倒计时 5 天，状态同步
-- `📋 08-12 每日回顾` — 刷题机竞品落实三连 + 闲鱼 P0 顺延第 12 天
-- `🧹 08-13 建议执行器报告`
-- `📋 08-13 每日回顾` — Top 5 发现 + 闲鱼行动项（剩 4 天） — 闲鱼专项扫描，距 8/17 决策剩 4 天
-- `🧹 08-14 建议执行器报告` — 闲鱼专项扫描，距 8/17 决策剩 3 天（连续顺延第 14 天）
-- `📋 08-14 每日回顾` — arxiv Agent 18 篇速览 + 闲鱼距决策剩 3 天（AaLLM 电路设计/QuoteBench 评测陷阱）
-- [[memory/2026/08/weekly-learning-2026-08-14|📚 W33 周学习回顾]] — Agent 前沿对照 + 刷题机竞品两轮 + 成本根因闭环
-- `📋 08-15 每日回顾` — 内容变现资产大放量：AgentScope 测试+PR、AI测评素材库、墨题 P0/P1、harness 十轮；闲鱼距 8/17 决策剩 2 天
-- `🪞 08-16 反思日记`
-- [[memory/2026/08/2026-08-23-daily-review|📋 08-23 每日回顾]] — 闲鱼合规新规+墨题IDB风险双高价值 + 千轮×20 + AgentHarness + 变现资产+2 — 3 改进点：Tavily 三连复发需治本 / 墨题 v3.6 补提交门禁 / 闲鱼 16 天提醒空转；知识吸收 4 项全中达标
-- `🪞 08-17 反思日记` — 3 改进点：反思闭环断裂(8/16行动项零落地)/Tavily第4次复发/健康全绿掩盖5产物缺失；知识吸收 4 项全中达标
-- `🧹 08-17 建议执行器报告` — 🔴 闲鱼 8/17 决策日（今天）：素材连续第 6 次核对 100% 就绪，待 sora 决策上架 or 放弃
-- `📋 08-17 每日回顾` — smart_model_routing 死占位实锤+自研落地 · AI 价格分层素材 · PCB 变现工具链 · arXiv 长程 Agent；闲鱼决策日已到期（顺延 16 天）
-- [[knowledge/Research/arxiv-2026-08-16-agent-llm|arXiv 今日速览]] — 15 篇 AI Agent/LLM 论文（08-13 池补全：SkillEvo/CrEST/Reconcile Once/Faraday）
-- [[memory/2026/08/2026-08-30-daily-review|📋 08-30 每日回顾]] — 联合工作 v1.3 升级日：Antigravity 程序化接入 + 多Agent协作增强 + AI原生组件库落点墨题；闲鱼决策 8/31 到期（悬置 32 天）
-- [[memory/2026/08/2026-08-31-xianyu-vault-suggestion-executor|🧹 08-31 闲鱼专项建议执行报告]] — 🔴 闲鱼上架决策 8/31 今日到期（悬置 33 天）：决策包 30 秒版 + 上架就绪清单 + 未完成待办 6 项
-- [[memory/2026/08/2026-08-30-reflection|🪞 08-30 反思日记]] — 联合工作 v1.3 升级日；3 改进点：排障无时间盒(19h)/cron联动诊断未落地(缺档6天)/会话卫生(1911msgs压缩重放)；知识吸收 4/4 全中达标
-- [[memory/2026/08/2026-08-31-reflection|🪞 08-31 反思日记]] — 多 Agent Eval 全量基线 20/20 + 反思行动项 2/2 闭环；3 改进点：会话卫生(3082msgs连2轮未执行)/cron 429 错峰未根治(20/54失败)/主模型下架+fallback余额双风险；知识吸收 4/4 达标
-- [[memory/2026/08/weekly-2026-08-16|📚 W34 周度整理]] — memory 归位 6 + research 归位 3 + MOC×5 更新 + Finance MOC 新建
-- [[memory/2026/08/weekly-learning-2026-08-16|📚 W34 学习回顾]] — AgentScope 实证测评提 PR + 墨题学习型设计 + Behavioral Contracts 落地容灾
-- [[memory/2026/08/weekly-2026-08-23|📚 W35 周度整理]] — 网安/开发/META/SOP 批量挂载 + memory 归位 + 孤立 95→31
-- [[memory/2026/08/weekly-2026-08-31|📚 W36 周度整理]] — Vibe Coding/Agent 工作流 + 数模实证 + 量化交易入库 + memory 归位 4
-- [[memory/2026/09/weekly-2026-09-06|📚 W37 周度整理]] — 墨题部署落地 + 闲鱼运营深化 + 工具精度方法论 + SRC 收敛
-- `🧹 08-18 建议执行器报告` — 🔴 闲鱼 8/17 决策日已过 1 天：素材第 7 次核对 100% 就绪，今日最后窗口，待 sora 决策上架 or 放弃
-- `🔧 08-18 维护` — 断链 9→0 · 空壳 2 删 · 孤立 4 补链 · DIR_MOC 清理
-- [[memory/2026/08/2026-08-31-maintenance|🔧 08-31 维护]] — 断链 25→0 · README 路径 6 修 · 标签 6 组归一（ai→AI/llm→LLM/pcb/redis）· 空文件 0
-- [[memory/2026/09/2026-09-01-maintenance|🔧 09-01 维护]] — 断链 10→0（5 真修 + 5 误报，修审计脚本 .md bug）· 空文件 0 · 标签 0 冲突
-- [[memory/2026/09/2026-09-02-maintenance|🔧 09-02 维护]] — 断链 0 真 · 空壳 21 删 · 标签 0 冲突 · 根级日志归位 · 孤立 18%
-- [[memory/2026/09/2026-09-04-maintenance|🔧 09-04 维护]] — 断链 0 真 · 空壳 3 删 · 标签 0 冲突 · 根级日志归位 · 孤立 17%
-- [[memory/2026/09/2026-09-20-maintenance|🧹 09-20 维护]] — 断链 8→0 · README 路径 1 修 · 标签 2 统一 · 垃圾 1 删 · 空壳 2 删
-- `📋 08-18 每日回顾` — 安全/SRC 变现研究日：信息泄露首单 SOP + 网安 offer 路径 + AI 红队工具选型 + 多 agent 协作背书 · 🔴 闲鱼 8/18 最后窗口待拍板
-
-- `🔧 08-19 维护` — 断链 2 修 · 空壳 13 删 · 标签 0 冲突 · MOC 补链 15
-- `🧹 08-19 建议执行器报告` — 闲鱼决策悬置第 18 天：素材第 8 次核对 100% 就绪，随时 30min 上架
-- `📊 08-19 每日回顾` — 安全/SRC 知识深挖 + SOP 体系建成 + 基础设施健康预警
-- [[knowledge/Research/arxiv-2026-08-19-agent-llm|arXiv 今日速览]] — 08-17 池补全 14 篇（Zetta 闭环 harness / Bounded Agents 委派安全 / HarnessEval-W 证据树评测）
-- `🧹 08-20 建议执行器报告` — 闲鱼决策悬置第 19 天：素材第 9 次核对 100% 就绪，随时 30min 上架
-- [[memory/2026/08/2026-08-23-vault-suggestion-executor|🧹 08-23 建议执行器报告]] — 落地 6 项（墨题巡检 cron pin 修复 / 报价话术 / 搭网站商品素材 / Agent OS B 站初稿）；发现 8/23 cron 集体 Connection error
-- `📊 08-20 每日回顾` — 补跑研究日：HarnessRisk 直接评测 Hermes + Gartner 推理成本 5x + 方舟-2 配额耗尽靠 fallback 扛
-- [[knowledge/Research/arxiv-2026-08-20-agent-llm|arXiv 今日速览]] — 20 篇 AI Agent/LLM 论文（08-18+08-19 新池：HarnessRL 三剑客 / HarnessRisk 含 Hermes 评测 / TTS 开放域瓶颈）
-- [[knowledge/Research/arxiv-2026-08-21-agent-llm|arXiv 今日速览]] — 补全 17 篇 AI Agent/LLM 论文（同池漏网：Co-RL / Continual RLVR / D²ACCI / StartupBench / Wuying-Browser 等）
-- `📋 08-21 每日回顾` — SRC AI 挖洞三工具落地 + 接单报价 4 问 + 开源私有化变现；🔴 闲鱼决策悬置第 20 天待拍板
-- [[memory/2026/08/2026-08-22-daily-review|📋 08-22 每日回顾]] — 墨题安全自审 4 洞修复 · 网安资料库千轮收官 · Agent OS/Harness 趋势 · 校园便利盒挖洞 4 洞 + 素材第 10 次核对 100% 就绪
-- [[memory/2026/08/suggestions-applied-2026-08-30|🧹 08-30 建议落实]] — 数据溯源卡 3 条入技能 + MCP 安全审计 6 server 全绿 + 数字核对门/agent 分类落地
-- [[knowledge/Research/arxiv-2026-08-31-agent-llm|arXiv 补全速览]] — 28 篇 AI Agent/LLM 论文（08-20→08-28 九日窗口补录：WikiSkill / The Empire harness 收敛 / Safety Does Not Compose / MCP-Universe RL / AI4AI-Bench / Collaboration Tax）
-- [[knowledge/Research/arxiv-2026-09-01-agent-llm|arXiv 今日速览]] — 31 篇 AI Agent/LLM 论文（08-29+08-30 新窗口：Agent Zero Memory 溯源记忆 / SearchWiki wiki 导航 / APIFlow-Bench / Facts Without Rules 交接泄漏 / Safe to Resume 回滚攻击）
-- [[memory/2026/09/2026-09-01-daily-review|📋 09-01 每日回顾]] — Agent Zero Memory 溯源记忆双 SOTA + GitHub 私有化变现卡片 + 技能双周审计 14技能21patch + 闲鱼素材第 12 次核验；🔴 闲鱼上架决策悬置 34 天待拍板
-- [[memory/2026/09/2026-09-02-vault-suggestion-executor|🧹 09-02 闲鱼专项建议执行报告]] — 闲鱼上架决策悬置第 34 天（等 sora 一句话拍板）+ 主图尺寸勘误 750×750 + 今日 3 项优先级计划
-- [[memory/2026/09/2026-09-03-vault-suggestion-executor|🧹 09-03 闲鱼专项建议执行报告]] — 闲鱼上架决策悬置第 35 天 + 「搭网站/写脚本」主图 3 张生成（vision 全 PASS）+ 今日 3 项优先级计划
-- [[memory/2026/09/2026-09-04-vault-suggestion-executor|🧹 09-04 闲鱼专项建议执行报告]] — 闲鱼上架决策拆小为「PPT 1 商品试水」30min 可逆 + 上架清单两段式升级（试水版+5 商品全量版）+ 6 图 PNG 头核验全 PASS + fallback 提前至 9/6
-- [[memory/2026/09/2026-09-02-daily-todo-executor|📋 09-02 每日待办落实]] — 9/2 反思行动项 3/3 落地（patch daily-knowledge-review reconcile + Tavily 降级拍板 + FlClash 推送）+ 陈旧待办剔除（主模型验证已闭环）+ 闲鱼悬置 34 天
-- [[knowledge/Research/arxiv-2026-09-02-agent-llm|arXiv 今日速览]] — 35 篇 AI Agent/LLM 论文（08-31+09-01 新窗口：Gated-Memory Routing / EvoSkill Injection 技能安全 / Explore More Drift Less / Harness-of-Harness / SoK MAS 安全 / Compile Don't Memorize）
-- [[memory/2026/09/2026-09-02-reflection|🪞 09-02 反思日记]] — 多Agent v2.7 千轮 + SRC ROI 实证归零 + 墨题上云无 Docker；3 改进点：每日笔记断档 / web_extract 8.3% 连续3次<15% / 闲鱼 34 天缺 fallback；知识吸收 4/4 达标
-- [[knowledge/Research/arxiv-2026-09-03-agent-llm|arXiv 今日速览]] — 27+12 篇 AI Agent/LLM 论文（09-02 新窗口：SafeEvolve harness-策略安全共进化 / LLM-judge 不是 oracle / SkillGLoW 程序族技能 / SCX Router 0.6B 流式路由 / Repo-To-Skill 仓库蒸馏 5000+ 技能）
-
-- [[memory/2026/09/2026-09-03-daily-review|📋 09-03 每日回顾]] — 闲鱼素材闭环(网站主图3张+第13次核验PASS) · arXiv 09-03 速览 27+12 · HN AI引用污染警示 · 健康巡检 402 定位
-- [[knowledge/Research/arxiv-2026-09-04-agent-llm|arXiv 今日速览]] — 24+12 篇 AI Agent/LLM 论文（09-03+09-04 双日补全：LLM judge 先自检再上岗 / 表示层对齐防对抗 / 100-agent 作弊-吹哨涌现 / HEART 工具原语成本-85% / agent 腐烂几何律）
-- [[memory/2026/09/2026-09-04-daily-review|📋 09-04 每日回顾]] — 闲鱼变现深度日：千轮研究推流算法 · 子代理推翻「最低档引流」+ OCR 机审 · L2 标题主图重做 · Codex 安全红线 · 上架决策拆小试水(fallback 9/6)
-- [[memory/2026/09/2026-09-04-reflection|🗞️ 09-04 反思日记]] — 闲鱼变现深度日；3 改进点：fallback 升级可执行试水上架(9/6)／PIL 稳定性生成兜底固化／首次交互置顶三连；知识吸收 4/4 达标
-- [[knowledge/Research/arxiv-2026-09-05-agent-llm|arXiv 补全速览]] — 20+8 篇 AI Agent/LLM 论文（09-05 索引冻结补录同池漏网：Agent 记忆授权洗白 / hook 供应链攻击 / OPD-then-RL / 测量伪影判定）
-- [[memory/2026/09/2026-09-05-daily-review|📋 09-05 每日回顾]] — 工具精度方法论日（假阳性税/检测器2bug）· 网站部署+动效两研究 · 墨题部署拍板（前端Vercel+后端云）· 素材第14次核验 · 试水fallback明日触发
-- [[knowledge/Research/arxiv-2026-09-06-agent-llm|arXiv 补全速览]] — 15+9 篇 AI Agent/LLM 论文（09-06 索引续冻结补录同池漏网：Harness Engineering 解剖 11 系统含 Hermes/OpenClaw / Delegation Without Trust 委派授权 / Persistent Agents 跨运行时记忆 / AgentProv 行为指纹审计）
-- [[knowledge/Research/arxiv-2026-09-07-agent-llm|arXiv 今日速览]] — 22+10 篇 AI Agent/LLM 论文（09-07 新窗口索引解冻：Multi-Harness RL credit assignment / HackProbe reward hacking 监视器 / 记忆可移植性 / CoSkill+Trace2Tower 技能演化四连 / CONTINUITY 安全契约）
-- [[knowledge/Research/arxiv-2026-09-10-agent-llm|arXiv 今日速览]] — 22+16 篇 AI Agent/LLM 论文（09-10 索引解冻新窗口 09-09+09-10 共 1,749 篇：Agent 记忆工程化四连 / 技能供应链安全 / 评测去脚手架 / 320B MoE 对齐脆弱性）
-- [[knowledge/Research/arxiv-2026-09-11-agent-llm|arXiv 今日速览]] — 20+12 篇 AI Agent/LLM 论文（09-11 新窗口 441 篇：记忆策展主动验证 / 验证器可靠性形式化 / MCP 生态 48.8% 存活实证 / T1 终端 Agent RL 64.0%）
-- [[knowledge/Research/arxiv-2026-09-14-agent-llm|arXiv 今日速览]] — 17+12 篇 AI Agent/LLM 论文（09-14 新窗口 432 篇：仓库 SKILL 优化方法论 / unlearning 六通道泄露 / 自进化护栏契约 GuardrailLoop / Harness vs Model 隔离 / 动作前验证）
-- [[knowledge/Research/arxiv-2026-09-15-agent-llm|arXiv 补全速览]] — 15+14 篇 AI Agent/LLM 论文（09-15 索引冻结补录 09-14 同池漏网：Scan the Skill 技能注册表治理 / Is Bash All You Need 工具接口实证 / LifeFuse-Mem 记忆生命周期 / LLM Judge 能力依赖偏置）
-- [[knowledge/Research/arxiv-2026-09-17-agent-llm|arXiv 今日速览]] — 32+10 篇 AI Agent/LLM 论文（09-17 新窗口 09-15~09-17 共 2,151 篇：PMPA 持久记忆投毒 OpenClaw 73.7% / BudgetBench 预算化记忆评测 / 工具-工作流组合级失败 / 投毒基准污染自修改 agent / 编码 agent 实证四连）
-- [[knowledge/Research/arxiv-2026-09-18-agent-llm|arXiv 今日速览]] — 20+7 篇 AI Agent/LLM 论文（09-18 新窗口 602 篇：Harness 组件级归因 176 设置 / OverclaimBench 完成声明 80.4% 误导 / 工具幻觉非 gate 决策 / 多智能体「越少越好」/ MAGS Dafny 形式化安全 100%）
-- [[knowledge/Research/arxiv-2026-09-19-agent-llm|arXiv 补全速览]] — 13+5 篇 AI Agent/LLM 论文（09-19 周六无新窗口，补录 09-18 同池漏网：LLM 评测 14,767 篇元研究 / PetriBench 动态状态推理 / 进化搜索单点评测揭穿 / 12.6M 激活探针平 1000 倍 guard / EconSkills 技能库抽象化 / 元认知反馈防去技能化）
-- [[knowledge/Research/arxiv-2026-09-20-agent-llm|arXiv 补全速览]] — 12+7 篇 AI Agent/LLM 论文（09-20 周日无新窗口，第三轮补录 09-18 同池漏网：ScientistTwo 全自主科学发现 / SoL-Pi harness 省 44.7-49% token / SkillAA 归因技能图 / claim-safe 评测协议 / CovR 覆盖率硬件验证 93.81% / harm laundering 安全评测揭穿）
-- [[knowledge/Research/arxiv-2026-09-21-agent-llm|arXiv 今日速览]] — 16+7 篇 AI Agent/LLM 论文（09-21 新窗口 460 篇：CodeMidas 代码自建 RL 环境 / Designer-RSI 程序记忆进化 / MDL 记忆信任决策 / GraphSkillEvo 技能图进化 / 单步指标不迁移自主执行 / IRT 生产评测降本 / CoLearn agentic 家教）
-
-## 🧭 核心区域
-- `🔍 08-19 反思` — 行动项 3/3 未落地（反思≠执行第 3 次复发）；Tavily 第 6 次复发；SRC 三方向收敛为补天聚焦 · scripts 登记表当场补建
-
-## 🧭 核心区域
-
-- `🧠 记忆` — 长期记忆与用户画像
-- [[concepts/MOC-Concepts|💡 概念]] — 常青概念卡片
-- [[projects/MOC-Projects|📦 项目]] — 进行中项目
-- [[portfolio/MOC-Portfolio|🎯 作品集]] — 交付案例
-- [[health/MOC-Health|💚 健康]] — 自举健康检查
+| 🤖 **AI / Agent** | [[knowledge/Dev/MOC-Dev\|MOC-Dev]] · [[knowledge/AI/MOC-AI\|MOC-AI]] | AI Agent 自举系统、Harness 框架、推理路由与多智能体协同 |
+| 💻 **现代 Web 开发** | [[knowledge/Dev/MOC-Dev\|MOC-Dev]] | Next.js 15、TypeScript、Three.js 3D 渲染、水墨风 UI 设计系统 |
+| 🔬 **深度前沿研究** | [[knowledge/Research/MOC-Research\|MOC-Research]] | arXiv 前沿论文深研、开源技术评测、算法解析与学术基线 |
+| 🐙 **GitHub 开源生态** | [[knowledge/Research/MOC-GitHub\|MOC-GitHub]] | 每周 Trending 增速榜精选、全球前沿开源项目解剖与架构复现 |
+| ⚡ **硬件与自动化** | [[knowledge/Hardware/MOC-Hardware\|MOC-Hardware]] | KiCad 10 自动化脚本、嘉立创 EDA、单片机 8051、工业 CAD 建模 |
+| 📈 **生产力与工程** | [[knowledge/Productivity/MOC-Productivity\|MOC-Productivity]] | 自动化流水线、工作流编排、高质量工程交付体系 |
+| 🛡️ **安全与攻防** | [[knowledge/Security/MOC-Security\|MOC-Security]] | API 安全审计、防木马供应链加固、隐私门禁检测技术 |
+| 🎬 **创意与自媒体** | [[knowledge/Content/MOC-Content\|MOC-Content]] · [[knowledge/Creative/MOC-Creative\|MOC-Creative]] | 商业短视频生产管线、四维摄影机控制、去 AI 味与文字润色 |
+| 📋 **标准化 SOP** | [[knowledge/SOP/MOC-SOP\|MOC-SOP]] | 深度排障 SOP、模型评估 SOP、知识吸收四算子标准化工程 |
+| 🃏 **精选知识卡片** | [[knowledge/cards/MOC-cards\|MOC-cards]] | 每日重磅事件、技术洞察、大模型架构创新极简卡片池 |
+| 📦 **项目管理** | [[projects/current\|当前项目]] · [[knowledge/Projects/MOC-Projects\|MOC-Projects]] | 墨题 (EPM) 考研机、万悟产业赛道等重点项目生命周期 |
+| 🎓 **教育科研** | [[knowledge/Education/MOC-Education\|MOC-Education]] | 课题申报书设计论证、数模竞赛分析、教学设计规范 |
 
 ---
 
-*每个新笔记都应链回所属 MOC——这是知识网络的基石。*
+## 🚀 核心工程与实战主线
+
+### 1. 墨题（EPM）考研英语刷题机
+* **当前版本**: `v2.2.0` 正式发行版（GitHub 全绿发布）
+* **核心特色**: 3D 水墨交互（浑天仪/砚滴/朱砂印章）+ SQLite FTS5 全文搜索 + 软键盘高度动态自适应 + 双半区拖拽分屏
+* **资产合规**: 方案 B 资产隔离已完全落地，真题题库与交付包本地封存，公开仓库仅保持轻量样例题库。
+
+### 2. 垂直领域 AI Agent 工业级体系
+* **双轨混合架构**: 概率推理轨（LLM 参数自适应与非标异常归因）+ 确定性工程轨（Shapely 几何拓扑与硬性 DRC 规则）。
+* **四大工程标准**: 职责边界硬隔离、置信度挂起审核（Confidence-Gated HITL）、几何哈希防篡改（Override SHA Invalidation）、Golden Sample 自动化指标回归。
+
+### 3. AI 商业广告与音视频生产链路
+* **多流派打法**: C 端时尚穿搭（痛点反差变身流）与 B 端实体硬件（3D 工业解构 + 实体店增效流）。
+* **一致性控制**: 核心资产冻结、首尾帧内插法、四维运镜编码（`[Z景别 + Y高度 + X偏角 + F动词]`）。
+
+---
+
+## 🔒 资产三级隔离原则（Physical Air-Gap Baseline）
+
+本知识库严格遵守 2026-09-23 确立的资产三级隔离铁律：
+
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│                        【公开开源层 (Public Repo)】                      │
+│   • 通用技术规范、全域 MOC 知识卡片、开源工具调研、学术理论与架构设计文档     │
+│   • 托管于 GitHub，全自动运行 8 项静态与隐私门禁检查（check-site / privacy）   │
+└───────────────────────────────────┬────────────────────────────────────┘
+                                    │ 物理切割与 .gitignore 拦截
+                                    ▼
+┌────────────────────────────────────────────────────────────────────────┐
+│                   【本地绝对隔离层 (Local Air-Gapped Vault)】            │
+│   • 路径: private_knowledge/ (被 .gitignore 永久拉黑，绝不上网)         │
+│   • 包含:                                                              │
+│     ├── cad_pipeline/ (工业治具核心算法、CAD Agent 源码、3D 模型图纸)   │
+│     ├── xianyu_commercial/ (商业广告素材包、6 张商用主图原图、防封 SOP)│
+│     ├── monetization_costs/ (变现成本测算表、代写与服务底价、报价流水线)│
+│     ├── memory/ (329 篇个人每日复盘、私密生活日记、dreaming 梦境记录)   │
+│     └── education/ (考研与个人学业长期规划)                            │
+└────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+> 🗺️ 属于 [[HOME|🏠 Home]] · 由 k (Hermes) 自动化治理与维护

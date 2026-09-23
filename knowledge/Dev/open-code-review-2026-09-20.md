@@ -75,4 +75,4 @@ ocr delegate preview && ocr delegate rule src/main.go
 | 风险 | Recall 低 = 可能漏报；markdown 等非代码文件默认过滤；规则集需按项目定制 |
 
 ---
-> 🗺️ 属于 [[MOC-Dev]] · [[MOC-GitHub]] · 周报 [[../../memory/2026/09/github-trending-w39|W39]]
+> 🗺️ 属于 [[MOC-Dev]] · [[MOC-GitHub]] · 周报 [[GitHub-Weekly-2026-09-20|W39]]

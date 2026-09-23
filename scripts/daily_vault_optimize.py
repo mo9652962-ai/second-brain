@@ -140,7 +140,8 @@ def scan_md_files():
     return [
         f for f in VAULT.rglob("*.md")
         if ".git" not in str(f) and ".obsidian" not in str(f)
-        and ".venv" not in str(f) and "MOC-" not in f.name
+        and ".venv" not in str(f) and "private_knowledge" not in str(f)
+        and "private_vault" not in str(f) and "MOC-" not in f.name
         and not (f.name == "README.md" and f.parent == VAULT)
         and f.name not in ("Home.md",)
     ]

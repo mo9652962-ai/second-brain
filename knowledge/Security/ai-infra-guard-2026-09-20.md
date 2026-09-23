@@ -75,4 +75,4 @@ python main.py --repo ./myproject -o results.json   # SARIF 2.1.0
 | 风险 | 6k★ 相对新，规则覆盖面持续演进；扫描结果是辅助，仍需人工复核高危项 |
 
 ---
-> 🗺️ 属于 [[MOC-Security]] · [[MOC-GitHub]] · 周报 [[../../memory/2026/09/github-trending-w39|W39]]
+> 🗺️ 属于 [[MOC-Security]] · [[MOC-GitHub]] · 周报 [[GitHub-Weekly-2026-09-20|W39]]

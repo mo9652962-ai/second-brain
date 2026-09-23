@@ -62,4 +62,4 @@ status: active
 | 值得安装 | 🟡 选学 | 不整套装，抄编排架构；demo 值得一看 |
 
 > 🗺️ 属于 [[MOC-Inbox]] · [[MOC-GitHub]] · [[Home|🏠 Home]]
-> 📅 周报见 [[../../memory/2026/09/github-trending-w37|W37 周报]]
+> 📅 周报见 [[GitHub-Weekly-2026-09-06|W37 周报]]

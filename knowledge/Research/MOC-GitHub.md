@@ -19,12 +19,12 @@ updated: 2026-08-31---
 ## 📅 周报系列（W31 起，每周一篇）
 
 - [[GitHub-Weekly-2026-09-20-weekly-5projects]] — W39 weekly：sub2api / SemIf / AI-Infra-Guard / karpathy-skills / open-code-review
-- [[GitHub-Weekly-2026-09-20]] — W39 宝藏挖掘（脚本口径 Top5：codebase-memory-mcp / nanobot / code-review-graph） 5 新面孔（周报 [[../../memory/2026/09/github-trending-w39|W39 周报]]）
-- [[GitHub-Weekly-2026-09-13-weekly-5projects]] — W38 weekly：context-mode / WeKnora / hyperframes / no-ai-slop 4 新面孔（周报 [[../../memory/2026/09/github-trending-w38|W38 周报]]）
+- [[GitHub-Weekly-2026-09-20]] — W39 宝藏挖掘（脚本口径 Top5：codebase-memory-mcp / nanobot / code-review-graph） 5 新面孔（周报 [[GitHub-Weekly-2026-09-20|W39 周报]]）
+- [[GitHub-Weekly-2026-09-13-weekly-5projects]] — W38 weekly：context-mode / WeKnora / hyperframes / no-ai-slop 4 新面孔（周报 [[GitHub-Weekly-2026-09-13|W38 周报]]）
 - [[GitHub-Weekly-2026-09-13]] — W38 宝藏挖掘（脚本口径 Top5：codebase-memory-mcp / nanobot 等，全连榜）
 - [[GitHub-Weekly-2026-09-08]] — W38 宝藏挖掘：codebase-memory-mcp / nanobot 等 Top5
-- [[../../memory/2026/09/github-trending-w37|W37 周报]] — W37：archify 可验证图表 / ECC 250k harness / scientific-agent-skills 科研技能库 / OpenMAIC 多 Agent 课堂 / VoiceStudio 本地语音
-- [[GitHub-Weekly-2026-08-23]] — W35：ai-memory 跨 Agent 记忆 / llmfit 硬件×模型匹配（周报 [[../../memory/2026/08/github-trending-w35|W35 周报]]）
+- [[GitHub-Weekly-2026-09-06|W37 周报]] — W37：archify 可验证图表 / ECC 250k harness / scientific-agent-skills 科研技能库 / OpenMAIC 多 Agent 课堂 / VoiceStudio 本地语音
+- [[GitHub-Weekly-2026-08-23]] — W35：ai-memory 跨 Agent 记忆 / llmfit 硬件×模型匹配（周报 [[GitHub-Weekly-2026-08-30|W35 周报]]）
 - [[GitHub-Weekly-2026-08-16]] — W34：diagram-design 图表（+14.7k 增长王）/ needle 14MB 端侧模型 / google-skills / code-graph-rag
 - [[agent-infra-weekly-2026-08-17]] — Agent 基建化周榜：电脑、记忆、图谱、长任务状态开卷（Dev 域）
 - [[GitHub-Weekly-2026-08-14]] — W33：自改进 RLM Agent 领跑（prime-agent +12k⭐）+ semantica / agent-skills / cloudflare-computer / switchyard

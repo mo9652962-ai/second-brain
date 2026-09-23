@@ -60,4 +60,4 @@ curl -o CLAUDE.md https://raw.githubusercontent.com/multica-ai/andrej-karpathy-s
 | 风险 | 纯守则无自动化；过度谨慎会拖慢平凡任务（作者已明说 tradeoff） |
 
 ---
-> 🗺️ 属于 [[MOC-Dev]] · [[MOC-GitHub]] · 周报 [[../../memory/2026/09/github-trending-w39|W39]]
+> 🗺️ 属于 [[MOC-Dev]] · [[MOC-GitHub]] · 周报 [[GitHub-Weekly-2026-09-20|W39]]

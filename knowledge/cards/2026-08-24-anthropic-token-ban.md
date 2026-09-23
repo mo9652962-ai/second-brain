@@ -3,7 +3,7 @@ aliases:
   - 2026-08-24-card-anthropic-token-ban
 tags: [knowledge-card, ai-agent, provider-risk, multi-vendor, openclaw]
 created: 2026-08-24
-source: "[[memory/2026/08/2026-08-24]]"
+source: "2026-08-24"
 status: fresh---
 
 # 🃏 知识卡片 · Anthropic 封订阅 token：单一供应商订阅依赖是 10-50x 成本陷阱
@@ -42,6 +42,9 @@ status: fresh---
 
 ---
 
-*卡片来源：当天知识库精选 · [[memory/2026/08/2026-08-24]]（🥇 Anthropic 封订阅 token 直接验证 sora 多供应商 fallback 链的正确性——外部硬事件背书生产架构，数字经三源核实，且有明确的配置收紧行动项）*
+*卡片来源：当天知识库精选 · 2026-08-24（🥇 Anthropic 封订阅 token 直接验证 sora 多供应商 fallback 链的正确性——外部硬事件背书生产架构，数字经三源核实，且有明确的配置收紧行动项）*
 
 **亚军候选**：语义缓存治本第 9 次复发验证（Tavily 432 → chokepoint 缓存兜底）——工程可靠性进展，但属执行确认而非新知识，留给 daily-review 记录。
+
+---
+> 🗺️ 属于 [[MOC-cards]] · [[Home|🏠 Home]]

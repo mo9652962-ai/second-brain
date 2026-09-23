@@ -59,4 +59,4 @@ Python 后端（引擎编排）
 | 值得安装 | 🟡 有条件 | 硬件允许+非商用可试；商用/内存紧张则观望 |
 
 > 🗺️ 属于 [[MOC-Inbox]] · [[MOC-GitHub]] · [[Home|🏠 Home]]
-> 📅 周报见 [[../../memory/2026/09/github-trending-w37|W37 周报]]
+> 📅 周报见 [[GitHub-Weekly-2026-09-06|W37 周报]]

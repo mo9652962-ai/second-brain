@@ -62,4 +62,4 @@ npx skills add K-Dense-AI/scientific-agent-skills
 | 值得安装 | 🟢 值得 | 至少抄治理模式；挑 3-5 个科研技能实测 |
 
 > 🗺️ 属于 [[MOC-Inbox]] · [[MOC-GitHub]] · [[Home|🏠 Home]]
-> 📅 周报见 [[../../memory/2026/09/github-trending-w37|W37 周报]]
+> 📅 周报见 [[GitHub-Weekly-2026-09-06|W37 周报]]

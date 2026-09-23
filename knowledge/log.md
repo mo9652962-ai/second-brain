@@ -110,7 +110,7 @@ tags: [meta, vault-maintenance]
   - 缺 `knowledge/` 前缀 26 处（index.md 5、MOC-Inbox 9、MOC-Productivity 3、MOC-Security 2、MOC-Research 2、工具精度方法论 2、网站公网部署 1、运动曲线 1、portfolio 3→改 `portfolio/` 前缀）
   - 相对路径层数错误 8 处：`github-trending-w35/w37` 的 `../knowledge/...` → `../../../knowledge/...`（memory/YYYY/MM/ 出发需 3 层）
   - 真断链转纯文本 4 处：knowledge-map 的 3 个 archive 周报（archive 目录已清理）+ AI-Agent 的 arxiv-agent-llm-2026-07-26（文件已归档移除）
-  - 周报内部路径修正 1 处：weekly-2026-08-16 `memory/2026-08-14` → `[[memory/2026/08/2026-08-14]]`
+  - 周报内部路径修正 1 处：weekly-2026-08-16 `memory/2026-08-14` → `2026-08-14`
 - **孤立页挂载 2 个**（幂等，未删页）：`Research/arxiv-2026-09-08-agent-llm`、`Research/黑盒热榜5项目实证研究-2026-09-08` → MOC-Research（续 09-08 序列）
 - **补 frontmatter 1 个**：`Research/黑盒热榜5项目实证研究-2026-09-08`（tags: [research, github, 实证研究, github-trending, W37]）
 - **标签一致性**：`codex` → `Codex`（codex-2week-game-absorbed.md，与主流大写统一）
@@ -126,17 +126,17 @@ tags: [meta, vault-maintenance]
 - **孤立挂载 4 个**：GitHub-Weekly-09-08→MOC-GitHub、skill-audit-09-08→MOC-Research、CAD自动化MCP参考→MOC-Dev、hackernews-09-08→knowledge-map；均挂 HOME.md
 - **补 frontmatter 2 个**：CAD自动化MCP参考-pascal-09-08、GitHub-Weekly-09-08
 - **遗留**：eval-v2 README 报孤立 = lint README 重名盲区（MOC-Research 全路径入链有效）；09-04-maintenance「剥离方括号」为规则 prose 保留
-- 详见 [[memory/2026/09/2026-09-08-vault-maintenance|2026-09-08 维护笔记]]
+- 详见 2026-09-08 维护笔记
 
 ## [2026-09-09] lint | 例行体检（断链0/空文件0/标签0冲突 + 检测器同步）
 
-- **断链 15 条报告 → 全部核实假阳性（真断链 0）**：占位符（`[[wikilink]]`/`[[note-1]]`/`[[series-2026-08-14]]`/`[[skill-name]]`/`` [[` `]] ``）×8、维护笔记文档示例（`../knowledge/...`/`MOC-Development` 等）×3、dreaming 冻结快照指向 `.archive`（`[[2026-07-21-2347]]`，lint 排除 .archive 故报 not found）×2、模板 `[[所属MOC]]`×1
+- **断链 15 条报告 → 全部核实假阳性（真断链 0）**：占位符（`[[wikilink]]`/`[[note-1]]`/`[[series-2026-08-14]]`/`[[skill-name]]`/`` [[` `]] ``）×8、维护笔记文档示例（`../knowledge/...`/`MOC-Development` 等）×3、dreaming 冻结快照指向 `.archive`（`2026-07-21-2347`，lint 排除 .archive 故报 not found）×2、模板 `[[所属MOC]]`×1
 - **检测器同步（先修检测器）**：skills 目录 `knowledge-lint.py` 为旧版（`Path(target).stem` 截断版本号 `MiMo-V2.5`→`MiMo-V2` → 误报 28 条断链）；已同步 vault 修复版（`strip_md()` 保留版本号点 + EXTERNAL_ROOTS 精确大小写）→ 正确 15 条全为占位符假阳性
 - **空文件**：全仓库 0 字节 + <3 字符 md = 0，无需清理
 - **标签一致性**：877 distinct tags，大小写 + 分隔符归一（`re.sub(r'[-_\s]+','-')`）冲突 = 0
 - **缺 frontmatter 284 个全为系统文件**（skills/.venv/README/AGENTS 等仓库元数据，非笔记，不补）；真实笔记 0 缺
 - **孤立页**：活跃 170（多为 memory/ 历史每日日志 + knowledge 新页待挂载，属 daily/周度 cron 职责，本次未动）
-- **遗留**：`memory/dreaming/light-2026-08-06/07` 的 `[[2026-07-21-2347]]` 为冻结历史引用，保留
+- **遗留**：`memory/dreaming/light-2026-08-06/07` 的 `2026-07-21-2347` 为冻结历史引用，保留
 - **结果**：真断链 0 / 空文件 0 / 标签冲突 0
 
 ## [2026-09-10] lint | 例行体检（断链9→0 + 孤立5→0 + 标签统一 + 检测器双修复）

@@ -5,7 +5,7 @@ type: moc
 domain: Research
 status: active
 created: 2026-08-09
-updated: 2026-09-20
+updated: 2026-09-23
 ---
 
 # 🔬 研究笔记 MOC — Research Map
@@ -13,7 +13,7 @@ updated: 2026-09-20
 > 所有研究笔记的索引与入口。自动按主题分组。
 > 回到 [[knowledge-map|🗺️ 知识地图]] · [[Home|🏠 Home]]
 
-**共 221 篇研究笔记** · 最后更新: 2026-09-20（每日增量索引）
+**共 216 篇研究笔记** · 最后更新: 2026-09-23（每日增量索引）
 
 ## 🆕 最新增量（2026-09-18 ~ 09-19）
 
@@ -129,8 +129,8 @@ updated: 2026-09-20
 - [[knowledge/Research/arxiv-2026-08-20-agent-llm|arXiv Agent/LLM 08-20]] · [[knowledge/cards/2026-08-20-hermes-harnessrisk-security|知识卡片 08-20]]
 - [[knowledge/Research/arxiv-2026-08-21-agent-llm|arXiv Agent/LLM 08-21 补录]] · [[knowledge/cards/2026-08-21-github-monetization|知识卡片 08-21]]
 - [[knowledge/Daily/hackernews-2026-08-17|HN 08-17]] · [[knowledge/Daily/hackernews-2026-08-18|HN 08-18]] · [[knowledge/Daily/hackernews-2026-08-19|HN 08-19]] · [[knowledge/Daily/hackernews-2026-08-21|HN 08-21]] — W35 Daily 速览补链
-- [[memory/2026/08/2026-08-30|自我完善 08-30]] · [[knowledge/cards/2026-08-30-data-source-verification|知识卡片 08-30]]
-- [[memory/2026/08/2026-08-24|自我完善 08-24]] · [[knowledge/cards/2026-08-24-anthropic-token-ban|知识卡片 08-24]]
+- 自我完善 08-30 · [[knowledge/cards/2026-08-30-data-source-verification|知识卡片 08-30]]
+- 自我完善 08-24 · [[knowledge/cards/2026-08-24-anthropic-token-ban|知识卡片 08-24]]
 
 - [[knowledge/AI/工具精度方法论-假阳性税与知识库Lint-2026-09-05|工具精度方法论 09-05]] · [[knowledge/cards/2026-09-05-false-positive-tax|知识卡片 09-05]]
 - [[knowledge/Research/arxiv-2026-09-06-core-contributions|arXiv 核心贡献 09-06]] · [[knowledge/cards/2026-09-06-harness-engineering|知识卡片 09-06]]

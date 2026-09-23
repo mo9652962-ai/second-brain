@@ -131,3 +131,6 @@ status: adopted
 
 *关联链接：*
 - 生成脚本：`~/AppData/Local/hermes/disk-cleanup/weekly_cost_stats.py`
+
+---
+> 🗺️ 属于 [[MOC-Productivity]] · [[Home|🏠 Home]]

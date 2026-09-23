@@ -164,3 +164,6 @@ status: adopted
 - 生成脚本：`~/AppData/Local/hermes/disk-cleanup/weekly_cost_stats.py`；本报告补充了 tokenrhythm CNY 修正口径与 agent.log 故障链分析
 
 _生成: weekly-cost-report cron · k (Hermes) · 2026-08-14 21:40_
+
+---
+> 🗺️ 属于 [[MOC-Productivity]] · [[Home|🏠 Home]]
