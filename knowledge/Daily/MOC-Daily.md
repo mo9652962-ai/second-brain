@@ -45,7 +45,14 @@ updated: 2026-09-20
 - [[knowledge/Daily/hackernews-2026-09-18|Hacker News 今日精选 — 2026-09-18]]
 - [[knowledge/Daily/hackernews-2026-09-19|Hacker News 今日精选 — 2026-09-19]]
 - [[knowledge/Daily/hackernews-2026-09-20|Hacker News 今日精选 — 2026-09-20]]
+- [[knowledge/Daily/hackernews-2026-09-21|Hacker News 今日精选 — 2026-09-21]]
 
 ## 每日产出研究
 
 - [[knowledge/Daily/daily-output-study-2026-08-18|今日产出学习研究报告（2026-08-18）]]
+
+## 自动挂载
+
+> cron 产出自动登记（防入链孤立）
+
+- [[hackernews-2026-09-24]]

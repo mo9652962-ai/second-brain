@@ -130,5 +130,7 @@ status: adopted
 ---
 
 *关联链接：*
-- [[LLM-Providers]] · [[deepseek-v4-flash-0731-upgrade]] · [[ai-monetization-costs]]
 - 生成脚本：`~/AppData/Local/hermes/disk-cleanup/weekly_cost_stats.py`
+
+---
+> 🗺️ 属于 [[MOC-Productivity]] · [[Home|🏠 Home]]

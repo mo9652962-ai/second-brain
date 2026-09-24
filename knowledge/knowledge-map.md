@@ -13,7 +13,9 @@ updated: 2026-09-20
 
 > 入口: [[Home|🏠 Home]] · 返回总索引
 
-> 所有知识领域的索引与关联。最后更新: 2026-09-20（W39 GitHub 周榜 5 项入库 + 周报更新）
+> 机器版索引: [[VAULT-MAP|🗺️ VAULT-MAP]]（AI 导航）· 健康看板: [[DASHBOARD|📊 DASHBOARD]] · 新陈代谢: [[METABOLISM|🌿 METABOLISM]]
+
+> 所有知识领域的索引与关联。最后更新: 2026-09-24（W39 GitHub 周榜 5 项入库 + 周报更新）
 
 ## 🧭 MOC 总入口（2026-08-16 起，新建 MOC 必须在此挂载）
 
@@ -80,13 +82,13 @@ updated: 2026-09-20
 
 ## 💰 变现分析
 
-> [[monetization-analysis]] — 基于现有能力的变现路径、可担任职位、立即行动方案
+> monetization-analysis — 基于现有能力的变现路径、可担任职位、立即行动方案
 
-> [[ai-monetization-costs]] — 闲鱼实战价目表、工具成本、利润测算（最新五轮整合）
+> ai-monetization-costs — 闲鱼实战价目表、工具成本、利润测算（最新五轮整合）
 
 ## 🎓 学术服务
 
-> [[academic-service-research]] — 2026知网5.0应对、AI PPT行业报告、服务套餐设计、竞争分析
+> academic-service-research — 2026知网5.0应对、AI PPT行业报告、服务套餐设计、竞争分析
 
 > [[ai-research-collaboration]] — 110亿Token的AI科研协作经验（Jadense）
 
@@ -244,7 +246,7 @@ graph TD
 
 ## 🆕 W33 新增速览（2026-08-10 ~ 08-14）
 
-> 本周主线：GitHub 热榜全新面孔（自改进 RLM Agent 领跑 +12k⭐）+ ACL 2026 自我进化五篇 + 刷题机竞品两轮落地 + W33 API 成本根因闭环。学习回顾见 [[../memory/2026/08/weekly-learning-2026-08-14|W33 学习回顾]]。
+> 本周主线：GitHub 热榜全新面孔（自改进 RLM Agent 领跑 +12k⭐）+ ACL 2026 自我进化五篇 + 刷题机竞品两轮落地 + W33 API 成本根因闭环。学习回顾见 W33 学习回顾。
 
 ### 各域本周新增
 
@@ -288,7 +290,7 @@ graph TD
 
 | 🛡️ Security | SRC 挖洞/提权渗透/防御加固/DVWA 靶场/逻辑漏洞 ×8 | [[knowledge/Security/MOC-Security]] |
 
-| 🎨 Creative | 去 AI 味开源技能研究（小黑盒帖子 + 千轮研究） | [[knowledge/Creative/de-ai-skills-2026-08-18]] |
+| 🎨 Creative | 去 AI 味开源技能研究（小黑盒帖子 + 千轮研究） | de-ai-skills-2026-08-18 |
 
 | 📅 Daily | HN 速览补链（08-08/08-16）· 今日产出学习 | [[knowledge/Daily/hackernews-2026-08-16]] · [[knowledge/Daily/hackernews-2026-08-08]] · [[knowledge/Daily/daily-output-study-2026-08-18]] |
 
@@ -300,7 +302,7 @@ graph TD
 
 ## 🆕 W35 续（2026-08-19 ~ 08-22 批量入库）
 
-> 网安资料库收官 + SRC 自动化 + SOP 知识体系 0→1 + 后端开发坑系列 32 项 + 千轮增强六域。整理报告见 [[../memory/2026/08/weekly-2026-08-23|W35 周度整理]]。学习回顾见 [[../memory/2026/08/weekly-learning-2026-08-23|W35 学习回顾]]。
+> 网安资料库收官 + SRC 自动化 + SOP 知识体系 0→1 + 后端开发坑系列 32 项 + 千轮增强六域。整理报告见 W35 周度整理。学习回顾见 W35 学习回顾。
 
 | 域 | 新增重点 | 入口 |
 
@@ -334,7 +336,7 @@ graph TD
 
 ## 🆕 W36 新增速览（2026-08-24 ~ 08-30）
 
-> 本周主线：Vibe Coding / Agent 工作流方法论批量入库（Context Engineering / SDD / AI-native 组件库）+ 联合工作 v1.3 升级（Antigravity 程序化接入）+ 数模 Agent 生态实证 + 量化交易缠论系统。整理报告见 [[../memory/2026/08/weekly-2026-08-31|W36 周度整理]]。
+> 本周主线：Vibe Coding / Agent 工作流方法论批量入库（Context Engineering / SDD / AI-native 组件库）+ 联合工作 v1.3 升级（Antigravity 程序化接入）+ 数模 Agent 生态实证 + 量化交易缠论系统。整理报告见 W36 周度整理。
 
 | 域 | 新增重点 | 入口 |
 
@@ -357,7 +359,7 @@ graph TD
 
 ## 🆕 W37 新增速览（2026-08-31 ~ 09-06）
 
-> 本周主线：墨题上云/公网部署落地（无 Docker 方案 + Vercel/CDN/域名全流程）+ 闲鱼运营千轮研究（推流算法点击率分层）+ 工具精度方法论（假阳性税，反哺 knowledge-lint）+ 多 Agent Eval 基线 v2（20 查询）。整理报告见 [[../memory/2026/09/weekly-2026-09-06|W37 周度整理]]。
+> 本周主线：墨题上云/公网部署落地（无 Docker 方案 + Vercel/CDN/域名全流程）+ 闲鱼运营千轮研究（推流算法点击率分层）+ 工具精度方法论（假阳性税，反哺 knowledge-lint）+ 多 Agent Eval 基线 v2（20 查询）。整理报告见 W37 周度整理。
 
 | 域 | 新增重点 | 入口 |
 |:---|:---------|:-----|
@@ -366,13 +368,13 @@ graph TD
 | 🔬 Research | 多 Agent Eval 基线 v2 + arXiv 09-03/04/05 速览 + 工具精度方法论（假阳性税）| [[knowledge/Research/MOC-Research]] |
 | 🔐 Security | hermes-codex-security-policy 09-04 + SRC 批量初筛收敛 | [[knowledge/Security/MOC-Security]] |
 | 🤖 AI | 知识库-AI 不翻知识库根因 + 工具精度方法论 | [[knowledge/AI/工具精度方法论-假阳性税与知识库Lint-2026-09-05]] |
-| 🃏 cards | 闲鱼运营算法 / 假阳性税知识卡片 | [[knowledge/cards/2026-09-04-xianyu-operation-algorithm]] |
+| 🃏 cards | 闲鱼运营算法 / 假阳性税知识卡片 | 2026-09-04-xianyu-operation-algorithm |
 
 ---
 
 ## 🆕 W34 新增速览（2026-08-15 ~ 08-16）
 
-> 本周主线：知识域收敛 10→7（08-15 refactor）+ AgentScope 评测资产放量 + 墨题 P0/P1 设计 + harness 十轮强化 + 闲鱼 8/17 决策倒计时。整理报告见 [[../memory/2026/08/weekly-2026-08-16|W34 周度整理]]，学习回顾见 [[../memory/2026/08/weekly-learning-2026-08-16|W34 学习回顾]]。
+> 本周主线：知识域收敛 10→7（08-15 refactor）+ AgentScope 评测资产放量 + 墨题 P0/P1 设计 + harness 十轮强化 + 闲鱼 8/17 决策倒计时。整理报告见 W34 周度整理，学习回顾见 W34 学习回顾。
 
 ### 各域本周新增
 
@@ -402,13 +404,13 @@ graph TD
 
 5. **股票分析 cron 上线** — 每日 18:00 akshare 采集 → DeepSeek 决策报告 → knowledge/Finance/
 
-6. **GitHub Trending 精选** — diagram-design（+14.7k 增长王，无 Mermaid-slop 图表）/ needle（14MB 端侧模型）/ google/skills（Agent Skills 官方生态）/ code-graph-rag（代码图谱 RAG），周报见 [[../memory/2026/08/github-trending-w34|W34 GitHub 周报]]
+6. **GitHub Trending 精选** — diagram-design（+14.7k 增长王，无 Mermaid-slop 图表）/ needle（14MB 端侧模型）/ google/skills（Agent Skills 官方生态）/ code-graph-rag（代码图谱 RAG），周报见 [[GitHub-Weekly-2026-08-23|W34 GitHub 周报]]
 
 ---
 
 ## 🆕 W35 新增速览（2026-08-17 ~ 08-23）
 
-> 本周主线：GitHub 跨厂商 Agent 记忆主线（ai-memory/OpenViking）+ 硬件×模型匹配工具（llmfit）+ 图表赛道连涨（diagram-design 第二周 +8.5k）。周报见 [[../memory/2026/08/github-trending-w35|W35 GitHub 周报]]。
+> 本周主线：GitHub 跨厂商 Agent 记忆主线（ai-memory/OpenViking）+ 硬件×模型匹配工具（llmfit）+ 图表赛道连涨（diagram-design 第二周 +8.5k）。周报见 [[GitHub-Weekly-2026-08-30|W35 GitHub 周报]]。
 
 ### 各域本周新增
 
@@ -430,7 +432,7 @@ graph TD
 
 ## 🆕 W37 GitHub Trending（2026-08-31 ~ 09-06）
 
-> 本周 GitHub Trending 精选 5 项入库：可验证系统图（archify，周增 +19.5k 增长王）/ 多 Agent harness（ECC 250k★）/ 科研 Agent 技能库（scientific-agent-skills）/ 清华多 Agent 课堂（OpenMAIC）/ 本地语音工作台（VoiceStudio）。周报见 [[../memory/2026/09/github-trending-w37|W37 GitHub 周报]]。
+> 本周 GitHub Trending 精选 5 项入库：可验证系统图（archify，周增 +19.5k 增长王）/ 多 Agent harness（ECC 250k★）/ 科研 Agent 技能库（scientific-agent-skills）/ 清华多 Agent 课堂（OpenMAIC）/ 本地语音工作台（VoiceStudio）。周报见 [[GitHub-Weekly-2026-09-06|W37 GitHub 周报]]。
 
 | 项目 | ★ / 周Δ | 一句话定位 | 入库笔记 |
 |:--|:--|:--|:--|
@@ -451,7 +453,7 @@ graph TD
 
 ## 🆕 W39 GitHub Trending（weekly 口径，2026-09-20）
 
-> 本周 GitHub API 断连，数据经 trending 快照 + web_search 多源交叉验证。5 项全部新入库；脚本口径 Top5 仍连榜。周报见 [[../memory/2026/09/github-trending-w39|W39 GitHub 周报]] + [[knowledge/Research/GitHub-Weekly-2026-09-20-weekly-5projects|weekly 详情]]。
+> 本周 GitHub API 断连，数据经 trending 快照 + web_search 多源交叉验证。5 项全部新入库；脚本口径 Top5 仍连榜。周报见 [[GitHub-Weekly-2026-09-20|W39 GitHub 周报]] + [[knowledge/Research/GitHub-Weekly-2026-09-20-weekly-5projects|weekly 详情]]。
 
 | 项目 | ★ / 周Δ | 一句话定位 | 入库笔记 |
 |:--|:--|:--|:--|
@@ -471,7 +473,7 @@ graph TD
 
 ## 🆕 W38 新增速览（2026-09-07 ~ 09-13）
 
-> 本周主线：三 bot 协作十领域自我强化千轮研究批次（PCB/变现/墨题/边缘AI/CAD/Web/AI安全/自举）+ 黑盒热榜 5 项目实证 + 评测意图隐藏规范 + 技能审计 + arXiv 双窗口速览。整理报告见 [[../memory/2026/09/weekly-2026-09-13|W38 周度整理]]。学习回顾见 [[../memory/2026/09/weekly-learning-2026-09-13|W38 学习回顾]]。
+> 本周主线：三 bot 协作十领域自我强化千轮研究批次（PCB/变现/墨题/边缘AI/CAD/Web/AI安全/自举）+ 黑盒热榜 5 项目实证 + 评测意图隐藏规范 + 技能审计 + arXiv 双窗口速览。整理报告见 W38 周度整理。学习回顾见 W38 学习回顾。
 
 ### 各域本周新增
 
@@ -483,7 +485,7 @@ graph TD
 | META | [[knowledge/META/评测设计规范-意图隐藏-2026-09-09\|评测意图隐藏规范 09-09]] | 被测模型知道被测即改变行为（开战意愿 -13.43 实证），自建基准必遵守 |
 | Research | [[knowledge/Research/skill-audit-2026-09-08\|技能审计 09-08]] | 392 技能 / 本月使用 97 / TOP10 cron 自举闭环 + P0 过时技能清单 |
 | Research | [[knowledge/Research/GitHub-Weekly-2026-09-08\|GitHub 宝藏 09-08]] | codebase-memory-mcp / nanobot / code-review-graph 等 Top5 |
-| Research | [[knowledge/Research/GitHub-Weekly-2026-09-13-weekly-5projects\|GitHub 周榜 W38 weekly 09-13]] | context-mode / WeKnora / hyperframes / no-ai-slop 4 新面孔；archify 59.8k / OpenMAIC 36.2k 连榜更新（周报 [[../memory/2026/09/github-trending-w38|W38 周报]]） |
+| Research | [[knowledge/Research/GitHub-Weekly-2026-09-13-weekly-5projects\|GitHub 周榜 W38 weekly 09-13]] | context-mode / WeKnora / hyperframes / no-ai-slop 4 新面孔；archify 59.8k / OpenMAIC 36.2k 连榜更新（周报 [[GitHub-Weekly-2026-09-13|W38 周报]]） |
 | arXiv | arxiv-09-07/08/09/10/11 五期速览 | 09-10 索引解冻 1,749 篇 + 09-11 新窗口 441 篇零重叠；Agent 记忆/技能为焦点 |
 | Finance | 每日股票分析 09-08/09/11 | A 股盘后分析 ×3 期 |
 | cards | 5 张知识卡 | 记忆可移植性 / 黑盒实证 / eval 反应性 / Desert Ant 端侧 / AI 商业广告反面教材 |
@@ -492,7 +494,7 @@ graph TD
 
 ### 🆕 W38 GitHub Trending（weekly 口径，2026-09-13）
 
-> 脚本口径 Top5（codebase-memory-mcp/nanobot/chrome-devtools-mcp/TrendRadar/ruflo）全连榜无新面孔；weekly 增速榜 4 个真新增。周报见 [[../memory/2026/09/github-trending-w38|W38 GitHub 周报]] + [[knowledge/Research/GitHub-Weekly-2026-09-13-weekly-5projects|weekly 详情]]。
+> 脚本口径 Top5（codebase-memory-mcp/nanobot/chrome-devtools-mcp/TrendRadar/ruflo）全连榜无新面孔；weekly 增速榜 4 个真新增。周报见 [[GitHub-Weekly-2026-09-13|W38 GitHub 周报]] + [[knowledge/Research/GitHub-Weekly-2026-09-13-weekly-5projects|weekly 详情]]。
 
 | 项目 | ★ / 周Δ | 一句话定位 | 入库笔记 |
 |:--|:--|:--|:--|
@@ -739,7 +741,7 @@ MCP 生态: GitHub + Filesystem + JLCPCB(38工具) + Obsidian(笔记操作)
 
 | [[k-self-improvement]] | 搜索引擎研究 | Agent 行为优化 | [[self-improvement-guide]] |
 
-| [[ai-monetization-costs]] | 闲鱼市场调研 | 变现落地执行 | [[monetization-analysis]] · [[academic-service-research]] |
+| ai-monetization-costs | 闲鱼市场调研 | 变现落地执行 | monetization-analysis · academic-service-research |
 
 | [[vibe-research]] | GitHub 社区研究 | AI 科研工具选型 | [[researchpilot-skills]] · [[ai-research-collaboration]] |
 
@@ -891,7 +893,7 @@ MCP 生态: GitHub + Filesystem + JLCPCB(38工具) + Obsidian(笔记操作)
 
 ## 🆕 W39 新增速览（2026-09-14 ~ 09-20）
 
-> 本周主线：安全危机与变现突破并行——ZCode 静默上传 P0 + RubyGems AI bots 主动攻击 + SOP-008 高客单 Web 定制（398-898 元）+ PMPA 记忆投毒 / Agent-Tool 边界 + 联通创新大赛万悟命题 + arXiv 三池速览 + PPT 扇叶 9.8 分 + graphify 六周冻结修复。学习回顾见 [[../memory/2026/09/weekly-learning-2026-09-20|W39 学习回顾]]。
+> 本周主线：安全危机与变现突破并行——ZCode 静默上传 P0 + RubyGems AI bots 主动攻击 + SOP-008 高客单 Web 定制（398-898 元）+ PMPA 记忆投毒 / Agent-Tool 边界 + 联通创新大赛万悟命题 + arXiv 三池速览 + PPT 扇叶 9.8 分 + graphify 六周冻结修复。学习回顾见 W39 学习回顾。
 
 ### 各域本周新增
 
@@ -917,7 +919,6 @@ MCP 生态: GitHub + Filesystem + JLCPCB(38工具) + Obsidian(笔记操作)
 | Content | [[knowledge/Content/即梦Seedance-相机四维编码速查-2026\|即梦 Seedance 四维编码]] | 即梦相机四维编码速查 |
 | Dev | [[knowledge/Dev/React-Bits-Web动效组件库速查-2026\|React Bits 动效速查]] | 前端高阶动效组件库速查 |
 | Dev | [[knowledge/Dev/Devin-Cognition-评估-2026-09-20\|Devin / Cognition 评估]] | 云端 coding agent 能力、可靠性、定价与 Codex/Hermes 接入建议 |
-| SOP | [[knowledge/SOP/SOP-008-xianyu-vibe-coding-website\|SOP-008 闲鱼接单]] | 高交互个人主页 Vibe Coding 接单 SOP |
 | Productivity | [[knowledge/Productivity/PPT国奖级扇叶开场平滑动画-制作SOP-2026-09-20\|PPT 扇叶开场 SOP]] | 国奖级扇叶开场平滑动画（双态 Morph） |
 | Productivity | [[knowledge/Productivity/PPT高级唯美镂空动态结尾页-制作SOP-2026-09-20\|PPT 镂空结尾 SOP]] | 高级唯美镂空动态结尾页 + 答辩商业化 |
 | GitHub | [[knowledge/Research/GitHub-Weekly-2026-09-20-weekly-5projects\|GitHub 周榜 W39]] | weekly 口径：sub2api / SemIf / AI-Infra-Guard / karpathy-skills / open-code-review |

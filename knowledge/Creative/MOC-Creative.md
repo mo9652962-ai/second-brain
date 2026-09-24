@@ -19,7 +19,6 @@ updated: 2026-09-20
 
 ## 去 AI 味
 
-- [[knowledge/Creative/de-ai-skills-2026-08-18|去 AI 味开源技能研究（2026-08-18 小黑盒帖子 + 千轮研究）]]
 - [[knowledge/Creative/no-ai-slop-2026-09-13|No AI Slop — 移除 20+ 种 AI 套路的规则化 Agent Skill]]
 
 ## 其他

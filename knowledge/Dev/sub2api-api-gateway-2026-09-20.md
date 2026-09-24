@@ -1,5 +1,5 @@
 ---
-tags: [GitHub, W39, API网关, 订阅分发, 中转站, Go, 变现]
+tags: [github, W39, API网关, 订阅分发, 中转站, go, 变现]
 aliases: [Sub2API, sub2api]
 date: 2026-09-20
 source: https://github.com/Wei-Shaw/sub2api
@@ -67,4 +67,4 @@ curl http://localhost:8080/v1/chat/completions \
 | 风险 | LGPL-3.0 注意合规；订阅共享有账号风控风险（封号），商业运营需自担 |
 
 ---
-> 🗺️ 属于 [[MOC-Dev]] · [[MOC-GitHub]] · 周报 [[../../memory/2026/09/github-trending-w39|W39]]
+> 🗺️ 属于 [[MOC-Dev]] · [[MOC-GitHub]] · 周报 [[GitHub-Weekly-2026-09-20|W39]]

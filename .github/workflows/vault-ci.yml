@@ -20,16 +20,48 @@ jobs:
       - name: Check backup privacy (no private docs in .backup tarballs)
         run: python3 scripts/check-backup-privacy.py --quiet
 
+      - name: Check repo privacy (school names / phone / email / local paths)
+        run: python3 scripts/check-repo-privacy.py
+
+      # 官网 + 文档站静态门禁（快，无依赖）
+      # S1 nav 目标存在 / S2 全库 md 可组装（中文路径）/ S3 docs-site 完整性
+      - name: Check site (nav targets / assemble / static integrity)
+        run: python3 scripts/check-site.py
+
+  site-browser:
+    # 浏览器行为门禁：移动端 0 溢出 / reveal 全触发 / 控制台零 error
+    # 只在 push + schedule 跑（PR 由 lint 的静态检查兜底，避免每次都装 Chromium）
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Playwright (chromium)
+        run: |
+          pip install playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Check site in real browser
+        run: python3 scripts/check-site.py --browser
+
   health:
-    if: github.event_name == 'schedule'
+    if: github.event_name != 'pull_request'   # push(dev/main) + 每周一 schedule 都跑全量健康检查
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
       - name: Full vault health check
-        run: python3 scripts/vault-structure.py
+        run: |
+          python3 scripts/vault-structure.py
+          python3 scripts/gen-vault-index.py
 
-      - name: Upload report
+      - name: Upload report (only on weekly schedule)
+        if: github.event_name == 'schedule'
         uses: actions/upload-artifact@v4
         with:
           name: vault-audit-report

@@ -1,5 +1,5 @@
 ---
-tags: [GitHub, W39, ai, logits, 决策, 语义if, 本地推理, 方法论]
+tags: [github, W39, ai, logits, 决策, 语义if, 本地推理, 方法论]
 aliases: [SemIf, OpenJev, semantic if]
 date: 2026-09-20
 source: https://github.com/TheoLeeCJ/SemIf
@@ -65,4 +65,4 @@ semif-score --mode direct --model Qwen/Qwen3.5-4B
 | 风险 | 4B 模型准确率有限（0.813 balanced accuracy）；复杂语义决策仍需大模型；项目仅 4 天，成熟度待观察 |
 
 ---
-> 🗺️ 属于 [[MOC-Dev]]（AI 域） · [[MOC-GitHub]] · 周报 [[../../memory/2026/09/github-trending-w39|W39]]
+> 🗺️ 属于 [[MOC-Dev]]（AI 域） · [[MOC-GitHub]] · 周报 [[GitHub-Weekly-2026-09-20|W39]]

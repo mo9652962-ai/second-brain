@@ -174,7 +174,7 @@ updated: 2026-09-14
 - [x] state.yaml 计数收敛机制落地（9/10 建库 + 9/11 首个执行循环）：`projects/state.yaml` 唯一权威源 + 唯一写方（daily-todo-executor）+ `scripts/assert_state_consistency.py` 断言门禁三连 PASS（权威推进 40→41 + MEMORY.md byte 级同步）——9/5/7/8/9 四连漂移根治 ✅
 - [x] fastmcp[server] 修复（9/11）：fastmcp-slim/fastmcp 镜像互斥根因 → uninstall 后装 `fastmcp[server]==3.4.5`，`import fastmcp.server` OK（code-review-graph MCP 180 次 WARNING 根除）✅
 - [x] mnemon hooks bash 包装修复（9/11）：prime/remind/nudge.sh 改 `bash.exe` 显式调用，WinError 193×3 根因消除 ✅
-- [x] 安全脱敏批量落地（9/8 晚）：本机路径 <USER>→~/ 全量脱敏（8 commits）+ Kimi key 改环境变量 + gitignore .dreams/.tmp + CAD 生成物 .step 移除跟踪 ✅
+- [x] 安全脱敏批量落地（9/8 晚）：本机路径全量脱敏为 ~/（8 commits）+ Kimi key 改环境变量 + gitignore .dreams/.tmp + CAD 生成物 .step 移除跟踪 ✅
 - [x] 墨题巡检 5 日 PASS（9/6/7/8/10/11）：git 干净 + 后端/前端/移动端四段全过，最近提交含 v2.1.3 版本对齐（`69e1d66`/`ddbad61`）✅
 
 **🧠 知识 / 研究（9/6–9/10）**
@@ -421,7 +421,7 @@ updated: 2026-09-14
 - [x] ~~🔒 万悟参赛确认（9/25 12:00 截止，剩 8 天，sora）~~ ✅ 2026-09-20 去重：与 L431 重复，以 L431（9/19 更新，剩 5 天）为准，决策仍开放
 
 ### 🧭 9/17 反思行动项（daily-reflection 复盘 9-17，执行者必读）
-- [x] 🔴 github-privacy-gate 13 处隐私命中清理 ✅ 2026-09-18 daily-todo-executor 落地：门禁清零（4 处真实本地路径脱敏为 %USERPROFILE% + 7 处示例 IP/π 数字掩码 + 移除失效 s4mp 白名单条目），重跑 exit 0（截止 9/21 巡检前）——health 09-16/09-17 连续两天报 13 处命中（API_KEY 占位符/内网 IP，门禁拦截属预期但未清理）；跑 github_privacy_gate 出命中清单 → 占位符改示例 / 内网 IP 脱敏 / 真误报进白名单（9/16 s4mp 192.168.0.112 惯例）；只写 daily-note 不会被 executor 扫到，故本项登记在此
+- [x] 🔴 github-privacy-gate 13 处隐私命中清理 ✅ 2026-09-18 daily-todo-executor 落地：门禁清零（4 处真实本地路径脱敏为 %USERPROFILE% + 7 处示例 IP/π 数字掩码 + 移除失效 s4mp 白名单条目），重跑 exit 0（截止 9/21 巡检前）——health 09-16/09-17 连续两天报 13 处命中（API_KEY 占位符/内网 IP，门禁拦截属预期但未清理）；跑 github_privacy_gate 出命中清单 → 占位符改示例 / 内网 IP 脱敏 / 真误报进白名单（9/16 s4mp <LAN-IP> 惯例）；只写 daily-note 不会被 executor 扫到，故本项登记在此
 - [x] 🟡 资源类 P0 按副作用分级拆分 ✅ 2026-09-18 daily-todo-executor 落地：规则固化 hermes-health-check（k 可做无副作用当场执行 / 需 sora 确认列报告，不捆绑冻结）；RAMMap64 -E 9/18 反思时已执行清 Standby；wsl --shutdown 独立归 9/21 万悟决策夜间窗口（9/17 内存 99.4% 教训）——巡检发现资源问题先拆「k 可做无副作用（RAMMap64 -E 等，当场执行）」/「需 sora（wsl --shutdown 等）」两列，不捆绑冻结；9/18 反思已当场 RAMMap64 -E 清 Standby；wsl --shutdown 若 9/21 前 sora 未确认万悟部署 → 夜间窗口自动执行（镜像 21/25 已拉完，重启可再起）
 
 ### 🧭 9/18 反思行动项（daily-reflection 复盘 9-18，执行者必读）
@@ -430,6 +430,26 @@ updated: 2026-09-14
 - [ ] 🟢 卡片 cron 排程评估：9/18 卡片 cron 12:33 跑时当日研究零产出（arXiv 12:42 才提交、kiko 19:53、wemux/genoffice 23:10），卡片由 executor 20:14 补写——后移到研究类 cron 之后（22:00+）或 prompt 加「候选池为空显式标记待补」；时序规则已 patch daily-knowledge-review，改 jobs.json 需授权
 - [ ] 🔒 万悟参赛确认（9/25 12:00 截止，剩 6 天）→ sora 拍板后 k 当天出《商业计划书/对策方案》初稿；9/21 前未确认 → wsl --shutdown 夜间窗口自动执行（镜像 21/25 已拉完）
 - [ ] 🔒 闲鱼试水决策（第 42 天，周一 9/21 复盘，state.yaml 权威）→ 30 秒三选一（试水/放弃/再缓）；k 侧 100% 就绪，上架 30min 可逆
+
+### 🧭 9/20 反思行动项（daily-reflection 复盘 9-20，执行者必读）
+
+- [x] 🟡 assert_state_consistency.py 扩展扫描 reflection/daily-review 天数残留 → ✅ **2026-09-21 反思当场闭环**：新增「表格行动项行+闲鱼上下文」扫描（行首 `|` + 含「闲鱼」+「第N天」；叙述/机制引用不判防假阳性；文件名日期 < state.yaml updated_at 不判）；实测修复 09-14/17/18/19 五份文件 7 行历史残留天数 → 第 42 天 + 断言全 PASS
+- [x] 🟢 AI 工具（Codex/dsh/WorkBuddy 反代）安装前安全基线首轮快扫 → ✅ **2026-09-21 反思当场闭环**：无 ZCode 式静默上传特征（无 pending/ 加密快照、无 aliyun/OSS 外传端点）；dsh/codex 命中均为注释与插件元数据
+- [ ] 🟡 daily-health-check 429 失败降级实现落地（pitfall 规则已固化 hermes-health-check，实现未落）→ **硬截止 9/24**；与 8/8 登记的「health 产物 stat 检查」P1 合并推进；executor 09-20 已加 config.yaml 可解析检查为前置
+- [ ] 🔒 万悟参赛确认（今日 9/21 最后确认日，9/25 12:00 截止）→ 9/21 前未确认 → wsl --shutdown 夜间窗口自动执行；确认后 k 当天出《商业计划书》初稿
+- [ ] 🔒 闲鱼试水决策（今日 9/21 复盘日，state.yaml 权威第 42 天）→ 30 秒三选一；新增 SOP-008 高客单 Web 定制选项，上架文案现成约 30min
+- [ ] 🔒 ZCode 卸载链：sora 前三步（退出登录→卸载→删 ~/.zcode）；git 历史轮换 k 代做
+- [ ] 🔒 生图三路径修复（9/21 10:15 api-media-weekly-probe 探活首验后定性）
+- [ ] 🔒 skill 合并授权（6 组重复 + apple 孤儿，破坏性）
+- [ ] 🔒 卡片 cron 排程授权（后移 22:00+，改 jobs.json）
+
+
+### 🧭 9/24 反思行动项（daily-todo-executor 复盘 9-24，执行者必读）
+
+- [x] 🔴 daily-health-check 429 失败降级实现落地（硬截止 9/24）→ ✅ 2026-09-24 daily-todo-executor 落地：新建 `AppData/Local/hermes/scripts/health_degraded.py`（no_agent 纯脚本，不调 LLM 故配额无关）+ 注册 cron `health-degraded-fallback`（`30 16 * * *`，紧跟 daily-health-check 15:45 之后）；契约 = 目标产物存在且 ≥200B 则静默 exit 0（正常路径不覆盖），缺失则采集磁盘/内存/cron 状态/产物哨兵写出「降级版」报告并打印一行告警。实测双路径：9/24（LLM 报告在）= 空输出 exit 0；9/21（429 无产物）= 正确产出降级报告
+- [x] 🟢 爆炸性提示防线（条件结构检测）→ ✅ 2026-09-24 daily-todo-executor 落地：新建 `AppData/Local/hermes/scripts/ingest_injection_scan.py`（四类模式：条件+动作/条件+高危对象/条件+身份劫持/条件+疑似编码载荷，中英双语），自检 4 正样本全中 + 4 负样本零误报，并实证 arXiv 2609.22510 论点（命令式基线仅 2/4 vs 条件式 4/4）；规则固化 `hermes-automation-patterns` 故障 C8
+- [x] 🟡 哨兵路径同步（deterministic_verify 期望路径漂移）→ ✅ 2026-09-24 daily-todo-executor 落地：根因核实为**双向问题**——① 9/23 资产隔离（49bf962）把 9/20 及更早日志迁至 `private_knowledge/memory/`，对历史日期复核必然误报；② 新增产物仍写 `workspace/memory/`（9/24 的 health/daily-review/api-probe 均在此），故**不该整体改路径**。修复 = 加 `VAULT_ARCHIVE` 归档兜底（workspace 无命中时到 private_knowledge 再找一次）。实测 9/20 异常 11→8（消除 3 处历史误报），9/24 保持 5 项真实异常
+- [x] 🟢 cron_health.py 看板缓存路径硬编码修复 → ✅ 2026-09-24 daily-todo-executor 落地：`CACHE_FILE` 原硬编码 `memory/2026/07/cron-health-latest.md`（跨月后持续写 7 月目录，违反「cron prompt 写 vault 必须用 YYYY/MM 动态记法」规则）→ 改为 `datetime.now()` 动态年月；实测已写 `memory/2026/09/cron-health-latest.md`，删除 9 月 24 日误落 7 月的陈旧副本
 
 ## 🔗 相关领域
 - [[AI-Agent]] — 基础设施与能力架构
@@ -440,7 +460,7 @@ updated: 2026-09-14
 
 ---
 
-_由 k (Hermes) 在每次会话结束时更新 | 最后更新: 2026-09-20 (daily-todo-executor 9/20：L420/L421 去重 → L432/L431 承接；新增 config.yaml 检查落地记录)_
+_由 k (Hermes) 在每次会话结束时更新 | 最后更新: 2026-09-24 (daily-todo-executor 9/24：落地 health 429 降级兜底 + 条件式注入防线 + 哨兵归档兜底 + cron_health 硬编码路径修复；闲鱼权威第 42 天未变)_
 
 ---
 

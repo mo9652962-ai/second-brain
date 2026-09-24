@@ -3,7 +3,7 @@ title: "AI全栈项目-SummerCheckin自习室平台-2026-08-31"
 type: note
 domain: Development
 status: active
-tags: [knowledge/development, ai-agent, rag, vibecoding]
+tags: [knowledge/development, ai-agent, rag, vibe-coding]
 source: "https://v.douyin.com/BU25cuBXgJs/"
 date: 2026-08-31
 ---
@@ -100,7 +100,7 @@ date: 2026-08-31
 
 ## 元信息
 
-- 话题：#全栈 #agent #ai #vibecoding #vibecoding大赏
+- 话题：#全栈 #agent #ai #vibe-coding #vibecoding大赏
 - 发布时间：2026-08-30
 - 抓取时间：2026-08-31 22:40（Playwright 拦截 RENDER_DATA 成功）
 

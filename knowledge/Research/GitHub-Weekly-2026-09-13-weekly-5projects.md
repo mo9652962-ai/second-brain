@@ -63,7 +63,7 @@ type: note
 - ✅ 更新 [[archify-verifiable-diagrams-2026-09-06]]（49.9k→59.8k）
 - ✅ 更新 [[openmaic-multiagent-classroom-2026-09-06]]（32.1k→36.2k）
 - ✅ 更新 CAD-Design.md（text-to-cad 12.3K→15.5K）
-- ✅ 周报 [[../../memory/2026/09/github-trending-w38|W38 周报（memory）]] + tracking CSV 快照
+- ✅ 周报 [[GitHub-Weekly-2026-09-13|W38 周报（memory）]] + tracking CSV 快照
 
 ---
 *weekly 口径 · 数据源 github.com/trending?since=weekly（2026-09-13）*

@@ -1,5 +1,5 @@
 ---
-tags: [research, vision, deepseek, MCP, ocr, evaluation]
+tags: [research, vision, deepseek, mcp, ocr, evaluation]
 created: 2026-08-08
 type: research
 ---

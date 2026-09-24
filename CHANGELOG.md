@@ -9,6 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- **AI-First 协议支持**: 全新支持 `llmstxt.org` 标准，自动化生成 `/llms.txt`（纲要索引）与 `/llms-full.txt`（221KB 纯净知识平铺包），优化 Agent 摄取上下文。
+- **OKM 知识新陈代谢治理 (Open Knowledge Metabolism)**: 新增 `scripts/okm_metabolism.py` 与 `knowledge/METABOLISM.md` 看板，自动化归类 332 篇 Evergreen 常青树、365 篇 Budding 成长笔记。
+- **官网与爬虫指引增强**: `docs-site/robots.txt` 声明 `llms.txt` 入口；3D 官网首页 Hero 与页脚新增 `llms.txt` 及 OKM 看板直达。
+- **CI/CD 自动化构建集成**: `.github/workflows/deploy-docs.yml` 增加生成阶段，确保每次 Push 自动刷新 llms 索引与新陈代谢指标。
+
 - README: QuickStart 移到顶部，添加"适合谁"定位说明 (#2)
 - CHANGELOG.md: 首次创建，遵循 Keep a Changelog 格式
 - Python 知识域: `knowledge/Dev/python-ecosystem.md`

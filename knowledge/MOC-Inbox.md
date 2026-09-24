@@ -30,7 +30,6 @@ source: scripts/vault-orphan-duplicate-scan.py
 - [[knowledge/AI/AIRI生态-18工具研究-哪些有用-2026]]
 - [[knowledge/AI/墨题三项深度研究-离线口语-adapter-向量记忆-2026]]
 - [[knowledge/AI/墨题口语评测-技术参考-2026]]
-- [[knowledge/AI/数模5-Skill工作流-2026-08-23]]
 - [[knowledge/AI/AI视频Agent全流程-四Skill协同架构-2026-09-20]] — AI 视频 Agent 四 Skill 协同架构
 - [[knowledge/AI/Vibe-Coding自制设计师交互网站-全流程实战-2026-09-20]] — Vibe Coding 高交互设计师网站实战
 - [[knowledge/AI/梯度下降-直觉推导与高维优化-2026-09-20]] — 梯度下降直觉推导与高维优化

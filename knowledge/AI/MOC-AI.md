@@ -35,6 +35,5 @@ updated: 2026-09-20
 - [[knowledge/AI/weknora-knowledge-platform-2026-09-13|WeKnora — 腾讯开源 LLM 知识平台（RAG + Agent + 自维护 Wiki）]]
 - [[knowledge/AI/墨题三项深度研究-离线口语-adapter-向量记忆-2026|墨题三项深度研究：离线口语 / 多模型 adapter / 本地向量记忆]]
 - [[knowledge/AI/墨题口语评测-技术参考-2026|墨题口语评测技术参考（webai-realtime-voice-chat 实证）]]
-- [[knowledge/AI/数模5-Skill工作流-2026-08-23|数模 5-Skill 工作流——拆解]]
 - [[knowledge/AI/数模国赛-AI提示词库-2026|数模国赛 AI 提示词库（26 国赛必备）]]
 - [[knowledge/AI/梯度下降-直觉推导与高维优化-2026-09-20|梯度下降：数学本质、直觉几何与高维优化]]

@@ -1,5 +1,5 @@
 ---
-tags: [dev, agent, harness, Codex, Claude-Code, security, github-trending, W37]
+tags: [dev, agent, harness, codex, Claude-Code, security, github-trending, W37]
 aliases: [ECC, agent-harness, 多Agent工具箱]
 date: 2026-09-06
 source: https://github.com/affaan-m/ECC
@@ -67,4 +67,4 @@ npx ecc-universal install --guided   # 一次配多个 harness
 | 值得安装 | 🟡 谨慎评估 | 功能强但侵入 agent 配置，先读安装文档再决定；低风险（MIT） |
 
 > 🗺️ 属于 [[MOC-Dev]] · [[MOC-GitHub]] · [[HOME|🏠 Home]]
-> 📅 周报见 [[../../memory/2026/09/github-trending-w37|W37 周报]]
+> 📅 周报见 [[GitHub-Weekly-2026-09-06|W37 周报]]

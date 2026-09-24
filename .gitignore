@@ -68,8 +68,14 @@ api.json
 # 临时文件（AI 测试残留，不跟踪）
 jlc-bridge/
 
-# 学业规划私人文档（不上传公开仓库）—— 通配匹配，避免文件名本身泄露信息
+# 考研规划私人文档（不上传公开仓库）—— 通配匹配，避免文件名本身泄露信息
 knowledge/Education/*考研*
+
+# 隐私门禁敏感词表（含真实特征串，仅本地）
+scripts/private-patterns.txt
+
+# vault 审计报告（脚本产物，CI 用 upload-artifact 取，不进版本库）
+scripts/vault-audit-report.json
 .tmp_hn/
 
 # 本地 MCP 配置（含本机路径，不进仓库）
@@ -94,3 +100,22 @@ projects/ai-cad-pipeline/output/
 
 # 第三方插件产物（本地保留，不推送 GitHub）
 .obsidian/plugins/
+
+# AI 生成实验图（2026-09 取消追踪，占 26MB+）
+outputs/diag/
+outputs/shimu/
+
+# 梦境日记（含业务信息片段，本地保留不上传）
+DREAMS.md
+
+# Local-Only Private Knowledge Vault (Physical Air-Gap)
+private_knowledge/
+private_vault/
+*.private.md
+.vault-audit-results.json
+
+# Memory daily logs and state (Air-Gapped)
+memory/20*.md
+memory/20*/
+memory/*.json
+memory/.dreams/

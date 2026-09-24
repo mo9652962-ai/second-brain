@@ -132,9 +132,7 @@ PPT 设计(PPT-Design)
 ### 场景八：闲鱼变现实战
 
 ```
-价目表(ai-monetization-costs)
     + 能力盘点(monetization-analysis)
-    + 服务套餐(academic-service-research)
     + PPT技能(PPT-Design)
     = 学术服务变现闭环
 ```
@@ -220,8 +218,7 @@ SORT domain ASC
 | 💡 **desktop-beautify** | [[desktop-beautify]] | Windows / UX |
 | 📱 **campus-box-design** | [[campus-box-design]] | WeChat / Fullstack |
 | 📐 **CAD-Postmortem** | [[CAD-Project-Postmortem]] | CAD / 3D-Printing |
-| 💰 **monetization-analysis** | [[monetization-analysis]] | 变现 / 学术 / 技术接单 |
-| 🧪 **ai-monetization-costs** | [[ai-monetization-costs]] | 闲鱼 / 定价 / 利润测算 |
+| 💰 **monetization-analysis** | monetization-analysis | 变现 / 学术 / 技术接单 |
 | 🔬 **vibe-research** | [[vibe-research]] | AI科研 / 工具选型 |
 | 📝 **researchpilot-skills** | [[researchpilot-skills]] | 科研全流程 / ML |
 | 🧩 **k-self-improvement** | [[k-self-improvement]] | 上下文工程 / Agent进化 |

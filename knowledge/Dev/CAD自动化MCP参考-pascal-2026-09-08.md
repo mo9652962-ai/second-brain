@@ -1,5 +1,5 @@
 ---
-tags: [cad, MCP, ai-automation, research, 千轮研究]
+tags: [cad, mcp, ai-automation, research, 千轮研究]
 type: note
 created: 2026-09-08
 ---

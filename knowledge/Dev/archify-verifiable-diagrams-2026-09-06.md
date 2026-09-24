@@ -65,4 +65,4 @@ npx skills add tt-a1i/archify -g   # 装到 agent
 | 值得安装 | 🟡 可试 | 先试装跑 1 个真实系统图验证；低风险（MIT，Node） |
 
 > 🗺️ 属于 [[MOC-Dev]] · [[MOC-GitHub]] · [[HOME|🏠 Home]]
-> 📅 周报见 [[../../memory/2026/09/github-trending-w37|W37 周报]]
+> 📅 周报见 [[GitHub-Weekly-2026-09-06|W37 周报]]

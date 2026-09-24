@@ -1,7 +1,7 @@
 ---
 aliases:
   - 2026-09-17-card-ai-query-plan-optimization
-tags: [knowledge-card, AI-优化, database, RL, Postgres]
+tags: [knowledge-card, AI-优化, database, rl, Postgres]
 created: 2026-09-17
 source: "[[knowledge/Daily/hackernews-2026-09-17]]"
 status: fresh---

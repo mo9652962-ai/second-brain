@@ -46,4 +46,4 @@ source: "reactbits.dev + 抖音《Vibe Coding自制设计师个人网站》工�
 
 ---
 
-> 🗺️ 关联笔记：[[Vibe-Coding自制设计师交互网站-全流程实战-2026-09-20]] · [[SOP-008-xianyu-vibe-coding-website]]
+> 🗺️ 关联笔记：[[Vibe-Coding自制设计师交互网站-全流程实战-2026-09-20]] · 闲鱼Web定制SOP

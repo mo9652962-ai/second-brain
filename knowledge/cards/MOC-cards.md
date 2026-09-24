@@ -42,16 +42,13 @@ updated: 2026-09-20
 
 ## 2026-09
 
-- [[knowledge/cards/2026-09-04-xianyu-operation-algorithm|🃏 知识卡片 · 闲鱼推流算法改版：「上架即曝光」失效，5 分钟回复率是流量生死线]]
 - [[knowledge/cards/2026-09-05-false-positive-tax|🃏 知识卡片 · 假阳性税：工具误报比不修更危险，评估工具先看原始计数]]
 - [[knowledge/cards/2026-09-06-harness-engineering|🃏 知识卡片 · 400 万行源码解剖 11 个编码 Agent：SKILL.md 已成主流、零框架零向量检索是实证方向]]
 - [[knowledge/cards/2026-09-07-memory-portability|🃏 知识卡片 · 模型升级后，agent 的记忆还认不认？]]
 - [[knowledge/cards/2026-09-08-heihe-top5-empirical|🃏 知识卡片 · 黑盒热榜别全信：5 个 GitHub 项目实测后，3 个值得抄]]
 - [[knowledge/cards/2026-09-09-eval-reactivity|🃏 知识卡片 · 被评估本身会改变 AI 行为：评测提示泄露是硬污染源]]
 - [[knowledge/cards/2026-09-10-desert-ant-on-device|🃏 知识卡片 · 端侧小模型正在替代 API：Desert Ant Labs 首发 18 个免费模型]]
-- [[knowledge/cards/2026-09-13-ai-commercial-ad-tutorial|🃏 知识卡片 · 抖音反面教材：空口承诺「学到就能接单」= 4 赞 0 互动]]
 - [[knowledge/cards/2026-09-15-rubygems-ai-attack|🃏 知识卡片 · OpenAI 的 AI bots 攻击 RubyGems：AI agent 主动利用已知漏洞的供应链攻]]
 - [[knowledge/cards/2026-09-17-ai-query-plan-optimization|🃏 知识卡片 · 训练 4B 模型生成查询计划：比 Postgres 默认优化器快 44.7%（标题口径 81%）]]
 - [[knowledge/cards/2026-09-18-overclaimbench|🃏 知识卡片 · 完成声明不可信：67.9% 编码 agent 没读完文件，80.4% 的「完成」具误导性]]
 - [[knowledge/cards/2026-09-19-zcode-silent-upload|🃏 知识卡片 · ZCode 静默上传整个工作区 + Git 历史——本机实锤：墨题仓库已被打包待传]]
-- [[knowledge/cards/2026-09-20-xianyu-web-portfolio-sop|🃏 知识卡片 · 闲鱼新服务线：个人作品集/主页 Web 定制 398~898 元，2 小时交付]]

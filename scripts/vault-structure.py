@@ -55,7 +55,7 @@ results = {
 all_notes = {}  # path -> content lines
 _scan_candidates = []
 for root, dirs, files in os.walk('.'):
-    dirs[:] = [d for d in dirs if d.split('/')[-1].split('\\')[-1] not in IGNORE_DIRS and not d.startswith('.') and d != '_community']
+    dirs[:] = [d for d in dirs if d.split('/')[-1].split('\\')[-1] not in IGNORE_DIRS and (d.split('/')[-1].split('\\')[-1] == '.archive' or not d.startswith('.')) and d != '_community']
     for f in files:
         if f.endswith('.md'):
             _scan_candidates.append(os.path.join(root, f))
@@ -99,18 +99,28 @@ note_names = {os.path.splitext(os.path.basename(p))[0]: p for p in notes_set}
 for path, lines in all_notes.items():
     for lineno, line in enumerate(lines, 1):
         for m in re.finditer(r'\[\[([^\]]+)\]\]', line):
-            target = m.group(1).split('|')[0].split('#')[0]
+            target = m.group(1).replace('\\|', '|').split('|')[0].split('#')[0]  # \| 转义别名 + 常规别名/锚点
             if not target:
                 continue
-            # 标准化路径
-            target_norm = target.replace('/', os.sep).replace('\\', os.sep)
+            # 标准化路径（统一正斜杠比较：wikilink 文本是正斜杠，Windows normpath 是反斜杠）
+            target_norm = re.sub(r'^(\.\./)+', '', target).replace('\\', '/')  # 剥 ../ 相对前缀（Obsidian 解析到 vault 根）
+            if target_norm.endswith('.md'):
+                target_norm = target_norm[:-3]  # 显式 .md 后缀剥掉（Obsidian 兼容）
             target_file = None
             for p in all_notes:
-                base = os.path.splitext(p)[0].lstrip('.\\').lstrip('./')
+                base = os.path.splitext(p)[0].lstrip('.\\').lstrip('./').replace('\\', '/')
                 name_only = os.path.basename(base)
                 if target_norm == base or target_norm == name_only:
                     target_file = True
                     break
+            # 大小写不敏感兜底（Obsidian 解析 [[Home]]→HOME.md，脚本比较须不敏感）
+            if not target_file:
+                for p in all_notes:
+                    base = os.path.splitext(p)[0].lstrip('.\\').lstrip('./').replace('\\', '/')
+                    name_only = os.path.basename(base)
+                    if target_norm.lower() == base.lower() or target_norm.lower() == name_only.lower():
+                        target_file = True
+                        break
             if not target_file:
                 results['broken_links'].append(f"{path}:{lineno} → {target}")
 
@@ -120,9 +130,12 @@ link_pattern = re.compile(r'\[\[([^\]]+)\]\]')
 for path, lines in all_notes.items():
     for line in lines:
         for m in link_pattern.finditer(line):
-            target = m.group(1).split('|')[0].split('#')[0]
+            target = m.group(1).replace('\\|', '|').split('|')[0].split('#')[0]  # \| 转义别名 + 常规别名/锚点
+            target_posix = re.sub(r'^(\.\./)+', '', target).replace('\\', '/')  # 剥 ../ 相对前缀
+            if target_posix.endswith('.md'):
+                target_posix = target_posix[:-3]  # 显式 .md 后缀剥掉（Obsidian 兼容）
             for p in all_notes:
-                if target in os.path.normpath(p):
+                if target_posix in os.path.normpath(p).replace('\\', '/'):
                     has_incoming.add(p)
                     break
 
@@ -234,7 +247,8 @@ for fi in results['frontmatter_issues'][:5]:
 # ===== 导出 JSON =====
 report = {
     'date': datetime.now().isoformat(),
-    'vault': VAULT,
+    # 只写相对标识，不落绝对路径（报告会进 CI artifact / 曾被跟踪，绝对路径含用户名）
+    'vault': os.path.basename(os.path.abspath(VAULT)) or 'vault',
     'stats': results['file_stats'],
     'broken_links_count': len(results['broken_links']),
     'orphan_files_count': len(results['orphan_files']),

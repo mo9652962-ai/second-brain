@@ -3,7 +3,7 @@ aliases:
   - 2026-08-30-card-data-source-verification
 tags: [knowledge-card, data-verification, github-evaluation, openclaw]
 created: 2026-08-30
-source: "[[memory/2026/08/2026-08-30]]"
+source: "2026-08-30"
 status: fresh---
 
 # 🃏 知识卡片 · 评估项目别信第三方 star 数：以官方 repo 为准
@@ -42,6 +42,9 @@ status: fresh---
 
 ---
 
-*卡片来源：当天知识库精选 · [[memory/2026/08/2026-08-30|自我完善 08-30]]（🥇 薄产出日 LRN 候选：数据辨识经验是今日唯一「新价值+新行动项」条目——直接强化 sora 实证评估偏好；Tavily 第 11 次复发属执行确认类不入选）*
+*卡片来源：当天知识库精选 · 自我完善 08-30（🥇 薄产出日 LRN 候选：数据辨识经验是今日唯一「新价值+新行动项」条目——直接强化 sora 实证评估偏好；Tavily 第 11 次复发属执行确认类不入选）*
 
 **亚军候选**：Firecrawl 第 11 次无缝接管（Tavily 432 兜底）——工程可靠性再次确认，但无新知识增量，留给 daily-review 记录。
+
+---
+> 🗺️ 属于 [[MOC-cards]] · [[Home|🏠 Home]]
