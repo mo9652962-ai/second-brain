@@ -4,7 +4,7 @@
 
   **让 AI 拥有一个会自己进化的第二大脑**
   <br>
-  **Obsidian + GitHub + Hermes Agent · 758 篇公开知识体系 · 18 域全景拓扑 · 7 大自举系统**
+  **Obsidian + GitHub + Hermes Agent · 700+ 篇公开知识资产 · 18 域全景拓扑 · 7 大自举系统**
 
   <p>
     <a href="https://mo9652962-ai.github.io/second-brain/">✨ 3D 全景沉浸式官网</a>
@@ -39,7 +39,7 @@
 </div>
 
 > 🌟 **全新 3D WebGL 宇宙与全景星空官网已上线**：👉 [在线体验 3D 知识图谱宇宙与自举演化剖析](https://mo9652962-ai.github.io/second-brain/)  
-> **核心交互体验**：3D 全景知识拓扑宇宙 · 7 大自举系统演化剖析器 · 18 域 677 篇知识实时检索 · 24H 自动化流水线雷达 · Web Audio 空间合成音效
+> **核心交互体验**：3D 全景知识拓扑宇宙 · 7 大自举系统演化剖析器 · 18 域 700+ 篇知识体系实时检索 · 24H 自动化流水线雷达 · Web Audio 空间合成音效
 
 <div align="center">
   <a href="https://mo9652962-ai.github.io/second-brain/">
@@ -91,7 +91,7 @@ graph LR
     D --> E[🔄 自举改进<br/>用新技能改进 Agent 自身]
     E --> F[✨ 进化到下一阶段]
     F -. 持续循环 .-> A
-    E -. 写入 .-> G[(Obsidian 知识库<br/>1187 篇笔记 · 19 域 · 31 MOC)]
+    E -. 写入 .-> G[(Obsidian 知识库<br/>700+ 篇公开精选 · 18 域 · 31 MOC)]
     G -. 反哺上下文 .-> A
 ```
 
@@ -181,40 +181,44 @@ graph LR
 
 ---
 
-## 📦 最新技能入库 (2026-08-16 ~ 2026-09-20)
+## 📦 最新技能与架构入库 (2026-08-16 ~ 2026-09-24)
 
-### 研究笔记
+### 研究与工程进阶
 
-| 技能 | 版本 | 简介 |
+| 技能 / 成果 | 版本 | 简介 |
 |------|------|------|
+| **[现代 Web 全栈与高感官微交互 09-24](skills/web/)** | v2.0 | Next.js 15 RSC、Hono v4、Tailwind v4 Oxide 引擎、Core Web Vitals 与 6 大高感官原生微交互（物理避障/3D破屏/纯CSS锯齿票券/密码锁/Canvas点阵雨/苹果Dock鱼眼） |
+| **[商业短视频工业化母带标准 09-23](skills/content/)** | v1.0 | 56.5s 七段叙事时序矩阵、-14.0 LUFS EBU R128 音频旁链闪避混音、ASS 动态弹跳荧光字幕、剪映 `draft_content.json` 纯 Python 解耦免 VIP 自动化装配 |
+| **[企业级 B2B 商业演示重构体系 09-23](skills/productivity/)** | v1.0 | 麦肯锡 SCQA 结构化说服、Action Title（标题即判断）、4+3 黄金对称产品矩阵、高密度资质矩阵墙、PPTX 批量无损量化压制引擎 |
+| **[资产三级隔离安全架构 09-23](knowledge/Security/)** | v1.0 | 确立 Public 开源层、Private 备份层与 Local-Only 本地绝对物理隔离层，商业核心算法、接单成本与私人日记 100% 物理阻隔，门禁脚本双重巡检 |
 | **[知识库事实源三件套 09-20](knowledge/META/MOC-META.md)** | v1.0 | 新增 META 事实源体系（current-environment / current-model-status / knowledge-sources），修正 3 处过期结论「本机无虚拟化 / Docker 不可用」→ 实测为「虚拟化✅ CLI✅ 仅 Daemon 未运行」 |
 | **[arXiv AI Agent / LLM 速览 09-20](knowledge/Research/arxiv-2026-09-20-agent-llm.md)** | v1.0 | 09-18 池第三轮补全：12 主条目 + 7 简评（ScientistTwo 自主科学发现 / SoL-Pi harness RSI / SkillAA 归因技能图 / claim-safe 评测协议 / CovR 覆盖率硬件验证） |
 | **[GitHub 宝藏挖掘 09-20](knowledge/Research/GitHub-Weekly-2026-09-20.md)** | v1.0 | Top 5 高星仓库（codebase-memory-mcp 43.8k★ / nanobot 48.4k★ / code-review-graph 31.6k★ 等） |
 | **[知识图谱周更 09-20](knowledge/Research/graphify-weekly-2026-09-20.md)** | v1.0 | 3 周积累图谱周更 |
-| **[每日日志 09-19](memory/2026-09-19.md)** | v1.0 | OpenClaw 部署/Agent 安全最佳实践 2026（OWASP Agentic AI Top 10 / Vidar 窃密实锤）+ OpenClaw vs Hermes 记忆纪律对比 |
+| **Agent 安全与记忆架构 09-19** | v1.0 | *(本地隔离日志)* OpenClaw 部署/Agent 安全最佳实践 2026（OWASP Agentic AI Top 10 / Vidar 窃密实锤）+ OpenClaw vs Hermes 记忆纪律对比 |
 | **[GEO 生成式引擎优化研究 09-19](knowledge/Content/GEO-生成式引擎优化-研究-2026.md)** | v1.0 | 抖音「小梅讲AI」GEO 视频逐条核对：结构化信息+SEO 排名+权威信源才有效，「改写正文」被 2025 NeurIPS 反证会降可见度 |
 | **[Agent4Science AI 科学家社交网络 09-18](knowledge/Research/agent4science-ai-scientist-social-network-20260918.md)** | v1.0 | UChicago CHAI Lab：AI agents 的 Reddit（Nature 报道过）；对 sora=AI 博主选题素材 |
 | **[GenOffice AI Office 套件 09-18](knowledge/Research/genoffice-ai-office-suite-20260918.md)** | v1.0 | 全球首个全功能开源 AI Office：`genoffice` CLI 让 Codex 直出真实 .docx/.xlsx/.pptx + render PNG 自检 |
 | **[Wemux AI Agent 协作平台 09-18](knowledge/Research/wemux-ai-agent-platform-20260918.md)** | v1.0 | Worker-first 自托管协作 OS；3 周新 repo 太早期，价值=博主选题 + worker-first/worktree 架构参考 |
 | **[抖音 Kiko 5 Skill 拆解 09-18](knowledge/Research/douyin-kiko-5-skills-ai-design-20260918.md)** | v1.0 | 5 大前端设计 Skill 全量源码拆解（Taste/Impeccable/shadcn/UI UX Pro Max/DESIGN.md）+ 墨题/万悟落地迁移方案 |
 | **[arXiv AI Agent / LLM 速览 09-18](knowledge/Research/arxiv-2026-09-18-agent-llm.md)** | v1.0 | 09-18 新窗口正常速览（AI Agent / LLM 强相关） |
-| **[每日日志 09-18](memory/2026-09-18.md)** | v1.0 | daily-self-improvement cron 自动生成；P0 阻塞点 FlClash 代理已解除（9/16 重启恢复）、OpenClaw 2.0 补丁节奏、AI Agent 安全标准化五控制点+三具体化、Persistent Agents 趋势 |
-| **[每日日志 09-17](memory/2026-09-17.md)** | v1.0 | daily-summary cron 自动生成（隔离会话视角，主会话历史未捕获、待主会话补全）；知识库维护日：补链 10 篇孤立笔记、孤立率 15%→14%、README 统计刷新 | 
-| **[每日日志 09-16](memory/2026/09/2026-09-16.md)** | v1.0 | 创新大赛研究沉淀 + cron 四算子知识自举（6 条可执行知识）+ 万悟 Docker 提速实战（新 skill）+ 12:53 六 cron 批量失败补跑 + health 巡检三红线 | 
-| **[cron 产出学习研究 09-15](knowledge/Research/cron-output-learning-20260915.md)** | v1.0 | 11 文件 → 6 条可执行知识：AI agent 主动攻击方(⭐6) / bash>typed tools(+21.8pp) / 记忆分层 / 技能库 479 个 6 组重复 / 代理层晨启隐患 | 
-| **[创新大赛产业赛道 09-15](knowledge/Research/innovation-competition-industry-track-20260915.md)** | v1.0 | 联通命题本质=推广万悟：三模块映射 + 3 坑对策 + 墨题企业版迁移路径 | 
-| **[每日日志 09-15](memory/2026/09/2026-09-15.md)** | v1.0 | 晨间批量入库（arXiv 09-15 补全速览 15+14 篇 + HN + 知识卡 RubyGems 攻击）+ 双周技能审计（479 技能 / 4 patch）+ 反思 3 改进点落地（assert 补 MEMORY.md 检查 4/4 PASS）+ health 降级 |
-| **[arXiv AI Agent / LLM 速览 09-15](knowledge/Research/arxiv-2026-09-15-agent-llm.md)** | v1.0 | 09-14 池 402 篇未覆盖补录 → 15 主条目 + 14 简评（5 大信号：技能治理运行时后果控制 / bash>typed tools / 记忆生命周期分层 / 评测可信度专家复评 / 代码质量差距） | 
-| **[双周技能审计 09-15](knowledge/Research/skill-audit-2026-09-15.md)** | v1.0 | 双周审计：479 技能登记（agent 400）+ 4 处 patch + 6 组重复待确认 + apple 孤儿 | 
-| **[每日日志 09-14](memory/2026/09/2026-09-14.md)** | v1.0 | 晨间批量入库（arxiv 432 篇新窗口 + 文献周报 + HN）+ 闲鱼计数推进 42 天 + health 巡检 2 个新 P1（cpa-gui/EasyCLIProxyAPI）+ 素材第 20 次核验 PASS | 
+| **每日自举日志 09-18** *(本地隔离)* | v1.0 | daily-self-improvement cron 自动生成；P0 阻塞点 FlClash 代理已解除（9/16 重启恢复）、OpenClaw 2.0 补丁节奏、AI Agent 安全标准化五控制点+三具体化、Persistent Agents 趋势 |
+| **每日自举日志 09-17** *(本地隔离)* | v1.0 | daily-summary cron 自动生成（隔离会话视角，主会话历史未捕获、待主会话补全）；知识库维护日：补链 10 篇孤立笔记、孤立率 15%→14%、README 统计刷新 |
+| **每日自举日志 09-16** *(本地隔离)* | v1.0 | 创新大赛研究沉淀 + cron 四算子知识自举（6 条可执行知识）+ 万悟 Docker 提速实战（新 skill）+ 12:53 六 cron 批量失败补跑 + health 巡检三红线 |
+| **[cron 产出学习研究 09-15](knowledge/Research/cron-output-learning-20260915.md)** | v1.0 | 11 文件 → 6 条可执行知识：AI agent 主动攻击方(⭐6) / bash>typed tools(+21.8pp) / 记忆分层 / 技能库 479 个 6 组重复 / 代理层晨启隐患 |
+| **[创新大赛产业赛道 09-15](knowledge/Research/innovation-competition-industry-track-20260915.md)** | v1.0 | 联通命题本质=推广万悟：三模块映射 + 3 坑对策 + 墨题企业版迁移路径 |
+| **每日自举日志 09-15** *(本地隔离)* | v1.0 | 晨间批量入库（arXiv 09-15 补全速览 15+14 篇 + HN + 知识卡 RubyGems 攻击）+ 双周技能审计（479 技能 / 4 patch）+ 反思 3 改进点落地（assert 补 MEMORY.md 检查 4/4 PASS）+ health 降级 |
+| **[arXiv AI Agent / LLM 速览 09-15](knowledge/Research/arxiv-2026-09-15-agent-llm.md)** | v1.0 | 09-14 池 402 篇未覆盖补录 → 15 主条目 + 14 简评（5 大信号：技能治理运行时后果控制 / bash>typed tools / 记忆生命周期分层 / 评测可信度专家复评 / 代码质量差距） |
+| **[双周技能审计 09-15](knowledge/Research/skill-audit-2026-09-15.md)** | v1.0 | 双周审计：479 技能登记（agent 400）+ 4 处 patch + 6 组重复待确认 + apple 孤儿 |
+| **每日自举日志 09-14** *(本地隔离)* | v1.0 | 晨间批量入库（arxiv 432 篇新窗口 + 文献周报 + HN）+ 闲鱼计数推进 42 天 + health 巡检 2 个新 P1（cpa-gui/EasyCLIProxyAPI）+ 素材第 20 次核验 PASS |
 | **[arXiv AI Agent / LLM 速览 09-14](knowledge/Research/arxiv-2026-09-14-agent-llm.md)** | v1.0 | 09-14 全新窗口 432 篇 → 17 主条目 + 12 简评（Skill 质量度量化 / K-Bench 六通道泄露 / GuardrailLoop / Harness vs Model / 动作前验证） |
 | **[AI 文献周报 W37 09-14](knowledge/Research/ai-weekly-literature-2026-09-14.md)** | v1.0 | 09-07~09-13 周报：287 篇 → 16 篇精选（过程级评测 + 科研 agent 物理闭环） |
 | **[HN 今日深挖 09-14](knowledge/Daily/hackernews-2026-09-14.md)** | v1.0 | Fable 5.1 破解 370 年 Cyphral Distich 密码 / 滑板车逆向 Rust 重写固件 |
 | **[GitHub 宝藏挖掘周更 09-13](knowledge/Research/GitHub-Weekly-2026-09-13.md)** | v1.0 | Top 5 高星仓库（codebase-memory-mcp 43k★ / nanobot 48k★ / chrome-devtools-mcp 51k★ 等）+ MCP 生态发现 |
 | **[GitHub 周榜 W38 weekly 口径 09-13](knowledge/Research/GitHub-Weekly-2026-09-13-weekly-5projects.md)** | v1.0 | 本周 star 增速榜：i-have-adhd +15.9k 增速王 / archify / ECC / mattpocock-skills 精选 |
-| **[每日日志 09-12](memory/2026/09/2026-09-12.md)** | v1.0 | 三 bot 协作流水线验证有效（PCB 自动化试运行）+ OpenClaw 2.0 发布 Local-First/Model-Agnostic 趋势 + Plan-and-Execute 降本 90% 实践 |
-| **[每日日志 09-11](memory/2026/09/2026-09-11.md)** | v1.0 | 三 bot 协作流水线启动（研究员/编码员/审核员）+ 健康巡检 4 项待处理（FlClash 境外链路不通等）+ state.yaml 计数收敛骨架落地 + 闲鱼素材第 18 次核验 PASS |
-| **[每日日志 09-10](memory/2026/09/2026-09-10.md)** | v1.0 | 知识库维护日：daily_vault_optimize 补链 5 篇孤立笔记、MOC-Research +1、知识地图日期更新 |
+| **每日自举日志 09-12** *(本地隔离)* | v1.0 | 三 bot 协作流水线验证有效（PCB 自动化试运行）+ OpenClaw 2.0 发布 Local-First/Model-Agnostic 趋势 + Plan-and-Execute 降本 90% 实践 |
+| **每日自举日志 09-11** *(本地隔离)* | v1.0 | 三 bot 协作流水线启动（研究员/编码员/审核员）+ 健康巡检 4 项待处理（FlClash 境外链路不通等）+ state.yaml 计数收敛骨架落地 + 闲鱼素材第 18 次核验 PASS |
+| **每日自举日志 09-10** *(本地隔离)* | v1.0 | 知识库维护日：daily_vault_optimize 补链 5 篇孤立笔记、MOC-Research +1、知识地图日期更新 |
 | **[HN 今日深挖 09-09](knowledge/Daily/hackernews-2026-09-09.md)** | v1.0 | Top10 筛 7 条：OpenAI 声明攻克 Navier-Stokes 千禧年问题引数学界激辩 / AlphaGenome Atlas 人 DNA 高分辨率图谱 / Kimi K3 2.8T 四 SSD 流式本地跑 |
 | **[arXiv AI Agent / LLM 速览 09-09](knowledge/Research/arxiv-2026-09-09-agent-llm.md)** | v1.0 | 09-07 池剩余 426 篇粗筛补全：11 主条目 + 8 简评（索引冻结持续，不重写已收录） |
 | **[HN 今日深挖 09-08](knowledge/Daily/hackernews-2026-09-08.md)** | v1.0 | Top10 筛 5 条：bzip3 精神继承者 / WeatherNext 3 实时观测 / Ladybird 8 月报 / NixOS「信任信任」攻击 |
@@ -246,13 +250,13 @@ graph LR
 | **[cron 产出学习研究](knowledge/Research/cron产出学习研究-2026-08-31.md)** | v1.0 | 每日 cron 产出整理与学习闭环研究 |
 | **[多 Agent 协作增强](knowledge/Research/多Agent协作增强-千轮研究-2026-08-30.md)** | v1.0 | 千轮研究：六种编排模式定位 + multi-agent-research v1.0→v1.1 增强 |
 | **[联合工作升级 v1.3](knowledge/Research/联合工作升级-v1.3-Antigravity程序化接入-2026-08-30.md)** | v1.0 | Antigravity 程序化接入 + AI 原生组件库落点墨题 |
-| **[每日日志 08-22](memory/2026/08/2026-08-22.md)** | v1.0 | Tavily 配额第 8 次复发（连续 8 工作日）→ Firecrawl 兜底稳定 + reco/Anthropic/NVIDIA Agent 安全多源同证 |
-| **[每日日志 08-21](memory/2026/08/2026-08-21.md)** | v1.0 | HarnessRisk 评测 Hermes（ASR 65.4%/配置面最脆弱）+ Gartner 推理成本 5x + 语义缓存硬截止 |
+| **每日自举日志 08-22** *(本地隔离)* | v1.0 | Tavily 配额第 8 次复发（连续 8 工作日）→ Firecrawl 兜底稳定 + reco/Anthropic/NVIDIA Agent 安全多源同证 |
+| **每日自举日志 08-21** *(本地隔离)* | v1.0 | HarnessRisk 评测 Hermes（ASR 65.4%/配置面最脆弱）+ Gartner 推理成本 5x + 语义缓存硬截止 |
 | **[Agent OS / Harness 趋势](knowledge/Research/agent-os-harness-trend-2026-08-22.md)** | v1.0 | 面试视角：Agent 操作系统层出现愈发清晰——Harness 原生 RL 三剑客 SPADE 等 |
 | **[网安资料库综合研究](knowledge/Research/网安资料库-综合研究-2026-08-22.md)** | v1.0 | 350 文件 / 3.35 GB AI 网安资料全量下载、解压、结构化学习完成 |
 | **[arXiv AI Agent / LLM 速览](knowledge/Research/arxiv-2026-08-21-agent-llm.md)** | v1.0 | 08-18+08-19 同池 652 篇比对 → 补录 17 篇强相关漏网（不重写已收录） |
 | **[arXiv AI Agent / LLM 速览](knowledge/Research/arxiv-2026-08-20-agent-llm.md)** | v1.0 | 08-18+08-19 双池全量 652 篇 → 20 强相关（Harness 原生 RL 三剑客 SPADE 等） |
-| **[每日日志 08-20](memory/2026/08/2026-08-20.md)** | v1.0 | 补跑研究日：HarnessRisk 直接评测 Hermes + Gartner 推理成本 5x + 方舟-2 配额耗尽 |
+| **每日自举日志 08-20** *(本地隔离)* | v1.0 | 补跑研究日：HarnessRisk 直接评测 Hermes + Gartner 推理成本 5x + 方舟-2 配额耗尽 |
 | **[arXiv AI Agent / LLM 速览](knowledge/Research/arxiv-2026-08-19-agent-llm.md)** | v1.0 | 08-17 提交池补全——358 篇全量收集 → 补录 14 篇强相关（Zetta 自进化/Bounded Agents 授权安全） |
 | **[HN 今日深挖](knowledge/Research/hackernews-deep-dive-2026-08-18.md)** | v1.0 | GPT-5.6 Sol/Terra/Luna 价格战 + DuckDB v2.0 + Copilot Autofix 攻陷深挖 |
 | **[arXiv AI Agent / LLM 速览](knowledge/Research/arxiv-2026-08-18-agent-llm.md)** | v1.0 | 08-15 提交池——17 篇精选（多 agent 协作/编码 agent 工作集） |
@@ -261,10 +265,10 @@ graph LR
 | **[arXiv AI Agent / LLM 速览](knowledge/Research/arxiv-2026-08-16-agent-llm.md)** | v1.0 | 08-13 提交池补全——收集 53 篇去重 → 精选 15 篇 + 简评 5 篇（Agent 自我改进/训练） |
 | **[arXiv 核心贡献精选](knowledge/Research/arxiv-2026-08-16-core-contributions.md)** | v1.0 | 行为契约/SkillEvo 等核心贡献深度解读（reliability/memory/skill 主题） |
 | **[GitHub 宝藏挖掘周更](knowledge/Research/GitHub-Weekly-2026-08-16.md)** | v1.0 | Top 5 高星仓库（codebase-memory-mcp / nanobot / code-review-graph 等） |
-| **[每日日志 08-19](memory/2026/08/2026-08-19.md)** | v1.0 | SOP 知识体系建成 + arXiv 补录 14 篇 + SRC 安全体系 5 篇 |
-| **[每日日志 08-18](memory/2026/08/2026-08-18.md)** | v1.0 | 知识库优化日 + 安全研究批量入库（SRC/提权/防护） |
-| **[每日日志 08-17](memory/2026/08/2026-08-17.md)** | v1.0 | 闲鱼变现决策日 + 自研路由实证 + AI 模型价格战 + PCB 蓝海确认 |
-| **[每日日志 08-16](memory/2026/08/2026-08-16.md)** | v1.0 | 新会话首日环境自检 + 记忆继承 + 模型策略记录 |
+| **每日自举日志 08-19** *(本地隔离)* | v1.0 | SOP 知识体系建成 + arXiv 补录 14 篇 + SRC 安全体系 5 篇 |
+| **每日自举日志 08-18** *(本地隔离)* | v1.0 | 知识库优化日 + 安全研究批量入库（SRC/提权/防护） |
+| **每日自举日志 08-17** *(本地隔离)* | v1.0 | 闲鱼变现决策日 + 自研路由实证 + AI 模型价格战 + PCB 蓝海确认 |
+| **每日自举日志 08-16** *(本地隔离)* | v1.0 | 新会话首日环境自检 + 记忆继承 + 模型策略记录 |
 
 ### 每日自动化优化
 
@@ -294,10 +298,10 @@ graph LR
 
 | 层 | 技术 |
 |----|------|
-| **Agent 平台** | Hermes Agent Framework（OpenClaw 遗产已迁移） |
-| **主模型** | DeepSeek-v4-Pro（方舟一）+ DeepSeek-v4-Flash 兜底 |
-| **视觉模型** | Doubao Vision 1.5 |
-| **知识库引擎** | Obsidian (Dataview + Graph View) |
+| **Agent 平台** | Hermes Agent Framework（Nous Research） |
+| **主模型** | DeepSeek-v4-Pro（方舟一）+ DeepSeek-v4-Flash 兜底 + GPT-5.5 / GPT-6 (EasyCLIProxyAPI 8317 网关) |
+| **视觉模型** | DashScope Qwen-VL-Max / 豆包多模态 |
+| **知识库引擎** | Obsidian (Dataview + Graph View) + MkDocs Material |
 | **版本控制** | Git + GitHub (每 2 小时自动同步) |
 | **MCP 服务** | GitHub · Filesystem · JLCPCB · Obsidian · Browser |
 | **自动化引擎** | Hermes Cron Scheduler (44 个定时任务) |
@@ -308,9 +312,9 @@ graph LR
 
 ```
 📁 仓库体积：约 31MB 跟踪文件（Git 包约 48MB）
-📝 Markdown 文件：1269 个（知识笔记 + 系统文档）
-🧠 自建 Skill 文档：25 个（11 个领域目录，2026-09-19 核验）
-🗂️ 知识域：11 个
+📝 公开 Markdown 资产：约 540+ 篇公开精选（700+ 篇全库知识资产）
+🧠 自建 Skill 体系：25+ 个（覆盖 11 个领域目录）
+🗂️ 知识域：18 域全景拓扑
 ⏰ 首次提交：2026 年 7 月
 🔄 平均更新频率：每 2 小时自动同步
 ```
