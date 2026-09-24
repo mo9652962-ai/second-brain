@@ -27,7 +27,7 @@
     <img src="https://img.shields.io/github/stars/mo9652962-ai/second-brain?style=flat-square&color=yellow" alt="GitHub stars">
     <img src="https://img.shields.io/badge/Obsidian-知识库-7C3AED?style=flat-square&logo=obsidian" alt="Obsidian">
     <img src="https://img.shields.io/badge/🤖_AI_直读-llms.txt-brightgreen?style=flat-square" alt="llms.txt">
-    <img src="https://img.shields.io/badge/🌿_常青笔记-323_篇-success?style=flat-square" alt="OKM Evergreen">
+    <img src="https://img.shields.io/badge/🌿_常青笔记-329_篇-success?style=flat-square" alt="OKM Evergreen">
     <img src="https://img.shields.io/badge/🔄_自举进化-Active-green" alt="自举进化">
     <img src="https://img.shields.io/badge/🏆_七大自举系统-32_项-gold" alt="七大自举系统">
   </p>
@@ -91,7 +91,7 @@ graph LR
     D --> E[🔄 自举改进<br/>用新技能改进 Agent 自身]
     E --> F[✨ 进化到下一阶段]
     F -. 持续循环 .-> A
-    E -. 写入 .-> G[(Obsidian 知识库<br/>700+ 篇公开精选 · 18 域 · 31 MOC)]
+    E -. 写入 .-> G[(Obsidian 知识库<br/>700+ 篇公开精选 · 18 域 · 26 MOC)]
     G -. 反哺上下文 .-> A
 ```
 
@@ -119,8 +119,8 @@ graph LR
 
 借鉴 Karpathy 的 **LLM Wiki** 范式与 GitHub 高星第二大脑架构，知识库不是只增不减（Append-only）的死仓库，而是一套具有自我生长、演进与淘汰能力的活体知识系统：
 
-- **🌲 常青笔记 (Evergreen, 332 篇 / 47.2%)**：结构完备、双向链接闭环、实战沉淀的高信号资产。
-- **🌿 成长笔记 (Budding, 365 篇 / 51.8%)**：包含基本推演与领域上下文，处于持续求证与拓展中的进阶笔记。
+- **🌲 常青笔记 (Evergreen, 329 篇 / 47.5%)**：结构完备、双向链接闭环、实战沉淀的高信号资产。
+- **🌿 成长笔记 (Budding, 356 篇 / 51.4%)**：包含基本推演与领域上下文，处于持续求证与拓展中的进阶笔记。
 - **🌱 萌芽速记 (Seed)**：捕获的原始事实、想法或灵感种子，定期被消化蒸馏。
 - **📦 降级标记 (Superseded)**：支持 `superseded_by: [[新笔记]]` 标记过时结论，抗击认知熵增。
 - 👉 查看完整治理看板：[knowledge/METABOLISM.md](knowledge/METABOLISM.md)
@@ -132,7 +132,7 @@ graph LR
 本仓库遵循 [llmstxt.org](https://llmstxt.org/) 协议，为各类外部 AI 编码助手（Claude Code、Cursor、OpenCode、Hermes 等）提供机器直接可读的轻量化上下文包：
 
 - **纲要索引**：[`/llms.txt`](llms.txt) — 18 域全景结构与高频核心 MOC 节点汇总
-- **平铺知识上下文**：[`/llms-full.txt`](llms-full.txt) — 200KB+ 高密度精选纯净知识平铺包，无需克隆即可整库灌入 LLM Prompt
+- **平铺知识上下文**：[`/llms-full.txt`](llms-full.txt) — 185KB+ 高密度精选纯净知识平铺包，无需克隆即可整库灌入 LLM Prompt
 
 ---
 
@@ -153,7 +153,7 @@ graph LR
 | 🎨 | **设计/多媒体** | PPT 设计、AI 美学、图像生成工具 | PPT 优化、AI 图像生成 |
 | 📊 | **效率方法论** | Obsidian 技巧、自动化工作流 | Obsidian 知识图谱、自动化工作流 |
 
-**📈 总计：25 个自建技能文档（11 大知识域）· 26 个外部技能集参考**（2026-09-19 核验）
+**📈 总计：29 个自建技能文档（11 大知识域）· 26 个外部技能集参考**（2026-09-24 核验）
 
 ---
 
@@ -304,17 +304,17 @@ graph LR
 | **知识库引擎** | Obsidian (Dataview + Graph View) + MkDocs Material |
 | **版本控制** | Git + GitHub (每 2 小时自动同步) |
 | **MCP 服务** | GitHub · Filesystem · JLCPCB · Obsidian · Browser |
-| **自动化引擎** | Hermes Cron Scheduler (44 个定时任务) |
+| **自动化引擎** | Hermes Cron Scheduler (46 个定时任务) |
 
 ---
 
 ## 📊 仓库统计
 
 ```
-📁 仓库体积：约 31MB 跟踪文件（Git 包约 48MB）
-📝 公开 Markdown 资产：约 540+ 篇公开精选（700+ 篇全库知识资产）
-🧠 自建 Skill 体系：25+ 个（覆盖 11 个领域目录）
-🗂️ 知识域：18 域全景拓扑
+📁 仓库体积：约 19.8MB 跟踪文件 / 897 个文件（Git 包约 115MB）
+📝 公开 Markdown 资产：732 篇（全库 1,248 篇，含 130 篇外部技能文档）
+🧠 自建 Skill 体系：29 个文档（覆盖 11 个领域目录）
+🗂️ 知识域：18 域全景拓扑 · 26 个 MOC 锚点
 ⏰ 首次提交：2026 年 7 月
 🔄 平均更新频率：每 2 小时自动同步
 ```

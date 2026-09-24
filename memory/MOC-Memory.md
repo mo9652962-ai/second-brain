@@ -18,3 +18,9 @@ tags: [meta/moc, memory, knowledge/governance]
 
 * **公开开源层（Public）**：不包含任何私有日常日记、财务或心路历程；
 * **本地隔离层（Air-Gapped）**：包含 `memory/2026/`、`memory/dreaming/` 与归档记录，已全部归档至本地环境。
+
+## 🔗 相关入口
+
+- 🏠 [[HOME|知识中枢]]
+- 🗺️ [[knowledge/knowledge-map|知识地图]]
+- 🛠️ [[knowledge/META/MOC-META|META 治理索引]]
