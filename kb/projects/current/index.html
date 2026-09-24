@@ -3193,6 +3193,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#924-daily-todo-executor-9-24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧭 9/24 反思行动项（daily-todo-executor 复盘 9-24，执行者必读）
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3932,6 +3943,13 @@
 <li>[ ] 🔒 skill 合并授权（6 组重复 + apple 孤儿，破坏性）</li>
 <li>[ ] 🔒 卡片 cron 排程授权（后移 22:00+，改 jobs.json）</li>
 </ul>
+<h3 id="924-daily-todo-executor-9-24">🧭 9/24 反思行动项（daily-todo-executor 复盘 9-24，执行者必读）<a class="headerlink" href="#924-daily-todo-executor-9-24" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[x] 🔴 daily-health-check 429 失败降级实现落地（硬截止 9/24）→ ✅ 2026-09-24 daily-todo-executor 落地：新建 <code>AppData/Local/hermes/scripts/health_degraded.py</code>（no_agent 纯脚本，不调 LLM 故配额无关）+ 注册 cron <code>health-degraded-fallback</code>（<code>30 16 * * *</code>，紧跟 daily-health-check 15:45 之后）；契约 = 目标产物存在且 ≥200B 则静默 exit 0（正常路径不覆盖），缺失则采集磁盘/内存/cron 状态/产物哨兵写出「降级版」报告并打印一行告警。实测双路径：9/24（LLM 报告在）= 空输出 exit 0；9/21（429 无产物）= 正确产出降级报告</li>
+<li>[x] 🟢 爆炸性提示防线（条件结构检测）→ ✅ 2026-09-24 daily-todo-executor 落地：新建 <code>AppData/Local/hermes/scripts/ingest_injection_scan.py</code>（四类模式：条件+动作/条件+高危对象/条件+身份劫持/条件+疑似编码载荷，中英双语），自检 4 正样本全中 + 4 负样本零误报，并实证 arXiv 2609.22510 论点（命令式基线仅 2/4 vs 条件式 4/4）；规则固化 <code>hermes-automation-patterns</code> 故障 C8</li>
+<li>[x] 🟡 哨兵路径同步（deterministic_verify 期望路径漂移）→ ✅ 2026-09-24 daily-todo-executor 落地：根因核实为<strong>双向问题</strong>——① 9/23 资产隔离（49bf962）把 9/20 及更早日志迁至 <code>private_knowledge/memory/</code>，对历史日期复核必然误报；② 新增产物仍写 <code>workspace/memory/</code>（9/24 的 health/daily-review/api-probe 均在此），故<strong>不该整体改路径</strong>。修复 = 加 <code>VAULT_ARCHIVE</code> 归档兜底（workspace 无命中时到 private_knowledge 再找一次）。实测 9/20 异常 11→8（消除 3 处历史误报），9/24 保持 5 项真实异常</li>
+<li>[x] 🟢 cron_health.py 看板缓存路径硬编码修复 → ✅ 2026-09-24 daily-todo-executor 落地：<code>CACHE_FILE</code> 原硬编码 <code>memory/2026/07/cron-health-latest.md</code>（跨月后持续写 7 月目录，违反「cron prompt 写 vault 必须用 YYYY/MM 动态记法」规则）→ 改为 <code>datetime.now()</code> 动态年月；实测已写 <code>memory/2026/09/cron-health-latest.md</code>，删除 9 月 24 日误落 7 月的陈旧副本</li>
+</ul>
 <h2 id="_6">🔗 相关领域<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <ul>
 <li>[[AI-Agent]] — 基础设施与能力架构</li>
@@ -3941,7 +3959,7 @@
 <li>[[HOME]] — 返回知识中枢</li>
 </ul>
 <hr />
-<p><em>由 k (Hermes) 在每次会话结束时更新 | 最后更新: 2026-09-21 (daily-reflection 9/21：登记 9/20 反思行动项 9 条 + assert 扩展/安全基线当场闭环；闲鱼权威第 42 天未变)</em></p>
+<p><em>由 k (Hermes) 在每次会话结束时更新 | 最后更新: 2026-09-24 (daily-todo-executor 9/24：落地 health 429 降级兜底 + 条件式注入防线 + 哨兵归档兜底 + cron_health 硬编码路径修复；闲鱼权威第 42 天未变)</em></p>
 <hr />
 <p>[[HOME|🏠 返回首页]]</p>
 
