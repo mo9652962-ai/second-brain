@@ -4,7 +4,7 @@
 
   **让 AI 拥有一个会自己进化的第二大脑**
   <br>
-  **Obsidian + GitHub + Hermes Agent · 700+ 篇公开知识资产 · 18 域全景拓扑 · 7 大自举系统**
+  **Obsidian + GitHub + Hermes Agent · 760+ 篇公开知识资产 · 18 域全景拓扑 · 7 大自举系统**
 
   <p>
     <a href="https://mo9652962-ai.github.io/second-brain/">✨ 3D 全景沉浸式官网</a>
@@ -25,11 +25,14 @@
   <p>
     <img src="https://img.shields.io/github/last-commit/mo9652962-ai/second-brain?style=flat-square&color=blue" alt="GitHub last commit">
     <img src="https://img.shields.io/github/stars/mo9652962-ai/second-brain?style=flat-square&color=yellow" alt="GitHub stars">
+  </p>
+
+  <p>
     <img src="https://img.shields.io/badge/Obsidian-知识库-7C3AED?style=flat-square&logo=obsidian" alt="Obsidian">
     <img src="https://img.shields.io/badge/🤖_AI_直读-llms.txt-brightgreen?style=flat-square" alt="llms.txt">
     <img src="https://img.shields.io/badge/🌿_常青笔记-329_篇-success?style=flat-square" alt="OKM Evergreen">
-    <img src="https://img.shields.io/badge/🔄_自举进化-Active-green" alt="自举进化">
-    <img src="https://img.shields.io/badge/🏆_七大自举系统-32_项-gold" alt="七大自举系统">
+    <img src="https://img.shields.io/badge/🔄_自举进化-Active-green?style=flat-square" alt="自举进化">
+    <img src="https://img.shields.io/badge/🏆_七大自举系统-32_项-gold?style=flat-square" alt="七大自举系统">
   </p>
 
   <p>
@@ -39,7 +42,7 @@
 </div>
 
 > 🌟 **全新 3D WebGL 宇宙与全景星空官网已上线**：👉 [在线体验 3D 知识图谱宇宙与自举演化剖析](https://mo9652962-ai.github.io/second-brain/)  
-> **核心交互体验**：3D 全景知识拓扑宇宙 · 7 大自举系统演化剖析器 · 18 域 700+ 篇知识体系实时检索 · 24H 自动化流水线雷达 · Web Audio 空间合成音效
+> **核心交互体验**：3D 全景知识拓扑宇宙 · 7 大自举系统演化剖析器 · 18 域 760+ 篇知识体系实时检索 · 24H 自动化流水线雷达 · Web Audio 空间合成音效
 
 <div align="center">
   <a href="https://mo9652962-ai.github.io/second-brain/">
@@ -91,7 +94,7 @@ graph LR
     D --> E[🔄 自举改进<br/>用新技能改进 Agent 自身]
     E --> F[✨ 进化到下一阶段]
     F -. 持续循环 .-> A
-    E -. 写入 .-> G[(Obsidian 知识库<br/>700+ 篇公开精选 · 18 域 · 26 MOC)]
+    E -. 写入 .-> G[(Obsidian 知识库<br/>760+ 篇公开精选 · 18 域 · 26 MOC)]
     G -. 反哺上下文 .-> A
 ```
 
@@ -119,8 +122,8 @@ graph LR
 
 借鉴 Karpathy 的 **LLM Wiki** 范式与 GitHub 高星第二大脑架构，知识库不是只增不减（Append-only）的死仓库，而是一套具有自我生长、演进与淘汰能力的活体知识系统：
 
-- **🌲 常青笔记 (Evergreen, 329 篇 / 47.5%)**：结构完备、双向链接闭环、实战沉淀的高信号资产。
-- **🌿 成长笔记 (Budding, 356 篇 / 51.4%)**：包含基本推演与领域上下文，处于持续求证与拓展中的进阶笔记。
+- **🌲 常青笔记 (Evergreen, 329 篇 / 47.3%)**：结构完备、双向链接闭环、实战沉淀的高信号资产。
+- **🌿 成长笔记 (Budding, 359 篇 / 51.7%)**：包含基本推演与领域上下文，处于持续求证与拓展中的进阶笔记。
 - **🌱 萌芽速记 (Seed)**：捕获的原始事实、想法或灵感种子，定期被消化蒸馏。
 - **📦 降级标记 (Superseded)**：支持 `superseded_by: [[新笔记]]` 标记过时结论，抗击认知熵增。
 - 👉 查看完整治理看板：[knowledge/METABOLISM.md](knowledge/METABOLISM.md)
@@ -132,7 +135,7 @@ graph LR
 本仓库遵循 [llmstxt.org](https://llmstxt.org/) 协议，为各类外部 AI 编码助手（Claude Code、Cursor、OpenCode、Hermes 等）提供机器直接可读的轻量化上下文包：
 
 - **纲要索引**：[`/llms.txt`](llms.txt) — 18 域全景结构与高频核心 MOC 节点汇总
-- **平铺知识上下文**：[`/llms-full.txt`](llms-full.txt) — 185KB+ 高密度精选纯净知识平铺包，无需克隆即可整库灌入 LLM Prompt
+- **平铺知识上下文**：[`/llms-full.txt`](llms-full.txt) — 196KB+ 高密度精选纯净知识平铺包，无需克隆即可整库灌入 LLM Prompt
 
 ---
 
@@ -177,16 +180,18 @@ graph LR
 
 5. **🔄 每 2 小时自动同步更新**
    - 不是一次性项目，是持续进化的活的知识库
-   - 44 个 Cron 自动化任务 7×24 小时运行
+   - 47 个 Cron 自动化任务 7×24 小时运行
 
 ---
 
-## 📦 最新技能与架构入库 (2026-08-16 ~ 2026-09-24)
+## 📦 最新技能与架构入库 (2026-08-16 ~ 2026-09-25)
 
 ### 研究与工程进阶
 
 | 技能 / 成果 | 版本 | 简介 |
 |------|------|------|
+| **[知识库体检器假阳性修复 09-25](scripts/gen-vault-index.py)** | v1.0 | 断链检测与 `knowledge-lint.py` 权威口径对齐（剥离代码 span/fence + 模板占位符白名单）：断链 51→0，剔除 45 条把 `[[新笔记]]` 类模板示例误报为断链的假阳性；DASHBOARD 恢复可信 |
+| **[arXiv AI Agent / LLM 速览 09-25](knowledge/Research/arxiv-2026-09-25-agent-llm.md)** | v1.0 | 单日窗口 662 篇补录（cron 被机器重启中断后补位）→ 16 主条目 + 14 简评：Scoped-ORC 记忆作用域防跨族干扰 / SkillPivot 转折点技能自进化 / 等 |
 | **[现代 Web 全栈与高感官微交互 09-24](skills/web/)** | v2.0 | Next.js 15 RSC、Hono v4、Tailwind v4 Oxide 引擎、Core Web Vitals 与 6 大高感官原生微交互（物理避障/3D破屏/纯CSS锯齿票券/密码锁/Canvas点阵雨/苹果Dock鱼眼） |
 | **[商业短视频工业化母带标准 09-23](skills/content/)** | v1.0 | 56.5s 七段叙事时序矩阵、-14.0 LUFS EBU R128 音频旁链闪避混音、ASS 动态弹跳荧光字幕、剪映 `draft_content.json` 纯 Python 解耦免 VIP 自动化装配 |
 | **[企业级 B2B 商业演示重构体系 09-23](skills/productivity/)** | v1.0 | 麦肯锡 SCQA 结构化说服、Action Title（标题即判断）、4+3 黄金对称产品矩阵、高密度资质矩阵墙、PPTX 批量无损量化压制引擎 |
@@ -304,15 +309,15 @@ graph LR
 | **知识库引擎** | Obsidian (Dataview + Graph View) + MkDocs Material |
 | **版本控制** | Git + GitHub (每 2 小时自动同步) |
 | **MCP 服务** | GitHub · Filesystem · JLCPCB · Obsidian · Browser |
-| **自动化引擎** | Hermes Cron Scheduler (46 个定时任务) |
+| **自动化引擎** | Hermes Cron Scheduler (47 个定时任务) |
 
 ---
 
 ## 📊 仓库统计
 
 ```
-📁 仓库体积：约 19.8MB 跟踪文件 / 897 个文件（Git 包约 115MB）
-📝 公开 Markdown 资产：732 篇（全库 1,248 篇，含 130 篇外部技能文档）
+📁 仓库体积：约 19.8MB 跟踪文件 / 904 个文件（Git 包约 127MB）
+📝 公开 Markdown 资产：767 篇（含 29 篇自建技能文档 · 672 篇 knowledge/ 知识域笔记）
 🧠 自建 Skill 体系：29 个文档（覆盖 11 个领域目录）
 🗂️ 知识域：18 域全景拓扑 · 26 个 MOC 锚点
 ⏰ 首次提交：2026 年 7 月

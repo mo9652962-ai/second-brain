@@ -29,6 +29,14 @@ by_top = Counter(top_dir(p) for p in all_md)
 now = datetime.now()
 
 # ---------- 断链/孤立（复用 vault-structure 口径的轻量版） ----------
+# 2026-09-25 修复：旧版直接把 [[...]] 当断链 → 把代码块/行内代码里的模板占位符
+# （`[[新笔记]]` `[[wikilink]]` `[[所属MOC]]` 等）全部误报成断链（实测 51 条中 45 条是误报）。
+# 现与 knowledge-lint.py（权威口径）对齐：先剥离代码 span/fence，再跳过占位符白名单。
+CODE_SPAN_RE = re.compile(r'`[^`]*`')
+FENCE_RE = re.compile(r'```.*?```', flags=re.S)
+PLACEHOLDER_LINKS = {'name', 'their-name', 'wiki link', 'wikilink', ':space:', 'todo', 'link',
+                     'note-1', 'series-2026-08-14', 'skill-name', '新笔记', '所属moc'}
+
 name_set = {p.stem.lower() for p in all_md}
 broken = []
 orphan = []
@@ -38,12 +46,15 @@ for p in all_md:
         txt = p.read_text(encoding='utf-8', errors='ignore')
     except Exception:
         continue
+    txt = FENCE_RE.sub('', CODE_SPAN_RE.sub('', txt))   # 代码区内容不算真实链接
     for m in re.finditer(r'\[\[([^\]|#]+)', txt):
         t = m.group(1).replace('\\|', '|').split('|')[0].strip()
         t = re.sub(r'^(\.\./)+', '', t).replace('\\', '/').rstrip('/')
         if t.endswith('.md'):
             t = t[:-3]
         base = os.path.basename(t).lower()
+        if base in PLACEHOLDER_LINKS:      # 模板占位符 → 非断链
+            continue
         if base in name_set:
             incoming.add(str(p).replace('\\', '/'))
         else:

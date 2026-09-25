@@ -113,11 +113,12 @@ def main():
     print(f'Safe indexable entries: {len(entries)}')
 
     # 1. 生成精简 /llms.txt (符合 llmstxt.org 规范)
+    # 2026-09-25 修复：篇数改为动态统计（旧版硬编码「1,000+」，实际 tracked 767 篇 → 长期失真）
     llms_txt = [
         '# Second Brain — AI Agent 第二大脑',
         '',
         '> 一个具备自进化能力的开源第二大脑与知识图谱系统。',
-        '> 整合 1,000+ 篇知识体系、18 知识域全景拓扑与 7 大自举进化闭环。',
+        f'> 整合 {len(tracked)} 篇公开知识体系、18 知识域全景拓扑与 7 大自举进化闭环。',
         '',
         '## 知识库概览',
         '- 官网与 3D 拓扑探针: https://mo9652962-ai.github.io/second-brain/',
