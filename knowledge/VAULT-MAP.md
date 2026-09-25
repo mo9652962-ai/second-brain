@@ -4,22 +4,23 @@ aliases: [VaultMap, 机器索引, vault-map]
 type: meta
 domain: META
 status: active
-created: 2026-09-23
-updated: 2026-09-23
+created: 2026-09-25
+updated: 2026-09-25
 tags: [meta/index, knowledge/governance, ai/navigation]
 ---
 
 # 🗺️ VAULT-MAP — 机器可读索引
 
-> 自动生成：`scripts/gen-vault-index.py`（2026-09-23）。
+> 自动生成：`scripts/gen-vault-index.py`（2026-09-25）。
 > 给 AI Agent 用的静态导航索引：不用全盘扫描即可定位内容。人类入口见 [[knowledge-map]] 与 [[HOME]]。
 
 ## 顶层分布
 
 | 顶层 | md 数 |
 |:---|---:|
-| `knowledge/` | 665 |
+| `knowledge/` | 672 |
 | `skills/` | 29 |
+| `memory/` | 7 |
 | `projects/` | 7 |
 | `templates/` | 7 |
 | `portfolio/` | 5 |
@@ -39,14 +40,12 @@ tags: [meta/index, knowledge/governance, ai/navigation]
 | `IDENTITY.md/` | 1 |
 | `INDEX.md/` | 1 |
 | `MEMORY.md/` | 1 |
-| `META/` | 1 |
 | `README.md/` | 1 |
 | `SECURITY.md/` | 1 |
 | `SOUL.md/` | 1 |
 | `SUPPORT.md/` | 1 |
 | `TOOLS.md/` | 1 |
 | `USER.md/` | 1 |
-| `memory/` | 1 |
 | `scripts/` | 1 |
 | `system/` | 1 |
 | `todo/` | 1 |
@@ -55,19 +54,19 @@ tags: [meta/index, knowledge/governance, ai/navigation]
 
 | 域 | 笔记数 |
 |:---|---:|
-| Research | 227 |
-| Dev | 143 |
+| Research | 229 |
+| Dev | 144 |
 | Productivity | 54 |
 | Security | 53 |
-| Daily | 34 |
+| Daily | 36 |
 | cards | 34 |
 | Hardware | 21 |
 | AI | 18 |
-| Finance | 16 |
+| Finance | 17 |
 | Archive | 13 |
 | Content | 11 |
+| META | 10 |
 | knowledge | 9 |
-| META | 9 |
 | SOP | 9 |
 | Creative | 5 |
 | gaming | 4 |

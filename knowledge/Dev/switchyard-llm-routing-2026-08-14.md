@@ -1,5 +1,5 @@
 ---
-tags: [LLM-Routing, Model-Gateway, API-兼容, fallback, cost-optimization]
+tags: [llm-routing, model-gateway, api-兼容, fallback, cost-optimization]
 aliases: [Switchyard, NVIDIA Switchyard, NeMo Switchyard]
 date: 2026-08-14
 source: https://github.com/NVIDIA-NeMo/Switchyard
