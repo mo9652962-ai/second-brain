@@ -28,6 +28,13 @@ jobs:
       - name: Check site (nav targets / assemble / static integrity)
         run: python3 scripts/check-site.py
 
+      # 脚本回归测试（frontmatter 判据等）——2026-09-26 起纳入门禁，
+      # 防「判据写错 + 无测试」再次造成 80 文件级静默漏报
+      - name: Run script regression tests
+        run: |
+          python3 -m pip install --quiet pyyaml pytest
+          python3 -m pytest tests/ -q -p no:cacheprovider
+
   site-browser:
     # 浏览器行为门禁：移动端 0 溢出 / reveal 全触发 / 控制台零 error
     # 只在 push + schedule 跑（PR 由 lint 的静态检查兜底，避免每次都装 Chromium）
