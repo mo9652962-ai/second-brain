@@ -272,19 +272,85 @@ updated: 2026-09-14
 - [x] github-privacy-gate 误报白名单（8 条 + uv.lock + ${VAR} 规则，三仓库零命中）✅ 9/15
 - [x] 生成器 OUT_DIR expandvars 修复（git-bash %USERPROFILE% 不展开误建字面目录）+ lint-fix-tags-v2 frontmatter 粘连重拼 ✅ 9/17
 
+### 12. 本周（9/20–9/26）完成项
+
+> 归档来源：git log（9/20–9/26 实测 60+ 提交）+ 本周日志（daily-review ×3 / daily-todo-executor ×4 / reflection ×2 / maintenance ×2 / suggestions-applied / vault-suggestion-executor）
+> 口径：每条可回溯到提交或日志，不从记忆补写
+
+#### 🗓️ 系统可靠性 / cron 容灾（10 项）
+- [x] **cron 健康看板 schema 失配根治**（`cron_health.py:115` 读不存在的 `last_run` 键 → 47 任务全被判「从未执行」，掩盖 7 个真实 error）→ ✅ 9/26 修复：改读扁平字段 `last_status`/`last_run_at`/`last_error` + 新增 `delivery_failed` 独立状态 + 「全体值不可能」自检护栏（`never_count == len(jobs)` 即显式告警）；实测修复后 `✅ 37 正常 ❌ 7 错误 📭 3 投递失败 ⚪ 0` — 静默失败第 4 次同源复发
+- [x] **LRN 断档 11 天收口**（最近 LRN-20260914-002）→ ✅ 9/26 补记 3 条（cron 看板字段失配掩盖 7 真实 error / web_extract fake-ip 拦截 curl 兜底 / 产出型 cron 缺失无告警）
+- [x] **web_extract fake-ip 拦截固化进执行面**（9/25 建议停在日报 bullet 零落地）→ ✅ 9/26 patch `link-content-fetch` 决策树插入 ⓪ 号分支（`Blocked: private or internal network address` = FlClash fake-ip 198.18.0.0/15，重试永无效 → 直接 curl）；实测 `nslookup arxiv.org`=198.18.0.102 / `curl`=200 0.46s
+- [x] **每日知识库维护 + 断链/标签/孤立清理**（knowledge-lint 全绿：断链 0 / frontmatter 0 / 孤立 0 / 标签变体 0）✅ 9/25（commit 157bc860）+ 9/26（commit 89ded8d7）
+- [x] **梦境日志隐私回流修复（P0 泄露）**：9/23 隔离后 `memory/dreaming/` 与 `memory/cron-hash-ledger/` 被 auto-sync 重新推送公开仓（`git ls-tree origin/main` 实锤 6+1 文件）→ ✅ 9/26 修复：`.gitignore` 增补两目录 + `git rm -r --cached` + `git check-ignore` 验证 + 隐私门禁 900 tracked 文件通过
+- [x] **部署流水线私有隔离硬门禁**（CI 层防私有资产回流公开站）✅ 9/26（commit 7af570be）
+- [x] **知识库维护报告 + 检测器修正 3 脚本**（清理 3 空文件 / 16 孤立页挂载 INDEX / tag 归一 api）✅ 9/26（private_knowledge/memory/2026/09/2026-09-26-maintenance.md）
+- [x] **health 429 降级兜底落地**（硬截止 9/24 闭环）→ ✅ 9/24：新建 `scripts/health_degraded.py`（no_agent 纯脚本不调 LLM）+ 注册 cron `health-degraded-fallback`（`30 16 * * *`，紧随 15:45 主任务）；契约=产物在位则静默 exit 0；双路径实测 PASS
+- [x] **条件式注入防线**（arXiv 2609.22510 爆炸性提示）→ ✅ 9/24：新建 `scripts/ingest_injection_scan.py`（4 类条件结构模式）；自检 4 正样本全中 + 4 负样本零误报；复现论文「条件式 4/4 vs 命令式基线 2/4」
+- [x] **哨兵路径双向核实 + 归档兜底**（9/23 隔离后 `deterministic_verify` 期望路径漂移）→ ✅ 9/24：根因核实为**双向问题**（历史日志已迁 `private_knowledge/`、新产物仍写 `workspace/memory/`），加 `VAULT_ARCHIVE` 归档兜底；实测 9/20 误报 11→8，9/24 真异常 5 项原样保留（只减误报不放宽真告警）
+
+#### 🧠 知识 / 研究（14 项）
+- [x] **资产三级隔离执行**（48 个商业/工业资产物理迁入 `private_knowledge/`）✅ 9/23（commit 49bf9626 + 9157a62c）— 隔离铁律落地
+- [x] **第二大脑 AI-First 认知中枢升级 + OKM 自愈生态** ✅ 9/23（commit 8507fd86）+ 深度整理拓扑/消除断链/更新中枢与代谢体系（commit 8412a207）
+- [x] **2026 现代全端开发工业级标准沉淀**（小程序 + Web 全栈 + 跨端 App）✅ 9/23（commit 29becc5c）
+- [x] **自媒体 6 大开源视频 Skill 选型指南 + 落地管线 + 决策树挂载主索引** ✅ 9/22（commit 74a1ebfe / 0cbdfc22）
+- [x] **3D 沉浸式知识大脑官网 + 交互矩阵 + 全景 WebGL 宇宙 + 动态星空** ✅ 9/22（commit 9cba67d6 / 20121092 / e64fa91c）
+- [x] **抖音爆款电影级镂空文字开场动画 SOP + 可编辑 PPTX 工件** ✅ 9/22（commit d0f5b621）
+- [x] **PPT 国奖级扇叶开场平滑动画 SOP**（双态 Morph + 透光视差，六轮迭代至 9.8/10 免检级，修复扇骨扇叶脱节）✅ 9/20（knowledge/Productivity/PPT国奖级扇叶开场平滑动画-制作SOP-2026-09-20）
+- [x] **闲鱼高客单 Web 定制服务线 SOP-008**（L1 ¥398 / L2 ¥598 主推 / L3 ¥898，1.5~2h/单，毛利 >90%，打破 30-50 元低价内卷）✅ 9/20（private_knowledge/xianyu_commercial/SOP-008-xianyu-vibe-coding-website.md）
+- [x] **arXiv 速览 7 日连续产出**（9/20 12+7 / 9/21 16+7 / 9/24 三日窗 24+18〔2356 篇池〕/ 9/25 16+14〔补位〕/ 9/26 16+14）✅ knowledge/Research/
+- [x] **HN 精选 4 日连续产出**（9/24 6 条 / 9/25 4 条 / 9/26）✅ knowledge/Daily/
+- [x] **每日股票分析产出 + 09-21~09-24 数据缺口轨迹补齐** ✅ 9/25（commit 8c6a1394）
+- [x] **Vault 拓扑/健康索引/VAULT-MAP/DASHBOARD 机器可读索引生成器**（借鉴 arkan vault-map / ibrahim dashboard）✅ 9/21（commit c247a7f5 / 329d6460）
+- [x] **MOC-Memory 索引页**（317 篇按年月/类型挂载）+ 幂等生成脚本 ✅ 9/21（commit 329d6460）
+- [x] **官网落地页 + 知识库文档站**（1044 页）+ 移动端 0 溢出门禁 ✅ 9/21（commit 5964d7f9 / bb76946b）
+
+#### 🔒 安全 / 隐私治理（7 项）
+- [x] **资产三级隔离**（工业算法 / 商业 SOP / 私有日志剥离至本地隔离区，air-gapped）✅ 9/23
+- [x] **隐私门禁 CI 化 + USER.md 脱敏 + 内网 IP 脱敏（RFC5737 文档网段）** ✅ 9/21（commit 5d95bfe6）
+- [x] **敏感词表外置为 gitignored 文件**（避免检测脚本自身成为泄露源）✅ 9/21（commit d29451b0 / eaadfdcd）
+- [x] **学校域名脱敏 13 处 + 本机路径脱敏 4 处 + 门禁两处缺陷修复** ✅ 9/21（commit 48d9dbe2 / 57704fd1）
+- [x] **check-repo-privacy 排除自身**（BUILTIN 敏感词基线不被自己命中）✅ 9/21（commit 90ed08f3）
+- [x] **`memory/20*/` 目录级忽略**（日记不进公开仓）✅ 9/24（commit 2d797487）
+- [x] **AI 工具安装前安全基线首轮快扫**（Codex / dsh / WorkBuddy 反代，无 ZCode 式静默上传特征）✅ 9/21 反思当场闭环
+
+#### 🛠️ 工具 / 维护（8 项）
+- [x] **cron_health.py 硬编码月份路径修复**（`memory/2026/07/` 跨月后持续写 7 月目录）→ ✅ 9/24：改 `datetime.now()` 动态年月；删除误落陈旧副本
+- [x] **PPT 大图转 webp**（15.7MB→425KB）+ diag/shimu 实验图取消追踪（省 26MB+）✅ 9/21（commit 69c20cd5）
+- [x] **根目录脚本/截图/uv.lock 移入 outputs/archive** ✅ 9/21（commit f49f0382）
+- [x] **tag-lint YAML-list 闭合 `---` 解析为假标签的潜在 bug 修复 + 标签一致性统一 20 文件** ✅ 9/21（commit cb855d81 / 6831a597）
+- [x] **vault-structure.py Windows 路径/大小写/转义别名误报修复 + HOME.md 24 处真断链转纯文本** ✅ 9/21（commit b4481059）
+- [x] **graphify frozen-graph bug 修复**（build_merge 从未写 graph.json，图谱自 08-09 卡死）✅ 9/20
+- [x] **系统清理 + 时效审计接入每周 cron**（`knowledge-freshness-weekly`）✅ 9/20（commit 638c1afc / system-cleanup-report-20260920）
+- [x] **hackernews-2026-09-21 CRCRLF 行尾缺陷修复**（内容零变更）✅ 9/24（commit 1998d3aa）
+
+#### 🛡️ 注入防御 / 轨迹完整性（4 项）
+- [x] **摄入注入防线扩面 4→13 模式**（按 arXiv 2609.29775 组合式注入：推理段 + 平凡输出前缀可达 99%，被测模型含 DeepSeek V4 Flash）→ ✅ 9/25：新增第 5 组「组合式前缀注入」6 条 + REASON/PREFIX 双语词表；关键设计=推理词与前缀词**同现才告警**（防论文正文误报）；自检 8 正全中 / 7 负零误报；真实语料 60 文件仅 7 处命中全为叙述性文字
+- [x] **技能范围声明试点**（按 arXiv 2609.29144 Scope Before You Persist：有害部署 6/8→0/8）→ ✅ 9/25：4 条高频 SKILL.md 加 `applies_to`/`not_for` frontmatter（vault-todo-cleanup / xianyu-monetization / hermes-health-check / hacker-news-digest），版本各 +1
+- [x] **轨迹完整性加固**（按 arXiv 2609.30266：除 Muse Code 外全部 harness 允许 agent 删除自身轨迹）→ ✅ 9/25：新建 `scripts/cron_product_hash.py`（SHA-256 → 仅追加账本 `memory/cron-hash-ledger/YYYY/MM/`，与产物目录分离；`--verify` 检出改动/删除）+ 注册 no_agent cron `cron-product-hash`（`30 23 * * *`）；双路径自检 PASS（记录→PASS / 篡改→FAIL）
+- [x] **万悟参赛确认硬截止处置**（9/25 12:00 截止）→ ✅ 9/25 判定未参赛并归档两条重复条目；四条可验证证据（无确认勾选 / 无商业计划书产物 / docker daemon 未运行 / WSL Stopped）；研究资产保留（innovation-competition-industry-track 技能 + 架构迁移路径）
+
+#### 💰 闲鱼 / 变现（5 项）
+- [x] **闲鱼素材核验第 23 次 PASS**（7 图 PNG 头实测 750×750 全过，46–61KB + 上架操作清单在位）✅ 9/20
+- [x] **素材核验脚本多候选根自动探测修复**（9/23 隔离后硬编码路径失效 → 报「素材目录不存在」假告警）→ ✅ 9/24：`verify_xianyu_assets.py` 改多根探测，实测 PASS；抓出「隔离后所有引用旧路径的脚本都会静默误报」这一类系统性问题
+- [x] **PPT 接单话术可用化**（客户「轻描淡写」语言陷阱拆解 + 双轨话术 + 防跑单闭环；标准档 60~80 / 底线 50 / 商务档 100~120；先发满屏浅灰水印低清 PDF、尾款后给可编辑 pptx）✅ 9/24（patch `ai-freelance-pricing` §一.十五）
+- [x] **闲鱼计数零漂移连续 4 天**（`assert_state_consistency.py` 5/5 PASS：state.yaml=42 / current.md 16 处 / MEMORY.md / reflection+daily-review 表格行全一致）✅ 9/22–9/26
+- [x] **闲鱼决策降频机制生效验证**（每日 P0 → 每周一复盘，其余日不占 P0 位；9/21 复盘日执行「只读不推进」防越权漂移）✅ 9/21（vault-suggestion-executor）
+
+
 ## 🔄 进行中 / 已重新排期
 
-### 🎯 闲鱼上架（🟡 **每周一复盘提醒**，决策悬置第 42 天，9/6 fallback 硬触发已过；连续顺延第 30+ 天——9/17 降频机制生效：每日 P0 → 每周一复盘，其余日子不占 P0 位；默认「再缓 7 天」自动续期，sora 拍板即停）
+### 🎯 闲鱼上架（🟡 **每周一复盘提醒**，决策悬置第 42 天〔state.yaml 权威，updated 9/14 → 已 12 天未推进〕，9/6 fallback 硬触发已过；连续顺延第 30+ 天——9/17 降频机制生效：每日 P0 → 每周一复盘，其余日子不占 P0 位；**9/21 复盘日已过、下次复盘 = 9/28（周一）**；默认「再缓 7 天」自动续期，sora 拍板即停）
 - [ ] 上架「AI 代做 PPT」商品 → 🟡 **决策悬置第 42 天（8/31 到期已过；9/4 已拆小为「先上 1 个商品试水」30min 最小可逆动作；9/6 fallback 硬触发日已过——k 侧试水前置 100% 就绪，实际上架是外部经营动作，等 sora 一句话拍板（试水/放弃/再缓）；9/7 触达升级触发：若仍无决策 → 换 desktop 通知/微信推送通道）**：素材 100% 就绪（7 图 PNG 头实测 750×750 全 PASS，第 21 次核验 9/17 含图片层禁词全清：2 张含「最」已修复为「人气之选」）；操作清单两段式（试水版 + 5 商品全量版）见 outputs/xianyu-master/上架素材包/上架操作清单.md；合规子集 v1.2.0（敏感词/同款频次/数模标题改写）；决策包见 memory/2026/08/2026-08-31-xianyu-vault-suggestion-executor.md + 9/4 复核 memory/2026/09/2026-09-04-vault-suggestion-executor.md + 9/7 报告 memory/2026/09/2026-09-07-vault-suggestion-executor.md
 - [x] 主图制作：3 张模板图（前后对比/价格表/服务承诺）→ ✅ 08-03 已生成：`outputs/xianyu-master/上架素材包/`（主图1-3，**实测 750×750 方形 51-57KB**，思源黑体+蓝橙撞色+无极限词）→ 上架时直接上传，无需再做
-- [ ] 同步上架「论文排版/润色」商品（素材包已有现成文案）→ 顺延 8/17 同批上
-- [ ] 补 PPT 样例素材：从现有作品提 2-3 个样例页 + 「仅供参考」水印 → portfolio/ → 需 sora 手动导出截图（无 LibreOffice/python-pptx 渲染，无法自动化）→ 上架操作清单已注明详情图可复用主图2/3 兜底
-- [ ] 数学练习册定制文案挂载（35元/份）→ 顺延 8/17 顺带
+- [ ] 同步上架「论文排版/润色」商品（素材包已有现成文案）→ 🗓️ **重排期：随 9/28 试水决策同批上**（原「顺延 8/17」已失效 40 天）
+- [ ] 补 PPT 样例素材：从现有作品提 2-3 个样例页 + 「仅供参考」水印 → portfolio/ → 🔒 **需 sora 手动导出截图**（无 LibreOffice/python-pptx 渲染，无法自动化）→ 上架操作清单已注明详情图可复用主图2/3 兜底；🗓️ 重排期：与 9/28 决策同批
+- [ ] 数学练习册定制文案挂载（35元/份）→ 🗓️ **重排期：随 9/28 试水决策顺带挂载**（原「顺延 8/17」已失效 40 天）
 
 ### 📝 AI 博主内容（P0/P1，素材已就绪）
 - [x] 《小君AI测评》测评文初稿（素材库+大纲+PR 实战全就绪，直接可写；标题候选 3 套）→ ✅ 8/16 已写初稿（约 1700 字：3 坑+PR 故事+竞品对比），见 knowledge/Dev/内容-小君AI测评测评文初稿-2026-08-16.md；发布前需 sora 选标题+配截图
-- [ ] 小红书发「AI PPT 教程」内容（可复用 PPT 样例）→ 样例未产出，顺延 8/16+
-- [ ] 尝试接论文润色/翻译单（依赖商品上架后引流）→ 排期 8/17 起观察
+- [ ] 小红书发「AI PPT 教程」内容（可复用 PPT 样例）→ 🗓️ **重排期：阻塞于 PPT 样例素材（需 sora 导出截图），样例到位后 1 周内出稿**（原「顺延 8/16+」已失效 41 天）；注：主平台已切抖音「sora做实事」，小红书降为副渠道
+- [ ] 尝试接论文润色/翻译单（依赖商品上架后引流）→ 🗓️ **重排期：依赖闲鱼商品上架（9/28 决策后启动）**，当前无引流入口故不可执行（原「排期 8/17 起观察」已失效 40 天）
 
 ### 🛠️ 工具/知识侧（P2，可选）
 - [x] Krea2 本地生图部署完成（ComfyUI 0.29 + 官方 FP8 模型 + Triton + 自定义 VAE 解码节点，实测出图 1024×1024 成功）✅ 8/1 深夜
@@ -411,6 +477,13 @@ updated: 2026-09-14
 | 三 bot 协作第一单目标 | ⏳ 等 sora | PCB 自动化流水线试跑：sora 给具体目标后 k 拆任务调度（researcher/coder/reviewer 已就位） |
 | ~~万悟参赛确认（9/25 12:00 截止）~~ | ✅ 已闭环 2026-09-25 | 截止已过且无 sora 确认 → 判定未参赛；Docker daemon 未运行 + WSL Stopped 佐证；研究资产（技能 + 架构迁移路径）保留 |
 | fangzhou-2 配额恢复 | ✅ 已恢复（9/5 实测） | 主链 custom:fangzhou-2 实测 1264ms OK，月配额重置生效，无需操作 |
+| **FlClash CF 优选节点集体失效** | 🔴 今日新发现（9/26） | 105 节点 88 alive 但选中组 delay=5000 超时 → 境外全 000（github/google/arxiv/hf/openai 直连+代理均不通）；影响 git push / MCP / arXiv·HN 抓取 / 境外 provider。**修法：打开 FlClash → 切换「🚀 节点选择」到非 CF 优选组 → 重新测速** |
+| **内存 93.9%** | 🔴 今日（9/26 16:15 巡检） | 0.95G 可用；Top=guigubahuang 3.6G。k 侧 `RAMMap64 -E` 执行失败（需管理员/UAC）；需 sora ① 管理员运行 `RAMMap64.exe -E` 或 ② 关闭 guigubahuang |
+| **QQ Bot 凭据失效** | 🔴 连续 1 天+ | `invalid appid or secret`（code 100016）今日 48 次、9/25 起累计 600+，每 5 分钟重试；需 sora 更新 appid/secret |
+| **provider 配额兜底决策** | 🔴 剩 2 天 7 小时 | `fallback_model` 仍指向 `custom:fangzhou-1`（与主链同源 = 假冗余）；**9/28 23:59:59 重置**。改 `custom:workbuddy` 可一次性消掉 4 项 429 失败（obsidian-maintenance / daily-wechat-knowledge-card / 闲鱼提醒 / daily-self-improvement）；走 `hermes config set`，勿手改 YAML |
+| **Lyricify 开机自启** | ⏳ 待回答（9/25 14:54 已问） | 确认后写自启项 + 处理 `Data\Logs\Log.txt` 8/1 遗留报错堆栈 |
+| **墨题 UI 方向** | 🔒 需决策（9/24 遗留） | Stitch 设计稿先行 or 直接改现有前端 |
+| **桌面 codex-task 归档** | ⏳ 需 sora 一句话 | 仅剩 `codex-task-wanwu-multiagent.md`（万悟未参赛已失效），建议移入 `task-archive/` |
 | 安全审计 cron 排期 | ✅ 已完成 8/5 | security-audit cron 已挂载（`30 8 * * 0` no_agent + security_audit.py），无需再操作 |
 
 ### 🧭 9/16 反思行动项（daily-reflection 复盘 9-16，执行者必读）
@@ -429,7 +502,7 @@ updated: 2026-09-14
 - [x] 🟡 fallback 链收窄评估：jiyuanlvdong 系充值 or 永久移出 → ✅ 2026-09-19 weekly-cleanup 结论：永久移出（连续 402；9/18 config.yaml fallback_model 已切 fangzhou-2，字节级替换+核验，无需充值）；如后续要恢复容灾深度再评估充值（连续 402 已导致 obsidian-maintenance 9/18 当日失败；fallback 链成员枯竭面扩大：jiyuanlvdong/deepseek 官方/siliconflow/dengzhen 402、moonshot/zhipu 429、keylink 503、opencode-go/tabitoken 403）——9/21 前评估 provider 充值优先级（fangzhou 系为主）；规则已固化 hermes-provider-matrix「fallback 链健康度管理」（连续 2 次 402/429 主动移出链，充值后回填）
 - [ ] 🟢 卡片 cron 排程评估：9/18 卡片 cron 12:33 跑时当日研究零产出（arXiv 12:42 才提交、kiko 19:53、wemux/genoffice 23:10），卡片由 executor 20:14 补写——后移到研究类 cron 之后（22:00+）或 prompt 加「候选池为空显式标记待补」；时序规则已 patch daily-knowledge-review，改 jobs.json 需授权
 - [x] 🔒 万悟参赛确认（9/25 12:00 截止，剩 6 天）→ ⏰ **2026-09-25 12:00 截止已过，无 sora 确认记录 → 判定「未参赛」，本条闭环归档**（依据：9/25 20:00 daily-todo-executor 核查——projects/current.md 无确认勾选、无《商业计划书》产物、Docker daemon 未运行（`docker ps` 报 pipe 不存在）、WSL Ubuntu 处于 Stopped）。保留研究资产 `innovation-competition-industry-track` 技能 + 万悟架构迁移墨题企业版路径，后续如赛事重启可复用
-- [ ] 🔒 闲鱼试水决策（第 42 天，周一 9/21 复盘，state.yaml 权威）→ 30 秒三选一（试水/放弃/再缓）；k 侧 100% 就绪，上架 30min 可逆
+- [ ] 🔒 闲鱼试水决策（第 42 天，**下次复盘 9/28（周一）**，state.yaml 权威）→ 30 秒三选一（试水/放弃/再缓）；k 侧 100% 就绪（新增 SOP-008 高客单 Web 定制选项 398/598/898，上架文案现成），上架 30min 可逆
 
 ### 🧭 9/20 反思行动项（daily-reflection 复盘 9-20，执行者必读）
 
@@ -437,7 +510,7 @@ updated: 2026-09-14
 - [x] 🟢 AI 工具（Codex/dsh/WorkBuddy 反代）安装前安全基线首轮快扫 → ✅ **2026-09-21 反思当场闭环**：无 ZCode 式静默上传特征（无 pending/ 加密快照、无 aliyun/OSS 外传端点）；dsh/codex 命中均为注释与插件元数据
 - [x] 🟡 daily-health-check 429 失败降级实现落地（pitfall 规则已固化 hermes-health-check，实现未落）→ ✅ 2026-09-24 daily-todo-executor 已落地（`health_degraded.py` + cron `health-degraded-fallback` 30 16 * * *，双路径实测 PASS）；2026-09-25 复核确认脚本/cron 均在位，本条勾选闭环
 - [x] ~~🔒 万悟参赛确认（今日 9/21 最后确认日，9/25 12:00 截止）~~ ✅ 2026-09-25 闭环：与 9/18 反思区同项，9/25 12:00 截止已过且无确认 → 判定未参赛；以 9/18 区条目为准，本条去重
-- [ ] 🔒 闲鱼试水决策（今日 9/21 复盘日，state.yaml 权威第 42 天）→ 30 秒三选一；新增 SOP-008 高客单 Web 定制选项，上架文案现成约 30min
+- [x] ~~🔒 闲鱼试水决策（今日 9/21 复盘日，state.yaml 权威第 42 天）~~ ✅ 2026-09-26 weekly-cleanup 去重：9/21 复盘日已过（当日 vault-suggestion-executor 执行「只读不推进」防越权漂移），决策仍开放，以 🎯 闲鱼上架区（下次复盘 9/28）为准
 - [ ] 🔒 ZCode 卸载链：sora 前三步（退出登录→卸载→删 ~/.zcode）；git 历史轮换 k 代做
 - [ ] 🔒 生图三路径修复（9/21 10:15 api-media-weekly-probe 探活首验后定性）
 - [ ] 🔒 skill 合并授权（6 组重复 + apple 孤儿，破坏性）
@@ -457,9 +530,11 @@ updated: 2026-09-14
 - [x] 🟡 技能范围声明试点（按 arXiv 2609.29144 Scope Before You Persist）→ ✅ 2026-09-25 daily-todo-executor 落地：给 4 条高频 SKILL.md 加 `applies_to`（适用任务族）+ `not_for`（明确不适用）frontmatter 声明——`vault-todo-cleanup` / `xianyu-monetization` / `hermes-health-check` / `hacker-news-digest`，版本各 +1；用于跨族调用降权
 - [x] 🟡 轨迹完整性加固（按 arXiv 2609.30266：agent 可篡改自身轨迹，除 Muse Code 外全部命中）→ ✅ 2026-09-25 daily-todo-executor 落地：新建 `AppData/Local/hermes/scripts/cron_product_hash.py`（关键 cron 产物 SHA-256 → **仅追加账本** `memory/cron-hash-ledger/YYYY/MM/`，与产物目录分离；`--verify` 检出记录后被改动/删除）；注册 no_agent cron `cron-product-hash`（`30 23 * * *`，纯脚本不调 LLM → 与配额无关）；自检双路径 PASS（记录→PASS / 篡改→FAIL）
 - [x] 🟡 万悟参赛确认截止处置（9/25 12:00 硬截止）→ ✅ 2026-09-25 daily-todo-executor 落地：截止已过 + 无确认证据 → 判定未参赛并归档两条重复条目（见 9/18 / 9/20 反思区勾选）；研究资产保留
-- [ ] 🟡 评分 prompt 措辞 A/B（按 2609.29333）→ ⏳ 需专项会话（2026-09-25 复核仍 open）
-- [ ] 🟡 补跑 9/25 三个中断任务（daily-wechat-knowledge-card / obsidian-maintenance / 闲鱼提醒，均 12:48 重启 unknown）→ ⏳ 明日正常调度自愈，本次未手工补跑（三者均 pin `custom:workbuddy` 本地反代，链路已恢复稳定）
-- [ ] 🟡 桌面 codex-task 待办清理 → ⏳ 复核：桌面仅剩 1 个 `codex-task-wanwu-multiagent.md`（9/16，随万悟参赛判定同步归档建议），task-archive/ 已有 8 份历史归档 → 建议随万悟结论一并归档，等 sora 确认
+- [ ] 🟡 评分 prompt 措辞 A/B（按 2609.29333）→ ⏳ 需专项会话（2026-09-26 复核仍 open，第 2 次）
+- [x] 🟡 `cron_product_hash.py --verify` 的 MISSING 加告警 + `deterministic-verify` 哨兵纳入 `*-reflection.md`（9/25 反思登记：反思缺失 4 天无人知）→ ⏳ **2026-09-26 weekly-cleanup 复核仍 open**，属 agent 可执行项，转列 🔄 我的待办
+- [x] 🟡 `api-media-weekly-probe` 修复（`Script exited with code 127`）→ ✅ **2026-09-26 复核：脚本已在位**（health 实测三处 `.sh`/`.py` 路径文件均存在 5212B / mtime 9/15；`api_image_probe.py` 9/24 已替换）→ last_error 系 9/21 历史遗留，**下周 9/28 10:15 调度验证即闭环**
+- [x] 🟡 补跑 9/25 三个中断任务 → ✅ **2026-09-26 复核：无需补跑，已自愈**（jobs.json 实测 `daily-wechat-knowledge-card` 12:16 ok / `obsidian-maintenance` 12:40 ok / `arxiv-fetch` 12:20 ok，三者 failure_streak=0）；仅 `闲鱼提醒` 仍 error（429 配额，streak=3，下次调度 9/28 周一）→ 转跟踪至 🔒 表「provider 配额」行
+- [ ] 🟡 桌面 codex-task 待办清理 → ✅ 2026-09-26 weekly-cleanup 实测复核：桌面**仅剩 1 个** `codex-task-wanwu-multiagent.md`（9428B，9/16 21:38），`task-archive/` 已有 10 份历史归档（含 8 份 codex-task-*）→ 该件已随万悟「判定未参赛」结论失效，**建议归档**；属 sora 桌面文件操作，保留 ⏳ 等一句话（k 不擅自移动 sora 桌面文件）
 - [ ] 🔒 Lyricify 开机自启确认 / 生图三路径修复 / 墨题 UI 方向 / skill 合并授权 / 卡片 cron 排程授权 → 🔒 均需 sora 一句话（见报告「需你处理」区）
 
 ## 🔗 相关领域

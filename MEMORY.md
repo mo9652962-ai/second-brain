@@ -302,7 +302,7 @@ v2026.3.7 引入的可插拔上下文管理界面已验证稳定。模型路由�
 - [x] ~~AI 变现调研~~ ✅ 2026-07-24
 - [x] ~~LRN-20260722-001 (Plan-and-Execute)~~ ✅ 2026-07-25
 - [x] ~~AI 变现落地（闲鱼AI代做PPT/论文润色）— 可发车~~ ✅ 素材已预生成，8/1 解封日已过，上架排期 8/2
-- [x] ~~闲鱼上架「AI 代做 PPT」~~ ✅ 2026-09-20 去重：决策状态由 projects/current.md 跟踪（🟡 每周一复盘提醒，决策悬置第 42 天，周一 9/21 复盘，state.yaml 权威）；MEMORY.md 不再重复跟踪
+- [x] ~~闲鱼上架「AI 代做 PPT」~~ ✅ 2026-09-20 去重：决策状态由 projects/current.md 跟踪（🟡 每周一复盘提醒，决策悬置第 42 天，下次复盘 9/28（周一），state.yaml 权威；9/26 weekly-cleanup 已同步镜像）；MEMORY.md 不再重复跟踪
 - [x] ~~语义缓存最小版落地（根治 Tavily 配额 + 预防 Gartner 5x）~~ ✅ 2026-08-21：统一 chokepoint 覆盖全 8 后端（commit 84d813bf2），根治连续 8 工作日配额复发
 - [x] ~~合并冗余 skills（hermes-search-configuration → hermes-search-config）~~ ✅ 2026-07-31 已核实：hermes-search-configuration 已不存在，仅剩 hermes-search-config，无需合并
 - [x] ~~随身WiFi下单确认（赫电 Pro 399元/年，选型已确认）~~ ✅ 2026-09-20 评估：8 月遗留、后续未再激活（决策状态未知）；如仍需下单由 sora 重提
