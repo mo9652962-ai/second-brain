@@ -19,6 +19,11 @@ from pathlib import Path
 from collections import defaultdict
 from datetime import datetime, timedelta
 
+try:
+    import yaml
+except ImportError:          # pyyaml 可选依赖：缺失时跳过 YAML 校验，不阻断其他检查
+    yaml = None
+
 SKIP_DIRS = {".git", ".obsidian", ".trash", "node_modules", ".archive", "Archive"}
 # 跨 vault 根目录（workspace 下存在，Obsidian 合法，不判断链）
 # 仅 workspace 根级跨 vault 目录（Obsidian 中合法，不判链）
@@ -79,6 +84,7 @@ def main():
     outlinks = {}
     missing_frontmatter = []
     glued_fm = []
+    bad_yaml = []
     short_pages = []
     stale_pages = []
     broken = []
@@ -155,11 +161,45 @@ def main():
         if not text.startswith("---"):
             missing_frontmatter.append(f)
         else:
-            # 粘连闭合符盲区：以 --- 开头但 frontmatter 区域无独立闭合行（如 tags: [a]---）
+            # 粘连闭合符检测（2026-09-26 修复假阴性盲区）
+            # 旧实现 any(l.strip()=="---" for l in fm_lines[1:20])：
+            #   只要前 20 行内存在任意独立 --- 就判"已闭合" → 正文首个水平分隔线 ---
+            #   会掩盖第 7 行真正的粘连闭合符（如 `status: fresh---`），实测漏报 80 个文件
+            #   （cards 27 / Research 49 / Archive 3 / Security 1），且 lint 报 Glued 0 → 静默失效。
+            # 新实现：frontmatter 区 = 第 2 行起，到**首个**独立 --- 为止；该区间内任何
+            #   以 --- 结尾（且非独立）的行即粘连。无独立闭合行同样判粘连。
             fm_lines = text.split("\n")
-            closed = any(l.strip() == "---" for l in fm_lines[1:20])
-            if not closed:
+            glued = False
+            closed = False
+            close_idx = None
+            for i, l in enumerate(fm_lines[1:200], start=1):
+                s = l.strip()
+                if s == "---":
+                    closed = True
+                    close_idx = i
+                    break
+                if s.endswith("---"):
+                    glued = True
+                    break
+            if glued or not closed:
                 glued_fm.append(f)
+            else:
+                # YAML 可解析性检测（2026-09-26 新增）
+                # 动机：`related: [[A]], [[B]]` 这类未加引号的 wikilink 列表在 YAML 中非法
+                # （`[` 开启 flow sequence → 解析崩溃），但 lint 旧版只看 frontmatter 是否存在、
+                # 不验证能否解析 → Obsidian/Dataview 静默丢字段，实测漏报 1 个文件
+                # （knowledge/Dev/Programming.md）。全部属性（MOC 分组、Dataview 查询、
+                # 代谢分类）都依赖 frontmatter 可解析，故必须纳入门禁。
+                # 注意：只取 [1, close_idx) 区间——把闭合 --- 及其后正文一并喂给
+                # safe_load 会误报 "expected a single document in the stream"。
+                if yaml is not None:
+                    try:
+                        meta = yaml.safe_load("\n".join(fm_lines[1:close_idx]))
+                        if meta is not None and not isinstance(meta, dict):
+                            bad_yaml.append((f, "frontmatter 不是键值映射"))
+                    except Exception as e:
+                        first = str(e).split("\n")[0]
+                        bad_yaml.append((f, first[:70]))
         # 短页面
         plain = re.sub(r"[#*`\[\]()>_~\-]", "", text)
         plain = re.sub(r"\n+", "\n", plain).strip()
@@ -201,6 +241,10 @@ def main():
     for f in glued_fm[:10]:
         print(f"  {f.relative_to(root.resolve())}")
 
+    print(f"\n[ERROR] Invalid YAML frontmatter: {len(bad_yaml)}")
+    for f, why in bad_yaml[:10]:
+        print(f"  {f.relative_to(root.resolve())} ({why})")
+
     print(f"\n[WARNING] Orphan pages (no inlinks): {len(orphans)}")
     for f in orphans[:20]:
         print(f"  {f.relative_to(root.resolve())}")
@@ -219,7 +263,7 @@ def main():
     for f, d in stale_pages[:10]:
         print(f"  {f.relative_to(root.resolve())} ({d})")
 
-    total = len(broken) + len(missing_frontmatter) + len(glued_fm) + len(orphans) + len(dup) + len(short_pages)
+    total = len(broken) + len(missing_frontmatter) + len(glued_fm) + len(bad_yaml) + len(orphans) + len(dup) + len(short_pages)
     print("\n" + "=" * 60)
     print(f"TOTAL ISSUES: {total}")
     print("HEALTH:", "GOOD" if total == 0 else "NEEDS ATTENTION")

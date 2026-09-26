@@ -4,7 +4,8 @@ aliases:
 tags: [knowledge-card, ai-agent, harness, research]
 created: 2026-09-06
 source: "[[knowledge/Research/arxiv-2026-09-06-core-contributions]]"
-status: fresh---
+status: fresh
+---
 
 # 🃏 知识卡片 · 400 万行源码解剖 11 个编码 Agent：SKILL.md 已成主流、零框架零向量检索是实证方向
 

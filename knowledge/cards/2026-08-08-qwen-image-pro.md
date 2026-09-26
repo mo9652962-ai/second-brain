@@ -4,7 +4,8 @@ aliases:
 tags: [knowledge-card, ai-image, monetization, xianyu, research]
 created: 2026-08-08
 source: "[[knowledge/Research/AI早报学习-2026-08-08]]"
-status: fresh---
+status: fresh
+---
 
 # 🃏 知识卡片 · 文生图进入「两毛时代」：Qwen-Image-3.0-Pro 让闲鱼配图成本再砍一半
 

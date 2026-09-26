@@ -6,7 +6,8 @@ tags: [arxiv, research, ai-agent, llm, harness-training, computer-use, state-gro
 created: 2026-07-31
 updated: 2026-07-31
 status: adopted
-source: arxiv-weekly-2026-07-31---
+source: arxiv-weekly-2026-07-31
+---
 
 # arXiv 核心贡献精选 — 2026-07-31
 

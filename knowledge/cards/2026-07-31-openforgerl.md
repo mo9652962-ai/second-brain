@@ -3,7 +3,8 @@ aliases:
   - 2026-07-31-card-openforgerl
 tags: [knowledge-card, arxiv, ai-agent, rl, harness]
 created: 2026-07-31
-source: "[[arxiv-2026-07-31-core-contributions]]"---
+source: "[[arxiv-2026-07-31-core-contributions]]"
+---
 
 # 🃏 知识卡片 · OpenForgeRL：用你每天都在用的 Agent Harness 直接训练模型
 

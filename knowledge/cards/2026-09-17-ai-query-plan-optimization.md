@@ -4,7 +4,8 @@ aliases:
 tags: [knowledge-card, AI-优化, database, rl, Postgres]
 created: 2026-09-17
 source: "[[knowledge/Daily/hackernews-2026-09-17]]"
-status: fresh---
+status: fresh
+---
 
 # 🃏 知识卡片 · 训练 4B 模型生成查询计划：比 Postgres 默认优化器快 44.7%（标题口径 81%）
 

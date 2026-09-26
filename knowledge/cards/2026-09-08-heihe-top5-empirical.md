@@ -4,7 +4,8 @@ aliases:
 tags: [knowledge-card, github, 实证研究, cad, ai-agent]
 created: 2026-09-08
 source: "[[knowledge/Research/黑盒热榜5项目实证研究-2026-09-08]]"
-status: fresh---
+status: fresh
+---
 
 # 🃏 知识卡片 · 黑盒热榜别全信：5 个 GitHub 项目实测后，3 个值得抄
 

@@ -5,7 +5,8 @@ tags: [research, memory, serialization, decision, roundup]
 created: 2026-08-05
 updated: 2026-08-05
 status: adopted
-domain: research---
+domain: research
+---
 
 # 自我升级多轮研究汇总（2026-08-05）
 

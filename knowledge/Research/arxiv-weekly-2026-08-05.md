@@ -6,7 +6,8 @@ created: 2026-08-05
 updated: 2026-08-05
 status: processed
 source: https://arxiv.org/
-domain: research---
+domain: research
+---
 
 # arXiv Weekly Roundup — AI Agent & LLM Papers
 

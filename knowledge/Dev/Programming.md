@@ -2,7 +2,7 @@
 tags: [programming, python, ai-agent, engineering]
 domain: 编程
 cross-domain: ["AI-Agent", "AI-Workflow", "CAD-Design"]
-related: [[AI-Agent]], [[AI-Workflow]], [[CAD-Design]], [[Vibe-Coding]]
+related: ["AI-Agent", "AI-Workflow", "CAD-Design", "Vibe-Coding"]
 description: "编程技术栈、Python 3.14 新特性、AI Agent 架构模式、ReAct 范式、Hermes Agent 技能开发"
 status: adopted
 ---

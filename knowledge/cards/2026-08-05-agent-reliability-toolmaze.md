@@ -9,7 +9,8 @@ source:
   - "https://arxiv.org/abs/2602.16666 (ICML 2026)"
   - "https://arxiv.org/abs/2606.05806 (ToolMaze)"
 status: adopted
-domain: AI---
+domain: AI
+---
 
 # Agent 可靠性科学 + 工具失败恢复（2026-08-05 双论文）
 

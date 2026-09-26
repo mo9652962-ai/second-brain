@@ -6,7 +6,8 @@ tags: [arxiv, research, ai-agent, llm, ai4ai, recursive-self-improvement, multi-
 created: 2026-08-02
 updated: 2026-08-02
 status: adopted
-source: arxiv-weekly-2026-08-02---
+source: arxiv-weekly-2026-08-02
+---
 
 # arXiv 核心贡献精选 — 2026-08-02
 

@@ -3,7 +3,8 @@ aliases:
   - 2026-08-21-card-github-monetization
 tags: [knowledge-card, github, monetization, business-model]
 created: 2026-08-21
-source: "[[knowledge/Productivity/github-monetization-2026-08-20]]"---
+source: "[[knowledge/Productivity/github-monetization-2026-08-20]]"
+---
 
 # 🃏 知识卡片 · 用开源项目变现：别做红海，做「私有化部署 + 订阅」
 

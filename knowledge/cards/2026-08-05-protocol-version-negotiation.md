@@ -3,7 +3,8 @@ aliases:
   - 2026-08-05-card-protocol-version-negotiation
 tags: [knowledge-card, protocol, network, s4mp, engineering]
 created: 2026-08-05
-source: "[[knowledge/Research/s4mp-protocol-network-100round-2026-08-05]]"---
+source: "[[knowledge/Research/s4mp-protocol-network-100round-2026-08-05]]"
+---
 
 # 🃏 知识卡片 · 协议版本协商：让"版本无关可读"排在最前面，旧客户端才不秒断
 

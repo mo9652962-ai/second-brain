@@ -6,7 +6,8 @@ tags: [arxiv, research, ai-agent, llm, reliability, memory, skill]
 created: 2026-08-16
 updated: 2026-08-16
 status: adopted
-source: arxiv-2026-08-16-agent-llm---
+source: arxiv-2026-08-16-agent-llm
+---
 
 # arXiv 核心贡献精选 — 2026-08-16
 

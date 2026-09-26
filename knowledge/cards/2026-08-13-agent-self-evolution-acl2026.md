@@ -4,7 +4,8 @@ aliases:
 tags: [knowledge-card, ai-agent, self-evolution, skill, ACL-2026]
 created: 2026-08-13
 source: "[[knowledge/Research/agent-self-evolution-research-2026-08-12]]"
-status: fresh---
+status: fresh
+---
 
 # 🃏 知识卡片 · AI Agent 自我进化：从"攒技能"到"协同进化"
 

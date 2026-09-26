@@ -53,3 +53,4 @@ updated: 2026-09-26
 - [[knowledge/cards/2026-09-18-overclaimbench|🃏 知识卡片 · 完成声明不可信：67.9% 编码 agent 没读完文件，80.4% 的「完成」具误导性]]
 - [[knowledge/cards/2026-09-19-zcode-silent-upload|🃏 知识卡片 · ZCode 静默上传整个工作区 + Git 历史——本机实锤：墨题仓库已被打包待传]]
 - [[knowledge/cards/2026-09-26-dow-billable-state|🃏 知识卡片 · 被保留的工具返回会被重复计费：单会话输入最高放大 14,293 倍]]
+- [[knowledge/cards/2026-09-26-lint-false-negative-blindspot|🃏 知识卡片 · 假阴性税：检测器报 0 不代表没问题，判据写错会静默放行 80 个坏文件]]

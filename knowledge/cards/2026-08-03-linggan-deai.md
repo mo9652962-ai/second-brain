@@ -3,7 +3,8 @@ aliases:
   - 2026-08-03-card-linggan-deai
 tags: [knowledge-card, ai-writing, xianyu, monetization]
 created: 2026-08-03
-source: "memory/2026/08/2026-08-03-research-apply"---
+source: "memory/2026/08/2026-08-03-research-apply"
+---
 
 # 🃏 知识卡片 · 降 AI 味工具定标：零感 AI 横评四维第一，1 元/千字可主推
 
