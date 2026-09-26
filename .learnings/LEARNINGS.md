@@ -251,3 +251,103 @@ Pattern-Key: security.ai-agent-standardization-2026
 Recurrence-Count: 1
 First-Seen: 2026-09-14
 Last-Seen: 2026-09-14
+
+## [LRN-20260925-001] correction
+
+**Logged**: 2026-09-26T12:20:00+08:00
+**Priority**: high
+**Status**: resolved
+**Area**: infra
+
+### Summary
+检测器读错字段名会把「全部异常」报成「全部正常/空」——比误报更危险，因为它不会引来任何人排查
+
+### Details
+1. `scripts/cron_health.py:115` 写 `last = j.get("last_run") or {}`，但 `cron/jobs.json` 的 schema 是**扁平字段** `last_status` / `last_run_at` / `last_error`，**没有 `last_run` 键**（实测 `sum(1 for j in jobs if 'last_run' in j) == 0`）。
+2. 于是 `last` 恒为空 dict → 47 个任务全部落进 `else: icon = "⚪"; never_count += 1`，看板输出 `✅ 0 正常 ❌ 0 错误 ⚪ 47 从未执行`；而真实状态是 `Counter({'ok': 37, 'error': 7, 'delivery_failed': 3})` —— **7 个真实 error 被完全掩盖**。
+3. 更隐蔽的一层：当日日报（`memory/2026-09-25.md:69`）看到了这个荒谬输出，却给它**编了一个合理解释**（「所有 cron 任务目前显示为『从未执行』，因为今日尚未到达调度时间」），而不是怀疑检测器。
+4. 同类复发链：9/5「假阳性税」、9/7「verify 基线对照」、8/8「health 全绿掩盖静默失败」——本次形态不同：前几次检测器**误报异常**（有人会去查），本次是检测器**把异常报成空**（无人会去查）= 静默失败。
+
+### Suggested Action
+- 修复：改读扁平字段 `last_status` / `last_run_at` / `last_error`，并给 `delivery_failed` 独立图标（📭）
+- **加自检护栏**：`if never_count == len(jobs) and len(jobs) > 0` → 输出显式告警「全部任务被判从未执行，极可能是 schema 变更后字段名失配」
+- 通用规则：**「物理上不可能的全体值」（100% 全绿 / 100% 全空）必须让检测器自己喊出来**，不要依赖人去发现
+- 检测器读外部文件时，先 `print(sorted(j.keys()))` 核对真实 schema，不凭记忆写字段名
+
+### Metadata
+- Source: local debugging
+- Tags: cron, health-check, detector-bug, silent-failure, schema-mismatch, false-negative
+- Pattern-Key: infra.detector-schema-mismatch-masks-all-errors
+- Recurrence-Count: 4
+- First-Seen: 2026-08-08
+- Last-Seen: 2026-09-26
+
+### Resolution
+- **Resolved**: 2026-09-26T12:15:00+08:00
+- **Notes**: 已 patch `AppData/Local/hermes/scripts/cron_health.py`（3 处：字段读取 / delivery_failed 分支 / 自检护栏），实测看板恢复真实值 37/7/3/0
+
+## [LRN-20260925-002] best_practice
+
+**Logged**: 2026-09-26T12:20:00+08:00
+**Priority**: high
+**Status**: adopted
+**Area**: research
+
+### Summary
+web_extract 报 `Blocked: private or internal network address` 时重试永远无效——本机 FlClash fake-ip 与工具侧「内网地址」策略不兼容，直接切 curl
+
+### Details
+1. 症状：`web_extract` 对**任何**公网 URL 都返回 `Blocked: URL targets a private or internal network address`。
+2. 根因（实测坐实）：本机 DNS 走 FlClash **fake-ip 段** —— `nslookup arxiv.org` → `198.18.0.102`；工具侧把 198.18.0.0/15 判定为内网地址而拦截。**不是代理坏了**：`curl https://arxiv.org/abs/2609.30266` → HTTP 200 / 0.46s。
+3. 时间线：2026-09-25 首次记录（当日 4 次 web_extract 全部 Blocked），**2026-09-26 复核仍复现** → 非偶发，是稳定不兼容。
+4. 当日研究全部改走 curl 直连兜底并成功：arxiv.org abs 页逐篇 / f-droid.org 35,993B / launchvideo.io 26,378B / keepandroidopen.org 367,806B，四站全 200。
+
+### Suggested Action
+- 遇到 `Blocked: private or internal network address` → **不要重试 web_extract**，直接 `curl -s -m 30 "<URL>" -o out.html` + Python regex 清洗
+- 验证手段可降级，**验证标准不降级**（与 9/7 curl 兜底核对 arXiv 官方源同一原则）
+- 已固化进 `link-content-fetch` 决策树 `⓪` 号分支（本次 patch）
+
+### Metadata
+- Source: local debugging
+- Tags: web-extract, curl-fallback, flclash, fake-ip, proxy, channel-failure
+- Pattern-Key: research.web-extract-fakeip-block-curl-fallback
+- Recurrence-Count: 2
+- First-Seen: 2026-09-25
+- Last-Seen: 2026-09-26
+
+### Resolution
+- **Resolved**: 2026-09-26T12:18:00+08:00
+- **Notes**: patch `research/link-content-fetch/SKILL.md` 决策树插入 `⓪` 分支（故障识别 → 正确动作压进第一格，无需回忆）
+
+## [LRN-20260925-003] knowledge_gap
+
+**Logged**: 2026-09-26T12:20:00+08:00
+**Priority**: medium
+**Status**: resolved
+**Area**: infra
+
+### Summary
+产出型 cron 失败后无缺口感知：反思 cron 连断 4 天（9/21~9/24），产物缺失只入哈希账本、从不告警
+
+### Details
+1. `cron/executions.db` 实测：daily-self-improvement 9/22-9/24 连续 3 天 `failed`（HTTP 429 火山 ARK 配额），9/25 `unknown`（12:48 机器重启）→ 应产出的 `2026-09-2[1-4]-reflection.md` **四份全部不存在**。
+2. 连带损失：反思的「🔄 上次反思行动项核查」闭环**断 4 天**——09-20 反思的 8 个行动项期间无人追踪。
+3. `status=unknown` 的隐蔽性：jobs.json 的 `last_status` 仍显示旧值 error，**只有 executions.db 的批次 + 开机时长能还原真相**。
+4. 告警缺口：`deterministic-verify` 的 5 项异常**不含 reflection**；`cron_product_hash.py` 虽把 reflection 记成 `MISSING`（账本 9/25 实测有该行），但 **MISSING 只入账本、不告警**。
+
+### Suggested Action
+- `cron_product_hash.py --verify` 的 MISSING 加**告警**输出（现只入账本）
+- `deterministic-verify` 哨兵清单纳入 `*-reflection.md`
+- 反思跨缺口补位时，「上次反思行动项核查」**不因中间空档而跳过**，直接对最后一份有效反思做核查（本次已执行）
+
+### Metadata
+- Source: local debugging
+- Tags: cron, reflection, silent-failure, missing-artifact, alerting, quota-429
+- Pattern-Key: infra.producer-cron-missing-artifact-no-alert
+- Recurrence-Count: 3
+- First-Seen: 2026-08-08
+- Last-Seen: 2026-09-25
+
+### Resolution
+- **Resolved**: 2026-09-26T12:25:00+08:00
+- **Notes**: 本次反思已跨缺口核查 09-20 行动项 8 项；告警改进登记为行动项交 daily-todo-executor
