@@ -33,7 +33,7 @@ updated: 2026-08-31
 - [[knowledge/Productivity/english-grammar-organization-absorbed]]
 
 ## 🔗 方法论
-- pipelines/pipeline-overview(待建)
+- [[pipelines/pipeline-overview|Pipeline 工作流总览]]
 - [[skills/hermes/hermes-workflow-preferences]]
 - [[skills/hermes/daily-knowledge-absorption-gate]]
 

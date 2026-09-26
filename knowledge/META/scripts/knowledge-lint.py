@@ -24,7 +24,11 @@ SKIP_DIRS = {".git", ".obsidian", ".trash", "node_modules", ".archive", "Archive
 # 仅 workspace 根级跨 vault 目录（Obsidian 中合法，不判链）
 # 注意: 不要加入 knowledge/ 内部子目录（Daily/Projects/META/Dev 等）——否则内部链接被跳过会误报孤立
 EXTERNAL_ROOTS = {"memory", "projects", "skills", "cards", "SOP", "HOME", "Home", "SOUL", "TOOLS",
-                  "AGENTS", "MEMORY", "Cross-Domain", "knowledge-map", "MOC-"}
+                  "AGENTS", "MEMORY", "Cross-Domain", "knowledge-map", "MOC-",
+                  # 2026-09-26：vault 根级目录（不在 knowledge/ 内），与 projects/memory 同类，
+                  # 从 knowledge/ 出发永远无法相对解析 → 白名单跳过（否则 MOC 挂载根级文件必报断链）
+                  "pipelines", "playbooks", "system", "todo", "health", "concepts",
+                  "outputs", "scripts", "docs", "templates", "portfolio", "site"}
 # 模板占位符
 PLACEHOLDER_LINKS = {"name", "their-name", "wiki link", ":space:", "TODO", "link"}
 WIKILINK_RE = re.compile(r"\[\[([^\]|#]+)(?:#[^\]|]*)?(?:\|[^\]]*)?\]\]")

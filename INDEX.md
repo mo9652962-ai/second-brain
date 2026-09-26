@@ -79,6 +79,29 @@ updated: 2026-09-25
 | skills/ | 可执行 Agent 技能库 |
 | portfolio/ | 作品集与实战案例 |
 
+## 🔗 目录内文件挂载
+
+> 以下为公开层实体文档的入链锚点（防图谱孤立）。
+
+| 文件 | 内容 |
+|:---|:---|
+| [[pipelines/pipeline-overview\|Pipeline 工作流总览]] | cron 任务链与调度全景 |
+| [[playbooks/browserbase-evaluation\|Browserbase 评估]] | 浏览器自动化托管方案评估 |
+| [[playbooks/camofox-docker-setup\|Camofox Docker 部署]] | 反检测浏览器本地部署 |
+| [[playbooks/web-scraping-cron-template\|网页抓取 Cron 模板]] | 抓取任务标准模板 |
+| [[system/GitHub-Treasure-Hunt-System\|GitHub 寻宝系统]] | 开源项目发现与评估体系 |
+| [[todo/skill-link-gate-剩余98条断链-2026-09-08\|技能断链待办]] | 技能库断链剩余项跟踪 |
+| [[concepts/MOC-Concepts\|概念原子笔记索引]] | 概念级常青卡片 |
+| [[health/MOC-Health\|健康自举索引]] | Hermes 运行状态与健康报告 |
+| [[portfolio/MOC-Portfolio\|作品集索引]] | 实战案例与交付作品 |
+| [[docs/知识库重构方案-2026-08-16\|知识库重构方案]] | 18 域拓扑重构设计文档 |
+| [[templates/research-cron-templates\|研究 Cron 模板]] | 定时研究任务标准模板 |
+| [[templates/light-skills-boundary-test\|轻量技能边界测试]] | 技能边界与降级验证 |
+| [[skills/8051-embedded-dev/references/8051-cheatsheet\|8051 速查表]] | STC89C52 寄存器与指令速查 |
+| [[skills/8051-embedded-dev/references/hardware-checklist\|8051 硬件清单]] | 最小系统与外围电路核对 |
+| [[skills/cad-design-master/references/cad-learning-curriculum\|CAD 学习路线]] | 从 2D 到 3D 打印的课程表 |
+| [[skills/cad-design-master/references/cad-software-comparison\|CAD 软件对比]] | 主流建模软件选型矩阵 |
+
 ## 维护说明
 
 1. 新研究笔记写入 `knowledge/Research/`（文件名含日期）

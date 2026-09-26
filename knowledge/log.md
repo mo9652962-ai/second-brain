@@ -223,7 +223,7 @@ tags: [meta, vault-maintenance]
 
 ## [2026-09-20] lint | 例行体检：8 问题 → 0
 
-- 修复：README.md 真断链（memory/2026/2026-09-10.md → memory/2026/09/2026-09-10.md）；标签统一 2 处（semif 裸 tag AI→ai、竞品对标 #AI→#ai）；删除 temp_extracted_content.md 垃圾文件；清理 dreaming 空壳 2 只（deep/rem 09-20，无 footer 无入链）
+- 修复：README.md 真断链（memory/2026/2026-09-10.md → memory/2026/09/2026-09-10.md）；标签统一 2 处（semif 裸 tag AI→ai、竞品对标 `#AI`→`#ai`）；删除 temp_extracted_content.md 垃圾文件；清理 dreaming 空壳 2 只（deep/rem 09-20，无 footer 无入链）
 - 并发进程已处理：award-defense-presentation 断链×2、MOC-Content→MOC-Inbox、孤立挂载×3、system-cleanup frontmatter
 - 遗留：14 markdown 误报（verbatim+代码块）、历史 cron 孤儿（归档/非活跃）、README 重复文件名 1 组
 - 验证：Broken wikilinks 0 / Missing frontmatter 0 / Orphan 0 / Tag case 0
@@ -250,3 +250,13 @@ tags: [meta, vault-maintenance]
 - 验证：Broken 0 / Missing frontmatter 0 / Short pages 0 / Stale 0；Orphan 剩 1（考研路线图=gitignore 隐私文件，预期孤立）；README 重名 1 组低风险保留
 - 工具坑沉淀：Path.read_text 文本模式把 CRLF→LF 导致误判换行——脚本须 open(newline="") 读、write_bytes 写，幂等验证 0 changes
 - 追加修复：tag-lint.py YAML-list 标签块紧随的闭合 `---` 会被解析成假标签 `--`（真库未触发）→ 改为逐行 `- ` 解析；临时夹具 8 项断言全过（检出/归一/CRLF/幂等/误报保护）
+
+## [2026-09-26] lint | 例行体检 + 隔离回流修复（cron）
+
+- **P0 隔离回流修复**：`.gitignore` 补 `memory/dreaming/` + `memory/cron-hash-ledger/`（原 `memory/20*/` 通配不覆盖 dreaming 子目录）→ `git rm -r --cached` 去跟踪（磁盘保留），阻断私有日志经 auto-sync 回流公开仓库
+- 断链 2：ai-blogger README 失效链接（strategy/roadmap 已迁私有库）改纯文本；私有笔记技能名 wikilink 剥离
+- 标签统一 1：`skills/platform/Platform-Development-2026.md` 的 `API`→`api`
+- 孤立挂载 16：INDEX.md 新增「目录内文件挂载」区（根级目录实体文档 + skills references）+ MOC-Productivity 补 wikilink
+- 空文件清理 3：dreaming 09-26 deep/rem 空壳 + 私有 light 空壳
+- **检测器修正 3 个**（先修检测器再动数据）：tag-lint.py（行内标签加 `(?![\w])` 断言 + hex 色值过滤）、knowledge-lint.py（EXTERNAL_ROOTS 补 12 个 vault 根级目录）、vault-structure.py（EXCLUDE_DIRS 排除 private_knowledge 等）
+- 验证：Broken 0 / Missing frontmatter 0 / Glued 0 / Orphan 0 / 标签变体 0；CI 三关（wikilinks / privacy / site）全绿

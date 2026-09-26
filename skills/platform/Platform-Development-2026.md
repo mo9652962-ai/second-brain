@@ -1,7 +1,7 @@
 ---
 name: Platform-Development-2026
 description: 平台开发完整技能手册，覆盖多租户架构、API 设计、开发者体验、计费、Webhooks、安全、可观测性、微服务、生态构建等 9 大核心领域
-tags: [平台, SaaS, 多租户, API, 微服务, 开发者体验, 可观测性, 平台工程]
+tags: [平台, SaaS, 多租户, api, 微服务, 开发者体验, 可观测性, 平台工程]
 category: Platform
 created: 2026-07-28
 updated: 2026-07-28
