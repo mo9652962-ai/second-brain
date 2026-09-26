@@ -70,6 +70,29 @@ def strip_md(name: str) -> str:
     return name[:-3] if name.lower().endswith(".md") else name
 
 
+def scan_frontmatter(lines: list[str]) -> tuple[bool, int | None]:
+    """定位 frontmatter 区并判断闭合符是否粘连。
+
+    返回 (glued, close_idx)：
+      glued     — 闭合符粘连（如 `status: fresh---`）或整份文件找不到独立闭合行
+      close_idx — 首个独立 `---` 的行号；未闭合时为 None
+
+    为什么不能只问「前 N 行有没有独立 ---」：
+      正文的水平分隔线 `---` 与 frontmatter 闭合符同形。若只在前 20 行里找任意
+      独立 `---`，正文横线会冒充闭合符 → 真实粘连行被掩盖，静默漏报
+      （2026-09-26 实测漏报 80 个文件而 lint 报 Glued 0）。
+    故必须锚定结构边界：从第 2 行起扫描，**首个**独立 `---` 即区间终点；
+    该区间内任何以 `---` 结尾的行即粘连。
+    """
+    for i, line in enumerate(lines[1:], start=1):
+        s = line.strip()
+        if s == "---":
+            return False, i
+        if s.endswith("---"):
+            return True, None
+    return True, None          # 从未闭合 → 同样按粘连上报
+
+
 def main():
     root = Path(sys.argv[1] if len(sys.argv) > 1 else ".")
     files = collect_md_files(root)
@@ -169,19 +192,8 @@ def main():
             # 新实现：frontmatter 区 = 第 2 行起，到**首个**独立 --- 为止；该区间内任何
             #   以 --- 结尾（且非独立）的行即粘连。无独立闭合行同样判粘连。
             fm_lines = text.split("\n")
-            glued = False
-            closed = False
-            close_idx = None
-            for i, l in enumerate(fm_lines[1:200], start=1):
-                s = l.strip()
-                if s == "---":
-                    closed = True
-                    close_idx = i
-                    break
-                if s.endswith("---"):
-                    glued = True
-                    break
-            if glued or not closed:
+            glued, close_idx = scan_frontmatter(fm_lines)
+            if glued:
                 glued_fm.append(f)
             else:
                 # YAML 可解析性检测（2026-09-26 新增）

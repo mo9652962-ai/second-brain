@@ -13,23 +13,47 @@ knowledge-lint.py 已能检出（2026-09-26 修复假阴性盲区），本脚本
 - 幂等：修完再跑应为 0 处
 """
 import argparse
+import importlib.util
 import pathlib
 
 VAULT = pathlib.Path(__file__).resolve().parent.parent
 ROOT = VAULT / "knowledge"
 
+# 粘连判据的单一真相源 = knowledge-lint.py（文件名含连字符，无法常规 import）
+_LINT = VAULT / "knowledge" / "META" / "scripts" / "knowledge-lint.py"
+_spec = importlib.util.spec_from_file_location("knowledge_lint", _LINT)
+_lint = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(_lint)
+
 
 def find_glued(lines: list[str]) -> int | None:
-    """返回粘连行的下标；无粘连或已正常闭合则返回 None。"""
-    if not lines or lines[0].strip() != "---":
+    """返回粘连行的下标；无粘连或已正常闭合则返回 None。
+
+    复用 lint 的 scan_frontmatter，避免两处判据各自漂移——2026-09-26 的
+    80 文件漏报正是「判据写错 + 无测试」共同造成的。
+    """
+    glued, _ = _lint.scan_frontmatter(lines)
+    if not glued:
         return None
+    if not lines or lines[0].strip() != "---":
+        return None                     # 非 frontmatter 文件（lint 侧已预检，这里自守）
     for i in range(1, len(lines)):
         s = lines[i].strip()
-        if s == "---":
-            return None                 # 正常闭合
-        if s.endswith("---"):
+        if s.endswith("---") and s != "---":
             return i
     return None
+
+
+def needs_manual(lines: list[str]) -> bool:
+    """lint 判粘连，但没有可摘的粘连行（frontmatter 从未闭合）→ 闭合点有歧义，交人工。
+
+    不猜的理由：把 `---` 插在第几行都可能是错的（可能切掉正文首行，也可能留下
+    非法 YAML）。误改比不改更贵——参见《假阳性税》卡片。
+    """
+    if not lines or lines[0].strip() != "---":
+        return False
+    glued, _ = _lint.scan_frontmatter(lines)
+    return glued and find_glued(lines) is None
 
 
 def main() -> int:
@@ -37,13 +61,17 @@ def main() -> int:
     ap.add_argument("--apply", action="store_true", help="实际写入（默认仅预览）")
     args = ap.parse_args()
 
-    fixed, skipped = [], []
+    fixed, skipped, manual = [], [], []
     for f in sorted(ROOT.rglob("*.md")):
         # read_bytes().decode() 而非 read_text()：后者默认做通用换行转换，
         # 会把 \r\n 静默变成 \n，导致下面的行尾保留逻辑永远失效（实测把 CRLF 扁平化）
         lines = f.read_bytes().decode("utf-8", "replace").split("\n")
+        glued, _ = _lint.scan_frontmatter(lines)
+        if not glued or not lines or lines[0].strip() != "---":
+            continue
         i = find_glued(lines)
         if i is None:
+            manual.append(f)          # 从未闭合 → 交人工（见 needs_manual 注释）
             continue
 
         cr = "\r" if lines[i].endswith("\r") else ""
@@ -66,6 +94,10 @@ def main() -> int:
         print("  ", p)
     for p, why in skipped:
         print(f"  [SKIP] {p} ({why})")
+    if manual:
+        print(f"  [需人工] {len(manual)} 个文件 frontmatter 从未闭合，闭合点有歧义：")
+        for p in manual:
+            print("    ", p.relative_to(ROOT))
     return 0
 
 
