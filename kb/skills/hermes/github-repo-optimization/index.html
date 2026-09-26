@@ -2406,6 +2406,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
 
       </a>
     </li>
@@ -3370,6 +3377,16 @@
 </tr>
 </tbody>
 </table>
+<blockquote>
+<p><strong>2026-09-26 增补（多源交叉验证：banger-readme / repoclip.io / maximosovsky-readme-guidelines）</strong></p>
+<ul>
+<li><strong>每行 ≤5 个徽章</strong>，超出即视觉噪音；<strong>同一行徽章高度必须一致</strong>，不同高度的单独占一行；徽章行之间留空行。</li>
+<li><strong>按语义分组</strong>：第 1 行技术健康度（CI / 覆盖率 / 代码质量），第 2 行管理与分发（版本 / 下载量 / 许可 / 社区）。</li>
+<li><strong>徽章自检问题</strong>：这个徽章对典型访问者提供什么真实价值？永远恒绿（或恒红）的徽章零信息量，应删。</li>
+<li><strong>徽章滥用警告</strong>：徽章只在浏览器中渲染 Markdown 时有效，且增加噪音；若数据有更好的触达通道（CI 失败自动开 issue / 通知维护者），优先用通道而非徽章。</li>
+<li><strong>最高 ROI 的维护动作</strong>：README 描述着两个版本之前的旧行为，比没有文档更伤信任——「陈旧 README」是 README 类问题里回报最高的一小时投入（与 knowledge-lint「陈旧页面」检查同源）。</li>
+</ul>
+</blockquote>
 <h3 id="52">5.2 推荐徽章组合<a class="headerlink" href="#52" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code>&lt;!-- 基础信息 --&gt;
 ![<span class="nt">GitHub License</span>](<span class="na">https://img.shields.io/github/license/mo9652962-ai/second-brain</span>)
@@ -3380,11 +3397,17 @@
 ![<span class="nt">GitHub Commits</span>](<span class="na">https://img.shields.io/github/commit-activity/m/mo9652962-ai/second-brain/dev</span>)
 
 &lt;!-- 内容统计（自定义） --&gt;
-![<span class="nt">Skills Count</span>](<span class="na">https://img.shields.io/badge/Skills-13-blue</span>)
-![<span class="nt">Knowledge Notes</span>](<span class="na">https://img.shields.io/badge/Notes-84+-green</span>)
-![<span class="nt">Maturity</span>](<span class="na">https://img.shields.io/badge/Maturity-63%25-yellow</span>)
+![<span class="nt">Skills Count</span>](<span class="na">https://img.shields.io/badge/Skills-29-blue</span>)
+![<span class="nt">Knowledge Notes</span>](<span class="na">https://img.shields.io/badge/Notes-764+-green</span>)
+![<span class="nt">Maturity</span>](<span class="na">https://img.shields.io/badge/Maturity-91%25-yellow</span>)
 </code></pre></div>
 
+<blockquote>
+<p>⚠️ <strong>自定义统计徽章必须与仓库同步更新</strong>（2026-09-26 校准）：上方数值对应本仓库真实状态
+（29 个自建技能 / 764 篇公开 Markdown / 自举成熟度 32÷35=91%）。
+旧版示例残留 <code>Skills-13</code>、<code>Notes-84+</code>、<code>Maturity-63%</code> 已失效 —— 硬编码统计徽章正是
+「陈旧 README」的高发区：能改成动态徽章（shields.io 的 <code>github/*</code> 端点）就别硬编码。</p>
+</blockquote>
 <h3 id="53">5.3 自定义颜色规范<a class="headerlink" href="#53" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code>🔵 蓝色 = 信息类（数量、版本）
 🟢 绿色 = 状态良好（健康、通过）
