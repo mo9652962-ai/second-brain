@@ -5,7 +5,8 @@ tags: [research, multi-agent, topology, manta, self-evolution]
 created: 2026-08-03
 updated: 2026-08-03
 status: adopted
-source: arxiv-2026-08-03-core-contributions---
+source: arxiv-2026-08-03-core-contributions
+---
 
 # 协作架构自进化 Review（MANTA 落地）— 固定拓扑盘点 + 试点任务
 

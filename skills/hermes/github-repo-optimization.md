@@ -157,6 +157,14 @@ agent-memory, skill-library, open-source-hardware
 | **信息密度** | 每个徽章传达一个明确的信息 |
 | **颜色逻辑** | 用颜色表达状态（绿色=好，黄色=注意，红色=警告） |
 
+> **2026-09-26 增补（多源交叉验证：banger-readme / repoclip.io / maximosovsky-readme-guidelines）**
+>
+> - **每行 ≤5 个徽章**，超出即视觉噪音；**同一行徽章高度必须一致**，不同高度的单独占一行；徽章行之间留空行。
+> - **按语义分组**：第 1 行技术健康度（CI / 覆盖率 / 代码质量），第 2 行管理与分发（版本 / 下载量 / 许可 / 社区）。
+> - **徽章自检问题**：这个徽章对典型访问者提供什么真实价值？永远恒绿（或恒红）的徽章零信息量，应删。
+> - **徽章滥用警告**：徽章只在浏览器中渲染 Markdown 时有效，且增加噪音；若数据有更好的触达通道（CI 失败自动开 issue / 通知维护者），优先用通道而非徽章。
+> - **最高 ROI 的维护动作**：README 描述着两个版本之前的旧行为，比没有文档更伤信任——「陈旧 README」是 README 类问题里回报最高的一小时投入（与 knowledge-lint「陈旧页面」检查同源）。
+
 ### 5.2 推荐徽章组合
 
 ```markdown
@@ -169,10 +177,15 @@ agent-memory, skill-library, open-source-hardware
 ![GitHub Commits](https://img.shields.io/github/commit-activity/m/mo9652962-ai/second-brain/dev)
 
 <!-- 内容统计（自定义） -->
-![Skills Count](https://img.shields.io/badge/Skills-13-blue)
-![Knowledge Notes](https://img.shields.io/badge/Notes-84+-green)
-![Maturity](https://img.shields.io/badge/Maturity-63%25-yellow)
+![Skills Count](https://img.shields.io/badge/Skills-29-blue)
+![Knowledge Notes](https://img.shields.io/badge/Notes-764+-green)
+![Maturity](https://img.shields.io/badge/Maturity-91%25-yellow)
 ```
+
+> ⚠️ **自定义统计徽章必须与仓库同步更新**（2026-09-26 校准）：上方数值对应本仓库真实状态
+> （29 个自建技能 / 764 篇公开 Markdown / 自举成熟度 32÷35=91%）。
+> 旧版示例残留 `Skills-13`、`Notes-84+`、`Maturity-63%` 已失效 —— 硬编码统计徽章正是
+> 「陈旧 README」的高发区：能改成动态徽章（shields.io 的 `github/*` 端点）就别硬编码。
 
 ### 5.3 自定义颜色规范
 

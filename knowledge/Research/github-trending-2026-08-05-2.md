@@ -5,7 +5,8 @@ tags: [github-trending, research, cad, skills, file-transfer, agent-security]
 created: 2026-08-05
 updated: 2026-08-05
 status: adopted
-domain: research---
+domain: research
+---
 
 # GitHub Trending 研究 — 2026-08-05（第二次，新项目）
 

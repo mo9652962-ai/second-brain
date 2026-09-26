@@ -6,7 +6,8 @@ tags: [arxiv, research, ai-agent, llm, daily]
 created: 2026-09-08
 updated: 2026-09-08
 status: adopted
-source: arxiv.org list pages + abs pages（API 429 限流期间，补全性质）---
+source: arxiv.org list pages + abs pages（API 429 限流期间，补全性质）
+---
 
 # arXiv AI Agent / LLM 速览 — 2026-09-08（补全性质）
 

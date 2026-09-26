@@ -6,7 +6,8 @@ tags: [arxiv, research, ai-agent, llm, daily]
 created: 2026-08-18
 updated: 2026-08-18
 status: adopted
-source: export.arxiv.org API---
+source: export.arxiv.org API
+---
 
 # arXiv AI Agent / LLM 速览 — 2026-08-18（08-17 提交池）
 

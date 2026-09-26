@@ -5,7 +5,8 @@ tags: [security, agent, memory, research]
 created: 2026-08-05
 updated: 2026-08-05
 status: adopted
-domain: security---
+domain: security
+---
 
 # AI Agent 记忆注入攻击研究（2026-08-05）
 

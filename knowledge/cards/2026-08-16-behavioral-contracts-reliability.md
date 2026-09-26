@@ -4,7 +4,8 @@ aliases:
 tags: [knowledge-card, ai-agent, reliability, model-fallback, hermes]
 created: 2026-08-16
 source: "[[knowledge/Research/arxiv-2026-08-16-core-contributions]]"
-status: fresh---
+status: fresh
+---
 
 # 🃏 知识卡片 · 同模型双 Agent 90% 会同败——「换模型才算冗余」的实证依据
 

@@ -5,7 +5,8 @@ tags: [github-trending, research, pdf, agent-infra, memory, llm-inference]
 created: 2026-08-05
 updated: 2026-08-05
 status: adopted
-domain: research---
+domain: research
+---
 
 # GitHub Trending 研究 — 2026-08-05（5 项目）
 

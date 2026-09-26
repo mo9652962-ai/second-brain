@@ -9,7 +9,19 @@ files = [f for f in root.rglob("*.md") if not any(p in SKIP for p in f.relative_
 
 fm_re = re.compile(r"^tags:\s*\[(.*?)\]", re.M)
 fm_yaml_re = re.compile(r"^tags:\s*\n((?:\s*-\s*\S+\s*\n?)+)", re.M)
-inline_re = re.compile(r"(?<![\w#])#([A-Za-z][A-Za-z0-9_\-/]*)")
+# 行内 #tag 检测。
+# 2026-09-26 修正两处假阳性（先修检测器再动数据）：
+#   1) 后接任意 word 字符（含 CJK）即非标签 —— 社媒话题 #UI设计 / #vibecoding大赏 整体不匹配
+#      （用 (?![\w]) 而非 (?![\u4e00-\u9fff])：后者会回溯切出 vibecodin/U 等残片）
+#   2) 纯十六进制色值（#A08250 / #F0F8F0）是 CSS 颜色 → 检测后按 is_hex_color() 过滤
+inline_re = re.compile(r"(?<![\w#])#([A-Za-z][A-Za-z0-9_\-/]*)(?![\w])")
+HEX_COLOR_RE = re.compile(r"^(?=.*\d)[0-9A-Fa-f]{3,4}$|^(?=.*\d)[0-9A-Fa-f]{6}$|^(?=.*\d)[0-9A-Fa-f]{8}$")
+
+
+def is_hex_color(tok: str) -> bool:
+    """纯十六进制色值（且至少含一个数字）视为 CSS 颜色，非标签。
+    要求含数字可避免误伤 cafe/beef/dead 一类真实英文标签。"""
+    return bool(HEX_COLOR_RE.match(tok))
 
 fm_tags = collections.Counter()
 inline_tags = collections.Counter()
@@ -40,6 +52,8 @@ for f in files:
     text_nocode = re.sub(r"`[^`]*`", "", text)
     text_nocode = re.sub(r"```.*?```", "", text_nocode, flags=re.S)
     for t in inline_re.findall(text_nocode):
+        if is_hex_color(t):
+            continue
         inline_tags[t] += 1
         tag_case[t.lower()].add(t)
 

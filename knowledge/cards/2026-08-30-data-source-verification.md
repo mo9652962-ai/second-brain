@@ -4,7 +4,8 @@ aliases:
 tags: [knowledge-card, data-verification, github-evaluation, openclaw]
 created: 2026-08-30
 source: "2026-08-30"
-status: fresh---
+status: fresh
+---
 
 # 🃏 知识卡片 · 评估项目别信第三方 star 数：以官方 repo 为准
 

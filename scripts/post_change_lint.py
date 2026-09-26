@@ -103,7 +103,8 @@ def main():
     #   ERROR 类 → 阻断（断链/缺 frontmatter 是硬伤，删页直接导致）
     #   WARNING 类 → 仅提示（孤立/重名/短页多为既有良性项，不阻断，避免假阳性税）
     BLOCKING = ("Broken wikilinks", "Missing frontmatter",
-                "Glued frontmatter close (no standalone ---)")
+                "Glued frontmatter close (no standalone ---)",
+                "Invalid YAML frontmatter")
     blocking = {k: v for k, v in counts.items() if k in BLOCKING and v > 0}
     warns = {k: v for k, v in counts.items() if k not in BLOCKING and v > 0}
 

@@ -4,7 +4,8 @@ aliases:
 tags: [knowledge-card, methodology, tooling, knowledge-lint]
 created: 2026-09-05
 source: "[[knowledge/AI/工具精度方法论-假阳性税与知识库Lint-2026-09-05]]"
-status: fresh---
+status: fresh
+---
 
 # 🃏 知识卡片 · 假阳性税：工具误报比不修更危险，评估工具先看原始计数
 
@@ -46,3 +47,5 @@ status: fresh---
 *卡片来源：当天知识库精选 · [[knowledge/AI/工具精度方法论-假阳性税与知识库Lint-2026-09-05|工具精度方法论 09-05]]（🥇 当天最高可行动性+强化自身：实战真数据+可迁移的评估方法论，issue caps/severity 分级待落地，未被卡过）*
 
 **亚军候选**：arXiv Agent/LLM 09-05 速览（agent 记忆授权洗白 50.2%/98.6% + HookPry harness 供应链 7 壳全沦陷）——安全价值高但属补全性质研究类，可行动性低于方法论篇。
+
+> **姊妹篇（2026-09-26）**：[[knowledge/cards/2026-09-26-lint-false-negative-blindspot|🃏 假阴性税]] —— 同一个 lint 检测器反过来漏报 80 个坏文件（判据扫「窗口内有没有」而非锚定结构边界）。假阳性与假阴性是一对，评估工具要看 TP/FP/**FN** 三个原始计数。

@@ -4,7 +4,8 @@ aliases:
 tags: [research, s4mp, sims4, multiplayer, ten-round]
 created: 2026-08-04
 updated: 2026-08-04
-status: adopted---
+status: adopted
+---
 
 # 🎮 S4MP 联机方式十轮研究 + 自制 mod 对齐方案
 

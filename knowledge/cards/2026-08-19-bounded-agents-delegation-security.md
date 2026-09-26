@@ -4,7 +4,8 @@ aliases:
 tags: [knowledge-card, ai-agent, security, multi-agent, authorization, mcp]
 created: 2026-08-19
 source: "[[knowledge/Research/arxiv-2026-08-19-agent-llm]]"
-status: fresh---
+status: fresh
+---
 
 # 🃏 知识卡片 · Agent 安全=授权架构：防注入靠「最小授权 + 模型外强制」
 

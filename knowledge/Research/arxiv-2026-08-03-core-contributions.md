@@ -6,7 +6,8 @@ tags: [arxiv, research, ai-agent, llm, multi-agent, self-evolution, skill, secur
 created: 2026-08-03
 updated: 2026-08-03
 status: adopted
-source: arxiv-weekly-2026-08-03---
+source: arxiv-weekly-2026-08-03
+---
 
 # arXiv 核心贡献精选 — 2026-08-03
 

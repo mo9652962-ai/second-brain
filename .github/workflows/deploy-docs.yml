@@ -52,7 +52,21 @@ jobs:
           rm -rf .build-docs
           mkdir -p .build-docs/docs .build-docs/site
           # -z + quotePath=false：避免中文/特殊字符路径被加引号转义（CI 上会 cp 失败）
+          # 私有隔离层硬门禁（2026-09-26）：即使有文件被误跟踪，也绝不发布到公开站点
+          # 注：$f 来自 git ls-files（本仓库自身跟踪路径），非外部不可信输入 → 无注入面
+          # memory/ 仅放行 MOC-Memory.md（mkdocs nav 的记忆索引锚点，本身不含私有内容）
+          is_private_path() {
+            case "$1" in
+              memory/MOC-Memory.md) return 1 ;;
+              memory/*|private_knowledge/*|private_vault/*) return 0 ;;
+              *) return 1 ;;
+            esac
+          }
           git -c core.quotePath=false ls-files -z '*.md' | while IFS= read -r -d '' f; do
+            if is_private_path "$f"; then
+              echo "::warning::skip private path: $f"
+              continue
+            fi
             mkdir -p ".build-docs/docs/$(dirname "$f")"
             cp "$f" ".build-docs/docs/$f"
           done
@@ -61,6 +75,10 @@ jobs:
             cp "knowledge/METABOLISM.md" ".build-docs/docs/knowledge/METABOLISM.md"
           fi
           echo "assembled md files: $(find .build-docs/docs -name '*.md' | wc -l)"
+          # 门禁：组装结果不得含任何私有路径
+          if find .build-docs/docs -path '*memory/dreaming*' -o -path '*private_knowledge*' | grep -q .; then
+            echo "::error::private content leaked into docs build"; exit 1
+          fi
 
       # ── 2. 构建知识库文档站 → /kb/ ───────────────────────────
       - name: Build knowledge base

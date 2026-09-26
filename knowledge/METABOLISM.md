@@ -4,8 +4,8 @@ aliases: [知识新陈代谢看板, OKM Dashboard]
 type: meta
 domain: META
 status: active
-created: 2026-09-25
-updated: 2026-09-25
+created: 2026-09-26
+updated: 2026-09-26
 tags: [meta/metabolism, okm, knowledge/governance]
 ---
 
@@ -16,9 +16,9 @@ tags: [meta/metabolism, okm, knowledge/governance]
 
 ## 📊 认知成熟度分布 (Maturity Funnel)
 
-- **全库受管笔记**：695 篇
-- 🌲 **Evergreen (常青/方法论)**：**329** 篇 (47.3%) — 结构完备、双向链接闭环、实战沉淀的成熟知识
-- 🌿 **Budding (成长/求证中)**：**359** 篇 (51.7%) — 包含基本推演与领域上下文的进阶笔记
+- **全库受管笔记**：700 篇
+- 🌲 **Evergreen (常青/方法论)**：**333** 篇 (47.6%) — 结构完备、双向链接闭环、实战沉淀的成熟知识
+- 🌿 **Budding (成长/求证中)**：**360** 篇 (51.4%) — 包含基本推演与领域上下文的进阶笔记
 - 🌱 **Seed (萌芽/原子速记)**：**0** 篇 (0.0%) — 初步捕获的原始事实、想法或灵感种子
 - 📦 **Superseded (降级/过时归档)**：**7** 篇 — 已被新技术、新决策替代，或标记为历史归档
 
@@ -33,21 +33,21 @@ tags: [meta/metabolism, okm, knowledge/governance]
 
 | 笔记名 | 领域路径 | 入链数 | 出链数 | 字符体量 |
 |:---|:---|:---:|:---:|:---:|
-| [[MOC-Research]] | `knowledge/Research/MOC-Research.md` | 227 | 267 | 14166 |
-| [[knowledge-map]] | `knowledge/knowledge-map.md` | 193 | 219 | 35923 |
+| [[MOC-Research]] | `knowledge/Research/MOC-Research.md` | 228 | 269 | 14489 |
+| [[knowledge-map]] | `knowledge/knowledge-map.md` | 194 | 219 | 35923 |
 | [[MOC-Dev]] | `knowledge/Dev/MOC-Dev.md` | 104 | 97 | 7826 |
-| [[MOC-Productivity]] | `knowledge/Productivity/MOC-Productivity.md` | 53 | 64 | 5958 |
-| [[MOC-Security]] | `knowledge/Security/MOC-Security.md` | 53 | 63 | 6161 |
+| [[MOC-Productivity]] | `knowledge/Productivity/MOC-Productivity.md` | 53 | 65 | 5973 |
+| [[MOC-Security]] | `knowledge/Security/MOC-Security.md` | 53 | 63 | 6162 |
 | [[MOC-Inbox]] | `knowledge/MOC-Inbox.md` | 36 | 63 | 4163 |
 | [[MOC-Finance]] | `knowledge/Finance/MOC-Finance.md` | 20 | 19 | 1705 |
 | [[current-environment]] | `knowledge/META/current-environment.md` | 20 | 3 | 3311 |
 | [[Cross-Domain]] | `knowledge/Cross-Domain.md` | 18 | 26 | 6256 |
 | [[index]] | `knowledge/index.md` | 18 | 22 | 2445 |
-| [[MOC-GitHub]] | `knowledge/Research/MOC-GitHub.md` | 18 | 77 | 6700 |
-| [[AI-Agent]] | `knowledge/Dev/AI-Agent.md` | 16 | 12 | 7141 |
+| [[MOC-GitHub]] | `knowledge/Research/MOC-GitHub.md` | 18 | 77 | 6701 |
+| [[AI-Agent]] | `knowledge/Dev/AI-Agent.md` | 15 | 12 | 7141 |
 | [[MOC-Hardware]] | `knowledge/Hardware/MOC-Hardware.md` | 15 | 31 | 2236 |
 | [[PPT-Design]] | `knowledge/Hardware/PPT-Design.md` | 14 | 9 | 2040 |
 | [[current-model-status]] | `knowledge/META/current-model-status.md` | 13 | 3 | 2807 |
 
 ---
-*由 scripts/okm_metabolism.py 自动生成于 2026-09-25 · 保障第二大脑持久自愈与抗熵增*
+*由 scripts/okm_metabolism.py 自动生成于 2026-09-26 · 保障第二大脑持久自愈与抗熵增*

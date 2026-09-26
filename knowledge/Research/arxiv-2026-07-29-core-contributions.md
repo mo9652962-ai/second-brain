@@ -7,7 +7,8 @@ updated: 2026-07-29
 status: adopted
 source: https://arxiv.org/
 domain: research
-priority: high---
+priority: high
+---
 
 # arXiv 核心贡献总结 — 2026-07-29
 

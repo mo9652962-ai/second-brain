@@ -4,7 +4,8 @@ aliases:
 tags: [knowledge-card, on-device-ai, local-llm, cost-optimization]
 created: 2026-09-10
 source: "[[knowledge/Daily/hackernews-2026-09-10]]"
-status: fresh---
+status: fresh
+---
 
 # 🃏 知识卡片 · 端侧小模型正在替代 API：Desert Ant Labs 首发 18 个免费模型
 

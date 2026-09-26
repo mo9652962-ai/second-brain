@@ -5,7 +5,8 @@ domain: Research
 type: moc
 status: active
 created: 2026-08-16
-updated: 2026-08-31---
+updated: 2026-08-31
+---
 
 # 🐙 GitHub 研究 MOC — GitHub Treasure Map
 

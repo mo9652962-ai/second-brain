@@ -4,7 +4,8 @@ aliases:
 tags: [knowledge-card, ai-agent, multi-agent, collaboration, hermes]
 created: 2026-08-18
 source: "[[knowledge/Research/arxiv-2026-08-18-agent-llm]]"
-status: fresh---
+status: fresh
+---
 
 # 🃏 知识卡片 · 多 Agent 协作被量化：coordinator 无稳定收益，共享文件省 42% token
 
