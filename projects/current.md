@@ -531,7 +531,7 @@ updated: 2026-09-14
 - [x] 🟡 轨迹完整性加固（按 arXiv 2609.30266：agent 可篡改自身轨迹，除 Muse Code 外全部命中）→ ✅ 2026-09-25 daily-todo-executor 落地：新建 `AppData/Local/hermes/scripts/cron_product_hash.py`（关键 cron 产物 SHA-256 → **仅追加账本** `memory/cron-hash-ledger/YYYY/MM/`，与产物目录分离；`--verify` 检出记录后被改动/删除）；注册 no_agent cron `cron-product-hash`（`30 23 * * *`，纯脚本不调 LLM → 与配额无关）；自检双路径 PASS（记录→PASS / 篡改→FAIL）
 - [x] 🟡 万悟参赛确认截止处置（9/25 12:00 硬截止）→ ✅ 2026-09-25 daily-todo-executor 落地：截止已过 + 无确认证据 → 判定未参赛并归档两条重复条目（见 9/18 / 9/20 反思区勾选）；研究资产保留
 - [ ] 🟡 评分 prompt 措辞 A/B（按 2609.29333）→ ⏳ 需专项会话（2026-09-26 复核仍 open，第 2 次）
-- [x] 🟡 `cron_product_hash.py --verify` 的 MISSING 加告警 + `deterministic-verify` 哨兵纳入 `*-reflection.md`（9/25 反思登记：反思缺失 4 天无人知）→ ⏳ **2026-09-26 weekly-cleanup 复核仍 open**，属 agent 可执行项，转列 🔄 我的待办
+- [ ] 🟡 `cron_product_hash.py --verify` 的 MISSING 加告警 + `deterministic-verify` 哨兵纳入 `*-reflection.md`（9/25 反思登记：反思缺失 4 天无人知）→ ⏳ **2026-09-26 weekly-cleanup 复核仍 open**，属 agent 可执行项，转列报告「🔄 我的待办」
 - [x] 🟡 `api-media-weekly-probe` 修复（`Script exited with code 127`）→ ✅ **2026-09-26 复核：脚本已在位**（health 实测三处 `.sh`/`.py` 路径文件均存在 5212B / mtime 9/15；`api_image_probe.py` 9/24 已替换）→ last_error 系 9/21 历史遗留，**下周 9/28 10:15 调度验证即闭环**
 - [x] 🟡 补跑 9/25 三个中断任务 → ✅ **2026-09-26 复核：无需补跑，已自愈**（jobs.json 实测 `daily-wechat-knowledge-card` 12:16 ok / `obsidian-maintenance` 12:40 ok / `arxiv-fetch` 12:20 ok，三者 failure_streak=0）；仅 `闲鱼提醒` 仍 error（429 配额，streak=3，下次调度 9/28 周一）→ 转跟踪至 🔒 表「provider 配额」行
 - [ ] 🟡 桌面 codex-task 待办清理 → ✅ 2026-09-26 weekly-cleanup 实测复核：桌面**仅剩 1 个** `codex-task-wanwu-multiagent.md`（9428B，9/16 21:38），`task-archive/` 已有 10 份历史归档（含 8 份 codex-task-*）→ 该件已随万悟「判定未参赛」结论失效，**建议归档**；属 sora 桌面文件操作，保留 ⏳ 等一句话（k 不擅自移动 sora 桌面文件）
