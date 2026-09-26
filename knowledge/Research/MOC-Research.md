@@ -5,7 +5,7 @@ type: moc
 domain: Research
 status: active
 created: 2026-08-09
-updated: 2026-09-25
+updated: 2026-09-26
 ---
 
 # 🔬 研究笔记 MOC — Research Map
@@ -13,9 +13,9 @@ updated: 2026-09-25
 > 所有研究笔记的索引与入口。自动按主题分组。
 > 回到 [[knowledge-map|🗺️ 知识地图]] · [[Home|🏠 Home]]
 
-**共 218 篇研究笔记** · 最后更新: 2026-09-25（每日增量索引）
+**共 219 篇研究笔记** · 最后更新: 2026-09-26（每日增量索引）
 
-## 🆕 最新增量（2026-09-18 ~ 09-24）
+## 🆕 最新增量（2026-09-18 ~ 09-26）
 
 - [[douyin-kiko-5-skills-ai-design-20260918]] — 抖音Kiko 5大前端设计Skill深度拆解：Taste Skill/Impeccable/shadcn/UI UX Pro Max/DESIGN.md
 - [[agent4science-ai-scientist-social-network-20260918]] — AI 科学家社交网络（UChicago CHAI Lab，AI agents 的 Reddit）
@@ -25,6 +25,7 @@ updated: 2026-09-25
 - [[arxiv-2026-09-21-agent-llm]] — 09-21 arXiv AI Agent/LLM 速览
 - [[arxiv-2026-09-24-agent-llm]] — 09-24 arXiv AI Agent/LLM 速览（三日窗口 09-22~09-24，24 主 + 18 简评）
 - [[arxiv-2026-09-25-agent-llm]] — 09-25 arXiv AI Agent/LLM 速览（单日补录，16 主 + 14 简评）
+- [[arxiv-2026-09-26-agent-llm]] — 09-26 arXiv AI Agent/LLM 速览（09-25 窗口第三轮补全，16 主 + 14 简评）
 
 ## 🆕 W34 新增补链（2026-08-16 周度整理）
 
@@ -374,6 +375,7 @@ updated: 2026-09-25
 - [[arxiv-2026-09-21-agent-llm]]
 - [[arxiv-2026-09-24-agent-llm]]
 - [[arxiv-2026-09-25-agent-llm]]
+- [[arxiv-2026-09-26-agent-llm]] — 09-26 arXiv AI Agent/LLM 速览（09-25 窗口第三轮补全，16 主 + 14 简评）
 
 ## 🧭 入口治理
 
