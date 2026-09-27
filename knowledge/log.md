@@ -260,3 +260,15 @@ tags: [meta, vault-maintenance]
 - 空文件清理 3：dreaming 09-26 deep/rem 空壳 + 私有 light 空壳
 - **检测器修正 3 个**（先修检测器再动数据）：tag-lint.py（行内标签加 `(?![\w])` 断言 + hex 色值过滤）、knowledge-lint.py（EXTERNAL_ROOTS 补 12 个 vault 根级目录）、vault-structure.py（EXCLUDE_DIRS 排除 private_knowledge 等）
 - 验证：Broken 0 / Missing frontmatter 0 / Glued 0 / Orphan 0 / 标签变体 0；CI 三关（wikilinks / privacy / site）全绿
+## [2026-09-27] lint | 每周例行体检
+
+- 断链 0 / 孤立 0 / 缺 frontmatter 0
+- 处理原则：只报告不自动修；新问题由 k 在下次会话处理
+
+## [2026-09-27] freshness | 时效审计
+
+- 过期硬约束 1 / 待运行时验证 37 / 历史记录 183
+- 需修正：
+  - `knowledge\cards\2026-09-21-devin-cognition-eval.md:35` — 3. ⚠️ 云端环境与本机不一致（本机无虚拟化、Windows 专属环境）→ 首次试用选独立后端/前端小 Bug + 要求加回归测试
+- 处理原则：只报告不自动修；事实源见 knowledge/META/current-environment.md
+
