@@ -320,27 +320,6 @@ _最后更新: 2026-09-21｜运行环境: Hermes Agent on Windows 11_
 ## 🔒 Waiting for User（阻塞待办，状态变化时提醒）
 - （空——被阻塞任务单独维护，不混入每日清单）
 
-## Promoted From Short-Term Memory (2026-09-20)
-
-<!-- openclaw-memory-promotion:memory:memory/2026-09-14-self-improvement.md:7:7 -->
-- AI Agent / OpenClaw 最新发展 (Tavily 搜索摘要): **OpenClaw 2.0 极速补丁节奏** (v2026.8.1 发布后) [score=0.824 recalls=0 avg=0.620 source=memory/2026-09-14-self-improvement.md:7-7]
-<!-- openclaw-memory-promotion:memory:memory/2026-09-14-self-improvement.md:8:11 -->
-- AI Agent / OpenClaw 最新发展 (Tavily 搜索摘要): v2026.8.1 (8/31): 16,000+ PRs 融合的大版本，共享云会话、凭证隔离、简化安装、重构浏览器; v2026.8.2 (9/1): Day-one patch，更安全升级路径; v2026.9.1 (9/3): 升级韧性、图表、快速启动、Android 对齐; v2026.9.2 (9/5): **GPT-6 Astra**、**Swarm 默认开启**、重启无损回复 [score=0.824 recalls=0 avg=0.620 source=memory/2026-09-14-self-improvement.md:8-11]
-<!-- openclaw-memory-promotion:memory:memory/2026-09-14-self-improvement.md:44:45 -->
-- 经验教训 (.learnings/LEARNINGS.md) 近期高价值: [LRN-20260914-001] OpenClaw 2.0 极速补丁节奏：半个月 6 个版本，Swarm 默认开启标志多 Agent 编排生产化; [LRN-20260914-002] AI Agent 安全标准化进入推进期：五大控制点 + 三大具体化形成架构审查清单 [score=0.804 recalls=0 avg=0.620 source=memory/2026-09-14-self-improvement.md:44-45]
-<!-- openclaw-memory-promotion:memory:memory/2026-09-14-self-improvement.md:47:47 -->
-- 经验教训 (.learnings/LEARNINGS.md) 近期高价值: **近期高价值** (9/13 前): [score=0.804 recalls=0 avg=0.620 source=memory/2026-09-14-self-improvement.md:47-47]
-<!-- openclaw-memory-promotion:memory:memory/2026-09-20-self-improvement.md:7:7 -->
-- AI Agent / OpenClaw 最新发展 (Tavily 搜索摘要): **系统全自动化确认** - FlClash 代理 9/16 重启恢复，连续 7+ 天高亮唯一人工介入点清除，系统可靠性恢复全自动化 [score=0.950 recalls=0 avg=0.620 source=memory/2026-09-20-self-improvement.md:7-7]
-<!-- openclaw-memory-promotion:memory:memory/2026-09-20-self-improvement.md:45:47 -->
-- AI Agent / OpenClaw 最新发展 (Tavily 搜索摘要): **OpenAI Agents API 公测** + **部署最佳实践 6 大支柱** + **OpenClaw vs Claude Code 互补关系** 等新发展 [score=0.920 recalls=0 avg=0.620 source=memory/2026-09-20-self-improvement.md:45-47]
-<!-- openclaw-memory-promotion:memory:memory/2026-09-23-self-improvement.md:7:7 -->
-- AI Agent / OpenClaw 最新发展 (Tavily 搜索摘要): **AI Agent 持续学习三层架构确立** (Model/Harness/Context 三层，Context-layer continual learning 成主流) [score=0.940 recalls=0 avg=0.620 source=memory/2026-09-23-self-improvement.md:7-7]
-<!-- openclaw-memory-promotion:memory:memory/2026-09-23-self-improvement.md:8:15 -->
-- AI Agent / OpenClaw 最新发展 (Tavily 搜索摘要): **三层记忆架构标准化** (Core/Archival/Recall) + **A-MEM 自适应记忆** + **Agent Dreaming & Skill Learning** + **图记忆生态成熟** + **记忆生命周期三步曲** [score=0.930 recalls=0 avg=0.620 source=memory/2026-09-23-self-improvement.md:8-15]
-<!-- openclaw-memory-promotion:memory:memory/2026-09-23-self-improvement.md:45:52 -->
-- 经验教训 (.learnings/LEARNINGS.md) 近期高价值: 系统全自动化稳健运行、持续学习三层架构、三层记忆标准化、A-MEM自适应、OpenClaw 2.0节奏、安全标准化、OpenAI托管、成本生存项 [score=0.910 recalls=0 avg=0.620 source=memory/2026-09-23-self-improvement.md:45-52]
-
 ## 🔧 2026-08 存档期关键产出（memory/2026/08/ 归档前提炼）
 
 ### 🏆 高价值实测验证
@@ -374,3 +353,8 @@ _最后更新: 2026-09-21｜运行环境: Hermes Agent on Windows 11_
 ---
 
 _最后更新: 2026-09-23 | 归档截止: 2026-08-21 (含) | 运行环境: Hermes Agent on Windows 11_
+
+## Promoted From Short-Term Memory (2026-09-28)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-09-23.md:24:26 -->
+- 待办 / 关注点: [x] ~~Tavily 配额监控~~（历史周期性耗尽模式，Firecrawl 已验证为可靠 fallback）✅ 2026-09-24 daily-todo-executor 评估：Tavily 已按 9/2 决策**降级为末位备选、不再评估**（搜索链 = exa + firecrawl，Tavily 仅兜底）；配额监控无意义，本条关闭; [x] ~~语义缓存实施进度（P0，硬截止 2026-08-22 已过期）~~ ✅ 已闭环 2026-08-21：统一 chokepoint 覆盖全部 8 后端（commit `84d813bf2`），exact 命中实测生效——本行为自动生成日志的陈旧残留; [x] ~~主 provider 月度配额监控（fangzhou-2 8/20 耗尽，8/28 重置模式）~~ ✅ 2026-09-24 已升级为架构级故障模式并固化：`hermes-automation-patterns` 故障 C6「单一 provider 月度总配额耗尽」（9/24 实测复发：fangzhou-1/2 共用火山 ARK 月度额度 → 假冗余，12 个推理型 cron 停摆，9/28 23:59 重置）；监控由 health 巡检 + cron_stats 批量失败联动诊断承担，本条转跟踪 [score=0.843 recalls=0 avg=0.620 source=memory/2026-09-23.md:24-26]
