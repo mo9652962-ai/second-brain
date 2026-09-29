@@ -20,13 +20,13 @@ tags: [meta/dashboard, knowledge/governance, health]
 - **断裂链接**：0
 - **孤立页面**：0
 - **MOC 锚点**：21
-- **7 天更新**：168 篇 · **30 天更新**：638 篇
+- **7 天更新**：187 篇 · **30 天更新**：645 篇
 
 ## 近 30 天活跃域
 
 | 顶层 | 30 天更新 |
 |:---|---:|
-| `knowledge/` | 593 |
+| `knowledge/` | 600 |
 | `skills/` | 13 |
 | `claude/` | 4 |
 | `codebuddy/` | 4 |

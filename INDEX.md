@@ -118,3 +118,4 @@ updated: 2026-09-25
 | [[docs/WPS数学练习册标准化优化指南\|WPS 数学练习册优化指南]] | WPS 交付格式与排版规范 |
 | [[knowledge/Archive/Daily-before-08-08/2026-07-29-每日回顾\|每日回顾 07-29（归档）]] | 知识吸收与变现行动复盘 |
 | [[templates/每日笔记模板\|每日笔记模板]] | 日度笔记标准结构 |
+| [[projects/MOC-Projects\|项目索引（根级）]] | 进行中项目入口（旧版，规范版见 knowledge/Projects） |
