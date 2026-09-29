@@ -2851,49 +2851,105 @@
 
 <h1 id="agent-eval-2026-08-31">多 Agent Eval 全量基线（第一批 + 第二批）— 2026-08-31<a class="headerlink" href="#agent-eval-2026-08-31" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p>对照设计：A=单 agent（k 自己）/ B=多 agent（WorkBuddy/dsh 派发）</p>
-<p>冒烟（N=5）已过：harness + grader 无 bug。本文件记录分批真实派发结果。</p>
+<p>对照设计：A=单 agent（k 自己）/ B=多 agent（WorkBuddy/dsh 派发）
+冒烟（N=5）已过：harness + grader 无 bug。本文件记录分批真实派发结果。</p>
 </blockquote>
 <h2 id="b-e">第一批结果（B 类数据 + E 类快速）<a class="headerlink" href="#b-e" title="Permanent link">&para;</a></h2>
-<p>| Query | 执行者 | 产物 | Grader 结果 | 备注 |</p>
-<p>|:---|:---|:---|:---|:---|</p>
-<p>| B2（JSON 去重）| WorkBuddy（多 agent）| artifact-B2.json（3 条）| ✅ PASS | 去重正确（5→3）|</p>
-<p>| B3（12 月合并）| WorkBuddy | artifact-B3.csv（12 行）| ✅ PASS | 数值 1100→2200 与源一致 |</p>
-<p>| B4（反馈聚类）| WorkBuddy | artifact-B4.json（3 类）| ✅ PASS | 计数和=9，类互斥 |</p>
-<p>| E2（git rebase vs merge）| k（单 agent）| artifact-E2.md（3 条）| ✅ PASS | 互不重复 + 无幻觉 flag |</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Query</th>
+<th style="text-align: left;">执行者</th>
+<th style="text-align: left;">产物</th>
+<th style="text-align: left;">Grader 结果</th>
+<th style="text-align: left;">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">B2（JSON 去重）</td>
+<td style="text-align: left;">WorkBuddy（多 agent）</td>
+<td style="text-align: left;">artifact-B2.json（3 条）</td>
+<td style="text-align: left;">✅ PASS</td>
+<td style="text-align: left;">去重正确（5→3）</td>
+</tr>
+<tr>
+<td style="text-align: left;">B3（12 月合并）</td>
+<td style="text-align: left;">WorkBuddy</td>
+<td style="text-align: left;">artifact-B3.csv（12 行）</td>
+<td style="text-align: left;">✅ PASS</td>
+<td style="text-align: left;">数值 1100→2200 与源一致</td>
+</tr>
+<tr>
+<td style="text-align: left;">B4（反馈聚类）</td>
+<td style="text-align: left;">WorkBuddy</td>
+<td style="text-align: left;">artifact-B4.json（3 类）</td>
+<td style="text-align: left;">✅ PASS</td>
+<td style="text-align: left;">计数和=9，类互斥</td>
+</tr>
+<tr>
+<td style="text-align: left;">E2（git rebase vs merge）</td>
+<td style="text-align: left;">k（单 agent）</td>
+<td style="text-align: left;">artifact-E2.md（3 条）</td>
+<td style="text-align: left;">✅ PASS</td>
+<td style="text-align: left;">互不重复 + 无幻觉 flag</td>
+</tr>
+</tbody>
+</table>
 <h2 id="c">第二批结果（C 类编码）<a class="headerlink" href="#c" title="Permanent link">&para;</a></h2>
-<p>| Query | 执行者 | 产物 | Grader 结果 | 备注 |</p>
-<p>|:---|:---|:---|:---|:---|</p>
-<p>| C1（空密码拒绝测试）| k（冒烟已过）| test_empty_pw.py | ✅ PASS | 3 passed |</p>
-<p>| C2（修复认证绕过）| WorkBuddy | auth.py 修复 + test_auth_fix.py | ✅ PASS | 2 测试真过 + 行为验证 |</p>
-<p>| C3（/healthz 端点）| k | api.py + healthz | ✅ PASS | 200 + status ok |</p>
-<p>| C4（mutable default 修复）| k | utils.py + test_utils_fix.py | ✅ PASS | AST 0 残留 + 3 测试 |</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Query</th>
+<th style="text-align: left;">执行者</th>
+<th style="text-align: left;">产物</th>
+<th style="text-align: left;">Grader 结果</th>
+<th style="text-align: left;">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">C1（空密码拒绝测试）</td>
+<td style="text-align: left;">k（冒烟已过）</td>
+<td style="text-align: left;">test_empty_pw.py</td>
+<td style="text-align: left;">✅ PASS</td>
+<td style="text-align: left;">3 passed</td>
+</tr>
+<tr>
+<td style="text-align: left;">C2（修复认证绕过）</td>
+<td style="text-align: left;">WorkBuddy</td>
+<td style="text-align: left;">auth.py 修复 + test_auth_fix.py</td>
+<td style="text-align: left;">✅ PASS</td>
+<td style="text-align: left;">2 测试真过 + 行为验证</td>
+</tr>
+<tr>
+<td style="text-align: left;">C3（/healthz 端点）</td>
+<td style="text-align: left;">k</td>
+<td style="text-align: left;">api.py + healthz</td>
+<td style="text-align: left;">✅ PASS</td>
+<td style="text-align: left;">200 + status ok</td>
+</tr>
+<tr>
+<td style="text-align: left;">C4（mutable default 修复）</td>
+<td style="text-align: left;">k</td>
+<td style="text-align: left;">utils.py + test_utils_fix.py</td>
+<td style="text-align: left;">✅ PASS</td>
+<td style="text-align: left;">AST 0 残留 + 3 测试</td>
+</tr>
+</tbody>
+</table>
 <h2 id="_1">数据点（第一批 + 第二批）<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>
-<p><strong>B 组（多 agent）5/5 PASS</strong>（B2/B3/B4/C2 WorkBuddy + 冒烟 A1）</p>
-</li>
-<li>
-<p><strong>A 组（单 agent）5/5 PASS</strong>（E2/C1/C3/C4 k + 冒烟 B1）</p>
-</li>
-<li>
-<p>副作用干净：repo git diff 只触 3 个预期文件 + 2 新增测试</p>
-</li>
-<li>
-<p>WorkBuddy 独立配额稳定（今天 6/6 成功）</p>
-</li>
+<li><strong>B 组（多 agent）5/5 PASS</strong>（B2/B3/B4/C2 WorkBuddy + 冒烟 A1）</li>
+<li><strong>A 组（单 agent）5/5 PASS</strong>（E2/C1/C3/C4 k + 冒烟 B1）</li>
+<li>副作用干净：repo git diff 只触 3 个预期文件 + 2 新增测试</li>
+<li>WorkBuddy 独立配额稳定（今天 6/6 成功）</li>
 </ul>
 <h2 id="_2">过程记录<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
-<li>
-<p>dsh 缺 DEEPSEEK_API_KEY → 无法派发（记录：需要配 key）</p>
-</li>
-<li>
-<p>反重力 agentapi CLI 有 project_id bug → D 类暂用 k 生成 + grader 验证（或人工 IDE）</p>
-</li>
-<li>
-<p>WorkBuddy 任务包：B2/B3/B4 三个任务合并一个任务包派发（数据类适合批量）</p>
-</li>
+<li>dsh 缺 DEEPSEEK_API_KEY → 无法派发（记录：需要配 key）</li>
+<li>反重力 agentapi CLI 有 project_id bug → D 类暂用 k 生成 + grader 验证（或人工 IDE）</li>
+<li>WorkBuddy 任务包：B2/B3/B4 三个任务合并一个任务包派发（数据类适合批量）</li>
 </ul>
 <hr />
 <blockquote>

@@ -2851,12 +2851,11 @@
 
 <h1 id="hermes-codex">Hermes → Codex 授权安全调用策略（强约束版）<a class="headerlink" href="#hermes-codex" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p>来源：sora 定稿 · 2026-09-04 · 落地为 skill: <code>hermes-codex-security-gate</code></p>
-<p>适用：Hermes 编排层派活 Codex/其他执行 Agent 前的强制 Policy Gate</p>
+<p>来源：sora 定稿 · 2026-09-04 · 落地为 skill: <code>hermes-codex-security-gate</code>
+适用：Hermes 编排层派活 Codex/其他执行 Agent 前的强制 Policy Gate</p>
 </blockquote>
 <h2 id="_1">核心原则<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><code>授权优先于执行 · 范围优先于效率 · 隔离验证优先于真实目标验证
-
 人工审批优先于 Agent 自主决策 · 最小证据优先于扩大访问
 </code></pre></div>
 
@@ -2866,159 +2865,120 @@
 
 <h2 id="policy-gate">Policy Gate 三分类<a class="headerlink" href="#policy-gate" title="Permanent link">&para;</a></h2>
 <ul>
-<li>
-<p>SAFE：允许自动执行</p>
-</li>
-<li>
-<p>REVIEW_REQUIRED：等待人工批准</p>
-</li>
-<li>
-<p>BLOCKED：不得下发任何执行 Agent</p>
-</li>
+<li>SAFE：允许自动执行</li>
+<li>REVIEW_REQUIRED：等待人工批准</li>
+<li>BLOCKED：不得下发任何执行 Agent</li>
 </ul>
 <h2 id="_3">触发词分类速查<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <h3 id="blocked">BLOCKED（凭证类，默认）<a class="headerlink" href="#blocked" title="Permanent link">&para;</a></h3>
 <p>密码抓取 / Cookie 抓取 / Session Token 获取 / API Key 提取 / Access Token 获取 / SSH Key 获取 / 浏览器凭证读取 / 系统凭证转储 / 登录信息窃取 / 从真实用户环境提取认证信息</p>
-<p>豁免条件（全满足才可降级为验证）：</p>
-<ol>
-<li>完全本地实验环境 2. 虚构测试账号 3. 人工生成测试凭证 4. 不涉及真实用户 5. 不访问第三方系统</li>
-</ol>
-<p>豁免后只允许验证「漏洞是否可能导致凭证暴露」，不实际收集真实凭证</p>
+<p>豁免条件（全满足才可降级为验证）：
+1. 完全本地实验环境 2. 虚构测试账号 3. 人工生成测试凭证 4. 不涉及真实用户 5. 不访问第三方系统
+豁免后只允许验证「漏洞是否可能导致凭证暴露」，不实际收集真实凭证</p>
 <h3 id="review_required">REVIEW_REQUIRED（安全控制绕过类）<a class="headerlink" href="#review_required" title="Permanent link">&para;</a></h3>
 <p>绕过认证 / 授权 / MFA / WAF / EDR / 反作弊 / 安全策略 / 访问控制 / 沙箱 / 检测 / 隐藏执行 / 规避日志 / 规避审计 / 反检测 / Evasion / Defense bypass</p>
 <p>目标属真实第三方系统且授权不明确 → BLOCKED</p>
 <h3 id="network_deny">NETWORK_DENY（真实网络目标）<a class="headerlink" href="#network_deny" title="Permanent link">&para;</a></h3>
 <ul>
-<li>
-<p>扫描公网 / 未列入授权清单的 IP / 枚举未知子域 / 自动发现并攻击相邻资产 / 扩大到供应商/CDN/云服务商/合作伙伴 / 扫描第三方 SaaS / 对真实用户账号测试</p>
-</li>
-<li>
-<p>所有网络目标必须存在于 AUTHORIZED_TARGETS</p>
-</li>
+<li>扫描公网 / 未列入授权清单的 IP / 枚举未知子域 / 自动发现并攻击相邻资产 / 扩大到供应商/CDN/云服务商/合作伙伴 / 扫描第三方 SaaS / 对真实用户账号测试</li>
+<li>所有网络目标必须存在于 AUTHORIZED_TARGETS</li>
 </ul>
 <h3 id="srcbug-bounty-src">SRC/Bug Bounty 双重确认（「这是 SRC」≠ 充分授权）<a class="headerlink" href="#srcbug-bounty-src" title="Permanent link">&para;</a></h3>
-<p>必须同时确认：Program（项目/平台/是否仍开放）+ Scope（Domain/IP/App/API/Repo）+ Allowed Actions + Prohibited Actions</p>
-<p>无法确认 → 不得执行主动攻击动作</p>
+<p>必须同时确认：Program（项目/平台/是否仍开放）+ Scope（Domain/IP/App/API/Repo）+ Allowed Actions + Prohibited Actions
+无法确认 → 不得执行主动攻击动作</p>
 <h2 id="_4">漏洞验证等级（从低到高，禁止跳级）<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>| 等级 | 方式 | 自动执行 |</p>
-<p>|:---|:---|:---|</p>
-<p>| L0 | 静态分析（Code Review/SAST/依赖分析/调用图/数据流）| ✅ 默认 |</p>
-<p>| L1 | 本地单元测试（Mock/Fixture/Synthetic Data）| ✅ 默认 |</p>
-<p>| L2 | Docker/VM 靶场复现（Sandbox/Disposable VM/Local Replica）| ✅ 默认 |</p>
-<p>| L3 | 授权测试环境 | ⚠️ 仅明确授权 |</p>
-<p>| L4 | 真实生产环境 | ❌ 默认禁止，必须人工批准 |</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">等级</th>
+<th style="text-align: left;">方式</th>
+<th style="text-align: left;">自动执行</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">L0</td>
+<td style="text-align: left;">静态分析（Code Review/SAST/依赖分析/调用图/数据流）</td>
+<td style="text-align: left;">✅ 默认</td>
+</tr>
+<tr>
+<td style="text-align: left;">L1</td>
+<td style="text-align: left;">本地单元测试（Mock/Fixture/Synthetic Data）</td>
+<td style="text-align: left;">✅ 默认</td>
+</tr>
+<tr>
+<td style="text-align: left;">L2</td>
+<td style="text-align: left;">Docker/VM 靶场复现（Sandbox/Disposable VM/Local Replica）</td>
+<td style="text-align: left;">✅ 默认</td>
+</tr>
+<tr>
+<td style="text-align: left;">L3</td>
+<td style="text-align: left;">授权测试环境</td>
+<td style="text-align: left;">⚠️ 仅明确授权</td>
+</tr>
+<tr>
+<td style="text-align: left;">L4</td>
+<td style="text-align: left;">真实生产环境</td>
+<td style="text-align: left;">❌ 默认禁止，必须人工批准</td>
+</tr>
+</tbody>
+</table>
 <h2 id="codex">Codex 工具调用限制<a class="headerlink" href="#codex" title="Permanent link">&para;</a></h2>
 <ul>
-<li>
-<p>ALLOW：read_file / search_code / grep / static_analysis / compile / unit_test / dependency_scan / create_test / generate_patch / generate_report</p>
-</li>
-<li>
-<p>APPROVAL REQUIRED：network_request / browser / scanner / exploit_test / authentication_test / privilege_test / package_install / external_api</p>
-</li>
-<li>
-<p>DENY BY DEFAULT：credential_dump / password_collection / token_collection / persistence / lateral_movement / destructive_command / unrestricted_scan / arbitrary_external_target / defense_evasion</p>
-</li>
+<li>ALLOW：read_file / search_code / grep / static_analysis / compile / unit_test / dependency_scan / create_test / generate_patch / generate_report</li>
+<li>APPROVAL REQUIRED：network_request / browser / scanner / exploit_test / authentication_test / privilege_test / package_install / external_api</li>
+<li>DENY BY DEFAULT：credential_dump / password_collection / token_collection / persistence / lateral_movement / destructive_command / unrestricted_scan / arbitrary_external_target / defense_evasion</li>
 </ul>
 <h2 id="_5">网络策略<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>NETWORK_POLICY=DENY_BY_DEFAULT · ALLOWLIST_ONLY=true</p>
-<p>Agent 不得自行添加域名/IP/修改 DNS/更改代理/切换出口节点；新增目标必须人工批准</p>
+<p>NETWORK_POLICY=DENY_BY_DEFAULT · ALLOWLIST_ONLY=true
+Agent 不得自行添加域名/IP/修改 DNS/更改代理/切换出口节点；新增目标必须人工批准</p>
 <h2 id="_6">密钥策略<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<p>禁止读取：浏览器密码 / 系统密码库 / SSH Agent / 用户主目录凭证 / 云平台长期密钥 / 浏览器 Cookie / 生产 Token</p>
-<p>测试仅用 TEST_CREDENTIAL_ONLY=true（Temporary/Scoped/Revocable/Non-production）；任务结束 Revoke/Rotate/Destroy</p>
+<p>禁止读取：浏览器密码 / 系统密码库 / SSH Agent / 用户主目录凭证 / 云平台长期密钥 / 浏览器 Cookie / 生产 Token
+测试仅用 TEST_CREDENTIAL_ONLY=true（Temporary/Scoped/Revocable/Non-production）；任务结束 Revoke/Rotate/Destroy</p>
 <h2 id="agent">Agent 自主循环限制<a class="headerlink" href="#agent" title="Permanent link">&para;</a></h2>
-<p>MAX_STEPS=12，达到即 STOP，不得无限重试</p>
-<p>禁止自主发生：Scan → Find → Exploit → Escalate → Pivot</p>
+<p>MAX_STEPS=12，达到即 STOP，不得无限重试
+禁止自主发生：Scan → Find → Exploit → Escalate → Pivot</p>
 <h2 id="openai-2026-09-04">⚠️ OpenAI 供应商红线（2026-09-04 警告信后新增，<strong>当日已申诉澄清</strong>）<a class="headerlink" href="#openai-2026-09-04" title="Permanent link">&para;</a></h2>
-<p><strong>背景</strong>：sora 收到 OpenAI 官方警告信，Codex 使用被标记「Network Abuse」——Codex 沙箱的高频自动化网络活动（npm/pip install、git、外部 API 调用）被自动检测系统判定为违规模式，再犯将停用服务访问。</p>
-<p><strong>✅ 申诉结果（2026-09-04 当日）</strong>：官方确认是<strong>误报/错报警告</strong>，账号无处罚。</p>
-<p><strong>✅ 已全面恢复（2026-09-04）</strong>：<code>web_search</code> 已恢复 <code>live</code>，下方「Codex 使用铁律」的临时限制（降频/禁敏感词/依赖离线/墨题不走 Codex）<strong>全部解除</strong>，Codex 正常编码任务恢复使用。本段保留作为事件记录，日常执行以「核心原则 / Policy Gate」常态基线为准。</p>
+<p><strong>背景</strong>：sora 收到 OpenAI 官方警告信，Codex 使用被标记「Network Abuse」——Codex 沙箱的高频自动化网络活动（npm/pip install、git、外部 API 调用）被自动检测系统判定为违规模式，再犯将停用服务访问。
+<strong>✅ 申诉结果（2026-09-04 当日）</strong>：官方确认是<strong>误报/错报警告</strong>，账号无处罚。
+<strong>✅ 已全面恢复（2026-09-04）</strong>：<code>web_search</code> 已恢复 <code>live</code>，下方「Codex 使用铁律」的临时限制（降频/禁敏感词/依赖离线/墨题不走 Codex）<strong>全部解除</strong>，Codex 正常编码任务恢复使用。本段保留作为事件记录，日常执行以「核心原则 / Policy Gate」常态基线为准。</p>
 <h3 id="codex_1">Codex 使用铁律<a class="headerlink" href="#codex_1" title="Permanent link">&para;</a></h3>
 <ol>
-<li>
-<p><strong>Codex 只跑纯本地代码任务</strong>：读文件/改代码/本地测试/本地构建（L0-L1）</p>
-</li>
-<li>
-<p><strong>禁止在 Codex 任务里触发网络活动</strong>：npm/pip install、git fetch/push、外部 API、浏览器、抓取、扫描——分流传本地或其他工具</p>
-</li>
-<li>
-<p><strong>任务包禁敏感词</strong>：不出现「扫描/抓取/绕过/爬虫/侦察/自动化」等字样</p>
-</li>
-<li>
-<p><strong>降频</strong>：不连续批量跑，每单间隔 5-10 分钟；涉及依赖安装的先本地装好再派活</p>
-</li>
-<li>
-<p><strong>墨题项目默认本地执行</strong>（2026-09-04 决策）：不再走 Codex</p>
-</li>
-<li>
-<p><strong>申诉模板</strong>：说明仅做本地开发、常规依赖安装被误判，请求复核</p>
-</li>
+<li><strong>Codex 只跑纯本地代码任务</strong>：读文件/改代码/本地测试/本地构建（L0-L1）</li>
+<li><strong>禁止在 Codex 任务里触发网络活动</strong>：npm/pip install、git fetch/push、外部 API、浏览器、抓取、扫描——分流传本地或其他工具</li>
+<li><strong>任务包禁敏感词</strong>：不出现「扫描/抓取/绕过/爬虫/侦察/自动化」等字样</li>
+<li><strong>降频</strong>：不连续批量跑，每单间隔 5-10 分钟；涉及依赖安装的先本地装好再派活</li>
+<li><strong>墨题项目默认本地执行</strong>（2026-09-04 决策）：不再走 Codex</li>
+<li><strong>申诉模板</strong>：说明仅做本地开发、常规依赖安装被误判，请求复核</li>
 </ol>
 <h3 id="2026-09-04-sora">操作细则（2026-09-04 sora 精确化补充）<a class="headerlink" href="#2026-09-04-sora" title="Permanent link">&para;</a></h3>
 <ul>
-<li>
-<p><strong>网络安全工作只针对</strong>：本地、靶场、staging 或明确授权目标；不碰真实第三方系统</p>
-</li>
-<li>
-<p><strong>任务包功能描述禁区</strong>：不写「自动挖洞/批量扫描/凭据抓取/绕过检测/隐藏运行」——即使任务内容是防御性的，描述也保持中性</p>
-</li>
-<li>
-<p><strong>高风险任务模式</strong>：只读沙箱 + 逐步人工审批（read-only / on-request 限制性配置，与 Codex 官方文档建议一致）</p>
-</li>
-<li>
-<p><strong>依赖策略</strong>：提前锁定版本并尽量离线缓存；减少每个任务临时安装、访问陌生外部服务</p>
-</li>
-<li>
-<p><strong>网络出口</strong>：尽量使用稳定可信出口，避免代理 IP 频繁跳变——这只是降低误报的运营措施，不代表 FlClash 已被确认为原因</p>
-</li>
-<li>
-<p><strong>申诉事实纪律</strong>：不把未验证的「代理 IP 被封」写成申诉事实；若支持团队询问，作为待核实假设说明</p>
-</li>
+<li><strong>网络安全工作只针对</strong>：本地、靶场、staging 或明确授权目标；不碰真实第三方系统</li>
+<li><strong>任务包功能描述禁区</strong>：不写「自动挖洞/批量扫描/凭据抓取/绕过检测/隐藏运行」——即使任务内容是防御性的，描述也保持中性</li>
+<li><strong>高风险任务模式</strong>：只读沙箱 + 逐步人工审批（read-only / on-request 限制性配置，与 Codex 官方文档建议一致）</li>
+<li><strong>依赖策略</strong>：提前锁定版本并尽量离线缓存；减少每个任务临时安装、访问陌生外部服务</li>
+<li><strong>网络出口</strong>：尽量使用稳定可信出口，避免代理 IP 频繁跳变——这只是降低误报的运营措施，不代表 FlClash 已被确认为原因</li>
+<li><strong>申诉事实纪律</strong>：不把未验证的「代理 IP 被封」写成申诉事实；若支持团队询问，作为待核实假设说明</li>
 </ul>
 <h3 id="2026-09-04-config">官方文档对照实证（2026-09-04 子代理审查 + 本机 config 核验）<a class="headerlink" href="#2026-09-04-config" title="Permanent link">&para;</a></h3>
-<p><strong>Codex 官方文档关键原文（github.com/openai/codex sandbox.md）</strong>：</p>
-<ul>
-<li>
-<p><em>"In workspace-write, network is disabled by default unless enabled in config (<code>[sandbox_workspace_write].network_access = true</code>)"</em></p>
-</li>
-<li>
-<p>官方推荐安全组合：<code>--sandbox read-only --ask-for-approval on-request</code>（安全只读浏览）/ <code>--sandbox read-only --ask-for-approval never</code>（CI 只读）/ <code>--sandbox workspace-write --ask-for-approval on-request</code>（改代码但高风险动作需批准）</p>
-</li>
-<li>
-<p><strong>避免 <code>danger-full-access</code> / <code>--yolo</code></strong>：完全绕过沙箱和审批（官方不建议）</p>
-</li>
-<li>
-<p>Windows 沙箱为 <strong>experimental</strong>：AppContainer 限制，world-writable 目录挡不住写</p>
-</li>
-</ul>
-<p><strong>本机 <code>~/.codex/config.toml</code> 实证（9/4 核验）</strong>：</p>
-<ul>
-<li>
-<p><code>sandbox_workspace_write.network_access = False</code> ✅ 网络默认已关（沙箱内禁止联网）</p>
-</li>
-<li>
-<p><code>approval_policy = on-request</code> + <code>approvals_reviewer = auto_review</code> ✅ 高风险动作走审查</p>
-</li>
-<li>
-<p><code>web_search = disabled</code> ⚠️（2026-09-04 已关闭——<strong>注意合法值只有 disabled/cached/indexed/live，写 <code>off</code> 会导致 config_load 失败</strong>，ChatGPT 桌面端直接卡启动）</p>
-</li>
-<li>
-<p><code>windows.sandbox = elevated</code> ⚠️ Windows 沙箱本身是 experimental</p>
-</li>
-</ul>
+<p><strong>Codex 官方文档关键原文（github.com/openai/codex sandbox.md）</strong>：
+- <em>"In workspace-write, network is disabled by default unless enabled in config (<code>[sandbox_workspace_write].network_access = true</code>)"</em>
+- 官方推荐安全组合：<code>--sandbox read-only --ask-for-approval on-request</code>（安全只读浏览）/ <code>--sandbox read-only --ask-for-approval never</code>（CI 只读）/ <code>--sandbox workspace-write --ask-for-approval on-request</code>（改代码但高风险动作需批准）
+- <strong>避免 <code>danger-full-access</code> / <code>--yolo</code></strong>：完全绕过沙箱和审批（官方不建议）
+- Windows 沙箱为 <strong>experimental</strong>：AppContainer 限制，world-writable 目录挡不住写</p>
+<p><strong>本机 <code>~/.codex/config.toml</code> 实证（9/4 核验）</strong>：
+- <code>sandbox_workspace_write.network_access = False</code> ✅ 网络默认已关（沙箱内禁止联网）
+- <code>approval_policy = on-request</code> + <code>approvals_reviewer = auto_review</code> ✅ 高风险动作走审查
+- <code>web_search = disabled</code> ⚠️（2026-09-04 已关闭——<strong>注意合法值只有 disabled/cached/indexed/live，写 <code>off</code> 会导致 config_load 失败</strong>，ChatGPT 桌面端直接卡启动）
+- <code>windows.sandbox = elevated</code> ⚠️ Windows 沙箱本身是 experimental</p>
 <p><strong>结论</strong>：之前用 <code>codex exec --sandbox workspace-write</code> 跑的任务，沙箱内网络已被禁；真正的联网通道是 <code>web_search = live</code> + 任务文本触发的搜索行为。这解释了「网络滥用」警告的来源之一。</p>
 <h3 id="_7">推荐配置（官方原文 + 本机适配）<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code><span class="c1"># ~/.codex/config.toml（观察期建议）</span>
-
 <span class="n">approval_policy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"on-request"</span><span class="w">        </span><span class="c1"># 高风险动作人工批准（已符合）</span>
-
 <span class="n">approvals_reviewer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"auto_review"</span><span class="w">    </span><span class="c1"># 自动审查（已符合）</span>
-
 <span class="n">sandbox_mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"read-only"</span><span class="w">            </span><span class="c1"># 观察期：只读为主；需改代码时临时切 workspace-write</span>
-
 <span class="n">web_search</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"disabled"</span><span class="w">               </span><span class="c1"># 关闭显式联网通道（观察期；合法值 disabled/cached/indexed/live，无 off）</span>
-
 <span class="k">[sandbox_workspace_write]</span>
-
 <span class="n">network_access</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="w">                </span><span class="c1"># 保持网络关闭（已符合）</span>
 </code></pre></div>
 
@@ -3026,26 +2986,38 @@
 <p>注意：<code>--sandbox read-only</code> 与 <code>--ask-for-approval never</code> 组合 = 官方推荐 CI 只读模式，适合代码审查类任务。</p>
 </blockquote>
 <h3 id="_8">替代执行路径<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<p>| 任务类型 | 替代方案 |</p>
-<p>|:---|:---|</p>
-<p>| 墨题前端/后端改动 | k 本地直接改（patch/write_file + npm build + pytest）|</p>
-<p>| 需要装依赖的任务 | 本地终端先装好再决定 |</p>
-<p>| 抓取/网络类任务 | 本地脚本 + Hermes 内置工具 |</p>
-<p>| 调研/数据任务 | WorkBuddy / dsh |</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">任务类型</th>
+<th style="text-align: left;">替代方案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">墨题前端/后端改动</td>
+<td style="text-align: left;">k 本地直接改（patch/write_file + npm build + pytest）</td>
+</tr>
+<tr>
+<td style="text-align: left;">需要装依赖的任务</td>
+<td style="text-align: left;">本地终端先装好再决定</td>
+</tr>
+<tr>
+<td style="text-align: left;">抓取/网络类任务</td>
+<td style="text-align: left;">本地脚本 + Hermes 内置工具</td>
+</tr>
+<tr>
+<td style="text-align: left;">调研/数据任务</td>
+<td style="text-align: left;">WorkBuddy / dsh</td>
+</tr>
+</tbody>
+</table>
 <h2 id="k">k 的落地执行承诺<a class="headerlink" href="#k" title="Permanent link">&para;</a></h2>
 <ol>
-<li>
-<p>每次派活 Codex 前先过 Policy Gate 三分类，输出分类结果</p>
-</li>
-<li>
-<p>涉安全/授权边界任务默认 REVIEW_REQUIRED，等 sora 明确批准再下发</p>
-</li>
-<li>
-<p>派活包内嵌授权边界段（scope/禁止项/验证等级上限）</p>
-</li>
-<li>
-<p>挖洞产出只用于授权目标，不进公开仓库，报告人工核验</p>
-</li>
+<li>每次派活 Codex 前先过 Policy Gate 三分类，输出分类结果</li>
+<li>涉安全/授权边界任务默认 REVIEW_REQUIRED，等 sora 明确批准再下发</li>
+<li>派活包内嵌授权边界段（scope/禁止项/验证等级上限）</li>
+<li>挖洞产出只用于授权目标，不进公开仓库，报告人工核验</li>
 </ol>
 <hr />
 <blockquote>

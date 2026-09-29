@@ -2850,106 +2850,113 @@
 
 
 <h1 id="multi-agent-eval-v2-implementation">Multi-Agent Eval v2 implementation<a class="headerlink" href="#multi-agent-eval-v2-implementation" title="Permanent link">&para;</a></h1>
-<p>This repository turns the design in <code>EVAL_PLAN.md</code> into dependency-free grading,</p>
-<p>statistics, and failure-attribution primitives plus a draft manifest for the</p>
-<p>matched 180-run experiment. It does not execute providers or perform network</p>
-<p>calls.</p>
+<p>This repository turns the design in <code>EVAL_PLAN.md</code> into dependency-free grading,
+statistics, and failure-attribution primitives plus a draft manifest for the
+matched 180-run experiment. It does not execute providers or perform network
+calls.</p>
 <h2 id="repository-contents">Repository contents<a class="headerlink" href="#repository-contents" title="Permanent link">&para;</a></h2>
-<p>| File | Purpose |</p>
-<p>|---|---|</p>
-<p>| <code>task_cards.jsonl</code> | Ten open-task cards (<code>T01</code>–<code>T10</code>) with budgets, artifacts, hard gates, and judge dimensions. |</p>
-<p>| <code>graders.py</code> | Hard-gate-first aggregation and strict LLM judge JSON validation. |</p>
-<p>| <code>stats.py</code> | Wilson intervals, exact paired McNemar tests, and Holm correction. |</p>
-<p>| <code>failure_attribution.py</code> | Timeline reconstruction and the ten-code failure taxonomy. |</p>
-<p>| <code>run_manifest.yaml</code> | Three-arm matched design, scheduling, grading, metrics, and provenance requirements. |</p>
-<p>| <code>tests/</code> | Unit tests for precedence, validation, statistics, and attribution behavior. |</p>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>task_cards.jsonl</code></td>
+<td>Ten open-task cards (<code>T01</code>–<code>T10</code>) with budgets, artifacts, hard gates, and judge dimensions.</td>
+</tr>
+<tr>
+<td><code>graders.py</code></td>
+<td>Hard-gate-first aggregation and strict LLM judge JSON validation.</td>
+</tr>
+<tr>
+<td><code>stats.py</code></td>
+<td>Wilson intervals, exact paired McNemar tests, and Holm correction.</td>
+</tr>
+<tr>
+<td><code>failure_attribution.py</code></td>
+<td>Timeline reconstruction and the ten-code failure taxonomy.</td>
+</tr>
+<tr>
+<td><code>run_manifest.yaml</code></td>
+<td>Three-arm matched design, scheduling, grading, metrics, and provenance requirements.</td>
+</tr>
+<tr>
+<td><code>tests/</code></td>
+<td>Unit tests for precedence, validation, statistics, and attribution behavior.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="local-validation">Local validation<a class="headerlink" href="#local-validation" title="Permanent link">&para;</a></h2>
-<p>No package installation is required by the implementation. If <code>pytest</code> is</p>
-<p>already available in a local Python interpreter, run:</p>
+<p>No package installation is required by the implementation. If <code>pytest</code> is
+already available in a local Python interpreter, run:</p>
 <div class="codehilite"><pre><span></span><code><span class="n">python</span> <span class="n">-m</span> <span class="n">pytest</span> <span class="n">-q</span>
 </code></pre></div>
 
-<p>The modules themselves use only the Python standard library and support Python</p>
-<p>3.11 or newer.</p>
+<p>The modules themselves use only the Python standard library and support Python
+3.11 or newer.</p>
 <p>Useful data checks without PyYAML are:</p>
 <div class="codehilite"><pre><span></span><code><span class="n">python</span> <span class="n">-c</span> <span class="s2">"import json; rows=[json.loads(x) for x in open('task_cards.jsonl', encoding='utf-8') if x.strip()]; assert len(rows)==10; assert len({x['task_id'] for x in rows})==10"</span>
-
 <span class="n">python</span> <span class="n">-m</span> <span class="n">py_compile</span> <span class="n">graders</span><span class="p">.</span><span class="n">py</span> <span class="n">stats</span><span class="p">.</span><span class="n">py</span> <span class="n">failure_attribution</span><span class="p">.</span><span class="n">py</span>
 </code></pre></div>
 
 <h2 id="grading-contract">Grading contract<a class="headerlink" href="#grading-contract" title="Permanent link">&para;</a></h2>
-<p>Call <code>grade_submission(hard_gates, judge_payload, needs_judge=True)</code>. Failed</p>
-<p>deterministic gates are collected in stable input order, deduplicated by reason</p>
-<p>code, and returned before the judge payload is parsed. Thus malformed or passing</p>
-<p>judge output cannot override a deterministic failure.</p>
-<p>When a judge is needed, its output must be one strict JSON object containing</p>
-<p>exactly:</p>
+<p>Call <code>grade_submission(hard_gates, judge_payload, needs_judge=True)</code>. Failed
+deterministic gates are collected in stable input order, deduplicated by reason
+code, and returned before the judge payload is parsed. Thus malformed or passing
+judge output cannot override a deterministic failure.</p>
+<p>When a judge is needed, its output must be one strict JSON object containing
+exactly:</p>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
-
 <span class="w">  </span><span class="nt">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="p">,</span>
-
 <span class="w">  </span><span class="nt">"dimensions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-
 <span class="w">    </span><span class="nt">"correctness"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
-
 <span class="w">    </span><span class="nt">"evidence"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
-
 <span class="w">    </span><span class="nt">"uncertainty"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
-
 <span class="w">    </span><span class="nt">"safety"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
-
 <span class="w">    </span><span class="nt">"efficiency"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span>
-
 <span class="w">  </span><span class="p">},</span>
-
 <span class="w">  </span><span class="nt">"evidence_spans"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-
 <span class="w">    </span><span class="p">{</span><span class="nt">"dimension"</span><span class="p">:</span><span class="w"> </span><span class="s2">"correctness"</span><span class="p">,</span><span class="w"> </span><span class="nt">"artifact"</span><span class="p">:</span><span class="w"> </span><span class="s2">"answer.md"</span><span class="p">,</span><span class="w"> </span><span class="nt">"quote"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Result"</span><span class="p">}</span>
-
 <span class="w">  </span><span class="p">],</span>
-
 <span class="w">  </span><span class="nt">"confidence"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9</span><span class="p">,</span>
-
 <span class="w">  </span><span class="nt">"unknown_reason"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
-
 <span class="p">}</span>
 </code></pre></div>
 
-<p>Scores are integer values from 0 through 4, confidence is finite and lies in</p>
-<p><code>[0, 1]</code>, and extra/missing/duplicate fields are rejected. <code>unknown_reason</code> must</p>
-<p>be a non-empty string only when <code>label</code> is <code>unknown</code>. Malformed judge output is</p>
-<p>a <code>grader_error</code>, not an agent-quality failure; <code>unknown</code> routes to review.</p>
+<p>Scores are integer values from 0 through 4, confidence is finite and lies in
+<code>[0, 1]</code>, and extra/missing/duplicate fields are rejected. <code>unknown_reason</code> must
+be a non-empty string only when <code>label</code> is <code>unknown</code>. Malformed judge output is
+a <code>grader_error</code>, not an agent-quality failure; <code>unknown</code> routes to review.</p>
 <h2 id="statistical-contract">Statistical contract<a class="headerlink" href="#statistical-contract" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>wilson_ci(successes, total, alpha=0.05)</code> returns <code>rate</code>, <code>low</code>, and <code>high</code>, or</li>
+<li><code>wilson_ci(successes, total, alpha=0.05)</code> returns <code>rate</code>, <code>low</code>, and <code>high</code>, or
+  <code>None</code> for <code>0/0</code>.</li>
+<li><code>mcnemar_exact(arm_a, arm_b)</code> requires non-empty aligned integer <code>0/1</code> pairs
+  and reports <code>ab</code>, <code>ba</code>, discordance, the exact two-sided p-value, and paired
+  success-rate delta.</li>
+<li><code>holm_correction(...)</code> accepts either an iterable of p-values or a mapping of
+  named comparisons and preserves original order.</li>
 </ul>
-<p><code>None</code> for <code>0/0</code>.</p>
-<ul>
-<li><code>mcnemar_exact(arm_a, arm_b)</code> requires non-empty aligned integer <code>0/1</code> pairs</li>
-</ul>
-<p>and reports <code>ab</code>, <code>ba</code>, discordance, the exact two-sided p-value, and paired</p>
-<p>success-rate delta.</p>
-<ul>
-<li><code>holm_correction(...)</code> accepts either an iterable of p-values or a mapping of</li>
-</ul>
-<p>named comparisons and preserves original order.</p>
-<p>For the preregistered analysis, apply McNemar only to matched binary outcomes</p>
-<p>for <code>M vs S</code>, <code>NG vs M</code>, and <code>NG vs S</code>, then apply Holm to those three p-values.</p>
-<p>Do not use McNemar for score, token, latency, or cost outcomes.</p>
+<p>For the preregistered analysis, apply McNemar only to matched binary outcomes
+for <code>M vs S</code>, <code>NG vs M</code>, and <code>NG vs S</code>, then apply Holm to those three p-values.
+Do not use McNemar for score, token, latency, or cost outcomes.</p>
 <h2 id="failure-attribution-contract">Failure-attribution contract<a class="headerlink" href="#failure-attribution-contract" title="Permanent link">&para;</a></h2>
-<p><code>attribute_failure(events, final_outcome=...)</code> sorts events by timestamp and</p>
-<p>uses the earliest unrecovered blocker as primary. Later distinct blockers become</p>
-<p>contributors. Recovered events remain in <code>observed_events</code> for reliability</p>
-<p>reporting but cannot become primary or contributing causes. The taxonomy is:</p>
-<p><code>INFRA</code>, <code>TIMEOUT</code>, <code>TOOL</code>, <code>ORCH</code>, <code>BUDGET</code>, <code>GATE</code>, <code>PARSE</code>, <code>TASK</code>, <code>DATA</code>,</p>
-<p>and <code>UNKNOWN</code>.</p>
+<p><code>attribute_failure(events, final_outcome=...)</code> sorts events by timestamp and
+uses the earliest unrecovered blocker as primary. Later distinct blockers become
+contributors. Recovered events remain in <code>observed_events</code> for reliability
+reporting but cannot become primary or contributing causes. The taxonomy is:
+<code>INFRA</code>, <code>TIMEOUT</code>, <code>TOOL</code>, <code>ORCH</code>, <code>BUDGET</code>, <code>GATE</code>, <code>PARSE</code>, <code>TASK</code>, <code>DATA</code>,
+and <code>UNKNOWN</code>.</p>
 <h2 id="before-a-formal-run">Before a formal run<a class="headerlink" href="#before-a-formal-run" title="Permanent link">&para;</a></h2>
-<p><code>run_manifest.yaml</code> intentionally leaves model, prompt, fixture, tool, and</p>
-<p>configuration hashes as <code>null</code>. Populate them from the final frozen bytes before</p>
-<p>execution; do not substitute descriptive labels or provisional digests. The</p>
-<p>formal design is 20 task templates × 3 instances × 3 arms = 180 matched runs.</p>
-<p>Dry runs, retries, and the separate Regression-20 suite do not increase that</p>
-<p>sample count. External side effects must remain simulated or dry-run only.</p>
+<p><code>run_manifest.yaml</code> intentionally leaves model, prompt, fixture, tool, and
+configuration hashes as <code>null</code>. Populate them from the final frozen bytes before
+execution; do not substitute descriptive labels or provisional digests. The
+formal design is 20 task templates × 3 instances × 3 arms = 180 matched runs.
+Dry runs, retries, and the separate Regression-20 suite do not increase that
+sample count. External side effects must remain simulated or dry-run only.</p>
 <hr />
 <blockquote>
 <p>🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]</p>
