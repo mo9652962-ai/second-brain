@@ -1,5 +1,5 @@
 ---
-tags: [knowledge, ai-image, prompt-engineering, reverse-prompting]
+tags: [knowledge/dev, ai-image, prompt-engineering, reverse-prompting]
 domain: AI-Workflow
 created: 2026-07-23
 updated: 2026-07-23

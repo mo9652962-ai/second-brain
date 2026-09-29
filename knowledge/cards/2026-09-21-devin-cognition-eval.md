@@ -1,12 +1,7 @@
 ---
 aliases:
   - 2026-09-21-card-devin-cognition-eval
-tags:
-  - knowledge-card
-  - devin
-  - coding-agent
-  - ai-agent
-  - vendor-evaluation
+tags: [knowledge-card, devin, coding-agent, ai-agent, vendor-evaluation]
 created: 2026-09-21
 source: "[[knowledge/Dev/Devin-Cognition-评估-2026-09-20]]"
 status: fresh

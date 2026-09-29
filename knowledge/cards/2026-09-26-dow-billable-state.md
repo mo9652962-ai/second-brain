@@ -1,12 +1,7 @@
 ---
 aliases:
   - 2026-09-26-card-dow-billable-state
-tags:
-  - knowledge-card
-  - agent-security
-  - cost
-  - mcp
-  - harness
+tags: [knowledge-card, agent-security, cost, mcp, harness]
 created: 2026-09-26
 source: "[[knowledge/Research/arxiv-2026-09-26-agent-llm]]"
 status: fresh

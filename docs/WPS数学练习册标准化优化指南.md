@@ -1,3 +1,13 @@
+---
+title: "WPS 数学练习册标准化优化指南"
+type: guide
+domain: Productivity
+status: adopted
+tags: [knowledge/productivity, wps, docx, math-practice, formatting]
+created: 2026-07-28
+updated: 2026-09-29
+---
+
 # 📐 WPS 数学练习册标准化优化指南
 
 > 针对《三年级数学每日一练40天_优化版.docx

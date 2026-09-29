@@ -1,11 +1,7 @@
 ---
 aliases:
   - 2026-09-29-card-jeff-local-decision-models
-tags:
-  - knowledge-card
-  - local-llm
-  - decision-model
-  - agent
+tags: [knowledge-card, local-llm, decision-model, agent]
 created: 2026-09-29
 source: "[[knowledge/Daily/hackernews-2026-09-29]]"
 ---

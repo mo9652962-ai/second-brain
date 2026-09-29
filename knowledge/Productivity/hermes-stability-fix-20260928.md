@@ -1,3 +1,13 @@
+---
+title: "Hermes 稳定性修复报告 2026-09-28"
+type: report
+domain: Productivity
+status: done
+tags: [knowledge/productivity, hermes, reliability, troubleshooting]
+created: 2026-09-28
+updated: 2026-09-28
+---
+
 # Hermes 稳定性修复报告 — 2026-09-28
 
 > 起因：sora 反馈「最近这几天使用 Hermes 总是会闪退自关闭」。

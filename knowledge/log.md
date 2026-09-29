@@ -272,3 +272,19 @@ tags: [meta, vault-maintenance]
   - `knowledge\cards\2026-09-21-devin-cognition-eval.md:35` — 3. ⚠️ 云端环境与本机不一致（本机无虚拟化、Windows 专属环境）→ 首次试用选独立后端/前端小 Bug + 要求加回归测试
 - 处理原则：只报告不自动修；事实源见 knowledge/META/current-environment.md
 
+
+## [2026-09-29] lint | 例行体检 + 检测器修正 + 标签归一（cron）
+
+- **先修检测器再动数据**（本轮核心）：3 个扫描器存在假阳性，修完再动数据
+  - `vault-structure.py` 断链检测：旧版只在「整行含反引号+方括号」时跳过，漏掉反引号包裹的完整链接与模板占位符 → 18 条假断链（4 wikilink + 14 markdown）。改为与 `knowledge-lint.py` 权威口径对齐（先剥离代码 span/fence + 占位符白名单）
+  - `vault-structure.py` 孤立检测：资产三级隔离后，公开页面唯一入链来自 private_knowledge/ 私有日记（已排除出报告范围）→ 误报孤立。改为只统计报告范围内文件的入链
+  - `gen-vault-index.py` 孤立检测（**逻辑错误，非口径问题**）：旧版把「链接来源」记入 incoming，导致「有出链但无入链」的页面被误判为非孤立，而真正被链接的页面反被报成孤立 → 孤立数虚高。改为把「被链接的目标」记为有入链
+  - `gen-vault-index.py` 孤立计数纳入仓库治理/工具类文件（.github/.learnings/CONTRIBUTING 等）→ 加忽略清单，计数回归「知识孤立页」本义
+- **断链 0**（检测器修正后 18 条假阳性全部消失，无真实断链需修）
+- **标签归一 28 文件**：`trending`→`github-trending`(6)、`knowledge/development`→`knowledge/dev`(4)、`ui/UX`→`ui`(3)、裸 `knowledge`→`knowledge/<域>`(14)；另 10 文件块式 tags → 流式（YAML 可解析）
+- **补 frontmatter 2**：hermes-stability-fix-20260928（缺整块）、docs/WPS数学练习册标准化优化指南（缺整块）
+- **孤立挂载**：MOC-Productivity（W40 稳定性/清理报告）、MOC-Archive（Daily-before-08-08 归档批次）、MOC-Research（arxiv 09-29 速览）、INDEX.md（ai-blogger 3 + templates 5 + docs 1）
+- **空文件清理 3**：dreaming deep/rem 空壳（无 footer、无入链、纯计数器）
+- **memory 漂移归位 5**：`memory/2026-09-2X.md` → `memory/2026/09/`（daily-summary / daily-self-improvement cron 硬编码根级路径所致；文件本身被 .gitignore 隔离，不在公开范围）
+- **验证**：Broken 0 / Missing frontmatter 0 / Glued 0 / Invalid YAML 0 / Orphan 0 / 标签变体 0；DASHBOARD 断链 0 · 孤立 0；CI 五关（wikilinks / backup-privacy / repo-privacy / site / pytest 14 passed）全绿
+- **工具坑**：MOC 挂载脚本用「首个 `---` 行」定位页脚 → 命中 frontmatter 开括号，块被插到文件最顶部（破坏 frontmatter）。教训：插入点扫描必须**跳过 frontmatter 区**，从第一个标题行之后开始找页脚

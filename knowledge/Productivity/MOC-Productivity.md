@@ -112,3 +112,8 @@ updated: 2026-08-31
 > cron 产出自动登记（防入链孤立）
 
 - [[token-usage-report-20260920]]
+
+## 🆕 W40 新增（09-28 ~ 09-29：稳定性 + 系统清理）
+- [[knowledge/Productivity/hermes-stability-fix-20260928|Hermes 稳定性修复报告 09-28]] — Electron 渲染进程崩溃定位 + 4 处配置层故障修复
+- [[knowledge/Productivity/system-cleanup-report-20260928|系统清理报告 09-28]] — 释放约 13.4 GB（C 盘 86% → 83%）
+

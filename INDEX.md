@@ -108,3 +108,13 @@ updated: 2026-09-25
 2. 每批次研究后更新 `knowledge/knowledge-map.md` 挂载 MOC（防孤立节点）
 3. 严格遵循**资产三级隔离原则**，商业核心算法、接单成本与隐私日记物理隔离于 `private_knowledge/`
 4. 自动同步：git push → GitHub (mo9652962-ai/second-brain)，gh-pages MkDocs 自动部署
+| [[projects/ai-blogger/content-template\|ai-blogger 内容模板]] | 发布流程 + 视频/图文模板 + 选题池 |
+| [[projects/ai-blogger/tools-setup\|ai-blogger 工具链]] | 工具链配置验证 + 账号状态 |
+| [[projects/ai-blogger/drafts/2026-09-09-AI会为了讨好你撒谎吗-抖音脚本\|抖音脚本示例 09-09]] | 实战脚本草稿 |
+| [[templates/通用笔记模板\|通用笔记模板]] | 标准笔记 frontmatter 模板 |
+| [[templates/研究笔记模板\|研究笔记模板]] | 千轮研究笔记结构模板 |
+| [[templates/风格指南\|风格指南]] | 笔记写作风格约定 |
+| [[templates/minimal-methodology-guide\|最小方法论文档指南]] | 方法论沉淀最小结构 |
+| [[docs/WPS数学练习册标准化优化指南\|WPS 数学练习册优化指南]] | WPS 交付格式与排版规范 |
+| [[knowledge/Archive/Daily-before-08-08/2026-07-29-每日回顾\|每日回顾 07-29（归档）]] | 知识吸收与变现行动复盘 |
+| [[templates/每日笔记模板\|每日笔记模板]] | 日度笔记标准结构 |
