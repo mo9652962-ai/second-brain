@@ -377,3 +377,16 @@ MIT License - 随便用，如果你觉得有用，可以给个 ⭐ Star
 **用知识武装大脑，用自举加速进化 🚀**
 
 </div>
+
+---
+
+## 🧬 产出与衍生
+
+本库不只是笔记——它是产出物的根。由本库的方法论与千轮研究直接孵化：
+
+- 🛡 [agent-audit](https://github.com/mo9652962-ai/agent-audit) — AI Agent 环境安全审计 CLI（OpenSSF passing 徽章 · GitHub Marketplace Action）
+- 🔧 [esq-builder-mcp](https://github.com/mo9652962-ai/esq-builder-mcp) — 题库包 MCP 工具链（MCP Registry 已上架）
+- 🧹 [skill-maintenance-mcp](https://github.com/mo9652962-ai/skill-maintenance-mcp) — 技能库维护 MCP（本库自举系统的工具化）
+- 📚 [墨题 · 英语刷题机](https://github.com/mo9652962-ai/english-multiple-choice-practice-machine) — 本地优先英语学习工作台
+
+> 完整矩阵见 [作者主页](https://github.com/mo9652962-ai)。
