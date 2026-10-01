@@ -28,7 +28,7 @@
 |------|--------|------|------|
 | Tavily | 🥇 | API Key | ✅ 主力 |
 | Exa | 🥈 | API Key | ✅ |
-| Firecrawl | 🥉 | API Key | ✅ |
+| Firecrawl | 🥉 | API Key | ✅ 永久可靠 fallback |
 | DDGS (DuckDuckGo) | ④ | pip 包 + VPN | ✅ |
 | SearXNG | ⑤ | 本地实例 localhost:8888 | ✅ 自托管 30 引擎 |
 
@@ -74,6 +74,7 @@
 - Obsidian vault（持久化存储）
 - 自动同步 GitHub（远程备份 + 版本历史）
 - 三层：当前工作记忆 → daily notes → MEMORY.md 提炼
+- **生命周期管理**: Extract → Update → Delete 三步曲缺一不可；陈旧记忆毒性 > 无记忆；需强化 Update/Delete 机制
 
 ### Vault 自动化维护（2026-08-18 验证）
 - 断链修复 / 空壳清理 / 孤立笔记补链 / 标签归一化 / MOC 映射更新 → 全量诊断 cron（每日 06:09）
@@ -111,6 +112,8 @@ OpenClaw 从单一框架扩展为 5 个发行版，覆盖不同场景：
 - **Task Brain 统一控制平面 (v2026.3.31)**: 整合 ACP subtasks、cron jobs、CLI background、subagent spawns；SQLite 任务日志、心跳监控、任务流注册表、父记录追踪、阻塞状态持久化
 - **AI 代理数据恢复 (v2026.7.2-beta.5)**: 隔离存储、SQLite 快照、崩溃耐用发布、拒绝导致数据丢失的架构升级、回滚作家快照恢复
 - **Graph Engineering > Loop Engineering (2026-07)**: 多阶段并行 + 精确反馈路由取代串行循环；steipete 推文 2.9M 浏览，48h 内 3 竞争定义；OpenClaw 落地：Codex Remote Coding Sessions (v2026.7.2 beta)
+- **Graph Engineering 实践**: 利用 OpenClaw subagent + sessions_spawn 实现并行阶段 + 精确反馈路由
+- **关注 LangGraph**: node caching / deferred nodes / pre-post model hooks 生产原语
 
 ### 2026 H2 新 Agent 平台
 - **Google Gemini Enterprise Agent Platform**: graph-based agent 开发框架，MCP 服务连接，agent-to-agent 编排，agent registry + agent gateway 策略执行
@@ -172,6 +175,7 @@ v2026.3.7 引入的可插拔上下文管理界面已验证稳定。模型路由�
 6. 自动测试 Pipeline + Canary + A/B
 7. 模型版本控制 + 快速回滚
 8. **成本优化三件套**: 模型路由(60-70%) + Prompt Caching(60-80%) + Batch API(50%)
+- **任务感知路由**: 引入 task-aware 模型路由（cron/heartbeat 用 qwen3.7-plus/glm-5.2 处理低复杂度任务）
 
 ### Gartner 2026-08-17: AI 推理成本至 2028 每 agentic workflow 增超 5 倍
 - 成本控制升为「生存项」，直接背书 cheap-model tiering + semantic caching + 模型路由
@@ -194,6 +198,9 @@ v2026.3.7 引入的可插拔上下文管理界面已验证稳定。模型路由�
 - **NVIDIA SkillSpector (2026-06-01)**: 所有 ClawHub skills 自动扫描隐藏指令
 - **Hotfix v2026.7.1-2 (2026-08-04)**: npm plugin singleton-array metadata 兼容修复
 - **v2026.8.1 发布后极速补丁节奏**: v2026.8.2 (9/1)、v2026.9.1 (9/3)、v2026.9.2 (9/5) —— **GPT-6 Astra、Swarm 默认开启、重启无损回复**；半个月 6 版本，Swarm 默认开启标志多 Agent 编排生产化
+- **v2026.9.3 (9/8)**: Node 24.16+ 强制、**持久化技能**、**可分享会话**
+- **v2026.9.4 (9/11)**: 失败更新回滚、统一插件工作区
+- **持久化技能** 与 Skill Workshop 流程对标需评估
 
 ### AI Agent 安全标准化进程 (2026-09)
 - Mastercard/NIST/新加坡 IMDA 推动 Agentic AI 治理框架与全球协调标准
@@ -202,6 +209,9 @@ v2026.3.7 引入的可插拔上下文管理界面已验证稳定。模型路由�
 - Simon Willison 三大固有脆弱性：私有数据访问 + 非受信内容暴露 + 外部通信能力
 - Cisco State of AI Security 2026：仅 29% 组织觉得准备好保护 Agentic AI
 - CoSAI 白皮书：MCP 服务器 12 核心威胁类别 + 近 40 特定威胁
+- **Secret egress host binding**: 评估在 openclaw.json 中显式配置密钥出口域名白名单
+- **审计日志完整性**: 确保 cron/heartbeat/subagent 执行轨迹可追溯
+- **关注 NIST/IMDA**: 正式标准发布后的合规对标
 
 ### Agentic Primitives > Glue Code (2026)
 - **OpenAI Agents API 公测 (2026-09)**: 托管 Agent 循环、Data Agent、GPT-Live-1 全双工语音；托管沙箱免费，仅模型 token + 工具使用
