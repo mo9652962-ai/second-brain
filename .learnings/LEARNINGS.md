@@ -351,3 +351,208 @@ web_extract 报 `Blocked: private or internal network address` 时重试永远�
 ### Resolution
 - **Resolved**: 2026-09-26T12:25:00+08:00
 - **Notes**: 本次反思已跨缺口核查 09-20 行动项 8 项；告警改进登记为行动项交 daily-todo-executor
+
+---
+
+## [LRN-20261002-001] insight
+
+**Logged**: 2026-10-02T12:31:00+08:00
+**Priority**: high
+**Status**: completed
+**Area**: config
+
+### Summary
+OpenClaw 2026.9.7 发布：负载响应更快、长对话更流畅、更新回滚保护增强、新增 OpenAI Agents API + Sign in with ChatGPT (Beta)、移除已退役的 Sora 视频生成。2,818 PR、344 贡献者，半个月内 6 版本极速补丁节奏延续。
+
+### Details
+1. **关键变更**:
+   - 更好的更新备份和回滚保护，修复从 2026.9.5 升级问题
+   - OpenAI Agents API 公测集成：托管 Agent 循环、Data Agent、GPT-Live-1 全双工语音、免费托管沙箱
+   - Sign in with ChatGPT (Beta) 降低准入门槛
+   - Sora 退役：需替换 `openai/sora-2` / `openai/sora-2-pro` 为 Kie AI、Z.AI、Novita、Qwen、Alibaba Wan 等
+   - Mac/iPhone/iPad 聊天体验改进，重启后工作恢复更好
+
+2. **架构信号**: 持续的「每日补丁」模式印证 LRN-20260914-001 —— 大版本后进入激进修复期，建议继续暂缓升级等社区验证
+
+### Suggested Action
+- 监控社区反馈 2-4 周后再评估升级
+- 关注 OpenAI Agents API 集成对我们多供应商 fallback 架构的影响
+- 确认 Sora 替代方案在 video generation skills 中的可用性
+
+### Metadata
+Source: tavily_search (docs.openclaw.ai/releases/2026.9.7) + self-improvement cron
+Tags: openclaw-2.0, rapid-patches, openai-agents-api, sora-retirement
+Pattern-Key: config.openclaw-2.0-rapid-patches-continued
+Recurrence-Count: 1
+First-Seen: 2026-10-02
+Last-Seen: 2026-10-02
+
+---
+
+## [LRN-20261002-002] best_practice
+
+**Logged**: 2026-10-02T12:31:00+08:00
+**Priority**: high
+**Status**: adopted
+**Area**: security
+
+### Summary
+OpenClaw 官方最佳实践指南 2026 核心四原则：Gateway 私有化部署、扩展代码即运行代码、最小权限凭证轮换、刻意修改默认值并记录原因。
+
+### Details
+1. **Gateway 私有化部署** (最高优先级):
+   - 绑定 `127.0.0.1` + SSH 隧道/VPN 访问
+   - 强制 TLS 1.2+，要求认证，限制源地址
+   - 验证 WebSocket origin validation (同网络浏览器也是攻击路径)
+   - `openclaw gateway status` 定期检查而非假设
+
+2. **扩展代码即运行代码**:
+   - 审查 declared capabilities、版本、来源再启用
+   - Pin 版本：npm `--pin` / Git `--ref <40-char-SHA>`
+   - Misbehave 时 disable 而非 delete (保留配置诊断)
+   - 特别警惕 message-injection capability (Hermes 对应 `allow_gateway_injection`)
+
+3. **最小权限凭证轮换**:
+   - 每 Agent 独立模型 Key，可单独吊销
+   - 定期轮换而非事后补救
+   - 密钥存凭证存储，不烘焙进镜像/Shell profile
+
+4. **刻意修改默认值并记录原因**:
+   - 大多数故障源于为解决一事改默认值后遗忘
+   - 配置入版本控制，每个非默认值写一句话备注
+   - 排查前先读配置而非怪框架
+
+### Suggested Action
+- 将上述四原则纳入架构审查清单 (与 LRN-20260914-002 8 大最佳实践合并)
+- 审计当前 openclaw.json 非默认值并补全备注
+- 评估 Secret egress host binding 实施 (密钥出口域名白名单)
+- 确保 cron/heartbeat/subagent 审计轨迹完整可追溯
+
+### Metadata
+Source: tavily_search (openclawlaunch.com/guides/openclaw-best-practices) + self-improvement cron
+Tags: openclaw-best-practices, gateway-security, extension-security, credential-rotation, config-drift
+Pattern-Key: security.openclaw-best-practices-2026
+Recurrence-Count: 1
+First-Seen: 2026-10-02
+Last-Seen: 2026-10-02
+
+---
+
+## [LRN-20261002-003] insight
+
+**Logged**: 2026-10-02T12:31:00+08:00
+**Priority**: high
+**Status**: completed
+**Area**: architecture
+
+### Summary
+OpenClaw Skills Directory 爆发式增长至 5,798+ 社区技能，1,800+ AI Agent 专用技能，安装/发现已成核心工作流入口。
+
+### Details
+1. **规模跃升**: 从数百增长到 5,798+，覆盖 Automation/Communication/Creative/Crypto/Data/Development/DevOps 等 10+ 大类
+2. **Top 10 技能分类**已成标准化发现入口
+3. **Skill 生态成熟度**: `clawhub install @author/slug` 标准化流程 + skill-vetter 审计 + 版本管理
+4. **对我们的启示**: 我们的 27+ skills 安装体系已具雏形，Skill Workshop 流程与官方「持久化技能」(v2026.9.3) 方向一致
+
+### Suggested Action
+- 继续维护 Skill Workshop 质量门控 (skill-vetter + 社区下载量对比)
+- 关注官方持久化技能机制与我们的 Skill Workshop 对标
+- 评估高频任务是否可封装为可复用 skill 贡献社区
+
+### Metadata
+Source: tavily_search (openclawai.io/skills) + self-improvement cron
+Tags: openclaw-skills, skill-ecosystem, skill-workshop, clawhub
+Pattern-Key: ecosystem.openclaw-skills-explosion
+Recurrence-Count: 1
+First-Seen: 2026-10-02
+Last-Seen: 2026-10-02
+
+---
+
+## [LRN-20261002-004] insight
+
+**Logged**: 2026-10-02T12:31:00+08:00
+**Priority**: high
+**Status**: completed
+**Area**: operations
+
+### Summary
+AI Agent 运营实践成熟 (IBM/Deloitte 2026)：企业从「构建 Agent」转向「安全规模化运营」，确立风险分级运营模型。
+
+### Details
+1. **关键运营活动** (IBM 2026):
+   - 监控执行 / 跟踪完成 / 审查失败 / 测量工具使用 / 延迟成本
+   - 管理提示配置 / 更新知识源 / 审查权限 / 发布前测试
+   - 审计高影响动作 / 管理人工升级 / 退役低价值 Agent
+
+2. **风险分级运营模型** (Deloitte 2026):
+   - 例行信息检索 → Agent 主导
+   - 重复数据处理 → Agent 主导
+   - 低风险工作流动作 → Agent 带控制
+   - 中风险决策 → Agent 建议 + 人工批准
+   - 高影响决策 → 人工主导 + Agent 支持
+   - 异常和模糊情况 → 人工主导
+   - 战略决策 → 人工主导 + AI 分析
+
+3. **员工角色转变**: 从手工完成每步 → 定义目标、审查输出、处理异常、批准动作、改进工作流
+
+### Suggested Action
+- 将风险分级模型纳入我们的多 Agent 工作流设计 (Graph Engineering 编排)
+- 为 cron/heartbeat/subagent 建立显式的风险等级标注
+- 完善「退役低价值 Agent」的评估机制 (定期 ROI 复盘)
+- 强化 Observability: 自动化 review session logs、工具使用统计、成本追踪
+
+### Metadata
+Source: tavily_search (xicom.biz AI Agent Trends 2026) + self-improvement cron
+Tags: ai-agent-operations, risk-tiered-operations, ibm-deloitte-2026, bounded-autonomy
+Pattern-Key: operations.ai-agent-operations-maturity-2026
+Recurrence-Count: 1
+First-Seen: 2026-10-02
+Last-Seen: 2026-10-02
+
+---
+
+## [LRN-20261002-005] insight
+
+**Logged**: 2026-10-02T12:31:00+08:00
+**Priority**: medium
+**Status**: completed
+**Area**: config
+
+### Summary
+OpenClaw 生态分化加速：NanoClaw/PicoClaw/Nanobot/memU/OpenCode/Claude Code/ZeroClaw/Moltworker/NullClaw/Anything LLM/TrustClaw 等 12+ 替代方案涌现，但轻量级 fork (nanoclaw/zeroclaw/ironclaw/picoclaw) 缺乏生产验证，社区共识是碎片化而非打磨替代品。
+
+### Details
+1. **替代方案画像**:
+   - NanoClaw: 容器隔离安全优先
+   - PicoClaw: 极简极速部署
+   - Nanobot: 轻量 Python + 持久化记忆
+   - memU: 主动知识图谱助手
+   - OpenCode: Go 多 LLM 编码
+   - Claude Code: 沙箱 + 显式权限 + Anthropic 安全基建
+   - ZeroClaw: 超极简无花哨
+   - Moltworker: 嵌入式安全稳定执行
+   - NullClaw: Zig 边缘 IoT
+   - Anything LLM: 自定义 LLM 应用
+   - TrustClaw: 企业级安全平台
+
+2. **社区信号**:
+   - Reddit r/LocalLLaMA: fork 处于实验期，缺乏生产验证
+   - PaulGugAI (X, 2026-07): "OpenClaw update stability has regressed! 最后两个更新导致 gateway 无法启动"
+   - 维护负担成切换主要理由
+
+3. **我们的定位**: OpenClaw Core (TypeScript、368K stars、Self-hosted、多供应商 fallback、本地数据主权) 仍为主流选择，Claude Code 为互补 (编码专用)
+
+### Suggested Action
+- 维持 OpenClaw Core 主力 + Claude Code 编码互补策略
+- 关注 NanoClaw 安全隔离模式在高敏感场景的适用性
+- 暂不投入轻量 fork 生态 (生产验证缺失)
+- 监控 OpenClaw 稳定性回归 (v2026.9.x 补丁期)
+
+### Metadata
+Source: tavily_search (larksuite.com + vellum.ai blog) + self-improvement cron
+Tags: openclaw-alternatives, ecosystem-fragmentation, stability-regression, claude-code-complement
+Pattern-Key: ecosystem.openclaw-alternatives-landscape-2026
+Recurrence-Count: 1
+First-Seen: 2026-10-02
+Last-Seen: 2026-10-02

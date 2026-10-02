@@ -51,6 +51,11 @@ updated: 2026-08-31
 - [[knowledge/Productivity/github-monetization-2026-08-20|GitHub 变现研究]] — 开源私有化+部署订阅
 - [[knowledge/Content/选题池|选题池 66 题]] — 内容库存，先查库存再临时找题
 
+## 🆕 10-02 结尾页版式库（PPT 接单雕花）
+
+- [[knowledge/Productivity/PPT结尾页八种版式-搜索引擎研究-2026-10-02|PPT 结尾页 8 种版式（可运行生成器）]] — 结尾页是记忆价值最高的一页；8 版式 + 5 条工程踩坑
+- [[knowledge/Productivity/PPT高级唯美镂空动态结尾页-制作SOP-2026-09-20|镂空动态结尾页 SOP]] — 手工操作版技法拆解
+
 ## 🆕 W35 新增（08-20 ~ 08-22 内容创作 + 千轮增强）
 
 - [[knowledge/Productivity/PPT-2026-千轮研究增强|PPT 2026 千轮研究增强]] — 设计方法论升级（08-22）
