@@ -14,11 +14,11 @@
 
 version: 1
 updated_by: vault-suggestion-executor
-updated_at: 2026-09-14
+updated_at: 2026-10-02
 
 counters:
   # 闲鱼试水决策悬置天数（唯一权威值；9/9 vault-suggestion-executor 报告口径 = 第 40 天）
-  xianyu_decision_day: 42
+  xianyu_decision_day: 56
   xianyu_decision_status: PENDING   # PENDING / APPROVED(试水) / ABANDONED(放弃)
 
 # 漂移修复历史（证明此问题真实存在，供审计）
@@ -33,6 +33,8 @@ drift_fix_history:
     fix: "第 39 天→第 40 天 7 处替换"
   - date: 2026-09-13
     fix: "suggestion-implementation 41→44 误推进回滚(违反唯一写方规则) → current.md 9 处 44→41, assert PASS"
+  - date: 2026-10-02
+    fix: "42→56 长期停更修复：9/14 后 14 个工作日无人推进（9/28 复盘日被 cron 故障吃掉 + 本 cron 9/30、10/1 连续 FAILED）。按工作日口径补推 +14（锚点校验：7/17=1 → 8/31=32 → 9/10=40 → 9/11=41 → 9/14=42 全命中）"
 
 # 建库时的漂移证据（供断言脚本参考基线）
 known_drift_at_creation:
