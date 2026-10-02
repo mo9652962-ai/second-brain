@@ -4,7 +4,7 @@ domain: cards
 type: moc
 status: active
 created: 2026-09-20
-updated: 2026-09-26
+updated: 2026-10-02
 ---
 
 # 🃏 知识卡片 — cards
@@ -55,3 +55,7 @@ updated: 2026-09-26
 - [[knowledge/cards/2026-09-26-dow-billable-state|🃏 知识卡片 · 被保留的工具返回会被重复计费：单会话输入最高放大 14,293 倍]]
 - [[knowledge/cards/2026-09-26-lint-false-negative-blindspot|🃏 知识卡片 · 假阴性税：检测器报 0 不代表没问题，判据写错会静默放行 80 个坏文件]]
 - [[knowledge/cards/2026-09-29-jeff-local-decision-models|🃏 知识卡片 · 0.8B 决策模型能跑在本机：一次前向给概率，22ms 出一个判断]]
+
+## 2026-10
+
+- [[knowledge/cards/2026-10-02-skill-supply-chain|🃏 知识卡片 · 装技能就是引入供应链：25.1% 的真实技能会走通危险路径，链式攻击成功率达 84.3%]]
