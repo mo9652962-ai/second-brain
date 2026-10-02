@@ -5,7 +5,7 @@ source: arxiv-2026-09-11-agent-llm.md (20 主条目 + 12 简评精选)
 selected: T1 Terminal Agent RL / BenchShield Reward Integrity / MCP Registry 普查
 status: 已深挖 3 篇（web_search 双源交叉验证）
 data-cutoff: 2026-09-13
-tags: [arxiv, research, knowledge/research]
+tags: [arxiv, knowledge/research]
 ---
 
 # arXiv 核心贡献总结 · 2026-09-11（09-13 补跑处理）

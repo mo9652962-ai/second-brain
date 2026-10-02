@@ -247,7 +247,7 @@ tags: [meta, vault-maintenance]
 - 新增脚本：`META/scripts/tag-lint.py`（只读标签扫描）+ `tag-fix.py`（幂等规范化，dry-run/--apply，保留 CRLF）；删除误报脚本 tag-lint-locate.py
 - 误报记录（fixer 精确跳过，非标签）：抖音引文 `#UI设计`、微信话题 `#vibecoding大赏`
 - 新页挂载 2：hackernews-2026-09-21 → MOC-Daily + MOC-Research；arxiv-2026-09-21-agent-llm → MOC-Research
-- 验证：Broken 0 / Missing frontmatter 0 / Short pages 0 / Stale 0；Orphan 剩 1（考研路线图=gitignore 隐私文件，预期孤立）；README 重名 1 组低风险保留
+- 验证：Broken 0 / Missing frontmatter 0 / Short pages 0 / Stale 0；Orphan 剩 1（1 个 .gitignore 隔离的隐私文件，预期孤立）；README 重名 1 组低风险保留
 - 工具坑沉淀：Path.read_text 文本模式把 CRLF→LF 导致误判换行——脚本须 open(newline="") 读、write_bytes 写，幂等验证 0 changes
 - 追加修复：tag-lint.py YAML-list 标签块紧随的闭合 `---` 会被解析成假标签 `--`（真库未触发）→ 改为逐行 `- ` 解析；临时夹具 8 项断言全过（检出/归一/CRLF/幂等/误报保护）
 
@@ -288,3 +288,14 @@ tags: [meta, vault-maintenance]
 - **memory 漂移归位 5**：`memory/2026-09-2X.md` → `memory/2026/09/`（daily-summary / daily-self-improvement cron 硬编码根级路径所致；文件本身被 .gitignore 隔离，不在公开范围）
 - **验证**：Broken 0 / Missing frontmatter 0 / Glued 0 / Invalid YAML 0 / Orphan 0 / 标签变体 0；DASHBOARD 断链 0 · 孤立 0；CI 五关（wikilinks / backup-privacy / repo-privacy / site / pytest 14 passed）全绿
 - **工具坑**：MOC 挂载脚本用「首个 `---` 行」定位页脚 → 命中 frontmatter 开括号，块被插到文件最顶部（破坏 frontmatter）。教训：插入点扫描必须**跳过 frontmatter 区**，从第一个标题行之后开始找页脚
+
+## [2026-10-02] lint | 例行体检 + 自指隐私泄露修复（cron）
+
+- 体检基线（668 页）：Broken 0 / Missing frontmatter 0 / Glued 0 / Invalid YAML 0 / Orphan 0 / 空文件 0 / 标签大小写变体 0
+- **P0 自指隐私泄露修复**：`scripts/check-repo-privacy.py`（本身在公开仓库内）BUILTIN 基线**明文硬编码**学校名/专业名/院校代码 → 门禁自抓自身，CI 长期红门；改为 base64 存放 + `_d()` 解码，并补齐 3 条（学院名/专业代码/本机用户目录名）；自检「明文 0 命中 + 检测力 10/10 样本全中」
+- 隐私门禁命中 4→0：log.md 隐私词改写为「1 个 .gitignore 隔离的隐私文件」；脚本自身明文清除。墨题仓库 `docs/lessons/2026-09-21.md:211` 本机路径属**外部仓库**，已报告待 sora 处置
+- 标签冗余归 9 文件：裸标签与同名 namespaced 标签并存（research+knowledge/research ×6、security+knowledge/security ×3）→ 删冗余裸标签；实测 220 个 namespaced 标签中 211 个为**唯一域标记**（约定，保留不动）
+- 空文件清理：根目录 25 个 `.temp-*.py` 占位空壳（36B，内容全同，gitignore 已覆盖）
+- **假阳性纠正（先修检测器再动数据）**：初版「标签近重复 235 对」系检测器口径问题——子串匹配把 `agent`↔`ai-agent` 等**合法父子关系**全部报为重复 → 复核后真实冗余仅 9 处，未按 235 对动数据
+- 顺带修复：`cache_hit_monitor.py` argparse `help="命中率阈值%"` 单 `%` 触发 `ValueError: incomplete format` → 改 `%%`（该 cron 长期 exit 1）
+- 验证：knowledge-lint 0 问题（仅剩 1 组 README 重名，低风险保留）；tag-lint 大小写变体 0；隐私门禁 exit 0

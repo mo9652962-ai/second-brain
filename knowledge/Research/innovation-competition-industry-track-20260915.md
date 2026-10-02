@@ -1,5 +1,5 @@
 ---
-tags: [knowledge/research, research, competition, multi-agent, unicom]
+tags: [knowledge/research, competition, multi-agent, unicom]
 title: 中国国际大学生创新大赛（2026）产业赛道·联通命题研究
 type: research
 created: 2026-09-15
