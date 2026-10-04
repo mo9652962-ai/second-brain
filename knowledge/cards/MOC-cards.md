@@ -59,3 +59,4 @@ updated: 2026-10-02
 ## 2026-10
 
 - [[knowledge/cards/2026-10-02-skill-supply-chain|🃏 知识卡片 · 装技能就是引入供应链：25.1% 的真实技能会走通危险路径，链式攻击成功率达 84.3%]]
+- [[knowledge/cards/2026-10-04-approval-laundering|🃏 知识卡片 · 批准的动作 ≠ 执行的动作：装前扫描不够，唯一可用边界在执行时]]
