@@ -384,9 +384,21 @@ MIT License - 随便用，如果你觉得有用，可以给个 ⭐ Star
 
 本库不只是笔记——它是产出物的根。由本库的方法论与千轮研究直接孵化：
 
-- 🛡 [agent-audit](https://github.com/mo9652962-ai/agent-audit) — AI Agent 环境安全审计 CLI（OpenSSF passing 徽章 · GitHub Marketplace Action）
-- 🔧 [esq-builder-mcp](https://github.com/mo9652962-ai/esq-builder-mcp) — 题库包 MCP 工具链（MCP Registry 已上架）
+- ⚡ [circuit-agent](https://github.com/mo9652962-ai/circuit-agent) — AI 硬件合成与工业电路编译器（CircuitBlocks DSL · 14 个 MCP 工具 · 已上架 MCP Registry）
+- 🏭 [wave-fixture-ai](https://github.com/mo9652962-ai/wave-fixture-ai) — 波峰焊治具 AI 设计助手（21 项自动化 · DXF/STL/CNC G 代码 · 26 项 DRC 门禁 · OpenSSF Scorecard）
+- 📚 [墨题 · 英语刷题机](https://github.com/mo9652962-ai/english-multiple-choice-practice-machine) — 东方水墨 × 3D 认知计算本地英语客观题刷题工作台（FSRS-4.5 算法）
+- 🛡️ [agent-audit](https://github.com/mo9652962-ai/agent-audit) — AI Agent 环境安全审计 CLI（OpenSSF passing 徽章 · GitHub Marketplace Action）
+- 📦 [esq-builder-mcp](https://github.com/mo9652962-ai/esq-builder-mcp) — 题库包 MCP 工具链（MCP Registry 已上架 · uvx 一行接入）
 - 🧹 [skill-maintenance-mcp](https://github.com/mo9652962-ai/skill-maintenance-mcp) — 技能库维护 MCP（本库自举系统的工具化）
-- 📚 [墨题 · 英语刷题机](https://github.com/mo9652962-ai/english-multiple-choice-practice-machine) — 本地优先英语学习工作台
 
 > 完整矩阵见 [作者主页](https://github.com/mo9652962-ai)。
+
+## ⭐ 关注与支持 (Star History)
+
+如果 Second Brain 的自举知识体系对你的 Agent 架构或个人成长有所启发，欢迎点个 Star 支持项目持续演进！
+
+<div align="center">
+
+[![Star History Chart](https://api.star-history.com/svg?repos=mo9652962-ai/second-brain&type=Date)](https://star-history.com/#mo9652962-ai/second-brain&Date)
+
+</div>
