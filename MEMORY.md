@@ -266,6 +266,20 @@ v2026.3.7 引入的可插拔上下文管理界面已验证稳定。模型路由�
 - **产出存在性校验**：health check 只看运行状态不看产出 → daily-review 文件静默缺失 → 健康检查加 stat 验证预期文件路径
 - **统计口径自我验证**：web_search 实锤口径 1 天失效 → 定义主/辅口径 + 降级兜底 + 自检规则
 
+### Q4 2026 最新发展
+- **OpenClaw 2026.9.7 发布** (10月): 更快负载响应、增强更新回滚保护、OpenAI Agents API 公测、Sign in with ChatGPT (Beta)、Sora 视频生成退役（建议替换为 Kie AI/Z.AI/Novita/Qwen/Wan）
+- **OpenClaw 最佳实践 2026**: Gateway 私有化部署、扩展代码即运行代码、最小权限凭证轮换、刻意修改默认值并记录原因
+- **Skills Directory 爆发式增长**: 5,798+ 社区构建技能（1,800+ AI Agent 专用），安装/发现已成核心工作流入口
+- **AI Agent 运营成熟** (IBM/Deloitte 2026): 从「构建 Agent」转向「安全规模化运营」，确立风险分级运营模型（例行检索→Agent主导、低风险动作→Agent带控制、中风险决策→Agent建议+人工批准、高影响决策→人工主导+Agent支持）
+- **持久化 Agent 趋势确认**: 设计用于长任务、本地执行、数据主权，配合 Local-First 转型
+- **OpenClaw 生态分化**: 12+ 替代方案涌现（NanoClaw/PicoClaw/Nanobot/memU/OpenCode/Claude Code/ZeroClaw/Moltworker/NullClaw/Anything LLM/TrustClaw），但轻量级 fork 缺乏生产验证
+- **Graph Engineering 范式确立**: 多阶段并行 + 精确反馈路由取代串行循环，验证 Codex Remote Sessions 为 OpenClaw 实践实证
+- **记忆生命周期管理关键性**: Extract→Update→Delete 三步曲缺一不可；陈旧记忆毒性 > 无记忆；需强化 Update/Delete 机制
+- **成本优化三件套深化**: 模型路由(60-70%) + Prompt Caching(60-80%) + Batch API(50%) → 任务感知路由引入 task-aware 模型路由（cron/heartbeat 用便宜模型处理低复杂度任务）
+- **安全基线对标**: Secret egress host binding 评估（openclaw.json 显式配置密钥出口域名白名单）、审计日志完整性确保、关注 NIST/IMDA 正式标准
+- **OpenAI Agents API 公测细节**: 托管 Agent 循环、Data Agent、GPT-Live-1 全双工语音、免费托管沙箱，仅计费模型 token + 工具使用
+- **Sora 退役影响**: video generation skills 需评估替代方案（Kie AI / Z.AI / Novita / Qwen / Wan）
+
 ## 本周亮点 (W30, 07/20~07/26)
 
 ### 🏗️ 架构全面升级
