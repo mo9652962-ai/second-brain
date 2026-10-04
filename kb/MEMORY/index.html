@@ -3165,6 +3165,21 @@
 <li><strong>产出存在性校验</strong>：health check 只看运行状态不看产出 → daily-review 文件静默缺失 → 健康检查加 stat 验证预期文件路径</li>
 <li><strong>统计口径自我验证</strong>：web_search 实锤口径 1 天失效 → 定义主/辅口径 + 降级兜底 + 自检规则</li>
 </ul>
+<h3 id="q4-2026">Q4 2026 最新发展<a class="headerlink" href="#q4-2026" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>OpenClaw 2026.9.7 发布</strong> (10月): 更快负载响应、增强更新回滚保护、OpenAI Agents API 公测、Sign in with ChatGPT (Beta)、Sora 视频生成退役（建议替换为 Kie AI/Z.AI/Novita/Qwen/Wan）</li>
+<li><strong>OpenClaw 最佳实践 2026</strong>: Gateway 私有化部署、扩展代码即运行代码、最小权限凭证轮换、刻意修改默认值并记录原因</li>
+<li><strong>Skills Directory 爆发式增长</strong>: 5,798+ 社区构建技能（1,800+ AI Agent 专用），安装/发现已成核心工作流入口</li>
+<li><strong>AI Agent 运营成熟</strong> (IBM/Deloitte 2026): 从「构建 Agent」转向「安全规模化运营」，确立风险分级运营模型（例行检索→Agent主导、低风险动作→Agent带控制、中风险决策→Agent建议+人工批准、高影响决策→人工主导+Agent支持）</li>
+<li><strong>持久化 Agent 趋势确认</strong>: 设计用于长任务、本地执行、数据主权，配合 Local-First 转型</li>
+<li><strong>OpenClaw 生态分化</strong>: 12+ 替代方案涌现（NanoClaw/PicoClaw/Nanobot/memU/OpenCode/Claude Code/ZeroClaw/Moltworker/NullClaw/Anything LLM/TrustClaw），但轻量级 fork 缺乏生产验证</li>
+<li><strong>Graph Engineering 范式确立</strong>: 多阶段并行 + 精确反馈路由取代串行循环，验证 Codex Remote Sessions 为 OpenClaw 实践实证</li>
+<li><strong>记忆生命周期管理关键性</strong>: Extract→Update→Delete 三步曲缺一不可；陈旧记忆毒性 &gt; 无记忆；需强化 Update/Delete 机制</li>
+<li><strong>成本优化三件套深化</strong>: 模型路由(60-70%) + Prompt Caching(60-80%) + Batch API(50%) → 任务感知路由引入 task-aware 模型路由（cron/heartbeat 用便宜模型处理低复杂度任务）</li>
+<li><strong>安全基线对标</strong>: Secret egress host binding 评估（openclaw.json 显式配置密钥出口域名白名单）、审计日志完整性确保、关注 NIST/IMDA 正式标准</li>
+<li><strong>OpenAI Agents API 公测细节</strong>: 托管 Agent 循环、Data Agent、GPT-Live-1 全双工语音、免费托管沙箱，仅计费模型 token + 工具使用</li>
+<li><strong>Sora 退役影响</strong>: video generation skills 需评估替代方案（Kie AI / Z.AI / Novita / Qwen / Wan）</li>
+</ul>
 <h2 id="w30-07200726">本周亮点 (W30, 07/20~07/26)<a class="headerlink" href="#w30-07200726" title="Permanent link">&para;</a></h2>
 <h3 id="_13">🏗️ 架构全面升级<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
 <ul>
