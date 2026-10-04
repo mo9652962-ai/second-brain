@@ -15,7 +15,7 @@ updated: 2026-09-25
 
 > 机器版索引: [[VAULT-MAP|🗺️ VAULT-MAP]]（AI 导航）· 健康看板: [[DASHBOARD|📊 DASHBOARD]] · 新陈代谢: [[METABOLISM|🌿 METABOLISM]]
 
-> 所有知识领域的索引与关联。最后更新: 2026-09-26（W39 GitHub 周榜 5 项入库 + 周报更新）
+> 所有知识领域的索引与关联。最后更新: 2026-10-04（W40 周度整理：PPT 结尾页版式库 + arXiv 速览 ×2 + 技能供应链卡片 + 索引补链）
 
 ## 🧭 MOC 总入口（2026-08-16 起，新建 MOC 必须在此挂载）
 
@@ -512,6 +512,32 @@ graph TD
 3. **评测反应性成为质量门禁新维度** — 告诉模型在被评估即改变行为 + 意图隐藏规范落地，与 service-quality 评估器审计互补
 4. **CAD/PCB 自动化 MCP 化有现成范本** — pascal/editor「语义工具为主 + patch 兜底 + 校验闭环 + 人工交接点」设计可直接迁移 jlc-mcp/KiCad 自动化
 5. **arXiv 索引窗口解冻恢复常态速览** — 09-10 解冻 1,749 篇（22+16）→ 09-11 新窗口 441 篇零重叠，HTML list 页路由已验证可用
+
+---
+
+## 🆕 W40 新增速览（2026-09-28 ~ 10-04）
+
+> ⚠️ 本周期跨 3 周：09-20 / 09-27 两次周度整理 cron 均因 `pydantic_core` 依赖故障失败，上次成功整理为 **09-13（W38）**。
+> 本周主线：PPT 结尾页版式库成型（研究+生成器+成品五件套）+ 技能供应链安全三连击 + Hermes 稳定性修复 + 系统清理。
+
+### 各域本周新增
+
+| 域 | 新增 | 要点 |
+|:--|:--|:--|
+| Research | [[knowledge/Research/arxiv-2026-10-02-agent-llm|arXiv 10-02 速览]] | 三日窗口 09-30~10-02，34 主 + 4 简评；Agent 技能供应链与信任为主轴 |
+| Research | [[knowledge/Research/arxiv-2026-09-29-agent-llm|arXiv 09-29 速览]] | 双日窗口 09-28~09-29，18 主 + 16 简评 |
+| cards | [[knowledge/cards/2026-10-02-skill-supply-chain|技能供应链三连击]] | TrustProbe 25.1% 危险路径 / APEX 链式 84.3% / pretext-actuation 解耦 |
+| cards | [[knowledge/cards/2026-09-29-jeff-local-decision-models|Jeff 0.8B 本地决策模型]] | 端侧 0.8B 一次前向给概率，22ms 出判断 |
+| Productivity | [[knowledge/Productivity/PPT结尾页八种版式-搜索引擎研究-2026-10-02|PPT 结尾页 8 种版式]] | 结尾页是记忆价值最高一页；8 版式 + 5 工程踩坑 + 可运行生成器 |
+| Productivity | [[knowledge/Productivity/hermes-stability-fix-20260928|Hermes 稳定性修复 09-28]] | Electron 渲染崩溃定位 + 4 处配置层故障修复 |
+| Productivity | [[knowledge/Productivity/system-cleanup-report-20260928|系统清理 09-28]] | 释放约 13.4 GB（C 盘 86% → 83%） |
+| Daily | HN 速览 ×3 | 09-29 / 10-02 / 10-04 |
+
+### 本周关键研究主题
+
+1. **技能供应链安全成为连续主线** — 10-02 三篇独立论文（静态路径 / 链式放大 / 审计盲区）证明 agent 技能供应链几乎无人审计，与 09-19 ZCode 静默上传、09-15 RubyGems AI bots 攻击连成知识簇
+2. **PPT 结尾页从「谢谢观看」到 8 版式体系** — 研究 → 版式对照表 → 可运行生成器 → .pptx 成品 → 渲染脚本，完整资产链可反哺闲鱼 PPT 接单
+3. **cron 基础设施不稳定压制知识产出密度** — daily-health-check 7 连败 + arxiv-fetch/biweekly-skill-audit 同类 pydantic_core 故障，arXiv 速览仅 2 期（上周 5+ 期）
 
 ---
 

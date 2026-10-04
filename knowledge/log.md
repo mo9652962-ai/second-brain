@@ -299,3 +299,43 @@ tags: [meta, vault-maintenance]
 - **假阳性纠正（先修检测器再动数据）**：初版「标签近重复 235 对」系检测器口径问题——子串匹配把 `agent`↔`ai-agent` 等**合法父子关系**全部报为重复 → 复核后真实冗余仅 9 处，未按 235 对动数据
 - 顺带修复：`cache_hit_monitor.py` argparse `help="命中率阈值%"` 单 `%` 触发 `ValueError: incomplete format` → 改 `%%`（该 cron 长期 exit 1）
 - 验证：knowledge-lint 0 问题（仅剩 1 组 README 重名，低风险保留）；tag-lint 大小写变体 0；隐私门禁 exit 0
+
+## [2026-10-04] lint | 每周例行体检
+
+- 断链 0 / 孤立 1 / 缺 frontmatter 1
+- 处理原则：只报告不自动修；新问题由 k 在下次会话处理
+
+## [2026-10-04] freshness | 时效审计
+
+- 过期硬约束 2 / 待运行时验证 38 / 历史记录 186
+- 需修正：
+  - `knowledge\log.md:272` — - `knowledge\cards\2026-09-21-devin-cognition-eval.md:35` — 3. ⚠️ 云端环境与本机不一致（本机无
+  - `knowledge\cards\2026-09-21-devin-cognition-eval.md:30` — 3. ⚠️ 云端环境与本机不一致（本机无虚拟化、Windows 专属环境）→ 首次试用选独立后端/前端小 Bug + 要求加回归测试
+- 处理原则：只报告不自动修；事实源见 knowledge/META/current-environment.md
+
+## [2026-10-04] lint | Obsidian 维护（断链/空文件/标签一致性 + 隐私门禁回归修复）
+
+- 体检基线（674 页）：Broken 0 / Missing frontmatter 0 / Glued 0 / Invalid YAML 0 / Orphan 0 / 空文件 0 / 标签大小写变体 0
+- **真断链修复 1**：`Productivity/PPT结尾页设计库-文案对照.md` 无 frontmatter 且无入链（孤立）——该文件是 `scripts/generate_ending_slide_library.py` 的落盘产物，生成器只写正文不写 frontmatter，故每跑一次就复现。修法=**治本**：改生成器 `main()` 输出 frontmatter + 页脚挂载（`[[MOC-Productivity]]`），再回填现有文件；MOC-Productivity 增补该页链接
+- **P0 隐私门禁回归（CI 红门）**：`check-repo-privacy.py` 命中 2 处本机路径 —— `Productivity/PPT结尾页八种版式-搜索引擎研究-2026-10-02.md:82`（Python 解释器绝对路径）与 `Productivity/scripts/make_contact_sheet.py:6`（硬编码 workspace 绝对路径）。均为 10-02 auto-sync 带入的回归。修法：文档改 `%LOCALAPPDATA%\Programs\...`；脚本改 `os.path.dirname(__file__)` 相对定位。门禁 2→0（917 tracked 文件）
+- **空文件清理 0**：全库 md 无 0 字节/无 <100B 空壳（对比 10-02 清了 25 个 `.temp-*.py`）
+- **标签一致性**：大小写变体组 0；纯冗余（裸标签与同名 namespaced 标签并存）0 对（10-02 已归 9 处）；inline tag 10 处经复核全部为**设计内保留**（dataview 查询语法 6 处 / 社媒话题标签 3 处 / 代码预处理指令 2 处）——按「先修检测器再动数据」原则不动
+- 验证：knowledge-lint 0 问题（仅剩 1 组 README 重名，低风险保留）；`check_wikilinks.py` ✅；`check-repo-privacy.py` ✅；`check-backup-privacy.py` ✅；`check-site.py` 8 项全过
+- **工具坑**：`write_file` 对未完整读取的文件会拒写（stale write guard）→ 大改用 `read_file` 全量读取后再写，或直接用 `patch` 做定点编辑（本轮两个文件均用 `patch` 完成）
+- **并发提示**：本次运行与 `weekly-knowledge-consolidation`（周日 12:15）重叠，`knowledge-lint.py` / `knowledge-map.md` 等正被该会话改写 → 按 pitfall#11 未触碰，只报告
+
+## [2026-10-04] weekly | W40 周度整理（weekly-knowledge-consolidation 12:15）
+
+- **周期跨 3 周**：09-20 / 09-27 两次周度整理 cron 均因 `pydantic_core._pydantic_core` 缺失失败，上次成功为 09-13（W38）→ 本轮覆盖 09-28 ~ 10-04
+- **新增清点 17 篇**：arXiv 速览 ×2（09-29 双日 18+16 / 10-02 三日 34+4）+ 知识卡片 ×3 + HN ×3 + PPT 结尾页族 4 件（研究/对照表/pptx/3 脚本）+ 稳定性修复 + 系统清理 + META current-environment
+- **memory 根级漂移归位 5 件**（Air-Gapped，plain mv）：2026-09-29/30 → 2026/09/…-summary/-self-improvement；2026-10-01/02/03 → 2026/10/…。迁移前 grep 确认无 wikilink 指向旧路径。根因同 W38：cron 输出路径硬编码根级
+- **dreaming 空壳清理 8 个**（计数为 0 的 deep/rem）：deep 09-29~10-03 + rem 09-30/10-02/10-03；保留 deep 09-28（有 promoted 记录）与 rem 09-27/10-01
+- **检测器修复 2 处**（knowledge-lint.py）：① 表格内转义竖线的 wikilink 目标带尾随反斜杠，反斜杠被换成路径分隔符 → 误报断链；改 rstrip 剥尾随斜杠。② SKIP_DIRS 未含 private_knowledge/private_vault → 私有日记路径被写进公开可见输出；已加入
+- **断链修复 1（真）**：INDEX.md 指向归档「2026-07-29-每日回顾」的链接剥掉 knowledge/ 前缀后从 vault 根解析落空 → 补第三种解析基准（根 + 保留前缀原目标）→ 全库断链 2 → 0
+- **MOC 补链**：MOC-Productivity 补「PPT结尾页设计库-文案对照」（孤立 → 归零）；knowledge-map 增 W40 速览章节 + 「最后更新」→ 10-04
+- **交叉引用**：hermes-stability-fix ↔ system-cleanup-report-20260928 双向互链 + 指向 META current-environment 事实源
+- 验证：knowledge-lint 断链 0 / glued 0 / pages 965；vault-structure 断裂 0 孤立 0 空文件 0；隐私门禁 ✅（917 tracked）；check-site 8 项全过
+- **隔离回流复查**：git ls-files memory/ 仅 MOC-Memory.md；private_knowledge/ tracked 0；origin/gh-pages 无 memory/ 泄漏 ✅
+- **基础设施告警**：daily-health-check 连续 7 次失败、arxiv-fetch / biweekly-skill-audit 同类 pydantic_core 故障 → 压制了本周期知识产出密度（arXiv 仅 2 期 vs 上周 5+）
+- **本条目补记**：写入时误用 `open(p,"wb")` 截断本文件 → 已 `git checkout HEAD` 恢复，并按当轮捕获文本**忠实重建**本日三条记录（lint 体检 / freshness 审计 / Obsidian 维护）。教训：向既有文件追加一律先读全量再以 `wb` 写回，或改文本模式 append
+- 报告：`memory/2026/10/weekly-2026-10-04.md`（Air-Gapped，不进公开库）

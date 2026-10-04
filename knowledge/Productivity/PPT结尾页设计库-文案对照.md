@@ -1,3 +1,14 @@
+---
+title: "PPT 结尾页设计库 · 版式对照（生成产物）"
+type: reference
+domain: Productivity
+status: active
+tags: [knowledge/productivity, ppt, ppt-design, 结尾页, 答辩ppt, 闲鱼接单]
+source: "[[knowledge/Productivity/PPT结尾页八种版式-搜索引擎研究-2026-10-02|PPT 结尾页 8 种版式（生成器）]] 的落盘产物"
+created: 2026-10-02
+updated: 2026-10-04
+---
+
 # PPT 结尾页设计库 · 版式对照
 
 > 生成时间：2026-10-02 ｜ 画布 16:9 ｜ 全部原生可编辑
@@ -13,3 +24,7 @@
 | 6 | 全屏影像 + 单字 | 演讲 / 品牌 / 致谢 | 图替你说最后一句，留白即力量 |
 | 7 | 负空间镂空（红金） | 答辩 / 评奖 / 学术 | 镂空透光，评委盯着看也高级 |
 | 8 | 负空间镂空（科技） | 商务 / 路演 / 客户交付 | 同结构换色，学术秒变商务 |
+
+---
+
+> 🗺️ 属于 [[MOC-Productivity]] · [[HOME]]

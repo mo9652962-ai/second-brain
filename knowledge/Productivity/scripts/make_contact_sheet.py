@@ -3,7 +3,8 @@
 import os
 from PIL import Image, ImageDraw
 
-D = r"C:\Users\31954\.openclaw\workspace\knowledge\Productivity\preview_ending"
+HERE = os.path.dirname(os.path.abspath(__file__))
+D = os.path.join(os.path.dirname(HERE), "preview_ending")
 OUT = os.path.join(D, "contact_sheet.png")
 files = [os.path.join(D, "page_%02d.png" % i) for i in range(9)]
 ims = [Image.open(f).convert("RGB") for f in files]

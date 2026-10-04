@@ -577,12 +577,21 @@ def main():
         print("%-4d %-20s %-24s %s" % (i, name, scene, note))
 
     md = os.path.join(os.path.dirname(HERE), "PPT结尾页设计库-文案对照.md")
-    with open(md, "w", encoding="utf-8") as f:
+    today = datetime.date.today()
+    with open(md, "w", encoding="utf-8", newline="\n") as f:
+        # frontmatter（2026-10-04 补：生成产物此前无 frontmatter → lint 报缺 FM + 孤立）
+        f.write("---\n")
+        f.write('title: "PPT 结尾页设计库 · 版式对照（生成产物）"\n')
+        f.write("type: reference\ndomain: Productivity\nstatus: active\n")
+        f.write("tags: [knowledge/productivity, ppt, ppt-design, 结尾页, 答辩ppt, 闲鱼接单]\n")
+        f.write('source: "[[knowledge/Productivity/PPT结尾页八种版式-搜索引擎研究-2026-10-02|PPT 结尾页 8 种版式（生成器）]] 的落盘产物"\n')
+        f.write("created: %s\nupdated: %s\n---\n\n" % (today, today))
         f.write("# PPT 结尾页设计库 · 版式对照\n\n")
-        f.write("> 生成时间：%s ｜ 画布 16:9 ｜ 全部原生可编辑\n\n" % datetime.date.today())
+        f.write("> 生成时间：%s ｜ 画布 16:9 ｜ 全部原生可编辑\n\n" % today)
         f.write("| # | 版式 | 适用场景 | 核心机制 |\n|:--|:--|:--|:--|\n")
         for i, name, scene, note in PAGES:
             f.write("| %d | %s | %s | %s |\n" % (i, name, scene, note))
+        f.write("\n---\n> 🗺️ 属于 [[MOC-Productivity]] · [[HOME]]\n")
     return OUT_PPTX
 
 

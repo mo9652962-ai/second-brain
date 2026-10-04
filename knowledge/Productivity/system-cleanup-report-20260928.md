@@ -68,3 +68,4 @@ date: 2026-09-28
 
 ## 关联
 - [[SOP-INDEX]] · 技能 `windows-system-cleanup`
+- [[knowledge/Productivity/hermes-stability-fix-20260928|同日 Hermes 稳定性修复 09-28]] | [[HOME|🏠 首页]]

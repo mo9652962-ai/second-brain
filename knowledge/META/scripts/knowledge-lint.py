@@ -24,7 +24,10 @@ try:
 except ImportError:          # pyyaml 可选依赖：缺失时跳过 YAML 校验，不阻断其他检查
     yaml = None
 
-SKIP_DIRS = {".git", ".obsidian", ".trash", "node_modules", ".archive", "Archive"}
+SKIP_DIRS = {".git", ".obsidian", ".trash", "node_modules", ".archive", "Archive",
+             # 资产三级隔离（2026-09-23）：本地绝对隔离层不得进入任何全库遍历/报告，
+             # 否则私有日记路径与短页列表会被写进公开可见的 lint 输出（2026-10-04 加固）。
+             "private_knowledge", "private_vault"}
 # 跨 vault 根目录（workspace 下存在，Obsidian 合法，不判断链）
 # 仅 workspace 根级跨 vault 目录（Obsidian 中合法，不判链）
 # 注意: 不要加入 knowledge/ 内部子目录（Daily/Projects/META/Dev 等）——否则内部链接被跳过会误报孤立
@@ -121,7 +124,11 @@ def main():
         links = extract_links(text)
         outlinks[f] = links
         for link in links:
-            target = link.replace("\\", "/")
+            # 表格内转义竖线 `[[path\|alias]]` 会让 WIKILINK_RE 的 group1 带上尾随反斜杠
+            # （`path\`）。直接 replace("\\","/") 会把转义符变成路径分隔符 → 目标变 `path/`
+            # → 误报断链（2026-10-04 实测：INDEX.md 指向归档「2026-07-29-每日回顾」的链接被
+            # 报断链，文件其实存在）。Obsidian 的 wikilink 路径不使用反斜杠，故统一剥尾随 / 。
+            target = link.replace("\\", "/").rstrip("/")
             # 模板占位符 → 跳过
             if target.lower() in PLACEHOLDER_LINKS:
                 continue
@@ -131,26 +138,27 @@ def main():
                 continue
             # 跨目录/跨层链接（../ 开头或含 /）在 Obsidian 中合法，按相对路径解析
             if target.startswith("../") or "/" in target:
-                # 剥离 knowledge/ 前缀（MOC 中常见的 workspace 根级全路径写法，vault root 已是 knowledge/）
+                orig = target
+                # 剥离 knowledge/ 前缀（MOC 中常见的 workspace 根级全路径写法）
                 if target.startswith("knowledge/") or target == "knowledge":
                     target = target[len("knowledge/"):]
-                # 尝试相对解析：从当前文件目录出发
-                cand = (f.parent / target).resolve()
-                if cand.exists():
-                    inlinks[cand].add(f)
-                    continue
-                cand_md = cand.with_suffix(".md")
-                if cand_md.exists():
-                    inlinks[cand_md].add(f)
-                    continue
-                # 尝试从 vault 根解析
-                cand2 = (root / target).resolve()
-                if cand2.exists():
-                    inlinks[cand2].add(f)
-                    continue
-                cand2_md = cand2.with_suffix(".md")
-                if cand2_md.exists():
-                    inlinks[cand2_md].add(f)
+                # 依次尝试三种解析基准（2026-10-04 修复）：
+                #   ① 当前文件目录 + 剥前缀目标   ② vault 根 + 剥前缀目标
+                #   ③ vault 根 + **保留 knowledge/ 前缀**的原始目标
+                # ③ 是本次新增：INDEX.md（位于 workspace 根）写
+                # `[[knowledge/Archive/.../2026-07-29-每日回顾]]`，剥掉前缀后从根解析
+                # 指向 workspace/Archive/（不存在）→ 误报断链；保留前缀才能命中
+                # workspace/knowledge/Archive/...（真实存在）。
+                resolved = None
+                for base, rel in ((f.parent, target), (root.resolve(), target), (root.resolve(), orig)):
+                    for cand in ((base / rel).resolve(), (base / rel).resolve().with_suffix(".md")):
+                        if cand.exists():
+                            resolved = cand
+                            break
+                    if resolved is not None:
+                        break
+                if resolved is not None:
+                    inlinks[resolved].add(f)
                     continue
                 # 尝试文件名校验（跨目录链接常见）
                 stem_matched = False
