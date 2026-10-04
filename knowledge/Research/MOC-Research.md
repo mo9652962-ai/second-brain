@@ -5,7 +5,7 @@ type: moc
 domain: Research
 status: active
 created: 2026-08-09
-updated: 2026-10-02
+updated: 2026-10-04
 ---
 
 # 🔬 研究笔记 MOC — Research Map
@@ -13,7 +13,7 @@ updated: 2026-10-02
 > 所有研究笔记的索引与入口。自动按主题分组。
 > 回到 [[knowledge-map|🗺️ 知识地图]] · [[Home|🏠 Home]]
 
-**共 221 篇研究笔记** · 最后更新: 2026-10-02（每日增量索引）
+**共 222 篇研究笔记** · 最后更新: 2026-10-04（每日增量索引）
 
 ## 🆕 最新增量（2026-09-18 ~ 10-02）
 
@@ -28,6 +28,7 @@ updated: 2026-10-02
 - [[arxiv-2026-09-26-agent-llm]] — 09-26 arXiv AI Agent/LLM 速览（09-25 窗口第三轮补全，16 主 + 14 简评）
 - [[arxiv-2026-09-29-agent-llm]] — 09-29 arXiv AI Agent/LLM 速览（双日窗口 09-28~09-29，18 主 + 16 简评）
 - [[arxiv-2026-10-02-agent-llm]] — 10-02 arXiv AI Agent/LLM 速览（三日窗口 09-30~10-02，34 主 + 4 简评）
+- [[arxiv-2026-10-04-agent-llm]] — 10-04 arXiv AI Agent/LLM 速览（09-30~10-02 窗口第二轮补全，33 主 + 12 简评）
 
 ## 🆕 W34 新增补链（2026-08-16 周度整理）
 
@@ -382,6 +383,7 @@ updated: 2026-10-02
 - [[arxiv-2026-09-26-agent-llm]] — 09-26 arXiv AI Agent/LLM 速览（09-25 窗口第三轮补全，16 主 + 14 简评）
 - [[arxiv-2026-09-29-agent-llm]] — 09-29 arXiv AI Agent/LLM 速览（双日窗口 09-28~09-29，18 主 + 16 简评）
 - [[arxiv-2026-10-02-agent-llm]] — 10-02 arXiv AI Agent/LLM 速览（三日窗口 09-30~10-02，34 主 + 4 简评）
+- [[arxiv-2026-10-04-agent-llm]] — 10-04 arXiv AI Agent/LLM 速览（09-30~10-02 窗口第二轮补全，33 主 + 12 简评）
 
 ## 🧭 入口治理
 
