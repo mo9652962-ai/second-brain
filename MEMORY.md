@@ -268,6 +268,7 @@ v2026.3.7 引入的可插拔上下文管理界面已验证稳定。模型路由�
 
 ### Q4 2026 最新发展
 - **OpenClaw 2026.9.7 发布** (10月): 更快负载响应、增强更新回滚保护、OpenAI Agents API 公测、Sign in with ChatGPT (Beta)、Sora 视频生成退役（建议替换为 Kie AI/Z.AI/Novita/Qwen/Wan）
+- **OpenClaw 2026.9.8 发布**: 优化了 Codex Remote Sessions 目录处理，避免为每个空闲 Codex 代理启动单独的会话-catalog 进程，而是在需要时启动并重用捕获的设置以减少大规模原生 Codex 会话集合中的重复内存使用
 - **OpenClaw 最佳实践 2026**: Gateway 私有化部署、扩展代码即运行代码、最小权限凭证轮换、刻意修改默认值并记录原因
 - **Skills Directory 爆发式增长**: 5,798+ 社区构建技能（1,800+ AI Agent 专用），安装/发现已成核心工作流入口
 - **AI Agent 运营成熟** (IBM/Deloitte 2026): 从「构建 Agent」转向「安全规模化运营」，确立风险分级运营模型（例行检索→Agent主导、低风险动作→Agent带控制、中风险决策→Agent建议+人工批准、高影响决策→人工主导+Agent支持）
