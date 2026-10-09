@@ -3178,6 +3178,7 @@
 <li><strong>记忆生命周期管理关键性</strong>: Extract→Update→Delete 三步曲缺一不可；陈旧记忆毒性 &gt; 无记忆；需强化 Update/Delete 机制</li>
 <li><strong>成本优化三件套深化</strong>: 模型路由(60-70%) + Prompt Caching(60-80%) + Batch API(50%) → 任务感知路由引入 task-aware 模型路由（cron/heartbeat 用便宜模型处理低复杂度任务）</li>
 <li><strong>安全基线对标</strong>: Secret egress host binding 评估（openclaw.json 显式配置密钥出口域名白名单）、审计日志完整性确保、关注 NIST/IMDA 正式标准</li>
+<li><strong>安全架构加强</strong> (v2026.9.x): Cross-Component Trust（远程节点事件默认 untrusted + 输出 sanitization）、WebSocket 会话即时失效（token/密码轮换时立即失效）、技能 realpath() 验证、Shell 沙箱收紧（busybox/toybox 移除）、审批命令 fail-closed（无法绑定到单一文件操作数时拒绝执行）</li>
 <li><strong>OpenAI Agents API 公测细节</strong>: 托管 Agent 循环、Data Agent、GPT-Live-1 全双工语音、免费托管沙箱，仅计费模型 token + 工具使用</li>
 <li><strong>Sora 退役影响</strong>: video generation skills 需评估替代方案（Kie AI / Z.AI / Novita / Qwen / Wan）</li>
 </ul>
