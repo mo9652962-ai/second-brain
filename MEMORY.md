@@ -278,6 +278,7 @@ v2026.3.7 引入的可插拔上下文管理界面已验证稳定。模型路由�
 - **记忆生命周期管理关键性**: Extract→Update→Delete 三步曲缺一不可；陈旧记忆毒性 > 无记忆；需强化 Update/Delete 机制
 - **成本优化三件套深化**: 模型路由(60-70%) + Prompt Caching(60-80%) + Batch API(50%) → 任务感知路由引入 task-aware 模型路由（cron/heartbeat 用便宜模型处理低复杂度任务）
 - **安全基线对标**: Secret egress host binding 评估（openclaw.json 显式配置密钥出口域名白名单）、审计日志完整性确保、关注 NIST/IMDA 正式标准
+- **安全架构加强** (v2026.9.x): Cross-Component Trust（远程节点事件默认 untrusted + 输出 sanitization）、WebSocket 会话即时失效（token/密码轮换时立即失效）、技能 realpath() 验证、Shell 沙箱收紧（busybox/toybox 移除）、审批命令 fail-closed（无法绑定到单一文件操作数时拒绝执行）
 - **OpenAI Agents API 公测细节**: 托管 Agent 循环、Data Agent、GPT-Live-1 全双工语音、免费托管沙箱，仅计费模型 token + 工具使用
 - **Sora 退役影响**: video generation skills 需评估替代方案（Kie AI / Z.AI / Novita / Qwen / Wan）
 
