@@ -160,6 +160,7 @@ updated: 2026-10-10
 - [[knowledge/Daily/hackernews-2026-09-29|HN 09-29]] · [[knowledge/cards/2026-09-29-jeff-local-decision-models|知识卡片 09-29]]
 - [[knowledge/Daily/hackernews-2026-10-02|HN 10-02]] · [[knowledge/cards/2026-10-02-skill-supply-chain|知识卡片 10-02]]
 - [[knowledge/Research/arxiv-2026-10-04-agent-llm|arXiv Agent/LLM 10-04 补全]] · [[knowledge/cards/2026-10-04-approval-laundering|知识卡片 10-04]]
+- [[knowledge/Research/arxiv-2026-10-10-agent-llm|arXiv Agent/LLM 10-10（10-05~10-09 全新窗口）]] · [[knowledge/Daily/hackernews-2026-10-10|HN 10-10]] · [[knowledge/cards/2026-10-10-coinstalled-skill-conflict|知识卡片 10-10]]
 
 ## 文章研读
 
