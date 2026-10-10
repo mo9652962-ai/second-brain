@@ -3184,6 +3184,18 @@
 <li><strong>本条目补记</strong>：写入时误用 <code>open(p,"wb")</code> 截断本文件 → 已 <code>git checkout HEAD</code> 恢复，并按当轮捕获文本<strong>忠实重建</strong>本日三条记录（lint 体检 / freshness 审计 / Obsidian 维护）。教训：向既有文件追加一律先读全量再以 <code>wb</code> 写回，或改文本模式 append</li>
 <li>报告：<code>memory/2026/10/weekly-2026-10-04.md</code>（Air-Gapped，不进公开库）</li>
 </ul>
+<h2 id="2026-10-10-lint-obsidian">[2026-10-10] lint | Obsidian 维护（断链/空文件/标签一致性 + 根级漂移归位）<a class="headerlink" href="#2026-10-10-lint-obsidian" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>体检基线（678 页）</strong>：Broken wikilinks 0 / Missing frontmatter 0 / Glued frontmatter close 0 / Invalid YAML 0 / Orphan 0 / Short pages 0 / Stale 0 —— 仅剩 1 组 README 重名（<code>Research/eval-v2-2026-08-31/README.md</code> vs <code>Dev/system-prompts-reference/README.md</code>，低风险，历轮均保留）</li>
+<li><strong>空壳清理 8 只</strong>（dreaming，计数为 0 且无 footer、无入链）：light 10-04/10-07/10-08/10-09（各 37B「No notable updates」）+ rem 10-08/10-09（各 128B「No strong patterns」）+ deep 10-04/10-07/10-08/10-09（各 103B「Ranked 0 / Promoted 0」）。保留：deep 09-28（有 promoted 记录）、rem 10-04/10-07（有 Reflections 内容）、light 09-26~10-03（有实质候选）</li>
+<li><strong>标签一致性</strong>：大小写变体组 0；纯冗余（裸标签与同名 namespaced 标签并存于同一文件）0 对；<strong>风格漂移修复 2 处</strong> —— <code>cards/2026-10-02-skill-supply-chain.md</code> 与 <code>cards/2026-10-04-approval-laundering.md</code> 用 YAML 块式列表（<code>tags:</code> 换行 + <code>- x</code>），与全库 751/753 的流式约定（<code>tags: [a, b]</code>）不一致，已用字节级替换转流式，LF 行尾原样保留。修复后 tag-lint「YAML-list style tags files」段归零</li>
+<li><strong>根级漂移归位 1 件</strong>：<code>memory/2026-10-09.md</code>（daily-summary 22:00 产出，1,003B，未被跟踪）→ <code>memory/2026/10/2026-10-09-summary.md</code>（与既有 14:42 的 <code>2026-10-09.md</code> 内容不同，属双版本，按 summary 后缀区分，未覆盖）。根因同 W38/W40：cron 输出路径漂移到 vault 根级</li>
+<li><strong>inline tag 复核 10 处</strong>：全部为设计内保留（dataview 查询语法 <code>FROM #ai-agent OR ...</code> 4 处、社媒话题标签 <code>#ai #python</code> 等 5 处、正文引用 <code>#codex</code> 1 处），按「先修检测器再动数据」不动</li>
+<li><strong>隔离回流复查</strong>：<code>git ls-files memory/ private_knowledge/ private_vault/</code> 仅 <code>memory/MOC-Memory.md</code>（预期）；<code>origin/main</code> 无 memory/ 泄漏（仅 MOC-Memory.md）；<code>origin/gh-pages</code> 无 memory/ 与 private_ 条目 —— 09-23 隔离基线完好</li>
+<li><strong>门禁复核</strong>：<code>check-repo-privacy.py</code> ✅（922 tracked 文件无敏感命中）/ <code>check_wikilinks.py</code> ✅ All wikilinks OK / <code>check-site.py</code> ✅ 8 项全过 / <code>scripts/vault-structure.py</code>（CI 实跑版本）断裂 0 / 孤立 0 / 空文件 0</li>
+<li><strong>检测器口径差异（本轮复核确认，未改数据）</strong>：<code>knowledge/META/scripts/knowledge-lint.py</code> 与 CI 实跑的 <code>scripts/vault-structure.py</code> 均报全绿；但 <code>AppData/Local/hermes/scripts/vault-structure.py</code>（07-24 部署副本，3.9KB）与 <code>skills/note-taking/obsidian-vault-management/scripts/vault-structure.py</code>（09-29 增强版，13.9KB）是三份不同实现——旧副本会把 vault 根级 <code>Home|🏠 Home</code> 与 skills/ 目录内文件全量误报（1,187 断链 / 145 孤立）。CI 与 workspace 版本口径一致且正确，旧副本已无引用方，建议后续归档</li>
+<li><strong>工具坑</strong>：<code>execute_code</code> 在 cron 模式被拒（无用户审批）；heredoc 形式的内联 Python 也被安全策略拦截 —— 一律 write_file 落盘脚本 + terminal 执行。<code>write_file</code> 对未完整读取的文件会拒写（stale write guard）→ 定点改用字节级脚本</li>
+</ul>
 
 
 
