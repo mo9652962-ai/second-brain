@@ -1,11 +1,7 @@
 ---
 aliases:
   - 2026-10-02-card-skill-supply-chain
-tags:
-  - knowledge-card
-  - agent-security
-  - skill-supply-chain
-  - multi-agent
+tags: [knowledge-card, agent-security, skill-supply-chain, multi-agent]
 created: 2026-10-02
 source: "[[knowledge/Research/arxiv-2026-10-02-agent-llm]]"
 ---

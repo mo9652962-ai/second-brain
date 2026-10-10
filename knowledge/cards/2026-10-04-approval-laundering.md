@@ -1,11 +1,7 @@
 ---
 aliases:
   - 2026-10-04-card-approval-laundering
-tags:
-  - knowledge-card
-  - agent-security
-  - approval-binding
-  - tool-authorization
+tags: [knowledge-card, agent-security, approval-binding, tool-authorization]
 created: 2026-10-04
 source: "[[knowledge/Research/arxiv-2026-10-04-agent-llm]]"
 ---
