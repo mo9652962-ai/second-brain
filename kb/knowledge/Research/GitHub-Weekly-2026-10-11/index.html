@@ -2852,7 +2852,8 @@
 <h1 id="github-2026-10-11w41">GitHub 宝藏挖掘 - 2026-10-11（W41）<a class="headerlink" href="#github-2026-10-11w41" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p>采集口径：topic 搜索 Top20 + 关注列表 7 项，共 25 个项目进入评分。
-距上一期 [[GitHub-Weekly-2026-09-20|W39]] 相隔 3 周（W40 缺档）。</p>
+距上一期 [[GitHub-Weekly-2026-09-20|W39]] 相隔 3 周（W40 缺档）。
+⚠️ <strong>本期 Top5 全为连榜，无新面孔</strong>——脚本按 topic 总 star 排序，头部项目长期稳定；信息量在 <strong>star delta</strong> 而非排名变化。</p>
 </blockquote>
 <h2 id="top-5">Top 5<a class="headerlink" href="#top-5" title="Permanent link">&para;</a></h2>
 <h3 id="1-deusdatacodebase-memory-mcp-46325">1. DeusData/codebase-memory-mcp (46,325⭐) [🔴]<a class="headerlink" href="#1-deusdatacodebase-memory-mcp-46325" title="Permanent link">&para;</a></h3>
@@ -2898,7 +2899,45 @@
 <li><strong>HKUDS/nanobot</strong> (81/100): 自托管 Agent 运行时，MCP + 长期记忆 + 多 Agent 委派 + cron 自动化，OpenAI 兼容 API</li>
 <li><strong>tirth8205/code-review-graph</strong> (74/100): 本地代码知识图谱，MCP 服务 review 场景上下文，65x token 压缩，已原生支持 Hermes Agent</li>
 </ul>
-<h2 id="_1">洞察<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_1">🔍 真实性核验（高星甄别）<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">项目</th>
+<th style="text-align: right;">commits</th>
+<th style="text-align: right;">contributors</th>
+<th style="text-align: right;">releases</th>
+<th style="text-align: left;">判定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">codebase-memory-mcp</td>
+<td style="text-align: right;">3,645</td>
+<td style="text-align: right;">100+</td>
+<td style="text-align: right;">v0.11.0</td>
+<td style="text-align: left;">✅ 真实（8050 测试 + arXiv 2603.27277 + SLSA 3）</td>
+</tr>
+<tr>
+<td style="text-align: left;">nanobot</td>
+<td style="text-align: right;">4,825</td>
+<td style="text-align: right;">100+</td>
+<td style="text-align: right;">v0.3.5</td>
+<td style="text-align: left;">✅ 真实（HKUDS 港大实验室 + PyPI 实包 + 11 语言文档）</td>
+</tr>
+<tr>
+<td style="text-align: left;">code-review-graph</td>
+<td style="text-align: right;">1,229</td>
+<td style="text-align: right;">100+</td>
+<td style="text-align: right;">v2.3.9</td>
+<td style="text-align: left;">✅ 真实（Trendshift 收录 + 可复现基准文档）</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>三者均通过生态交叉验证：有真实 commit 历史、多 contributor、版本化 release、第三方排行/论文支撑，非刷星项目。</p>
+</blockquote>
+<h2 id="_2">洞察<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>「代码知识图谱」三连榜</strong>：codebase-memory-mcp / code-review-graph 均已连续 9 期上榜，MCP 已成 Agent 上下文压缩的默认接口——三者共性是把「读文件」换成「查图」。</li>
 <li><strong>本地优先 + 自托管是主流</strong>：Top5 全部可离线自托管（nanobot 甚至主打「小而可读的内核」），与本机无虚拟化、无 Docker 的部署约束天然契合。</li>
@@ -2909,7 +2948,7 @@
 <p><em>自动生成 2026-10-11 13:45 · 增强整理 2026-10-11</em></p>
 <hr />
 <blockquote>
-<p>🗺️ 属于 [[MOC-GitHub]] · [[MOC-Research]] · [[Home|🏠 Home]]</p>
+<p>🗺️ 属于 [[knowledge/Research/MOC-GitHub|MOC-GitHub]] · [[knowledge/Research/MOC-Research|MOC-Research]] · [[Home|🏠 Home]]</p>
 </blockquote>
 
 
