@@ -4,7 +4,7 @@ domain: Daily
 type: moc
 status: active
 created: 2026-09-20
-updated: 2026-09-20
+updated: 2026-10-11
 ---
 
 # 📅 每日产出 — Daily
@@ -63,3 +63,4 @@ updated: 2026-09-20
 - [[hackernews-2026-10-04]]
 - [[hackernews-2026-10-08]]
 - [[hackernews-2026-10-10]]
+- [[hackernews-2026-10-11]]
