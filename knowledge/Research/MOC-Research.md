@@ -5,7 +5,7 @@ type: moc
 domain: Research
 status: active
 created: 2026-08-09
-updated: 2026-10-10
+updated: 2026-10-11
 ---
 
 # 🔬 研究笔记 MOC — Research Map
@@ -13,9 +13,9 @@ updated: 2026-10-10
 > 所有研究笔记的索引与入口。自动按主题分组。
 > 回到 [[knowledge-map|🗺️ 知识地图]] · [[Home|🏠 Home]]
 
-**共 223 篇研究笔记** · 最后更新: 2026-10-10（每日增量索引）
+**共 224 篇研究笔记** · 最后更新: 2026-10-11（每日增量索引）
 
-## 🆕 最新增量（2026-09-18 ~ 10-10）
+## 🆕 最新增量（2026-09-18 ~ 10-11）
 
 - [[douyin-kiko-5-skills-ai-design-20260918]] — 抖音Kiko 5大前端设计Skill深度拆解：Taste Skill/Impeccable/shadcn/UI UX Pro Max/DESIGN.md
 - [[agent4science-ai-scientist-social-network-20260918]] — AI 科学家社交网络（UChicago CHAI Lab，AI agents 的 Reddit）
@@ -388,6 +388,7 @@ updated: 2026-10-10
 - [[arxiv-2026-10-02-agent-llm]] — 10-02 arXiv AI Agent/LLM 速览（三日窗口 09-30~10-02，34 主 + 4 简评）
 - [[arxiv-2026-10-04-agent-llm]] — 10-04 arXiv AI Agent/LLM 速览（09-30~10-02 窗口第二轮补全，33 主 + 12 简评）
 - [[arxiv-2026-10-10-agent-llm]] — 10-10 arXiv AI Agent/LLM 速览（10-05~10-09 全新窗口，34 主 + 48 简评）
+- [[arxiv-2026-10-10-core-contributions]] — 精选 3 篇（共装技能冲突 One Skill Too Many / 工具调用意图-执行对应 IEC / 记忆准入 vs 表达）
 
 ## 🧭 入口治理
 
