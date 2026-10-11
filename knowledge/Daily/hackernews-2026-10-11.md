@@ -29,7 +29,7 @@ created: 2026-10-11
 | 17 | [Unikernels were hard. key word: were](https://ghuntley.com/unikernels/) | 126 | [54](https://news.ycombinator.com/item?id=50033357) | Geoffrey Huntley（10-11）与 MirageOS 老兵 Justin Cormack 的对谈整理：unikernel 正在被重新发现——当年让它难用的摩擦已经消失，操作系统本身是设计债，若真在意安全就该认真考虑 unikernel。两人从 Mirage、Orleans、Haskell 一路聊到 Nix。属云基础设施/系统安全方向。 |
 | 18 | [OpenSCAD the Programmers Solid 3D CAD Modeller](https://openscad.org/) | 125 | [102](https://news.ycombinator.com/item?id=49984349) | OpenSCAD 官网（程序员向的实体 3D CAD 建模器）：用代码描述实体模型、免费开源，支持 Linux/Windows/macOS；官网近期动态包括「用代码编出的编织机」、新书《This is OpenSCAD》、可在浏览器里试的 OpenSCAD Playground。评论区是 CAD 老手对「代码建模 vs 交互式建模」的长期争论。 |
 | 19 | [Five months treating bugs like patients and coding agents like a medical team](https://www.cockroachlabs.com/blog/experiment-running-hospital-code/) | 102 | [46](https://news.ycombinator.com/item?id=50021899) | Cockroach Labs 博客（10-09）：把编码 agent 流水线按「教学医院」角色拆成分诊护士、住院医、审核主治、出院护士等岗位，强制先规划再写码、强留痕、严测试。五个月处理超百万行代码只有 7 次 revert，并借此让 MOLT 迁移工具新增了 IBM Db2 → CockroachDB 的迁移能力。结论：结构化 agent 工作流能在保持企业级可靠性的前提下承接大规模改造。 |
-| 20 | [Rampart: Browser native on-device PII redaction](https://ndstudio.gov/posts/say-hello-to-rampart) | 82 | [32](https://news.ycombinator.com/item?id=50024242) | 美国 National Design Studio 开源 Rampart：完全跑在浏览器本地的个人信息过滤系统——确定性正则层拦 SSN/证件号，MiniLM 小模型识别姓名与街道地址，毫秒级在消息发出前完成脱敏。设计原则是「只有从未离开设备的个人信息才是确定私密的」，定位为给聊天类工具兜底的第一道防线。 |
+| 20 | [Rampart: Browser native on-device PII radaction](https://ndstudio.gov/posts/say-hello-to-rampart) | 82 | [32](https://news.ycombinator.com/item?id=50024242) | 美国 National Design Studio 开源 Rampart：完全跑在浏览器本地的个人信息过滤系统——确定性正则层拦 SSN/证件号，MiniLM 小模型识别姓名与街道地址，毫秒级在消息发出前完成脱敏。设计原则是「只有从未离开设备的个人信息才是确定私密的」，定位为给聊天类工具兜底的第一道防线。 |
 
 ### 被跳过的 Top 10 条目
 
