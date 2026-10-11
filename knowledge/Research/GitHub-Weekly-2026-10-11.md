@@ -13,6 +13,7 @@ source: scripts/github_treasure_hunt.py
 
 > 采集口径：topic 搜索 Top20 + 关注列表 7 项，共 25 个项目进入评分。
 > 距上一期 [[GitHub-Weekly-2026-09-20|W39]] 相隔 3 周（W40 缺档）。
+> ⚠️ **本期 Top5 全为连榜，无新面孔**——脚本按 topic 总 star 排序，头部项目长期稳定；信息量在 **star delta** 而非排名变化。
 
 ## Top 5
 
@@ -54,6 +55,16 @@ source: scripts/github_treasure_hunt.py
 - **HKUDS/nanobot** (81/100): 自托管 Agent 运行时，MCP + 长期记忆 + 多 Agent 委派 + cron 自动化，OpenAI 兼容 API
 - **tirth8205/code-review-graph** (74/100): 本地代码知识图谱，MCP 服务 review 场景上下文，65x token 压缩，已原生支持 Hermes Agent
 
+## 🔍 真实性核验（高星甄别）
+
+| 项目 | commits | contributors | releases | 判定 |
+|:---|---:|---:|---:|:---|
+| codebase-memory-mcp | 3,645 | 100+ | v0.11.0 | ✅ 真实（8050 测试 + arXiv 2603.27277 + SLSA 3） |
+| nanobot | 4,825 | 100+ | v0.3.5 | ✅ 真实（HKUDS 港大实验室 + PyPI 实包 + 11 语言文档） |
+| code-review-graph | 1,229 | 100+ | v2.3.9 | ✅ 真实（Trendshift 收录 + 可复现基准文档） |
+
+> 三者均通过生态交叉验证：有真实 commit 历史、多 contributor、版本化 release、第三方排行/论文支撑，非刷星项目。
+
 ## 洞察
 
 1. **「代码知识图谱」三连榜**：codebase-memory-mcp / code-review-graph 均已连续 9 期上榜，MCP 已成 Agent 上下文压缩的默认接口——三者共性是把「读文件」换成「查图」。
@@ -65,4 +76,4 @@ source: scripts/github_treasure_hunt.py
 *自动生成 2026-10-11 13:45 · 增强整理 2026-10-11*
 
 ---
-> 🗺️ 属于 [[MOC-GitHub]] · [[MOC-Research]] · [[Home|🏠 Home]]
+> 🗺️ 属于 [[knowledge/Research/MOC-GitHub|MOC-GitHub]] · [[knowledge/Research/MOC-Research|MOC-Research]] · [[Home|🏠 Home]]
