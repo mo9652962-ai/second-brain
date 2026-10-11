@@ -3196,6 +3196,31 @@
 <li><strong>检测器口径差异（本轮复核确认，未改数据）</strong>：<code>knowledge/META/scripts/knowledge-lint.py</code> 与 CI 实跑的 <code>scripts/vault-structure.py</code> 均报全绿；但 <code>AppData/Local/hermes/scripts/vault-structure.py</code>（07-24 部署副本，3.9KB）与 <code>skills/note-taking/obsidian-vault-management/scripts/vault-structure.py</code>（09-29 增强版，13.9KB）是三份不同实现——旧副本会把 vault 根级 <code>Home|🏠 Home</code> 与 skills/ 目录内文件全量误报（1,187 断链 / 145 孤立）。CI 与 workspace 版本口径一致且正确，旧副本已无引用方，建议后续归档</li>
 <li><strong>工具坑</strong>：<code>execute_code</code> 在 cron 模式被拒（无用户审批）；heredoc 形式的内联 Python 也被安全策略拦截 —— 一律 write_file 落盘脚本 + terminal 执行。<code>write_file</code> 对未完整读取的文件会拒写（stale write guard）→ 定点改用字节级脚本</li>
 </ul>
+<h2 id="2026-10-11-lint">[2026-10-11] lint | 每周例行体检<a class="headerlink" href="#2026-10-11-lint" title="Permanent link">&para;</a></h2>
+<ul>
+<li>断链 0 / 孤立 0 / 缺 frontmatter 0</li>
+<li>处理原则：只报告不自动修；新问题由 k 在下次会话处理</li>
+</ul>
+<h2 id="2026-10-11-freshness">[2026-10-11] freshness | 时效审计<a class="headerlink" href="#2026-10-11-freshness" title="Permanent link">&para;</a></h2>
+<ul>
+<li>过期硬约束 3 / 待运行时验证 38 / 历史记录 190</li>
+<li>需修正：</li>
+<li><code>knowledge\log.md:272</code> — - <code>knowledge\cards\2026-09-21-devin-cognition-eval.md:35</code> — 3. ⚠️ 云端环境与本机不一致（本机无</li>
+<li><code>knowledge\log.md:313</code> — - <code>knowledge\cards\2026-09-21-devin-cognition-eval.md:30</code> — 3. ⚠️ 云端环境与本机不一致（本机无</li>
+<li><code>knowledge\cards\2026-09-21-devin-cognition-eval.md:30</code> — 3. ⚠️ 云端环境与本机不一致（本机无虚拟化、Windows 专属环境）→ 首次试用选独立后端/前端小 Bug + 要求加回归测试</li>
+<li>处理原则：只报告不自动修；事实源见 knowledge/META/current-environment.md</li>
+</ul>
+<h2 id="2026-10-11-weekly-w41-2026-10-05-10-11">[2026-10-11] weekly | W41 周度整理（2026-10-05 ~ 10-11）<a class="headerlink" href="#2026-10-11-weekly-w41-2026-10-05-10-11" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>新增清点</strong>：arXiv 10-10 速览（10-05~10-09 全新窗口，34 主 + 48 简评）+ 卡片 1 张（共装技能冲突）+ HN ×2（10-08 / 10-10）+ W41 GitHub 周报</li>
+<li><strong>孤立归零</strong>：<code>GitHub-Weekly-2026-10-11.md</code> 无 frontmatter、无入链（CI 版 vault-structure 报孤立 1）→ 补 frontmatter + 挂载到 MOC-GitHub 周报区 → 孤立 1 → <strong>0</strong></li>
+<li><strong>跳链补齐</strong>：技能生命周期三环互链（10-02 ↔ 10-04 ↔ 10-10，6 处 wikilink）</li>
+<li><strong>索引刷新</strong>：knowledge-map（W41 新增速览章节 + 最后更新日期 + 7 个域计数）· MOC-GitHub（W41 周报行）· MOC-Research（223→224 + 周报挂载）· MOC-cards / MOC-Daily（updated 日期）· index.md（7 个域计数 + updated）</li>
+<li><strong>空壳清理</strong>：deep/2026-10-10（103B，Ranked 0 / Promoted 0，无 footer、无入链）</li>
+<li><strong>根级漂移归位</strong>：<code>memory/2026-10-10.md</code>（daily-summary 22:00 产出，733B）→ <code>memory/2026/10/2026-10-10-summary.md</code>（与 10/ 内 3.4KB 工作总结不同，按 summary 后缀区分）</li>
+<li><strong>隔离回流复查</strong>：<code>git ls-files memory/ private_knowledge/ private_vault/</code> 仅 <code>memory/MOC-Memory.md</code>；origin/main 无 memory/ 泄露；origin/gh-pages 无 memory/ 与 private_ 条目 —— 09-23 隔离基线完好</li>
+<li><strong>报告</strong>：<code>memory/2026/10/weekly-2026-10-11.md</code>（Air-Gapped，不进公开库）</li>
+</ul>
 
 
 
