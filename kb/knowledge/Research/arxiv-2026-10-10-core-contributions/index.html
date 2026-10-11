@@ -1,0 +1,3334 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="AI Agent 第二大脑 | Hermes 七大自举系统 | 硬件/PCB/单片机全链路知识库 | 学术写作工作流 | 全中文 Obsidian 知识库">
+      
+      
+        <meta name="author" content="mo9652962">
+      
+      
+        <link rel="canonical" href="https://mo9652962-ai.github.io/second-brain/kb/knowledge/Research/arxiv-2026-10-10-core-contributions/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>arXiv 2026-10-10 核心贡献总结 - Second Brain 知识库</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#arxiv-2026-10-1010-11" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="Second Brain 知识库" class="md-header__button md-logo" aria-label="Second Brain 知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Second Brain 知识库
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              arXiv 2026-10-10 核心贡献总结
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="切换到深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="切换到浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  
+    
+  
+  🏠 总入口
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/hermes/hermes-workflow-preferences/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🤖 Hermes 自举系统
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/hardware/PCB-Design-Automation-2026/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🔧 硬件工程
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/ai/mlops-llm-training-pipeline/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🧠 AI / MLOps
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/web/Modern-Web-Development-2026/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  💻 Web / 平台
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/dev/cross-platform-mobile-development-2026/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  📱 移动端 & 安全
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/general/knowledge-domain-roadmap/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  📚 通用参考
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../MOC-Research/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🗺️ 知识域 MOC
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../projects/current/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  📦 项目与治理
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Second Brain 知识库" class="md-nav__button md-logo" aria-label="Second Brain 知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Second Brain 知识库
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../.." class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 总入口
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🏠 总入口
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../HOME/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HOME 知识中枢
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../INDEX/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    全库索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../knowledge-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识地图
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--adopted"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DASHBOARD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    健康看板
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../METABOLISM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识新陈代谢
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../VAULT-MAP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器可读索引
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cross-Domain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跨域关联
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--adopted"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 Hermes 自举系统
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🤖 Hermes 自举系统
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/hermes-workflow-preferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    交互自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/hermes-automation-patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    可靠性自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/daily-knowledge-absorption-gate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/tool-call-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    工具调用自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/code-quality-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    代码质量自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/output-style-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    输出风格自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/context-management-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    上下文管理自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/github-repo-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub 仓库优化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/github-seo-optimization-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub SEO 优化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔧 硬件工程
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🔧 硬件工程
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hardware/PCB-Design-Automation-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PCB 设计自动化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hardware/CAD-Design-Complete-Guide-v2.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CAD 设计完整指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hardware/Microcontroller-Edge-AI-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    单片机与边缘 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hardware/Hardware-Startup-Open-Source-Ecosystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    硬件创业与开源生态
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/cad-design-master/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CAD 设计大师（技能集）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/8051-embedded-dev/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8051 嵌入式开发
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧠 AI / MLOps
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🧠 AI / MLOps
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/ai/mlops-llm-training-pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MLOps & LLM 训练流水线
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💻 Web / 平台
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    💻 Web / 平台
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/web/Modern-Web-Development-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    现代 Web 开发 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/platform/Platform-Development-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    平台开发 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📱 移动端 & 安全
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📱 移动端 & 安全
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/dev/cross-platform-mobile-development-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跨平台移动端开发
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/dev/ctf-cybersecurity-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CTF 网络安全路线
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📚 通用参考
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📚 通用参考
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/general/knowledge-domain-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识域扩展路线图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/general/community-best-practices-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    社区最佳实践索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/general/bilingual-terminology-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中英双语术语表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/engineering-workflow/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    工程工作流
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🗺️ 知识域 MOC
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🗺️ 知识域 MOC
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MOC-Research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    研究 Research
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Dev/MOC-Dev/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开发 Dev
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Productivity/MOC-Productivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    生产力 Productivity
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Security/MOC-Security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    安全 Security
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cards/MOC-cards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识卡 cards
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Daily/MOC-Daily/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    日常 Daily
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Hardware/MOC-Hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    硬件 Hardware
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AI/MOC-AI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Finance/MOC-Finance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    金融 Finance
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Archive/MOC-Archive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    归档 Archive
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Content/MOC-Content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    内容 Content
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SOP/MOC-SOP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SOP
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../META/MOC-META/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    元信息 META
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Creative/MOC-Creative/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    创意 Creative
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gaming/MOC-gaming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    游戏 gaming
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Product/MOC-Product/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    产品 Product
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projects/MOC-Projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    项目 Projects
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Education/MOC-Education/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    教育 Education
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📦 项目与治理
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📦 项目与治理
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/current/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    当前项目
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/MOC-Concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    概念索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../memory/MOC-Memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    记忆索引
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../health/MOC-Health/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    健康索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MOC-Inbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    待整理箱
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MOC-Duplicate-Review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    重复审查
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="arxiv-2026-10-1010-11">arXiv 核心贡献总结 · 2026-10-10（10-11 处理）<a class="headerlink" href="#arxiv-2026-10-1010-11" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>来源：arxiv-fetch cron 2026-10-10 14:00 输出（10-05 ~ 10-09 全新窗口，34 主条目 + 48 简评，落库 <code>arxiv-2026-10-10-agent-llm.md</code>）
+精选原则：消费 fetch「🟢 待深读」清单（5 篇候选）+ ★★★★★ 相关性（直接命中 Hermes/Agent 体系）+ 跨周论文级去重（候选 5 篇与历史 12 份 core-contributions 的 20 个已深挖 ID <strong>零重叠</strong> ✅）
+选 3 篇，分散 3 个方向：<strong>技能库治理 / 工具执行可信 / 记忆治理</strong>——其中 04375 的实测环境正是 k 每天跑的 Windows + git-bash，11188 的结论与 k 的直觉相反</p>
+</blockquote>
+<hr />
+<h2 id="one-skill-too-many-how-co-installed-skills-conflict-in-coding-agents-261011647">🥇 One Skill Too Many: How Co-Installed Skills Conflict in Coding Agents (2610.11647)<a class="headerlink" href="#one-skill-too-many-how-co-installed-skills-conflict-in-coding-agents-261011647" title="Permanent link">&para;</a></h2>
+<p><strong>标题</strong>: One Skill Too Many: How Co-Installed Skills Conflict in Coding Agents
+<strong>作者</strong>: Chaoliang Yan, Zihao Xu, Yuekang Li, Shangzhi Xu, Yi Liu, Gelei Deng, Siqi Ma（UNSW 等四校）
+<strong>分类</strong>: cs.SE, cs.AI ｜ 投稿状态：arXiv preprint v1（2026-10-08）
+<strong>核心</strong>: 技能来自独立来源（团队 / 开发者 / 插件 / 拷贝合集），一个已装技能可能与<strong>做同一件事</strong>的相似技能共装，而模型<strong>仅凭名称与描述</strong>二选一。冲突时已装技能丢掉核心功能（例如「禁止碰 git」被绕过），<strong>而任务仍然通过</strong>——所以只看任务完成度的基准测不出。首个实证研究。</p>
+<h3 id="_1">核心贡献表<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">发现</th>
+<th style="text-align: left;">数据</th>
+<th style="text-align: left;">对 k 的意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>共装冲突是常态</strong></td>
+<td style="text-align: left;">20,947 个仓库快照 → 822,109 个疑似相似技能对 → LLM 判定 3,754 个分层样本 → 312 个确认对进实验</td>
+<td style="text-align: left;">这不是边缘情况，是技能生态的结构性特征</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>近 1/4 已装技能有同功能共存者</strong></td>
+<td style="text-align: left;">同一安装列表内 23.5%（95% CI 21.2%–25.7%），约 10,100 个「家族」；若算上「用户可再加的同功能技能」达 63.7%</td>
+<td style="text-align: left;">k 本地 459 个 SKILL.md，同名重复 2 组、Jaccard≥0.5 近似对 5 组（10-10 实测）——量级一致</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>任务通过 ≠ 技能生效</strong></td>
+<td style="text-align: left;">相似技能在<strong>不降低任务完成率</strong>的前提下抢走 <strong>1/5 运行</strong>；先打开相似技能的运行丢掉 <strong>&gt;1/3</strong> 独占核心功能（37% vs 共享功能 8%）</td>
+<td style="text-align: left;">必须专测<strong>独占核心功能</strong>（「不许碰 git」「发布前必过隐私门禁」），完成率测不出来</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>位置决定谁跑</strong></td>
+<td style="text-align: left;"><strong>安装位置</strong>决定（个人目录 vs 插件），列表顺序几乎无关；B 放个人目录 → A 从全部 243 个列表消失、A 使用率 −35.0pp、46.5% 运行改用 B</td>
+<td style="text-align: left;">装技能的位置就是优先级策略，不是排序</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>回复不告诉你谁干的</strong></td>
+<td style="text-align: left;">113 次替换运行里，最终回复<strong>只在 0.9%</strong> 点名实际使用的技能；全部 A+B 运行里 7.7% 提到技能名</td>
+<td style="text-align: left;">「点名本次生效的技能」是 0.9% → 高覆盖的巨大低成本缺口</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>冲突在「首次读技能」定案</strong></td>
+<td style="text-align: left;">97% 的 B-first 运行在打开 B 之前<strong>未改动任何文件</strong>；该处加 PreToolUse hook（拒绝首次读 B、点名让模型用 A）→ 模型 <strong>96%</strong> 切回 A，独占核心功能保真度 <strong>+9.1pp</strong>（双方都先够 B 的场景 +17.8pp），重定向运行与「先打开 A」持平（0.0pp），<strong>任务完成率不变</strong></td>
+<td style="text-align: left;">干预点极便宜：一个文件读，在任何改动之前；代价是必须<strong>声明哪个是 A</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_2">方法/架构<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="mf">20</span><span class="p">,</span><span class="mf">947</span><span class="w"> </span><span class="n">个仓库快照</span><span class="err">（</span><span class="n">公开</span><span class="w"> </span><span class="n">SKILL</span><span class="mf">.</span><span class="n">md</span><span class="err">，</span><span class="mf">2026</span><span class="o">-</span><span class="mf">07</span><span class="o">-</span><span class="mf">18</span><span class="w"> </span><span class="n">采集</span><span class="err">）</span>
+<span class="w">    </span><span class="err">↓</span><span class="w"> </span><span class="n">按</span><span class="w"> </span><span class="n">Claude</span><span class="w"> </span><span class="n">Code</span><span class="w"> </span><span class="n">加载规则还原</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="mf">106</span><span class="w"> </span><span class="n">个</span><span class="err">「</span><span class="n">安装列表</span><span class="err">」</span>
+<span class="w">    </span><span class="err">↓</span><span class="w"> </span><span class="n">名称</span><span class="o">+</span><span class="n">描述嵌入</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="n">每技能取</span><span class="w"> </span><span class="mf">10</span><span class="w"> </span><span class="n">近邻</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="mf">822</span><span class="p">,</span><span class="mf">109</span><span class="w"> </span><span class="n">个候选对</span>
+<span class="w">    </span><span class="err">├─</span><span class="w"> </span><span class="n">跨项目</span><span class="w"> </span><span class="mf">439</span><span class="p">,</span><span class="mf">860</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">项目内</span><span class="w"> </span><span class="mf">382</span><span class="p">,</span><span class="mf">249</span>
+<span class="w">    </span><span class="err">↓</span><span class="w"> </span><span class="n">LLM</span><span class="w"> </span><span class="n">judge</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="mf">754</span><span class="w"> </span><span class="n">个分层样本</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="n">确认</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="mf">639</span><span class="w"> </span><span class="n">个</span><span class="err">「</span><span class="n">同一件事</span><span class="err">」→</span><span class="w"> </span><span class="mf">312</span><span class="w"> </span><span class="n">个可跑可评分对</span>
+<span class="w">    </span><span class="err">↓</span><span class="w"> </span><span class="mf">3</span><span class="w"> </span><span class="n">模型</span><span class="w"> </span><span class="err">×</span><span class="w"> </span><span class="mf">312</span><span class="w"> </span><span class="n">对</span><span class="err">（</span><span class="mf">6</span><span class="p">,</span><span class="mf">368</span><span class="w"> </span><span class="n">运行</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">169</span><span class="p">,</span><span class="mf">294</span><span class="w"> </span><span class="n">工具调用</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">542</span><span class="w"> </span><span class="n">agent</span><span class="w"> </span><span class="n">小时</span><span class="err">）</span>
+<span class="w">    </span><span class="err">├─</span><span class="w"> </span><span class="n">抽取</span><span class="err">「</span><span class="n">核心功能</span><span class="err">」：</span><span class="n">称职模型通常不会自发改的</span><span class="err">、</span><span class="n">可核查的要求</span><span class="err">（</span><span class="n">禁令也算</span><span class="err">）</span>
+<span class="w">    </span><span class="err">│</span><span class="w">     </span><span class="err">└─</span><span class="w"> </span><span class="n">标注</span><span class="w"> </span><span class="n">exclusive</span><span class="err">（</span><span class="n">仅</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="n">要求</span><span class="err">，</span><span class="mf">73</span><span class="err">%</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="mf">518</span><span class="err">）</span><span class="n">vs</span><span class="w"> </span><span class="n">shared</span>
+<span class="w">    </span><span class="err">├─</span><span class="w"> </span><span class="n">对照组</span><span class="err">：</span><span class="n">A</span><span class="w"> </span><span class="kr">on</span><span class="n">ly</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">A</span><span class="o">+</span><span class="n">B</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">A</span><span class="o">+</span><span class="n">C</span><span class="err">（</span><span class="n">无关技能</span><span class="err">）</span>
+<span class="w">    </span><span class="err">└─</span><span class="w"> </span><span class="n">干预</span><span class="err">：</span><span class="n">PreToolUse</span><span class="w"> </span><span class="n">hook</span><span class="w"> </span><span class="n">守</span><span class="err">「</span><span class="n">首次技能读取</span><span class="err">」</span>
+</code></pre></div>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">指标</th>
+<th style="text-align: left;">A+B vs A only</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">用到 A 的运行</td>
+<td style="text-align: left;"><strong>−19.9 pp</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">任务完成率</td>
+<td style="text-align: left;">+1.9 pp（CI 跨零，不显著）</td>
+</tr>
+<tr>
+<td style="text-align: left;">A 的核心功能保真度（前三条）</td>
+<td style="text-align: left;">−2.6 pp</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>A 的独占核心功能</strong></td>
+<td style="text-align: left;"><strong>−5.6 pp</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">A 的共享核心功能</td>
+<td style="text-align: left;">+0.1 pp（无变化）</td>
+</tr>
+<tr>
+<td style="text-align: left;">对照：加无关技能 C</td>
+<td style="text-align: left;">A 使用率仅 −5.9 pp，保真度无变化</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>关键对照：<strong>问题不是「多了一个技能」，而是「多了一个干同一件事的技能」</strong>。失效形态以<strong>整体替换</strong>为主（12.1% 只用 B、38.0% 两个都不用），而非混合。</p>
+</blockquote>
+<h3 id="sora">与 sora 的关联<a class="headerlink" href="#sora" title="Permanent link">&para;</a></h3>
+<ul>
+<li>🔴 <strong>直接命中 k 自己的技能库</strong>：Hermes 活跃技能 459 个（10-10 本地实测，已排除 <code>.archive</code>），同名重复 2 组（<code>ai-image-generation</code> @okaris 版 vs 自建版、<code>manim-video</code> creative/ vs video-use/）——<strong>同名 = 触发条件完全重叠，只有加载顺序能决定谁跑</strong>，是最高优先级冲突源</li>
+<li>✅ <strong>方法论修正</strong>：skill-audit 现在只看 description 是否过时，<strong>没有独占功能断言</strong>——本文给出的「专测独占核心功能」正是缺的那一环</li>
+<li>✅ <strong>技能生命周期三环闭环</strong>：10-02 卡片「装的时候危险」（技能即供应链）→ 10-04 卡片「执行的时候危险」（批准的动作 ≠ 执行的动作）→ 本篇「共存的时候危险」（抢跑且不报名字）</li>
+<li>⚠️ <strong>对「全都要」原则的精确边界修正</strong>：sora 的偏好是搜索/模型/技能一次配多个冗余。冗余在<strong>模型侧是容灾</strong>，在<strong>技能侧是冲突</strong>——同一件事两个技能，谁跑由安装位置决定，而输出不会告诉你</li>
+</ul>
+<hr />
+<h2 id="do-tool-calls-execute-as-intended-measuring-and-repairing-intent-execution-correspondence-in-llm-agents-261004375">🥈 Do Tool Calls Execute as Intended? Measuring and Repairing Intent-Execution Correspondence in LLM Agents (2610.04375)<a class="headerlink" href="#do-tool-calls-execute-as-intended-measuring-and-repairing-intent-execution-correspondence-in-llm-agents-261004375" title="Permanent link">&para;</a></h2>
+<p><strong>标题</strong>: Do Tool Calls Execute as Intended? Measuring and Repairing Intent-Execution Correspondence in LLM Agents
+<strong>作者</strong>: Boyang Yang, Zhenhao Li, Ziyao Yang, Kanghui Jia, Xin Yin, Mingmou Liu, Haoye Tian（燕山大学、Aalto 大学等）
+<strong>分类</strong>: cs.AI, cs.SE ｜ 投稿状态：arXiv preprint v1（2026-10-03）
+<strong>核心</strong>: 一个工具调用要经<strong>多个跳（hop）</strong>才到达程序，任一跳都可能<strong>无声改动</strong>它。改动后的调用失败时，agent 会重试一个<strong>正确的</strong>调用，白烧用户的时间与钱。基准与失败分析看不见这个改动——因为它们读的是「调用及其结果」，而不是「<strong>某一跳收到了什么</strong>」。作者定义 <strong>intent-execution correspondence（IEC）</strong>：执行的动作与发出的调用在工具契约下所指的动作一致。</p>
+<h3 id="_3">核心贡献表<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">发现</th>
+<th style="text-align: left;">数据</th>
+<th style="text-align: left;">对 k 的意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>改动率高且集中</strong></td>
+<td style="text-align: left;">生产会话 <strong>47,828 次 shell 调用</strong>中，Claude Code 的 Bash 工具改动了 <strong>12.0%</strong> 携带代码/转义序列/长文本的调用（902 / 7,491）</td>
+<td style="text-align: left;">k 每天跑的正是这类调用（含引号、<code>&amp;&amp;</code>、反斜杠、MSYS 路径）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>静默执行错误动作</strong></td>
+<td style="text-align: left;">反斜杠被改动的调用中 <strong>80.7%</strong>（535 / 663）在<strong>没有任何报错</strong>的情况下执行了错误动作</td>
+<td style="text-align: left;">「没报错」不等于「跑对了」——这是最贵的失效形态</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>全部 harness 都改</strong></td>
+<td style="text-align: left;">被测 <strong>10 个 harness 全部</strong>会改动调用</td>
+<td style="text-align: left;">不是某个工具的 bug，是架构层性质</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>归因被系统性带偏</strong></td>
+<td style="text-align: left;">基于轨迹的判断把 <strong>95.1%</strong> 的生产失败归因给 LLM，尽管<strong>超过一半</strong>是执行路径造成的</td>
+<td style="text-align: left;">k 排障时「调用失败 → 怀疑模型/工具」的默认路径是错的</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>成本可量化</strong></td>
+<td style="text-align: left;">IEC-Bench 上路径把<strong>每通过任务的 token 成本抬高 2.4×</strong>（最高 <strong>12.3×</strong>）</td>
+<td style="text-align: left;">失败重试的成本会藏在 token 账单里</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>改动会遮蔽后续改动</strong></td>
+<td style="text-align: left;">改动的跳同时<strong>遮蔽其后所有改动</strong> → 某路径 <strong>55.1%</strong> 的失败要等第一跳被修复后才显现</td>
+<td style="text-align: left;">修一层才暴露下一层，别指望一次定位</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>修复有效</strong></td>
+<td style="text-align: left;"><strong>IntAct</strong>（以该跳无法改动的方式投递调用，或直接拒绝）已在商业产品部署，恢复 <strong>79.2%</strong> 的改动调用失败（137 / 173）</td>
+<td style="text-align: left;">「投递形式不可改」+「拒绝」是可落地的两个动作</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_4">方法/架构<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="n">agent</span><span class="w"> </span><span class="err">发出的调用</span>
+<span class="w">    </span><span class="err">↓</span><span class="w"> </span><span class="n">hop</span><span class="w"> </span><span class="mi">1</span><span class="err">（</span><span class="n">harness</span><span class="w"> </span><span class="err">工具层，如</span><span class="w"> </span><span class="n">Bash</span><span class="w"> </span><span class="k">tool</span><span class="err">）</span>
+<span class="w">    </span><span class="err">↓</span><span class="w"> </span><span class="n">hop</span><span class="w"> </span><span class="mi">2</span><span class="err">（</span><span class="n">shell</span><span class="w"> </span><span class="err">包装</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="err">路径转换</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="err">编码层）</span>
+<span class="w">    </span><span class="err">↓</span><span class="w"> </span><span class="n">hop</span><span class="w"> </span><span class="mi">3</span><span class="err">（接收方解析器）</span>
+<span class="w">    </span><span class="err">└─</span><span class="w"> </span><span class="err">任一跳可无声改动</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="err">执行的动作</span><span class="w"> </span><span class="err">≠</span><span class="w"> </span><span class="err">发出的调用所指的动作（</span><span class="n">IEC</span><span class="w"> </span><span class="err">破坏）</span>
+
+<span class="err">测量协议：不执行调用，逐跳观测「这一跳收到了什么」</span>
+<span class="w">         </span><span class="err">用接收方自己的解析器指认第一个改动它的跳</span>
+<span class="err">修复</span><span class="w"> </span><span class="n">IntAct</span><span class="err">：</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="err">以该跳无法改动的方式投递</span><span class="w">  </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="err">拒绝该调用</span>
+</code></pre></div>
+
+<h3 id="k">环境细节（对 k 尤其重要）<a class="headerlink" href="#k" title="Permanent link">&para;</a></h3>
+<ul>
+<li>生产语料来自<strong>一家公司六名开发者、11 周、Windows 上的 Git Bash + PowerShell 5.1</strong></li>
+<li>同论文报告：在 <strong>Linux</strong> 上把命令作为参数交给 <code>bash -c</code>，约 <strong>167,000 次调用中零改动</strong> —— 即<strong>改动是 Windows 路径/引号/转义链路特有的</strong>，不是普遍现象</li>
+<li>⚠️ 作者建议：<strong>逐跳测试 harness</strong>——「确保正确的调用按意图执行，或被拒绝」</li>
+</ul>
+<h3 id="sora_1">与 sora 的关联<a class="headerlink" href="#sora_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>🔴 <strong>k 的运行环境就是论文的高危环境</strong>：本机 <code>terminal</code> 走 git-bash（MSYS），且系统提示已明确「MSYS 路径转换被禁用」——<code>git -C /c/Users/x</code>、<code>node /tmp/a.js</code> 会失败而 <code>cd /c/Users/x</code> 可以。这正是本文描述的「hop 改动了调用」</li>
+<li>🔴 <strong>k 已记录过同类失效</strong>：记忆里的「垃圾文件名（含引号/&amp;&amp;）Windows 无法落盘、status 假象 → 用 <code>git ls-tree</code> 验证」就是 IEC 破坏的一个实例——当年是靠结果对账发现的，本文给了机制解释与前置观测方法</li>
+<li>✅ <strong>三条可立即落地的排障规则</strong>：① shell 调用（尤其含引号/转义/长文本）失败时<strong>先验「实际执行的是什么」</strong>，别先改命令；② 失败归因不要只看轨迹（95.1% 被误归因）；③ 观测每一跳「收到了什么」，而非只看结果</li>
+<li>✅ <strong>与既有坑清单合流</strong>：写码前扫坑 32 项 / <code>windows-file-lock-troubleshooting</code> / <code>windows-node-deployment</code> 三条技能可增补「IEC 自检」步骤</li>
+</ul>
+<hr />
+<h2 id="what-to-admit-and-how-to-present-governing-persistent-memory-in-llm-agents-261011188">🥉 What to Admit and How to Present: Governing Persistent Memory in LLM Agents (2610.11188)<a class="headerlink" href="#what-to-admit-and-how-to-present-governing-persistent-memory-in-llm-agents-261011188" title="Permanent link">&para;</a></h2>
+<p><strong>标题</strong>: What to Admit and How to Present: Governing Persistent Memory in LLM Agents
+<strong>作者</strong>: Chang Liu, Deliang Ding
+<strong>分类</strong>: cs.AI ｜ 投稿状态：arXiv preprint v1（2026-10-05 前后）
+<strong>核心</strong>: 持久记忆能提升个性化，但也会诱发<strong>谄媚与跨域泄漏</strong>。作者把治理拆成两个可分离的决策：<strong>admission（什么召回信息进入工作上下文）</strong> 与 <strong>presentation（已准入信息如何表达）</strong>。实现两个免重训的推理时设计：FC（整条评估）与 PS（把条目分解为带类型的单元，映射到六类许可：五种可用 + deny）。</p>
+<h3 id="_5">核心贡献表<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">发现</th>
+<th style="text-align: left;">数据</th>
+<th style="text-align: left;">对 k 的意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>只有 admission 显著有效</strong></td>
+<td style="text-align: left;">相对逐字注入，FC / PS 把外部基准合并 judge 失败率降低 <strong>6.7 / 8.8 pp</strong>（p = 2.7e-7 / 4.1e-12）；开发集跨域泄漏最多降 <strong>29.5 pp</strong></td>
+<td style="text-align: left;">力气该花在<strong>筛选</strong>，不是改写措辞</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>presentation 无显著差异（反直觉）</strong></td>
+<td style="text-align: left;">固定准入、比较<strong>同一裁定输出的两种渲染</strong>（PN vs CH）→ <strong>九个任务-指标对里没有一项</strong>通过多重比较校正</td>
+<td style="text-align: left;">k 常花力气润色记忆/提示的措辞——本文实测这一轴<strong>几乎不产生安全收益</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>收紧准入再降跨域失败</strong></td>
+<td style="text-align: left;">固定 presentation、收紧 admission → 跨域失败再降 <strong>17.5 pp</strong>（p = 1.6e-4）</td>
+<td style="text-align: left;">准入是<strong>可连续加力的杠杆</strong>，与表达解耦</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>单 bit 准入不够</strong></td>
+<td style="text-align: left;">查询条件化 gating 基线（MemGate 复现）在客观事实失败与合并失败上<strong>无显著变化</strong></td>
+<td style="text-align: left;">「按相关性保留/丢弃」这种单 bit 准入是粗糙的，需要裁定属性</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>代价是真实的</strong></td>
+<td style="text-align: left;">两个设计<strong>都增加个性化失败</strong>；PS <strong>未达到</strong>预注册的改进与个性化保留标准；记忆-证据冲突下误导率仍 82.3–85.0%（Bare 91.7%）</td>
+<td style="text-align: left;">安全与个性化存在权衡，<strong>别宣称两全</strong>——诚实报告副作用是本文的加分项</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>PS 优于随机/相关性选择</strong></td>
+<td style="text-align: left;">匹配准入预算下，PS 在 Holm 校正后仍优于随机与相关性选择（外部客观事实判断）</td>
+<td style="text-align: left;">单元级分解（把「我偏好 A 因为续航久」拆成偏好单元 + 事实声明单元）确实带来选择优势</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_6">方法/架构<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>生成时：检索 top-k 记忆 M = {m1..mk}（查询 q）
+    ↓ 治理 = 两个映射的复合
+    ├─ Admission A：m → 类型化单元 U(m)（FC 判整条；PS 先拆单元）
+    │     └─ 批量裁定调用一次看到 query + answer target + task mode + 全部 top-k
+    │           （支持跨记忆冲突检测）→ 只赋「属性」，不赋「动作决策」
+    │     └─ 确定性代码把属性编译成 6 类许可（5 可用 + deny）；deny 单元物理移出
+    └─ Presentation P：决定已准入单元的表面形式
+          └─ PN（许可说明分节）vs CH（信息类型通道分节）
+    ↓ 两个杠杆都只在推理时生效：不重训、不删除、不改存储内容
+</code></pre></div>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">任务</th>
+<th style="text-align: left;">Bare</th>
+<th style="text-align: left;">Gate</th>
+<th style="text-align: left;">FC</th>
+<th style="text-align: left;">PS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">ofj 客观事实判断</td>
+<td style="text-align: left;">45.2</td>
+<td style="text-align: left;">45.5 (p=1.0)</td>
+<td style="text-align: left;">23.7</td>
+<td style="text-align: left;"><strong>20.4</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">csc 上下文范围控制</td>
+<td style="text-align: left;">33.3</td>
+<td style="text-align: left;">22.7</td>
+<td style="text-align: left;">27.0</td>
+<td style="text-align: left;">25.3</td>
+</tr>
+<tr>
+<td style="text-align: left;">mec 记忆-证据冲突</td>
+<td style="text-align: left;">91.7</td>
+<td style="text-align: left;">85.7</td>
+<td style="text-align: left;">85.0</td>
+<td style="text-align: left;">84.0</td>
+</tr>
+<tr>
+<td style="text-align: left;">pm 个性化记忆使用（越低越好）</td>
+<td style="text-align: left;">14.7</td>
+<td style="text-align: left;">22.7 †</td>
+<td style="text-align: left;">22.3 †</td>
+<td style="text-align: left;">20.0 †</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>合并（n=1,199）</strong></td>
+<td style="text-align: left;">46.2</td>
+<td style="text-align: left;">44.1 (p=.08)</td>
+<td style="text-align: left;"><strong>39.5</strong></td>
+<td style="text-align: left;"><strong>37.4</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>† = 相对 Bare 失败率<strong>上升</strong>。准入收紧换来安全，代价是个性化能力下降。</p>
+</blockquote>
+<h3 id="sora_2">与 sora 的关联<a class="headerlink" href="#sora_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>🔴 <strong>k 的记忆治理直接受益</strong>：现在的做法是「读取 → 直接用」，缺少显式的准入裁定层。可落地：<strong>记忆读取先做准入裁定（这条该不该进上下文），别急着润色</strong></li>
+<li>✅ <strong>纠正一个直觉错误</strong>：k 在整理 MEMORY.md / 记忆条目时习惯反复改措辞——本文说这一轴<strong>不产生可测安全收益</strong>，该把力气移到「准入与分型」</li>
+<li>✅ <strong>与记忆分型研究合流</strong>：2610.11573（Memory Type Varies，TriMEM 分型数据集）+ 2610.03020（用户事实 vs 协作方式分列）→ 记忆要<strong>分型治理</strong>；k 的记忆可拆「用户事实 / 协作方式」两类维护</li>
+<li>⚠️ <strong>接受权衡、不做过度承诺</strong>：收紧准入会增加个性化失败——k 报「记忆治理有效」时必须同时报损失面（与知识库「诚实报告」原则一致）</li>
+<li>⚠️ <strong>跨域泄漏当独立指标</strong>：k 的记忆里有商业资产隔离红线（商业核心/接单 SOP 不上公开仓）——本文的 cross-domain leakage 指标正是这类风险的量化形式</li>
+</ul>
+<hr />
+<h2 id="_7">综合评估矩阵<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">维度</th>
+<th style="text-align: left;">共装技能冲突 (11647)</th>
+<th style="text-align: left;">工具调用 IEC (04375)</th>
+<th style="text-align: left;">记忆准入/表达 (11188)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">相关性（Hermes/k 体系）</td>
+<td style="text-align: left;">★★★★★ 459 个技能库直接同构</td>
+<td style="text-align: left;">★★★★★ 本机 Windows+git-bash 正是高危环境</td>
+<td style="text-align: left;">★★★★★ 记忆是 k 的核心系统</td>
+</tr>
+<tr>
+<td style="text-align: left;">可落地性</td>
+<td style="text-align: left;">高（去重 + 独占断言 + 首次读取 hook + 点名技能）</td>
+<td style="text-align: left;">高（排障顺序三条，立即可用）</td>
+<td style="text-align: left;">中高（准入层需设计，但方向明确）</td>
+</tr>
+<tr>
+<td style="text-align: left;">证据强度</td>
+<td style="text-align: left;">双源（arXiv abs + redreamality 全文逐表复核 + mindpattern/searcharxiv）</td>
+<td style="text-align: left;">双源（arXiv abs + darkfactory.dev 逐数复核含分母 + thesingularityreport/newx.sg）</td>
+<td style="text-align: left;">双源（arXiv HTML 全文表 1–4 + thelatestinai/arxivradar/ai-news-brief）</td>
+</tr>
+<tr>
+<td style="text-align: left;">数据截止</td>
+<td style="text-align: left;">2026-10-11</td>
+<td style="text-align: left;">2026-10-11</td>
+<td style="text-align: left;">2026-10-11</td>
+</tr>
+<tr>
+<td style="text-align: left;">吸收状态</td>
+<td style="text-align: left;"><strong>adopted</strong>（技能审计加独占功能断言 + 处理 2 组同名技能）</td>
+<td style="text-align: left;"><strong>adopted</strong>（排障规则进 windows 坑清单 + 委派/验证流程）</td>
+<td style="text-align: left;"><strong>trial</strong>（准入层设计待评估，需先量测现有记忆收益/损失）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_8">落地行动清单<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<ul>
+<li>🔴 <strong>待办 · 处理 2 组同名技能</strong>：<code>ai-image-generation</code>（保留自建版，@okaris 版改名或归档）、<code>manim-video</code>（creative/ vs video-use/ 二选一）——同名 = 触发条件完全重叠，最高优先级冲突源（延续 10-10 卡片未完成项）</li>
+<li>🔴 <strong>待办 · 独占核心功能断言</strong>：给 3~5 个高风险技能各写一条<strong>可核查的独占断言</strong>（「不许碰 git」「发布前必须过隐私门禁」「图片敏感词必扫」），纳入 skill-audit 周期测试——按本文方法，<strong>完成率测不出这类失效</strong></li>
+<li>🔴 <strong>待办 · 交付/回复点名生效技能</strong>：现状 0.9%（本文实测），k 报「我用 X 技能做的」即可抹平</li>
+<li>🔴 <strong>待办 · 工具调用排障顺序修订</strong>：shell 调用失败（尤其含引号/转义/长文本）→ ① 先验「实际执行的是什么」；② 归因不只看轨迹；③ 观测每一跳收到什么。增补进 <code>windows-file-lock-troubleshooting</code> / 写码前扫坑清单</li>
+<li>🟡 <strong>待办 · 记忆准入层设计</strong>：记忆读取加一道准入裁定（进不进上下文），把「用户事实 / 协作方式」分列维护，并把跨域泄漏当独立指标跟踪；先量测再改，不做无基准的重构</li>
+<li>🟡 <strong>待办 · 技能安装位置策略</strong>：装新技能前查「是否已有同功能技能」；位置即优先级（个人目录会<strong>遮蔽</strong>项目/插件技能），需要显式记录谁该赢</li>
+<li>🟢 <strong>待办 · 延伸阅读</strong>：2610.04832（Agent Skill Evolution，见下）/ 2610.06069（Attention &amp; Handoff Tax，见下）/ 2610.11781（可证伪契约 + 历史回放非回归）/ 2610.11573（记忆分型 TriMEM）</li>
+</ul>
+<hr />
+<h2 id="_9">延伸阅读<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://arxiv.org/abs/2610.11647">One Skill Too Many (2610.11647)</a> — 本篇 🥇</li>
+<li><a href="https://arxiv.org/abs/2610.04375">Do Tool Calls Execute as Intended? (2610.04375)</a> — 本篇 🥈</li>
+<li><a href="https://arxiv.org/abs/2610.11188">What to Admit and How to Present (2610.11188)</a> — 本篇 🥉</li>
+<li><a href="https://arxiv.org/abs/2610.04832">Agent Skill Evolution: How Revisions Affect Coding Agents (2610.04832)</a> — ★★★★★ 未选入本篇：从 3,159 个技能的 2,608 对首/末修订量化「一次修订做了什么」——新增一条规则平均把单次回答遵从度 <strong>+0.41</strong>、4 个 agent「采取所需动作」率 <strong>+0.23</strong>（+0.16~+0.36）、盲审正确率 <strong>+0.10</strong>；<strong>增益主要来自「点名了旧技能没提到的命令或路径」的规则</strong>；技能正文加载让 episode token <strong>+50%</strong> → 正文精简、硬规则放最前。与 11647 同属技能库簇，已由 [[knowledge/cards/2026-10-10-coinstalled-skill-conflict|10-10 知识卡片]]联合覆盖（详见 MANTA 记录）</li>
+<li><a href="https://arxiv.org/abs/2610.06069">Attention Tax, Handoff Tax (2610.06069)</a> — ★★★★★ 未选入本篇：给「单 agent vs 多 agent」一个<strong>可计算判据</strong>——分解在「重置上下文省下的注意力成本 &gt; 交接成本」时变优（线性区闭式 <code>L* = 2(h+λs)/(λk)</code>，chunk 大小 <code>m* = sqrt(2h/λk)</code>），冗余在「共享失败下限 &lt; 单 agent 长思考错误下限」时变优；实测交叉点深度 <strong>10</strong>。⚠️ 第三方复核指出「预测落在 9 个百分点内」依赖单一 handoff tax 点估计（95% CI 跨零），论文自身的替代估计给 14 个百分点偏差——<strong>方向可信、精度声明偏乐观</strong></li>
+<li><a href="https://arxiv.org/abs/2610.11190">MemTrace: State-Consistent Memory for Long-Horizon Coding Agents (2610.11190)</a> — 长时程编码 agent 的状态一致性记忆（与 11188 同簇，准入/一致性互补）</li>
+</ul>
+<hr />
+<h2 id="manta-2026-10-11">MANTA 试点记录（2026-10-11）<a class="headerlink" href="#manta-2026-10-11" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">项</th>
+<th style="text-align: left;">值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">是否触发拓扑变更</td>
+<td style="text-align: left;"><strong>否</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">触发的变更类型</td>
+<td style="text-align: left;">无变更（保持固定流程）</td>
+</tr>
+<tr>
+<td style="text-align: left;">监控点1（候选池）判定</td>
+<td style="text-align: left;">fetch「🟢 待深读」清单给出 5 篇：11647 / 04832 / 11188 / 04375 / 06069，分属 <strong>4 个簇</strong>——技能库（<strong>2 篇</strong>：11647+04832）、记忆治理（11188）、工具执行可信（04375）、编排理论（06069）。技能库簇内 2 篇同题但<strong>非直接竞争</strong>（一篇讲冲突、一篇讲修订效应，问题不同），且已被 10-10 知识卡片<strong>联合覆盖</strong> → 判定<strong>未达合并阈值</strong>（历史校准：≥3 篇同赛道且互为直接竞争才合并），选 3 篇分散簇</td>
+</tr>
+<tr>
+<td style="text-align: left;">监控点2（草稿）判定</td>
+<td style="text-align: left;">3 篇选文均<strong>双源验证通过</strong>（arXiv abs 页 + 独立第三方：redreamality.com 逐表复核 / darkfactory.dev 逐数复核含分母 / thelatestinai + arxivradar + ai-news-brief 全文表）→ 证据<strong>充分</strong> → 保持固定验证路径，未触发独立验证者</td>
+</tr>
+<tr>
+<td style="text-align: left;">子代理预算使用</td>
+<td style="text-align: left;"><strong>0/3</strong>（全部主进程完成，无 delegate_task）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>质量/成本观察</strong>：</p>
+<ul>
+<li>🔴 <strong>新增观察点（本次最有价值的一条）</strong>：<strong>上游已产出的知识卡片可作为「已完成合并调研」的证据</strong>。10-10 的知识卡片（<code>knowledge/cards/2026-10-10-coinstalled-skill-conflict.md</code>）已把 11647 + 04832 两篇<strong>联合</strong>消化（含本地 459 技能实测），因此本次把 04832 转入延伸阅读、只对 11647 做完整深挖——<strong>避免了同一对论文的重复深挖</strong>。这给 MANTA 提供了一条<strong>成本更低的合并路径</strong>：不必在 summarize 内部合并阶段，上游卡片已经合并过了，summarize 只需引用。建议后续在「选文」步骤加一条检查：<strong>候选是否已被近期知识卡片联合覆盖 → 是则只深挖其中 1 篇 + 另一篇进延伸阅读</strong></li>
+<li>✅ <strong>fetch 待深读清单第四次直接决定选文</strong>（09-06 / 09-13 / 09-20 / 10-11），本次 5 候选全按清单消费、零自选 → 「升级为正式接口字段」的信号再次加强</li>
+<li>⚠️ <strong>候选池主题重合度的判定需要「竞争性」而非仅「同题」</strong>：技能库簇 2 篇同属 section 一，若只看主题重合会误触发合并；加上「是否互为直接竞争」这一维后判定更准。建议把阈值表述细化为：<strong>同赛道 ≥3 篇 且 互为直接竞争（同一问题、同一评测）</strong></li>
+<li>💰 成本：3 次 web_search 全命中（其中 1 次后端 exa SSL 失败由 keyless 兜底返回，未损失结果）；验证零修正、零返工</li>
+</ul>
+<p><em>本总结由 arxiv-summarize cron 自动生成（2026-10-11），选文/数字基于速览 + web_search 跨源交叉验证。</em></p>
+<hr />
+<blockquote>
+<p>🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]</p>
+</blockquote>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
