@@ -5,7 +5,7 @@ domain: Research
 type: moc
 status: active
 created: 2026-08-16
-updated: 2026-08-31
+updated: 2026-10-11
 ---
 
 # 🐙 GitHub 研究 MOC — GitHub Treasure Map
@@ -13,12 +13,14 @@ updated: 2026-08-31
 > GitHub 主题切片总入口：周报 / 趋势日榜 / 单项目研读 / 热榜深读 / 资源清单。
 > [[knowledge-map|🗺️ 知识地图]] · [[MOC-Research|🔬 Research MOC（父域）]] · [[MOC-Security|🛡️ Security MOC]]
 
-**共 58 篇相关笔记** · 最后更新：2026-09-20（W39 weekly 精选 5 项入库）
+**共 59 篇相关笔记** · 最后更新：2026-10-11（W41 宝藏挖掘入库）
 
 ---
 
 ## 📅 周报系列（W31 起，每周一篇）
 
+- [[knowledge/Research/GitHub-Weekly-2026-10-11|W41 宝藏挖掘]] — W41：Top5 仍为 codebase-memory-mcp / nanobot / code-review-graph 全连榜；chrome-devtools-mcp / TrendRadar 回榜（脚本口径，全 12 项入 csv）
+- [[GitHub-Weekly-2026-10-11]] — W41 宝藏挖掘（脚本口径 Top5：codebase-memory-mcp 46.3k / nanobot 48.9k / code-review-graph 32.0k / chrome-devtools-mcp / TrendRadar）
 - [[GitHub-Weekly-2026-09-20-weekly-5projects]] — W39 weekly：sub2api / SemIf / AI-Infra-Guard / karpathy-skills / open-code-review
 - [[GitHub-Weekly-2026-09-20]] — W39 宝藏挖掘（脚本口径 Top5：codebase-memory-mcp / nanobot / code-review-graph） 5 新面孔（周报 [[GitHub-Weekly-2026-09-20|W39 周报]]）
 - [[GitHub-Weekly-2026-09-13-weekly-5projects]] — W38 weekly：context-mode / WeKnora / hyperframes / no-ai-slop 4 新面孔（周报 [[GitHub-Weekly-2026-09-13|W38 周报]]）

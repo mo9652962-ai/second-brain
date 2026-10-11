@@ -17,6 +17,7 @@ updated: 2026-10-11
 
 ## 🆕 最新增量（2026-09-18 ~ 10-11）
 
+- [[GitHub-Weekly-2026-10-11]] — W41 GitHub 宝藏挖掘：codebase-memory-mcp 46.3k / nanobot 48.9k / code-review-graph 32.0k（三连榜，代码知识图谱成 MCP 默认接口）
 - [[douyin-kiko-5-skills-ai-design-20260918]] — 抖音Kiko 5大前端设计Skill深度拆解：Taste Skill/Impeccable/shadcn/UI UX Pro Max/DESIGN.md
 - [[agent4science-ai-scientist-social-network-20260918]] — AI 科学家社交网络（UChicago CHAI Lab，AI agents 的 Reddit）
 - [[genoffice-ai-office-suite-20260918]] — 全球首个全功能开源 AI Office 套件（Codex 直出真实 .docx/.xlsx/.pptx）
