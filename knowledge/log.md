@@ -351,3 +351,28 @@ tags: [meta, vault-maintenance]
 - **门禁复核**：`check-repo-privacy.py` ✅（922 tracked 文件无敏感命中）/ `check_wikilinks.py` ✅ All wikilinks OK / `check-site.py` ✅ 8 项全过 / `scripts/vault-structure.py`（CI 实跑版本）断裂 0 / 孤立 0 / 空文件 0
 - **检测器口径差异（本轮复核确认，未改数据）**：`knowledge/META/scripts/knowledge-lint.py` 与 CI 实跑的 `scripts/vault-structure.py` 均报全绿；但 `AppData/Local/hermes/scripts/vault-structure.py`（07-24 部署副本，3.9KB）与 `skills/note-taking/obsidian-vault-management/scripts/vault-structure.py`（09-29 增强版，13.9KB）是三份不同实现——旧副本会把 vault 根级 `Home|🏠 Home` 与 skills/ 目录内文件全量误报（1,187 断链 / 145 孤立）。CI 与 workspace 版本口径一致且正确，旧副本已无引用方，建议后续归档
 - **工具坑**：`execute_code` 在 cron 模式被拒（无用户审批）；heredoc 形式的内联 Python 也被安全策略拦截 —— 一律 write_file 落盘脚本 + terminal 执行。`write_file` 对未完整读取的文件会拒写（stale write guard）→ 定点改用字节级脚本
+## [2026-10-11] lint | 每周例行体检
+
+- 断链 0 / 孤立 0 / 缺 frontmatter 0
+- 处理原则：只报告不自动修；新问题由 k 在下次会话处理
+
+## [2026-10-11] freshness | 时效审计
+
+- 过期硬约束 3 / 待运行时验证 38 / 历史记录 190
+- 需修正：
+  - `knowledge\log.md:272` — - `knowledge\cards\2026-09-21-devin-cognition-eval.md:35` — 3. ⚠️ 云端环境与本机不一致（本机无
+  - `knowledge\log.md:313` — - `knowledge\cards\2026-09-21-devin-cognition-eval.md:30` — 3. ⚠️ 云端环境与本机不一致（本机无
+  - `knowledge\cards\2026-09-21-devin-cognition-eval.md:30` — 3. ⚠️ 云端环境与本机不一致（本机无虚拟化、Windows 专属环境）→ 首次试用选独立后端/前端小 Bug + 要求加回归测试
+- 处理原则：只报告不自动修；事实源见 knowledge/META/current-environment.md
+
+
+## [2026-10-11] weekly | W41 周度整理（2026-10-05 ~ 10-11）
+
+- **新增清点**：arXiv 10-10 速览（10-05~10-09 全新窗口，34 主 + 48 简评）+ 卡片 1 张（共装技能冲突）+ HN ×2（10-08 / 10-10）+ W41 GitHub 周报
+- **孤立归零**：`GitHub-Weekly-2026-10-11.md` 无 frontmatter、无入链（CI 版 vault-structure 报孤立 1）→ 补 frontmatter + 挂载到 MOC-GitHub 周报区 → 孤立 1 → **0**
+- **跳链补齐**：技能生命周期三环互链（10-02 ↔ 10-04 ↔ 10-10，6 处 wikilink）
+- **索引刷新**：knowledge-map（W41 新增速览章节 + 最后更新日期 + 7 个域计数）· MOC-GitHub（W41 周报行）· MOC-Research（223→224 + 周报挂载）· MOC-cards / MOC-Daily（updated 日期）· index.md（7 个域计数 + updated）
+- **空壳清理**：deep/2026-10-10（103B，Ranked 0 / Promoted 0，无 footer、无入链）
+- **根级漂移归位**：`memory/2026-10-10.md`（daily-summary 22:00 产出，733B）→ `memory/2026/10/2026-10-10-summary.md`（与 10/ 内 3.4KB 工作总结不同，按 summary 后缀区分）
+- **隔离回流复查**：`git ls-files memory/ private_knowledge/ private_vault/` 仅 `memory/MOC-Memory.md`；origin/main 无 memory/ 泄露；origin/gh-pages 无 memory/ 与 private_ 条目 —— 09-23 隔离基线完好
+- **报告**：`memory/2026/10/weekly-2026-10-11.md`（Air-Gapped，不进公开库）

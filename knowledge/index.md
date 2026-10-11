@@ -2,7 +2,7 @@
 title: 知识库索引
 type: 索引
 created: 2026-09-05
-updated: 2026-09-20
+updated: 2026-10-11
 tags: [meta, vault-maintenance]
 ---
 
@@ -26,16 +26,16 @@ MOC-<域>.md          ← 该域全部页面索引
 | 域 | MOC 入口 | 规模 | 典型内容 |
 |:---|:---|:---|:---|
 | 全量总图 | [[knowledge-map]] | 600+ | **所有页面的完整索引（唯一真相源）** |
-| Research | [[MOC-Research]] | 221 | 千轮研究、多 Agent、AI 论文深研 |
-| Dev | [[MOC-Dev]] | 137 | 软件工程、前端/后端、部署、系统设计 |
-| Security | [[MOC-Security]] | 53 | SRC、逆向、防御加固、合规 |
-| Productivity | [[MOC-Productivity]] | 52 | PPT、写作、文档、效率工具 |
-| Hardware | [[MOC-Hardware]] | 21 | PCB/KiCad/FreeCAD/单片机 |
+| Research | [[MOC-Research]] | 224 | 千轮研究、多 Agent、AI 论文深研 |
+| Dev | [[MOC-Dev]] | 138 | 软件工程、前端/后端、部署、系统设计 |
+| Security | [[MOC-Security]] | 52 | SRC、逆向、防御加固、合规 |
+| Productivity | [[MOC-Productivity]] | 57 | PPT、写作、文档、效率工具 |
+| Hardware | [[MOC-Hardware]] | 20 | PCB/KiCad/FreeCAD/单片机 |
 | Finance | [[MOC-Finance]] | 16 | A股、量化、自选股分析 |
 | GitHub | [[MOC-GitHub]] | 58 | GitHub 项目实证研究 |
 | Inbox | [[MOC-Inbox]] | 53 | 待接入笔记（未挂载入口） |
-| cards | [[knowledge/cards/MOC-cards\|MOC-cards]] | 35 | 每日精选知识卡片 |
-| Daily | [[knowledge/Daily/MOC-Daily\|MOC-Daily]] | 32 | Hacker News 精选、每日回顾 |
+| cards | [[knowledge/cards/MOC-cards\|MOC-cards]] | 39 | 每日精选知识卡片 |
+| Daily | [[knowledge/Daily/MOC-Daily\|MOC-Daily]] | 42 | Hacker News 精选、每日回顾 |
 | AI | [[knowledge/AI/MOC-AI\|MOC-AI]] | 18 | Agent 评估、数字生命、知识库方法论 |
 | SOP | [[knowledge/SOP/MOC-SOP\|MOC-SOP]] | 9 | 可复用标准流程 |
 | Creative | [[knowledge/Creative/MOC-Creative\|MOC-Creative]] | 5 | AI 小说、去 AI 味、网文 |

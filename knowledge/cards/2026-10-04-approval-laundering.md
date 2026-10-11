@@ -45,3 +45,6 @@ source: "[[knowledge/Research/arxiv-2026-10-04-agent-llm]]"
 ---
 
 *卡片来源：当天知识库精选 · [[knowledge/Research/arxiv-2026-10-04-agent-llm|arXiv Agent/LLM 10-04 补全]]（🥇 入选理由：当日最新落盘（12:38）的 33 主条目速览，其中「授权-执行绑定」这条链在 10-02 卡片之后补上了执行时边界这一半，且直击 k 的审批语义与 cron 链；数字经 abs 页逐项核对，2609.38983 摘要由 k 于 10-04 curl 直连原文复核。亚军：同日 [[knowledge/Daily/hackernews-2026-10-04|HN 10-04]] 的 Simon Willison「默认硬预算上限」（278 分，agent 烧钱防护，但属倡议而非可核验数据）与 Kolibri 78B/3B Apache-2.0 开源模型（546 分，权重可实测，但边际新增量只是「又一个小激活 MoE」））*
+
+---
+> 🔗 技能生命周期三环：[[knowledge/cards/2026-10-02-skill-supply-chain|10-02 · 装的时候]] · [[2026-10-10-coinstalled-skill-conflict|10-10 · 共存时边界]] | [[knowledge/cards/MOC-cards|MOC-cards]] · [[Home|🏠 Home]]

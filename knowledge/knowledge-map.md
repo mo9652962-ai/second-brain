@@ -15,7 +15,7 @@ updated: 2026-09-25
 
 > 机器版索引: [[VAULT-MAP|🗺️ VAULT-MAP]]（AI 导航）· 健康看板: [[DASHBOARD|📊 DASHBOARD]] · 新陈代谢: [[METABOLISM|🌿 METABOLISM]]
 
-> 所有知识领域的索引与关联。最后更新: 2026-10-04（W40 周度整理：PPT 结尾页版式库 + arXiv 速览 ×2 + 技能供应链卡片 + 索引补链）
+> 所有知识领域的索引与关联。最后更新: 2026-10-11（W41 周度整理：arXiv 10-10 速览 + 共装技能冲突卡片 + W41 GitHub 周报挂载 + 技能生命周期三环互链 + 空壳清理）
 
 ## 🧭 MOC 总入口（2026-08-16 起，新建 MOC 必须在此挂载）
 
@@ -23,25 +23,25 @@ updated: 2026-09-25
 
 |:---|:---|:---|
 
-| 🔬 Research（域） | [[MOC-Research]] | 220 篇 |
+| 🔬 Research（域） | [[MOC-Research]] | 224 篇 |
 
 | 🐙 GitHub 研究（主题切片） | [[MOC-GitHub]] | 58 篇 |
 
-| 🛡️ 网络安全（主题切片） | [[MOC-Security]] | 53 篇 |
+| 🛡️ 网络安全（主题切片） | [[MOC-Security]] | 52 篇 |
 
-| 💻 Dev（域） | [[MOC-Dev]] | 137 篇 |
+| 💻 Dev（域） | [[MOC-Dev]] | 138 篇 |
 
-| 🔧 Hardware（域） | [[MOC-Hardware]] | 21 篇 |
+| 🔧 Hardware（域） | [[MOC-Hardware]] | 20 篇 |
 
-| 🏠 Productivity（域） | [[MOC-Productivity]] | 52 篇 |
+| 🏠 Productivity（域） | [[MOC-Productivity]] | 57 篇 |
 
 | 🧭 入口治理 | [[MOC-Inbox]] | 53 篇待接入笔记 |
 
 | 🔁 重复审阅 | [[MOC-Duplicate-Review]] | 0 组逐字重复；相似标题按时间/用途保留 |
 
 | 📈 Finance（域） | [[MOC-Finance]] | 16 篇 |
-| 🃏 知识卡片 | [[knowledge/cards/MOC-cards|MOC-cards]] | 35 篇 |
-| 📅 每日产出 | [[knowledge/Daily/MOC-Daily|MOC-Daily]] | 32 篇 |
+| 🃏 知识卡片 | [[knowledge/cards/MOC-cards|MOC-cards]] | 39 篇 |
+| 📅 每日产出 | [[knowledge/Daily/MOC-Daily|MOC-Daily]] | 42 篇 |
 | 🤖 AI 研究与生态 | [[knowledge/AI/MOC-AI|MOC-AI]] | 18 篇 |
 | 📋 标准操作流程 | [[knowledge/SOP/MOC-SOP|MOC-SOP]] | 9 篇 |
 | 🎓 教育规划 | [[knowledge/Education/MOC-Education|MOC-Education]] | 1 篇 |
@@ -538,6 +538,28 @@ graph TD
 1. **技能供应链安全成为连续主线** — 10-02 三篇独立论文（静态路径 / 链式放大 / 审计盲区）证明 agent 技能供应链几乎无人审计，与 09-19 ZCode 静默上传、09-15 RubyGems AI bots 攻击连成知识簇
 2. **PPT 结尾页从「谢谢观看」到 8 版式体系** — 研究 → 版式对照表 → 可运行生成器 → .pptx 成品 → 渲染脚本，完整资产链可反哺闲鱼 PPT 接单
 3. **cron 基础设施不稳定压制知识产出密度** — daily-health-check 7 连败 + arxiv-fetch/biweekly-skill-audit 同类 pydantic_core 故障，arXiv 速览仅 2 期（上周 5+ 期）
+
+---
+
+## 🆕 W41 新增速览（2026-10-05 ~ 10-11）
+
+> 本周主线：“技能生命周期三环”收官（装的时候 → 执行的时候 → 共存的时候）。arXiv 10-10 全新窗口（34 主 + 48 简评）落地了第三环卡片；本周日志密度低（仅 HN ×2 + 卡片 ×1），主要是 cron 基础设施修复后的恢复期。
+
+### 各域本周新增
+
+| 域 | 新增 | 要点 |
+|:--|:--|:--|
+| Research | [[knowledge/Research/arxiv-2026-10-10-agent-llm|arXiv 10-10 速览]] | 10-05~10-09 全新窗口，34 主 + 48 简评；共装技能冲突 + 技能演化配方为主轴 |
+| Research | [[knowledge/Research/GitHub-Weekly-2026-10-11|W41 GitHub 宝藏挖掘]] | 脚本口径 Top5：codebase-memory-mcp 46.3k / nanobot 48.9k / code-review-graph 32.0k 全连榜；新增 12 项入 csv |
+| cards | [[knowledge/cards/2026-10-10-coinstalled-skill-conflict|共装技能冲突]] | 近 1/4 已装技能有同功能共存者，五次运行被抢走一次，99.1% 不点名实际技能；本地 459 个 SKILL.md 当场扫描 |
+| Daily | HN 速览 ×2 | [[knowledge/Daily/hackernews-2026-10-08|10-08]] · [[knowledge/Daily/hackernews-2026-10-10|10-10]] |
+| META | [[PRIVACY|PRIVACY 隔离声明]] | 双轨物理隔离 + 零遥测声明（对外可引用） |
+
+### 本周关键研究主题
+
+1. **技能生命周期三环闭环** — 10-02（装的时候：供应链 25.1% 危险路径）→ 10-04（执行的时候：批准的动作 ≠ 执行的动作）→ 10-10（共存的时候：技能抢跑且不报名）。三张卡片已互链为一个知识簇。
+2. **“全都要”原则的边界修正** — sora 的配置偏好是冗余容灾；在**模型侧**是安全网，在**技能侧**却是冲突源（同名双份：ai-image-generation / manim-video）。
+3. **cron 基础设施恢复** — W40 报告的 pydantic_core 故障已不再出现在本周日志；arXiv/卡片/周报 cron 均正常产出。
 
 ---
 
