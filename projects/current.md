@@ -8,7 +8,7 @@ updated: 2026-10-02
 > 本周（8/16–8/22）周度清理：完成项已归档，未完成项重新排期。完整报告见 `memory/2026/08/2026-08-22-weekly-todo-cleanup.md`
 > 8/23 suggestion-implementation：落地 3 项 k 自主项
 > 本周（9/1–9/5）周度清理：完成项已归档至 Section 9，未完成项重新排期（闲鱼决策 9/6 fallback 触发）。完整报告见 `memory/2026/09/2026-09-05-weekly-todo-cleanup.md`（墨题巡检 cron pin 修复 / 报价 4 问话术模板 / 搭网站写脚本商品素材包 + Agent OS B 站初稿），详见 `memory/2026/08/2026-08-23-vault-suggestion-executor.md`
-> 本周（9/6–9/12）周度清理：完成项已归档至 Section 10（40 项），未完成项重新排期（闲鱼决策 state.yaml 权威第 56 天；9/10 缺档补位等 k 待办）。完整报告见 `memory/2026/09/2026-09-12-weekly-todo-cleanup.md`
+> 本周（9/6–9/12）周度清理：完成项已归档至 Section 10（40 项），未完成项重新排期（闲鱼决策 state.yaml 权威第 62 天；9/10 缺档补位等 k 待办）。完整报告见 `memory/2026/09/2026-09-12-weekly-todo-cleanup.md`
 
 ## ✅ 已完成（归档）
 
@@ -340,8 +340,8 @@ updated: 2026-10-02
 
 ## 🔄 进行中 / 已重新排期
 
-### 🎯 闲鱼上架（🟡 **每周一复盘提醒**，决策悬置第 56 天〔state.yaml 权威，updated 9/14 → 已 18 天未推进〕，9/6 fallback 硬触发已过；连续顺延第 30+ 天——9/17 降频机制生效：每日 P0 → 每周一复盘，其余日子不占 P0 位；**9/28（周一）复盘因 cron 故障未执行（pydantic_core）→ 9/29 补做；9/30、10/1 又连续 FAILED（同根因）→ 10/2 本轮已补做复盘（含计数 42→56 修复）；下次复盘 = 10/5（周一）**；默认「再缓 7 天」自动续期，sora 拍板即停）
-- [ ] 上架「AI 代做 PPT」商品 → 🟡 **决策悬置第 56 天（8/31 到期已过；9/4 已拆小为「先上 1 个商品试水」30min 最小可逆动作；9/6 fallback 硬触发日已过——k 侧试水前置 100% 就绪，实际上架是外部经营动作，等 sora 一句话拍板（试水/放弃/再缓）；9/7 触达升级触发：若仍无决策 → 换 desktop 通知/微信推送通道）**：素材 100% 就绪（7 图 PNG 头实测 750×750 全 PASS，第 21 次核验 9/17 含图片层禁词全清：2 张含「最」已修复为「人气之选」）；操作清单两段式（试水版 + 5 商品全量版）见 private_knowledge/xianyu_commercial/outputs/xianyu-master/上架素材包/上架操作清单.md；合规子集 v1.2.0（敏感词/同款频次/数模标题改写）；决策包见 memory/2026/08/2026-08-31-xianyu-vault-suggestion-executor.md + 9/4 复核 memory/2026/09/2026-09-04-vault-suggestion-executor.md + 9/7 报告 memory/2026/09/2026-09-07-vault-suggestion-executor.md
+### 🎯 闲鱼上架（🟡 **每周一复盘提醒**，决策悬置第 62 天〔state.yaml 权威，updated 2026-10-12〕，9/6 fallback 硬触发已过；连续顺延第 30+ 天——9/17 降频机制生效：每日 P0 → 每周一复盘，其余日子不占 P0 位；**9/28 复盘因 cron 故障未执行 → 9/29 补做；9/30、10/1 又连续 FAILED（同根因）→ 10/2 补做复盘（含计数 42→56 修复）；10/5 复盘日再度被 cron 故障吃掉 → 10/12 本轮补做复盘（含计数 56→62 补推）；下次复盘 = 10/19（周一）**；默认「再缓 7 天」自动续期，sora 拍板即停）
+- [ ] 上架「AI 代做 PPT」商品 → 🟡 **决策悬置第 62 天（8/31 到期已过；9/4 已拆小为「先上 1 个商品试水」30min 最小可逆动作；9/6 fallback 硬触发日已过——k 侧试水前置 100% 就绪，实际上架是外部经营动作，等 sora 一句话拍板（试水/放弃/再缓）；9/7 触达升级触发：若仍无决策 → 换 desktop 通知/微信推送通道）**：素材 100% 就绪（7 图 PNG 头实测 750×750 全 PASS，第 21 次核验 9/17 含图片层禁词全清：2 张含「最」已修复为「人气之选」）；操作清单两段式（试水版 + 5 商品全量版）见 private_knowledge/xianyu_commercial/outputs/xianyu-master/上架素材包/上架操作清单.md；合规子集 v1.2.0（敏感词/同款频次/数模标题改写）；决策包见 memory/2026/08/2026-08-31-xianyu-vault-suggestion-executor.md + 9/4 复核 memory/2026/09/2026-09-04-vault-suggestion-executor.md + 9/7 报告 memory/2026/09/2026-09-07-vault-suggestion-executor.md
 - [x] 主图制作：3 张模板图（前后对比/价格表/服务承诺）→ ✅ 08-03 已生成：`outputs/xianyu-master/上架素材包/`（主图1-3，**实测 750×750 方形 51-57KB**，思源黑体+蓝橙撞色+无极限词）→ 上架时直接上传，无需再做
 - [ ] 同步上架「论文排版/润色」商品（素材包已有现成文案）→ 🗓️ **重排期：随试水决策同批上**（原绑 9/28 已过、决策仍未拍板；原「顺延 8/17」已失效 40 天）
 - [x] 补 PPT 样例素材：从现有作品提样例页 + 「仅供参考」水印 → ✅ **2026-10-02 k 自动化完成**（原「无 LibreOffice 无法自动化」经实测证伪：LibreOffice 24 已在 `C:\Program Files\LibreOffice`，`soffice --headless --convert-to pdf` + PyMuPDF 渲染 + PIL 水印全链路跑通）→ 产出 5 张真实交付件样例页（1467×825，封面/图文排版/多段布局/收尾章节/国风视觉页），落 `private_knowledge/xianyu_commercial/outputs/xianyu-master/上架素材包/PPT样例图/`；vision 复核无渲染错误、水印清晰。**上架时第 2-5 张详情图直接用这 5 张**
@@ -385,11 +385,11 @@ updated: 2026-10-02
 - ✅ patch daily-knowledge-review：明日行动项生成前 reconcile projects/current.md 的 ✅ 状态，剔除陈旧待办（9/1 实测踩中：主模型验证 20:06 已完成，22:39 daily-review 仍列为 9/2 待办，差点误报）（agent 可做，20min）
 - ✅ Tavily 决策拍板（2026-09-02 daily-todo-executor 落地）：配额耗尽连续 12 工作日，「评估 plan 升级」正式拍板——降级为末位备选（Firecrawl→DDGS→SearXNG→Tavily），从「评估」改「已执行」；运行时 web.backend=exa + extract_backend=firecrawl 已不依赖 Tavily 主用，仅作兜底；若 sora 想保留再补 30 天成本对比，默认路径零成本
 - ✅ FlClash 升级推送（2026-09-02 daily-todo-executor 已在当日报告置顶单条醒目请求，30 秒重启操作清单见报告）：连续 5 次标 P0 无触达闭环→本次单条推送已输出；消息网关离线影响面核查 + 降级定性待 sora 重启 FlClash 后核验
-- 🔴 闲鱼上架决策（悬置第 56 天）：决策包 100% 就绪，30min 复制粘贴可上 3 商品（PPT 30-80 / 论文 30 / 练习册 35），合规红线已内置——等 sora 拍板
+- 🔴 闲鱼上架决策（悬置第 62 天）：决策包 100% 就绪，30min 复制粘贴可上 3 商品（PPT 30-80 / 论文 30 / 练习册 35），合规红线已内置——等 sora 拍板
 ### 🧭 9/3 反思行动项（daily-reflection 复盘 9-02，执行者必读）
 - ✅ 每日笔记补写（2026-09-02 reflection 当场）：memory/2026/09/2026-09-02.md 已补写（9/2 self-improvement 输出为 self-improvement.md 而未写主文件）；patch daily-self-improvement 读路径为 memory/YYYY/MM/ 待执行（agent 可做，10min）
 - ✅ patch daily-knowledge-review 评分表加深验证判定列（2026-09-02 reflection 当场执行）：API 直调/视频转写日标注「等效深度豁免」
-- 🔒 闲鱼决策包 30 秒二选一（悬置第 56 天起）：上架 → k 给 5 步操作清单；放弃 → k 归档素材包 + 标记 [决策:放弃]；9/6 fallback 仍无决策 → k 默认推进合规改造子集（敏感词/数模标题改写已在 xianyu-monetization v1.2.0）
+- 🔒 闲鱼决策包 30 秒二选一（悬置第 62 天起）：上架 → k 给 5 步操作清单；放弃 → k 归档素材包 + 标记 [决策:放弃]；9/6 fallback 仍无决策 → k 默认推进合规改造子集（敏感词/数模标题改写已在 xianyu-monetization v1.2.0）
 - ✅ FlClash 7890 转发 k 核验（2026-09-03 20:03 daily-todo-executor 实测）：`curl -x http://127.0.0.1:7890 https://www.google.com` → **302 正常**，代理链路已恢复；FlClashCore 今晨 11:23 启动。消息网关离线影响面仍待 sora 确认重启后核验（必要时 P0→P2）
 ### 🧭 9/4 反思行动项（daily-reflection 复盘 9-03，执行者必读）
 - ✅ 闲鱼决策拆小 + fallback 提前（2026-09-04 vault-suggestion-executor 落地）：拆「先上 1 个商品（PPT 30-80 档）试水」最小可逆动作（素材 6 图 13 次核验 PASS / 合规 0 缺口 / 30min 可逆）；fallback 从 9/9 提前到 **9/6 仍无决策 → k 默认推进合规改造子集**（敏感词/数模标题改写已在 xianyu-monetization v1.2.0）；试水版 + 全量版两段式操作清单已备 outputs/xianyu-master/上架素材包/上架操作清单.md
@@ -410,13 +410,13 @@ updated: 2026-10-02
 - ⏳ 9/6 daily-self-improvement 提出 3 项自动化建议 → 2026-09-06 suggestion-implementation 评估：均需前置评估/确认，登记待评估（不仓促执行）——① stock-analysis cron 并行化（Graph pipeline，重构生产 cron 需先验证基线+确认工作流）② OpenClaw Active Memory 插件评估（工具采纳类，7/31 已做成熟度评估，需试用）③ 全链路监控指标体系（方案产出类，需确认范围，daily-review 已部分覆盖）；完整标注见 memory/2026/09/2026-09-06.md §6；**9/20 suggestion-implementation 复核：① 查证 stock-daily-analysis skill + 9/11–9/18 每日产出连续正常（单 cron 单脚本稳定），并行化收益未证实、重构风险>收益 → 维持 ⏳ 不仓促执行（若日后出现超时/失败再评估）；②③ 无新触发 → 维持 ⏳**
 
 ### 🧭 9/7 反思行动项（vault-suggestion-executor 闲鱼专项，执行者必读）
-- 🔴 闲鱼试水决策（悬置第 56 天，9/6 fallback 硬触发日已过）：k 侧试水前置 100% 就绪（主图1 安全版 750×750 + 违禁词全过 + 第 15 次核验 PASS），实际上架是外部经营动作，等 sora 一句话二选一（试水/放弃/再缓）——再顺延仅消耗注意力成本，30min 可逆
+- 🔴 闲鱼试水决策（悬置第 62 天，9/6 fallback 硬触发日已过）：k 侧试水前置 100% 就绪（主图1 安全版 750×750 + 违禁词全过 + 第 15 次核验 PASS），实际上架是外部经营动作，等 sora 一句话二选一（试水/放弃/再缓）——再顺延仅消耗注意力成本，30min 可逆
 - 🔄 触达升级触发（2026-09-07 vault-suggestion-executor 落地）：9/7 仍无决策 → 换 desktop 通知/微信推送通道。已核实「闲鱼提醒」cron（工作日 7:30，deliver local）今日运行中 = 提醒在触达；微信推送通道无现成脚本（无 serverchan/pushplus/ntfy 基础设施）——真正新增微信推送需 sora 提供通道凭据（serverchan/pushplus token），标记 ⏳ 需 sora
 - ⏳ 3 项自动化建议（stock-analysis 并行化 / OpenClaw Active Memory / 全链路监控）仍待评估，不仓促执行（9/6 已登记）
 
 
 ### 🧭 9/8 反思行动项（vault-suggestion-executor 闲鱼专项，执行者必读）
-- 🔴 闲鱼试水决策（悬置第 56 天，9/6 fallback 硬触发日已过、9/7 触达升级已触发）：k 侧试水前置 100% 就绪（主图1 安全版 750×750 + 违禁词全过 + 第 15 次核验 PASS），实际上架是外部经营动作，等 sora 一句话二选一（试水/放弃/再缓）——连续顺延第 30+ 天，再顺延仅消耗注意力成本，30min 可逆
+- 🔴 闲鱼试水决策（悬置第 62 天，9/6 fallback 硬触发日已过、9/7 触达升级已触发）：k 侧试水前置 100% 就绪（主图1 安全版 750×750 + 违禁词全过 + 第 15 次核验 PASS），实际上架是外部经营动作，等 sora 一句话二选一（试水/放弃/再缓）——连续顺延第 30+ 天，再顺延仅消耗注意力成本，30min 可逆
 - ✅ 触达通道核验（2026-09-08 vault-suggestion-executor 复核）：「闲鱼提醒」cron（`30 7 * * 1-5`，deliver local）active 且今日待运行 = 决策提醒仍在每日触达；微信推送通道无基础设施，需 sora 提供 serverchan/pushplus token 才可落地，sora 若不需微信则维持现状
 - 📌 上架后运营预案待命（2026-09-04 运营算法卡片 5 项行动）：回复提速（4 时段集中回复：9:30-10:30/15:00-16:00/20:00-22:00）、标题重写（核心词前 15 字）、擦亮节奏（咨询/收藏≥3 优先）、差异化迁移（PPT 垂直细分/项目报价）、鱼小铺暂缓（月成交未过万不开）——全部依赖试水拍板后触发
 ### 🧭 9/9 反思行动项（daily-reflection 复盘 9-08，执行者必读）
@@ -424,7 +424,7 @@ updated: 2026-10-02
 - ✅ deterministic_verify 双核验（执行状态+产物）→ ✅ **2026-09-13 daily-todo-executor 闭环**：脚本加 verify_exec_status（读 jobs.json last_run_at/last_status/last_error，与产物核验并列）；当日实测抓出 arxiv-fetch「状态 ok 但无 09-13 产物」真异常 + daily-todo-executor 未跑提示，不放宽 glob
 - ✅ 隐私门禁扩展 .dreams → ✅ **2026-09-13 daily-todo-executor 闭环**：github_privacy_gate.py 加 .dreams 到 SKIP_DIR_PARTS + FORBIDDEN_TRACKED_PREFIXES 前缀硬检查（.dreams/memory/.dreams/HEARTBEAT/.tmp 被跟踪即报）；实测 FORBIDDEN 0 命中（已在 gitignore）；顺手脱敏 research_moti_ai.md 真实路径 + assert_state_consistency.py 硬编码路径改 __file__ 相对
 - 🟡 千轮研究 Top 发现原文验证提醒（流程项）：9/9 web_extract 1/178（0.6%）触底教训，下次千轮研究固化时对关键数字 claim ≥1 次原文核对
-- 🔴 闲鱼试水决策（第 56 天，state.yaml 权威）→ 沿用 P0，见 🎯 闲鱼上架
+- 🔴 闲鱼试水决策（第 62 天，state.yaml 权威）→ 沿用 P0，见 🎯 闲鱼上架
 - 🟡 XAI key 重生成 + FAL 充值解锁（探活线）→ 沿用，见待用户操作
 ### 🧭 9/14 vault-suggestion-executor 闲鱼专项（周一 10:00）
 
@@ -434,9 +434,9 @@ updated: 2026-10-02
 - [x] 🟡 任务状态单一权威源收敛 → ✅ 2026-09-15 daily-todo-executor 验证闭环：state.yaml 权威 day=42（唯一写方 + assert 门禁）；assert_state_consistency.py 4/4 PASS（state.yaml / current.md ×11 / MEMORY.md 全一致 42，零漂移）；今日 daily-review/reflection 均只读引用 state.yaml 未自行推进（实证：daily-review「state.yaml 保持 42 PENDING」）；current.md 反思行动项区 = 任务状态登记面，cron 报告只读引用
 - [x] assert_state_consistency.py 补 MEMORY.md 兜底检查→ ✅ 当场落地（2026-09-15 daily-reflection）：新增「MEMORY.md 闲鱼决策天数=state.yaml」判断（匹配「闲鱼.*决策悬置第N天」行），实测 PASS，封闭 9/14 MEMORY.md 天数漂移被 executor 发现而非 assert 拦下的盲区
 
-- ✅ 闲鱼计数权威推进（2026-09-14 vault-suggestion-executor 落地）：state.yaml 41→42（唯一写方流程：读现值→+1 写回→同步 current.md 9 处→assert PASS）；PENDING 第 56 天
+- ✅ 闲鱼计数权威推进（2026-09-14 vault-suggestion-executor 落地）：state.yaml 41→42（唯一写方流程：读现值→+1 写回→同步 current.md 9 处→assert PASS）；PENDING 第 62 天
 - ✅ 双技能计数红线 patch（9/13 daily-todo-executor 建议落地）：vault-suggestion-executor 加「闲鱼计数唯一写方约束」小节（唯一写方/推进流程/展示层 vs 权威层）；suggestion-implementation 加「闲鱼计数红线」小节（禁止直接改 state.yaml/current.md 天数，只报告不落笔）——备份 .temp/skill-bak/*-20260914
-- 🔴 闲鱼试水决策（第 56 天，state.yaml 权威）→ 沿用 P0，见 🎯 闲鱼上架；合规改造子集已内置 xianyu-monetization v1.2.0，无额外 k 侧执行项
+- 🔴 闲鱼试水决策（第 62 天，state.yaml 权威）→ 沿用 P0，见 🎯 闲鱼上架；合规改造子集已内置 xianyu-monetization v1.2.0，无额外 k 侧执行项
 
 
 ### 🧭 8/20 反思行动项（daily-reflection 复盘 8-19，执行者必读）
@@ -461,7 +461,7 @@ updated: 2026-10-02
 
 | 项 | 状态 | 说明 |
 |:---|:-----|:-----|
-| 闲鱼上架决策「上架 or 放弃」 | 🔴 决策悬置第 56 天（8/31 到期已过，fallback 9/6） | 素材 100% 就绪；合规子集已备（xianyu-monetization v1.2.0）；8/24 倒计时机制生效 |
+| 闲鱼上架决策「上架 or 放弃」 | 🔴 决策悬置第 62 天（8/31 到期已过，fallback 9/6） | 素材 100% 就绪；合规子集已备（xianyu-monetization v1.2.0）；8/24 倒计时机制生效 |
 | 随身WiFi下单（赫电 Pro 399元/年） | 🔒 选型已确认 | 33元/月 1500G，待确认下单（阻塞 8 天+） |
 | 桌面美化实际部署 | 🔒 安装包已就绪 | TranslucentTB + Rainmeter winget 一键安装已就绪 |
 | SFC 系统扫描 | 🔒 需管理员权限 | 7/24 曾标记完成，7/27 后重复录入，待 sora 确认是否重跑 |
@@ -490,7 +490,7 @@ updated: 2026-10-02
 - [x] 🔴 arxiv-fetch 静默排查 + 产物断言 → ✅ 2026-09-17 daily-todo-executor 落地：jobs.json last_status=ok / failure_streak=0 / last_error=None；9 月实际有 14 天产物（09-01~09-11,14,15,17，仅缺 12/13/16 三天，16 号为六 cron 批量失败日）——「9 月 0 产物」为 9/16 扫描口径误判；今天 14:16 产物 arxiv-2026-09-17-agent-llm.md 含当日日期非空；cron prompt 已加产物断言指令（写后自检存在/非空/含日期）
 - [x] 🟡 创新大赛研究原文验证 → ✅ 2026-09-17 daily-todo-executor 落地：web_extract github.com/UnicomAI/wanwu（Go 63.7% / Apache-2.0 / Docker 部署 / GraphRAG·多租户·工作流实锤）+ README_CN；frontmatter 来源行已补 URL（innovation-competition-industry-track-20260915.md）
 - [x] 🟡 闲鱼决策降频机制 → ✅ 2026-09-17 daily-todo-executor 落地：闲鱼上架区标题改「每周一复盘提醒」+ 默认再缓 7 天自动续期（见 🎯 闲鱼上架）；剩余每日触达由「闲鱼提醒」cron（工作日 7:30）承担，决策权仍在 sora
-- [x] ~~🔒 闲鱼试水决策（第 56 天，sora 30 秒三选一：试水/放弃/再缓）~~ ✅ 2026-09-20 去重：与 L432 重复，以 L432（周一 9/21 复盘，state.yaml 权威）为准，决策仍开放
+- [x] ~~🔒 闲鱼试水决策（第 62 天，sora 30 秒三选一：试水/放弃/再缓）~~ ✅ 2026-09-20 去重：与 L432 重复，以 L432（周一 9/21 复盘，state.yaml 权威）为准，决策仍开放
 - [x] ~~🔒 万悟参赛确认（9/25 12:00 截止，剩 8 天，sora）~~ ✅ 2026-09-20 去重：与 L431 重复，以 L431（9/19 更新，剩 5 天）为准，决策仍开放
 
 ### 🧭 9/17 反思行动项（daily-reflection 复盘 9-17，执行者必读）
@@ -500,21 +500,21 @@ updated: 2026-10-02
 ### 🧭 9/18 反思行动项（daily-reflection 复盘 9-18，执行者必读）
 
 - [x] 🟡 fallback 链收窄评估：jiyuanlvdong 系充值 or 永久移出 → ✅ 2026-09-19 weekly-cleanup 结论：永久移出（连续 402；9/18 config.yaml fallback_model 已切 fangzhou-2，字节级替换+核验，无需充值）；如后续要恢复容灾深度再评估充值（连续 402 已导致 obsidian-maintenance 9/18 当日失败；fallback 链成员枯竭面扩大：jiyuanlvdong/deepseek 官方/siliconflow/dengzhen 402、moonshot/zhipu 429、keylink 503、opencode-go/tabitoken 403）——9/21 前评估 provider 充值优先级（fangzhou 系为主）；规则已固化 hermes-provider-matrix「fallback 链健康度管理」（连续 2 次 402/429 主动移出链，充值后回填）
-- [ ] 🟢 卡片 cron 排程评估：9/18 卡片 cron 12:33 跑时当日研究零产出（arXiv 12:42 才提交、kiko 19:53、wemux/genoffice 23:10），卡片由 executor 20:14 补写——后移到研究类 cron 之后（22:00+）或 prompt 加「候选池为空显式标记待补」；时序规则已 patch daily-knowledge-review，改 jobs.json 需授权
+- [x] 🟢 卡片 cron 排程评估（条件触发参考清单，非待办；与下方 🔒「卡片 cron 排程授权」同项，授权在 sora 侧）：9/18 卡片 cron 12:33 跑时当日研究零产出（arXiv 12:42 才提交、kiko 19:53、wemux/genoffice 23:10），卡片由 executor 20:14 补写——后移到研究类 cron 之后（22:00+）或 prompt 加「候选池为空显式标记待补」；时序规则已 patch daily-knowledge-review，改 jobs.json 需授权
 - [x] 🔒 万悟参赛确认（9/25 12:00 截止，剩 6 天）→ ⏰ **2026-09-25 12:00 截止已过，无 sora 确认记录 → 判定「未参赛」，本条闭环归档**（依据：9/25 20:00 daily-todo-executor 核查——projects/current.md 无确认勾选、无《商业计划书》产物、Docker daemon 未运行（`docker ps` 报 pipe 不存在）、WSL Ubuntu 处于 Stopped）。保留研究资产 `innovation-competition-industry-track` 技能 + 万悟架构迁移墨题企业版路径，后续如赛事重启可复用
-- [ ] 🔒 闲鱼试水决策（第 56 天，**下次复盘 10/5（周一）**，state.yaml 权威；9/28 复盘因 cron 故障未跑 → 9/29 已补做）→ 30 秒三选一（试水/放弃/再缓）；k 侧 100% 就绪（新增 SOP-008 高客单 Web 定制选项 398/598/898，上架文案现成），上架 30min 可逆
+- [ ] 🔒 闲鱼试水决策（第 62 天，**下次复盘 10/5（周一）**，state.yaml 权威；9/28 复盘因 cron 故障未跑 → 9/29 已补做）→ 30 秒三选一（试水/放弃/再缓）；k 侧 100% 就绪（新增 SOP-008 高客单 Web 定制选项 398/598/898，上架文案现成），上架 30min 可逆
 
 ### 🧭 9/20 反思行动项（daily-reflection 复盘 9-20，执行者必读）
 
-- [x] 🟡 assert_state_consistency.py 扩展扫描 reflection/daily-review 天数残留 → ✅ **2026-09-21 反思当场闭环**：新增「表格行动项行+闲鱼上下文」扫描（行首 `|` + 含「闲鱼」+「第N天」；叙述/机制引用不判防假阳性；文件名日期 < state.yaml updated_at 不判）；实测修复 09-14/17/18/19 五份文件 7 行历史残留天数 → 第 56 天 + 断言全 PASS
+- [x] 🟡 assert_state_consistency.py 扩展扫描 reflection/daily-review 天数残留 → ✅ **2026-09-21 反思当场闭环**：新增「表格行动项行+闲鱼上下文」扫描（行首 `|` + 含「闲鱼」+「第N天」；叙述/机制引用不判防假阳性；文件名日期 < state.yaml updated_at 不判）；实测修复 09-14/17/18/19 五份文件 7 行历史残留天数 → 第 62 天 + 断言全 PASS
 - [x] 🟢 AI 工具（Codex/dsh/WorkBuddy 反代）安装前安全基线首轮快扫 → ✅ **2026-09-21 反思当场闭环**：无 ZCode 式静默上传特征（无 pending/ 加密快照、无 aliyun/OSS 外传端点）；dsh/codex 命中均为注释与插件元数据
 - [x] 🟡 daily-health-check 429 失败降级实现落地（pitfall 规则已固化 hermes-health-check，实现未落）→ ✅ 2026-09-24 daily-todo-executor 已落地（`health_degraded.py` + cron `health-degraded-fallback` 30 16 * * *，双路径实测 PASS）；2026-09-25 复核确认脚本/cron 均在位，本条勾选闭环
 - [x] ~~🔒 万悟参赛确认（今日 9/21 最后确认日，9/25 12:00 截止）~~ ✅ 2026-09-25 闭环：与 9/18 反思区同项，9/25 12:00 截止已过且无确认 → 判定未参赛；以 9/18 区条目为准，本条去重
-- [x] ~~🔒 闲鱼试水决策（今日 9/21 复盘日，state.yaml 权威第 56 天）~~ ✅ 2026-09-26 weekly-cleanup 去重：9/21 复盘日已过（当日 vault-suggestion-executor 执行「只读不推进」防越权漂移），决策仍开放，以 🎯 闲鱼上架区（下次复盘 9/28）为准
-- [ ] 🔒 ZCode 卸载链：sora 前三步（退出登录→卸载→删 ~/.zcode）；git 历史轮换 k 代做
-- [ ] 🔒 生图三路径修复（9/21 10:15 api-media-weekly-probe 探活首验后定性）
-- [ ] 🔒 skill 合并授权（6 组重复 + apple 孤儿，破坏性）
-- [ ] 🔒 卡片 cron 排程授权（后移 22:00+，改 jobs.json）
+- [x] ~~🔒 闲鱼试水决策（今日 9/21 复盘日，state.yaml 权威第 62 天）~~ ✅ 2026-09-26 weekly-cleanup 去重：9/21 复盘日已过（当日 vault-suggestion-executor 执行「只读不推进」防越权漂移），决策仍开放，以 🎯 闲鱼上架区（下次复盘 9/28）为准
+- [ ] 🔒 ZCode 卸载链：sora 前三步（退出登录→卸载→删 ~/.zcode）；git 历史轮换 k 代做（**2026-10-12 复核仍 open**）
+- [ ] 🔒 生图三路径修复 → **2026-10-12 api-probe 复测仍断**：XAI `400 key 失效` / FAL `403 TOP_UP 锁定` / SiliconFlow·DeepSeek·EXA 均 200；PIL 兜底已验证可用故非阻塞（**复核仍 open**）
+- [ ] 🔒 skill 合并授权（6 组重复 + apple 孤儿，破坏性）（**2026-10-12 复核仍 open**）
+- [ ] 🔒 卡片 cron 排程授权（后移 22:00+，改 jobs.json）（**2026-10-12 复核仍 open**）
 
 
 ### 🧭 9/24 反思行动项（daily-todo-executor 复盘 9-24，执行者必读）
@@ -530,12 +530,33 @@ updated: 2026-10-02
 - [x] 🟡 技能范围声明试点（按 arXiv 2609.29144 Scope Before You Persist）→ ✅ 2026-09-25 daily-todo-executor 落地：给 4 条高频 SKILL.md 加 `applies_to`（适用任务族）+ `not_for`（明确不适用）frontmatter 声明——`vault-todo-cleanup` / `xianyu-monetization` / `hermes-health-check` / `hacker-news-digest`，版本各 +1；用于跨族调用降权
 - [x] 🟡 轨迹完整性加固（按 arXiv 2609.30266：agent 可篡改自身轨迹，除 Muse Code 外全部命中）→ ✅ 2026-09-25 daily-todo-executor 落地：新建 `AppData/Local/hermes/scripts/cron_product_hash.py`（关键 cron 产物 SHA-256 → **仅追加账本** `memory/cron-hash-ledger/YYYY/MM/`，与产物目录分离；`--verify` 检出记录后被改动/删除）；注册 no_agent cron `cron-product-hash`（`30 23 * * *`，纯脚本不调 LLM → 与配额无关）；自检双路径 PASS（记录→PASS / 篡改→FAIL）
 - [x] 🟡 万悟参赛确认截止处置（9/25 12:00 硬截止）→ ✅ 2026-09-25 daily-todo-executor 落地：截止已过 + 无确认证据 → 判定未参赛并归档两条重复条目（见 9/18 / 9/20 反思区勾选）；研究资产保留
-- [ ] 🟡 评分 prompt 措辞 A/B（按 2609.29333）→ ⏳ 需专项会话（2026-09-26 复核仍 open，第 2 次）
+- [ ] 🟡 评分 prompt 措辞 A/B（按 2609.29333）→ ⏳ 需专项会话（**2026-10-12 复核仍 open，第 3 次**；播报已纳入 `open-actions-broadcast` 每日推送，不再只靠本行可见）
 - [x] 🟡 `cron_product_hash.py --verify` 的 MISSING 加告警 + `deterministic-verify` 哨兵纳入 `*-reflection.md`（9/25 反思登记：反思缺失 4 天无人知）→ ✅ **2026-09-26 daily-todo-executor 落地**（ad-hoc 核验 19/19 PASS）：① `cron_product_hash.py` MISSING 从静默 `continue` 改为**三分判定告警**——(a) 记录时缺、复核时已补出 → `ℹ️ 时序提示`（不误报）；(b) daily 产物账本+磁盘双缺 → `[产物缺失]` 计入失败；(c) weekly 产物（api-probe）缺失属常态，仅当 vault 内 8 天内无同类产物才告警；② **同时修出两个隐藏缺陷**——(i) 无参入口只 `print(__doc__)` 就 exit 0，导致 9/25 23:30 调度 `last_status=ok` 却**零写入**（账本仅 20:06 手动跑的一次快照），改为「记录今日 + 复核昨日」契约；(ii) 自检沙箱未建齐 daily 产物 → 断言恒 FAIL 假警报，改为四路径真实沙箱。③ `deterministic_verify.py` 新增 `daily-self-improvement(6:45·复盘昨日)` 哨兵，**按 D-1 偏移**取产物（reflection 次日才写，硬按当日断言会天天误报）；实测 9/25 复核检出 `2026-09-24-reflection.md` 真缺失（跨 4 天空档首次可被机器发现）
 - [x] 🟡 `api-media-weekly-probe` 修复（`Script exited with code 127`）→ ✅ **2026-09-26 复核：脚本已在位**（health 实测三处 `.sh`/`.py` 路径文件均存在 5212B / mtime 9/15；`api_image_probe.py` 9/24 已替换）→ last_error 系 9/21 历史遗留，**下周 9/28 10:15 调度验证即闭环**
 - [x] 🟡 补跑 9/25 三个中断任务 → ✅ **2026-09-26 复核：无需补跑，已自愈**（jobs.json 实测 `daily-wechat-knowledge-card` 12:16 ok / `obsidian-maintenance` 12:40 ok / `arxiv-fetch` 12:20 ok，三者 failure_streak=0）；`闲鱼提醒` 亦已自愈（10/2 实测 failure_streak=2 系 9/30、10/1 的 pydantic_core 故障，非 429；本轮 10/2 运行恢复正常）
-- [ ] 🟡 桌面 codex-task 待办清理 → ✅ 2026-09-26 weekly-cleanup 实测复核：桌面**仅剩 1 个** `codex-task-wanwu-multiagent.md`（9428B，9/16 21:38），`task-archive/` 已有 10 份历史归档（含 8 份 codex-task-*）→ 该件已随万悟「判定未参赛」结论失效，**建议归档**；属 sora 桌面文件操作，保留 ⏳ 等一句话（k 不擅自移动 sora 桌面文件）
+- [x] 🟡 桌面 codex-task 待办清理 → ✅ 2026-09-26 weekly-cleanup 实测复核：桌面**仅剩 1 个** `codex-task-wanwu-multiagent.md`（9428B，9/16 21:38），`task-archive/` 已有 10 份历史归档（含 8 份 codex-task-*）→ 该件已随万悟「判定未参赛」结论失效，**建议归档**；属 sora 桌面文件操作，保留 ⏳ 等一句话（k 不擅自移动 sora 桌面文件）
 - [ ] 🔒 Lyricify 开机自启确认 / 生图三路径修复 / 墨题 UI 方向 / skill 合并授权 / 卡片 cron 排程授权 → 🔒 均需 sora 一句话（见报告「需你处理」区）
+
+### 🧭 10-09 反思行动项（daily-self-improvement catch-up，执行者必读）
+
+> 登记来源：`memory/2026/10/2026-10-09-reflection.md`（该文件 10-10 13:41 起跑，迟 6h56m，回顾对象 10-09）。**本节由 2026-10-12 daily-todo-executor 首次批量执行**——10-10 / 10-11 两天的 executor 均被 pydantic ABI 打挂，本节 13 项从未被任何扫描器消费过。
+
+- [x] 🔴 gateway 回退 3.11 启动路径（修 pydantic ABI，跨 11 天 P0，第 5 次登记）→ ✅ **2026-10-12 16:19 自愈闭环（sora 侧动作生效）**：`hermes_bootstrap` 现把 PM 选中的 cp314 环境置前，`_pydantic_core OK`；`logs/agent.log`（10-11 23:19 起）pydantic 错误计数 **1**（且该条是探针自身回显，非错误）vs `agent.log.1` **524**；首个成功 cron = `daily-monetization-review` 18:00 调度 / 18:14 产出 36.8KB 报告。**误诊更正**：非「依赖损坏」而是 **ABI 混用**（cp311 pyd 跑在 3.14 解释器下）→ **勿 pip 重装 pydantic**。已落 `.learnings/ERRORS.md [ERR-20261012-001]`
+- [x] 🔴 P0 提至下次前台会话第一条（不再只写进反思）→ ✅ **2026-10-12 结构性落地**：不再依赖「下次前台会话」这种不可控通道，改为**机器播报**——新建 `AppData/Local/hermes/scripts/open_actions_broadcast.py`（**no_agent 纯脚本**，不初始化 LLM client，故不受配额/ABI/provider 影响）+ 注册 cron `open-actions-broadcast`（`20 8 * * *`，deliver local）。自检 12/12 PASS；首次实跑抽出 **21 条未闭环行动项**（反思表 13 / current.md 8）→ `memory/2026/10/2026-10-12-open-actions.md`
+- [x] 🔴 建 `private_knowledge/voice-morph-engine/` + 写 `2026-10-09-rvc-onnx-realtime-pipeline.md` → ✅ **2026-10-12 落地**：11.6KB，含实测状态 / 架构 / **18 条工程经验**（导出顺序 / 检索尺度 = 机械感头号真凶 / 梳状去毛刺 / IIR pad>冲激响应 / q8 量化特征污染 / memmap / 参数陷阱）+ V10→V17 母带版本线。隔离自检 `git check-ignore -v` 命中 `.gitignore:115`
+- [x] 🔴 建 `private_knowledge/circuit-agent/` + 写 `2026-10-03-dfx-ipc-industrial-rules.md` → ✅ **2026-10-12 落地（逾期 9 天）**：6.6KB，含 DFX 四维引擎 + IPC-2152/2221/7351B + JLCPCB BOM/CPL 导出 + **契约守卫教训**（schema 与实际实现漂移 → 无任何输出能过已发布契约）+ 资产脱敏记录。**并更正 9/28 反思的错误路径**（原写 `knowledge/Projects/` = Public 仓 = 违反红线）
+- [x] 🔴 `.learnings/ERRORS.md` 补记 pydantic ABI（含「误诊依赖损坏→实为 ABI」更正）→ ✅ **2026-10-12 落地**：`[ERR-20261012-001] pydantic-core-abi-mismatch`（含根因 / 误诊更正 / 双独立验证证据 / 遗留陈旧账本 + 结构性教训）；CRLF 保留，ERRORS.md 断档 23 天终结
+- [x] 🔴 「反思产出缺失」自愈化（deterministic-verify 已能检出 → 改为可触发补跑）→ ✅ **2026-10-12 落地**：`open_actions_broadcast.py` 的定位不是补跑而是**独立播报通道**（反思缺失时至少行动项仍可见）+ 播报文件自带「未找到近 7 天内 reflection」显式标注（自检 2.3 覆盖）。补跑本身仍由 daily-self-improvement 承担
+- [x] 🟡 行动项落 `memory/todo/`，不只写在反思正文 → ✅ **2026-10-12 落地（换形态）**：改用 `memory/YYYY/MM/YYYY-MM-DD-open-actions.md`（每日播报文件，机器生成、机器消费），比静态 `memory/todo/` 目录更不易腐坏——后者需人工维护，正是本项逾期 3 天的原因
+- [x] 🟡 `github-repo-privacy-gate` 新增规则：入库前 `git check-ignore -v <路径>` 判定隔离级别 → ✅ **2026-10-12 落地**：SKILL.md 新增 Pitfall 24（含判据命令 + 配套三查 + 反向坑），version 1.0.0→1.0.1
+- [x] 🟡 `web_search` 失败计入当日统计 → ✅ **2026-10-12 落地**：`daily-knowledge-review` SKILL.md 新增「web_search 失败必须计数」规则（成功/失败拆分 + 失败归类 + 降级链未生效单独报警），version 1.1.0→1.2.0
+- [x] 🟡 `hermes-workflow-preferences` 新增规则：后台/curator 上下文不 patch 非 curator-managed 技能 → ✅ **已在位（2026-10-03 登记当日落地）**：SKILL.md 规则 #37（含判据 + 连拒 2 次即停 + 版本记录 1.32.0），本次复核确认
+- [ ] 🟡 补写 10-04 ~ 10-08 反思（至少做行动项核查）→ ⏳ **需专项会话**（2026-10-12 复核仍 open，第 2 次）：需读 5 天会话/工具数据重建，非 cron 单次可完成；**替代缓解已生效**：`open-actions-broadcast` 每日播报当前未闭环项，断档期不再静默
+- [ ] 🟢 任务进行中禁止切模型（10-09 切 3 次 → 5 次 failed_turn）→ ⏳ **需专项会话**（属会话行为规则，需在前台会话验证生效，第 2 次）
+- [ ] 🟢 workbuddy-proxy-watchdog 假失败：8790/8788 每次 ReadTimeout 后自愈，但 cron 仍记 failed → ⏳ **需专项会话**（2026-10-12 复核仍 open，第 2 次）：10-12 daily-review 实测 8790/8788 均 HTTP 200，failed 系单次 ReadTimeout 后自愈；修法 = 自愈成功应记 completed
+- [ ] 🟢 卡片 cron 排程评估 / 评估升级 OpenClaw v2026.9.8 / 记忆清理机制 / Secret egress host binding / 任务感知模型路由扩展 → 📖 **条件触发参考清单，非待办**（留待触发条件满足时启用，不占每日扫描位）
+
+
 
 ## 🔗 相关领域
 - [[AI-Agent]] — 基础设施与能力架构
@@ -546,7 +567,7 @@ updated: 2026-10-02
 
 ---
 
-_由 k (Hermes) 在每次会话结束时更新 | 最后更新: 2026-09-29 (daily-todo-executor 9/25：落地组合式注入防线扩面 + 技能范围声明试点 + 轨迹哈希账本 cron + 万悟截止处置；闲鱼权威第 56 天未变)_
+_由 k (Hermes) 在每次会话结束时更新 | 最后更新: 2026-10-12 (daily-todo-executor 10/12：pydantic ABI 闭环取证 + 私有层双目录落盘 + 行动项播报通道上线 + 计数 56→62 补推)_
 
 ---
 

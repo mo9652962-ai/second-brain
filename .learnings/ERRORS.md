@@ -357,3 +357,48 @@ health_provider_check.py 统一走 127.0.0.1:7890 → 全 FAIL 为假警报
 - **Notes**: sora 物理机重启 FlClash 服务，7890 代理端口数据转发功能恢复，QQBot/微信消息通道自动重连，health_provider_check 恢复正常监控。这是唯一需人工介入的 P0 阻塞点，历时 29 天 (8/18→9/16) 解决。
 
 ---
+
+## [ERR-20261012-001] pydantic-core-abi-mismatch 🆕
+
+**Logged**: 2026-10-12T20:10:00+08:00
+**Priority**: high
+**Status**: resolved
+**Area**: infra
+**Duration**: 2026-09-29 → 2026-10-12（**14 天**）
+
+### Summary
+运行解释器与 site-packages 的 **ABI 混用** 导致 `pydantic_core` 无法加载，30+ 生产 cron 连续停摆 14 天。
+
+### Error
+```
+ModuleNotFoundError: No module named 'pydantic_core._pydantic_core'
+RuntimeError: Failed to initialize OpenAI client: No module named 'pydantic_core._pydantic_core'
+```
+
+### Root Cause（本次首次落地为可验证事实）
+- 运行解释器 = `tools/python-3.14.7`，而依赖装在 `hermes-agent/venv`（**3.11**）的 site-packages 里
+- 该目录下的 `_pydantic_core.cp311-win_amd64.pyd` 是 **cp311 ABI**，在 3.14 下**无法加载**
+- 影响面：`daily-health-check` / `daily-todo-executor` / `项目追踪` / `每日仓库+知识库优化`（各 failure_streak=14）等 30+ cron
+
+### ⚠️ 误诊更正（重要）
+- **早期判断为「pydantic 依赖损坏」→ 错误**。实际依赖包完好，是 **ABI 不匹配**。
+- 因此**不要 `pip reinstall pydantic`** —— 重装到 3.14 环境只会换一个不匹配的包，或把 3.11 venv 搅乱。
+- 同类误诊史：9/29、10-01、10-03、10-09 四份反思共登记 **5 次**，均写成「回退 3.11 启动路径 / 依赖损坏」，**修 0 次**（「报告但不修」模式第 5 次复发）。
+
+### Resolution
+- **Resolved**: 2026-10-12T16:19:00+08:00（scheduler 重启后生效）
+- **修复动作**: `hermes_bootstrap` 现把 PM 选中的 **cp314 环境置前**，`_pydantic_core OK`
+- **验证（双独立证据）**:
+  1. `logs/agent.log`（10-11 23:19 起，1,053,735 B）**pydantic 错误计数 = 1**，且该条是**探针本身的回显**（`current python: 3.14.7 … pydantic 2.13.4 core 2.46.4 / _pydantic_core OK`），非错误；对照 `agent.log.1`（10-11 23:19 归档）**计数 = 524 / 1088 行**
+  2. **首个成功运行的 cron**：`daily-monetization-review` 18:00 调度、18:14 产出 36.8KB 报告（此前连续 14 次失败同根因）；`每日股票分析` 18:14 产出 36.8KB 报告（此前连续 9 次失败）
+- **Notes**: `errors.log` 最后一条真 `ModuleNotFoundError` 时间戳 = 10-10 13:45:12；此后无新增。
+
+### 遗留（未闭环）
+- **陈旧账本**：32 个 cron 的 `last_error` / `failure_streak` 仍停在 10-11（实测 47 jobs 中 28 个 `failure_streak>0`），health 看板持续报 ❌32。**属状态账本陈旧，非真实故障** —— 等新排程自然跑一轮覆盖，或对已到期 job 手动触发。
+- **结构性教训**：`daily-todo-executor` 本身也被同一条错误打挂 → **写进反思的 P0 行动项，在扫描器自己死掉时等于没写**。10-01 反思已提「给反思行动项加不依赖 cron 健康的播报通道（no_agent 纯脚本）」，仍未落地。
+
+### See Also
+- 影响同根因任务：`daily-health-check` / `daily-todo-executor` / `项目追踪` / `每日仓库+知识库优化` / `weekly-cost-report` / `组会报告` / `文献周报` / `闲鱼提醒` / `biweekly-skill-audit` / `monthly-skill-usage` / `weekly-learning-progress` / `weekly-suggestion-implementation` / `AI测评周报` / `shai-hulud-weekly-scan`
+- 反思登记史：`memory/2026/10/2026-10-01-reflection.md` / `2026-10-03-reflection.md` / `2026-10-09-reflection.md`
+
+---
