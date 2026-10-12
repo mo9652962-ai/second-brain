@@ -556,3 +556,131 @@ Pattern-Key: ecosystem.openclaw-alternatives-landscape-2026
 Recurrence-Count: 1
 First-Seen: 2026-10-02
 Last-Seen: 2026-10-02
+
+---
+
+## [LRN-20261012-001] insight
+
+**Logged**: 2026-10-12T16:25:00+08:00
+**Priority**: high
+**Status**: completed
+**Area**: config
+
+### Summary
+OpenClaw v2026.9.7 (10/1) 与 v2026.9.8 (10/8) 连续发布：OpenAI Agents API 公测集成 (托管 Agent 循环、Data Agent、GPT-Live-1 全双工语音、免费托管沙箱)、Sign in with ChatGPT (Beta) 降低准入、**Sora 视频生成退役** (需替换为 Kie AI / Z.AI / Novita / Qwen / Wan)、Codex Remote Sessions 目录处理优化复用设置减少内存。半个月 6 版本极速补丁节奏延续，建议暂缓升级等社区验证 2-4 周。
+
+### Details
+1. **OpenAI Agents API 公测** (2026-09 公测): 托管 Agent 循环 (会话管理/自动重试/摘要/工具编排)、Data Agent (连企业 Drive/Notion/Slack/Confluence)、GPT-Live-1 全双工语音、免费托管沙箱仅计费模型 token + 工具使用 —— 大幅降低构建门槛
+2. **Sora 退役**: 需替换 `openai/sora-2` / `openai/sora-2-pro`，官方建议 Kie AI、Z.AI、Novita、Qwen、Alibaba Wan
+3. **Sign in with ChatGPT (Beta)**: 降低用户准入门槛
+4. **v2026.9.8 优化**: Codex Remote Sessions 避免为每个空闲代理启动单独会话-catalog 进程，改为需要时启动并重用捕获设置
+5. **架构信号**: v2026.9.1→9.8 半个月 6 版本，「每日补丁」模式印证 LRN-20260914-001，继续暂缓升级
+
+### Suggested Action
+- 监控社区反馈 2-4 周后再评估升级
+- 关注 OpenAI Agents API 集成对多供应商 fallback 架构的影响 (托管循环可能改变我们的控制面设计)
+- 确认 Sora 替代方案在 video generation skills 中的可用性
+- 评估 Sign in with ChatGPT 对认证流程的影响
+
+### Metadata
+Source: tavily_search (docs.openclaw.ai/releases/2026.9.7, 2026.9.8) + self-improvement cron
+Tags: openclaw-2.0, openai-agents-api, sora-retirement, codex-remote-sessions
+Pattern-Key: config.openclaw-2.0-rapid-patches-continued-v2
+Recurrence-Count: 1
+First-Seen: 2026-10-12
+Last-Seen: 2026-10-12
+
+---
+
+## [LRN-20261012-002] insight
+
+**Logged**: 2026-10-12T16:25:00+08:00
+**Priority**: high
+**Status**: completed
+**Area**: operations
+
+### Summary
+AI Agent 运营实践成熟 (IBM/Deloitte 2026)：企业从「构建 Agent」转向「安全规模化运营」，确立**风险分级运营模型** — 例行信息检索→Agent主导、重复数据处理→Agent主导、低风险工作流动作→Agent带控制、中风险决策→Agent建议+人工批准、高影响决策→人工主导+Agent支持、异常模糊情况→人工主导、战略决策→人工主导+AI分析。员工角色转变：从手工完成每步 → 定义目标、审查输出、处理异常、批准动作、改进工作流。
+
+### Details
+1. **IBM 2026 关键运营活动**: 监控执行/跟踪完成/审查失败/测量工具使用/延迟成本、管理提示配置/更新知识源/审查权限/发布前测试、审计高影响动作/管理人工升级/退役低价值 Agent
+2. **Deloitte 2026 风险分级模型**: 7 级从 Agent 主导到人工主导的渐进式控制
+3. **对我们的启示**: Graph Engineering 编排中显式标注各阶段风险等级，cron/heartbeat/subagent 建立风险等级标注，完善「退役低价值 Agent」ROI 复盘机制，强化 Observability (自动化 review session logs、工具使用统计、成本追踪)
+
+### Suggested Action
+- 将风险分级模型纳入多 Agent 工作流设计 (Graph Engineering 编排)
+- 为 cron/heartbeat/subagent 建立显式风险等级标注 (低/中/高)
+- 完善「退役低价值 Agent」评估机制 (定期 ROI 复盘)
+- 强化 Observability: 自动化 review session logs、工具使用统计、成本追踪
+
+### Metadata
+Source: tavily_search (xicom.biz AI Agent Trends 2026) + self-improvement cron
+Tags: ai-agent-operations, risk-tiered-operations, ibm-deloitte-2026, bounded-autonomy, graph-engineering
+Pattern-Key: operations.ai-agent-risk-tiered-ops-2026
+Recurrence-Count: 1
+First-Seen: 2026-10-12
+Last-Seen: 2026-10-12
+
+---
+
+## [LRN-20261012-003] correction
+
+**Logged**: 2026-10-12T16:25:00+08:00
+**Priority**: high
+**Status**: open
+**Area**: infra
+
+### Summary
+daily-summary cron 产出缺失 19 天：MEMORY.md 最后更新 2026-09-23，memory/ 目录无 2026-10-09/10/11 日志文件。health check 只看运行状态不看产出 → daily-summary 文件静默缺失。疑似 cron 执行成功但产出写入失败，或 cron 根本未触发。
+
+### Details
+1. **现象**: MEMORY.md 最后更新 2026-09-23 (距今 19 天)，memory/ 目录仅有 2026/ 子目录、cron-hash-ledger、consolidated_state.json、MOC-Memory.md，无近期 YYYY-MM-DD.md
+2. **根因假设**: daily-summary cron (cron/jobs.json 中配置) 可能因权限、路径、模型配额、脚本异常等原因静默失败，但 executions.db 可能仍记录 success
+3. **教训**: health check 必须增加 stat 验证预期产出文件路径 (LRN-20260925-003 已识别此类问题，但未完全修复)
+4. **关联**: LRN-20260925-003 "产出型 cron 失败后无缺口感知" — reflection cron 曾连断 4 天且无告警
+
+### Suggested Action
+- 立即排查 daily-summary cron: 检查 executions.db 近期运行记录、jobs.json 配置、脚本路径权限
+- 为 daily-summary cron 添加产出存在性校验 (stat 预期文件)
+- 产出缺失时触发告警而非静默记录
+- 补全 9/24~10/11 缺失的 daily notes (从 session transcripts 恢复)
+
+### Metadata
+Source: self-improvement cron (local debugging)
+Tags: cron, daily-summary, silent-failure, missing-artifact, alerting, health-check
+Pattern-Key: infra.daily-summary-cron-silent-failure
+Recurrence-Count: 1
+First-Seen: 2026-10-12
+Last-Seen: 2026-10-12
+
+---
+
+## [LRN-20261012-004] best_practice
+
+**Logged**: 2026-10-12T16:25:00+08:00
+**Priority**: medium
+**Status**: proposed
+**Area**: security
+
+### Summary
+OpenClaw 官方最佳实践 2026 指出 **Secret egress host binding**: 密钥绑定精确 HTTPS 出口宿主。评估在 openclaw.json 中显式配置密钥出口域名白名单，防止凭证泄露到非预期域名。
+
+### Details
+1. **OpenClaw Security 2026 五控制点 + 三具体化** 中明确: Secret egress host binding (密钥出口宿主绑定)
+2. **机制**: 每个凭证/密钥显式声明允许访问的 HTTPS 目标宿主，运行时拦截非白名单出口
+3. **对应 LRN-20260914-002**: 已记录但未落地实施
+4. **配合 Cross-Component Trust** (v2026.9.x): 远程节点事件默认 untrusted + 输出 sanitization，形成纵深防御
+
+### Suggested Action
+- 审计 openclaw.json 当前凭证配置，识别需绑定出口宿主的密钥
+- 在 openclaw.json 中添加 `secretEgressHosts` 或类似字段显式配置白名单
+- 验证运行时拦截效果 (尝试向非白名单域名发起请求应被阻断)
+- 记录配置变更原因 (遵循「刻意修改默认值并记录原因」原则 LRN-20261002-002)
+
+### Metadata
+Source: tavily_search (openclawlaunch.com/guides/openclaw-best-practices) + self-improvement cron
+Tags: secret-egress, host-binding, credential-security, openclaw-best-practices, defense-in-depth
+Pattern-Key: security.secret-egress-host-binding
+Recurrence-Count: 1 (referenced in LRN-20260914-002, LRN-20261002-002)
+First-Seen: 2026-10-12
+Last-Seen: 2026-10-12
