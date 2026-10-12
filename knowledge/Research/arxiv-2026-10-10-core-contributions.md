@@ -110,7 +110,7 @@ agent 发出的调用
 
 ### 与 sora 的关联
 
-- 🔴 **k 的运行环境就是论文的高危环境**：本机 `terminal` 走 git-bash（MSYS），且系统提示已明确「MSYS 路径转换被禁用」——`git -C /c/Users/x`、`node /tmp/a.js` 会失败而 `cd /c/Users/x` 可以。这正是本文描述的「hop 改动了调用」
+- 🔴 **k 的运行环境就是论文的高危环境**：本机 `terminal` 走 git-bash（MSYS），且系统提示已明确「MSYS 路径转换被禁用」——`git -C /c/Users/<user>`、`node /tmp/a.js` 会失败而 `cd /c/Users/<user>` 可以。这正是本文描述的「hop 改动了调用」
 - 🔴 **k 已记录过同类失效**：记忆里的「垃圾文件名（含引号/&&）Windows 无法落盘、status 假象 → 用 `git ls-tree` 验证」就是 IEC 破坏的一个实例——当年是靠结果对账发现的，本文给了机制解释与前置观测方法
 - ✅ **三条可立即落地的排障规则**：① shell 调用（尤其含引号/转义/长文本）失败时**先验「实际执行的是什么」**，别先改命令；② 失败归因不要只看轨迹（95.1% 被误归因）；③ 观测每一跳「收到了什么」，而非只看结果
 - ✅ **与既有坑清单合流**：写码前扫坑 32 项 / `windows-file-lock-troubleshooting` / `windows-node-deployment` 三条技能可增补「IEC 自检」步骤
