@@ -64,3 +64,4 @@ updated: 2026-10-11
 - [[hackernews-2026-10-08]]
 - [[hackernews-2026-10-10]]
 - [[hackernews-2026-10-11]]
+- [[hackernews-2026-10-14]]
