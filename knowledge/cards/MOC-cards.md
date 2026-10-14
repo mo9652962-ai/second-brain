@@ -4,7 +4,7 @@ domain: cards
 type: moc
 status: active
 created: 2026-09-20
-updated: 2026-10-11
+updated: 2026-10-14
 ---
 
 # 🃏 知识卡片 — cards
@@ -62,3 +62,4 @@ updated: 2026-10-11
 - [[knowledge/cards/2026-10-04-approval-laundering|🃏 知识卡片 · 批准的动作 ≠ 执行的动作：装前扫描不够，唯一可用边界在执行时]]
 - [[knowledge/cards/2026-10-10-coinstalled-skill-conflict|🃏 知识卡片 · 技能装多了会互相抢跑：五次运行被抢走一次，而 99.1% 的回复不告诉你是谁干的]]
 - [[knowledge/cards/2026-10-11-iec-tool-call-fidelity|🃏 知识卡片 · 没报错 ≠ 跑对了：Windows 上 12% 的 shell 调用被悄悄改掉，其中 80.7% 静默执行了错的动作]]
+- [[knowledge/cards/2026-10-14-apex-harm-delivered-not-safe|知识卡片 10-14]]
