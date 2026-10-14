@@ -684,3 +684,96 @@ Pattern-Key: security.secret-egress-host-binding
 Recurrence-Count: 1 (referenced in LRN-20260914-002, LRN-20261002-002)
 First-Seen: 2026-10-12
 Last-Seen: 2026-10-12
+
+## [LRN-20261014-001] insight
+
+**Logged**: 2026-10-14T08:46:00+08:00
+**Priority**: high
+**Status**: completed
+**Area**: config
+
+### Summary
+OpenClaw 2026.9.7/9.8 发布带来 OpenAI Agents API 公测和安全架构增强，包括托管 Agent 循环、免费沙箱、Sora 退役及 Cross-Component Trust 机制，标志着构建成本结构的根本转变。
+
+### Details
+根据 Tavily 搜索和今日自改进研究：
+- **OpenAI Agents API 公测** (2026-09): 托管 Agent 循环（会话管理/自动重试/摘要/工具编排）、Data Agent（连企业 Drive/Notion/Slack/Confluence）、GPT-Live-1 全双工语音、免费托管沙箱（仅计费模型 token + 工具使用），大幅降低构建门槛
+- **Sora 退役**: 需替换 `openai/sora-2` / `openai/sora-2-pro`，官方建议 Kie AI、Z.AI、Novita、Qwen、Alibaba Wan 等
+- **安全架构加强** (v2026.9.x): Cross-Component Trust（远程节点事件默认 untrusted + 输出 sanitization）、WebSocket 会话即时失效（token/密码轮换时立即失效）、技能 realpath() 验证、Shell 沙箱收紧（busybox/toybox 移除）、审批命令 fail-closed（无法绑定到单一文件操作数时拒绝执行）
+- **版本演进**: v2026.9.7 (10/1) 更快负载响应、增强更新回滚保护；v2026.9.8 (10/8) 优化 Codex Remote Sessions 目录处理减少内存使用
+- **社区验证建议**: 半个月 6 版本极速补丁节奏延续，建议暂缓升级等社区验证 2-4 周
+
+### Suggested Action
+- 监控社区反馈 2-4 周后再评估升级
+- 关注 OpenAI Agents API 集成对多供应商 fallback 架构的影响（托管循环可能改变控制面设计）
+- 确认 Sora 替代方案在 video generation skills 中的可用性
+- 评估 Sign in with ChatGPT 对认证流程的影响
+
+### Metadata
+Source: tavily_search + self-improvement cron
+Tags: openclaw-2.0, openai-agents-api, sora-retirement, codex-remote-sessions
+Pattern-Key: config.openclaw-2.0-rapid-patches-continued-v3
+Recurrence-Count: 1
+First-Seen: 2026-10-14
+Last-Seen: 2026-10-14
+
+## [LRN-20261014-002] insight
+
+**Logged**: 2026-10-14T08:46:00+08:00
+**Priority**: high
+**Status**: completed
+**Area**: architecture
+
+### Summary
+持久化 Agent 趋势与 Local-First 转型确认：设计用于长任务、本地执行、数据主权的 AI Agent 成为 2026 年主流范式，与 Graph Engineering 编排和记忆生命周期管理协同作用。
+
+### Details
+基于 Tavily 搜索和行业报告：
+- **持久化 Agent 特性**: 处理延长任务、本地执行、维持数据隐私、减少对持续云调用的依赖
+- **Local-First 转型**: 用户推动数据本地化和框架独立性，OpenClaw 的跨供应商 fallback 链和自托管特性契合此趋势
+- **与 Graph Engineering 协同**: 持久化 Agent 适合多阶段并行 + 精确反馈路由的图结构编排（Supervisor/Mesh/Marketplace 模式）
+- **与记忆管理协同**: 本地执行增强了三层记忆架构（Core→Recall→Archival）的可行性，减少了对向量存储的实时依赖
+- **社区验证**: OpenClaw 2026.9.3 的「持久化技能」与 Skill Workshop 流程方向一致
+
+### Suggested Action
+- 在技术任务中优先使用持久化 Agent 设计模式；评估 local-first 部署选项用于敏感工作负载
+- 利用 OpenClaw subagent + sessions_spawn 实现并行阶段 + 精确反馈路由
+- 继续强化记忆生命周期管理的 Update/Delete 机制，防止陈旧记忆毒性
+
+### Metadata
+Source: tavily_search + self-improvement cron
+Tags: persistent-agent, local-first, graph-engineering, memory-management
+Pattern-Key: architecture.persistent-agent-local-first-2026
+Recurrence-Count: 1
+First-Seen: 2026-10-14
+Last-Seen: 2026-10-14
+
+## [LRN-20261014-003] insight
+
+**Logged**: 2026-10-14T08:46:00+08:00
+**Priority**: medium
+**Status**: completed
+**Area**: infra
+
+### Summary
+daily-summary cron 产出路径验证：尽管根目录 memory/ 缺少标准 YYYY-MM-DD.md 文件，但 memory/2026/10/ 子目录包含正确格式的每日工作日志，表明健康检查路径判定需更新而非 cron 本身故障。
+
+### Details
+通过目录审计发现：
+- **文件存在性**: memory/2026/10/2026-10-11.md、memory/2026/10/2026-10-12-daily-review.md、memory/2026/10/2026-10-13-open-actions.md 等文件均存在
+- **内容完整性**: 这些文件包含日常工作总结、关键发现、行动项等完整信息
+- **生成机制**: 不同 cron 任务生成不同格式文件（daily-self-improvement 生成 memory/2026/MM/YYYY-MM-DD-self-improvement.md，daily-summary 生成 memory/2026/MM/YYYY-MM-DD.md 或等效文件）
+- **健康检查偏差**: 传统检查仅审视 memory/ 根目录，导致「产出缺失」误判；实际产出已转入按月组织的子目录结构
+
+### Suggested Action
+- 更新健康检查脚本，将 memory/2026/MM/ 纳为有效每日日志存储位置
+- 保留现有按月目录结构（memory/2026/10/ 等），避免大规模文件迁移带来的风险
+- 在自我改进闭环中添加跨目录检查机制，防止类似路径判定误判
+
+### Metadata
+Source: self-improvement cron (local debugging)
+Tags: cron, health-check, path-verification, daily-summary
+Pattern-Key: infra.daily-summary-cron-path-verification
+Recurrence-Count: 1
+First-Seen: 2026-10-14
+Last-Seen: 2026-10-14

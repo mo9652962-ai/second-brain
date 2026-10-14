@@ -358,13 +358,13 @@ health_provider_check.py 统一走 127.0.0.1:7890 → 全 FAIL 为假警报
 
 ---
 
-## [ERR-20261012-001] pydantic-core-abi-mismatch 🆕
+## [ERR-20261012-001] pydantic-core-abi-mismatch 🔁 REGRESSED
 
 **Logged**: 2026-10-12T20:10:00+08:00
 **Priority**: high
-**Status**: resolved
+**Status**: ⚠️ **resolved → REGRESSED**（2026-10-13 复发，见下方「复发」章节；此后此类修复一律先标 `mitigated`）
 **Area**: infra
-**Duration**: 2026-09-29 → 2026-10-12（**14 天**）
+**Duration**: 2026-09-29 → 2026-10-12（**14 天**）；**2026-10-13 复发（同一根因，未根治）**
 
 ### Summary
 运行解释器与 site-packages 的 **ABI 混用** 导致 `pydantic_core` 无法加载，30+ 生产 cron 连续停摆 14 天。
@@ -393,9 +393,93 @@ RuntimeError: Failed to initialize OpenAI client: No module named 'pydantic_core
   2. **首个成功运行的 cron**：`daily-monetization-review` 18:00 调度、18:14 产出 36.8KB 报告（此前连续 14 次失败同根因）；`每日股票分析` 18:14 产出 36.8KB 报告（此前连续 9 次失败）
 - **Notes**: `errors.log` 最后一条真 `ModuleNotFoundError` 时间戳 = 10-10 13:45:12；此后无新增。
 
+### ⚠️ 复发（2026-10-13，本条「resolved」判定被推翻）
+
+- **复发时间**：2026-10-13 10:31:34 起（gateway 10:28 重启后首次批量 tick）
+- **实测证据**：
+  1. `cron/executions.db` 10-13 全天 **63 次执行 / 16 failed**，其中 **13 个 job** 失败信息为同一句 `RuntimeError: Failed to initialize OpenAI client: No module named 'pydantic_core._pydantic_core'`（10:31–10:32 集中爆发，另有 15:45 / 18:00 / 18:01 / 18:45 / 20:00 / 21:00 / 22:30）
+  2. `logs/agent.log` 10-13 全天 **19 行** pydantic 错误（13 条 cron 失败 + **6 条 `gateway.run: Supervised task hosted_room_worker died`**）；10-14 08:44 再刷 6 条 worker 死亡
+  3. `logs/gateway-exit-diag.log`：`gateway.start` 在 **10-13T02:28Z（10:28 CST）** 与 **10-14T00:42Z（08:42 CST）** 两次启动，**`"python": "3.14.7"` 两次都还是 3.14.7**
+- **误判根因（重要）**：10-12 的「resolved」验证只做了**进程内** `import pydantic_core` 探针（`agent.log` 计数 = 1 且那 1 条是探针回显）。`hermes_bootstrap` 把 cp314 环境置前是**进程内生效**；**gateway 一重启即回落**。10-12 16:19 的「首个成功 cron」证明的是「那一次进程能跑」，**不是「这条路径被修好了」**。
+- **修正后的判定口径（此后所有 ERR 条目适用）**：
+  1. **「resolved」必须包含一次 gateway 重启后的复验**，否则只能标 `mitigated`（进程内缓解）
+  2. 验证证据不得使用「错误计数 = 0/1」这类**同进程自证**指标，必须用**跨进程**指标（重启后的新失败记录 / 独立 cron 产出）
+  3. 涉及解释器/依赖路径的修复，必须核对 `gateway-exit-diag.log` 的 `"python"` 字段，而非只看 import 是否成功
+- **未闭环**：根治 = 把解释器固定写进启动路径（`hermes-agent/venv/Scripts/python.exe` 实测 `pydantic_core 2.46.4` import OK），不再依赖 bootstrap 每次置前 —— **需 sora 拍板**
+- **影响面更新**：10-13 全天 **13 个生产 cron 0 产出**（含 `daily-self-improvement` 与 `daily-todo-executor` —— **行动项消费器自己死掉时，写进反思的行动项等于没写**）
+
 ### 遗留（未闭环）
 - **陈旧账本**：32 个 cron 的 `last_error` / `failure_streak` 仍停在 10-11（实测 47 jobs 中 28 个 `failure_streak>0`），health 看板持续报 ❌32。**属状态账本陈旧，非真实故障** —— 等新排程自然跑一轮覆盖，或对已到期 job 手动触发。
 - **结构性教训**：`daily-todo-executor` 本身也被同一条错误打挂 → **写进反思的 P0 行动项，在扫描器自己死掉时等于没写**。10-01 反思已提「给反思行动项加不依赖 cron 健康的播报通道（no_agent 纯脚本）」，仍未落地。
+
+### 🔁 复发 #2（2026-10-14 08:41–08:45 CST，本机实测复现）
+
+> 追加者：`vault-suggestion-executor`（闲鱼提醒 cron，job `c9eb24e4819e`）2026-10-14 09:00。
+> 依据 10-13 反思的 P0 行动项「`.learnings/ERRORS.md` 追加复发记录」。
+
+**症状**：`logs/agent.log` 10-13 10:30 起 27 行 pydantic 报错（13 条 cron 失败 + 14 条
+`gateway.run: Supervised task hosted_room_worker died`）；10-14 08:44 再刷 6 条 worker 死亡。
+`cron/executions.db` 口径：10-13 全天 63 次执行 / **16 failed**，其中 13 项同一句错误。
+
+**本轮新增的决定性证据（本次首次做到可复现）**：
+
+| 探针 | 结果 |
+|:-----|:-----|
+| `tools/python-3.14.7/python.exe` + `PYTHONPATH=hermes-agent/venv/Lib/site-packages` | ❌ `No module named 'pydantic_core._pydantic_core'`（**精确复现**） |
+| `tools/python-3.14.7/python.exe`（launcher 原样：`VIRTUAL_ENV=tools` + `PYTHONPATH=hermes-agent`） | ❌ `No module named 'pydantic_core'` |
+| `installs/<pm>/environments/<hash>/venv/Scripts/python.exe`（PM venv） | ✅ `pydantic_core 2.46.4` / `openai 2.24.0` |
+| `tools/python-3.14.7/python.exe` + `PYTHONPATH=hermes-agent;<PM venv>/Lib/site-packages` | ✅ 同上 |
+| `hermes-agent/venv/Scripts/python.exe`（cp311 venv） | ✅ `_pydantic_core.cp311-win_amd64.pyd` |
+
+**ABI 事实（磁盘实测，三个 `.pyd` 并存）**：
+
+| 位置 | 二进制 | 在 3.14 解释器下 |
+|:-----|:-------|:-----------------|
+| `hermes-agent/venv/Lib/site-packages/pydantic_core/` | `_pydantic_core.cp311-win_amd64.pyd` | ❌ 不可加载 |
+| `installs/<pm>/.../venv/Lib/site-packages/pydantic_core/` | `_pydantic_core.cp314-win_amd64.pyd` | ✅ |
+| `cache/uv/archive-v0/.../pydantic_core/` | `_pydantic_core.cp314-win_amd64.pyd` | ✅ |
+
+**根因（已闭合）**：`hermes-agent/venv` 是 **cp311 venv**（`pyvenv.cfg version_info=3.11`，
+`venv/Scripts/python.exe` = Python 3.11.15）；但磁盘上 `gateway-service/Hermes_Gateway.cmd` /
+`.vbs` 是 **9/26 生成的陈旧版本**，其内容与当前 hermes 代码重新生成的结果**逐字节相同**——
+即两条都指向 `tools/python-3.14.7` 解释器 + `PYTHONPATH=hermes-agent`。
+`hermes-agent/venv/Lib/site-packages` 里的 **cp311** `_pydantic_core` 一旦被 3.14 解释器加载
+即报「子模块不存在」。10-12 的 `hermes_bootstrap` 把 PM 的 cp314 环境**置前**只是
+**进程内**生效——**gateway 一重启即回落**，这正是 10-13 原样复发的原因。
+
+**重启即复发的时间线（`logs/gateway-exit-diag.log` 的 `"python"` 字段）**：
+
+| gateway 启动 | pid | `"python"` | 结果 |
+|:---|:---|:---|:---|
+| 10-12 16:19 | — | 3.14.7 | 进程内被 bootstrap 救回 → 误判 resolved |
+| 10-13 02:28 UTC（10:28 CST） | 30608 | **3.14.7** | ❌ 10:30 起 13 cron 失败 + 6 worker 死亡 |
+| 10-14 00:42 UTC（08:42 CST） | 36592 | **3.14.7** | ❌ 08:44–08:45 再 6 次 worker 死亡 |
+
+**修复路径（三条实测 PASS，按侵入性排序）**：
+
+1. **最小改动**：给 launcher 的 `PYTHONPATH` 追加 PM venv 的 `Lib\site-packages`
+   （实测 PASS）。但 `_resolve_detached_python()` 的 `extra_pythonpath` 现在恒为 `[]`，
+   说明上游已刻意放弃「PYTHONPATH 叠加」这条设计——改回去等于逆着上游走。
+2. **上游本意**：让 `get_python_path()` 返回 **PM venv 的 `python.exe`** 而非 store python。
+   实测 PM venv python 单跑即 PASS，无需任何 PYTHONPATH 叠加。
+3. **最省事**：`gateway install` 重新生成 launcher（当前 launcher 是 9/26 的陈旧产物）。
+
+**判定口径（沿用 10-13 反思确立的三条）**：① 「resolved」必须含**一次 gateway 重启后的复验**，
+否则只标 `mitigated`；② 证据不得用同进程自证指标，须用跨进程指标；③ 涉及解释器/依赖路径的修复，
+必须核对 `gateway-exit-diag.log` 的 `"python"` 字段。
+
+**当前状态**：`mitigated`（进程内可用）。**10-14 08:42 重启后，`daily-self-improvement`
+（09:04）与 `hackernews-daily`（08:49）已成功 → 本进程内正常**；但解释器仍为 3.14.7，
+**下次 gateway 重启仍会复发**，故不得再标 resolved。
+
+**副作用（已定位，非本错误但同窗口）**：`hosted_room_worker` 连续 5 次死亡后
+`giving up restarts` → 群聊 worker 全程离线（10-13 10:31、10-14 08:45 两次），
+即 profile.yaml 里 researcher/coder/reviewer 的群聊房间不可用。
+
+**修复归属**：🔒 **需 sora**（改 `get_python_path()` / 重跑 `gateway install` 属安装层动作，
+且 gateway 重启会中断当前会话）。k 侧已把可复现证据与三条候选路径备齐，sora 一句话即可落地。
+
+---
 
 ### See Also
 - 影响同根因任务：`daily-health-check` / `daily-todo-executor` / `项目追踪` / `每日仓库+知识库优化` / `weekly-cost-report` / `组会报告` / `文献周报` / `闲鱼提醒` / `biweekly-skill-audit` / `monthly-skill-usage` / `weekly-learning-progress` / `weekly-suggestion-implementation` / `AI测评周报` / `shai-hulud-weekly-scan`

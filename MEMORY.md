@@ -268,7 +268,7 @@ v2026.3.7 引入的可插拔上下文管理界面已验证稳定。模型路由�
 
 ### Q4 2026 最新发展
 - **OpenClaw 2026.9.7 发布** (10月): 更快负载响应、增强更新回滚保护、OpenAI Agents API 公测、Sign in with ChatGPT (Beta)、Sora 视频生成退役（建议替换为 Kie AI/Z.AI/Novita/Qwen/Wan）
-- **OpenClaw 2026.9.8 发布**: 优化了 Codex Remote Sessions 目录处理，避免为每个空闲 Codex 代理启动单独的会话-catalog 进程，而是在需要时启动并重用捕获的设置以减少大规模原生 Codex 会话集合中的重复内存使用
+- **OpenClaw 2026.9.8 发布** (10月8日): 优化了 Codex Remote Sessions 目录处理，避免为每个空闲 Codex 代理启动单独的会话-catalog 进程，而是在需要时启动并重用捕获的设置以减少大规模原生 Codex 会话集合中的重复内存使用
 - **OpenClaw 最佳实践 2026**: Gateway 私有化部署、扩展代码即运行代码、最小权限凭证轮换、刻意修改默认值并记录原因
 - **Skills Directory 爆发式增长**: 5,798+ 社区构建技能（1,800+ AI Agent 专用），安装/发现已成核心工作流入口
 - **AI Agent 运营成熟** (IBM/Deloitte 2026): 从「构建 Agent」转向「安全规模化运营」，确立风险分级运营模型（例行检索→Agent主导、低风险动作→Agent带控制、中风险决策→Agent建议+人工批准、高影响决策→人工主导+Agent支持）
@@ -281,6 +281,7 @@ v2026.3.7 引入的可插拔上下文管理界面已验证稳定。模型路由�
 - **安全架构加强** (v2026.9.x): Cross-Component Trust（远程节点事件默认 untrusted + 输出 sanitization）、WebSocket 会话即时失效（token/密码轮换时立即失效）、技能 realpath() 验证、Shell 沙箱收紧（busybox/toybox 移除）、审批命令 fail-closed（无法绑定到单一文件操作数时拒绝执行）
 - **OpenAI Agents API 公测细节**: 托管 Agent 循环、Data Agent、GPT-Live-1 全双工语音、免费托管沙箱，仅计费模型 token + 工具使用
 - **Sora 退役影响**: video generation skills 需评估替代方案（Kie AI / Z.AI / Novita / Qwen / Wan）
+- **pydantic_core ABI 问题**（10月12日首修，**10-13/10-14 两度复发**）: 根因 = 运行解释器（tools/python-3.14.7）与 hermes-agent/venv（**3.11**）site-packages **ABI 混用**。⚠️ 10-12 判「已解决」**是误判**——hermes_bootstrap 置前 cp314 只是**进程内**生效，gateway 一重启即回落（`gateway-exit-diag.log` 三次 `"python": "3.14.7"` 为证）。当前状态 `mitigated`（10-14 08:42 重启后本进程正常），**根治需 sora 选修复路径**，详见 `.learnings/ERRORS.md [ERR-20261012-001]` 复发 #2
 
 ## 本周亮点 (W30, 07/20~07/26)
 
@@ -328,7 +329,7 @@ v2026.3.7 引入的可插拔上下文管理界面已验证稳定。模型路由�
 - [x] ~~AI 变现调研~~ ✅ 2026-07-24
 - [x] ~~LRN-20260722-001 (Plan-and-Execute)~~ ✅ 2026-07-25
 - [x] ~~AI 变现落地（闲鱼AI代做PPT/论文润色）— 可发车~~ ✅ 素材已预生成，8/1 解封日已过，上架排期 8/2
-- [x] ~~闲鱼上架「AI 代做 PPT」~~ ✅ 2026-09-20 去重：决策状态由 projects/current.md 跟踪（🟡 每周一复盘提醒，决策悬置第 62 天，下次复盘 10/19（周一），state.yaml 权威；10-12 daily-todo-executor 已同步镜像）；MEMORY.md 不再重复跟踪
+- [x] ~~闲鱼上架「AI 代做 PPT」~~ ✅ 2026-09-20 去重：决策状态由 projects/current.md 跟踪（🟡 每周一复盘提醒，决策悬置第 64 天，下次复盘 10/19（周一），state.yaml 权威；10-12 daily-todo-executor 已同步镜像）；MEMORY.md 不再重复跟踪
 - [x] ~~语义缓存最小版落地（根治 Tavily 配额 + 预防 Gartner 5x）~~ ✅ 2026-08-21：统一 chokepoint 覆盖全 8 后端（commit 84d813bf2），根治连续 8 工作日配额复发
 - [x] ~~合并冗余 skills（hermes-search-configuration → hermes-search-config）~~ ✅ 2026-07-31 已核实：hermes-search-configuration 已不存在，仅剩 hermes-search-config，无需合并
 - [x] ~~随身WiFi下单确认（赫电 Pro 399元/年，选型已确认）~~ ✅ 2026-09-20 评估：8 月遗留、后续未再激活（决策状态未知）；如仍需下单由 sora 重提
