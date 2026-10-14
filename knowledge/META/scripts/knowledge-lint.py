@@ -42,6 +42,26 @@ PLACEHOLDER_LINKS = {"name", "their-name", "wiki link", ":space:", "TODO", "link
 WIKILINK_RE = re.compile(r"\[\[([^\]|#]+)(?:#[^\]|]*)?(?:\|[^\]]*)?\]\]")
 
 
+def is_workspace_root_doc(target: str, root: Path) -> bool:
+    """target 是否指向 workspace 根级文档（knowledge/ 之外，Obsidian 中合法）。
+
+    2026-10-14 实测：`knowledge-map.md` 里 `[[PRIVACY]]` 指向 workspace 根的
+    `PRIVACY.md`（对外隔离声明，真实存在），但 EXTERNAL_ROOTS 白名单只列了
+    目录级条目（HOME/SOUL/TOOLS/...）→ 报断链假阳性。
+
+    为什么不直接把 PRIVACY/README/INDEX 等塞进 EXTERNAL_ROOTS：
+    EXTERNAL_ROOTS 是**前置跳过**，一旦库内也有同名文件（如各项目子目录的
+    README.md、self-study/INDEX.md），前置跳过会让库内链接失去入链记录 →
+    把正常页面误报成孤立页（踩过的坑 #3：库内子目录不能进白名单）。
+    故改为**解析失败后的兜底**：库内能解析的优先走库内，解析不到再看
+    workspace 根级文档，两边都不误伤。
+    """
+    if "/" in target or target.startswith("."):
+        return False
+    stem = strip_md(Path(target).name)
+    return (root.resolve().parent / (stem + ".md")).exists()
+
+
 def collect_md_files(root: Path):
     files = []
     for p in root.resolve().rglob("*.md"):
@@ -186,6 +206,9 @@ def main():
                         matched = True
                         break
                 if not matched:
+                    # 兜底：workspace 根级文档（HOME/SOUL/PRIVACY/README/INDEX 等）真实存在，非断链
+                    if is_workspace_root_doc(target, root):
+                        continue
                     broken.append((f, target))
 
         # frontmatter

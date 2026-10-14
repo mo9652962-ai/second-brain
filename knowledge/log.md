@@ -376,3 +376,13 @@ tags: [meta, vault-maintenance]
 - **根级漂移归位**：`memory/2026-10-10.md`（daily-summary 22:00 产出，733B）→ `memory/2026/10/2026-10-10-summary.md`（与 10/ 内 3.4KB 工作总结不同，按 summary 后缀区分）
 - **隔离回流复查**：`git ls-files memory/ private_knowledge/ private_vault/` 仅 `memory/MOC-Memory.md`；origin/main 无 memory/ 泄露；origin/gh-pages 无 memory/ 与 private_ 条目 —— 09-23 隔离基线完好
 - **报告**：`memory/2026/10/weekly-2026-10-11.md`（Air-Gapped，不进公开库）
+
+## [2026-10-14] lint | 例行体检 + 检测器修复
+
+- **全库体检**：686 页 — 断链 0 / 缺 frontmatter 0 / 粘连闭合 0 / YAML 非法 0 / 孤立 0 / 短页 0 / 空文件 0；唯一遗留为 `readme` 同名 2 处（两个不同项目子目录的 README，低风险不复修）
+- **检测器修复（先修检测器再动数据）**：`knowledge-map.md` 的 `[[PRIVACY]]` 被判断链属**假阳性**——目标是 workspace 根级 `PRIVACY.md`（真实存在），但 `EXTERNAL_ROOTS` 只收目录级条目。**未**把 PRIVACY/README/INDEX 塞进白名单（那会让库内同名 README 失去入链记录 → 误报孤立，踩坑 #3），改为解析失败后的**兜底**：库内能解析优先走库内，解析不到再看 workspace 根级文档。**双向验证**：① 单元级 7 例（PRIVACY/HOME/README/INDEX=True，幽灵页/带路径/`../`=False）全过；② 端到端临时 vault 注入真断链仍被检出 → 检测力未退化；③ 相对 root / 绝对 root / 异地 cwd 三种调用孤立数一致（0）
+- **标签一致性**：`tag-lint.py` 补**近重复检测**（lower+去 `-_ ` 后同名），补齐「大小写变体组」抓不到的连字符变体；同时落地坑 #9 的正确判据（纯冗余 = 裸标签与同名 namespaced 同现于同一列表）。首扫出 1 组真近重复：`ClaudeCode`(karpathy-coding-guidelines) vs `Claude-Code`(×2) → 归一为 `Claude-Code`；复扫 近重复 0 / 纯冗余 0 / 大小写变体 0（903 FM 标签）
+- **备份隐私门禁红灯清零**：`check-backup-privacy.py` 长期红门（09-20 遗留包命中 `guat.edu.cn` ×2 处，均为**脱敏前快照**，当前 tracked 文件已 0 命中）。处置：包移入 `private_knowledge/_backups/`（gitignored 本地隔离层），**不删**——包内 20 个未跟踪文件中 16 个在 private_knowledge 有对应副本、4 个已转为 .webp 在盘，保留快照无损。门禁复跑 ✅（1 包 0 泄露）；`check-repo-privacy.py` ✅（931 tracked 文件 0 命中）
+- **备份**：`.backup/knowledge-lint-20261014/knowledge-backup.tar.gz`（17.4MB / 754 文件），用 `git ls-files -z | tar --null -T -` 驱动（含 CJK 文件名，避免裸 `tar -czf knowledge/` 把私有文档打进去）；隐私自检通过
+- **口径复核**：`scripts/check_wikilinks.py` ✅ All wikilinks OK / `scripts/vault-structure.py` 断裂 0 · 孤立 0 · 空文件 0 / frontmatter 问题 0（与 knowledge-lint 三口径一致）
+- **并发规避**：本轮跑时另有 5 个 cron 在 running（hackernews-daily / 闲鱼提醒 / wechat-knowledge-card / daily-self-improvement / arxiv-fetch），故对并发中的产物只读不写；`log.md` 用 append 写入
