@@ -3006,7 +3006,7 @@
 <li><strong>ID:</strong> <a href="https://arxiv.org/abs/2609.35889v1">2609.35889v1</a> | <a href="https://arxiv.org/pdf/2609.35889">📄 PDF</a></li>
 <li><strong>作者:</strong> Xiaoyu Xu, Zi Liang, Minxin Du, Qipeng Xie, Qingqing Ye, Yuyuan Li, Haibo Hu</li>
 <li><strong>分类:</strong> cs.CR, cs.AI</li>
-<li><strong>摘要:</strong> 工具使用语言模型 agent 会<strong>选择并执行第三方工件</strong>。不同实现可以<strong>返回所要求的输出</strong>，却产生任务式、攻击式或选择式评测都漏掉的<strong>隐藏执行效果</strong>。本文研究 <strong>functional counterfeits</strong>：在要求的输出上与良性替代品一致、却额外产生任务契约所禁止效果的实现。作者提出 <strong>SINGED</strong> 基准（5 个主任务族 + 2 个留出族），变化显示排名、证据深度、决策策略、模型版本与 agent 配置，同时用任务与过程 oracle 验证工件<strong>与执行路径</strong>。在 7,549 次审计试验中：随机排名研究在 rank-one 试验里 <strong>45%（27/60）</strong>出现 counterfeit 执行，而在更后排名中一次也没有；跨候选比较能消除浅层失败并把分层失败从 <strong>15.7% 降到 4.2%</strong>，但留下依赖失败，且对未见效果与公开包结构的收益不确定；更有 7 个版本在「存在良性替代品」时零 counterfeit 执行，一旦<strong>移除替代品</strong>，在 <strong>55/175</strong> 个单源单元中执行了 counterfeit。SINGED 因此暴露一个<strong>排名/证据/选择敏感的结果-执行鸿沟</strong>：评测必须把正确输出<strong>连到执行路径</strong>上。</li>
+<li><strong>摘要:</strong> 工具使用语言模型 agent 会<strong>选择并执行第三方工件</strong>。不同实现可以<strong>返回所要求的输出</strong>，却产生任务式、攻击式或选择式评测都漏掉的<strong>隐藏执行效果</strong>。本文研究 <strong>functional counterfeits</strong>：在要求的输出上与良性替代品一致、却额外产生任务契约所禁止效果的实现。作者提出 <strong>SINGED</strong> 基准（5 个主任务族 + 2 个留出族），变化显示排名、证据深度、决策策略、模型版本与 agent 配置，同时用任务与过程 oracle 验证工件<strong>与执行路径</strong>。在 7,549 次审计试验中：随机排名研究在 rank-one 试验里 <strong>45%（27/60）<strong>出现 counterfeit 执行，而在更后排名中一次也没有；跨候选比较能消除浅层失败并把分层失败从 <strong>15.7% 降到 4.2%</strong>，但留下依赖失败，且对未见效果与公开包结构的收益不确定；更有 7 个版本在「存在良性替代品」时零 counterfeit 执行，一旦</strong>移除替代品</strong>，在 <strong>55/175</strong> 个单源单元中执行了 counterfeit。SINGED 因此暴露一个<strong>排名/证据/选择敏感的结果-执行鸿沟</strong>：评测必须把正确输出<strong>连到执行路径</strong>上。</li>
 <li><strong>关联度:</strong> ★★★★★ 与 10-02 速览的「终态通过 ≠ 安全」同调，但换了切口：<strong>输出对不等于执行对</strong>。k 的验收若只看「文件生成成功」，就完全看不见「顺手多做了别的」。可落地：① 验收记录加<strong>执行路径</strong>（改了哪些文件、发了哪些请求、调用了哪些工具）；② 有良性替代方案时优先选替代方案，别只看输出一致性。</li>
 </ul>
 <h3 id="19-cheap-to-hypothesize-costly-to-verify-the-defense-surface-of-agentic-vulnerability-discovery">19. Cheap to Hypothesize, Costly to Verify: The Defense Surface of Agentic Vulnerability Discovery<a class="headerlink" href="#19-cheap-to-hypothesize-costly-to-verify-the-defense-surface-of-agentic-vulnerability-discovery" title="Permanent link">&para;</a></h3>
@@ -3209,7 +3209,7 @@
 <td>11</td>
 <td><a href="https://arxiv.org/abs/2609.39321v1">2609.39321</a></td>
 <td>GRPO Training Dynamics for Small Language Models</td>
-<td>GRPO 已成为记忆高效的强化微调技术，但其在<strong>小语言模型（SLM）</strong>上的训练动力学仍理解不足，限制了在开放、资源受限环境中的可靠采用与复现。本文在单节点 8×A100 预算下系统研究 1.5B–7B 模型的 GRPO 微调，跨多个模型族与推理领域（数学、编码、科学多选题），分析组大小等超参对训练动力学的影响。→ 本地微调小模型时，这篇提供的是「省算力的实证参数区间」而非新方法</td>
+<td>GRPO 已成为记忆高效的强化微调技术，但其在**小语言模型（SLM）**上的训练动力学仍理解不足，限制了在开放、资源受限环境中的可靠采用与复现。本文在单节点 8×A100 预算下系统研究 1.5B–7B 模型的 GRPO 微调，跨多个模型族与推理领域（数学、编码、科学多选题），分析组大小等超参对训练动力学的影响。→ 本地微调小模型时，这篇提供的是「省算力的实证参数区间」而非新方法</td>
 </tr>
 <tr>
 <td>12</td>
@@ -3293,7 +3293,7 @@
 <li>🟢 <strong>待深读</strong>：2609.39607（Pretext）、2610.01349（PACE）、2609.38983（Approval Laundering）、2609.36043（SAGE）、2609.39284（EngramBench）→ core-contributions 候选</li>
 </ul>
 <hr />
-<p><em>本速览为 </em><em>09-30 ~ 10-02 窗口第二轮补全</em><em>：10-04 复核 list 页日期分组仍停在 Fri, 2 Oct 2026（索引未前进），而该窗口 3,129 篇仅被覆盖 38 篇（1.25%）→ 按补全性质处理。流程：复用 3,129 篇池 → 排除 covered 得 3,090 未覆盖 → 标题粗筛 505 候选（score≥2）→ 人工剔除领域应用误报 → 补抓 abs 页 69 篇 → 精选 33 主条目 + 12 简评。元数据以 arxiv.org abs 页为准；本份未做跨源 web 验证（HTML 收录即存在性证据）。</em></p>
+<p><em>本速览为 <strong>09-30 ~ 10-02 窗口第二轮补全</strong>：10-04 复核 list 页日期分组仍停在 Fri, 2 Oct 2026（索引未前进），而该窗口 3,129 篇仅被覆盖 38 篇（1.25%）→ 按补全性质处理。流程：复用 3,129 篇池 → 排除 covered 得 3,090 未覆盖 → 标题粗筛 505 候选（score≥2）→ 人工剔除领域应用误报 → 补抓 abs 页 69 篇 → 精选 33 主条目 + 12 简评。元数据以 arxiv.org abs 页为准；本份未做跨源 web 验证（HTML 收录即存在性证据）。</em></p>
 <hr />
 <blockquote>
 <p>🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]</p>

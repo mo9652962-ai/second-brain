@@ -2915,12 +2915,12 @@
 </ul>
 <h2 id="_3">为什么重要<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>补上「技能生命周期」的执行侧</strong>：10-02 讲「装的时候危险」（技能即供应链）→ 10-04 讲「批准的动作 ≠ 执行的动作」→ 10-10 讲「共存的时候危险」（技能抢跑）→ 今天讲<strong>「执行的时候危险」</strong>（调用被路径/转义链路改动）。四张合起来，从安装到执行才真正闭环。</li>
+<li><strong>补上「技能生命周期」的执行侧</strong>：10-02 讲「装的时候危险」（技能即供应链）→ 10-04 讲「批准的动作 ≠ 执行的动作」→ 10-10 讲「共存的时候危险」（技能抢跑）→ 今天讲**「执行的时候危险」**（调用被路径/转义链路改动）。四张合起来，从安装到执行才真正闭环。</li>
 <li><strong>直接命中 k 的日常</strong>：k 每天几十次 shell 调用，37% 含转义、31.6% 用 MSYS 路径——本文给出的不是理论风险，是<strong>本机正在发生的失效面</strong>，且已有一次历史实例（垃圾文件名事件）。</li>
 <li><strong>内容选题</strong>：「你的 AI 每天跑几百条命令，其中八分之一被悄悄改掉，八成还不报错」——有出处、有反直觉数字（Linux 零改动 vs Windows 12%）、有本地实测，工程向选题，可讲可落地。</li>
 </ul>
 <hr />
-<p><em>卡片来源：当天知识库精选 · [[knowledge/Research/arxiv-2026-10-10-core-contributions|arXiv 核心贡献 10-11（10-10 窗口深挖 3 篇）]]（🥇 入选理由：当日 13:49 落盘的核心贡献总结中，🥈 篇的</em><em>实测环境正是 k 每天跑的 Windows + git-bash</em><em>，与 k 自身 52,704 次 terminal 调用的实测画像直接互证，可行动性最高（三条排障规则立即可用 + 一条历史实例可闭环）；关键摘要数字由 k 于 10-11 curl 直连 arXiv abs 页逐句核对，本地调用统计为本次 cron 当场跑 state.db 得出。亚军：同日 [[knowledge/Research/GitHub-Weekly-2026-10-11|GitHub 宝藏挖掘 W41]] 的 codebase-memory-mcp（46.3k★，把代码库索引成持久知识图谱、token 省 99%）——工程价值高但属工具发现，行动项弱于本篇）</em></p>
+<p><em>卡片来源：当天知识库精选 · [[knowledge/Research/arxiv-2026-10-10-core-contributions|arXiv 核心贡献 10-11（10-10 窗口深挖 3 篇）]]（🥇 入选理由：当日 13:49 落盘的核心贡献总结中，🥈 篇的<strong>实测环境正是 k 每天跑的 Windows + git-bash</strong>，与 k 自身 52,704 次 terminal 调用的实测画像直接互证，可行动性最高（三条排障规则立即可用 + 一条历史实例可闭环）；关键摘要数字由 k 于 10-11 curl 直连 arXiv abs 页逐句核对，本地调用统计为本次 cron 当场跑 state.db 得出。亚军：同日 [[knowledge/Research/GitHub-Weekly-2026-10-11|GitHub 宝藏挖掘 W41]] 的 codebase-memory-mcp（46.3k★，把代码库索引成持久知识图谱、token 省 99%）——工程价值高但属工具发现，行动项弱于本篇）</em></p>
 
 
 

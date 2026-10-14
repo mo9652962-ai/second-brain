@@ -2866,7 +2866,7 @@
 <tbody>
 <tr>
 <td>① 假设被证伪</td>
-<td><strong>Approval Laundering</strong>（<a href="https://arxiv.org/abs/2609.38983">2609.38983</a>，Yang Wang，09-30 提交）：六种失败模式——<strong>Scope（范围）/ Argument（参数）/ Temporal（时序）/ Tool（工具）/ Delegation（委派）/ Semantic（语义）</strong>洗白，描述 harness 如何在批准后<strong>静默把 A 替换成 A'</strong>。作者直接 instrument <strong>Claude Code 的 PreToolUse</strong> 中介点做受控重复测量（每类 N=19–20 次，评分者一致性 kappa=1.0）</td>
+<td><strong>Approval Laundering</strong>（<a href="https://arxiv.org/abs/2609.38983">2609.38983</a>，Yang Wang，09-30 提交）：六种失败模式——<strong>Scope（范围）/ Argument（参数）/ Temporal（时序）/ Tool（工具）/ Delegation（委派）/ Semantic（语义）<strong>洗白，描述 harness 如何在批准后</strong>静默把 A 替换成 A'</strong>。作者直接 instrument <strong>Claude Code 的 PreToolUse</strong> 中介点做受控重复测量（每类 N=19–20 次，评分者一致性 kappa=1.0）</td>
 </tr>
 <tr>
 <td>② 防御的诚实边界</td>
@@ -2884,7 +2884,7 @@
 </table>
 <h2 id="sora">关键数据 / 对 sora 的影响<a class="headerlink" href="#sora" title="Permanent link">&para;</a></h2>
 <ol>
-<li>⚠️ <strong>「sora 说可以，k 照办」≠「k 执行的就是 sora 批准的那件事」</strong>：六类洗白里最隐蔽的是 <strong>Argument 与 Semantic</strong>——批准「更新笔记」却顺手改了配置。可落地：审批记录写成<strong>「对象 + 参数 + 范围 + 有效期」四元组</strong>，执行前<strong>回读比对</strong>，不一致就停下重新确认</li>
+<li>⚠️ <strong>「sora 说可以，k 照办」≠「k 执行的就是 sora 批准的那件事」</strong>：六类洗白里最隐蔽的是 <strong>Argument 与 Semantic</strong>——批准「更新笔记」却顺手改了配置。可落地：审批记录写成**「对象 + 参数 + 范围 + 有效期」四元组**，执行前<strong>回读比对</strong>，不一致就停下重新确认</li>
 <li>⚠️ <strong>只在工具调用那一刻做字段校验，天生抓不到两类洗白</strong>：论文的 negative result 很硬——Approval Token 对 Scope/Argument 无效（p=1），因为它们不改任何被记录的 dispatch 字段。教训：门禁不能只看「调用了什么」，还要看「这一步被用户请求的哪部分证成」</li>
 <li>💡 <strong>「谁做决定」和「谁审这个决定」必须分开</strong>：ActionGuard 的杀手锏是 Reviewer <strong>不看原始技能文本</strong>（否则被投毒的文本会同时污染生成侧与审查侧）。可直接抄进 k 的工程结构——高风险工具（写文件 / 发网络请求 / git push）前挂一个独立 Reviewer</li>
 <li>✅ <strong>「我觉得它安全」可以换成「逐项撤权它还能过」</strong>：Aletheia 给了一条干净、可生成审计证据的判据——比静态读规则文本可靠得多，3.75% 误报率说明可实用</li>

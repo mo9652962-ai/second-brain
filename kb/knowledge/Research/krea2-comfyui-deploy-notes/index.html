@@ -2857,8 +2857,8 @@
 <blockquote>
 <p>⚠️ <strong>2026-08-03 重大修复</strong>：08-02 笔记的 ProcessOut 结论已过时！
 ComfyUI 0.29 的 Krea2 类绑定 <code>Wan21 latent_format</code>，KSampler 输出时<strong>自动</strong>
-process_out (x<em>std+mean)。旧版笔记要求手动 ProcessOut = </em><em>双重缩放</em><em> →
-latent 值爆炸 (±10) → 解码 clamp → </em><em>全白图</em>*。
+process_out (x*std+mean)。旧版笔记要求手动 ProcessOut = <strong>双重缩放</strong> →
+latent 值爆炸 (±10) → 解码 clamp → <strong>全白图</strong>。
 实测 debug：KSampler 输出 std≈1.8 已可直接解码，ProcessOut 后 std≈3.9 爆炸。</p>
 </blockquote>
 <table>

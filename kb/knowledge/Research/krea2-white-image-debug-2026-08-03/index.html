@@ -2936,7 +2936,7 @@
 </code></pre></div>
 
 <p><strong>KSampler 输出时已自动调用 process_out</strong>（x*std+mean），latent 已在解码空间。</p>
-<p>而旧部署笔记（2026-08-02）要求采样后再手动接 <code>Krea2LatentProcessOut</code>（也做 x<em>std+mean）→ </em><em>双重缩放</em>*：
+<p>而旧部署笔记（2026-08-02）要求采样后再手动接 <code>Krea2LatentProcessOut</code>（也做 x*std+mean）→ <strong>双重缩放</strong>：
 - KSampler 输出：min=-3.8, max=3.5, std=1.8 ✅ 正常
 - ProcessOut 后：min=-11, max=9.5, std=3.9 ❌ 爆炸
 - VAE decode clamp(-1,1) → 全白</p>

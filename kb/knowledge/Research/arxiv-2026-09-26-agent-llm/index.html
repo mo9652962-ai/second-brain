@@ -2924,7 +2924,7 @@
 <li><strong>作者:</strong> Arian Abbasi, Alan Aqrawi, Ted Kwartler</li>
 <li><strong>分类:</strong> cs.AI, cs.CR</li>
 <li><strong>摘要:</strong> 承载编码 agent 的 <strong>harness</strong> 正在企业中从数百席位扩到数万席位，而多数企业不自建、直接买大厂产品（Claude Code / Codex）。<strong>harness 决定哪个模型回答、模型读什么、prompt cache 怎么用、哪些 subagent 运行</strong>——因此它既挑价目表上的费率，也定购买量。沿用未调优 harness 默认值的企业等于继承这些选择与账单。作者构建一个快速可定制路由器：用 <strong>Jev</strong>（带校准概率的分类器）按企业自带分类法给每个 prompt 打标。关键约束：一个用户回合在属于同一模型的 prompt cache 上是<strong>许多次请求</strong>，所以路由器只在<strong>无需重建缓存的位置</strong>迁移工作——会话开始、侧车道、subagent 启动。由价目表推导「任务中途切换何时回本」并给出<strong>交叉点</strong>：在长且工具密集的会话上，最贵模型反而比次一档更便宜（用公开数据集重定价约 10,000 个真实会话确认）。在 10,000 席位的模拟企业中，路由器在 2026-09-21 Anthropic 挂牌价下<strong>回收 14–21% 的模型支出（每年 330 万–500 万美元）</strong>；另梳理 20 个 harness 的风险、给单一供应商依赖定价，并提出企业可自持的控制面。</li>
-<li><strong>关联度:</strong> ★★★★ k 的模型成本正在上升（多路 fallback + 多 agent 协作），本文给出<strong>「缓存友好的路由」</strong>这一被忽略的约束：随意切换模型会毁掉 prompt cache，省下的单价可能亏在重建上。可落地：给 Hermes 的 fallback 链加「会话内不轻易切模型」规则，只在会话起点/子任务边界切换；与既有 <code>low-cost-model-guide</code>、<code>model-supplier-strategy</code> 合并成「单价 × 缓存命中 × 会话结构」的成本模型。另注意其「最贵模型在长会话上更便宜」的反直觉结论。</li>
+<li><strong>关联度:</strong> ★★★★ k 的模型成本正在上升（多路 fallback + 多 agent 协作），本文给出**「缓存友好的路由」**这一被忽略的约束：随意切换模型会毁掉 prompt cache，省下的单价可能亏在重建上。可落地：给 Hermes 的 fallback 链加「会话内不轻易切模型」规则，只在会话起点/子任务边界切换；与既有 <code>low-cost-model-guide</code>、<code>model-supplier-strategy</code> 合并成「单价 × 缓存命中 × 会话结构」的成本模型。另注意其「最贵模型在长会话上更便宜」的反直觉结论。</li>
 </ul>
 <h3 id="9-parthackbench-certified-equal-progress-stress-tests-for-partial-credit-tool-agent-evaluation">9. PartHackBench: Certified Equal-Progress Stress Tests for Partial-Credit Tool-Agent Evaluation<a class="headerlink" href="#9-parthackbench-certified-equal-progress-stress-tests-for-partial-credit-tool-agent-evaluation" title="Permanent link">&para;</a></h3>
 <ul>
@@ -2965,7 +2965,7 @@
 <li><strong>ID:</strong> <a href="https://arxiv.org/abs/2609.29051v1">2609.29051v1</a> | <a href="https://arxiv.org/pdf/2609.29051">📄 PDF</a></li>
 <li><strong>作者:</strong> Xingyu Su, Abhishek Kumar, Qing Ping, Youzhi Luo, Jonathan Buck, Zach Zhang, Subramanian Chidambaram, Vinayak Arannil</li>
 <li><strong>分类:</strong> cs.AI</li>
-<li><strong>摘要:</strong> On-policy self-distillation（OPSD）已成为 LLM agent 后训练的热门配方：用同一模型在<strong>特权信息（PI）</strong>条件下的更强教师视角，对 agent 模型做 token 级监督。本文证明：在<strong>多轮 agent</strong> 中，这一范式教会学生「<strong>自信地</strong>行动但<strong>没有</strong>支撑它的信息」——训练后的 agent 表现得像拥有它从未观察到的特权信息，性能远低于纯 RL，<strong>最坏情况下甚至低于未训练的基座模型</strong>。因此提出 <strong>Privileged Self-Practice（PSP）</strong>：保留 PI，但把它<strong>从 loss 移到 sampler</strong>。当学生在一项任务上的 rollout 大多失败时，注入一段由 analyzer 模型写的短任务指令，带着该指令重新采样，再用<strong>不变的 GRPO 目标</strong>训练结果——特权信息留在 prompt 里，<strong>永不进入 loss</strong>。在 AppWorld 与 SWE-bench Verified、三个不同学生模型上，PSP 在每个设置都取得最佳平均分，且是<strong>唯一稳定优于纯 GRPO</strong> 的方法：AppWorld 任务目标完成率最高提升 <strong>65%</strong>，SWE-bench Verified 解决率最高提升 <strong>61%</strong>。</li>
+<li><strong>摘要:</strong> On-policy self-distillation（OPSD）已成为 LLM agent 后训练的热门配方：用同一模型在<strong>特权信息（PI）<strong>条件下的更强教师视角，对 agent 模型做 token 级监督。本文证明：在</strong>多轮 agent</strong> 中，这一范式教会学生「<strong>自信地</strong>行动但<strong>没有</strong>支撑它的信息」——训练后的 agent 表现得像拥有它从未观察到的特权信息，性能远低于纯 RL，<strong>最坏情况下甚至低于未训练的基座模型</strong>。因此提出 <strong>Privileged Self-Practice（PSP）</strong>：保留 PI，但把它<strong>从 loss 移到 sampler</strong>。当学生在一项任务上的 rollout 大多失败时，注入一段由 analyzer 模型写的短任务指令，带着该指令重新采样，再用<strong>不变的 GRPO 目标</strong>训练结果——特权信息留在 prompt 里，<strong>永不进入 loss</strong>。在 AppWorld 与 SWE-bench Verified、三个不同学生模型上，PSP 在每个设置都取得最佳平均分，且是<strong>唯一稳定优于纯 GRPO</strong> 的方法：AppWorld 任务目标完成率最高提升 <strong>65%</strong>，SWE-bench Verified 解决率最高提升 <strong>61%</strong>。</li>
 <li><strong>关联度:</strong> ★★★★ 这是「<strong>提示里给提示 ≠ 学会能力</strong>」的严格实证，直接解释 k 的一个已知失败模式：把「正确答案/上下文」塞进 prompt 让 agent 照着做，会得到「看起来对但没有能力」的行为。可落地：① k 的技能沉淀要区分「prompt 内的临时提示」与「真正内化的流程」——前者不该记为技能；② 复盘时若发现某类任务<strong>只有给了提示才做对</strong>，应标为能力缺口而非已掌握。与 memory 里「不结合上下文=跑偏」那条经验互为补充。</li>
 </ul>
 <hr />
@@ -3159,7 +3159,7 @@
 <li>🟢 <strong>待深读</strong>：2609.28585（DoW 成本边界）、2609.28586（审批洗白）、2609.29921（SpecHarness）、2609.28693（skilder）→ core-contributions 候选</li>
 </ul>
 <hr />
-<p><em>本速览为 </em><em>09-25 窗口第三轮补全</em><em>：09-26 检查 list 页无新日期分组（索引冻结于 Fri, 25 Sep 2026），09-25 池子 662 篇中仅 30 篇（≈4.5%）已被覆盖 → 复用同一池子 + 已抓 abs 摘要，标题粗筛 84 候选（人工剔除领域应用误报）→ 补抓 37 篇 abs 页 → 精选 16 主条目 + 14 简评。</em><em>未新增池子收集请求</em><em>，仅补抓候选摘要。元数据以 arxiv.org abs 页为准。</em></p>
+<p><em>本速览为 <strong>09-25 窗口第三轮补全</strong>：09-26 检查 list 页无新日期分组（索引冻结于 Fri, 25 Sep 2026），09-25 池子 662 篇中仅 30 篇（≈4.5%）已被覆盖 → 复用同一池子 + 已抓 abs 摘要，标题粗筛 84 候选（人工剔除领域应用误报）→ 补抓 37 篇 abs 页 → 精选 16 主条目 + 14 简评。<strong>未新增池子收集请求</strong>，仅补抓候选摘要。元数据以 arxiv.org abs 页为准。</em></p>
 <hr />
 <blockquote>
 <p>🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]</p>
