@@ -5,7 +5,7 @@ type: moc
 domain: Research
 status: active
 created: 2026-08-09
-updated: 2026-10-14
+updated: 2026-10-16
 ---
 
 # 🔬 研究笔记 MOC — Research Map
@@ -165,6 +165,7 @@ updated: 2026-10-14
 - [[knowledge/Research/arxiv-2026-10-10-agent-llm|arXiv Agent/LLM 10-10（10-05~10-09 全新窗口）]] · [[knowledge/Daily/hackernews-2026-10-10|HN 10-10]] · [[knowledge/cards/2026-10-10-coinstalled-skill-conflict|知识卡片 10-10]]
 - [[knowledge/Research/arxiv-2026-10-10-core-contributions|arXiv 核心贡献 10-11（IEC 工具调用保真）]] · [[knowledge/cards/2026-10-11-iec-tool-call-fidelity|知识卡片 10-11]]
 - [[knowledge/Daily/hackernews-2026-10-14|HN 10-14]] · [[knowledge/cards/2026-10-14-apex-harm-delivered-not-safe|知识卡片 10-14]]
+- [[knowledge/Research/arxiv-2026-10-14-agent-llm|arXiv Agent/LLM 10-14 深挖（候选第 1 位 2610.13227）]] · [[knowledge/cards/2026-10-16-cross-session-skill-artifacts|知识卡片 10-16（跨会话技能产物 + 本机 provenance 0/52 实测）]]
 
 ## 文章研读
 

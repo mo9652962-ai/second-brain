@@ -6,7 +6,7 @@ domain: META
 aliases: [知识地图, Knowledge Map, 知识网络]
 date: 2026-07-22
 status: adopted
-updated: 2026-09-25
+updated: 2026-10-16
 ---
 
 # 🗺️ 知识地图 — Knowledge Map
@@ -40,7 +40,7 @@ updated: 2026-09-25
 | 🔁 重复审阅 | [[MOC-Duplicate-Review]] | 0 组逐字重复；相似标题按时间/用途保留 |
 
 | 📈 Finance（域） | [[MOC-Finance]] | 16 篇 |
-| 🃏 知识卡片 | [[knowledge/cards/MOC-cards|MOC-cards]] | 39 篇 |
+| 🃏 知识卡片 | [[knowledge/cards/MOC-cards|MOC-cards]] | 42 篇 |
 | 📅 每日产出 | [[knowledge/Daily/MOC-Daily|MOC-Daily]] | 42 篇 |
 | 🤖 AI 研究与生态 | [[knowledge/AI/MOC-AI|MOC-AI]] | 18 篇 |
 | 📋 标准操作流程 | [[knowledge/SOP/MOC-SOP|MOC-SOP]] | 9 篇 |

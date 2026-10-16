@@ -2,7 +2,7 @@
 title: 知识库索引
 type: 索引
 created: 2026-09-05
-updated: 2026-10-11
+updated: 2026-10-16
 tags: [meta, vault-maintenance]
 ---
 
@@ -34,7 +34,7 @@ MOC-<域>.md          ← 该域全部页面索引
 | Finance | [[MOC-Finance]] | 16 | A股、量化、自选股分析 |
 | GitHub | [[MOC-GitHub]] | 58 | GitHub 项目实证研究 |
 | Inbox | [[MOC-Inbox]] | 53 | 待接入笔记（未挂载入口） |
-| cards | [[knowledge/cards/MOC-cards\|MOC-cards]] | 39 | 每日精选知识卡片 |
+| cards | [[knowledge/cards/MOC-cards\|MOC-cards]] | 42 | 每日精选知识卡片 |
 | Daily | [[knowledge/Daily/MOC-Daily\|MOC-Daily]] | 42 | Hacker News 精选、每日回顾 |
 | AI | [[knowledge/AI/MOC-AI\|MOC-AI]] | 18 | Agent 评估、数字生命、知识库方法论 |
 | SOP | [[knowledge/SOP/MOC-SOP\|MOC-SOP]] | 9 | 可复用标准流程 |

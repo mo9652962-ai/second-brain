@@ -387,3 +387,15 @@ tags: [meta, vault-maintenance]
 - **备份**：`.backup/knowledge-lint-20261014/knowledge-backup.tar.gz`（17.4MB / 754 文件），用 `git ls-files -z | tar --null -T -` 驱动（含 CJK 文件名，避免裸 `tar -czf knowledge/` 把私有文档打进去）；隐私自检通过
 - **口径复核**：`scripts/check_wikilinks.py` ✅ All wikilinks OK / `scripts/vault-structure.py` 断裂 0 · 孤立 0 · 空文件 0 / frontmatter 问题 0（与 knowledge-lint 三口径一致）
 - **并发规避**：本轮跑时另有 5 个 cron 在 running（hackernews-daily / 闲鱼提醒 / wechat-knowledge-card / daily-self-improvement / arxiv-fetch），故对并发中的产物只读不写；`log.md` 用 append 写入
+
+## [2026-10-16] card | 知识卡片：跨会话技能持久产物（2610.13227）
+
+- **来源**：arXiv 10-14 速览「候选深挖」清单第 1 位（2610.13227，Cross-Session Attacks via Persistent Artifacts in Agent Skill Composition）——10-14 卡片用的是第 3 位 APEX-Harm，本篇为同日速览剩余首选，非重复
+- **原文核对**：curl 直连 arXiv abs 页逐句核对标题/摘要/作者/提交日期（2026-10-09，cs.CR; cs.SE，Dianshu Liao 等 5 人），未沿用速览二手转述
+- **本机实测（新增探针 `.temp/cross_session_artifact_probe_1016.py`，只读）**：工作态目录（`.temp/ .tmp/ outputs/ .learnings/ .backup/ scripts/`）持久产物 **155 个 / 40.13 MB**，时间跨度 **07-21 → 10-16（87 天）**；其中可执行脚本 **54 个**、陈旧(≥1天)数据产物 **43 个**、今日新建 **30 个**；**52 个可解析 JSON 中含 provenance 字段（session/producer/created_by/writer/run_id）者 0 个 = 覆盖率 0.0%**——即当前工作区正处于 SkillRelayGuard 所要防的「artifact 全匿名」状态
+- **跨会话沿用实证**：今早 arxiv-fetch 首步即把 10-14 会话留下的 `abs_all.json` 改名备份为 `abs_all_1014.bak.json`（12:36）；`.tmp/hn/` 内 38 天前 `wn3.json`、37 天前 `item_navier.json` 与今日 12:36 的 `fetch.py` 同目录共存
+- **产出**：`knowledge/cards/2026-10-16-cross-session-skill-artifacts.md`（6.3 KB，含 5 条行动项）
+- **入链**：MOC-cards 10 月区 + MOC-Research 增量区（双 MOC，防孤立）；顺带修正 MOC-cards 中 10-14 卡片的显示标题（原为占位「知识卡片 10-14」）
+- **索引刷新**：MOC-cards / MOC-Research / knowledge-map / index.md 的 updated → 2026-10-16；卡片计数 39 → **42**（knowledge-map + index 两处口径同步）
+- **门禁**：`check_wikilinks.py` ✅ All wikilinks OK · `vault-structure.py` 断裂 0 / 孤立 0 / 空文件 0 / frontmatter 0 · `check-repo-privacy.py` ✅ 933 tracked 文件 0 命中
+- **并发说明**：本轮跑时 arxiv-fetch / hackernews-daily / obsidian-maintenance / daily-self-improvement / 闲鱼提醒 等 cron 同时在 running（今日 12:34-12:40 catch-up 批次），故对并发中的 `.temp/` `.tmp/` 产物**只读不写**；探针脚本落 `.temp/` 自身目录（gitignored）
