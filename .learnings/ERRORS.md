@@ -499,9 +499,9 @@ RuntimeError: Failed to initialize OpenAI client: No module named 'pydantic_core
 `gateway-service/Hermes_Gateway.cmd` 与 `.vbs` 仍是**指向 3.14 store 解释器**的版本：
 
 ```
-set "VIRTUAL_ENV=C:\Users\31954\AppData\Local\hermes\tools"
-set "PYTHONPATH=C:\Users\31954\AppData\Local\hermes\hermes-agent;%PYTHONPATH%"
-C:\Users\31954\AppData\Local\hermes\tools\python-3.14.7+202****0901-win32-x64\python.exe -m hermes_cli.main gateway run
+set "VIRTUAL_ENV=C:\Users\<USER>\AppData\Local\hermes\tools"
+set "PYTHONPATH=C:\Users\<USER>\AppData\Local\hermes\hermes-agent;%PYTHONPATH%"
+C:\Users\<USER>\AppData\Local\hermes\tools\python-3.14.7+202****0901-win32-x64\python.exe -m hermes_cli.main gateway run
 ```
 
 而上游 `_launchers.py` 的现行设计（`runtime_command()` 文档串明写）是：
