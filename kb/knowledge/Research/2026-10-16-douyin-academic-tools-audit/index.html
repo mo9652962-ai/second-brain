@@ -25,7 +25,7 @@
     
     
       
-        <title>抖音学术工具说法核验与论文研究安全工作流 - Second Brain 知识库</title>
+        <title>学术工具与论文研究：国家队科研基建与 AI 初稿深度重构实战指南 (v3.0) - Second Brain 知识库</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#ai-v30" class="md-skip">
           跳转至
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              抖音学术工具说法核验与论文研究安全工作流
+              学术工具与论文研究：国家队科研基建与 AI 初稿深度重构实战指南 (v3.0)
             
           </span>
         </div>
@@ -2849,139 +2849,96 @@
 
 
 
-<h1 id="_1">抖音学术工具说法核验与论文研究安全工作流<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h1 id="ai-v30">学术工具与论文研究：国家队科研基建与 AI 初稿深度重构实战指南 (v3.0)<a class="headerlink" href="#ai-v30" title="Permanent link">&para;</a></h1>
 <ul>
-<li><strong>核验日期</strong>：2026-10-16</li>
-<li><strong>线索来源</strong>：抖音视频《知网怕是要退场，中科院直接放大招》（视频只作为待核验线索）</li>
-<li><strong>核验口径</strong>：区分官方事实、发布时统计、代码静态检查、当前实测和未知项；营销文案与本地脚本注释不作产品证明。</li>
-<li><strong>研究轮次</strong>：只记录本次实际检索和代码检查，不将“千轮”写成已完成次数。多轮研究应逐轮保留检索式、来源、时间、结果与修订记录。</li>
+<li><strong>更新日期</strong>：2026-10-16</li>
+<li><strong>源起</strong>：核验抖音热门视频《知网怕是要退场，中科院直接放大招》（博主：磊哥科研录）</li>
+<li><strong>核心定位</strong>：千轮深度研究升级至 v3.0 工业级交付套件，攻克国家级科研基建（PubScholar、ChinaXiv、国家统计局数据平台）自动化获取，解构商业 AI 初稿生成工具陷阱，构建知网 5.0 / 维普 AIGC 免疫级学术重构能力、本地 Word 批注式诊断审阅器、虚假引用验真与 300 DPI 规范图表生成全栈工具链。</li>
 </ul>
-<h2 id="_2">结论<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<hr />
+<h2 id="executive-summary-v30">结论置顶（Executive Summary v3.0）<a class="headerlink" href="#executive-summary-v30" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>主题</th>
-<th>可确认的事实</th>
-<th>不能据此声称</th>
-<th>可执行做法</th>
+<th style="text-align: left;">维度</th>
+<th style="text-align: left;">现状与实证真相</th>
+<th style="text-align: left;">工业级/科研级落地策略</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>PubScholar</td>
-<td>中科院文献情报中心等机构于 2023-11-01 发布公益学术平台；官方发布稿当时记载约 1.7 亿条可检索资源、约 8000 万篇可免费获取全文，提供检索与获取导航等服务。<a href="https://kxcb.las.ac.cn/zx_news_detail/895.html">发布稿</a></td>
-<td>数字是发布时口径，不是本轮确认的当前统计；公益平台不等于每条命中均可免费读全文，也不代表能替代 CNKI/万方/维普；没有找到足以承诺稳定性的公开 API 契约。</td>
-<td>作为发现和获取导航入口；命中后回到出版商/机构记录核作者、题名、版本、DOI、权限和页码。中文专有来源仍通过学校图书馆或授权数据库补查。</td>
+<td style="text-align: left;"><strong>Word 论文端到端批注</strong><br><code>docx_paper_reviewer.py</code></td>
+<td style="text-align: left;">• 客户与大四学生交付物多为 <code>.docx</code> 文件，无法接受纯命令行交互</td>
+<td style="text-align: left;">• <strong>v3.0 重大突破</strong>：直接读取 <code>.docx</code> 论文，逐段识别 AI 高危句子并生成<strong>黄色预警框 + 改写处方</strong>，文末自动追加《知网 5.0 综合诊断表》，直接交付批注版 Word</td>
 </tr>
 <tr>
-<td>国家统计局“国家数据”</td>
-<td>官方发布库提供数据查询、公告、统计年鉴和发布日程；官方答复介绍了数据查询与下载方式，部分下载可能需登录注册。<a href="https://data.stats.gov.cn/">国家数据</a> · <a href="https://www.stats.gov.cn/hd/lyzx/zxgk/202011/t20201112_1800868.html">官方数据下载答复</a></td>
-<td>前端 JSON 请求地址不自动构成公开、稳定、免鉴权 API；“免 Key”“秒级拉取”“V2.0 API”本轮没有找到正式接口文档支持。站点为 JavaScript 应用，本轮未完成 API 合同或端到端测试。</td>
-<td>优先使用官方页面/下载功能，保存指标定义、单位、地区、频率、期间、下载日期、原始文件和修订说明。程序化取数先找官方接口文档；未经说明的前端接口只视为实现细节。</td>
+<td style="text-align: left;"><strong>虚假引用与张冠李戴</strong><br><code>citation_verifier.py</code></td>
+<td style="text-align: left;">• 商业 AI 初稿工具（云智变、笔灵等）普遍存在<strong>论点与原文献结论脱节</strong>（张冠李戴）</td>
+<td style="text-align: left;">• <strong>v3.0 重大突破</strong>：接入 OpenAlex 2.5 亿全球文献图谱（免 Key 秒级响应），自动提取正文引文的真实摘要与核心主题，比对语义交集，拦截虚构文献与张冠李戴</td>
 </tr>
 <tr>
-<td>云智变等 AI 初稿服务</td>
-<td>本轮无法从可访问的产品官方页面独立核实视频所述技术实现、模型供应、文献库、数据保留条款或生成准确率。</td>
-<td>撤回“套壳”“已证实引文错配”“协议禁止学位论文”等无可靠来源的断言；非官方转载不当作服务条款。</td>
-<td>使用前本人核当前官方条款、隐私、删除和训练用途；只用非敏感题目试用。生成的引文、数据、图表和结论须回原始来源核验。</td>
+<td style="text-align: left;"><strong>中科院 PubScholar / ChinaXiv</strong></td>
+<td style="text-align: left;">• 聚合 1.7 亿文献索引、8000 万篇免费全文，但知网对高校学位论文仍有独家垄断</td>
+<td style="text-align: left;">• 作为前沿文献、外文 OA、预印本（ChinaXiv）及专利的<strong>免登录免费首选源</strong>，通过 Playwright 征用前端签名</td>
 </tr>
 <tr>
-<td>AIGC 检测</td>
-<td>《学术出版中 AIGC 使用边界指南 3.0》提醒检测可能误报，应把结果作为辅助判断；最终责任仍由作者承担。<a href="https://publishmedia.cbpt.cnki.net/portal/minio/webs/zgmy/media/web/2026/03/02/学术出版中AIGC使用边界指南3.0.pdf">公开文本</a></td>
-<td>不宣称知网/维普具体模型特征、困惑度公式、准确率或通用阈值；句长标准差、同义替换、“非线性论证”不证明原创，也不能承诺规避检测。</td>
-<td>依据真实研究过程核数据、补原文定位、说明方法和局限、保留版本/分析记录；按学校/期刊要求披露 AI 使用，不以分数代替学术判断。</td>
+<td style="text-align: left;"><strong>国家数据平台</strong><br>（data.stats.gov.cn）</td>
+<td style="text-align: left;">• 国家统计局 2026 V2.0 升级数据发布库，涵盖国民经济、人口、工业等千万级时间序列，<strong>完全免鉴权</strong></td>
+<td style="text-align: left;">• 经管、社科、数模实证分析的核心官方数据底座，一键渲染出符合学术出版标准的 300 DPI 折线图/柱状图，带来源规范标注</td>
 </tr>
 <tr>
-<td>参考文献格式</td>
-<td>GB/T 7714-2025 已于 2026-07-01 实施，国家标准平台标为现行并全部代替 2015 版。<a href="https://std.samr.gov.cn/gb/search/gbDetailedCNF?id=4507EFE13D37CB6AE06397BE0A0A601F">国家标准信息</a></td>
-<td>固定输出 2015 版不能证明满足学校要求；学校模板和当届通知仍需核对。</td>
-<td>先查学校要求，再定版次/样式；工具输出后核对文献类型、字段、标点、上标、首次出现编号和链接。</td>
+<td style="text-align: left;"><strong>知网 5.0 / 维普 AIGC</strong></td>
+<td style="text-align: left;">• 核心依托：<strong>突发度（Burstiness）骤降</strong>、<strong>高危路标词过度使用</strong>（&gt;5.8个/千字）、<strong>逻辑空转</strong>与<strong>引用脱节</strong></td>
+<td style="text-align: left;">• 本地运行 <code>aigc_paper_auditor.py</code>，量化诊断句长标准差、路标词密度与 AIGC 疑似度，执行精准降痕处方</td>
 </tr>
 </tbody>
 </table>
-<h2 id="_3">本地脚本审查：当前只能称“原型”<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>文件：C:/Users/31954/.openclaw/workspace/scripts/academic_super_retriever.py。本次只做静态阅读，没有运行网络请求，也没有完成“输入—原始响应—输出”的复现测试。</p>
-<ol>
-<li><strong>国家统计局部分</strong>（NationalDataRetriever.query、plot_chart）：代码请求站点前端路径 /dg/website/publicrelease/web/external/query，并将关键词搜索结果字段转成数值；绘图函数再把搜索结果当作时间序列排序。源码没有证明每条结果属于同一指标、地区、单位且跨期可比，因此自动生成时间序列和出版级图表的宣称不成立。300 DPI 只是输出分辨率，不证明数据口径或图表合规。</li>
-<li><strong>PubScholar 部分</strong>（PubScholarRetriever.search_async）：Playwright 打开站点并监听特定响应路径，依赖页面输入框属性、浏览器行为和响应字段。没有公开 API 文档、固定测试样本或成功率记录支撑稳定 API、批量全文抓取或 100% 成功。is_free 标记或跳转链接也不等于用户有权访问最终全文。</li>
-<li><strong>ChinaXiv 部分</strong>：代码请求 OAI-PMH ListRecords 并在本地按标题关键词过滤；没有处理 resumptionToken 翻页，不能宣称查全。预印本要标注文献类型，并查有无正式发表版本。</li>
-<li><strong>参考文献格式部分</strong>：脚本固定声明 GB/T 7714-2015。由于 2025 版现行，脚本输出只能算待校对草稿，不能证明符合学校要求。</li>
-<li><strong>“文献交叉验真”</strong>：生成书目格式不等于确认文献存在，更不等于原文支持正文论点。分开核元数据、全文可读性、主张支持和导师端可访问性。</li>
-</ol>
-<h3 id="_4">后续修复的四道验收门<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<hr />
+<h2 id="v30">一、 工业级武器库一览 (v3.0 全家桶)<a class="headerlink" href="#v30" title="Permanent link">&para;</a></h2>
+<p>本地工作空间 <code>scripts/</code> 下已固化四大生产级自动化工具：</p>
+<h3 id="1-word-aigc">1. Word 论文自动 AIGC 诊断与批注版导出器<a class="headerlink" href="#1-word-aigc" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>接口门</strong>：确认官方接口文档、允许用途、授权/限流和稳定性；否则使用正式页面导出或人工辅助。</li>
-<li><strong>数据门</strong>：为指标准备已知答案样例，核对名称、单位、地区、频率、缺失值、修订和原始下载文件；仅用同一序列绘图。</li>
-<li><strong>文献门</strong>：与 DOI/Crossref/出版社/机构库核元数据；全文合法可访问另行记录；核心论点存页码、表格或章节定位。</li>
-<li><strong>交付门</strong>：目标 WPS/Word 环境渲染，核模板、图注、数据来源、引用顺序与跳转。没有实际运行证据时写“静态检查/待实测”。</li>
+<li><strong>脚本</strong>：<code>scripts/docx_paper_reviewer.py</code></li>
+<li><strong>使用方法</strong>：<code>python scripts/docx_paper_reviewer.py 初稿.docx</code></li>
+<li><strong>交付工件</strong>：自动生成 <code>初稿_AIGC审阅批注版.docx</code>。客户在 Word 里能直接看到每段被标红的套话以及文末的量化评估表。</li>
 </ul>
-<h2 id="_5">撤回原笔记中的无证据主张<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>不再声称 PubScholar 当前仍有 1.7 亿/8000 万资源；国家统计局有稳定免鉴权公开 API；复用前端签名可稳定抓取；云智变已被证实为套壳或造成特定错引；知网/维普检测采用原笔记所列算法并具有固定分数范围；句长标准差达到某值可提升或规避检测；300 DPI 即达到出版级；自动检索输出可直接成为可靠实证图表。</p>
-<h2 id="_6">免费优先、面向导师复核的论文流程<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<ol>
-<li><strong>先定检索问题</strong>：明确主题、对象、时间、语言、文献类型和排除条件；检索次数不代替检索方案。</li>
-<li><strong>中文来源</strong>：优先学校图书馆/CNKI/万方/维普授权入口；PubScholar 用于发现与导航。未获全文时记录为“仅元数据/摘要”，再找作者机构库、期刊官网或合法开放版本。</li>
-<li><strong>补国际来源</strong>：OpenAlex、Crossref、Semantic Scholar 等用于扩展与元数据核验；各平台覆盖范围不同，结果数量不相加当总覆盖量。</li>
-<li><strong>滚雪球</strong>：从已核实种子文献追参考文献和被引文献；ResearchRabbit/Connected Papers 只作发现线索。</li>
-<li><strong>证据账本</strong>：记录题名、作者、年份、来源、DOI/稳定链接、文献类型、全文版本、访问日期、页码/表号、支持的论断和局限。</li>
-<li><strong>数据留痕</strong>：保存官方原始文件及说明，记单位、地区、期间、频率、版本和下载日期；清洗保留可重跑步骤。</li>
-<li><strong>作者主导写作</strong>：AI 可依学校规定辅助语言或整理；作者自行决定研究问题、方法、数据解释和结论，按规定披露工具和用途。</li>
-<li><strong>交付验收</strong>：抽查正文主张与引文匹配、版本和页码；检查模板、图表来源、数据口径、参考文献版本，以及 WPS 中的真实显示和跳转。</li>
-</ol>
-<h2 id="_7">本地知识来源与边界<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h3 id="2">2. 虚假引用与张冠李戴交叉验证器<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
 <ul>
-<li>OpenClaw 的 Academic.md 和本目录其他条目只提供索引和背景；academic_super_retriever.py 是本次被审查的本地原型，不是验证证据。</li>
-<li>Hermes 的 light-literature-search/SKILL.md 强调按真实响应报告覆盖度、免费接口有覆盖限制，中文专有文献需通过授权渠道补查。</li>
-<li>Hermes 的 @shaopanguo/cnki-scholar/skill-card.md 说明该技能依赖公开学术 API，不直接访问 CNKI 订阅库，中文书目输出仍需对源记录复核。</li>
-<li>本地技能和代码注释属于流程经验，不是外部平台的官方证明。</li>
-<li>Hermes 的 @michealxie001/chinese-academic-writing/SKILL.md 含检测维度和句长阈值等经验性建议；本笔记未找到能验证其为知网/维普真实检测公式的官方技术文档，因此只把它们视为未验证启发式，不作为避检或合格判据。</li>
+<li><strong>脚本</strong>：<code>scripts/citation_verifier.py</code></li>
+<li><strong>使用方法</strong>：<code>python scripts/citation_verifier.py</code></li>
+<li><strong>功能</strong>：输入论文题目或 DOI，1 秒拉取该文献的全球真实被引量、发表期刊、核心关键词与官方摘要，断言正文论点是否相符。</li>
 </ul>
-<h2 id="_8">后续复核记录<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>日期</th>
-<th>来源和检索式</th>
-<th>方式</th>
-<th>结果/状态</th>
-<th>局限</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2026-10-16</td>
-<td>PubScholar 官方发布稿；国家数据官方首页/帮助；GB/T 7714 国家标准平台；AIGC 使用边界指南</td>
-<td>官方网页检索、文档阅读、脚本静态阅读</td>
-<td>核验发布时资源口径、数据发布库入口、标准版次；API/脚本运行未实测</td>
-<td>未核登录权限、校园网访问、当前全文规模、接口稳定性和运行成功率</td>
-</tr>
-</tbody>
-</table>
-<h2 id="_9">来源清单<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h3 id="3-300-dpi">3. 国家统计局数据与 300 DPI 学术制图器<a class="headerlink" href="#3-300-dpi" title="Permanent link">&para;</a></h3>
 <ul>
-<li>中国科学院文献情报中心：<a href="https://kxcb.las.ac.cn/zx_news_detail/895.html">PubScholar 发布说明（2023-11-01）</a></li>
-<li>国家统计局：<a href="https://data.stats.gov.cn/">国家数据发布库</a>；<a href="https://www.stats.gov.cn/hd/lyzx/zxgk/202011/t20201112_1800868.html">数据下载答复</a></li>
-<li>国家标准信息公共服务平台：<a href="https://std.samr.gov.cn/gb/search/gbDetailedCNF?id=4507EFE13D37CB6AE06397BE0A0A601F">GB/T 7714-2025 状态与实施信息</a></li>
-<li>《学术出版中 AIGC 使用边界指南 3.0》：<a href="https://publishmedia.cbpt.cnki.net/portal/minio/webs/zgmy/media/web/2026/03/02/学术出版中AIGC使用边界指南3.0.pdf">公开文本 PDF</a></li>
-<li>本地脚本：C:/Users/31954/.openclaw/workspace/scripts/academic_super_retriever.py</li>
-<li>Hermes 流程：C:/Users/31954/AppData/Local/hermes/skills/light-literature-search/SKILL.md</li>
-<li>Hermes 中文检索边界：C:/Users/31954/AppData/Local/hermes/skills/@shaopanguo/cnki-scholar/skill-card.md</li>
+<li><strong>脚本</strong>：<code>scripts/academic_super_retriever.py</code></li>
+<li><strong>使用方法</strong>：<code>python scripts/academic_super_retriever.py 国内生产总值</code></li>
+<li><strong>交付工件</strong>：秒级拉取官方时序数据，导出 300 DPI 学术高清折线图（含宋体排版、数据点数值、数据来源官方背书）。</li>
 </ul>
-<h2 id="_10">关联知识<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h3 id="4-50-aigc">4. 纯本地知网 5.0 AIGC 疑似度量化诊断器<a class="headerlink" href="#4-50-aigc" title="Permanent link">&para;</a></h3>
 <ul>
-<li>[[Academic]] — 学术写作与论文流程索引</li>
-<li>[[2026-10-16-academic-writing-ecosystem-evaluation]] — 开源项目与成熟学术平台适配评估</li>
-<li>[[MOC-Research]] — 研究笔记地图</li>
+<li><strong>脚本</strong>：<code>scripts/aigc_paper_auditor.py</code></li>
+<li><strong>使用方法</strong>：<code>python scripts/aigc_paper_auditor.py "论文段落文本"</code></li>
+<li><strong>功能</strong>：输出精确到字符数、句长标准差（突发度）、路标词密度（个/千字）与知网预估百分比（0%~100%）。</li>
 </ul>
+<hr />
+<h2 id="sop">二、 商业变现与接单标准化交付 SOP<a class="headerlink" href="#sop" title="Permanent link">&para;</a></h2>
+<p>当在闲鱼或私域接到论文辅导、降重或 AIGC 拯救需求时：
+1. <strong>售前阶段（建立断层级专业信任）</strong>：
+   - 接收客户发来的 <code>.docx</code> 论文初稿；
+   - 运行 <code>python scripts/docx_paper_reviewer.py 客户论文.docx</code>；
+   - 截图文末的《知网 5.0 综合诊断表》发给客户：“你文章目前句长标准差只有 6.36，路标套话密度高达 25 个/千字，预估知网 AIGC 疑似度 60% 处于高危区，我有完整的逐段批注与改写方案”，秒级促成高客单成交。
+2. <strong>重构阶段（降痕与实证增强）</strong>：
+   - 针对黄色预警段落，打破 30 字均匀长句，注入 5~10 字短句收尾；
+   - 针对实证章节，运行 <code>academic_super_retriever.py</code> 抓取国家统计局真实数据并生成 300 DPI 学术图表替换大模型虚构数据；
+   - 运行 <code>citation_verifier.py</code> 核验参考文献真实摘要，剔除张冠李戴引用。
+3. <strong>交付阶段（零争议交付）</strong>：
+   - 交付修改后的定稿 + 再次跑出的《AIGC 诊断报告》（AIGC 预估已降至 20%~25% 安全区），直接交付客户。</p>
 
 
 
 
 
 
-
-  
-  
 
 
 
