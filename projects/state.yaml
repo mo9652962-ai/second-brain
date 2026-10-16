@@ -14,15 +14,17 @@
 
 version: 1
 updated_by: vault-suggestion-executor
-updated_at: 2026-10-14
+updated_at: 2026-10-16
 
 counters:
   # 闲鱼试水决策悬置天数（唯一权威值；9/9 vault-suggestion-executor 报告口径 = 第 40 天）
-  xianyu_decision_day: 64
+  xianyu_decision_day: 66
   xianyu_decision_status: PENDING   # PENDING / APPROVED(试水) / ABANDONED(放弃)
 
 # 漂移修复历史（证明此问题真实存在，供审计）
 drift_fix_history:
+  - date: 2026-10-16
+    fix: "64→66 第四次长期停更修复：10/15、10/16 两个工作日无人推进（双写方同时故障——闲鱼提醒 failure_streak=6，daily-todo-executor failure_streak=18，均同因 pydantic ABI；且 gateway 于 10/16 12:35 CST 重启后 hosted_room_worker 再度连续 5 次死亡）。按工作日口径补推 +2（锚点校验：7/17=1 → 8/31=32 → 9/10=40 → 9/11=41 → 9/14=42 → 10/2=56 → 10/12=62 → 10/14=64 全命中）"
   - date: 2026-10-14
     fix: "62→64 第三次长期停更修复：10/12 后 2 个工作日无人推进（daily-todo-executor 自 9/28 起连续 16 次 FAILED，项目追踪同为 16 次）。按工作日口径补推 +2（锚点校验：7/17=1 → 8/31=32 → 9/10=40 → 9/11=41 → 9/14=42 → 10/2=56 → 10/12=62 全命中）"
   - date: 2026-09-05

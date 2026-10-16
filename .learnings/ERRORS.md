@@ -479,6 +479,44 @@ RuntimeError: Failed to initialize OpenAI client: No module named 'pydantic_core
 **修复归属**：🔒 **需 sora**（改 `get_python_path()` / 重跑 `gateway install` 属安装层动作，
 且 gateway 重启会中断当前会话）。k 侧已把可复现证据与三条候选路径备齐，sora 一句话即可落地。
 
+
+### 🔁 复发 #3（2026-10-16 12:35 CST，**预测命中：重启即复发**）
+
+**判定依据：10-14 写下的预测「下次 gateway 重启仍会复发」在 10-16 被实测命中，且失败形态与 10-14 完全一致。**
+
+| 证据 | 实测值 | 来源 |
+|:---|:---|:---|
+| gateway 重启时刻 | 2026-10-16 04:35:22 UTC = **12:35:22 CST**，pid **38000** | `logs/gateway-exit-diag.log` `tag=gateway.start` |
+| 解释器 | `"python": "3.14.7"`（仍非 PM venv 的 3.11.15） | 同上 |
+| worker 死亡 | **12:38:21 / 12:38:22 / 12:38:24 / 12:38:28 / 12:38:36 / 12:38:52** 共 **6 次** | `logs/gateway.log` |
+| 放弃重启 | `12:38:52,257 hosted_room_worker died 5 times in rapid succession ... giving up restarts` | 同上 |
+| 错误文本 | `ModuleNotFoundError: No module named 'pydantic_core._pydantic_core'` | 同上 |
+
+**注**：本次 worker 死亡发生在**本 cron（12:35:17 起跑）运行期间**，即修复未落地前，每次重启都会稳定复现同一故障。
+
+**launcher 现状（本机实测，2026-10-16）**：
+
+`gateway-service/Hermes_Gateway.cmd` 与 `.vbs` 仍是**指向 3.14 store 解释器**的版本：
+
+```
+set "VIRTUAL_ENV=C:\Users\31954\AppData\Local\hermes\tools"
+set "PYTHONPATH=C:\Users\31954\AppData\Local\hermes\hermes-agent;%PYTHONPATH%"
+C:\Users\31954\AppData\Local\hermes\tools\python-3.14.7+202****0901-win32-x64\python.exe -m hermes_cli.main gateway run
+```
+
+而上游 `_launchers.py` 的现行设计（`runtime_command()` 文档串明写）是：
+`Store Python owns the ABI; bootstrap selects and leases dependencies at child start.
+No selected generation or ambient PYTHONPATH is captured in the command.`
+→ 该设计下 launcher 应经 `hermes_bootstrap` 选择依赖代次；**本机 launcher 是 9/26 生成的陈旧产物，未带 bootstrap 层**，
+所以 3.14 解释器直接吃 `hermes-agent/venv`（cp311）的 site-packages → ABI 不匹配。
+
+**新增判定口径（第 4 条）**：本机 launcher 是「陈旧生成物」而非「上游当前产物」时，
+`gateway install` 重新生成会**同时**改变两件事（解释器来源 + 是否经 bootstrap），
+因此候选②（重跑 `gateway install`）的验证必须包含「重新生成后 launcher 文本 diff」+「重启后 `gateway-exit-diag.log` 的 python 字段」两项，
+不可只看「重启后 worker 没死」——那可能只是 bootstrap 进程内救回（10-12 的误判模式）。
+
+**状态**：`mitigated`（进程内可用，未根治）。**第三次预测命中，不得再标 resolved。**
+
 ---
 
 ### See Also
