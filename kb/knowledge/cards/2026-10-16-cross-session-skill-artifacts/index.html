@@ -2899,22 +2899,22 @@
 <tbody>
 <tr>
 <td>持久工作产物总数</td>
-<td style="text-align: right;"><strong>155</strong></td>
+<td style="text-align: right;"><strong>182</strong></td>
 <td>跨会话存活的 artifact 规模</td>
 </tr>
 <tr>
 <td>其中<strong>可执行</strong>脚本（.py/.sh/.ps1/.bat/.js）</td>
-<td style="text-align: right;"><strong>54</strong></td>
+<td style="text-align: right;"><strong>62</strong></td>
 <td>后续会话<strong>可能直接跑</strong>，不只是读</td>
 </tr>
 <tr>
 <td>其中<strong>陈旧</strong>（≥1 天）数据产物</td>
-<td style="text-align: right;"><strong>43</strong></td>
+<td style="text-align: right;"><strong>42</strong></td>
 <td>被后续会话当"事实"读入的旧数据</td>
 </tr>
 <tr>
 <td>今日新建</td>
-<td style="text-align: right;"><strong>30</strong></td>
+<td style="text-align: right;"><strong>58</strong></td>
 <td>单日增量</td>
 </tr>
 <tr>
@@ -2924,34 +2924,42 @@
 </tr>
 <tr>
 <td><strong>JSON 产物带来源字段的比例</strong></td>
-<td style="text-align: right;"><strong>0 / 52 = 0.0%</strong></td>
+<td style="text-align: right;"><strong>0 / 65 = 0.0%</strong></td>
 <td>← <strong>本卡片最硬的一行</strong>：没有任何一个产物记了"哪次会话、哪个技能写的"</td>
 </tr>
 </tbody>
 </table>
+<blockquote>
+<p><strong>采样时刻 <code>run_at = 2026-10-16 12:43:24</code>。以上计数是瞬时值，不是稳定值</strong>——复验时发现并发 cron（arxiv-fetch / hackernews-daily）在两次采样之间就往这些目录里写了 26 个新文件，并把 10-14 留下的 <code>abs_all.json</code> 消费掉了。只有比例类指标（provenance 覆盖率）相对稳定。</p>
+<p><strong>口径修正记录（本次 cron 自查抓出）</strong>：初版探针统计 provenance 时<strong>只读前 4000 字符</strong>再解析前缀——位置 &gt;4000 的字段、嵌套在顶层数组里的字段会被<strong>静默漏掉</strong>。合成用例证伪：5 个用例里旧逻辑漏判 3 个（&gt;4000 偏移、顶层数组内、深层嵌套）。已改为<strong>全文解析 + 原文关键字兜底取并集</strong>，并对探针自身输出做自指剔除（它的统计键 <code>json_with_provenance</code> 会被误认为来源字段）。修正后重测：<strong>0/65，结论不变</strong>——即结论是对的，但它是<strong>被一个不可靠的检测器测出来的</strong>。这正是 09-26 那张「假阴性税」卡片描述的模式，这次踩在自己脚上。</p>
+</blockquote>
 <p><strong>三条现场观察</strong>：</p>
 <ol>
-<li>🔴 <strong>provenance 覆盖率是 0%，不是"低"</strong>。52 个可解析 JSON 里，含 session / producer / created_by / writer / run_id 任一字段的：<strong>0 个</strong>。也就是说按 2610.13227 的判据，我的工作区<strong>现在就是 SkillRelayGuard 想要防的那种状态</strong>——所有 artifact 都是匿名的。</li>
+<li>🔴 <strong>provenance 覆盖率是 0%，不是"低"</strong>。65 个业务 JSON（剔除探针自身输出）里，含 session / producer / created_by / writer / run_id 任一字段的：<strong>0 个</strong>。也就是说按 2610.13227 的判据，我的工作区<strong>现在就是 SkillRelayGuard 想要防的那种状态</strong>——所有 artifact 都是匿名的。</li>
 <li>🔴 <strong>陈旧产物与当日产物同目录共存</strong>。<code>.tmp/hn/</code> 里既有今天 12:36 的 <code>fetch.py</code> / <code>urls.json</code>，也有 <strong>38 天前</strong>的 <code>wn3.json</code>、<strong>37 天前</strong>的 <code>item_navier.json</code>、<strong>33 天前</strong>的 <code>nvidia_items.json</code>。后续会话的抓取脚本读这个目录时，拿到的是"今天的 + 上个月的"混在一起，且无法区分。</li>
-<li>🔴 <strong>今日会话确实在沿用历史产物</strong>。今早 arxiv-fetch 做的第一件事是把 10-14 会话留下的 <code>abs_all.json</code> 改名备份为 <code>abs_all_1014.bak.json</code>（12:36）——<strong>跨会话 relay 在我这儿不是理论，是正在发生的日常操作</strong>。</li>
+<li>🔴 <strong>今日会话确实在沿用历史产物</strong>。今早 arxiv-fetch 的第一件事是把 10-14 会话留下的 <code>abs_all.json</code> 改名备份为 <code>abs_all_1014.bak.json</code>（12:36）——<strong>跨会话 relay 在我这儿不是理论，是正在发生的日常操作</strong>。</li>
+<li>🔴 <strong>而这个数字本身也踩了同一个坑</strong>。第一版探针用「读前 4000 字符再解析」的方式统计 provenance，合成用例显示它在 5 个场景里漏判 3 个。也就是说：<strong>一个用来测「产物是否可追溯」的探针，自己就不可追溯</strong>——它没记录自己的口径版本，改了口径也没人知道。修好之后结论不变（0/65），但这恰好证明第 ① 条不是学术问题。</li>
 </ol>
 <h2 id="_3">行动项<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ul>
-<li>[ ] <strong>给工作态产物加来源戳</strong>：<code>.temp/</code> <code>.tmp/</code> 下每个 JSON 落盘时写入 <code>{"_producer": "&lt;cron 名/skill 名&gt;", "_run": "&lt;ISO 时间&gt;", "_session": "&lt;session id&gt;"}</code>——从 0% 起步，先覆盖当日新建的 30 个</li>
+<li>[ ] <strong>给工作态产物加来源戳</strong>：<code>.temp/</code> <code>.tmp/</code> 下每个 JSON 落盘时写入 <code>{"_producer": "&lt;cron 名/skill 名&gt;", "_run": "&lt;ISO 时间&gt;", "_session": "&lt;session id&gt;"}</code>——从 0% 起步</li>
+<li>[ ] <strong>检测器自己也要有来源戳</strong>：任何"测覆盖率/测健康度"的探针，必须在输出里记录<strong>自己的口径版本 + run_at</strong>（本次就是探针自己没记口径，改了口径无人知晓）</li>
+<li>[ ] <strong>比例类结论必须双路复测</strong>：同一指标用两套独立实现各测一遍，不一致就先怀疑检测器（本次 5 个合成用例抓出 3 个漏判）</li>
 <li>[ ] <strong>读之前先验来源</strong>：跨会话读 <code>.temp/</code> 产物时，先看时间戳与 producer；<strong>无来源戳的一律当不可信输入</strong>处理（按论文的 DBV 判据）</li>
 <li>[ ] <strong>陈旧产物定期收口</strong>：≥7 天未被读取的工作态产物移到归档目录或删除，避免"上个月的抓取结果"混进今天的判断</li>
-<li>[ ] <strong>可执行产物特殊对待</strong>：54 个脚本中，跨会话执行前先看内容再跑（对应 10-14 卡片的「外部传入脚本先看内容」）</li>
+<li>[ ] <strong>可执行产物特殊对待</strong>：62 个脚本中，跨会话执行前先看内容再跑（对应 10-14 卡片的「外部传入脚本先看内容」）</li>
 <li>[ ] <strong>高风险读取走「执行前建议」</strong>：配置 / 凭据路径 / 脚本目录的读取，改成先建议后执行，而不是直接执行（SkillRelayGuard 的核心动作）</li>
 </ul>
 <h2 id="_4">为什么重要<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>直接命中 k 自己的形态</strong>：k 的工作方式就是「多技能 + 多 cron + 共享一个工作区」，这正是 SkillRelayBench 的评测设定。10-10 卡片讲的是<strong>共装技能抢跑</strong>（同一会话内），这条讲的是<strong>跨会话持久产物</strong>——更隐蔽，因为没人会去看上个月那个 JSON。</li>
-<li><strong>可测量</strong>：不用靠感觉，<code>0/52</code> 是一个能每周复测的数字。来源戳覆盖率可以从 0% 一路盯到 100%。</li>
+<li><strong>可测量</strong>：不用靠感觉，<code>0/65</code> 是一个能每周复测的数字。来源戳覆盖率可以从 0% 一路盯到 100%。</li>
 <li><strong>成本极低</strong>：加三个字段，换来论文里 69.5%→10.9% 的 ASR 下降量级，且合法完成率还升。</li>
+<li><strong>验证也是同一课</strong>：修好探针前后结论都是 0%，但这不代表可以跳过验证——<strong>用不可靠的检测器测出正确结论，是运气不是能力</strong>，下次同样写法会给出错误答案。</li>
 <li><strong>内容选题价值</strong>：sora 的「做实事」方向可取材——「为什么我给自己写的每个临时文件都盖了个戳」是天然的前 3 秒钩子，背后有 270 用例的基准数据支撑。</li>
 </ul>
 <hr />
-<p><em>卡片来源：当天知识库精选 · [[knowledge/Research/arxiv-2026-10-14-agent-llm|arXiv 10-14 速览（10-12 全新窗口）]]（🥇 入选理由：速览「候选深挖」清单第 1 位、当日尚未成卡，且是唯一一条能在自己工作区里当场量出对应指标（provenance 覆盖率 0/52）的发现——结论可复测、行动项可直接落盘）</em></p>
+<p><em>卡片来源：当天知识库精选 · [[knowledge/Research/arxiv-2026-10-14-agent-llm|arXiv 10-14 速览（10-12 全新窗口）]]（🥇 入选理由：速览「候选深挖」清单第 1 位、当日尚未成卡，且是唯一一条能在自己工作区里当场量出对应指标（provenance 覆盖率 0/65）的发现——结论可复测、行动项可直接落盘）</em></p>
 
 
 
