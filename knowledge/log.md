@@ -406,3 +406,10 @@ tags: [meta, vault-maintenance]
 - **索引刷新**：MOC-cards / MOC-Research / knowledge-map / index.md 的 updated → 2026-10-16；卡片计数 39 → **42**（knowledge-map + index 两处口径同步）
 - **门禁**：`check_wikilinks.py` ✅ All wikilinks OK · `vault-structure.py` 断裂 0 / 孤立 0 / 空文件 0 / frontmatter 0 · `check-repo-privacy.py` ✅ 933 tracked 文件 0 命中
 - **并发说明**：本轮跑时 arxiv-fetch / hackernews-daily / obsidian-maintenance / daily-self-improvement / 闲鱼提醒 等 cron 同时在 running（今日 12:34-12:40 catch-up 批次），故对并发中的 `.temp/` `.tmp/` 产物**只读不写**；探针脚本落 `.temp/` 自身目录（gitignored）
+
+## [2026-10-16] revise | 抖音学术工具审计纠错与证据门加固
+- 重写 knowledge/Research/2026-10-16-douyin-academic-tools-audit.md：将官方事实、发布时统计、代码静态审查、未实测项分开；撤回无来源的 API、AIGC 算法/阈值、商业产品定性和“检测免疫”主张。
+- 代码静态审查发现：国家统计局关键字搜索结果被脚本直接当时间序列绘图；PubScholar 自动化依赖前端响应结构但没有测试记录；ChinaXiv OAI-PMH 未处理 resumptionToken；格式器仍写死 GB/T 7714-2015。
+- 依据国家标准平台更新参考文献版次提示：GB/T 7714-2025 于 2026-07-01 实施；仍以学校当届模板为准。
+- 为笔记补 frontmatter，并挂接 Research MOC 与知识地图；未修改检索脚本、未运行外部接口、未写入 Hermes memory。
+- 验收目标：全库 knowledge-lint 检查断链、frontmatter、孤立页；本次检索/页面读取不虚报为“千轮研究”。

@@ -777,3 +777,172 @@ Pattern-Key: infra.daily-summary-cron-path-verification
 Recurrence-Count: 1
 First-Seen: 2026-10-14
 Last-Seen: 2026-10-14
+
+---
+
+## [LRN-20261016-001] insight
+
+**Logged**: 2026-10-16T12:58:00+08:00
+**Priority**: high
+**Status**: completed
+**Area**: config
+
+### Summary
+OpenClaw 2026.9.7/9.8 发布：OpenAI Agents API 公测、Sora 视频生成退役、Sign in with ChatGPT (Beta) 降低准入门槛。
+
+### Details
+- **OpenAI Agents API 公测** (2026-09): 托管 Agent 循环、Data Agent、GPT-Live-1 全双工语音、免费托管沙箱
+- **Sora 退役**: 需替换 `openai/sora-2` / `openai/sora-2-pro`，官方建议 Kie AI、Z.AI、Novita、Qwen、Alibaba Wan 等
+- **Sign in with ChatGPT (Beta)**: 降低用户准入门槛
+
+### Suggested Action
+- 监控社区反馈 2-4 周后再评估升级
+- 关注 OpenAI Agents API 集成对多供应商 fallback 架构的影响
+- 确认 Sora 替代方案在 video generation skills 中的可用性
+- 评估 Sign in with ChatGPT 对认证流程的影响
+
+### Metadata
+Source: tavily_search + self-improvement cron
+Tags: openclaw-2.0, openai-agents-api, sora-retirement
+Pattern-Key: config.openclaw-2.0-rapid-patches-continued-v3
+Recurrence-Count: 1
+First-Seen: 2026-10-16
+Last-Seen: 2026-10-16
+
+---
+
+## [LRN-20261016-002] insight
+
+**Logged**: 2026-10-16T12:58:00+08:00
+**Priority**: high
+**Status**: completed
+**Area**: operations
+
+### Summary
+AI Agent 运营实践成熟 (IBM/Deloitte 2026)：企业从「构建 Agent」转向「安全规模化运营」，确立风险分级运营模型。
+
+### Details
+1. **关键运营活动** (IBM 2026):
+   - 监控执行 / 跟踪完成 / 审查失败 / 测量工具使用 / 延迟成本
+   - 管理提示配置 / 更新知识源 / 审查权限 / 发布前测试
+   - 审计高影响动作 / 管理人工升级 / 退役低价值 Agent
+2. **风险分级运营模型** (Deloitte 2026):
+   - 例行信息检索 → Agent 主导
+   - 重复数据处理 → Agent 主导
+   - 低风险工作流动作 → Agent 带控制
+   - 中风险决策 → Agent 建议 + 人工批准
+   - 高影响决策 → 人工主导 + Agent 支持
+   - 异常和模糊情况 → 人工主导
+   - 战略决策 → 人工主导 + AI 分析
+3. **员工角色转变**: 从手工完成每步 → 定义目标、审查输出、处理异常、批准动作、改进工作流
+
+### Suggested Action
+- 将风险分级模型纳入我们的多 Agent 工作流设计 (Graph Engineering 编排)
+- 为 cron/heartbeat/subagent 建立显式的风险等级标注
+- 完善「退役低价值 Agent」的评估机制 (定期 ROI 复盘)
+- 强化 Observability: 自动化 review session logs、工具使用统计、成本追踪
+
+### Metadata
+Source: tavily_search + self-improvement cron
+Tags: ai-agent-operations, risk-tiered-operations, ibm-deloitte-2026, bounded-autonomy
+Pattern-Key: operations.ai-agent-risk-tiered-ops-2026
+Recurrence-Count: 1
+First-Seen: 2026-10-16
+Last-Seen: 2026-10-16
+
+---
+
+## [LRN-20261016-003] insight
+
+**Logged**: 2026-10-16T12:58:00+08:00
+**Priority**: high
+**Status**: completed
+**Area**: architecture
+
+### Summary
+持久化 Agent 趋势与 Local-First 转型确认：设计用于长任务、本地执行、数据主权的 AI Agent 成为 2026 年主流范式，与 Graph Engineering 编排和记忆生命周期管理协同作用。
+
+### Details
+基于 Tavily 搜索和行业报告：
+- **持久化 Agent 特性**: 处理延长任务、本地执行、维持数据隐私、减少对持续云调用的依赖
+- **Local-First 转型**: 用户推动数据本地化和框架独立性，OpenClaw 的跨供应商 fallback 链和自托管特性契合此趋势
+- **与 Graph Engineering 协同**: 持久化 Agent 适合多阶段并行 + 精确反馈路由的图结构编排（Supervisor/Mesh/Marketplace 模式）
+- **与记忆管理协同**: 本地执行增强了三层记忆架构（Core→Recall→Archival）的可行性，减少了对向量存储的实时依赖
+- **社区验证**: OpenClaw 2026.9.3 的「持久化技能」与 Skill Workshop 流程方向一致
+
+### Suggested Action
+- 在技术任务中优先使用持久化 Agent 设计模式；评估 local-first 部署选项用于敏感工作负载
+- 利用 OpenClaw subagent + sessions_spawn 实现并行阶段 + 精确反馈路由
+- 继续强化记忆生命周期管理的 Update/Delete 机制，防止陈旧记忆毒性
+
+### Metadata
+Source: tavily_search + self-improvement cron
+Tags: persistent-agent, local-first, graph-engineering, memory-management
+Pattern-Key: architecture.persistent-agent-local-first-2026
+Recurrence-Count: 1
+First-Seen: 2026-10-16
+Last-Seen: 2026-10-16
+
+---
+
+## [LRN-20261016-004] insight
+
+**Logged**: 2026-10-16T12:58:00+08:00
+**Priority**: medium
+**Status**: completed
+**Area**: infra
+
+### Summary
+daily-summary cron 产出路径验证：尽管根目录 memory/ 缺少标准 YYYY-MM-DD.md 文件，但 memory/2026/10/ 子目录包含正确格式的每日工作日志，表明健康检查路径判定需更新而非 cron 本身故障。
+
+### Details
+通过目录审计发现：
+- **文件存在性**: memory/2026/10/2026-10-11.md、memory/2026/10/2026-10-12-daily-review.md、memory/2026/10/2026-10-13-open-actions.md 等文件均存在
+- **内容完整性**: 这些文件包含日常工作总结、关键发现、行动项等完整信息
+- **生成机制**: 不同 cron 任务生成不同格式文件（daily-self-improvement 生成 memory/2026/MM/YYYY-MM-DD-self-improvement.md，daily-summary 生成 memory/2026/MM/YYYY-MM-DD.md 或等效文件）
+- **健康检查偏差**: 传统检查仅审视 memory/ 根目录，导致「产出缺失」误判；实际产出已转入按月组织的子目录结构
+
+### Suggested Action
+- 更新健康检查脚本，将 memory/2026/MM/ 纳为有效每日日志存储位置
+- 保留现有按月目录结构（memory/2026/10/ 等），避免大规模文件迁移带来的风险
+- 在自我改进闭环中添加跨目录检查机制，防止类似路径判定误判
+
+### Metadata
+Source: self-improvement cron (local debugging)
+Tags: cron, health-check, path-verification, daily-summary
+Pattern-Key: infra.daily-summary-cron-path-verification
+Recurrence-Count: 1
+First-Seen: 2026-10-16
+Last-Seen: 2026-10-16
+
+---
+
+## [LRN-20261016-005] best_practice
+
+**Logged**: 2026-10-16T12:58:00+08:00
+**Priority**: medium
+**Status**: proposed
+**Area**: security
+
+### Summary
+OpenClaw 官方最佳实践 2026 指出 **Secret egress host binding**: 密钥绑定精确 HTTPS 出口宿主。评估在 openclaw.json 中显式配置密钥出口域名白名单，防止凭证泄露到非预期域名。
+
+### Details
+1. **OpenClaw Security 2026 五控制点 + 三具体化** 中明确: Secret egress host binding (密钥出口宿主绑定)
+2. **机制**: 每个凭证/密钥显式声明允许访问的 HTTPS 目标宿主，运行时拦截非白名单出口
+3. **对应 LRN-20260914-002**: 已记录但未落地实施
+4. **配合 Cross-Component Trust** (v2026.9.x): 远程节点事件默认 untrusted + 输出 sanitization，形成纵深防御
+
+### Suggested Action
+- 审计 openclaw.json 当前凭证配置，识别需绑定出口宿主的密钥
+- 在 openclaw.json 中添加 `secretEgressHosts` 或类似字段显式配置白名单
+- 验证运行时拦截效果 (尝试向非白名单域名发起请求应被阻断)
+- 记录配置变更原因 (遵循「刻意修改默认值并记录原因」原则 LRN-20261002-002)
+
+### Metadata
+Source: tavily_search (openclawlaunch.com/guides/openclaw-best-practices) + self-improvement cron
+Tags: secret-egress, host-binding, credential-security, openclaw-best-practices, defense-in-depth
+Pattern-Key: security.secret-egress-host-binding
+Recurrence-Count: 1 (referenced in LRN-20260914-002, LRN-20261002-002)
+First-Seen: 2026-10-16
+Last-Seen: 2026-10-16

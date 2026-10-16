@@ -412,7 +412,7 @@ RuntimeError: Failed to initialize OpenAI client: No module named 'pydantic_core
 - **陈旧账本**：32 个 cron 的 `last_error` / `failure_streak` 仍停在 10-11（实测 47 jobs 中 28 个 `failure_streak>0`），health 看板持续报 ❌32。**属状态账本陈旧，非真实故障** —— 等新排程自然跑一轮覆盖，或对已到期 job 手动触发。
 - **结构性教训**：`daily-todo-executor` 本身也被同一条错误打挂 → **写进反思的 P0 行动项，在扫描器自己死掉时等于没写**。10-01 反思已提「给反思行动项加不依赖 cron 健康的播报通道（no_agent 纯脚本）」，仍未落地。
 
-### 🔁 复发 #2（2026-10-14 08:41–08:45 CST，本机实测复现）
+### 🔁 复发 #3（2026-10-14 08:41–08:45 CST，本机实测复现）
 
 > 追加者：`vault-suggestion-executor`（闲鱼提醒 cron，job `c9eb24e4819e`）2026-10-14 09:00。
 > 依据 10-13 反思的 P0 行动项「`.learnings/ERRORS.md` 追加复发记录」。

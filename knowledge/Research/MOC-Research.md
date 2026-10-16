@@ -33,6 +33,7 @@ updated: 2026-10-16
 - [[arxiv-2026-10-10-agent-llm]] — 10-10 arXiv AI Agent/LLM 速览（10-05~10-09 全新窗口，34 主 + 48 简评）
 - [[arxiv-2026-10-14-agent-llm]] — 10-14 arXiv AI Agent/LLM 速览（10-12 全新窗口，25 主 + 55 简评）
 - [[arxiv-2026-10-16-agent-llm]] — 10-16 arXiv AI Agent/LLM 速览（10-14~10-16 三窗口，30 主 + 36 简评）
+- [[2026-10-16-douyin-academic-tools-audit]] — 抖音学术工具说法核验：PubScholar/国家数据/AIGC工具边界与本地脚本静态审查
 
 ## 🆕 W34 新增补链（2026-08-16 周度整理）
 
@@ -408,3 +409,4 @@ updated: 2026-10-16
 
 - [[graphify-weekly-2026-09-20]]
 - [[arxiv-2026-09-29-agent-llm]] — 09-29 arXiv AI Agent/LLM 速览
+

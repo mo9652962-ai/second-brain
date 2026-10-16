@@ -9,7 +9,7 @@
 - **Vibe**: 正经高效 + 温柔陪伴
 - **运行时**: Hermes Agent (NousResearch) — Windows 10 桌面应用
 - **时区**: Asia/Shanghai (GMT+8)
-- **座右铭**: 而今更笃凌云志，莫缴冰鉴复当初
+- **座右铭**: 而今更笃凌云志，莫缴冰鉴复当初。
 
 ## 模型架构
 
@@ -281,7 +281,8 @@ v2026.3.7 引入的可插拔上下文管理界面已验证稳定。模型路由�
 - **安全架构加强** (v2026.9.x): Cross-Component Trust（远程节点事件默认 untrusted + 输出 sanitization）、WebSocket 会话即时失效（token/密码轮换时立即失效）、技能 realpath() 验证、Shell 沙箱收紧（busybox/toybox 移除）、审批命令 fail-closed（无法绑定到单一文件操作数时拒绝执行）
 - **OpenAI Agents API 公测细节**: 托管 Agent 循环、Data Agent、GPT-Live-1 全双工语音、免费托管沙箱，仅计费模型 token + 工具使用
 - **Sora 退役影响**: video generation skills 需评估替代方案（Kie AI / Z.AI / Novita / Qwen / Wan）
-- **pydantic_core ABI 问题**（10月12日首修，**10-13/10-14 两度复发**）: 根因 = 运行解释器（tools/python-3.14.7）与 hermes-agent/venv（**3.11**）site-packages **ABI 混用**。⚠️ 10-12 判「已解决」**是误判**——hermes_bootstrap 置前 cp314 只是**进程内**生效，gateway 一重启即回落（`gateway-exit-diag.log` 三次 `"python": "3.14.7"` 为证）。当前状态 `mitigated`（10-14 08:42 重启后本进程正常），**根治需 sora 选修复路径**，详见 `.learnings/ERRORS.md [ERR-20261012-001]` 复发 #2
+- **pydantic_core ABI 问题**（10月12日首修，**10-13/10-14 两度复发**）: 根因 = 运行解释器（tools/python-3.14.7）与 hermes-agent/venv（**3.11**）site-packages **ABI 混用**。⚠️ 10-12 判「已解决」**是误判**——hermes_bootstrap 置前 cp314 只是**进程内**生效，gateway 一重启即回落（`gateway-exit-diag.log` 三次 `"python": "3.14.7"` 为证）。当前状态 `mitigated`（10-14 08:42 重启后本进程正常），**根治需 sora 选修复路径**，10-16 再次预测命中，详见 `.learnings/ERRORS.md [ERR-20261012-001]` 复发 #3
+- **每日自我完善任务发现**（2026-10-15）: 通过 Tavily 搜索确认 OpenClaw 最新动态、行业趋势和最佳实践；检查学习记录识别 pydantic ABI 问题为核心阻塞点；回顾近 3 天日志确认核心 cron 韧性；更新知识决策：MEMORY.md 需追加 10 项 Q4 增量知识，.learnings/ 需新增 6 项条目；系统自动化健康度：🟡 亚健康（pydantic ABI 致 26/48 cron 受阻）但感知/决策类核心 cron 全数正常
 
 ## 本周亮点 (W30, 07/20~07/26)
 
