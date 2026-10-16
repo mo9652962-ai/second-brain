@@ -64,7 +64,7 @@ LIMIT 8
 ---
 > 关联: [[PPT-Design]] · [[AI-Workflow]] · [[Cross-Domain|🔀 知识地图]] | [[HOME|🏠 首页]]
 
-- **工具主张核验与代码静态审查（2026-10-16）**：[[2026-10-16-douyin-academic-tools-audit]] —— PubScholar/国家数据/AIGC 说法分级核验，撤回未经证实的 API、检测算法与商业服务断言；审计本地检索脚本，未作运行实测。
+- **工具主张核验与代码静态审查（2026-10-16）**：[[2026-10-16-douyin-academic-tools-audit]] —— PubScholar/国家数据/AIGC 说法分级核验，撤回未经证实的 API、检测算法与商业服务断言；审计本地检索脚本，未作运行实测。 本日复核补记覆盖国家数据新版发布库、原型实现缺陷及检索协议冻结/覆盖/变更留痕。
 
 
 - **书目元数据与 OA 复核升级（2026-10-16）**：[[2026-10-16-reference-metadata-audit-upgrade]] —— Crossref 元数据初筛、Unpaywall 关键词 API 退役、OpenAlex OA 版本线索与人工验收边界。
@@ -76,3 +76,5 @@ LIMIT 8
 
 
 - **学术写作智能体工作流 v1.0（2026-10-16）**：[[2026-10-16-academic-writing-agent-workflow-v1]] —— 来源身份/全文/主张支持分离、证据账本、研究设计适配审查、阻断门与格式验证层级。
+
+- **AIGC 检测与本地工具链核验（2026-10-16）**：[[2026-10-16-aigc-detection-toolchain-verification]] —— 媒体案例与学术研究的证据边界、ASI 假置信区间、生成批注不等于作者过程证明，以及本地 citation verifier 的静态问题。

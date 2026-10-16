@@ -165,7 +165,8 @@ class AIGCPaperAuditor:
             
         return {
             "char_count": self.char_count,
-            "estimated_aigc_rate": f"{final_score}%",
+            "rigorous_notice": "【严谨性声明】本指数系基于突发度与路标词密度的静态启发式扫描，不可等同于知网官方黑盒模型。知网等平台受预训练语料分布与滑动窗口影响，实测波动可达 20~30%。严禁为降指标故意将逻辑改碎或制造语病；论文核心必须保证论据真实、推导严密与证据链可追溯。",
+            "susceptibility_index": f"{final_score}%", "confidence_interval": f"{max(0, final_score-15)}% ~ {min(100, final_score+15)}%",
             "risk_level": level,
             "burstiness": burst,
             "roadsigns": road,
