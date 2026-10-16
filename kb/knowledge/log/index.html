@@ -3232,6 +3232,18 @@
 <li><strong>口径复核</strong>：<code>scripts/check_wikilinks.py</code> ✅ All wikilinks OK / <code>scripts/vault-structure.py</code> 断裂 0 · 孤立 0 · 空文件 0 / frontmatter 问题 0（与 knowledge-lint 三口径一致）</li>
 <li><strong>并发规避</strong>：本轮跑时另有 5 个 cron 在 running（hackernews-daily / 闲鱼提醒 / wechat-knowledge-card / daily-self-improvement / arxiv-fetch），故对并发中的产物只读不写；<code>log.md</code> 用 append 写入</li>
 </ul>
+<h2 id="2026-10-16-card-261013227">[2026-10-16] card | 知识卡片：跨会话技能持久产物（2610.13227）<a class="headerlink" href="#2026-10-16-card-261013227" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>来源</strong>：arXiv 10-14 速览「候选深挖」清单第 1 位（2610.13227，Cross-Session Attacks via Persistent Artifacts in Agent Skill Composition）——10-14 卡片用的是第 3 位 APEX-Harm，本篇为同日速览剩余首选，非重复</li>
+<li><strong>原文核对</strong>：curl 直连 arXiv abs 页逐句核对标题/摘要/作者/提交日期（2026-10-09，cs.CR; cs.SE，Dianshu Liao 等 5 人），未沿用速览二手转述</li>
+<li><strong>本机实测（新增探针 <code>.temp/cross_session_artifact_probe_1016.py</code>，只读）</strong>：工作态目录（<code>.temp/ .tmp/ outputs/ .learnings/ .backup/ scripts/</code>）持久产物 <strong>155 个 / 40.13 MB</strong>，时间跨度 <strong>07-21 → 10-16（87 天）</strong>；其中可执行脚本 <strong>54 个</strong>、陈旧(≥1天)数据产物 <strong>43 个</strong>、今日新建 <strong>30 个</strong>；<strong>52 个可解析 JSON 中含 provenance 字段（session/producer/created_by/writer/run_id）者 0 个 = 覆盖率 0.0%</strong>——即当前工作区正处于 SkillRelayGuard 所要防的「artifact 全匿名」状态</li>
+<li><strong>跨会话沿用实证</strong>：今早 arxiv-fetch 首步即把 10-14 会话留下的 <code>abs_all.json</code> 改名备份为 <code>abs_all_1014.bak.json</code>（12:36）；<code>.tmp/hn/</code> 内 38 天前 <code>wn3.json</code>、37 天前 <code>item_navier.json</code> 与今日 12:36 的 <code>fetch.py</code> 同目录共存</li>
+<li><strong>产出</strong>：<code>knowledge/cards/2026-10-16-cross-session-skill-artifacts.md</code>（6.3 KB，含 5 条行动项）</li>
+<li><strong>入链</strong>：MOC-cards 10 月区 + MOC-Research 增量区（双 MOC，防孤立）；顺带修正 MOC-cards 中 10-14 卡片的显示标题（原为占位「知识卡片 10-14」）</li>
+<li><strong>索引刷新</strong>：MOC-cards / MOC-Research / knowledge-map / index.md 的 updated → 2026-10-16；卡片计数 39 → <strong>42</strong>（knowledge-map + index 两处口径同步）</li>
+<li><strong>门禁</strong>：<code>check_wikilinks.py</code> ✅ All wikilinks OK · <code>vault-structure.py</code> 断裂 0 / 孤立 0 / 空文件 0 / frontmatter 0 · <code>check-repo-privacy.py</code> ✅ 933 tracked 文件 0 命中</li>
+<li><strong>并发说明</strong>：本轮跑时 arxiv-fetch / hackernews-daily / obsidian-maintenance / daily-self-improvement / 闲鱼提醒 等 cron 同时在 running（今日 12:34-12:40 catch-up 批次），故对并发中的 <code>.temp/</code> <code>.tmp/</code> 产物<strong>只读不写</strong>；探针脚本落 <code>.temp/</code> 自身目录（gitignored）</li>
+</ul>
 
 
 
