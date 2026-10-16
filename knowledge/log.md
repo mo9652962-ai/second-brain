@@ -392,7 +392,9 @@ tags: [meta, vault-maintenance]
 
 - **来源**：arXiv 10-14 速览「候选深挖」清单第 1 位（2610.13227，Cross-Session Attacks via Persistent Artifacts in Agent Skill Composition）——10-14 卡片用的是第 3 位 APEX-Harm，本篇为同日速览剩余首选，非重复
 - **原文核对**：curl 直连 arXiv abs 页逐句核对标题/摘要/作者/提交日期（2026-10-09，cs.CR; cs.SE，Dianshu Liao 等 5 人），未沿用速览二手转述
-- **本机实测（新增探针 `.temp/cross_session_artifact_probe_1016.py`，只读）**：工作态目录（`.temp/ .tmp/ outputs/ .learnings/ .backup/ scripts/`）持久产物 **155 个 / 40.13 MB**，时间跨度 **07-21 → 10-16（87 天）**；其中可执行脚本 **54 个**、陈旧(≥1天)数据产物 **43 个**、今日新建 **30 个**；**52 个可解析 JSON 中含 provenance 字段（session/producer/created_by/writer/run_id）者 0 个 = 覆盖率 0.0%**——即当前工作区正处于 SkillRelayGuard 所要防的「artifact 全匿名」状态
+- **本机实测（新增探针 `.temp/cross_session_artifact_probe_1016.py`，只读）**：工作态目录（`.temp/ .tmp/ outputs/ .learnings/ .backup/ scripts/`）持久产物 **182 个**（`run_at=2026-10-16 12:43:24`，瞬时值），时间跨度 **07-21 → 10-16（87 天）**；其中可执行脚本 **62 个**、陈旧(≥1天)数据产物 **42 个**、今日新建 **58 个**；**65 个业务 JSON 中含 provenance 字段（session/producer/created_by/writer/run_id）者 0 个 = 覆盖率 0.0%**——即当前工作区正处于 SkillRelayGuard 所要防的「artifact 全匿名」状态
+- **⚠️ 口径修正（本轮自查抓出，首版数据已作废）**：① **检测器假阴性**——初版统计 provenance 只读前 4000 字符再解析前缀，位置 >4000 的字段与嵌套在顶层数组内的字段被**静默漏掉**；合成用例证伪：5 例中旧逻辑漏判 3 例（>4000 偏移 / 顶层数组 / 深层嵌套）。已改**全文解析 + 原文关键字兜底取并集**，并加自指剔除（探针输出文件的 `json_with_provenance` 统计键会被误认为来源字段）。② **瞬时值被当稳定值**——首版 155/54/43/30 是单次采样，复验时并发 cron（arxiv-fetch / hackernews-daily）在两次采样间写入 26 个新文件并消费掉 `.temp/abs_all.json`；现快照带 `run_at` + `volatile:true` 标记。修正后重测 **0/65，结论不变**——结论对，但首版是「用不可靠检测器测出正确答案」，属运气非能力（同 09-26「假阴性税」卡片模式）
+- **验证方式（ad-hoc，非项目测试套件）**：临时脚本 `hermes-verify-*/verify_probe.py`（首轮 FAIL：3 处计数不符 + 2 处盲区复现）→ 修好后 `verify_probe_fixed.py` **PASS**：快照带 run_at、5 个 provenance 合成用例全对、真实库比例 0/65 复算一致；计数单调性不变量（无删除 ⇒ 计数不回退）通过
 - **跨会话沿用实证**：今早 arxiv-fetch 首步即把 10-14 会话留下的 `abs_all.json` 改名备份为 `abs_all_1014.bak.json`（12:36）；`.tmp/hn/` 内 38 天前 `wn3.json`、37 天前 `item_navier.json` 与今日 12:36 的 `fetch.py` 同目录共存
 - **产出**：`knowledge/cards/2026-10-16-cross-session-skill-artifacts.md`（6.3 KB，含 5 条行动项）
 - **入链**：MOC-cards 10 月区 + MOC-Research 增量区（双 MOC，防孤立）；顺带修正 MOC-cards 中 10-14 卡片的显示标题（原为占位「知识卡片 10-14」）
