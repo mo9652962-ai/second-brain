@@ -3251,6 +3251,14 @@
 <li><strong>门禁</strong>：<code>check_wikilinks.py</code> ✅ All wikilinks OK · <code>vault-structure.py</code> 断裂 0 / 孤立 0 / 空文件 0 / frontmatter 0 · <code>check-repo-privacy.py</code> ✅ 933 tracked 文件 0 命中</li>
 <li><strong>并发说明</strong>：本轮跑时 arxiv-fetch / hackernews-daily / obsidian-maintenance / daily-self-improvement / 闲鱼提醒 等 cron 同时在 running（今日 12:34-12:40 catch-up 批次），故对并发中的 <code>.temp/</code> <code>.tmp/</code> 产物<strong>只读不写</strong>；探针脚本落 <code>.temp/</code> 自身目录（gitignored）</li>
 </ul>
+<h2 id="2026-10-16-revise">[2026-10-16] revise | 抖音学术工具审计纠错与证据门加固<a class="headerlink" href="#2026-10-16-revise" title="Permanent link">&para;</a></h2>
+<ul>
+<li>重写 knowledge/Research/2026-10-16-douyin-academic-tools-audit.md：将官方事实、发布时统计、代码静态审查、未实测项分开；撤回无来源的 API、AIGC 算法/阈值、商业产品定性和“检测免疫”主张。</li>
+<li>代码静态审查发现：国家统计局关键字搜索结果被脚本直接当时间序列绘图；PubScholar 自动化依赖前端响应结构但没有测试记录；ChinaXiv OAI-PMH 未处理 resumptionToken；格式器仍写死 GB/T 7714-2015。</li>
+<li>依据国家标准平台更新参考文献版次提示：GB/T 7714-2025 于 2026-07-01 实施；仍以学校当届模板为准。</li>
+<li>为笔记补 frontmatter，并挂接 Research MOC 与知识地图；未修改检索脚本、未运行外部接口、未写入 Hermes memory。</li>
+<li>验收目标：全库 knowledge-lint 检查断链、frontmatter、孤立页；本次检索/页面读取不虚报为“千轮研究”。</li>
+</ul>
 
 
 
