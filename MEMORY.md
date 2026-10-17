@@ -283,6 +283,7 @@ v2026.3.7 引入的可插拔上下文管理界面已验证稳定。模型路由�
 - **Sora 退役影响**: video generation skills 需评估替代方案（Kie AI / Z.AI / Novita / Qwen / Wan）
 - **pydantic_core ABI 问题**（10月12日首修，**10-13/10-14 两度复发**）: 根因 = 运行解释器（tools/python-3.14.7）与 hermes-agent/venv（**3.11**）site-packages **ABI 混用**。⚠️ 10-12 判「已解决」**是误判**——hermes_bootstrap 置前 cp314 只是**进程内**生效，gateway 一重启即回落（`gateway-exit-diag.log` 三次 `"python": "3.14.7"` 为证）。当前状态 `mitigated`（10-14 08:42 重启后本进程正常），**根治需 sora 选修复路径**，10-16 再次预测命中，详见 `.learnings/ERRORS.md [ERR-20261012-001]` 复发 #3
 - **每日自我完善任务发现**（2026-10-15）: 通过 Tavily 搜索确认 OpenClaw 最新动态、行业趋势和最佳实践；检查学习记录识别 pydantic ABI 问题为核心阻塞点；回顾近 3 天日志确认核心 cron 韧性；更新知识决策：MEMORY.md 需追加 10 项 Q4 增量知识，.learnings/ 需新增 6 项条目；系统自动化健康度：🟡 亚健康（pydantic ABI 致 26/48 cron 受阻）但感知/决策类核心 cron 全数正常
+- **每日自我完善任务发现**（2026-10-17）: 通过 Tavily 搜索确认 OpenClaw 最新动态、行业趋势和最佳实践；检查学习记录识别 pydantic ABI 问题根因已闭合，需 sora 执行修复路径；回顾近 3 天日志确认核心 cron 韧性；更新知识决策：MEMORY.md 需追加 Q4 2026 增量知识（本条），.learnings/ 需新增学习条目；系统自动化健康度：🟡 亚健康（pydantic ABI 致 26/48 cron 受阻）但感知/决策类核心 cron 全数正常
 
 ## 本周亮点 (W30, 07/20~07/26)
 
@@ -382,15 +383,19 @@ _最后更新: 2026-09-21｜运行环境: Hermes Agent on Windows 11_
 
 _最后更新: 2026-09-23 | 归档截止: 2026-08-21 (含) | 运行环境: Hermes Agent on Windows 11_
 
-## Promoted From Short-Term Memory (2026-09-29)
+## Promoted From Short-Term Memory (2026-10-17)
 
-<!-- openclaw-memory-promotion:memory:memory/2026-09-23.md:14:16 -->
-- 系统状态: OpenClaw Gateway 运行正常; Cron 调度器工作中（heartbeat + daily-summary 等定时任务）; 模型当前: openrouter/nvidia/nemotron-3-ultra-550b-a55b:free (默认: opencode-go/deepseek-v4-pro) [score=0.812 recalls=0 avg=0.620 source=memory/2026-09-23.md:14-16]
-<!-- openclaw-memory-promotion:memory:memory/2026-09-23.md:19:21 -->
-- 记忆架构运行情况: Hermes memory tool 可用; Obsidian vault 自动同步机制活跃; 每日 06:09 vault 优化 cron 正常执行 [score=0.812 recalls=0 avg=0.620 source=memory/2026-09-23.md:19-21]
-<!-- openclaw-memory-promotion:memory:memory/2026-09-23.md:29:31 -->
-- 下一步建议: 在主会话中回顾今日完整交互，提炼关键决策与学习; 将重要内容折叠入 MEMORY.md 长期记忆; 检查并更新相关 skill 版本（当前 27+ skills 已安装） [score=0.812 recalls=0 avg=0.620 source=memory/2026-09-23.md:29-31]
-<!-- openclaw-memory-promotion:memory:memory/2026-09-23.md:4:6 -->
-- 概览: **日期**: 2026-09-23 (周三); **时区**: Asia/Shanghai (GMT+8); **总结生成时间**: 22:04 (由 cron daily-summary 任务自动触发) [score=0.812 recalls=0 avg=0.620 source=memory/2026-09-23.md:4-6]
-<!-- openclaw-memory-promotion:memory:memory/2026-09-23.md:9:9 -->
-- 主要对话与任务: > 当前会话为 cron 隔离会话，无法直接访问主会话的完整对话历史。主会话的详细交互记录需在主会话中查看。 [score=0.812 recalls=0 avg=0.620 source=memory/2026-09-23.md:9-9]
+<!-- openclaw-memory-promotion:memory:memory/2026-10-12.md:11:14 -->
+- OpenClaw 核心发布: | 版本 | 日期 | 关键变更 | |------|------|----------| | **v2026.9.7** | 2026-10-01 | 更快负载响应、增强更新回滚保护、**OpenAI Agents API 公测**、**Sign in with ChatGPT (Beta)**、**Sora 视频生成退役** (建议替换: Kie AI / Z.AI / Novita / Qwen / Wan) | | **v2026.9.8** | 2026-10-08 | 优化 Codex Remote Sessions 目录处理，复用捕获设置减少重复内存使用 | [score=0.814 recalls=0 avg=0.620 source=memory/2026-10-12.md:11-14]
+<!-- openclaw-memory-promotion:memory:memory/2026-10-12.md:17:20 -->
+- 行业趋势与最佳实践: **AI Agent 运营成熟** (IBM/Deloitte 2026): 从「构建」转向「安全规模化运营」，确立**风险分级运营模型** (例行检索→Agent主导、低风险动作→Agent带控制、中风险决策→Agent建议+人工批准、高影响决策→人工主导+Agent支持); **持久化 Agent 趋势确认**: 设计用于长任务、本地执行、数据主权，配合 Local-First 转型; **Graph Engineering 范式确立**: 多阶段并行 + 精确反馈路由取代串行循环，Codex Remote Sessions 为 OpenClaw 实践实证; **记忆生命周期管理关键性**: Extract→Update→Delete 三步曲缺一不可；陈旧记忆毒性 > 无记忆 [score=0.814 recalls=0 avg=0.620 source=memory/2026-10-12.md:17-20]
+<!-- openclaw-memory-promotion:memory:memory/2026-10-12.md:21:23 -->
+- 行业趋势与最佳实践: **Skills Directory 爆发式增长**: 5,798+ 社区技能 (1,800+ AI Agent 专用)，安装/发现已成核心工作流入口; **OpenClaw 生态分化**: 12+ 替代方案涌现，但轻量级 fork (nanoclaw/zeroclaw/ironclaw/picoclaw) 缺乏生产验证; **OpenAI Agents API 公测细节**: 托管 Agent 循环、Data Agent (企业数据源)、GPT-Live-1 全双工语音、免费托管沙箱 (仅计费模型 token + 工具使用) [score=0.814 recalls=0 avg=0.620 source=memory/2026-10-12.md:21-23]
+<!-- openclaw-memory-promotion:memory:memory/2026-10-12.md:26:29 -->
+- 安全基线更新: **Secret egress host binding**: 评估在 openclaw.json 中显式配置密钥出口域名白名单; **审计日志完整性**: 确保 cron/heartbeat/subagent 执行轨迹可追溯; **Cross-Component Trust** (v2026.9.x): 远程节点事件默认 untrusted + 输出 sanitization; **WebSocket 会话即时失效**: token/密码轮换时立即失效 [score=0.814 recalls=0 avg=0.620 source=memory/2026-10-12.md:26-29]
+<!-- openclaw-memory-promotion:memory:memory/2026-10-12.md:3:4 -->
+- 2026-10-12 (周一) 每日自我完善总结: **生成时间**: 2026-10-12 16:25 (Asia/Shanghai) **触发方式**: cron daily-self-improvement 任务自动执行 [score=0.814 recalls=0 avg=0.620 source=memory/2026-10-12.md:3-4]
+<!-- openclaw-memory-promotion:memory:memory/2026-10-12.md:30:30 -->
+- 安全基线更新: **Shell 沙箱收紧**: busybox/toybox 移除，审批命令 fail-closed [score=0.814 recalls=0 avg=0.620 source=memory/2026-10-12.md:30-30]
+<!-- openclaw-memory-promotion:memory:memory/2026-10-12.md:37:40 -->
+- ERRORS.md - 关键已解决项: | 错误ID | 状态 | 核心教训 | |--------|------|----------| | ERR-20260916 (FlClash代理) | ✅ **2026-09-16 解决** | 物理层单点故障需人工介入，历时29天(8/18→9/16)，软件层冗余已拉满 | | ERR-20260720-001 (搜索超时) | ✅ 解决 | timeoutSeconds: 60→120，国内→Tavily需更长超时 | [score=0.814 recalls=0 avg=0.620 source=memory/2026-10-12.md:37-40]

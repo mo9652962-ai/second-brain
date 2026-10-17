@@ -6,7 +6,7 @@ domain: META
 aliases: [知识地图, Knowledge Map, 知识网络]
 date: 2026-07-22
 status: adopted
-updated: 2026-10-16
+updated: 2026-10-17
 ---
 
 # 🗺️ 知识地图 — Knowledge Map
@@ -15,7 +15,7 @@ updated: 2026-10-16
 
 > 机器版索引: [[VAULT-MAP|🗺️ VAULT-MAP]]（AI 导航）· 健康看板: [[DASHBOARD|📊 DASHBOARD]] · 新陈代谢: [[METABOLISM|🌿 METABOLISM]]
 
-> 所有知识领域的索引与关联。最后更新: 2026-10-16（论文工具审计纠错与证据边界回挂 Research MOC）
+> 所有知识领域的索引与关联。最后更新: 2026-10-17（论文样例图表与路线图复盘）
 
 ## 🧭 MOC 总入口（2026-08-16 起，新建 MOC 必须在此挂载）
 
@@ -97,6 +97,8 @@ updated: 2026-10-16
 > [[researchpilot-skills]] — AI科研全流程7阶段Skill套件
 
 > [[knowledge/Research/2026-10-16-douyin-academic-tools-audit]] — 学术平台主张核验、数据/文献接口边界与本地检索脚本审计
+
+> [[knowledge/Research/2026-10-17-academic-writing-tables-roadmaps|学术图表与路线图样例复盘]] — 表格自明性、学科路线图与 Word 渲染验收
 
 > [[vibe-research]] — AI辅助科研9阶段工具推荐清单
 
@@ -979,5 +981,6 @@ MCP 生态: GitHub + Filesystem + JLCPCB(38工具) + Obsidian(笔记操作)
 | cards | [[knowledge/cards/2026-09-19-zcode-silent-upload\|知识卡片 09-19]] | ZCode 静默上传 Git 历史实锤（墨题 126MB 快照 P0） |
 | Finance | [[knowledge/Finance/每日股票分析-2026-09-18\|股票分析 09-18]] | 每日 18:00 cron 自动分析（本周 5 篇） |
 | Daily | [[knowledge/Daily/hackernews-2026-09-19\|HN 09-19]] | hackernews 日报（本周 6 篇） |
+
 
 
