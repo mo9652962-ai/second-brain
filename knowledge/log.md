@@ -420,3 +420,18 @@ tags: [meta, vault-maintenance]
 - **修订**：新增 `Research/2026-10-17-academic-writing-tables-roadmaps.md`，挂接 Research MOC 与知识地图；新增 academic-thesis-engine 图表与路线图指南，升至 2.20.0；不修改原样例。
 - **边界**：未做全篇内容核验、公式复算、统计代码复现、法规时效审查或实机设计验证；规范来源有适用范围，后续以学校/期刊现行模板为准。
 - **验收补记**：knowledge-lint 复跑 699 页；本次新增页 YAML/frontmatter 合格、wikilink 断链 0。库级仍有既存问题：3 页缺 frontmatter、1 页孤立、README 同名 1 组；均非本次新增，未擅自改动。
+## [2026-10-18] lint | 每周例行体检
+
+- 断链 0 / 孤立 2 / 缺 frontmatter 3
+- 处理原则：只报告不自动修；新问题由 k 在下次会话处理
+
+## [2026-10-18] freshness | 时效审计
+
+- 过期硬约束 4 / 待运行时验证 38 / 历史记录 192
+- 需修正：
+  - `knowledge\log.md:272` — - `knowledge\cards\2026-09-21-devin-cognition-eval.md:35` — 3. ⚠️ 云端环境与本机不一致（本机无
+  - `knowledge\log.md:313` — - `knowledge\cards\2026-09-21-devin-cognition-eval.md:30` — 3. ⚠️ 云端环境与本机不一致（本机无
+  - `knowledge\log.md:365` — - `knowledge\cards\2026-09-21-devin-cognition-eval.md:30` — 3. ⚠️ 云端环境与本机不一致（本机无
+  - `knowledge\cards\2026-09-21-devin-cognition-eval.md:30` — 3. ⚠️ 云端环境与本机不一致（本机无虚拟化、Windows 专属环境）→ 首次试用选独立后端/前端小 Bug + 要求加回归测试
+- 处理原则：只报告不自动修；事实源见 knowledge/META/current-environment.md
+
