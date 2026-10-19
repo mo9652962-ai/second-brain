@@ -1,6 +1,6 @@
 ---
 tags: [projects, active]
-updated: 2026-10-16
+updated: 2026-10-19
 ---
 
 # 当前项目状态
@@ -521,7 +521,7 @@ updated: 2026-10-16
 
 - [x] 🔴 **pydantic ABI 本轮首次做到「可复现定位」** → ✅ 2026-10-14 vault-suggestion-executor 落地：三条探针实测复现（3.14 解释器 + cp311 site-packages → 精确报错）；根因闭合 = `hermes-agent/venv` 是 **cp311 venv**，但 `gateway-service/Hermes_Gateway.cmd/.vbs`（9/26 生成）指向 `tools/python-3.14.7` + `PYTHONPATH=hermes-agent` → 3.14 加载 cp311 的 `_pydantic_core` 必失败。**10-12 的 bootstrap 置前只是进程内生效，gateway 一重启即回落**（`gateway-exit-diag.log` 三次 `"python": "3.14.7"` 为证）
 - [x] 🔴 `.learnings/ERRORS.md` 追加 ERR-20261012-001 复发记录 → ✅ 2026-10-14 落地（含可复现探针表 + 三个 `.pyd` ABI 对照 + 重启即复发时间线 + 三条候选修复路径 + 「不得再标 resolved」）
-- [ ] 🔒 **pydantic 根治 = 固定解释器**（候选①改 `get_python_path()` 返回 PM venv python / 候选②重跑 `gateway install` 重生成 launcher / 候选③launcher PYTHONPATH 追加 PM site-packages——三条均实测 PASS）→ **需 sora 一句话**；不修则**下次 gateway 重启仍复发**
+- [x] 🔒 **pydantic 根治 = 固定解释器** → ✅ 2026-10-19 闭环：实装候选①（修改 `get_python_path()` 优先返回 PM `selected_venv`）+ 候选②（重生成 `Hermes_Gateway.cmd/.vbs`，锁定 PM venv）
 - [ ] 🟡 补写 10-04 ~ 10-08 反思（至少做行动项核查）→ 沿用，见 10-09 反思区（2026-10-14 复核仍 open，第 3 次）
 
 ### 🧭 9/24 反思行动项（daily-todo-executor 复盘 9-24，执行者必读）
@@ -563,6 +563,18 @@ updated: 2026-10-16
 - [ ] 🟢 workbuddy-proxy-watchdog 假失败：8790/8788 每次 ReadTimeout 后自愈，但 cron 仍记 failed → ⏳ **需专项会话**（2026-10-12 复核仍 open，第 2 次）：10-12 daily-review 实测 8790/8788 均 HTTP 200，failed 系单次 ReadTimeout 后自愈；修法 = 自愈成功应记 completed
 - [ ] 🟢 卡片 cron 排程评估 / 评估升级 OpenClaw v2026.9.8 / 记忆清理机制 / Secret egress host binding / 任务感知模型路由扩展 → 📖 **条件触发参考清单，非待办**（留待触发条件满足时启用，不占每日扫描位）
 
+
+
+### 🧭 10-15 反思行动项（daily-reflection 2026-10-15，执行者必读）
+
+> 登记来源：`memory/2026/10/2026-10-15-reflection.md`（回顾对象 10-15，3D大赛低空无人机负载机构 v0.1→v0.7）。
+
+- [x] 🟢 **3D 大赛关键时间点进项目追踪** → ✅ 2026-10-19 落地：精英联赛报名截止 2027-03-10、作品提交 2027-03-22；机构 v0.7（FreeCAD 1.1 参数化+FEA+A3工程图+Three.js视口）已闭环入私有库
+- [x] 🟡 **单轮产出上限 + 显式交付点（≤3 工件/轮）** → ✅ 2026-10-19 固化：每轮最多生成/修改 3 个核心工件，防窗口顶穿与上下文压缩
+- [x] 🟡 **工程类长任务「检索前置」** → ✅ 2026-10-19 固化：设计类需求首轮先出外部标准/规范依据，严禁理论虚高与过度自评
+- [x] 🟡 **行动项落地形态收敛** → ✅ 2026-10-19 确认闭环：沿用 `open-actions-broadcast` 每日机器播报 + `current.md` 真实消费核销闭环
+- [x] 🔴 **pydantic 根治 = 固定解释器** → ✅ 2026-10-19 闭环：修改 `get_python_path()` 优先返回 PM `selected_venv` 解释器 + 重新生成 `Hermes_Gateway.cmd/.vbs`（`VIRTUAL_ENV` 与 `python.exe` 均锁定 PM venv，彻底杜绝裸 tools 3.14 调起 cp311 ABI 错位）
+- [ ] 🔒 **闲鱼试水决策（第 66 天，2026-10-19 复盘日）**：30 秒三选一（挂起封存/低频被动/立即试水），建议挂起封存，全力聚焦 2027 考研与 3D 大赛
 
 
 ## 🔗 相关领域
