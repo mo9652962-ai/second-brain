@@ -524,3 +524,23 @@ No selected generation or ambient PYTHONPATH is captured in the command.`
 - 反思登记史：`memory/2026/10/2026-10-01-reflection.md` / `2026-10-03-reflection.md` / `2026-10-09-reflection.md`
 
 ---
+### 🔁 复发 #4（2026-10-18 预测命中 / 2026-10-20 再次确认）
+
+**判定依据**: 10-14 写下的预测「下次 gateway 重启仍会复发」在 10-16 命中，10-18 daily-summary 期间再次确认核心 cron 受阻，10-20 本次 self-improvement cron 运行期间再次验证根因未变。
+
+| 证据 | 实测值 | 来源 |
+|:---|:---|:---|
+| 10-18 系统健康度 | 32/48 cron 受阻，核心感知链路 100% 存活 | daily-summary cron 10-18 |
+| 10-19 self-improvement | 四度复发/预测命中确认，根因闭合 | daily-self-improvement cron 10-19 |
+| 10-20 self-improvement | 第五度确认，三重压力并发 (ABI+配额+磁盘) | daily-self-improvement cron 10-20 |
+
+**关键确认**: 
+- gateway-exit-diag.log 仍为 "python": "3.14.7" (launcher 未重新生成)
+- hermes-agent/venv 仍为 cp311 (pyvenv.cfg version_info=3.11)
+- PM venv (cp314) 单跑 PASS，三条修复路径均实测有效
+- **判定口径已固化**: ① resolved 必须含 gateway 重启复验 ② 证据须跨进程 ③ 核对 python 字段 ④ launcher 陈旧时验证须含 diff
+
+**当前状态**: mitigated，**第四次预测命中**，根治仅待 sora 选路径执行。
+
+---
+

@@ -383,23 +383,11 @@ _最后更新: 2026-09-21｜运行环境: Hermes Agent on Windows 11_
 
 _最后更新: 2026-09-23 | 归档截止: 2026-08-21 (含) | 运行环境: Hermes Agent on Windows 11_
 
-## Promoted From Short-Term Memory (2026-10-19)
+## Promoted From Short-Term Memory (2026-10-20)
 
-<!-- openclaw-memory-promotion:memory:memory/2026-10-14.md:11:11 -->
-- 📋 今日核心概况: **无人工对话交互** —— 全天为自动化 cron 任务运行日，系统在 pydantic_core ABI 故障背景下维持基础自动化运转。 [score=0.827 recalls=0 avg=0.620 source=memory/2026-10-14.md:11-11]
-<!-- openclaw-memory-promotion:memory:memory/2026-10-14.md:13:16 -->
-- 📋 今日核心概况: | 维度 | 状态 | |------|------| | 主会话对话 | 0 条 | | Cron 任务总数 | 48 | [score=0.827 recalls=0 avg=0.620 source=memory/2026-10-14.md:13-16]
-<!-- openclaw-memory-promotion:memory:memory/2026-10-14.md:17:19 -->
-- 📋 今日核心概况: | Cron 正常执行 | 21 | | Cron 失败/异常 | 26 (主要受 pydantic_core ABI 阻塞) | | 关键基础设施 | FlClash 代理已恢复 (2026-09-16) | [score=0.827 recalls=0 avg=0.620 source=memory/2026-10-14.md:17-19]
-<!-- openclaw-memory-promotion:memory:memory/2026-10-13.md:11:14 -->
-- 系统维护与配置: **Memory 架构验证**: 确认 WAL Protocol 运行正常，SESSION-STATE.md / working-buffer.md / daily notes / MEMORY.md 四层记忆体系完整; **模型容灾链**: deepseek-v4-pro → kimi-k2.6 → qwen3.7-plus → glm-5.2 链路就绪; **搜索工具链**: Tavily/Exa/Firecrawl 三重 API 冗余 + SearXNG 本地实例 + DDGS VPN 备用; **Skills 体系**: 27+ skills 已安装，覆盖论文/PPT/图片/自改进/搜索/工程/学术写作 [score=0.810 recalls=0 avg=0.620 source=memory/2026-10-13.md:11-14]
-<!-- openclaw-memory-promotion:memory:memory/2026-10-13.md:17:19 -->
-- 自动化运行: **Heartbeat**: 约 30 分钟间隔批量检查 (邮件/日历/天气)，80-95% 静默返回; **Vault 优化**: 每日 06:09 全量诊断 cron (断链/空壳/孤立笔记/标签/MOC); **Cron 调度器**: 当前 daily-summary 任务正常触发 [score=0.810 recalls=0 avg=0.620 source=memory/2026-10-13.md:17-19]
-<!-- openclaw-memory-promotion:memory:memory/2026-10-13.md:22:24 -->
-- 知识沉淀: **OpenClaw 生态分化**: 记录 5 个发行版定位差异 (Core/NanoClaw/ZeroClaw/NemoClaw/Taskade Genesis); **v2026.2.12 安全特性**: SSRF 白名单 / Webhook 节流 / 沙箱限制 / 新模型原生支持; **架构里程碑**: Task Brain 统一控制平面 / AI 代理数据恢复 / Graph Engineering 范式 [score=0.810 recalls=0 avg=0.620 source=memory/2026-10-13.md:22-24]
-<!-- openclaw-memory-promotion:memory:memory/2026-10-13.md:27:30 -->
-- 待办与关注点: [ ] Tavily 配额周期性耗尽模式监控 (Firecrawl 作为永久 fallback 已验证); [ ] 语义缓存 (0.92 阈值) 治本项 P0，硬截止 2026-08-22 已过，需复盘; [ ] 记忆生命周期管理：强化 Update/Delete 机制，防止陈旧记忆毒性; [ ] 脚本登记表维护：`scripts/README.md` 作为单一事实源 [score=0.810 recalls=0 avg=0.620 source=memory/2026-10-13.md:27-30]
-<!-- openclaw-memory-promotion:memory:memory/2026-10-13.md:33:33 -->
-- 备注: 今日无人工对话交互记录（隔离 cron 会话），系统自动化运行平稳。主要工作集中在后台维护与知识体系的持续沉淀。 [score=0.810 recalls=0 avg=0.620 source=memory/2026-10-13.md:33-33]
-<!-- openclaw-memory-promotion:memory:memory/2026-10-13.md:4:6 -->
-- 概览: **日期**: 2026-10-13 (周二); **时间**: 22:00 自动生成 (Asia/Shanghai); **会话类型**: Cron 隔离会话 (daily-summary) [score=0.810 recalls=0 avg=0.620 source=memory/2026-10-13.md:4-6]
+<!-- openclaw-memory-promotion:memory:memory/2026-10-14.md:26:29 -->
+- OpenClaw 生态重大更新 (v2026.9.7/9.8): **OpenAI Agents API 公测集成** —— 托管 Agent 循环、免费沙箱将改变构建成本结构; **Sign in with ChatGPT (Beta)** 新增认证方式; **Sora 视频生成正式退役** —— 官方建议替代: Kie AI / Z.AI / Novita / Qwen / Wan，需评估对 video generation skills 影响; 半个月 6 版本极速补丁节奏延续，社区验证进行中，**暂不建议升级** [score=0.812 recalls=0 avg=0.620 source=memory/2026-10-14.md:26-29]
+<!-- openclaw-memory-promotion:memory:memory/2026-10-14.md:3:5 -->
+- 2026-10-14 每日工作总结: **日期**: 2026-10-14 (周三) **生成时间**: 22:00 (Asia/Shanghai) **生成方式**: daily-summary cron 自动执行 [score=0.812 recalls=0 avg=0.620 source=memory/2026-10-14.md:3-5]
+<!-- openclaw-memory-promotion:memory:memory/2026-10-14.md:32:35 -->
+- pydantic_core ABI 问题获明确根因与修复证据 (P0 阻塞项): **根因**: 运行解释器与 site-packages ABI 混用 (hermes_bootstrap 路径问题); **跨度**: 14 天 P0 阻塞，第 5 次登记待办; **状态**: 已有修复证据，需 **gateway 回退 3.11 启动路径** (需 sora 执行); **影响**: 26/48 cron 任务因 `No module named 'pydantic_core._pydantic_core'` 失败 [score=0.812 recalls=0 avg=0.620 source=memory/2026-10-14.md:32-35]
