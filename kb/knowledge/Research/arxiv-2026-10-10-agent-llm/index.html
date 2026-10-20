@@ -2965,7 +2965,7 @@
 <li><strong>作者:</strong> Hongming Xu, Le Zhou, ZhongHe Jin, Xiang Zhang, Bo Tang, Zhiyu Li, Xuanhe Zhou, Juncheng Zhang</li>
 <li><strong>分类:</strong> cs.AI</li>
 <li><strong>摘要:</strong> 编码 agent 承担跨多文件多阶段的长时程软件演化任务时，更长的执行轨迹带来两个耦合挑战：① 累积历史挤压上下文预算；② <strong>仓库变更会让早先的执行证据失效</strong>。既有方案（更大窗口、压缩、检索、仓库表示）常无法在上下文刷新后<strong>重建一致的任务状态</strong>，也无法验证召回的证据是否仍然有效。<strong>MemTrace</strong> 是 provenance-aware 记忆系统：把历史存为锚定关键信息（文件、符号、测试）的<strong>不可变 Memory Trace</strong>，用 Memory Trace Graph 组织其执行顺序与依赖；上下文受限时工作记忆只保留紧凑的 <strong>Memory Anchors</strong>，agent 据此重建最新执行状态并定位与下一步动作相关的证据；恢复历史证据前<strong>对照当前仓库状态校验有效性</strong>，只取下一步动作所需的部分。三个长时程编码基准上一致优于全部完整评测的基线，在 Codex CLI 下把 DeepSWE pass@1 提升 <strong>21.2 分</strong>、SWE-EVO Resolved Rate 提升 <strong>4.4 分</strong>、SWE-Milestone Score 提升 <strong>17.8 分</strong>。</li>
-<li><strong>关联度:</strong> ★★★★★ 直接可用于 k 的编码委派流程：**「证据要对着当前仓库状态校验」**是 k 目前完全缺失的一环——k 常把早先读到的文件内容当既成事实，而 Codex 已经改过文件。可落地：① 长任务维护「锚点（文件/符号/测试）」而非全文历史；② 恢复历史证据前先校验当前状态（文件是否还存在、符号是否还被引用）；③ 只取下一步所需，不做全量恢复。</li>
+<li><strong>关联度:</strong> ★★★★★ 直接可用于 k 的编码委派流程：<strong>「证据要对着当前仓库状态校验」</strong>是 k 目前完全缺失的一环——k 常把早先读到的文件内容当既成事实，而 Codex 已经改过文件。可落地：① 长任务维护「锚点（文件/符号/测试）」而非全文历史；② 恢复历史证据前先校验当前状态（文件是否还存在、符号是否还被引用）；③ 只取下一步所需，不做全量恢复。</li>
 </ul>
 <h3 id="14-memory-canonicalization-a-framework-and-benchmark-for-cross-model-drift-in-persistent-llm-memory">14. Memory Canonicalization: A Framework and Benchmark for Cross-Model Drift in Persistent LLM Memory<a class="headerlink" href="#14-memory-canonicalization-a-framework-and-benchmark-for-cross-model-drift-in-persistent-llm-memory" title="Permanent link">&para;</a></h3>
 <ul>
@@ -3030,7 +3030,7 @@
 <li><strong>ID:</strong> <a href="https://arxiv.org/abs/2610.08900v2">2610.08900v2</a> | <a href="https://arxiv.org/pdf/2610.08900">📄 PDF</a></li>
 <li><strong>作者:</strong> Sihao Liu, Ligeng Zhu, Zijian Zhang, Dongyun Zou, Zhengyang Zhang, Changye Li, Song Bian, Song Han, Tony Nowatzki</li>
 <li><strong>分类:</strong> cs.AI, cs.CY</li>
-<li><strong>摘要:</strong> agentic 编码让代码生成变便宜，但可靠完成仍难：<strong>写代码的 agent 是判断「是否完成」的弱裁判</strong>。<strong>Humanize</strong> 是围绕 <strong>judgement engineering</strong> 构建的多 agent 编排工作流——在规划、实现、复核、学习四个边界上做显式的、机械强制的决策：人类批准计划契约，builder agent 分轮实现，<strong>来自另一个厂商的 reviewer agent 决定完成</strong>，由确定性 hook（而非模型）在角色间路由工作并强制 <strong>72 道机械门禁</strong>。把流程视为仓库状态上的马尔可夫链，交替的 builder 与 reviewer 相当于联合采样两个模型，因此一个缺陷只有<strong>两个模型都漏掉</strong>才能存活。通过部署（108 天 68 个版本、<strong>1,468 GitHub stars</strong>）、118 份真实循环的公开 postmortem 及其应用来研究：包括上游评审中的 567 文件 gem5 构建系统迁移；Kernel Design Agents 在 MLSys 2026 FlashInfer 竞赛三个 Full-Agent 赛道全部进入前三；通过 Humanize Olympiad Agents（HOA）在 IOI 2026、IMO 2026、IPhO 2026、IBO 2024 取得满分，IChO 2026 得 418.5/437（金牌）；PutnamBench <strong>672/672</strong>，Lean-Eval 榜首位（251/303）。postmortem 显示独立复核能抓住 builder 无依据的声称，但**「何时停止」仍是关键弱点**——在按阶段分轮的报告中，三分之二的轮次发生在实现已被接受之后。作者声明这是观察性证据，不是受控比较。</li>
+<li><strong>摘要:</strong> agentic 编码让代码生成变便宜，但可靠完成仍难：<strong>写代码的 agent 是判断「是否完成」的弱裁判</strong>。<strong>Humanize</strong> 是围绕 <strong>judgement engineering</strong> 构建的多 agent 编排工作流——在规划、实现、复核、学习四个边界上做显式的、机械强制的决策：人类批准计划契约，builder agent 分轮实现，<strong>来自另一个厂商的 reviewer agent 决定完成</strong>，由确定性 hook（而非模型）在角色间路由工作并强制 <strong>72 道机械门禁</strong>。把流程视为仓库状态上的马尔可夫链，交替的 builder 与 reviewer 相当于联合采样两个模型，因此一个缺陷只有<strong>两个模型都漏掉</strong>才能存活。通过部署（108 天 68 个版本、<strong>1,468 GitHub stars</strong>）、118 份真实循环的公开 postmortem 及其应用来研究：包括上游评审中的 567 文件 gem5 构建系统迁移；Kernel Design Agents 在 MLSys 2026 FlashInfer 竞赛三个 Full-Agent 赛道全部进入前三；通过 Humanize Olympiad Agents（HOA）在 IOI 2026、IMO 2026、IPhO 2026、IBO 2024 取得满分，IChO 2026 得 418.5/437（金牌）；PutnamBench <strong>672/672</strong>，Lean-Eval 榜首位（251/303）。postmortem 显示独立复核能抓住 builder 无依据的声称，但<strong>「何时停止」仍是关键弱点</strong>——在按阶段分轮的报告中，三分之二的轮次发生在实现已被接受之后。作者声明这是观察性证据，不是受控比较。</li>
 <li><strong>关联度:</strong> ★★★★★ 与 k 的编码委派流程（Codex → k review）高度同构，且给了两条硬结论：① <strong>换厂商复核有效</strong>（缺陷需两模型同时漏掉才存活）——正是 sora 的「Gemini 跨源盲评」打法；② <strong>停止条件是弱点</strong>（2/3 轮次在验收后还在跑）——k 该给委派任务设明确的「完成即停」判据，而不是让 agent 无限轮。可落地：把 72 道门禁的思路缩成 k 的「交付前检查清单」，且<strong>由确定性脚本执行而非模型自评</strong>。</li>
 </ul>
 <h3 id="22-fast-models-slow-evidence-a-paired-and-self-audited-evaluation-of-system-1-decision-models-for-llm-agent-harnesses">22. Fast Models, Slow Evidence: A Paired and Self-Audited Evaluation of System-1 Decision Models for LLM Agent Harnesses<a class="headerlink" href="#22-fast-models-slow-evidence-a-paired-and-self-audited-evaluation-of-system-1-decision-models-for-llm-agent-harnesses" title="Permanent link">&para;</a></h3>
@@ -3046,7 +3046,7 @@
 <li><strong>ID:</strong> <a href="https://arxiv.org/abs/2610.04375v1">2610.04375v1</a> | <a href="https://arxiv.org/pdf/2610.04375">📄 PDF</a></li>
 <li><strong>作者:</strong> Boyang Yang, Zhenhao Li, Ziyao Yang, Kanghui Jia, Xin Yin, Mingmou Liu, Haoye Tian</li>
 <li><strong>分类:</strong> cs.AI, cs.SE</li>
-<li><strong>摘要:</strong> LLM agent 通过工具调用构建并运行软件。一个调用要经<strong>多个跳（hop）<strong>到达程序，任一跳都可能悄无声息地改动它；改动后的调用失败时，agent 会重试一个</strong>正确的</strong>调用，浪费用户时间与金钱。基准与失败分析看不到这个改动，因为它们读的是调用及其结果，而不是<strong>某一跳收到了什么</strong>。作者定义 <strong>intent-execution correspondence（IEC）</strong>：执行的动作与发出的调用在工具契约下所指的动作一致。协议在不执行调用的前提下观测每一跳收到了什么，并用<strong>接收方自己的解析器</strong>指出第一个改动它的跳；<strong>IntAct</strong> 随后以该跳无法改动的方式投递调用，或拒绝该调用。基于真实使用中观察到的改动构建 <strong>IEC-Bench</strong>（4 个广泛使用 harness 的执行路径上的依赖调用链）：在生产会话的 <strong>47,828 次 shell 调用</strong>中，Claude Code 的 Bash 工具改动了 <strong>12.0%</strong> 的携带代码/转义序列/长文本的调用；在反斜杠被改动的调用中 <strong>80.7%</strong> 会在<strong>没有任何报错</strong>的情况下执行错误动作。<strong>全部 10 个被测 harness 都会改动调用</strong>。基于轨迹的判断把 <strong>95.1%</strong> 的生产失败归因于 LLM，尽管<strong>超过一半</strong>是路径造成的。IEC-Bench 上路径把每通过任务的 token 成本抬高 <strong>2.4 倍</strong>（最高 12.3 倍）。改动调用的跳还会<strong>遮蔽其后所有改动</strong>，因此某路径上 55.1% 的失败要等到第一跳被修复后才显现。IntAct 部署在商业产品中，恢复了 79.2% 的失败调用。</li>
+<li><strong>摘要:</strong> LLM agent 通过工具调用构建并运行软件。一个调用要经<strong>多个跳（hop）</strong>到达程序，任一跳都可能悄无声息地改动它；改动后的调用失败时，agent 会重试一个<strong>正确的</strong>调用，浪费用户时间与金钱。基准与失败分析看不到这个改动，因为它们读的是调用及其结果，而不是<strong>某一跳收到了什么</strong>。作者定义 <strong>intent-execution correspondence（IEC）</strong>：执行的动作与发出的调用在工具契约下所指的动作一致。协议在不执行调用的前提下观测每一跳收到了什么，并用<strong>接收方自己的解析器</strong>指出第一个改动它的跳；<strong>IntAct</strong> 随后以该跳无法改动的方式投递调用，或拒绝该调用。基于真实使用中观察到的改动构建 <strong>IEC-Bench</strong>（4 个广泛使用 harness 的执行路径上的依赖调用链）：在生产会话的 <strong>47,828 次 shell 调用</strong>中，Claude Code 的 Bash 工具改动了 <strong>12.0%</strong> 的携带代码/转义序列/长文本的调用；在反斜杠被改动的调用中 <strong>80.7%</strong> 会在<strong>没有任何报错</strong>的情况下执行错误动作。<strong>全部 10 个被测 harness 都会改动调用</strong>。基于轨迹的判断把 <strong>95.1%</strong> 的生产失败归因于 LLM，尽管<strong>超过一半</strong>是路径造成的。IEC-Bench 上路径把每通过任务的 token 成本抬高 <strong>2.4 倍</strong>（最高 12.3 倍）。改动调用的跳还会<strong>遮蔽其后所有改动</strong>，因此某路径上 55.1% 的失败要等到第一跳被修复后才显现。IntAct 部署在商业产品中，恢复了 79.2% 的失败调用。</li>
 <li><strong>关联度:</strong> ★★★★★ 「发出的调用 ≠ 执行的调用」是 k 排障时的盲区——k 常常看到「调用失败」就归因于模型或工具，而真相可能在中间层（shell 转义、路径转换、编码）。本文的 12% 改动率与 80.7% 静默错误率相当高。可落地：① 工具调用失败时<strong>先怀疑中间层</strong>（尤其含转义/引号/长文本的 shell 命令）；② 失败归因别只看轨迹（本文说 95.1% 被误归因给模型）；③ 观测每一跳「收到了什么」而非只看结果。</li>
 </ul>
 <h3 id="24-confidence-reasoning-graphs-structured-confidence-estimation-for-llm-agents">24. Confidence Reasoning Graphs: Structured Confidence Estimation for LLM Agents<a class="headerlink" href="#24-confidence-reasoning-graphs-structured-confidence-estimation-for-llm-agents" title="Permanent link">&para;</a></h3>
@@ -3055,7 +3055,7 @@
 <li><strong>作者:</strong> Brendan King, Farima Fatahi Bayat, Jean-Flavien Bussotti, Pouya Pezeshkpour, Estevam Hruschka</li>
 <li><strong>分类:</strong> cs.AI, cs.CL</li>
 <li><strong>摘要:</strong> 在关键领域使用 LLM agent 时，「该信任其输出还是介入」需要<strong>校准的置信度</strong>。agent 置信度估计难，因为关于成功的证据分散在异质、相互依赖的轨迹步骤上；实际部署还带来额外挑战：前沿 LLM 常只提供有限的内部信号访问、agent rollout 昂贵、训练数据可能不可得或很快过时。作者提出 <strong>Confidence Reasoning Graphs（CRG）</strong>：推理时框架，从<strong>单条轨迹</strong>估计 agent 完成任务的概率，不需要特权模型访问或训练数据。CRG 不把执行压成单一整体判断，而是从「agent 完成了任务」这一主张出发，把它分解为<strong>以轨迹证据为基础的情境化子主张</strong>，对每个终端主张估计置信度，最后聚合为整体置信度。在三个 agentic 基准、三个骨干模型、三个 agent 框架上，CRG 给出比「言语化置信」「采样法」「白盒代理」基线<strong>更好的校准与更强的风险感知决策</strong>。作者进一步发现<strong>单看校准误差可能误导</strong>：一个白盒代理基线看起来校准良好，但判别力接近随机。消融把 CRG 的改进归因于主张级置信度估计与聚合，而非仅图构建。CRG 还暴露每个置信度估计背后的主张与轨迹证据，可在决策时审计。</li>
-<li><strong>关联度:</strong> ★★★★★ 给 k 的交付提供了**「置信度可审计」的做法**：不是给一个笼统的「我觉得行」，而是分解成若干带证据的子主张再聚合。同时本文的「校准好但判别力近随机」是 k 评模型时的关键陷阱——<strong>校准 ≠ 有用</strong>。可落地：① 关键结论附「子主张 + 证据」而非单一分数；② 评估置信度方法时同时看校准与判别力；③ 优先「可从单条轨迹算」的方法（不需要重跑）。</li>
+<li><strong>关联度:</strong> ★★★★★ 给 k 的交付提供了<strong>「置信度可审计」的做法</strong>：不是给一个笼统的「我觉得行」，而是分解成若干带证据的子主张再聚合。同时本文的「校准好但判别力近随机」是 k 评模型时的关键陷阱——<strong>校准 ≠ 有用</strong>。可落地：① 关键结论附「子主张 + 证据」而非单一分数；② 评估置信度方法时同时看校准与判别力；③ 优先「可从单条轨迹算」的方法（不需要重跑）。</li>
 </ul>
 <hr />
 <h2 id="4">五、评测有效性与基准可信（4 篇）<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
@@ -3099,7 +3099,7 @@
 <li><strong>作者:</strong> Jiahao Lu, Mohan Kankanhalli</li>
 <li><strong>分类:</strong> cs.LG, cs.AI, cs.CL</li>
 <li><strong>摘要:</strong> Test-time training（TTT）用测试输入导出的信号调整 LLM 参数，能在 IMO 竞赛或指定开放问题等预设场景中带来显著改进；通过把部署经验变成参数更新，TTT 提供了<strong>模型级自我改进</strong>的直接机制。但 TTT 并非普遍有益：每种 TTT 算法适用的设置不同，用错方法可能浪费测试时算力甚至损害性能。因此这种参数级自我改进<strong>需要自主性</strong>：模型必须判断何时该做 TTT、调用哪种算法、以及现有技能能否复用。<strong>Agentic-TTT</strong> 学习一个<strong>测试时策略</strong>来治理这些决策：把 TTT 过程变成可调用工具，把累积技能视为演化的部署环境，用决策带来的观测效用增益训练策略。在其基准上，Agentic-TTT 相对骨干模型<strong>效用近乎翻倍</strong>，学会在效用与算力间权衡，并泛化到训练中未见领域。作者认为这指向自主自我改进：能决定如何从自身部署经验中学习的模型。</li>
-<li><strong>关联度:</strong> ★★★★☆ 给 k 的自举体系一个**「何时学」的判据**：不是所有经验都值得固化（用错方法会浪费甚至有害）。可落地：把「这次经验值不值得写进技能/记忆」做成显式决策（参照 <code>knowledge-absorption</code> 五步法的评估环节），并把「算力/上下文成本」纳入权衡。</li>
+<li><strong>关联度:</strong> ★★★★☆ 给 k 的自举体系一个<strong>「何时学」的判据</strong>：不是所有经验都值得固化（用错方法会浪费甚至有害）。可落地：把「这次经验值不值得写进技能/记忆」做成显式决策（参照 <code>knowledge-absorption</code> 五步法的评估环节），并把「算力/上下文成本」纳入权衡。</li>
 </ul>
 <h3 id="30-synco-data-synthesis-co-training-for-self-evolving-llms-via-multi-agent-reinforcement-learning">30. SynCo: Data Synthesis Co-Training for Self-Evolving LLMs via Multi-Agent Reinforcement Learning<a class="headerlink" href="#30-synco-data-synthesis-co-training-for-self-evolving-llms-via-multi-agent-reinforcement-learning" title="Permanent link">&para;</a></h3>
 <ul>
@@ -3107,7 +3107,7 @@
 <li><strong>作者:</strong> Wei Yang, Shawn Li, Yuehan Qin, Yawei Wang, Mingxi Wang, Shixuan Li, Tiankai Yang, Jiate Li, Jesse Thomason, Xuezhe Ma, Yue Zhao</li>
 <li><strong>分类:</strong> cs.AI</li>
 <li><strong>摘要:</strong> 自演化 LLM agent 承诺通过持续交互与学习自主改进，减少对手工监督的依赖。实现这一承诺不仅需要更新 agent，还需要<strong>随能力变化而演化其训练经验</strong>。但多数既有管线依赖静态数据集或独立更新的合成模型，导致曾经有用的任务变得平凡、而过难的任务始终无信息量——这种 agent 能力与训练经验之间日益扩大的<strong>失配</strong>限制了持续自我改进。作者提出 <strong>SynCo</strong>：基于多智能体强化学习的 agentic 数据合成<strong>共训练</strong>框架，联合优化两个独立参数化的 agent：<strong>Synthesizer</strong> 依据 Reasoner 的演化能力状态构造训练任务，<strong>Reasoner</strong> 从产生的经验中学习。每个合成任务引发多个 Reasoner rollout，其结果给两个 agent 提供互补奖励：正确性反馈改进 Reasoner，而任务质量、答案可靠性与结果锚定的可教性引导 Synthesizer。两者的更新反馈进后续合成轮次，使<strong>任务求解策略与其训练分布共同演化</strong>。八个数学推理基准上，SynCo 大幅优于广泛的既有合成数据方法与受控基线，取得最强整体性能，且<strong>大部分增益来自此前未解决的问题</strong>。</li>
-<li><strong>关联度:</strong> ★★★★☆ 对 k 的知识库自举是**「难度适配」原则**：过易的知识点无信息量、过难的记不住。可落地：挑选学习材料/论文时按「当前能力边界」选（略高于现有水平）；把「大部分增益来自此前未解决的问题」当选题判据——<strong>优先补自己确实不会的缺口</strong>。</li>
+<li><strong>关联度:</strong> ★★★★☆ 对 k 的知识库自举是<strong>「难度适配」原则</strong>：过易的知识点无信息量、过难的记不住。可落地：挑选学习材料/论文时按「当前能力边界」选（略高于现有水平）；把「大部分增益来自此前未解决的问题」当选题判据——<strong>优先补自己确实不会的缺口</strong>。</li>
 </ul>
 <h3 id="31-closed-loop-evaluation-of-llm-agents-for-embedded-software-development">31. Closed-loop evaluation of LLM agents for embedded software development<a class="headerlink" href="#31-closed-loop-evaluation-of-llm-agents-for-embedded-software-development" title="Permanent link">&para;</a></h3>
 <ul>
@@ -3379,7 +3379,7 @@
 <td>38</td>
 <td><a href="https://arxiv.org/abs/2610.11766v1">2610.11766</a></td>
 <td>Same Outcome, Different Evidence: Intent Recovery in LLM Safety Evaluation</td>
-<td>安全评测常用攻击成功率（ASR）概括有害输出行为，但<strong>同一个非有害结果可能源于完全不同的原因</strong>：模型恢复了有害任务并拒绝、没能恢复任务、或答了别的。在<strong>意图模糊</strong>的 prompt 下，低 ASR 并不说明被评测的任务是否真被触及。作者把 ASR 与**操作理解率（UR）**配对。→ k 评估安全时该加「理解率」，别只看拒绝率</td>
+<td>安全评测常用攻击成功率（ASR）概括有害输出行为，但<strong>同一个非有害结果可能源于完全不同的原因</strong>：模型恢复了有害任务并拒绝、没能恢复任务、或答了别的。在<strong>意图模糊</strong>的 prompt 下，低 ASR 并不说明被评测的任务是否真被触及。作者把 ASR 与<strong>操作理解率（UR）</strong>配对。→ k 评估安全时该加「理解率」，别只看拒绝率</td>
 </tr>
 <tr>
 <td>39</td>
@@ -3459,7 +3459,7 @@
 <p><strong>执行可信从「模型层」下沉到「协议/传输层」</strong>：Do Tool Calls Execute as Intended（生产会话 47,828 次 shell 调用中 <strong>12.0%</strong> 被 harness 改动，<strong>80.7% 的改动静默执行错误动作</strong>，全部 10 个 harness 都会改，且 <strong>95.1% 的失败被误归因给 LLM</strong>）、COPEX（MCP 四层攻击面，client/transport 层攻击<strong>部分在模型观测之外</strong>）、StegoMemory（agentic memory 成<strong>跨会话隐蔽信道</strong>，20.1% 精确恢复且 71.4% 同时通过任务评分与安全监督）。→ <strong>「模型侧防御」有硬边界</strong>，必须叠加协议层完整性与执行时授权。</p>
 </li>
 <li>
-<p><strong>多 agent 的「何时值得」终于有了可计算判据</strong>：Attention Tax, Handoff Tax 给出两个交叉条件（<strong>重置上下文省下的注意力成本 &gt; 交接成本</strong> → 分解变优；<strong>并行采样的共享失败下限 &lt; 单 agent 长思考的错误下限</strong> → 冗余更优），并在实测中把交叉点定在<strong>深度 10</strong>、预测与实测差 9 个百分点内。配合 ABCAgent（<strong>把稳定流程写成确定性程序</strong>，延迟降 5.2×、成本降 7.0×）与 Humanize（<strong>换厂商复核</strong>让缺陷需两模型同漏才存活，但**「何时停止」是弱点**，2/3 轮次发生在验收后）。→ k 的委派决策可公式化，且**「该停就停」要写进流程**。</p>
+<p><strong>多 agent 的「何时值得」终于有了可计算判据</strong>：Attention Tax, Handoff Tax 给出两个交叉条件（<strong>重置上下文省下的注意力成本 &gt; 交接成本</strong> → 分解变优；<strong>并行采样的共享失败下限 &lt; 单 agent 长思考的错误下限</strong> → 冗余更优），并在实测中把交叉点定在<strong>深度 10</strong>、预测与实测差 9 个百分点内。配合 ABCAgent（<strong>把稳定流程写成确定性程序</strong>，延迟降 5.2×、成本降 7.0×）与 Humanize（<strong>换厂商复核</strong>让缺陷需两模型同漏才存活，但<strong>「何时停止」是弱点</strong>，2/3 轮次发生在验收后）。→ k 的委派决策可公式化，且<strong>「该停就停」要写进流程</strong>。</p>
 </li>
 </ol>
 <hr />

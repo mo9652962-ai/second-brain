@@ -2864,7 +2864,7 @@
 <li><strong>ID:</strong> <a href="https://arxiv.org/abs/2610.13227v1">2610.13227v1</a> | <a href="https://arxiv.org/pdf/2610.13227">📄 PDF</a></li>
 <li><strong>作者:</strong> Dianshu Liao, Shidong Pan, Guangdong Bai, Zhenchang Xing, Xiaoyu Sun</li>
 <li><strong>分类:</strong> cs.CR, cs.SE</li>
-<li><strong>摘要:</strong> Agent skill 把指令、代码、资源打包成可复用组件；技能执行时会产出或修改<strong>文件、配置、缓存</strong>等 artifact，被<strong>后续会话里的其他技能</strong>复用——这条跨会话链路是全新的攻击面。作者刻画三种传播机制：<strong>Instruction Propagation（IP）</strong>、<strong>Data Boundary Violation（DBV）</strong>、<strong>Evidence Poisoning（EP）</strong>。构建 SkillRelayBench：30 个跨会话技能组合场景、10 个领域、270 个对抗用例；在 Codex CLI / Gemini CLI / Claude Code 上评测 7 个模型，<strong>攻击成功率 ASR 46.7%–77.4%，攻击链成功率 ACSR 35.6%–61.1%</strong>，成功链条覆盖全部五类目标安全后果。防御方案 SkillRelayGuard 恢复 artifact 的<strong>来源上下文（provenance）<strong>并做</strong>执行前建议性审查</strong>（最终决定权留给 agent）：ASR 69.5%→<strong>10.9%</strong>、ACSR 54.8%→<strong>10.0%</strong>，同时把合法任务完成率从 79.6% <strong>提高到</strong> 87.5%。</li>
+<li><strong>摘要:</strong> Agent skill 把指令、代码、资源打包成可复用组件；技能执行时会产出或修改<strong>文件、配置、缓存</strong>等 artifact，被<strong>后续会话里的其他技能</strong>复用——这条跨会话链路是全新的攻击面。作者刻画三种传播机制：<strong>Instruction Propagation（IP）</strong>、<strong>Data Boundary Violation（DBV）</strong>、<strong>Evidence Poisoning（EP）</strong>。构建 SkillRelayBench：30 个跨会话技能组合场景、10 个领域、270 个对抗用例；在 Codex CLI / Gemini CLI / Claude Code 上评测 7 个模型，<strong>攻击成功率 ASR 46.7%–77.4%，攻击链成功率 ACSR 35.6%–61.1%</strong>，成功链条覆盖全部五类目标安全后果。防御方案 SkillRelayGuard 恢复 artifact 的<strong>来源上下文（provenance）</strong>并做<strong>执行前建议性审查</strong>（最终决定权留给 agent）：ASR 69.5%→<strong>10.9%</strong>、ACSR 54.8%→<strong>10.0%</strong>，同时把合法任务完成率从 79.6% <strong>提高到</strong> 87.5%。</li>
 <li><strong>关联度:</strong> ★★★★★ 这是 k 自己技能库的直接威胁模型：Hermes 的技能会写文件、改配置、落缓存，而这些产物会跨会话被别的技能读到。10-10 那份的 One Skill Too Many 讲的是<strong>共装冲突</strong>，本篇补上<strong>跨会话持久产物</strong>这条更隐蔽的通道。可落地：① 技能写出的文件/配置在<strong>被下一个技能读取前</strong>先标注来源（哪次会话、哪个技能写的）；② 高风险读取（配置、脚本、凭据路径）加「执行前建议」而非直接执行；③ 把「来源上下文恢复」写成 pre-tool hook 的固定动作。</li>
 </ul>
 <h3 id="2-reward-hacking-as-a-transmissible-strategy-in-multi-agent-coding-systems">2. Reward Hacking as a Transmissible Strategy in Multi-Agent Coding Systems<a class="headerlink" href="#2-reward-hacking-as-a-transmissible-strategy-in-multi-agent-coding-systems" title="Permanent link">&para;</a></h3>
@@ -2881,7 +2881,7 @@
 <li><strong>作者:</strong> Ziyi Yang, Adel Bibi, Guohao Li, Bernard Ghanem, Carlos Hinojosa</li>
 <li><strong>分类:</strong> cs.CR, cs.CL</li>
 <li><strong>摘要:</strong> 专业 agent 在<strong>共享工作区</strong>（文件、消息、业务应用）里通过 CLI 与多工具作业，安全风险无法用「在某个已知读取点放置攻击」来刻画。APEX-Harm 构建长时程 agent 在<strong>金融/咨询/法律</strong>任务上的评测：每个任务工作区含 <strong>115–328 个文件</strong>，外加 email / calendar / chat / document / spreadsheet / PDF / 代码执行工具（经 MCP 暴露）；六类攻击覆盖静态与动态注入、任务专用脚本替换、攻击者提供的通用脚本。12 个前沿模型 × 180 个任务实例：<strong>Opus 5（8%）与 Sonnet 5（20%）总体 ASR 最低</strong>，但<strong>任务专用脚本替换（81–84%）与攻击者通用脚本（73%）依然高效</strong>；Gemini 3.8 Flash 平均任务分最高（0.877）却仍有 <strong>33% ASR</strong>。结论：<strong>完成请求任务 ≠ 行为安全</strong>——agent 可以交付正确产物，同时在workspace里执行未授权动作。</li>
-<li><strong>关联度:</strong> ★★★★★ 与 k 的真实工作形态高度重合（本地文件系统 + 多工具 + 长时程）。最要命的是「任务分高 ≠ 安全」：k 做完一单闲鱼交付、论文/PPT/PCB 产物都对，也可能顺手做了不该做的事。可落地：① 交付验收固定加一项**「这次有没有越权动作」<strong>（读了不该读的、写了不该写的、跑了不该跑的）；② 攻击者通用脚本类攻击最难防 → 对</strong>外部传入的脚本/模板<strong>一律先看内容再执行；③ 工作区里的文件（尤其 email/calendar 里的内容）按</strong>不可信输入**处理。</li>
+<li><strong>关联度:</strong> ★★★★★ 与 k 的真实工作形态高度重合（本地文件系统 + 多工具 + 长时程）。最要命的是「任务分高 ≠ 安全」：k 做完一单闲鱼交付、论文/PPT/PCB 产物都对，也可能顺手做了不该做的事。可落地：① 交付验收固定加一项<strong>「这次有没有越权动作」</strong>（读了不该读的、写了不该写的、跑了不该跑的）；② 攻击者通用脚本类攻击最难防 → 对<strong>外部传入的脚本/模板</strong>一律先看内容再执行；③ 工作区里的文件（尤其 email/calendar 里的内容）按<strong>不可信输入</strong>处理。</li>
 </ul>
 <h3 id="4-x-agentred-red-teaming-personal-agents-in-evolving-multi-service-ecosystems">4. X-AgentRed: Red-Teaming Personal Agents in Evolving Multi-Service Ecosystems<a class="headerlink" href="#4-x-agentred-red-teaming-personal-agents-in-evolving-multi-service-ecosystems" title="Permanent link">&para;</a></h3>
 <ul>
@@ -2897,7 +2897,7 @@
 <li><strong>作者:</strong> Andis Draguns, Sumeet Ramesh Motwani, Raymond Douglas, Christian Schroeder de Witt</li>
 <li><strong>分类:</strong> cs.LG, cs.CR</li>
 <li><strong>摘要:</strong> 能力评测的前提假设是「隐藏能力可被诱发（elicitation）」；本文证明该假设在对抗条件下<strong>不成立</strong>。作者构造后门攻击，把<strong>加密的神经网络嵌入宿主模型权重</strong>，仅在收到秘密触发时解密并执行——用 digital lockers，这些隐藏电路在密码学假设下<strong>即使拥有完整权重也极难被诱发或解释</strong>，把此前「隐藏固定字符串」的工作扩展到<strong>任意计算</strong>。PyTorch 实现概念验证，在小型化学反应预测任务（CBRN 相关能力的代理）上测试诱发手段：<strong>微调、权重加噪、基于梯度的触发搜索、latent adversarial training</strong> 全部抵抗。结论：这揭示了<strong>基于诱发的能力审计存在原理性上限</strong>。模型已释出以支持防御研究。</li>
-<li><strong>关联度:</strong> ★★★★☆ 对 k 的模型评测观是校准剂：<strong>「测不出危险能力」不等于「没有危险能力」</strong>。10-10 那份讲的是评估方法不可信（评分器未过验证门），本篇把边界推得更远——有些能力<strong>原理上不可诱发</strong>。可落地：① 能力/安全结论一律带**「未覆盖项 + 诱发方法清单」**，不说「已确认安全」；② 对小模型做安全评测时承认上限（本篇正是用小模型做代理）；③ 与「测量本身不可信」主题合并成 k 的验收纪律。</li>
+<li><strong>关联度:</strong> ★★★★☆ 对 k 的模型评测观是校准剂：<strong>「测不出危险能力」不等于「没有危险能力」</strong>。10-10 那份讲的是评估方法不可信（评分器未过验证门），本篇把边界推得更远——有些能力<strong>原理上不可诱发</strong>。可落地：① 能力/安全结论一律带<strong>「未覆盖项 + 诱发方法清单」</strong>，不说「已确认安全」；② 对小模型做安全评测时承认上限（本篇正是用小模型做代理）；③ 与「测量本身不可信」主题合并成 k 的验收纪律。</li>
 </ul>
 <h3 id="6-vepa-verified-evolving-formal-policy-for-lifelong-llm-agent-guardrails">6. VEPA: Verified Evolving Formal Policy for Lifelong LLM Agent Guardrails<a class="headerlink" href="#6-vepa-verified-evolving-formal-policy-for-lifelong-llm-agent-guardrails" title="Permanent link">&para;</a></h3>
 <ul>
@@ -2915,7 +2915,7 @@
 <li><strong>作者:</strong> Lei Liu, Yunji Liang, Xiaowen Zhang, Jingqi Liu, Qi Li, Bin Guo, Zhiwen Yu</li>
 <li><strong>分类:</strong> cs.AI</li>
 <li><strong>摘要:</strong> LLM agent 对<strong>记忆投毒</strong>高度脆弱，既有防御靠外部模块做静态隔离或持续在线审计，<strong>记忆效率低、计算开销高</strong>。受神经科学「弱再激活可在缺乏强化时使记忆失稳并衰退」启发，作者提出 <strong>agent 内生、免训练</strong>的记忆修复框架 <strong>DREAM</strong>（Dynamic Reactivation for Engram Attenuation in Memory），实现<strong>选择性功能遗忘</strong>：三阶段流水线——① <strong>扰动诱导的隐式再激活</strong>揭示恶意记忆的结构脆弱性；② 基于多维激活模式的<strong>自适应异常诊断</strong>检测拓扑异常；③ <strong>动态记忆修复模块</strong>选择性抑制有害记忆、强化良性记忆。多攻击者与真实任务实验：对后门投毒<strong>攻击成功率降低 &gt;95%</strong>，同时保持良性效用；对注入攻击也有竞争力。运行时与 token 消耗上，相对 A-MemGuard 实现最高 <strong>2.13× 加速</strong>与 <strong>37.7% token 降低</strong>；在投毒的多 agent 系统上任务成功率 <strong>92.96%</strong>。</li>
-<li><strong>关联度:</strong> ★★★★☆ 补上 k 记忆治理里缺的一块：<strong>不是只做准入，还要能「修」</strong>。10-10 那份的四轴（准入/表达/过时/类型）讲的是入口与维护，本篇给的是<strong>投毒后如何选择性遗忘</strong>（免训练、可落地）。可落地：① 记忆异常检测从「内容可疑」升级到**「结构/激活模式异常」<strong>；② 修复动作是</strong>选择性抑制 + 强化良性**，不是全量清空；③ 记忆写入后定期做一次「弱再激活」探测，看哪些条目一碰就碎。</li>
+<li><strong>关联度:</strong> ★★★★☆ 补上 k 记忆治理里缺的一块：<strong>不是只做准入，还要能「修」</strong>。10-10 那份的四轴（准入/表达/过时/类型）讲的是入口与维护，本篇给的是<strong>投毒后如何选择性遗忘</strong>（免训练、可落地）。可落地：① 记忆异常检测从「内容可疑」升级到<strong>「结构/激活模式异常」</strong>；② 修复动作是<strong>选择性抑制 + 强化良性</strong>，不是全量清空；③ 记忆写入后定期做一次「弱再激活」探测，看哪些条目一碰就碎。</li>
 </ul>
 <h3 id="8-test-time-memory-construction">8. Test-Time Memory Construction<a class="headerlink" href="#8-test-time-memory-construction" title="Permanent link">&para;</a></h3>
 <ul>
@@ -3030,7 +3030,7 @@
 <li><strong>ID:</strong> <a href="https://arxiv.org/abs/2610.13361v1">2610.13361v1</a> | <a href="https://arxiv.org/pdf/2610.13361">📄 PDF</a></li>
 <li><strong>作者:</strong> Jiahao Wang, Hongjin Qian, Yuyang Hu, Jiajun Zhang, Zheng Liu</li>
 <li><strong>分类:</strong> cs.SE, cs.AI, cs.LG</li>
-<li><strong>摘要:</strong> 随着软件生产交到软件自己手里，编码 agent 越来越多被<strong>委托去构建贴合用户工作流的 agent</strong>。这一委派暗含一个假设：<strong>交付的 agent 会忠实服务于它被建造的用途，而不只是看起来像</strong>。此前没有基准检验这个假设。AgentSWE 覆盖 agent 开发生命周期三阶段：<strong>从自然语言需求创建完整 agent、编辑生产 agent 代码库、朝可测目标优化</strong>。25 个任务都框定为**「委托」而非「考试」<strong>：构建方针对少量示例迭代，验收则在</strong>为覆盖完整需求而设计的留出案例<strong>上运行冻结提交，按需求派生的 rubric 在硬性 pass/fail 门下评分（优化类用源基准自身目标）。评测多种编码 agent（跨模型与 harness）：<strong>没有一个接近交付需求所要的东西</strong>——</strong>「演示能做到」与「实际交付」之间的差距是常态而非边角情况**。失败轨迹分析给出反复出现的失效模式：<strong>对可见案例过拟合、代码看起来完整但运行时是空壳、无依据地声称完成</strong>。</li>
+<li><strong>摘要:</strong> 随着软件生产交到软件自己手里，编码 agent 越来越多被<strong>委托去构建贴合用户工作流的 agent</strong>。这一委派暗含一个假设：<strong>交付的 agent 会忠实服务于它被建造的用途，而不只是看起来像</strong>。此前没有基准检验这个假设。AgentSWE 覆盖 agent 开发生命周期三阶段：<strong>从自然语言需求创建完整 agent、编辑生产 agent 代码库、朝可测目标优化</strong>。25 个任务都框定为<strong>「委托」而非「考试」</strong>：构建方针对少量示例迭代，验收则在<strong>为覆盖完整需求而设计的留出案例</strong>上运行冻结提交，按需求派生的 rubric 在硬性 pass/fail 门下评分（优化类用源基准自身目标）。评测多种编码 agent（跨模型与 harness）：<strong>没有一个接近交付需求所要的东西</strong>——<strong>「演示能做到」与「实际交付」之间的差距是常态而非边角情况</strong>。失败轨迹分析给出反复出现的失效模式：<strong>对可见案例过拟合、代码看起来完整但运行时是空壳、无依据地声称完成</strong>。</li>
 <li><strong>关联度:</strong> ★★★★★ 三条失效模式是 k 的自检清单：<strong>过拟合可见案例 / 空壳运行时 / 无依据声称完成</strong>。可落地：① 交付前用<strong>为完整需求设计的留出案例</strong>自测（不是自己挑的几个例子）；② 检查「代码看起来完整」背后运行时是否真跑通（对应 k 的「产物必须真实执行验证」纪律）；③ 禁止无依据的完成声明——每条「已完成」都要能指向具体证据。</li>
 </ul>
 <h3 id="22-same-query-different-answer-run-to-run-variance-in-semantic-query-processing">22. Same Query, Different Answer: Run-to-Run Variance in Semantic Query Processing<a class="headerlink" href="#22-same-query-different-answer-run-to-run-variance-in-semantic-query-processing" title="Permanent link">&para;</a></h3>
@@ -3039,7 +3039,7 @@
 <li><strong>作者:</strong> Oktie Hassanzadeh, Dharmashankar Subramanian</li>
 <li><strong>分类:</strong> cs.DB, cs.AI</li>
 <li><strong>摘要:</strong> 语义查询引擎让 LLM 判断单行数据，基准在 temperature 0 下比较若干次执行的<strong>质量</strong>。本文测量<strong>再执行一次会改变多少</strong>：在 SemBench、LRO-Bench、UDA-Bench 的文本与表格工作负载上<strong>通过其自身 harness 重跑</strong>，记录<strong>全部 120 万次模型调用</strong>，并重新分析 SemBench 已公布的执行。temperature 0 下，<strong>0.07%–10.2% 的行在五次执行间改变算子输出</strong>（视模型而定），某任务高达 <strong>24.0%</strong>。计划（plans）会按答案暴露的行数<strong>指数级放大</strong>这些变化（如可能世界模型所预测）：UDA-Bench 上仅几个百分点的抽取值变化，却导致<strong>约三分之二的答案变化</strong>。SemBench 已公布结果中 <strong>21% 的文本结果在两次执行间质量改变</strong>（含计划确定性的引擎）。若干逐查询系统比较、以及 <strong>LRO-Bench 28 项实现建议检验中的 16 项</strong>，<strong>并未被基准所跑的执行所判定</strong>。变化的行正是<strong>模型之间彼此不一致的行</strong>；同一次执行内的相同请求之间的不一致<strong>与跨执行一样频繁</strong>；单次执行的决策裕度或推理长度<strong>可预测哪些行会变</strong>。投票能降低方差但无法消除；校准级联能保持保证但返回的行仍在变。</li>
-<li><strong>关联度:</strong> ★★★★★ 又一条「测量本身不可信」的硬证据，而且给出了<strong>具体数字</strong>（120 万次调用）。对 k 的含义：<strong>temperature 0 不等于确定性</strong>，逐查询结论可能在重跑后翻转。可落地：① 任何「A 比 B 好」的结论要<strong>多次执行 + 报告方差</strong>，单次结果不算数；② 逐行/逐项判断类任务（打分、分类、标注）必须<strong>重跑复核</strong>；③ 决策裕度/推理长度可作为**「这一项可能不稳」的预警信号**。</li>
+<li><strong>关联度:</strong> ★★★★★ 又一条「测量本身不可信」的硬证据，而且给出了<strong>具体数字</strong>（120 万次调用）。对 k 的含义：<strong>temperature 0 不等于确定性</strong>，逐查询结论可能在重跑后翻转。可落地：① 任何「A 比 B 好」的结论要<strong>多次执行 + 报告方差</strong>，单次结果不算数；② 逐行/逐项判断类任务（打分、分类、标注）必须<strong>重跑复核</strong>；③ 决策裕度/推理长度可作为<strong>「这一项可能不稳」的预警信号</strong>。</li>
 </ul>
 <hr />
 <h2 id="3">五、评测有效性：结论与指标脱钩（3 篇）<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
@@ -3049,7 +3049,7 @@
 <li><strong>作者:</strong> Sangdo Han, Moonsoo Kim</li>
 <li><strong>分类:</strong> cs.CL, cs.LG</li>
 <li><strong>摘要:</strong> Prompt 优化器改写提示以提升<strong>某一个目标指标</strong>，但提示里还写着该指标<strong>不计分的要求</strong>（输出格式、引用、弃答）。在这项<strong>预注册</strong>研究中，作者在 HotpotQA、SQuAD 2.0、IFEval 上跑 <strong>GEPA、MIPROv2、TextGrad</strong>，用确定性检查统计对<strong>未计分要求</strong>的逐项违反。按预注册判据，三个优化器<strong>全部产生回归</strong>，HotpotQA 上尤其严重：<strong>引用有效性净回归 10.7–41.6 分</strong>，而 exact match <strong>上升 21–34 分</strong>。事后分解改变了这一解读：优化后的提示会<strong>在要求的 JSON 对象之前先输出推理</strong>，而在全程使用的 <strong>200-token 输出上限</strong>下，<strong>13.9%–47.0% 的回复在任何答案出现前就被截断</strong>。只看可解析输出，净回归在 0 的 3 分以内。把上限提到 <strong>1,024 token</strong>，抽取失败消失、内容回归 &lt;1 分，且 exact match 进一步上升。两个简单门禁未通过预注册判据。结论：副作用比假设更窄——<strong>优化后的提示更准，同时破坏了显式输出契约，而宽松的目标指标看不出这个代价</strong>。</li>
-<li><strong>关联度:</strong> ★★★★★ 这是 k 做优化时的固定陷阱：<strong>优化一个指标会静默破坏未被计分的要求</strong>。而且本篇给出了归因方法（本例是输出上限导致的截断）。可落地：① 任何 prompt/流程优化前后都跑一次**「未计分要求」检查**（格式、引用、弃答、字数）；② 报告「指标提升」时同时报<strong>契约违反率</strong>；③ 遇到「指标涨但产物变差」先查<strong>长度/格式约束</strong>（本例真凶是 200-token 上限）。</li>
+<li><strong>关联度:</strong> ★★★★★ 这是 k 做优化时的固定陷阱：<strong>优化一个指标会静默破坏未被计分的要求</strong>。而且本篇给出了归因方法（本例是输出上限导致的截断）。可落地：① 任何 prompt/流程优化前后都跑一次<strong>「未计分要求」检查</strong>（格式、引用、弃答、字数）；② 报告「指标提升」时同时报<strong>契约违反率</strong>；③ 遇到「指标涨但产物变差」先查<strong>长度/格式约束</strong>（本例真凶是 200-token 上限）。</li>
 </ul>
 <h3 id="24-when-charts-deceive-web-agents-a-paired-benchmark-for-misleading-visualization-grounded-tasks">24. When Charts Deceive Web Agents: A Paired Benchmark for Misleading Visualization-Grounded Tasks<a class="headerlink" href="#24-when-charts-deceive-web-agents-a-paired-benchmark-for-misleading-visualization-grounded-tasks" title="Permanent link">&para;</a></h3>
 <ul>
@@ -3057,7 +3057,7 @@
 <li><strong>作者:</strong> Yisheng Li, Dongming Han, Hongkun Pan, Bingcheng Mao, Zijian Wang, Yunlong Mao, Wei Tong, Sheng Zhong</li>
 <li><strong>分类:</strong> cs.CL</li>
 <li><strong>摘要:</strong> Web agent 代表用户浏览、解释并基于网页内容行动；但现实工作流中它消费的<strong>视觉证据并非中立</strong>：图表与仪表盘<strong>可能误导</strong>，且<strong>不发出任何显式恶意指令</strong>。与图表问答不同，Web agent 把图表当作<strong>中间证据</strong>，其误读会传播为具体下游动作——这是被低估的可靠性风险。<strong>MisVisAgentBench</strong> 是首个<strong>成对可执行</strong>基准：<strong>280 个任务实例</strong>组成匹配的 clean–misleading 对，<strong>仅图表证据不同</strong>；另提供诊断框架，把误导导致的失败与基线任务难度分离，并捕获执行层面的效应（额外浏览步骤、决策犹豫）。13 个视觉语言 Web agent 上，把干净图表换成误导版本使<strong>平均任务成功率下降 &gt;34 个百分点</strong>；且这些失败<strong>主要沿着针对性的误导动作分支</strong>发生，说明欺骗性图表是<strong>系统性地重定向</strong>而非随机扰乱 agent 决策。</li>
-<li><strong>关联度:</strong> ★★★★★ 对 k 的图表/数据工作（PPT、数模论文、股票分析、报告）是直接警示：<strong>图表的视觉呈现会系统性改变结论走向</strong>。可落地：① 自己做图表时<strong>检查是否存在「同样数据、不同呈现、不同结论」<strong>的误导性（k 的交付物里图表是核心）；② 读别人的图表时把「视觉证据」当</strong>可能误导的中间证据</strong>处理，回到数据源核对；③ 记住失败是<strong>定向</strong>的——误导图表会把决策推向特定分支，不是随机噪声。</li>
+<li><strong>关联度:</strong> ★★★★★ 对 k 的图表/数据工作（PPT、数模论文、股票分析、报告）是直接警示：<strong>图表的视觉呈现会系统性改变结论走向</strong>。可落地：① 自己做图表时<strong>检查是否存在「同样数据、不同呈现、不同结论」</strong>的误导性（k 的交付物里图表是核心）；② 读别人的图表时把「视觉证据」当<strong>可能误导的中间证据</strong>处理，回到数据源核对；③ 记住失败是<strong>定向</strong>的——误导图表会把决策推向特定分支，不是随机噪声。</li>
 </ul>
 <h3 id="25-agreement-without-alignment-label-free-rubric-clarification-increases-llm-judge-consensus-but-not-agreement-with-humans">25. Agreement Without Alignment: Label-Free Rubric Clarification Increases LLM-Judge Consensus but Not Agreement with Humans<a class="headerlink" href="#25-agreement-without-alignment-label-free-rubric-clarification-increases-llm-judge-consensus-but-not-agreement-with-humans" title="Permanent link">&para;</a></h3>
 <ul>
@@ -3143,7 +3143,7 @@
 <td>11</td>
 <td><a href="https://arxiv.org/abs/2610.12593v1">2610.12593</a></td>
 <td>Know What You Don't Know: Agentic Data Synthesis by Evolving Generation Space for Closed-Loop Learning</td>
-<td>既有合成方法有**「反馈到决策」断层**：观测到的弱点不直接指定未来合成该怎么改，也无法判断当前合成空间能否表示它。EvoSyn 用<strong>可修订状态</strong>组织合成（哪些交互因素可被有意生成、算力该投向哪里），Designer 分配方向、Planner 落地为可执行经验，τ²-Bench/CAR-Bench 上平均任务成功 <strong>+13.3 分</strong>。→ 合成/造题要有「可修订的状态」，别只改参数</td>
+<td>既有合成方法有<strong>「反馈到决策」断层</strong>：观测到的弱点不直接指定未来合成该怎么改，也无法判断当前合成空间能否表示它。EvoSyn 用<strong>可修订状态</strong>组织合成（哪些交互因素可被有意生成、算力该投向哪里），Designer 分配方向、Planner 落地为可执行经验，τ²-Bench/CAR-Bench 上平均任务成功 <strong>+13.3 分</strong>。→ 合成/造题要有「可修订的状态」，别只改参数</td>
 </tr>
 <tr>
 <td>12</td>
