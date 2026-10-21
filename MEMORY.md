@@ -383,11 +383,17 @@ _最后更新: 2026-09-21｜运行环境: Hermes Agent on Windows 11_
 
 _最后更新: 2026-09-23 | 归档截止: 2026-08-21 (含) | 运行环境: Hermes Agent on Windows 11_
 
-## Promoted From Short-Term Memory (2026-10-20)
+## Promoted From Short-Term Memory (2026-10-21)
 
-<!-- openclaw-memory-promotion:memory:memory/2026-10-14.md:26:29 -->
-- OpenClaw 生态重大更新 (v2026.9.7/9.8): **OpenAI Agents API 公测集成** —— 托管 Agent 循环、免费沙箱将改变构建成本结构; **Sign in with ChatGPT (Beta)** 新增认证方式; **Sora 视频生成正式退役** —— 官方建议替代: Kie AI / Z.AI / Novita / Qwen / Wan，需评估对 video generation skills 影响; 半个月 6 版本极速补丁节奏延续，社区验证进行中，**暂不建议升级** [score=0.812 recalls=0 avg=0.620 source=memory/2026-10-14.md:26-29]
-<!-- openclaw-memory-promotion:memory:memory/2026-10-14.md:3:5 -->
-- 2026-10-14 每日工作总结: **日期**: 2026-10-14 (周三) **生成时间**: 22:00 (Asia/Shanghai) **生成方式**: daily-summary cron 自动执行 [score=0.812 recalls=0 avg=0.620 source=memory/2026-10-14.md:3-5]
-<!-- openclaw-memory-promotion:memory:memory/2026-10-14.md:32:35 -->
-- pydantic_core ABI 问题获明确根因与修复证据 (P0 阻塞项): **根因**: 运行解释器与 site-packages ABI 混用 (hermes_bootstrap 路径问题); **跨度**: 14 天 P0 阻塞，第 5 次登记待办; **状态**: 已有修复证据，需 **gateway 回退 3.11 启动路径** (需 sora 执行); **影响**: 26/48 cron 任务因 `No module named 'pydantic_core._pydantic_core'` 失败 [score=0.812 recalls=0 avg=0.620 source=memory/2026-10-14.md:32-35]
+<!-- openclaw-memory-promotion:memory:memory/2026-10-15.md:11:14 -->
+- OpenClaw 核心发布与行业动态: | 项目 | 状态 | 关键信息 | |------|------|----------| | **v2026.9.7** (10/1) | 已发布 | 更快负载响应、增强更新回滚保护、**OpenAI Agents API 公测**、**Sign in with ChatGPT (Beta)**、**Sora 视频生成退役** (建议替换: Kie AI / Z.AI / Novita / Qwen / Wan) | | **v2026.9.8** (10/8) | 已发布 | 优化 Codex Remote Sessions 目录处理，复用捕获设置减少重复内存使用 | [score=0.813 recalls=0 avg=0.620 source=memory/2026-10-15.md:11-14]
+<!-- openclaw-memory-promotion:memory:memory/2026-10-15.md:15:17 -->
+- OpenClaw 核心发布与行业动态: | **v2026.9.x 补丁期** | 进行中 | 半个月 6 版本极速补丁节奏，**建议暂缓升级等社区验证 2-4 周** | | **Skills Directory** | 爆发式增长 | 5,798+ 社区技能 (1,800+ AI Agent 专用)，安装/发现已成核心工作流入口 | | **OpenClaw 生态分化** | 加速中 | 12+ 替代方案涌现，轻量级 fork (nanoclaw/zeroclaw/ironclaw/picoclaw) 缺乏生产验证 | [score=0.813 recalls=0 avg=0.620 source=memory/2026-10-15.md:15-17]
+<!-- openclaw-memory-promotion:memory:memory/2026-10-15.md:20:23 -->
+- AI Agent 行业趋势与最佳实践: **运营模式成熟** (IBM/Deloitte 2026): 从「构建」转向「安全规模化运营」，确立**风险分级运营模型** (例行检索→Agent主导、低风险动作→Agent带控制、中风险决策→Agent建议+人工批准、高影响决策→人工主导+Agent支持); **持久化 Agent 趋势确认**: 设计用于长任务、本地执行、数据主权，配合 Local-First 转型; **Graph Engineering 范式确立**: 多阶段并行 + 精确反馈路由取代串行循环，Codex Remote Sessions 为 OpenClaw 实践实证; **记忆生命周期管理关键性**: Extract→Update→Delete 三步曲缺一不可；陈旧记忆毒性 > 无记忆 [score=0.813 recalls=0 avg=0.620 source=memory/2026-10-15.md:20-23]
+<!-- openclaw-memory-promotion:memory:memory/2026-10-15.md:24:24 -->
+- AI Agent 行业趋势与最佳实践: **OpenAI Agents API 公测细节**: 托管 Agent 循环、Data Agent (企业数据源)、GPT-Live-1 全双工语音、免费托管沙箱 (仅计费模型 token + 工具使用) [score=0.813 recalls=0 avg=0.620 source=memory/2026-10-15.md:24-24]
+<!-- openclaw-memory-promotion:memory:memory/2026-10-15.md:27:30 -->
+- 安全基线更新: **Secret egress host binding**: 评估在 openclaw.json 中显式配置密钥出口域名白名单; **审计日志完整性**: 确保 cron/heartbeat/subagent 执行轨迹可追溯; **Cross-Component Trust** (v2026.9.x): 远程节点事件默认 untrusted + 输出 sanitization; **WebSocket 会话即时失效**: token/密码轮换时立即失效 [score=0.813 recalls=0 avg=0.620 source=memory/2026-10-15.md:27-30]
+<!-- openclaw-memory-promotion:memory:memory/2026-10-15.md:3:4 -->
+- 2026-10-15 (周四) 每日自我完善总结: **生成时间**: 2026-10-15 14:50 (Asia/Shanghai) **触发方式**: cron daily-self-improvement 任务自动执行 [score=0.813 recalls=0 avg=0.620 source=memory/2026-10-15.md:3-4]

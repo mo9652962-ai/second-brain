@@ -465,3 +465,111 @@ Secret egress host binding 评估: openclaw.json 显式配置密钥出口白名�
 - Recurrence-Count: 3
 - First-Seen: 2026-10-17
 - Last-Seen: 2026-10-20
+
+---
+
+## [LRN-20261021-001] correction
+
+**Logged**: 2026-10-21T08:47:00+08:00
+**Priority**: high
+**Status**: open
+**Area**: infra
+
+### Summary
+pydantic_core ABI 问题：10-12 误判 resolved，**10-13/10-14/10-16/10-18/10-20 五度复发/预测命中**，根因已闭合
+
+### Details
+- **误判时间线**: 10-12 仅做进程内 `import pydantic_core` 探针验证，未重启 gateway 复验 → 误标 resolved
+- **复发证据链**: 10-13/10-14/10-16/10-18/10-20 **五次 gateway 重启后均复发**，`gateway-exit-diag.log` 四次 `"python": "3.14.7"` 为证
+- **根因闭合**: 运行解释器 (tools/python-3.14.7, cp314) 与 hermes-agent/venv (cp311) site-packages ABI 混用
+- **修正判定口径** (此后所有 ERR 条目适用):
+  1. "resolved" 必须含**一次 gateway 重启后的复验**，否则只标 `mitigated`
+  2. 证据不得用同进程自证指标，须用跨进程指标
+  3. 涉及解释器/依赖路径修复，必须核对 `gateway-exit-diag.log` 的 `"python"` 字段
+  4. launcher 为陈旧生成物时，重跑 `gateway install` 验证须含 launcher diff + 重启后 python 字段
+- **三条修复路径** (按侵入性排序，实测均 PASS):
+  ① PYTHONPATH 叠加 PM venv site-packages
+  ② `get_python_path()` 返回 PM venv python (上游本意)
+  ③ **重跑 `gateway install` 重新生成 launcher (推荐，最省事且符合上游设计)**
+- **当前状态**: `mitigated` (本进程正常)，下次重启仍会复发，**根治需 sora 选路径执行**
+
+### Suggested Action
+- sora 从三条路径选一执行根治 (建议方案 ③)
+- 此后所有基础设施修复必须包含 gateway 重启复验
+- 陈旧账本 (32 个 cron failure_streak 停在 10-11) 待新排程自然覆盖
+
+### Metadata
+- Source: daily-self-improvement cron + 实测复现
+- Tags: pydantic-abi, abi-mismatch, regression, verification-criteria, gateway-restart
+- Pattern-Key: infra.pydantic-abi-mismatch-regresed
+- Recurrence-Count: 5
+- First-Seen: 2026-10-12
+- Last-Seen: 2026-10-21
+
+---
+
+## [LRN-20261021-002] insight
+
+**Logged**: 2026-10-21T08:47:00+08:00
+**Priority**: high
+**Status**: completed
+**Area**: config
+
+### Summary
+OpenClaw v2026.9.3-9.6: Node 24 强制、持久化技能、原子更新、免重启插件、只读共享、交互终端
+
+### Details
+- **v2026.9.3** (9/8): Node 24.16+ 强制、**持久化技能** (Skill Workshop 落地)、**可分享会话** (只读链接)
+- **v2026.9.4** (9/11): **失败更新回滚**、统一插件工作区
+- **v2026.9.5** (9/15): **原子更新**、**免重启插件安装**、只读会话共享、工具输出脱敏 (注册密钥遮蔽)
+- **v2026.9.6** (9/23): **交互式终端问题** (Claude Code 风格)、云会话控制增强
+- **补丁节奏**: 9 月 4 版本，**建议暂缓升级等社区验证 2-4 周**
+- **持久化技能** 与 Skill Workshop 流程对标需评估
+
+### Suggested Action
+- 评估持久化技能与现有 Skill Workshop 流程的对标/迁移
+- 关注社区验证进度，2-4 周后决定升级时机
+- 评估工具输出脱敏对现有工作流影响
+
+### Metadata
+- Source: tavily_search (OpenClaw 官方文档 releases/2026.9.3-9.6、社区讨论)
+- Tags: openclaw, persistent-skills, atomic-updates, plugin-hot-reload, session-sharing
+- Pattern-Key: config.openclaw-2.0-rapid-patches-continued-v4
+- Recurrence-Count: 1
+- First-Seen: 2026-10-21
+- Last-Seen: 2026-10-21
+
+---
+
+## [LRN-20261021-003] insight
+
+**Logged**: 2026-10-21T08:47:00+08:00
+**Priority**: high
+**Status**: completed
+**Area**: memory
+
+### Summary
+AI Agent 记忆三层架构标准化确认：Core/Recall/Archival + Graph-native (Cognee) 企业级首选
+
+### Details
+- **三层标准** (Letta/MemGPT/Cognee/Zep 成熟实现):
+  - Core Memory (in-context): Agent 直接可编辑的工作记忆，少量高价值事实/偏好/规则
+  - Recall Memory (conversation history): 对话历史索引检索，时间/主题/实体多维召回
+  - Archival Memory (vector store): 外部向量存储，语义检索，大规模长期知识
+- **Graph-native 趋势**: Cognee (Rust edge engine、auto-extracted ontologies、70+ 企业采用、1M+ pipelines/月) 在企业级获青睐；Mem0 适合个性化助手；Letta 适合长生命周期自主 agent
+- **Write-Path > Read-Only RAG**: 图记忆生态成熟，实体关系检索超越向量相似度，解决 RAG「检到但推不出」问题
+- **记忆生命周期三步曲**: Extract→Update→Delete 缺一不可；陈旧记忆毒性 > 无记忆
+- **当前架构对标**: Hermes memory tool + Obsidian vault + MEMORY.md 已覆盖三层，Archival 层可评估 Cognee 增强
+
+### Suggested Action
+- 确认当前三层架构已落地 (Hermes memory tool + Obsidian vault + MEMORY.md)
+- 评估 Cognee Graph-native 记忆集成替代/增强现有 Archival 层
+- 强化 Update/Delete 机制：定期清理陈旧/矛盾记忆
+
+### Metadata
+- Source: tavily_search (Mem0/Cognee/Zep/Letta 2026 状态报告、Techment 架构指南) + 自检确认
+- Tags: memory-architecture, three-tier, graph-native, cognee, memory-lifecycle
+- Pattern-Key: memory.three-tier-standardized-2026
+- Recurrence-Count: 2
+- First-Seen: 2026-10-20
+- Last-Seen: 2026-10-21\
