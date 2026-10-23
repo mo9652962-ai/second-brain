@@ -383,25 +383,9 @@ _最后更新: 2026-09-21｜运行环境: Hermes Agent on Windows 11_
 
 _最后更新: 2026-09-23 | 归档截止: 2026-08-21 (含) | 运行环境: Hermes Agent on Windows 11_
 
-## Promoted From Short-Term Memory (2026-10-22)
+## Promoted From Short-Term Memory (2026-10-23)
 
-<!-- openclaw-memory-promotion:memory:memory/2026-10-16.md:11:14 -->
-- OpenClaw 核心发布与行业动态: | 项目 | 状态 | 关键信息 | |------|------|----------| | **v2026.9.7** (10/1) | 已发布 | 更快负载响应、增强更新回滚保护、**OpenAI Agents API 公测**、**Sign in with ChatGPT (Beta)**、**Sora 视频生成退役** (建议替换: Kie AI / Z.AI / Novita / Qwen / Wan) | | **v2026.9.8** (10/8) | 已发布 | 优化了 Codex Remote Sessions 目录处理，避免为每个空闲 Codex 代理启动单独的会话-catalog 进程，而是在需要时启动并重用捕获的设置以减少大规模原生 Codex 会话集合中的重复内存使用 | [score=0.811 recalls=0 avg=0.620 source=memory/2026-10-16.md:11-14]
-<!-- openclaw-memory-promotion:memory:memory/2026-10-16.md:15:17 -->
-- OpenClaw 核心发布与行业动态: | **v2026.9.x 补丁期** | 进行中 | 半个月 6 版本极速补丁节奏，**建议暂缓升级等社区验证 2-4 周** | | **Skills Directory** | 爆发式增长 | 5,798+ 社区技能 (1,800+ AI Agent 专用)，安装/发现已成核心工作流入口 | | **OpenClaw 生态分化** | 加速中 | 12+ 替代方案涌现，轻量级 fork (nanoclaw/zeroclaw/ironclaw/picoclaw) 缺乏生产验证 | [score=0.811 recalls=0 avg=0.620 source=memory/2026-10-16.md:15-17]
-<!-- openclaw-memory-promotion:memory:memory/2026-10-16.md:20:23 -->
-- AI Agent 行业趋势与最佳实践: **运营模式成熟** (IBM/Deloitte 2026): 从「构建」转向「安全规模化运营」，确立**风险分级运营模型** (例行检索→Agent主导、低风险动作→Agent带控制、中风险决策→Agent建议+人工批准、高影响决策→人工主导+Agent支持); **持久化 Agent 趋势确认**: 设计用于长任务、本地执行、数据主权，配合 Local-First 转型; **Graph Engineering 范式确立**: 多阶段并行 + 精确反馈路由取代串行循环，Codex Remote Sessions 为 OpenClaw 实践实证; **记忆生命周期管理关键性**: Extract→Update→Delete 三步曲缺一不可；陈旧记忆毒性 > 无记忆；需强化 Update/Delete 机制 [score=0.811 recalls=0 avg=0.620 source=memory/2026-10-16.md:20-23]
-<!-- openclaw-memory-promotion:memory:memory/2026-10-16.md:24:25 -->
-- AI Agent 行业趋势与最佳实践: **OpenAI Agents API 公测细节**: 托管 Agent 循环、Data Agent、GPT-Live-1 全双工语音、免费托管沙箱 (仅计费模型 token + 工具使用); **成本优化三件套深化**: 模型路由(60-70%) + Prompt Caching(60-80%) + Batch API(50%) → 任务感知路由引入 task-aware 模型路由（cron/heartbeat 用便宜模型处理低复杂度任务） [score=0.811 recalls=0 avg=0.620 source=memory/2026-10-16.md:24-25]
-<!-- openclaw-memory-promotion:memory:memory/2026-10-16.md:28:31 -->
-- 安全基线更新: **Secret egress host binding**: 评估在 openclaw.json 中显式配置密钥出口域名白名单; **审计日志完整性**: 确保 cron/heartbeat/subagent 执行轨迹可追溯; **Cross-Component Trust** (v2026.9.x): 远程节点事件默认 untrusted + 输出 sanitization; **WebSocket 会话即时失效**: token/密码轮换时立即失效 [score=0.811 recalls=0 avg=0.620 source=memory/2026-10-16.md:28-31]
-<!-- openclaw-memory-promotion:memory:memory/2026-10-16.md:3:4 -->
-- 2026-10-16 (周五) 每日自我完善总结: **生成时间**: 2026-10-16 12:58 (Asia/Shanghai) **触发方式**: cron daily-self-improvement 任务自动执行 [score=0.811 recalls=0 avg=0.620 source=memory/2026-10-16.md:3-4]
-<!-- openclaw-memory-promotion:memory:memory/2026-10-17.md:11:14 -->
-- OpenClaw 核心发布与行业动态: | 项目 | 状态 | 关键信息 | |------|------|----------| | **v2026.9.7** (10/1) | 已发布 | 更快负载响应、增强更新回滚保护、**OpenAI Agents API 公测**、**Sign in with ChatGPT (Beta)**、**Sora 视频生成退役** (建议替换: Kie AI / Z.AI / Novita / Qwen / Wan) | | **v2026.9.8** (10/8) | 已发布 | 优化了 Codex Remote Sessions 目录处理，避免为每个空闲 Codex 代理启动单独的会话-catalog 进程，而是在需要时启动并重用捕获的设置以减少大规模原生 Codex 会话集合中的重复内存使用 | [score=0.811 recalls=0 avg=0.620 source=memory/2026-10-17.md:11-14]
-<!-- openclaw-memory-promotion:memory:memory/2026-10-17.md:15:17 -->
-- OpenClaw 核心发布与行业动态: | **v2026.9.x 补丁期** | 进行中 | 半个月 6 版本极速补丁节奏，**建议暂缓升级等社区验证 2-4 周** | | **Skills Directory** | 爆发式增长 | 5,798+ 社区技能 (1,800+ AI Agent 专用)，安装/发现已成核心工作流入口 | | **OpenClaw 生态分化** | 加速中 | 12+ 替代方案涌现，轻量级 fork (nanoclaw/zeroclaw/ironclaw/picoclaw) 缺乏生产验证 | [score=0.811 recalls=0 avg=0.620 source=memory/2026-10-17.md:15-17]
-<!-- openclaw-memory-promotion:memory:memory/2026-10-17.md:20:23 -->
-- AI Agent 行业趋势与最佳实践: **运营模式成熟** (IBM/Deloitte 2026): 从「构建」转向「安全规模化运营」，确立**风险分级运营模型** (例行检索→Agent主导、低风险动作→Agent带控制、中风险决策→Agent建议+人工批准、高影响决策→人工主导+Agent支持); **持久化 Agent 趋势确认**: 设计用于长任务、本地执行、数据主权，配合 Local-First 转型; **Graph Engineering 范式确立**: 多阶段并行 + 精确反馈路由取代串行循环，Codex Remote Sessions 为 OpenClaw 实践实证; **记忆生命周期管理关键性**: Extract→Update→Delete 三步曲缺一不可；陈旧记忆毒性 > 无记忆；需强化 Update/Delete 机制 [score=0.811 recalls=0 avg=0.620 source=memory/2026-10-17.md:20-23]
-<!-- openclaw-memory-promotion:memory:memory/2026-10-17.md:24:25 -->
-- AI Agent 行业趋势与最佳实践: **OpenAI Agents API 公测细节**: 托管 Agent 循环、Data Agent、GPT-Live-1 全双工语音、免费托管沙箱 (仅计费模型 token + 工具使用); **成本优化三件套深化**: 模型路由(60-70%) + Prompt Caching(60-80%) + Batch API(50%) → 任务感知路由引入 task-aware 模型路由（cron/heartbeat 用便宜模型处理低复杂度任务） [score=0.811 recalls=0 avg=0.620 source=memory/2026-10-17.md:24-25]
+<!-- openclaw-memory-promotion:memory:memory/2026-10-17.md:28:31 -->
+- 安全基线更新: **Secret egress host binding**: 评估在 openclaw.json 中显式配置密钥出口域名白名单; **审计日志完整性**: 确保 cron/heartbeat/subagent 执行轨迹可追溯; **Cross-Component Trust** (v2026.9.x): 远程节点事件默认 untrusted + 输出 sanitization; **WebSocket 会话即时失效**: token/密码轮换时立即失效 [score=0.825 recalls=0 avg=0.620 source=memory/2026-10-17.md:28-31]
+<!-- openclaw-memory-promotion:memory:memory/2026-10-17.md:3:4 -->
+- 2026-10-17 (周六) 每日自我完善总结: **生成时间**: 2026-10-17 09:41 (Asia/Shanghai) **触发方式**: cron daily-self-improvement 任务自动执行 [score=0.825 recalls=0 avg=0.620 source=memory/2026-10-17.md:3-4]
