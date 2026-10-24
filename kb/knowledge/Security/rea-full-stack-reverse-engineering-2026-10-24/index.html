@@ -1,0 +1,3193 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="AI Agent 第二大脑 | Hermes 七大自举系统 | 硬件/PCB/单片机全链路知识库 | 学术写作工作流 | 全中文 Obsidian 知识库">
+      
+      
+        <meta name="author" content="mo9652962">
+      
+      
+        <link rel="canonical" href="https://mo9652962-ai.github.io/second-brain/kb/knowledge/Security/rea-full-stack-reverse-engineering-2026-10-24/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>REA 全功能逆向工程环境实战部署指南（Windows 完备版） - Second Brain 知识库</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#rea-windows" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="Second Brain 知识库" class="md-header__button md-logo" aria-label="Second Brain 知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Second Brain 知识库
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              REA 全功能逆向工程环境实战部署指南（Windows 完备版）
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="切换到深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="切换到浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  
+    
+  
+  🏠 总入口
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/hermes/hermes-workflow-preferences/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🤖 Hermes 自举系统
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/hardware/PCB-Design-Automation-2026/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🔧 硬件工程
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/ai/mlops-llm-training-pipeline/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🧠 AI / MLOps
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/web/Modern-Web-Development-2026/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  💻 Web / 平台
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/dev/cross-platform-mobile-development-2026/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  📱 移动端 & 安全
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/general/knowledge-domain-roadmap/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  📚 通用参考
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Research/MOC-Research/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🗺️ 知识域 MOC
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../projects/current/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  📦 项目与治理
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Second Brain 知识库" class="md-nav__button md-logo" aria-label="Second Brain 知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Second Brain 知识库
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../.." class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 总入口
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🏠 总入口
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../HOME/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HOME 知识中枢
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../INDEX/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    全库索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../knowledge-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识地图
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--adopted"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DASHBOARD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    健康看板
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../METABOLISM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识新陈代谢
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../VAULT-MAP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器可读索引
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cross-Domain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跨域关联
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--adopted"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 Hermes 自举系统
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🤖 Hermes 自举系统
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/hermes-workflow-preferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    交互自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/hermes-automation-patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    可靠性自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/daily-knowledge-absorption-gate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/tool-call-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    工具调用自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/code-quality-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    代码质量自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/output-style-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    输出风格自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/context-management-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    上下文管理自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/github-repo-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub 仓库优化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/github-seo-optimization-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub SEO 优化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔧 硬件工程
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🔧 硬件工程
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hardware/PCB-Design-Automation-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PCB 设计自动化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hardware/CAD-Design-Complete-Guide-v2.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CAD 设计完整指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hardware/Microcontroller-Edge-AI-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    单片机与边缘 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hardware/Hardware-Startup-Open-Source-Ecosystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    硬件创业与开源生态
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/cad-design-master/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CAD 设计大师（技能集）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/8051-embedded-dev/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8051 嵌入式开发
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧠 AI / MLOps
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🧠 AI / MLOps
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/ai/mlops-llm-training-pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MLOps & LLM 训练流水线
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💻 Web / 平台
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    💻 Web / 平台
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/web/Modern-Web-Development-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    现代 Web 开发 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/platform/Platform-Development-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    平台开发 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📱 移动端 & 安全
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📱 移动端 & 安全
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/dev/cross-platform-mobile-development-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跨平台移动端开发
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/dev/ctf-cybersecurity-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CTF 网络安全路线
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📚 通用参考
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📚 通用参考
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/general/knowledge-domain-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识域扩展路线图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/general/community-best-practices-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    社区最佳实践索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/general/bilingual-terminology-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中英双语术语表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/engineering-workflow/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    工程工作流
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🗺️ 知识域 MOC
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🗺️ 知识域 MOC
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Research/MOC-Research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    研究 Research
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Dev/MOC-Dev/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开发 Dev
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Productivity/MOC-Productivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    生产力 Productivity
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MOC-Security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    安全 Security
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cards/MOC-cards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识卡 cards
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Daily/MOC-Daily/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    日常 Daily
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Hardware/MOC-Hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    硬件 Hardware
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AI/MOC-AI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Finance/MOC-Finance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    金融 Finance
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Archive/MOC-Archive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    归档 Archive
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Content/MOC-Content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    内容 Content
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SOP/MOC-SOP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SOP
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../META/MOC-META/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    元信息 META
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Creative/MOC-Creative/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    创意 Creative
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gaming/MOC-gaming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    游戏 gaming
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Product/MOC-Product/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    产品 Product
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projects/MOC-Projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    项目 Projects
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Education/MOC-Education/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    教育 Education
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📦 项目与治理
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📦 项目与治理
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/current/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    当前项目
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/MOC-Concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    概念索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../memory/MOC-Memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    记忆索引
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../health/MOC-Health/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    健康索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MOC-Inbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    待整理箱
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MOC-Duplicate-Review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    重复审查
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="rea-windows">REA 全功能逆向工程环境实战部署指南（Windows 完备版）<a class="headerlink" href="#rea-windows" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>状态：本机已完成全套多引擎实战部署并 100% 验证跑通。</strong>
+安装根路径 <code>D:\tools\rea</code>，涵盖 <strong>Ghidra 12.1.4 (原生 C/C++)</strong>、<strong>JADX 0.7.1 Headless (Android Java)</strong>、<strong>Apktool 2.10.0 (资源/清单)</strong>、<strong>ADB 37.0.1 (安卓设备)</strong> 与 <strong>微软官方 PDB 符号服务</strong>。全程独立沙箱，未污染全局环境。</p>
+</blockquote>
+<hr />
+<h2 id="0">0. 核心结论与能力全景<a class="headerlink" href="#0" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">逆向场景</th>
+<th style="text-align: left;">驱动引擎</th>
+<th style="text-align: center;">实测状态</th>
+<th style="text-align: left;">实战能力与产出</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>原生 PE/ELF/DLL (x86/x64)</strong></td>
+<td style="text-align: left;">Ghidra 12.1.4</td>
+<td style="text-align: center;">✅ 已跑通</td>
+<td style="text-align: left;">完整函数分析（1758 函数）、伪代码还原、汇编/交叉引用 (<code>confidence: observed</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Android APK / DEX 代码</strong></td>
+<td style="text-align: left;">JADX Headless 0.7.1</td>
+<td style="text-align: center;">✅ 已跑通</td>
+<td style="text-align: left;">930 个类解析、精确类方法查找、提取整洁 Java 伪代码源码 (<code>representation: java</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Android 资源与清单</strong></td>
+<td style="text-align: left;">Apktool 2.10.0</td>
+<td style="text-align: center;">✅ 已跑通</td>
+<td style="text-align: left;">1026 个文件解码、AndroidManifest.xml 自动还原、全套多语言 strings 提取</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Android 真机 / 模拟器</strong></td>
+<td style="text-align: left;">ADB 37.0.1</td>
+<td style="text-align: center;">✅ 已就绪</td>
+<td style="text-align: left;">免启动 Client 快速握手、包名解析、设备状态采集</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Windows 符号支持</strong></td>
+<td style="text-align: left;">微软官方 PDB Server</td>
+<td style="text-align: center;">✅ 已配置</td>
+<td style="text-align: left;">自动缓存 Windows 动态库 PDB 到 <code>D:\Symbols</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>JS / Electron / ASAR</strong></td>
+<td style="text-align: left;">内置 AST 解析器</td>
+<td style="text-align: center;">✅ 已跑通</td>
+<td style="text-align: left;">4.5MB 真实 asar 边界还原、IPC 通道配对、preload 隔离分析</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Go / Rust 二进制</strong></td>
+<td style="text-align: left;">内置静态提取器</td>
+<td style="text-align: center;">✅ 已跑通</td>
+<td style="text-align: left;">2.4 秒秒级抽取 Go 版本 (go1.26.6) + 模块列表 + cargo-auditable 依赖树</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>.NET 托管程序集</strong></td>
+<td style="text-align: left;">内置 Metadata 解析器</td>
+<td style="text-align: center;">✅ 已跑通</td>
+<td style="text-align: left;">支持 P/Invoke 边界；利用 <code>--type</code> 精确提取成功绕过 64MB 预算硬限制</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="1-cli-mcp">1. 为什么坚决坚持 CLI 优先（拒绝全局 MCP）<a class="headerlink" href="#1-cli-mcp" title="Permanent link">&para;</a></h2>
+<p>REA 提供了 <code>npx rea-agents setup</code> 一键注册 MCP，但我们在实测中坚决弃用，原因如下：</p>
+<ol>
+<li><strong>Token 灾难</strong>：REA 的 MCP 面包含 <strong>207 个工具</strong>，未精简时 <code>tools/list</code> 报文达 <strong>3.16MB ≈ 79 万 tokens</strong>，直接打穿任何大模型的上下文窗口。</li>
+<li><strong>即便极限压缩仍嫌重</strong>：双 profile 开启（<code>REA_MCP_INPUT_SCHEMA_PROFILE=compact</code> + <code>REA_MCP_OUTPUT_SCHEMA_PROFILE=off</code>）压到 54,807 tokens，依然吃掉 5.5 万 token 底线。</li>
+<li><strong>性能基准验证</strong>：社区 <code>leanrea</code> 实测 Benchmark 证明，<strong>纯 CLI + 精简 Skill 比 207 工具的 MCP 快 38%、成本节约 35%、Token 节省 60%，评分完全持平（74/75 vs 75/75）</strong>。</li>
+</ol>
+<hr />
+<h2 id="2">2. 部署组件与钉版本矩阵<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">组件</th>
+<th style="text-align: left;">选用版本</th>
+<th style="text-align: left;">强制原因与避坑实测</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>rea-agents</strong></td>
+<td style="text-align: left;"><strong>6.7.0</strong></td>
+<td style="text-align: left;">一周经历 4 个大版本与 23 项破坏性更新，必须钉死 6.7.0，严禁盲目追 latest。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Ghidra</strong></td>
+<td style="text-align: left;"><strong>12.1.4</strong></td>
+<td style="text-align: left;">REA 源码 <code>SUPPORTED_GHIDRA_VERSION = "12.1.4"</code>，<strong>Ghidra 12.2 会被 doctor 强行拒绝</strong>。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>JADX Headless</strong></td>
+<td style="text-align: left;"><strong>0.7.1-all</strong></td>
+<td style="text-align: left;">官方固定契约 SHA256 为 <code>6e5eacf500b64292bfb73c49797c1958f6ee44646e43e868039ae7feb573ff75</code>。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Apktool</strong></td>
+<td style="text-align: left;"><strong>2.10.0</strong></td>
+<td style="text-align: left;">REA 最低要求 2.7.0，且 Windows 必须 &gt;= 2.9.3 以规避目录遍历漏洞。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>JDK</strong></td>
+<td style="text-align: left;"><strong>21.0.2</strong></td>
+<td style="text-align: left;">必须是含 <code>javac.exe</code> 和 <code>jdk.compiler</code> 的 64 位完整 JDK，纯 JRE 无法通过检查。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>ADB</strong></td>
+<td style="text-align: left;"><strong>37.0.1</strong></td>
+<td style="text-align: left;">系统自带于 <code>C:/Users/31954/platform-tools/adb.exe</code>。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3">3. 一键部署与环境变量维护<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<h3 id="31">3.1 部署脚本<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
+<p>全套环境已整合为自动化脚本 <code>D:\tools\rea\install.sh</code>，支持断点续传、SHA256 校验与前置依赖检查：</p>
+<div class="codehilite"><pre><span></span><code>bash<span class="w"> </span>/d/tools/rea/install.sh
+</code></pre></div>
+
+<h3 id="32-dtoolsreaenvsh">3.2 运行环境激活 (<code>D:\tools\rea\env.sh</code>)<a class="headerlink" href="#32-dtoolsreaenvsh" title="Permanent link">&para;</a></h3>
+<p>每次开新终端，仅需一行命令：</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>/d/tools/rea/env.sh
+</code></pre></div>
+
+<p>加载的关键变量与安全参数：</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">REA_HOME</span><span class="o">=</span><span class="s2">"D:/tools/rea"</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">REA_ENTRY</span><span class="o">=</span><span class="s2">"</span><span class="nv">$REA_HOME</span><span class="s2">/node_modules/rea-agents/scripts/rea.mjs"</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">JAVA_HOME</span><span class="o">=</span><span class="s2">"C:/Users/31954/jdk21"</span>
+
+<span class="c1"># Ghidra 原生引擎配置</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">GHIDRA_INSTALL_DIR</span><span class="o">=</span><span class="s2">"D:/tools/ghidra_12.1.4_PUBLIC"</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">REA_ANALYSIS_PROVIDER</span><span class="o">=</span><span class="s2">"ghidra"</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">GHIDRA_HEADLESS_MAXMEM</span><span class="o">=</span><span class="s2">"2G"</span><span class="w">                     </span><span class="c1"># 堆限制 2G，保护宿主机内存</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">REA_GHIDRA_STARTUP_TIMEOUT_MS</span><span class="o">=</span><span class="s2">"900000"</span><span class="w">          </span><span class="c1"># 冷启动超时放宽到 15 分钟</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">REA_GHIDRA_DECOMPILE_TIMEOUT_SECONDS</span><span class="o">=</span><span class="s2">"60"</span><span class="w">       </span><span class="c1"># 单函数反编译上限 60s，防死锁</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">_NT_SYMBOL_PATH</span><span class="o">=</span><span class="s2">"srv*D:\\Symbols*https://msdl.microsoft.com/download/symbols"</span>
+
+<span class="c1"># Android 引擎配置</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">REA_JADX_MCP_JAR</span><span class="o">=</span><span class="s2">"</span><span class="nv">$REA_HOME</span><span class="s2">/android/jadx-headless-mcp-0.7.1-all.jar"</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">REA_JADX_HEAP_MIB</span><span class="o">=</span><span class="s2">"2048"</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">REA_JADX_OPERATION_TIMEOUT_MS</span><span class="o">=</span><span class="s2">"300000"</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">REA_APKTOOL_COMMAND</span><span class="o">=</span><span class="s2">"</span><span class="nv">$REA_HOME</span><span class="s2">/android/apktool.bat"</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">REA_ADB_PATH</span><span class="o">=</span><span class="s2">"C:/Users/31954/platform-tools/adb.exe"</span>
+
+<span class="c1"># 上下文保护</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">REA_MCP_INPUT_SCHEMA_PROFILE</span><span class="o">=</span><span class="s2">"compact"</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">REA_MCP_OUTPUT_SCHEMA_PROFILE</span><span class="o">=</span><span class="s2">"off"</span>
+</code></pre></div>
+
+<hr />
+<h2 id="4">4. 实战工作流命令集<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<h3 id="41-pe-dll-elf">4.1 原生二进制 (PE / DLL / ELF)<a class="headerlink" href="#41-pe-dll-elf" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># 1. 扫描符号与函数列表</span>
+rea<span class="w"> </span>search<span class="w"> </span>&lt;target.exe&gt;<span class="w"> </span><span class="s2">"."</span><span class="w"> </span>--kind<span class="w"> </span>procedures<span class="w"> </span>--mode<span class="w"> </span>regex<span class="w"> </span>--provider<span class="w"> </span>ghidra<span class="w"> </span>--format<span class="w"> </span>json
+
+<span class="c1"># 2. 精确反编译指定分析地址 (快捷命令)</span>
+reanative<span class="w"> </span>&lt;target.exe&gt;<span class="w"> </span>0x140001080
+<span class="c1"># 或原始命令：</span>
+rea<span class="w"> </span><span class="k">function</span><span class="w"> </span>&lt;target.exe&gt;<span class="w"> </span>0x140001080<span class="w"> </span>--provider<span class="w"> </span>ghidra<span class="w"> </span>--format<span class="w"> </span>json
+</code></pre></div>
+
+<h3 id="42-android-apk">4.2 Android APK 逆向<a class="headerlink" href="#42-android-apk" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># 1. 查看 APK 基础包信息、SDK 版本与申请权限</span>
+reaapk<span class="w"> </span>&lt;target.apk&gt;
+<span class="c1"># 或原始命令：</span>
+rea<span class="w"> </span>inspect-android-package<span class="w"> </span>&lt;target.apk&gt;<span class="w"> </span>--format<span class="w"> </span>json
+
+<span class="c1"># 2. 解码 Android 资源、布局与字符串</span>
+rea<span class="w"> </span>decode-android-resources<span class="w"> </span>&lt;target.apk&gt;<span class="w"> </span>--format<span class="w"> </span>json
+
+<span class="c1"># 3. 搜索特定类名</span>
+rea<span class="w"> </span>search-android-classes<span class="w"> </span>&lt;target.apk&gt;<span class="w"> </span>--query<span class="w"> </span><span class="s2">"MainActivity"</span><span class="w"> </span>--format<span class="w"> </span>json
+
+<span class="c1"># 4. 反编译指定类的指定方法为 Java 源码 (快捷命令)</span>
+reajava<span class="w"> </span>&lt;target.apk&gt;<span class="w"> </span><span class="s2">"com.example.MainActivity"</span><span class="w"> </span><span class="s2">"onCreate"</span>
+</code></pre></div>
+
+<h3 id="43-net">4.3 静态分诊与 .NET<a class="headerlink" href="#43-net" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># 秒级提取 Go/Rust 编译元数据与模块指纹</span>
+rea<span class="w"> </span>inspect-go-binary<span class="w"> </span>&lt;target.exe&gt;<span class="w"> </span>--format<span class="w"> </span>json
+rea<span class="w"> </span>inspect-rust-binary<span class="w"> </span>&lt;target.exe&gt;<span class="w"> </span>--format<span class="w"> </span>json
+
+<span class="c1"># .NET 绕过 64MB 预算墙精准反编译</span>
+rea<span class="w"> </span>inspect-managed-members<span class="w"> </span>&lt;target.dll&gt;<span class="w"> </span>--type<span class="w"> </span><span class="s2">"System.Net.WebRequest"</span><span class="w"> </span>--format<span class="w"> </span>json
+</code></pre></div>
+
+<hr />
+<h2 id="5-10">5. 经过实测验证的 10 个核心坑位与解法<a class="headerlink" href="#5-10" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">#</th>
+<th style="text-align: left;">陷阱</th>
+<th style="text-align: left;">表现特征</th>
+<th style="text-align: left;">根本原因与彻底解法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;"><strong>Ghidra 12.2 不支持</strong></td>
+<td style="text-align: left;">doctor 报错 <code>unsupported_version</code></td>
+<td style="text-align: left;">REA 6.7.0 源码硬编码锁死 12.1.4，必须降级使用 12.1.4。</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;"><strong><code>stdin is not a tty</code></strong></td>
+<td style="text-align: left;">控制台提示像错误</td>
+<td style="text-align: left;">后台执行时 REA 的无害 stderr 提示，不影响 stdout 产出。</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;"><strong>地址并非文件偏移</strong></td>
+<td style="text-align: left;">报错 <code>has no loaded source mapping</code></td>
+<td style="text-align: left;">必须传入分析地址（<code>image_base</code> + 相对偏移），非磁盘十六进制偏移。</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;"><strong>符号名反编译失败</strong></td>
+<td style="text-align: left;">报错 <code>Unknown Ghidra procedure name</code></td>
+<td style="text-align: left;">必须先通过 <code>search --kind procedures</code> 提取物理内存地址，再调用 <code>function &lt;addr&gt;</code>。</td>
+</tr>
+<tr>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;"><strong>Go 符号完全抹除</strong></td>
+<td style="text-align: left;">全部函数呈现为 <code>FUN_xxx</code></td>
+<td style="text-align: left;">Go 剥离符号表后无解，必须搭配 <code>inspect-go-binary</code> 提取元数据补位。</td>
+</tr>
+<tr>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;"><strong>.NET 64MB 预算墙</strong></td>
+<td style="text-align: left;">3.4MB 的 System.dll 报告 0 方法</td>
+<td style="text-align: left;">REA 内存 AST 预算上限 64MB。<strong>解法</strong>：通过 <code>--type &lt;全限定类名&gt;</code> 局部查询，实测 0 变 78 方法。</td>
+</tr>
+<tr>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;"><strong>输出 JSON 暴涨</strong></td>
+<td style="text-align: left;">1.2KB fixture 膨胀至 439KB (12.7万 token)</td>
+<td style="text-align: left;">严禁直接喂原始 JSON，必须配合 <code>--filter-output &lt;key_path&gt;</code> 提取关键摘要。</td>
+</tr>
+<tr>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;"><strong>Ghidra 无缓存重分析</strong></td>
+<td style="text-align: left;">同一文件二次扫描耗时依然 54s</td>
+<td style="text-align: left;">REA 每次以临时工程重新导入。大二进制必须预先规划好命令批次。</td>
+</tr>
+<tr>
+<td style="text-align: left;">9</td>
+<td style="text-align: left;"><strong>冷启动超时被杀</strong></td>
+<td style="text-align: left;">报 <code>provider_timeout</code></td>
+<td style="text-align: left;">默认 330s 不够用，需设 <code>REA_GHIDRA_STARTUP_TIMEOUT_MS=900000</code> (15分钟)。</td>
+</tr>
+<tr>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;"><strong>单函数挂死整场分析</strong></td>
+<td style="text-align: left;">某个巨大函数卡死 headless</td>
+<td style="text-align: left;">显式配置 <code>REA_GHIDRA_DECOMPILE_TIMEOUT_SECONDS=60</code>，单个超时自动重启子进程，保护全局。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6">6. 能力边界与安全守则<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Windows P0 只读边界</strong>：</li>
+<li>Windows 原生通道下，Ghidra 仅支持读取分析，<strong>禁止重命名函数与修改注释</strong>（需要可写数据库可无缝切换到 WSL2 Ubuntu 运行）。</li>
+<li><strong>「没报 ≠ 没有」审计铁律</strong>：</li>
+<li>在我们自建的 Ground-Truth 真实 Electron 样本中，REA 漏报了 2/3 的窗口与全部 <code>nodeIntegration</code> 声明。因此在安全审计与漏洞分析中，<strong>工具的空白不代表风险不存在</strong>。</li>
+<li><strong>严守防御与授权边界</strong>：</li>
+<li>逆向工程仅用于自主软件加固、授权审计、协议兼容性研究与代码理解，坚决不参与任何 DRM 破解与恶意分析。</li>
+</ol>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

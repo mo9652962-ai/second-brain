@@ -1,0 +1,3242 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="AI Agent 第二大脑 | Hermes 七大自举系统 | 硬件/PCB/单片机全链路知识库 | 学术写作工作流 | 全中文 Obsidian 知识库">
+      
+      
+        <meta name="author" content="mo9652962">
+      
+      
+        <link rel="canonical" href="https://mo9652962-ai.github.io/second-brain/kb/knowledge/Security/ilspycmd-dotnet8-breakthrough-2026-10-24/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>ilspycmd 8.2 在 .NET 8 运行时打通（rollForward + Go shim） - Second Brain 知识库</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ilspycmd-82-net-8" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="Second Brain 知识库" class="md-header__button md-logo" aria-label="Second Brain 知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Second Brain 知识库
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ilspycmd 8.2 在 .NET 8 运行时打通（rollForward + Go shim）
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="切换到深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="切换到浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  
+    
+  
+  🏠 总入口
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/hermes/hermes-workflow-preferences/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🤖 Hermes 自举系统
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/hardware/PCB-Design-Automation-2026/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🔧 硬件工程
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/ai/mlops-llm-training-pipeline/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🧠 AI / MLOps
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/web/Modern-Web-Development-2026/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  💻 Web / 平台
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/dev/cross-platform-mobile-development-2026/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  📱 移动端 & 安全
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../skills/general/knowledge-domain-roadmap/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  📚 通用参考
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Research/MOC-Research/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🗺️ 知识域 MOC
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../projects/current/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  📦 项目与治理
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Second Brain 知识库" class="md-nav__button md-logo" aria-label="Second Brain 知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Second Brain 知识库
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../.." class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 总入口
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🏠 总入口
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../HOME/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HOME 知识中枢
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../INDEX/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    全库索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../knowledge-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识地图
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--adopted"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DASHBOARD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    健康看板
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../METABOLISM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识新陈代谢
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../VAULT-MAP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器可读索引
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cross-Domain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跨域关联
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--adopted"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤖 Hermes 自举系统
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🤖 Hermes 自举系统
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/hermes-workflow-preferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    交互自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/hermes-automation-patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    可靠性自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/daily-knowledge-absorption-gate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/tool-call-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    工具调用自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/code-quality-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    代码质量自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/output-style-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    输出风格自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/context-management-bootstrapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    上下文管理自举
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/github-repo-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub 仓库优化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hermes/github-seo-optimization-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub SEO 优化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔧 硬件工程
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🔧 硬件工程
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hardware/PCB-Design-Automation-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PCB 设计自动化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hardware/CAD-Design-Complete-Guide-v2.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CAD 设计完整指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hardware/Microcontroller-Edge-AI-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    单片机与边缘 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/hardware/Hardware-Startup-Open-Source-Ecosystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    硬件创业与开源生态
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/cad-design-master/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CAD 设计大师（技能集）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/8051-embedded-dev/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8051 嵌入式开发
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧠 AI / MLOps
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🧠 AI / MLOps
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/ai/mlops-llm-training-pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MLOps & LLM 训练流水线
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💻 Web / 平台
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    💻 Web / 平台
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/web/Modern-Web-Development-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    现代 Web 开发 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/platform/Platform-Development-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    平台开发 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📱 移动端 & 安全
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📱 移动端 & 安全
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/dev/cross-platform-mobile-development-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    跨平台移动端开发
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/dev/ctf-cybersecurity-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CTF 网络安全路线
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📚 通用参考
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📚 通用参考
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/general/knowledge-domain-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识域扩展路线图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/general/community-best-practices-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    社区最佳实践索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/general/bilingual-terminology-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中英双语术语表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../skills/engineering-workflow/SKILL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    工程工作流
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🗺️ 知识域 MOC
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🗺️ 知识域 MOC
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Research/MOC-Research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    研究 Research
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Dev/MOC-Dev/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开发 Dev
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Productivity/MOC-Productivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    生产力 Productivity
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MOC-Security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    安全 Security
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cards/MOC-cards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知识卡 cards
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Daily/MOC-Daily/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    日常 Daily
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Hardware/MOC-Hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    硬件 Hardware
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AI/MOC-AI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Finance/MOC-Finance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    金融 Finance
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Archive/MOC-Archive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    归档 Archive
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Content/MOC-Content/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    内容 Content
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SOP/MOC-SOP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SOP
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../META/MOC-META/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    元信息 META
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Creative/MOC-Creative/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    创意 Creative
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gaming/MOC-gaming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    游戏 gaming
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Product/MOC-Product/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    产品 Product
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projects/MOC-Projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    项目 Projects
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Education/MOC-Education/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    教育 Education
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📦 项目与治理
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📦 项目与治理
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/current/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    当前项目
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/MOC-Concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    概念索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../memory/MOC-Memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    记忆索引
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../health/MOC-Health/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    健康索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MOC-Inbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    待整理箱
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MOC-Duplicate-Review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    重复审查
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--active"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ilspycmd-82-net-8">ilspycmd 8.2 在 .NET 8 上跑通<a class="headerlink" href="#ilspycmd-82-net-8" title="Permanent link">&para;</a></h1>
+<h2 id="_1">结论置顶<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p><strong>已打通。</strong> <code>ilspycmd 8.2.0.7535</code> 在本机（只有 .NET 8.0.21 / 8.0.32，无 .NET 6 / 10）成功运行，反编译 <code>System.Core.dll</code> 产出 <strong>694 个 .cs 文件 / 4.1MB</strong>，REA doctor 报 <code>[OK] ilspycmd</code>。</p>
+<p>关键只有两步：
+1. <code>ilspycmd.runtimeconfig.json</code> 加 <code>"rollForward": "Major"</code> —— 让 net6.0 目标向前滚动到 .NET 8
+2. 用 Go 编译一个真 PE shim —— 因为 REA 用 <code>execFile</code> 直呼，Node 在 Windows 无法执行 <code>.bat</code> / <code>.cmd</code></p>
+<h2 id="_2">一、踩过的四个坑（按发现顺序）<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="1">坑 1：目标框架猜错<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>我原以为 <code>ilspycmd 8.2</code> 是 <code>net8.0</code>，实测是 <strong><code>net6.0</code></strong>：</p>
+<div class="codehilite"><pre><span></span><code><span class="n">tools</span><span class="o">/</span><span class="n">net6</span><span class="o">.</span><span class="mi">0</span><span class="o">/</span><span class="n">any</span><span class="o">/</span><span class="n">ilspycmd</span><span class="o">.</span><span class="n">dll</span><span class="w">          </span><span class="mi">2023</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">03</span>
+<span class="n">tools</span><span class="o">/</span><span class="n">net6</span><span class="o">.</span><span class="mi">0</span><span class="o">/</span><span class="n">any</span><span class="o">/</span><span class="n">ilspycmd</span><span class="o">.</span><span class="n">runtimeconfig</span><span class="o">.</span><span class="n">json</span>
+</code></pre></div>
+
+<p>版本号 8.2 指 ILSpy 产品版本，不是 .NET 目标版本。<strong>版本号不能推断 TFM，必须看包内路径。</strong></p>
+<h3 id="2">坑 2：默认不跨主版本<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>直接跑报：</p>
+<div class="codehilite"><pre><span></span><code>You must install or update .NET to run this application.
+Framework: 'Microsoft.NETCore.App', version '6.0.0' (x64)
+The following frameworks were found:
+  8.0.21 / 8.0.32
+</code></pre></div>
+
+<p>runtimeconfig 未声明 <code>rollForward</code>，默认 <code>Minor</code> —— 只在同一主版本内滚动。</p>
+<h3 id="3">坑 3：方向决定成败<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p><strong>向前滚动可行，向后不可行：</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">场景</th>
+<th style="text-align: left;">方向</th>
+<th style="text-align: left;">结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">ilspycmd 11.1 (net10.0) → 本机 net8</td>
+<td style="text-align: left;"><strong>向后</strong></td>
+<td style="text-align: left;">❌ <code>Could not load System.Runtime, Version=10.0.0.0</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">ilspycmd 8.2 (net6.0) → 本机 net8</td>
+<td style="text-align: left;"><strong>向前</strong></td>
+<td style="text-align: left;">✅ 正常工作</td>
+</tr>
+</tbody>
+</table>
+<p>.NET 运行时保证向后兼容（新版能跑旧版编译的程序），反之不成立。这是上次 11.1 失败的根因。</p>
+<h3 id="4node-execfile-batcmd">坑 4：Node execFile 不认 .bat/.cmd<a class="headerlink" href="#4node-execfile-batcmd" title="Permanent link">&para;</a></h3>
+<p><code>.bat</code> / <code>.cmd</code> 包装器在终端里跑得好好的：</p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>cmd.exe<span class="w"> </span>/c<span class="w"> </span><span class="s2">"ilspycmd.cmd"</span><span class="w"> </span>--version
+ilspycmd:<span class="w"> </span><span class="m">8</span>.2.0.7535
+</code></pre></div>
+
+<p>但 REA doctor 报 FAIL。原因：REA 用 <code>execFile</code> 直接执行路径，而 Node 在 Windows 上<strong>不能直接执行批处理文件</strong>（需要 <code>shell: true</code> 或 <code>cmd /c</code>）。</p>
+<p><strong>注意：</strong> <code>.cmd</code> 的 stdout 经 <code>od -c</code> 检查是干净的 <code>ilspycmd: 8.2.0.7535\r\n</code>，所以不是输出格式问题，纯粹是执行方式问题。</p>
+<h2 id="_3">二、失败的三条弯路（别重走）<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">尝试</th>
+<th style="text-align: left;">结果</th>
+<th style="text-align: left;">原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>dotnet tool install --tool-path</code> 从本地 nupkg 装</td>
+<td style="text-align: left;">❌</td>
+<td style="text-align: left;">需要 .NET <strong>SDK</strong>，本机只有运行时</td>
+</tr>
+<tr>
+<td style="text-align: left;">复制 <code>dotnet.exe</code> 改名 <code>ilspycmd.exe</code></td>
+<td style="text-align: left;">❌</td>
+<td style="text-align: left;">明确拒绝：<code>Error: cannot execute dotnet when renamed to ilspycmd.</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">用 ILSpy GUI 的 apphost 改名</td>
+<td style="text-align: left;">❌</td>
+<td style="text-align: left;">apphost 内部绑定自身元数据，改名后静默无输出</td>
+</tr>
+<tr>
+<td style="text-align: left;">下载 .NET 10 运行时</td>
+<td style="text-align: left;">❌</td>
+<td style="text-align: left;">经代理仅 ~10KB/s，三次重试均残缺（<code>End-of-central-directory</code>）</td>
+</tr>
+<tr>
+<td style="text-align: left;">WSL <code>apt install dotnet-sdk-10.0</code></td>
+<td style="text-align: left;">❌</td>
+<td style="text-align: left;">Ubuntu 22.04 微软源只到 .NET 9</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_4">三、最终方案（两步）<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="1runtimeconfig-rollforward">步骤 1：runtimeconfig 加 rollForward<a class="headerlink" href="#1runtimeconfig-rollforward" title="Permanent link">&para;</a></h3>
+<p>文件：<code>D:\tools\rea\ilspy\bin82\tools\net6.0\any\ilspycmd.runtimeconfig.json</code></p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"runtimeOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"tfm"</span><span class="p">:</span><span class="w"> </span><span class="s2">"net6.0"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"framework"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Microsoft.NETCore.App"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6.0.0"</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"rollForward"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Major"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"configProperties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"System.GC.Server"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"System.Globalization.Invariant"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"System.Globalization.PredefinedCulturesOnly"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"System.Reflection.Metadata.MetadataUpdater.IsSupported"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>验证：</p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>dotnet<span class="w"> </span>ilspycmd.dll<span class="w"> </span>--version
+ilspycmd:<span class="w"> </span><span class="m">8</span>.2.0.7535
+ICSharpCode.Decompiler:<span class="w"> </span><span class="m">8</span>.2.0.7535
+</code></pre></div>
+
+<h3 id="2go-pe-shim">步骤 2：Go 编译真 PE shim<a class="headerlink" href="#2go-pe-shim" title="Permanent link">&para;</a></h3>
+<p>源码：<code>D:\tools\rea\ilspy\shim\main.go</code></p>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="s">"fmt"</span>
+<span class="w">    </span><span class="s">"os"</span>
+<span class="w">    </span><span class="s">"os/exec"</span>
+<span class="w">    </span><span class="s">"path/filepath"</span>
+<span class="p">)</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="nx">dotnetExe</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s">`C:\Program Files\dotnet\dotnet.exe`</span>
+<span class="w">    </span><span class="nx">ilspycmdDll</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">`D:\tools\rea\ilspy\bin82\tools\net6.0\any\ilspycmd.dll`</span>
+<span class="p">)</span>
+
+<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">args</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">append</span><span class="p">([]</span><span class="kt">string</span><span class="p">{</span><span class="nx">ilspycmdDll</span><span class="p">},</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">Args</span><span class="p">[</span><span class="mi">1</span><span class="p">:]...)</span>
+<span class="w">    </span><span class="nx">cmd</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">exec</span><span class="p">.</span><span class="nx">Command</span><span class="p">(</span><span class="nx">dotnetExe</span><span class="p">,</span><span class="w"> </span><span class="nx">args</span><span class="p">...)</span>
+<span class="w">    </span><span class="nx">cmd</span><span class="p">.</span><span class="nx">Stdin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">Stdin</span>
+<span class="w">    </span><span class="nx">cmd</span><span class="p">.</span><span class="nx">Stdout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">Stdout</span>
+<span class="w">    </span><span class="nx">cmd</span><span class="p">.</span><span class="nx">Stderr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">Stderr</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">cmd</span><span class="p">.</span><span class="nx">Run</span><span class="p">();</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nx">ee</span><span class="p">,</span><span class="w"> </span><span class="nx">ok</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">err</span><span class="p">.(</span><span class="o">*</span><span class="nx">exec</span><span class="p">.</span><span class="nx">ExitError</span><span class="p">);</span><span class="w"> </span><span class="nx">ok</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">os</span><span class="p">.</span><span class="nx">Exit</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">ExitCode</span><span class="p">())</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Fprintf</span><span class="p">(</span><span class="nx">os</span><span class="p">.</span><span class="nx">Stderr</span><span class="p">,</span><span class="w"> </span><span class="s">"%s: %v\n"</span><span class="p">,</span><span class="w"> </span><span class="nx">filepath</span><span class="p">.</span><span class="nx">Base</span><span class="p">(</span><span class="nx">os</span><span class="p">.</span><span class="nx">Args</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span><span class="w"> </span><span class="nx">err</span><span class="p">)</span>
+<span class="w">        </span><span class="nx">os</span><span class="p">.</span><span class="nx">Exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>构建：</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/d/tools/rea/ilspy/shim
+<span class="nv">CGO_ENABLED</span><span class="o">=</span><span class="m">0</span><span class="w"> </span>go<span class="w"> </span>build<span class="w"> </span>-ldflags<span class="o">=</span><span class="s2">"-s -w"</span><span class="w"> </span>-o<span class="w"> </span>ilspycmd.exe<span class="w"> </span>main.go
+</code></pre></div>
+
+<p>产物 1968 KB，<code>CGO_ENABLED=0</code> 保证无 DLL 依赖、单文件可移植。</p>
+<p>一键重建脚本：<code>D:\tools\rea\ilspy\shim\build.sh</code></p>
+<h3 id="3-envsh">步骤 3：接进 env.sh<a class="headerlink" href="#3-envsh" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">REA_ILSPY_CMD_PATH</span><span class="o">=</span><span class="s2">"</span><span class="nv">$REA_HOME</span><span class="s2">/ilspy/shim/ilspycmd.exe"</span>
+</code></pre></div>
+
+<h2 id="_5">四、验收证据<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="41-rea-doctor">4.1 REA doctor<a class="headerlink" href="#41-rea-doctor" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="n">OK</span><span class="w">   </span><span class="n">ilspycmd</span><span class="w">    </span><span class="n">D</span><span class="p">:</span><span class="o">/</span><span class="n">tools</span><span class="o">/</span><span class="n">rea</span><span class="o">/</span><span class="n">ilspy</span><span class="o">/</span><span class="n">shim</span><span class="o">/</span><span class="n">ilspycmd</span><span class="o">.</span><span class="n">exe</span><span class="w"> </span><span class="p">(</span><span class="n">ilspycmd</span><span class="p">:</span><span class="w"> </span><span class="mf">8.2</span><span class="o">.</span><span class="mf">0.7535</span><span class="p">)</span>
+</code></pre></div>
+
+<h3 id="42">4.2 整程序集反编译<a class="headerlink" href="#42" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>./shim/ilspycmd.exe<span class="w"> </span>--disable-updatecheck<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-o<span class="w"> </span><span class="s2">"D:/tools/targets/ilspy_out"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-p<span class="w"> </span><span class="s2">"C:/Windows/Microsoft.NET/Framework64/v4.0.30319/System.Core.dll"</span>
+</code></pre></div>
+
+<p>产出：<strong>694 个 .cs 文件 / 4.1MB</strong></p>
+<blockquote>
+<p>⚠️ 必须加 <code>--disable-updatecheck</code>。否则它会先打印「有新版本」然后<strong>不执行反编译、产出 0 文件</strong>。</p>
+</blockquote>
+<h3 id="43">4.3 双源交叉验证（最有说服力的一条）<a class="headerlink" href="#43" title="Permanent link">&para;</a></h3>
+<p>同一个类型 <code>System.Linq.Enumerable</code>，两个独立来源比对：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">来源</th>
+<th style="text-align: center;">方法名数量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">ilspycmd 反编译 C# 源码（正则提取）</td>
+<td style="text-align: center;">85</td>
+</tr>
+<tr>
+<td style="text-align: left;">REA <code>inspect-managed-members</code> 静态元数据</td>
+<td style="text-align: center;">77</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>交集</strong></td>
+<td style="text-align: center;"><strong>77</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">仅 ilspycmd</td>
+<td style="text-align: center;">8</td>
+</tr>
+<tr>
+<td style="text-align: left;">仅 REA</td>
+<td style="text-align: center;"><strong>0</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>REA 的 77 个方法，ilspycmd 100% 覆盖</strong> —— 没有漏</li>
+<li>ilspycmd 多出 8 个：<code>Clone</code> / <code>Dispose</code> / <code>GetCount</code> / <code>GetEnumerator</code> / <code>GetSourceEnumerator</code> / <code>LazyToArray</code> / <code>LoadFromEnumerator</code> / <code>MoveNext</code> —— 全是<strong>嵌套类 <code>Iterator&lt;TSource&gt;</code> 的成员</strong>，REA 的 <code>--type</code> 只查顶层类型，不递归嵌套类</li>
+<li><strong>零冲突</strong></li>
+</ul>
+<p>这个结果同时验证了两件事：ilspycmd 输出真实完整；REA 静态元数据准确（在顶层类型范围内）。</p>
+<h2 id="_6">五、使用方式<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>/d/tools/rea/env.sh
+
+<span class="c1"># 方式 A: 直接调 shim</span>
+D:/tools/rea/ilspy/shim/ilspycmd.exe<span class="w"> </span>--disable-updatecheck<span class="w"> </span>-t<span class="w"> </span><span class="s2">"命名空间.类名"</span><span class="w"> </span><span class="s2">"目标.dll"</span>
+
+<span class="c1"># 方式 B: 整程序集导出</span>
+D:/tools/rea/ilspy/shim/ilspycmd.exe<span class="w"> </span>--disable-updatecheck<span class="w"> </span>-o<span class="w"> </span><span class="s2">"输出目录"</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">"目标.dll"</span>
+
+<span class="c1"># 方式 C: REA 静态证据（不需要 ilspycmd，速度更快）</span>
+rea<span class="w"> </span>inspect-managed-members<span class="w"> </span><span class="s2">"目标.dll"</span><span class="w"> </span>--type<span class="w"> </span><span class="s2">"命名空间.类名"</span><span class="w"> </span>--format<span class="w"> </span>json
+</code></pre></div>
+
+<p><strong>选择建议：</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">需求</th>
+<th style="text-align: left;">用什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">看 C# 源码逻辑</td>
+<td style="text-align: left;">ilspycmd</td>
+</tr>
+<tr>
+<td style="text-align: left;">拿方法 token / 调用边 / 字符串字面量</td>
+<td style="text-align: left;">REA <code>inspect-managed-members</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">两者互校</td>
+<td style="text-align: left;">双跑，比对方法名集合</td>
+</tr>
+<tr>
+<td style="text-align: left;">大程序集（&gt;64MB 元数据）</td>
+<td style="text-align: left;">必须用 REA <code>--type</code> 局部取，否则撞预算墙</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_7">六、已知限制<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">限制</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">必须带 <code>--disable-updatecheck</code></td>
+<td style="text-align: left;">否则静默产出 0 文件</td>
+</tr>
+<tr>
+<td style="text-align: left;">嵌套类型不递归</td>
+<td style="text-align: left;">REA <code>--type</code> 只查顶层；要查嵌套类需单独指定</td>
+</tr>
+<tr>
+<td style="text-align: left;">net6.0 向前滚动属非官方路径</td>
+<td style="text-align: left;">官方不保证；但实测稳定。若要长期稳定，装 .NET 6 运行时更正规</td>
+</tr>
+<tr>
+<td style="text-align: left;">版本停留在 8.2</td>
+<td style="text-align: left;">更高版本（10.x/11.x）目标 net8/net10，11.1 实测向后滚动失败</td>
+</tr>
+<tr>
+<td style="text-align: left;">shim 硬编码路径</td>
+<td style="text-align: left;"><code>main.go</code> 里写死 dotnet 和 dll 路径；换机需重编译</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_8">七、文件清单<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">路径</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>D:\tools\rea\ilspy\ilspycmd82.nupkg</code></td>
+<td style="text-align: left;">原始包 3.71MB</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>D:\tools\rea\ilspy\bin82\tools\net6.0\any\</code></td>
+<td style="text-align: left;">解压后 57 文件</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>D:\tools\rea\ilspy\bin82\tools\net6.0\any\ilspycmd.runtimeconfig.json</code></td>
+<td style="text-align: left;">已加 rollForward:Major</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>D:\tools\rea\ilspy\shim\main.go</code></td>
+<td style="text-align: left;">shim 源码</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>D:\tools\rea\ilspy\shim\ilspycmd.exe</code></td>
+<td style="text-align: left;">产物 1968KB</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>D:\tools\rea\ilspy\shim\build.sh</code></td>
+<td style="text-align: left;">一键重建</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>D:\tools\targets\ilspy_out\</code></td>
+<td style="text-align: left;">测试产出 694 文件</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
