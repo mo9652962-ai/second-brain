@@ -392,25 +392,9 @@ _最后更新: 2026-10-24｜运行环境: Hermes Agent on Windows 11_
 
 _最后更新: 2026-09-23 | 归档截止: 2026-08-21 (含) | 运行环境: Hermes Agent on Windows 11_
 
-## Promoted From Short-Term Memory (2026-10-24)
+## Promoted From Short-Term Memory (2026-10-25)
 
-<!-- openclaw-memory-promotion:memory:memory/2026-10-18.md:12:15 -->
-- 系统健康度：🟡 亚健康（P0 阻塞项持续，核心感知链路韧性生效）: | 维度 | 状态 | 备注 | |------|------|------| | **Cron 总览** | 48 任务 / ✅ 14 正常 / ❌ 32 错误 / 📭 2 投递失败 | 32 个受 pydantic_core ABI 阻塞 | | **核心感知/决策链路** | ✅ 全数正常 | open-actions-broadcast、cron-health-board、health-degraded-fallback、obsidian-github-sync、workbuddy-proxy-watchdog、每日学习计划/回顾、闲鱼提醒 —— 均为 no_agent 纯脚本，不依赖 LLM | [score=0.812 recalls=0 avg=0.620 source=memory/2026-10-18.md:12-15]
-<!-- openclaw-memory-promotion:memory:memory/2026-10-18.md:16:19 -->
-- 系统健康度：🟡 亚健康（P0 阻塞项持续，核心感知链路韧性生效）: | **磁盘 (C:)** | ⚠️ 92% (38G/448G) | 需清理或迁移 | | **内存** | 🟡 81.7% (2.9G/15.6G) | 高位但可控 | | **网络连通性** | 🟡 67% | opencode-go SSL 握手失败；siliconflow/deepseek 401 但可达 | | **模型可用性** | ❌ 全线受阻 | opencode-go 系 400 (缺 x-opencode-session)；deepseek 402 余额不足；OpenRouter 免费模型 429 日限额耗尽 | [score=0.812 recalls=0 avg=0.620 source=memory/2026-10-18.md:16-19]
-<!-- openclaw-memory-promotion:memory:memory/2026-10-18.md:25:27 -->
-- 🔴 P0 持续阻塞项（第 20+ 天）: | 问题 | 根因 | 修复路径（三选一，待 sora 拍板） | 当前状态 | |------|------|--------------------------------|----------| | **pydantic_core ABI 不匹配** | gateway 启动脚本指向 Python 3.14.7 但加载 Python 3.11 site-packages (hermes-agent/venv) | ① PYTHONPATH 叠加 PM venv ② `get_python_path()` 返回 PM venv python ③ **重跑 `gateway install` 重新生成 launcher（推荐）** | `mitigated`（本进程正常），下次重启即复发 | [score=0.812 recalls=0 avg=0.620 source=memory/2026-10-18.md:25-27]
-<!-- openclaw-memory-promotion:memory:memory/2026-10-18.md:29:29 -->
-- 🔴 P0 持续阻塞项（第 20+ 天）: > **影响面**：32/48 cron 任务全部报 `RuntimeError: Failed to initialize OpenAI client: No module named 'pydantic_core._pydantic_core'`，导致 daily-self-improvement、daily-health-check、daily-todo-executor、项目追踪等核心任务连续 20+ 天失败，无产物产出。 [score=0.812 recalls=0 avg=0.620 source=memory/2026-10-18.md:29-29]
-<!-- openclaw-memory-promotion:memory:memory/2026-10-18.md:3:4 -->
-- 2026-10-18 (周日) daily-summary 总结: **生成时间**: 2026-10-18 22:00 (Asia/Shanghai) **触发方式**: cron daily-summary 任务自动执行（本轮为手动补录，原 cron 受模型配额阻塞） [score=0.812 recalls=0 avg=0.620 source=memory/2026-10-18.md:3-4]
-<!-- openclaw-memory-promotion:memory:memory/2026-10-18.md:35:38 -->
-- ✅ 今日正常运行的关键任务（韧性设计生效）: | 任务 | 调度 | 最后运行 | 产物 | |------|------|----------|------| | **open-actions-broadcast** | 20 8 * * * | 11:37 | `memory/2026/10/2026-10-18-open-actions.md` | | **cron-health-board** | 0 */4 * * * | 16:00 | `memory/2026/10/cron-health-latest.md` | [score=0.812 recalls=0 avg=0.620 source=memory/2026-10-18.md:35-38]
-<!-- openclaw-memory-promotion:memory:memory/2026-10-19.md:11:14 -->
-- OpenClaw 核心发布与行业动态: | 项目 | 状态 | 关键信息 | |------|------|----------| | **v2026.9.7** (10/1) | 已发布 | 更快负载响应、增强更新回滚保护、**OpenAI Agents API 公测**、**Sign in with ChatGPT (Beta)**、**Sora 视频生成退役** (建议替换: Kie AI / Z.AI / Novita / Qwen / Wan) | | **v2026.9.8** (10/8) | 已发布 | 优化 Codex Remote Sessions 目录处理，复用捕获设置减少重复内存使用 | [score=0.812 recalls=0 avg=0.620 source=memory/2026-10-19.md:11-14]
-<!-- openclaw-memory-promotion:memory:memory/2026-10-19.md:15:18 -->
-- OpenClaw 核心发布与行业动态: | **v2026.9.x 补丁期** | 进行中 | 半个月 6 版本极速补丁节奏，**建议暂缓升级等社区验证 2-4 周** | | **Skills Directory** | 爆发式增长 | 5,798+ 社区技能 (1,800+ AI Agent 专用)，安装/发现已成核心工作流入口 | | **OpenClaw 生态分化** | 加速中 | 12+ 替代方案涌现，轻量级 fork (nanoclaw/zeroclaw/ironclaw/picoclaw) 缺乏生产验证 | | **NIBVOK AI Security v0.1.2** | 10/12 发布 | 运行时策略层，逐工具调用决定 allow/confirm/deny，**非扫描器而是强制点**；已入 ClawHub 注册表 | [score=0.812 recalls=0 avg=0.620 source=memory/2026-10-19.md:15-18]
-<!-- openclaw-memory-promotion:memory:memory/2026-10-19.md:19:19 -->
-- OpenClaw 核心发布与行业动态: | **最佳模型榜单更新** (haimaker.ai 7/2026) | 更新 | 主力: deepseek-v4-pro / kimi-k2.6 / qwen3.7-plus / glm-5.2；Gemini 3.1 Pro 长上下文首选；本地: Qwen3.6 / Gemma 4 / gpt-oss | [score=0.812 recalls=0 avg=0.620 source=memory/2026-10-19.md:19-19]
-<!-- openclaw-memory-promotion:memory:memory/2026-10-19.md:22:25 -->
-- AI Agent 行业趋势与最佳实践: **运营模式成熟** (IBM/Deloitte 2026): 从「构建」转向「安全规模化运营」，确立**风险分级运营模型** (例行检索→Agent主导、低风险动作→Agent带控制、中风险决策→Agent建议+人工批准、高影响决策→人工主导+Agent支持); **持久化 Agent 趋势确认**: 设计用于长任务、本地执行、数据主权，配合 Local-First 转型; **Graph Engineering 范式确立**: 多阶段并行 + 精确反馈路由取代串行循环，Codex Remote Sessions 为 OpenClaw 实践实证; **记忆生命周期管理关键性**: Extract→Update→Delete 三步曲缺一不可；陈旧记忆毒性 > 无记忆；需强化 Update/Delete 机制 [score=0.812 recalls=0 avg=0.620 source=memory/2026-10-19.md:22-25]
+<!-- openclaw-memory-promotion:memory:memory/2026-10-19.md:26:28 -->
+- AI Agent 行业趋势与最佳实践: **OpenAI Agents API 公测细节**: 托管 Agent 循环、Data Agent、GPT-Live-1 全双工语音、免费托管沙箱 (仅计费模型 token + 工具使用); **成本优化三件套深化**: 模型路由(60-70%) + Prompt Caching(60-80%) + Batch API(50%) → 任务感知路由引入 task-aware 模型路由（cron/heartbeat 用便宜模型处理低复杂度任务）; **Agentic Primitives > Glue Code**: 标准化 Agent 原语取代脆弱胶水脚本，工具质量/可发现性 > Agent 推理能力 [score=0.825 recalls=0 avg=0.620 source=memory/2026-10-19.md:26-28]
+<!-- openclaw-memory-promotion:memory:memory/2026-10-19.md:3:4 -->
+- 2026-10-19 (周一) 每日自我完善总结: **生成时间**: 2026-10-19 13:20 (Asia/Shanghai) **触发方式**: cron daily-self-improvement 任务自动执行 [score=0.825 recalls=0 avg=0.620 source=memory/2026-10-19.md:3-4]

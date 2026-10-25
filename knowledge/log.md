@@ -435,3 +435,19 @@ tags: [meta, vault-maintenance]
   - `knowledge\cards\2026-09-21-devin-cognition-eval.md:30` — 3. ⚠️ 云端环境与本机不一致（本机无虚拟化、Windows 专属环境）→ 首次试用选独立后端/前端小 Bug + 要求加回归测试
 - 处理原则：只报告不自动修；事实源见 knowledge/META/current-environment.md
 
+## [2026-10-25] lint | 每周例行体检
+
+- 断链 0 / 孤立 9 / 缺 frontmatter 4
+- 处理原则：只报告不自动修；新问题由 k 在下次会话处理
+
+## [2026-10-25] freshness | 时效审计
+
+- 过期硬约束 5 / 待运行时验证 38 / 历史记录 195
+- 需修正：
+  - `knowledge\log.md:272` — - `knowledge\cards\2026-09-21-devin-cognition-eval.md:35` — 3. ⚠️ 云端环境与本机不一致（本机无
+  - `knowledge\log.md:313` — - `knowledge\cards\2026-09-21-devin-cognition-eval.md:30` — 3. ⚠️ 云端环境与本机不一致（本机无
+  - `knowledge\log.md:365` — - `knowledge\cards\2026-09-21-devin-cognition-eval.md:30` — 3. ⚠️ 云端环境与本机不一致（本机无
+  - `knowledge\log.md:435` — - `knowledge\cards\2026-09-21-devin-cognition-eval.md:30` — 3. ⚠️ 云端环境与本机不一致（本机无
+  - `knowledge\cards\2026-09-21-devin-cognition-eval.md:30` — 3. ⚠️ 云端环境与本机不一致（本机无虚拟化、Windows 专属环境）→ 首次试用选独立后端/前端小 Bug + 要求加回归测试
+- 处理原则：只报告不自动修；事实源见 knowledge/META/current-environment.md
+
