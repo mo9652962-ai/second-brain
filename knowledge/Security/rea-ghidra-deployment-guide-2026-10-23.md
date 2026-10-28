@@ -112,7 +112,7 @@ rea doctor --provider ghidra --format json
 | 变量 | 值 | 为什么 |
 |:---|:---|:---|
 | `GHIDRA_INSTALL_DIR` | `D:/tools/ghidra_12.1.4_PUBLIC` | 必须是含 `support/` 和 `Ghidra/` 的内层目录 |
-| `JAVA_HOME` | `C:/Users/31954/jdk21` | REA 也会自动探测，但显式指定避免歧义 |
+| `JAVA_HOME` | `C:/Users/USERNAME/jdk21` | REA 也会自动探测，但显式指定避免歧义 |
 | `REA_ANALYSIS_PROVIDER` | `ghidra` | 避免 `auto` 在多引擎时选错 |
 | `GHIDRA_HEADLESS_MAXMEM` | `2G` | 本机 15.6GB 但常只剩 2GB 可用，别调大 |
 | `REA_GHIDRA_STARTUP_TIMEOUT_MS` | `900000` | 默认 330s 对 1.6MB Go 二进制不够稳 |

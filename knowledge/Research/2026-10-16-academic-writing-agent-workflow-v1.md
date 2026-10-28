@@ -14,8 +14,8 @@ status: adopted
 
 ## 本地落地
 
-- 可执行技能规程：[academic-writing-agent-workflow.md](C:/Users/31954/.agents/skills/academic-thesis-engine/references/academic-writing-agent-workflow.md)
-- 技能入口：[academic-thesis-engine/SKILL.md](C:/Users/31954/.agents/skills/academic-thesis-engine/SKILL.md)
+- 可执行技能规程：[academic-writing-agent-workflow.md](C:/Users/USERNAME/.agents/skills/academic-thesis-engine/references/academic-writing-agent-workflow.md)
+- 技能入口：[academic-thesis-engine/SKILL.md](C:/Users/USERNAME/.agents/skills/academic-thesis-engine/SKILL.md)
 - 相关既有知识：[[2026-10-16-douyin-academic-tools-audit]]、[[2026-10-16-reference-metadata-audit-upgrade]]、[[2026-10-16-academic-writing-ecosystem-evaluation]]
 
 ## 核心升级
