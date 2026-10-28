@@ -2958,7 +2958,7 @@ GoReSym.exe<span class="w"> </span>-d<span class="w"> </span>-p<span class="w"> 
 <span class="c1"># ...</span>
 </code></pre></div>
 
-<p>mnemon.exe → <strong>959 个源文件</strong>，含完整 GOPATH 路径（<code>C:/Users/31954/go/pkg/mod/github.com/spf13/pflag@v1.0.9/bool.go</code>）。</p>
+<p>mnemon.exe → <strong>959 个源文件</strong>，含完整 GOPATH 路径（<code>C:/Users/USERNAME/go/pkg/mod/github.com/spf13/pflag@v1.0.9/bool.go</code>）。</p>
 <p><strong>情报价值</strong>：从二进制直接读出依赖版本（<code>pflag@v1.0.9</code>）、模块路径、甚至原作者本地构建路径。</p>
 <h2 id="2-srcline">五、新能力 2：源码行号定位（<code>-srcline</code>）<a class="headerlink" href="#2-srcline" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><code>gosymtab.exe<span class="w"> </span>-srcline<span class="w"> </span>D:/tools/targets/calc.exe<span class="w"> </span><span class="s2">"main."</span>
@@ -2981,7 +2981,7 @@ GoReSym.exe<span class="w"> </span>-d<span class="w"> </span>-p<span class="w"> 
 
 <p><strong>1639 / 1757 = 93.3%</strong> 的函数带源码定位（其余是无 filetab 的汇编桩）。</p>
 <h2 id="mnemonexe498mb">七、大型二进制压测：mnemon.exe（4.98MB）<a class="headerlink" href="#mnemonexe498mb" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>bash<span class="w"> </span>apply-go-symbols.sh<span class="w"> </span><span class="s2">"C:/Users/31954/go/bin/mnemon.exe"</span><span class="w"> </span>mnemon_gosym
+<div class="codehilite"><pre><span></span><code>bash<span class="w"> </span>apply-go-symbols.sh<span class="w"> </span><span class="s2">"C:/Users/USERNAME/go/bin/mnemon.exe"</span><span class="w"> </span>mnemon_gosym
 </code></pre></div>
 
 <table>
