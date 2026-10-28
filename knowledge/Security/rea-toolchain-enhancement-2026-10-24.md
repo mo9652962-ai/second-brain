@@ -119,10 +119,10 @@ curl -sL -x http://127.0.0.1:7890 \
 REA 启动 Ghidra 时用了**独立的临时 user.home**：
 
 ```
--Duser.home=C:\Users\31954\AppData\Local\Temp\rea-ghidra-<hash>\home
+-Duser.home=C:\Users\USERNAME\AppData\Local\Temp\rea-ghidra-<hash>\home
 ```
 
-所以我在 `C:\Users\31954\AppData\Roaming\ghidra\ghidra_12.1.4_PUBLIC\preferences` 里的配置，**REA 调用时根本读不到**。
+所以我在 `C:\Users\USERNAME\AppData\Roaming\ghidra\ghidra_12.1.4_PUBLIC\preferences` 里的配置，**REA 调用时根本读不到**。
 
 这解释了为什么手动跑 `analyzeHeadless` 和 REA 跑都没生效——两边的 user.home 不同。
 

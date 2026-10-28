@@ -18,7 +18,7 @@
 | 4 | **BepInEx mod 日志** | `Roaming\r2modmanPlus-local\RiskOfRain2\profiles\Default\BepInEx\LogOutput.log` | **5.25 GB** | mod 框架日志，同一批刷爆。间隔 3 秒两次 `stat` 确认静止 + 无游戏进程，删除安全 |
 | 5 | 安装包分片 | `LocalVideoAI\qwen-voice\wheels\` | **6.46 GB** | 210 个文件：torch 3.46 GB 主包 + **208 个未完成 `.part-*` 分片（3.3 GB）**。torch 2.8.0+cu128 已装入 venv（site-packages/torch 7.0 GB），安装包本身是纯残留 |
 | 6 | 已装软件安装包 | `LocalVideoAI\downloads\` | **2.89 GB** | OpenChatCut 0.2.15 的 exe(705M)+zip(777M) 与两组 download-parts 分片。0.2.15 已解包安装到 `OpenChatCut-0.2.15` / `OpenChatCut-Windows-0.2.15` |
-| 7 | Downloads 安装包 | `C:\Users\31954\Downloads` | **1.65 GB** | WorkBuddy 5.7.6 ×3（含 `(1)` 重复副本）+ WorkBuddy-setup + ocs-2.9.24 + 微信开发者工具。已核实安装版本：WorkBuddy AI 5.8.4 / OCS Desktop 2.9.24 / 微信开发者工具 2.02.2608080 —— **全部已装，安装包为残留** |
+| 7 | Downloads 安装包 | `C:\Users\USERNAME\Downloads` | **1.65 GB** | WorkBuddy 5.7.6 ×3（含 `(1)` 重复副本）+ WorkBuddy-setup + ocs-2.9.24 + 微信开发者工具。已核实安装版本：WorkBuddy AI 5.8.4 / OCS Desktop 2.9.24 / 微信开发者工具 2.02.2608080 —— **全部已装，安装包为残留** |
 | 8 | 更新快照残骸 | `hermes\state-snapshots\20260910-145547-pre-update` | **791 MB** | 38 天前的旧更新快照。`git rev-list --count HEAD..origin/main = 0`（已追平远端）+ 9-25 正式回滚点健在，故可删 |
 | 9 | uv 归档缓存 | `hermes\cache\uv\archive-v0` | **657 MB** | 159 个条目，最后写入 2026-09-26，21 天未动，可再生 |
 | 10 | 系统组件存储 | `C:\Windows\WinSxS` (DISM) | **~3 GB** | `Dism /Online /Cleanup-Image /StartComponentCleanup` 官方安全回收（输出「操作成功完成」），表观 11.6 GB |

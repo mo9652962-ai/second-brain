@@ -93,7 +93,7 @@ winget install --id BrechtSanders.WinLibs.POSIX.UCRT \
 WinLibs 是 MinGW-W64 + GCC 打包，附带完整 binutils。安装路径：
 
 ```
-C:\Users\31954\AppData\Local\Microsoft\WinGet\Packages\
+C:\Users\USERNAME\AppData\Local\Microsoft\WinGet\Packages\
   BrechtSanders.WinLibs.POSIX.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe\mingw64\bin
 ```
 

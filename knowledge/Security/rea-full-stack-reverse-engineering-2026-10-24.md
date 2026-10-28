@@ -47,7 +47,7 @@ REA 提供了 `npx rea-agents setup` 一键注册 MCP，但我们在实测中坚
 | **JADX Headless** | **0.7.1-all** | 官方固定契约 SHA256 为 `6e5eacf500b64292bfb73c49797c1958f6ee44646e43e868039ae7feb573ff75`。 |
 | **Apktool** | **2.10.0** | REA 最低要求 2.7.0，且 Windows 必须 >= 2.9.3 以规避目录遍历漏洞。 |
 | **JDK** | **21.0.2** | 必须是含 `javac.exe` 和 `jdk.compiler` 的 64 位完整 JDK，纯 JRE 无法通过检查。 |
-| **ADB** | **37.0.1** | 系统自带于 `C:/Users/31954/platform-tools/adb.exe`。 |
+| **ADB** | **37.0.1** | 系统自带于 `C:/Users/USERNAME/platform-tools/adb.exe`。 |
 
 ---
 
@@ -74,7 +74,7 @@ source /d/tools/rea/env.sh
 ```bash
 export REA_HOME="D:/tools/rea"
 export REA_ENTRY="$REA_HOME/node_modules/rea-agents/scripts/rea.mjs"
-export JAVA_HOME="C:/Users/31954/jdk21"
+export JAVA_HOME="C:/Users/USERNAME/jdk21"
 
 # Ghidra 原生引擎配置
 export GHIDRA_INSTALL_DIR="D:/tools/ghidra_12.1.4_PUBLIC"
@@ -89,7 +89,7 @@ export REA_JADX_MCP_JAR="$REA_HOME/android/jadx-headless-mcp-0.7.1-all.jar"
 export REA_JADX_HEAP_MIB="2048"
 export REA_JADX_OPERATION_TIMEOUT_MS="300000"
 export REA_APKTOOL_COMMAND="$REA_HOME/android/apktool.bat"
-export REA_ADB_PATH="C:/Users/31954/platform-tools/adb.exe"
+export REA_ADB_PATH="C:/Users/USERNAME/platform-tools/adb.exe"
 
 # 上下文保护
 export REA_MCP_INPUT_SCHEMA_PROFILE="compact"

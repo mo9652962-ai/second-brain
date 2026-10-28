@@ -1,3 +1,10 @@
+---
+tags: [academic, thesis, reference, crossref]
+domain: research
+created: 2026-10-16
+updated: 2026-10-16
+---
+
 # 文献核验流程升级：Crossref 初筛与 OpenAlex/Unpaywall 接口更新
 
 - 日期：2026-10-16
@@ -17,7 +24,7 @@
 
 ## 新增工具与运行验证
 
-新增 `C:\Users\31954\.agents\skills\academic-thesis-engine\scripts\crossref_reference_audit.py`：
+新增 `C:\Users\USERNAME\.agents\skills\academic-thesis-engine\scripts\crossref_reference_audit.py`：
 
 - 输入 CSV：`reference_id,title,author,year,doi`。
 - 有 DOI 时查该 DOI 的 Crossref 记录；无 DOI 时根据题名/作者/年份找候选。
