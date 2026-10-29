@@ -392,9 +392,17 @@ _最后更新: 2026-10-24｜运行环境: Hermes Agent on Windows 11_
 
 _最后更新: 2026-09-23 | 归档截止: 2026-08-21 (含) | 运行环境: Hermes Agent on Windows 11_
 
-## Promoted From Short-Term Memory (2026-10-28)
+## Promoted From Short-Term Memory (2026-10-29)
 
-<!-- openclaw-memory-promotion:memory:memory/2026-10-22.md:26:28 -->
-- AI Agent 行业趋势与最佳实践: **OpenAI Agents API 公测细节**: 托管 Agent 循环、Data Agent (企业数据源)、GPT-Live-1 全双工语音、免费托管沙箱 (仅计费模型 token + 工具使用); **成本优化三件套深化**: 模型路由(60-70%) + Prompt Caching(60-80%) + Batch API(50%) → 任务感知路由引入 task-aware 模型路由（cron/heartbeat 用便宜模型处理低复杂度任务）; **Agentic Primitives > Glue Code**: 标准化 Agent 原语取代脆弱胶水脚本，工具质量/可发现性 > Agent 推理能力 [score=0.825 recalls=0 avg=0.620 source=memory/2026-10-22.md:26-28]
-<!-- openclaw-memory-promotion:memory:memory/2026-10-22.md:3:4 -->
-- 2026-10-22 (周四) 每日自我完善总结: **生成时间**: 2026-10-22 13:58 (Asia/Shanghai) **触发方式**: cron daily-self-improvement 任务自动执行 [score=0.825 recalls=0 avg=0.620 source=memory/2026-10-22.md:3-4]
+<!-- openclaw-memory-promotion:memory:memory/2026-10-23.md:11:12 -->
+- 用户可见会话: **可见会话数**: 0 个 (sessions 可见性受限 tree 模式，无用户主动会话记录); **主要交互**: 无 [score=0.812 recalls=0 avg=0.620 source=memory/2026-10-23.md:11-12]
+<!-- openclaw-memory-promotion:memory:memory/2026-10-23.md:16:19 -->
+- 自动化 Cron 任务执行情况: | Cron 任务 | 计划时间 | 实际执行 | 状态 | 备注 | |-----------|----------|----------|------|------| | **daily-self-improvement** | 06:45 | ~06:45 | ✅ 推测成功 | 基于昨日日志 "下次执行: 2026-10-23 06:45"，按惯例应已完成行业研判、学习记录检查、日志回顾 | | **daily-summary** | 22:00 | 22:03 | 🟡 本次执行 | 上次执行报错 (lastRunStatus: error)，本次为重试/正常调度 | [score=0.812 recalls=0 avg=0.620 source=memory/2026-10-23.md:16-19]
+<!-- openclaw-memory-promotion:memory:memory/2026-10-23.md:22:25 -->
+- 系统后台持续工作: **Heartbeat 机制**: 约 30 分钟间隔运行，批量检查邮件/日历/天气，80-95% 静默返回 `HEARTBEAT_OK`; **pydantic_core ABI 阻塞**: 持续影响 32/48 cron 任务 (Python 3.14.7 vs 3.11 ABI 混用)，核心感知链路 (no_agent 纯脚本) 100% 存活; **模型配额压力**: OpenRouter 429 / DeepSeek 402 / opencode-go 400 三重限制，待引入 task-aware 路由分流; **C 盘空间**: 92% (38G/448G) 临界状态，需清理/迁移 [score=0.812 recalls=0 avg=0.620 source=memory/2026-10-23.md:22-25]
+<!-- openclaw-memory-promotion:memory:memory/2026-10-23.md:3:4 -->
+- 2026-10-23 (周五) 每日工作总结: **生成时间**: 2026-10-23 22:03 (Asia/Shanghai) **触发方式**: cron daily-summary 任务自动执行 [score=0.812 recalls=0 avg=0.620 source=memory/2026-10-23.md:3-4]
+<!-- openclaw-memory-promotion:memory:memory/2026-10-23.md:32:33 -->
+- P0 阻塞项 (待 sora 决策/执行): **pydantic_core ABI 根治** — 三选一：① gateway 回退 Python 3.11 启动路径 ② 重跑 `gateway install` ③ PM venv 叠加 `PYTHONPATH` (建议方案 ③ 最省事且符合上游本意); **C 盘清理/迁移** — 目标 <80%，当前 92% 临界 [score=0.812 recalls=0 avg=0.620 source=memory/2026-10-23.md:32-33]
+<!-- openclaw-memory-promotion:memory:memory/2026-10-23.md:36:36 -->
+- 待同步知识更新 (MEMORY.md 停滞 30 天): 需追加 15 项 Q4 2026 增量知识： [score=0.812 recalls=0 avg=0.620 source=memory/2026-10-23.md:36-36]
