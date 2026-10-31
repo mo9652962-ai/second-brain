@@ -572,4 +572,45 @@ AI Agent 记忆三层架构标准化确认：Core/Recall/Archival + Graph-native
 - Pattern-Key: memory.three-tier-standardized-2026
 - Recurrence-Count: 2
 - First-Seen: 2026-10-20
-- Last-Seen: 2026-10-21\
+- Last-Seen: 2026-10-21
+
+---
+
+## [LRN-20261031-001] correction
+
+**Logged**: 2026-10-31T12:26:00+08:00
+**Priority**: high
+**Status**: completed
+**Area**: infra
+
+### Summary
+错误判定口径升级四条铁律固化：pydantic_core ABI 问题连续 9 次重启复发/预测命中 (10-13/10-14/10-16/10-18/10-20/10-21/10-25/10-28/10-31)，10-12 误判 resolved 根因揭示
+
+### Details
+- **误判时间线**: 10-12 仅做进程内 `import pydantic_core` 探针验证，未重启 gateway 复验 → 误标 resolved
+- **复发证据链**: 9 次 gateway 重启后均复发，`gateway-exit-diag.log` 多次 `"python": "3.14.7"` 为证
+- **根因闭合**: 运行解释器 (tools/python-3.14.7, cp314) 与 hermes-agent/venv (3.11, cp311) site-packages **ABI 混用**
+- **修正判定口径** (此后所有 ERR 条目适用):
+  1. "resolved" 必须含**一次 gateway 重启后的复验**，否则只标 `mitigated`
+  2. 证据不得用同进程自证指标，须用跨进程指标
+  3. 涉及解释器/依赖路径修复，必须核对 `gateway-exit-diag.log` 的 `"python"` 字段
+  4. launcher 为陈旧生成物时，重跑 `gateway install` 验证须含 launcher diff + 重启后 python 字段
+- **三条修复路径** (按侵入性排序，实测均 PASS):
+  ① PYTHONPATH 叠加 PM venv site-packages
+  ② `get_python_path()` 返回 PM venv python (上游本意)
+  ③ **重跑 `gateway install` 重新生成 launcher (推荐，最省事且符合上游设计)**
+- **当前状态**: `mitigated` (本进程正常)，下次重启仍会复发，**根治需 sora 选路径执行**
+
+### Suggested Action
+- sora 从三条路径选一执行根治 (建议方案 ③)
+- 此后所有基础设施修复必须包含 gateway 重启复验
+- 陈旧账本 (32 个 cron failure_streak 停在 10-11) 待新排程自然覆盖
+
+### Metadata
+- Source: daily-self-improvement cron + 实测复现
+- Tags: pydantic-abi, abi-mismatch, regression, verification-criteria, gateway-restart
+- Pattern-Key: infra.pydantic-abi-mismatch-regresed
+- Recurrence-Count: 9
+- First-Seen: 2026-10-12
+- Last-Seen: 2026-10-31
+
