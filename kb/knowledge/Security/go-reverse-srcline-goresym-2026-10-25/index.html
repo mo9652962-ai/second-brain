@@ -2958,8 +2958,8 @@ GoReSym.exe<span class="w"> </span>-d<span class="w"> </span>-p<span class="w"> 
 <span class="c1"># ...</span>
 </code></pre></div>
 
-<p>mnemon.exe → <strong>959 个源文件</strong>，含完整 GOPATH 路径（<code>C:/Users/USERNAME/go/pkg/mod/github.com/spf13/pflag@v1.0.9/bool.go</code>）。</p>
-<p><strong>情报价值</strong>：从二进制直接读出依赖版本（<code>pflag@v1.0.9</code>）、模块路径、甚至原作者本地构建路径。</p>
+<p>mnemon.exe → <strong>959 个源文件</strong>，含完整 GOPATH 路径（<code>C:/Users/USERNAME/go/pkg/mod/github.com/spf13/pflag@v1.0.9/bool.go</code>）。
+<strong>情报价值</strong>：从二进制直接读出依赖版本（<code>pflag@v1.0.9</code>）、模块路径、甚至原作者本地构建路径。</p>
 <h2 id="2-srcline">五、新能力 2：源码行号定位（<code>-srcline</code>）<a class="headerlink" href="#2-srcline" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><code>gosymtab.exe<span class="w"> </span>-srcline<span class="w"> </span>D:/tools/targets/calc.exe<span class="w"> </span><span class="s2">"main."</span>
 <span class="c1"># 0x140047880  runtime.main.func2  D:/tools/go/go/src/runtime/proc.go:207</span>
@@ -2981,56 +2981,35 @@ GoReSym.exe<span class="w"> </span>-d<span class="w"> </span>-p<span class="w"> 
 
 <p><strong>1639 / 1757 = 93.3%</strong> 的函数带源码定位（其余是无 filetab 的汇编桩）。</p>
 <h2 id="mnemonexe498mb">七、大型二进制压测：mnemon.exe（4.98MB）<a class="headerlink" href="#mnemonexe498mb" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>bash<span class="w"> </span>apply-go-symbols.sh<span class="w"> </span><span class="s2">"C:/Users/USERNAME/go/bin/mnemon.exe"</span><span class="w"> </span>mnemon_gosym
-</code></pre></div>
+<div class="codehilite"><pre><span></span><code>bash<span class="w"> </span>apply-go-symbols.sh<span class="w"> </span><span class="s2">"C:/Users/USERNAME/go/bin/mnemon.exe"</span><span class="w"> </span>mnemon_gosym<span class="sb">```</span>
 
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">指标</th>
-<th style="text-align: left;">值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">符号数</td>
-<td style="text-align: left;"><strong>15774</strong></td>
-</tr>
-<tr>
-<td style="text-align: left;">源码文件</td>
-<td style="text-align: left;"><strong>959</strong></td>
-</tr>
-<tr>
-<td style="text-align: left;">带源码定位</td>
-<td style="text-align: left;"><strong>13642</strong>（86.5%）</td>
-</tr>
-<tr>
-<td style="text-align: left;">Ghidra 已命名函数</td>
-<td style="text-align: left;"><strong>14002 / 14010</strong>（99.94%）</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>failed</code></td>
-<td style="text-align: left;"><strong>0</strong></td>
-</tr>
-<tr>
-<td style="text-align: left;">耗时</td>
-<td style="text-align: left;"><strong>5 分 21 秒</strong></td>
-</tr>
-</tbody>
-</table>
-<p><strong>注意</strong>：<code>mnemon.exe</code> 未 strip，Ghidra 自带符号表已认出 13781 个，我们额外补了 221 个（含被 Ghidra 漏掉的）。<code>skipped_existing=13781</code> 是正常的。</p>
-<p>对比 <code>calc.exe</code>（strip 过的）：1757 函数全是 <code>FUN_xxx</code>，我们补了 1754 个 —— <strong>这才是本工具的主战场</strong>。</p>
-<h2 id="_3">八、三个新增能力的实现要点<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<h3 id="81">8.1 标志位解析要支持任意顺序<a class="headerlink" href="#81" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">switch</span><span class="w"> </span><span class="nx">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s">"-json"</span><span class="p">:</span><span class="w">    </span><span class="nx">jsonOut</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
-<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s">"-srcline"</span><span class="p">:</span><span class="w"> </span><span class="nx">showSrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
-<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s">"-files"</span><span class="p">:</span><span class="w">   </span><span class="nx">showFiles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
-<span class="w">    </span><span class="k">default</span><span class="p">:</span><span class="w">         </span><span class="k">goto</span><span class="w"> </span><span class="nx">flagsDone</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="nx">args</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">args</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
-<span class="p">}</span>
+<span class="p">|</span><span class="w"> </span>指标<span class="w"> </span><span class="p">|</span><span class="w"> </span>值<span class="w"> </span><span class="p">|</span>
+<span class="p">|</span>:---<span class="p">|</span>:---<span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>符号数<span class="w"> </span><span class="p">|</span><span class="w"> </span>**15774**<span class="w"> </span><span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>源码文件<span class="w"> </span><span class="p">|</span><span class="w"> </span>**959**<span class="w"> </span><span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>带源码定位<span class="w"> </span><span class="p">|</span><span class="w"> </span>**13642**（86.5%）<span class="w"> </span><span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>Ghidra<span class="w"> </span>已命名函数<span class="w"> </span><span class="p">|</span><span class="w"> </span>**14002<span class="w"> </span>/<span class="w"> </span><span class="m">14010</span>**（99.94%）<span class="w"> </span><span class="p">|</span>
+<span class="p">|</span><span class="w"> </span><span class="sb">`</span>failed<span class="sb">`</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>**0**<span class="w"> </span><span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>耗时<span class="w"> </span><span class="p">|</span><span class="w"> </span>**5<span class="w"> </span>分<span class="w"> </span><span class="m">21</span><span class="w"> </span>秒**<span class="w"> </span><span class="p">|</span>
+
+**注意**：<span class="sb">`</span>mnemon.exe<span class="sb">`</span><span class="w"> </span>未<span class="w"> </span>strip，Ghidra<span class="w"> </span>自带符号表已认出<span class="w"> </span><span class="m">13781</span><span class="w"> </span>个，我们额外补了<span class="w"> </span><span class="m">221</span><span class="w"> </span>个（含被<span class="w"> </span>Ghidra<span class="w"> </span>漏掉的）。<span class="sb">`</span><span class="nv">skipped_existing</span><span class="o">=</span><span class="m">13781</span><span class="sb">`</span><span class="w"> </span>是正常的。
+
+对比<span class="w"> </span><span class="sb">`</span>calc.exe<span class="sb">`</span>（strip<span class="w"> </span>过的）：1757<span class="w"> </span>函数全是<span class="w"> </span><span class="sb">`</span>FUN_xxx<span class="sb">`</span>，我们补了<span class="w"> </span><span class="m">1754</span><span class="w"> </span>个<span class="w"> </span>——<span class="w"> </span>**这才是本工具的主战场**。
+
+<span class="c1">## 八、三个新增能力的实现要点</span>
+
+<span class="c1">### 8.1 标志位解析要支持任意顺序</span>
+
+<span class="sb">```</span>go
+<span class="k">for</span><span class="w"> </span>len<span class="o">(</span>args<span class="o">)</span><span class="w"> </span>&gt;<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>switch<span class="w"> </span>args<span class="o">[</span><span class="m">0</span><span class="o">]</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">"-json"</span>:<span class="w">    </span><span class="nv">jsonOut</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">"-srcline"</span>:<span class="w"> </span><span class="nv">showSrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">"-files"</span>:<span class="w">   </span><span class="nv">showFiles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span>
+<span class="w">    </span>default:<span class="w">         </span>goto<span class="w"> </span>flagsDone
+<span class="w">    </span><span class="o">}</span>
+<span class="w">    </span><span class="nv">args</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>args<span class="o">[</span><span class="m">1</span>:<span class="o">]</span>
+<span class="o">}</span>
 </code></pre></div>
 
 <h3 id="82">8.2 默认输出格式必须保持不变<a class="headerlink" href="#82" title="Permanent link">&para;</a></h3>
@@ -3055,7 +3034,7 @@ GoReSym.exe<span class="w"> </span>-d<span class="w"> </span>-p<span class="w"> 
 </code></pre></div>
 
 <p><code>tab.Files</code> 是 <code>map[string]*Obj</code>，遍历 key 得文件清单。</p>
-<h2 id="_4">九、测试与反向验证<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_3">九、测试与反向验证<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><code>npm run check  →  10 sh + 4 java → syntax OK
 npm test       →  24 + 62 = 86 条断言，0 失败
 </code></pre></div>
@@ -3087,7 +3066,7 @@ npm test       →  24 + 62 = 86 条断言，0 失败
 </tr>
 </tbody>
 </table>
-<h2 id="_5">十、能力边界（观察 / 推断 / 未知）<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_4">十、能力边界（观察 / 推断 / 未知）<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p><strong>观察</strong>：
 - gosymtab 对 mnemon.exe 输出 15774，与 GoReSym 完全一致
 - calc.exe 的 pclntab magic 是 0xfffffff1（Go 1.18 布局），即使 Go 版本是 1.26.6
@@ -3099,7 +3078,7 @@ npm test       →  24 + 62 = 86 条断言，0 失败
 <p><strong>未知</strong>：
 - GoReSym 的 <code>Types</code> / <code>Interfaces</code> 对 mnemon.exe 返回 0 —— 未查清是解析失败还是该二进制真无 typelinks（<code>-t</code> 已传）
 - 未验证 GoReSym 的 garble（符号混淆）检测能力</p>
-<h2 id="_6">十一、遗留<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="_5">十一、遗留<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>

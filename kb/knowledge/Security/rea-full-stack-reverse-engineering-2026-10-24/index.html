@@ -2965,9 +2965,13 @@
 <td style="text-align: left;"><strong>37.0.1</strong></td>
 <td style="text-align: left;">系统自带于 <code>C:/Users/USERNAME/platform-tools/adb.exe</code>。</td>
 </tr>
+<tr>
+<td style="text-align: left;">---</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
 </tbody>
 </table>
-<hr />
 <h2 id="3">3. 一键部署与环境变量维护<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <h3 id="31">3.1 部署脚本<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
 <p>全套环境已整合为自动化脚本 <code>D:\tools\rea\install.sh</code>，支持断点续传、SHA256 校验与前置依赖检查：</p>
@@ -2983,7 +2987,6 @@
 <div class="codehilite"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">REA_HOME</span><span class="o">=</span><span class="s2">"D:/tools/rea"</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">REA_ENTRY</span><span class="o">=</span><span class="s2">"</span><span class="nv">$REA_HOME</span><span class="s2">/node_modules/rea-agents/scripts/rea.mjs"</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">JAVA_HOME</span><span class="o">=</span><span class="s2">"C:/Users/USERNAME/jdk21"</span>
-
 <span class="c1"># Ghidra 原生引擎配置</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">GHIDRA_INSTALL_DIR</span><span class="o">=</span><span class="s2">"D:/tools/ghidra_12.1.4_PUBLIC"</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">REA_ANALYSIS_PROVIDER</span><span class="o">=</span><span class="s2">"ghidra"</span>
@@ -2998,7 +3001,6 @@
 <span class="nb">export</span><span class="w"> </span><span class="nv">REA_JADX_OPERATION_TIMEOUT_MS</span><span class="o">=</span><span class="s2">"300000"</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">REA_APKTOOL_COMMAND</span><span class="o">=</span><span class="s2">"</span><span class="nv">$REA_HOME</span><span class="s2">/android/apktool.bat"</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">REA_ADB_PATH</span><span class="o">=</span><span class="s2">"C:/Users/USERNAME/platform-tools/adb.exe"</span>
-
 <span class="c1"># 上下文保护</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">REA_MCP_INPUT_SCHEMA_PROFILE</span><span class="o">=</span><span class="s2">"compact"</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">REA_MCP_OUTPUT_SCHEMA_PROFILE</span><span class="o">=</span><span class="s2">"off"</span>

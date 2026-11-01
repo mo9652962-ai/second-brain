@@ -3099,7 +3099,7 @@ wreaname<span class="w"> </span><span class="s2">"D:/tools/targets/calc.exe"</sp
 
 <p>所以<strong>不用装 .NET 10</strong>（那是 11.x 的要求）。8.2 版本直接能跑。</p>
 <p><strong>但踩到的坑</strong>：
-- ilspycmd 11.1 要 .NET 10 → 试过改 <code>runtimeconfig.json</code> 的 <code>rollForward</code>，报 <code>Could not load System.Runtime, Version=10.0.0.0</code>（程序集版本硬绑定，rollForward 救不了）
+- ilspycmd 11.1 要 .NET 10 → 试过改 <code>runtimeconfig.json</code> 的 <code>rollForward</code>，报 <code>Could not load System.Runtime, Version=10.0.x</code>（程序集版本硬绑定，rollForward 救不了）
 - .NET 10 运行时 37MB，从 <code>builds.dotnet.microsoft.com</code> 直连/代理都只有 5-10KB/s（需 1 小时+）
 - NuGet CDN（<code>globalcdn.nuget.org</code>）同样不稳定
 - WSL 内 apt 装 .NET：Ubuntu 22.04 的微软源只提供到 <strong>.NET 9</strong>，没有 10</p>
@@ -3229,7 +3229,7 @@ rea<span class="w"> </span>compare-managed-members<span class="w"> </span>&lt;ol
 <tr>
 <td style="text-align: left;">4</td>
 <td style="text-align: left;">ilspycmd 11.1 要 .NET 10</td>
-<td style="text-align: left;"><code>Could not load System.Runtime, Version=10.0.0.0</code></td>
+<td style="text-align: left;"><code>Could not load System.Runtime, Version=10.0.x</code></td>
 <td style="text-align: left;">降级到 8.2（匹配现有 .NET 8）</td>
 </tr>
 <tr>

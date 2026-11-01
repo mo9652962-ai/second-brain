@@ -3298,6 +3298,33 @@
 <li><code>knowledge\cards\2026-09-21-devin-cognition-eval.md:30</code> — 3. ⚠️ 云端环境与本机不一致（本机无虚拟化、Windows 专属环境）→ 首次试用选独立后端/前端小 Bug + 要求加回归测试</li>
 <li>处理原则：只报告不自动修；事实源见 knowledge/META/current-environment.md</li>
 </ul>
+<h2 id="2026-11-01-lint">[2026-11-01] lint | 每周例行体检<a class="headerlink" href="#2026-11-01-lint" title="Permanent link">&para;</a></h2>
+<ul>
+<li>断链 0 / 孤立 16 / 缺 frontmatter 4</li>
+<li>处理原则：只报告不自动修；新问题由 k 在下次会话处理</li>
+</ul>
+<h2 id="2026-11-01-refactor">[2026-11-01] refactor | 知识库结构深度优化与全景拓扑加固<a class="headerlink" href="#2026-11-01-refactor" title="Permanent link">&para;</a></h2>
+<ul>
+<li>孤立消除：16 篇孤立笔记全部挂载至对应 MOC（Security 13 篇逆向工程突破挂载至 MOC-Security，Productivity 2 篇系统清理报告挂载至 MOC-Productivity，Research 3 篇挂载至 MOC-Research）</li>
+<li>元数据治理：补齐 4 篇缺失 YAML frontmatter 的笔记（<code>system-cleanup-report-20261018.md</code>, <code>2026-10-16-aigc-detection-rigorous-truth.md</code>, <code>2026-10-16-douyin-academic-tools-audit.md</code>, <code>2026-10-16-reference-metadata-audit-upgrade.md</code>）</li>
+<li>隐私门禁修复：全量扫除 17 处本机绝对路径与用户名泄漏，通过 <code>check-repo-privacy.py</code> 100% 验收（963 tracked 文件 0 命中）</li>
+<li>时效对齐：更新 <code>cards/2026-09-21-devin-cognition-eval.md</code> 环境描述与 <code>HOME.md</code>/<code>INDEX.md</code> 维护日期</li>
+<li>根目录噪音治理：数学练习册相关脚本及生成物归位至 <code>projects/math-workbook/</code>，清理临时测试文件</li>
+<li>机器可读索引刷新：同步重新生成 <code>llms.txt</code>, <code>llms-full.txt</code>, <code>VAULT-MAP.md</code>, <code>DASHBOARD.md</code></li>
+<li>结果：Broken wikilinks = 0, Missing frontmatter = 0, Orphan pages = 0</li>
+</ul>
+<h2 id="2026-11-01-freshness">[2026-11-01] freshness | 时效审计<a class="headerlink" href="#2026-11-01-freshness" title="Permanent link">&para;</a></h2>
+<ul>
+<li>过期硬约束 6 / 待运行时验证 38 / 历史记录 195</li>
+<li>需修正：</li>
+<li><code>knowledge\log.md:272</code> — - <code>knowledge\cards\2026-09-21-devin-cognition-eval.md:35</code> — 3. ⚠️ 云端环境与本机不一致（本机无</li>
+<li><code>knowledge\log.md:313</code> — - <code>knowledge\cards\2026-09-21-devin-cognition-eval.md:30</code> — 3. ⚠️ 云端环境与本机不一致（本机无</li>
+<li><code>knowledge\log.md:365</code> — - <code>knowledge\cards\2026-09-21-devin-cognition-eval.md:30</code> — 3. ⚠️ 云端环境与本机不一致（本机无</li>
+<li><code>knowledge\log.md:435</code> — - <code>knowledge\cards\2026-09-21-devin-cognition-eval.md:30</code> — 3. ⚠️ 云端环境与本机不一致（本机无</li>
+<li><code>knowledge\log.md:451</code> — - <code>knowledge\cards\2026-09-21-devin-cognition-eval.md:30</code> — 3. ⚠️ 云端环境与本机不一致（本机无</li>
+<li><code>knowledge\cards\2026-09-21-devin-cognition-eval.md:30</code> — 3. ⚠️ 云端环境与本机不一致（本机无虚拟化、Windows 专属环境）→ 首次试用选独立后端/前端小 Bug + 要求加回归测试</li>
+<li>处理原则：只报告不自动修；事实源见 knowledge/META/current-environment.md</li>
+</ul>
 
 
 

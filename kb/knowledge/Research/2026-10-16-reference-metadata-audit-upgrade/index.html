@@ -25,7 +25,7 @@
     
     
       
-        <title>文献核验流程升级：Crossref 初筛与 OpenAlex/Unpaywall 接口更新 - Second Brain 知识库</title>
+        <title>2026 10 16 reference metadata audit upgrade - Second Brain 知识库</title>
       
     
     
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              文献核验流程升级：Crossref 初筛与 OpenAlex/Unpaywall 接口更新
+              2026 10 16 reference metadata audit upgrade
             
           </span>
         </div>
@@ -2849,6 +2849,13 @@
 
 
 
+<hr />
+<p>tags: [research, academic, crossref, openalex, citation]
+domain: Research
+type: upgrade-note
+status: activecreated: 2026-10-16
+updated: 2026-10-16</p>
+<hr />
 <h1 id="crossref-openalexunpaywall">文献核验流程升级：Crossref 初筛与 OpenAlex/Unpaywall 接口更新<a class="headerlink" href="#crossref-openalexunpaywall" title="Permanent link">&para;</a></h1>
 <ul>
 <li>日期：2026-10-16</li>
@@ -2865,13 +2872,11 @@
 <li>Unpaywall 官方 API 文档在 2026-10-16 标明 <code>/v2/search</code> 关键词搜索于 2026-09-18 退役，应改用 OpenAlex 搜索。按 DOI 查询 OA 状态的 <code>/v2/:doi</code> 不是该关键词接口，二者须分开描述。</li>
 </ul>
 <h2 id="_3">新增工具与运行验证<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>新增 <code>C:\Users\USERNAME\.agents\skills\academic-thesis-engine\scripts\crossref_reference_audit.py</code>：</p>
-<ul>
-<li>输入 CSV：<code>reference_id,title,author,year,doi</code>。</li>
-<li>有 DOI 时查该 DOI 的 Crossref 记录；无 DOI 时根据题名/作者/年份找候选。</li>
-<li>输出题名相似度、候选 DOI、作者、年份、刊名、卷期页和人工复核标记。</li>
-<li>只用 Python 标准库，无需 API key；每条候选都明确写“元数据候选，不认证真实性/全文/主张匹配”。</li>
-</ul>
+<p>新增 <code>C:\Users\USERNAME\.agents\skills\academic-thesis-engine\scripts\crossref_reference_audit.py</code>：
+- 输入 CSV：<code>reference_id,title,author,year,doi</code>。
+- 有 DOI 时查该 DOI 的 Crossref 记录；无 DOI 时根据题名/作者/年份找候选。
+- 输出题名相似度、候选 DOI、作者、年份、刊名、卷期页和人工复核标记。
+- 只用 Python 标准库，无需 API key；每条候选都明确写“元数据候选，不认证真实性/全文/主张匹配”。</p>
 <p>验证：编译检查通过；用 Crossref 真实记录 DOI <code>10.1038/nature12373</code> 查询成功，返回题名 <code>Nanometre-scale thermometry in a living cell</code>；以同一准确题名检索返回题名相似度 <code>1.000</code>。输出仍标为 <code>strong_title_candidate_manual_review</code>。</p>
 <h2 id="_4">失败处理/证据上限<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ul>
@@ -2910,9 +2915,6 @@
 
 
 
-
-  
-  
 
 
 

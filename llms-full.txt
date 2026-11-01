@@ -10,14 +10,14 @@
 tags: [Home, MOC, 入口]
 aliases: [首页, Home, 第二大脑]
 created: 2026-08-09
-updated: 2026-09-25
+updated: 2026-11-01
 ---
 
 # 🏠 Home — 第二大脑知识中枢
 
-> **知识库状态**: 765 篇公开知识资产 · 18 域全景拓扑 · 7 大自举系统 · 纯净开源模式
+> **知识库状态**: 760+ 篇核心公开知识资产（全库 1,100+ 篇 Markdown 资产）· 18 域全景拓扑 · 7 大自举系统 · 纯净开源模式
 > **资产安全保障**: 已全面贯彻执行**【资产三级隔离原则】**（商业机密、私有算法、接单成本与个人复盘 100% 物理隔离于本地私有保险箱）
-> **最后维护**: 2026-09-23（完成全库资产三级物理切离与拓扑重组）
+> **最后维护**: 2026-11-01（完成 10 月前沿逆向与二进制分析实证 MOC 挂载、孤立节点清零、根目录规范化治理）
 
 ---
 
@@ -103,7 +103,7 @@ updated: 2026-09-25
 tags: [MOC, index, vault-guide]
 domain: home
 created: 2026-07-25
-updated: 2026-09-25
+updated: 2026-11-01
 ---
 
 # 🗺️ vault 全局关联网
@@ -1190,6 +1190,11 @@ updated: 2026-08-31
 - [[knowledge/Productivity/hermes-stability-fix-20260928|Hermes 稳定性修复报告 09-28]] — Electron 渲染进程崩溃定位 + 4 处配置层故障修复
 - [[knowledge/Productivity/system-cleanup-report-20260928|系统清理报告 09-28]] — 释放约 13.4 GB（C 盘 86% → 83%）
 
+## 🆕 10月中下旬新增（系统清理与环境治理）
+- [[knowledge/Productivity/system-cleanup-report-20261017|系统清理报告 2026-10-17]] — C 盘极端空间抢修与缓存清理
+- [[knowledge/Productivity/system-cleanup-report-20261018|系统清理报告 2026-10-18]] — 最终释放 49.6 GB 深度清理实测
+
+
 
 
 
@@ -1473,6 +1478,8 @@ updated: 2026-10-17
 - [[arxiv-2026-10-14-agent-llm]] — 10-14 arXiv AI Agent/LLM 速览（10-12 全新窗口，25 主 + 55 简评）
 - [[arxiv-2026-10-16-agent-llm]] — 10-16 arXiv AI Agent/LLM 速览（10-14~10-16 三窗口，30 主 + 36 简评）
 - [[2026-10-16-douyin-academic-tools-audit]] — 抖音学术工具说法核验：PubScholar/国家数据/AIGC工具边界与本地脚本静态审查
+- [[2026-10-16-aigc-detection-rigorous-truth]] — 2026 学术论文 AIGC 检测客观真相与严谨应对白皮书：绝不把论文改傻
+- [[2026-10-16-reference-metadata-audit-upgrade]] — 文献核验流程升级：Crossref 初筛与 OpenAlex/Unpaywall 接口更新
 
 ## 🆕 W34 新增补链（2026-08-16 周度整理）
 
@@ -1968,7 +1975,7 @@ domain: Security
 type: moc
 status: active
 created: 2026-08-16
-updated: 2026-08-31
+updated: 2026-11-01
 ---
 
 # 🛡️ 网络安全 MOC — Security Map
@@ -2091,6 +2098,27 @@ updated: 2026-08-31
 - [[knowledge/Security/手机木马RAT攻防-2026-08-22|手机木马 RAT 攻防全景]] — 防御视角
 - [[knowledge/Security/墨题安全自审-2026-08-22|墨题安全自审报告]] — 4 洞修复
 - [[knowledge/Security/墨题防破解自查-2026-08-22|墨题防破解自查]] — 加固清单
+
+## 🆕 2026-10 逆向工程与二进制分析实证（13 篇重磅突破）
+
+> 聚焦现代逆向工具链（REA + Ghidra + GoReSym + DIE/FLOSS）、多语言（Go / Rust / C++ / .NET）二进制符号与类层次还原。
+
+### 🛠️ REA 框架与全栈环境
+- [[knowledge/Security/rea-full-stack-reverse-engineering-2026-10-24|REA 全功能逆向工程环境实战部署指南]] — Windows 完备版实战部署
+- [[knowledge/Security/rea-ghidra-deployment-guide-2026-10-23|REA + Ghidra 逆向环境部署与实战指南]] — Ghidra 与 REA 联动闭环
+- [[knowledge/Security/rea-mcp-reverse-engineering-audit-2026-10-23|REA 实证审计 (rea-agents 6.7.0)]] — 证据契约层与真实工具能力审计
+- [[knowledge/Security/rea-toolchain-enhancement-2026-10-24|REA 工具链增强实录]] — 解决配置探测与工作区隔离问题
+- [[knowledge/Security/rea-wsl2-dotnet-expansion-2026-10-24|REA 双通道拓展：WSL2 可写逆向 + .NET 反编译链路]] — 跨环境扩展
+- [[knowledge/Security/reverse-toolchain-v3-2026-10-24|逆向工具链增强 v3]] — 工具链全栈升级
+
+### 🔬 现代语言与符号结构深度还原
+- [[knowledge/Security/go-reverse-srcline-goresym-2026-10-25|Go 逆向能力升级：从「函数名」到「源码行号」]] — GoReSym 实战
+- [[knowledge/Security/go-symbol-backfill-ghidra-2026-10-24|Go 符号回填 Ghidra：从 55 小时到 46 秒]] — 符号解析性能跃升实证
+- [[knowledge/Security/rust-binary-panic-location-recovery-2026-10-26|Rust 二进制逆向分析突破]] — panic location 与依赖树全面还原
+- [[knowledge/Security/cpp-rtti-vftable-reverse-engineering-2026-10-26|C++ RTTI 逆向与类层次重构]] — 虚函数表与类内存布局自动化还原
+- [[knowledge/Security/pdb-symbol-chain-breakthrough-2026-10-26|PDB 符号链路打通]] — 调试符号链真根因定位
+- [[knowledge/Security/die-floss-binary-triage-pipeline-2026-10-26|二进制自动化分诊与混淆字符串解密]] — DIE + FLOSS 静态解密全景
+- [[knowledge/Security/ilspycmd-dotnet8-breakthrough-2026-10-24|ilspycmd 8.2 在 .NET 8 上跑通]] — 跨版本依赖与 CLI 反编译落地
 
 ---
 
