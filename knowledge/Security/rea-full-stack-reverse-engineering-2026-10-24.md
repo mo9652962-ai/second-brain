@@ -48,7 +48,6 @@ REA 提供了 `npx rea-agents setup` 一键注册 MCP，但我们在实测中坚
 | **Apktool** | **2.10.0** | REA 最低要求 2.7.0，且 Windows 必须 >= 2.9.3 以规避目录遍历漏洞。 |
 | **JDK** | **21.0.2** | 必须是含 `javac.exe` 和 `jdk.compiler` 的 64 位完整 JDK，纯 JRE 无法通过检查。 |
 | **ADB** | **37.0.1** | 系统自带于 `C:/Users/USERNAME/platform-tools/adb.exe`。 |
-
 ---
 
 ## 3. 一键部署与环境变量维护
@@ -75,7 +74,6 @@ source /d/tools/rea/env.sh
 export REA_HOME="D:/tools/rea"
 export REA_ENTRY="$REA_HOME/node_modules/rea-agents/scripts/rea.mjs"
 export JAVA_HOME="C:/Users/USERNAME/jdk21"
-
 # Ghidra 原生引擎配置
 export GHIDRA_INSTALL_DIR="D:/tools/ghidra_12.1.4_PUBLIC"
 export REA_ANALYSIS_PROVIDER="ghidra"
@@ -90,7 +88,6 @@ export REA_JADX_HEAP_MIB="2048"
 export REA_JADX_OPERATION_TIMEOUT_MS="300000"
 export REA_APKTOOL_COMMAND="$REA_HOME/android/apktool.bat"
 export REA_ADB_PATH="C:/Users/USERNAME/platform-tools/adb.exe"
-
 # 上下文保护
 export REA_MCP_INPUT_SCHEMA_PROFILE="compact"
 export REA_MCP_OUTPUT_SCHEMA_PROFILE="off"

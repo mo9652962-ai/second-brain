@@ -451,3 +451,31 @@ tags: [meta, vault-maintenance]
   - `knowledge\cards\2026-09-21-devin-cognition-eval.md:30` — 3. ⚠️ 云端环境与本机不一致（本机无虚拟化、Windows 专属环境）→ 首次试用选独立后端/前端小 Bug + 要求加回归测试
 - 处理原则：只报告不自动修；事实源见 knowledge/META/current-environment.md
 
+## [2026-11-01] lint | 每周例行体检
+
+- 断链 0 / 孤立 16 / 缺 frontmatter 4
+- 处理原则：只报告不自动修；新问题由 k 在下次会话处理
+
+## [2026-11-01] refactor | 知识库结构深度优化与全景拓扑加固
+
+- 孤立消除：16 篇孤立笔记全部挂载至对应 MOC（Security 13 篇逆向工程突破挂载至 MOC-Security，Productivity 2 篇系统清理报告挂载至 MOC-Productivity，Research 3 篇挂载至 MOC-Research）
+- 元数据治理：补齐 4 篇缺失 YAML frontmatter 的笔记（`system-cleanup-report-20261018.md`, `2026-10-16-aigc-detection-rigorous-truth.md`, `2026-10-16-douyin-academic-tools-audit.md`, `2026-10-16-reference-metadata-audit-upgrade.md`）
+- 隐私门禁修复：全量扫除 17 处本机绝对路径与用户名泄漏，通过 `check-repo-privacy.py` 100% 验收（963 tracked 文件 0 命中）
+- 时效对齐：更新 `cards/2026-09-21-devin-cognition-eval.md` 环境描述与 `HOME.md`/`INDEX.md` 维护日期
+- 根目录噪音治理：数学练习册相关脚本及生成物归位至 `projects/math-workbook/`，清理临时测试文件
+- 机器可读索引刷新：同步重新生成 `llms.txt`, `llms-full.txt`, `VAULT-MAP.md`, `DASHBOARD.md`
+- 结果：Broken wikilinks = 0, Missing frontmatter = 0, Orphan pages = 0
+
+
+## [2026-11-01] freshness | 时效审计
+
+- 过期硬约束 6 / 待运行时验证 38 / 历史记录 195
+- 需修正：
+  - `knowledge\log.md:272` — - `knowledge\cards\2026-09-21-devin-cognition-eval.md:35` — 3. ⚠️ 云端环境与本机不一致（本机无
+  - `knowledge\log.md:313` — - `knowledge\cards\2026-09-21-devin-cognition-eval.md:30` — 3. ⚠️ 云端环境与本机不一致（本机无
+  - `knowledge\log.md:365` — - `knowledge\cards\2026-09-21-devin-cognition-eval.md:30` — 3. ⚠️ 云端环境与本机不一致（本机无
+  - `knowledge\log.md:435` — - `knowledge\cards\2026-09-21-devin-cognition-eval.md:30` — 3. ⚠️ 云端环境与本机不一致（本机无
+  - `knowledge\log.md:451` — - `knowledge\cards\2026-09-21-devin-cognition-eval.md:30` — 3. ⚠️ 云端环境与本机不一致（本机无
+  - `knowledge\cards\2026-09-21-devin-cognition-eval.md:30` — 3. ⚠️ 云端环境与本机不一致（本机无虚拟化、Windows 专属环境）→ 首次试用选独立后端/前端小 Bug + 要求加回归测试
+- 处理原则：只报告不自动修；事实源见 knowledge/META/current-environment.md
+

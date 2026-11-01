@@ -1,3 +1,12 @@
+---
+tags: [research, academic, tools, paper-writing, audit]
+domain: Research
+type: guide
+status: active
+created: 2026-10-16
+updated: 2026-10-16
+---
+
 # 学术工具与论文研究：国家队科研基建与 AI 初稿深度重构实战指南 (v3.0)
 
 - **更新日期**：2026-10-16

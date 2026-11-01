@@ -48,8 +48,7 @@ Or set the symbol server search configuration using:
 查 API 的正确姿势：
 
 ```bash
-"C:/Users/USERNAME/jdk21/bin/javap.exe" \
-  -classpath "D:/tools/ghidra_12.1.4_PUBLIC/Ghidra/Features/PDB/lib/PDB.jar" \
+"C:/Users/USERNAME/jdk21/bin/javap.exe" \  -classpath "D:/tools/ghidra_12.1.4_PUBLIC/Ghidra/Features/PDB/lib/PDB.jar" \
   pdb.symbolserver.HttpSymbolServer
 ```
 

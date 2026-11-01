@@ -1,7 +1,8 @@
 ---
-tags: [academic, thesis, reference, crossref]
-domain: research
-created: 2026-10-16
+tags: [research, academic, crossref, openalex, citation]
+domain: Research
+type: upgrade-note
+status: activecreated: 2026-10-16
 updated: 2026-10-16
 ---
 
@@ -25,7 +26,6 @@ updated: 2026-10-16
 ## 新增工具与运行验证
 
 新增 `C:\Users\USERNAME\.agents\skills\academic-thesis-engine\scripts\crossref_reference_audit.py`：
-
 - 输入 CSV：`reference_id,title,author,year,doi`。
 - 有 DOI 时查该 DOI 的 Crossref 记录；无 DOI 时根据题名/作者/年份找候选。
 - 输出题名相似度、候选 DOI、作者、年份、刊名、卷期页和人工复核标记。

@@ -47,7 +47,7 @@ runtimeconfig 未声明 `rollForward`，默认 `Minor` —— 只在同一主版
 
 | 场景 | 方向 | 结果 |
 |:---|:---|:---|
-| ilspycmd 11.1 (net10.0) → 本机 net8 | **向后** | ❌ `Could not load System.Runtime, Version=10.0.0.0` |
+| ilspycmd 11.1 (net10.0) → 本机 net8 | **向后** | ❌ `Could not load System.Runtime, Version=10.0.x` |
 | ilspycmd 8.2 (net6.0) → 本机 net8 | **向前** | ✅ 正常工作 |
 
 .NET 运行时保证向后兼容（新版能跑旧版编译的程序），反之不成立。这是上次 11.1 失败的根因。

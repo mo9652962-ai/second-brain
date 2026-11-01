@@ -123,3 +123,8 @@ updated: 2026-08-31
 - [[knowledge/Productivity/hermes-stability-fix-20260928|Hermes 稳定性修复报告 09-28]] — Electron 渲染进程崩溃定位 + 4 处配置层故障修复
 - [[knowledge/Productivity/system-cleanup-report-20260928|系统清理报告 09-28]] — 释放约 13.4 GB（C 盘 86% → 83%）
 
+## 🆕 10月中下旬新增（系统清理与环境治理）
+- [[knowledge/Productivity/system-cleanup-report-20261017|系统清理报告 2026-10-17]] — C 盘极端空间抢修与缓存清理
+- [[knowledge/Productivity/system-cleanup-report-20261018|系统清理报告 2026-10-18]] — 最终释放 49.6 GB 深度清理实测
+
+

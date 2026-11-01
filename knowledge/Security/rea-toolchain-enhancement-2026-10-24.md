@@ -123,7 +123,6 @@ REA 启动 Ghidra 时用了**独立的临时 user.home**：
 ```
 
 所以我在 `C:\Users\USERNAME\AppData\Roaming\ghidra\ghidra_12.1.4_PUBLIC\preferences` 里的配置，**REA 调用时根本读不到**。
-
 这解释了为什么手动跑 `analyzeHeadless` 和 REA 跑都没生效——两边的 user.home 不同。
 
 ### 未验证的解法（留给后续）

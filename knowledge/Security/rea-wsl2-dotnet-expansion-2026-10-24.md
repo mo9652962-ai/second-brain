@@ -193,7 +193,7 @@ rea import-managed-reconstruction --help
 所以**不用装 .NET 10**（那是 11.x 的要求）。8.2 版本直接能跑。
 
 **但踩到的坑**：
-- ilspycmd 11.1 要 .NET 10 → 试过改 `runtimeconfig.json` 的 `rollForward`，报 `Could not load System.Runtime, Version=10.0.0.0`（程序集版本硬绑定，rollForward 救不了）
+- ilspycmd 11.1 要 .NET 10 → 试过改 `runtimeconfig.json` 的 `rollForward`，报 `Could not load System.Runtime, Version=10.0.x`（程序集版本硬绑定，rollForward 救不了）
 - .NET 10 运行时 37MB，从 `builds.dotnet.microsoft.com` 直连/代理都只有 5-10KB/s（需 1 小时+）
 - NuGet CDN（`globalcdn.nuget.org`）同样不稳定
 - WSL 内 apt 装 .NET：Ubuntu 22.04 的微软源只提供到 **.NET 9**，没有 10
@@ -274,7 +274,7 @@ source /d/tools/rea/wsl-rea.sh   # WSL2 可写通道
 | 1 | WSL 无 Node | `node: command not found` | 下 Linux 版 Node 22.19 到 `/opt/node22` |
 | 2 | WSL 无 JDK | Ghidra 起不来 | 下 Temurin Linux JDK 到 `D:/tools/jdk21_linux` |
 | 3 | 项目目录必须先存在 | `Directory not found: /tmp/wsl_test` | `mkdir -p` 先建 |
-| 4 | ilspycmd 11.1 要 .NET 10 | `Could not load System.Runtime, Version=10.0.0.0` | 降级到 8.2（匹配现有 .NET 8） |
+| 4 | ilspycmd 11.1 要 .NET 10 | `Could not load System.Runtime, Version=10.0.x` | 降级到 8.2（匹配现有 .NET 8） |
 | 5 | 改 runtimeconfig 无效 | rollForward 救不了程序集版本绑定 | 必须用匹配 TFM 的版本 |
 | 6 | Ubuntu 22.04 微软源无 .NET 10 | `Unable to locate package dotnet-sdk-10.0` | 源只到 9.0，要 10 得用其他发行版 |
 | 7 | NuGet CDN 极慢 | 5-10KB/s | 断点续传 + 多次重试 |

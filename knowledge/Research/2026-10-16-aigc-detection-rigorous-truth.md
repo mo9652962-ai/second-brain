@@ -1,3 +1,12 @@
+---
+tags: [research, academic, aigc, paper-writing, audit]
+domain: Research
+type: whitepaper
+status: active
+created: 2026-10-16
+updated: 2026-10-16
+---
+
 # 2026 学术论文 AIGC 检测客观真相与严谨应对白皮书：绝不把论文改傻
 
 - **沉淀日期**：2026-10-16

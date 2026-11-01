@@ -71,7 +71,6 @@ gosymtab.exe -files D:/tools/targets/calc.exe
 ```
 
 mnemon.exe → **959 个源文件**，含完整 GOPATH 路径（`C:/Users/USERNAME/go/pkg/mod/github.com/spf13/pflag@v1.0.9/bool.go`）。
-
 **情报价值**：从二进制直接读出依赖版本（`pflag@v1.0.9`）、模块路径、甚至原作者本地构建路径。
 
 ## 五、新能力 2：源码行号定位（`-srcline`）
@@ -107,8 +106,7 @@ Ghidra 里打开任一函数，注释区直接显示：
 ## 七、大型二进制压测：mnemon.exe（4.98MB）
 
 ```bash
-bash apply-go-symbols.sh "C:/Users/USERNAME/go/bin/mnemon.exe" mnemon_gosym
-```
+bash apply-go-symbols.sh "C:/Users/USERNAME/go/bin/mnemon.exe" mnemon_gosym```
 
 | 指标 | 值 |
 |:---|:---|
