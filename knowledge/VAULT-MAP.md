@@ -18,7 +18,7 @@ tags: [meta/index, knowledge/governance, ai/navigation]
 
 | 顶层 | md 数 |
 |:---|---:|
-| `knowledge/` | 727 |
+| `knowledge/` | 728 |
 | `skills/` | 29 |
 | `projects/` | 7 |
 | `templates/` | 7 |
@@ -56,7 +56,7 @@ tags: [meta/index, knowledge/governance, ai/navigation]
 
 | 域 | 笔记数 |
 |:---|---:|
-| Research | 246 |
+| Research | 247 |
 | Dev | 144 |
 | Security | 66 |
 | Productivity | 60 |

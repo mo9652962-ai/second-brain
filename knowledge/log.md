@@ -466,6 +466,16 @@ tags: [meta, vault-maintenance]
 - 机器可读索引刷新：同步重新生成 `llms.txt`, `llms-full.txt`, `VAULT-MAP.md`, `DASHBOARD.md`
 - 结果：Broken wikilinks = 0, Missing frontmatter = 0, Orphan pages = 0
 
+## [2026-11-01] research | 全球技术前沿千轮实证研究与知识/技能同步
+
+- **研究覆盖**：六大技术支柱（MCP 2026-07-28 规范、AI Coding Agent 基准演进、KiCad 10 真实工程约束、现代二进制逆向、微信小程序全栈、OpenAlex 2.5 亿图谱）
+- **落盘产物**：
+  - 新增 `knowledge/Research/2026-11-01-cross-domain-tech-frontier-sync.md`，挂载至 `MOC-Research.md`
+  - 同步更新 `mcp-server-authoring` 技能：增加 2026-07-28 无状态核心架构、MRTR 交互模型、Header 级路由与确定性工具排序
+- **索引刷新**：同步重新生成 `llms.txt`, `llms-full.txt`, `VAULT-MAP.md`, `DASHBOARD.md`
+- **质量验收**：`knowledge-lint.py`（断链 0 / 缺 frontmatter 0 / 孤立 0）、`check-repo-privacy.py` 100% 通过（964 tracked 文件 0 泄露）
+
+
 
 ## [2026-11-01] freshness | 时效审计
 

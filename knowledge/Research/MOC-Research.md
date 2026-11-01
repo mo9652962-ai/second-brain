@@ -5,7 +5,7 @@ type: moc
 domain: Research
 status: active
 created: 2026-08-09
-updated: 2026-10-17
+updated: 2026-11-01
 ---
 
 # 🔬 研究笔记 MOC — Research Map
@@ -13,10 +13,11 @@ updated: 2026-10-17
 > 所有研究笔记的索引与入口。自动按主题分组。
 > 回到 [[knowledge-map|🗺️ 知识地图]] · [[Home|🏠 Home]]
 
-**共 226 篇研究笔记** · 最后更新: 2026-10-17（论文样例图表与路线图复盘）
+**共 227 篇研究笔记** · 最后更新: 2026-11-01（Q4 全球技术前沿深度同步）
 
-## 🆕 最新增量（2026-09-18 ~ 10-17）
+## 🆕 最新增量（2026-10 ~ 11-01）
 
+- [[2026-11-01-cross-domain-tech-frontier-sync]] — 2026 Q4 全球技术前沿与工程基线深度同步：从 MCP 规范演进到 AI Agent、现代逆向与硬件 EDA（六大支柱全景实证）
 - [[2026-10-17-academic-writing-tables-roadmaps]] — 四类论文样例的学术论证、表格、路线图与 Word 渲染验收复盘
 
 - [[GitHub-Weekly-2026-10-11]] — W41 GitHub 宝藏挖掘：codebase-memory-mcp 46.3k / nanobot 48.9k / code-review-graph 32.0k（三连榜，代码知识图谱成 MCP 默认接口）
