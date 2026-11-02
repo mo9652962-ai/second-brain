@@ -496,6 +496,22 @@ tags: [meta, vault-maintenance]
   - 同步刷新 `llms.txt`, `llms-full.txt`, `VAULT-MAP.md`, `DASHBOARD.md`
   - 门禁验收：`knowledge-lint.py`（断链 0 / 缺 frontmatter 0 / 孤立 0）、`check-repo-privacy.py` 100% 通过（965 tracked 文件 0 泄露）
 
+## [2026-11-01] skills | 十大核心实战技能系统性升级与前沿对齐
+
+- **全量升级技能清单 (10/10)**：
+  1. `academic-paper-writing`: 注入知网 5.0 算法三层特征、教育部抽检 30% 警戒线、科学降痕四步法
+  2. `wechat-miniprogram-pro`: 注入微信支付 APIv3 异步回调多重幂等校验、数据锁并发控制与短效双 Token
+  3. `kicad-automated-pcb`: 固化 KiCad 10 混编与无头 CI 避坑指南（规避 `WriteDRCReport()` 崩溃，走 `kicad-cli`）
+  4. `pcb-design`: 更新 JLCPCB 2026 最新 3313 介质层、NP-155F/S1000-2M 板材参数与阻抗公差规范
+  5. `8051-embedded-dev`: 升级 STC32G/Ai8051U 32位高性能外设、VS Code+EIDE+SDCC 工具链与 USB 免冷启动烧录
+  6. `rea-ghidra-reversing`: 注入 Go 1.23+ GoReSym 46秒源码行号回填与 Rust panic-location 依赖树逆向实证
+  7. `english-practice-machine-dev`: 注入 FSRS-5 算法同日多轮增益公式与 SQLite WAL 模式高并发优化参数
+  8. `xianyu-monetization`: 注入 2026 Q4 闲鱼多目标向量搜索、首图点击率与 5 分钟回复率权重规程
+  9. `douyin-ai-practical-video`: 注入抖音 RankMixer-1B 论文级实证、破除固定流量池神话与前 2 秒反常识锁客
+  10. `fastapi-cloud-deploy`: 注入基于 Astral uv 的 `uv sync --frozen` 秒级原子虚拟环境与 systemd 现代化部署
+- **双向同步**：`vault/skills/8051-embedded-dev/SKILL.md` 与 Hermes profile 技能完成 100% 字节级镜像对齐
+
+
 
 - 过期硬约束 6 / 待运行时验证 38 / 历史记录 195
 - 需修正：
