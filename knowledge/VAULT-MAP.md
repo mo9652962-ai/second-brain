@@ -4,21 +4,21 @@ aliases: [VaultMap, 机器索引, vault-map]
 type: meta
 domain: META
 status: active
-created: 2026-11-01
-updated: 2026-11-01
+created: 2026-11-02
+updated: 2026-11-02
 tags: [meta/index, knowledge/governance, ai/navigation]
 ---
 
 # 🗺️ VAULT-MAP — 机器可读索引
 
-> 自动生成：`scripts/gen-vault-index.py`（2026-11-01）。
+> 自动生成：`scripts/gen-vault-index.py`（2026-11-02）。
 > 给 AI Agent 用的静态导航索引：不用全盘扫描即可定位内容。人类入口见 [[knowledge-map]] 与 [[HOME]]。
 
 ## 顶层分布
 
 | 顶层 | md 数 |
 |:---|---:|
-| `knowledge/` | 728 |
+| `knowledge/` | 729 |
 | `skills/` | 29 |
 | `projects/` | 7 |
 | `templates/` | 7 |
@@ -56,7 +56,7 @@ tags: [meta/index, knowledge/governance, ai/navigation]
 
 | 域 | 笔记数 |
 |:---|---:|
-| Research | 247 |
+| Research | 248 |
 | Dev | 144 |
 | Security | 66 |
 | Productivity | 60 |

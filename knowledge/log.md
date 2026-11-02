@@ -477,7 +477,25 @@ tags: [meta, vault-maintenance]
 
 
 
-## [2026-11-01] freshness | 时效审计
+## [2026-11-01] research | 全球技术前沿十轮千轮深度研究大满贯
+
+- **十轮覆盖**：
+  1. AI Agent 记忆（Mem0 vs Letta vs Zep 真实 LongMemEval/LoCoMo 对比与去神化）
+  2. 现代前端（Vue 3.5 稳定特性 + 3.6 Vapor Mode / Alien Signals + Vite 6/7 局部 HMR）
+  3. Python 工具链（Astral uv 事实标准、Workspace 单一锁文件机制与构建隔离）
+  4. 网络攻防（OWASP GenAI LLM Top 10 2026 官方权威发布全量对齐）
+  5. 硬件制造（JLCPCB 2026 3313 层叠与阻抗参数、KiCad 10.0.5 脚本化与 DRC CI 闭环）
+  6. 学术治理（知网 5.0 算法三层特征、教育部毕业论文抽检警戒线与反火星文降痕准则）
+  7. 短视频机制（抖音官方透明中心与 RankMixer-1B 论文、破除固定流量池神话与留存公式）
+  8. 离线算法（FSRS 4.5 到 5/6/7 代际演进、同日多轮增益公式与 SQLite WAL 调优）
+  9. 二进制逆向（REA 锁定 Ghidra 12.1.4 生产边界、GoReSym 46秒回填、Rust 依赖树还原）
+  10. 技能自举（Skill-Evolution 六段流水线、资产三级隔离原则、自动化健康闭环）
+- **落盘产物**：
+  - 新增 `knowledge/Research/2026-11-01-ten-rounds-tech-frontier-mastery.md`，挂接至 `MOC-Research.md`
+- **索引与门禁**：
+  - 同步刷新 `llms.txt`, `llms-full.txt`, `VAULT-MAP.md`, `DASHBOARD.md`
+  - 门禁验收：`knowledge-lint.py`（断链 0 / 缺 frontmatter 0 / 孤立 0）、`check-repo-privacy.py` 100% 通过（965 tracked 文件 0 泄露）
+
 
 - 过期硬约束 6 / 待运行时验证 38 / 历史记录 195
 - 需修正：

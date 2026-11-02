@@ -392,17 +392,9 @@ _最后更新: 2026-10-24｜运行环境: Hermes Agent on Windows 11_
 
 _最后更新: 2026-09-23 | 归档截止: 2026-08-21 (含) | 运行环境: Hermes Agent on Windows 11_
 
-## Promoted From Short-Term Memory (2026-11-01)
+## Promoted From Short-Term Memory (2026-11-02)
 
-<!-- openclaw-memory-promotion:memory:memory/2026-10-26.md:10:10 -->
-- 今日概况: 今日为常规工作日，系统自动化维护模式运行。cron 调度器按计划执行 heartbeat 与 daily-summary 任务，核心感知链路维持 100% 存活。 [score=0.812 recalls=0 avg=0.620 source=memory/2026-10-26.md:10-10]
-<!-- openclaw-memory-promotion:memory:memory/2026-10-26.md:17:19 -->
-- 自动化维护任务: **daily-self-improvement cron** (06:45 计划执行)：执行 AI Agent/OpenClaw 最新动态研究，更新 ERRORS.md 与 LEARNINGS.md 跟踪表; **heartbeat 定时检查**：按约 30 分钟间隔轮询邮件/日历/天气/社交提及，无异常触发主动联络; **daily-summary cron** (22:00 本次执行)：生成今日工作总结，写入 memory/2026-10-26.md [score=0.812 recalls=0 avg=0.620 source=memory/2026-10-26.md:17-19]
-<!-- openclaw-memory-promotion:memory:memory/2026-10-26.md:22:25 -->
-- 系统状态延续 (继承自 10-25): | 组件 | 状态 | 备注 | |------|------|------| | **pydantic_core ABI 阻塞** | 🔴 P0 未解除 | 第 7 次预测命中持续，根因闭合、三条修复路径实测 PASS，**待 sora 选路径执行** (① gateway 回退 3.11 ② 重跑 gateway install ③ PYTHONPATH 叠加，建议 ②) | | **模型配额三重奏** | ⚠️ 压力态 | OpenRouter 429 / DeepSeek 402 / opencode-go 400，急需 task-aware 路由分流 | [score=0.812 recalls=0 avg=0.620 source=memory/2026-10-26.md:22-25]
-<!-- openclaw-memory-promotion:memory:memory/2026-10-26.md:26:29 -->
-- 系统状态延续 (继承自 10-25): | **C 盘磁盘** | ⚠️ 92% 临界 | 38G/448G，需清理/迁移大文件防故障 | | **核心感知链路** | ✅ 100% 存活 | no_agent 纯脚本架构在 P0 阻塞下韧性验证通过 | | **FlClash 代理** | ✅ 已恢复 | 2026-09-16 物理层单点故障已清除 | | **MEMORY.md 同步** | 🟡 滞后 33 天 | 累计 19 项 Q4 增量知识待批量追加 (含 10-25 新增 1 项) | [score=0.812 recalls=0 avg=0.620 source=memory/2026-10-26.md:26-29]
-<!-- openclaw-memory-promotion:memory:memory/2026-10-26.md:3:4 -->
-- 2026-10-26 (周一) 每日工作总结: **生成时间**: 2026-10-26 22:00 (Asia/Shanghai) **触发方式**: cron daily-summary 任务自动执行 [score=0.812 recalls=0 avg=0.620 source=memory/2026-10-26.md:3-4]
-<!-- openclaw-memory-promotion:memory:memory/2026-10-26.md:36:37 -->
-- ERRORS.md - 核心阻塞持续: **ERR-20261012-001** (pydantic_core ABI)：第 7 次预测命中，**根治仅待 sora 一句话选路径执行**，连续 7 次重启复发/预测命中证明修复路径正确但未落地; 错误判定四条铁律已固化："resolved" 必须含 gateway 重启复验、证据须跨进程、核对 python 字段、launcher 陈旧时验证须含 diff [score=0.812 recalls=0 avg=0.620 source=memory/2026-10-26.md:36-37]
+<!-- openclaw-memory-promotion:memory:memory/2026-10-27.md:4:5 -->
+- Cron 自动任务: **22:00** 每日总结触发（cron:35cb8e26-1d27-4642-b16b-e90c26bc2e52 daily-summary）; 运行于隔离 cron session，无法访问主会话历史（tools.sessions.visibility=tree 限制） [score=0.811 recalls=0 avg=0.620 source=memory/2026-10-27.md:4-5]
+<!-- openclaw-memory-promotion:memory:memory/2026-10-27.md:8:9 -->
+- 备注: 今日主会话对话内容需在主会话上下文中回顾; 建议：在主会话手动执行每日回顾，或调整 cron 可见性策略 [score=0.811 recalls=0 avg=0.620 source=memory/2026-10-27.md:8-9]
