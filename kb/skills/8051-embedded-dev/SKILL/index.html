@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="8051/STC89C52 嵌入式开发 v2.0 (2026)：Keil C51/SDCC 编程、AiCube-ISP图形化配置、RTX51 RTOS、STC32/USB/CAN新芯片、VS Code+SDCC+Git现代化工具链、WCH/Nuvoton国产替代、Edge AI单片机趋势">
+        <meta name="description" content="为 8051/MCS-51 与 STC 单片机项目核对芯片能力、编写/审查嵌入式 C、配置编译与烧录，并按数据手册和实物验证寄存器、时序及外设兼容性。">
       
       
         <meta name="author" content="mo9652962">
@@ -1372,10 +1372,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#grill" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Grill 对齐 —— 先问清楚再写代码
+        适用边界与证据要求
       
     </span>
   </a>
@@ -1383,7 +1383,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        开工前对齐 —— 先确认硬件边界
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
         🎯 核心能力
@@ -1394,7 +1405,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
         📋 开发工作流
@@ -1422,7 +1433,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
         🔧 技术规范
@@ -1473,7 +1484,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
         代码模板
@@ -1561,7 +1572,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
         📐 硬件连接规范
@@ -1612,7 +1623,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       
         外设引脚建议
@@ -1678,7 +1689,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       
         ⚡ 常见问题诊断 (增强版)
@@ -1689,7 +1700,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     <span class="md-ellipsis">
       
         📊 寄存器配置参考
@@ -1761,7 +1772,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#2026-q4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🆕 2026 Q4 单片机演进与免冷启动烧录实战
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
     <span class="md-ellipsis">
       
         🔗 参考资源
@@ -1772,10 +1794,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     <span class="md-ellipsis">
       
         ⚠️ 安全与规范
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decision-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision Log
       
     </span>
   </a>
@@ -3323,7 +3356,11 @@
 <p>8051/STC89C52 嵌入式 C 语言开发：从 Keil C51/SDCC 编程到 STC-ISP 烧录的全流程辅助。
 触发：用户提到「51单片机」「8051」「STC89C52」「嵌入式」「单片机」或需要写嵌入式 C 代码。</p>
 </blockquote>
-<h2 id="grill">Grill 对齐 —— 先问清楚再写代码<a class="headerlink" href="#grill" title="Permanent link">&para;</a></h2>
+<h2 id="_1">适用边界与证据要求<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>本技能只处理 8051/MCS-51 及明确指定的兼容单片机。ESP32、STM32 等不同架构项目应使用对应技能，不把 8051 寄存器、时钟或工具链结论套用过去。</p>
+<p>在给出芯片能力、引脚复用、电气限制、时钟、存储、ISP/下载器或编译器支持结论前，先确认完整芯片型号/封装/硬件版本，并以芯片厂商该型号的数据手册、勘误和工具官方文档为准。系列名相近不代表寄存器、引脚或烧录流程兼容；找不到一手资料时标为待核验，不猜测。</p>
+<p>芯片与工具链清单只作为候选线索，不是当前产品榜单。选 Keil C51、SDCC、EIDE、STC-ISP、AiCube-ISP 或第三方烧录工具时，分别核对当前版本、目标芯片支持、许可证/费用、操作系统与生成文件格式；不可把“支持 MCS-51”扩展成“支持所有 STC 扩展寄存器”。</p>
+<h2 id="_2">开工前对齐 —— 先确认硬件边界<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p><strong>完成标准</strong>: 芯片型号、晶振、外设清单已确定，所有开放问题已关闭</p>
 </blockquote>
@@ -3334,7 +3371,7 @@
 - □ 开发环境？(Keil C51 / SDCC+VS Code / AiCube-ISP 图形化)
 - □ 有没有参考电路或现有代码？
 - □ 特殊要求？(低功耗 / 车规 / RTOS / 远程升级)</p>
-<h2 id="_1">🎯 核心能力<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_3">🎯 核心能力<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>生成规范的 8051 C 代码</strong> — LED/数码管/LCD/传感器/电机驱动</li>
 <li><strong>正确配置寄存器</strong> — 定时器/中断/串口/GPIO</li>
@@ -3342,7 +3379,7 @@
 <li><strong>烧录流程指导</strong> — STC-ISP 冷启动、stcgal 命令行</li>
 <li><strong>常见问题诊断</strong> — 中断不触发、波特率不准、P0 口驱动</li>
 </ol>
-<h2 id="_2">📋 开发工作流<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_4">📋 开发工作流<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><code>需求分析 → 选择芯片型号 → 设计电路连接
      ↓
 编写 C 代码 (Keil C51 / SDCC / VS Code + EIDE)
@@ -3386,7 +3423,7 @@ STC-ISP / AiCube-ISP 烧录 (USB 直连，无需冷启动)
 </tr>
 </tbody>
 </table>
-<h2 id="_3">🔧 技术规范<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_5">🔧 技术规范<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <h3 id="2026_1">芯片选型速查 (2026)<a class="headerlink" href="#2026_1" title="Permanent link">&para;</a></h3>
 <h4 id="stc">STC (宏晶) 最新产品线<a class="headerlink" href="#stc" title="Permanent link">&para;</a></h4>
 <table>
@@ -3467,7 +3504,7 @@ STC-ISP / AiCube-ISP 烧录 (USB 直连，无需冷启动)
 </tr>
 </tbody>
 </table>
-<h3 id="_4">代码模板<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h3 id="_6">代码模板<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <h4 id="1">模板 1: 最小程序框架<a class="headerlink" href="#1" title="Permanent link">&para;</a></h4>
 <div class="codehilite"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;reg52.h&gt;</span><span class="w">  </span><span class="c1">// STC89C52 头文件 (Keil)</span>
 <span class="c1">// SDCC: #include &lt;mcs51/8052.h&gt;</span>
@@ -3576,7 +3613,7 @@ STC-ISP / AiCube-ISP 烧录 (USB 直连，无需冷启动)
 <span class="p">}</span>
 </code></pre></div>
 
-<h2 id="_5">📐 硬件连接规范<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_7">📐 硬件连接规范<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <h3 id="stc_1">烧录接线 (STC 芯片)<a class="headerlink" href="#stc_1" title="Permanent link">&para;</a></h3>
 <h4 id="stc891215">传统烧录 (STC89/12/15 系列)<a class="headerlink" href="#stc891215" title="Permanent link">&para;</a></h4>
 <div class="codehilite"><pre><span></span><code>USB-TTL        STC89C52
@@ -3598,7 +3635,7 @@ STC-ISP / AiCube-ISP 烧录 (USB 直连，无需冷启动)
 <blockquote>
 <p>新芯片支持 <strong>USB 2.0 全速直连</strong> + <strong>硬件仿真调试</strong>，Keil 中可直接 Step Debug</p>
 </blockquote>
-<h3 id="_6">外设引脚建议<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h3 id="_8">外设引脚建议<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code>P0.0~P0.7  →  LCD1602 数据线 (需上拉 10KΩ 排阻)
 P1.0~P1.7  →  LED / 按键 (灌电流驱动)
 P2.0~P2.2  →  LCD1602 控制线 (RS, RW, EN)
@@ -3696,7 +3733,7 @@ P3.4~P3.5  →  定时器外部输入
 <span class="err">└──</span> <span class="p">.</span><span class="n">gitignore</span>
 </code></pre></div>
 
-<h2 id="_7">⚡ 常见问题诊断 (增强版)<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h2 id="_9">⚡ 常见问题诊断 (增强版)<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -3753,7 +3790,7 @@ P3.4~P3.5  →  定时器外部输入
 </tr>
 </tbody>
 </table>
-<h2 id="_8">📊 寄存器配置参考<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h2 id="_10">📊 寄存器配置参考<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <h3 id="tmod">定时器模式 TMOD<a class="headerlink" href="#tmod" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code>Bit 7: GATE1 (门控)
 Bit 6: C/T1  (0=定时, 1=计数)
@@ -3793,9 +3830,23 @@ RI=0         → 清接收中断标志
 <li><strong>AiCube-ISP + AI</strong>: STC 官方工具图形化配置生成代码框架，AI 辅助填充业务逻辑</li>
 <li><strong>代码审查</strong>: AI 自动检查寄存器配置、时序冲突、中断优先级</li>
 </ul>
-<h2 id="_9">🔗 参考资源<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h2 id="2026-q4">🆕 2026 Q4 单片机演进与免冷启动烧录实战<a class="headerlink" href="#2026-q4" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="https://stcmcudata.com">STC 官网</a> — STC-ISP 下载 + 数据手册</li>
+<li><strong>芯片生态跨越</strong>：传统 STC89C52 (12T/低速/资源极度受限) 正在加速被 <strong>STC8H (1T 8051，集成丰富硬件 PWM/ADC/CAN)</strong> 与 <strong>Ai8051U / STC32G (32 位超强内核，支持硬件浮点与 USB 直连)</strong> 取代。</li>
+<li><strong>烧录流程质的飞跃</strong>：</li>
+<li>传统 89C52 必须通过断电-通电冷启动握手才能进入 ISP；</li>
+<li>现代 Ai8051U / STC8H 支持通过内部 USB 硬件枚举或自定义串口握手指令，实现 <strong>一键免断电自动复位烧录 (No Cold-boot Required)</strong>，极大提升开发与回归测试效率。</li>
+<li><strong>现代化开源环境闭环</strong>：VS Code + EIDE + SDCC (编译输出 hex) + <code>stcgal</code> (Python 跨平台命令行烧录) 成为 CI/CD 与 Linux/Mac 跨平台的推荐解法。</li>
+</ul>
+<h2 id="_11">🔗 参考资源<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../references/8051-cheatsheet/">8051-cheatsheet.md</a> — 本地寄存器/指令速查；具体芯片仍须回到对应数据手册核实。</li>
+<li>
+<p><a href="../references/hardware-checklist/">hardware-checklist.md</a> — 接线与上电检查清单。</p>
+</li>
+<li>
+<p><a href="https://stcmcudata.com">STC 官网</a> — STC-ISP 下载 + 数据手册</p>
+</li>
 <li><a href="https://www.stcai.com">STC 国芯官网</a> — Ai8051U / STC32 新芯片文档</li>
 <li><a href="https://sdcc.sourceforge.net/doc/sdccman.pdf">SDCC 文档</a> — 开源 8051 编译器</li>
 <li><a href="https://github.com/cjacker/opensource-toolchain-8051">opensource-toolchain-8051</a> — 完整开源工具链</li>
@@ -3805,15 +3856,17 @@ RI=0         → 清接收中断标志
 <li><a href="https://em-ide.com/">EIDE (VS Code)</a> — Embedded IDE 插件，一键配置 8051 开发</li>
 <li><a href="https://www.stcai.com/gjrj">AiCube-ISP 下载</a> — 最新 V6.96Z (2026-06-30)</li>
 </ul>
-<h2 id="_10">⚠️ 安全与规范<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h2 id="_12">⚠️ 安全与规范<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>电压</strong>: STC89C52 工作电压 3.3V~5.5V，烧录时务必 5V</li>
-<li><strong>P0 口</strong>: 必须外接上拉电阻（开漏结构）</li>
-<li><strong>复位</strong>: RST 引脚上电时需 &gt; 2 个机器周期的高电平（10KΩ + 10μF RC 电路）</li>
-<li><strong>晶振匹配电容</strong>: 30pF 瓷片电容 × 2</li>
-<li><strong>IO 电流</strong>: 单引脚灌电流 ≤ 20mA，全芯片 ≤ 100mA</li>
-<li><strong>生成代码标注</strong>: 所有寄存器配置处标注注释，方便硬件验证</li>
+<li><strong>供电与下载电平</strong>：严格按具体芯片、开发板和 USB-TTL/下载器手册确认 VCC、IO 电平、共地和供电电流；不可把“STC89C52”或“烧录”泛化成固定 5V。不同芯片/板卡可能不耐 5V。</li>
+<li><strong>绝对最大额定值</strong>：逐项核对单引脚、端口总电流、输入电压、温度和供电范围；额定值不是推荐工作点。不得仅凭通用 8051 经验给负载上电。</li>
+<li><strong>引脚与外围</strong>：确认复用功能、开漏/上拉要求和外设驱动能力；电机、继电器等负载使用合适驱动器和保护，不由 MCU IO 直接驱动。</li>
+<li><strong>时钟与复位</strong>：根据芯片手册及板上实测确认时钟源、机器周期/定时器分频、复位电路和下载条件，不照搬通用晶振电容或 RC 数值。</li>
+<li><strong>上电顺序</strong>：先做断电连通/短路检查，再限流上电，测量 VCC/复位/时钟后逐步验证外设；遇到器件发热、异常电流或电压不符立即断电。</li>
+<li><strong>代码与验收</strong>：寄存器配置注明芯片型号和手册章节；分别报告编译、烧录和实板运行结果，不把编译成功说成硬件验证完成。</li>
 </ol>
+<h2 id="decision-log">Decision Log<a class="headerlink" href="#decision-log" title="Permanent link">&para;</a></h2>
+<p>本技能的修改理由、证据和遗留事项见 <a href="references/decision-log.md">references/decision-log.md</a>。</p>
 
 
 
