@@ -396,15 +396,17 @@ _最后更新: 2026-11-03｜运行环境: Hermes Agent on Windows 11_
 
 _最后更新: 2026-11-03 | 归档截止: 2026-08-21 (含) | 运行环境: Hermes Agent on Windows 11_
 
-## Promoted From Short-Term Memory (2026-11-05)
+## Promoted From Short-Term Memory (2026-11-06)
 
-<!-- openclaw-memory-promotion:memory:memory/2026-10-30.md:10:10 -->
-- 今日概况: **状态**: 🌙 静默日 — 无活跃对话会话，无新任务触发 [score=0.811 recalls=0 avg=0.620 source=memory/2026-10-30.md:10-10]
-<!-- openclaw-memory-promotion:memory:memory/2026-10-30.md:16:18 -->
-- 会话回顾: | 时间段 | 会话/任务 | 核心内容 | 产出 | |--------|-----------|----------|------| | 全天 | 无 | 无用户对话、无后台任务、无技能调用 | — | [score=0.811 recalls=0 avg=0.620 source=memory/2026-10-30.md:16-18]
-<!-- openclaw-memory-promotion:memory:memory/2026-10-30.md:3:4 -->
-- 2026-10-30 (周五) 每日工作总结: **生成时间**: 2026-10-30 22:00 (Asia/Shanghai) **触发方式**: cron daily-summary 任务自动执行 [score=0.811 recalls=0 avg=0.620 source=memory/2026-10-30.md:3-4]
-<!-- openclaw-memory-promotion:memory:memory/2026-10-30.md:36:36 -->
-- 观察与感受: 今天是难得的「零打扰」日子。系统处于待机状态，等待下一个触发信号。这种安静也是一种节奏 —— 不必每天都有产出，保持就绪本身就是一种工作。 [score=0.811 recalls=0 avg=0.620 source=memory/2026-10-30.md:36-36]
-<!-- openclaw-memory-promotion:memory:memory/2026-10-30.md:42:43 -->
-- 下一步建议: 保持现状，等待用户下次唤醒; 后台 cron 任务（心跳检查、技能更新检查等）按计划正常运行 [score=0.811 recalls=0 avg=0.620 source=memory/2026-10-30.md:42-43]
+<!-- openclaw-memory-promotion:memory:memory/2026-10-31.md:11:12 -->
+- Tavily 搜索状态: **搜索结果**: `fetch failed` (网络波动，本次 cron 复用已有知识库); **备用知识源**: LEARNINGS.md 中已累计 2026-10-17 至 10-21 的多轮 Tavily 搜索结果 (OpenClaw v2026.9.3-9.6/10.x 密集发布期、OpenAI Agents API、NIBVOK Security、记忆架构标准化、持久化 Agent 趋势、Graph Engineering 等) [score=0.812 recalls=0 avg=0.620 source=memory/2026-10-31.md:11-12]
+<!-- openclaw-memory-promotion:memory:memory/2026-10-31.md:15:18 -->
+- 已知关键动态回顾 (来自近期 LEARNINGS.md 累积): | 类别 | 关键信息 | 来源/确认日期 | |------|----------|---------------| | **OpenClaw 发布** | v2026.9.3-9.6 连续发布 (Node 24 强制、持久化技能、原子更新、免重启插件、只读共享、交互终端) | LRN-20261021-002 (10-21) | | **OpenClaw 10.x 密集期** | 10 月已发 6+ 版本 (9.9/10.1/10.5-beta/10.6/10.10-beta/Extended-Stable)，日均 1 版本，**Extended-Stable 2026.9.33 为当前 LTS 推荐基线** | memory/2026-10-28.md | [score=0.812 recalls=0 avg=0.620 source=memory/2026-10-31.md:15-18]
+<!-- openclaw-memory-promotion:memory:memory/2026-10-31.md:19:22 -->
+- 已知关键动态回顾 (来自近期 LEARNINGS.md 累积): | **DeepSeek V4.1 Flash** | 10/22 现已在 OpenClaw 可用 | memory/2026-10-28.md | | **OpenClaw Enterprise** | 10/23 正式宣布，**Red Hat + NVIDIA 贡献**，企业级功能集 | memory/2026-10-28.md | | **NVIDIA NemoClaw** | 10/26 入选 Time 2026 最佳发明 — OpenShell 进程级沙箱 + 最小特权，Siemens/Foxconn 已采用 | memory/2026-10-28.md | | **OpenAI Agents API** | 公测：托管 Agent 循环、Data Agent、GPT-Live-1 全双工语音、免费托管沙箱 | LRN-20261020-002 (10-20) | [score=0.812 recalls=0 avg=0.620 source=memory/2026-10-31.md:19-22]
+<!-- openclaw-memory-promotion:memory:memory/2026-10-31.md:23:26 -->
+- 已知关键动态回顾 (来自近期 LEARNINGS.md 累积): | **Sora 视频生成退役** | 官方建议替代: Kie AI / Z.AI / Novita / Qwen / Wan，需评估对 video generation skills 影响 | LRN-20261020-002 (10-20) | | **Agent 运营风险分级** | IBM/Deloitte 2026：7 级分级 (例行检索→Agent主导 → 关键决策→完全人工) | LRN-20261020-003 (10-20) | | **记忆架构标准化** | 三层 (Core/Recall/Archival) + Graph-native (Cognee 企业首选，70+ 企业/1M+ pipelines/月) | LRN-20261020-009 (10-20) | | **持续学习新范式** | ReHarness (arXiv 2610.12668)：Recurrent Harness + 反射 Agent 写入 harness state → 下一实例检索反射助决策 | memory/2026-10-28.md | [score=0.812 recalls=0 avg=0.620 source=memory/2026-10-31.md:23-26]
+<!-- openclaw-memory-promotion:memory:memory/2026-10-31.md:27:29 -->
+- 已知关键动态回顾 (来自近期 LEARNINGS.md 累积): | **安全治理突破** | FTC 调查、Email Prompt Injection (无漏洞利用)、Walmart MCP Gateway 治理模板、UK FCA/ICO 合规前置、AARTS 规范、NIBVOK 运行时策略层 (逐工具调用 enforce allow/confirm/deny) | LRN-20261020-005 (10-20) | | **AI Agent 架构范式** | 领域特化 > 通用、多 Agent 编排成默认、Agent OS 涌现、Org Chart 式部署、Agent 间互查错误优于自我查错、Graph Engineering > Loop Engineering | memory/2026-10-28.md | | **部署最佳实践** | 成本优化三件套：模型路由(60-70%) + Prompt Caching(60-80%) + Batch API(50%) → 任务感知路由迫切 | LRN-20261020-010 (10-20) | [score=0.812 recalls=0 avg=0.620 source=memory/2026-10-31.md:27-29]
+<!-- openclaw-memory-promotion:memory:memory/2026-10-31.md:3:4 -->
+- 2026-10-31 (周六) 每日自我完善总结: **生成时间**: 2026-10-31 12:26 (Asia/Shanghai) **触发方式**: cron daily-self-improvement 任务自动执行 [score=0.812 recalls=0 avg=0.620 source=memory/2026-10-31.md:3-4]
