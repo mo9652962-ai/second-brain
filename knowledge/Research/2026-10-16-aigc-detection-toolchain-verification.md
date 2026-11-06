@@ -66,3 +66,6 @@ status: reviewed
 - OpenClaw Research：`2026-10-16-douyin-academic-tools-audit.md`、本白皮书原文、`scripts/academic_super_retriever.py`。
 - Codex 论文技能：`academic-tool-claims-and-ai-integrity.md`、`dual-reduction-handbook.md`、`academic-writing-agent-workflow.md`。
 - Hermes：`light-literature-search/SKILL.md` 的检索协议/覆盖/查询日志规则；`light-paper-writing/SKILL.md` 的逐项主张绑定与措辞边界；`cnki-scholar/skill-card.md` 对公共 API 与 CNKI 订阅访问边界的说明；`chinese-academic-writing/SKILL.md` 中未经证实的词频/句长阈值不纳入执行规则。
+
+---
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]

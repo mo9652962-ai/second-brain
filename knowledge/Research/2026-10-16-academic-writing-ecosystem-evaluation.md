@@ -31,3 +31,6 @@ status: adopted
 - Crossref: https://www.crossref.org/ ; OpenAlex: https://openalex.org/
 
 价格和额度以官方页面为准；以上为 2026-10-16 研究快照。
+
+---
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]

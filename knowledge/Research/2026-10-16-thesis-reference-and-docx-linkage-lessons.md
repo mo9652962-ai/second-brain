@@ -34,3 +34,6 @@ status: adopted
 ## 来源与边界
 
 本地对照了 Codex academic-thesis-engine 的引文核验、交付 QA、WPS 链接防御与避坑规程；OpenClaw Research 的学术索引、学术检索踩坑研究及深度研究 SOP；Hermes 中 academic-paper-writing、paper-writing-workflow、chinese-academic-writing 技能。它们作为流程参考，不等同原始研究证据。官方页面通过直接 HTTP HEAD 返回 200；Web MCP 本轮连接失败。目标 WPS 实际鼠标操作仍待验。
+
+---
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]

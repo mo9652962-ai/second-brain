@@ -5,7 +5,7 @@ type: moc
 domain: Research
 status: active
 created: 2026-08-09
-updated: 2026-11-01
+updated: 2026-11-06
 ---
 
 # 🔬 研究笔记 MOC — Research Map
@@ -13,7 +13,7 @@ updated: 2026-11-01
 > 所有研究笔记的索引与入口。自动按主题分组。
 > 回到 [[knowledge-map|🗺️ 知识地图]] · [[Home|🏠 Home]]
 
-**共 227 篇研究笔记** · 最后更新: 2026-11-01（Q4 全球技术前沿深度同步）
+**共 238 篇研究笔记** · 最后更新: 2026-11-06（Q4 全球技术前沿深度同步）
 
 ## 🆕 最新增量（2026-10 ~ 11-01）
 
@@ -405,6 +405,10 @@ updated: 2026-11-01
 - [[arxiv-2026-10-14-agent-llm]] — 10-14 arXiv AI Agent/LLM 速览（10-12 全新窗口，25 主 + 55 简评）
 - [[arxiv-2026-10-16-agent-llm]] — 10-16 arXiv AI Agent/LLM 速览（10-14~10-16 三窗口，30 主 + 36 简评）
 - [[arxiv-2026-10-10-core-contributions]] — 精选 3 篇（共装技能冲突 One Skill Too Many / 工具调用意图-执行对应 IEC / 记忆准入 vs 表达）
+- [[2026-10-16-academic-writing-agent-workflow-v1]]
+- [[2026-10-16-academic-writing-ecosystem-evaluation]]
+- [[2026-10-16-aigc-detection-toolchain-verification]]
+- [[2026-10-16-thesis-reference-and-docx-linkage-lessons]]
 
 ## 🧭 入口治理
 
@@ -416,5 +420,3 @@ updated: 2026-11-01
 
 - [[graphify-weekly-2026-09-20]]
 - [[arxiv-2026-09-29-agent-llm]] — 09-29 arXiv AI Agent/LLM 速览
-
-

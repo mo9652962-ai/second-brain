@@ -296,3 +296,6 @@ REA 在 Windows 上的 Ghidra 通道是**实验性只读 P0 边界**：
 - REA 仓库：https://github.com/morluto/rea
 - Ghidra 12.1.4：https://github.com/NationalSecurityAgency/ghidra/releases/tag/Ghidra_12.1.4_build
 - 前次审计：`rea-mcp-reverse-engineering-audit-2026-10-23.md`
+
+---
+> 🗺️ 属于 [[MOC-Security]] · [[Home|🏠 Home]]

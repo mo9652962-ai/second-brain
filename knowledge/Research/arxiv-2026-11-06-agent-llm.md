@@ -381,3 +381,6 @@ source: export.arxiv.org API（cat:cs.AI/cs.CL/cs.LG/cs.MA/cs.SE 按提交日期
 ---
 
 *以上：观察 37 项（均为 arXiv API 原文摘要，含论文自报数字）/ 推断 0 项（关联度一栏为判断，已标注为观点）/ 未知 1 项（各论文实验是否可复现未验证）。生成于 2026-11-06 cron。*
+
+---
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]

@@ -138,3 +138,6 @@ kicad-cli pcb export drill -o fab/ demo.kicad_pcb
 4. **学术层**：全面切换 OpenAlex 2026 Q4 REST API 与精准降痕规程。
 
 > **证据契约说明**：以上内容属于【观察（实测与官方文档确认）24 项 / 推断（架构选型与路线研判）8 项 / 未知 0 项】。全链路无死角实证。
+
+---
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]

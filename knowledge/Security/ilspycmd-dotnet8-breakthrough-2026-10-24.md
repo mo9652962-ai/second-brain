@@ -243,3 +243,6 @@ rea inspect-managed-members "目标.dll" --type "命名空间.类名" --format j
 | `D:\tools\rea\ilspy\shim\ilspycmd.exe` | 产物 1968KB |
 | `D:\tools\rea\ilspy\shim\build.sh` | 一键重建 |
 | `D:\tools\targets\ilspy_out\` | 测试产出 694 文件 |
+
+---
+> 🗺️ 属于 [[MOC-Security]] · [[Home|🏠 Home]]

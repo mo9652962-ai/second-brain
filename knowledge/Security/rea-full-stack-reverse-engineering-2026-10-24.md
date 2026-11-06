@@ -165,3 +165,6 @@ rea inspect-managed-members <target.dll> --type "System.Net.WebRequest" --format
    - 在我们自建的 Ground-Truth 真实 Electron 样本中，REA 漏报了 2/3 的窗口与全部 `nodeIntegration` 声明。因此在安全审计与漏洞分析中，**工具的空白不代表风险不存在**。
 3. **严守防御与授权边界**：
    - 逆向工程仅用于自主软件加固、授权审计、协议兼容性研究与代码理解，坚决不参与任何 DRM 破解与恶意分析。
+
+---
+> 🗺️ 属于 [[MOC-Security]] · [[Home|🏠 Home]]

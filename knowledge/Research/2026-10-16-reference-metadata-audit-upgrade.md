@@ -64,3 +64,6 @@ updated: 2026-10-16
 - 对有效 DOI、题名检索、无效 DOI 三类样本分别通过：`metadata_returned`、`candidates_returned`（相似度 1.000，仍需人工复核）、`not_found`。DOI-only 行显示“metadata_returned_title_unchecked”，不生成虚假的题名 mismatch。
 - 技能 `quick_validate.py` 与 Python 编译检查通过。Windows 默认代码页会让检查器按 GBK 解读 UTF-8 的 SKILL.md；本地使用 UTF-8 模式重跑通过，并移除不被当前校验器接受的顶层 `version` 键，仅保留 `metadata.version`。
 - 工具将参考题名、作者和 DOI 发给 Crossref 进行查询；未公开或保密课题先脱敏，不直接上传查询。
+
+---
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]

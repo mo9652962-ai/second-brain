@@ -290,3 +290,6 @@ source /d/tools/rea/wsl-rea.sh   # WSL2 可写通道
 - Ghidra 12.1.4：https://github.com/NationalSecurityAgency/ghidra/releases/tag/Ghidra_12.1.4_build
 - 前篇：`rea-full-stack-reverse-engineering-2026-10-24.md`
 - 审计篇：`rea-mcp-reverse-engineering-audit-2026-10-23.md`
+
+---
+> 🗺️ 属于 [[MOC-Security]] · [[Home|🏠 Home]]

@@ -186,3 +186,6 @@ npm test       →  24 + 55 = 79 条断言，0 失败
 | 200 个 `skipped_no_func` | 正常 | 数据地址/内联点，不是函数入口 |
 | `go:buildid` 等特殊符号 | 已跳过 | 非函数 |
 | PDB 自动下载 | 仍未打通 | REA 隔离 `user.home` 读不到 preferences（前次已停手） |
+
+---
+> 🗺️ 属于 [[MOC-Security]] · [[Home|🏠 Home]]

@@ -98,3 +98,6 @@ updated: 2026-10-16
 | `docx_paper_reviewer.py` | **辅助排版与审阅批注生成器** | 帮助作者在 Word 中可视化学术套话，生成过程性修改建议 |
 | `academic_super_retriever.py` | **官方数据与开源文献直通车** | 提供权威数据底座，但实证模型的构建仍需作者自主完成 |
 | `citation_verifier.py` | **文献真实性与摘要快速初筛** | 发现明显造假文献；深度论证契合度仍需精读全文 |
+
+---
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]

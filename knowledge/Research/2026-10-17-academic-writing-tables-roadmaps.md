@@ -74,3 +74,5 @@ status: reviewed
 - [《通信学报》稿件格式要求](https://www.joconline.com.cn/en/info/15279/)
 - [SAMPL Statistical Analyses and Methods in the Published Literature](https://www.equator-network.org/wp-content/uploads/2013/07/SAMPL-Guidelines-6-27-13.pdf)
 
+---
+> 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]

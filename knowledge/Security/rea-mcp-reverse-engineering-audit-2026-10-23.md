@@ -115,3 +115,6 @@ IPC 32/32 配对成功、37 条 sender 校验观察 —— **静态 JS 这一路
 - 仓库：https://github.com/morluto/rea （npm `rea-agents`）
 - 官方站：https://rea.tools
 - 独立测试：SystemDesign Academy（Electron 覆盖缺口）、SMF Clearinghouse（安装与安全审视）、SoloSoft（token 账单实测）
+
+---
+> 🗺️ 属于 [[MOC-Security]] · [[Home|🏠 Home]]

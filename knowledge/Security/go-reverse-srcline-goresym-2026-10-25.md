@@ -205,3 +205,6 @@ npm test       →  24 + 62 = 86 条断言，0 失败
 | GoReSym 对 calc.exe 失效 | 已知局限，我们的工具可覆盖 |
 | Ghidra 自带 Go 分析器 | 仍拒绝 Go 1.26.6（版本白名单） |
 | PDB 自动下载 | 仍未打通（前次已停手） |
+
+---
+> 🗺️ 属于 [[MOC-Security]] · [[Home|🏠 Home]]

@@ -190,3 +190,6 @@ npm test       →  24 + 74 = 98 条断言，0 失败
 | `D:\tools\rea\apply-pdb-symbols.sh` | 一键：配置 + 分析 + 统计 |
 | `D:\tools\ghidra_scripts\TestPre.java` | preScript 机制验证（保留作诊断） |
 | `D:\Symbols\` | 符号缓存（MS indexLevel=2 结构） |
+
+---
+> 🗺️ 属于 [[MOC-Security]] · [[Home|🏠 Home]]

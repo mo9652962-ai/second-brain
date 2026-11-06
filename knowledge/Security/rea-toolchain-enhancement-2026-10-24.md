@@ -188,3 +188,6 @@ MB=${REA_MCP_MAX_RESPONSE_BYTES:-0}
 **建议：** 这个方向投入产出比已经不划算（试了 5 种方案）。如果确实需要 Windows 原生 PE 的符号名，更实际的路是：
 1. 用 `dumpbin`/`pdbparse` 自己解析 PDB，不走 Ghidra
 2. 或者接受 `FUN_xxx`，靠字符串/调用图人工还原（Go 二进制本来就这样）
+
+---
+> 🗺️ 属于 [[MOC-Security]] · [[Home|🏠 Home]]
