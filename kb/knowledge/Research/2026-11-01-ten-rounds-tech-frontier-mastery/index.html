@@ -3041,9 +3041,12 @@
 <hr />
 <h2 id="round-7-rankmixer-1b">Round 7: 自媒体与短视频推荐机制（抖音 RankMixer-1B 论文级实证）<a class="headerlink" href="#round-7-rankmixer-1b" title="Permanent link">&para;</a></h2>
 <h3 id="1_1">1. 破除“民间固定四级流量池”神话<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>⚠️ 2026-11-06 复核修正</strong>：本节原写「官方证实不存在固定流量池」，属<strong>过度断言</strong>。官方从未公布流量池档位/晋级阈值，正确表述是「<strong>无公开依据</strong>」，不能升级为「已被证伪」——公开材料同样不足以排除冷启动分阶段曝光。详见 [[knowledge/cards/2026-11-06-douyin-traffic-pool-evidence]]。</p>
+</blockquote>
 <ul>
-<li>官方披露（安全与信任中心）与字节跳动 CIKM 论文（RankMixer-1B）证实：<strong>平台不存在所谓“固定 200-500 播放、完播率达 45% 机械晋级下一池”的通用规则</strong>。</li>
-<li>真实的工业推荐架构是极高速的“漏斗体系”：<strong>多路双塔召回 → 粗排 → 1B 参数精排（RankMixer，全流量推理仅 14.3ms）→ 多目标重排</strong>。</li>
+<li>官方披露（安全与信任中心）与字节跳动 CIKM 论文（RankMixer）<strong>未能支持</strong>“固定 200-500 播放、完播率达 45% 机械晋级下一池”这类通用规则（注意：是「无依据」，非「已证伪」）。</li>
+<li>真实的工业推荐架构是极高速的“漏斗体系”：<strong>多路双塔召回 → 粗排 → 1B 参数精排（RankMixer，全流量上线且延迟基本不变）→ 多目标重排</strong>。（原记「14.3ms」为二手数字，本次复核未在 arXiv 摘要中定位到，暂按未核对处理。）</li>
 </ul>
 <h3 id="2_3">2. 多目标打分核心公式与数据杠杆<a class="headerlink" href="#2_3" title="Permanent link">&para;</a></h3>
 <ul>
