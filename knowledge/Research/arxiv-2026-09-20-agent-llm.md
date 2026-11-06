@@ -2,12 +2,7 @@
 aliases:
   - arxiv-2026-09-20-agent-llm
   - arxiv-agent-llm-2026-09-20
-tags:
-  - arxiv
-  - research
-  - ai-agent
-  - llm
-  - daily
+tags: [arxiv, research, ai-agent, llm, daily]
 created: 2026-09-20
 updated: 2026-09-20
 status: adopted

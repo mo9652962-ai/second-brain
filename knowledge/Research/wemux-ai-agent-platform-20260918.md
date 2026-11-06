@@ -1,5 +1,5 @@
 ---
-tags: [research, wemux, multi-agent, tool]
+tags: [research, wemux, multi-agent, tools]
 type: research
 created: 2026-09-18
 title: Wemux — 自托管 AI Agent 协作平台

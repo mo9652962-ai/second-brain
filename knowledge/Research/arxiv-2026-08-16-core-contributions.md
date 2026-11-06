@@ -2,7 +2,7 @@
 aliases:
   - arxiv-2026-08-16-core
   - reconcile-once-behavioral-contracts-skillevo
-tags: [arxiv, research, ai-agent, llm, reliability, memory, skill]
+tags: [arxiv, research, ai-agent, llm, reliability, memory, skills]
 created: 2026-08-16
 updated: 2026-08-16
 status: adopted

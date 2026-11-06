@@ -1,7 +1,7 @@
 ---
 aliases:
   - s4mp-multiplayer-10round-2026-08-04
-tags: [research, s4mp, sims4, multiplayer, ten-round]
+tags: [research, s4mp, sims4, multiplayer, ten-rounds]
 created: 2026-08-04
 updated: 2026-08-04
 status: adopted

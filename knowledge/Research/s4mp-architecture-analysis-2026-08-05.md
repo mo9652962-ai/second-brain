@@ -1,7 +1,7 @@
 ---
 aliases:
   - s4mp-analysis
-tags: [simsync, research, s4mp, benchmark]
+tags: [simsync, research, s4mp, benchmarks]
 created: 2026-08-05
 updated: 2026-08-05
 status: studied

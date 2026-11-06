@@ -1,5 +1,5 @@
 ---
-tags: [knowledge]
+tags: [knowledge/research]
 title: "多 Agent Eval 体系强化任务包：完成方案"
 type: note
 created: 2026-09-05

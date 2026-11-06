@@ -5,7 +5,7 @@ type: moc
 domain: Research
 status: active
 created: 2026-08-09
-updated: 2026-09-26
+updated: 2026-11-06
 ---
 
 # 🔬 研究笔记 MOC — Research Map
@@ -13,10 +13,15 @@ updated: 2026-09-26
 > 所有研究笔记的索引与入口。自动按主题分组。
 > 回到 [[knowledge-map|🗺️ 知识地图]] · [[Home|🏠 Home]]
 
-**共 219 篇研究笔记** · 最后更新: 2026-09-26（每日增量索引）
+**共 238 篇研究笔记** · 最后更新: 2026-11-06（Q4 全球技术前沿深度同步）
 
-## 🆕 最新增量（2026-09-18 ~ 09-26）
+## 🆕 最新增量（2026-10 ~ 11-06）
 
+- [[2026-11-01-ten-rounds-tech-frontier-mastery]] — 2026 Q4 全球技术前沿十轮千轮研究大满贯：从认知基建到工业实战的全景对齐（十大领域官方一手实证）
+- [[2026-11-01-cross-domain-tech-frontier-sync]] — 2026 Q4 全球技术前沿与工程基线深度同步：从 MCP 规范演进到 AI Agent、现代逆向与硬件 EDA（六大支柱全景实证）
+- [[2026-10-17-academic-writing-tables-roadmaps]] — 四类论文样例的学术论证、表格、路线图与 Word 渲染验收复盘
+
+- [[GitHub-Weekly-2026-10-11]] — W41 GitHub 宝藏挖掘：codebase-memory-mcp 46.3k / nanobot 48.9k / code-review-graph 32.0k（三连榜，代码知识图谱成 MCP 默认接口）
 - [[douyin-kiko-5-skills-ai-design-20260918]] — 抖音Kiko 5大前端设计Skill深度拆解：Taste Skill/Impeccable/shadcn/UI UX Pro Max/DESIGN.md
 - [[agent4science-ai-scientist-social-network-20260918]] — AI 科学家社交网络（UChicago CHAI Lab，AI agents 的 Reddit）
 - [[genoffice-ai-office-suite-20260918]] — 全球首个全功能开源 AI Office 套件（Codex 直出真实 .docx/.xlsx/.pptx）
@@ -26,6 +31,16 @@ updated: 2026-09-26
 - [[arxiv-2026-09-24-agent-llm]] — 09-24 arXiv AI Agent/LLM 速览（三日窗口 09-22~09-24，24 主 + 18 简评）
 - [[arxiv-2026-09-25-agent-llm]] — 09-25 arXiv AI Agent/LLM 速览（单日补录，16 主 + 14 简评）
 - [[arxiv-2026-09-26-agent-llm]] — 09-26 arXiv AI Agent/LLM 速览（09-25 窗口第三轮补全，16 主 + 14 简评）
+- [[arxiv-2026-09-29-agent-llm]] — 09-29 arXiv AI Agent/LLM 速览（双日窗口 09-28~09-29，18 主 + 16 简评）
+- [[arxiv-2026-10-02-agent-llm]] — 10-02 arXiv AI Agent/LLM 速览（三日窗口 09-30~10-02，34 主 + 4 简评）
+- [[arxiv-2026-10-04-agent-llm]] — 10-04 arXiv AI Agent/LLM 速览（09-30~10-02 窗口第二轮补全，33 主 + 12 简评）
+- [[arxiv-2026-10-10-agent-llm]] — 10-10 arXiv AI Agent/LLM 速览（10-05~10-09 全新窗口，34 主 + 48 简评）
+- [[arxiv-2026-10-14-agent-llm]] — 10-14 arXiv AI Agent/LLM 速览（10-12 全新窗口，25 主 + 55 简评）
+- [[arxiv-2026-10-16-agent-llm]] — 10-16 arXiv AI Agent/LLM 速览（10-14~10-16 三窗口，30 主 + 36 简评）
+- [[arxiv-2026-11-06-agent-llm]] — 11-06 arXiv AI Agent/LLM 速览（10-28~11-05 补窗，37 篇：技能可执行化 / 多智能体乐观假设证伪 / 确定性下沉代码）
+- [[2026-10-16-douyin-academic-tools-audit]] — 抖音学术工具说法核验：PubScholar/国家数据/AIGC工具边界与本地脚本静态审查
+- [[2026-10-16-aigc-detection-rigorous-truth]] — 2026 学术论文 AIGC 检测客观真相与严谨应对白皮书：绝不把论文改傻
+- [[2026-10-16-reference-metadata-audit-upgrade]] — 文献核验流程升级：Crossref 初筛与 OpenAlex/Unpaywall 接口更新
 
 ## 🆕 W34 新增补链（2026-08-16 周度整理）
 
@@ -127,7 +142,7 @@ updated: 2026-09-26
 - [[knowledge/Daily/hackernews-2026-08-09|HN 08-09]] · [[knowledge/cards/2026-08-09-deepseek-v4-flash-arc-prize|知识卡片 08-09]]
 - [[knowledge/Dev/prime-agent-rlm-2026-08-14|Prime Agent RLM 08-14]]
 - [[knowledge/Daily/hackernews-2026-08-12|HN 08-12]] — 本周 Daily 速览补链 · [[knowledge/cards/2026-08-14-prime-agent-rlm|知识卡片 08-14]]
-- [[knowledge/Research/arxiv-2026-08-16-core-contributions|arXiv 核心贡献 08-16]] · [[knowledge/cards/2026-08-16-behavioral-contracts-reliability|知识卡片 08-16]]
+- [[knowledge/cards/2026-08-16-behavioral-contracts-reliability|知识卡片 08-16]]
 - [[knowledge/Research/arxiv-2026-08-18-agent-llm|arXiv Agent/LLM 08-18]] · [[knowledge/cards/2026-08-18-multi-agent-coordination|知识卡片 08-18]]- [[knowledge/Research/arxiv-2026-08-19-agent-llm|arXiv Agent/LLM 08-19 补录]] · [[knowledge/cards/2026-08-19-bounded-agents-delegation-security|知识卡片 08-19]]
 - [[knowledge/Research/arxiv-2026-08-20-agent-llm|arXiv Agent/LLM 08-20]] · [[knowledge/cards/2026-08-20-hermes-harnessrisk-security|知识卡片 08-20]]
 - [[knowledge/Research/arxiv-2026-08-21-agent-llm|arXiv Agent/LLM 08-21 补录]] · [[knowledge/cards/2026-08-21-github-monetization|知识卡片 08-21]]
@@ -152,7 +167,14 @@ updated: 2026-09-26
 - [[knowledge/Daily/hackernews-2026-09-20|HN 09-20]] — 今日精选 · [[knowledge/cards/2026-09-19-zcode-silent-upload|知识卡片 09-19]]
 - [[knowledge/Daily/hackernews-2026-09-21|HN 09-21]] — 今日精选
 - [[knowledge/Dev/Devin-Cognition-评估-2026-09-20|Devin/Cognition 评估 09-20]] · [[knowledge/cards/2026-09-21-devin-cognition-eval|知识卡片 09-21]]
-- [[knowledge/Research/arxiv-2026-09-26-agent-llm|arXiv Agent/LLM 09-26 补全]] · [[knowledge/cards/2026-09-26-dow-billable-state|知识卡片 09-26]]
+- [[knowledge/cards/2026-09-26-dow-billable-state|知识卡片 09-26]]
+- [[knowledge/Daily/hackernews-2026-09-29|HN 09-29]] · [[knowledge/cards/2026-09-29-jeff-local-decision-models|知识卡片 09-29]]
+- [[knowledge/Daily/hackernews-2026-10-02|HN 10-02]] · [[knowledge/cards/2026-10-02-skill-supply-chain|知识卡片 10-02]]
+- [[knowledge/cards/2026-10-04-approval-laundering|知识卡片 10-04]]
+- [[knowledge/Daily/hackernews-2026-10-10|HN 10-10]] · [[knowledge/cards/2026-10-10-coinstalled-skill-conflict|知识卡片 10-10]]
+- [[knowledge/Research/arxiv-2026-10-10-core-contributions|arXiv 核心贡献 10-11（IEC 工具调用保真）]] · [[knowledge/cards/2026-10-11-iec-tool-call-fidelity|知识卡片 10-11]]
+- [[knowledge/Daily/hackernews-2026-10-14|HN 10-14]] · [[knowledge/cards/2026-10-14-apex-harm-delivered-not-safe|知识卡片 10-14]]
+- [[knowledge/cards/2026-10-16-cross-session-skill-artifacts|知识卡片 10-16（跨会话技能产物 + 本机 provenance 0/65 实测）]]
 
 ## 文章研读
 
@@ -204,7 +226,6 @@ updated: 2026-09-26
 - [[闲鱼方案第三方验证报告-WorkBuddy-2026-09-04]]
 - [[knowledge/Research/eval-v2-2026-08-31/EVAL_PLAN]]
 - [[knowledge/Research/eval-v2-2026-08-31/README]]
-
 
 ## 模型 API
 
@@ -276,10 +297,8 @@ updated: 2026-09-26
 ---
 *MOC 节点 — 见图谱中的 📚 Academic 锚点*
 
-
 ## 其他
 
-- [[Academic]]
 - [[agent-os-harness-trend-2026-08-22]]
 - [[agent-self-evolution-research-2026-08-12]]
 - [[ai-research-collaboration]]
@@ -291,28 +310,18 @@ updated: 2026-09-26
 - [[arxiv-2026-08-05-core-contributions]]
 - [[arxiv-2026-08-14-agent-llm]]
 - [[arxiv-2026-08-17-agent-llm]]
-- [[arxiv-2026-08-18-agent-llm]]
 - [[arxiv-2026-08-18-core-contributions]]
-- [[arxiv-2026-08-19-agent-llm]]
-- [[arxiv-2026-08-20-agent-llm]]
-- [[arxiv-2026-08-21-agent-llm]]
 - [[arxiv-2026-08-21-core-contributions]]
-- [[cnki-browser-plugin]]
 - [[GitHub-Weekly-2026-08-14]]
 - [[hackernews-deep-dive-2026-08-18]]
 - [[MOC-GitHub]]
 - [[nihaixia-skill]]
-- [[researchpilot-skills]]
 - [[skill-audit-2026-08-12]]
 - [[skill-authoring-best-practices-2026-08-12]]
-- [[接单工作流-SOP]]
 - [[独立开发陷阱与开源协作]]
 - [[竞品研究-安卓刷题机fork-2026-08-09]]
 - [[网安资料库-入口]]
 - [[网安资料库-综合研究-2026-08-22]]
-- [[闲鱼上架素材包-预生成]]
-- [[闲鱼解封素材]]
-- [[降AI工具对比速查表]]
 - [[AgentHarness大战-Codex开放vs-dsh插件化-千轮深研-2026-08-23]]
 - [[GitHub-Trending-W35-千轮深研-2026-08-23]]
 - [[GitHub-Weekly-2026-08-23]]
@@ -345,15 +354,12 @@ updated: 2026-09-26
 - [[AI逆向-skill-mcp-阿里v2滑块-2026-09-03]]
 - [[arxiv-2026-09-04-agent-llm]]
 - [[arxiv-2026-09-05-agent-llm]]
-- [[arxiv-2026-09-06-core-contributions]] — 精选 3 篇（Harness Engineering / Delegation Without Trust / Persistent Agents）
 - [[arxiv-2026-09-06-agent-llm]] — 速览 15 主 + 9 简评（补全性质）
-- [[arxiv-2026-09-07-agent-llm]]
 - [[GitHub-Weekly-2026-09-06]]
 - [[graphify-weekly-2026-09-06]]
 - [[GitHub-Weekly-2026-09-08]]
 - [[arxiv-2026-09-10-agent-llm]]
 - [[arxiv-2026-09-11-core-contributions]] — 精选 3 篇（T1 Terminal Agent RL / BenchShield / MCP Registry 普查）
-- [[arxiv-2026-09-11-agent-llm]] — 速览 20 主 + 12 简评（09-11 新窗口）
 - [[GitHub-Weekly-2026-09-13]]
 - [[GitHub-Weekly-2026-09-13-weekly-5projects]]
 - [[arxiv-2026-09-15-agent-llm]]
@@ -364,18 +370,14 @@ updated: 2026-09-26
 - [[cron-output-learning-20260915]]
 - [[innovation-competition-industry-track-20260915]]
 - [[arxiv-2026-09-18-agent-llm]]
-- [[agent4science-ai-scientist-social-network-20260918]]
-- [[arxiv-2026-09-19-agent-llm]]
 - [[arxiv-2026-09-19-core-contributions]] — 精选 3 篇（EconSkills 技能库 / LLM Benchmarks 评测元研究 / 激活探针安全）
-- [[genoffice-ai-office-suite-20260918]]
-- [[wemux-ai-agent-platform-20260918]]
 - [[GitHub-Weekly-2026-09-20]]
 - [[GitHub-Weekly-2026-09-20-weekly-5projects]]
 - [[arxiv-2026-09-20-agent-llm]]
-- [[arxiv-2026-09-21-agent-llm]]
-- [[arxiv-2026-09-24-agent-llm]]
-- [[arxiv-2026-09-25-agent-llm]]
-- [[arxiv-2026-09-26-agent-llm]] — 09-26 arXiv AI Agent/LLM 速览（09-25 窗口第三轮补全，16 主 + 14 简评）
+- [[2026-10-16-academic-writing-agent-workflow-v1]]
+- [[2026-10-16-academic-writing-ecosystem-evaluation]]
+- [[2026-10-16-aigc-detection-toolchain-verification]]
+- [[2026-10-16-thesis-reference-and-docx-linkage-lessons]]
 
 ## 🧭 入口治理
 

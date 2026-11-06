@@ -10,8 +10,27 @@ if not os.path.exists(VAULT):
     VAULT = os.getcwd()  # 在 CI 中 fallback 到当前目录
 os.chdir(VAULT)
 
-IGNORE_DIRS = {'.git', '.obsidian', 'node_modules', '.hermes', 'scripts', 'templates'}
+IGNORE_DIRS = {'.git', '.obsidian', 'node_modules', '.hermes', 'scripts'}
+# ⚠️ `templates/` 不能进 IGNORE_DIRS：它是**被链接的目标**，排除后 INDEX.md 指向
+# 模板的 5 条 wikilink 全被误报断链（2026-09-29 实测）。IGNORE_DIRS 只该排除
+# 「永不作为 wikilink 目标」的目录。
 SCAN_DIRS = {'knowledge', 'memory', '.'}  # 根目录的单个文件也扫
+
+# ===== 断链判据的假阳性过滤（2026-09-29，与 knowledge-lint.py 权威口径对齐）=====
+# 旧实现直接把 [[...]] 当断链 → 三类误报共 33 条（实测真断链 0）：
+#   1. 代码区示例：反引号/fence 内展示给用户的模板链接
+#   2. 模板占位符：[[wikilink]] [[新笔记]] [[所属MOC]] [[A]] [[B]] 等
+#   3. 被 IGNORE/非跟踪目录排除的目标（templates/、skills/@* 第三方技能）
+CODE_SPAN_RE = re.compile(r'`[^`]*`')
+FENCE_RE = re.compile(r'```.*?```', flags=re.S)
+PLACEHOLDER_LINKS = {'name', 'their-name', 'wiki link', 'wikilink', ':space:', 'todo', 'link',
+                     'note-1', 'series-2026-08-14', 'skill-name', '新笔记', '所属moc',
+                     '页面名', 'a', 'b'}
+
+
+def _strip_code(text):
+    """剥离代码区（行内反引号 + fence），返回与原文行数一致、行号可信的文本。"""
+    return FENCE_RE.sub('', CODE_SPAN_RE.sub('', text))
 
 
 def _gitignored(paths):
@@ -97,15 +116,23 @@ notes_set_norm = {os.path.normcase(p): p for p in notes_set}
 note_names = {os.path.splitext(os.path.basename(p))[0]: p for p in notes_set}
 
 for path, lines in all_notes.items():
+    # 剥离代码区后再找链接（行数保持一致 → 行号仍可信）
+    lines = _strip_code(''.join(lines)).splitlines()
     for lineno, line in enumerate(lines, 1):
         for m in re.finditer(r'\[\[([^\]]+)\]\]', line):
             target = m.group(1).replace('\\|', '|').split('|')[0].split('#')[0]  # \| 转义别名 + 常规别名/锚点
             if not target:
                 continue
+            # 模板占位符（非真实笔记名）→ 白名单跳过
+            if target.strip().lower() in PLACEHOLDER_LINKS:
+                continue
             # 标准化路径（统一正斜杠比较：wikilink 文本是正斜杠，Windows normpath 是反斜杠）
             target_norm = re.sub(r'^(\.\./)+', '', target).replace('\\', '/')  # 剥 ../ 相对前缀（Obsidian 解析到 vault 根）
             if target_norm.endswith('.md'):
                 target_norm = target_norm[:-3]  # 显式 .md 后缀剥掉（Obsidian 兼容）
+            # 第三方技能/非扫描目录（skills/@* 等）不是 vault 内容，跳过
+            if target_norm.startswith('skills/@'):
+                continue
             target_file = None
             for p in all_notes:
                 base = os.path.splitext(p)[0].lstrip('.\\').lstrip('./').replace('\\', '/')
@@ -121,30 +148,73 @@ for path, lines in all_notes.items():
                     if target_norm.lower() == base.lower() or target_norm.lower() == name_only.lower():
                         target_file = True
                         break
+            # 扫描范围外的真实文件（如 templates/ 曾被 IGNORE_DIRS 排除）→ 非断链
+            if not target_file:
+                from pathlib import Path as _P
+                _cand = _P(VAULT) / (target_norm + '.md')
+                if _cand.is_file() or any(_P(VAULT).rglob(os.path.basename(target_norm) + '.md')):
+                    target_file = True
             if not target_file:
                 results['broken_links'].append(f"{path}:{lineno} → {target}")
 
 # Step 3: 检查孤立文件
+# 2026-09-29：入链统计须同样剥离代码区（否则文档里的示例链接会制造假入链），
+# 且只认「目标确实存在」的链接（旧版用子串匹配，任意路径含该串即算入链）。
+# 另：markdown 链接 [text](path.md) 也是真实入链——README 就是用这种方式导航
+# skills/ 的，只认 wikilink 会把 19 个技能文档全报成孤立（实测）。
 has_incoming = set()
 link_pattern = re.compile(r'\[\[([^\]]+)\]\]')
+md_link_pattern = re.compile(r'\[[^\]]*\]\(([^)]+\.md)(?:#[^)]*)?\)')
+
 for path, lines in all_notes.items():
-    for line in lines:
+    stripped = _strip_code(''.join(lines)).splitlines()
+    src_dir = os.path.dirname(path)
+    for line in stripped:
+        # --- wikilink 入链 ---
         for m in link_pattern.finditer(line):
             target = m.group(1).replace('\\|', '|').split('|')[0].split('#')[0]  # \| 转义别名 + 常规别名/锚点
+            if target.strip().lower() in PLACEHOLDER_LINKS:
+                continue
             target_posix = re.sub(r'^(\.\./)+', '', target).replace('\\', '/')  # 剥 ../ 相对前缀
             if target_posix.endswith('.md'):
                 target_posix = target_posix[:-3]  # 显式 .md 后缀剥掉（Obsidian 兼容）
             for p in all_notes:
-                if target_posix in os.path.normpath(p).replace('\\', '/'):
+                norm = os.path.normpath(p).replace('\\', '/')
+                if target_posix == os.path.splitext(norm)[0].lstrip('./') or \
+                   target_posix == os.path.basename(os.path.splitext(norm)[0]):
                     has_incoming.add(p)
                     break
+        # --- markdown 相对链接入链 ---
+        for m in md_link_pattern.finditer(line):
+            url = m.group(1)
+            if url.startswith(('http', 'mailto:')) or '://' in url:
+                continue
+            resolved = os.path.normpath(os.path.join(src_dir, url.split('#')[0])).replace('\\', '/')
+            if resolved in {os.path.normpath(p).replace('\\', '/') for p in all_notes}:
+                has_incoming.add(next(p for p in all_notes
+                                      if os.path.normpath(p).replace('\\', '/') == resolved))
+
+# 工具/导航类目录不参与孤立判定：它们由 GitHub 界面、README 表格或各自的 MOC
+# 导航，从不指望从知识库内部被 wikilink 引用（与 gen-vault-index.py 口径一致）。
+ORPHAN_IGNORE_PREFIXES = ('skills/', 'portfolio/', 'scripts/', 'todo/', 'mcp/', 'system/',
+                          'pipelines/', 'playbooks/', 'traces/', 'site/', 'outputs/')
 
 for path in all_notes:
-    if path not in has_incoming and os.path.dirname(path) != '.':
-        # 排除根目录文件和 README/LICENSE/HOME
-        basename = os.path.basename(path)
-        if basename not in ('README.md', 'LICENSE', 'HOME.md', 'SOUL.md'):
-            results['orphan_files'].append(path)
+    # 跳过条件（注意德摩根展开：原判据是「不在 has_incoming 且不在根目录」才入列，
+    # 故跳过条件是「在 has_incoming 或位于根目录」——写成 != '.' 会反向把
+    # 所有子目录文件全部排除，孤立恒为 0。2026-09-29 由负向对照夹具抓出）
+    if path in has_incoming or os.path.dirname(path) == '.':
+        continue
+    basename = os.path.basename(path)
+    # 仓库治理/元信息文件：由 GitHub 界面或 Hermes 运行时消费，不是知识孤立页
+    if basename in ('README.md', 'LICENSE', 'HOME.md', 'SOUL.md', 'INDEX.md', 'MEMORY.md',
+                    'CHANGELOG.md', 'CODE_OF_CONDUCT.md', 'CONTRIBUTING.md', 'SECURITY.md',
+                    'SUPPORT.md', 'IDENTITY.md', 'USER.md', 'AGENTS.md', 'DREAMS.md',
+                    'HEARTBEAT.md', 'CLAUDE.md'):
+        continue
+    if os.path.normpath(path).replace('\\', '/').lstrip('./').startswith(ORPHAN_IGNORE_PREFIXES):
+        continue
+    results['orphan_files'].append(path)
 
 # Step 4: 检查标签一致性
 tag_counts = Counter()

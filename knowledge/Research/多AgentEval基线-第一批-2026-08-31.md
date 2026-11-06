@@ -1,5 +1,5 @@
 ---
-tags: [knowledge]
+tags: [knowledge/research]
 title: "多 Agent Eval 全量基线（第一批 + 第二批）— 2026-08-31"
 type: note
 created: 2026-09-05

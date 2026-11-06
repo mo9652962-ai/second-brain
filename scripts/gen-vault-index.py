@@ -38,6 +38,11 @@ PLACEHOLDER_LINKS = {'name', 'their-name', 'wiki link', 'wikilink', ':space:', '
                      'note-1', 'series-2026-08-14', 'skill-name', '新笔记', '所属moc'}
 
 name_set = {p.stem.lower() for p in all_md}
+# 目标 basename -> 该目标的相对路径（用于把「被链接方」记为有入链）
+name_to_paths = {}
+for p in all_md:
+    name_to_paths.setdefault(p.stem.lower(), []).append(str(p).replace('\\', '/'))
+
 broken = []
 orphan = []
 incoming = set()
@@ -56,14 +61,33 @@ for p in all_md:
         if base in PLACEHOLDER_LINKS:      # 模板占位符 → 非断链
             continue
         if base in name_set:
-            incoming.add(str(p).replace('\\', '/'))
+            # 2026-09-29 修复：旧版把「链接来源」p 记入 incoming，导致
+            # 「有出链但无入链」的页面被误判为非孤立，而真正被链接的页面
+            # 反被报成孤立（孤立数虚高）。正确做法是把「被链接的目标」记为有入链。
+            for tgt in name_to_paths.get(base, []):
+                incoming.add(tgt)
         else:
             broken.append((str(p).replace('\\', '/'), t))
 
+# 2026-09-29：仓库治理/工具类文件不算「知识孤立页」——它们由 GitHub 界面、
+# CI 或工具链消费，从不指望从知识库内部被 wikilink 引用。
+ORPHAN_IGNORE_FILES = {'README.md', 'LICENSE', 'HOME.md', 'SOUL.md', 'INDEX.md', 'MEMORY.md',
+                       'CHANGELOG.md', 'CODE_OF_CONDUCT.md', 'CONTRIBUTING.md', 'SECURITY.md',
+                       'SUPPORT.md', 'IDENTITY.md', 'USER.md', 'AGENTS.md', 'DREAMS.md',
+                       'HEARTBEAT.md', 'CLAUDE.md'}
+ORPHAN_IGNORE_PREFIXES = ('.github/', '.learnings/', '.claude/', '.codebuddy/', '.hermes/',
+                          'skills/', 'todo/', 'scripts/', 'mcp/', 'system/', 'pipelines/',
+                          'playbooks/', 'portfolio/', 'traces/', 'site/', 'outputs/')
+
 for p in all_md:
     sp = str(p).replace('\\', '/')
-    if sp not in incoming and p.name not in ('README.md', 'LICENSE', 'HOME.md', 'SOUL.md'):
-        orphan.append(sp)
+    if sp in incoming:
+        continue
+    if p.name in ORPHAN_IGNORE_FILES:
+        continue
+    if sp.startswith(ORPHAN_IGNORE_PREFIXES):
+        continue
+    orphan.append(sp)
 
 # 知识域（knowledge/ 下）统计
 know = [p for p in all_md if top_dir(p) == 'knowledge']

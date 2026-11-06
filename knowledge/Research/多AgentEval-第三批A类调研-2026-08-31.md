@@ -1,5 +1,5 @@
 ---
-tags: [knowledge]
+tags: [knowledge/research]
 title: "我将完成这 3 个调研任务。由于需要核实 URL 可达性和引用字面匹配，我会并行启动多个搜索/抓取任务。"
 type: note
 created: 2026-09-05

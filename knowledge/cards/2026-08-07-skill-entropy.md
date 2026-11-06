@@ -1,7 +1,7 @@
 ---
 aliases:
   - skill-entropy-card-2026-08-07
-tags: [knowledge-card, arxiv, ai-agent, skill, research]
+tags: [knowledge-card, arxiv, ai-agent, skills, research]
 created: 2026-08-07
 source: "[[knowledge/Research/arxiv-2026-08-07-agent-llm]]"
 status: adopted

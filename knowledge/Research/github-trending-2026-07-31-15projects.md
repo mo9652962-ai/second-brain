@@ -1,5 +1,5 @@
 ---
-tags: [research, github, trending, daily]
+tags: [research, github, github-trending, daily]
 created: 2026-07-31
 status: absorbed
 ---

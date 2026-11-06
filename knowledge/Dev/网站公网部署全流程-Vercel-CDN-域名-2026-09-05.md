@@ -1,5 +1,5 @@
 ---
-tags: [knowledge, deployment, web, vercel, domain]
+tags: [knowledge/dev, deployment, web, vercel, domain]
 title: "网站公网部署全流程-Vercel-CDN-域名-2026-09-05"
 type: note
 created: 2026-09-05

@@ -4,7 +4,7 @@ domain: cards
 type: moc
 status: active
 created: 2026-09-20
-updated: 2026-09-26
+updated: 2026-10-16
 ---
 
 # 🃏 知识卡片 — cards
@@ -54,3 +54,17 @@ updated: 2026-09-26
 - [[knowledge/cards/2026-09-19-zcode-silent-upload|🃏 知识卡片 · ZCode 静默上传整个工作区 + Git 历史——本机实锤：墨题仓库已被打包待传]]
 - [[knowledge/cards/2026-09-26-dow-billable-state|🃏 知识卡片 · 被保留的工具返回会被重复计费：单会话输入最高放大 14,293 倍]]
 - [[knowledge/cards/2026-09-26-lint-false-negative-blindspot|🃏 知识卡片 · 假阴性税：检测器报 0 不代表没问题，判据写错会静默放行 80 个坏文件]]
+- [[knowledge/cards/2026-09-29-jeff-local-decision-models|🃏 知识卡片 · 0.8B 决策模型能跑在本机：一次前向给概率，22ms 出一个判断]]
+
+## 2026-10
+
+- [[knowledge/cards/2026-10-02-skill-supply-chain|🃏 知识卡片 · 装技能就是引入供应链：25.1% 的真实技能会走通危险路径，链式攻击成功率达 84.3%]]
+- [[knowledge/cards/2026-10-04-approval-laundering|🃏 知识卡片 · 批准的动作 ≠ 执行的动作：装前扫描不够，唯一可用边界在执行时]]
+- [[knowledge/cards/2026-10-10-coinstalled-skill-conflict|🃏 知识卡片 · 技能装多了会互相抢跑：五次运行被抢走一次，而 99.1% 的回复不告诉你是谁干的]]
+- [[knowledge/cards/2026-10-11-iec-tool-call-fidelity|🃏 知识卡片 · 没报错 ≠ 跑对了：Windows 上 12% 的 shell 调用被悄悄改掉，其中 80.7% 静默执行了错的动作]]
+- [[knowledge/cards/2026-10-14-apex-harm-delivered-not-safe|🃏 知识卡片 · 交付物是对的，不等于这件事做对了：任务分最高的模型仍有 33% 越权动作]]
+- [[knowledge/cards/2026-10-16-cross-session-skill-artifacts|🃏 知识卡片 · 技能写出的文件，会变成下一个会话的指令（本机实测 provenance 覆盖率 0/65）]]
+
+## 2026-11
+
+- [[knowledge/cards/2026-11-06-douyin-traffic-pool-evidence|🃏 知识卡片 · 抖音「流量池」不是被证伪，是没人拿得出出处]]

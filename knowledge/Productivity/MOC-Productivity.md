@@ -51,6 +51,12 @@ updated: 2026-08-31
 - [[knowledge/Productivity/github-monetization-2026-08-20|GitHub 变现研究]] — 开源私有化+部署订阅
 - [[knowledge/Content/选题池|选题池 66 题]] — 内容库存，先查库存再临时找题
 
+## 🆕 10-02 结尾页版式库（PPT 接单雕花）
+
+- [[knowledge/Productivity/PPT结尾页八种版式-搜索引擎研究-2026-10-02|PPT 结尾页 8 种版式（可运行生成器）]] — 结尾页是记忆价值最高的一页；8 版式 + 5 条工程踩坑
+- [[knowledge/Productivity/PPT结尾页设计库-文案对照|PPT 结尾页版式对照表（生成产物）]] — 生成器落盘的版式×场景×机制速查表
+- [[knowledge/Productivity/PPT高级唯美镂空动态结尾页-制作SOP-2026-09-20|镂空动态结尾页 SOP]] — 手工操作版技法拆解
+
 ## 🆕 W35 新增（08-20 ~ 08-22 内容创作 + 千轮增强）
 
 - [[knowledge/Productivity/PPT-2026-千轮研究增强|PPT 2026 千轮研究增强]] — 设计方法论升级（08-22）
@@ -112,3 +118,13 @@ updated: 2026-08-31
 > cron 产出自动登记（防入链孤立）
 
 - [[token-usage-report-20260920]]
+
+## 🆕 W40 新增（09-28 ~ 09-29：稳定性 + 系统清理）
+- [[knowledge/Productivity/hermes-stability-fix-20260928|Hermes 稳定性修复报告 09-28]] — Electron 渲染进程崩溃定位 + 4 处配置层故障修复
+- [[knowledge/Productivity/system-cleanup-report-20260928|系统清理报告 09-28]] — 释放约 13.4 GB（C 盘 86% → 83%）
+
+## 🆕 10月中下旬新增（系统清理与环境治理）
+- [[knowledge/Productivity/system-cleanup-report-20261017|系统清理报告 2026-10-17]] — C 盘极端空间抢修与缓存清理
+- [[knowledge/Productivity/system-cleanup-report-20261018|系统清理报告 2026-10-18]] — 最终释放 49.6 GB 深度清理实测
+
+

@@ -86,6 +86,46 @@ print("\n=== YAML-list style tags files ===")
 for p in fm_yaml_files[:20]:
     print(f"  {p}")
 
+# 近重复检测（2026-10-14 新增）
+# 大小写变体组（tag_case）只抓「完全相同字母、仅大小写不同」；
+# 抓不到 Claude-Code / ClaudeCode 这类**连字符变体**——两者规范化后同名，
+# 但分属两个标签 → 同一概念被拆成两个标签，Dataview 查询与图谱分组都会漏。
+# 判据：lower + 去 -/_ 后同名 = 近重复候选（**仅报告，需人工确认是否真同义**）。
+# 注意：不要用子串/相似度判重复（坑 #9：agent↔ai-agent、skill↔agent-skills 是
+# 合法父子关系，子串判据会误报 200+ 处）。
+def _norm(t: str) -> str:
+    return re.sub(r"[-_ ]", "", t.lower())
+
+
+norm_groups = collections.defaultdict(set)
+for t in fm_tags:
+    norm_groups[_norm(t)].add(t)
+print("\n=== NEAR-DUPLICATE TAGS (normalized collisions, review-only) ===")
+_near = {k: sorted(v) for k, v in norm_groups.items() if len(v) > 1}
+for k, v in sorted(_near.items()):
+    print(f"  {k}: {v}")
+print(f"total near-duplicate groups: {len(_near)}")
+
+# 纯冗余：裸标签与同名 namespaced 标签同现于同一 tags 列表（坑 #9 的正确判据）
+pure_red = []
+for f in files:
+    try:
+        t = f.read_text(encoding="utf-8", errors="replace")
+    except Exception:
+        continue
+    mm = fm_re.search(t)
+    if not mm:
+        continue
+    tags = [x for x in re.split(r"[,\s]+", mm.group(1).strip()) if x]
+    s = set(tags)
+    for x in tags:
+        if "/" in x and x.split("/")[-1] in s:
+            pure_red.append((str(f.relative_to(root)), x))
+print("\n=== PURE REDUNDANT (bare + namespaced same name in one list) ===")
+for p in pure_red[:20]:
+    print(f"  {p}")
+print(f"total pure redundant: {len(pure_red)}")
+
 print("\n=== TOP inline tags (50) ===")
 for t, c in inline_tags.most_common(50):
     print(f"  {t}: {c}")

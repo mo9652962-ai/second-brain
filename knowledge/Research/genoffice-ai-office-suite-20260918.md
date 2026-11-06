@@ -1,5 +1,5 @@
 ---
-tags: [research, genoffice, ai-office, tool]
+tags: [research, genoffice, ai-office, tools]
 type: research
 created: 2026-09-18
 title: GenOffice — 全球首个全功能开源 AI Office 套件

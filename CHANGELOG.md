@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed (2026-11-06 知识库治理日)
+
+- **标签归一化**: 全库 1264 个唯一标签中清理单复数/大小写/空格变体，26 篇笔记 12 类标签归一（`skill→skills`、`project→projects`、`JLCPCB→jlcpcb`、`Edge ai→edge-ai` 等）；规范表写入 `templates/风格指南.md`，后续新建笔记按表执行。
+- **MOC-Research 去重瘦身**: 索引从 422 行降至 390 行，删除 33 条整行重复 + 清理 38 个重复链接 token，唯一笔记 300 篇保留完整；「最新增量」标题时间窗修正为 `2026-10 ~ 11-06`。
+- **OKM 看板刷新**: `knowledge/METABOLISM.md` 由 700 篇/333 常青（2026-09-26 快照）刷新为 757 篇 / 361 Evergreen / 389 Budding。
+- **README 数据校准**: 资产数 760+ → 820+，常青徽章 333 → 361，仓库统计块 19.8MB/901 文件 → 29MB/969 文件、knowledge 676 → 733 篇、Skill 覆盖 11 → 37 目录。
+
 ### Added
 
 - **AI-First 协议支持**: 全新支持 `llmstxt.org` 标准，自动化生成 `/llms.txt`（纲要索引）与 `/llms-full.txt`（221KB 纯净知识平铺包），优化 Agent 摄取上下文。

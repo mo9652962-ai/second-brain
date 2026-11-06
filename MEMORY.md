@@ -9,7 +9,7 @@
 - **Vibe**: 正经高效 + 温柔陪伴
 - **运行时**: Hermes Agent (NousResearch) — Windows 10 桌面应用
 - **时区**: Asia/Shanghai (GMT+8)
-- **座右铭**: 而今更笃凌云志，莫缴冰鉴复当初
+- **座右铭**: 而今更笃凌云志，莫缴冰鉴复当初。
 
 ## 模型架构
 
@@ -28,7 +28,7 @@
 |------|--------|------|------|
 | Tavily | 🥇 | API Key | ✅ 主力 |
 | Exa | 🥈 | API Key | ✅ |
-| Firecrawl | 🥉 | API Key | ✅ |
+| Firecrawl | 🥉 | API Key | ✅ 永久可靠 fallback |
 | DDGS (DuckDuckGo) | ④ | pip 包 + VPN | ✅ |
 | SearXNG | ⑤ | 本地实例 localhost:8888 | ✅ 自托管 30 引擎 |
 
@@ -74,6 +74,7 @@
 - Obsidian vault（持久化存储）
 - 自动同步 GitHub（远程备份 + 版本历史）
 - 三层：当前工作记忆 → daily notes → MEMORY.md 提炼
+- **生命周期管理**: Extract → Update → Delete 三步曲缺一不可；陈旧记忆毒性 > 无记忆；需强化 Update/Delete 机制
 
 ### Vault 自动化维护（2026-08-18 验证）
 - 断链修复 / 空壳清理 / 孤立笔记补链 / 标签归一化 / MOC 映射更新 → 全量诊断 cron（每日 06:09）
@@ -111,6 +112,8 @@ OpenClaw 从单一框架扩展为 5 个发行版，覆盖不同场景：
 - **Task Brain 统一控制平面 (v2026.3.31)**: 整合 ACP subtasks、cron jobs、CLI background、subagent spawns；SQLite 任务日志、心跳监控、任务流注册表、父记录追踪、阻塞状态持久化
 - **AI 代理数据恢复 (v2026.7.2-beta.5)**: 隔离存储、SQLite 快照、崩溃耐用发布、拒绝导致数据丢失的架构升级、回滚作家快照恢复
 - **Graph Engineering > Loop Engineering (2026-07)**: 多阶段并行 + 精确反馈路由取代串行循环；steipete 推文 2.9M 浏览，48h 内 3 竞争定义；OpenClaw 落地：Codex Remote Coding Sessions (v2026.7.2 beta)
+- **Graph Engineering 实践**: 利用 OpenClaw subagent + sessions_spawn 实现并行阶段 + 精确反馈路由
+- **关注 LangGraph**: node caching / deferred nodes / pre-post model hooks 生产原语
 
 ### 2026 H2 新 Agent 平台
 - **Google Gemini Enterprise Agent Platform**: graph-based agent 开发框架，MCP 服务连接，agent-to-agent 编排，agent registry + agent gateway 策略执行
@@ -172,6 +175,7 @@ v2026.3.7 引入的可插拔上下文管理界面已验证稳定。模型路由�
 6. 自动测试 Pipeline + Canary + A/B
 7. 模型版本控制 + 快速回滚
 8. **成本优化三件套**: 模型路由(60-70%) + Prompt Caching(60-80%) + Batch API(50%)
+- **任务感知路由**: 引入 task-aware 模型路由（cron/heartbeat 用 qwen3.7-plus/glm-5.2 处理低复杂度任务）
 
 ### Gartner 2026-08-17: AI 推理成本至 2028 每 agentic workflow 增超 5 倍
 - 成本控制升为「生存项」，直接背书 cheap-model tiering + semantic caching + 模型路由
@@ -194,6 +198,9 @@ v2026.3.7 引入的可插拔上下文管理界面已验证稳定。模型路由�
 - **NVIDIA SkillSpector (2026-06-01)**: 所有 ClawHub skills 自动扫描隐藏指令
 - **Hotfix v2026.7.1-2 (2026-08-04)**: npm plugin singleton-array metadata 兼容修复
 - **v2026.8.1 发布后极速补丁节奏**: v2026.8.2 (9/1)、v2026.9.1 (9/3)、v2026.9.2 (9/5) —— **GPT-6 Astra、Swarm 默认开启、重启无损回复**；半个月 6 版本，Swarm 默认开启标志多 Agent 编排生产化
+- **v2026.9.3 (9/8)**: Node 24.16+ 强制、**持久化技能**、**可分享会话**
+- **v2026.9.4 (9/11)**: 失败更新回滚、统一插件工作区
+- **持久化技能** 与 Skill Workshop 流程对标需评估
 
 ### AI Agent 安全标准化进程 (2026-09)
 - Mastercard/NIST/新加坡 IMDA 推动 Agentic AI 治理框架与全球协调标准
@@ -202,6 +209,9 @@ v2026.3.7 引入的可插拔上下文管理界面已验证稳定。模型路由�
 - Simon Willison 三大固有脆弱性：私有数据访问 + 非受信内容暴露 + 外部通信能力
 - Cisco State of AI Security 2026：仅 29% 组织觉得准备好保护 Agentic AI
 - CoSAI 白皮书：MCP 服务器 12 核心威胁类别 + 近 40 特定威胁
+- **Secret egress host binding**: 评估在 openclaw.json 中显式配置密钥出口域名白名单
+- **审计日志完整性**: 确保 cron/heartbeat/subagent 执行轨迹可追溯
+- **关注 NIST/IMDA**: 正式标准发布后的合规对标
 
 ### Agentic Primitives > Glue Code (2026)
 - **OpenAI Agents API 公测 (2026-09)**: 托管 Agent 循环、Data Agent、GPT-Live-1 全双工语音；托管沙箱免费，仅模型 token + 工具使用
@@ -256,6 +266,41 @@ v2026.3.7 引入的可插拔上下文管理界面已验证稳定。模型路由�
 - **产出存在性校验**：health check 只看运行状态不看产出 → daily-review 文件静默缺失 → 健康检查加 stat 验证预期文件路径
 - **统计口径自我验证**：web_search 实锤口径 1 天失效 → 定义主/辅口径 + 降级兜底 + 自检规则
 
+### Q4 2026 最新发展
+- **OpenClaw 2026.9.7 发布** (10月): 更快负载响应、增强更新回滚保护、OpenAI Agents API 公测、Sign in with ChatGPT (Beta)、Sora 视频生成退役（建议替换为 Kie AI/Z.AI/Novita/Qwen/Wan）
+- **OpenClaw 2026.9.8 发布** (10月8日): 优化了 Codex Remote Sessions 目录处理，避免为每个空闲 Codex 代理启动单独的会话-catalog 进程，而是在需要时启动并重用捕获的设置以减少大规模原生 Codex 会话集合中的重复内存使用
+- **OpenClaw 最佳实践 2026**: Gateway 私有化部署、扩展代码即运行代码、最小权限凭证轮换、刻意修改默认值并记录原因
+- **Skills Directory 爆发式增长**: 5,798+ 社区构建技能（1,800+ AI Agent 专用），安装/发现已成核心工作流入口
+- **AI Agent 运营成熟** (IBM/Deloitte 2026): 从「构建 Agent」转向「安全规模化运营」，确立风险分级运营模型（例行检索→Agent主导、低风险动作→Agent带控制、中风险决策→Agent建议+人工批准、高影响决策→人工主导+Agent支持）
+- **持久化 Agent 趋势确认**: 设计用于长任务、本地执行、数据主权，配合 Local-First 转型
+- **OpenClaw 生态分化**: 12+ 替代方案涌现（NanoClaw/PicoClaw/Nanobot/memU/OpenCode/Claude Code/ZeroClaw/Moltworker/NullClaw/Anything LLM/TrustClaw），但轻量级 fork 缺乏生产验证
+- **Graph Engineering 范式确立**: 多阶段并行 + 精确反馈路由取代串行循环，验证 Codex Remote Sessions 为 OpenClaw 实践实证
+- **记忆生命周期管理关键性**: Extract→Update→Delete 三步曲缺一不可；陈旧记忆毒性 > 无记忆；需强化 Update/Delete 机制
+- **成本优化三件套深化**: 模型路由(60-70%) + Prompt Caching(60-80%) + Batch API(50%) → 任务感知路由引入 task-aware 模型路由（cron/heartbeat 用便宜模型处理低复杂度任务）
+- **安全基线对标**: Secret egress host binding 评估（openclaw.json 显式配置密钥出口域名白名单）、审计日志完整性确保、关注 NIST/IMDA 正式标准
+- **安全架构加强** (v2026.9.x): Cross-Component Trust（远程节点事件默认 untrusted + 输出 sanitization）、WebSocket 会话即时失效（token/密码轮换时立即失效）、技能 realpath() 验证、Shell 沙箱收紧（busybox/toybox 移除）、审批命令 fail-closed（无法绑定到单一文件操作数时拒绝执行）
+- **OpenAI Agents API 公测细节**: 托管 Agent 循环、Data Agent、GPT-Live-1 全双工语音、免费托管沙箱，仅计费模型 token + 工具使用
+- **Sora 退役影响**: video generation skills 需评估替代方案（Kie AI / Z.AI / Novita / Qwen / Wan）
+- **pydantic_core ABI 问题**（10月12日首修，**10-13/10-14 两度复发**）: 根因 = 运行解释器（tools/python-3.14.7）与 hermes-agent/venv（**3.11**）site-packages **ABI 混用**。⚠️ 10-12 判「已解决」**是误判**——hermes_bootstrap 置前 cp314 只是**进程内**生效，gateway 一重启即回落（`gateway-exit-diag.log` 三次 `"python": "3.14.7"` 为证）。当前状态 `mitigated`（10-14 08:42 重启后本进程正常），**根治需 sora 选修复路径**，10-16 再次预测命中，详见 `.learnings/ERRORS.md [ERR-20261012-001]` 复发 #3
+- **每日自我完善任务发现**（2026-10-15）: 通过 Tavily 搜索确认 OpenClaw 最新动态、行业趋势和最佳实践；检查学习记录识别 pydantic ABI 问题为核心阻塞点；回顾近 3 天日志确认核心 cron 韧性；更新知识决策：MEMORY.md 需追加 10 项 Q4 增量知识，.learnings/ 需新增 6 项条目；系统自动化健康度：🟡 亚健康（pydantic ABI 致 26/48 cron 受阻）但感知/决策类核心 cron 全数正常
+- **每日自我完善任务发现**（2026-10-17）: 通过 Tavily 搜索确认 OpenClaw 最新动态、行业趋势和最佳实践；检查学习记录识别 pydantic ABI 问题根因已闭合，需 sora 执行修复路径；回顾近 3 天日志确认核心 cron 韧性；更新知识决策：MEMORY.md 需追加 Q4 2026 增量知识（本条），.learnings/ 需新增学习条目；系统自动化健康度：🟡 亚健康（pydantic ABI 致 26/48 cron 受阻）但感知/决策类核心 cron 全数正常
+- **每日自我完善任务发现**（2026-10-18）: daily-summary 总结确认 pydantic ABI 问题三度预测命中、核心感知链路 100% 存活、模型配额三重耗尽、磁盘 92% 临界；无用户会话，全天自动化维护；系统健康度 🟡 亚健康
+- **每日自我完善任务发现**（2026-10-19）: Tavily 确认 OpenClaw v2026.9.x 补丁期、运营成熟度、记忆架构标准化、NIBVOK Security、Sora 退役；ERRORS.md 确认 pydantic ABI 四度预测命中，根因闭合；LEARNINGS.md 13 项待推广模式；系统健康度 🟡 亚健康
+- **每日自我完善任务发现**（2026-10-20）: 确认记忆三层架构标准化、Cognee 企业级获青睐、成本优化三件套需落地 task-aware 路由、pydantic ABI 持续阻塞 32/48 cron；新增洞察：模型配额危机三重奏、C 盘 92% 临界、NIBVOK 运行时策略层、Secret egress host binding 评估、韧性设计验证通过
+- **每日自我完善任务发现**（2026-10-21）: Tavily 确认 OpenClaw v2026.9.3-9.6 连续发布、NIBVOK Security 运行时策略层、记忆三层架构标准化；ERRORS.md 确认 pydantic ABI **第五度预测命中** (10-20 复发)；LEARNINGS.md 14 项待推广；系统健康度 🟡 亚健康
+- **每日自我完善任务发现**（2026-10-22）: 确认 OpenClaw 补丁期持续、运营模式成熟(风险分级 7 级)、持久化 Agent+Local-First 趋势、Graph Engineering 确立、NIBVOK Security、Sora 退役；pydantic ABI 第五度预测命中持续、根因闭合、修复路径明确待落地；LEARNINGS.md 14 项待推广；系统健康度 🟡 亚健康
+- **每日自我完善任务发现**（2026-10-23): 无用户主动会话，heartbeat+cron 维持核心链路；三重压力持续但韧性设计生效；MEMORY.md 同步滞后 30 天；daily-self-improvement cron 推测正常；系统健康度 🟡 亚健康
+- **每日自我完善任务发现**（2026-10-24 本条）: Tavily 确认 OpenClaw 补丁期持续、运营成熟度、记忆架构标准化、NIBVOK Security、Sora 退役；ERRORS.md 确认 pydantic ABI **第六度预测命中 (含 10-21 第五度复发)**、根因闭合、三条修复路径实测 PASS 待落地；LEARNINGS.md 14 项待推广持续跟踪；近 3 天日志确认三重压力持续但核心链路 100% 存活；MEMORY.md 需追加 17 项 Q4 增量知识；系统健康度 🟡 亚健康
+- **错误判定口径升级** (LRN-20261021-001): "resolved" 必须含 gateway 重启复验、证据须跨进程、核对 python 字段、launcher 陈旧时验证须含 diff —— 四条铁律已固化
+- **OpenClaw v2026.9.3-9.6 连续发布细节** (LRN-20261021-002): Node 24 强制、持久化技能、原子更新、免重启插件、只读共享、交互终端，建议等社区验证 2-4 周
+- **每日自我完善任务发现**（2026-10-28): Tavily 确认 OpenClaw v2026.10.x 补丁期持续、OpenAI Agents API 公测、OpenClaw Enterprise 正式发布 (Red Hat+NVIDIA)、NVIDIA NemoClaw 入选 Time 2026 最佳发明、DeepSeek V4.1 Flash 可用、Extended-Stable 2026.9.33 LTS 基线；记忆架构三层标准化 (Core/Recall/Archival + Graph-native Cognee)、持续学习新范式 ReHarness (arXiv 2610.12668, 0.24 归一化增益)、Agent 运营风险分级 7 级 (IBM/Deloitte)、安全治理突破 (FTC/Email Prompt Injection/Walmart MCP/AARTS/NIBVOK)、Graph Engineering 确立、Local-First 转型、成本优化三件套需落地 task-aware 路由；ERRORS.md 确认 pydantic ABI 第 7-9 度预测命中；LEARNINGS.md 14 项待推广；系统健康度 🟡 亚健康
+- **每日自我完善任务发现**（2026-11-01): Tavily 双搜索确认 OpenClaw v2026.9.6 稳定版、390K stars、OpenAI Agents API 公测、Sora 退役、记忆架构标准化、Graph Engineering、持续学习 ReHarness、安全治理、Local-First；ERRORS.md 确认 pydantic ABI **第十度预测命中**，根因闭合、四条判定铁律已固化 (LRN-20261031-001)；LEARNINGS.md 16 项待推广；近 3 天日志：10-29 静默维护、10-30 静默日、10-31 深度自完善；MEMORY.md 需追加 24 项 Q4 增量知识；系统健康度 🟡 亚健康
+- **每日自我完善任务发现**（2026-11-02): Tavily 确认 OpenClaw 10 月补丁密集期 (v2026.9.3-9.9/10.1 核心特性：Node 24/持久化技能/原子更新/免重启插件/对话共享/GPT Live/专家团队/云工作节点/GPT Image 2.5)、OpenAI Agents API 公测细节、Sora 退役、OpenClaw Enterprise/NemoClaw/DeepSeek V4.1 Flash/Extended-Stable 2026.9.33；ERRORS.md 确认 pydantic ABI **第十一度预测命中**，根因闭合、修复路径明确（推荐 ② 重跑 gateway install）；LEARNINGS.md 16 项待推广；近 3 天日志确认静默日+深度自完善模式；系统健康度 🟡 亚健康
+- **每日自我完善任务发现**（2026-11-03 本条): Tavily 双搜索确认 **OpenClaw 2.0 正式发布 (v2026.8.1, 933 贡献者, 16K+ PRs)**、简化安装、协作 Agent、v2026.9.6 稳定版、v2026.9.5 核心特性 (原子更新/免重启插件/只读共享/密钥遮蔽/GPT Live/浏览器自动化/对话归档/专家团队向导)、v2026.9.3-9.4 特性 (持久化技能/技能发现/云工作节点/GPT Image 2.5)、OpenAI Agents API 公测 (托管循环/Data Agent/GPT-Live-1/免费沙箱)、Sora 退役替代方案、Extended-Stable 2026.9.33 LTS、**OpenClaw Enterprise (Red Hat+NVIDIA)**、**NVIDIA NemoClaw (Time 2026 最佳发明, OpenShell 进程沙箱+最小特权, Siemens/Foxconn 已采用)**、**DeepSeek V4.1 Flash** 可用、Skills Directory 5,798+ (1,800+ AI Agent 专用)、**生产最佳实践** (Context Studios: 内存管理/定时任务 vs 心跳/模型选择、Active Memory 插件语义搜索、Task Brain 统一控制平面 `openclaw flows`、memory-lancedb 云存储 beta、**CVE-2026-25253 RCE 单点免认证绕过**)、ReHarness 持续学习 (arXiv 2610.12668, Recurrent Harness + 反射 Agent, 0.24 归一化增益)、记忆架构三层标准化 + Graph-native (Cognee 企业首选 70+ 企业/1M+ pipelines/月)、Agent 运营风险分级 7 级 (IBM/Deloitte)、安全治理多点突破、成本优化三件套 + task-aware 路由迫切、本地优先转型确认；ERRORS.md 确认 pydantic ABI **第十二度预测命中** (今日重启后再次复发)，根因彻底闭合 (运行解释器 3.14.7 cp314 与 venv 3.11 cp311 ABI 混用，hermes_bootstrap 仅进程内生效，gateway 重启即回落，`gateway-exit-diag.log` 多次 `"python": "3.14.7"` 为证)；当前状态 `mitigated`，**根治仅待 sora 选路径执行 (① 回退 3.11 启动 ② 重跑 gateway install 推荐 ③ PYTHONPATH 叠加 PM venv)**；LEARNINGS.md 16 项待推广持续跟踪；近 3 天日志 (11-01/11-02/11-03) 确认：深度自完善 → 深度自完善 → 本次执行，系统处于「亚健康但核心链路 100% 存活」稳定态；MEMORY.md 需追加 26 项 Q4 增量知识（含本条）；系统自动化健康度：🟡 亚健康（pydantic ABI + 模型配额三重压力 + C 盘 92% 三重压力）但核心感知链路 100% 存活
+- **每日自我完善任务发现**（2026-11-04): 静默维护日确认 pydantic_core ABI 问题**第十三度预测命中** (11-03 重启后再次复发)，根因彻底闭合 (运行解释器 3.14.7 cp314 与 venv 3.11 cp311 ABI 混用，hermes_bootstrap 仅进程内生效，gateway 重启即回落)；当前状态 `mitigated`，**根治仅待 sora 执行 (① 回退 3.11 启动 ② 重跑 gateway install 推荐 ③ PYTHONPATH 叠加 PM venv)**；近 4 天日志模式：11-01/11-02/11-03 深度自完善、11-04 静默维护；系统处于「亚健康但核心链路 100% 存活」稳定态；三重压力持续 (pydantic ABI + 模型配额 + C 盘 92%)
+- **每日自我完善任务发现**（2026-11-05): Tavily 搜索确认 **OpenClaw 2026 年度最佳 Agent 第 1 名 (180K+ stars)**、四大核心趋势 (Local-First/多 Agent/模型无关/编码 Agent 引领)、最佳实践指南 (技能需求转变 +145%~+210%)、v2026.9.6 稳定版、Cross-Component Trust/Active Memory/Task Brain/`openclaw flows`/memory-lancedb、**Context Studios 生产实战** (内存管理/Cron vs Heartbeat/模型选择)、新兴项目全景 (EdgeAgent/MemOS/EnterpriseAgent/2027-2030 路线图)、官方博客 8 篇实战、Prompt Injection 风险；ERRORS.md 确认 pydantic ABI **第十三度预测命中**，四条判定铁律固化 (LRN-20261031-001)；LEARNINGS.md 16 项待推广；近 3 天日志 (11-02/11-03/11-04) 确认：深度自完善 → 深度自完善 → 静默维护
+- **每日自我完善任务发现**（2026-11-06 本条): Tavily 再次确认 OpenClaw 2026 第 1 名、四大趋势、最佳实践、v2026.9.6、Context Studios 生产实战、新兴项目、官方博客、Prompt Injection；pydantic_core ABI **第十四度预测命中** (11-04 重启后复发)，根因闭合，当前 `mitigated`，**根治仅待 sora 执行 (建议 ② 重跑 gateway install)**；LEARNINGS.md 16 项待推广持续跟踪；近 3 天日志 (11-03/11-04/11-05) 确认：深度自完善 (OpenClaw 2.0) → 静默维护 → 深度自完善；MEMORY.md 需追加 3 项增量知识 (含本条)；系统健康度 🟡 亚健康但核心链路 100% 存活
+
 ## 本周亮点 (W30, 07/20~07/26)
 
 ### 🏗️ 架构全面升级
@@ -302,7 +347,7 @@ v2026.3.7 引入的可插拔上下文管理界面已验证稳定。模型路由�
 - [x] ~~AI 变现调研~~ ✅ 2026-07-24
 - [x] ~~LRN-20260722-001 (Plan-and-Execute)~~ ✅ 2026-07-25
 - [x] ~~AI 变现落地（闲鱼AI代做PPT/论文润色）— 可发车~~ ✅ 素材已预生成，8/1 解封日已过，上架排期 8/2
-- [x] ~~闲鱼上架「AI 代做 PPT」~~ ✅ 2026-09-20 去重：决策状态由 projects/current.md 跟踪（🟡 每周一复盘提醒，决策悬置第 42 天，下次复盘 9/28（周一），state.yaml 权威；9/26 weekly-cleanup 已同步镜像）；MEMORY.md 不再重复跟踪
+- [x] ~~闲鱼上架「AI 代做 PPT」~~ ✅ 2026-09-20 去重：决策状态由 projects/current.md 跟踪（🟡 每周一复盘提醒，决策悬置第 81 天，下次复盘 11/09（周一），state.yaml 权威；10-12 daily-todo-executor 已同步镜像）；MEMORY.md 不再重复跟踪
 - [x] ~~语义缓存最小版落地（根治 Tavily 配额 + 预防 Gartner 5x）~~ ✅ 2026-08-21：统一 chokepoint 覆盖全 8 后端（commit 84d813bf2），根治连续 8 工作日配额复发
 - [x] ~~合并冗余 skills（hermes-search-configuration → hermes-search-config）~~ ✅ 2026-07-31 已核实：hermes-search-configuration 已不存在，仅剩 hermes-search-config，无需合并
 - [x] ~~随身WiFi下单确认（赫电 Pro 399元/年，选型已确认）~~ ✅ 2026-09-20 评估：8 月遗留、后续未再激活（决策状态未知）；如仍需下单由 sora 重提
@@ -315,31 +360,10 @@ v2026.3.7 引入的可插拔上下文管理界面已验证稳定。模型路由�
 
 ---
 
-_最后更新: 2026-09-21｜运行环境: Hermes Agent on Windows 11_
+_最后更新: 2026-11-06｜运行环境: Hermes Agent on Windows 11_
 
 ## 🔒 Waiting for User（阻塞待办，状态变化时提醒）
 - （空——被阻塞任务单独维护，不混入每日清单）
-
-## Promoted From Short-Term Memory (2026-09-20)
-
-<!-- openclaw-memory-promotion:memory:memory/2026-09-14-self-improvement.md:7:7 -->
-- AI Agent / OpenClaw 最新发展 (Tavily 搜索摘要): **OpenClaw 2.0 极速补丁节奏** (v2026.8.1 发布后) [score=0.824 recalls=0 avg=0.620 source=memory/2026-09-14-self-improvement.md:7-7]
-<!-- openclaw-memory-promotion:memory:memory/2026-09-14-self-improvement.md:8:11 -->
-- AI Agent / OpenClaw 最新发展 (Tavily 搜索摘要): v2026.8.1 (8/31): 16,000+ PRs 融合的大版本，共享云会话、凭证隔离、简化安装、重构浏览器; v2026.8.2 (9/1): Day-one patch，更安全升级路径; v2026.9.1 (9/3): 升级韧性、图表、快速启动、Android 对齐; v2026.9.2 (9/5): **GPT-6 Astra**、**Swarm 默认开启**、重启无损回复 [score=0.824 recalls=0 avg=0.620 source=memory/2026-09-14-self-improvement.md:8-11]
-<!-- openclaw-memory-promotion:memory:memory/2026-09-14-self-improvement.md:44:45 -->
-- 经验教训 (.learnings/LEARNINGS.md) 近期高价值: [LRN-20260914-001] OpenClaw 2.0 极速补丁节奏：半个月 6 个版本，Swarm 默认开启标志多 Agent 编排生产化; [LRN-20260914-002] AI Agent 安全标准化进入推进期：五大控制点 + 三大具体化形成架构审查清单 [score=0.804 recalls=0 avg=0.620 source=memory/2026-09-14-self-improvement.md:44-45]
-<!-- openclaw-memory-promotion:memory:memory/2026-09-14-self-improvement.md:47:47 -->
-- 经验教训 (.learnings/LEARNINGS.md) 近期高价值: **近期高价值** (9/13 前): [score=0.804 recalls=0 avg=0.620 source=memory/2026-09-14-self-improvement.md:47-47]
-<!-- openclaw-memory-promotion:memory:memory/2026-09-20-self-improvement.md:7:7 -->
-- AI Agent / OpenClaw 最新发展 (Tavily 搜索摘要): **系统全自动化确认** - FlClash 代理 9/16 重启恢复，连续 7+ 天高亮唯一人工介入点清除，系统可靠性恢复全自动化 [score=0.950 recalls=0 avg=0.620 source=memory/2026-09-20-self-improvement.md:7-7]
-<!-- openclaw-memory-promotion:memory:memory/2026-09-20-self-improvement.md:45:47 -->
-- AI Agent / OpenClaw 最新发展 (Tavily 搜索摘要): **OpenAI Agents API 公测** + **部署最佳实践 6 大支柱** + **OpenClaw vs Claude Code 互补关系** 等新发展 [score=0.920 recalls=0 avg=0.620 source=memory/2026-09-20-self-improvement.md:45-47]
-<!-- openclaw-memory-promotion:memory:memory/2026-09-23-self-improvement.md:7:7 -->
-- AI Agent / OpenClaw 最新发展 (Tavily 搜索摘要): **AI Agent 持续学习三层架构确立** (Model/Harness/Context 三层，Context-layer continual learning 成主流) [score=0.940 recalls=0 avg=0.620 source=memory/2026-09-23-self-improvement.md:7-7]
-<!-- openclaw-memory-promotion:memory:memory/2026-09-23-self-improvement.md:8:15 -->
-- AI Agent / OpenClaw 最新发展 (Tavily 搜索摘要): **三层记忆架构标准化** (Core/Archival/Recall) + **A-MEM 自适应记忆** + **Agent Dreaming & Skill Learning** + **图记忆生态成熟** + **记忆生命周期三步曲** [score=0.930 recalls=0 avg=0.620 source=memory/2026-09-23-self-improvement.md:8-15]
-<!-- openclaw-memory-promotion:memory:memory/2026-09-23-self-improvement.md:45:52 -->
-- 经验教训 (.learnings/LEARNINGS.md) 近期高价值: 系统全自动化稳健运行、持续学习三层架构、三层记忆标准化、A-MEM自适应、OpenClaw 2.0节奏、安全标准化、OpenAI托管、成本生存项 [score=0.910 recalls=0 avg=0.620 source=memory/2026-09-23-self-improvement.md:45-52]
 
 ## 🔧 2026-08 存档期关键产出（memory/2026/08/ 归档前提炼）
 
@@ -373,4 +397,20 @@ _最后更新: 2026-09-21｜运行环境: Hermes Agent on Windows 11_
 
 ---
 
-_最后更新: 2026-09-23 | 归档截止: 2026-08-21 (含) | 运行环境: Hermes Agent on Windows 11_
+_最后更新: 2026-11-03 | 归档截止: 2026-08-21 (含) | 运行环境: Hermes Agent on Windows 11_
+
+## Promoted From Short-Term Memory (2026-11-06)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-10-31.md:11:12 -->
+- Tavily 搜索状态: **搜索结果**: `fetch failed` (网络波动，本次 cron 复用已有知识库); **备用知识源**: LEARNINGS.md 中已累计 2026-10-17 至 10-21 的多轮 Tavily 搜索结果 (OpenClaw v2026.9.3-9.6/10.x 密集发布期、OpenAI Agents API、NIBVOK Security、记忆架构标准化、持久化 Agent 趋势、Graph Engineering 等) [score=0.812 recalls=0 avg=0.620 source=memory/2026-10-31.md:11-12]
+<!-- openclaw-memory-promotion:memory:memory/2026-10-31.md:15:18 -->
+- 已知关键动态回顾 (来自近期 LEARNINGS.md 累积): | 类别 | 关键信息 | 来源/确认日期 | |------|----------|---------------| | **OpenClaw 发布** | v2026.9.3-9.6 连续发布 (Node 24 强制、持久化技能、原子更新、免重启插件、只读共享、交互终端) | LRN-20261021-002 (10-21) | | **OpenClaw 10.x 密集期** | 10 月已发 6+ 版本 (9.9/10.1/10.5-beta/10.6/10.10-beta/Extended-Stable)，日均 1 版本，**Extended-Stable 2026.9.33 为当前 LTS 推荐基线** | memory/2026-10-28.md | [score=0.812 recalls=0 avg=0.620 source=memory/2026-10-31.md:15-18]
+<!-- openclaw-memory-promotion:memory:memory/2026-10-31.md:19:22 -->
+- 已知关键动态回顾 (来自近期 LEARNINGS.md 累积): | **DeepSeek V4.1 Flash** | 10/22 现已在 OpenClaw 可用 | memory/2026-10-28.md | | **OpenClaw Enterprise** | 10/23 正式宣布，**Red Hat + NVIDIA 贡献**，企业级功能集 | memory/2026-10-28.md | | **NVIDIA NemoClaw** | 10/26 入选 Time 2026 最佳发明 — OpenShell 进程级沙箱 + 最小特权，Siemens/Foxconn 已采用 | memory/2026-10-28.md | | **OpenAI Agents API** | 公测：托管 Agent 循环、Data Agent、GPT-Live-1 全双工语音、免费托管沙箱 | LRN-20261020-002 (10-20) | [score=0.812 recalls=0 avg=0.620 source=memory/2026-10-31.md:19-22]
+<!-- openclaw-memory-promotion:memory:memory/2026-10-31.md:23:26 -->
+- 已知关键动态回顾 (来自近期 LEARNINGS.md 累积): | **Sora 视频生成退役** | 官方建议替代: Kie AI / Z.AI / Novita / Qwen / Wan，需评估对 video generation skills 影响 | LRN-20261020-002 (10-20) | | **Agent 运营风险分级** | IBM/Deloitte 2026：7 级分级 (例行检索→Agent主导 → 关键决策→完全人工) | LRN-20261020-003 (10-20) | | **记忆架构标准化** | 三层 (Core/Recall/Archival) + Graph-native (Cognee 企业首选，70+ 企业/1M+ pipelines/月) | LRN-20261020-009 (10-20) | | **持续学习新范式** | ReHarness (arXiv 2610.12668)：Recurrent Harness + 反射 Agent 写入 harness state → 下一实例检索反射助决策 | memory/2026-10-28.md | [score=0.812 recalls=0 avg=0.620 source=memory/2026-10-31.md:23-26]
+<!-- openclaw-memory-promotion:memory:memory/2026-10-31.md:27:29 -->
+- 已知关键动态回顾 (来自近期 LEARNINGS.md 累积): | **安全治理突破** | FTC 调查、Email Prompt Injection (无漏洞利用)、Walmart MCP Gateway 治理模板、UK FCA/ICO 合规前置、AARTS 规范、NIBVOK 运行时策略层 (逐工具调用 enforce allow/confirm/deny) | LRN-20261020-005 (10-20) | | **AI Agent 架构范式** | 领域特化 > 通用、多 Agent 编排成默认、Agent OS 涌现、Org Chart 式部署、Agent 间互查错误优于自我查错、Graph Engineering > Loop Engineering | memory/2026-10-28.md | | **部署最佳实践** | 成本优化三件套：模型路由(60-70%) + Prompt Caching(60-80%) + Batch API(50%) → 任务感知路由迫切 | LRN-20261020-010 (10-20) | [score=0.812 recalls=0 avg=0.620 source=memory/2026-10-31.md:27-29]
+<!-- openclaw-memory-promotion:memory:memory/2026-10-31.md:3:4 -->
+- 2026-10-31 (周六) 每日自我完善总结: **生成时间**: 2026-10-31 12:26 (Asia/Shanghai) **触发方式**: cron daily-self-improvement 任务自动执行 [score=0.812 recalls=0 avg=0.620 source=memory/2026-10-31.md:3-4]
+

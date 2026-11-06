@@ -1,5 +1,5 @@
 ---
-tags: [absorbed, research-tool, workflow]
+tags: [absorbed, research-tools, workflow]
 source: 吃太饱骑士 · 攻玉 (jadense.com)
 status: absorbed
 date: 2026-07-27

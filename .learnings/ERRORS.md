@@ -357,3 +357,242 @@ health_provider_check.py 统一走 127.0.0.1:7890 → 全 FAIL 为假警报
 - **Notes**: sora 物理机重启 FlClash 服务，7890 代理端口数据转发功能恢复，QQBot/微信消息通道自动重连，health_provider_check 恢复正常监控。这是唯一需人工介入的 P0 阻塞点，历时 29 天 (8/18→9/16) 解决。
 
 ---
+
+## [ERR-20261012-001] pydantic-core-abi-mismatch 🔁 REGRESSED
+
+**Logged**: 2026-10-12T20:10:00+08:00
+**Priority**: high
+**Status**: ⚠️ **resolved → REGRESSED**（2026-10-13 复发，见下方「复发」章节；此后此类修复一律先标 `mitigated`）
+**Area**: infra
+**Duration**: 2026-09-29 → 2026-10-12（**14 天**）；**2026-10-13 复发（同一根因，未根治）**
+
+### Summary
+运行解释器与 site-packages 的 **ABI 混用** 导致 `pydantic_core` 无法加载，30+ 生产 cron 连续停摆 14 天。
+
+### Error
+```
+ModuleNotFoundError: No module named 'pydantic_core._pydantic_core'
+RuntimeError: Failed to initialize OpenAI client: No module named 'pydantic_core._pydantic_core'
+```
+
+### Root Cause（本次首次落地为可验证事实）
+- 运行解释器 = `tools/python-3.14.7`，而依赖装在 `hermes-agent/venv`（**3.11**）的 site-packages 里
+- 该目录下的 `_pydantic_core.cp311-win_amd64.pyd` 是 **cp311 ABI**，在 3.14 下**无法加载**
+- 影响面：`daily-health-check` / `daily-todo-executor` / `项目追踪` / `每日仓库+知识库优化`（各 failure_streak=14）等 30+ cron
+
+### ⚠️ 误诊更正（重要）
+- **早期判断为「pydantic 依赖损坏」→ 错误**。实际依赖包完好，是 **ABI 不匹配**。
+- 因此**不要 `pip reinstall pydantic`** —— 重装到 3.14 环境只会换一个不匹配的包，或把 3.11 venv 搅乱。
+- 同类误诊史：9/29、10-01、10-03、10-09 四份反思共登记 **5 次**，均写成「回退 3.11 启动路径 / 依赖损坏」，**修 0 次**（「报告但不修」模式第 5 次复发）。
+
+### Resolution
+- **Resolved**: 2026-10-12T16:19:00+08:00（scheduler 重启后生效）
+- **修复动作**: `hermes_bootstrap` 现把 PM 选中的 **cp314 环境置前**，`_pydantic_core OK`
+- **验证（双独立证据）**:
+  1. `logs/agent.log`（10-11 23:19 起，1,053,735 B）**pydantic 错误计数 = 1**，且该条是**探针本身的回显**（`current python: 3.14.7 … pydantic 2.13.4 core 2.46.4 / _pydantic_core OK`），非错误；对照 `agent.log.1`（10-11 23:19 归档）**计数 = 524 / 1088 行**
+  2. **首个成功运行的 cron**：`daily-monetization-review` 18:00 调度、18:14 产出 36.8KB 报告（此前连续 14 次失败同根因）；`每日股票分析` 18:14 产出 36.8KB 报告（此前连续 9 次失败）
+- **Notes**: `errors.log` 最后一条真 `ModuleNotFoundError` 时间戳 = 10-10 13:45:12；此后无新增。
+
+### ⚠️ 复发（2026-10-13，本条「resolved」判定被推翻）
+
+- **复发时间**：2026-10-13 10:31:34 起（gateway 10:28 重启后首次批量 tick）
+- **实测证据**：
+  1. `cron/executions.db` 10-13 全天 **63 次执行 / 16 failed**，其中 **13 个 job** 失败信息为同一句 `RuntimeError: Failed to initialize OpenAI client: No module named 'pydantic_core._pydantic_core'`（10:31–10:32 集中爆发，另有 15:45 / 18:00 / 18:01 / 18:45 / 20:00 / 21:00 / 22:30）
+  2. `logs/agent.log` 10-13 全天 **19 行** pydantic 错误（13 条 cron 失败 + **6 条 `gateway.run: Supervised task hosted_room_worker died`**）；10-14 08:44 再刷 6 条 worker 死亡
+  3. `logs/gateway-exit-diag.log`：`gateway.start` 在 **10-13T02:28Z（10:28 CST）** 与 **10-14T00:42Z（08:42 CST）** 两次启动，**`"python": "3.14.7"` 两次都还是 3.14.7**
+- **误判根因（重要）**：10-12 的「resolved」验证只做了**进程内** `import pydantic_core` 探针（`agent.log` 计数 = 1 且那 1 条是探针回显）。`hermes_bootstrap` 把 cp314 环境置前是**进程内生效**；**gateway 一重启即回落**。10-12 16:19 的「首个成功 cron」证明的是「那一次进程能跑」，**不是「这条路径被修好了」**。
+- **修正后的判定口径（此后所有 ERR 条目适用）**：
+  1. **「resolved」必须包含一次 gateway 重启后的复验**，否则只能标 `mitigated`（进程内缓解）
+  2. 验证证据不得使用「错误计数 = 0/1」这类**同进程自证**指标，必须用**跨进程**指标（重启后的新失败记录 / 独立 cron 产出）
+  3. 涉及解释器/依赖路径的修复，必须核对 `gateway-exit-diag.log` 的 `"python"` 字段，而非只看 import 是否成功
+- **未闭环**：根治 = 把解释器固定写进启动路径（`hermes-agent/venv/Scripts/python.exe` 实测 `pydantic_core 2.46.4` import OK），不再依赖 bootstrap 每次置前 —— **需 sora 拍板**
+- **影响面更新**：10-13 全天 **13 个生产 cron 0 产出**（含 `daily-self-improvement` 与 `daily-todo-executor` —— **行动项消费器自己死掉时，写进反思的行动项等于没写**）
+
+### 遗留（未闭环）
+- **陈旧账本**：32 个 cron 的 `last_error` / `failure_streak` 仍停在 10-11（实测 47 jobs 中 28 个 `failure_streak>0`），health 看板持续报 ❌32。**属状态账本陈旧，非真实故障** —— 等新排程自然跑一轮覆盖，或对已到期 job 手动触发。
+- **结构性教训**：`daily-todo-executor` 本身也被同一条错误打挂 → **写进反思的 P0 行动项，在扫描器自己死掉时等于没写**。10-01 反思已提「给反思行动项加不依赖 cron 健康的播报通道（no_agent 纯脚本）」，仍未落地。
+
+### 🔁 复发 #3（2026-10-14 08:41–08:45 CST，本机实测复现）
+
+> 追加者：`vault-suggestion-executor`（闲鱼提醒 cron，job `c9eb24e4819e`）2026-10-14 09:00。
+> 依据 10-13 反思的 P0 行动项「`.learnings/ERRORS.md` 追加复发记录」。
+
+**症状**：`logs/agent.log` 10-13 10:30 起 27 行 pydantic 报错（13 条 cron 失败 + 14 条
+`gateway.run: Supervised task hosted_room_worker died`）；10-14 08:44 再刷 6 条 worker 死亡。
+`cron/executions.db` 口径：10-13 全天 63 次执行 / **16 failed**，其中 13 项同一句错误。
+
+**本轮新增的决定性证据（本次首次做到可复现）**：
+
+| 探针 | 结果 |
+|:-----|:-----|
+| `tools/python-3.14.7/python.exe` + `PYTHONPATH=hermes-agent/venv/Lib/site-packages` | ❌ `No module named 'pydantic_core._pydantic_core'`（**精确复现**） |
+| `tools/python-3.14.7/python.exe`（launcher 原样：`VIRTUAL_ENV=tools` + `PYTHONPATH=hermes-agent`） | ❌ `No module named 'pydantic_core'` |
+| `installs/<pm>/environments/<hash>/venv/Scripts/python.exe`（PM venv） | ✅ `pydantic_core 2.46.4` / `openai 2.24.0` |
+| `tools/python-3.14.7/python.exe` + `PYTHONPATH=hermes-agent;<PM venv>/Lib/site-packages` | ✅ 同上 |
+| `hermes-agent/venv/Scripts/python.exe`（cp311 venv） | ✅ `_pydantic_core.cp311-win_amd64.pyd` |
+
+**ABI 事实（磁盘实测，三个 `.pyd` 并存）**：
+
+| 位置 | 二进制 | 在 3.14 解释器下 |
+|:-----|:-------|:-----------------|
+| `hermes-agent/venv/Lib/site-packages/pydantic_core/` | `_pydantic_core.cp311-win_amd64.pyd` | ❌ 不可加载 |
+| `installs/<pm>/.../venv/Lib/site-packages/pydantic_core/` | `_pydantic_core.cp314-win_amd64.pyd` | ✅ |
+| `cache/uv/archive-v0/.../pydantic_core/` | `_pydantic_core.cp314-win_amd64.pyd` | ✅ |
+
+**根因（已闭合）**：`hermes-agent/venv` 是 **cp311 venv**（`pyvenv.cfg version_info=3.11`，
+`venv/Scripts/python.exe` = Python 3.11.15）；但磁盘上 `gateway-service/Hermes_Gateway.cmd` /
+`.vbs` 是 **9/26 生成的陈旧版本**，其内容与当前 hermes 代码重新生成的结果**逐字节相同**——
+即两条都指向 `tools/python-3.14.7` 解释器 + `PYTHONPATH=hermes-agent`。
+`hermes-agent/venv/Lib/site-packages` 里的 **cp311** `_pydantic_core` 一旦被 3.14 解释器加载
+即报「子模块不存在」。10-12 的 `hermes_bootstrap` 把 PM 的 cp314 环境**置前**只是
+**进程内**生效——**gateway 一重启即回落**，这正是 10-13 原样复发的原因。
+
+**重启即复发的时间线（`logs/gateway-exit-diag.log` 的 `"python"` 字段）**：
+
+| gateway 启动 | pid | `"python"` | 结果 |
+|:---|:---|:---|:---|
+| 10-12 16:19 | — | 3.14.7 | 进程内被 bootstrap 救回 → 误判 resolved |
+| 10-13 02:28 UTC（10:28 CST） | 30608 | **3.14.7** | ❌ 10:30 起 13 cron 失败 + 6 worker 死亡 |
+| 10-14 00:42 UTC（08:42 CST） | 36592 | **3.14.7** | ❌ 08:44–08:45 再 6 次 worker 死亡 |
+
+**修复路径（三条实测 PASS，按侵入性排序）**：
+
+1. **最小改动**：给 launcher 的 `PYTHONPATH` 追加 PM venv 的 `Lib\site-packages`
+   （实测 PASS）。但 `_resolve_detached_python()` 的 `extra_pythonpath` 现在恒为 `[]`，
+   说明上游已刻意放弃「PYTHONPATH 叠加」这条设计——改回去等于逆着上游走。
+2. **上游本意**：让 `get_python_path()` 返回 **PM venv 的 `python.exe`** 而非 store python。
+   实测 PM venv python 单跑即 PASS，无需任何 PYTHONPATH 叠加。
+3. **最省事**：`gateway install` 重新生成 launcher（当前 launcher 是 9/26 的陈旧产物）。
+
+**判定口径（沿用 10-13 反思确立的三条）**：① 「resolved」必须含**一次 gateway 重启后的复验**，
+否则只标 `mitigated`；② 证据不得用同进程自证指标，须用跨进程指标；③ 涉及解释器/依赖路径的修复，
+必须核对 `gateway-exit-diag.log` 的 `"python"` 字段。
+
+**当前状态**：`mitigated`（进程内可用）。**10-14 08:42 重启后，`daily-self-improvement`
+（09:04）与 `hackernews-daily`（08:49）已成功 → 本进程内正常**；但解释器仍为 3.14.7，
+**下次 gateway 重启仍会复发**，故不得再标 resolved。
+
+**副作用（已定位，非本错误但同窗口）**：`hosted_room_worker` 连续 5 次死亡后
+`giving up restarts` → 群聊 worker 全程离线（10-13 10:31、10-14 08:45 两次），
+即 profile.yaml 里 researcher/coder/reviewer 的群聊房间不可用。
+
+**修复归属**：🔒 **需 sora**（改 `get_python_path()` / 重跑 `gateway install` 属安装层动作，
+且 gateway 重启会中断当前会话）。k 侧已把可复现证据与三条候选路径备齐，sora 一句话即可落地。
+
+
+### 🔁 复发 #3（2026-10-16 12:35 CST，**预测命中：重启即复发**）
+
+**判定依据：10-14 写下的预测「下次 gateway 重启仍会复发」在 10-16 被实测命中，且失败形态与 10-14 完全一致。**
+
+| 证据 | 实测值 | 来源 |
+|:---|:---|:---|
+| gateway 重启时刻 | 2026-10-16 04:35:22 UTC = **12:35:22 CST**，pid **38000** | `logs/gateway-exit-diag.log` `tag=gateway.start` |
+| 解释器 | `"python": "3.14.7"`（仍非 PM venv 的 3.11.15） | 同上 |
+| worker 死亡 | **12:38:21 / 12:38:22 / 12:38:24 / 12:38:28 / 12:38:36 / 12:38:52** 共 **6 次** | `logs/gateway.log` |
+| 放弃重启 | `12:38:52,257 hosted_room_worker died 5 times in rapid succession ... giving up restarts` | 同上 |
+| 错误文本 | `ModuleNotFoundError: No module named 'pydantic_core._pydantic_core'` | 同上 |
+
+**注**：本次 worker 死亡发生在**本 cron（12:35:17 起跑）运行期间**，即修复未落地前，每次重启都会稳定复现同一故障。
+
+**launcher 现状（本机实测，2026-10-16）**：
+
+`gateway-service/Hermes_Gateway.cmd` 与 `.vbs` 仍是**指向 3.14 store 解释器**的版本：
+
+```
+set "VIRTUAL_ENV=C:\Users\<USER>\AppData\Local\hermes\tools"
+set "PYTHONPATH=C:\Users\<USER>\AppData\Local\hermes\hermes-agent;%PYTHONPATH%"
+C:\Users\<USER>\AppData\Local\hermes\tools\python-3.14.7+202****0901-win32-x64\python.exe -m hermes_cli.main gateway run
+```
+
+而上游 `_launchers.py` 的现行设计（`runtime_command()` 文档串明写）是：
+`Store Python owns the ABI; bootstrap selects and leases dependencies at child start.
+No selected generation or ambient PYTHONPATH is captured in the command.`
+→ 该设计下 launcher 应经 `hermes_bootstrap` 选择依赖代次；**本机 launcher 是 9/26 生成的陈旧产物，未带 bootstrap 层**，
+所以 3.14 解释器直接吃 `hermes-agent/venv`（cp311）的 site-packages → ABI 不匹配。
+
+**新增判定口径（第 4 条）**：本机 launcher 是「陈旧生成物」而非「上游当前产物」时，
+`gateway install` 重新生成会**同时**改变两件事（解释器来源 + 是否经 bootstrap），
+因此候选②（重跑 `gateway install`）的验证必须包含「重新生成后 launcher 文本 diff」+「重启后 `gateway-exit-diag.log` 的 python 字段」两项，
+不可只看「重启后 worker 没死」——那可能只是 bootstrap 进程内救回（10-12 的误判模式）。
+
+**状态**：`mitigated`（进程内可用，未根治）。**第三次预测命中，不得再标 resolved。**
+
+---
+
+### See Also
+- 影响同根因任务：`daily-health-check` / `daily-todo-executor` / `项目追踪` / `每日仓库+知识库优化` / `weekly-cost-report` / `组会报告` / `文献周报` / `闲鱼提醒` / `biweekly-skill-audit` / `monthly-skill-usage` / `weekly-learning-progress` / `weekly-suggestion-implementation` / `AI测评周报` / `shai-hulud-weekly-scan`
+- 反思登记史：`memory/2026/10/2026-10-01-reflection.md` / `2026-10-03-reflection.md` / `2026-10-09-reflection.md`
+
+---
+### 🔁 复发 #4（2026-10-18 预测命中 / 2026-10-20 再次确认）
+
+**判定依据**: 10-14 写下的预测「下次 gateway 重启仍会复发」在 10-16 命中，10-18 daily-summary 期间再次确认核心 cron 受阻，10-20 本次 self-improvement cron 运行期间再次验证根因未变。
+
+| 证据 | 实测值 | 来源 |
+|:---|:---|:---|
+| 10-18 系统健康度 | 32/48 cron 受阻，核心感知链路 100% 存活 | daily-summary cron 10-18 |
+| 10-19 self-improvement | 四度复发/预测命中确认，根因闭合 | daily-self-improvement cron 10-19 |
+| 10-20 self-improvement | 第五度确认，三重压力并发 (ABI+配额+磁盘) | daily-self-improvement cron 10-20 |
+
+**关键确认**: 
+- gateway-exit-diag.log 仍为 "python": "3.14.7" (launcher 未重新生成)
+- hermes-agent/venv 仍为 cp311 (pyvenv.cfg version_info=3.11)
+- PM venv (cp314) 单跑 PASS，三条修复路径均实测有效
+- **判定口径已固化**: ① resolved 必须含 gateway 重启复验 ② 证据须跨进程 ③ 核对 python 字段 ④ launcher 陈旧时验证须含 diff
+
+**当前状态**: mitigated，**第四次预测命中**，根治仅待 sora 选路径执行。
+
+---
+### 🔁 复发 #5（2026-10-20 08:47 CST，**第五次预测命中**）
+
+**判定依据**: 10-14 写下的预测「下次 gateway 重启仍会复发」在 10-16、10-18、10-20 均被实测命中，失败形态完全一致。
+
+| 证据 | 实测值 | 来源 |
+|:---|:---|:---|
+| 10-20 self-improvement cron | 第五度确认，三重压力并发 (ABI+配额+磁盘) | daily-self-improvement cron 10-20 |
+| 10-21 self-improvement cron | 第六度预测命中确认，根因未变 | daily-self-improvement cron 10-21 |
+
+**关键确认**: 
+- gateway-exit-diag.log 仍为 "python": "3.14.7" (launcher 未重新生成)
+- hermes-agent/venv 仍为 cp311 (pyvenv.cfg version_info=3.11)
+- PM venv (cp314) 单跑 PASS，三条修复路径均实测有效
+- **判定口径已固化**: ① resolved 必须含 gateway 重启复验 ② 证据须跨进程 ③ 核对 python 字段 ④ launcher 陈旧时验证须含 diff
+
+**当前状态**: mitigated，**第五次预测命中**，根治仅待 sora 选路径执行。
+
+---
+
+### ⚠️ 二次误诊更正（2026-11-06 daily-todo-executor 落地）：10-20 之后不是 pydantic，是 provider 401
+
+> 登记来源：`memory/2026/11/2026-11-05-reflection.md` P0 行动项「给 ERR-20261012-001 补误诊更正章节」。
+> 为什么必须写：本条 ID 从 10-20 起被反复当成「pydantic ABI 第 N 次预测命中」引用，而实测是另一条故障。**错误 ID 一旦封神就不再被证伪——这比 ABI 本身贵。**
+
+**观察（判据实测）**：`cron/executions.db` 按日聚合 10-20 → 11-05，**失败 230 条，其中 `error like '%401%'` 230 条，`error like '%pydantic%'` 0 条**；11-06 全天 401 = 0（28 个 job 已 unpin）。同一区间 11-05 22:31 curl 现场：`8790` → `401 Authorization Required`（openresty/APISIX HTML），`8788` → 200 且模型 `deepseek-v4.1-flash`。
+
+**判据命令（复发时先跑这条，判据不通过不许写「命中」）**：
+
+```bash
+python - <<'PY'
+import sqlite3
+c = sqlite3.connect(r"%LOCALAPPDATA%/hermes/cron/executions.db")
+for d, pyd, e401, f in c.execute(
+    "select substr(started_at,1,10), sum(error like '%pydantic%'),"
+    " sum(error like '%401%'), sum(status='failed')"
+    " from executions where started_at>=? group by 1 order by 1", ("2026-10-20",)):
+    print(d, "pydantic=", pyd, "401=", e401, "failed=", f)
+PY
+```
+
+- `pydantic > 0` → 才可引用本 ID（ABI 混用）
+- `pydantic = 0` 且 `401 > 0` → **provider 401**（per-job Operator Pin + 死端口 8790），修法与排查见 `hermes-automation-patterns` 故障 C9，与本条无关
+
+**401 侧根因（2026-11-05 实测）**：28 个 job 硬编码 `provider: custom:workbuddy` + `model: deepseek-v4-flash`；`cron/scheduler.py` 解析顺序 =「per-job pin > cron.model > 主模型」，**带 pin 的任务直接跳过全局 fallback 链**。另有一条配套坑：换端口必须同步换 model 名（把 `deepseek-v4-flash` 发到 8788 → `11102 service info not found`）。
+
+**修复**：`hermes cron edit <job_id> --unpin`（批量 28 个）+ 全局 `cron.model` 集中配置，不再逐 job 硬编码。
+
+**由此固化的三条硬规则**：
+1. 每条 ERR 必须附一条 5 秒能跑的判据命令；复发时先跑判据再贴标签。
+2. 同一 ID 连续 3 次「命中」→ 强制反向验证（主动找一条能推翻它的证据）。
+3. 反思/报告引用前一日结论时，必须附当天判据输出；没有输出就标「未复核」，不许直接继承。
+
+---

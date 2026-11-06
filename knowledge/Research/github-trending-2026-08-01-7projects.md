@@ -1,5 +1,5 @@
 ---
-tags: [research, github, trending, ai-agent, gateway]
+tags: [research, github, github-trending, ai-agent, gateway]
 created: 2026-08-01
 status: absorbed
 ---

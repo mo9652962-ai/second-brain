@@ -5,7 +5,7 @@ domain: Security
 type: moc
 status: active
 created: 2026-08-16
-updated: 2026-08-31
+updated: 2026-11-01
 ---
 
 # 🛡️ 网络安全 MOC — Security Map
@@ -128,6 +128,27 @@ updated: 2026-08-31
 - [[knowledge/Security/手机木马RAT攻防-2026-08-22|手机木马 RAT 攻防全景]] — 防御视角
 - [[knowledge/Security/墨题安全自审-2026-08-22|墨题安全自审报告]] — 4 洞修复
 - [[knowledge/Security/墨题防破解自查-2026-08-22|墨题防破解自查]] — 加固清单
+
+## 🆕 2026-10 逆向工程与二进制分析实证（13 篇重磅突破）
+
+> 聚焦现代逆向工具链（REA + Ghidra + GoReSym + DIE/FLOSS）、多语言（Go / Rust / C++ / .NET）二进制符号与类层次还原。
+
+### 🛠️ REA 框架与全栈环境
+- [[knowledge/Security/rea-full-stack-reverse-engineering-2026-10-24|REA 全功能逆向工程环境实战部署指南]] — Windows 完备版实战部署
+- [[knowledge/Security/rea-ghidra-deployment-guide-2026-10-23|REA + Ghidra 逆向环境部署与实战指南]] — Ghidra 与 REA 联动闭环
+- [[knowledge/Security/rea-mcp-reverse-engineering-audit-2026-10-23|REA 实证审计 (rea-agents 6.7.0)]] — 证据契约层与真实工具能力审计
+- [[knowledge/Security/rea-toolchain-enhancement-2026-10-24|REA 工具链增强实录]] — 解决配置探测与工作区隔离问题
+- [[knowledge/Security/rea-wsl2-dotnet-expansion-2026-10-24|REA 双通道拓展：WSL2 可写逆向 + .NET 反编译链路]] — 跨环境扩展
+- [[knowledge/Security/reverse-toolchain-v3-2026-10-24|逆向工具链增强 v3]] — 工具链全栈升级
+
+### 🔬 现代语言与符号结构深度还原
+- [[knowledge/Security/go-reverse-srcline-goresym-2026-10-25|Go 逆向能力升级：从「函数名」到「源码行号」]] — GoReSym 实战
+- [[knowledge/Security/go-symbol-backfill-ghidra-2026-10-24|Go 符号回填 Ghidra：从 55 小时到 46 秒]] — 符号解析性能跃升实证
+- [[knowledge/Security/rust-binary-panic-location-recovery-2026-10-26|Rust 二进制逆向分析突破]] — panic location 与依赖树全面还原
+- [[knowledge/Security/cpp-rtti-vftable-reverse-engineering-2026-10-26|C++ RTTI 逆向与类层次重构]] — 虚函数表与类内存布局自动化还原
+- [[knowledge/Security/pdb-symbol-chain-breakthrough-2026-10-26|PDB 符号链路打通]] — 调试符号链真根因定位
+- [[knowledge/Security/die-floss-binary-triage-pipeline-2026-10-26|二进制自动化分诊与混淆字符串解密]] — DIE + FLOSS 静态解密全景
+- [[knowledge/Security/ilspycmd-dotnet8-breakthrough-2026-10-24|ilspycmd 8.2 在 .NET 8 上跑通]] — 跨版本依赖与 CLI 反编译落地
 
 ---
 

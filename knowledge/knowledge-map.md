@@ -6,7 +6,7 @@ domain: META
 aliases: [知识地图, Knowledge Map, 知识网络]
 date: 2026-07-22
 status: adopted
-updated: 2026-09-25
+updated: 2026-10-17
 ---
 
 # 🗺️ 知识地图 — Knowledge Map
@@ -15,7 +15,7 @@ updated: 2026-09-25
 
 > 机器版索引: [[VAULT-MAP|🗺️ VAULT-MAP]]（AI 导航）· 健康看板: [[DASHBOARD|📊 DASHBOARD]] · 新陈代谢: [[METABOLISM|🌿 METABOLISM]]
 
-> 所有知识领域的索引与关联。最后更新: 2026-09-26（W39 GitHub 周榜 5 项入库 + 周报更新）
+> 所有知识领域的索引与关联。最后更新: 2026-11-06（论文样例图表与路线图复盘）
 
 ## 🧭 MOC 总入口（2026-08-16 起，新建 MOC 必须在此挂载）
 
@@ -23,25 +23,25 @@ updated: 2026-09-25
 
 |:---|:---|:---|
 
-| 🔬 Research（域） | [[MOC-Research]] | 220 篇 |
+| 🔬 Research（域） | [[MOC-Research]] | 224 篇 |
 
 | 🐙 GitHub 研究（主题切片） | [[MOC-GitHub]] | 58 篇 |
 
-| 🛡️ 网络安全（主题切片） | [[MOC-Security]] | 53 篇 |
+| 🛡️ 网络安全（主题切片） | [[MOC-Security]] | 52 篇 |
 
-| 💻 Dev（域） | [[MOC-Dev]] | 137 篇 |
+| 💻 Dev（域） | [[MOC-Dev]] | 138 篇 |
 
-| 🔧 Hardware（域） | [[MOC-Hardware]] | 21 篇 |
+| 🔧 Hardware（域） | [[MOC-Hardware]] | 20 篇 |
 
-| 🏠 Productivity（域） | [[MOC-Productivity]] | 52 篇 |
+| 🏠 Productivity（域） | [[MOC-Productivity]] | 57 篇 |
 
 | 🧭 入口治理 | [[MOC-Inbox]] | 53 篇待接入笔记 |
 
 | 🔁 重复审阅 | [[MOC-Duplicate-Review]] | 0 组逐字重复；相似标题按时间/用途保留 |
 
 | 📈 Finance（域） | [[MOC-Finance]] | 16 篇 |
-| 🃏 知识卡片 | [[knowledge/cards/MOC-cards|MOC-cards]] | 35 篇 |
-| 📅 每日产出 | [[knowledge/Daily/MOC-Daily|MOC-Daily]] | 32 篇 |
+| 🃏 知识卡片 | [[knowledge/cards/MOC-cards|MOC-cards]] | 42 篇 |
+| 📅 每日产出 | [[knowledge/Daily/MOC-Daily|MOC-Daily]] | 42 篇 |
 | 🤖 AI 研究与生态 | [[knowledge/AI/MOC-AI|MOC-AI]] | 18 篇 |
 | 📋 标准操作流程 | [[knowledge/SOP/MOC-SOP|MOC-SOP]] | 9 篇 |
 | 🎓 教育规划 | [[knowledge/Education/MOC-Education|MOC-Education]] | 1 篇 |
@@ -95,6 +95,10 @@ updated: 2026-09-25
 > [[cnki-browser-plugin]] — 攻玉学术·知网浏览器插件 + MIMO PLAN API
 
 > [[researchpilot-skills]] — AI科研全流程7阶段Skill套件
+
+> [[knowledge/Research/2026-10-16-douyin-academic-tools-audit]] — 学术平台主张核验、数据/文献接口边界与本地检索脚本审计
+
+> [[knowledge/Research/2026-10-17-academic-writing-tables-roadmaps|学术图表与路线图样例复盘]] — 表格自明性、学科路线图与 Word 渲染验收
 
 > [[vibe-research]] — AI辅助科研9阶段工具推荐清单
 
@@ -515,6 +519,54 @@ graph TD
 
 ---
 
+## 🆕 W40 新增速览（2026-09-28 ~ 10-04）
+
+> ⚠️ 本周期跨 3 周：09-20 / 09-27 两次周度整理 cron 均因 `pydantic_core` 依赖故障失败，上次成功整理为 **09-13（W38）**。
+> 本周主线：PPT 结尾页版式库成型（研究+生成器+成品五件套）+ 技能供应链安全三连击 + Hermes 稳定性修复 + 系统清理。
+
+### 各域本周新增
+
+| 域 | 新增 | 要点 |
+|:--|:--|:--|
+| Research | [[knowledge/Research/arxiv-2026-10-02-agent-llm|arXiv 10-02 速览]] | 三日窗口 09-30~10-02，34 主 + 4 简评；Agent 技能供应链与信任为主轴 |
+| Research | [[knowledge/Research/arxiv-2026-09-29-agent-llm|arXiv 09-29 速览]] | 双日窗口 09-28~09-29，18 主 + 16 简评 |
+| cards | [[knowledge/cards/2026-10-02-skill-supply-chain|技能供应链三连击]] | TrustProbe 25.1% 危险路径 / APEX 链式 84.3% / pretext-actuation 解耦 |
+| cards | [[knowledge/cards/2026-09-29-jeff-local-decision-models|Jeff 0.8B 本地决策模型]] | 端侧 0.8B 一次前向给概率，22ms 出判断 |
+| Productivity | [[knowledge/Productivity/PPT结尾页八种版式-搜索引擎研究-2026-10-02|PPT 结尾页 8 种版式]] | 结尾页是记忆价值最高一页；8 版式 + 5 工程踩坑 + 可运行生成器 |
+| Productivity | [[knowledge/Productivity/hermes-stability-fix-20260928|Hermes 稳定性修复 09-28]] | Electron 渲染崩溃定位 + 4 处配置层故障修复 |
+| Productivity | [[knowledge/Productivity/system-cleanup-report-20260928|系统清理 09-28]] | 释放约 13.4 GB（C 盘 86% → 83%） |
+| Daily | HN 速览 ×3 | 09-29 / 10-02 / 10-04 |
+
+### 本周关键研究主题
+
+1. **技能供应链安全成为连续主线** — 10-02 三篇独立论文（静态路径 / 链式放大 / 审计盲区）证明 agent 技能供应链几乎无人审计，与 09-19 ZCode 静默上传、09-15 RubyGems AI bots 攻击连成知识簇
+2. **PPT 结尾页从「谢谢观看」到 8 版式体系** — 研究 → 版式对照表 → 可运行生成器 → .pptx 成品 → 渲染脚本，完整资产链可反哺闲鱼 PPT 接单
+3. **cron 基础设施不稳定压制知识产出密度** — daily-health-check 7 连败 + arxiv-fetch/biweekly-skill-audit 同类 pydantic_core 故障，arXiv 速览仅 2 期（上周 5+ 期）
+
+---
+
+## 🆕 W41 新增速览（2026-10-05 ~ 10-11）
+
+> 本周主线：“技能生命周期三环”收官（装的时候 → 执行的时候 → 共存的时候）。arXiv 10-10 全新窗口（34 主 + 48 简评）落地了第三环卡片；本周日志密度低（仅 HN ×2 + 卡片 ×1），主要是 cron 基础设施修复后的恢复期。
+
+### 各域本周新增
+
+| 域 | 新增 | 要点 |
+|:--|:--|:--|
+| Research | [[knowledge/Research/arxiv-2026-10-10-agent-llm|arXiv 10-10 速览]] | 10-05~10-09 全新窗口，34 主 + 48 简评；共装技能冲突 + 技能演化配方为主轴 |
+| Research | [[knowledge/Research/GitHub-Weekly-2026-10-11|W41 GitHub 宝藏挖掘]] | 脚本口径 Top5：codebase-memory-mcp 46.3k / nanobot 48.9k / code-review-graph 32.0k 全连榜；新增 12 项入 csv |
+| cards | [[knowledge/cards/2026-10-10-coinstalled-skill-conflict|共装技能冲突]] | 近 1/4 已装技能有同功能共存者，五次运行被抢走一次，99.1% 不点名实际技能；本地 459 个 SKILL.md 当场扫描 |
+| Daily | HN 速览 ×2 | [[knowledge/Daily/hackernews-2026-10-08|10-08]] · [[knowledge/Daily/hackernews-2026-10-10|10-10]] |
+| META | [[PRIVACY|PRIVACY 隔离声明]] | 双轨物理隔离 + 零遥测声明（对外可引用） |
+
+### 本周关键研究主题
+
+1. **技能生命周期三环闭环** — 10-02（装的时候：供应链 25.1% 危险路径）→ 10-04（执行的时候：批准的动作 ≠ 执行的动作）→ 10-10（共存的时候：技能抢跑且不报名）。三张卡片已互链为一个知识簇。
+2. **“全都要”原则的边界修正** — sora 的配置偏好是冗余容灾；在**模型侧**是安全网，在**技能侧**却是冲突源（同名双份：ai-image-generation / manim-video）。
+3. **cron 基础设施恢复** — W40 报告的 pydantic_core 故障已不再出现在本周日志；arXiv/卡片/周报 cron 均正常产出。
+
+---
+
 ## ① 💻 工程与开发
 
 | 领域 | 笔记 | 相关 skill | 掌握程度 |
@@ -929,3 +981,6 @@ MCP 生态: GitHub + Filesystem + JLCPCB(38工具) + Obsidian(笔记操作)
 | cards | [[knowledge/cards/2026-09-19-zcode-silent-upload\|知识卡片 09-19]] | ZCode 静默上传 Git 历史实锤（墨题 126MB 快照 P0） |
 | Finance | [[knowledge/Finance/每日股票分析-2026-09-18\|股票分析 09-18]] | 每日 18:00 cron 自动分析（本周 5 篇） |
 | Daily | [[knowledge/Daily/hackernews-2026-09-19\|HN 09-19]] | hackernews 日报（本周 6 篇） |
+
+
+

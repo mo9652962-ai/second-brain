@@ -1,5 +1,5 @@
 ---
-tags: [research, ai-design, frontend, skill, ui]
+tags: [research, ai-design, frontend, skills, ui]
 type: research
 created: 2026-09-18
 title: 抖音 Kiko 深度研究：5 个让 AI 前端设计质感翻倍的顶级 Skill

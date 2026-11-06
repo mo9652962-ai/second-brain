@@ -4,7 +4,7 @@
 
   **让 AI 拥有一个会自己进化的第二大脑**
   <br>
-  **Obsidian + GitHub + Hermes Agent · 760+ 篇公开知识资产 · 18 域全景拓扑 · 7 大自举系统**
+  **Obsidian + GitHub + Hermes Agent · 820+ 篇公开知识资产 · 18 域全景拓扑 · 7 大自举系统**
 
   <p>
     <a href="https://mo9652962-ai.github.io/second-brain/">✨ 3D 全景沉浸式官网</a>
@@ -30,7 +30,7 @@
   <p>
     <img src="https://img.shields.io/badge/Obsidian-知识库-7C3AED?style=flat-square&logo=obsidian" alt="Obsidian">
     <img src="https://img.shields.io/badge/🤖_AI_直读-llms.txt-brightgreen?style=flat-square" alt="llms.txt">
-    <img src="https://img.shields.io/badge/🌿_常青笔记-333_篇-success?style=flat-square" alt="OKM Evergreen">
+    <img src="https://img.shields.io/badge/🌿_常青笔记-361_篇-success?style=flat-square" alt="OKM Evergreen">
     <img src="https://img.shields.io/badge/🔄_自举进化-Active-green?style=flat-square" alt="自举进化">
     <img src="https://img.shields.io/badge/🏆_七大自举系统-32_项-gold?style=flat-square" alt="七大自举系统">
   </p>
@@ -42,7 +42,7 @@
 </div>
 
 > 🌟 **全新 3D WebGL 宇宙与全景星空官网已上线**：👉 [在线体验 3D 知识图谱宇宙与自举演化剖析](https://mo9652962-ai.github.io/second-brain/)  
-> **核心交互体验**：3D 全景知识拓扑宇宙 · 7 大自举系统演化剖析器 · 18 域 760+ 篇知识体系实时检索 · 24H 自动化流水线雷达 · Web Audio 空间合成音效
+> **核心交互体验**：3D 全景知识拓扑宇宙 · 7 大自举系统演化剖析器 · 18 域 820+ 篇知识体系实时检索 · 24H 自动化流水线雷达 · Web Audio 空间合成音效
 
 <div align="center">
   <a href="https://mo9652962-ai.github.io/second-brain/">
@@ -94,7 +94,7 @@ graph LR
     D --> E[🔄 自举改进<br/>用新技能改进 Agent 自身]
     E --> F[✨ 进化到下一阶段]
     F -. 持续循环 .-> A
-    E -. 写入 .-> G[(Obsidian 知识库<br/>760+ 篇公开精选 · 18 域 · 26 MOC)]
+    E -. 写入 .-> G[(Obsidian 知识库<br/>820+ 篇公开精选 · 18 域 · 26 MOC)]
     G -. 反哺上下文 .-> A
 ```
 
@@ -122,8 +122,8 @@ graph LR
 
 借鉴 Karpathy 的 **LLM Wiki** 范式与 GitHub 高星第二大脑架构，知识库不是只增不减（Append-only）的死仓库，而是一套具有自我生长、演进与淘汰能力的活体知识系统：
 
-- **🌲 常青笔记 (Evergreen, 333 篇 / 47.6%)**：结构完备、双向链接闭环、实战沉淀的高信号资产。
-- **🌿 成长笔记 (Budding, 360 篇 / 51.4%)**：包含基本推演与领域上下文，处于持续求证与拓展中的进阶笔记。
+- **🌲 常青笔记 (Evergreen, 361 篇 / 47.7%)**：结构完备、双向链接闭环、实战沉淀的高信号资产。
+- **🌿 成长笔记 (Budding, 389 篇 / 51.4%)**：包含基本推演与领域上下文，处于持续求证与拓展中的进阶笔记。
 - **🌱 萌芽速记 (Seed)**：捕获的原始事实、想法或灵感种子，定期被消化蒸馏。
 - **📦 降级标记 (Superseded)**：支持 `superseded_by: [[新笔记]]` 标记过时结论，抗击认知熵增。
 - 👉 查看完整治理看板：[knowledge/METABOLISM.md](knowledge/METABOLISM.md)
@@ -316,9 +316,9 @@ graph LR
 ## 📊 仓库统计
 
 ```
-📁 仓库体积：约 19.8MB 跟踪文件 / 901 个文件（Git 包约 130MB）
-📝 公开 Markdown 资产：765 篇（含 29 篇自建技能文档 · 676 篇 knowledge/ 知识域笔记）
-🧠 自建 Skill 体系：29 个文档（覆盖 11 个领域目录）
+📁 仓库体积：约 29MB 跟踪文件 / 969 个文件（Git 包约 220MB）
+📝 公开 Markdown 资产：824 篇（含 29 篇自建技能文档 · 733 篇 knowledge/ 知识域笔记）
+🧠 自建 Skill 体系：29 个文档（覆盖 37 个领域目录）
 🗂️ 知识域：18 域全景拓扑 · 26 个 MOC 锚点
 ⏰ 首次提交：2026 年 7 月
 🔄 平均更新频率：每 2 小时自动同步
@@ -375,5 +375,30 @@ MIT License - 随便用，如果你觉得有用，可以给个 ⭐ Star
 <div align="center">
 
 **用知识武装大脑，用自举加速进化 🚀**
+
+</div>
+
+---
+
+## 🧬 产出与衍生
+
+本库不只是笔记——它是产出物的根。由本库的方法论与千轮研究直接孵化：
+
+- ⚡ [circuit-agent](https://github.com/mo9652962-ai/circuit-agent) — AI 硬件合成与工业电路编译器（CircuitBlocks DSL · 14 个 MCP 工具 · 已上架 MCP Registry）
+- 🏭 [wave-fixture-ai](https://github.com/mo9652962-ai/wave-fixture-ai) — 波峰焊治具 AI 设计助手（21 项自动化 · DXF/STL/CNC G 代码 · 26 项 DRC 门禁 · OpenSSF Scorecard）
+- 📚 [墨题 · 英语刷题机](https://github.com/mo9652962-ai/english-multiple-choice-practice-machine) — 东方水墨 × 3D 认知计算本地英语客观题刷题工作台（FSRS-4.5 算法）
+- 🛡️ [agent-audit](https://github.com/mo9652962-ai/agent-audit) — AI Agent 环境安全审计 CLI（OpenSSF passing 徽章 · GitHub Marketplace Action）
+- 📦 [esq-builder-mcp](https://github.com/mo9652962-ai/esq-builder-mcp) — 题库包 MCP 工具链（MCP Registry 已上架 · uvx 一行接入）
+- 🧹 [skill-maintenance-mcp](https://github.com/mo9652962-ai/skill-maintenance-mcp) — 技能库维护 MCP（本库自举系统的工具化）
+
+> 完整矩阵见 [作者主页](https://github.com/mo9652962-ai)。
+
+## ⭐ 关注与支持 (Star History)
+
+如果 Second Brain 的自举知识体系对你的 Agent 架构或个人成长有所启发，欢迎点个 Star 支持项目持续演进！
+
+<div align="center">
+
+[![Star History Chart](https://api.star-history.com/svg?repos=mo9652962-ai/second-brain&type=Date)](https://star-history.com/#mo9652962-ai/second-brain&Date)
 
 </div>

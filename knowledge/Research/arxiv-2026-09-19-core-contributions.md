@@ -5,7 +5,7 @@ source: arxiv-2026-09-19-agent-llm.md (13 主条目 + 5 简评补全速览精选
 selected: EconSkills 技能库 / LLM Benchmarks 评测元研究 / 激活探针安全
 status: 已深挖 3 篇（web_search 双源交叉验证）
 data-cutoff: 2026-09-20
-tags: [arxiv, research, knowledge/research]
+tags: [arxiv, knowledge/research]
 ---
 
 # arXiv 核心贡献总结 · 2026-09-19（09-20 处理）

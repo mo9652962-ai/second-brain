@@ -1,5 +1,5 @@
 ---
-tags: [knowledge, windows, desktop, beautify]
+tags: [knowledge/hardware, windows, desktop, beautify]
 domain: AI-Workflow
 created: 2026-07-24
 status: adopted

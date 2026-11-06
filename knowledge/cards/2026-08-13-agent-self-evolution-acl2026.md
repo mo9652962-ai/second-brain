@@ -1,7 +1,7 @@
 ---
 aliases:
   - 2026-08-13-card-agent-self-evolution-acl2026
-tags: [knowledge-card, ai-agent, self-evolution, skill, ACL-2026]
+tags: [knowledge-card, ai-agent, self-evolution, skills, ACL-2026]
 created: 2026-08-13
 source: "[[knowledge/Research/agent-self-evolution-research-2026-08-12]]"
 status: fresh

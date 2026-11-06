@@ -14,15 +14,21 @@
 
 version: 1
 updated_by: vault-suggestion-executor
-updated_at: 2026-09-14
+updated_at: 2026-11-06
 
 counters:
   # 闲鱼试水决策悬置天数（唯一权威值；9/9 vault-suggestion-executor 报告口径 = 第 40 天）
-  xianyu_decision_day: 42
+  xianyu_decision_day: 81
   xianyu_decision_status: PENDING   # PENDING / APPROVED(试水) / ABANDONED(放弃)
 
 # 漂移修复历史（证明此问题真实存在，供审计）
 drift_fix_history:
+  - date: 2026-11-06
+    fix: "66→81 第五次长期停更修复（15 个工作日，最长一次）：10/19–11/06 全线 cron 因反代 401 停摆——本 cron 连续 13 次 FAILED、daily-todo-executor 连续 39 次、项目追踪 39 次、每日仓库+知识库优化 39 次；agent.log 实测 10/19 以来仅 1 个 agent 类 job 成功（daily-health-check 11/05 22:53）。按工作日口径补推 +15（锚点校验 9/9 全命中：7/17=1 → 8/31=32 → 9/10=40 → 9/11=41 → 9/14=42 → 10/2=56 → 10/12=62 → 10/14=64 → 10/16=66）"
+  - date: 2026-10-16
+    fix: "64→66 第四次长期停更修复：10/15、10/16 两个工作日无人推进（双写方同时故障——闲鱼提醒 failure_streak=6，daily-todo-executor failure_streak=18，均同因 pydantic ABI；且 gateway 于 10/16 12:35 CST 重启后 hosted_room_worker 再度连续 5 次死亡）。按工作日口径补推 +2（锚点校验：7/17=1 → 8/31=32 → 9/10=40 → 9/11=41 → 9/14=42 → 10/2=56 → 10/12=62 → 10/14=64 全命中）"
+  - date: 2026-10-14
+    fix: "62→64 第三次长期停更修复：10/12 后 2 个工作日无人推进（daily-todo-executor 自 9/28 起连续 16 次 FAILED，项目追踪同为 16 次）。按工作日口径补推 +2（锚点校验：7/17=1 → 8/31=32 → 9/10=40 → 9/11=41 → 9/14=42 → 10/2=56 → 10/12=62 全命中）"
   - date: 2026-09-05
     fix: "第 N 天漂移修 4 处"
   - date: 2026-09-07
@@ -33,6 +39,10 @@ drift_fix_history:
     fix: "第 39 天→第 40 天 7 处替换"
   - date: 2026-09-13
     fix: "suggestion-implementation 41→44 误推进回滚(违反唯一写方规则) → current.md 9 处 44→41, assert PASS"
+  - date: 2026-10-12
+    fix: "56→62 第二次长期停更修复：10/2 后 6 个工作日无人推进（10/5 复盘日被 cron 故障吃掉 + 10/5~10/12 本 cron 因 pydantic_core ABI 连续 FAILED）。按工作日口径补推 +6（锚点校验：7/17=1 → 8/31=32 → 9/10=40 → 9/11=41 → 9/14=42 → 10/2=56 全命中）"
+  - date: 2026-10-02
+    fix: "42→56 长期停更修复：9/14 后 14 个工作日无人推进（9/28 复盘日被 cron 故障吃掉 + 本 cron 9/30、10/1 连续 FAILED）。按工作日口径补推 +14（锚点校验：7/17=1 → 8/31=32 → 9/10=40 → 9/11=41 → 9/14=42 全命中）"
 
 # 建库时的漂移证据（供断言脚本参考基线）
 known_drift_at_creation:

@@ -3,7 +3,7 @@ title: "Summer Checkin 复现方案书"
 type: plan
 domain: Development
 status: draft
-tags: [knowledge/development, ai-agent, rag, 复现方案]
+tags: [knowledge/dev, ai-agent, rag, 复现方案]
 date: 2026-08-31
 ---
 

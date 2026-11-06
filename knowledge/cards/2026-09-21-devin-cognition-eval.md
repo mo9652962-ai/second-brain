@@ -1,12 +1,7 @@
 ---
 aliases:
   - 2026-09-21-card-devin-cognition-eval
-tags:
-  - knowledge-card
-  - devin
-  - coding-agent
-  - ai-agent
-  - vendor-evaluation
+tags: [knowledge-card, devin, coding-agent, ai-agent, vendor-evaluation]
 created: 2026-09-21
 source: "[[knowledge/Dev/Devin-Cognition-评估-2026-09-20]]"
 status: fresh
@@ -32,7 +27,7 @@ status: fresh
 
 1. ✅ 工具分工矩阵扩展：Hermes（知识/拆题）→ Codex（本地受控执行）→ Devin（云端并行 Issue→PR）→ 人工审查 diff/测试/合并——与现有 Codex 分工互补不冲突
 2. ⚠️ 不交给它的：生产部署/支付/权限/账号迁移/Windows 打包/Android 真机/显卡验证——墨题项目的敏感区几乎全在禁区内
-3. ⚠️ 云端环境与本机不一致（本机无虚拟化、Windows 专属环境）→ 首次试用选独立后端/前端小 Bug + 要求加回归测试
+3. ⚠️ 云端环境与本机不一致（Windows 专属原生环境 vs 云端 Linux 容器）→ 首次试用选独立后端/前端小 Bug + 要求加回归测试
 4. 💡 试用方案：3 个相似任务做 A/B，记录首测通过率/返工时间/改动文件数/实际费用，持续减少返工才扩大使用
 5. 💡 隐私红线：不把私人知识库无差别上传，只传筛选后的约束/AGENTS.md/验收标准
 

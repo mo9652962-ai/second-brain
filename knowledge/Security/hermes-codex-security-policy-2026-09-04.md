@@ -1,5 +1,5 @@
 ---
-tags: [knowledge]
+tags: [knowledge/security]
 title: "Hermes → Codex 授权安全调用策略（强约束版）"
 type: note
 created: 2026-09-05

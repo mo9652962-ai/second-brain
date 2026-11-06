@@ -1,5 +1,5 @@
 ---
-tags: [knowledge]
+tags: [knowledge/research]
 title: "Multi-Agent Eval v2 implementation"
 type: note
 created: 2026-09-05

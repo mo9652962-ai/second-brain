@@ -1,5 +1,5 @@
 ---
-tags: [ai-blogger, project, index]
+tags: [ai-blogger, projects, index]
 created: 2026-07-28
 ---
 
