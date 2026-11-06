@@ -2,7 +2,8 @@
 tags: [research, academic, crossref, openalex, citation]
 domain: Research
 type: upgrade-note
-status: activecreated: 2026-10-16
+status: active
+created: 2026-10-16
 updated: 2026-10-16
 ---
 

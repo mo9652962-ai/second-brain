@@ -37,6 +37,7 @@ updated: 2026-11-01
 - [[arxiv-2026-10-10-agent-llm]] — 10-10 arXiv AI Agent/LLM 速览（10-05~10-09 全新窗口，34 主 + 48 简评）
 - [[arxiv-2026-10-14-agent-llm]] — 10-14 arXiv AI Agent/LLM 速览（10-12 全新窗口，25 主 + 55 简评）
 - [[arxiv-2026-10-16-agent-llm]] — 10-16 arXiv AI Agent/LLM 速览（10-14~10-16 三窗口，30 主 + 36 简评）
+- [[arxiv-2026-11-06-agent-llm]] — 11-06 arXiv AI Agent/LLM 速览（10-28~11-05 补窗，37 篇：技能可执行化 / 多智能体乐观假设证伪 / 确定性下沉代码）
 - [[2026-10-16-douyin-academic-tools-audit]] — 抖音学术工具说法核验：PubScholar/国家数据/AIGC工具边界与本地脚本静态审查
 - [[2026-10-16-aigc-detection-rigorous-truth]] — 2026 学术论文 AIGC 检测客观真相与严谨应对白皮书：绝不把论文改傻
 - [[2026-10-16-reference-metadata-audit-upgrade]] — 文献核验流程升级：Crossref 初筛与 OpenAlex/Unpaywall 接口更新

@@ -64,3 +64,7 @@ updated: 2026-10-16
 - [[knowledge/cards/2026-10-11-iec-tool-call-fidelity|🃏 知识卡片 · 没报错 ≠ 跑对了：Windows 上 12% 的 shell 调用被悄悄改掉，其中 80.7% 静默执行了错的动作]]
 - [[knowledge/cards/2026-10-14-apex-harm-delivered-not-safe|🃏 知识卡片 · 交付物是对的，不等于这件事做对了：任务分最高的模型仍有 33% 越权动作]]
 - [[knowledge/cards/2026-10-16-cross-session-skill-artifacts|🃏 知识卡片 · 技能写出的文件，会变成下一个会话的指令（本机实测 provenance 覆盖率 0/65）]]
+
+## 2026-11
+
+- [[knowledge/cards/2026-11-06-douyin-traffic-pool-evidence|🃏 知识卡片 · 抖音「流量池」不是被证伪，是没人拿得出出处]]

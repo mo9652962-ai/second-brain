@@ -523,3 +523,11 @@ tags: [meta, vault-maintenance]
   - `knowledge\cards\2026-09-21-devin-cognition-eval.md:30` — 3. ⚠️ 云端环境与本机不一致（本机无虚拟化、Windows 专属环境）→ 首次试用选独立后端/前端小 Bug + 要求加回归测试
 - 处理原则：只报告不自动修；事实源见 knowledge/META/current-environment.md
 
+
+## [2026-11-06] card | 每日知识卡片：抖音流量池的证据定级
+
+- **候选池**：`knowledge/` 今日无新增笔记 → 从最新研究资产 `Research/2026-11-01-ten-rounds-tech-frontier-mastery.md` Round 7 回捞
+- **落盘**：新增 `knowledge/cards/2026-11-06-douyin-traffic-pool-evidence.md`，挂载 `cards/MOC-cards.md`（新增 2026-11 分节）
+- **本次核对（观察）**：arXiv 2507.15551 abs 页 curl 直读（v1 2025-07-21 / v3 07-26），摘要逐句核对 MFU 4.5%→45%、参数 100×、延迟基本不变、1B Dense 全流量、活跃天数 +0.3% / 时长 +1.08%；ACM DL CIKM'25 页面（10.1145/3746252.3761507）标题摘要同源
+- **口径修正**：Round 7 原写「官方证实不存在固定流量池」→ 改为「无公开依据」（证据不足 ≠ 已证伪）；原记「14.3ms」二手数字降级为未核对。已在该笔记正文加修正注
+- **判据沉淀**：遇到「完播率 45% 进下一池」类精确数字，先问出处 / 样本 / 时间 / 适用范围
