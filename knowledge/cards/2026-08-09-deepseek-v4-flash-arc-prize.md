@@ -1,7 +1,7 @@
 ---
 aliases:
   - 2026-08-09-card-deepseek-v4-flash-arc-prize
-tags: [knowledge-card, deepseek, benchmark, ai-model, monetization]
+tags: [knowledge-card, deepseek, benchmarks, ai-model, monetization]
 created: 2026-08-09
 source: "[[knowledge/Daily/hackernews-2026-08-09]]"
 status: fresh

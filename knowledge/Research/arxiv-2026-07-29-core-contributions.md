@@ -1,7 +1,7 @@
 ---
 aliases:
   - arXiv Core Contributions 2026-07-29
-tags: [arxiv, research, ai-agent, llm, paper-review, core-contribution]
+tags: [arxiv, research, ai-agent, llm, paper-review, core-contributions]
 created: 2026-07-29
 updated: 2026-07-29
 status: adopted

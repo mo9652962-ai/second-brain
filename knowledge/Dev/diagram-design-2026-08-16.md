@@ -1,5 +1,5 @@
 ---
-tags: [diagram, HTML-SVG, skill, Claude-Code, 设计, methodology, W34]
+tags: [diagram, HTML-SVG, skills, Claude-Code, 设计, methodology, W34]
 aliases: [diagram-design, cathrynlavery-diagram]
 date: 2026-08-16
 source: https://github.com/cathrynlavery/diagram-design

@@ -1,5 +1,5 @@
 ---
-tags: [project, math, workbook, education, python]
+tags: [projects, math, workbook, education, python]
 status: completed
 created: 2026-07-29
 updated: 2026-07-30

@@ -1,5 +1,5 @@
 ---
-tags: [cnki, browser-plugin, academic, research-tool]
+tags: [cnki, browser-plugin, academic, research-tools]
 domain: Academic
 status: watch
 ---
