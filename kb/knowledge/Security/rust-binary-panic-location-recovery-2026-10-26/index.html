@@ -2985,6 +2985,10 @@ npm test       →  24 通过 / 0 失败
 <p><strong>双重反向验证实证记录</strong>：
 1. <strong>反向验证 A（秒级模式篡改）</strong>：将 <code>apply-rust-binary.sh</code> 中的 <code>-noanalysis</code> 篡改为 <code>-fullanalysis</code>，测试精准阻断：<code>FAIL 秒级回填 (103 通过 / 1 失败)</code>，恢复后回升至 104。
 2. <strong>反向验证 B（产物标签截断损坏）</strong>：将生成清单中的 panic 标签截断至 50 行（低于 1000 阈值），测试精准阻断：<code>FAIL Panic 标签数 (103 通过 / 1 失败)</code>，恢复后恢复 104。</p>
+<hr />
+<blockquote>
+<p>🗺️ 属于 [[MOC-Security]] · [[Home|🏠 Home]]</p>
+</blockquote>
 
 
 

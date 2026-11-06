@@ -2965,6 +2965,10 @@ hermes verify --json: ok=true (npm install + npm test + npm check 全绿)
 <p><strong>双重反向验证实证记录</strong>：
 1. <strong>反向验证 A（分诊 JSON 字段破坏）</strong>：将 <code>obfuscated_strings</code> 篡改为 <code>corrupted_strings</code>，测试断言阻断：<code>FAIL 分诊 JSON (114 通过 / 1 失败)</code>，恢复后回升至 115。
 2. <strong>反向验证 B（栈字符串断言破坏）</strong>：将断言目标改为不存在的 <code>Nonexistent_StackStr!</code>，测试断言双重阻断：<code>FAIL FLOSS 栈字符串</code> + <code>FAIL 分诊 JSON (113 通过 / 2 失败)</code>，恢复后回升至 115。</p>
+<hr />
+<blockquote>
+<p>🗺️ 属于 [[MOC-Security]] · [[Home|🏠 Home]]</p>
+</blockquote>
 
 
 
