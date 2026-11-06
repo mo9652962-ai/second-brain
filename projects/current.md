@@ -1,6 +1,6 @@
 ---
 tags: [projects, active]
-updated: 2026-10-19
+updated: 2026-11-06
 ---
 
 # 当前项目状态
@@ -577,6 +577,19 @@ updated: 2026-10-19
 - [ ] 🔒 **闲鱼试水决策（第 81 天，2026-10-19 复盘日）**：30 秒三选一（挂起封存/低频被动/立即试水），建议挂起封存，全力聚焦 2027 考研与 3D 大赛
 
 
+### 🧭 11-05 反思行动项（daily-reflection 复盘 11-05，执行者必读）
+
+> 登记来源：`memory/2026/11/2026-11-05-reflection.md`（回顾对象 11-05，11-06 12:26 生成）。
+> 主题：**一晚拆掉三颗暗礁，却把 17 天的错误归因留在原地**（230 条失败全是 401，pydantic 相关 0 条）。
+> 本节由 2026-11-06 daily-todo-executor 首次消费并逐条执行。
+
+- [x] 🔴 **P0**：给 `ERR-20261012-001` 补「误诊更正」章节 ✅ 2026-11-06 落地：`.learnings/ERRORS.md` 追加「二次误诊更正（10-20 之后是 provider 401，不是 pydantic ABI）」——含 5 秒判据命令（`error like '%pydantic%'` 计数）、401 侧根因（28 job Operator Pin + 死端口 8790 + 换端口必换 model 名）、三条硬规则（ERR 必附判据 / 连续 3 次命中强制反向验证 / 引用前一日结论必须附当天判据）
+- [x] 🟠 **P1**：写反思兜底脚本（no_agent，从 state.db + executions.db 生成骨架）✅ 2026-11-06 落地：`~/AppData/Local/hermes/scripts/reflection_backfill.py`（`--selftest` 12/12 PASS，双路径实测）+ cron `reflection-backfill-fallback`（`20 7 * * *`，no_agent，无 provider pin）+ 已补 **20 份** `*-reflection-skeleton.md`（10-16 ~ 11-04）。踩坑固化：state.db 时间列是 **epoch float**（用 substr 会静默全零），executions.db 是 ISO——两个库口径不同
+- [x] 🟠 **P1**：把「检索预算」写进输出规则 ✅ 2026-11-06 落地：`hermes-workflow-preferences` **规则 #39**——「千轮研究」= 检索 ≥5 次 + ≥3 独立来源 + 结论附 URL，N<5 不许写「千轮」；报告首行标注「检索 N 次 / 独立来源 M 个」；纯本地排查须明写「本次为本地实证」
+- [x] 🟡 **P2**：确认 11-06 剩余 4 个 running cron 收尾正常 ✅ 2026-11-06 20:0x 实测（executions.db）：当日 42 completed / 1 failed / 1 running。12:12 那批里 `daily-self-improvement`(→12:29)、`闲鱼提醒`(→12:24)、`daily-wechat-knowledge-card`(→12:23)、`arxiv-fetch`(→12:20) 全部 completed；唯一 failed = 12:12 `workbuddy-proxy-watchdog`（8790 上游 401，12:44 起自愈 completed）；running 1 条 = 本任务自身
+- [x] 🟡 **P2**：skill patch 与 ERRORS.md 回写绑定 ✅ 2026-11-06 落地：`hermes-workflow-preferences` **规则 #40**——一次 patch 一条 ERR 回写；账本与代码不一致时以判据实测为准
+- [ ] 🔒 **待 sora 一句话**：闲鱼试水决策（第 81 天，下次复盘 11/09 周一）/ skill 合并授权 / 卡片 cron 排程授权 —— 不重复催，见下方 🔒 区
+
 ## 🔗 相关领域
 - [[AI-Agent]] — 基础设施与能力架构
 - [[PPT-Design]] — PPT 制作方法论
@@ -586,7 +599,7 @@ updated: 2026-10-19
 
 ---
 
-_由 k (Hermes) 在每次会话结束时更新 | 最后更新: 2026-10-14 (vault-suggestion-executor 10/14：计数 62→64 补推 + pydantic ABI 可复现定位 + ERRORS.md 复发记录 + assert PASS 5/5)_
+_由 k (Hermes) 在每次会话结束时更新 | 最后更新: 2026-11-06 (daily-todo-executor：11-05 反思行动项 5/6 落地 + 20 份反思骨架补齐 + ERR 二次误诊更正)
 
 ---
 

@@ -562,3 +562,37 @@ No selected generation or ambient PYTHONPATH is captured in the command.`
 
 ---
 
+### ⚠️ 二次误诊更正（2026-11-06 daily-todo-executor 落地）：10-20 之后不是 pydantic，是 provider 401
+
+> 登记来源：`memory/2026/11/2026-11-05-reflection.md` P0 行动项「给 ERR-20261012-001 补误诊更正章节」。
+> 为什么必须写：本条 ID 从 10-20 起被反复当成「pydantic ABI 第 N 次预测命中」引用，而实测是另一条故障。**错误 ID 一旦封神就不再被证伪——这比 ABI 本身贵。**
+
+**观察（判据实测）**：`cron/executions.db` 按日聚合 10-20 → 11-05，**失败 230 条，其中 `error like '%401%'` 230 条，`error like '%pydantic%'` 0 条**；11-06 全天 401 = 0（28 个 job 已 unpin）。同一区间 11-05 22:31 curl 现场：`8790` → `401 Authorization Required`（openresty/APISIX HTML），`8788` → 200 且模型 `deepseek-v4.1-flash`。
+
+**判据命令（复发时先跑这条，判据不通过不许写「命中」）**：
+
+```bash
+python - <<'PY'
+import sqlite3
+c = sqlite3.connect(r"%LOCALAPPDATA%/hermes/cron/executions.db")
+for d, pyd, e401, f in c.execute(
+    "select substr(started_at,1,10), sum(error like '%pydantic%'),"
+    " sum(error like '%401%'), sum(status='failed')"
+    " from executions where started_at>=? group by 1 order by 1", ("2026-10-20",)):
+    print(d, "pydantic=", pyd, "401=", e401, "failed=", f)
+PY
+```
+
+- `pydantic > 0` → 才可引用本 ID（ABI 混用）
+- `pydantic = 0` 且 `401 > 0` → **provider 401**（per-job Operator Pin + 死端口 8790），修法与排查见 `hermes-automation-patterns` 故障 C9，与本条无关
+
+**401 侧根因（2026-11-05 实测）**：28 个 job 硬编码 `provider: custom:workbuddy` + `model: deepseek-v4-flash`；`cron/scheduler.py` 解析顺序 =「per-job pin > cron.model > 主模型」，**带 pin 的任务直接跳过全局 fallback 链**。另有一条配套坑：换端口必须同步换 model 名（把 `deepseek-v4-flash` 发到 8788 → `11102 service info not found`）。
+
+**修复**：`hermes cron edit <job_id> --unpin`（批量 28 个）+ 全局 `cron.model` 集中配置，不再逐 job 硬编码。
+
+**由此固化的三条硬规则**：
+1. 每条 ERR 必须附一条 5 秒能跑的判据命令；复发时先跑判据再贴标签。
+2. 同一 ID 连续 3 次「命中」→ 强制反向验证（主动找一条能推翻它的证据）。
+3. 反思/报告引用前一日结论时，必须附当天判据输出；没有输出就标「未复核」，不许直接继承。
+
+---
