@@ -537,3 +537,11 @@ tags: [meta, vault-maintenance]
 - **daily-monetization-review 恢复**：连续 24 次失败（反代上游 401，非 pydantic）后首次成功运行，产出 `memory/2026/11/2026-11-06-daily-review.md`
 - **技能修正**：`douyin-ai-practical-video` §8 三处口径 — 「固定流量池」由「不存在」改为「无公开依据（≠ 已证伪）」；新增「精确数字四问（出处/样本/时间/适用范围）」；删除「5 秒完播 ≥50%~60%」「20%+ 搜索长尾流量」两处无出处阈值
 - **变现卡点实证**：墨题 `plans/orders/payment_events` 表已建但 0 行、无套餐查询接口 → 开卖最小缺口 = seed 套餐 + `GET /api/plans`
+
+## [2026-11-07] card | 每日知识卡片：监控的三张假脸（假绿 / 假红 / 漏跑）
+
+- **候选池**：`knowledge/` 今日无新增笔记 → 从今日 vault 实测产物回捞（`memory/2026/11/health-2026-11-07.md`、`cron-health-latest.md`、`2026-11-07-open-actions.md`）
+- **落盘**：新增 `knowledge/cards/2026-11-07-cron-monitoring-three-fakes.md`，挂载 `cards/MOC-cards.md`（2026-11 分节）
+- **本次现场核对（观察）**：`executions.db` 按日聚合 401 命中 173 条、跨 12 天（10-25 13:13 → 11-05 22:30），11-06/11-07 各 0 条；`jobs.json` 实读 49 任务 / 22 红（20 error + 2 delivery_failed），其中 19 个 `last_run` ≤ 11-02（陈旧红）；`psutil.boot_time()` = 11-07 21:12:28，02:10:39~21:18:23 之间 0 次执行 → 漏跑系主机未开机，非调度器故障
+- **判据沉淀**：判断任务真死没死只看三样 —— 最近真实执行时间戳 / 失败信号时间窗 / 产物是否落盘；`last_status` 不可作为状态源
+- **待验证**：11-08（周日）weekly 批量跑完后复核那 19 个是否转绿（唯一真验证窗口）
