@@ -33,10 +33,10 @@ source: "[[knowledge/Research/arxiv-2026-10-10-agent-llm]]"
 
 ## 行动项
 
-- [ ] 处理 2 组同名技能：`ai-image-generation`（保留自建版，把 @okaris 版改名或归档）、`manim-video`（二选一，另一份归档）——同名 = 触发条件完全重叠，是最高优先级的冲突源
+- [ ] 处理 2 组同名技能：`ai-image-generation`（保留自建版，把 @okaris 版改名或归档）、`manim-video`（二选一，另一份归档）——同名 = 触发条件完全重叠，是最高优先级的冲突源 → ⏳ 2026-11-07 复核：实测重复只存在于 `profiles/{coder,researcher,reviewer}/skills/`，**default profile 内没有同名副本**；且改/归档技能属破坏性动作，与 current.md 🔒「skill 合并授权」同项 → 等 sora 一句话，不擅自动
 - [ ] 给 3~5 个高风险技能各写一条**独占核心功能断言**（「不许碰 git」「发布前必须过隐私门禁」「图片敏感词必扫」），纳入 skill-audit 周期测试
-- [ ] 技能修订按本文配方：新增规则**点名具体命令/路径**（这是 +0.41 的唯一来源），正文保持精简
-- [ ] 交付回复里点名本次实际生效的技能（现状 0.9%）
+- [x] 技能修订按本文配方：新增规则**点名具体命令/路径**（这是 +0.41 的唯一来源），正文保持精简 → ✅ 2026-11-07 按此配方做了两次 patch：`windows-file-lock-troubleshooting` §0（`set -x` / `echo "$@"` / `git ls-tree` 全点名）+ `hermes-workflow-preferences` 规则 #43（判据全给命令）
+- [x] 交付回复里点名本次实际生效的技能（现状 0.9%）→ ✅ 2026-11-07 本日报告已加「本次生效技能」小节
 
 ## 为什么重要
 

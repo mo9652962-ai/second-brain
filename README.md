@@ -193,8 +193,8 @@ graph LR
 | **[知识库体检器假阳性修复 09-25](scripts/gen-vault-index.py)** | v1.0 | 断链检测与 `knowledge-lint.py` 权威口径对齐（剥离代码 span/fence + 模板占位符白名单）：断链 51→0，剔除 45 条把 `[[新笔记]]` 类模板示例误报为断链的假阳性；DASHBOARD 恢复可信 |
 | **[arXiv AI Agent / LLM 速览 09-25](knowledge/Research/arxiv-2026-09-25-agent-llm.md)** | v1.0 | 单日窗口 662 篇补录（cron 被机器重启中断后补位）→ 16 主条目 + 14 简评：Scoped-ORC 记忆作用域防跨族干扰 / SkillPivot 转折点技能自进化 / 等 |
 | **[现代 Web 全栈与高感官微交互 09-24](skills/web/)** | v2.0 | Next.js 15 RSC、Hono v4、Tailwind v4 Oxide 引擎、Core Web Vitals 与 6 大高感官原生微交互（物理避障/3D破屏/纯CSS锯齿票券/密码锁/Canvas点阵雨/苹果Dock鱼眼） |
-| **[商业短视频工业化母带标准 09-23](skills/content/)** | v1.0 | 56.5s 七段叙事时序矩阵、-14.0 LUFS EBU R128 音频旁链闪避混音、ASS 动态弹跳荧光字幕、剪映 `draft_content.json` 纯 Python 解耦免 VIP 自动化装配 |
-| **[企业级 B2B 商业演示重构体系 09-23](skills/productivity/)** | v1.0 | 麦肯锡 SCQA 结构化说服、Action Title（标题即判断）、4+3 黄金对称产品矩阵、高密度资质矩阵墙、PPTX 批量无损量化压制引擎 |
+| **商业短视频工业化母带标准 09-23**（本地私有，未公开） | v1.0 | 56.5s 七段叙事时序矩阵、-14.0 LUFS EBU R128 音频旁链闪避混音、ASS 动态弹跳荧光字幕、剪映 `draft_content.json` 纯 Python 解耦免 VIP 自动化装配 |
+| **企业级 B2B 商业演示重构体系 09-23**（本地私有，未公开） | v1.0 | 麦肯锡 SCQA 结构化说服、Action Title（标题即判断）、4+3 黄金对称产品矩阵、高密度资质矩阵墙、PPTX 批量无损量化压制引擎 |
 | **[资产三级隔离安全架构 09-23](knowledge/Security/)** | v1.0 | 确立 Public 开源层、Private 备份层与 Local-Only 本地绝对物理隔离层，商业核心算法、接单成本与私人日记 100% 物理阻隔，门禁脚本双重巡检 |
 | **[知识库事实源三件套 09-20](knowledge/META/MOC-META.md)** | v1.0 | 新增 META 事实源体系（current-environment / current-model-status / knowledge-sources），修正 3 处过期结论「本机无虚拟化 / Docker 不可用」→ 实测为「虚拟化✅ CLI✅ 仅 Daemon 未运行」 |
 | **[arXiv AI Agent / LLM 速览 09-20](knowledge/Research/arxiv-2026-09-20-agent-llm.md)** | v1.0 | 09-18 池第三轮补全：12 主条目 + 7 简评（ScientistTwo 自主科学发现 / SoL-Pi harness RSI / SkillAA 归因技能图 / claim-safe 评测协议 / CovR 覆盖率硬件验证） |

@@ -5,7 +5,7 @@ type: moc
 domain: Research
 status: active
 created: 2026-08-09
-updated: 2026-11-06
+updated: 2026-11-07
 ---
 
 # 🔬 研究笔记 MOC — Research Map
@@ -13,7 +13,7 @@ updated: 2026-11-06
 > 所有研究笔记的索引与入口。自动按主题分组。
 > 回到 [[knowledge-map|🗺️ 知识地图]] · [[Home|🏠 Home]]
 
-**共 239 篇研究笔记** · 最后更新: 2026-11-06（Q4 全球技术前沿深度同步）
+**共 240 篇研究笔记** · 最后更新: 2026-11-07（Q4 全球技术前沿深度同步）
 
 ## 🆕 最新增量（2026-10 ~ 11-06）
 
@@ -40,6 +40,7 @@ updated: 2026-11-06
 - [[arxiv-2026-10-14-agent-llm]] — 10-14 arXiv AI Agent/LLM 速览（10-12 全新窗口，25 主 + 55 简评）
 - [[arxiv-2026-10-16-agent-llm]] — 10-16 arXiv AI Agent/LLM 速览（10-14~10-16 三窗口，30 主 + 36 简评）
 - [[arxiv-2026-11-06-agent-llm]] — 11-06 arXiv AI Agent/LLM 速览（10-28~11-05 补窗，37 篇：技能可执行化 / 多智能体乐观假设证伪 / 确定性下沉代码）
+- [[arxiv-2026-11-07-agent-llm]] — 11-07 arXiv AI Agent/LLM 速览（11-05 批次未读 326 篇二轮深读，24 篇：基准维护债 / 记忆陷阱 / 任务篡改式注入 / PCBRouteAgent 走线 agent）
 - [[2026-10-16-douyin-academic-tools-audit]] — 抖音学术工具说法核验：PubScholar/国家数据/AIGC工具边界与本地脚本静态审查
 - [[2026-10-16-aigc-detection-rigorous-truth]] — 2026 学术论文 AIGC 检测客观真相与严谨应对白皮书：绝不把论文改傻
 - [[2026-10-16-reference-metadata-audit-upgrade]] — 文献核验流程升级：Crossref 初筛与 OpenAlex/Unpaywall 接口更新

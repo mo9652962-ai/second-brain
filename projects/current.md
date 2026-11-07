@@ -686,6 +686,7 @@ updated: 2026-11-06
 ---
 
 _由 k (Hermes) 在每次会话结束时更新 | 最后更新: 2026-11-07 (weekly-todo-cleanup：本周 15 项完成归档至 Section 13 · 20 条未勾选去重为 16 项活跃任务 · 8/18–10/15 反思区收敛为历史面)
+_daily-todo-executor 2026-11-07 补记：关闭 17 条待办（MOC 重复登记根因修复 + Bases 试点 + 看板两档红 + IEC/规则 #43 落地），详见 `memory/2026/11/2026-11-07-daily-todo-executor.md`_
 
 ---
 

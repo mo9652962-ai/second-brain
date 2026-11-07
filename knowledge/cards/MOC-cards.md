@@ -74,4 +74,3 @@ updated: 2026-10-16
 
 > cron 产出自动登记（防入链孤立）
 
-- [[2026-11-07-cron-monitoring-three-fakes]]

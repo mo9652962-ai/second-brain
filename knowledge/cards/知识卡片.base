@@ -1,0 +1,52 @@
+# 知识卡片 Bases 试点 — 2026-11-07（评估结论的落地件）
+#
+# 背景：MOC 里的「纯列表索引」小节长期靠手写/脚本追加，是重复登记与漏登记的来源
+# （2026-11-06 审计：MOC-Research 33 行整行重复；2026-11-07 复查仍有 5 个重复 token）。
+# 结论 = 部分替代：Bases 接管「按属性自动列表」，MOC 只保留人工策展的主题分组与一句话注解。
+# 为什么不能整体替代：Bases 只读 frontmatter、行=文件、无脚本能力，表达不了「主题分组 + 注解」。
+#
+# 用法：Obsidian ≥1.9 打开即渲染（本库 .obsidian/core-plugins.json 中 bases=true）。
+# 约束：Bases 结果不写回笔记，所以它永远不会再制造重复索引。
+
+filters:
+  and:
+    - file.inFolder("knowledge/cards")
+    - 'file.ext == "md"'
+
+properties:
+  note.created:
+    displayName: 创建
+  note.status:
+    displayName: 状态
+  note.tags:
+    displayName: 标签
+  note.source:
+    displayName: 来源
+
+views:
+  - type: table
+    name: 全部卡片（按创建时间倒序）
+    order:
+      - file.name
+      - note.created
+      - note.status
+      - note.tags
+    groupBy:
+      property: note.created
+      direction: DESC
+
+  - type: table
+    name: 待消化（status = fresh）
+    filters:
+      and:
+        - 'note.status == "fresh"'
+    order:
+      - file.name
+      - note.created
+      - note.source
+
+  - type: cards
+    name: 卡片墙
+    order:
+      - file.name
+      - note.tags
