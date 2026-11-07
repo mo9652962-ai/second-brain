@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -3383,6 +3383,14 @@
 <li><strong>技能修正</strong>：<code>douyin-ai-practical-video</code> §8 三处口径 — 「固定流量池」由「不存在」改为「无公开依据（≠ 已证伪）」；新增「精确数字四问（出处/样本/时间/适用范围）」；删除「5 秒完播 ≥50%~60%」「20%+ 搜索长尾流量」两处无出处阈值</li>
 <li><strong>变现卡点实证</strong>：墨题 <code>plans/orders/payment_events</code> 表已建但 0 行、无套餐查询接口 → 开卖最小缺口 = seed 套餐 + <code>GET /api/plans</code></li>
 </ul>
+<h2 id="2026-11-07-card">[2026-11-07] card | 每日知识卡片：监控的三张假脸（假绿 / 假红 / 漏跑）<a class="headerlink" href="#2026-11-07-card" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>候选池</strong>：<code>knowledge/</code> 今日无新增笔记 → 从今日 vault 实测产物回捞（<code>memory/2026/11/health-2026-11-07.md</code>、<code>cron-health-latest.md</code>、<code>2026-11-07-open-actions.md</code>）</li>
+<li><strong>落盘</strong>：新增 <code>knowledge/cards/2026-11-07-cron-monitoring-three-fakes.md</code>，挂载 <code>cards/MOC-cards.md</code>（2026-11 分节）</li>
+<li><strong>本次现场核对（观察）</strong>：<code>executions.db</code> 按日聚合 401 命中 173 条、跨 12 天（10-25 13:13 → 11-05 22:30），11-06/11-07 各 0 条；<code>jobs.json</code> 实读 49 任务 / 22 红（20 error + 2 delivery_failed），其中 19 个 <code>last_run</code> ≤ 11-02（陈旧红）；<code>psutil.boot_time()</code> = 11-07 21:12:28，02:10:39~21:18:23 之间 0 次执行 → 漏跑系主机未开机，非调度器故障</li>
+<li><strong>判据沉淀</strong>：判断任务真死没死只看三样 —— 最近真实执行时间戳 / 失败信号时间窗 / 产物是否落盘；<code>last_status</code> 不可作为状态源</li>
+<li><strong>待验证</strong>：11-08（周日）weekly 批量跑完后复核那 19 个是否转绿（唯一真验证窗口）</li>
+</ul>
 
 
 
@@ -3444,7 +3452,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "toc.integrate"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>
