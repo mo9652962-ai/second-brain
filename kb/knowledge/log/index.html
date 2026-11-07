@@ -3391,6 +3391,17 @@
 <li><strong>判据沉淀</strong>：判断任务真死没死只看三样 —— 最近真实执行时间戳 / 失败信号时间窗 / 产物是否落盘；<code>last_status</code> 不可作为状态源</li>
 <li><strong>待验证</strong>：11-08（周日）weekly 批量跑完后复核那 19 个是否转绿（唯一真验证窗口）</li>
 </ul>
+<h2 id="2026-11-07-review-2118-15h">[2026-11-07] review | 每日回顾（补跑 21:18）：健康信号的三层假绿 + 墨题仍差 1.5h<a class="headerlink" href="#2026-11-07-review-2118-15h" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>补跑事实</strong>：<code>daily-monetization-review</code> 18:00 未跑，21:18 随开机补跑（迟到 3.3h）；<code>psutil.boot_time()</code>=21:12:28，02:10–21:18 之间 0 次执行 → 白天主机未开机</li>
+<li><strong>发现 1（观察）</strong>：<code>curl :8788/v1/chat/completions</code> → <code>OK</code>；<code>curl :8790/...</code> → <strong>APISIX 401 upstream_error</strong>；<code>config.yaml</code> 三处 base_url 全为 8788；<code>healthcheck.py</code> 对「config 未引用」的备用实例只打 ℹ️ 不告警 → <strong>「双实例健康」实为单点无 fallback</strong></li>
+<li><strong>发现 2（观察）</strong>：21:18:23–25 的 <strong>20 个任务/2 秒</strong>补跑风暴 → 双实例同时 502「已自愈」；21:25 复测双 <code>/health</code> 200 + 补全正常 → 502 系并发冲击（推断），补跑需限并发 + jitter</li>
+<li><strong>发现 3（观察）</strong>：arXiv 补读 24 篇（11-05 批次剩余 326 篇）→ <code>2611.08175</code> PCBRouteAgent（KiCad 原生布线，真实板 D3-C 仅 <strong>40%</strong> = 复杂板空档）；<code>2611.07650</code> 中转实测 5/20 家多报 input token <strong>4,200–60,000</strong>；<code>2611.07307</code> 项目接管完整交付率 <strong>4.95%</strong></li>
+<li><strong>发现 4（观察）</strong>：墨题 <code>plans/orders/payment_events</code> 仍各 <strong>0 行</strong>，<code>/plans</code> 仅词库计划（vocab_plans），仓库最后提交 10-14 → 开卖只差 seed 套餐 + <code>GET /api/plans</code> + e2e（1.5h）</li>
+<li><strong>工具</strong>：<code>scripts/daily_vault_optimize.py</code> 修自动挂载重复根因（三种 wikilink 写法字面比对失效），自测 <strong>10/10 PASS</strong>，当前可去重 1 行（防复发）</li>
+<li><strong>落盘</strong>：<code>memory/2026/11/2026-11-07-daily-review.md</code>；明日 11-08 行动项 9 条（P0×3 / P1×3 / P2×2 / 🔒×1）</li>
+<li><strong>口径修正</strong>：「8788 auth mtime 9/19 未续期 = 下次全库停摆」证据不足（今日 requests=355 + 补全正常），降级为推断</li>
+</ul>
 
 
 

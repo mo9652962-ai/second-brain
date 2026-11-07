@@ -2908,10 +2908,10 @@
 </ol>
 <h2 id="_2">行动项<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
-<li>[ ] 给 <code>windows-file-lock-troubleshooting</code> / 写码前扫坑清单增补 <strong>IEC 自检步骤</strong>：失败时先回显实际执行内容（<code>set -x</code> / <code>echo "$@"</code> / 结果对账），再怀疑命令本身</li>
-<li>[ ] 高风险自动化（cron 脚本、批量文件操作）<strong>避免长转义单行命令</strong>，改为写脚本文件执行；关键调用后做一次<strong>结果侧对账</strong>（如 <code>git ls-tree</code> 式验证）</li>
-<li>[ ] 排障归因流程里加一句硬规则：<strong>「调用失败 → 默认先怀疑执行路径，不先怀疑模型」</strong></li>
-<li>[ ] 延伸：把本文与 10-10 卡片（共装技能冲突）一起作为技能生命周期第三环的<strong>执行侧</strong>补全</li>
+<li>[x] 给 <code>windows-file-lock-troubleshooting</code> / 写码前扫坑清单增补 <strong>IEC 自检步骤</strong>：失败时先回显实际执行内容（<code>set -x</code> / <code>echo "$@"</code> / 结果对账），再怀疑命令本身 → ✅ 2026-11-07 落地：<code>windows-file-lock-troubleshooting</code> v1.1.0→<strong>v1.2.0</strong> 新增「## 0. 执行侧自检（IEC）」小节，含回显实际命令 / 结果侧对账 / 判据（<code>set -x</code> 输出与原文不一致 = IEC 故障，改写法不改逻辑）</li>
+<li>[x] 高风险自动化（cron 脚本、批量文件操作）<strong>避免长转义单行命令</strong>，改为写脚本文件执行；关键调用后做一次<strong>结果侧对账</strong>（如 <code>git ls-tree</code> 式验证）→ ✅ 2026-11-07 已写入同节第 2/3 条（含「含引号/<code>&amp;&amp;</code> 的文件名会让落盘与 git status 出现假象，须用 <code>git ls-tree</code> 验证」）；当天实测印证：cron 模式下 heredoc 直接被执行层拦截，改「写脚本文件再跑」后正常——文件化执行本身也是绕开转义坑的手段</li>
+<li>[x] 排障归因流程里加一句硬规则：<strong>「调用失败 → 默认先怀疑执行路径，不先怀疑模型」</strong> → ✅ 2026-11-07 写入同节第 4 条，并给出顺序：执行路径（shell 解释/编码/路径转换）→ 命令语义 → 工具/模型能力</li>
+<li>[ ] 延伸：把本文与 10-10 卡片（共装技能冲突）一起作为技能生命周期第三环的<strong>执行侧</strong>补全 → ⏳ 前半（本文）已落 skill；10-10 的同名技能合并需 sora 授权（破坏性），见 current.md 🔒「skill 合并授权」</li>
 </ul>
 <h2 id="_3">为什么重要<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ul>
