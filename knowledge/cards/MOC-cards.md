@@ -68,3 +68,9 @@ updated: 2026-10-16
 ## 2026-11
 
 - [[knowledge/cards/2026-11-06-douyin-traffic-pool-evidence|🃏 知识卡片 · 抖音「流量池」不是被证伪，是没人拿得出出处]]
+- [[knowledge/cards/2026-11-07-cron-monitoring-three-fakes|🃏 知识卡片 · 监控的三张假脸：假绿、假红、漏跑——今天一次全看全了]]
+
+## 自动挂载
+
+> cron 产出自动登记（防入链孤立）
+

@@ -4,8 +4,8 @@ aliases: [知识新陈代谢看板, OKM Dashboard]
 type: meta
 domain: META
 status: active
-created: 2026-11-06
-updated: 2026-11-06
+created: 2026-11-07
+updated: 2026-11-07
 tags: [meta/metabolism, okm, knowledge/governance]
 ---
 
@@ -16,9 +16,9 @@ tags: [meta/metabolism, okm, knowledge/governance]
 
 ## 📊 认知成熟度分布 (Maturity Funnel)
 
-- **全库受管笔记**：757 篇
-- 🌲 **Evergreen (常青/方法论)**：**361** 篇 (47.7%) — 结构完备、双向链接闭环、实战沉淀的成熟知识
-- 🌿 **Budding (成长/求证中)**：**389** 篇 (51.4%) — 包含基本推演与领域上下文的进阶笔记
+- **全库受管笔记**：763 篇
+- 🌲 **Evergreen (常青/方法论)**：**362** 篇 (47.4%) — 结构完备、双向链接闭环、实战沉淀的成熟知识
+- 🌿 **Budding (成长/求证中)**：**394** 篇 (51.6%) — 包含基本推演与领域上下文的进阶笔记
 - 🌱 **Seed (萌芽/原子速记)**：**0** 篇 (0.0%) — 初步捕获的原始事实、想法或灵感种子
 - 📦 **Superseded (降级/过时归档)**：**7** 篇 — 已被新技术、新决策替代，或标记为历史归档
 
@@ -33,8 +33,8 @@ tags: [meta/metabolism, okm, knowledge/governance]
 
 | 笔记名 | 领域路径 | 入链数 | 出链数 | 字符体量 |
 |:---|:---|:---:|:---:|:---:|
-| [[MOC-Research]] | `knowledge/Research/MOC-Research.md` | 245 | 299 | 17925 |
-| [[knowledge-map]] | `knowledge/knowledge-map.md` | 203 | 234 | 38781 |
+| [[MOC-Research]] | `knowledge/Research/MOC-Research.md` | 247 | 301 | 16196 |
+| [[knowledge-map]] | `knowledge/knowledge-map.md` | 205 | 234 | 38781 |
 | [[MOC-Dev]] | `knowledge/Dev/MOC-Dev.md` | 104 | 97 | 7826 |
 | [[MOC-Security]] | `knowledge/Security/MOC-Security.md` | 66 | 76 | 7668 |
 | [[MOC-Productivity]] | `knowledge/Productivity/MOC-Productivity.md` | 58 | 71 | 6759 |
@@ -50,4 +50,4 @@ tags: [meta/metabolism, okm, knowledge/governance]
 | [[current-model-status]] | `knowledge/META/current-model-status.md` | 13 | 3 | 2807 |
 
 ---
-*由 scripts/okm_metabolism.py 自动生成于 2026-11-06 · 保障第二大脑持久自愈与抗熵增*
+*由 scripts/okm_metabolism.py 自动生成于 2026-11-07 · 保障第二大脑持久自愈与抗熵增*

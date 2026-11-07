@@ -55,15 +55,16 @@ updated: 2026-10-11
 
 > cron 产出自动登记（防入链孤立）
 
-- [[hackernews-2026-09-24]]
-- [[hackernews-2026-09-25]]
-- [[hackernews-2026-09-26]]
-- [[hackernews-2026-09-29]]
-- [[hackernews-2026-10-02]]
-- [[hackernews-2026-10-04]]
-- [[hackernews-2026-10-08]]
-- [[hackernews-2026-10-10]]
-- [[hackernews-2026-10-11]]
-- [[hackernews-2026-10-14]]
-- [[hackernews-2026-10-16]]
-- [[hackernews-2026-11-06]]
+- [[hackernews-2026-09-24]] — Hacker News 今日精选 — 2026-09-24
+- [[hackernews-2026-09-25]] — Hacker News 今日精选 — 2026-09-25
+- [[hackernews-2026-09-26]] — Hacker News 今日精选 — 2026-09-26
+- [[hackernews-2026-09-29]] — Hacker News 今日精选 — 2026-09-29
+- [[hackernews-2026-10-02]] — Hacker News 今日精选 — 2026-10-02
+- [[hackernews-2026-10-04]] — Hacker News 今日精选 — 2026-10-04
+- [[hackernews-2026-10-08]] — Hacker News 今日精选 — 2026-10-08
+- [[hackernews-2026-10-10]] — Hacker News 今日精选 — 2026-10-10
+- [[hackernews-2026-10-11]] — Hacker News 今日精选 — 2026-10-11
+- [[hackernews-2026-10-14]] — Hacker News 今日精选 — 2026-10-14
+- [[hackernews-2026-10-16]] — Hacker News 今日精选 — 2026-10-16
+- [[hackernews-2026-11-06]] — Hacker News 今日精选 — 2026-11-06
+- [[hackernews-2026-11-07]] — Hacker News 今日精选 — 2026-11-07

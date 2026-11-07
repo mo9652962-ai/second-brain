@@ -537,3 +537,22 @@ tags: [meta, vault-maintenance]
 - **daily-monetization-review 恢复**：连续 24 次失败（反代上游 401，非 pydantic）后首次成功运行，产出 `memory/2026/11/2026-11-06-daily-review.md`
 - **技能修正**：`douyin-ai-practical-video` §8 三处口径 — 「固定流量池」由「不存在」改为「无公开依据（≠ 已证伪）」；新增「精确数字四问（出处/样本/时间/适用范围）」；删除「5 秒完播 ≥50%~60%」「20%+ 搜索长尾流量」两处无出处阈值
 - **变现卡点实证**：墨题 `plans/orders/payment_events` 表已建但 0 行、无套餐查询接口 → 开卖最小缺口 = seed 套餐 + `GET /api/plans`
+
+## [2026-11-07] card | 每日知识卡片：监控的三张假脸（假绿 / 假红 / 漏跑）
+
+- **候选池**：`knowledge/` 今日无新增笔记 → 从今日 vault 实测产物回捞（`memory/2026/11/health-2026-11-07.md`、`cron-health-latest.md`、`2026-11-07-open-actions.md`）
+- **落盘**：新增 `knowledge/cards/2026-11-07-cron-monitoring-three-fakes.md`，挂载 `cards/MOC-cards.md`（2026-11 分节）
+- **本次现场核对（观察）**：`executions.db` 按日聚合 401 命中 173 条、跨 12 天（10-25 13:13 → 11-05 22:30），11-06/11-07 各 0 条；`jobs.json` 实读 49 任务 / 22 红（20 error + 2 delivery_failed），其中 19 个 `last_run` ≤ 11-02（陈旧红）；`psutil.boot_time()` = 11-07 21:12:28，02:10:39~21:18:23 之间 0 次执行 → 漏跑系主机未开机，非调度器故障
+- **判据沉淀**：判断任务真死没死只看三样 —— 最近真实执行时间戳 / 失败信号时间窗 / 产物是否落盘；`last_status` 不可作为状态源
+- **待验证**：11-08（周日）weekly 批量跑完后复核那 19 个是否转绿（唯一真验证窗口）
+
+## [2026-11-07] review | 每日回顾（补跑 21:18）：健康信号的三层假绿 + 墨题仍差 1.5h
+
+- **补跑事实**：`daily-monetization-review` 18:00 未跑，21:18 随开机补跑（迟到 3.3h）；`psutil.boot_time()`=21:12:28，02:10–21:18 之间 0 次执行 → 白天主机未开机
+- **发现 1（观察）**：`curl :8788/v1/chat/completions` → `OK`；`curl :8790/...` → **APISIX 401 upstream_error**；`config.yaml` 三处 base_url 全为 8788；`healthcheck.py` 对「config 未引用」的备用实例只打 ℹ️ 不告警 → **「双实例健康」实为单点无 fallback**
+- **发现 2（观察）**：21:18:23–25 的 **20 个任务/2 秒**补跑风暴 → 双实例同时 502「已自愈」；21:25 复测双 `/health` 200 + 补全正常 → 502 系并发冲击（推断），补跑需限并发 + jitter
+- **发现 3（观察）**：arXiv 补读 24 篇（11-05 批次剩余 326 篇）→ `2611.08175` PCBRouteAgent（KiCad 原生布线，真实板 D3-C 仅 **40%** = 复杂板空档）；`2611.07650` 中转实测 5/20 家多报 input token **4,200–60,000**；`2611.07307` 项目接管完整交付率 **4.95%**
+- **发现 4（观察）**：墨题 `plans/orders/payment_events` 仍各 **0 行**，`/plans` 仅词库计划（vocab_plans），仓库最后提交 10-14 → 开卖只差 seed 套餐 + `GET /api/plans` + e2e（1.5h）
+- **工具**：`scripts/daily_vault_optimize.py` 修自动挂载重复根因（三种 wikilink 写法字面比对失效），自测 **10/10 PASS**，当前可去重 1 行（防复发）
+- **落盘**：`memory/2026/11/2026-11-07-daily-review.md`；明日 11-08 行动项 9 条（P0×3 / P1×3 / P2×2 / 🔒×1）
+- **口径修正**：「8788 auth mtime 9/19 未续期 = 下次全库停摆」证据不足（今日 requests=355 + 补全正常），降级为推断

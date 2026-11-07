@@ -47,9 +47,9 @@ updated: 2026-11-06
 - [x] OKM 看板刷新（757 / 361 / 389）
 - [x] README 统计块与徽章校准
 - [x] CRLF→LF 归一（main + dev 双分支），解除 dev 同步阻塞
-- [ ] 给 `daily_vault_optimize.py` 的 `mount_orphans` 加跨小节查重（本次手工做了一次，脚本下次还会重复登记）
-- [ ] 评估 Obsidian Bases（原生表格视图）替代部分手写 MOC 索引——参考 bryanhogan 的 2026 vault 2.0 方案
-- [ ] 给 `skills/` 第三方技能文档单独定口径（是否纳入 MOC，当前一律视为外部资产）
+- [x] 给 `daily_vault_optimize.py` 的 `mount_orphans` 加跨小节查重（本次手工做了一次，脚本下次还会重复登记）→ ✅ 2026-11-07 落地：根因不是「跨小节」，而是**字面判重**——旧检查 `f"[[{stem}]]" in text` 只认裸链接，`[[stem|显示名]]`（无路径前缀）两种写法都躲过去，于是重复登记。改为 `linked_stems()` 统一做 stem 级判重（去显示名/去锚点/去路径），并新增 `dedupe_automount()` + `dedupe_all_moc_automount()` 清理自动挂载小节里的重复裸行（正文带注解行保留，幂等）。自检 `scripts/test_daily_vault_optimize_dedup.py` 10/10 PASS；实跑 1185 篇 / 入链孤立 1 / 挂载 1 / 去重 0（现有 5 个重复 token 全在「追踪器」等人工分组区，不在自动挂载小节，故未动——保守优先）
+- [x] 评估 Obsidian Bases（原生表格视图）替代部分手写 MOC 索引——参考 bryanhogan 的 2026 vault 2.0 方案 → ✅ 2026-11-07 结论：**部分替代，不整体替代**。Bases 是核心插件（本库 `.obsidian/core-plugins.json` 已 `bases=true`，≥1.9 可用；Table/Cards/List/Kanban），但只读 frontmatter、行=文件、无脚本能力 → 表达不了 MOC 里的「主题分组 + 一句话注解」。落地：`knowledge/cards/知识卡片.base`（3 视图：全部卡片按 created 倒序 / 待消化 status=fresh / 卡片墙），YAML 已校验；MOC 保留策展层，纯列表部分逐步迁给 Bases（Bases 不写回笔记，天然不会再制造重复索引）。**需 sora 在 Obsidian 打开确认渲染**（k 侧无法 GUI 验收）
+- [x] 给 `skills/` 第三方技能文档单独定口径（是否纳入 MOC，当前一律视为外部资产）→ ✅ 2026-11-07 定案并写入 `templates/风格指南.md`「扫描口径（MOC 挂载范围）」：`knowledge/**` 纳入；`skills/**`、根目录 meta（SOUL/AGENTS/USER/PRIVACY/HOME/README）、`.hermes/.learnings/.dreams/private_knowledge` 一律不纳入；`memory/**` 只入 knowledge-map 不入域 MOC。配套硬规则：**对外报「孤立率」分母只能用 `knowledge/` 页数（~720），不能用全库 1587 篇**——后者会得出 12% 的假缺陷
 
 ## 🔗 相关
 

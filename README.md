@@ -4,7 +4,7 @@
 
   **让 AI 拥有一个会自己进化的第二大脑**
   <br>
-  **Obsidian + GitHub + Hermes Agent · 820+ 篇公开知识资产 · 18 域全景拓扑 · 7 大自举系统**
+  **Obsidian + GitHub + Hermes Agent · 830+ 篇公开知识资产 · 18 域全景拓扑 · 7 大自举系统**
 
   <p>
     <a href="https://mo9652962-ai.github.io/second-brain/">✨ 3D 全景沉浸式官网</a>
@@ -30,7 +30,7 @@
   <p>
     <img src="https://img.shields.io/badge/Obsidian-知识库-7C3AED?style=flat-square&logo=obsidian" alt="Obsidian">
     <img src="https://img.shields.io/badge/🤖_AI_直读-llms.txt-brightgreen?style=flat-square" alt="llms.txt">
-    <img src="https://img.shields.io/badge/🌿_常青笔记-361_篇-success?style=flat-square" alt="OKM Evergreen">
+    <img src="https://img.shields.io/badge/🌿_常青笔记-362_篇-success?style=flat-square" alt="OKM Evergreen">
     <img src="https://img.shields.io/badge/🔄_自举进化-Active-green?style=flat-square" alt="自举进化">
     <img src="https://img.shields.io/badge/🏆_七大自举系统-32_项-gold?style=flat-square" alt="七大自举系统">
   </p>
@@ -42,7 +42,7 @@
 </div>
 
 > 🌟 **全新 3D WebGL 宇宙与全景星空官网已上线**：👉 [在线体验 3D 知识图谱宇宙与自举演化剖析](https://mo9652962-ai.github.io/second-brain/)  
-> **核心交互体验**：3D 全景知识拓扑宇宙 · 7 大自举系统演化剖析器 · 18 域 820+ 篇知识体系实时检索 · 24H 自动化流水线雷达 · Web Audio 空间合成音效
+> **核心交互体验**：3D 全景知识拓扑宇宙 · 7 大自举系统演化剖析器 · 18 域 830+ 篇知识体系实时检索 · 24H 自动化流水线雷达 · Web Audio 空间合成音效
 
 <div align="center">
   <a href="https://mo9652962-ai.github.io/second-brain/">
@@ -94,7 +94,7 @@ graph LR
     D --> E[🔄 自举改进<br/>用新技能改进 Agent 自身]
     E --> F[✨ 进化到下一阶段]
     F -. 持续循环 .-> A
-    E -. 写入 .-> G[(Obsidian 知识库<br/>820+ 篇公开精选 · 18 域 · 26 MOC)]
+    E -. 写入 .-> G[(Obsidian 知识库<br/>830+ 篇公开精选 · 18 域 · 26 MOC)]
     G -. 反哺上下文 .-> A
 ```
 
@@ -122,8 +122,8 @@ graph LR
 
 借鉴 Karpathy 的 **LLM Wiki** 范式与 GitHub 高星第二大脑架构，知识库不是只增不减（Append-only）的死仓库，而是一套具有自我生长、演进与淘汰能力的活体知识系统：
 
-- **🌲 常青笔记 (Evergreen, 361 篇 / 47.7%)**：结构完备、双向链接闭环、实战沉淀的高信号资产。
-- **🌿 成长笔记 (Budding, 389 篇 / 51.4%)**：包含基本推演与领域上下文，处于持续求证与拓展中的进阶笔记。
+- **🌲 常青笔记 (Evergreen, 362 篇 / 47.4%)**：结构完备、双向链接闭环、实战沉淀的高信号资产。
+- **🌿 成长笔记 (Budding, 394 篇 / 51.6%)**：包含基本推演与领域上下文，处于持续求证与拓展中的进阶笔记。
 - **🌱 萌芽速记 (Seed)**：捕获的原始事实、想法或灵感种子，定期被消化蒸馏。
 - **📦 降级标记 (Superseded)**：支持 `superseded_by: [[新笔记]]` 标记过时结论，抗击认知熵增。
 - 👉 查看完整治理看板：[knowledge/METABOLISM.md](knowledge/METABOLISM.md)
@@ -193,8 +193,8 @@ graph LR
 | **[知识库体检器假阳性修复 09-25](scripts/gen-vault-index.py)** | v1.0 | 断链检测与 `knowledge-lint.py` 权威口径对齐（剥离代码 span/fence + 模板占位符白名单）：断链 51→0，剔除 45 条把 `[[新笔记]]` 类模板示例误报为断链的假阳性；DASHBOARD 恢复可信 |
 | **[arXiv AI Agent / LLM 速览 09-25](knowledge/Research/arxiv-2026-09-25-agent-llm.md)** | v1.0 | 单日窗口 662 篇补录（cron 被机器重启中断后补位）→ 16 主条目 + 14 简评：Scoped-ORC 记忆作用域防跨族干扰 / SkillPivot 转折点技能自进化 / 等 |
 | **[现代 Web 全栈与高感官微交互 09-24](skills/web/)** | v2.0 | Next.js 15 RSC、Hono v4、Tailwind v4 Oxide 引擎、Core Web Vitals 与 6 大高感官原生微交互（物理避障/3D破屏/纯CSS锯齿票券/密码锁/Canvas点阵雨/苹果Dock鱼眼） |
-| **[商业短视频工业化母带标准 09-23](skills/content/)** | v1.0 | 56.5s 七段叙事时序矩阵、-14.0 LUFS EBU R128 音频旁链闪避混音、ASS 动态弹跳荧光字幕、剪映 `draft_content.json` 纯 Python 解耦免 VIP 自动化装配 |
-| **[企业级 B2B 商业演示重构体系 09-23](skills/productivity/)** | v1.0 | 麦肯锡 SCQA 结构化说服、Action Title（标题即判断）、4+3 黄金对称产品矩阵、高密度资质矩阵墙、PPTX 批量无损量化压制引擎 |
+| **商业短视频工业化母带标准 09-23**（本地私有，未公开） | v1.0 | 56.5s 七段叙事时序矩阵、-14.0 LUFS EBU R128 音频旁链闪避混音、ASS 动态弹跳荧光字幕、剪映 `draft_content.json` 纯 Python 解耦免 VIP 自动化装配 |
+| **企业级 B2B 商业演示重构体系 09-23**（本地私有，未公开） | v1.0 | 麦肯锡 SCQA 结构化说服、Action Title（标题即判断）、4+3 黄金对称产品矩阵、高密度资质矩阵墙、PPTX 批量无损量化压制引擎 |
 | **[资产三级隔离安全架构 09-23](knowledge/Security/)** | v1.0 | 确立 Public 开源层、Private 备份层与 Local-Only 本地绝对物理隔离层，商业核心算法、接单成本与私人日记 100% 物理阻隔，门禁脚本双重巡检 |
 | **[知识库事实源三件套 09-20](knowledge/META/MOC-META.md)** | v1.0 | 新增 META 事实源体系（current-environment / current-model-status / knowledge-sources），修正 3 处过期结论「本机无虚拟化 / Docker 不可用」→ 实测为「虚拟化✅ CLI✅ 仅 Daemon 未运行」 |
 | **[arXiv AI Agent / LLM 速览 09-20](knowledge/Research/arxiv-2026-09-20-agent-llm.md)** | v1.0 | 09-18 池第三轮补全：12 主条目 + 7 简评（ScientistTwo 自主科学发现 / SoL-Pi harness RSI / SkillAA 归因技能图 / claim-safe 评测协议 / CovR 覆盖率硬件验证） |
