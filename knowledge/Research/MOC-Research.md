@@ -390,4 +390,4 @@ updated: 2026-11-07
 
 > cron 产出自动登记（防入链孤立）
 
-- [[graphify-weekly-2026-09-20]]
+- [[graphify-weekly-2026-09-20]] — Graphify 知识图谱周更 2026-09-20

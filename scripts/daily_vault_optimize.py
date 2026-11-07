@@ -187,14 +187,49 @@ def mount_orphans(files) -> int:
             continue
         marker = AUTOMOUNT_MARKER
         tail = text.rstrip()
+        ctx = mount_context(f)
+        entry = f"- [[{f.stem}]] — {ctx}" if ctx else f"- [[{f.stem}]]"
         if marker in tail:
-            new = tail + f"\n- [[{f.stem}]]\n"
+            new = tail + f"\n{entry}\n"
         else:
-            new = tail + f"\n\n{marker}\n\n> cron 产出自动登记（防入链孤立）\n\n- [[{f.stem}]]\n"
+            new = tail + f"\n\n{marker}\n\n> cron 产出自动登记（防入链孤立）\n\n{entry}\n"
         moc_path.write_text(new, encoding="utf-8")
         print(f"  [MOUNT] {f.stem} → {moc}")
         n += 1
     return n
+
+
+def mount_context(f) -> str:
+    """给 MOC 挂载行取一句上下文（研究结论：带注解的链接才是「地图」，裸链接只是清单）。
+
+    优先级：frontmatter description → frontmatter title → 首个 H1 → 正文首句。
+    取不到就返回空串，宁可裸挂也不编造。
+    """
+    try:
+        text = f.read_text(encoding="utf-8", errors="ignore")
+    except Exception:
+        return ""
+    m = re.match(r"^---\r?\n(.*?)\r?\n---", text, re.S)
+    body = text
+    if m:
+        fm = m.group(1)
+        body = text[m.end():]
+        for key in ("description", "summary", "title"):
+            mm = re.search(rf"^{key}\s*:\s*(.+)$", fm, re.M)
+            if mm:
+                val = mm.group(1).strip().strip("\"'")
+                if val and not val.startswith("["):
+                    return val[:60].replace("\n", " ")
+    for ln in body.splitlines():
+        s = ln.strip()
+        if s.startswith("# "):
+            return s[2:].strip()[:60]
+        if s and not s.startswith(("---", ">", "|", "-", "*", "!", "[", "<", "#")):
+            # 跳过 YAML 残留键值行（tags: / type: ...），它不是人写的句子
+            if re.match(r"^[A-Za-z_][\w-]*\s*:", s):
+                continue
+            return s[:60]
+    return ""
 
 
 def scan_md_files():
@@ -205,7 +240,24 @@ def scan_md_files():
         and "private_vault" not in str(f) and "MOC-" not in f.name
         and not (f.name == "README.md" and f.parent == VAULT)
         and f.name not in ("Home.md",)
+        # 第三方技能包 / 工具产物的 README、SKILL.md 不是知识笔记：
+        # 计入孤立率会把口径稀释掉（2026-11-07 实测：全库 13% vs 知识域 2%）
+        and not _in_vendor_dir(f)
     ]
+
+
+VENDOR_DIRS = (
+    "skills", ".hermes", ".learnings", ".claude", ".codebuddy",
+    ".qoder", ".gemini", ".skillkit", "graphify-out", "docs-site",
+)
+
+
+def _in_vendor_dir(f) -> bool:
+    try:
+        rel = str(f.relative_to(VAULT)).replace("\\", "/")
+    except ValueError:
+        return False
+    return any(rel == d or rel.startswith(d + "/") for d in VENDOR_DIRS)
 
 
 def find_isolated():
@@ -308,6 +360,57 @@ def update_knowledge_map_date() -> int:
     return 0
 
 
+def sync_readme_stats() -> int:
+    """把 README 里的手写统计数字同步到 knowledge/METABOLISM.md 的真实值。
+
+    为什么值得自动化：README 顶部的「常青笔记 N 篇」「820+ 篇」这类手写数字每天都会
+    过时，靠人肉记着改必然漂移（2026-11-07 实测：METABOLISM 763 篇 / 362 常青，
+    README 还写着 757 / 361）。徽章规范的研究结论也一致——能动态读真值的徽章才可信。
+    这里以 METABOLISM.md（由 okm_metabolism.py 生成）为唯一真相源，只改数字不动文案。
+    """
+    metab = VAULT / "knowledge" / "METABOLISM.md"
+    readme = VAULT / "README.md"
+    if not metab.exists() or not readme.exists():
+        return 0
+    m = metab.read_text(encoding="utf-8", errors="ignore")
+    total = re.search(r"全库受管笔记\*\*：\s*(\d+)", m) or re.search(r"全库受管笔记\D*(\d+)", m)
+    ev = re.search(r"Evergreen[^\n]*?\*\*(\d+)\*\*\s*篇\s*\(([\d.]+)%\)", m)
+    bu = re.search(r"Budding[^\n]*?\*\*(\d+)\*\*\s*篇\s*\(([\d.]+)%\)", m)
+    if not (total and ev and bu):
+        return 0
+    total_n, ev_n, ev_p, bu_n, bu_p = (
+        int(total.group(1)), int(ev.group(1)), ev.group(2), int(bu.group(1)), bu.group(2)
+    )
+    text = readme.read_text(encoding="utf-8")
+    orig = text
+    changes = 0
+
+    def sub(pattern, repl):
+        nonlocal text, changes
+        new, n = re.subn(pattern, repl, text)
+        if n and new != text:
+            changes += n
+            text = new
+
+    sub(r"常青笔记-\d+_篇", f"常青笔记-{ev_n}_篇")
+    sub(r"Evergreen, \d+ 篇 / [\d.]+%", f"Evergreen, {ev_n} 篇 / {ev_p}%")
+    sub(r"Budding, \d+ 篇 / [\d.]+%", f"Budding, {bu_n} 篇 / {bu_p}%")
+    # 「820+ 篇」指的是公开知识体系总量 → 真相源是 llms.txt（gen-llms-txt.py 产出），
+    # 不是 METABOLISM 的「受管笔记」（口径更窄）。取不到再退回受管笔记数。
+    public_n = total_n
+    llms = VAULT / "llms.txt"
+    if llms.exists():
+        mm = re.search(r"整合\s*(\d+)\s*篇", llms.read_text(encoding="utf-8", errors="ignore"))
+        if mm:
+            public_n = int(mm.group(1))
+    # 向下取整到十位，保证「N+ 篇」表述永远成立（824 → 820+，830 → 830+）
+    floor10 = (public_n // 10) * 10
+    sub(r"\b\d{3}\+ 篇", f"{floor10}+ 篇")
+    if text != orig:
+        readme.write_text(text, encoding="utf-8")
+    return changes
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--commit", action="store_true", help="自动 git add/commit/push")
@@ -317,6 +420,12 @@ def main():
     total = scan_md_files()
     isolated = find_isolated()
     print(f"笔记总数: {len(total)} | 孤立: {len(isolated)} ({len(isolated)*100//max(len(total),1)}%)")
+    # 知识域单独口径（knowledge/**）：这是真正的知识资产健康度，
+    # 全库口径含 memory/ 日志、系统身份文件等天然无出链的文件
+    kn_total = [f for f in total if str(f.relative_to(VAULT)).startswith("knowledge")]
+    kn_iso = [f for f in isolated if str(f.relative_to(VAULT)).startswith("knowledge")]
+    print(f"知识域口径(knowledge/**): {len(kn_iso)}/{len(kn_total)}"
+          f" ({len(kn_iso)*100//max(len(kn_total),1)}%)")
     # 最小产出门禁（2026-09-08 静默失效 bug 防线）：正常 vault 应有 1000+ 笔记，
     # 扫描数异常偏低 = VAULT 路径/扫描逻辑出问题，立即 FATAL 不许假装成功
     if len(total) < MIN_NOTE_COUNT:
@@ -351,7 +460,11 @@ def main():
     km = update_knowledge_map_date()
     print(f"知识地图日期更新: {km}")
 
-    if args.commit and (linked + mounted + moc_new + deduped + km) > 0:
+    # README 统计徽章自愈（2026-11-07 研究落地：手写数字徽章是最快的腐化点）
+    synced = sync_readme_stats()
+    print(f"README 统计同步: {synced} 处")
+
+    if args.commit and (linked + mounted + moc_new + deduped + km + synced) > 0:
         r = subprocess.run(
             ["git", "-C", str(VAULT), "add", "-A"],
             capture_output=True, text=True, timeout=60,
