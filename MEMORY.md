@@ -357,10 +357,11 @@ v2026.3.7 引入的可插拔上下文管理界面已验证稳定。模型路由�
 - [x] ~~小红书发「AI PPT 教程」内容~~ ✅ 2026-09-20 去重：由 projects/current.md L286 跟踪（依赖 PPT 样例素材，样例未产出顺延）
 - [x] ~~Krea2 安装（ComfyUI + 14GB 模型下载）~~ ✅ 2026-08-02：8/1 深夜已部署完成（见 projects/current.md），待办过时
 - [x] ~~Skill 重复合并（6 组，8/1 审计识别）~~ ✅ 2026-09-05 已执行（真相核对：1 真重复 + 1 重叠 + 1 残留——image-generation-workflow 并入 ai-image-generation v1.1 / miknas-find-skills 归档 / openclaw-imports 归档）
+- [x] ~~待办清单分散~~ ✅ 2026-11-07 周清理：`projects/current.md`「📌 活跃任务清单」= 唯一执行清单（16 项去重，7 项需 sora / 6 项 k 可做 / 3 项专项会话）；MEMORY.md 待提升区不再新增执行条目，仅作历史留存
 
 ---
 
-_最后更新: 2026-11-06｜运行环境: Hermes Agent on Windows 11_
+_最后更新: 2026-11-07｜运行环境: Hermes Agent on Windows 11_
 
 ## 🔒 Waiting for User（阻塞待办，状态变化时提醒）
 - （空——被阻塞任务单独维护，不混入每日清单）
