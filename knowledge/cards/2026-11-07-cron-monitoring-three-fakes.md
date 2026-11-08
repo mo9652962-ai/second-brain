@@ -78,3 +78,8 @@ status: fresh
 ---
 
 *卡片来源：当天知识库精选（`knowledge/` 今日无新增笔记 → 候选池为空，改从今日 vault 实测产物 `memory/2026/11/health-2026-11-07.md` + `cron-health-latest.md` 回捞，并用 `executions.db` / `jobs.json` / `psutil` 现场复核，未采信旧报告结论）。*
+
+---
+
+> 🔗 **同周卡片（证据档位知识簇）**：[[2026-11-06-douyin-traffic-pool-evidence|抖音流量池的证据定级]] · [[2026-11-08-agent-approval-secrets|「别再问我」把密码写进公开仓库]]
+> 三张讲的是同一件事——**没报 ≠ 没有，无出处 ≠ 已证伪，`last_status` ≠ 状态源**。判据一律分成观察 / 推断 / 未知三档。

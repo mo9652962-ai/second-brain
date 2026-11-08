@@ -2,7 +2,7 @@
 title: 知识库索引
 type: 索引
 created: 2026-09-05
-updated: 2026-10-16
+updated: 2026-11-08
 tags: [meta, vault-maintenance]
 ---
 
@@ -26,22 +26,22 @@ MOC-<域>.md          ← 该域全部页面索引
 | 域 | MOC 入口 | 规模 | 典型内容 |
 |:---|:---|:---|:---|
 | 全量总图 | [[knowledge-map]] | 600+ | **所有页面的完整索引（唯一真相源）** |
-| Research | [[MOC-Research]] | 224 | 千轮研究、多 Agent、AI 论文深研 |
-| Dev | [[MOC-Dev]] | 138 | 软件工程、前端/后端、部署、系统设计 |
-| Security | [[MOC-Security]] | 52 | SRC、逆向、防御加固、合规 |
-| Productivity | [[MOC-Productivity]] | 57 | PPT、写作、文档、效率工具 |
+| Research | [[MOC-Research]] | 243 | 千轮研究、多 Agent、AI 论文深研 |
+| Dev | [[MOC-Dev]] | 140 | 软件工程、前端/后端、部署、系统设计 |
+| Security | [[MOC-Security]] | 66 | SRC、逆向、防御加固、合规 |
+| Productivity | [[MOC-Productivity]] | 59 | PPT、写作、文档、效率工具 |
 | Hardware | [[MOC-Hardware]] | 20 | PCB/KiCad/FreeCAD/单片机 |
-| Finance | [[MOC-Finance]] | 16 | A股、量化、自选股分析 |
-| GitHub | [[MOC-GitHub]] | 58 | GitHub 项目实证研究 |
-| Inbox | [[MOC-Inbox]] | 53 | 待接入笔记（未挂载入口） |
-| cards | [[knowledge/cards/MOC-cards\|MOC-cards]] | 42 | 每日精选知识卡片 |
-| Daily | [[knowledge/Daily/MOC-Daily\|MOC-Daily]] | 42 | Hacker News 精选、每日回顾 |
-| AI | [[knowledge/AI/MOC-AI\|MOC-AI]] | 18 | Agent 评估、数字生命、知识库方法论 |
-| SOP | [[knowledge/SOP/MOC-SOP\|MOC-SOP]] | 9 | 可复用标准流程 |
-| Creative | [[knowledge/Creative/MOC-Creative\|MOC-Creative]] | 5 | AI 小说、去 AI 味、网文 |
+| Finance | [[MOC-Finance]] | 18 | A股、量化、自选股分析 |
+| GitHub | [[MOC-GitHub]] | 60 | GitHub 项目实证研究 |
+| Inbox | [[MOC-Inbox]] | 0（历史 53 已接入） | 待接入笔记（未挂载入口） |
+| cards | [[knowledge/cards/MOC-cards\|MOC-cards]] | 45 | 每日精选知识卡片 |
+| Daily | [[knowledge/Daily/MOC-Daily\|MOC-Daily]] | 47 | Hacker News 精选、每日回顾 |
+| AI | [[knowledge/AI/MOC-AI\|MOC-AI]] | 21 | Agent 评估、数字生命、知识库方法论 |
+| SOP | [[knowledge/SOP/MOC-SOP\|MOC-SOP]] | 8 | 可复用标准流程 |
+| Creative | [[knowledge/Creative/MOC-Creative\|MOC-Creative]] | 4 | AI 小说、去 AI 味、网文 |
 | gaming | [[knowledge/gaming/MOC-gaming\|MOC-gaming]] | 3 | 游戏 mod / 工具 / 联机 |
 | Archive | [[knowledge/Archive/MOC-Archive\|MOC-Archive]] | 2 | 冻结历史笔记 |
-| Education | [[knowledge/Education/MOC-Education\|MOC-Education]] | 1 | 学业规划、家教 |
+| Education | [[knowledge/Education/MOC-Education\|MOC-Education]] | 0（入口指向 skills） | 学业规划、家教 |
 | Product | [[knowledge/Product/MOC-Product\|MOC-Product]] | 1 | 墨题及服务类产品 |
 
 > 2026-09-20 起：**每个知识域都有 MOC 锚点**（此前 9 个域无锚点，只能粗粒度挂 knowledge-map）。

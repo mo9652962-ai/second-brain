@@ -68,3 +68,4 @@ updated: 2026-10-11
 - [[hackernews-2026-10-16]] — Hacker News 今日精选 — 2026-10-16
 - [[hackernews-2026-11-06]] — Hacker News 今日精选 — 2026-11-06
 - [[hackernews-2026-11-07]] — Hacker News 今日精选 — 2026-11-07
+- [[hackernews-2026-11-08]] — Hacker News 今日精选 — 2026-11-08

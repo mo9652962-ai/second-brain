@@ -1,7 +1,7 @@
 ---
 title: "Lossless Scaling（无损缩放/小黄鸭）研究（2026-08-18 五轮千轮研究）"
 type: note
-domain: gaming
+domain: Gaming
 status: active
 tags: [knowledge/gaming]
 source: null

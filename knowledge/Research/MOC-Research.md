@@ -19,6 +19,7 @@ updated: 2026-11-08
 
 - [[vault-governance-audit-2026-11-06]] — 知识库治理日审计：MOC 重复索引才是真噪音（33 行重复/38 token）、标签变体 12 类命中 26 篇、CRLF 幽灵改动阻塞 dev 同步的根因与修复
 - [[GitHub-Weekly-2026-11-08]] — W45 GitHub 宝藏挖掘（4 周缺档后首期）：codebase-memory-mcp 48.3k（28 天 +1,986）/ chrome-devtools-mcp +1,687 / dify 160.6k 首次进榜；本期未重跑真实性核验
+- [[GitHub-Weekly-2026-11-08-weekly-5projects]] — W45 weekly 口径 5 项新面孔：agent-autoloop 4.0k / claude-mem 114.6k / dsh-superagent 20.9k / NOIR 3.0k / worktrunk 12.0k（与同日脚本口径互补）
 
 - [[2026-11-01-ten-rounds-tech-frontier-mastery]] — 2026 Q4 全球技术前沿十轮千轮研究大满贯：从认知基建到工业实战的全景对齐（十大领域官方一手实证）
 - [[2026-11-01-cross-domain-tech-frontier-sync]] — 2026 Q4 全球技术前沿与工程基线深度同步：从 MCP 规范演进到 AI Agent、现代逆向与硬件 EDA（六大支柱全景实证）

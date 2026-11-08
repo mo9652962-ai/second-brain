@@ -140,4 +140,10 @@ kicad-cli pcb export drill -o fab/ demo.kicad_pcb
 > **证据契约说明**：以上内容属于【观察（实测与官方文档确认）24 项 / 推断（架构选型与路线研判）8 项 / 未知 0 项】。全链路无死角实证。
 
 ---
+## 关联
+
+- **同批另一份总览**：[[2026-11-01-ten-rounds-tech-frontier-mastery]] — 十轮递进版（记忆/前端/Python/OWASP/EDA/学术/抖音/FSRS/逆向/自举），本文六支柱是它的协议层与评测层展开。
+- **后续落地**：知识库治理侧的实测结论见 [[vault-governance-audit-2026-11-06]]（MOC 重复索引 / 标签变体 / CRLF 幽灵改动）。
+
+---
 > 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]

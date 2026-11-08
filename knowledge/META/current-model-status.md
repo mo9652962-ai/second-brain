@@ -1,6 +1,6 @@
 ---
 type: current-state
-verified_at: 2026-09-20
+verified_at: 2026-11-08
 status: active
 tags: [meta, models, api, fact-source]
 ---
@@ -9,7 +9,7 @@ tags: [meta, models, api, fact-source]
 
 > **事实源**：模型名、价格、可用性一律以本文为准。
 > 旧文档中的价格表、模型名可能已过期 —— 不要复制价格，指向官方来源。
-> 下次复核：2026-10-20（或 provider 变更时）。
+> 下次复核：2026-12-08（或 provider 变更时）。
 
 ## 命名规范
 
@@ -95,33 +95,48 @@ next_review: 2026-10-20
 
 ---
 
-## Hermes 运行时配置（2026-09-20 实测）
+## Hermes 运行时配置（2026-11-08 实测）
 
-> 来源：`AppData\Local\hermes\config.yaml`，**不手工猜测**。
+> 来源：`AppData\Local\hermes\config.yaml`，**不手工猜测**（yaml 解析实读，非肉眼抄）。
 
 ```yaml
 model:
-  default: gemini-3.8-flash-high
-  provider: cpa-gui
+  default: deepseek-v4.1-flash
+  provider: workbuddy-ai
+fallback_model:
+  - provider: custom:workbuddy-ai
+    model: deepseek-v4.1-flash
+    base_url: http://127.0.0.1:8788/v1
+    api_mode: chat_completions
 ```
 
-**已配置的 provider**（custom_providers）：
-`opencode-go` / `siliconflow` / `moonshot` / `fangzhou-1` / `jiyuanlvdong` /
-`dengzhen` / `keylink` / `local-qwen` / `sensenova` / `jiyuanlvdong-2` /
-`cpa-gui` / `workbuddy` / `workbuddy-ai`
+**已配置的 provider**（`providers:` 共 19 个，2026-11-08 实读）：
+`moonshot` / `moonshot-2` / `opencode-go` / `siliconflow` / `fangzhou-1` / `fangzhou-2` /
+`jiyuanlvdong` / `jiyuanlvdong-2` / `dengzhen` / `dashscope` / `keylink` / `local-qwen` /
+`tabitoken` / `zhipu` / `sensenova` / `openrouter` / `workbuddy` / `workbuddy-ai` / `cpa-gui`
 
-**辅助任务模型**（auxiliary）：
+> 注：`custom_providers:` 这个键现在是空列表 `[]`——09-20 版文档按旧 schema 把它当 provider 清单，
+> 会得出「只有 13 个 provider」的错误结论。**以 `providers:` 为准**。
+
+**辅助任务模型**（auxiliary，9 项全部实读）：
 
 | 用途 | 模型 | provider |
 |:---|:---|:---|
-| vision | `qwen-vl-max` | — |
-| skill_match | `doubao-seed-1-6-flash-250615` | `custom:fangzhou-2` ⚠️ |
-| 其他辅助 | doubao-seed-2-0-* / glm-5-2-260617 / minimax-m3 | `custom:fangzhou-2` ⚠️ |
+| vision | `glm-5v-turbo` | `workbuddy-ai` |
+| compression | `deepseek-v4.1-flash` | `workbuddy-ai` |
+| approval_classifier | `glm-5.2` | `workbuddy-ai` |
+| browser_screenshot | `minimax-m3` | `custom:opencode-go` |
+| memory_refresh | `deepseek-v4.1-flash` | `workbuddy-ai` |
+| session_summary | `deepseek-v4.1-flash` | `workbuddy-ai` |
+| skill_match | `deepseek-v4.1-flash` | `workbuddy-ai` |
+| tool_dispatch | `deepseek-v4.1-flash` | `workbuddy-ai` |
+| web_summary | `deepseek-v4-flash` | `custom:workbuddy` |
 
-> ⚠️ **配置缺陷（2026-09-20 发现）**：`auxiliary.*.provider` 引用了 `custom:fangzhou-2`，
-> 但 `custom_providers` 中**只定义了 `fangzhou-1`，没有 `fangzhou-2`**。
-> 该引用共出现 6 次，可能导致辅助模型（含 skill_match）回退或失败。
-> 待处理：确认是否应改为 `custom:fangzhou-1`，或补上 fangzhou-2 定义。
+> ✅ **旧配置缺陷已闭环（2026-11-08 复核）**：09-20 记的「`auxiliary.*.provider` 引用
+> `custom:fangzhou-2` 但未定义」已不复存在——`fangzhou-2` 现已在 `providers:` 中定义，
+> 且 auxiliary 已整体切到 `workbuddy-ai`，不再有任何 `fangzhou-2` 引用。
+> 复核命令（5 秒）：
+> `python -c "import yaml,io;c=yaml.safe_load(io.open('~/AppData/Local/hermes/config.yaml',encoding='utf-8'));print(c['model']);print(list(c['providers']));print(c['auxiliary'])"`
 
 ---
 
@@ -130,3 +145,4 @@ model:
 - [[knowledge/META/current-environment]] — 环境与 Docker 事实源
 - [[knowledge/META/knowledge-sources]] — 路径与数量事实源
 - [[index]] — 知识库路由层
+- [[knowledge/AI/免费额度模型通道-2026-11-06]] — 官方零费率 / 注册赠额通道盘点（数字未逐条复核，接入前看官方页）

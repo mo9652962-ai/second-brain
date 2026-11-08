@@ -400,7 +400,18 @@ updated: 2026-11-06
 | 10 | **单笔成本归因**（接单表加 token / 时长 / 工具成本列） | 0.5h | 近 3 单填完，得真实毛利区间 |
 | 11 | **抖音首条脚本**（按修正口径「流量池那套数字没人拿得出出处」） | 40min | 含前 2 秒钩子 + 3 个证据点 + 置顶评论 |
 | 12 | **知识卡片收敛**（21 卡 57 条行动项 → 按主题并入技能规则区） | 1h | 卡片区未勾选项 ≤10 |
-| 13 | watchdog「自愈后仍记 failed」账本修 | 30min | 自愈成功记 completed，不再产生假失败 |
+| 13 | watchdog「自愈后仍记 failed」账本修 | 30min | 自愈成功记 completed，不再产生假失败 → ✅ **2026-11-08 已闭环**（见下） |
+
+> ✅ **#13 已落地（2026-11-08 suggestion-implementation）**：根因不在 cron 账本，在
+> `D:\tools\codebuddy2api\healthcheck.py` 的 quiet 分支——`problems` 里混着「🔧 已自愈」和
+> 「❌/🔑 真故障」，quiet 模式一律 `return 1`，**与模块 docstring 自己写的契约
+> 「0 = 全部健康，或掉线后已自愈」相反**。修法：quiet 模式只把 `❌`/`🔑` 当致命，
+> 自愈成功落盘 `logs/watchdog-selfheal.log` 后静默返回 0。
+> 验证：4 分支 monkeypatch 用例全 PASS（全健康 0 静默 / 自愈 0 静默 / 拉起仍挂 1 报错 /
+> 凭据失效 1 报错）；真实 `--quiet` 与 wrapper 实跑均 exit 0 静默。
+> **回归护栏已入仓**：`tests/test_healthcheck.py` 新增 4 条 quiet 契约用例，全套 **183 passed**；
+> 拿旧版跑同一套 → `assert 1 == 0`（RED 成立，测试确实咬得住这个 bug）。
+> 备份：`healthcheck.py.bak-20261108`。
 
 ### ⏳ 需专项会话（3 项，cron 单次做不完）
 
@@ -646,7 +657,7 @@ updated: 2026-11-06
 - [x] 🟡 `hermes-workflow-preferences` 新增规则：后台/curator 上下文不 patch 非 curator-managed 技能 → ✅ **已在位（2026-10-03 登记当日落地）**：SKILL.md 规则 #37（含判据 + 连拒 2 次即停 + 版本记录 1.32.0），本次复核确认
 - [x] 🟡 补写 10-04 ~ 10-08 反思（至少做行动项核查）→ ⏳ **需专项会话**（2026-10-12 复核仍 open，第 2 次）：需读 5 天会话/工具数据重建，非 cron 单次可完成；**替代缓解已生效**：`open-actions-broadcast` 每日播报当前未闭环项，断档期不再静默 → 🔁 2026-11-07 周清理：已收敛至「📌 活跃任务清单」
 - [x] 🟢 任务进行中禁止切模型（10-09 切 3 次 → 5 次 failed_turn）→ ⏳ **需专项会话**（属会话行为规则，需在前台会话验证生效，第 2 次） → 🔁 2026-11-07 周清理：已收敛至「📌 活跃任务清单」
-- [x] 🟢 workbuddy-proxy-watchdog 假失败：8790/8788 每次 ReadTimeout 后自愈，但 cron 仍记 failed → ⏳ **需专项会话**（2026-10-12 复核仍 open，第 2 次）：10-12 daily-review 实测 8790/8788 均 HTTP 200，failed 系单次 ReadTimeout 后自愈；修法 = 自愈成功应记 completed；**11/06 已加装深度探测：`healthcheck.py` 新增 `probe_completion()`（真发 1-token 补全抓 401，不再只看 /health），config 未引用的实例降为 verbose-only 防噪音**；仍 open 的一半 = 「自愈后 cron 仍记 failed」的账本问题 → 🔁 2026-11-07 周清理：已收敛至「📌 活跃任务清单」
+- [x] 🟢 workbuddy-proxy-watchdog 假失败：8790/8788 每次 ReadTimeout 后自愈，但 cron 仍记 failed → ✅ **2026-11-08 已闭环（不再需要专项会话）**：根因在 `healthcheck.py` quiet 分支把「🔧 已自愈」当致命返回 1（与自身 docstring 契约相反），已改为只对 `❌`/`🔑` 报错、自愈落盘静默；4 分支用例全 PASS + 真实 wrapper 实跑 exit 0 静默。详见「📌 活跃任务清单 #13」。**11/06 的深度探测 `probe_completion()` 保留生效**（抓 401 上游掉号）
 - [x] 🟢 卡片 cron 排程评估 / 评估升级 OpenClaw v2026.9.8 / 记忆清理机制 / Secret egress host binding / 任务感知模型路由扩展 → 📖 **条件触发参考清单，非待办**（留待触发条件满足时启用，不占每日扫描位） → 🔁 2026-11-07 周清理：已收敛至「📌 活跃任务清单」
 
 

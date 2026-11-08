@@ -76,7 +76,7 @@ status: adopted
 - [[knowledge/Dev/agent-autoloop-2026-11-08]] — 内核四机制的可运行实现
 - [[knowledge/AI/claude-mem-2026-11-08]] — 分层索引 / 按需展开（注意力在上下文侧的对应物）
 - [[knowledge/Dev/worktrunk-2026-11-08]] — 工作区隔离（并行第三块拼图）
-- [[hermes-automation-patterns]] — 现有 cron 可靠性规范，本笔记是其上位约束
+- hermes-automation-patterns（技能）— 现有 cron 可靠性规范，本笔记是其上位约束
 
 ---
 *W45 · 2026-11-08 · 观察 8 项概念 / 推断 1 项映射 / 未知 1 项*

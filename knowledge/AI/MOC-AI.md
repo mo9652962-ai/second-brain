@@ -4,13 +4,19 @@ domain: AI
 type: moc
 status: active
 created: 2026-09-20
-updated: 2026-09-20
+updated: 2026-11-08
 ---
 
 # 🤖 AI 研究与生态 — AI
 
 > 🏠 [[HOME]] | 🗺️ [[knowledge/knowledge-map|知识地图]] | 📇 [[knowledge/index|索引]]
 > Agent 评估、数字生命、知识库方法论
+
+## 🆕 W45（2026-11-08）
+
+- [[knowledge/AI/claude-mem-2026-11-08|claude-mem 114.6k]] — 第二个 agent 旁听记笔记：索引→时间线→详情三级检索省 ~10x token；repo 描述点名支持 Hermes
+- [[knowledge/AI/dsh-superagent-2026-11-08|dsh-superagent 20.9k]] — DeepSeek Router/Worker 两层原型：**20.9k★ / 1 commit / 37KB**，读 docs 不装码
+- [[knowledge/AI/super-agent-attention-architecture-2026-11-08|注意力架构方法论]] — 把「人的注意力是瓶颈」落成 Hermes cron 三条 P0 约束（无新增即 SILENT / 外部文本落盘 / 委派深度 ≤3）
 
 ## Agent / 数字生命
 

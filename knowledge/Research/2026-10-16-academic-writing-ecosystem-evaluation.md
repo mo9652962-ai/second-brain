@@ -1,6 +1,6 @@
 ---
 tags: [academic, paper, research-tools, citation]
-domain: academic
+domain: Academic
 created: 2026-10-16
 updated: 2026-10-16
 status: adopted
