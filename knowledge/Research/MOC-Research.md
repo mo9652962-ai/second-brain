@@ -381,6 +381,8 @@ updated: 2026-11-07
 - [[2026-10-16-academic-writing-ecosystem-evaluation]]
 - [[2026-10-16-aigc-detection-toolchain-verification]]
 - [[2026-10-16-thesis-reference-and-docx-linkage-lessons]]
+- [[arxiv-2026-10-10-core-contributions]] — 精选 3 篇（补登记，10-10 批次）
+- [[arxiv-2026-11-07-core-contributions]] — 精选 3 篇（PCBRouteAgent PCB 布线 / Memory Trap 记忆越界 / LLM API Relays 中转实测）
 
 ## 🧭 入口治理
 

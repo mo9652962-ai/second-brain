@@ -262,4 +262,10 @@ source: export.arxiv.org API（cat:cs.AI/cs.CL/cs.LG/cs.MA/cs.SE 按提交日期
 *以上：观察 24 项（均为 arXiv API 原文摘要与论文自报数字）/ 推断 3 项（①「arXiv 周日 20:00 ET 才出下一批」依据公告规则未实测；② 各篇「关联度」为判断非论文结论；③ 论文实验可复现性未验证）/ 未知 2 项（PCBWorld-Bench 是否公开可取未确认；DelegateEval 无实证结果）。生成于 2026-11-07 21:25 cron，覆盖 11-05 批次未读的 326 篇中的 24 篇。*
 
 ---
+
+**状态：reading → processed**（2026-11-08 14:55 CST，arxiv-summarize cron）
+**已处理：** 精选 3 篇（PCBRouteAgent 2611.08175 / The Memory Trap 2611.07554 / LLM API Relays 2611.07650）→ [[arxiv-2026-11-07-core-contributions]]
+**处理时补充的实测：** PCBWorld-Bench 公开可用（LGAI-Research/PCBWorld，37★，Linux+KiCad 9.0.8）；PCBRouteAgent 与 memory-trap 自报的代码仓库均 404（暂不可复现）。
+
+---
 > 🗺️ 属于 [[MOC-Research]] · [[Home|🏠 Home]]
