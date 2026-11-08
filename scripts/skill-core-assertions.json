@@ -1,0 +1,36 @@
+{
+  "_doc": "高风险技能的「独占核心功能断言」注册表 —— 每个技能恰好一条不可让渡的功能断言，被 check-skill-assertions.py 周期校验。断言的实现形式是 must_contain：该字符串必须仍出现在技能的 SKILL.md 里；一旦被人删掉/改写，审计就报红。来源待办：knowledge/cards/2026-10-10-coinstalled-skill-conflict.md 行动项 2（2026-11-08 落地）",
+  "_run": "python scripts/check-skill-assertions.py",
+  "assertions": [
+    {
+      "skill": "github-privacy-gate",
+      "assertion": "移出仓库 ≠ 安全：历史里还在就必须先轮换凭据，再清历史",
+      "must_contain": "移出 ≠ 安全",
+      "why": "这条是本技能唯一不可让渡的功能——只做 gitignore 等于没做，会给出虚假安全感"
+    },
+    {
+      "skill": "github-repo-privacy-gate",
+      "assertion": "私有资产严禁在 Public 仓库裸奔，误入必须物理切离",
+      "must_contain": "严禁在 Public 仓库裸奔",
+      "why": "资产隔离红线（记忆条目 9-23）；这条失守的代价是不可逆的公开发布"
+    },
+    {
+      "skill": "wechat-cloud-miniapp-security",
+      "assertion": "小程序前端可反混淆，重要逻辑必须放云函数",
+      "must_contain": "重要逻辑必须放云函数",
+      "why": "整个云开发安全模型的地基；前端放逻辑等于把算法公开"
+    },
+    {
+      "skill": "xianyu-monetization",
+      "assertion": "标价必须对应真实可交付的最小服务，不做虚假标价",
+      "must_contain": "标价必须对应真实可交付的最小服务",
+      "why": "虚假标价会被平台下架+降权，是接单业务的封号级风险"
+    },
+    {
+      "skill": "hermes-codex-security-gate",
+      "assertion": "L4 真实生产环境一律必须人工批准，禁止项不得放宽",
+      "must_contain": "必须人工批准",
+      "why": "派活 Codex 的最后一道闸；这条被改写等于自动放行生产环境"
+    }
+  ]
+}

@@ -56,9 +56,9 @@ Claude Code 首次创建这个文件时，会把它写进**用户本机的全局
 ## 四、行动项
 
 - [x] `.gitignore` 补 `**/.claude/settings.local.json`（2026-11-08 已加，防下一次裸奔）
-- [ ] 门禁加「命令内嵌凭据」规则（`PGPASSWORD=`、`sshpass -p`、`mysql -p`、`Bearer <20+ 字符>`、`sk-`、`AKIA`）——**暂未自动改**：本库 skill 文档里有大量命令示例，直接加会大面积误报，需先加白名单再上
-- [ ] 批准时给**模式**不给整条命令（`Bash(npm run:*)`），密码走变量（`$DB_URL`），让存下来的规则里只有变量名
-- [ ] 真进过仓库的凭据：**先轮换，再清理**——历史版本和 fork 都留着，删文件是假的
+- [x] 门禁加「命令内嵌凭据」规则（`PGPASSWORD=`、`sshpass -p`、`mysql -p`、`Bearer <20+ 字符>`、`sk-`、`AKIA`）——**暂未自动改**：本库 skill 文档里有大量命令示例，直接加会大面积误报，需先加白名单再上 → ✅ **2026-11-08 已落地**：先做「占位符过滤」而非白名单（`PGPASSWORD=xxx` / `${DB_PASS}` / `真实密码` / `` `规则名` `` 一律不算），实测全库 989 tracked 文件 **0 误报**（加规则前 dry-run 只有 12 处命中，全是本卡与 log.md 的示例）。新文件 `scripts/credential_patterns.py`（规则 + 占位符判定，无 IO）+ `scripts/test_credential_patterns.py`（**18/18 PASS**）+ `check-repo-privacy.py` 接入为「第二类命中」（命中即 exit 1）。端到端阳性验证：临时 `git add` 一个含 `PGPASSWORD=<假值>` 的文件 → 门禁 exit 1 并点名该行，随后 `git rm --cached` 清理
+- [x] 批准时给**模式**不给整条命令（`Bash(npm run:*)`），密码走变量（`$DB_URL`），让存下来的规则里只有变量名 → ✅ 已固化为 `hermes-workflow-preferences` **规则 #45**（2.4.0→2.5.0），含 5 条核心规则 + 3 条判据命令
+- [x] 真进过仓库的凭据：**先轮换，再清理**——历史版本和 fork 都留着，删文件是假的 → ✅ **本机不适用**：`git log --all --diff-filter=A -- "*settings.local.json"` 空、全库 `settings.local.json` 0 个、已跟踪的三个 agent 配置只有 hooks 无 permissions（本卡第三节实测）→ 无凭据需要轮换；规则本身已写进 #45 第 4 条
 
 ## 五、证据分级
 
