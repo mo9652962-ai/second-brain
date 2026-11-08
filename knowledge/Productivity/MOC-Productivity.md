@@ -131,4 +131,7 @@ updated: 2026-08-31
 - [[knowledge/Productivity/system-cleanup-report-20261017|系统清理报告 2026-10-17]] — C 盘极端空间抢修与缓存清理
 - [[knowledge/Productivity/system-cleanup-report-20261018|系统清理报告 2026-10-18]] — 最终释放 49.6 GB 深度清理实测
 
+## 🆕 W45 新增（11-02 ~ 11-08：API 成本）
+- [[knowledge/Productivity/token-usage-report-20261108|Token 用量报告 11-08（W45）]] — 等价成本 $38.04，71% 来自单个 grok 长会话；state.db 涨至 942MB；wechat-official MCP 201 次连接失败
+
 
