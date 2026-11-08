@@ -62,3 +62,6 @@ Claude Code / Codex 这类 agent 能长时间无人值守跑，所以「同时�
 
 ---
 *W45 · 2026-11-08 · 观察：star/commits/contributors/releases/README 实读；推断：与另两个项目构成并行三件套；未知：未实机安装*
+
+---
+> 🗺️ 属于 [[MOC-Dev]] · [[Home|🏠 Home]]

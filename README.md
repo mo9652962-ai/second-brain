@@ -30,7 +30,7 @@
   <p>
     <img src="https://img.shields.io/badge/Obsidian-知识库-7C3AED?style=flat-square&logo=obsidian" alt="Obsidian">
     <img src="https://img.shields.io/badge/🤖_AI_直读-llms.txt-brightgreen?style=flat-square" alt="llms.txt">
-    <img src="https://img.shields.io/badge/🌿_常青笔记-362_篇-success?style=flat-square" alt="OKM Evergreen">
+    <img src="https://img.shields.io/badge/🌿_常青笔记-402_篇-success?style=flat-square" alt="OKM Evergreen">
     <img src="https://img.shields.io/badge/🔄_自举进化-Active-green?style=flat-square" alt="自举进化">
     <img src="https://img.shields.io/badge/🏆_七大自举系统-32_项-gold?style=flat-square" alt="七大自举系统">
   </p>
@@ -122,8 +122,8 @@ graph LR
 
 借鉴 Karpathy 的 **LLM Wiki** 范式与 GitHub 高星第二大脑架构，知识库不是只增不减（Append-only）的死仓库，而是一套具有自我生长、演进与淘汰能力的活体知识系统：
 
-- **🌲 常青笔记 (Evergreen, 362 篇 / 47.4%)**：结构完备、双向链接闭环、实战沉淀的高信号资产。
-- **🌿 成长笔记 (Budding, 394 篇 / 51.6%)**：包含基本推演与领域上下文，处于持续求证与拓展中的进阶笔记。
+- **🌲 常青笔记 (Evergreen, 402 篇 / 51.9%)**：结构完备、双向链接闭环、实战沉淀的高信号资产。
+- **🌿 成长笔记 (Budding, 366 篇 / 47.2%)**：包含基本推演与领域上下文，处于持续求证与拓展中的进阶笔记。
 - **🌱 萌芽速记 (Seed)**：捕获的原始事实、想法或灵感种子，定期被消化蒸馏。
 - **📦 降级标记 (Superseded)**：支持 `superseded_by: [[新笔记]]` 标记过时结论，抗击认知熵增。
 - 👉 查看完整治理看板：[knowledge/METABOLISM.md](knowledge/METABOLISM.md)

@@ -76,4 +76,4 @@ updated: 2026-10-16
 > cron 产出自动登记（防入链孤立）
 
 - [[knowledge/cards/2026-09-21-devin-cognition-eval|2026-09-21 Devin 认知评估]] — 🃏 知识卡片 · Devin 评估：云端 Agent 适合当「远程执行队员」，不替代 Codex + Hermes
-
+- [[2026-11-07-ppt-layered-material]] — 🃏 知识卡片 · 答辩 PPT 的「分层材质」：三层就够，别加第四层

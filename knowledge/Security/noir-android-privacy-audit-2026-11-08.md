@@ -71,3 +71,6 @@ noir doctor     # 环境自检：平台 / java / adb / 设备
 
 ---
 *W45 · 2026-11-08 · 观察：star/commits/releases/README 实读；推断：本机可跑（adb 已具备）；未知：报告准确性未实测*
+
+---
+> 🗺️ 属于 [[MOC-Security]] · [[Home|🏠 Home]]

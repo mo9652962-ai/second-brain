@@ -87,3 +87,6 @@ status: watching
 
 ---
 *W45 · 2026-11-08 · 观察：star/commits/contributors/releases/README 实读，性能数字为作者自测口径；推断：Hermes 映射；未知：未实机安装验证*
+
+---
+> 🗺️ 属于 [[MOC-Dev]] · [[Home|🏠 Home]]
