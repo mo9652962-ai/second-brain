@@ -2951,9 +2951,9 @@
 <h2 id="_3">四、行动项<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ul>
 <li>[x] <code>.gitignore</code> 补 <code>**/.claude/settings.local.json</code>（2026-11-08 已加，防下一次裸奔）</li>
-<li>[ ] 门禁加「命令内嵌凭据」规则（<code>PGPASSWORD=</code>、<code>sshpass -p</code>、<code>mysql -p</code>、<code>Bearer &lt;20+ 字符&gt;</code>、<code>sk-</code>、<code>AKIA</code>）——<strong>暂未自动改</strong>：本库 skill 文档里有大量命令示例，直接加会大面积误报，需先加白名单再上</li>
-<li>[ ] 批准时给<strong>模式</strong>不给整条命令（<code>Bash(npm run:*)</code>），密码走变量（<code>$DB_URL</code>），让存下来的规则里只有变量名</li>
-<li>[ ] 真进过仓库的凭据：<strong>先轮换，再清理</strong>——历史版本和 fork 都留着，删文件是假的</li>
+<li>[x] 门禁加「命令内嵌凭据」规则（<code>PGPASSWORD=</code>、<code>sshpass -p</code>、<code>mysql -p</code>、<code>Bearer &lt;20+ 字符&gt;</code>、<code>sk-</code>、<code>AKIA</code>）——<strong>暂未自动改</strong>：本库 skill 文档里有大量命令示例，直接加会大面积误报，需先加白名单再上 → ✅ <strong>2026-11-08 已落地</strong>：先做「占位符过滤」而非白名单（<code>PGPASSWORD=xxx</code> / <code>${DB_PASS}</code> / <code>真实密码</code> / <code>`规则名`</code> 一律不算），实测全库 989 tracked 文件 <strong>0 误报</strong>（加规则前 dry-run 只有 12 处命中，全是本卡与 log.md 的示例）。新文件 <code>scripts/credential_patterns.py</code>（规则 + 占位符判定，无 IO）+ <code>scripts/test_credential_patterns.py</code>（<strong>18/18 PASS</strong>）+ <code>check-repo-privacy.py</code> 接入为「第二类命中」（命中即 exit 1）。端到端阳性验证：临时 <code>git add</code> 一个含 <code>PGPASSWORD=&lt;假值&gt;</code> 的文件 → 门禁 exit 1 并点名该行，随后 <code>git rm --cached</code> 清理</li>
+<li>[x] 批准时给<strong>模式</strong>不给整条命令（<code>Bash(npm run:*)</code>），密码走变量（<code>$DB_URL</code>），让存下来的规则里只有变量名 → ✅ 已固化为 <code>hermes-workflow-preferences</code> <strong>规则 #45</strong>（2.4.0→2.5.0），含 5 条核心规则 + 3 条判据命令</li>
+<li>[x] 真进过仓库的凭据：<strong>先轮换，再清理</strong>——历史版本和 fork 都留着，删文件是假的 → ✅ <strong>本机不适用</strong>：<code>git log --all --diff-filter=A -- "*settings.local.json"</code> 空、全库 <code>settings.local.json</code> 0 个、已跟踪的三个 agent 配置只有 hooks 无 permissions（本卡第三节实测）→ 无凭据需要轮换；规则本身已写进 #45 第 4 条</li>
 </ul>
 <h2 id="_4">五、证据分级<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <table>
