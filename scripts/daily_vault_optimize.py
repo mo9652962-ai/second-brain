@@ -14,13 +14,28 @@ import re
 import subprocess
 import sys
 
-# %USERPROFILE% 是字面量，Path 不会自动展开环境变量（否则 VAULT 指向不存在路径 → 扫出 0 笔记）
-VAULT = pathlib.Path(os.path.expandvars(r"%USERPROFILE%\.openclaw\workspace"))
+def _resolve_vault() -> pathlib.Path:
+    """VAULT 解析顺序（跨平台，不在仓库里写任何本机路径）：
+    1. 环境变量 SECOND_BRAIN_VAULT（显式指定）
+    2. USERPROFILE/.openclaw/workspace（Windows 本机 cron；测试沙箱也靠它）
+    3. 本脚本所在仓库根目录（CI / Linux 检出即 vault 本身）
+    注意：%USERPROFILE% 字面量在 POSIX 上不会被 expandvars 展开，所以这里直接读环境变量。
+    """
+    explicit = os.environ.get("SECOND_BRAIN_VAULT")
+    if explicit:
+        return pathlib.Path(explicit)
+    profile = os.environ.get("USERPROFILE")
+    if profile:
+        return pathlib.Path(profile) / ".openclaw" / "workspace"
+    return pathlib.Path(__file__).resolve().parent.parent
+
+
+VAULT = _resolve_vault()
 
 # 输入有效性断言（2026-09-08 静默失效 bug 防线）：VAULT 不存在/不是目录 → 立即 FATAL，不许"假装成功"
 if not VAULT.exists() or not VAULT.is_dir():
     raise SystemExit(
-        f"[FATAL] VAULT 路径不存在或不是目录: {VAULT}（%USERPROFILE% 展开失败？）"
+        f"[FATAL] VAULT 路径不存在或不是目录: {VAULT}（可用环境变量 SECOND_BRAIN_VAULT 指定）"
     )
 MIN_NOTE_COUNT = 100  # 正常 vault 笔记数下限，低于此视为扫描异常（静默失效防线）
 
