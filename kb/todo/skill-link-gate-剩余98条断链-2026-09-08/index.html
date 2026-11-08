@@ -2851,8 +2851,16 @@
 
 <h1 id="skill-link-gate">待办：skill-link-gate 剩余断链<a class="headerlink" href="#skill-link-gate" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p>2026-09-08 记录，2026-09-13 suggestion-implementation 复查</p>
+<p>2026-09-08 记录，2026-09-13 / <strong>2026-11-08</strong> suggestion-implementation 复查</p>
 </blockquote>
+<h2 id="2026-11-08">✅ 2026-11-08 复查结论：已闭环，本待办可归档<a class="headerlink" href="#2026-11-08" title="Permanent link">&para;</a></h2>
+<ul>
+<li>实跑 <code>python ~/AppData/Local/hermes/scripts/skill_link_check.py</code> →
+  <strong><code>✅ 链接门禁通过：374 个 skill 全部无断裂引用</code></strong>（exit 0）</li>
+<li>9/8 的 98 条 → 9/13 的 100 条 → <strong>11/08 的 0 条</strong>。中间的处理把 templates/assets/scripts 占位与跨 skill 引用一起消化掉了，不再需要专项会话。</li>
+<li>唯一遗留项（light-orchestrator 9 条脚本引用）也已不再报错 → 检测器现在认为引用可解析。</li>
+<li>维护方式：<code>skill-link-gate</code> cron（周一 08:15）继续跑，<strong>红了再来找我，不用预先把 98 条拆成任务</strong>。</li>
+</ul>
 <h2 id="2026-09-13">2026-09-13 复查结论<a class="headerlink" href="#2026-09-13" title="Permanent link">&para;</a></h2>
 <ul>
 <li>复跑 <code>python AppData/Local/hermes/scripts/skill_link_check.py</code>：断链 <strong>100 条</strong>（9/8 的 98 → 100）</li>

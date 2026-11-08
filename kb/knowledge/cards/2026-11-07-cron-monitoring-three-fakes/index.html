@@ -2955,6 +2955,7 @@
 <h2 id="_6">行动项<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <ul>
 <li>[ ] <strong>11-08（周日）weekly 批量跑完，复核那 19 个是否转绿</strong>——这是唯一真验证，别提前宣布修好</li>
+<li>🔁 2026-11-08 14:43 部分复核（suggestion-implementation）：机器唤醒后 catch-up 一次性拉起 <strong>22 个 job</strong>，截至 14:55 <strong>15 条 completed / 10 条仍 running</strong>（含 weekly-graphify / weekly-knowledge-consolidation / weekly-trending-review / weekly-system-cleanup / GitHub 宝藏挖掘 / arxiv-summarize）；<strong>无新 401</strong>；近 3 天除 11-05 那批 401 外无失败。<strong>那 19 个正好在跑，结论等这批跑完再下</strong>——本次只记「401 已消失 + 正在重跑」，不算转绿。</li>
 <li>[x] 健康看板加一列「<code>last_run</code> 距今」+ 红分两档（<strong>陈旧红</strong> vs <strong>当下红</strong>），否则看板永远全红 → ✅ 2026-11-07 落地：<code>~/AppData/Local/hermes/scripts/cron_health.py</code> 加「距今」列（45m/5h/3d 人类可读）+ 红色两档——<strong>❌ 当下红</strong> = 有错误且已过 <code>next_run_at</code>（真故障先看它）/ <strong>🟠 陈旧红</strong> = 有错误但下次运行还没到（粘滞快照）；表头补 markdown 表格行。实测 49 任务：✅27 / ❌<strong>0</strong> / 🟠20 / 📭2 / ⚪0——印证卡片结论「22 红里真故障可能只有 3 个」，当下红为 0 说明此刻没有该跑未跑的活故障</li>
 <li>[ ] 8788 凭据续期（5 分钟，各登一次）——不续就是下一次全库停摆</li>
 </ul>
@@ -2969,6 +2970,11 @@
 <p>（数据：本机 cron 执行库按日聚合，401 共 173 条、跨 12 天；任务配置实读 49 条。）</p>
 <hr />
 <p><em>卡片来源：当天知识库精选（<code>knowledge/</code> 今日无新增笔记 → 候选池为空，改从今日 vault 实测产物 <code>memory/2026/11/health-2026-11-07.md</code> + <code>cron-health-latest.md</code> 回捞，并用 <code>executions.db</code> / <code>jobs.json</code> / <code>psutil</code> 现场复核，未采信旧报告结论）。</em></p>
+<hr />
+<blockquote>
+<p>🔗 <strong>同周卡片（证据档位知识簇）</strong>：[[2026-11-06-douyin-traffic-pool-evidence|抖音流量池的证据定级]] · [[2026-11-08-agent-approval-secrets|「别再问我」把密码写进公开仓库]]
+三张讲的是同一件事——<strong>没报 ≠ 没有，无出处 ≠ 已证伪，<code>last_status</code> ≠ 状态源</strong>。判据一律分成观察 / 推断 / 未知三档。</p>
+</blockquote>
 
 
 
