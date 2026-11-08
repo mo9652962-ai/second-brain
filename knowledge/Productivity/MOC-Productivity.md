@@ -135,3 +135,6 @@ updated: 2026-08-31
 - [[knowledge/Productivity/token-usage-report-20261108|Token 用量报告 11-08（W45）]] — 等价成本 $38.04，71% 来自单个 grok 长会话；state.db 涨至 942MB；wechat-official MCP 201 次连接失败
 
 
+
+## 🗄️ 历史（已合并）
+- [[knowledge/Productivity/Productivity|Productivity 旧索引（2026-07-26）]] — 已合并至本 MOC，仅留档追溯

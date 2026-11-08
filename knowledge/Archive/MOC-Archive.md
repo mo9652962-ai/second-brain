@@ -18,6 +18,9 @@ updated: 2026-09-20
 - [[knowledge/Archive/system-comparison-content|「体系对照表」对外发布文案（博客 + 视频双版本）]]
 
 ## 归档批次：Daily-before-08-08（2026-08-17 归档）
+- [[knowledge/Archive/Daily-before-08-08/2026-07-29-每日回顾|每日回顾 07-29]]
+- [[knowledge/Archive/Daily-before-08-08/hackernews-2026-07-29|HN 精选 07-29]]
+- [[knowledge/Archive/Daily-before-08-08/hackernews-2026-07-29-absorbed|HN 精选 07-29（已吸收版）]]
 - [[knowledge/Archive/Daily-before-08-08/hackernews-2026-07-30|HN 精选 07-30]]
 - [[knowledge/Archive/Daily-before-08-08/hackernews-2026-07-31|HN 精选 07-31]]
 - [[knowledge/Archive/Daily-before-08-08/hackernews-2026-08-02|HN 精选 08-02]]
