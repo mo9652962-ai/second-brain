@@ -18,10 +18,17 @@ SESSION-STATE.md
 # OpenClaw / Hermes 配置
 .hermes/
 
+# 编码 agent 的本地权限文件：存的是「你批准过的命令原文」，可能含明文密码
+# （Apiiro 2026-11-05：GitHub 上 1,122 份含真实凭据。Claude Code 只写本机全局 excludes，不写这里）
+**/.claude/settings.local.json
+.claude/settings.local.json
+
 # 缓存与生成文件
 __pycache__/
 graphify-out/
 .openclaw/workspace/graphify-out/
+# 嵌套 .openclaw/：任何在仓库内重建 ~/.openclaw 路径的脚本都是路径 bug 产物（2026-10-31 曾落盘 memory 骨架），一律忽略
+/.openclaw/
 # skills/：只公开自建技能；@ 开头为第三方技能集（版权/体积原因不上传）
 skills/*
 !skills/8051-embedded-dev/
