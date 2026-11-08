@@ -3402,6 +3402,42 @@
 <li><strong>落盘</strong>：<code>memory/2026/11/2026-11-07-daily-review.md</code>；明日 11-08 行动项 9 条（P0×3 / P1×3 / P2×2 / 🔒×1）</li>
 <li><strong>口径修正</strong>：「8788 auth mtime 9/19 未续期 = 下次全库停摆」证据不足（今日 requests=355 + 补全正常），降级为推断</li>
 </ul>
+<h2 id="2026-11-08-lint">[2026-11-08] lint | 每周例行体检<a class="headerlink" href="#2026-11-08-lint" title="Permanent link">&para;</a></h2>
+<ul>
+<li>断链 0 / 孤立 0 / 缺 frontmatter 0</li>
+<li>处理原则：只报告不自动修；新问题由 k 在下次会话处理</li>
+</ul>
+<h2 id="2026-11-08-freshness">[2026-11-08] freshness | 时效审计<a class="headerlink" href="#2026-11-08-freshness" title="Permanent link">&para;</a></h2>
+<ul>
+<li>过期硬约束 6 / 待运行时验证 38 / 历史记录 207</li>
+<li>需修正：</li>
+<li><code>knowledge\log.md:272</code> — - <code>knowledge\cards\2026-09-21-devin-cognition-eval.md:35</code> — 3. ⚠️ 云端环境与本机不一致（本机无</li>
+<li><code>knowledge\log.md:313</code> — - <code>knowledge\cards\2026-09-21-devin-cognition-eval.md:30</code> — 3. ⚠️ 云端环境与本机不一致（本机无</li>
+<li><code>knowledge\log.md:365</code> — - <code>knowledge\cards\2026-09-21-devin-cognition-eval.md:30</code> — 3. ⚠️ 云端环境与本机不一致（本机无</li>
+<li><code>knowledge\log.md:435</code> — - <code>knowledge\cards\2026-09-21-devin-cognition-eval.md:30</code> — 3. ⚠️ 云端环境与本机不一致（本机无</li>
+<li><code>knowledge\log.md:451</code> — - <code>knowledge\cards\2026-09-21-devin-cognition-eval.md:30</code> — 3. ⚠️ 云端环境与本机不一致（本机无</li>
+<li><code>knowledge\log.md:523</code> — - <code>knowledge\cards\2026-09-21-devin-cognition-eval.md:30</code> — 3. ⚠️ 云端环境与本机不一致（本机无</li>
+<li>处理原则：只报告不自动修；事实源见 knowledge/META/current-environment.md</li>
+</ul>
+<h2 id="2026-11-08-card">[2026-11-08] card | 每日知识卡片：一次「别再问我」把密码写进公开仓库<a class="headerlink" href="#2026-11-08-card" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>候选池</strong>：<code>knowledge/</code> 今日无新增长文笔记 → 从今日 cron 产物回捞：<code>knowledge/Daily/hackernews-2026-11-08.md</code>（第 6 条，HN 315 分）</li>
+<li><strong>落盘</strong>：新增 <code>knowledge/cards/2026-11-08-agent-approval-secrets.md</code>，挂载 <code>cards/MOC-cards.md</code>（2026-11 分节）</li>
+<li><strong>本次核对（观察）</strong>：Apiiro 2026-11-05 原始研究（页面 JS 渲染，正文取不到）→ 改用 The Hacker News / cybersecuritynews / aiweekly / devlery / ctxsec 五家独立转述交叉核对，数字一致：104,185 份公开 <code>settings.local.json</code> / 1,122 份含真实凭据 / 1,379 个凭据 / 计入历史与共享文件 2,539 个跨 1,994 仓库 / gitleaks 564、TruffleHog 643、两个都没抓 215（≈1/5）/ 中位 217 天仍在默认分支。「只写用户全局 excludes、不写仓库 .gitignore」有 Anthropic settings 文档背书</li>
+<li><strong>本机实测（观察）</strong>：已跟踪的 <code>.claude/settings.json</code>+<code>.codebuddy</code>+<code>.qoder</code> 只有 hooks 无凭据；全库无 <code>settings.local.json</code>；<code>git log --all</code> 从未提交过；<code>.gitignore</code> 原无 agent 配置规则（已补）；<code>core.excludesFile</code> 未配置；<code>check-repo-privacy.py</code> 83 行只扫身份/路径，无 <code>PGPASSWORD=</code>/<code>sshpass -p</code>/<code>Bearer</code>/<code>sk-</code>/<code>AKIA</code> 规则 → 门禁防「我是谁」不防「我的钥匙」</li>
+<li><strong>本次改动</strong>：<code>.gitignore</code> 加 <code>**/.claude/settings.local.json</code></li>
+<li><strong>未做</strong>：门禁加「命令内嵌凭据」规则——本库 skill 文档含大量命令示例，直接加会大面积误报，需先设计白名单，留作行动项</li>
+<li><strong>判据沉淀</strong>：评估密钥扫描器不看抓了多少，看它认不认「人类手打的那半句」——格式化密钥好抓，命令行中间的密码才是常态；凭据一旦进过仓库，先轮换再清理（历史与 fork 都留着）</li>
+</ul>
+<h2 id="2026-11-08-lint-10-10-3-domain-21">[2026-11-08] lint | 修复轮：断链 1→0 · 孤立 1→0 · 标签类型 3 处 · domain 大小写 21 处<a class="headerlink" href="#2026-11-08-lint-10-10-3-domain-21" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>断链</strong>：<code>knowledge/cards/2026-11-07-cron-monitoring-three-fakes.md</code> 的 <code>source</code> 用 wikilink 指向被 gitignore 的本地 <code>memory/2026/11/health-2026-11-07</code>（tracked 口径必断）→ 改纯文本路径并标注「本地隔离，不入库」；知识库口径与 tracked 口径双归零</li>
+<li><strong>孤立</strong>：<code>.openclaw/workspace/memory/2026-10-31.md</code> 是 10-31 daily-summary 路径 bug 在仓库内重建 <code>~/.openclaw</code> 写下的全占位骨架 → <code>git rm</code>（可从 2f0e704c 恢复）；<code>.gitignore</code> 增 <code>/.openclaw/</code> 防复发</li>
+<li><strong>标签类型</strong>：3 处 YAML 隐式类型污染（<code>8051</code> / <code>3306</code> / 日期型 tag 被解析成 int/date）→ 加引号，Dataview 标签查询恢复</li>
+<li><strong>domain 一致性</strong>：21 处大小写变体归并到 TitleCase 主口径（research→Research 13、academic→Academic 3、Meta→META 2、ai-workflow→AI-Workflow 1、gaming→Gaming 2），行尾 CRLF 保留，脚本幂等（二次跑 0 处）</li>
+<li><strong>索引</strong>：<code>gen-vault-index.py</code> 重生成 DASHBOARD / VAULT-MAP（断链 0 · 孤立 0 · 831 篇 · 21 MOC）</li>
+<li><strong>待决策（只报告，未动）</strong>：<code>Development</code>(27) vs <code>Dev</code>(31) 同义双写、<code>编程</code>(3) vs <code>Programming</code>(4)、369 篇无 domain、166 篇无 status、status 字段被塞长句（如「已深挖 3 篇…」）、4 个单例命名空间 tag（<code>math/</code> <code>content/</code> <code>dev/</code> <code>ai/</code>）、同名 README 2 份（分属不同项目，可忽略）</li>
+</ul>
 
 
 
