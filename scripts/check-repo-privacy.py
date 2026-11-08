@@ -10,6 +10,8 @@ import base64, os, re, sys, subprocess, pathlib
 
 WS = pathlib.Path(__file__).resolve().parent.parent
 os.chdir(WS)
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+from credential_patterns import find_credentials  # noqa: E402  「命令内嵌凭据」规则
 
 
 def _d(b64: str) -> str:
@@ -54,7 +56,11 @@ except Exception:
 # 只扫文本类（跳过二进制大文件）
 TEXT_EXT = {'.md', '.py', '.sh', '.ps1', '.yml', '.yaml', '.json', '.txt', '.toml', '.html', '.css', '.js', '.ts'}
 hits = []
+cred_hits = []
 SELF = str(WS / 'scripts' / 'check-repo-privacy.py')
+# 测试夹具文件：整份内容就是「假凭据」样本，跳过**凭据规则**（否则每次提交都红）。
+# 身份规则照常扫 —— 真凭据不许藏在测试文件里。
+CRED_SCAN_SKIP = {'scripts/test_credential_patterns.py'}
 for f in tracked:
     # 排除脚本自身（BUILTIN 基线含敏感词样本，不能被自己扫出）
     if os.path.abspath(f) == SELF or f.replace('\\', '/').endswith('scripts/check-repo-privacy.py'):
@@ -73,11 +79,24 @@ for f in tracked:
             pass
         hits.append(f'{f}: {val}')
 
+    # ── 第二类：命令内嵌凭据（2026-11-08 新增，见 knowledge/cards/2026-11-08-agent-approval-secrets）
+    # gitleaks/TruffleHog 只认「钥匙形状」，命令中间的密码 1/5 会漏；这里补上那半句。
+    # 占位符/变量引用（PGPASSWORD=xxx、${DB_PASS}）在 credential_patterns 里已滤掉。
+    if f.replace('\\', '/') not in CRED_SCAN_SKIP:
+        for rule, frag in find_credentials(content):
+            cred_hits.append(f'{f}: [{rule}] {frag}')
+
+if cred_hits:
+    print(f'❌ 凭据门禁命中 {len(cred_hits)} 处（命令内嵌凭据）：')
+    for h in cred_hits[:20]:
+        print(f'   {h}')
+    print('（改法：凭据走变量/环境变量；真进过仓库的先轮换再清理）')
 if hits:
     print(f'❌ 隐私门禁命中 {len(hits)} 处：')
     for h in hits[:20]:
         print(f'   {h}')
     print('（完整列表见输出；请脱敏后提交）')
+if hits or cred_hits:
     sys.exit(1)
-print(f'✅ 隐私门禁通过：{len(tracked)} tracked 文件无敏感特征命中')
+print(f'✅ 隐私门禁通过：{len(tracked)} tracked 文件无敏感特征命中（身份规则 {len(patterns)} 条 + 凭据规则 6 条）')
 sys.exit(0)

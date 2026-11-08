@@ -118,6 +118,10 @@ updated: 2026-08-31
 > cron 产出自动登记（防入链孤立）
 
 - [[token-usage-report-20260920]] — 本周 API 成本报告（W38）：2026-09-14～09-20 Token 用量与真实口径成本
+- [[system-cleanup-report-20260816]] — 系统清理报告 2026-08-16
+- [[system-cleanup-report-20260817]] — 系统清理报告 2026-08-17
+- [[system-cleanup-report-20260823]] — 系统清理报告 2026-08-23
+- [[token-usage-report-20260823]] — API 成本周报 W34（2026.08.17 - 08.23）
 
 ## 🆕 W40 新增（09-28 ~ 09-29：稳定性 + 系统清理）
 - [[knowledge/Productivity/hermes-stability-fix-20260928|Hermes 稳定性修复报告 09-28]] — Electron 渲染进程崩溃定位 + 4 处配置层故障修复
@@ -127,4 +131,10 @@ updated: 2026-08-31
 - [[knowledge/Productivity/system-cleanup-report-20261017|系统清理报告 2026-10-17]] — C 盘极端空间抢修与缓存清理
 - [[knowledge/Productivity/system-cleanup-report-20261018|系统清理报告 2026-10-18]] — 最终释放 49.6 GB 深度清理实测
 
+## 🆕 W45 新增（11-02 ~ 11-08：API 成本）
+- [[knowledge/Productivity/token-usage-report-20261108|Token 用量报告 11-08（W45）]] — 等价成本 $38.04，71% 来自单个 grok 长会话；state.db 涨至 942MB；wechat-official MCP 201 次连接失败
 
+
+
+## 🗄️ 历史（已合并）
+- [[knowledge/Productivity/Productivity|Productivity 旧索引（2026-07-26）]] — 已合并至本 MOC，仅留档追溯

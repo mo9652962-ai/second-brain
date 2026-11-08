@@ -6,7 +6,7 @@ domain: META
 aliases: [知识地图, Knowledge Map, 知识网络]
 date: 2026-07-22
 status: adopted
-updated: 2026-10-17
+updated: 2026-11-08
 ---
 
 # 🗺️ 知识地图 — Knowledge Map
@@ -15,7 +15,7 @@ updated: 2026-10-17
 
 > 机器版索引: [[VAULT-MAP|🗺️ VAULT-MAP]]（AI 导航）· 健康看板: [[DASHBOARD|📊 DASHBOARD]] · 新陈代谢: [[METABOLISM|🌿 METABOLISM]]
 
-> 所有知识领域的索引与关联。最后更新: 2026-11-07（论文样例图表与路线图复盘）
+> 所有知识领域的索引与关联。最后更新: 2026-11-08（W45 周度归并：52 篇 Dev 补挂 + 11-08 新增全量入 MOC + 速览补齐 arXiv×3/卡片×3/日报）
 
 ## 🧭 MOC 总入口（2026-08-16 起，新建 MOC 必须在此挂载）
 
@@ -23,29 +23,29 @@ updated: 2026-10-17
 
 |:---|:---|:---|
 
-| 🔬 Research（域） | [[MOC-Research]] | 224 篇 |
+| 🔬 Research（域） | [[MOC-Research]] | 243 篇 |
 
-| 🐙 GitHub 研究（主题切片） | [[MOC-GitHub]] | 58 篇 |
+| 🐙 GitHub 研究（主题切片） | [[MOC-GitHub]] | 60 篇 |
 
-| 🛡️ 网络安全（主题切片） | [[MOC-Security]] | 52 篇 |
+| 🛡️ 网络安全（主题切片） | [[MOC-Security]] | 66 篇 |
 
-| 💻 Dev（域） | [[MOC-Dev]] | 138 篇 |
+| 💻 Dev（域） | [[MOC-Dev]] | 140 篇 |
 
 | 🔧 Hardware（域） | [[MOC-Hardware]] | 20 篇 |
 
-| 🏠 Productivity（域） | [[MOC-Productivity]] | 57 篇 |
+| 🏠 Productivity（域） | [[MOC-Productivity]] | 59 篇 |
 
-| 🧭 入口治理 | [[MOC-Inbox]] | 53 篇待接入笔记 |
+| 🧭 入口治理 | [[MOC-Inbox]] | 0 篇待接入（历史 53 篇已全部接入，见 MOC-Inbox 说明） |
 
 | 🔁 重复审阅 | [[MOC-Duplicate-Review]] | 0 组逐字重复；相似标题按时间/用途保留 |
 
-| 📈 Finance（域） | [[MOC-Finance]] | 16 篇 |
-| 🃏 知识卡片 | [[knowledge/cards/MOC-cards|MOC-cards]] | 42 篇 |
-| 📅 每日产出 | [[knowledge/Daily/MOC-Daily|MOC-Daily]] | 42 篇 |
-| 🤖 AI 研究与生态 | [[knowledge/AI/MOC-AI|MOC-AI]] | 18 篇 |
-| 📋 标准操作流程 | [[knowledge/SOP/MOC-SOP|MOC-SOP]] | 9 篇 |
-| 🎓 教育规划 | [[knowledge/Education/MOC-Education|MOC-Education]] | 1 篇 |
-| 🎨 创意创作 | [[knowledge/Creative/MOC-Creative|MOC-Creative]] | 5 篇 |
+| 📈 Finance（域） | [[MOC-Finance]] | 18 篇 |
+| 🃏 知识卡片 | [[knowledge/cards/MOC-cards|MOC-cards]] | 45 篇 |
+| 📅 每日产出 | [[knowledge/Daily/MOC-Daily|MOC-Daily]] | 47 篇 |
+| 🤖 AI 研究与生态 | [[knowledge/AI/MOC-AI|MOC-AI]] | 21 篇 |
+| 📋 标准操作流程 | [[knowledge/SOP/MOC-SOP|MOC-SOP]] | 8 篇 |
+| 🎓 教育规划 | [[knowledge/Education/MOC-Education|MOC-Education]] | 0 篇（入口指向 skills 文档） |
+| 🎨 创意创作 | [[knowledge/Creative/MOC-Creative|MOC-Creative]] | 4 篇 |
 | 📦 产品 | [[knowledge/Product/MOC-Product|MOC-Product]] | 1 篇 |
 | 🎮 游戏研究 | [[knowledge/gaming/MOC-gaming|MOC-gaming]] | 3 篇 |
 | 🗄️ 归档 | [[knowledge/Archive/MOC-Archive|MOC-Archive]] | 2 篇 |
@@ -542,6 +542,40 @@ graph TD
 1. **技能供应链安全成为连续主线** — 10-02 三篇独立论文（静态路径 / 链式放大 / 审计盲区）证明 agent 技能供应链几乎无人审计，与 09-19 ZCode 静默上传、09-15 RubyGems AI bots 攻击连成知识簇
 2. **PPT 结尾页从「谢谢观看」到 8 版式体系** — 研究 → 版式对照表 → 可运行生成器 → .pptx 成品 → 渲染脚本，完整资产链可反哺闲鱼 PPT 接单
 3. **cron 基础设施不稳定压制知识产出密度** — daily-health-check 7 连败 + arxiv-fetch/biweekly-skill-audit 同类 pydantic_core 故障，arXiv 速览仅 2 期（上周 5+ 期）
+
+---
+
+## 🆕 W45 新增速览（2026-11-02 ~ 11-08）
+
+> 本周主线：**「人的注意力」成为 agent 系统的第一约束**。DeepSeek 把这条写成设计原则（一个人只能同时盯 3~5 个会话），agent-autoloop 用挂起零消耗 + 卡片审批把它工程化，claude-mem 用分层索引把它搬到上下文侧。W42~W44 weekly 口径缺档（脚本口径 W45 报告见 [[knowledge/Research/GitHub-Weekly-2026-11-08|W45 宝藏挖掘]]）。本页为**周日归并版**：在 GitHub weekly 那批之外，补齐本周 arXiv 三轮速览、三张卡片、HN ×3、股票日报、免费额度清单与知识库治理审计。
+
+### 各域本周新增
+
+| 域 | 新增 | 要点 |
+|:--|:--|:--|
+| Research | [[knowledge/Research/GitHub-Weekly-2026-11-08-weekly-5projects|W45 GitHub weekly]] | weekly 口径 5 项新面孔 + 连榜 delta（mattpocock 317.9k / superpowers 314.2k / Scrapling 99.4k +8.7k 周增第二） |
+| Dev | [[knowledge/Dev/agent-autoloop-2026-11-08|agent-autoloop 4.0k]] | 1,850 行零依赖内核：挂起零消耗 / 事件溯源 / 指令数据分离 / TTL 熔断；支持 `hermes chat -Q -q` 接入 |
+| AI | [[knowledge/AI/claude-mem-2026-11-08|claude-mem 114.6k]] | 第二 agent 旁听记笔记；三级检索 ~10x token 节省；repo 描述点名 Hermes |
+| AI | [[knowledge/AI/dsh-superagent-2026-11-08|dsh-superagent 20.9k]] | Router/Worker 两层 + 授权表；**20.9k★ 但 1 commit**，读 docs 不装码 |
+| Security | [[knowledge/Security/noir-android-privacy-audit-2026-11-08|NOIR 3.0k]] | adb 权限 × 端点 → 数据流向 + 可回滚处置；本机 adb 已具备，可只读试跑 |
+| Dev | [[knowledge/Dev/worktrunk-2026-11-08|worktrunk 12.0k]] | git worktree → 并行 agent 工位；并行任务 ≥3 个时再装 |
+| AI | [[knowledge/AI/super-agent-attention-architecture-2026-11-08|方法论：注意力架构]] | P0 三条本周可做：注意力三问 / 外部文本落盘 / 委派深度上限 3 |
+| Research | arXiv 三轮速览：[[knowledge/Research/arxiv-2026-11-06-agent-llm|11-06]] · [[knowledge/Research/arxiv-2026-11-07-agent-llm|11-07]] · [[knowledge/Research/arxiv-2026-11-08-agent-llm|11-08]] | 全部来自 11-05 同一批次（三天零新投稿）：37 + 24 + 24 篇递进补全，主轴是「技能可执行化 / 多智能体乐观假设被证伪 / 确定性下沉代码」 |
+| Research | Q4 前沿两份总览：[[knowledge/Research/2026-11-01-ten-rounds-tech-frontier-mastery|十轮大满贯]] · [[knowledge/Research/2026-11-01-cross-domain-tech-frontier-sync|六支柱同步]] | 十域千轮 vs 六支柱（MCP 2026-07-28 无状态核心 / Agent 评测饱和 / KiCad 10 混编 / OpenAlex）；两份已互链并标注重合结论 |
+| Research | [[knowledge/Research/vault-governance-audit-2026-11-06|知识库治理日审计]] | 「孤立 36%」是口径假象（含根目录 meta 与 skills）；真噪音是 MOC 重复索引（33 行重复 / 38 token）+ 标签变体 12 类 |
+| AI | [[knowledge/AI/免费额度模型通道-2026-11-06|免费额度通道清单]] | 国内/国外零费率与注册赠额盘点：智谱 glm-4-flash 长期 0 元 / OpenRouter `:free` 约 50 次一天；**数字未逐条复核**，接入前看官方页 |
+| cards | 三张卡片：[[knowledge/cards/2026-11-06-douyin-traffic-pool-evidence|流量池证据]] · [[knowledge/cards/2026-11-07-cron-monitoring-three-fakes|监控三张假脸]] · [[knowledge/cards/2026-11-08-agent-approval-secrets|「别再问我」泄密]] | 三张都在讲同一件事：把「观察/推断/未知」分开写——无出处≠已证伪、`last_status`≠状态源、扫描器没报≠没有 |
+| Finance | [[knowledge/Finance/每日股票分析-2026-11-06|自选股 11-06 收盘]] | 断档 18 个交易日后首次恢复；顺带定位并修掉 cron 解释器错位（3.14 venv 无 pandas/akshare） |
+| Daily | HN ×3：[[knowledge/Daily/hackernews-2026-11-06|11-06]] · [[knowledge/Daily/hackernews-2026-11-07|11-07]] · [[knowledge/Daily/hackernews-2026-11-08|11-08]] | 11-06 musl OpenSSH 十年认证绕过（`*` 账号接受任意长密码）+ Claude Code 把用户邮箱塞进 UA；11-07 libghostty 1.0 / Firecracker 逃逸；11-08 macOS 未文档化的个人知识图谱 |
+
+### 本周关键研究主题
+
+1. **注意力经济学落地为可执行规则** — 从「少打扰」的口号变成三条硬约束：无新增即 `[SILENT]`、外部文本不内联进指令段、委派深度 ≤3。
+2. **prompt injection 防线从提示词下沉到架构** — agent-autoloop 的指令数据分离（外部文字只进文件、事件带 `cwd/agent/access` 直接拒收）比任何「请忽略恶意指令」都硬；与本期 AGENTS.md 被注入检测拦截互为注脚。
+3. **高星 ≠ 高成熟再添一例** — dsh-superagent 20.9k★ / 1 commit / 37KB，同批 4.0k★ 的 agent-autoloop 代码量是它 30 倍。star 只触发核验，不构成结论。
+4. **「证据档位」成了本周的通用判据** — 抖音流量池（查不到出处 ≠ 已证伪）、监控三张假脸（`last_status` 不可信）、agent 泄密（两个扫描器漏掉 1/5 泄露文件）三张卡片说的是同一件事：结论必须标清是观察、推断还是未知。
+5. **arXiv 三天零新批次，补读成了主要产出** — 11-06/07/08 三期共 85 篇全部来自 11-05 同一批次；索引冻结时，「换端点继续读同一批」比「等新论文」有效（HTML 搜索端点绕开 API 限流）。
+6. **知识库治理的优先级从「补链」转向「去重」** — 11-06 审计确认孤立 0，但 MOC-Research 有 33 行重复索引；本周日归并也按这个顺序：先确认没有重复入口，再补缺失入口（Dev 域 52 篇补挂）。
 
 ---
 

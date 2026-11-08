@@ -1,6 +1,6 @@
 ---
 tags: [workflow, orchestration, skills, pipeline, hermes, 2026-standards]
-domain: ai-workflow
+domain: AI-Workflow
 cross-domain: [hermes-agent, skill-authoring, multi-agent, automation]
 related: ["skills/hermes-agent", "skills/hermes-model-fallback", "skills/hermes-search-config", "skills/test-driven-development", "skills/systematic-debugging"]
 created: 2026-07-23

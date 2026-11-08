@@ -6,7 +6,7 @@ created: 2026-07-29
 updated: 2026-07-29
 status: adopted
 source: https://arxiv.org/
-domain: research
+domain: Research
 priority: high
 ---
 

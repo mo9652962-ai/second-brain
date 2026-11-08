@@ -556,3 +556,51 @@ tags: [meta, vault-maintenance]
 - **工具**：`scripts/daily_vault_optimize.py` 修自动挂载重复根因（三种 wikilink 写法字面比对失效），自测 **10/10 PASS**，当前可去重 1 行（防复发）
 - **落盘**：`memory/2026/11/2026-11-07-daily-review.md`；明日 11-08 行动项 9 条（P0×3 / P1×3 / P2×2 / 🔒×1）
 - **口径修正**：「8788 auth mtime 9/19 未续期 = 下次全库停摆」证据不足（今日 requests=355 + 补全正常），降级为推断
+## [2026-11-08] lint | 每周例行体检
+
+- 断链 0 / 孤立 0 / 缺 frontmatter 0
+- 处理原则：只报告不自动修；新问题由 k 在下次会话处理
+
+## [2026-11-08] freshness | 时效审计
+
+- 过期硬约束 6 / 待运行时验证 38 / 历史记录 207
+- 需修正：
+  - `knowledge\log.md:272` — - `knowledge\cards\2026-09-21-devin-cognition-eval.md:35` — 3. ⚠️ 云端环境与本机不一致（本机无
+  - `knowledge\log.md:313` — - `knowledge\cards\2026-09-21-devin-cognition-eval.md:30` — 3. ⚠️ 云端环境与本机不一致（本机无
+  - `knowledge\log.md:365` — - `knowledge\cards\2026-09-21-devin-cognition-eval.md:30` — 3. ⚠️ 云端环境与本机不一致（本机无
+  - `knowledge\log.md:435` — - `knowledge\cards\2026-09-21-devin-cognition-eval.md:30` — 3. ⚠️ 云端环境与本机不一致（本机无
+  - `knowledge\log.md:451` — - `knowledge\cards\2026-09-21-devin-cognition-eval.md:30` — 3. ⚠️ 云端环境与本机不一致（本机无
+  - `knowledge\log.md:523` — - `knowledge\cards\2026-09-21-devin-cognition-eval.md:30` — 3. ⚠️ 云端环境与本机不一致（本机无
+- 处理原则：只报告不自动修；事实源见 knowledge/META/current-environment.md
+
+
+
+## [2026-11-08] card | 每日知识卡片：一次「别再问我」把密码写进公开仓库
+
+- **候选池**：`knowledge/` 今日无新增长文笔记 → 从今日 cron 产物回捞：`knowledge/Daily/hackernews-2026-11-08.md`（第 6 条，HN 315 分）
+- **落盘**：新增 `knowledge/cards/2026-11-08-agent-approval-secrets.md`，挂载 `cards/MOC-cards.md`（2026-11 分节）
+- **本次核对（观察）**：Apiiro 2026-11-05 原始研究（页面 JS 渲染，正文取不到）→ 改用 The Hacker News / cybersecuritynews / aiweekly / devlery / ctxsec 五家独立转述交叉核对，数字一致：104,185 份公开 `settings.local.json` / 1,122 份含真实凭据 / 1,379 个凭据 / 计入历史与共享文件 2,539 个跨 1,994 仓库 / gitleaks 564、TruffleHog 643、两个都没抓 215（≈1/5）/ 中位 217 天仍在默认分支。「只写用户全局 excludes、不写仓库 .gitignore」有 Anthropic settings 文档背书
+- **本机实测（观察）**：已跟踪的 `.claude/settings.json`+`.codebuddy`+`.qoder` 只有 hooks 无凭据；全库无 `settings.local.json`；`git log --all` 从未提交过；`.gitignore` 原无 agent 配置规则（已补）；`core.excludesFile` 未配置；`check-repo-privacy.py` 83 行只扫身份/路径，无 `PGPASSWORD=`/`sshpass -p`/`Bearer`/`sk-`/`AKIA` 规则 → 门禁防「我是谁」不防「我的钥匙」
+- **本次改动**：`.gitignore` 加 `**/.claude/settings.local.json`
+- **未做**：门禁加「命令内嵌凭据」规则——本库 skill 文档含大量命令示例，直接加会大面积误报，需先设计白名单，留作行动项
+- **判据沉淀**：评估密钥扫描器不看抓了多少，看它认不认「人类手打的那半句」——格式化密钥好抓，命令行中间的密码才是常态；凭据一旦进过仓库，先轮换再清理（历史与 fork 都留着）
+## [2026-11-08] lint | 修复轮：断链 1→0 · 孤立 1→0 · 标签类型 3 处 · domain 大小写 21 处
+
+- **断链**：`knowledge/cards/2026-11-07-cron-monitoring-three-fakes.md` 的 `source` 用 wikilink 指向被 gitignore 的本地 `memory/2026/11/health-2026-11-07`（tracked 口径必断）→ 改纯文本路径并标注「本地隔离，不入库」；知识库口径与 tracked 口径双归零
+- **孤立**：`.openclaw/workspace/memory/2026-10-31.md` 是 10-31 daily-summary 路径 bug 在仓库内重建 `~/.openclaw` 写下的全占位骨架 → `git rm`（可从 2f0e704c 恢复）；`.gitignore` 增 `/.openclaw/` 防复发
+- **标签类型**：3 处 YAML 隐式类型污染（`8051` / `3306` / 日期型 tag 被解析成 int/date）→ 加引号，Dataview 标签查询恢复
+- **domain 一致性**：21 处大小写变体归并到 TitleCase 主口径（research→Research 13、academic→Academic 3、Meta→META 2、ai-workflow→AI-Workflow 1、gaming→Gaming 2），行尾 CRLF 保留，脚本幂等（二次跑 0 处）
+- **索引**：`gen-vault-index.py` 重生成 DASHBOARD / VAULT-MAP（断链 0 · 孤立 0 · 831 篇 · 21 MOC）
+- **待决策（只报告，未动）**：`Development`(27) vs `Dev`(31) 同义双写、`编程`(3) vs `Programming`(4)、369 篇无 domain、166 篇无 status、status 字段被塞长句（如「已深挖 3 篇…」）、4 个单例命名空间 tag（`math/` `content/` `dev/` `ai/`）、同名 README 2 份（分属不同项目，可忽略）
+
+## [2026-11-08] weekly | W45 周度归并：本周新增归类 + Dev 域 52 篇补挂 + 索引按实测重算
+
+- **本周新增盘点（11-02 ~ 11-08 落盘/入库，共 22 篇）**：Research 8（arXiv 11-06/07/08 三轮速览、GitHub 周报脚本口径 + weekly 口径、知识库治理审计、11-01 两份 Q4 前沿总览）、AI 4（免费额度通道清单、claude-mem、dsh-superagent、注意力架构方法论）、Dev 2（agent-autoloop、worktrunk）、Security 1（NOIR）、cards 3（抖音流量池证据 / 监控三张假脸 / 「别再问我」泄密）、Daily 3（HN 11-06/07/08）、Finance 1（自选股 11-06）
+- **归并动作 1｜周报归一**：`GitHub-Weekly-2026-11-08.md` 原始产出无 frontmatter、无入链、CRLF → 补 frontmatter（W45）+ LF + 按 W41 快照回算 28 天 star delta + 核验状态分档（dify 标「未核验」）；挂 [[MOC-GitHub]] 与 [[MOC-Research]]
+- **归并动作 2｜Dev 域 52 篇补挂**：这 52 篇此前**域 MOC 无入口**（实测：48 篇靠 `MOC-Inbox` / `MOC-GitHub` / `Cross-Domain` 等旁路可达，4 篇只有 `knowledge-map` 可达）；按「Agent 架构/记忆/上下文 10 · 工程方法论 8 · 全栈项目与小程序 10 · 工具生态 15 · 部署与硬件交叉 5 · 墨题巡检 3 · 内容 1」七组补进 `MOC-Dev`，注解取自各篇 frontmatter/H1
+- **归并动作 3｜零散补挂**：Security 4（AI-Infra-Guard / 企业 SRC / SRC 体系 / T3 首单）、Productivity 4（系统清理×3 + token 周报）、cards 1（09-21 Devin 评估）→ 各自域 MOC
+- **归并动作 4｜当日新增入域**：11-08 新增 7 篇（agent-autoloop、worktrunk、claude-mem、dsh-superagent、注意力架构、NOIR、weekly-5projects）全部挂进 MOC-AI / MOC-Dev / MOC-Security / MOC-Research
+- **互链**：11-01 两份总览互链并标注重合结论；抖音流量池卡片从 ten-rounds 回链；arXiv 11-06 → 11-07 后续；免费额度清单 ↔ [[knowledge/META/current-model-status]]
+- **索引刷新（实测口径）**：`knowledge-map` 新增「W45 新增速览」14 行 + 6 条主题；18 个 MOC 规模数字重算（Research 224→243、Security 52→66、Dev 138→140、Productivity 57→59、cards 42→45、Daily 42→47、AI 18→21、Finance 16→18、SOP 9→8、Creative 5→4、Education 1→0）；`index.md` / `HOME.md` 同步；MOC-Inbox「53 篇待接入」更正为 0（历史）
+- **体检（观察）**：17 个域目录 688 篇笔记中，**0 篇缺域 MOC 入口**（此前缺 65 篇：Dev 52 / Security 4 / Productivity 4 / cards 1 / Research 1 / AI 3；其中只有 4 篇连旁路入链都没有）；`knowledge-lint.py` 断链 0 / 孤儿 0 / 缺 frontmatter 0
+- **未做 / 待办**：W42~W44 周报缺档（脚本口径，非本次可补）；dify 未做真实性核验；`current-model-status` 的 `next_review`（10-20）已过期，需重核 provider 与价格

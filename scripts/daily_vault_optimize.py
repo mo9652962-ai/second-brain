@@ -411,6 +411,54 @@ def sync_readme_stats() -> int:
     return changes
 
 
+def _git_ls(pattern: str | None = None) -> list[str]:
+    # 必须用 -z：默认输出会把中文路径转义成 "knowledge/AI/\345\205..."（core.quotePath），
+    # 带引号的条目 endswith(".md") 判断会漏掉 223 个中文名文件（2026-11-08 实测踩坑）。
+    cmd = ["git", "-C", str(VAULT), "ls-files", "-z"] + ([pattern] if pattern else [])
+    r = subprocess.run(cmd, capture_output=True, text=True, timeout=90,
+                       encoding="utf-8", errors="replace")
+    if r.returncode != 0:
+        return []
+    return [line for line in r.stdout.split("\0") if line.strip()]
+
+
+def sync_readme_inventory() -> int:
+    """同步 README「📊 仓库统计」代码块里的库存数字。
+
+    为什么：2026-11-08 实测 README 代码块写着 969 文件 / 824 篇 md / 733 篇 knowledge
+    / 29 篇技能文档，git 真实值 996 / 844 / 753 / 30 —— 徽章那半边有自愈、代码块这半边
+    全靠手写，于是长期漂移。真相源统一取 git 跟踪清单，只改数字不动文案。
+    """
+    readme = VAULT / "README.md"
+    if not readme.exists():
+        return 0
+    all_files = _git_ls()
+    if not all_files:
+        return 0
+    md = [f for f in all_files if f.lower().endswith(".md")]
+    kn = [f for f in md if f.startswith("knowledge/")]
+    sk = [f for f in md if f.startswith("skills/")]
+    text = readme.read_text(encoding="utf-8")
+    orig = text
+    changes = 0
+
+    def sub(pattern, repl):
+        nonlocal text, changes
+        new, n = re.subn(pattern, repl, text)
+        if n and new != text:
+            changes += n
+            text = new
+
+    sub(r"/ \d{3,5} 个文件", f"/ {len(all_files)} 个文件")
+    sub(r"公开 Markdown 资产：\d+ 篇", f"公开 Markdown 资产：{len(md)} 篇")
+    sub(r"含 \d+ 篇自建技能文档", f"含 {len(sk)} 篇自建技能文档")
+    sub(r"\d+ 篇 knowledge/ 知识域笔记", f"{len(kn)} 篇 knowledge/ 知识域笔记")
+    sub(r"自建 Skill 体系：\d+ 个文档", f"自建 Skill 体系：{len(sk)} 个文档")
+    if text != orig:
+        readme.write_text(text, encoding="utf-8")
+    return changes
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--commit", action="store_true", help="自动 git add/commit/push")
@@ -464,7 +512,10 @@ def main():
     synced = sync_readme_stats()
     print(f"README 统计同步: {synced} 处")
 
-    if args.commit and (linked + mounted + moc_new + deduped + km + synced) > 0:
+    inv = sync_readme_inventory()
+    print(f"README 库存同步: {inv} 处")
+
+    if args.commit and (linked + mounted + moc_new + deduped + km + synced + inv) > 0:
         r = subprocess.run(
             ["git", "-C", str(VAULT), "add", "-A"],
             capture_output=True, text=True, timeout=60,

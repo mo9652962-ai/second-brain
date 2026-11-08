@@ -3,7 +3,7 @@ aliases:
   - 2026-11-07-card-cron-monitoring-three-fakes
 tags: [knowledge-card, monitoring, cron-reliability, observability, evidence-discipline]
 created: 2026-11-07
-source: "[[memory/2026/11/health-2026-11-07]] + `cron/executions.db` / `cron/jobs.json` 本机实测"
+source: "本机 `memory/2026/11/health-2026-11-07.md`（本地隔离，不入库） + `cron/executions.db` / `cron/jobs.json` 本机实测"
 status: fresh
 ---
 
@@ -52,7 +52,8 @@ status: fresh
 
 ## 行动项
 
-- [ ] **11-08（周日）weekly 批量跑完，复核那 19 个是否转绿**——这是唯一真验证，别提前宣布修好
+- [x] **11-08（周日）weekly 批量跑完，复核那 19 个是否转绿**——这是唯一真验证，别提前宣布修好 → ✅ **2026-11-08 20:10 实测 `cron_health.py`**：49 任务 = ✅39 正常 / ❌**0 当下红** / 🟠**9 陈旧红**（昨日 20）/ 📭1 投递失败。即 **11 个转绿、0 个真故障**；剩余 9 个「陈旧红」是失败快照未刷新，等下轮真跑。同日网络探活另见：opencode-go SSL EOF、siliconflow/deepseek 各 HTTP 401（见报告「观察」节）
+  - 🔁 2026-11-08 14:43 部分复核（suggestion-implementation）：机器唤醒后 catch-up 一次性拉起 **22 个 job**，截至 14:55 **15 条 completed / 10 条仍 running**（含 weekly-graphify / weekly-knowledge-consolidation / weekly-trending-review / weekly-system-cleanup / GitHub 宝藏挖掘 / arxiv-summarize）；**无新 401**；近 3 天除 11-05 那批 401 外无失败。**那 19 个正好在跑，结论等这批跑完再下**——本次只记「401 已消失 + 正在重跑」，不算转绿。
 - [x] 健康看板加一列「`last_run` 距今」+ 红分两档（**陈旧红** vs **当下红**），否则看板永远全红 → ✅ 2026-11-07 落地：`~/AppData/Local/hermes/scripts/cron_health.py` 加「距今」列（45m/5h/3d 人类可读）+ 红色两档——**❌ 当下红** = 有错误且已过 `next_run_at`（真故障先看它）/ **🟠 陈旧红** = 有错误但下次运行还没到（粘滞快照）；表头补 markdown 表格行。实测 49 任务：✅27 / ❌**0** / 🟠20 / 📭2 / ⚪0——印证卡片结论「22 红里真故障可能只有 3 个」，当下红为 0 说明此刻没有该跑未跑的活故障
 - [ ] 8788 凭据续期（5 分钟，各登一次）——不续就是下一次全库停摆
 
@@ -77,3 +78,8 @@ status: fresh
 ---
 
 *卡片来源：当天知识库精选（`knowledge/` 今日无新增笔记 → 候选池为空，改从今日 vault 实测产物 `memory/2026/11/health-2026-11-07.md` + `cron-health-latest.md` 回捞，并用 `executions.db` / `jobs.json` / `psutil` 现场复核，未采信旧报告结论）。*
+
+---
+
+> 🔗 **同周卡片（证据档位知识簇）**：[[2026-11-06-douyin-traffic-pool-evidence|抖音流量池的证据定级]] · [[2026-11-08-agent-approval-secrets|「别再问我」把密码写进公开仓库]]
+> 三张讲的是同一件事——**没报 ≠ 没有，无出处 ≠ 已证伪，`last_status` ≠ 状态源**。判据一律分成观察 / 推断 / 未知三档。

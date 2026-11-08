@@ -152,6 +152,19 @@ updated: 2026-11-01
 
 ---
 
+## 🆕 W45（11-08）
+
+- [[knowledge/Security/noir-android-privacy-audit-2026-11-08|NOIR 3.0k]] — 用 adb 把「这台手机能泄露什么」做成可复现报告：权限 × 上报端点 → 数据流向 + 可回滚处置（范围：自己的设备 / 已授权研究）
+
+## 🧩 补挂（2026-11-08 周度归并，4 篇）
+
+- [[knowledge/Security/ai-infra-guard-2026-09-20|ai-infra-guard-2026-09-20]] — Tencent AI-Infra-Guard（A.I.G）— AI 红队平台：扫 Agent / MCP / Skill
+- [[knowledge/Security/enterprise-src-knowledge-2026-08-18|enterprise-src-knowledge-2026-08-18]] — 企业 SRC 系统性知识（2026-08-18 五轮千轮研究）
+- [[knowledge/Security/src-systematic-knowledge-2026-08-18|src-systematic-knowledge-2026-08-18]] — SRC 挖洞系统性知识体系（2026-08-18 六轮千轮研究）
+- [[knowledge/Security/t3-first-bounty-2026-08-18|t3-first-bounty-2026-08-18]] — T3 首单全记录（2026-08-18）
+
+---
+
 [[HOME|🏠 返回首页]]
 
 ## 🧭 入口治理

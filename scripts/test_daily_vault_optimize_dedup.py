@@ -37,7 +37,7 @@ for p in (note_a, note_b, note_d):
     p.write_text("---\ntags: [test]\n---\n\n# " + p.stem + "\n", encoding="utf-8")
 
 os.environ["USERPROFILE"] = str(SANDBOX)
-sys.path.insert(0, str(pathlib.Path(r"C:\Users\31954\.openclaw\workspace\scripts")))
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import daily_vault_optimize as d  # noqa: E402
 
 assert str(d.VAULT) == str(WORKSPACE), f"VAULT 未指向沙箱: {d.VAULT}"

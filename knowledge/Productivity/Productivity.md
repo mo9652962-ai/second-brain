@@ -1,15 +1,20 @@
 ---
-tags: [index, MOC, productivity]
+tags: [index, productivity, archive]
 aliases: [生产力, 效率工具]
 created: 2026-07-26
-status: adopted
+updated: 2026-11-08
+status: superseded
+superseded_by: "[[MOC-Productivity]]"
 ---
 
-# Productivity — 生产力工具与效率指南
+# Productivity — 生产力工具与效率指南（已合并）
+
+> ⚠️ **本页已合并进 [[knowledge/Productivity/MOC-Productivity|MOC-Productivity]]**，保留仅为历史追溯。
+> 现行唯一入口：**MOC-Productivity**（76 条链接，含工具 / 系统清理 / 成本报告分区）。
+
+## 工具列表（历史快照）
 
 > 日常效率工具、写作辅助、Obsidian 使用技巧等。
-
-## 工具列表
 
 | 工具/笔记 | 用途 | 来源 |
 |:---------|:----|:----|
@@ -18,10 +23,10 @@ status: adopted
 | [[delphitools]] | 在线小工具合集 | 网络发现 |
 | [[6-online-tools]] | 在线工具推荐（续） | 网络发现 |
 | [[translumo]] | 屏幕实时翻译工具 | GitHub 项目 |
-|| [[workbuddy-bluebook]] | AI 办公工作流手册 | 网络发现 |
-||| [[tool-digestion-round10]] | 十轮工具消化：EDA/Pandoc/Gamma 等评估 | 经验总结 |
-||| [[vault-health-baseline]] | Vault 健康基线检查与维护 | 经验总结 |
-||| [[obsidian-mcp-setup]] | Obsidian Local REST API + MCP 配置 | 经验总结 |
+| [[workbuddy-bluebook]] | AI 办公工作流手册 | 网络发现 |
+| [[tool-digestion-round10]] | 十轮工具消化：EDA/Pandoc/Gamma 等评估 | 经验总结 |
+| [[vault-health-baseline]] | Vault 健康基线检查与维护 | 经验总结 |
+| [[obsidian-mcp-setup]] | Obsidian Local REST API + MCP 配置 | 经验总结 |
 
 ## 关联域
 

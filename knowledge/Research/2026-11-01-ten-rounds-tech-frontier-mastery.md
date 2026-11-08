@@ -209,3 +209,11 @@ updated: 2026-11-01
 - **观察（实测原始事实）**：38 项（涵盖 MCP 官方 Changelog 2026-07-28、SWE-bench Verified 官方归档状态、JLCPCB 2026 介质层实测表、知网 5.0 算法白皮书特征、Ghidra 12.1.4 兼容性测试、FSRS 参数公式、uv 官方文档与命令、字节 RankMixer-1B 论文参数）；
 - **推断（严密逻辑结论）**：12 项（涵盖 Letta 代码化对本地优先的印证、KiCad 10 混编工作流推荐、抖音多目标打分应对策略、现代逆向 CLI 优先策略）；
 - **未知（显式留空）**：0 项（无模糊盲推与无来源猜测）。
+
+---
+
+## 关联与后续
+
+- **同批另一份总览**：[[2026-11-01-cross-domain-tech-frontier-sync]] — MCP 2026-07-28 规范 / Agent 评测 Harness / KiCad 10 / 逆向 / OpenAlex 六支柱；与本文 Round 1~10 互补，重合处（MCP、KiCad、逆向、学术）结论一致。
+- **Round 7 的后续修正**：本文「抖音流量池」一节已单独立卡并做了证据降级 → [[knowledge/cards/2026-11-06-douyin-traffic-pool-evidence|抖音流量池的证据定级]]（「查不到出处」≠「已被证伪」）。
+- **Round 9 的工程落地**：逆向工具链的逐项突破记录在 [[knowledge/Security/MOC-Security|MOC-Security]]（REA / Ghidra / GoReSym 系列 2026-10-23~26 共 13 篇）。

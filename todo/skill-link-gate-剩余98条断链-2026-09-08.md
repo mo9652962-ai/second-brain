@@ -1,6 +1,14 @@
 # 待办：skill-link-gate 剩余断链
 
-> 2026-09-08 记录，2026-09-13 suggestion-implementation 复查
+> 2026-09-08 记录，2026-09-13 / **2026-11-08** suggestion-implementation 复查
+
+## ✅ 2026-11-08 复查结论：已闭环，本待办可归档
+
+- 实跑 `python ~/AppData/Local/hermes/scripts/skill_link_check.py` →
+  **`✅ 链接门禁通过：374 个 skill 全部无断裂引用`**（exit 0）
+- 9/8 的 98 条 → 9/13 的 100 条 → **11/08 的 0 条**。中间的处理把 templates/assets/scripts 占位与跨 skill 引用一起消化掉了，不再需要专项会话。
+- 唯一遗留项（light-orchestrator 9 条脚本引用）也已不再报错 → 检测器现在认为引用可解析。
+- 维护方式：`skill-link-gate` cron（周一 08:15）继续跑，**红了再来找我，不用预先把 98 条拆成任务**。
 
 ## 2026-09-13 复查结论
 

@@ -5,7 +5,7 @@ domain: Research
 type: moc
 status: active
 created: 2026-08-16
-updated: 2026-10-11
+updated: 2026-11-08
 ---
 
 # 🐙 GitHub 研究 MOC — GitHub Treasure Map
@@ -13,12 +13,14 @@ updated: 2026-10-11
 > GitHub 主题切片总入口：周报 / 趋势日榜 / 单项目研读 / 热榜深读 / 资源清单。
 > [[knowledge-map|🗺️ 知识地图]] · [[MOC-Research|🔬 Research MOC（父域）]] · [[MOC-Security|🛡️ Security MOC]]
 
-**共 59 篇相关笔记** · 最后更新：2026-10-11（W41 宝藏挖掘入库）
+**共 66 篇相关笔记** · 最后更新：2026-11-08（W45 weekly 口径 5 项新面孔 + 1 篇方法论）
 
 ---
 
 ## 📅 周报系列（W31 起，每周一篇）
 
+- [[GitHub-Weekly-2026-11-08-weekly-5projects]] — W45 weekly：agent-autoloop / claude-mem / dsh-superagent / NOIR / worktrunk（附方法论 [[super-agent-attention-architecture-2026-11-08]]）
+- [[GitHub-Weekly-2026-11-08]] — W45 宝藏挖掘（28 天 delta：codebase-memory-mcp 48.3k **+1,986** / chrome-devtools-mcp 54.9k +1,687 / code-review-graph 32.6k +609 / TrendRadar 63.5k +730；dify 160.6k **首次进榜**；nanobot 掉榜原因未知）
 - [[GitHub-Weekly-2026-10-11]] — W41 宝藏挖掘（脚本口径 Top5：codebase-memory-mcp 46.3k / nanobot 48.9k / code-review-graph 32.0k / chrome-devtools-mcp / TrendRadar）
 - [[GitHub-Weekly-2026-09-20-weekly-5projects]] — W39 weekly：sub2api / SemIf / AI-Infra-Guard / karpathy-skills / open-code-review
 - [[GitHub-Weekly-2026-09-20]] — W39 宝藏挖掘（脚本口径 Top5：codebase-memory-mcp / nanobot / code-review-graph） 5 新面孔（周报 [[GitHub-Weekly-2026-09-20|W39 周报]]）
@@ -32,6 +34,15 @@ updated: 2026-10-11
 - [[GitHub-Weekly-2026-08-14]] — W33：自改进 RLM Agent 领跑（prime-agent +12k⭐）+ semantica / agent-skills / cloudflare-computer / switchyard
 - [[GitHub-Weekly-2026-08-09]] — W32 宝藏挖掘
 - [[GitHub-Weekly-2026-08-02]] — W31 宝藏挖掘
+
+## 🗓️ W45 周精选（2026-11-08，weekly 口径 5 项新面孔 + 1 方法论）
+
+- [[knowledge/Dev/agent-autoloop-2026-11-08|agent-autoloop 4.0k]] — 命令行 Agent 自动接活中台：1,850 行零依赖内核，挂起零消耗 / 事件溯源 / 指令数据分离 / TTL 熔断
+- [[knowledge/AI/claude-mem-2026-11-08|claude-mem 114.6k]] — 第二 agent 旁听记笔记：hooks→worker→observer→SQLite+Chroma，三级检索省 ~10x token
+- [[knowledge/AI/dsh-superagent-2026-11-08|dsh-superagent 20.9k]] — DeepSeek 超级 Agent 原型：Router/Worker 两层 + 注意力经济学 + 可计算授权表（1 commit，读 docs 不装码）
+- [[knowledge/Security/noir-android-privacy-audit-2026-11-08|NOIR 3.0k]] — adb 审 Android：权限 × 上报端点 → 数据流向 + 风险分 + 可回滚处置，本地零上传
+- [[knowledge/Dev/worktrunk-2026-11-08|worktrunk 12.0k]] — git worktree 做成并行 agent 工位：wt switch/remove/list + 生命周期 hooks + CoW 构建缓存
+- [[knowledge/AI/super-agent-attention-architecture-2026-11-08|方法论：注意力架构]] — 把「人的注意力是第一约束」落到 Hermes cron：P0 三条（注意力三问 / 外部文本落盘 / 委派深度上限 3）
 
 ## 🗓️ W39 周精选（2026-09-20，weekly 口径 5 项新面孔）
 

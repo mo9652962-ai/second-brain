@@ -1,6 +1,6 @@
 ---
 tags: [academic, thesis, evidence, workflow]
-domain: research
+domain: Research
 created: 2026-10-16
 updated: 2026-10-16
 status: adopted

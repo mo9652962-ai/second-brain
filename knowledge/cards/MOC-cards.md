@@ -69,8 +69,11 @@ updated: 2026-10-16
 
 - [[knowledge/cards/2026-11-06-douyin-traffic-pool-evidence|🃏 知识卡片 · 抖音「流量池」不是被证伪，是没人拿得出出处]]
 - [[knowledge/cards/2026-11-07-cron-monitoring-three-fakes|🃏 知识卡片 · 监控的三张假脸：假绿、假红、漏跑——今天一次全看全了]]
+- [[knowledge/cards/2026-11-08-agent-approval-secrets|🃏 知识卡片 · 一次「别再问我」把密码写进公开仓库：1,122 份文件，两个扫描器漏了 215 份]]
 
 ## 自动挂载
 
 > cron 产出自动登记（防入链孤立）
 
+- [[knowledge/cards/2026-09-21-devin-cognition-eval|2026-09-21 Devin 认知评估]] — 🃏 知识卡片 · Devin 评估：云端 Agent 适合当「远程执行队员」，不替代 Codex + Hermes
+- [[2026-11-07-ppt-layered-material]] — 🃏 知识卡片 · 答辩 PPT 的「分层材质」：三层就够，别加第四层

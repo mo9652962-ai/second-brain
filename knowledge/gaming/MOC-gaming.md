@@ -1,6 +1,6 @@
 ---
 tags: [MOC, gaming]
-domain: gaming
+domain: Gaming
 type: moc
 status: active
 created: 2026-09-20
