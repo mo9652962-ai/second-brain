@@ -1,5 +1,5 @@
 ---
-tags: [absorbed, ai-news, 2026-07-25]
+tags: [absorbed, ai-news, "2026-07-25"]
 source: AI HOT 简报 · 2026-07-25
 status: absorbed
 date: 2026-07-27

@@ -3,7 +3,7 @@ aliases:
   - 2026-11-07-card-cron-monitoring-three-fakes
 tags: [knowledge-card, monitoring, cron-reliability, observability, evidence-discipline]
 created: 2026-11-07
-source: "[[memory/2026/11/health-2026-11-07]] + `cron/executions.db` / `cron/jobs.json` 本机实测"
+source: "本机 `memory/2026/11/health-2026-11-07.md`（本地隔离，不入库） + `cron/executions.db` / `cron/jobs.json` 本机实测"
 status: fresh
 ---
 
@@ -53,6 +53,7 @@ status: fresh
 ## 行动项
 
 - [ ] **11-08（周日）weekly 批量跑完，复核那 19 个是否转绿**——这是唯一真验证，别提前宣布修好
+  - 🔁 2026-11-08 14:43 部分复核（suggestion-implementation）：机器唤醒后 catch-up 一次性拉起 **22 个 job**，截至 14:55 **15 条 completed / 10 条仍 running**（含 weekly-graphify / weekly-knowledge-consolidation / weekly-trending-review / weekly-system-cleanup / GitHub 宝藏挖掘 / arxiv-summarize）；**无新 401**；近 3 天除 11-05 那批 401 外无失败。**那 19 个正好在跑，结论等这批跑完再下**——本次只记「401 已消失 + 正在重跑」，不算转绿。
 - [x] 健康看板加一列「`last_run` 距今」+ 红分两档（**陈旧红** vs **当下红**），否则看板永远全红 → ✅ 2026-11-07 落地：`~/AppData/Local/hermes/scripts/cron_health.py` 加「距今」列（45m/5h/3d 人类可读）+ 红色两档——**❌ 当下红** = 有错误且已过 `next_run_at`（真故障先看它）/ **🟠 陈旧红** = 有错误但下次运行还没到（粘滞快照）；表头补 markdown 表格行。实测 49 任务：✅27 / ❌**0** / 🟠20 / 📭2 / ⚪0——印证卡片结论「22 红里真故障可能只有 3 个」，当下红为 0 说明此刻没有该跑未跑的活故障
 - [ ] 8788 凭据续期（5 分钟，各登一次）——不续就是下一次全库停摆
 
